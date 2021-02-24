@@ -1,0 +1,33 @@
+add authors entities:
+  title: 'Create new Authors entities'
+
+administer authors entities:
+  title: 'Administer Authors entities'
+  description: 'Allow to access the administration form to configure Authors entities.'
+  restrict access: true
+
+delete authors entities:
+  title: 'Delete Authors entities'
+
+edit authors entities:
+  title: 'Edit Authors entities'
+
+view published authors entities:
+  title: 'View published Authors entities'
+
+view unpublished authors entities:
+  title: 'View unpublished Authors entities'
+
+view all authors revisions:
+  title: 'View all Authors revisions'
+
+revert all authors revisions:
+  title: 'Revert all Authors revisions'
+  description: 'Role requires permission <em>view Authors revisions</em> and <em>edit rights</em> for authors entities in question or <em>administer authors entities</em>.'
+
+delete all authors revisions:
+  title: 'Delete all revisions'
+  description: 'Role requires permission to <em>view Authors revisions</em> and <em>delete rights</em> for authors entities in question or <em>administer authors entities</em>.'
+
+permission_callbacks:
+  - \Drupal\content_authors\AuthorsPermissions::generatePermissions
