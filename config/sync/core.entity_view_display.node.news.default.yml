@@ -18,19 +18,19 @@ bundle: news
 mode: default
 content:
   addtoany:
-    weight: 5
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
   body:
     label: hidden
     type: text_default
-    weight: 1
+    weight: 3
     settings: {  }
     third_party_settings: {  }
     region: content
   field_caption:
-    weight: 4
+    weight: 2
     label: hidden
     settings:
       link_to_entity: false
@@ -38,7 +38,7 @@ content:
     type: string
     region: content
   field_image:
-    weight: 3
+    weight: 1
     label: hidden
     settings:
       image_style: ''
@@ -47,16 +47,12 @@ content:
     type: image
     region: content
   field_short_title:
-    weight: 2
+    weight: 0
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
     region: content
-  links:
-    weight: 0
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-hidden: {  }
+hidden:
+  links: true
