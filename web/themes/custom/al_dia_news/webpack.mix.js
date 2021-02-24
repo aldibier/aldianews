@@ -28,14 +28,14 @@ mix
  | JS
  |--------------------------------------------------------------------------
  */
-mix.js('src/js/app.js', 'assets/js/index.js');
+mix.js('src/js/scripts.js', 'js');
 
 /*
  |--------------------------------------------------------------------------
  | SASS
  |--------------------------------------------------------------------------
  */
-mix.sass('src/sass/index.scss', 'assets/css/index.css', {
+mix.sass('src/sass/styles.scss', 'css', {
     sassOptions: {
         outputStyle: "compressed",
     }
