@@ -1,0 +1,81 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the autogestion_me_pockets module.
+ */
+
+use Drupal\Core\Database\Database;
+use Drupal\Core\Entity\ContentEntityType;
+
+function autogestion_me_pockets_update_8001() {
+    $definition_update_manager = Drupal::entityDefinitionUpdateManager(); 
+    // Basically the entity plugin definition for the custom entity, converted to an associative array. 
+    $entity_definition = new ContentEntityType([            
+        'id' => "authors",
+        'label' => new \Drupal\Core\StringTranslation\TranslatableMarkup("Authors"),
+        'bundle_label' => @Translation("Authors type"),
+        'handlers' => [
+            "storage" => "Drupal\content_authors\AuthorsStorage",
+            "view_builder" => "Drupal\Core\Entity\EntityViewBuilder",
+            "list_builder" => "Drupal\content_authors\AuthorsListBuilder",
+            "views_data" => "Drupal\content_authors\Entity\AuthorsViewsData",
+            "translation" => "Drupal\content_authors\AuthorsTranslationHandler",
+        
+            "form" => [
+            "default" => "Drupal\content_authors\Form\AuthorsForm",
+            "add" => "Drupal\content_authors\Form\AuthorsForm",
+            "edit" => "Drupal\content_authors\Form\AuthorsForm",
+            "delete" => "Drupal\content_authors\Form\AuthorsDeleteForm",
+            ],
+            "route_provider" => [
+            "html" => "Drupal\content_authors\AuthorsHtmlRouteProvider",
+            ],
+            "access" => "Drupal\content_authors\AuthorsAccessControlHandler",
+        ],
+        'base_table' => "authors",
+        'data_table' => "authors_field_data",
+        'revision_table' => "authors_revision",
+        'revision_data_table' => "authors_field_revision",
+        'translatable' => TRUE,
+        'permission_granularity' => "bundle",
+        'admin_permission' => "administer authors entities",
+        'entity_keys' => [
+            "id" => "id",
+            "revision" => "vid",
+            "bundle" => "type",
+            "label" => "name",
+            "uuid" => "uuid",
+            "uid" => "user_id",
+            "langcode" => "langcode",
+            "published" => "status",
+        ],
+        'revision_metadata_keys' => [
+            'revision_user' => 'revision_user',
+            'revision_created' => 'revision_created',
+            'revision_log_message' => 'revision_log',
+        ],
+        'links' => [
+            "canonical" => "/admin/structure/authors/{authors}",
+            "add-page" => "/admin/structure/authors/add",
+            "add-form" => "/admin/structure/authors/add/{authors_type}",
+            "edit-form" => "/admin/structure/authors/{authors}/edit",
+            "delete-form" => "/admin/structure/authors/{authors}/delete",
+            "version-history" => "/admin/structure/authors/{authors}/revisions",
+            "revision" => "/admin/structure/authors/{authors}/revisions/{authors_revision}/view",
+            "revision_revert" => "/admin/structure/authors/{authors}/revisions/{authors_revision}/revert",
+            "revision_delete" => "/admin/structure/authors/{authors}/revisions/{authors_revision}/delete",
+            "translation_revert" => "/admin/structure/authors/{authors}/revisions/{authors_revision}/revert/{langcode}",
+            "collection" => "/admin/structure/authors",
+        ],
+        'bundle_entity_type' => "authors_type",
+        'field_ui_base_route' => "entity.authors_type.edit_form"
+
+
+    ]);
+    // Finally you need to manually set the class to where the entity plugin definition is. 
+    $entity_definition->setClass('Drupal\content_authors\Entity\Authors'); 
+    // Create new entity type. 
+    $definition_update_manager->installEntityType($entity_definition);
+       
+}

@@ -5,10 +5,12 @@ dependencies:
   config:
     - field.field.node.news.body
     - field.field.node.news.field_caption
+    - field.field.node.news.field_comments
     - field.field.node.news.field_image
     - field.field.node.news.field_short_title
     - node.type.news
   module:
+    - comment
     - image
     - text
     - user
@@ -36,6 +38,15 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_comments:
+    weight: 5
+    label: above
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    type: comment_default
     region: content
   field_image:
     weight: 1
