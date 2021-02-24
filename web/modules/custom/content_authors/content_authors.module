@@ -1,0 +1,57 @@
+<?php
+
+/**
+ * @file
+ * Contains content_authors.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function content_authors_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the content_authors module.
+    case 'help.page.content_authors':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function content_authors_theme() {
+  $theme = [];
+  $theme['authors'] = [
+    'render element' => 'elements',
+    'file' => 'authors.page.inc',
+    'template' => 'authors',
+  ];
+  $theme['authors_content_add_list'] = [
+    'render element' => 'content',
+    'variables' => ['content' => NULL],
+    'file' => 'authors.page.inc',
+  ];
+  return $theme;
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK().
+ */
+function content_authors_theme_suggestions_authors(array $variables) {
+  $suggestions = [];
+  $entity = $variables['elements']['#authors'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'authors__' . $sanitized_view_mode;
+  $suggestions[] = 'authors__' . $entity->bundle();
+  $suggestions[] = 'authors__' . $entity->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'authors__' . $entity->id();
+  $suggestions[] = 'authors__' . $entity->id() . '__' . $sanitized_view_mode;
+  return $suggestions;
+}
