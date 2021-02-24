@@ -17,24 +17,29 @@ targetEntityType: node
 bundle: news
 mode: default
 content:
+  addtoany:
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   body:
     label: hidden
     type: text_default
-    weight: 101
+    weight: 1
     settings: {  }
     third_party_settings: {  }
     region: content
   field_caption:
-    weight: 104
-    label: above
+    weight: 4
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
     region: content
   field_image:
-    weight: 103
-    label: above
+    weight: 3
+    label: hidden
     settings:
       image_style: ''
       image_link: ''
@@ -42,16 +47,16 @@ content:
     type: image
     region: content
   field_short_title:
-    weight: 102
-    label: above
+    weight: 2
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
     region: content
   links:
-    weight: 100
+    weight: 0
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden: {  }
