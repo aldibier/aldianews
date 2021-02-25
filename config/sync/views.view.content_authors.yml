@@ -266,7 +266,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class =\"author-information\">\r\n{{ field_authors_photo }}\r\n <div class =\"name-date\">\r\n  {{ name }}\r\n  {{ created }}\r\n </div>\r\n</div>"
+            text: "<div class =\"author-information\">\r\n  <div class=\"photo\">\r\n  {{ field_authors_photo }}\r\n  </div\r\n <div class =\"name-date\">\r\n  {{ name }}\r\n  {{ created }}\r\n </div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
