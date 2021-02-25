@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.news.field_short_title
     - node.type.news
     - views.view.content_authors
+    - views.view.more_in_this_section_news
   module:
     - al_dia_layouts
     - comment
@@ -189,6 +190,19 @@ third_party_settings:
                 entity: layout_builder.entity
             additional: {  }
             weight: -9
+          be603c0d-56da-46ef-8a58-c966b26d748b:
+            uuid: be603c0d-56da-46ef-8a58-c966b26d748b
+            region: one_more
+            configuration:
+              id: 'views_block:more_in_this_section_news-block_1'
+              label: 'MORE IN THIS SECTION'
+              provider: views
+              label_display: visible
+              views_label: 'MORE IN THIS SECTION'
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
         third_party_settings: {  }
 id: node.news.default
 targetEntityType: node
