@@ -4,16 +4,26 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "npx mix",
-    "watch": "npx mix watch",
-    "hot": "npx mix watch --hot",
-    "prod": "npx mix --production"
+    "dev": "npm run development",
+    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "npm run development -- --watch",
+    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "prod": "npm run production",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "laravel-mix": "^6.0.11",
-    "sass": "^1.32.8",
-    "sass-loader": "^8.0.2"
+    "cross-env": "^7.0.2",
+    "ed-grid": "^3.0.2",
+    "laravel-mix": "^5.0.7",
+    "postcss-assets": "^5.0.0",
+    "postcss-clean": "^1.1.0",
+    "postcss-svg": "^3.0.0",
+    "postcss-svgo": "^4.0.2",
+    "postcss-zindex": "^4.0.1",
+    "sass": "^1.27.0",
+    "sass-loader": "^8.0.2",
+    "vue-template-compiler": "^2.6.12"
   }
 }
