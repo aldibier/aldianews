@@ -1,0 +1,22 @@
+uuid: 533e239a-c9db-418c-bf44-661f49db29dc
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - al_dia_news
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: al_dia_news_content
+theme: al_dia_news
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }
