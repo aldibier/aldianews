@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.news.field_image
     - field.field.node.news.field_short_title
     - node.type.news
+    - views.view.content_authors
   module:
     - al_dia_layouts
     - comment
@@ -18,6 +19,7 @@ dependencies:
     - layout_builder
     - text
     - user
+    - views
 third_party_settings:
   layout_builder:
     allow_custom: false
@@ -122,7 +124,7 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: 0
+            weight: -9
           d7c86c43-0433-4918-8c9e-59120ede1108:
             uuid: d7c86c43-0433-4918-8c9e-59120ede1108
             region: two_content
@@ -137,7 +139,7 @@ third_party_settings:
               context_mapping:
                 entity: layout_builder.entity
             additional: {  }
-            weight: 1
+            weight: -8
           85b577c8-0624-449c-a353-da8bfe8a1721:
             uuid: 85b577c8-0624-449c-a353-da8bfe8a1721
             region: two_content
@@ -157,7 +159,7 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: 2
+            weight: -7
           cfe2d810-0491-4dd0-8618-f5832b9cd269:
             uuid: cfe2d810-0491-4dd0-8618-f5832b9cd269
             region: content
@@ -174,6 +176,19 @@ third_party_settings:
                 type: entity_reference_label
             additional: {  }
             weight: 0
+          4726351f-688e-4669-87e2-1f1106db000a:
+            uuid: 4726351f-688e-4669-87e2-1f1106db000a
+            region: two_content
+            configuration:
+              id: 'views_block:content_authors-block_1'
+              label: ''
+              provider: views
+              label_display: '0'
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: -10
         third_party_settings: {  }
 id: node.news.default
 targetEntityType: node
