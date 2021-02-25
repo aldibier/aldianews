@@ -1,0 +1,19 @@
+uuid: 493d5795-a685-4391-8401-c3431713651b
+langcode: en
+status: true
+dependencies:
+  config:
+    - content_authors.authors_type.news_authors
+    - field.storage.authors.field_author_s_name
+id: authors.news_authors.field_author_s_name
+field_name: field_author_s_name
+entity_type: authors
+bundle: news_authors
+label: 'Author''s name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

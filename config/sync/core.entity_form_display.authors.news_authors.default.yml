@@ -1,0 +1,51 @@
+uuid: 65bc44fb-6398-4d21-9231-ffc15b7c5313
+langcode: en
+status: true
+dependencies:
+  config:
+    - content_authors.authors_type.news_authors
+    - field.field.authors.news_authors.field_author_s_name
+    - field.field.authors.news_authors.field_authors_photo
+    - image.style.thumbnail
+  module:
+    - image
+id: authors.news_authors.default
+targetEntityType: authors
+bundle: news_authors
+mode: default
+content:
+  field_author_s_name:
+    weight: 27
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_authors_photo:
+    weight: 26
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  name:
+    type: string_textfield
+    weight: -4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  user_id:
+    type: entity_reference_autocomplete
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    region: content
+    third_party_settings: {  }
+hidden: {  }

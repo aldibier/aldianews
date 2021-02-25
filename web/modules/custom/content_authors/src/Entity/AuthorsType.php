@@ -30,6 +30,12 @@ use Drupal\Core\Config\Entity\ConfigEntityBundleBase;
  *     "label" = "label",
  *     "uuid" = "uuid"
  *   },
+ *     config_export = {
+ *     "id",
+ *     "label",
+ *     "targetEntityType",
+ *     "cache",
+ *   },
  *   links = {
  *     "canonical" = "/admin/structure/authors_type/{authors_type}",
  *     "add-form" = "/admin/structure/authors_type/add",
