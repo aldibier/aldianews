@@ -1,0 +1,23 @@
+news:
+  label: 'News'
+  path: layouts/news
+  template: layout--news
+  category: 'News'
+  default_region: content
+  icon_map:
+    - [one_advertising]
+    - [one_content]
+    - [one_more] 
+    - [two_content]
+    - [two_advertising]
+  regions:
+    one_advertising:
+      label: Primero - Publicidad
+    one_content:
+      label: Primero - Contenido
+    one_more:
+      label: Derecha - relacionados
+    two_content:
+      label: Segundo - Contenido
+    two_advertising:
+      label: Segundo - Publicidad

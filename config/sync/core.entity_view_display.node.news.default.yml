@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_display.comment.comments_content.default
     - field.field.node.news.body
     - field.field.node.news.field_caption
     - field.field.node.news.field_comments
@@ -12,8 +13,111 @@ dependencies:
   module:
     - comment
     - image
+    - layout_builder
     - text
     - user
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          1a01f268-6d43-4e72-93e7-a928f274c20a:
+            uuid: 1a01f268-6d43-4e72-93e7-a928f274c20a
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:news:field_short_title'
+              formatter:
+                label: hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+                type: string
+            additional: {  }
+            weight: 0
+          904c25d6-536d-4c7d-b065-22e329a41d25:
+            uuid: 904c25d6-536d-4c7d-b065-22e329a41d25
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:news:field_image'
+              formatter:
+                label: hidden
+                settings:
+                  image_style: ''
+                  image_link: ''
+                third_party_settings: {  }
+                type: image
+            additional: {  }
+            weight: 1
+          b450b99b-51af-4536-9207-00c7ddfc66c0:
+            uuid: b450b99b-51af-4536-9207-00c7ddfc66c0
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:news:field_caption'
+              formatter:
+                label: hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+                type: string
+            additional: {  }
+            weight: 2
+          e013f941-82b7-469f-b06e-ecba040fa93e:
+            uuid: e013f941-82b7-469f-b06e-ecba040fa93e
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:news:body'
+              formatter:
+                label: hidden
+                type: text_default
+                settings: {  }
+                third_party_settings: {  }
+            additional: {  }
+            weight: 3
+          0fbb52d4-67ec-473b-9138-ee7086cca943:
+            uuid: 0fbb52d4-67ec-473b-9138-ee7086cca943
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:news:addtoany'
+            additional: {  }
+            weight: 4
+          80814e86-d77f-4103-b55d-c12cbd4ce426:
+            uuid: 80814e86-d77f-4103-b55d-c12cbd4ce426
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:news:field_comments'
+              formatter:
+                label: above
+                settings:
+                  view_mode: default
+                  pager_id: 0
+                third_party_settings: {  }
+                type: comment_default
+            additional: {  }
+            weight: 5
+        third_party_settings: {  }
 id: node.news.default
 targetEntityType: node
 bundle: news
