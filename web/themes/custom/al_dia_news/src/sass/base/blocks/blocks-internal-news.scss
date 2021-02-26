@@ -20,18 +20,68 @@
 //------block share----------//
 
 .block-extra-field-blocknodenewsaddtoany {
-    font-style: normal;
-    font-weight: bold;
-    font-size: $px19;
-    line-height: 127.8%;
-    letter-spacing: 0.2px;
+
+    h2 {
+        margin: 10px 0 25px;
+        font-style: normal;
+        font-weight: bold;
+        font-size: $px19;
+        line-height: 127.8%;
+        letter-spacing: 0.2px;
+    }
 
     .addtoany_list.a2a_kit_size_32 a > span {
         padding: 4px;
+        border-radius: 100%;
         background: $cgrey !important;
+    }
 
-        &:hover {
-            background: initial;
-        }
+    >.content {
+        margin: 10px auto 25px 0;
+    }
+}
+
+
+
+//---------block content news -----------//
+
+
+//------- twitter
+
+.twitter-tweet {
+    max-width: 100% !important;
+}
+
+//------- blockquote 
+
+blockquote {
+    padding: 0 70px;
+    position: relative;
+    margin: 45px auto 35px 0;
+    border: none;
+    background: none;
+    max-width: 660px;
+    width: 100%;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 28px;
+    line-height: 140%;
+    color: $cgrey2;
+
+    &:before,
+    &:after {
+        color: $corange;
+        font-size: $px130;
+        position: absolute;
+    }
+
+    &:before {
+        left: 0;
+        top: 45px;
+    }
+
+    &:after {
+        right: 0;
+        top: 74px;
     }
 }
