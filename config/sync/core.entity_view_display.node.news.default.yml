@@ -10,9 +10,11 @@ dependencies:
     - field.field.node.news.field_comments
     - field.field.node.news.field_image
     - field.field.node.news.field_short_title
+    - field.field.node.news.field_tags
     - node.type.news
     - views.view.content_authors
     - views.view.more_in_this_section_news
+    - views.view.news_tags
   module:
     - al_dia_layouts
     - comment
@@ -145,7 +147,7 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: -7
+            weight: -6
           cfe2d810-0491-4dd0-8618-f5832b9cd269:
             uuid: cfe2d810-0491-4dd0-8618-f5832b9cd269
             region: content
@@ -195,14 +197,43 @@ third_party_settings:
             region: one_more
             configuration:
               id: 'views_block:more_in_this_section_news-block_1'
-              label: 'MORE IN THIS SECTION'
+              label: ''
               provider: views
-              label_display: visible
-              views_label: 'MORE IN THIS SECTION'
+              label_display: '0'
+              views_label: ''
               items_per_page: none
               context_mapping: {  }
             additional: {  }
             weight: 0
+          8e60b238-4c55-4bfb-a10f-cdc47def7281:
+            uuid: 8e60b238-4c55-4bfb-a10f-cdc47def7281
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:news:field_tags'
+              formatter:
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+                type: entity_reference_label
+            additional: {  }
+            weight: 1
+          a154e1cd-2a1d-44b1-9ec7-97a606a4ad21:
+            uuid: a154e1cd-2a1d-44b1-9ec7-97a606a4ad21
+            region: two_content
+            configuration:
+              id: 'views_block:news_tags-block_1'
+              label: ''
+              provider: views
+              label_display: '0'
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: -7
         third_party_settings: {  }
 id: node.news.default
 targetEntityType: node
@@ -262,6 +293,14 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_tags:
+    weight: 7
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
     region: content
 hidden:
   langcode: true

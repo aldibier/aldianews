@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.news.field_comments
     - field.field.node.news.field_image
     - field.field.node.news.field_short_title
+    - field.field.node.news.field_tags
     - image.style.thumbnail
     - node.type.news
   module:
@@ -33,7 +34,7 @@ content:
     region: content
   created:
     type: datetime_timestamp
-    weight: 7
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -56,7 +57,7 @@ content:
     type: string_textfield
     region: content
   field_comments:
-    weight: 13
+    weight: 14
     settings: {  }
     third_party_settings: {  }
     type: comment_default
@@ -77,9 +78,19 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
+  field_tags:
+    weight: 6
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   path:
     type: path
-    weight: 10
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -87,21 +98,21 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 8
+    weight: 9
     region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 12
+    weight: 13
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 9
+    weight: 10
     region: content
     third_party_settings: {  }
   title:
@@ -113,13 +124,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
   translation:
-    weight: 11
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 6
+    weight: 7
     settings:
       match_operator: CONTAINS
       size: 60
