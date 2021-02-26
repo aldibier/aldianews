@@ -15,7 +15,6 @@ dependencies:
     - views.view.content_authors
     - views.view.more_in_this_section_news
     - views.view.news_tags
-    - views.view.related_content
   module:
     - al_dia_layouts
     - comment
@@ -235,19 +234,6 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: -7
-          a26ac9c5-f916-4021-9a4c-e1eec1fdaf23:
-            uuid: a26ac9c5-f916-4021-9a4c-e1eec1fdaf23
-            region: two_content
-            configuration:
-              id: 'views_block:related_content-block_1'
-              label: ''
-              provider: views
-              label_display: '0'
-              views_label: ''
-              items_per_page: none
-              context_mapping: {  }
-            additional: {  }
-            weight: -5
         third_party_settings: {  }
 id: node.news.default
 targetEntityType: node
