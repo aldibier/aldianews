@@ -55,3 +55,11 @@ function content_authors_theme_suggestions_authors(array $variables) {
   $suggestions[] = 'authors__' . $entity->id() . '__' . $sanitized_view_mode;
   return $suggestions;
 }
+
+/**
+ * Implements hook_form_alter()
+ */
+// function content_authors_form_alter(&$form, $form_state, $form_id) {
+//   ksm($form_id);
+
+// }
