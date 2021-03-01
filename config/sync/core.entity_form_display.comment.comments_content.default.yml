@@ -4,7 +4,9 @@ status: true
 dependencies:
   config:
     - comment.type.comments_content
+    - field.field.comment.comments_content.field_captcha
     - field.field.comment.comments_content.field_comment_body
+    - field.field.comment.comments_content.field_recaptcha
 id: comment.comments_content.default
 targetEntityType: comment
 bundle: comments_content
@@ -12,8 +14,14 @@ mode: default
 content:
   author:
     weight: -2
+    region: content
     settings: {  }
     third_party_settings: {  }
+  field_captcha:
+    weight: 14
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
     region: content
   field_comment_body:
     weight: 12
@@ -22,6 +30,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textarea
+    region: content
+  field_recaptcha:
+    weight: 13
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
     region: content
   langcode:
     type: language_select

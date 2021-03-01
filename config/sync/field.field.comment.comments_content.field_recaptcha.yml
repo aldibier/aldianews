@@ -1,0 +1,23 @@
+uuid: 64622734-cabc-4733-acf9-2c13a6557065
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comments_content
+    - field.storage.comment.field_recaptcha
+id: comment.comments_content.field_recaptcha
+field_name: field_recaptcha
+entity_type: comment
+bundle: comments_content
+label: Recaptcha
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:captcha_point'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference
