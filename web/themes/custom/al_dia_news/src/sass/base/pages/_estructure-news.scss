@@ -5,11 +5,26 @@
 .block-extra-field-blocknodenewsaddtoany,
 .block-field-blocknodenewsbody,
 .block-field-blocknodenewsfield-comments {
+    --padding-right: 450px;
     max-width: 840px;
-    width: 100%;
+    width: calc(100% - var(--padding-right));
+    max-width: 930px;
+
+    > *  {
+        padding: 0 15px;
+    }
 }
+
+.content-news-internal-first {
+    padding: 0 15px;
+}
+
+
 
 //--------more notices---------//
 .container-right  {
-
+    --padding-right: 450px;
+    width: var(--padding-right);
+    position: absolute;
+    right: 0;
 }
