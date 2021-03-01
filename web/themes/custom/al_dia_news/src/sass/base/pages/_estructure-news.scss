@@ -1,3 +1,11 @@
+//---style remplace ------//
+@media (min-width: 560px){
+    .node .field--type-image {
+        float: none;
+        margin: 0;
+    }
+}
+
 //-------notice -----------//
 
 //-----body notice--------//
@@ -9,6 +17,10 @@
     max-width: 840px;
     width: calc(100% - var(--padding-right));
     max-width: 930px;
+}
+
+.content-news-internal-first {
+    padding: 0 15px;
 }
 
 
