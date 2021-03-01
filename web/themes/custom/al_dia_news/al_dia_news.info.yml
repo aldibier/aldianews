@@ -9,6 +9,6 @@ libraries:
   - al_dia_news/global
 
 libraries-override:
-  selection_sharer/library:
+  selection_sharer/selection-shared:
     js:
-      /selection-sharer.js: js/selection-sharer.jss
+      library/selection-sharer.js: js/selection-sharer.js

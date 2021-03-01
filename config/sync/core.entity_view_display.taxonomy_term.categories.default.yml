@@ -4,12 +4,10 @@ status: true
 dependencies:
   config:
     - taxonomy.vocabulary.categories
-    - views.view.categories_sons
   module:
     - layout_builder
     - layout_discovery
     - text
-    - views
 third_party_settings:
   layout_builder:
     allow_custom: false
@@ -35,19 +33,6 @@ third_party_settings:
                 third_party_settings: {  }
             additional: {  }
             weight: 0
-          c95f921c-ce73-4d79-b8e2-288621e4780b:
-            uuid: c95f921c-ce73-4d79-b8e2-288621e4780b
-            region: content
-            configuration:
-              id: 'views_block:categories_sons-block_1'
-              label: ''
-              provider: views
-              label_display: '0'
-              views_label: ''
-              items_per_page: none
-              context_mapping: {  }
-            additional: {  }
-            weight: 1
         third_party_settings: {  }
 id: taxonomy_term.categories.default
 targetEntityType: taxonomy_term
