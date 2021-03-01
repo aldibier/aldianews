@@ -1,10 +1,28 @@
 display:
   default:
     display_options:
+      exposed_form:
+        options:
+          submit_button: Filter
       fields:
         title:
           label: Título
+        type:
+          label: 'Content type'
+        status:
+          label: Status
+        operations:
+          label: Operations
       filters:
         title:
           expose:
             label: Título
+        type:
+          expose:
+            label: 'Content type'
+        status:
+          expose:
+            label: Status
+        langcode:
+          expose:
+            label: Language
