@@ -175,6 +175,7 @@ div[ data-embed-button="related_content" ] {
         line-height: 39px;
         text-decoration: none;
         color: $cblack;
+        border: none;
 
         a:hover {
             text-decoration: none;
@@ -183,7 +184,8 @@ div[ data-embed-button="related_content" ] {
     }
 
     .views-row {
-        padding: 10px 0;
+        padding: 20px 0;
+        border-bottom: 1px solid $cgrey4;
     }
 
     .related-content-news {
@@ -194,6 +196,7 @@ div[ data-embed-button="related_content" ] {
             font-size: $px16;
             line-height: 19px;
             color: $cgrey3;
+            margin: 15px 0 0;
         }
     }
 }
