@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.taxonomy_term.full
     - taxonomy.vocabulary.categories
     - views.view.categories_sons
+    - views.view.last_news
     - views.view.last_news_category_sons
   module:
     - al_dia_layouts
@@ -20,21 +21,8 @@ third_party_settings:
       -
         layout_id: taxonomy_category
         layout_settings:
-          label: ''
+          label: Taxonomy_category
         components:
-          388e8b72-f4da-4eff-873e-ab3d9e8f682a:
-            uuid: 388e8b72-f4da-4eff-873e-ab3d9e8f682a
-            region: one_content
-            configuration:
-              id: 'views_block:categories_sons-block_1'
-              label: ''
-              provider: views
-              label_display: visible
-              views_label: ''
-              items_per_page: none
-              context_mapping: {  }
-            additional: {  }
-            weight: -6
           e5d05f37-3954-4926-a371-024cea51a873:
             uuid: e5d05f37-3954-4926-a371-024cea51a873
             region: one_content
@@ -47,7 +35,7 @@ third_party_settings:
               items_per_page: none
               context_mapping: {  }
             additional: {  }
-            weight: -10
+            weight: -9
           5d0ba0ae-e5e7-4ab3-b3e3-b854c690b26f:
             uuid: 5d0ba0ae-e5e7-4ab3-b3e3-b854c690b26f
             region: one_content
@@ -60,7 +48,33 @@ third_party_settings:
               items_per_page: none
               context_mapping: {  }
             additional: {  }
-            weight: -9
+            weight: -8
+          388e8b72-f4da-4eff-873e-ab3d9e8f682a:
+            uuid: 388e8b72-f4da-4eff-873e-ab3d9e8f682a
+            region: one_content
+            configuration:
+              id: 'views_block:categories_sons-block_1'
+              label: ''
+              provider: views
+              label_display: visible
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: -7
+          be485acc-9cf1-43c5-a713-806ee1feb4c6:
+            uuid: be485acc-9cf1-43c5-a713-806ee1feb4c6
+            region: two_more_content
+            configuration:
+              id: 'views_block:last_news-block_4'
+              label: ''
+              provider: views
+              label_display: visible
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: -5
         third_party_settings: {  }
 id: taxonomy_term.categories.full
 targetEntityType: taxonomy_term
