@@ -13,9 +13,50 @@ dependencies:
     - field.field.node.news.field_short_title
     - field.field.node.news.field_tags
     - node.type.news
+    - views.view.last_news
   module:
+    - al_dia_layouts
+    - layout_builder
     - text
     - user
+    - views
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: taxonomy_category
+        layout_settings:
+          label: Category
+        components:
+          a954576b-5e70-4234-9f5d-42312a98724f:
+            uuid: a954576b-5e70-4234-9f5d-42312a98724f
+            region: one_content
+            configuration:
+              id: 'views_block:last_news-block_1'
+              label: ''
+              provider: views
+              label_display: visible
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+          585d9097-5e9f-4fb8-83ff-f856fb7414b9:
+            uuid: 585d9097-5e9f-4fb8-83ff-f856fb7414b9
+            region: one_content
+            configuration:
+              id: 'views_block:last_news-block_2'
+              label: ''
+              provider: views
+              label_display: visible
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: 1
+        third_party_settings: {  }
 id: node.news.teaser
 targetEntityType: node
 bundle: news
