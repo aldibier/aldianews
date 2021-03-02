@@ -4,10 +4,12 @@ status: true
 dependencies:
   config:
     - taxonomy.vocabulary.categories
+    - views.view.last_news
   module:
     - layout_builder
     - layout_discovery
     - text
+    - views
 third_party_settings:
   layout_builder:
     allow_custom: false
@@ -18,21 +20,32 @@ third_party_settings:
         layout_settings:
           label: ''
         components:
-          1204969f-9798-4116-b7c2-411b7afcba11:
-            uuid: 1204969f-9798-4116-b7c2-411b7afcba11
+          a5e591c2-9370-4bc0-a561-77438f474626:
+            uuid: a5e591c2-9370-4bc0-a561-77438f474626
             region: content
             configuration:
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              id: 'field_block:taxonomy_term:categories:description'
-              formatter:
-                label: hidden
-                type: text_default
-                settings: {  }
-                third_party_settings: {  }
+              id: 'views_block:last_news-block_1'
+              label: ''
+              provider: views
+              label_display: visible
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
             additional: {  }
             weight: 0
+          2f0f2542-2da4-4c3b-97ca-73379debf437:
+            uuid: 2f0f2542-2da4-4c3b-97ca-73379debf437
+            region: content
+            configuration:
+              id: 'views_block:last_news-block_2'
+              label: ''
+              provider: views
+              label_display: visible
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: 1
         third_party_settings: {  }
 id: taxonomy_term.categories.default
 targetEntityType: taxonomy_term

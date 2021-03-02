@@ -5,9 +5,11 @@ dependencies:
   config:
     - taxonomy.vocabulary.categories
   module:
+    - better_exposed_filters
     - node
     - taxonomy
     - user
+    - views_field_view
 id: categories_sons
 label: 'Categories sons'
 module: views
@@ -38,7 +40,7 @@ display:
           query_comment: ''
           query_tags: {  }
       exposed_form:
-        type: basic
+        type: bef
         options:
           submit_button: Apply
           reset_button: false
@@ -47,6 +49,20 @@ display:
           expose_sort_order: true
           sort_asc_label: Asc
           sort_desc_label: Desc
+          text_input_required: 'Select any filter and click on Apply to see results'
+          text_input_required_format: null
+          bef:
+            general:
+              autosubmit: false
+              autosubmit_exclude_textfield: false
+              autosubmit_textfield_delay: 500
+              autosubmit_hide: false
+              input_required: false
+              allow_secondary: false
+              secondary_label: 'Advanced options'
+              secondary_open: false
+            sort:
+              plugin_id: default
       pager:
         type: none
         options:
@@ -56,7 +72,7 @@ display:
         options:
           grouping:
             -
-              field: name
+              field: parent_target_id
               rendered: true
               rendered_strip: true
           row_class: ''
@@ -64,6 +80,71 @@ display:
       row:
         type: fields
       fields:
+        parent_target_id:
+          id: parent_target_id
+          table: taxonomy_term__parent
+          field: parent_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: true
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: taxonomy_term
+          entity_field: parent
+          plugin_id: field
         name:
           id: name
           table: taxonomy_term_field_data
@@ -138,7 +219,7 @@ display:
           group_type: group
           admin_label: ''
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -196,6 +277,58 @@ display:
           entity_type: taxonomy_term
           entity_field: tid
           plugin_id: field
+        view:
+          id: view
+          table: views
+          field: view
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: true
+          empty_zero: true
+          hide_alter_empty: true
+          view: last_news
+          display: block_1
+          arguments: '{{ raw_fields.tid }}'
+          plugin_id: view
       filters:
         status:
           value: '1'
@@ -292,7 +425,7 @@ display:
           relationship: none
           group_type: group
           admin_label: field_category
-          required: false
+          required: true
           entity_type: taxonomy_term
           plugin_id: entity_reverse
       arguments:
@@ -313,8 +446,8 @@ display:
           default_argument_type: taxonomy_tid
           default_argument_options:
             term_page: '1'
+            node: true
             anyall: ','
-            node: false
             limit: false
             vids: {  }
           default_argument_skip_url: false
@@ -339,6 +472,7 @@ display:
           plugin_id: taxonomy
       display_extenders: {  }
       use_ajax: true
+      group_by: true
     cache_metadata:
       max-age: -1
       contexts:
