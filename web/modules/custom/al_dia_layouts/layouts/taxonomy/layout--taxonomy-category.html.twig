@@ -18,6 +18,11 @@
           {{ content.one_content }} 
         </div>
     {% endif %}
+    {% if content.two_more_content %}
+        <div {{ region_attributes.two_more_content.addClass('two_more_content-taxonomy-category') }}>
+          {{ content.two_more_content}} 
+        </div>
+    {% endif %}
 
   </div>
 {% endif %}
