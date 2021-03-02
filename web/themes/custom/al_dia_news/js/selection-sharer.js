@@ -381,7 +381,7 @@
         e.preventDefault();
         var text = swapParaWithNewline(self.htmlSelection);
         var url =
-          'https://www.reddit.com/shareArticle?mini=true&url=' +
+          'https://www.reddit.com/submit?text=' +
           encodeURIComponent(self.url2share) +
           '&title=' +
           encodeURIComponent(text);
