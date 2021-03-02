@@ -8,6 +8,12 @@
     }
 }
 
+.selectionShareable {
+    &::selection {
+        background: $cyello;
+    }
+}
+
 //---style remplace ------//
 @media (min-width: 560px){
     .node .field--type-image {
