@@ -32,7 +32,7 @@
         font-size: $px24;
         line-height: 140%;
 
-        >content {
+        > .content {
             padding: 0;
         }
     }
@@ -146,5 +146,78 @@ blockquote {
         font-size: 14px;
         line-height: 17px;
         color: $cgrey3;
+    }
+}
+
+//---------span
+.block-field-blocknodenewsbody {
+    span {
+        color: $corange !important;
+    }
+}
+
+//---------- content related
+div[ data-embed-button="related_content" ] {
+    border-top: 3px solid $cblack2;
+    margin: 50px 0 20px;
+
+    h2 {
+        margin: -17px 0 0 0;
+        width: max-content;
+        padding: 0 15px 0 0;
+        background: $cwhite;
+    }
+
+    a{
+        font-style: normal;
+        font-weight: bold;
+        font-size: $px32;
+        line-height: 39px;
+        text-decoration: none;
+        color: $cblack;
+        border: none;
+
+        a:hover {
+            text-decoration: none;
+            color: $cblack;
+        }
+    }
+
+    .views-row {
+        padding: 20px 0;
+        border-bottom: 1px solid $cgrey4;
+    }
+
+    .related-content-news {
+
+        div {
+            font-style: normal;
+            font-weight: normal;
+            font-size: $px16;
+            line-height: 19px;
+            color: $cgrey3;
+            margin: 15px 0 0;
+        }
+    }
+}
+
+.block-views-blocknews-tags-block-1 {
+    padding: 0 15px;
+
+    .views-label-field-tags {
+        font-style: normal;
+        font-weight: bold;
+        font-size: $px19;
+        line-height: 127.8%;
+        letter-spacing: 0.2px;
+        color: $cblack;
+    }
+
+    .field-content {
+        font-style: normal;
+        font-weight: normal;
+        font-size: $px20;
+        line-height: 127.8%;
+        letter-spacing: 0.2px;
     }
 }
