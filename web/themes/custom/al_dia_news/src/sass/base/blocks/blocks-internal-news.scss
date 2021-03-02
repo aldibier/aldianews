@@ -148,3 +148,52 @@ blockquote {
         color: $cgrey3;
     }
 }
+
+//---------span
+.block-field-blocknodenewsbody {
+    span {
+        color: $corange !important;
+    }
+}
+
+//---------- content related
+div[ data-embed-button="related_content" ] {
+    border-top: 3px solid $cblack2;
+    margin: 20px 0 20px;
+
+    h2 {
+        margin: -17px 0 0 0;
+        width: max-content;
+        padding: 0 15px 0 0;
+        background: $cwhite;
+    }
+
+    a{
+        font-style: normal;
+        font-weight: bold;
+        font-size: $px32;
+        line-height: 39px;
+        text-decoration: none;
+        color: $cblack;
+
+        a:hover {
+            text-decoration: none;
+            color: $cblack;
+        }
+    }
+
+    .views-row {
+        padding: 10px 0;
+    }
+
+    .related-content-news {
+
+        div {
+            font-style: normal;
+            font-weight: normal;
+            font-size: $px16;
+            line-height: 19px;
+            color: $cgrey3;
+        }
+    }
+}
