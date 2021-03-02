@@ -6,7 +6,6 @@ dependencies:
     - core.entity_view_mode.taxonomy_term.full
     - taxonomy.vocabulary.categories
     - views.view.categories_sons
-    - views.view.last_news
     - views.view.last_news_category_sons
   module:
     - al_dia_layouts
@@ -23,32 +22,6 @@ third_party_settings:
         layout_settings:
           label: ''
         components:
-          b61a19ff-5a64-490d-990d-63218c274306:
-            uuid: b61a19ff-5a64-490d-990d-63218c274306
-            region: one_content
-            configuration:
-              id: 'views_block:last_news-block_1'
-              label: 'Last News PRIMER BLOQUE'
-              provider: views
-              label_display: visible
-              views_label: 'Last News PRIMER BLOQUE'
-              items_per_page: none
-              context_mapping: {  }
-            additional: {  }
-            weight: -8
-          e1491c96-c24f-4be8-9703-98e01d031a06:
-            uuid: e1491c96-c24f-4be8-9703-98e01d031a06
-            region: one_content
-            configuration:
-              id: 'views_block:last_news-block_2'
-              label: 'Last News 4 PRIMER BLOQUE'
-              provider: views
-              label_display: visible
-              views_label: 'Last News 4 PRIMER BLOQUE'
-              items_per_page: none
-              context_mapping: {  }
-            additional: {  }
-            weight: -7
           388e8b72-f4da-4eff-873e-ab3d9e8f682a:
             uuid: 388e8b72-f4da-4eff-873e-ab3d9e8f682a
             region: one_content
