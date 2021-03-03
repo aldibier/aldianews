@@ -472,7 +472,7 @@ div[ data-embed-button="related_content" ] {
         border: none;
     }
 
-    .edit-field-comment-body-0-value {
+    label[for="edit-field-comment-body-0-value"] {
         display: none;
     }
 
@@ -493,6 +493,23 @@ div[ data-embed-button="related_content" ] {
             display: none;
         }
     }
+}
 
-    
+//-----------------share selected 
+
+#selectionSharerPopover-inner {
+    border: none;
+    background: transparent;
+    box-shadow: none;
+}
+
+#selectionSharerPopover{
+
+    &:after {
+        display: none;
+    }
+
+    .selectionSharerPopover-clip {
+        display: none;
+    }
 }
