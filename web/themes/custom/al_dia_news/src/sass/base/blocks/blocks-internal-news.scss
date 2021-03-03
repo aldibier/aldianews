@@ -372,6 +372,7 @@ div[ data-embed-button="related_content" ] {
     }
 }
 
+//--------------tags
 .block-views-blocknews-tags-block-1 {
     margin: 20px 0 30px;
 
@@ -430,6 +431,27 @@ div[ data-embed-button="related_content" ] {
         .field-content {
             font-size: 14px;
             line-height: 127.8%;
+        }
+    }
+}
+
+//--------------coments
+.block-field-blocknodenewsfield-comments {
+
+    .comment__meta {
+        width: 133px;
+    }
+
+    .comment__author,
+    .comment__permalink {
+        color: $corange;
+        border: none;
+    }
+
+    .comment__content  {
+        a {
+            color: $corange;
+            border: none;
         }
     }
 }
