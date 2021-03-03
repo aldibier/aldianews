@@ -317,7 +317,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"related-content\">\r\n{{ field_image }} \r\n <div class=\"short-title-date\">\r\n    <h3>{{ field_short_title }}</h3>\r\n    {{ created }}\r\n </div>\r\n</div>"
+            text: "<div class=\"related-content\">\r\n{{ field_image }} \r\n <div class=\"short-title-date\">\r\n    <h3>{{ field_short_title }}</h3>\r\n    <span class=\"date-more-content\">{{ created }}</span>\r\n </div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
