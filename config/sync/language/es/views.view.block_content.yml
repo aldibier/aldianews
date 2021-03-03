@@ -15,7 +15,18 @@ display:
             items_per_page_options_all_label: '- Todo -'
             offset_label: Desplazamiento
       fields:
+        info:
+          label: 'Descripción del bloque'
+        type:
+          label: 'Tipo de bloque'
         operations:
           label: Operations
+      filters:
+        info:
+          expose:
+            label: 'Descripción del bloque'
+        type:
+          expose:
+            label: 'Tipo de bloque'
   page_1:
     display_title: Página
