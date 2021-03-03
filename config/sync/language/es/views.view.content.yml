@@ -5,6 +5,10 @@ display:
       exposed_form:
         options:
           submit_button: Filter
+          reset_button_label: Restablecer
+          exposed_sorts_label: 'Ordenar por'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
       fields:
         title:
           label: Título
@@ -28,9 +32,11 @@ display:
           expose:
             label: Language
       title: Contenido
+    display_title: Máster
   page_1:
     display_options:
       menu:
         title: Contenido
       tab_options:
         title: Contenido
+    display_title: Página
