@@ -23,6 +23,11 @@
           {{ content.two_more_content}} 
         </div>
     {% endif %}
+    {% if content.subcategory %}
+        <div {{ region_attributes.subcategory.addClass('subcategory-taxonomy') }}>
+          {{ content.subcategory}} 
+        </div>
+    {% endif %}
 
   </div>
 {% endif %}
