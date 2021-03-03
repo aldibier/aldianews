@@ -373,7 +373,6 @@ div[ data-embed-button="related_content" ] {
 }
 
 .block-views-blocknews-tags-block-1 {
-    padding: 0 15px;
 
     .views-label-field-tags {
         font-style: normal;
@@ -382,6 +381,7 @@ div[ data-embed-button="related_content" ] {
         line-height: 127.8%;
         letter-spacing: 0.2px;
         color: $cblack;
+        font-weight: $PrNovacond-bold;
     }
 
     .field-content {
@@ -390,5 +390,28 @@ div[ data-embed-button="related_content" ] {
         font-size: $px20;
         line-height: 127.8%;
         letter-spacing: 0.2px;
+        margin: 20px 0 0;
+        font-family: $NimR-reg;
+        color: $corange;
+    }
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    li {
+        
+        &:before{
+            content: '/';
+            color: $cgrey3;
+            display: block;
+        }
+
+        &:first-child {
+            &::before {
+                display: none;
+            }
+        }
     }
 }
