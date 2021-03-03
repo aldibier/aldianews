@@ -18,6 +18,27 @@
         --padding-right: 0;
         max-width: 100%;
         padding: 0 15px;
+
+        > *  {
+            padding: 0;
+        }
+    }
+}
+
+.page-node-type-news {
+
+    .node-content {
+        @media (max-width:$tablet) {
+
+            >div {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .container-right {
+                order: 30;
+            }
+        }
     }
 }
 
