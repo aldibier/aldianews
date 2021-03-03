@@ -6,13 +6,17 @@
 .block-field-blocknodenewsbody,
 .block-field-blocknodenewsfield-comments {
     --padding-right: 465px;
-    max-width: 840px;
     width: calc(100% - var(--padding-right));
     max-width: 930px;
 
     > *  {
         padding: 0 15px;
         width: 100%;
+    }
+
+    @media (max-width:$tablet) {
+        --padding-right: 15px;
+        max-width: 100%;
     }
 }
 
@@ -33,4 +37,9 @@
     position: absolute;
     right: 0;
     padding: 0 15px;
+
+    @media (max-width:$tablet) {
+        --padding-right: 100;
+        position: relative;
+    }
 }

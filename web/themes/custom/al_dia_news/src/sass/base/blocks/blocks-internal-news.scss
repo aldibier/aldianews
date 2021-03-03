@@ -39,6 +39,24 @@
             padding: 0;
         }
     }
+
+    @media (max-width:$tablet){
+
+        .block-field-blocknodenewsfield-caption {
+            font-size: 11px;
+            line-height: 13px;
+        }
+
+        .block-field-blocknodenewstitle {
+            font-size: 30px;
+            line-height: 112.8%;
+        }
+
+        .block-field-blocknodenewsbody {
+            font-size: 18px;
+            line-height: 140%;
+        }
+    }
 }
 
 //-----block autor news-------// 
@@ -153,9 +171,10 @@ blockquote {
         background: none;
         font-style: normal;
         font-weight: normal;
-        font-size: 14px;
+        font-size: $px14;
         line-height: 17px;
         color: $cgrey3;
+        font-family: $PrNovacond-reg;
     }
 }
 
@@ -172,6 +191,7 @@ blockquote {
         line-height: 140%;
         font-family: $NimR-reg;
     }
+
 }
 
 //---------- content related
