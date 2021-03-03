@@ -1,0 +1,23 @@
+uuid: 32ec1bcb-1e1a-4c03-93ac-10c87e3a1538
+langcode: en
+status: true
+dependencies:
+  config:
+    - fixed_block_content.fixed_block_content.last_print_edition
+  module:
+    - fixed_block_content
+  theme:
+    - al_dia_news
+id: lastprintedition
+theme: al_dia_news
+region: header
+weight: -6
+provider: null
+plugin: 'fixed_block_content:last_print_edition'
+settings:
+  id: 'fixed_block_content:last_print_edition'
+  label: 'Last print edition'
+  provider: fixed_block_content
+  label_display: '0'
+  view_mode: ''
+visibility: {  }
