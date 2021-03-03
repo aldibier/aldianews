@@ -101,6 +101,14 @@
     >.content {
         margin: 10px auto 25px 0;
     }
+
+    @media(max-width:$tablet){
+
+        h2 {
+            font-size: 12px;
+            line-height: 127.8%;
+        }
+    }
 }
 
 //---------block content news -----------//
@@ -108,6 +116,9 @@
 
 .twitter-tweet {
     max-width: 100% !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 //------- blockquote 
@@ -147,6 +158,18 @@ blockquote {
         font-weight: normal;
         font-size: $px28;
         line-height: 140%;
+    }
+
+    @media(max-width:$tablet){
+
+        p.selectionShareable {
+            font-size: 18px;
+            line-height: 140%;
+        }
+
+        &:after {
+            right: 25px; 
+        }
     }
 }
 
@@ -190,6 +213,14 @@ blockquote {
         font-size: $px19;
         line-height: 140%;
         font-family: $NimR-reg;
+    }
+
+    @media(max-width:$tablet){
+
+        p {
+            font-size: 15px;
+            line-height: 140%;
+        }
     }
 
 }
@@ -242,6 +273,27 @@ div[ data-embed-button="related_content" ] {
             color: $cgrey3;
             margin: 15px 0 0;
             font-family: $PrNovacond-reg;
+        }
+    }
+
+    @media(max-width:$tablet){
+
+        h2 {
+            font-size: 20px;
+            line-height: 24px;  
+        }
+
+        a {
+            font-size: 20px;
+            line-height: 24px;
+        }
+
+        .related-content-news {
+
+            div {
+                font-size: 14px;
+                line-height: 17px;
+            }
         }
     }
 }
