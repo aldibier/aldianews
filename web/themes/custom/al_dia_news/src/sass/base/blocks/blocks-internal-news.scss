@@ -472,7 +472,7 @@ div[ data-embed-button="related_content" ] {
         border: none;
     }
 
-    .edit-field-comment-body-0-value {
+    label[for="edit-field-comment-body-0-value"] {
         display: none;
     }
 
@@ -493,6 +493,69 @@ div[ data-embed-button="related_content" ] {
             display: none;
         }
     }
+}
 
-    
+//-----------------share selected 
+
+#selectionSharerPopover-inner {
+    border: none;
+    background: transparent;
+    box-shadow: none;
+
+    a.action {
+        width: 40px;
+        height: 40px;
+        font-size: 0;
+        box-shadow: 1px 3px 5px -2px rgba(0,0,0,0.09);
+    }
+
+    a.email,
+    a.facebook,
+    a.tweet {
+        background-size: 28px;
+        position: relative;
+        background-position: center;
+
+        &:after {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            content: '';
+            display: block;
+            z-index: -1;
+            border-radius: 100%;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+        }
+    }
+
+    a.tweet  {
+        &:after {
+            background: #1DAFED;
+        }
+    }
+
+    a.facebook  {
+        &:after {
+            background: #2377BA;
+        }
+    }
+
+    a.email  {
+        &:after {
+            background: #939598;
+        }
+    }
+}
+
+#selectionSharerPopover{
+
+    &:after {
+        display: none;
+    }
+
+    .selectionSharerPopover-clip {
+        display: none;
+    }
 }
