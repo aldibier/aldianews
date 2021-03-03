@@ -15,7 +15,7 @@
 
     {% if content.one_content %}
         <div {{ region_attributes.one_content.addClass('one-content-subcategory') }}>
-          {{ content.one_content }} 
+          {{ content.one_content|without("title") }} 
         </div>
     {% endif %}
 
