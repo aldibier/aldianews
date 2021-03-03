@@ -27,7 +27,8 @@
 
 .page-node-type-news {
 
-    .node-content {
+    .node__content  {
+
         @media (max-width:$tablet) {
 
             >div {
@@ -37,6 +38,13 @@
 
             .container-right {
                 order: 30;
+            }
+        }
+
+        @media (min-width:$tablet) { 
+
+            .container-content >.block-field-blocknodenewsbody > div {
+                min-height: 955px;
             }
         }
     }
