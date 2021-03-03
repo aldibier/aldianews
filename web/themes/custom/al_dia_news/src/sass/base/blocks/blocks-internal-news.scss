@@ -71,6 +71,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        box-shadow: 1px 2px 2px 1px #c4c4c4;
     }
 
     img {
@@ -90,7 +91,7 @@
         padding: 0 0 29px;
         font-style: normal;
         font-weight: normal;
-        font-size: $px14;
+        font-size: $px20;
         line-height: 17px;
         font-family: $PrNovacond-reg;
     }
@@ -102,20 +103,47 @@
     .author-name {
         font-style: normal;
         font-weight: normal;
-        font-size: $px14;
+        font-size: $px20;
         line-height: 17px;
         font-family: $PrNovacond-reg;
         color: $corange;
+        margin: 5px;
     }
 
     .date-authored-on {
         margin: 0 0 0 -20px;  
         font-style: normal;
-        font-size: 20px;
+        font-size: $px20;
         line-height: 24px;
         font-family: $PrNovacond-bold;
         border-bottom: 1px solid;
         padding: 0 0 15px;
+    }
+
+    @media(max-width:$tablet){
+
+        .photo {
+            width: 70px;
+            height: 70px;
+        } 
+
+        .date-authored-on  {
+            padding: 0 0 5px;
+            line-height: 17px;
+            font-size: 14px;
+        }
+
+        .author-name {
+            font-size: 14px;
+            line-height: 17px;
+            margin: 5px 0 0;
+        }
+
+        .by-author-information {
+            font-size: 14px;
+            line-height: 17px;
+            padding: 0 0 10px;
+        }
     }
 }
 
