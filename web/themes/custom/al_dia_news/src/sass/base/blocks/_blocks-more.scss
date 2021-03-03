@@ -1,4 +1,7 @@
 .block-views-blockmore-in-this-section-news-block-1 {
+  padding: 0 20px;
+  border-left: 1px solid $cgrey4;
+
   //------ title more in this section ------------//
   > h2 {
     position: relative;
@@ -25,8 +28,15 @@
   }
 
   .views-row {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
     border-bottom: 1px solid $cgrey4;
+
+    &:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border: 0;
+    }
   }
 
   .related-content {
@@ -60,6 +70,13 @@
         text-transform: uppercase;
         text-decoration: none;
         color: $cblack;
+      }
+
+      .date-more-content {
+        font-size: $px16;
+        font-family: $PrNovacond-reg;
+        line-height: 20px;
+        color: $cgrey3;
       }
     }
   }
