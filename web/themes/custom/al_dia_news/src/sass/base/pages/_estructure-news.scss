@@ -18,6 +18,35 @@
         --padding-right: 0;
         max-width: 100%;
         padding: 0 15px;
+
+        > *  {
+            padding: 0;
+        }
+    }
+}
+
+.page-node-type-news {
+
+    .node__content  {
+
+        @media (max-width:$tablet) {
+
+            >div {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .container-right {
+                order: 30;
+            }
+        }
+
+        @media (min-width:$tablet) { 
+
+            .container-content >.block-field-blocknodenewsbody > div {
+                min-height: 955px;
+            }
+        }
     }
 }
 
