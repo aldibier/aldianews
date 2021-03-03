@@ -15,6 +15,7 @@ dependencies:
     - field.field.node.news.field_tags
     - node.type.news
   module:
+    - al_dia_layouts
     - comment
     - image
     - layout_builder
@@ -23,7 +24,74 @@ dependencies:
 third_party_settings:
   layout_builder:
     allow_custom: false
-    enabled: false
+    enabled: true
+    sections:
+      -
+        layout_id: category_childs
+        layout_settings:
+          label: 'Category childs'
+        components:
+          ab1749d1-beca-4e3f-adb7-6eb599d2ca01:
+            uuid: ab1749d1-beca-4e3f-adb7-6eb599d2ca01
+            region: one_content
+            configuration:
+              id: 'field_block:node:news:field_image'
+              label: Image
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: image
+                settings:
+                  image_style: ''
+                  image_link: content
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 0
+          d72ab3b2-c176-4d45-bf20-7017395b9b6a:
+            uuid: d72ab3b2-c176-4d45-bf20-7017395b9b6a
+            region: one_content
+            configuration:
+              id: 'field_block:node:news:field_short_title'
+              label: 'Short title'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: string
+                settings:
+                  link_to_entity: true
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 1
+          8b88c8a3-fed7-488e-a2ae-405f05ced39a:
+            uuid: 8b88c8a3-fed7-488e-a2ae-405f05ced39a
+            region: one_content
+            configuration:
+              id: 'field_block:node:news:created'
+              label: 'Authored on'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: timestamp
+                settings:
+                  date_format: related_news
+                  custom_date_format: ''
+                  timezone: ''
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 2
+        third_party_settings: {  }
 id: node.news.category_childs
 targetEntityType: node
 bundle: news
