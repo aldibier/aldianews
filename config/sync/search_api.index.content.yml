@@ -1,0 +1,44 @@
+uuid: 33153a76-7d0e-41ee-b0ce-967d46a5cca5
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.server.al_dia_news
+  module:
+    - search_api
+    - node
+    - taxonomy
+id: content
+name: Content
+description: ''
+read_only: false
+field_settings: {  }
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: true
+      selected:
+        - news
+    languages:
+      default: true
+      selected: {  }
+  'entity:taxonomy_term':
+    bundles:
+      default: true
+      selected:
+        - categories
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  language_with_fallback: {  }
+  rendered_item: {  }
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: true
+  cron_limit: 50
+server: al_dia_news

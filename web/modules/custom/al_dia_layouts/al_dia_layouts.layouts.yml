@@ -39,3 +39,27 @@ taxonomy_category:
       label: Segundo - Mas contenido
     subcategory:
       label: Subacetorias
+
+subcategory_first:
+  label: 'Subcategory first'
+  path: layouts/news
+  template: layout--subcategory-first
+  category: 'Subcategory first'
+  default_region: content
+  icon_map:
+    - [one_content]
+  regions:
+    one_content:
+      label: Primero - Contenido
+
+subcategory_next_four:
+  label: 'Subcategory next four'
+  path: layouts/news
+  template: layout--subcategory-next-four
+  category: 'Subcategory Next Four'
+  default_region: content
+  icon_map:
+    - [one_content]
+  regions:
+    one_content:
+      label: Primero - Contenido
