@@ -40,6 +40,30 @@ taxonomy_category:
     subcategory:
       label: Subacetorias
 
+category_first:
+  label: 'Category first'
+  path: layouts/news
+  template: layout--category-first
+  category: 'Category first'
+  default_region: content
+  icon_map:
+    - [one_content]
+  regions:
+    one_content:
+      label: Primero - Contenido
+
+category_next_four:
+  label: 'Category next four'
+  path: layouts/news
+  template: layout--category-next-four
+  category: 'Category Next four'
+  default_region: content
+  icon_map:
+    - [one_content]
+  regions:
+    one_content:
+      label: Primero - Contenido
+
 subcategory_first:
   label: 'Subcategory first'
   path: layouts/news
