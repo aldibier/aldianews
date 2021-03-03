@@ -1,0 +1,31 @@
+label: Multimedia
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filter
+      fields:
+        media_bulk_form:
+          action_title: Action
+        thumbnail__target_id:
+          label: Miniatura
+        bundle:
+          label: Type
+        status:
+          label: Status
+        operations:
+          label: Operations
+      filters:
+        bundle:
+          expose:
+            label: Type
+        langcode:
+          expose:
+            label: Language
+      title: Multimedia
+  media_page_list:
+    display_title: Multimedia
+    display_options:
+      menu:
+        title: Multimedia
