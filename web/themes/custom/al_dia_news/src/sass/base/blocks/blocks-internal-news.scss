@@ -442,8 +442,12 @@ div[ data-embed-button="related_content" ] {
         width: 133px;
     }
 
-    .comment__author,
-    .comment__permalink {
+    .comment__author a {
+        color: $cblack;
+        border: none;
+    }
+
+    .comment__permalink a{
         color: $corange;
         border: none;
     }
