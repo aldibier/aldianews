@@ -458,4 +458,41 @@ div[ data-embed-button="related_content" ] {
             border: none;
         }
     }
+
+    h2.comment-form__title {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 19px;
+        line-height: 127.8%;
+        padding: 20px 0 0;
+    }
+
+    textarea {
+        background: #F2F2F2;
+        border: none;
+    }
+
+    .edit-field-comment-body-0-value {
+        display: none;
+    }
+
+    .form-actions {
+
+        .button--primary {
+            background: $corange;
+            border: none;
+            height: 40px;
+            font-style: normal;
+            font-weight: bold;
+            font-size: $px18;
+            color: $cwhite;
+            font-family: $PrNovacond-bold;
+        }
+
+        input[value="Preview"]{
+            display: none;
+        }
+    }
+
+    
 }
