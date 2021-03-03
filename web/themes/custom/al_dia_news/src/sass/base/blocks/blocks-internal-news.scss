@@ -76,6 +76,46 @@
     img {
         transform: scale(1.5);
     }
+
+    .author-information {
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+    }
+
+    .by-author-information {
+        width: 20px;
+        height: 30px;
+        margin: auto 0 auto 15px;
+        padding: 0 0 32px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: $px14;
+        line-height: 17px;
+        font-family: $PrNovacond-reg;
+    }
+
+    .name-date {
+        margin: auto 0;
+    }
+
+    .author-name {
+        font-style: normal;
+        font-weight: normal;
+        font-size: $px14;
+        line-height: 17px;
+        font-family: $PrNovacond-reg;
+        color: $corange;
+    }
+
+    .date-authored-on {
+        margin: 0 0 0 -20px;  
+        font-style: normal;
+        font-size: 20px;
+        line-height: 24px;
+        font-family: $PrNovacond-bold;
+        border-bottom: 1px solid;
+    }
 }
 
 //------block share----------//
