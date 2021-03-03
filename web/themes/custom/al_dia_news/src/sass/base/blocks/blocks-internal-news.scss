@@ -12,6 +12,7 @@
         line-height: 17px;
         color: $cgrey3;
         margin: -12px 0px 12px;
+        font-family: $PrNovacond-reg;
     }
 
     .block-field-blocknodenewstitle {
@@ -20,6 +21,7 @@
         font-size: $px76;
         line-height: 112.8%;
         color: $cblack;
+        font-family: $Modcond-reg;
     }
 
     .block-field-blocknodenewsbody {
@@ -31,6 +33,7 @@
         font-weight: 600;
         font-size: $px24;
         line-height: 140%;
+        font-family: $PrNovacond-reg;
 
         > .content {
             padding: 0;
@@ -68,6 +71,7 @@
         font-size: $px19;
         line-height: 127.8%;
         letter-spacing: 0.2px;
+        font-family: $PrNovacond-bold;
     }
 
     .addtoany_list.a2a_kit_size_32 a > span {
@@ -103,6 +107,8 @@ blockquote {
     font-size: 28px;
     line-height: 140%;
     color: $cgrey2;
+    --padding-right: 0;
+    width: calc(100% - var(--padding-right));
 
     &:before,
     &:after {
@@ -119,6 +125,14 @@ blockquote {
     &:after {
         right: 0;
         top: 74px;
+    }
+
+    p.selectionShareable {
+        font-family: $NimR-reg;
+        font-style: normal;
+        font-weight: normal;
+        font-size: $px28;
+        line-height: 140%;
     }
 }
 
@@ -153,6 +167,14 @@ blockquote {
 .block-field-blocknodenewsbody {
     span {
         color: $corange !important;
+    }
+
+    p {
+        font-style: normal;
+        font-weight: normal;
+        font-size: $px19;
+        line-height: 140%;
+        font-family: $NimR-reg;
     }
 }
 
