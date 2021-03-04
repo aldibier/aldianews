@@ -5,6 +5,7 @@ dependencies:
   config:
     - content_authors.authors_type.thought_leaders_authors
     - field.field.authors.thought_leaders_authors.field_authors_photo
+    - field.field.authors.thought_leaders_authors.field_job_title_or_profession_co
     - image.style.thumbnail
   module:
     - image
@@ -20,6 +21,14 @@ content:
       preview_image_style: thumbnail
     third_party_settings: {  }
     type: image_image
+    region: content
+  field_job_title_or_profession_co:
+    weight: 27
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
     region: content
   langcode:
     type: language_select

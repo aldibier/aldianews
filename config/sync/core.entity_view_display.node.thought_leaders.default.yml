@@ -3,17 +3,177 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_display.comment.comment.default
     - field.field.node.thought_leaders.body
+    - field.field.node.thought_leaders.comment
     - field.field.node.thought_leaders.field_author_thought_leaders
     - field.field.node.thought_leaders.field_caption
     - field.field.node.thought_leaders.field_image
     - field.field.node.thought_leaders.field_short_title
     - field.field.node.thought_leaders.field_tags
     - node.type.thought_leaders
+    - views.view.thought_leaders_content_authors
   module:
+    - al_dia_layouts
+    - comment
     - image
+    - layout_builder
     - text
     - user
+    - views
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: news
+        layout_settings:
+          label: 'News - Thought leaders'
+        components:
+          d08db03a-3fbf-478d-aa81-0680dd034e19:
+            uuid: d08db03a-3fbf-478d-aa81-0680dd034e19
+            region: one_advertising
+            configuration:
+              id: 'field_block:node:thought_leaders:field_image'
+              label: Image
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: image
+                settings:
+                  image_style: ''
+                  image_link: ''
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 0
+          3fe51b3e-69ec-4539-8ff2-45f00fb368a7:
+            uuid: 3fe51b3e-69ec-4539-8ff2-45f00fb368a7
+            region: one_advertising
+            configuration:
+              id: 'field_block:node:thought_leaders:field_caption'
+              label: Caption
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: string
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 1
+          af25de7a-07d5-4afc-ac35-fcaa97d3f88b:
+            uuid: af25de7a-07d5-4afc-ac35-fcaa97d3f88b
+            region: one_content
+            configuration:
+              id: 'field_block:node:thought_leaders:title'
+              label: Title
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: string
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 0
+          58704211-d1b1-494f-b43a-37d03567ed8f:
+            uuid: 58704211-d1b1-494f-b43a-37d03567ed8f
+            region: one_content
+            configuration:
+              id: 'field_block:node:thought_leaders:body'
+              label: Body
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: text_default
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 1
+          3ccbd478-6f8b-47cf-adb8-5828e960177a:
+            uuid: 3ccbd478-6f8b-47cf-adb8-5828e960177a
+            region: two_content
+            configuration:
+              id: 'extra_field_block:node:thought_leaders:addtoany'
+              label: AddToAny
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: -9
+          b422d5c4-1569-432c-949b-2f7403e30fdc:
+            uuid: b422d5c4-1569-432c-949b-2f7403e30fdc
+            region: two_content
+            configuration:
+              id: 'field_block:node:thought_leaders:body'
+              label: Body
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: text_default
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: -8
+          f73437ed-37c8-4a80-8521-61eb6e1ff2c2:
+            uuid: f73437ed-37c8-4a80-8521-61eb6e1ff2c2
+            region: two_content
+            configuration:
+              id: 'field_block:node:thought_leaders:comment'
+              label: Comments
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: comment_default
+                settings:
+                  view_mode: default
+                  pager_id: 0
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: -7
+          13f531ca-02ce-4166-a2fe-b2331e45e820:
+            uuid: 13f531ca-02ce-4166-a2fe-b2331e45e820
+            region: two_content
+            configuration:
+              id: 'views_block:thought_leaders_content_authors-block_1'
+              label: ''
+              provider: views
+              label_display: '0'
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: -10
+        third_party_settings: {  }
 id: node.thought_leaders.default
 targetEntityType: node
 bundle: thought_leaders
@@ -25,6 +185,15 @@ content:
     weight: 101
     settings: {  }
     third_party_settings: {  }
+    region: content
+  comment:
+    weight: 107
+    label: above
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    type: comment_default
     region: content
   field_author_thought_leaders:
     weight: 106

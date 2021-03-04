@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.thought_leaders.body
+    - field.field.node.thought_leaders.comment
     - field.field.node.thought_leaders.field_author_thought_leaders
     - field.field.node.thought_leaders.field_caption
     - field.field.node.thought_leaders.field_image
@@ -12,6 +13,7 @@ dependencies:
     - image.style.thumbnail
     - node.type.thought_leaders
   module:
+    - comment
     - image
     - path
     - text
@@ -29,6 +31,12 @@ content:
       placeholder: ''
       show_summary: false
     third_party_settings: {  }
+    region: content
+  comment:
+    weight: 127
+    settings: {  }
+    third_party_settings: {  }
+    type: comment_default
     region: content
   created:
     type: datetime_timestamp

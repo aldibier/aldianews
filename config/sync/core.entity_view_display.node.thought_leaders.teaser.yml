@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.thought_leaders.body
+    - field.field.node.thought_leaders.comment
     - field.field.node.thought_leaders.field_author_thought_leaders
     - field.field.node.thought_leaders.field_caption
     - field.field.node.thought_leaders.field_image
@@ -34,6 +35,7 @@ content:
     region: content
 hidden:
   addtoany: true
+  comment: true
   field_author_thought_leaders: true
   field_caption: true
   field_image: true
