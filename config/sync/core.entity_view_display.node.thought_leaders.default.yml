@@ -27,12 +27,12 @@ third_party_settings:
     enabled: true
     sections:
       -
-        layout_id: news
+        layout_id: thought_leaders
         layout_settings:
-          label: 'News - Thought leaders'
+          label: 'Thought Leaders'
         components:
-          d08db03a-3fbf-478d-aa81-0680dd034e19:
-            uuid: d08db03a-3fbf-478d-aa81-0680dd034e19
+          0a0c56fa-b33d-49ba-aa5d-b08944e8c966:
+            uuid: 0a0c56fa-b33d-49ba-aa5d-b08944e8c966
             region: one_advertising
             configuration:
               id: 'field_block:node:thought_leaders:field_image'
@@ -51,8 +51,8 @@ third_party_settings:
                 view_mode: view_mode
             additional: {  }
             weight: 0
-          3fe51b3e-69ec-4539-8ff2-45f00fb368a7:
-            uuid: 3fe51b3e-69ec-4539-8ff2-45f00fb368a7
+          c36ad680-9cac-42a0-a39d-64441d55a0e9:
+            uuid: c36ad680-9cac-42a0-a39d-64441d55a0e9
             region: one_advertising
             configuration:
               id: 'field_block:node:thought_leaders:field_caption'
@@ -70,8 +70,8 @@ third_party_settings:
                 view_mode: view_mode
             additional: {  }
             weight: 1
-          af25de7a-07d5-4afc-ac35-fcaa97d3f88b:
-            uuid: af25de7a-07d5-4afc-ac35-fcaa97d3f88b
+          29e9e374-e998-4f7c-947a-cd5b229b9864:
+            uuid: 29e9e374-e998-4f7c-947a-cd5b229b9864
             region: one_content
             configuration:
               id: 'field_block:node:thought_leaders:title'
@@ -89,8 +89,8 @@ third_party_settings:
                 view_mode: view_mode
             additional: {  }
             weight: 0
-          58704211-d1b1-494f-b43a-37d03567ed8f:
-            uuid: 58704211-d1b1-494f-b43a-37d03567ed8f
+          cf5087b2-2ea3-47ad-a0f6-df2ee1be4cb5:
+            uuid: cf5087b2-2ea3-47ad-a0f6-df2ee1be4cb5
             region: one_content
             configuration:
               id: 'field_block:node:thought_leaders:body'
@@ -99,16 +99,30 @@ third_party_settings:
               label_display: '0'
               formatter:
                 label: hidden
-                type: text_default
-                settings: {  }
+                type: text_summary_or_trimmed
+                settings:
+                  trim_length: 170
                 third_party_settings: {  }
               context_mapping:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
             weight: 1
-          3ccbd478-6f8b-47cf-adb8-5828e960177a:
-            uuid: 3ccbd478-6f8b-47cf-adb8-5828e960177a
+          a3aa1f04-ebfd-4c17-a46e-4ea38202bea8:
+            uuid: a3aa1f04-ebfd-4c17-a46e-4ea38202bea8
+            region: two_content
+            configuration:
+              id: 'views_block:thought_leaders_content_authors-block_1'
+              label: ''
+              provider: views
+              label_display: '0'
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+          bb7be5b1-ef27-405e-ba32-22d377634654:
+            uuid: bb7be5b1-ef27-405e-ba32-22d377634654
             region: two_content
             configuration:
               id: 'extra_field_block:node:thought_leaders:addtoany'
@@ -121,9 +135,9 @@ third_party_settings:
               context_mapping:
                 entity: layout_builder.entity
             additional: {  }
-            weight: -9
-          b422d5c4-1569-432c-949b-2f7403e30fdc:
-            uuid: b422d5c4-1569-432c-949b-2f7403e30fdc
+            weight: 1
+          52698ec9-a25a-45b0-bf34-394a00a53af1:
+            uuid: 52698ec9-a25a-45b0-bf34-394a00a53af1
             region: two_content
             configuration:
               id: 'field_block:node:thought_leaders:body'
@@ -139,9 +153,9 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: -8
-          f73437ed-37c8-4a80-8521-61eb6e1ff2c2:
-            uuid: f73437ed-37c8-4a80-8521-61eb6e1ff2c2
+            weight: 2
+          5f38ac44-4ab9-4a54-9581-77f0d0f5fdb9:
+            uuid: 5f38ac44-4ab9-4a54-9581-77f0d0f5fdb9
             region: two_content
             configuration:
               id: 'field_block:node:thought_leaders:comment'
@@ -159,20 +173,7 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: -7
-          13f531ca-02ce-4166-a2fe-b2331e45e820:
-            uuid: 13f531ca-02ce-4166-a2fe-b2331e45e820
-            region: two_content
-            configuration:
-              id: 'views_block:thought_leaders_content_authors-block_1'
-              label: ''
-              provider: views
-              label_display: '0'
-              views_label: ''
-              items_per_page: none
-              context_mapping: {  }
-            additional: {  }
-            weight: -10
+            weight: 3
         third_party_settings: {  }
 id: node.thought_leaders.default
 targetEntityType: node

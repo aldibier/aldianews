@@ -1,0 +1,23 @@
+uuid: 2c6b9720-b711-4771-a034-8c86b80059e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - fixed_block_content.fixed_block_content.subscribe_block_footer
+  module:
+    - fixed_block_content
+  theme:
+    - al_dia_news
+id: subscribeblockfooter
+theme: al_dia_news
+region: footer
+weight: -11
+provider: null
+plugin: 'fixed_block_content:subscribe_block_footer'
+settings:
+  id: 'fixed_block_content:subscribe_block_footer'
+  label: 'Subscribe block footer'
+  provider: fixed_block_content
+  label_display: '0'
+  view_mode: ''
+visibility: {  }
