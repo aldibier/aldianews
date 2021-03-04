@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.thought_leaders.field_short_title
     - field.field.node.thought_leaders.field_tags
     - node.type.thought_leaders
+    - views.view.more_in_this_section_thought_leaders
     - views.view.thought_leaders_content_authors
   module:
     - al_dia_layouts
@@ -191,6 +192,19 @@ third_party_settings:
                 view_mode: view_mode
             additional: {  }
             weight: 3
+          f59e9c96-b29e-43dd-956c-70ecf67e3965:
+            uuid: f59e9c96-b29e-43dd-956c-70ecf67e3965
+            region: one_more
+            configuration:
+              id: 'views_block:more_in_this_section_thought_leaders-block_1'
+              label: ''
+              provider: views
+              label_display: visible
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
         third_party_settings: {  }
 id: node.thought_leaders.default
 targetEntityType: node
