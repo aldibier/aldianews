@@ -1,0 +1,16 @@
+uuid: 8ce2f1d9-0db9-4535-bd17-31986c5a6433
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.thought_leaders
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.thought_leaders
+target_entity_type_id: node
+target_bundle: thought_leaders
+default_langcode: site_default
+language_alterable: false

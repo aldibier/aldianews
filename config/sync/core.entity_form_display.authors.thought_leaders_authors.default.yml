@@ -1,0 +1,58 @@
+uuid: 8fc87e82-0c1b-455c-847f-6a9b9b7a2393
+langcode: en
+status: true
+dependencies:
+  config:
+    - content_authors.authors_type.thought_leaders_authors
+    - field.field.authors.thought_leaders_authors.field_authors_photo
+    - field.field.authors.thought_leaders_authors.field_job_title_or_profession_co
+    - image.style.thumbnail
+  module:
+    - image
+id: authors.thought_leaders_authors.default
+targetEntityType: authors
+bundle: thought_leaders_authors
+mode: default
+content:
+  field_authors_photo:
+    weight: 26
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_job_title_or_profession_co:
+    weight: 27
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: -4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  user_id:
+    type: entity_reference_autocomplete
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    region: content
+    third_party_settings: {  }
+hidden: {  }

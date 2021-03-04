@@ -1,0 +1,45 @@
+uuid: 22123894-d1d5-4ce5-8cb0-6d146ba4451f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.thought_leaders.body
+    - field.field.node.thought_leaders.comment
+    - field.field.node.thought_leaders.field_author_thought_leaders
+    - field.field.node.thought_leaders.field_caption
+    - field.field.node.thought_leaders.field_image
+    - field.field.node.thought_leaders.field_short_title
+    - field.field.node.thought_leaders.field_tags
+    - node.type.thought_leaders
+  module:
+    - text
+    - user
+id: node.thought_leaders.teaser
+targetEntityType: node
+bundle: thought_leaders
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  comment: true
+  field_author_thought_leaders: true
+  field_caption: true
+  field_image: true
+  field_short_title: true
+  field_tags: true
+  langcode: true
+  search_api_excerpt: true

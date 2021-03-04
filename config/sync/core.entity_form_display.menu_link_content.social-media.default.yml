@@ -1,0 +1,44 @@
+uuid: 2a1d80ae-7ab2-4860-acfc-e298c8dcceb1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.menu_link_content.social-media.field_icon
+    - system.menu.social-media
+  module:
+    - fontawesome
+    - link
+    - menu_item_extras
+id: menu_link_content.social-media.default
+targetEntityType: menu_link_content
+bundle: social-media
+mode: default
+content:
+  field_icon:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: fontawesome_icon_widget
+    region: content
+  langcode:
+    type: language_select
+    weight: 3
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  view_mode:
+    type: menu_item_extras_view_mode_selector_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

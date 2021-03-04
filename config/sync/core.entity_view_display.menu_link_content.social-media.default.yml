@@ -1,0 +1,30 @@
+uuid: 508a1ed9-4b1b-4f9f-aa0c-f28eb82f65fb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.menu_link_content.social-media.field_icon
+    - system.menu.social-media
+  module:
+    - fontawesome
+id: menu_link_content.social-media.default
+targetEntityType: menu_link_content
+bundle: social-media
+mode: default
+content:
+  children:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_icon:
+    weight: 2
+    label: hidden
+    settings:
+      layers: false
+    third_party_settings: {  }
+    type: fontawesome_icon_formatter
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

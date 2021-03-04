@@ -1,0 +1,19 @@
+uuid: d7360223-95d0-46cd-9c46-c0a2d6b41665
+langcode: en
+status: true
+dependencies:
+  config:
+    - content_authors.authors_type.thought_leaders_authors
+    - field.storage.authors.field_job_title_or_profession_co
+id: authors.thought_leaders_authors.field_job_title_or_profession_co
+field_name: field_job_title_or_profession_co
+entity_type: authors
+bundle: thought_leaders_authors
+label: 'Job title or profession and Company'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
