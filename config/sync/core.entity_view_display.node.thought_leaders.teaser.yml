@@ -5,9 +5,9 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.thought_leaders.body
-    - field.field.node.thought_leaders.comment
     - field.field.node.thought_leaders.field_author_thought_leaders
     - field.field.node.thought_leaders.field_caption
+    - field.field.node.thought_leaders.field_comments
     - field.field.node.thought_leaders.field_image
     - field.field.node.thought_leaders.field_short_title
     - field.field.node.thought_leaders.field_tags
@@ -35,9 +35,9 @@ content:
     region: content
 hidden:
   addtoany: true
-  comment: true
   field_author_thought_leaders: true
   field_caption: true
+  field_comments: true
   field_image: true
   field_short_title: true
   field_tags: true
