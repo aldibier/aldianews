@@ -477,8 +477,8 @@
         '      <li class="llinkedin"><a class="action linkedin" href="" title="Share this selection on LinkedIn" target="_blank">LinkedIn</a></li>' +
         '      <li class="lwst"><a class="action whatsapp" href="" title="Share this selection on Whatsapp" target="_blank">Whatsapp</a></li>' +
         '      <li class="lreddit"><a class="action reddit" href="" title="Share this selection on Reddit" target="_blank">Reddit</a></li>' +
-        pickedShareIcons +
-        '      <li><a class="action email" href="" title="Share this selection by email" target="_blank"><svg width="20" height="20"><path stroke="%23FFF" stroke-width="6" d="m16,25h82v60H16zl37,37q4,3 8,0l37-37M16,85l30-30m22,0 30,30"/></svg></a></li>' +
+        // pickedShareIcons +
+        '      <li class="lemail"><a class="action email" href="" title="Share this selection by email" target="_blank"><svg width="20" height="20"><path stroke="%23FFF" stroke-width="6" d="m16,25h82v60H16zl37,37q4,3 8,0l37-37M16,85l30-30m22,0 30,30"/></svg></a></li>' +
         '    </ul>' +
         '  </div>';
 
