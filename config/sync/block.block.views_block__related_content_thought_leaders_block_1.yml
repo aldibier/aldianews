@@ -1,0 +1,25 @@
+uuid: 8d30fd54-d5b1-4da2-bcf3-c83264be3fff
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.related_content_thought_leaders
+  module:
+    - views
+  theme:
+    - al_dia_news
+id: views_block__related_content_thought_leaders_block_1
+theme: al_dia_news
+region: embed
+weight: 0
+provider: null
+plugin: 'views_block:related_content_thought_leaders-block_1'
+settings:
+  id: 'views_block:related_content_thought_leaders-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility: {  }
