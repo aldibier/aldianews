@@ -203,11 +203,10 @@ blockquote {
     margin: 45px auto 35px 0;
     border: none;
     background: none;
-    max-width: 660px;
-    width: 100%;
+    width: max-content;
     color: $cgrey2;
     --padding-right: 0;
-    width: calc(100% - var(--padding-right));
+    max-width: 660px;
 
     &:before,
     &:after {
@@ -277,10 +276,7 @@ blockquote {
 
 //---------span
 .block-field-blocknodenewsbody {
-    span {
-        color: $corange !important;
-    }
-
+    
     p {
         font-style: normal;
         font-weight: normal;
@@ -289,9 +285,17 @@ blockquote {
         font-family: $NimR-reg;
     }
 
+    strong {
+        font-family: $NimR-bold;
+        font-style: normal;
+        font-size: 1.4rem;
+        line-height: 140%;
+    }
+
     @media(max-width:$tablet){
 
-        p {
+        p,
+        strong {
             font-size: 15px;
             line-height: 140%;
         }
