@@ -14,6 +14,7 @@ dependencies:
     - node.type.thought_leaders
     - views.view.more_in_this_section_thought_leaders
     - views.view.thought_leaders_content_authors
+    - views.view.thought_leaders_tags
   module:
     - al_dia_layouts
     - comment
@@ -121,7 +122,7 @@ third_party_settings:
               items_per_page: none
               context_mapping: {  }
             additional: {  }
-            weight: 0
+            weight: -10
           bb7be5b1-ef27-405e-ba32-22d377634654:
             uuid: bb7be5b1-ef27-405e-ba32-22d377634654
             region: two_content
@@ -136,7 +137,7 @@ third_party_settings:
               context_mapping:
                 entity: layout_builder.entity
             additional: {  }
-            weight: 1
+            weight: -9
           52698ec9-a25a-45b0-bf34-394a00a53af1:
             uuid: 52698ec9-a25a-45b0-bf34-394a00a53af1
             region: two_content
@@ -154,7 +155,7 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: 2
+            weight: -8
           1355dea0-ce3a-4753-bcf0-1300d24f09a9:
             uuid: 1355dea0-ce3a-4753-bcf0-1300d24f09a9
             region: content
@@ -191,7 +192,7 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: 3
+            weight: -6
           f59e9c96-b29e-43dd-956c-70ecf67e3965:
             uuid: f59e9c96-b29e-43dd-956c-70ecf67e3965
             region: one_more
@@ -205,6 +206,19 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: 0
+          ee4777e9-5cde-40fe-9d59-6e655aa670dc:
+            uuid: ee4777e9-5cde-40fe-9d59-6e655aa670dc
+            region: two_content
+            configuration:
+              id: 'views_block:thought_leaders_tags-block_1'
+              label: ''
+              provider: views
+              label_display: '0'
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: -7
         third_party_settings: {  }
 id: node.thought_leaders.default
 targetEntityType: node
