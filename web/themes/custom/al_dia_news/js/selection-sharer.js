@@ -472,11 +472,11 @@
       }, '');
       var shareIcons =
         '    <ul>' +
-        '      <li><a class="action tweet" href="" title="Share this selection on Twitter" target="_blank">Tweet</a></li>' +
-        '      <li><a class="action facebook" href="" title="Share this selection on Facebook" target="_blank">Facebook</a></li>' +
-        '      <li><a class="action linkedin" href="" title="Share this selection on LinkedIn" target="_blank">LinkedIn</a></li>' +
-        '      <li><a class="action whatsapp" href="" title="Share this selection on Whatsapp" target="_blank">Whatsapp</a></li>' +
-        '      <li><a class="action reddit" href="" title="Share this selection on Reddit" target="_blank">Reddit</a></li>' +
+        '      <li class="ltweet"><a class="action tweet" href="" title="Share this selection on Twitter" target="_blank">Tweet</a></li>' +
+        '      <li class="lfacebook"><a class="action facebook" href="" title="Share this selection on Facebook" target="_blank">Facebook</a></li>' +
+        '      <li class="llinkedin"><a class="action linkedin" href="" title="Share this selection on LinkedIn" target="_blank">LinkedIn</a></li>' +
+        '      <li class="lwst"><a class="action whatsapp" href="" title="Share this selection on Whatsapp" target="_blank">Whatsapp</a></li>' +
+        '      <li class="lreddit"><a class="action reddit" href="" title="Share this selection on Reddit" target="_blank">Reddit</a></li>' +
         pickedShareIcons +
         '      <li><a class="action email" href="" title="Share this selection by email" target="_blank"><svg width="20" height="20"><path stroke="%23FFF" stroke-width="6" d="m16,25h82v60H16zl37,37q4,3 8,0l37-37M16,85l30-30m22,0 30,30"/></svg></a></li>' +
         '    </ul>' +
