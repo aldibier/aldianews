@@ -1,641 +1,214 @@
-/*
- * selection-sharer: Medium like popover menu to share on Twitter or by email any text selected on the page
- *
- * -- Requires jQuery --
- * -- AMD compatible  --
- *
- * Author: Xavier Damman (@xdamman)
- * GIT: https://github.com/xdamman/share-selection
- * MIT License
- */
-
-(function($) {
-    function attachClickHandlers(parentElement, handlers) {
-      if (handlers && handlers.length < 0) {
-        return;
-      }
-  
-      handlers.forEach(function(h) {
-        parentElement.find(h.query).click(h.action);
-      });
-    }
-  
-    function swapParaWithNewline(string) {
-      return string
-        .replace(/<p[^>]*>/gi, '\n')
-        .replace(/<\/p>| {2}/gi, '')
-        .trim();
-    }
-  
-    function getURL2Share() {
-      var ogpURL =
-        $('meta[property="og:url"]').attr('content') || $('meta[property="og:url"]').attr('value');
-      var currLocation = window.location.href;
-  
-      if (currLocation !== ogpURL) {
-        return currLocation;
-      }
-  
-      return ogpURL;
-    }
-  
-    var SelectionSharer = function(options) {
-      var self = this;
-  
-      options = options || {};
-      if (typeof options == 'string') {
-        options = { elements: options };
-      }
-  
-      this.sel = null;
-      this.textSelection = '';
-      this.htmlSelection = '';
-      this.optionalShare = ['telegram'];
-      this.url2share = getURL2Share();
-  
-      this.appId =
-        $('meta[property="fb:app_id"]').attr('content') ||
-        $('meta[property="fb:app_id"]').attr('value');
-  
-      this.updateURL2Share = function() {
-        this.url2share = getURL2Share();
-      };
-  
-      this.getSelectionText = function(sel) {
-        var html = '',
-          text = '';
-        sel = sel || window.getSelection();
-        if (sel.rangeCount) {
-          var container = document.createElement('div');
-          for (var i = 0, len = sel.rangeCount; i < len; ++i) {
-            container.appendChild(sel.getRangeAt(i).cloneContents());
+// @codingStandardsIgnoreFile
+/* @author: Xavier Damman (@xdamman) - http://github.com/xdamman/selection-sharer - @license: MIT */
+! function(a) {
+  var b = function(b) {
+      var c = this;
+      b = b || {}, "string" == typeof b && (b = {
+          elements: b
+      }), this.sel = null, this.textSelection = "", this.htmlSelection = "", this.appId = a('meta[property="fb:app_id"]').attr("content") || a('meta[property="fb:app_id"]').attr("value"), this.url2share = a('meta[property="og:url"]').attr("content") || a('meta[property="og:url"]').attr("value") || window.location.href, this.getSelectionText = function(a) {
+          var b = "",
+              d = "";
+          if (a = a || window.getSelection(), a.rangeCount) {
+              for (var e = document.createElement("div"), f = 0, g = a.rangeCount; g > f; ++f) e.appendChild(a.getRangeAt(f).cloneContents());
+              d = e.textContent, b = e.innerHTML
           }
-          text = container.textContent;
-          html = container.innerHTML;
-        }
-        self.textSelection = text;
-        self.htmlSelection = html || text;
-        return text;
-      };
-  
-      this.selectionDirection = function(selection) {
-        var sel = selection || window.getSelection();
-        var range = document.createRange();
-        if (!sel.anchorNode) return 0;
-        range.setStart(sel.anchorNode, sel.anchorOffset);
-        range.setEnd(sel.focusNode, sel.focusOffset);
-        var direction = range.collapsed ? 'backward' : 'forward';
-        range.detach();
-        return direction;
-      };
-  
-      this.showPopunder = function() {
-        self.popunder = self.popunder || document.getElementById('selectionSharerPopunder');
-  
-        var sel = window.getSelection();
-        var selection = self.getSelectionText(sel);
-  
-        if (sel.isCollapsed || selection.length < 10 || !selection.match(/ /))
-          return self.hidePopunder();
-  
-        if (self.popunder.classList.contains('fixed')) {
-          self.popunder.style.bottom = 0;
-          return self.popunder.style.bottom;
-        }
-  
-        var range = sel.getRangeAt(0);
-        var node = range.endContainer.parentNode; // The <p> where the selection ends
-  
-        // If the popunder is currently displayed
-        if (self.popunder.classList.contains('show')) {
-          // If the popunder is already at the right place, we do nothing
-          if (
-            Math.ceil(self.popunder.getBoundingClientRect().top) ==
-            Math.ceil(node.getBoundingClientRect().bottom)
-          )
-            return;
-  
-          // Otherwise, we first hide it and the we try again
-          return self.hidePopunder(self.showPopunder);
-        }
-  
-        if (node.nextElementSibling) {
-          // We need to push down all the following siblings
-          self.pushSiblings(node);
-        } else {
-          // We need to append a new element to push all the content below
-          if (!self.placeholder) {
-            self.placeholder = document.createElement('div');
-            self.placeholder.className = 'selectionSharerPlaceholder';
+          return c.textSelection = d, c.htmlSelection = b || d, d
+      }, this.selectionDirection = function(a) {
+          var b = a || window.getSelection(),
+              c = document.createRange();
+          if (!b.anchorNode) return 0;
+          c.setStart(b.anchorNode, b.anchorOffset), c.setEnd(b.focusNode, b.focusOffset);
+          var d = c.collapsed ? "backward" : "forward";
+          return c.detach(), d
+      }, this.showPopunder = function() {
+          c.popunder = c.popunder || document.getElementById("selectionSharerPopunder");
+          var a = window.getSelection(),
+              b = c.getSelectionText(a);
+          if (a.isCollapsed || b.length < 10 || !b.match(/ /)) return c.hidePopunder();
+          if (c.popunder.classList.contains("fixed")) return c.popunder.style.bottom = 0, c.popunder.style.bottom;
+          var d = a.getRangeAt(0),
+              e = d.endContainer.parentNode;
+          if (c.popunder.classList.contains("show")) {
+              if (Math.ceil(c.popunder.getBoundingClientRect().top) == Math.ceil(e.getBoundingClientRect().bottom)) return;
+              return c.hidePopunder(c.showPopunder)
           }
-  
-          // If we add a div between two <p> that have a 1em margin, the space between them
-          // will become 2x 1em. So we give the placeholder a negative margin to avoid that
-          var margin = window.getComputedStyle(node).marginBottom;
-          self.placeholder.style.height = margin;
-          self.placeholder.style.marginBottom = -2 * parseInt(margin, 10) + 'px';
-          node.parentNode.insertBefore(self.placeholder);
-        }
-  
-        // scroll offset
-        var offsetTop = window.pageYOffset + node.getBoundingClientRect().bottom;
-        self.popunder.style.top = Math.ceil(offsetTop) + 'px';
-  
-        setTimeout(function() {
-          if (self.placeholder) self.placeholder.classList.add('show');
-          self.popunder.classList.add('show');
-        }, 0);
-      };
-  
-      this.pushSiblings = function(el) {
-        while ((el = el.nextElementSibling)) {
-          el.classList.add('selectionSharer');
-          el.classList.add('moveDown');
-        }
-      };
-  
-      this.hidePopunder = function(cb) {
-        cb = cb || function() {};
-  
-        if (self.popunder == 'fixed') {
-          self.popunder.style.bottom = '-50px';
-          return cb();
-        }
-  
-        self.popunder.classList.remove('show');
-        if (self.placeholder) self.placeholder.classList.remove('show');
-        // We need to push back up all the siblings
-        var el;
-        var els = document.getElementsByClassName('moveDown');
-        while ((el = els[0])) el.classList.remove('moveDown');
-  
-        // CSS3 transition takes 0.6s
-        setTimeout(function() {
-          if (self.placeholder) document.body.insertBefore(self.placeholder);
-          cb();
-        }, 600);
-      };
-  
-      this.show = function(e) {
-        this.updateURL2Share();
-        setTimeout(function() {
-          var sel = window.getSelection();
-          var selection = self.getSelectionText(sel);
-          if (!sel.isCollapsed && selection && selection.length > 10 && selection.match(/ /)) {
-            var range = sel.getRangeAt(0);
-            var topOffset = range.getBoundingClientRect().top - 5;
-            var top = topOffset + self.getPosition().y - self.$popover.height();
-            var left = 0;
-            if (e) {
-              left = e.pageX;
-            } else {
-              var obj = sel.anchorNode.parentNode;
-              left += obj.offsetWidth / 2;
-              do {
-                left += obj.offsetLeft;
-              } while ((obj = obj.offsetParent));
-            }
-            switch (self.selectionDirection(sel)) {
-              case 'forward':
-                left -= self.$popover.width();
-                break;
-              case 'backward':
-                left += self.$popover.width();
-                break;
-              default:
-                return;
-            }
-            self.$popover
-              .removeClass('anim')
-              .css('top', top + 10)
-              .css('left', left)
-              .show();
-            setTimeout(function() {
-              self.$popover.addClass('anim').css('top', top);
-            }, 0);
+          if (e.nextElementSibling) c.pushSiblings(e);
+          else {
+              c.placeholder || (c.placeholder = document.createElement("div"), c.placeholder.className = "selectionSharerPlaceholder");
+              var f = window.getComputedStyle(e).marginBottom;
+              c.placeholder.style.height = f, c.placeholder.style.marginBottom = -2 * parseInt(f, 10) + "px", e.parentNode.insertBefore(c.placeholder)
           }
-        }, 10);
-      };
-  
-      this.hide = function() {
-        self.$popover.hide();
-      };
-  
-      this.smart_truncate = function(str, n) {
-        if (!str || !str.length) return str;
-        var toLong = str.length > n,
-          s_ = toLong ? str.substr(0, n - 1) : str;
-        s_ = toLong ? s_.substr(0, s_.lastIndexOf(' ')) : s_;
-        return toLong ? s_ + '...' : s_;
-      };
-  
-      this.getRelatedTwitterAccounts = function() {
-        var usernames = [];
-  
-        var creator =
-          $('meta[name="twitter:creator"]').attr('content') ||
-          $('meta[name="twitter:creator"]').attr('value');
-        if (creator) usernames.push(creator);
-  
-        // We scrape the page to find a link to http(s)://twitter.com/username
-        var anchors = document.getElementsByTagName('a');
-        for (var i = 0, len = anchors.length; i < len; i++) {
-          if (anchors[i].attributes.href && typeof anchors[i].attributes.href.value == 'string') {
-            var matches = anchors[i].attributes.href.value.match(
-              /^https?:\/\/twitter\.com\/([a-z0-9_]{1,20})/i
-            );
-            if (matches && matches.length > 1 && ['widgets', 'intent'].indexOf(matches[1]) == -1)
-              usernames.push(matches[1]);
-          }
-        }
-  
-        if (usernames.length > 0) return usernames.join(',');
-        else return '';
-      };
-  
-      this.shareTwitter = function(e) {
-        e.preventDefault();
-  
-        var text = '“' + self.smart_truncate(self.textSelection.trim(), 114) + '”';
-        var url =
-          'http://twitter.com/intent/tweet?text=' +
-          encodeURIComponent(text) +
-          '&related=' +
-          self.getRelatedTwitterAccounts() +
-          '&url=' +
-          encodeURIComponent(self.url2share);
-  
-        // We only show the via @twitter:site if we have enough room
-        if (self.viaTwitterAccount && text.length < 120 - 6 - self.viaTwitterAccount.length)
-          url += '&via=' + self.viaTwitterAccount;
-  
-        var w = 640,
-          h = 440;
-        var left = screen.width / 2 - w / 2;
-        var top = screen.height / 2 - h / 2 - 100;
-        window.open(
-          url,
-          'share_twitter',
-          'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=' +
-            w +
-            ', height=' +
-            h +
-            ', top=' +
-            top +
-            ', left=' +
-            left
-        );
-        self.hide();
-        return false;
-      };
-      this.shareWhatsapp = function(e) {
-        e.preventDefault();
-  
-        var text = '“' + self.smart_truncate(self.textSelection.trim(), 114) + '”';
-        var url =
-          'https://api.whatsapp.com/send?text='  +
-          encodeURIComponent(self.url2share) +
-          '&text=' +
-          encodeURIComponent(text);
-  
-        var w = 640,
-          h = 440;
-        var left = screen.width / 2 - w / 2;
-        var top = screen.height / 2 - h / 2 - 100;
-        window.open(
-          url,
-          'share_whatsapp',
-          'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=' +
-            w +
-            ', height=' +
-            h +
-            ', top=' +
-            top +
-            ', left=' +
-            left
-        );
-      };
-  
-      this.shareFacebook = function(e) {
-        e.preventDefault();
-        var text = swapParaWithNewline(self.htmlSelection);
-        var url =
-          'https://www.facebook.com/dialog/feed?' +
-          'app_id=' +
-          self.appId +
-          '&display=popup' +
-          '&caption=' +
-          encodeURIComponent(text) +
-          '&link=' +
-          encodeURIComponent(self.url2share) +
-          '&href=' +
-          encodeURIComponent(self.url2share) +
-          '&redirect_uri=' +
-          encodeURIComponent(self.url2share);
-        var w = 640,
-          h = 440;
-        var left = screen.width / 2 - w / 2;
-        var top = screen.height / 2 - h / 2 - 100;
-  
-        window.open(
-          url,
-          'share_facebook',
-          'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=' +
-            w +
-            ', height=' +
-            h +
-            ', top=' +
-            top +
-            ', left=' +
-            left
-        );
-      };
-  
-      this.shareLinkedIn = function(e) {
-        e.preventDefault();
-        var text = swapParaWithNewline(self.htmlSelection);
-        var url =
-          'https://www.linkedin.com/shareArticle?mini=true&url=' +
-          encodeURIComponent(self.url2share) +
-          '&title=' +
-          encodeURIComponent(text);
-        var w = 640,
-          h = 440;
-        var left = screen.width / 2 - w / 2;
-        var top = screen.height / 2 - h / 2 - 100;
-        window.open(
-          url,
-          'share_linkedin',
-          'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=' +
-            w +
-            ', height=' +
-            h +
-            ', top=' +
-            top +
-            ', left=' +
-            left
-        );
-      };
-
-      this.shareReddit = function(e) {
-        e.preventDefault();
-        var text = swapParaWithNewline(self.htmlSelection);
-        var url =
-          'https://www.reddit.com/submit?text=' +
-          encodeURIComponent(self.url2share) +
-          '&title=' +
-          encodeURIComponent(text);
-        var w = 640,
-          h = 440;
-        var left = screen.width / 2 - w / 2;
-        var top = screen.height / 2 - h / 2 - 100;
-        window.open(
-          url,
-          'share_reddit',
-          'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=' +
-            w +
-            ', height=' +
-            h +
-            ', top=' +
-            top +
-            ', left=' +
-            left
-        );
-      };
-  
-      this.shareTelegram = function(e) {
-        e.preventDefault();
-        var text = swapParaWithNewline(self.htmlSelection);
-        var url =
-          'https://www.telegram.me/share/share/?url=' +
-          encodeURIComponent(self.url2share) +
-          '&text=' +
-          encodeURIComponent(text);
-  
-        var w = 640,
-          h = 440;
-        var left = screen.width / 2 - w / 2;
-        var top = screen.height / 2 - h / 2 - 100;
-        window.open(
-          url,
-          'share_telegram',
-          'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=' +
-            w +
-            ', height=' +
-            h +
-            ', top=' +
-            top +
-            ', left=' +
-            left
-        );
-      };
-  
-      this.shareEmail = function() {
-        var text = swapParaWithNewline(self.textSelection);
-        var email = {};
-        email.subject = encodeURIComponent('Quote from ' + document.title);
-        email.body =
-          encodeURIComponent('“' + text + '”') +
-          '%0D%0A%0D%0AFrom: ' +
-          document.title +
-          '%0D%0A' +
-          window.location.href;
-        $(this).attr('href', 'mailto:?subject=' + email.subject + '&body=' + email.body);
-        self.hide();
-        return true;
-      };
-  
-      this.render = function() {
-        var getIconHTML = function(name) {
-          var nameCapitalized = name.charAt(0).toUpperCase() + name.substring(1);
-          return (
-            '<li><a class="action ' +
-            name +
-            '" href="" title="Share this selection on ' +
-            nameCapitalized +
-            '" target="_blank">' +
-            nameCapitalized +
-            '</a></li>'
-          );
-        };
-        var shareServices = {
-          telegram: {
-            icon: getIconHTML('telegram'),
-            query: 'a.telegram',
-            action: this.shareTelegram,
-          },
-          whatsapp: {
-            icon: getIconHTML('whatsapp'),
-            query: 'a.whatsapp',
-            action: this.shareWhatsapp,
-          },
-        };
-        
-        var pickedServices = this.optionalShare.map(function(s) {
-          return shareServices[s];
-        });
-  
-        var pickedShareIcons = pickedServices.reduce(function(acc, p) {
-          return acc.concat(p.icon).concat('\n');
-        }, '');
-        var shareIcons =
-          '    <ul>' +
-          '      <li><a class="action tweet" href="" title="Share this selection on Twitter" target="_blank">Tweet</a></li>' +
-          '      <li><a class="action facebook" href="" title="Share this selection on Facebook" target="_blank">Facebook</a></li>' +
-          '      <li><a class="action linkedin" href="" title="Share this selection on LinkedIn" target="_blank">LinkedIn</a></li>' +
-          '      <li><a class="action whatsapp" href="" title="Share this selection on Whatsapp" target="_blank">Whatsapp</a></li>' +
-          '      <li><a class="action reddit" href="" title="Share this selection on Reddit" target="_blank">Reddit</a></li>' +
-          pickedShareIcons +
-          '      <li><a class="action email" href="" title="Share this selection by email" target="_blank"><svg width="20" height="20"><path stroke="%23FFF" stroke-width="6" d="m16,25h82v60H16zl37,37q4,3 8,0l37-37M16,85l30-30m22,0 30,30"/></svg></a></li>' +
-          '    </ul>' +
-          '  </div>';
-  
-        var popoverHTML =
-          '<div class="selectionSharer" id="selectionSharerPopover" style="position:absolute;">' +
-          '  <div id="selectionSharerPopover-inner">' +
-          shareIcons +
-          '  <div class="selectionSharerPopover-clip"><span class="selectionSharerPopover-arrow"></span></div>' +
-          '</div>';
-  
-        var popunderHTML =
-          '<div id="selectionSharerPopunder" class="selectionSharer">' +
-          '  <div id="selectionSharerPopunder-inner">' +
-          shareIcons +
-          '  </div>' +
-          '</div>';
-        self.$popover = $(popoverHTML);
-        self.$popunder = $(popunderHTML);
-  
-        var pickedHandlers = pickedServices.map(function(p) {
+          var g = window.pageYOffset + e.getBoundingClientRect().bottom;
+          c.popunder.style.top = Math.ceil(g) + "px", setTimeout(function() {
+              c.placeholder && c.placeholder.classList.add("show"), c.popunder.classList.add("show")
+          }, 0)
+      }, this.pushSiblings = function(a) {
+          for (; a = a.nextElementSibling;) a.classList.add("selectionSharer"), a.classList.add("moveDown")
+      }, this.hidePopunder = function(a) {
+          if (a = a || function() {}, "fixed" == c.popunder) return c.popunder.style.bottom = "-50px", a();
+          c.popunder.classList.remove("show"), c.placeholder && c.placeholder.classList.remove("show");
+          for (var b = document.getElementsByClassName("moveDown"); el = b[0];) el.classList.remove("moveDown");
+          setTimeout(function() {
+              c.placeholder && document.body.insertBefore(c.placeholder), a()
+          }, 600)
+      }, this.show = function(a) {
+          setTimeout(function() {
+              var b = window.getSelection(),
+                  d = c.getSelectionText(b);
+              if (!b.isCollapsed && d && d.length > 10 && d.match(/ /)) {
+                  var e = b.getRangeAt(0),
+                      f = e.getBoundingClientRect().top - 5,
+                      g = f + c.getPosition().y - c.$popover.height(),
+                      h = 0;
+                  if (a) h = a.pageX;
+                  else {
+                      var i = b.anchorNode.parentNode;
+                      h += i.offsetWidth / 2;
+                      do h += i.offsetLeft; while (i = i.offsetParent)
+                  }
+                  switch (c.selectionDirection(b)) {
+                      case "forward":
+                          h -= c.$popover.width();
+                          break;
+                      case "backward":
+                          h += c.$popover.width();
+                          break;
+                      default:
+                          return
+                  }
+                  c.$popover.removeClass("anim").css("top", g + 10).css("left", h).show(), setTimeout(function() {
+                      c.$popover.addClass("anim").css("top", g)
+                  }, 0)
+              }
+          }, 10)
+      }, this.hide = function(a) {
+          c.$popover.hide()
+      }, this.smart_truncate = function(a, b) {
+          if (!a || !a.length) return a;
+          var c = a.length > b,
+              d = c ? a.substr(0, b - 1) : a;
+          return d = c ? d.substr(0, d.lastIndexOf(" ")) : d, c ? d + "..." : d
+      }, this.getRelatedTwitterAccounts = function() {
+          var b = [],
+              c = a('meta[name="twitter:creator"]').attr("content") || a('meta[name="twitter:creator"]').attr("value");
+          c && b.push(c);
+          for (var d = document.getElementsByTagName("a"), e = 0, f = d.length; f > e; e++)
+              if (d[e].attributes.href && "string" == typeof d[e].attributes.href.value) {
+                  var g = d[e].attributes.href.value.match(/^https?:\/\/twitter\.com\/([a-z0-9_]{1,20})/i);
+                  g && g.length > 1 && -1 == ["widgets", "intent"].indexOf(g[1]) && b.push(g[1])
+              } return b.length > 0 ? b.join(",") : ""
+      }, this.shareTwitter = function(a) {
+          a.preventDefault();
+          var b = "“" + c.smart_truncate(c.textSelection.trim(), 114) + "”",
+              d = "http://twitter.com/intent/tweet?text=" + encodeURIComponent(b) + "&related=" + c.getRelatedTwitterAccounts() + "&url=" + encodeURIComponent(c.url2share);
+          c.viaTwitterAccount && b.length < 114 - c.viaTwitterAccount.length && (d += "&via=" + c.viaTwitterAccount);
+          var e = 640,
+              f = 440,
+              g = screen.width / 2 - e / 2,
+              h = screen.height / 2 - f / 2 - 100;
+          return window.open(d, "share_twitter", "toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=" + e + ", height=" + f + ", top=" + h + ", left=" + g), c.hide(), !1
+      }, this. shareWhatsapp = function(a){
+        a.preventDefault();
+        var b = "“" + c.smart_truncate(c.textSelection.trim(), 114) + "”",
+          d = "https://api.whatsapp.com/send?text=" + encodeURIComponent(b) + "&related=" + c.getRelatedTwitterAccounts() + "&url=" + encodeURIComponent(c.url2share);
+          var e = 640,
+              f = 440,
+              g = screen.width / 2 - e / 2,
+              h = screen.height / 2 - f / 2 - 100;
+          return window.open(d, "share_whatsapp", "toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=" + e + ", height=" + f + ", top=" + h + ", left=" + g), c.hide(), !1
+      },this.shareFacebook = function(a) {
+          a.preventDefault();
+          var b = c.htmlSelection.replace(/<p[^>]*>/gi, "\n").replace(/<\/p>|  /gi, "").trim(),
+              d = "https://www.facebook.com/sharer/sharer.php?quote=" + encodeURIComponent(b) + "&u=" + encodeURIComponent(c.url2share),
+              e = 640,
+              f = 440,
+              g = screen.width / 2 - e / 2,
+              h = screen.height / 2 - f / 2 - 100;
+          window.open(d, "share_facebook", "toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=" + e + ", height=" + f + ", top=" + h + ", left=" + g)
+      }, this. shareLinkedIn = function(a){
+        a.preventDefault();
+        var b = c.htmlSelection.replace(/<p[^>]*>/gi, "\n").replace(/<\/p>|  /gi, "").trim(),
+          d = "https://www.linkedin.com/shareArticle?mini=true&url=" + encodeURIComponent(c.url2share);
+          var e = 640,
+              f = 440,
+              g = screen.width / 2 - e / 2,
+              h = screen.height / 2 - f / 2 - 100;
+          return window.open(d, "share_linkedin", "toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=" + e + ", height=" + f + ", top=" + h + ", left=" + g), c.hide(), !1
+      }, this. shareReddit = function(a){
+        a.preventDefault();
+        var b = "“" + c.smart_truncate(c.textSelection.trim(), 114) + "”",
+        d = "https://www.reddit.com/submit?text=" + encodeURIComponent(b) + "&url=" + encodeURIComponent(c.url2share);
+          var e = 640,
+              f = 440,
+              g = screen.width / 2 - e / 2,
+              h = screen.height / 2 - f / 2 - 100;
+          return window.open(d, "share_reddit", "toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=" + e + ", height=" + f + ", top=" + h + ", left=" + g), c.hide(), !1
+      }, this.shareEmail = function(b) {
+          var d = c.textSelection.replace(/<p[^>]*>/gi, "\n").replace(/<\/p>|  /gi, "").trim(),
+              e = {};
+          return e.subject = encodeURIComponent("Quote from " + document.title), e.body = encodeURIComponent("“" + d + "”") + "%0D%0A%0D%0AFrom: " + encodeURIComponent(document.title) + "%0D%0A" + encodeURIComponent(window.location.href), a(b.target).attr("href", "mailto:?subject=" + e.subject + "&body=" + e.body), c.hide(b), !0
+      }, this.render = function() {
+          var b = '<div class="selectionSharer" id="selectionSharerPopover" style="position:absolute;">  <div id="selectionSharerPopover-inner">    <ul>      <li><a class="action tweet" href="" title="Share this selection on Twitter" target="_blank">Tweet</a></li>  <li><a class="action whatsapp" href="" title="Share this selection on Whatsapp" target="_blank">Whatsapp</a></li>    <li><a class="action facebook" href="" title="Share this selection on Facebook" target="_blank">Facebook</a></li>   <li><a class="action linkedin" href="" title="Share this selection on Linkedin" target="_blank">LinkedIn</a></li> <li><a class="action reddit" href="" title="Share this selection on Reddit" target="_blank">Reddit</a></li>  <li><a class="action email" href="" title="Share this selection by email"><svg width="20" height="20"><path stroke="%23FFF" stroke-width="6" d="m16,25h82v60H16zl37,37q4,3 8,0l37-37M16,85l30-30m22,0 30,30"/></svg></a></li>    </ul>  </div>  <div class="selectionSharerPopover-clip"><span class="selectionSharerPopover-arrow"></span></div></div>',
+              d = '<div id="selectionSharerPopunder" class="selectionSharer">  <div id="selectionSharerPopunder-inner">    <label>Share this selection</label>    <ul>      <li><a class="action tweet" href="" title="Share this selection on Twitter" target="_blank">Tweet</a></li>   <li><a class="action whatsapp" href="" title="Share this selection on Whatsapp" target="_blank">Whatsapp</a></li>   <li><a class="action facebook" href="" title="Share this selection on Facebook" target="_blank">Facebook</a></li>   <li><a class="action linkedin" href="" title="Share this selection on Linkedin" target="_blank">LinkedIn</a></li> <li><a class="action reddit" href="" title="Share this selection on Reddit" target="_blank">Reddit</a></li>  <li><a class="action email" href="" title="Share this selection by email"><svg width="20" height="20"><path stroke="%23FFF" stroke-width="6" d="m16,25h82v60H16zl37,37q4,3 8,0l37-37M16,85l30-30m22,0 30,30"/></svg></a></li>    </ul>  </div></div>';
+          c.$popover = a(b), c.$popover.find("a.tweet").on("click", function(a) {
+              c.shareTwitter(a)
+          }), c.$popover.find("a.whatsapp").on("click", function(a) {
+              c.shareWhatsapp(a)
+          }),c.$popover.find("a.facebook").on("click", function(a) {
+              c.shareFacebook(a)
+          }),c.$popover.find("a.linkedin").on("click", function(a) {
+              c.shareLinkedIn(a)
+          }),c.$popover.find("a.reddit").on("click", function(a) {
+              c.shareReddit(a)
+          }), c.$popover.find("a.email").on("click", function(a) {
+              c.shareEmail(a)
+          }), a("body").append(c.$popover), c.$popunder = a(d), c.$popunder.find("a.tweet").on("click", function(a) {
+              c.shareTwitter(a)
+          }), c.$popunder.find("a.whatsapp").on("click", function(a) {
+              c.shareWhatsapp(a)
+          }),c.$popunder.find("a.facebook").on("click", function(a) {
+              c.shareFacebook(a)
+          }),c.$popunder.find("a.linkedin").on("click", function(a) {
+              c.shareLinkedIn(a)
+          }),c.$popunder.find("a.reddit").on("click", function(a) {
+              c.shareReddit(a)
+          }), c.$popunder.find("a.email").on("click", function(a) {
+              c.shareEmail(a)
+          }), a("body").append(c.$popunder), c.appId && c.url2share && a(".selectionSharer a.facebook").css("display", "inline-block")
+      }, this.setElements = function(b) {
+          "string" == typeof b && (b = a(b)), c.$elements = b instanceof a ? b : a(b), c.$elements.on({
+              mouseup: function(a) {
+                  c.show(a)
+              },
+              mousedown: function(a) {
+                  c.hide(a)
+              },
+              touchstart: function(a) {
+                  c.isMobile = !0
+              }
+          }).addClass("selectionShareable"), document.onselectionchange = c.selectionChanged
+      }, this.selectionChanged = function(a) {
+          c.isMobile && (c.lastSelectionChanged && clearTimeout(c.lastSelectionChanged), c.lastSelectionChanged = setTimeout(function() {
+              c.showPopunder(a)
+          }, 300))
+      }, this.getPosition = function() {
+          var a = void 0 !== window.pageXOffset,
+              b = "CSS1Compat" === (document.compatMode || ""),
+              c = a ? window.pageXOffset : b ? document.documentElement.scrollLeft : document.body.scrollLeft,
+              d = a ? window.pageYOffset : b ? document.documentElement.scrollTop : document.body.scrollTop;
           return {
-            query: p.query,
-            action: p.action,
-          };
-        });
-  
-        self.attachHandlers(
-          [self.$popover, self.$popunder],
-          [
-            {
-              query: 'a.tweet',
-              action: self.shareTwitter,
-            },
-            {
-              query: 'a.facebook',
-              action: self.shareFacebook,
-            },
-            {
-              query: 'a.linkedin',
-              action: self.shareLinkedIn,
-            },
-            {
-                query: 'a.reddit',
-                action: self.shareReddit,
-              },
-            {
-                query: 'a.whatsapp',
-                action: self.shareWhatsapp,
-              },
-            {
-              query: 'a.email',
-              action: self.shareEmail,
-            },
-          ].concat(pickedHandlers)
-        );
-  
-        $('body').append(self.$popover);
-        $('body').append(self.$popunder);
-  
-        if (self.appId && self.url2share) {
-          $('.selectionSharer a.facebook').css('display', 'inline-block');
-        }
-      };
-  
-      this.attachHandlers = function(parents, queryHandlers) {
-        if (parents && parents.length < 0) {
-          return;
-        }
-  
-        parents.forEach(function(p) {
-          attachClickHandlers(p, queryHandlers);
-        });
-      };
-  
-      this.setElements = function(elements) {
-        if (typeof elements == 'string') elements = $(elements);
-        self.$elements = elements instanceof $ ? elements : $(elements);
-        self.$elements
-          .mouseup(self.show.bind(this))
-          .mousedown(self.hide)
-          .addClass('selectionShareable');
-  
-        self.$elements.bind('touchstart', function() {
-          self.isMobile = true;
-        });
-  
-        document.onselectionchange = self.selectionChanged;
-      };
-  
-      this.selectionChanged = function(e) {
-        if (!self.isMobile) return;
-  
-        if (self.lastSelectionChanged) {
-          clearTimeout(self.lastSelectionChanged);
-        }
-        self.lastSelectionChanged = setTimeout(function() {
-          self.showPopunder(e);
-        }, 300);
-      };
-  
-      this.getPosition = function() {
-        var supportPageOffset = window.pageXOffset !== undefined;
-        var isCSS1Compat = (document.compatMode || '') === 'CSS1Compat';
-  
-        var x = supportPageOffset
-          ? window.pageXOffset
-          : isCSS1Compat
-          ? document.documentElement.scrollLeft
-          : document.body.scrollLeft;
-        var y = supportPageOffset
-          ? window.pageYOffset
-          : isCSS1Compat
-          ? document.documentElement.scrollTop
-          : document.body.scrollTop;
-        return { x: x, y: y };
-      };
-  
-      this.render();
-  
-      if (options.elements) {
-        this.setElements(options.elements);
-      }
-    };
-  
-    // jQuery plugin
-    // Usage: $( "p" ).selectionSharer();
-    $.fn.selectionSharer = function() {
-      var sharer = new SelectionSharer();
-      sharer.setElements(this);
-      return this;
-    };
-  
-    // For AMD / requirejs
-    // Usage: require(["selection-sharer!"]);
-    //     or require(["selection-sharer"], function(selectionSharer) { var sharer = new SelectionSharer('p'); });
-    if (typeof define == 'function') {
-      define(function() {
-        SelectionSharer.load = function(name, req, onLoad) {
-          var sharer = new SelectionSharer();
-          sharer.setElements('p');
-          onLoad();
-        };
-        return SelectionSharer;
-      });
-    } else if (typeof module === 'object' && module.exports) {
-      module.exports = SelectionSharer;
-    } else {
-      // Registering SelectionSharer as a global
-      // Usage: var sharer = new SelectionSharer('p');
-      window.SelectionSharer = SelectionSharer;
-    }
-  })(jQuery);
+              x: c,
+              y: d
+          }
+      }, this.render(), b.elements && this.setElements(b.elements)
+  };
+  a.fn.selectionSharer = function() {
+      var a = new b;
+      return a.setElements(this), this
+  }, "function" == typeof define ? define(function() {
+      return b.load = function(a, c, d, e) {
+          var f = new b;
+          f.setElements("p"), d()
+      }, b
+  }) : "object" == typeof module && module.exports ? module.exports = b : window.SelectionSharer = b
+}(jQuery);

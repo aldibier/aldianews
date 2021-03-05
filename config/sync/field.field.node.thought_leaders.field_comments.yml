@@ -1,14 +1,14 @@
-uuid: 1ce6d80f-373e-4540-81dc-3411e395cfe8
+uuid: dba72fe0-0f99-4410-8d79-219e2ccb5be9
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.comment
+    - field.storage.node.field_comments
     - node.type.thought_leaders
   module:
     - comment
-id: node.thought_leaders.comment
-field_name: comment
+id: node.thought_leaders.field_comments
+field_name: field_comments
 entity_type: node
 bundle: thought_leaders
 label: Comments
