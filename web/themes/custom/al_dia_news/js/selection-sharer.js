@@ -347,7 +347,7 @@
       e.preventDefault();
       var text = swapParaWithNewline(self.htmlSelection);
       var url =
-        'https://www.linkedin.com/shareArticle?mini=true&url=' +
+        'https://www.linkedin.com/sharing/share-offsite/?url=' +
         encodeURIComponent(self.url2share) +
         '&title=' +
         encodeURIComponent(text);
