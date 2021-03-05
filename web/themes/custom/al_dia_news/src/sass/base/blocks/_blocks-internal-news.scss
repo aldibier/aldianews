@@ -203,11 +203,10 @@ blockquote {
     margin: 45px auto 35px 0;
     border: none;
     background: none;
-    width: max-content;
     color: $cgrey2;
-    --padding-right: 0;
+    width: fit-content;
     max-width: 660px;
-
+   
     &:before,
     &:after {
         color: $corange;
@@ -276,7 +275,10 @@ blockquote {
 
 //---------span
 .block-field-blocknodenewsbody {
-    
+    span {
+        color: $corange !important;
+    }
+
     p {
         font-style: normal;
         font-weight: normal;
