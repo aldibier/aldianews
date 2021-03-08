@@ -1,0 +1,184 @@
+#header {
+    background: none;
+}
+
+//------------------menu secondary----------//
+.region-secondary-menu {
+    display: flex;
+    
+    #block-al-dia-news-main-menu {
+        width: 100%;
+    }
+
+    .menu {
+        display: flex;
+
+        .menu-item{
+            margin: 0 auto;
+
+            a{
+                color: $cblack0;
+            }
+        }  
+    }
+
+    //------------- menu social media
+
+    .menu--social-media {
+        
+
+        .menu-item {
+            width: 25px;
+            height: 25px;
+            position: relative;
+            margin: 5px;
+            transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+
+            &:hover {
+                transform: scale(1.2);
+            }
+            
+        }
+        
+        .menu.menu-level-0 {
+            display: flex;
+
+            a {
+                font-size: 0;
+                display: block;
+                position: absolute;
+                z-index: 2;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+            }
+        }
+
+        .menu-link-contentsocial-media {
+            width: 25px;
+            height: 25px;
+            background: $cgrey5;
+            border-radius: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        *{
+            fill: $cwhite;
+            color: $cwhite;
+        }
+    }
+}
+
+//----------------menu primary------------------//@extend
+
+.region-header {
+    background: $cblack0;
+    display: flex;
+    padding: 0 15px;
+
+    #block-loginformpopup {
+        order: 1;
+        min-width: 40px;
+        width: 40px;
+        height: 40px;
+        position: relative;
+        margin: 12px 0 7px;
+
+        &:before,
+        &:after {
+            width: 25px;
+            height: 1px;
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            background: $cwhite;
+            right: 0;
+            margin: 0 auto;
+        }
+
+        &:after {
+            top: 0;
+        }
+
+        &:before {
+            top: 8px;
+        }
+
+        .content {
+
+            &:before {
+                width: 25px;
+                height: 1px;
+                content: '';
+                display: block;
+                position: absolute;
+                left: 0;
+                background: $cwhite;
+                right: 0;
+                margin: 0 auto;
+                top: 16px;
+            }
+
+            &:after{
+                content: 'Menu';
+                display: block;
+                position: absolute;
+                left: 0;
+                color: $cwhite;
+                right: 0;
+                margin: 0 auto;
+                bottom: 0;
+                font-weight: 600;
+                font-size: 12px;
+                line-height: 15px;
+                font-family: $PrNovacond-reg;
+                text-align: center;
+                bottom: 4px;
+            }
+        }
+    }
+
+    #block-al-dia-news-branding{
+        order: 2;
+        max-width: 242px;
+        max-height: 75px;
+        margin: -16px 0 0 0;
+
+        .site-branding__text {
+            font-size: 0;
+        }
+    }
+
+    #block-sitedescription {
+        order: 3;
+        margin: auto 0 auto -15px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: $px18;
+        line-height: 22px;
+        padding: 12px 0 0;
+
+        strong {
+            font-style: normal;
+            font-weight: normal;
+            color: $corange;
+        }
+    }
+
+    #block-searchform {
+        order: 4;
+    }
+
+    #block-languageswitcher {
+        order: 5;
+    }
+
+    #block-lastprintedition {
+        order: 6;
+    }
+}
+
