@@ -56,6 +56,10 @@ display:
           offset: 0
       style:
         type: default
+        options:
+          grouping: {  }
+          row_class: 'card-more card-more-news'
+          default_row_class: true
       row:
         type: fields
       fields:
@@ -482,6 +486,7 @@ display:
           entity_field: nid
           plugin_id: node_nid
       display_extenders: {  }
+      css_class: 'view-more view-more-news'
     cache_metadata:
       max-age: -1
       contexts:
