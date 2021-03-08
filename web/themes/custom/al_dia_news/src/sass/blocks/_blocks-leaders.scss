@@ -31,6 +31,10 @@
 
     .block-views-blockcontent-authors-block-1 {
 
+        .name-date {
+            max-width: 31%;
+        }
+
         .photo {
             width: 220px;
             height: 220px;
@@ -42,6 +46,10 @@
             font-size: $px24;
             line-height: 29px;
             font-family: $Modcond-reg;
+            width: 25px;
+            height: 134px;
+            padding: 0 0 20px;
+            margin: auto 0 auto 25px;
         }
 
         .author-name {
@@ -50,19 +58,26 @@
             font-size: $px24;
             line-height: 29px;
             font-family: $Modcond-reg;
+            margin: 5px 0 0 5px;
         }
         
         .author-information {
-            font-style: normal;
-            font-weight: 600;
-            font-size: $px24;
-            line-height: 29px;
-            font-family: $Modcond-reg;
+
+            .author-information {
+                font-style: normal;
+                font-weight: 600;
+                font-size: $px24;
+                line-height: 29px;
+                font-family: $Modcond-reg;
+                margin: 0 0 0 -25px;
+            }
+            
         }
 
         .date-authored-on {
             font-size: $px20;
             line-height: 24px; 
+            margin: 10px 0 0 -25px;
         }
     }
 }
