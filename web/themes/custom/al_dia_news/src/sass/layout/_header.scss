@@ -1,0 +1,306 @@
+#header {
+    background: none;
+}
+
+//------------------menu secondary----------//
+.region-secondary-menu {
+    display: flex;
+    
+    #block-al-dia-news-main-menu {
+        width: 100%;
+    }
+
+    .menu {
+        display: flex;
+
+        .menu-item{
+            margin: 0 auto;
+
+            a{
+                color: $cblack0;
+            }
+        }  
+    }
+
+    //------------- menu social media
+
+    .menu--social-media {
+        
+
+        .menu-item {
+            width: 25px;
+            height: 25px;
+            position: relative;
+            margin: 5px;
+            transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+
+            &:hover {
+                transform: scale(1.2);
+            }
+            
+        }
+        
+        .menu.menu-level-0 {
+            display: flex;
+
+            a {
+                font-size: 0;
+                display: block;
+                position: absolute;
+                z-index: 2;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+            }
+        }
+
+        .menu-link-contentsocial-media {
+            width: 25px;
+            height: 25px;
+            background: $cgrey5;
+            border-radius: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        *{
+            fill: $cwhite;
+            color: $cwhite;
+        }
+    }
+}
+
+
+//-------------------popup
+#block-al-dia-news-account-menu {
+    display: none;
+}
+
+.user-logged-in {
+    #block-al-dia-news-account-menu {
+        display: block;
+    }
+}
+
+//----------------menu primary------------------//
+
+.region-header {
+    background: $cblack0;
+    display: flex;
+    padding: 0 15px;
+    border-bottom: 5px solid $corange;
+
+    #block-blockheader {
+        order: 1;
+        min-width: 40px;
+        width: 40px;
+        height: 40px;
+        position: relative;
+        margin: 12px 0 6px;
+
+        &:before,
+        &:after {
+            width: 25px;
+            height: 1px;
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            background: $cwhite;
+            right: 0;
+            margin: 0 auto;
+        }
+
+        &:after {
+            top: 0;
+        }
+
+        &:before {
+            top: 8px;
+        }
+
+        .content {
+
+            &:before {
+                width: 25px;
+                height: 1px;
+                content: '';
+                display: block;
+                position: absolute;
+                left: 0;
+                background: $cwhite;
+                right: 0;
+                margin: 0 auto;
+                top: 16px;
+            }
+
+            &:after{
+                content: 'Menu';
+                display: block;
+                position: absolute;
+                left: 0;
+                color: $cwhite;
+                right: 0;
+                margin: 0 auto;
+                bottom: 0;
+                font-weight: 600;
+                font-size: 12px;
+                line-height: 15px;
+                font-family: $PrNovacond-reg;
+                text-align: center;
+                bottom: 4px;
+            }
+        }
+    }
+
+    #block-al-dia-news-branding{
+        order: 2;
+        max-width: 242px;
+        max-height: 75px;
+        margin: -16px 0 -1px;
+
+        .site-branding__text {
+            font-size: 0;
+        }
+    }
+
+    #block-sitedescription {
+        order: 3;
+        margin: auto 0 auto -15px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: $px18;
+        line-height: 22px;
+        padding: 12px 0 0;
+
+        strong {
+            font-style: normal;
+            font-weight: normal;
+            color: $corange;
+        }
+
+        p{
+            margin: 0 0 7px 0;
+        }
+    }
+
+    #block-searchform {
+        order: 4;
+        margin: 0;   
+    }
+
+    .block-search {
+
+        input {
+            display: none;
+        }
+        
+        .form-actions {
+            width: 56px;
+            height: 56px;
+            display: block;
+            padding: 0;
+
+            input {
+                width: 100%;
+                height: 100%;
+                display: block;
+                background: transparent url("../img/search.svg") center center no-repeat;
+                border: none;
+            }
+        }
+
+    }
+
+    #block-languageswitcher {
+        order: 5;
+        margin: 0; 
+    }
+
+    .block-language {
+        position: relative;  
+        
+        a {
+            font-style: normal;
+            font-weight: 600;
+            font-size: $px18;
+            line-height: 22px;
+            font-family: $PrNovacond-reg;
+        }
+
+        .is-active a {
+            color: $corange;
+        }
+
+        .links {
+            width: 56px;
+            height: 56px;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0;
+            position: relative;
+        }
+
+        li {
+            width: 100%;
+            text-align: center;
+
+            &:first-child {
+                margin:  auto 0 0 0;
+            }
+
+            &:last-child{
+                margin: 0 0 auto 0;
+            }
+
+            &:after {
+                height: 40px;
+                left: 0;
+                width: 1px;
+                position: absolute;
+                display: block;
+                content: '';
+                background: $corange;
+                top: 0;
+                bottom: 0;
+                margin: auto 0;
+            }
+        }
+    }
+
+    #block-lastprintedition {
+        order: 6;
+        position: relative;
+        min-width: 100px;
+
+        .field--name-field-image {
+            position: absolute;
+            z-index: 3;
+            width: 78px;
+            height: 86px;
+            left: 10px;
+            transform: rotate(-17deg);
+        }
+
+        .field--name-field-link {
+            position: absolute;
+            z-index: 4;
+            width: 78px;
+            height: 86px;
+            opacity: 0;
+            left: 10px;
+            transform: rotate(-17deg);
+        }
+    }
+
+    #block-loginformpopup {
+        order: 7;
+        width: 30px;
+        height: 30px;
+        background: white;
+        display: block;
+    }
+
+}
