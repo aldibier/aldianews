@@ -193,13 +193,15 @@
     #block-lastprintedition {
         order: 6;
         position: relative;
+        min-width: 100px;
 
         .field--name-field-image {
             position: absolute;
             z-index: 3;
             width: 78px;
             height: 86px;
-            transform: rotate(-25deg);
+            left: 10px;
+            transform: rotate(-17deg);
         }
 
         .field--name-field-link {
@@ -208,7 +210,8 @@
             width: 78px;
             height: 86px;
             opacity: 0;
-            transform: rotate(-25deg);
+            left: 10px;
+            transform: rotate(-17deg);
         }
     }
 }
