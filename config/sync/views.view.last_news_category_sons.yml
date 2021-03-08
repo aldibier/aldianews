@@ -769,6 +769,8 @@ display:
         - 'config:core.entity_view_display.node.news.teaser'
         - 'config:core.entity_view_display.node.page.default'
         - 'config:core.entity_view_display.node.page.teaser'
+        - 'config:core.entity_view_display.node.thought_leaders.default'
+        - 'config:core.entity_view_display.node.thought_leaders.teaser'
   block_2:
     display_plugin: block
     id: block_2
@@ -786,6 +788,9 @@ display:
         relationships: false
         arguments: false
         fields: false
+        css_class: false
+        style: false
+        row: false
       relationships:
         field_category:
           id: field_category
@@ -901,6 +906,16 @@ display:
           view_mode: category_next_4
           entity_type: node
           plugin_id: rendered_entity
+      css_class: 'view-more view-more-category'
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: 'card-more card-more-category'
+          default_row_class: true
+      row:
+        type: fields
+        options: {  }
     cache_metadata:
       max-age: -1
       contexts:
@@ -923,3 +938,5 @@ display:
         - 'config:core.entity_view_display.node.news.teaser'
         - 'config:core.entity_view_display.node.page.default'
         - 'config:core.entity_view_display.node.page.teaser'
+        - 'config:core.entity_view_display.node.thought_leaders.default'
+        - 'config:core.entity_view_display.node.thought_leaders.teaser'
