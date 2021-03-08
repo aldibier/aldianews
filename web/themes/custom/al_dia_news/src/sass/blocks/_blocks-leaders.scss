@@ -1,0 +1,134 @@
+.page-node-type-thought-leaders {
+
+    //------- first block leader
+    .content-advertising {
+        padding: 0 15px;
+
+        img {
+            margin: 0;
+        }
+
+        .field--label-hidden {
+            font-family: $PrNovacond-reg;
+            font-style: normal;
+            font-weight: normal;
+            font-size: $px14;
+            line-height: 17px;
+            color: $cgrey3;
+            margin: -12px 0 12px;
+        }
+
+        @media (max-width:$tablet){
+
+            .field--label-hidden {
+                font-size: 11px;
+                line-height: 13px;
+            }
+        }
+    }
+
+    //---------author
+
+    .block-views-blockcontent-authors-block-1 {
+
+        .name-date {
+            max-width: 320px;
+            position: relative;
+            margin: auto 0 auto 25px;
+            
+            &::before {
+                top: 3px;
+                content: 'By';
+                left: 0;
+                font-style: normal;
+                font-weight: 600;
+                font-size: $px24;
+                line-height: 29px;
+                font-family: $Modcond-reg;
+                position: absolute;
+            }
+        }
+
+        .photo {
+            width: 220px;
+            height: 220px;
+        }
+
+        .by-author-information {
+           display: none;
+        }
+
+        .author-name {
+            font-style: normal;
+            font-weight: 600;
+            font-size: $px24;
+            line-height: 29px;
+            font-family: $Modcond-reg;
+            margin: 5px 0 0 0;
+            padding: 0 0 0 30px;
+        }
+        
+        .author-information {
+
+            .author-information {
+                font-style: normal;
+                font-weight: 600;
+                font-size: $px24;
+                line-height: 29px;
+                font-family: $Modcond-reg;
+                margin: 0;
+            }
+            
+        }
+
+        .date-authored-on {
+            font-size: $px20;
+            line-height: 24px; 
+            margin: 10px 0 0;
+        }
+
+        @media (max-width:$tablet){ 
+
+            img {
+                transform: scale(1.6);
+            }
+
+            .author-information {
+                flex-wrap: nowrap;
+
+                .author-information {
+                    font-size: 14px;
+                    line-height: 17px;
+                }
+            }
+
+            .name-date {
+                max-width: 308px;
+                width: calc(100% - 90px);
+                margin: auto 0px auto 15px;
+
+                &::before {
+                    font-size: 14px;
+                    line-height: 17px;
+                }
+            }
+
+            .photo {
+                width: 95px;
+                height: 95px;
+            }
+
+            .author-name {
+                font-size: 14px;
+                line-height: 17px;
+                padding: 0 0 0 20px;
+            }
+
+            .date-authored-on {
+                font-size: 14px;
+                line-height: 17px;
+                margin: 5px 0 0;
+            }
+        }
+    }
+}
