@@ -72,12 +72,25 @@
     }
 }
 
+
+//-------------------popup
+#block-al-dia-news-account-menu {
+    display: none;
+}
+
+.user-logged-in {
+    #block-al-dia-news-account-menu {
+        display: block;
+    }
+}
+
 //----------------menu primary------------------//@extend
 
 .region-header {
     background: $cblack0;
     display: flex;
     padding: 0 15px;
+    border-bottom: 5px solid $corange;
 
     #block-loginformpopup {
         order: 1;
@@ -85,7 +98,7 @@
         width: 40px;
         height: 40px;
         position: relative;
-        margin: 12px 0 7px;
+        margin: 12px 0 6px;
 
         &:before,
         &:after {
@@ -146,7 +159,7 @@
         order: 2;
         max-width: 242px;
         max-height: 75px;
-        margin: -16px 0 0 0;
+        margin: -16px 0 -1px;
 
         .site-branding__text {
             font-size: 0;
@@ -179,6 +192,23 @@
 
     #block-lastprintedition {
         order: 6;
+        position: relative;
+
+        .field--name-field-image {
+            position: absolute;
+            z-index: 3;
+            width: 78px;
+            height: 86px;
+            transform: rotate(-25deg);
+        }
+
+        .field--name-field-link {
+            position: absolute;
+            z-index: 4;
+            width: 78px;
+            height: 86px;
+            opacity: 0;
+            transform: rotate(-25deg);
+        }
     }
 }
-
