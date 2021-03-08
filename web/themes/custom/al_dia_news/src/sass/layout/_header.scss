@@ -84,7 +84,7 @@
     }
 }
 
-//----------------menu primary------------------//@extend
+//----------------menu primary------------------//
 
 .region-header {
     background: $cblack0;
@@ -188,10 +188,86 @@
 
     #block-searchform {
         order: 4;
+        margin: 0;   
+    }
+
+    .block-search {
+
+        input {
+            display: none;
+        }
+        
+        .form-actions {
+            width: 56px;
+            height: 56px;
+            display: block;
+            padding: 0;
+
+            input {
+                width: 100%;
+                height: 100%;
+                display: block;
+                background: transparent url("../img/search.svg") center center no-repeat;
+                border: none;
+            }
+        }
+
     }
 
     #block-languageswitcher {
         order: 5;
+        margin: 0; 
+    }
+
+    .block-language {
+        position: relative;  
+        
+        a {
+            font-style: normal;
+            font-weight: 600;
+            font-size: $px18;
+            line-height: 22px;
+            font-family: $PrNovacond-reg;
+        }
+
+        .is-active a {
+            color: $corange;
+        }
+
+        .links {
+            width: 56px;
+            height: 56px;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0;
+            position: relative;
+        }
+
+        li {
+            width: 100%;
+            text-align: center;
+
+            &:first-child {
+                margin:  auto 0 0 0;
+            }
+
+            &:last-child{
+                margin: 0 0 auto 0;
+            }
+
+            &:after {
+                height: 40px;
+                left: 0;
+                width: 1px;
+                position: absolute;
+                display: block;
+                content: '';
+                background: $corange;
+                top: 0;
+                bottom: 0;
+                margin: auto 0;
+            }
+        }
     }
 
     #block-lastprintedition {
@@ -226,4 +302,5 @@
         background: white;
         display: block;
     }
+
 }
