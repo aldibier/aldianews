@@ -2,82 +2,73 @@
   padding: 0 20px;
   border-left: 1px solid $cgrey4;
 
+  @media (max-width: $tablet) {
+    padding: 0;
+    border-left: none;
+  }
+
   //------ title more in this section ------------//
   > h2 {
     position: relative;
     font-size: $px28;
     font-family: $Mod-light;
+    font-style: normal;
+    font-weight: normal;
     line-height: 33.6px;
     text-transform: uppercase;
     color: #333333;
+    overflow: hidden;
 
     &::after {
       content: "";
       width: 65px;
-      height: 2px;
+      height: 3px;
+      margin-left: 15px;
       display: inline-block;
       position: absolute;
       top: calc(50% - 5px);
       background-color: #333333;
     }
+
+    @media (max-width: $tablet) {
+      font-size: 20px;
+
+      &::after {
+        width: 100%;
+      }
+    }
   }
 
   //------ related content ------------//
   > .content {
-    margin-top: 45px;
+    margin-top: 25px;
+
+    @media (max-width: $tablet) {
+      margin-top: 25px;
+    }
+  }
+
+  .view-content {
+    @media (max-width: $tablet) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   .views-row {
-    margin-bottom: 10px;
-    padding-bottom: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
     border-bottom: 1px solid $cgrey4;
+
+    @media (max-width: $tablet) {
+      margin-bottom: 30px;
+      padding-bottom: 30px;
+    }
 
     &:last-child {
       margin-bottom: 0;
       padding-bottom: 0;
       border: 0;
-    }
-  }
-
-  .related-content {
-    display: flex;
-
-    > a {
-      max-width: 145px;
-      min-height: 100px;
-      margin-right: 15px;
-      border: none;
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-      }
-    }
-
-    .short-title-date {
-      display: inherit;
-      flex-direction: column;
-
-      h3 {
-        margin: 0;
-      }
-
-      a  {
-        border: none;
-        font-size: $px24;
-        font-family: $PrNovacond-Sbold;
-        text-transform: uppercase;
-        text-decoration: none;
-        color: $cblack;
-      }
-
-      .date-more-content {
-        font-size: $px16;
-        font-family: $PrNovacond-reg;
-        line-height: 20px;
-        color: $cgrey3;
-      }
     }
   }
 }
