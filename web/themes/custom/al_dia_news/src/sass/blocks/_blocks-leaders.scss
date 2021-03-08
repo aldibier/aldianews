@@ -1,4 +1,6 @@
 .page-node-type-thought-leaders {
+
+    //------- first block leader
     .content-advertising {
         padding: 0 15px;
 
@@ -14,6 +16,53 @@
             line-height: 17px;
             color: $cgrey3;
             margin: -12px 0 12px;
+        }
+
+        @media (max-width:$tablet){
+
+            .field--label-hidden {
+                font-size: 11px;
+                line-height: 13px;
+            }
+        }
+    }
+
+    //---------author
+
+    .block-views-blockcontent-authors-block-1 {
+
+        .photo {
+            width: 220px;
+            height: 220px;
+        }
+
+        .by-author-information {
+            font-style: normal;
+            font-weight: 600;
+            font-size: $px24;
+            line-height: 29px;
+            font-family: $Modcond-reg;
+        }
+
+        .author-name {
+            font-style: normal;
+            font-weight: 600;
+            font-size: $px24;
+            line-height: 29px;
+            font-family: $Modcond-reg;
+        }
+        
+        .author-information {
+            font-style: normal;
+            font-weight: 600;
+            font-size: $px24;
+            line-height: 29px;
+            font-family: $Modcond-reg;
+        }
+
+        .date-authored-on {
+            font-size: $px20;
+            line-height: 24px; 
         }
     }
 }
