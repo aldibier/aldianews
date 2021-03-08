@@ -23,6 +23,7 @@
         line-height: 112.8%;
         color: $cblack;
         font-family: $Modcond-reg;
+        margin: 60px 0 20px;
     }
 
     .block-field-blocknodenewsbody {
@@ -51,6 +52,7 @@
         .block-field-blocknodenewstitle {
             font-size: 30px;
             line-height: 112.8%;
+            margin: 30px 0 10px;
         }
 
         .block-field-blocknodenewsbody {
@@ -88,13 +90,13 @@
 
     .by-author-information {
         width: 20px;
-        height: 57px;
+        height: 64px;
         margin: auto 0 auto 15px;
         padding: 0 0 29px;
         font-style: normal;
         font-weight: normal;
         font-size: $px20;
-        line-height: 17px;
+        line-height: 24px;
         font-family: $PrNovacond-reg;
     }
 
@@ -106,7 +108,7 @@
         font-style: normal;
         font-weight: normal;
         font-size: $px20;
-        line-height: 17px;
+        line-height: 24px;
         font-family: $PrNovacond-reg;
         color: $corange;
         margin: 5px;
@@ -545,6 +547,10 @@ div[ data-embed-button="related_content" ] {
         margin: 0 5px 4px;
     }
 
+    .lwst {
+        order: 2;
+    }
+
     a.email,
     a.facebook,
     a.tweet {
@@ -558,14 +564,29 @@ div[ data-embed-button="related_content" ] {
 
     .ltweet  {
         background: #1DAFED;
+        order: 4;
     }
 
     .lfacebook {
         background: #2377BA;
+        order: 3;
     }
 
     .lemail {
         background: #939598;
+        order: 1;
+    }
+
+    .llinkedin {
+        order: 5;
+    }
+
+    .lreddit {
+        order: 6;
+    }
+
+    ul {
+        display: flex;
     }
 }
 
