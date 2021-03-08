@@ -22,7 +22,21 @@
 }
 
 
-#selectionSharerPopunder-inner ul li {
-    padding: 0;
-}
-    
+#selectionSharerPopunder-inner ul {
+    width: 100%;
+    float: none;
+    display: flex;
+
+    li {
+        padding: 0;
+        margin: 5px 5px 4px;
+
+        &:first-child {
+           margin: 5px 5px 4px auto;
+        }
+
+        &:last-child {
+            margin: 5px auto 4px 5px;
+        }
+    }
+}   
