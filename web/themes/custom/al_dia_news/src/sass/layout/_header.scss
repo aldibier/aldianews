@@ -92,7 +92,7 @@
     padding: 0 15px;
     border-bottom: 5px solid $corange;
 
-    #block-loginformpopup {
+    #block-blockheader {
         order: 1;
         min-width: 40px;
         width: 40px;
@@ -180,6 +180,10 @@
             font-weight: normal;
             color: $corange;
         }
+
+        p{
+            margin: 0 0 7px 0;
+        }
     }
 
     #block-searchform {
@@ -213,5 +217,13 @@
             left: 10px;
             transform: rotate(-17deg);
         }
+    }
+
+    #block-loginformpopup {
+        order: 7;
+        width: 30px;
+        height: 30px;
+        background: white;
+        display: block;
     }
 }
