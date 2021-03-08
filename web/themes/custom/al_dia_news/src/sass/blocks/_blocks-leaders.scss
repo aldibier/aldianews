@@ -86,5 +86,49 @@
             line-height: 24px; 
             margin: 10px 0 0;
         }
+
+        @media (max-width:$tablet){ 
+
+            img {
+                transform: scale(1.6);
+            }
+
+            .author-information {
+                flex-wrap: nowrap;
+
+                .author-information {
+                    font-size: 14px;
+                    line-height: 17px;
+                }
+            }
+
+            .name-date {
+                max-width: 308px;
+                width: calc(100% - 90px);
+                margin: auto 0px auto 15px;
+
+                &::before {
+                    font-size: 14px;
+                    line-height: 17px;
+                }
+            }
+
+            .photo {
+                width: 95px;
+                height: 95px;
+            }
+
+            .author-name {
+                font-size: 14px;
+                line-height: 17px;
+                padding: 0 0 0 20px;
+            }
+
+            .date-authored-on {
+                font-size: 14px;
+                line-height: 17px;
+                margin: 5px 0 0;
+            }
+        }
     }
 }
