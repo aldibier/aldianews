@@ -1272,6 +1272,9 @@ display:
         pager: false
         arguments: false
         fields: false
+        css_class: false
+        style: false
+        row: false
       arguments:
         tid:
           id: tid
@@ -1560,6 +1563,16 @@ display:
           view_mode: category_childs
           entity_type: node
           plugin_id: rendered_entity
+      css_class: 'view-more view-more-category'
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: 'card-more card-more-category'
+          default_row_class: true
+      row:
+        type: fields
+        options: {  }
     cache_metadata:
       max-age: -1
       contexts:
@@ -1583,6 +1596,8 @@ display:
         - 'config:core.entity_view_display.node.news.teaser'
         - 'config:core.entity_view_display.node.page.default'
         - 'config:core.entity_view_display.node.page.teaser'
+        - 'config:core.entity_view_display.node.thought_leaders.default'
+        - 'config:core.entity_view_display.node.thought_leaders.teaser'
         - 'config:field.storage.node.field_image'
         - 'config:field.storage.node.field_short_title'
   block_4:
