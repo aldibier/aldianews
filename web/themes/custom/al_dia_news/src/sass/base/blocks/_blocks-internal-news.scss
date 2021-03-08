@@ -3,6 +3,7 @@
 .content-news-internal-first {
     img {
         margin: 0 auto;
+        width: 100%;
     }
 
     .block-field-blocknodenewsfield-caption {
@@ -87,7 +88,7 @@
 
     .by-author-information {
         width: 20px;
-        height: 30px;
+        height: 57px;
         margin: auto 0 auto 15px;
         padding: 0 0 29px;
         font-style: normal;
@@ -144,6 +145,7 @@
             font-size: 14px;
             line-height: 17px;
             padding: 0 0 10px;
+            height: 35px;
         }
 
         .author-information {
@@ -220,7 +222,7 @@ blockquote {
     }
 
     &:after {
-        right: 0;
+        right: 13px;
         top: 74px;
     }
 
@@ -292,6 +294,19 @@ blockquote {
         line-height: 140%;
     }
 
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: $corange;
+    }
+
+    .video-embed-field-provider-youtube {
+        margin: 0 0 1.2em;
+    }
+
     @media(max-width:$tablet){
 
         p,
@@ -355,6 +370,7 @@ div[ data-embed-button="related_content" ] {
     }
 
     @media(max-width:$tablet){
+        border-top: 1px solid #000;
 
         h2 {
             font-size: 20px;
@@ -498,6 +514,10 @@ div[ data-embed-button="related_content" ] {
             display: none;
         }
     }
+}
+
+.comment {
+    width: 100%; 
 }
 
 //-----------------share selected 

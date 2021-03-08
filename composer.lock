@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "44708e93acc9bbff5333e083b2d50417",
+    "content-hash": "9ce8c6bb67b1c49293a7456b6db883fe",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2324,6 +2324,54 @@
             }
         },
         {
+            "name": "drupal/comment_reply_count",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/comment_reply_count.git",
+                "reference": "8.x-1.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/comment_reply_count-8.x-1.2.zip",
+                "reference": "8.x-1.2",
+                "shasum": "9d1a786291cc272ea74f51c73b9dfc09fe86b725"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.2",
+                    "datestamp": "1588068802",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "rahulrasgon",
+                    "homepage": "https://www.drupal.org/user/3513914"
+                },
+                {
+                    "name": "swastik1608",
+                    "homepage": "https://www.drupal.org/user/2479170"
+                }
+            ],
+            "description": "Toggles the display of comment replies with the count of total number of the replies to that comment.",
+            "homepage": "https://www.drupal.org/project/comment_reply_count",
+            "support": {
+                "source": "https://git.drupalcode.org/project/comment_reply_count"
+            }
+        },
+        {
             "name": "drupal/console",
             "version": "1.9.7",
             "source": {
@@ -2783,9 +2831,6 @@
                         "[web-root]/profiles/README.txt": "assets/scaffold/files/profiles.README.txt",
                         "[web-root]/themes/README.txt": "assets/scaffold/files/themes.README.txt"
                     }
-                },
-                "patches_applied": {
-                    "The entity type authors does not have an revision_created entity revision metadata key.": "https://www.drupal.org/files/issues/2020-10-19/1863906-97.patch"
                 }
             },
             "autoload": {
@@ -2825,18 +2870,12 @@
                     "includes/bootstrap.inc"
                 ]
             },
-            "scripts": {
-                "pre-autoload-dump": [
-                    "Drupal\\Core\\Composer\\Composer::preAutoloadDump"
-                ],
-                "post-autoload-dump": [
-                    "Drupal\\Core\\Composer\\Composer::ensureHtaccess"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "GPL-2.0-or-later"
             ],
-            "description": "Drupal is an open source content management platform powering millions of websites and applications."
+            "description": "Drupal is an open source content management platform powering millions of websites and applications.",
+            "time": "2021-02-03T19:21:05+00:00"
         },
         {
             "name": "drupal/core-composer-scaffold",
@@ -4087,6 +4126,9 @@
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
                     }
+                },
+                "patches_applied": {
+                    "Corregir la URL del compartidor de Facebook": "https://www.drupal.org/files/issues/2020-08-06/Fix-Facebook-sharer-URL-3163780-6.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
