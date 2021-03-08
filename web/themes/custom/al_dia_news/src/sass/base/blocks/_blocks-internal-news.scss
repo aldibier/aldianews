@@ -220,7 +220,7 @@ blockquote {
     }
 
     &:after {
-        right: 0;
+        right: 13px;
         top: 74px;
     }
 
@@ -292,6 +292,15 @@ blockquote {
         line-height: 140%;
     }
 
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: $corange;
+    }
+
     @media(max-width:$tablet){
 
         p,
@@ -356,7 +365,7 @@ div[ data-embed-button="related_content" ] {
 
     @media(max-width:$tablet){
         border-top: 1px solid #000;
-        
+
         h2 {
             font-size: 20px;
             line-height: 24px; 
@@ -499,6 +508,10 @@ div[ data-embed-button="related_content" ] {
             display: none;
         }
     }
+}
+
+.comment {
+    width: 100%; 
 }
 
 //-----------------share selected 
