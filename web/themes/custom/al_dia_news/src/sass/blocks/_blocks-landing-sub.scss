@@ -1,0 +1,31 @@
+
+.subcategory-taxonomy {
+    
+    .block-views-blocksubcategory-only-for-children-block-1 {
+        .view-header {
+            a {
+                font-style: normal;
+                font-family: $Modcond-reg;
+                font-weight: normal;
+                font-size: $px42;
+                line-height: 50px;
+                color: $corange;
+                border: none;
+
+                &:hover {
+                    border: none;
+                    text-decoration: none;
+                }
+
+            }
+
+            border-bottom: 3px solid $corange;
+            width: calc(100% - 30px);
+            margin: 0 auto;
+        }
+
+        .view-content {
+            padding: 0 15px;
+        }
+    }
+}
