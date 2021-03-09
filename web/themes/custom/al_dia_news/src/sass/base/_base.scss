@@ -2,7 +2,48 @@
     padding: 0;
 }
 
-body {
+.user-logged-in {
+
+    #header {
+        top: 39px;
+    }
+}
+
+.user-logged-in.open-menu {
+    #page {
+        padding: 125px 0 0;
+
+        @media(max-width:$broken2){
+            padding: 208px 0 0;
+        }
+    }
+}
+
+#page {
+    padding: 75px 0 0;
+
+    @media(max-width:$broken2){
+        padding: 110px 0 0;
+    }
+    
+}
+
+body.open-menu {
+    #page {
+        padding: 125px 0 0;
+        @media(max-width:$broken2){
+            padding: 203px 0 0;
+        }
+    }
+}
+
+body.toolbar-tray-open.user-logged-in {
+    #header {
+        top: 79px; 
+    }
+}
+
+#page {
     overflow: hidden;
 }
 
