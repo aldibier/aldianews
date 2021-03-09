@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains al_dia_news_general.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function al_dia_news_general_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the al_dia_news_general module.
+    case 'help.page.al_dia_news_general':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Al día news general') . '</p>';
+      return $output;
+
+    default:
+  }
+}
