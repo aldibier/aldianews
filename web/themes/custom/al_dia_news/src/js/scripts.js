@@ -8,3 +8,7 @@
 //         .addTo(controller)
 //         .addIndicators({name: "pin scene", colorEnd: "#0000"});
 // });
+
+(function ($, Drupal) {
+    
+})(jQuery, Drupal);
