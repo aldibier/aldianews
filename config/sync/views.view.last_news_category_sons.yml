@@ -624,7 +624,7 @@ display:
           group_type: group
           admin_label: ''
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -741,10 +741,10 @@ display:
           group_type: group
           admin_label: ''
           empty: false
-          tokenize: false
+          tokenize: true
           content:
-            value: '<img src="/themes/custom/al_dia_news/assets/img/ADNL.png" alt="MDN">'
-            format: basic_html
+            value: "<div class=\"category-title\">\r\n    <h1>{{ arguments.parent_target_id }}</h1>\r\n    <img src=\"/themes/custom/al_dia_news/assets/img/ADNL.png\" alt=\"MDN\">\r\n</div>"
+            format: full_html
           plugin_id: text
     cache_metadata:
       max-age: -1
