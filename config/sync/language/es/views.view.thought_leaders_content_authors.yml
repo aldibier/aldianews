@@ -1,0 +1,7 @@
+display:
+  default:
+    display_options:
+      fields:
+        nothing:
+          alter:
+            text: "<div class =\"author-information\">\r\n  <div class=\"photo\">\r\n  {{ field_authors_photo }}\r\n  </div>\r\n<div class = \"by-author-information\">Por</div>\r\n  <div class =\"name-date\">\r\n    <div class=\"author-name\">{{ name }}</div>\r\n     <div class=\"author-information\">{{ field_job_title_or_profession_co }} </div>\r\n     <div class=\"date-authored-on\">{{ created }}</div>\r\n  </div>\r\n</div>"

@@ -6,7 +6,14 @@ dependencies:
     - content_authors.authors_type.news_authors
     - field.storage.authors.field_authors_photo
   module:
+    - content_translation
     - image
+third_party_settings:
+  content_translation:
+    translation_sync:
+      alt: alt
+      title: title
+      file: '0'
 id: authors.news_authors.field_authors_photo
 field_name: field_authors_photo
 entity_type: authors
@@ -14,7 +21,7 @@ bundle: news_authors
 label: 'Author''s photo'
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
