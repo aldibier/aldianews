@@ -10,5 +10,15 @@
 // });
 
 (function ($, Drupal) {
-    
+    jQuery( document ).ready(function() {
+
+        $('.region-header #block-blockheader').click(function () {
+            if ($('.region-secondary-menu').hasClass('open-menu')) {
+                $('.region-secondary-menu').removeClass('open-menu');
+            }
+            else {  
+                $('.region-secondary-menu').addClass('open-menu');
+            }
+        });
+    });
 })(jQuery, Drupal);
