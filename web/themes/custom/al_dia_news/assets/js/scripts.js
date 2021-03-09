@@ -102,7 +102,7 @@ __webpack_require__.r(__webpack_exports__);
   jQuery(document).ready(function () {
     //--------- initialization --------------------//
     Object(_scroll_magic_js__WEBPACK_IMPORTED_MODULE_0__["default"])();
-    console.log('scroll !!!'); //--------- menu--------------------//
+    console.log('4582'); //--------- menu--------------------//
 
     $('.region-header #block-blockheader').click(function () {
       if ($('.region-secondary-menu').hasClass('open-menu')) {
@@ -149,8 +149,8 @@ var initScrollMagic = function initScrollMagic() {
   var blockSticky = document.querySelector(".block-views-blockmore-in-this-section-news-block-1");
   var scene = new ScrollMagic.Scene({
     triggerElement: blockSticky,
-    offset: "-".concat(header.offsetHeight + 180),
-    triggerHook: 0,
+    offset: "".concat(blockSticky.offsetHeight + header.offsetHeight),
+    triggerHook: 1,
     duration: getDuration
   }).addTo(controller);
 
@@ -171,7 +171,8 @@ var initScrollMagic = function initScrollMagic() {
   });
 
   function getDuration() {
-    return newsInternalLeft.offsetHeight - blockSticky.offsetHeight;
+    console.log(newsInternalLeft.offsetHeight - header.offsetHeight);
+    return newsInternalLeft.offsetHeight - header.offsetHeight;
   }
 };
 

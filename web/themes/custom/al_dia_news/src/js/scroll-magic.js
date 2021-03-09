@@ -9,8 +9,8 @@ const initScrollMagic = () => {
 
     const scene = new ScrollMagic.Scene({
         triggerElement: blockSticky,
-        offset: `-${header.offsetHeight + 180}`,
-        triggerHook: 0,
+        offset: `${blockSticky.offsetHeight + header.offsetHeight}`,
+        triggerHook: 1,
         duration: getDuration
     }).addTo(controller);
 
@@ -27,7 +27,8 @@ const initScrollMagic = () => {
     });
 
     function getDuration() {
-        return newsInternalLeft.offsetHeight - blockSticky.offsetHeight;
+        console.log(newsInternalLeft.offsetHeight - header.offsetHeight);
+        return newsInternalLeft.offsetHeight - header.offsetHeight;
     }
 }
 

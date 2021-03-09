@@ -6,7 +6,7 @@ import initScrollMagic from "./scroll-magic.js";
 
         //--------- initialization --------------------//
         initScrollMagic();
-        console.log('scroll !!!');
+        console.log('4582');
 
         //--------- menu--------------------//
         $('.region-header #block-blockheader').click(function () {
