@@ -57,6 +57,7 @@
     #block-al-dia-news-main-menu {
         width: 100%;
         z-index: 2;
+        max-width: 1030px;
     }
 
     .menu {
@@ -75,6 +76,7 @@
 
     .menu--social-media {
         z-index: 2;
+        margin: auto 0;
 
         .menu-item {
             width: 25px;
@@ -128,6 +130,7 @@
     height: 20px;
     margin: auto 0;
     position: relative;
+    cursor: pointer;
 
     &:after {
         content: '';
@@ -157,9 +160,50 @@
     display: none;
 }
 
+#block-al-dia-news-account-menu {
+    display: none;
+}
+
 .user-logged-in {
-    #block-al-dia-news-account-menu {
+    #block-al-dia-news-account-menu.open {
         display: block;
+        height: initial;
+        opacity: 1;
+        z-index: 33;
+        position: absolute;
+        right: 15px;
+        width: 100%;
+        max-width: 290px;
+        background: $cwhite;
+        bottom: -150px;
+        box-shadow: 2px 4px 15px -2px rgba(0,0,0,0.71);
+
+        .menu {
+            flex-wrap: wrap;
+            margin: 0;
+            padding: 0 15px;
+        }
+
+        li {
+            width: 100%;
+            margin: 9px 0;
+            text-align: left;
+        }
+
+        a {
+            font-style: normal;
+            font-weight: 300;
+            font-size: 20px;
+            line-height: 24px;
+            padding: 0;
+            width: 100%;
+            font-family: $PrNovacond-reg;
+
+            &:hover {
+                text-decoration: none;
+                font-family: $PrNovacond-Sbold;
+            }
+        }
     }
 }
 
@@ -379,9 +423,34 @@
 
     #block-loginformpopup {
         order: 7;
-        width: 30px;
-        height: 30px;
-        background: white;
         display: block;
+        margin: auto 0;
+
+        a {
+            font-style: normal;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 25px;
+            color: $corange;
+            font-family: $PrNovacond-reg;
+            text-transform: uppercase;
+        }
     }    
+}
+
+.user-logged-in {
+    .region-header{
+        #block-loginformpopup {
+            width: 75px;
+            height: 60px;
+            display: block;
+            background: transparent url("../img/user.svg") center center no-repeat;
+            margin: auto 0 -5px auto;
+            z-index: 7;
+
+            &.open {
+                background: $cwhite url("../img/user.svg") center center no-repeat;
+            }
+        }
+    }
 }
