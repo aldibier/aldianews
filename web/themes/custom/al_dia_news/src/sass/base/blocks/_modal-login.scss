@@ -32,10 +32,11 @@
         margin: 0 auto;
         line-height: 27px;
         font-family: $PrNovacond-reg;
+        max-height: max-content !important;
 
         input {
             margin: 10px 0;
-            height: 30px;
+            height: 50px;
             background: #EFEFEF;
             border: none;
             width: 100%;
@@ -50,7 +51,8 @@
         background: none;
         border: none;
         max-width: 520px;
-        margin: 0 auto 50px;
+        margin: 20px auto 50px;
+        padding: 0 20px;
 
         .ui-dialog-buttonset {
             width: 100%;
@@ -75,5 +77,31 @@
         right: 20px;
         width: 20px !important;
         height: 20px;
+    }
+
+    @media (max-width: $tablet) {
+        width: calc(100% - 30px)!important;
+
+        .ui-dialog-title {
+            font-size: 18px;
+            line-height: 22px;
+        }
+
+        .ui-dialog-content {
+            font-size: 15px;
+            line-height: 18px;
+
+            input {
+                height: 30px;
+            }
+        }
+
+        .ui-dialog-buttonpane{
+            button {
+                font-size: 14px;
+                line-height: 16px;
+            }
+
+        }
     }
 }
