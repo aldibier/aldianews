@@ -1,3 +1,79 @@
 .ui-widget.ui-corner-all {
     border: none;
+    width: 100% !important;
+    max-width: 600px;
+
+    .ui-dialog-titlebar {
+        border: none;
+        background: $cwhite;
+        padding: 55px 20px 0;
+        max-width: 520px;
+        margin: 0 auto;
+    }
+
+    .ui-dialog-title {
+        font-style: normal;
+        font-weight: bold;
+        font-size: $px34;
+        line-height: 41px;
+        color: $corange;
+        font-family: $Mod-Sbold;
+        text-transform: uppercase;
+        border-bottom: 1px solid $corange;
+        width: 100%;
+    }
+
+    .ui-dialog-content {
+        padding: 0 20px;
+        font-style: normal;
+        font-weight: 600;
+        font-size: $px22;
+        max-width: 520px;
+        margin: 0 auto;
+        line-height: 27px;
+        font-family: $PrNovacond-reg;
+
+        input {
+            margin: 10px 0;
+            height: 30px;
+            background: #EFEFEF;
+            border: none;
+            width: 100%;
+        }
+    }
+
+    .form-item {
+        margin: 30px 0;
+    }
+
+    .ui-dialog-buttonpane {
+        background: none;
+        border: none;
+        max-width: 520px;
+        margin: 0 auto 50px;
+
+        .ui-dialog-buttonset {
+            width: 100%;
+        }
+
+        button {
+            background: $corange;
+            width: 100%;
+            height: 40px;
+            border-radius: 0;
+            color: $cwhite;
+            font-weight: bold;
+            font-size: $px18;
+            line-height: 25px;
+            font-family: $PrNovacond-reg;
+        }
+    }
+
+    .ui-dialog-titlebar-close {
+        transform: scale(1.5);
+        position: absolute;
+        right: 20px;
+        width: 20px !important;
+        height: 20px;
+    }
 }
