@@ -1,20 +1,89 @@
 #header {
-    background: none;
+    background: $cblack0;
+    border-bottom: 5px solid $corange;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 30;
 }
 
 //------------------menu secondary----------//
+.region-secondary-menu.open-menu{
+    height: auto;
+    transition: all 1s cubic-bezier(0.55, 0, 0.1, 1);
+    >* {
+        transition: all 1s cubic-bezier(0.55, 0, 0.1, 1);
+        opacity: 1;
+        height: initial;
+    }
+}
+
 .region-secondary-menu {
     display: flex;
+    max-width: 1280px;
+    margin: 0 auto;
+    position: relative;
+    background: $cwhite;
+    height: 0;
+    transition: all 1s cubic-bezier(0.55, 0, 0.1, 1);
+
+    >* {
+        transition: all 1s cubic-bezier(0.55, 0, 0.1, 1);
+        opacity: 0;
+        height: 0;
+        overflow: hidden;
+    }
+
+    &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        height: 100%;
+        left: 0;
+        width: 100%;
+        background: $cwhite;
+        z-index: 1;
+        margin: 0 0 0 -100%;
+    }
+
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        height: 100%;
+        right: 0;
+        width: 100%;
+        background: $cwhite;
+        z-index: 1;
+        margin: 0 -100% 0 0;
+    }
     
     #block-al-dia-news-main-menu {
         width: 100%;
+        z-index: 2;
+        max-width: 1030px;
+
+        .menu {
+            flex-wrap: wrap;
+        }
+
+        a {
+            font-style: normal;
+            font-family: $PrNovacond-reg;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 19px;
+            text-align: center;
+            letter-spacing: 0.025em;
+            padding: 15px 1.1em;
+        }
     }
 
     .menu {
         display: flex;
 
         .menu-item{
-            margin: 0 auto;
+            margin: 0;
 
             a{
                 color: $cblack0;
@@ -25,7 +94,9 @@
     //------------- menu social media
 
     .menu--social-media {
-        
+        z-index: 2;
+        margin: auto 0;
+        min-width: 195px;
 
         .menu-item {
             width: 25px;
@@ -72,15 +143,87 @@
     }
 }
 
+#block-blockpreheader {
+    min-width: 20px;
+    min-height: 20px;
+    display: block;
+    height: 20px;
+    margin: auto 0;
+    position: relative;
+    cursor: pointer;
+
+    &:after {
+        content: '';
+        height: 20px;
+        width: 5px;
+        border: 2px;
+        background: $cgrey7;
+        position: absolute;
+        transform: rotate(-45deg);
+        left: 7px;
+    }
+
+    &:before {
+        content: '';
+        height: 20px;
+        width: 5px;
+        border: 2px;
+        background: $cgrey7;
+        position: absolute;
+        transform: rotate(45deg);
+        right: 8px;
+    }
+}
 
 //-------------------popup
 #block-al-dia-news-account-menu {
     display: none;
 }
 
+#block-al-dia-news-account-menu {
+    display: none;
+}
+
 .user-logged-in {
-    #block-al-dia-news-account-menu {
+    #block-al-dia-news-account-menu.open {
         display: block;
+        height: initial;
+        opacity: 1;
+        z-index: 33;
+        position: absolute;
+        right: 15px;
+        width: 100%;
+        max-width: 290px;
+        background: $cwhite;
+        bottom: -150px;
+        box-shadow: 2px 4px 15px -2px rgba(0,0,0,0.71);
+
+        .menu {
+            flex-wrap: wrap;
+            margin: 0;
+            padding: 0 15px;
+        }
+
+        li {
+            width: 100%;
+            margin: 9px 0;
+            text-align: left;
+        }
+
+        a {
+            font-style: normal;
+            font-weight: 300;
+            font-size: 20px;
+            line-height: 24px;
+            padding: 0;
+            width: 100%;
+            font-family: $PrNovacond-reg;
+
+            &:hover {
+                text-decoration: none;
+                font-family: $PrNovacond-Sbold;
+            }
+        }
     }
 }
 
@@ -90,7 +233,8 @@
     background: $cblack0;
     display: flex;
     padding: 0 15px;
-    border-bottom: 5px solid $corange;
+    max-width: 1280px;
+    margin: 0 auto;
 
     #block-blockheader {
         order: 1;
@@ -98,7 +242,8 @@
         width: 40px;
         height: 40px;
         position: relative;
-        margin: 12px 0 6px;
+        margin: 20px auto 7px 0;
+        cursor: pointer;
 
         &:before,
         &:after {
@@ -157,9 +302,10 @@
 
     #block-al-dia-news-branding{
         order: 2;
-        max-width: 242px;
+        max-width: 272px;
         max-height: 75px;
-        margin: -16px 0 -1px;
+        margin: -18px 0 10px;
+        z-index: 2;
 
         .site-branding__text {
             font-size: 0;
@@ -168,7 +314,7 @@
 
     #block-sitedescription {
         order: 3;
-        margin: auto 0 auto -15px;
+        margin: auto auto auto -15px;
         font-style: normal;
         font-weight: normal;
         font-size: $px18;
@@ -188,7 +334,7 @@
 
     #block-searchform {
         order: 4;
-        margin: 0;   
+        margin: auto 0 auto auto;   
     }
 
     .block-search {
@@ -198,8 +344,8 @@
         }
         
         .form-actions {
-            width: 56px;
-            height: 56px;
+            width: 46px;
+            height: 65px;
             display: block;
             padding: 0;
 
@@ -236,7 +382,7 @@
 
         .links {
             width: 56px;
-            height: 56px;
+            height: 67px;
             display: flex;
             flex-wrap: wrap;
             padding: 0;
@@ -297,10 +443,45 @@
 
     #block-loginformpopup {
         order: 7;
-        width: 30px;
-        height: 30px;
-        background: white;
         display: block;
-    }
+        margin: auto 0;
 
+        a {
+            font-style: normal;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 25px;
+            color: $corange;
+            font-family: $PrNovacond-reg;
+            text-transform: uppercase;
+        }
+    }  
+    
+    @media(max-width:$broken2){
+        #block-sitedescription{
+            order: 7;
+            position: absolute;
+            bottom: -46px;
+            background: #000;
+            width: 100%;
+            text-align: center;
+        } 
+    }
+}
+
+.user-logged-in {
+    .region-header{
+        #block-loginformpopup {
+            width: 75px;
+            height: 60px;
+            display: block;
+            background: transparent url("../img/user.svg") center center no-repeat;
+            z-index: 7;
+            margin: auto 0 -5px 0;
+
+            &.open {
+                background: $cwhite url("../img/user.svg") center center no-repeat;
+            }
+        }
+    }
 }
