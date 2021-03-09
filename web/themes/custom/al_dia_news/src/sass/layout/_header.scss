@@ -222,7 +222,7 @@
         width: 40px;
         height: 40px;
         position: relative;
-        margin: 20px 0 7px;
+        margin: 20px auto 7px 0;
         cursor: pointer;
 
         &:before,
@@ -294,7 +294,7 @@
 
     #block-sitedescription {
         order: 3;
-        margin: auto 0 auto -15px;
+        margin: auto auto auto -15px;
         font-style: normal;
         font-weight: normal;
         font-size: $px18;
@@ -314,7 +314,7 @@
 
     #block-searchform {
         order: 4;
-        margin: 0;   
+        margin: auto 0 auto auto;   
     }
 
     .block-search {
