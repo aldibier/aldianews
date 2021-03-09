@@ -13,9 +13,9 @@
 {% if content %}
   <div class="container-content">
 
-    {% if content.one_content_right %}
-        <div {{ region_attributes.one_content_right.addClass('content-rigth-category') }}>
-          {{ content.one_content_right }} 
+    {% if content.one_content_first %}
+        <div {{ region_attributes.one_content_first.addClass('category-first-block ') }}>
+          {{ content.one_content_first }} 
         </div>
     {% endif %}
     {% if content.one_content %}
