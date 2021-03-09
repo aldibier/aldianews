@@ -1,15 +1,23 @@
+
+.path-taxonomy {
+    .one-content-taxonomy-category,
+    .two-more-content-taxonomy-category {
+        display: none;
+    }
+}
+
+
 .subcategory-taxonomy {
     display: flex;
     flex-wrap: wrap;
     position: relative;
 
-    .one-content-taxonomy-category,
-    .two-more-content-taxonomy-category {
-        display: none;
-    }
-
     .block-views-blocksubcategory-only-for-children-block-1 {
         width: 100%;
+
+        >h2 {
+            display: none;
+        }
 
         .view-content {
             width: calc(100% - 430px);
