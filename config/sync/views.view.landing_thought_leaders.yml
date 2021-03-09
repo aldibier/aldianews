@@ -395,7 +395,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"photo-author-landing\">\r\n{{ field_authors_photo }}\r\n  <div class=\"author-information-landing\">\r\n     <div class=\"name-author-landing\"> {{ name }}</div>\r\n     <div class=\"job-author-landing\">{{ field_job_title_or_profession_co }}</div>\r\n  </div>\r\n  <div class=\"information-node-landing\">\r\n    <div class=\"title-node-landing\">\"{{ title_1 }}\"</div>\r\n    <div class=\"authored-on-landing\">{{ created }}</div>\r\n  </div>\r\n</div>"
+            text: "<div class=\"second-content-landing\">\r\n  <div class=\"photo-author-landing-second\">\r\n    {{ field_authors_photo }}\r\n  </div>\r\n  <div class=\"author-information-second-content\">\r\n     <div class=\"name-author-landing\"> {{ name }}</div>\r\n     <div class=\"job-author-landing\">{{ field_job_title_or_profession_co }}</div>\r\n  </div>\r\n  <div class=\"information-node-second-content\">\r\n    <div class=\"title-node-landing\">\"{{ title_1 }}\"</div>\r\n    <div class=\"authored-on-landing\">{{ created }}</div>\r\n  </div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -509,6 +509,13 @@ display:
     display_options:
       display_extenders: {  }
       display_description: ''
+      pager:
+        type: some
+        options:
+          items_per_page: 1
+          offset: 1
+      defaults:
+        pager: false
     cache_metadata:
       max-age: -1
       contexts:
