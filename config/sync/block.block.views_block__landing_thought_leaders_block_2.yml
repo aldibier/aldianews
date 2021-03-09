@@ -1,0 +1,29 @@
+uuid: 9838af00-a874-42eb-b7e7-1ad75c08879a
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.landing_thought_leaders
+  module:
+    - system
+    - views
+  theme:
+    - al_dia_news
+id: views_block__landing_thought_leaders_block_2
+theme: al_dia_news
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:landing_thought_leaders-block_2'
+settings:
+  id: 'views_block:landing_thought_leaders-block_2'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: /thought-leaders
+    negate: false
