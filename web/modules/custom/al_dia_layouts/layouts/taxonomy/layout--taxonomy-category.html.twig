@@ -13,13 +13,18 @@
 {% if content %}
   <div class="container-content">
 
+    {% if content.one_content_first %}
+        <div {{ region_attributes.one_content_first.addClass('category-first-block ') }}>
+          {{ content.one_content_first }} 
+        </div>
+    {% endif %}
     {% if content.one_content %}
-        <div {{ region_attributes.one_content.addClass('one_content-taxonomy-category') }}>
+        <div {{ region_attributes.one_content.addClass('one-content-taxonomy-category') }}>
           {{ content.one_content }} 
         </div>
     {% endif %}
     {% if content.two_more_content %}
-        <div {{ region_attributes.two_more_content.addClass('two_more_content-taxonomy-category') }}>
+        <div {{ region_attributes.two_more_content.addClass('two-more-content-taxonomy-category') }}>
           {{ content.two_more_content}} 
         </div>
     {% endif %}

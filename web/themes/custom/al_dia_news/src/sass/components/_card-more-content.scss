@@ -1,8 +1,8 @@
 //------ related content card ------------//
 .card-more {
-  //------ more content news and category ------------//
-  &-news,
-  &-category  {
+  //------ more content news ------------//
+
+  &-news {
     .related-content > a {
       max-width: 145px;
       min-height: 100px;
@@ -62,11 +62,15 @@
 
   //------ more content category ------------//
   &-category {
-    .short-title-date {
-      h2 {
-        margin: 0;
-      }
+    .one-content-category-four {
+      display: flex;
 
+      @media (max-width: $tablet) {
+        flex-direction: column;
+      }
+    }
+
+    .field--name-field-category {
       a {
         border: none;
         font-size: $px12;
@@ -76,6 +80,24 @@
         line-height: 14px;
         letter-spacing: 0.08em;
         color: $corange;
+      }
+    }
+
+    .field--name-field-short-title {
+      a  {
+        border: none;
+        font-size: $px24;
+        font-family: $PrNovacond-Sbold;
+        font-style: normal;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: $cblack;
+
+        @media (max-width: $tablet) {
+          font-size: 14px;
+          line-height: 17px;
+        }
       }
     }
   }

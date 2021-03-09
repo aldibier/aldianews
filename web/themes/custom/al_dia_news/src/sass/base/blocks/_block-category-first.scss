@@ -1,0 +1,44 @@
+//-------------block landing categories-----------------//
+.view-last-news-category-sons  {
+  .category-title {
+    height: 60px;
+    margin-bottom: 45px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid $corange;
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    overflow: hidden;
+
+    h1 {
+      margin: 0;
+      font-family: $Mod-light;
+      font-style: normal;
+      font-weight: normal;
+      font-size: $px50;
+      line-height: 0;
+      color: $corange;
+      order: 2;
+    }
+
+    img {
+      width: 160px;
+      height: 45px;
+      margin-right: 5px;
+      order: 1;
+    }
+  }
+}
+
+//-------------block category first -----------------//
+.category-first-block {
+  display: flex;
+
+  .block-views-blocklast-news-category-sons-block-1 {
+  }
+
+  .block-views-blocklast-news-category-sons-block-2 {
+    --padding-right: 410px;
+    width: var(--padding-right);
+  }
+}

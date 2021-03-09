@@ -53,10 +53,13 @@ taxonomy_category:
   category: 'Taxonomy Category'
   default_region: content
   icon_map:
+    - [one_content_first]
     - [one_content]
     - [two_more_content]
     - [subcategory]
   regions:
+    one_content_first:
+      label: Primero - Contenido agrupado
     one_content:
       label: Primero - Contenido
     two_more_content:
@@ -84,9 +87,12 @@ category_next_four:
   default_region: content
   icon_map:
     - [one_content]
+    - [two_content]   
   regions:
     one_content:
-      label: Primero - Contenido
+      label: Primero - Imagen
+    two_content:
+      label: Segundo - Contenido
 
 category_childs:
   label: 'Category Childs'
@@ -124,6 +130,7 @@ subcategory_next_four:
   regions:
     one_content:
       label: Primero - Contenido
+
 
 subcategory_more:
   label: 'Subcategory more'
