@@ -111,6 +111,9 @@
         $('.region-secondary-menu').addClass('open-menu');
       }
     });
+    $('#block-blockpreheader').click(function () {
+      $('.region-secondary-menu').removeClass('open-menu');
+    });
   });
 })(jQuery, Drupal);
 

@@ -121,6 +121,36 @@
     }
 }
 
+#block-blockpreheader {
+    min-width: 20px;
+    min-height: 20px;
+    display: block;
+    height: 20px;
+    margin: auto 0;
+    position: relative;
+
+    &:after {
+        content: '';
+        height: 20px;
+        width: 5px;
+        border: 2px;
+        background: $cgrey7;
+        position: absolute;
+        transform: rotate(-45deg);
+        left: 7px;
+    }
+
+    &:before {
+        content: '';
+        height: 20px;
+        width: 5px;
+        border: 2px;
+        background: $cgrey7;
+        position: absolute;
+        transform: rotate(45deg);
+        right: 8px;
+    }
+}
 
 //-------------------popup
 #block-al-dia-news-account-menu {
@@ -353,6 +383,5 @@
         height: 30px;
         background: white;
         display: block;
-    }
-
+    }    
 }
