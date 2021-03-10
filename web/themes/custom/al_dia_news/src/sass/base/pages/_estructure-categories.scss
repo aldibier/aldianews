@@ -1,0 +1,40 @@
+
+.path-taxonomy {
+    .one-content-taxonomy-category,
+    .two-more-content-taxonomy-category,
+    .category-first-block {
+        display: none;
+    }
+}
+
+
+.subcategory-taxonomy {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+
+    .block-views-blocksubcategory-only-for-children-block-1 {
+        width: 100%;
+
+        >h2 {
+            display: none;
+        }
+
+        .view-content {
+            width: calc(100% - 430px);
+        }
+    }
+
+    .block-views-blocksubcategory-only-for-children-block-2 {
+        position: absolute;
+        width: 100%;
+        max-width: 430px;
+        padding: 0 20px;
+        right: 0;
+        top: 92px;
+    }
+
+    .block-views-blocksubcategory-only-for-children-block-3 {
+        width: 100%;
+    }
+}

@@ -1,0 +1,94 @@
+.subcategory-taxonomy {
+    
+    .block-views-blocksubcategory-only-for-children-block-1 {
+        .view-header {
+            a {
+                font-style: normal;
+                font-family: $Modcond-reg;
+                font-weight: normal;
+                font-size: $px42;
+                line-height: 50px;
+                color: $corange;
+                border: none;
+
+                &:hover {
+                    border: none;
+                    text-decoration: none;
+                }
+
+            }
+
+            border-bottom: 3px solid $corange;
+            width: calc(100% - 30px);
+            margin: 0 auto;
+        }
+
+        .view-content {
+            padding: 20px 15px;
+        }
+
+        .view-row {
+            position: relative;
+        }
+
+        .block-field-blocknodenewsfield-short-title {
+            width: 100%;
+            max-width: 730px;
+            margin: 0 auto;
+
+            a {
+                font-style: normal;
+                font-weight: bold;
+                font-size: $px47;
+                line-height: 110%;
+                text-transform: uppercase;
+                color: $cwhite;
+                border: none;
+
+                &:hover {
+                    text-decoration: none;
+                    border: none;
+                }
+            }
+        }
+
+        .block-field-blocknodenewsbody {
+            width: 100%;
+            max-width: 730px;
+            margin: 0 auto;
+            font-style: normal;
+            font-weight: normal;
+            font-size: $px20;
+            line-height: 122%;
+            font-family: $NimR-reg;
+            color: $cwhite;
+        }
+
+        .block-field-blocknodenewscreated {
+            font-style: normal;
+            font-weight: normal;
+            font-size: $px17;
+            line-height: 21px;
+            width: 100%;
+            color: $cwhite;
+            max-width: 730px;
+            margin: 0 auto;
+        }
+
+        .block-info-short {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(180deg, #0B0B0B 31.77%, rgba(11, 11, 11, 0.630593) 77.63%, rgba(11, 11, 11, 0) 100%);
+            transform: rotate(-180deg);
+            width: 100%;
+        }
+    }
+
+    .block-views-blocksubcategory-only-for-children-block-2  {
+        >h2 {
+            display: none;
+        }
+
+    }
+}
