@@ -52,7 +52,7 @@
             }
         }
 
-        .block-field-blocknodenewsfield-short-title {
+        .block-field-blocknodenewsbody {
             width: 100%;
             max-width: 730px;
             margin: 0 auto;
@@ -73,6 +73,15 @@
             color: $cwhite;
             max-width: 730px;
             margin: 0 auto;
+        }
+
+        .block-info-short {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(180deg, #0B0B0B 31.77%, rgba(11, 11, 11, 0.630593) 77.63%, rgba(11, 11, 11, 0) 100%);
+            transform: rotate(-180deg);
+            width: 100%;
         }
     }
 }
