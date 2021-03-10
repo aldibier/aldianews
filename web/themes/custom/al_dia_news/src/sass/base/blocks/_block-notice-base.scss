@@ -1,9 +1,31 @@
 .block-notice-base {
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #b1b1b1;
+    width: 100%;
+    max-width: 430px;
+    padding: 0 15px;
+    position: relative;
+    margin: 30px auto;
 
-    .block-field-blocknodenewsfield-image {
-        
+    img {
+        width: 100%;
+        margin: 0;
+    }
+
+    a {
+        font-style: normal;
+        font-weight: bold;
+        font-size: $px30;
+        font-family: $PrNovacond-Sbold;
+        line-height: 37px;
+        text-transform: uppercase;
+        color: $cblack;
+        border: none;
+    }
+
+    span {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 19px;
+        color: $cgrey3;
     }
 }
