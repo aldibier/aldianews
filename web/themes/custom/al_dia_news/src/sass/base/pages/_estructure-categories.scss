@@ -31,6 +31,12 @@
         .view-content {
             width: calc(100% - 430px);
         }
+
+        @media(max-width:$broken) {
+            .view-content {
+                width: 100%;
+            }
+        }
     }
 
     .block-views-blocksubcategory-only-for-children-block-2 {
@@ -40,6 +46,12 @@
         padding: 0 15px;
         right: 0;
         top: 73px;
+
+        @media(max-width:$broken) {
+            position: relative;
+            top: 0;
+            max-width: 100%;
+        }
     }
 
     .block-views-blocksubcategory-only-for-children-block-3 {
