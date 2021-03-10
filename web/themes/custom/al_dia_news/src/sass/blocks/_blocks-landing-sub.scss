@@ -98,8 +98,7 @@
             padding: 8rem 0 2rem;
         }
 
-        @media(max-width:$broken) {
-
+        @media(max-width:$tablet) {
             .block-field-blocknodenewsfield-short-title a{
                 font-size: 18px;
                 line-height: 22px;  
@@ -114,6 +113,9 @@
                 font-size: 20px;
                 line-height: 122%;
             }
+        }
+
+        @media(max-width:$broken) {
 
             .view-content{
                 height: auto;
