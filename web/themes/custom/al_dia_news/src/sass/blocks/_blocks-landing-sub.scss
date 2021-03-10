@@ -119,15 +119,19 @@
             @extend .block-notice-base;
 
             @media(max-width:$broken){
-                width: 50%;
-                max-width: 440px;
                 
                 &:nth-child(2n + 1) {
                     padding: 0 5px 0 15px;
+                    width: 50%;
+                    max-width: 440px;
+                    margin: 20px auto 20px 0;
                 }
 
                 &:nth-child(2n + 2) {
                     padding: 0 15px 0 5px;
+                    width: 50%;
+                    max-width: 440px;
+                    margin: 20px 0 20px auto;
                 }
             }
         }
@@ -135,10 +139,6 @@
         .views-infinite-scroll-content-wrapper {
             display: flex;
             flex-wrap: wrap;
-        }
-
-        @media(max-width: $tablet-min){
-            
         }
     }
 }
