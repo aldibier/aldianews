@@ -1,3 +1,4 @@
+//----------------blocks notice scroll------------------//
 .block-notice-base {
     width: 100%;
     max-width: 430px;
@@ -22,6 +23,44 @@
     }
 
     span {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 19px;
+        color: $cgrey3;
+    }
+}
+
+//--------------blocks base related---------------//
+.block-views-blocksubcategory-only-for-children-block-2 {
+
+    .container-content {
+        display: flex;
+    }
+
+    .one-content-subcategory-four {
+        width: 145px;
+        height: 100px;
+        min-height: 100px;
+        margin-right: 15px;
+        border: none;
+    }
+
+    .block-field-blocknodenewsfield-short-title {
+        a {
+            font-style: normal;
+            font-weight: bold;
+            font-size: $px24;
+            line-height: 29px;
+            font-family: $PrNovacond-bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: $cblack;
+            border: none;
+        }
+    }
+
+    .block-field-blocknodenewscreated {
         font-style: normal;
         font-weight: normal;
         font-size: 16px;
