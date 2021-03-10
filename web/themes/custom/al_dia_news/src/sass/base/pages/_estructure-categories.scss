@@ -46,11 +46,13 @@
         padding: 0 15px;
         right: 0;
         top: 73px;
+        border-left: 1px solid $cgrey4;
 
         @media(max-width:$broken) {
             position: relative;
             top: 0;
             max-width: 100%;
+            border: none;
         }
     }
 
