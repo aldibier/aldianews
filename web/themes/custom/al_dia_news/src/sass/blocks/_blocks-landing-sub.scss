@@ -108,11 +108,15 @@
 
     .block-views-blocksubcategory-only-for-children-block-3 {
 
+        >h2 {
+            display: none;
+        }
+
         .views-row {
-            @extend .block-notice-base;
             margin: 0 auto 0 0;
             width: 33%;
             max-width: 100%;
+            @extend .block-notice-base;
         }
 
         .views-infinite-scroll-content-wrapper {
