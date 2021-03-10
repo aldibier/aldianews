@@ -101,8 +101,7 @@ __webpack_require__.r(__webpack_exports__);
 (function ($, Drupal) {
   jQuery(document).ready(function () {
     //--------- initialization --------------------//
-    Object(_scroll_magic_js__WEBPACK_IMPORTED_MODULE_0__["default"])();
-    console.log('scroll !!!'); //--------- menu--------------------//
+    Object(_scroll_magic_js__WEBPACK_IMPORTED_MODULE_0__["default"])(); //--------- menu--------------------//
 
     $('.region-header #block-blockheader').click(function () {
       if ($('.region-secondary-menu').hasClass('open-menu')) {
@@ -147,10 +146,12 @@ var initScrollMagic = function initScrollMagic() {
   var header = document.querySelector('.header');
   var newsInternalLeft = document.querySelector(".content-news-internal-left");
   var blockSticky = document.querySelector(".block-views-blockmore-in-this-section-news-block-1");
+  var offsetValue = newsInternalLeft.offsetHeight - blockSticky.offsetHeight;
+  if (!document.body.contains(blockSticky)) return;
   var scene = new ScrollMagic.Scene({
     triggerElement: blockSticky,
-    offset: "-".concat(header.offsetHeight + 180),
-    triggerHook: 0,
+    offset: "".concat(blockSticky.offsetHeight + header.offsetHeight),
+    triggerHook: 1,
     duration: getDuration
   }).addTo(controller);
 

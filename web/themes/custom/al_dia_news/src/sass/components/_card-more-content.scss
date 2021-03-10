@@ -1,10 +1,16 @@
 //------ related content card ------------//
 .card-more {
-  //------ more content news and category ------------//
-  &-news,
-  &-category  {
+  //------ more content news ------------//
+
+  //------ reset margin ------------//
+  .block .content {
+    margin: 0;
+  }
+
+  &-news {
     .related-content > a {
-      max-width: 145px;
+      width: 145px;
+      height: 100px;
       min-height: 100px;
       margin-right: 15px;
       border: none;
@@ -62,11 +68,39 @@
 
   //------ more content category ------------//
   &-category {
-    .short-title-date {
-      h2 {
-        margin: 0;
+    .container-content {
+      display: flex;
+
+      @media (max-width: $tablet) {
+        flex-direction: column;
+      }
+    }
+
+    .field--name-field-image {
+      width: 145px;
+      height: 100px;
+      max-width: 145px;
+      min-height: 100px;
+      margin-right: 15px;
+      border: none;
+
+      @media (max-width: $tablet) {
+        max-width: 140px;
+        min-height: 80px;
+        margin-right: 10px;
+        margin-bottom: 10px;
       }
 
+      img {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        object-fit: contain;
+      }
+    }
+
+    .field--name-field-category {
+      margin: 0;
       a {
         border: none;
         font-size: $px12;
@@ -76,6 +110,38 @@
         line-height: 14px;
         letter-spacing: 0.08em;
         color: $corange;
+      }
+    }
+
+    .field--name-field-short-title {
+      a  {
+        border: none;
+        font-size: $px24;
+        font-family: $PrNovacond-Sbold;
+        font-style: normal;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: $cblack;
+
+        @media (max-width: $tablet) {
+          font-size: 14px;
+          line-height: 17px;
+        }
+      }
+    }
+
+    .field--name-created {
+      font-size: $px16;
+      font-family: $PrNovacond-reg;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 20px;
+      color: $cgrey3;
+
+      @media (max-width: $tablet) {
+        font-size: 10px;
+        line-height: 12px;
       }
     }
   }
