@@ -24,11 +24,21 @@
         }
 
         .view-content {
-            padding: 20px 15px;
+            padding: 0 15px;
+            height: 520px;
+            margin: 20px 0;
         }
 
-        .view-row {
+        img {
+            height: 100%;
+            max-height: 520px;
+            width: auto;
+            max-width: initial;
+        }
+
+        .views-row {
             position: relative;
+            overflow: hidden;
         }
 
         .block-field-blocknodenewsfield-short-title {
@@ -94,5 +104,24 @@
             display: none;
         }
 
+    }
+
+    .block-views-blocksubcategory-only-for-children-block-3 {
+
+        >h2 {
+            display: none;
+        }
+
+        .views-row {
+            margin: 0 auto 0 0;
+            width: 33%;
+            max-width: 100%;
+            @extend .block-notice-base;
+        }
+
+        .views-infinite-scroll-content-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+        }
     }
 }

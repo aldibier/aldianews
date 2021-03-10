@@ -1,10 +1,10 @@
 //----------------blocks notice scroll------------------//
 .block-notice-base {
-    width: 100%;
-    max-width: 430px;
     padding: 0 15px;
     position: relative;
-    margin: 30px auto;
+    margin: 0 auto 0 0;
+    width: 33%;
+    max-width: 100%;
 
     img {
         width: 100%;
@@ -36,6 +36,7 @@
 
     .content {
         margin: 0;
+        margin-top: 0;
     }
 
     .node__content {
@@ -46,12 +47,45 @@
         display: flex;
     }
 
+    .views-row{
+        padding: 0 0 40px;
+        position: relative;
+
+        &:after {
+            content: '';
+            width: 100%;
+            bottom: 20px;
+            position: absolute;
+            height: 1px;
+            background: $cgrey4;
+        }
+
+        &:last-child {
+            padding: 0 0 0;
+
+            &::after {
+                display: none;
+            }
+        }
+    }
+
+    .one-content-subcategory {
+        overflow: hidden;
+    }
+
+    .two-content-subcategory-four {
+        width: 100%;
+    }
+
     .one-content-subcategory-four {
-        width: 145px;
+        min-width: 175px;
         height: 100px;
-        min-height: 100px;
-        margin-right: 15px;
         border: none;
+        margin: 0 15px 0 0;
+
+        img {
+            width: 175px;
+        }
     }
 
     .block-field-blocknodenewsfield-short-title {
@@ -65,6 +99,8 @@
             text-decoration: none;
             color: $cblack;
             border: none;
+            display: block;
+            width: 100%;
         }
     }
 
