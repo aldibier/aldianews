@@ -44,6 +44,8 @@
                 text-transform: uppercase;
                 color: $cwhite;
                 border: none;
+                padding: 0 15px;
+                font-family: $PrNovacond-bold;
 
                 &:hover {
                     text-decoration: none;
@@ -72,16 +74,18 @@
             width: 100%;
             color: $cwhite;
             max-width: 730px;
-            margin: 0 auto;
+            margin: 0 auto 15px;
+            padding: 0 15px;
+            font-family: $PrNovacond-reg;
         }
 
         .block-info-short {
             position: absolute;
             bottom: 0;
             left: 0;
-            background: linear-gradient(180deg, #0B0B0B 31.77%, rgba(11, 11, 11, 0.630593) 77.63%, rgba(11, 11, 11, 0) 100%);
-            transform: rotate(-180deg);
+            background: linear-gradient(rgba(11,11,11,0) 31.77%,rgba(11,11,11,.630593),#0b0b0b 77.63%);
             width: 100%;
+            padding: 8rem 0 2rem;
         }
     }
 
