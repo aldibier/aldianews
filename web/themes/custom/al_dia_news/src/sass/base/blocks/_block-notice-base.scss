@@ -32,6 +32,7 @@
         font-size: 16px;
         line-height: 19px;
         color: $cgrey3;
+        font-family: $PrNovacond-reg;
     }
 
     @media(max-width: $tablet-min){
@@ -130,7 +131,7 @@
         color: $cgrey3;
     }
 
-    @media (max-width:$tablet){
+    @media (max-width:$broken){
 
         .view-content {
             display: flex;
@@ -174,11 +175,34 @@
         }
 
         .block-field-blocknodenewsfield-short-title a {
+            margin: 10px 0;
+            font-style: normal;
+            font-weight: bold;
+            font-size: $px30;
+            font-family: $PrNovacond-Sbold;
+            line-height: 37px;
+            text-transform: uppercase;
+            color: $cblack;
+            border: none;
+        }
+        
+        .block-field-blocknodenewscreated {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 19px;
+            color: $cgrey3;
+        }
+    }
+
+    @media (max-width:$tablet){
+
+        .block-field-blocknodenewsfield-short-title a {
             font-size: 14px;
             line-height: 17px;
             margin: 10px 0;
         }
-        
+
         .block-field-blocknodenewscreated {
             font-size: 10px;
             line-height: 12px;
