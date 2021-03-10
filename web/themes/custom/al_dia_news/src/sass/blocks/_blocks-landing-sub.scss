@@ -97,6 +97,22 @@
             width: 100%;
             padding: 8rem 0 2rem;
         }
+
+        @media(max-width:$broken) {
+
+            .block-views-blocksubcategory-only-for-children-block-1{
+
+                .view-content{
+                    height: auto;
+                }
+
+                img {
+                    max-height: initial;
+                    height: auto;
+                    width: 100%;
+                }
+            }
+        }
     }
 
     .block-views-blocksubcategory-only-for-children-block-2  {
