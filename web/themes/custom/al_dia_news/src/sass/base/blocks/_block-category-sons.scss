@@ -1,0 +1,36 @@
+.view-categories-sons {
+  .view-content {
+    > h3 {
+      position: relative;
+      overflow: hidden;
+
+      a {
+        border: none;
+        font-size: $px34;
+        font-family: $Modcond-reg;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 41px;
+        color: $corange;
+      }
+
+      &::after {
+        content: "";
+        width: 100%;
+        height: 3px;
+        margin-left: 15px;
+        display: inline-block;
+        position: absolute;
+        top: calc(50% - 5px);
+        background-color: $corange;
+      }
+    }
+
+    .views-row {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      grid-template-rows: repeat(2,auto);
+      //grid-template-areas: '';
+    }
+  }
+}
