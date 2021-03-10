@@ -38,11 +38,54 @@
 .category-first-block {
   display: flex;
 
-  .block-views-blocklast-news-category-sons-block-1 {
-    position: relative;
+  .node--view-mode-category-first {
+    .container-content {
+      height: 530px;
+      display: flex;
+      align-items: flex-end;
+      position: relative;
 
-    .block-field-blocknodenewsfield-image {
-      //position: absolute;
+      &::after {
+        content: "";
+        width: 100%;
+        height: 60%;
+        display: block;
+        position: absolute;
+        left: 0;
+        background-image: linear-gradient(to top, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.8), transparent);
+      }
+    }
+  }
+
+  .one-content-category {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+
+    * {
+      width: inherit;
+      height: inherit;
+    }
+
+    img {
+      margin: 0;
+      object-fit: cover;
+    }
+  }
+
+  .two-content-category {
+    padding: 0 55px 50px;
+    position: relative;
+    z-index: 1;
+
+    > div {
+      margin-bottom: 10px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
 
     .block-field-blocknodenewsbody {
@@ -51,16 +94,15 @@
       padding: 0;
     }
 
-    .field--name-field-image {
-    }
-
     .field--name-field-category {
       margin: 0;
       font-size: $px20;
       font-family: $Modcond-bold;
       font-style: normal;
       font-weight: bold;
+      line-height: 24px;
       letter-spacing: 0.08em;
+      color: $cwhite;
     }
 
     .field--name-field-short-title {
@@ -70,7 +112,9 @@
         font-family: $PrNovacond-bold;
         font-style: normal;
         font-weight: bold;
+        line-height: 1;
         text-transform: uppercase;
+        color: $cwhite;
       }
     }
 
@@ -80,6 +124,7 @@
       font-style: normal;
       font-weight: normal;
       line-height: 1.5;
+      color: $cwhite;
     }
 
     .field--name-created {
@@ -88,7 +133,7 @@
       font-style: normal;
       font-weight: normal;
       line-height: 20px;
-      color: $cgrey3;
+      color: $cwhite;
 
       @media (max-width: $tablet) {
         font-size: 10px;
@@ -97,9 +142,20 @@
     }
   }
 
+  .block-views-blocklast-news-category-sons-block-1 {
+    padding-right: 20px;
+    flex: 1 1 100%;
+
+    > .content {
+      margin: 0;
+    }
+  }
+
   .block-views-blocklast-news-category-sons-block-2 {
     --padding-right: 410px;
     width: var(--padding-right);
     min-width: var(--padding-right);
+    height: 100%;
+    max-height: max-content;
   }
 }
