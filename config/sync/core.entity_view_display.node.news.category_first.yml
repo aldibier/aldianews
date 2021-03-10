@@ -50,25 +50,6 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: 3
-          579ce495-1a9d-4a90-806d-e48ae73676b5:
-            uuid: 579ce495-1a9d-4a90-806d-e48ae73676b5
-            region: one_content
-            configuration:
-              id: 'field_block:node:news:body'
-              label: Body
-              provider: layout_builder
-              label_display: '0'
-              formatter:
-                label: hidden
-                type: text_summary_or_trimmed
-                settings:
-                  trim_length: 170
-                third_party_settings: {  }
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-            additional: {  }
             weight: 4
           096921d6-534b-452d-a8eb-d683b5b15059:
             uuid: 096921d6-534b-452d-a8eb-d683b5b15059
@@ -88,7 +69,7 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: 1
+            weight: -10
           9c68e11a-7458-4def-8f01-ecd79cff42b8:
             uuid: 9c68e11a-7458-4def-8f01-ecd79cff42b8
             region: two_content
@@ -107,7 +88,7 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: 2
+            weight: -9
           5603d68b-506c-4b0a-b0b7-c65a5f857902:
             uuid: 5603d68b-506c-4b0a-b0b7-c65a5f857902
             region: two_content
@@ -128,7 +109,26 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: 4
+            weight: -7
+          579ce495-1a9d-4a90-806d-e48ae73676b5:
+            uuid: 579ce495-1a9d-4a90-806d-e48ae73676b5
+            region: two_content
+            configuration:
+              id: 'field_block:node:news:body'
+              label: Body
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: text_summary_or_trimmed
+                settings:
+                  trim_length: 170
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: -8
         third_party_settings: {  }
 id: node.news.category_first
 targetEntityType: node
