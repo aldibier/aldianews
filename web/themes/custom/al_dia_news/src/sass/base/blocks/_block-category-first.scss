@@ -1,5 +1,9 @@
 //-------------block landing categories-----------------//
 .view-last-news-category-sons  {
+  .view-header {
+    display: none;
+  }
+
   .category-title {
     height: 60px;
     margin-bottom: 45px;
@@ -40,5 +44,6 @@
   .block-views-blocklast-news-category-sons-block-2 {
     --padding-right: 410px;
     width: var(--padding-right);
+    min-width: var(--padding-right);
   }
 }
