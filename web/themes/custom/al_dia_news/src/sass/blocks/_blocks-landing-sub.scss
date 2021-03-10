@@ -117,6 +117,19 @@
             width: 33%;
             max-width: 100%;
             @extend .block-notice-base;
+
+            @media(max-width:$broken){
+                width: 50%;
+                max-width: 440px;
+                
+                &:nth-child(2n + 1) {
+                    padding: 0 5px 0 15px;
+                }
+
+                &:nth-child(2n + 2) {
+                    padding: 0 15px 0 5px;
+                }
+            }
         }
 
         .views-infinite-scroll-content-wrapper {
@@ -124,12 +137,8 @@
             flex-wrap: wrap;
         }
 
-        @media(max-width:$broken){
+        @media(max-width: $tablet-min){
             
-            .views-row {
-                width: 50%;
-                max-width: 440px;
-            }
         }
     }
 }
