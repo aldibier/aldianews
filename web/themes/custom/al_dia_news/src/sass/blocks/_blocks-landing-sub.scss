@@ -123,5 +123,13 @@
             display: flex;
             flex-wrap: wrap;
         }
+
+        @media(max-width:$broken){
+            
+            .views-row {
+                width: 50%;
+                max-width: 440px;
+            }
+        }
     }
 }
