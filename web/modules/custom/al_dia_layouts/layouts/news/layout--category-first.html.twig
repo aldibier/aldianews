@@ -19,5 +19,11 @@
         </div>
     {% endif %}
 
+    {% if content.two_content %}
+        <div {{ region_attributes.two_content.addClass('two-content-category news-category-container') }}>
+          {{ content.two_content}} 
+        </div>
+    {% endif %}
+
   </div>
 {% endif %}
