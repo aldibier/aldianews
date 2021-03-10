@@ -119,15 +119,17 @@
             @extend .block-notice-base;
 
             @media(max-width:$broken){
-                width: 50%;
-                max-width: 440px;
                 
                 &:nth-child(2n + 1) {
                     padding: 0 5px 0 15px;
+                    width: 50%;
+                    max-width: 440px;
                 }
 
                 &:nth-child(2n + 2) {
                     padding: 0 15px 0 5px;
+                    width: 50%;
+                    max-width: 440px;
                 }
             }
         }
@@ -138,7 +140,18 @@
         }
 
         @media(max-width: $tablet-min){
-            
+
+            .views-row {
+                a {
+                    font-size: 14px;
+                    line-height: 17px;
+                }
+
+                span {
+                    font-size: 10px;
+                    line-height: 12px;
+                }
+            }
         }
     }
 }
