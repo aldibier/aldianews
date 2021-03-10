@@ -1,4 +1,3 @@
-
 .subcategory-taxonomy {
     
     .block-views-blocksubcategory-only-for-children-block-1 {
@@ -26,6 +25,54 @@
 
         .view-content {
             padding: 20px 15px;
+        }
+
+        .view-row {
+            position: relative;
+        }
+
+        .block-field-blocknodenewsfield-short-title {
+            width: 100%;
+            max-width: 730px;
+            margin: 0 auto;
+
+            a {
+                font-style: normal;
+                font-weight: bold;
+                font-size: $px47;
+                line-height: 110%;
+                text-transform: uppercase;
+                color: $cwhite;
+                border: none;
+
+                &:hover {
+                    text-decoration: none;
+                    border: none;
+                }
+            }
+        }
+
+        .block-field-blocknodenewsfield-short-title {
+            width: 100%;
+            max-width: 730px;
+            margin: 0 auto;
+            font-style: normal;
+            font-weight: normal;
+            font-size: $px20;
+            line-height: 122%;
+            font-family: $NimR-reg;
+            color: $cwhite;
+        }
+
+        .block-field-blocknodenewscreated {
+            font-style: normal;
+            font-weight: normal;
+            font-size: $px17;
+            line-height: 21px;
+            width: 100%;
+            color: $cwhite;
+            max-width: 730px;
+            margin: 0 auto;
         }
     }
 }
