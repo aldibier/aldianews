@@ -100,17 +100,14 @@
 
         @media(max-width:$broken) {
 
-            .block-views-blocksubcategory-only-for-children-block-1{
+            .view-content{
+                height: auto;
+            }
 
-                .view-content{
-                    height: auto;
-                }
-
-                img {
-                    max-height: initial;
-                    height: auto;
-                    width: 100%;
-                }
+            img {
+                max-height: initial;
+                height: auto;
+                width: 100%;
             }
         }
     }
