@@ -110,7 +110,14 @@
 
         .views-row {
             @extend .block-notice-base;
+            margin: 0 auto 0 0;
+            width: 33%;
+            max-width: 100%;
+        }
+
+        .views-infinite-scroll-content-wrapper {
+            display: flex;
+            flex-wrap: wrap;
         }
     }
-    
 }
