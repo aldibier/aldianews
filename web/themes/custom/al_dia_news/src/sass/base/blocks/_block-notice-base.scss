@@ -61,10 +61,16 @@
         }
 
         &:last-child {
+            padding: 0 0 0;
+
             &::after {
                 display: none;
             }
         }
+    }
+
+    .one-content-subcategory {
+        overflow: hidden;
     }
 
     .two-content-subcategory-four {
