@@ -13,6 +13,11 @@
 {% if content %}
   <div class="container-content">
 
+    {% if content.header_category %}
+        <div {{ region_attributes.header_category.addClass('header-category ') }}>
+          {{ content.header_category }} 
+        </div>
+    {% endif %}
     {% if content.one_content_first %}
         <div {{ region_attributes.one_content_first.addClass('category-first-block ') }}>
           {{ content.one_content_first }} 
