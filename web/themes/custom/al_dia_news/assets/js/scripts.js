@@ -101,8 +101,7 @@ __webpack_require__.r(__webpack_exports__);
 (function ($, Drupal) {
   jQuery(document).ready(function () {
     //--------- initialization --------------------//
-    Object(_scroll_magic_js__WEBPACK_IMPORTED_MODULE_0__["default"])();
-    console.log('4582'); //--------- menu--------------------//
+    Object(_scroll_magic_js__WEBPACK_IMPORTED_MODULE_0__["default"])(); //--------- menu--------------------//
 
     $('.region-header #block-blockheader').click(function () {
       if ($('.region-secondary-menu').hasClass('open-menu')) {
@@ -147,6 +146,8 @@ var initScrollMagic = function initScrollMagic() {
   var header = document.querySelector('.header');
   var newsInternalLeft = document.querySelector(".content-news-internal-left");
   var blockSticky = document.querySelector(".block-views-blockmore-in-this-section-news-block-1");
+  var offsetValue = newsInternalLeft.offsetHeight - blockSticky.offsetHeight;
+  if (!document.body.contains(blockSticky)) return;
   var scene = new ScrollMagic.Scene({
     triggerElement: blockSticky,
     offset: "".concat(blockSticky.offsetHeight + header.offsetHeight),
@@ -171,8 +172,7 @@ var initScrollMagic = function initScrollMagic() {
   });
 
   function getDuration() {
-    console.log(newsInternalLeft.offsetHeight - header.offsetHeight);
-    return newsInternalLeft.offsetHeight - header.offsetHeight;
+    return newsInternalLeft.offsetHeight - blockSticky.offsetHeight;
   }
 };
 
@@ -198,8 +198,8 @@ var initScrollMagic = function initScrollMagic() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/andresmartinez/sites/News/code/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
-module.exports = __webpack_require__(/*! /Users/andresmartinez/sites/News/code/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
+__webpack_require__(/*! /Users/usuario/Desktop/Proyectos/AlDiaNews/4ld14-n3ws/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
+module.exports = __webpack_require__(/*! /Users/usuario/Desktop/Proyectos/AlDiaNews/4ld14-n3ws/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
 
 
 /***/ })

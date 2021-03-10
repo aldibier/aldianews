@@ -6,6 +6,9 @@ const initScrollMagic = () => {
     const header = document.querySelector('.header');
     const newsInternalLeft = document.querySelector(".content-news-internal-left");
     const blockSticky = document.querySelector(".block-views-blockmore-in-this-section-news-block-1");
+    const offsetValue = newsInternalLeft.offsetHeight - blockSticky.offsetHeight;
+
+    if (!document.body.contains(blockSticky)) return;
 
     const scene = new ScrollMagic.Scene({
         triggerElement: blockSticky,
@@ -27,8 +30,7 @@ const initScrollMagic = () => {
     });
 
     function getDuration() {
-        console.log(newsInternalLeft.offsetHeight - header.offsetHeight);
-        return newsInternalLeft.offsetHeight - header.offsetHeight;
+        return newsInternalLeft.offsetHeight - blockSticky.offsetHeight;
     }
 }
 
