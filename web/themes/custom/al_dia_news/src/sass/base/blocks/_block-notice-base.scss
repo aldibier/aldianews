@@ -22,7 +22,7 @@
 
     &:nth-child(3n+1),
     &:nth-child(3n+2) {
-        .field-content {
+        article {
             position: relative;
 
             &:before {
@@ -35,6 +35,40 @@
                 right: -15px;
             }
         }
+    }
+
+    @media(max-width: $broken) {
+
+        &:nth-child(3n+1),
+        &:nth-child(3n+2){
+
+            article {
+                &:before {
+                    display: none;
+                }
+            }
+        }
+
+        &:nth-child(3n+4) {
+            &:before {
+                display: none;
+            }
+        }
+
+        &:nth-child(2n+1) {
+            &:before {
+                display: block;
+                content: '';
+                width: calc(100% - 30px);
+                height: 1px;
+                left: 0;
+                background: $cgrey4;
+                position: absolute;
+                right: 0;
+                margin: -20px auto 0;
+            }
+        }
+
     }
 
     .block-field-blocknodenewsfield-short-title {
