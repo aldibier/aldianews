@@ -1,13 +1,13 @@
 //----------------blocks notice scroll------------------//
 .block-notice-base {
     padding: 35px 15px;
-    margin: 0 auto 0 0;
+    margin: 0;
     width: 33.33%;
     max-width: 100%;
 
     &:nth-child(3n+4) {
 
-        &:after {
+        &:before {
             display: block;
             content: '';
             width: calc(100% - 30px);
@@ -16,7 +16,24 @@
             background: $cgrey4;
             position: absolute;
             right: 0;
-            margin: 35px auto 0;
+            margin: -35px auto 0;
+        }
+    }
+
+    &:nth-child(3n+1),
+    &:nth-child(3n+2) {
+        .field-content {
+            position: relative;
+
+            &:before {
+                display: block;
+                content: '';
+                width: 1px;
+                height: 100%;
+                background: $cgrey4;
+                position: absolute;
+                right: -15px;
+            }
         }
     }
 
