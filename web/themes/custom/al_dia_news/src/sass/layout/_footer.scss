@@ -121,6 +121,8 @@
         position: absolute;
         bottom: 0;
         left: 345px;
+        width: 100%;
+        max-width: 390px;
         
         a {
             position: absolute;
@@ -130,12 +132,17 @@
             font-size: 0;
         }
 
-        ul {
+        .menu {
             display: flex;
         }
 
-        li {
+        li.menu-item {
             position: relative;
+            margin: 0 7px;
+            position: relative;
+            width: 30px;
+            height: 30px;
+            margin: 0 7px;
         }
 
     }
