@@ -593,6 +593,7 @@ display:
         arguments: false
         fields: false
         header: false
+        css_class: false
       fields:
         field_category:
           id: field_category
@@ -694,7 +695,7 @@ display:
             preserve_tags: ''
             html: false
           element_type: ''
-          element_class: ''
+          element_class: main-news-image
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
@@ -987,7 +988,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"main-news\">\r\n   <div class=\"main-news-title\">{{ field_short_title }}</div>\r\n   <div class=\"main-news-body\">{{ body }}</div>\r\n   <div class=\"main-news-date\">{{ created }}</div>\r\n</div>"
+            text: "<div class=\"main-news-content\">\r\n   <div class=\"main-news-title\">{{ field_short_title }}</div>\r\n   <div class=\"main-news-body\">{{ body }}</div>\r\n   <div class=\"main-news-date\">{{ created }}</div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -1026,6 +1027,7 @@ display:
           hide_alter_empty: false
           plugin_id: custom
       header: {  }
+      css_class: main-news
     cache_metadata:
       max-age: -1
       contexts:
