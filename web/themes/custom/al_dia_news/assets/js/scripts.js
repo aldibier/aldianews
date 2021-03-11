@@ -100,11 +100,6 @@ __webpack_require__.r(__webpack_exports__);
 
 (function ($, Drupal) {
   jQuery(document).ready(function () {
-<<<<<<< HEAD
-    //--------- initialization --------------------//
-    //initScrollMagic();
-=======
->>>>>>> 17594fff4fac93c91be5019291833604e821a786
     //--------- menu--------------------//
     $('.region-header #block-blockheader').click(function () {
       if ($('.region-secondary-menu').hasClass('open-menu')) {
