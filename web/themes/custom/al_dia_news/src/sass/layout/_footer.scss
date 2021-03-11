@@ -368,6 +368,7 @@
         #block-subscribeblockfooter {
             width: 257px;
             top: 218px;
+            left: 0;
 
             a {
                 width: 100px;
@@ -375,6 +376,24 @@
                 margin: 0 0 0 auto;
                 font-size: 14px;
                 line-height: 25px;
+            }
+        }
+
+        #block-footer{
+            .menu{
+                a{
+                    font-size: 17px;
+                    line-height: 21px;
+                    margin: 0;
+                }
+
+                li {
+                    height: 37px;
+                }
+
+                img {
+                    transform: initial;
+                }
             }
         }
 
@@ -387,6 +406,13 @@
                 font-size: 10px;
                 line-height: 100%;
             }
+        }
+    }
+
+    @media (max-width: 372px) {
+
+        .field--name-field-image  {
+            margin: -68px 0 0;
         }
     }
 
