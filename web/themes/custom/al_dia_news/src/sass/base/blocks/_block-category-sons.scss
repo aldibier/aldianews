@@ -1,5 +1,5 @@
 .view-categories-sons {
-  .view-content {
+  > .view-content {
     > h3 {
       position: relative;
       overflow: hidden;
@@ -26,11 +26,77 @@
       }
     }
 
-    .views-row {
+    > .views-row {
+      margin: 20px 0;
       display: grid;
-      grid-template-columns: repeat(2,1fr);
-      grid-template-rows: repeat(2,auto);
-      //grid-template-areas: '';
+      grid-template-columns: repeat(2, auto);
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-areas:
+        "area-1 area-3"
+        "area-2 area-3";
+    }
+
+    .views-field-view {
+      padding: 0 15px;
+      grid-area: area-1;
+    }
+
+    .views-field-view-1 {
+      grid-area: area-2;
+
+      .view-content {
+        display: flex;
+      }
+    }
+
+    .views-field-view-2 {
+      --padding-right: 410px;
+      width: var(--padding-right);
+      min-width: var(--padding-right);
+      height: 100%;
+      max-height: max-content;
+      grid-area: area-3;
     }
   }
+
+  .views-field-field-short-title {
+    a {
+      border: none;
+      font-size: $px47;
+      font-family: $PrNovacond-bold;
+      font-style: normal;
+      font-weight: bold;
+      line-height: 1;
+      text-transform: uppercase;
+      //color: $cwhite;
+    }
+  }
+
+  .views-field-body {
+    font-size: $px20;
+    font-family: $NimR-bold;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1.5;
+    //color: $cwhite;
+  }
+
+  .views-field-created {
+    font-size: $px17;
+    font-family: $PrNovacond-reg;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 20px;
+    //color: $cwhite;
+
+    @media (max-width: $tablet) {
+      font-size: 10px;
+      line-height: 12px;
+    }
+  }
+}
+
+//view more temporary
+.category-view-more {
+  display: none;
 }
