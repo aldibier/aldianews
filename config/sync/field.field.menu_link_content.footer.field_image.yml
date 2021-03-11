@@ -6,7 +6,14 @@ dependencies:
     - field.storage.menu_link_content.field_image
     - system.menu.footer
   module:
+    - content_translation
     - image
+third_party_settings:
+  content_translation:
+    translation_sync:
+      alt: alt
+      title: title
+      file: '0'
 id: menu_link_content.footer.field_image
 field_name: field_image
 entity_type: menu_link_content
@@ -14,7 +21,7 @@ bundle: footer
 label: Image
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
