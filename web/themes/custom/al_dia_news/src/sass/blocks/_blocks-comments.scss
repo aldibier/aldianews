@@ -22,11 +22,17 @@
 
 .comment {
     position: relative;
+    background: #FBFBFB;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.17);
+    margin: 0 auto 25px;
 
     .comment__meta {
         position: absolute;
-        top: 15px;
-        left: 15px;
+        width: calc(100% - 60px);
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        top: 25px;
     }
 
     .comment__content {
