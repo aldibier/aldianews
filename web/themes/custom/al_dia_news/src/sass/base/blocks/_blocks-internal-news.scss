@@ -414,7 +414,7 @@ div[ data-embed-button="related_content" ] {
         line-height: 127.8%;
         letter-spacing: 0.2px;
         color: $cblack;
-        font-weight: $PrNovacond-bold;
+        font-family: $PrNovacond-bold;
     }
 
     .field-content {
@@ -437,6 +437,11 @@ div[ data-embed-button="related_content" ] {
         li {
             display: flex;
             padding: 0;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 20px;
+            line-height: 127.8%;
+            font-family: $NimR-reg;
     
             &:before{
                 content: '/';
@@ -463,6 +468,11 @@ div[ data-embed-button="related_content" ] {
             font-size: 14px;
             line-height: 127.8%;
         }
+
+        ul li {
+            font-size: 14px;
+            line-height: 127.8%;
+        }
     }
 }
 
@@ -474,7 +484,8 @@ div[ data-embed-button="related_content" ] {
         font-weight: bold;
         font-size: 19px;
         line-height: 127.8%;
-        padding: 20px 0 0;
+        padding: 0;
+        font-family: $PrNovacond-bold;
     }
 
     textarea {
@@ -523,6 +534,11 @@ div[ data-embed-button="related_content" ] {
                 margin: 0;
                 padding: 0;
             }
+        }
+
+        h2.comment-form__title {
+            font-size: 12px;
+            line-height: 127.8%;
         }
     }
 }
