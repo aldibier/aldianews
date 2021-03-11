@@ -101,8 +101,8 @@ __webpack_require__.r(__webpack_exports__);
 (function ($, Drupal) {
   jQuery(document).ready(function () {
     //--------- initialization --------------------//
-    Object(_scroll_magic_js__WEBPACK_IMPORTED_MODULE_0__["default"])(); //--------- menu--------------------//
-
+    //initScrollMagic();
+    //--------- menu--------------------//
     $('.region-header #block-blockheader').click(function () {
       if ($('.region-secondary-menu').hasClass('open-menu')) {
         $('.region-secondary-menu').removeClass('open-menu');
