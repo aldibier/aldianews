@@ -50,11 +50,33 @@
         left: 0;
     }
 
-    .navigation {
+    #block-footer {
         position: absolute;
         right: 0;
         width: calc(100% - 604px);
         margin: 112px auto 0 0;
+
+
+        ul {
+            column-count: 2;
+            width: 100%;
+            
+            li {
+                display: flex;
+
+                >div {
+                    order: 1;
+                }
+            }
+
+            a{
+                width: 100%;
+                border: none;
+                margin: 20px 0;
+                padding: 0 15px;
+                order: 2;
+            }
+        }
     }
 
     .block-fixed-block-contentlocation {
@@ -83,24 +105,4 @@
         }
     }
 
-    ul {
-        column-count: 2;
-        width: 100%;
-        
-        li {
-            display: flex;
-
-            >div {
-                order: 1;
-            }
-        }
-
-        a{
-            width: 100%;
-            border: none;
-            margin: 20px 0;
-            padding: 0 15px;
-            order: 2;
-        }
-    }
 }
