@@ -355,6 +355,28 @@
         }
     }
 
+    @media (max-width:$tablet){
+        #block-footerlogo {
+            .field--name-body{
+                p{
+                    font-size: 11px;
+                    line-height: 13px;
+                }
+            }
+        }
+
+        .block-fixed-block-contentlocation {
+            .content {
+                margin: 7px 0 auto;
+            }
+
+            p {
+                font-size: 10px;
+                line-height: 100%;
+            }
+        }
+    }
+
 }
 
 footer.site-footer {
