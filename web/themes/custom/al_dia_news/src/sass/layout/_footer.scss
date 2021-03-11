@@ -137,7 +137,7 @@
         width: 100%;
         max-width: 390px;
         z-index: 4;
-        
+
         a {
             position: absolute;
             top: 0;
@@ -149,6 +149,7 @@
             height: 100%;
             padding: 0;
             z-index: 2;
+            transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
         }
 
         .menu {
@@ -168,8 +169,8 @@
             align-items: center;
             justify-content: center;
 
-            &:hover {
-                transform: scale(1.2);
+            >div {
+                transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
             }
 
             path {
@@ -178,6 +179,14 @@
 
             .fontawesome-icon  {
                 font-size: 16px;
+            }
+
+            &:hover {
+                a,
+                >li{
+                    transform: scale(1.2);
+                    transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+                }
             }
         }
 
