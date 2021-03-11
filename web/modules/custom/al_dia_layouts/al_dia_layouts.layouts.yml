@@ -158,3 +158,23 @@ subcategory_more:
   regions:
     one_content:
       label: Primero - Contenido
+
+
+error_page:
+  label: 'Error Page'
+  path: layouts/general
+  template: layout--error-page
+  category: 'General'
+  default_region: content
+  icon_map:
+    - [one_content]
+    - [advertising]
+    - [two_content]
+  regions:
+    one_content:
+      label: Primero - Contenido
+    advertising:
+      label: Publicidad horizontal
+    two_content:
+      label: Segundo - Contenido
+
