@@ -46,16 +46,22 @@
         padding: 0 15px;
         right: 0;
         top: 73px;
+        border-left: 1px solid $cgrey4;
 
         @media(max-width:$broken) {
             position: relative;
             top: 0;
             max-width: 100%;
+            border: none;
         }
     }
 
     .block-views-blocksubcategory-only-for-children-block-3 {
         width: 100%;
         margin: 20px auto 0;
+
+        @media (max-width:$tablet){
+            margin: 0 auto;
+        }
     }
 }

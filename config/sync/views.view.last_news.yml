@@ -1710,6 +1710,7 @@ display:
         pager: false
         fields: false
         arguments: false
+        header: false
       fields:
         field_image:
           id: field_image
@@ -2010,6 +2011,20 @@ display:
           entity_type: taxonomy_term
           entity_field: parent
           plugin_id: taxonomy
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content:
+            value: '<h3>MORE CONTENT</h3>'
+            format: full_html
+          plugin_id: text
     cache_metadata:
       max-age: -1
       contexts:

@@ -1,0 +1,29 @@
+uuid: 6214290c-b5db-419c-8389-1e001ee6abca
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.490x445
+    - image.style.850x520
+  theme:
+    - al_dia_news
+id: image_landing_subcategory
+label: 'Image landing subcategory'
+image_style_mappings:
+  -
+    breakpoint_id: al_dia_news.medium
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: 490x445
+  -
+    breakpoint_id: al_dia_news.small
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: 490x445
+  -
+    breakpoint_id: al_dia_news.extra_small
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: 490x445
+breakpoint_group: 'Al dia news'
+fallback_image_style: 850x520

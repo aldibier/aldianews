@@ -97,6 +97,39 @@
             width: 100%;
             padding: 8rem 0 2rem;
         }
+
+        @media(max-width:$tablet) {
+            .block-field-blocknodenewsfield-short-title a{
+                font-size: 18px;
+                line-height: 22px;  
+            }
+
+            .block-field-blocknodenewscreated {
+                font-size: 10px;
+                line-height: 12px;
+            }
+
+            .block-field-blocknodenewsbody{
+                display: none;
+            }
+
+            .block-info-short {
+                padding: 8rem 0 25px;
+            }
+        }
+
+        @media(max-width:$broken) {
+
+            .view-content{
+                height: auto;
+            }
+
+            img {
+                max-height: initial;
+                height: auto;
+                width: 100%;
+            }
+        }
     }
 
     .block-views-blocksubcategory-only-for-children-block-2  {
