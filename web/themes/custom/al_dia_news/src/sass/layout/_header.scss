@@ -255,6 +255,12 @@ body.open-menu {
     display: none;
 }
 
+.user-logged-in.open-menu {
+    #block-al-dia-news-account-menu.open {
+        bottom: -150px;
+    }
+}
+
 .user-logged-in {
     #block-al-dia-news-account-menu.open {
         display: block;
@@ -262,11 +268,11 @@ body.open-menu {
         opacity: 1;
         z-index: 33;
         position: absolute;
-        right: 15px;
+        right: 1px;
         width: 100%;
         max-width: 290px;
         background: $cwhite;
-        bottom: -150px;
+        bottom: -166px;
         box-shadow: 2px 4px 15px -2px rgba(0,0,0,0.71);
 
         .menu {
@@ -336,7 +342,7 @@ body.open-menu {
     background: $cblack0;
     display: flex;
     padding: 15px 15px 0;
-    max-width: 1280px;
+    max-width: 1315px;
     margin: 0 auto;
 
     &:after {
@@ -697,7 +703,7 @@ body.open-menu {
             height: 60px;
             display: block;
             background: transparent url("../img/user.svg") center center no-repeat;
-            z-index: 7;
+            z-index: 8;
             margin: auto 0 -5px 0;
 
             &.open {
