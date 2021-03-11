@@ -2,10 +2,6 @@ import initScrollMagic from "./scroll-magic.js";
 
 (function ($, Drupal) {
     jQuery( document ).ready(function() {
-        
-
-        //--------- initialization --------------------//
-        initScrollMagic();
 
         //--------- menu--------------------//
         $('.region-header #block-blockheader').click(function () {
@@ -35,5 +31,10 @@ import initScrollMagic from "./scroll-magic.js";
                 $(this).addClass('open');
             }
         });
+
+        //--------- initialization --------------------//
+        initScrollMagic();
+
+      
     });
 })(jQuery, Drupal);
