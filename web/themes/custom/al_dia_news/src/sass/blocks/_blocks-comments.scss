@@ -36,13 +36,14 @@
         z-index: 2;
     }
 
-    .comment__author {
+    .comment__author a{
         font-family: $PrNovacond-reg;
         font-style: normal;
         font-weight: 600;
         font-size: $px24;
         line-height: 140%;
         color: $cblack0;
+        border: none;
     }
 
     .comment__time {
@@ -60,6 +61,9 @@
 
     .comment__content {
         padding: 100px 30px 25px;
+        display: flex;
+        flex-wrap: wrap;
+        border: none;
 
         &:before,
         &:after {
@@ -69,5 +73,32 @@
 
     h3 {
         display: none;
+    }
+
+    .field--name-field-comment-body {
+        font-style: normal;
+        font-weight: normal;
+        font-size: $px20;
+        line-height: 140%;
+        color: $cblack3;
+        font-family: $PrNovacond-reg;
+        width: 100%;
+    }
+
+    .links {
+        margin: 0 0 0 auto;
+    }
+}
+
+.indented {
+    margin: -25px 0 0;
+    width: 100%;
+
+    .comment__meta  {
+        text-align: right;
+    }
+
+    .comment__content {
+        text-align: right;
     }
 }
