@@ -296,6 +296,14 @@ blockquote {
         font-family: $NimR-reg;
     }
 
+    em {
+        font-style: italic !important;
+
+        *{
+            font-style: italic !important;
+        }
+    }
+
     strong {
         font-family: $NimR-bold;
         font-style: normal;
@@ -414,7 +422,7 @@ div[ data-embed-button="related_content" ] {
         line-height: 127.8%;
         letter-spacing: 0.2px;
         color: $cblack;
-        font-weight: $PrNovacond-bold;
+        font-family: $PrNovacond-bold;
     }
 
     .field-content {
@@ -437,6 +445,11 @@ div[ data-embed-button="related_content" ] {
         li {
             display: flex;
             padding: 0;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 20px;
+            line-height: 127.8%;
+            font-family: $NimR-reg;
     
             &:before{
                 content: '/';
@@ -463,44 +476,30 @@ div[ data-embed-button="related_content" ] {
             font-size: 14px;
             line-height: 127.8%;
         }
+
+        ul li {
+            font-size: 14px;
+            line-height: 127.8%;
+        }
     }
 }
 
 //--------------coments
 .block-field-blocknodenewsfield-comments {
-
-    .comment__meta {
-        width: 133px;
-    }
-
-    .comment__author a {
-        color: $cblack;
-        border: none;
-    }
-
-    .comment__permalink a{
-        color: $corange;
-        border: none;
-    }
-
-    .comment__content  {
-        a {
-            color: $corange;
-            border: none;
-        }
-    }
-
+    
     h2.comment-form__title {
         font-style: normal;
         font-weight: bold;
         font-size: 19px;
         line-height: 127.8%;
-        padding: 20px 0 0;
+        padding: 0;
+        font-family: $PrNovacond-bold;
     }
 
     textarea {
         background: #F2F2F2;
         border: none;
+        min-height: 182px;
     }
 
     label[for="edit-field-comment-body-0-value"] {
@@ -513,15 +512,41 @@ div[ data-embed-button="related_content" ] {
             background: $corange;
             border: none;
             height: 40px;
+            width: 165px;
             font-style: normal;
             font-weight: bold;
             font-size: $px18;
             color: $cwhite;
+            border-radius: 0;
             font-family: $PrNovacond-bold;
         }
 
         input[value="Preview"]{
             display: none;
+        }
+    }
+
+    @media (max-width:$tablet){
+
+        textarea {
+            min-height: 80px;
+        }
+
+        .form-actions {
+
+            .button--primary {
+                width: 110px;
+                height: 30px;
+                font-size: 12px;
+                line-height: 25px;
+                margin: 0;
+                padding: 0;
+            }
+        }
+
+        h2.comment-form__title {
+            font-size: 12px;
+            line-height: 127.8%;
         }
     }
 }
