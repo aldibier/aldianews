@@ -480,6 +480,7 @@ div[ data-embed-button="related_content" ] {
     textarea {
         background: #F2F2F2;
         border: none;
+        min-height: 182px;
     }
 
     label[for="edit-field-comment-body-0-value"] {
@@ -507,6 +508,11 @@ div[ data-embed-button="related_content" ] {
     }
 
     @media (max-width:$tablet){
+
+        textarea {
+            min-height: 80px;
+        }
+
         .form-actions {
 
             .button--primary {
@@ -514,6 +520,8 @@ div[ data-embed-button="related_content" ] {
                 height: 30px;
                 font-size: 12px;
                 line-height: 25px;
+                margin: 0;
+                padding: 0;
             }
         }
     }
