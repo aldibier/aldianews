@@ -258,6 +258,10 @@ body.open-menu {
 .user-logged-in.open-menu {
     #block-al-dia-news-account-menu.open {
         bottom: -150px;
+
+        @media(max-width:$tablet){
+            display: block;
+        }
     }
 }
 
