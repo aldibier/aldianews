@@ -1,0 +1,21 @@
+.field--type-comment {
+    display: flex;
+    flex-wrap: wrap;
+
+    .comment-form__title {
+        order: -2;
+        width: 100%;
+        padding: 0;
+        color: $cblack;
+    }
+
+    .comment-comments-content-form {
+        order: -1;
+        width: 100%;
+        margin: 0 auto 77px;
+        
+        .form-textarea {
+            min-height: 182px;
+        }
+    }
+}
