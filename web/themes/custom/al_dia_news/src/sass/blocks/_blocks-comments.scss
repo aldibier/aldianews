@@ -33,6 +33,29 @@
         left: 0;
         right: 0;
         top: 25px;
+        z-index: 2;
+    }
+
+    .comment__author {
+        font-family: $PrNovacond-reg;
+        font-style: normal;
+        font-weight: 600;
+        font-size: $px24;
+        line-height: 140%;
+        color: $cblack0;
+    }
+
+    .comment__time {
+        font-style: normal;
+        font-weight: normal;
+        font-size: $px14;
+        line-height: 17px;
+        font-family: $PrNovacond-reg;
+        color: $cgrey3;
+    }
+
+    .comment__permalink {
+        display: none;
     }
 
     .comment__content {
@@ -42,5 +65,9 @@
         &:after {
             display: none;
         }
+    }
+
+    h3 {
+        display: none;
     }
 }
