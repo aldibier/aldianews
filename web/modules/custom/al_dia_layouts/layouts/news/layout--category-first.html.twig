@@ -14,14 +14,16 @@
   <div class="container-content">
 
     {% if content.one_content %}
-        <div {{ region_attributes.one_content.addClass('one-content-category') }}>
+        <div {{ region_attributes.one_content.addClass('one-content-category main-news-image') }}>
           {{ content.one_content|without("title") }} 
         </div>
     {% endif %}
 
     {% if content.two_content %}
-        <div {{ region_attributes.two_content.addClass('two-content-category news-category-container main-news-content') }}>
-          {{ content.two_content}} 
+        <div {{ region_attributes.two_content.addClass('two-content-category') }}>
+          <div class="main-news-content">
+            {{ content.two_content}} 
+          </div>
         </div>
     {% endif %}
 
