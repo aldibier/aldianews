@@ -3,6 +3,17 @@
     border: none;
     position: relative;
 
+    &:after {
+        width: 50%;
+        position: absolute;
+        content: '';
+        display: block;
+        top: 30px;
+        height: 5px;
+        background: $corange;
+        right: 0;
+    }
+
     .site-footer__bottom{
         border: none;
         position: relative;
@@ -13,7 +24,6 @@
         top: 0;
         right: 0;
         width: calc(100% - 330px);
-
 
         .field--name-field-image-block {
             max-width: 265px;
