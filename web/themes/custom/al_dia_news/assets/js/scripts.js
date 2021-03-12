@@ -123,6 +123,10 @@ __webpack_require__.r(__webpack_exports__);
         $('.user-logged-in #block-al-dia-news-account-menu').addClass('open');
         $(this).addClass('open');
       }
+    });
+    $(".region-secondary-menu #block-al-dia-news-main-menu a").each(function () {
+      var text = $(this).html();
+      $(this).html(text.replace(/AL/g, '<br>AL'));
     }); //--------- initialization --------------------//
 
     Object(_scroll_magic_js__WEBPACK_IMPORTED_MODULE_0__["default"])();

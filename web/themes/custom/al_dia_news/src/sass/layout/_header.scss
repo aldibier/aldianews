@@ -136,6 +136,7 @@ body.open-menu {
             text-align: center;
             letter-spacing: 0.025em;
             padding: 8px 1.1em;
+            margin: auto 0;
         }
     }
 
@@ -144,9 +145,24 @@ body.open-menu {
 
         .menu-item{
             margin: 0;
+            display: flex;
+            flex-wrap: wrap;
 
             a{
                 color: $cblack0;
+            }
+
+            &:nth-child(9){
+                br{
+                    display: none;
+                }
+            }
+
+            &:nth-child(10){
+                a {
+                    max-width: 81px;
+                    text-align: center;
+                }
             }
         }  
     }
