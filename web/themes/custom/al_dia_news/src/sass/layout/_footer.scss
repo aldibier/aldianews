@@ -4,14 +4,22 @@
     position: relative;
 
     &:after {
-        width: 50%;
+        width: 63%;
         position: absolute;
         content: '';
         display: block;
-        top: 30px;
+        top: 79px;
         height: 5px;
         background: $corange;
         right: 0;
+
+        @media(max-width: 1004px){
+            width: 47%;
+        }
+
+        @media(max-width: $broken3){
+            display: none;
+        }
     }
 
     .site-footer__bottom{
@@ -24,6 +32,7 @@
         top: 0;
         right: 0;
         width: calc(100% - 330px);
+        z-index: 2;
 
         .field--name-field-image-block {
             max-width: 265px;
