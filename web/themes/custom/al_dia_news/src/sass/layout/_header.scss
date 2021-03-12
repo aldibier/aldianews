@@ -486,7 +486,7 @@ body.open-menu {
 
     #block-languageswitcher {
         order: 5;
-        margin: 0; 
+        margin: 0 10px 0 0; 
     }
 
     .block-language {
@@ -498,6 +498,7 @@ body.open-menu {
             font-size: $px18;
             line-height: 22px;
             font-family: $PrNovacond-reg;
+            text-transform: uppercase;
         }
 
         .is-active a {
@@ -532,7 +533,7 @@ body.open-menu {
                 position: absolute;
                 display: block;
                 content: '';
-                background: $corange;
+                background: $cwhite;
                 top: 0;
                 bottom: 0;
                 margin: auto 0;

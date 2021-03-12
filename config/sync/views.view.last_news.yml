@@ -1059,6 +1059,8 @@ display:
         arguments: false
         fields: false
         css_class: false
+        style: false
+        row: false
       arguments:
         tid:
           id: tid
@@ -1408,7 +1410,16 @@ display:
           empty_zero: false
           hide_alter_empty: false
           plugin_id: custom
-      css_class: card-one-column
+      css_class: ''
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: card-one-column
+          default_row_class: true
+      row:
+        type: fields
+        options: {  }
     cache_metadata:
       max-age: -1
       contexts:

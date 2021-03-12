@@ -537,7 +537,20 @@ display:
             label: ''
           granularity: second
       title: 'Last news in error page'
-      header: {  }
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content:
+            value: 'Discover the Best of the US Latino Experience with a focus on Culture, Entrepreneurship, and Leadership.'
+            format: full_html
+          plugin_id: text
       footer: {  }
       empty: {  }
       relationships: {  }
