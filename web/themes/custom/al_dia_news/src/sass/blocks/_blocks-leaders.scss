@@ -36,18 +36,6 @@
             max-width: 320px;
             position: relative;
             margin: auto 0 auto 25px;
-            
-            &::before {
-                top: 3px;
-                content: 'By';
-                left: 0;
-                font-style: normal;
-                font-weight: 600;
-                font-size: $px24;
-                line-height: 29px;
-                font-family: $Modcond-reg;
-                position: absolute;
-            }
         }
 
         .photo {
@@ -56,7 +44,16 @@
         }
 
         .by-author-information {
-           display: none;
+            top: 3px;
+            left: 0;
+            font-style: normal;
+            font-weight: 600;
+            font-size: $px24;
+            line-height: 29px;
+            font-family: $Modcond-reg;
+            position: absolute;
+            margin: 0;
+            width: 32px;
         }
 
         .author-name {
@@ -66,7 +63,7 @@
             line-height: 29px;
             font-family: $Modcond-reg;
             margin: 5px 0 0 0;
-            padding: 0 0 0 30px;
+            padding: 0 0 0 35px;
         }
         
         .author-information {
@@ -89,6 +86,12 @@
         }
 
         @media (max-width:$tablet){ 
+
+            .by-author-information { 
+                font-size: 14px;
+                line-height: 17px;
+                top: 4;
+            }
 
             img {
                 transform: scale(1.6);
@@ -122,7 +125,7 @@
             .author-name {
                 font-size: 14px;
                 line-height: 17px;
-                padding: 0 0 0 20px;
+                padding: 0 0 0 21px;
             }
 
             .date-authored-on {
