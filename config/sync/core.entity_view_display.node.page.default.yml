@@ -4,10 +4,100 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
+    - fixed_block_content.fixed_block_content._small_vertical_advertising
+    - fixed_block_content.fixed_block_content.big_vertical_advertising
+    - fixed_block_content.fixed_block_content.horizontal_advertising
     - node.type.page
   module:
+    - al_dia_layouts
+    - fixed_block_content
+    - layout_builder
     - text
     - user
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: basic_page_general
+        layout_settings:
+          label: 'Basic Page General'
+        components:
+          90cccc67-5fce-41cf-97f8-f02bf8a6cfd1:
+            uuid: 90cccc67-5fce-41cf-97f8-f02bf8a6cfd1
+            region: one_content
+            configuration:
+              id: 'field_block:node:page:title'
+              label: Title
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: string
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 0
+          89310b4e-6923-48b7-abee-f5e596a7ea67:
+            uuid: 89310b4e-6923-48b7-abee-f5e596a7ea67
+            region: horizontal_advertising
+            configuration:
+              id: 'fixed_block_content:horizontal_advertising'
+              label: 'Horizontal advertising'
+              provider: fixed_block_content
+              label_display: '0'
+              view_mode: ''
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+          8021a08b-8d26-410f-be0d-01a1ecc7f45f:
+            uuid: 8021a08b-8d26-410f-be0d-01a1ecc7f45f
+            region: one_vertical_advertising
+            configuration:
+              id: 'fixed_block_content:_small_vertical_advertising'
+              label: ' Small vertical advertising'
+              provider: fixed_block_content
+              label_display: '0'
+              view_mode: ''
+              context_mapping: {  }
+            additional: {  }
+            weight: 2
+          055b769b-9e1f-4c54-8e03-8d5c6dc9636b:
+            uuid: 055b769b-9e1f-4c54-8e03-8d5c6dc9636b
+            region: two_vertical_advertising
+            configuration:
+              id: 'fixed_block_content:big_vertical_advertising'
+              label: 'Big vertical advertising'
+              provider: fixed_block_content
+              label_display: '0'
+              view_mode: ''
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+          037589f5-2b5e-48c7-b9ae-69f9bd6dd9cb:
+            uuid: 037589f5-2b5e-48c7-b9ae-69f9bd6dd9cb
+            region: two_content
+            configuration:
+              id: 'field_block:node:page:body'
+              label: Cuerpo
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: text_default
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 0
+        third_party_settings: {  }
 _core:
   default_config_hash: g1S3_GLaxq4l3I9RIca5Mlz02MxI2KmOquZpHw59akM
 id: node.page.default
