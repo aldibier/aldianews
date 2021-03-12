@@ -1,0 +1,20 @@
+.news-galery {
+  padding: 0 15px;
+
+  .view-header {
+    h3 {
+      @include title-section-line($px34, $Modcond-reg, $cgrey6);
+    }
+  }
+
+  .view-content {
+    > div {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    }
+
+    .views-row,
+    .card-one-column {
+    }
+  }
+}
