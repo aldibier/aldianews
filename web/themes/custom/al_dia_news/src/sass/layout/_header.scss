@@ -152,16 +152,18 @@ body.open-menu {
                 color: $cblack0;
             }
 
-            &:nth-child(9){
-                br{
-                    display: none;
+            @media (min-width: $mobile-mid){
+                &:nth-child(7){
+                    br{
+                        display: none;
+                    }
                 }
-            }
-
-            &:nth-child(10){
-                a {
-                    max-width: 81px;
-                    text-align: center;
+    
+                &:nth-child(9){
+                    a {
+                        max-width: 81px;
+                        text-align: center;
+                    }
                 }
             }
         }  
@@ -236,6 +238,10 @@ body.open-menu {
             .menu-item{
                 width: 50%;
                 text-align: left;
+
+                br {
+                    display: none;
+                }
             }
         }
     }
