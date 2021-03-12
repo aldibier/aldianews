@@ -11,7 +11,7 @@
  */
 #}
 {% if content %}
-  <div class="container-content main-news-content">
+  <div class="container-content">
 
     {% if content.one_content %}
         <div {{ region_attributes.one_content.addClass('one-content-category') }}>
@@ -20,7 +20,7 @@
     {% endif %}
 
     {% if content.two_content %}
-        <div {{ region_attributes.two_content.addClass('two-content-category news-category-container') }}>
+        <div {{ region_attributes.two_content.addClass('two-content-category news-category-container main-news-content') }}>
           {{ content.two_content}} 
         </div>
     {% endif %}
