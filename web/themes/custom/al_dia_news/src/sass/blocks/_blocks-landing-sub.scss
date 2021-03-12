@@ -146,10 +146,14 @@
         }
 
         .views-row {
-            margin: 0 auto 0 0;
-            width: 33%;
-            max-width: 100%;
+            width: 33.33%;
+            max-width: 430px;
             @extend .block-notice-base;
+
+            .block-field-blocknodenewsfield-image {
+                max-height: 235px;
+                overflow: hidden;
+            }
 
             @media(max-width:$broken){
                 
