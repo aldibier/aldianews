@@ -508,7 +508,7 @@ div[ data-embed-button="related_content" ] {
 
     .form-actions {
 
-        .button--primary {
+        input.button--primary {
             background: $corange;
             border: none;
             height: 40px;
@@ -518,6 +518,7 @@ div[ data-embed-button="related_content" ] {
             color: $cwhite;
             border-radius: 0;
             font-family: $PrNovacond-bold;
+            padding: 0 24px;
         }
 
         input[value="Preview"]{
@@ -533,12 +534,14 @@ div[ data-embed-button="related_content" ] {
 
         .form-actions {
 
-            .button--primary {
+            input.button--primary {
                 height: 30px;
                 font-size: 12px;
                 line-height: 25px;
                 margin: 0;
                 padding: 0;
+                width: auto;
+                padding: 0 16px;
             }
         }
 
