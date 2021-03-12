@@ -274,6 +274,10 @@
         font-size: $px14;
         line-height: 17px;
         font-family: $PrNovacond-reg;
+
+        p,div{
+            margin: auto 0;
+        }
     }
 
     .copyr {
@@ -283,7 +287,16 @@
         display: flex;
         flex-wrap: wrap;
         max-width: 50%;
-        right: 19;
+        right: 19px;
+
+        &:before {
+            content: '';
+            width: 15px;
+            height: 15px;
+            display: block;
+            background: url('../img/seed-logo.png') center center no-repeat;
+            background-size: contain;
+        }
     }
 
     .powerd{
@@ -293,6 +306,15 @@
         bottom: 12px;
         right: 13px;
         width: 50%;
+
+        &:before {
+            content: '';
+            width: 15px;
+            height: 15px;
+            display: block;
+            background: url('../img/copy.png') center center no-repeat;
+            background-size: contain;
+        }
     }
 
     @media (max-width:$broken) {
