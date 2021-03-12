@@ -5,15 +5,13 @@ dependencies:
   config:
     - core.entity_view_mode.node.basic_page_about_us
     - field.field.node.page.body
+    - fixed_block_content.fixed_block_content._small_vertical_advertising
+    - fixed_block_content.fixed_block_content.big_vertical_advertising
     - fixed_block_content.fixed_block_content.header_page_about_us
     - fixed_block_content.fixed_block_content.horizontal_advertising
     - node.type.page
-  content:
-    - 'block_content:block_for_image_and_link:54c84c2c-0905-4af7-a15f-1223f4913b2a'
-    - 'block_content:block_for_image_and_link:ab0512b0-0e59-45ef-85c5-cbf89ca28b61'
   module:
     - al_dia_layouts
-    - block_content
     - fixed_block_content
     - layout_builder
     - text
@@ -58,34 +56,6 @@ third_party_settings:
                 view_mode: view_mode
             additional: {  }
             weight: 0
-          27aae6e9-1365-4e17-bf46-e4e8fe7b3069:
-            uuid: 27aae6e9-1365-4e17-bf46-e4e8fe7b3069
-            region: one_vertical_advertising
-            configuration:
-              id: 'block_content:54c84c2c-0905-4af7-a15f-1223f4913b2a'
-              label: ' Small vertical advertising'
-              provider: block_content
-              label_display: '0'
-              status: true
-              info: ''
-              view_mode: full
-              context_mapping: {  }
-            additional: {  }
-            weight: 0
-          0c1a9b76-f508-4ea7-9006-3abe5400c59c:
-            uuid: 0c1a9b76-f508-4ea7-9006-3abe5400c59c
-            region: two_vertical_advertising
-            configuration:
-              id: 'block_content:ab0512b0-0e59-45ef-85c5-cbf89ca28b61'
-              label: 'Big vertical advertising'
-              provider: block_content
-              label_display: '0'
-              status: true
-              info: ''
-              view_mode: full
-              context_mapping: {  }
-            additional: {  }
-            weight: 0
           2b66b274-fda1-45f3-a60b-c0fab914cb4c:
             uuid: 2b66b274-fda1-45f3-a60b-c0fab914cb4c
             region: block_image
@@ -98,6 +68,30 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: 1
+          ca90331c-75ea-4da1-9260-1adafd48f64d:
+            uuid: ca90331c-75ea-4da1-9260-1adafd48f64d
+            region: one_vertical_advertising
+            configuration:
+              id: 'fixed_block_content:_small_vertical_advertising'
+              label: ' Small vertical advertising'
+              provider: fixed_block_content
+              label_display: '0'
+              view_mode: ''
+              context_mapping: {  }
+            additional: {  }
+            weight: 1
+          ee8a2af1-9760-4faf-b9cc-59756f9ae3ed:
+            uuid: ee8a2af1-9760-4faf-b9cc-59756f9ae3ed
+            region: two_vertical_advertising
+            configuration:
+              id: 'fixed_block_content:big_vertical_advertising'
+              label: 'Big vertical advertising'
+              provider: fixed_block_content
+              label_display: '0'
+              view_mode: ''
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
         third_party_settings: {  }
 _core:
   default_config_hash: g1S3_GLaxq4l3I9RIca5Mlz02MxI2KmOquZpHw59akM
