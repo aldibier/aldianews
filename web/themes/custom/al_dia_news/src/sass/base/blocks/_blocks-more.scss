@@ -1,12 +1,19 @@
 .block-views-blockmore-in-this-section-news-block-1,
 .block-views-blocklast-news-category-sons-block-2,
 .view-categories-sons .views-field-view-2 {
-  padding: 0 15px;
   border-left: 1px solid $cgrey4;
+
+  @media (max-width: $broken) {
+    border-left: none;
+  }
 
   @media (max-width: $tablet) {
     padding: 0;
-    border-left: none;
+  }
+
+ 
+  .view-more {
+    padding: 0 15px;
   }
 
   //------ title more in this section ------------//
@@ -51,7 +58,7 @@
   }
 
   .view-content {
-    @media (max-width: $tablet) {
+    @media (max-width: $broken) {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
     }

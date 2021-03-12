@@ -2,6 +2,10 @@
 .card-more {
   //------ more content news ------------//
 
+  .one-content-category-four {
+    margin-right: 15px;
+  }
+
   &-news {
     .related-content > a {
       width: 175px;
@@ -70,9 +74,17 @@
     .last-content-category-childs {
       display: flex;
 
-      @media (max-width: $tablet) {
+      @media (max-width: $broken) {
         flex-direction: column;
       }
+    }
+
+    .block-field-blocknodenewsfield-short-title {
+      margin-bottom: 10px;
+    }
+
+    .last-content-category-childs {
+      margin-right: 15px;
     }
 
     .field--name-field-image {
@@ -99,7 +111,11 @@
     }
 
     .field--name-field-category {
-      margin: 0;
+      h2 {
+        margin: 0;
+        line-height: 0;
+      }
+
       a {
         border: none;
         font-size: $px12;
@@ -113,6 +129,10 @@
     }
 
     .field--name-field-short-title {
+      h3 {
+        margin: 0;
+      }
+
       a  {
         border: none;
         font-size: $px24;

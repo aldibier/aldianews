@@ -1,7 +1,26 @@
+//view more
+.category-view-more {
+  width: 100%;
+  padding: 15px;
+  text-align: right;
+
+  a {
+    border: none;
+    font-size: $px16;
+    font-family: $PrNovacond-reg;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 25px;
+    letter-spacing: 0.741176px;
+    color: $corange;
+  }
+}
+
+//block category sons
 .view-categories-sons {
   > .view-content {
     > h3 {
-      margin-bottom: 0;
+      margin: 0 15px;
       position: relative;
       overflow: hidden;
 
@@ -29,7 +48,7 @@
 
     > .views-row {
       display: grid;
-      grid-template-columns: 850px auto;
+      grid-template-columns: 1fr auto;
       grid-template-rows: repeat(3, auto);
       grid-template-areas:
         "head head"
@@ -38,12 +57,15 @@
     }
 
     .views-field-view {
-      padding: 0 15px;
+      max-width: 880px;
+      margin: 0 15px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid $cgrey4;
       grid-area: area-1;
     }
 
     .views-field-view-1 {
-      padding: 0 15px;
+      margin: 20px 15px 0;
       grid-area: area-2;
 
       .view-content {
@@ -61,56 +83,9 @@
     }
   }
 
-  .views-field-field-short-title {
-    a {
-      border: none;
-      font-size: $px47;
-      font-family: $PrNovacond-bold;
-      font-style: normal;
-      font-weight: bold;
-      line-height: 1;
-      text-transform: uppercase;
-      //color: $cwhite;
+  //next two
+  .view-last-news {
+    .card-one-column {
     }
-  }
-
-  .views-field-body {
-    font-size: $px20;
-    font-family: $NimR-bold;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1.5;
-    //color: $cwhite;
-  }
-
-  .views-field-created {
-    font-size: $px17;
-    font-family: $PrNovacond-reg;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 20px;
-    //color: $cwhite;
-
-    @media (max-width: $tablet) {
-      font-size: 10px;
-      line-height: 12px;
-    }
-  }
-}
-
-//view more
-.category-view-more {
-  width: 100%;
-  text-align: right;
-
-  a {
-    border: none;
-    font-size: $px16;
-    font-family: $PrNovacond-reg;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 25px;
-    letter-spacing: 0.741176px;
-    color: $corange;
   }
 }
