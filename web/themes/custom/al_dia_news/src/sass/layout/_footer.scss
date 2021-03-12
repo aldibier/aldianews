@@ -114,6 +114,12 @@
                 &:nth-child(7),
                 &:nth-child(8) {
                     width: 100%;
+
+                    @media(min-width: $tablet){
+                        a {
+                            max-width: 50%;
+                        }
+                    }
                 }
             }
 
