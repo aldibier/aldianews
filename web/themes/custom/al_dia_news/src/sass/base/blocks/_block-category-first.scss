@@ -6,7 +6,7 @@
 
   .category-title {
     height: 60px;
-    margin: 0 15px;
+    margin: 0 20px;
     padding-bottom: 10px;
     border-bottom: 3px solid $corange;
     display: flex;
@@ -49,11 +49,12 @@
     grid-template-areas:
       "area-1"
       "area-2";
+    grid-gap: 40px 0;
   }
 
   .block-views-blocklast-news-category-sons-block-1 {
     max-width: 880px;
-    padding: 0 15px;
+    padding: 0 20px;
     grid-area: area-1;
 
     @media screen and(max-width:$broken) {
@@ -63,6 +64,11 @@
 
     > .content {
       margin: 0;
+    }
+
+    .main-news-image img {
+      min-height: 520px;
+      max-height: 520px;
     }
   }
 

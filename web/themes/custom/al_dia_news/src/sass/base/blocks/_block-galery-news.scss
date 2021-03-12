@@ -1,5 +1,5 @@
 .news-galery {
-  padding: 0 15px;
+  padding: 0 20px;
 
   .view-header {
     h3 {
@@ -10,11 +10,49 @@
   .view-content {
     > div {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+      grid-template-columns: repeat(3, minmax(400px, 1fr));
+      gap: 70px 35px;
+      overflow: hidden;
     }
 
-    .views-row,
-    .card-one-column {
+    .views-row {
+      max-width: 100%;
+      margin: 0;
+      margin-bottom: 35px;
+      position: relative;
+
+      &::after {
+        content: "";
+        width: 1px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: calc(0% - 20px + 1px);
+        background-color: $cgrey4;
+      }
+
+      &::before {
+        content: "";
+        width: calc(100% + 40px);
+        height: 1px;
+        position: absolute;
+        top: calc(0% - 35px);
+        left: 0;
+        right: 0;
+        background-color: $cgrey4;
+      }
+
+      &:nth-child(3n + 3) {
+        &::after {
+          display: none;
+        }
+      }
+
+      &:nth-child(-n + 3) {
+        &::before {
+          display: none;
+        }
+      }
     }
   }
 }

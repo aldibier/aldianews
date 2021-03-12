@@ -12,7 +12,7 @@
   }
 
   .view-more {
-    padding: 0 15px;
+    padding: 0 20px;
   }
 
   //------ title more in this section ------------//
@@ -34,6 +34,11 @@
     @media (max-width: $broken) {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
+      grid-gap: 40px 50px;
+    }
+
+    @media (max-width: $tablet) {
+      grid-gap: 0;
     }
   }
 
