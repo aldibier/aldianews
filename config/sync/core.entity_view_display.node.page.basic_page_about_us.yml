@@ -5,10 +5,10 @@ dependencies:
   config:
     - core.entity_view_mode.node.basic_page_about_us
     - field.field.node.page.body
+    - fixed_block_content.fixed_block_content.header_page_about_us
     - fixed_block_content.fixed_block_content.horizontal_advertising
     - node.type.page
   content:
-    - 'block_content:basic_block_with_image:6c4cccd4-7305-4d6e-86c7-046996f6efdc'
     - 'block_content:block_for_image_and_link:54c84c2c-0905-4af7-a15f-1223f4913b2a'
     - 'block_content:block_for_image_and_link:ab0512b0-0e59-45ef-85c5-cbf89ca28b61'
   module:
@@ -28,20 +28,6 @@ third_party_settings:
         layout_settings:
           label: 'Basic page with block image'
         components:
-          2750edd0-81ed-454a-93b6-0c3106207512:
-            uuid: 2750edd0-81ed-454a-93b6-0c3106207512
-            region: block_image
-            configuration:
-              id: 'block_content:6c4cccd4-7305-4d6e-86c7-046996f6efdc'
-              label: 'Header page about us'
-              provider: block_content
-              label_display: '0'
-              status: true
-              info: ''
-              view_mode: full
-              context_mapping: {  }
-            additional: {  }
-            weight: 0
           0a9c4872-1927-402c-9bf2-9a8a439e17bd:
             uuid: 0a9c4872-1927-402c-9bf2-9a8a439e17bd
             region: horizontal_advertising
@@ -100,6 +86,18 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: 0
+          2b66b274-fda1-45f3-a60b-c0fab914cb4c:
+            uuid: 2b66b274-fda1-45f3-a60b-c0fab914cb4c
+            region: block_image
+            configuration:
+              id: 'fixed_block_content:header_page_about_us'
+              label: 'Header page about us'
+              provider: fixed_block_content
+              label_display: '0'
+              view_mode: ''
+              context_mapping: {  }
+            additional: {  }
+            weight: 1
         third_party_settings: {  }
 _core:
   default_config_hash: g1S3_GLaxq4l3I9RIca5Mlz02MxI2KmOquZpHw59akM
