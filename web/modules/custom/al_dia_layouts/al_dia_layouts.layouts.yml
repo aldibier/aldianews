@@ -193,8 +193,33 @@ basic_page_general:
   regions:
     horizontal_advertising:
       label: Publicidad horizontal
-    one_content:
+    one_content_title:
       label: Primero - Contenido
+    two_content:
+      label: Segundo - Contenido
+    one_vertical_advertising:
+      label: Publicidad vertical uno
+    two_vertical_advertising:
+      label: Publicidad vertical dos
+
+basic_page_with_block_image:
+  label: 'Basic Page with block image'
+  path: layouts/basic_page
+  template: layout--basic-page-with-block-image
+  category: 'Basic Page'
+  default_region: content
+  icon_map:
+    - [block_image]
+    - [horizontal_advertising]
+    - [one_content_title]
+    - [two_content]
+    - [one_vertical_advertising]
+    - [two_vertical_advertising]
+  regions:
+    block_image:
+      label: Bloque con imagen
+    horizontal_advertising:
+      label: Publicidad horizontal
     two_content:
       label: Segundo - Contenido
     one_vertical_advertising:
