@@ -110,6 +110,11 @@
                 >div {
                     order: 1;
                 }
+
+                &:nth-child(7),
+                &:nth-child(8) {
+                    width: 100%;
+                }
             }
 
             .field--name-field-image {
@@ -259,6 +264,35 @@
                 transform: scale(1.2);
             }
         }
+    }
+
+    .copyr,
+    .powerd {
+        list-style: none;
+        font-style: normal;
+        font-weight: 300;
+        font-size: $px14;
+        line-height: 17px;
+        font-family: $PrNovacond-reg;
+    }
+
+    .copyr {
+        width: 100%;
+        position: absolute;
+        bottom: 87px;
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 50%;
+        right: 19;
+    }
+
+    .powerd{
+        list-style: none;
+        display: flex;
+        position: absolute;
+        bottom: 12px;
+        right: 13px;
+        width: 50%;
     }
 
     @media (max-width:$broken) {
