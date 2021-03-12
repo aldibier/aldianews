@@ -57,7 +57,19 @@ body.open-menu {
     @media(max-width:$tablet){
         flex-wrap: wrap;
         margin: 0 auto 7px;
-        padding: 50px 0 0px;
+        padding: 70px 0 0px;
+
+        &:after {
+            position: absolute;
+            top: 0;
+            width: calc(100% - 30px);
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            height: 1px;
+            content: '';
+            background: $cgrey4;
+        }
     }
 }
 
