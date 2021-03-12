@@ -1,0 +1,122 @@
+uuid: c412b27e-a1e7-44a3-9b54-b1c385dd367e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.basic_page_about_us
+    - field.field.node.page.body
+    - fixed_block_content.fixed_block_content._small_vertical_advertising
+    - fixed_block_content.fixed_block_content.big_vertical_advertising
+    - fixed_block_content.fixed_block_content.header_page_about_us
+    - fixed_block_content.fixed_block_content.horizontal_advertising
+    - node.type.page
+  module:
+    - al_dia_layouts
+    - fixed_block_content
+    - layout_builder
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: basic_page_with_block_image
+        layout_settings:
+          label: 'Basic page with block image'
+        components:
+          0a9c4872-1927-402c-9bf2-9a8a439e17bd:
+            uuid: 0a9c4872-1927-402c-9bf2-9a8a439e17bd
+            region: horizontal_advertising
+            configuration:
+              id: 'fixed_block_content:horizontal_advertising'
+              label: 'Horizontal advertising'
+              provider: fixed_block_content
+              label_display: '0'
+              view_mode: ''
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+          9daf15e4-e360-4fab-a226-3a189a91a893:
+            uuid: 9daf15e4-e360-4fab-a226-3a189a91a893
+            region: two_content
+            configuration:
+              id: 'field_block:node:page:body'
+              label: Body
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: text_default
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 0
+          2b66b274-fda1-45f3-a60b-c0fab914cb4c:
+            uuid: 2b66b274-fda1-45f3-a60b-c0fab914cb4c
+            region: block_image
+            configuration:
+              id: 'fixed_block_content:header_page_about_us'
+              label: 'Header page about us'
+              provider: fixed_block_content
+              label_display: '0'
+              view_mode: ''
+              context_mapping: {  }
+            additional: {  }
+            weight: 1
+          ca90331c-75ea-4da1-9260-1adafd48f64d:
+            uuid: ca90331c-75ea-4da1-9260-1adafd48f64d
+            region: one_vertical_advertising
+            configuration:
+              id: 'fixed_block_content:_small_vertical_advertising'
+              label: ' Small vertical advertising'
+              provider: fixed_block_content
+              label_display: '0'
+              view_mode: ''
+              context_mapping: {  }
+            additional: {  }
+            weight: 1
+          ee8a2af1-9760-4faf-b9cc-59756f9ae3ed:
+            uuid: ee8a2af1-9760-4faf-b9cc-59756f9ae3ed
+            region: two_vertical_advertising
+            configuration:
+              id: 'fixed_block_content:big_vertical_advertising'
+              label: 'Big vertical advertising'
+              provider: fixed_block_content
+              label_display: '0'
+              view_mode: ''
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+        third_party_settings: {  }
+_core:
+  default_config_hash: g1S3_GLaxq4l3I9RIca5Mlz02MxI2KmOquZpHw59akM
+id: node.page.basic_page_about_us
+targetEntityType: node
+bundle: page
+mode: basic_page_about_us
+content:
+  addtoany:
+    weight: 101
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  body:
+    label: hidden
+    type: text_default
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  links:
+    weight: 101
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true
+  search_api_excerpt: true

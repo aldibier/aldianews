@@ -24,25 +24,6 @@ third_party_settings:
         layout_settings:
           label: 'Basic Page General'
         components:
-          90cccc67-5fce-41cf-97f8-f02bf8a6cfd1:
-            uuid: 90cccc67-5fce-41cf-97f8-f02bf8a6cfd1
-            region: one_content
-            configuration:
-              id: 'field_block:node:page:title'
-              label: Title
-              provider: layout_builder
-              label_display: '0'
-              formatter:
-                label: hidden
-                type: string
-                settings:
-                  link_to_entity: false
-                third_party_settings: {  }
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-            additional: {  }
-            weight: 0
           89310b4e-6923-48b7-abee-f5e596a7ea67:
             uuid: 89310b4e-6923-48b7-abee-f5e596a7ea67
             region: horizontal_advertising
@@ -132,6 +113,25 @@ third_party_settings:
               id: 'extra_field_block:node:page:links'
             additional: {  }
             weight: 2
+          d0c3f079-3c1a-4555-bc3b-bd56d30c986b:
+            uuid: d0c3f079-3c1a-4555-bc3b-bd56d30c986b
+            region: one_content_title
+            configuration:
+              id: 'field_block:node:page:title'
+              label: Title
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: string
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 0
         third_party_settings: {  }
 _core:
   default_config_hash: g1S3_GLaxq4l3I9RIca5Mlz02MxI2KmOquZpHw59akM
