@@ -108,6 +108,11 @@ body.open-menu {
 
         .menu {
             flex-wrap: wrap;
+            margin: 43px 0px;
+
+            @media(max-width:$tablet){
+                margin: 0;
+            }
         }
 
         a {
