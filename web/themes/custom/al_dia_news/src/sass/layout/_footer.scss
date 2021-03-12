@@ -329,6 +329,12 @@
     }
 
     @media (max-width:$broken) {
+
+        .copyr,
+        .powerd {
+            right: -11px;
+        }
+
         #block-footer {
             right: 15px;
 
@@ -341,6 +347,21 @@
     }
 
     @media (max-width:$broken3){
+
+        .copyr,
+        .powerd {
+            right: auto;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            padding: 0 30px;
+            max-width: 100%;
+        }
+
+        .copyr {
+            margin: 15px 0;
+        }
+
         #block-footerlogo {
             position: relative;
             width: 100%;
@@ -442,6 +463,17 @@
     }
 
     @media (max-width:$tablet){
+
+        .copyr,
+        .powerd {
+            font-size: 12px;
+            line-height: 15px;
+        }
+
+        .copyr {
+            margin: 10px 0;
+        }
+        
         #block-footerlogo {
             .field--name-body{
                 p{
