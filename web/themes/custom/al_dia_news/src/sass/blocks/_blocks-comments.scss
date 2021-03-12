@@ -17,6 +17,12 @@
         .form-textarea {
             min-height: 182px;
         }
+
+        @media( max-width: $tablet){
+            .form-textarea {
+                min-height: 80px;
+            }
+        }
     }
 }
 
