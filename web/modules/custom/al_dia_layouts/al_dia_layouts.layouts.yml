@@ -178,3 +178,79 @@ error_page:
     two_content:
       label: Segundo - Contenido
 
+basic_page_general:
+  label: 'Basic Page Genral'
+  path: layouts/basic_page
+  template: layout--basic-page-general
+  category: 'Basic Page'
+  default_region: content
+  icon_map:
+    - [horizontal_advertising]
+    - [one_content_title]
+    - [two_content]
+    - [one_vertical_advertising]
+    - [two_vertical_advertising]
+  regions:
+    horizontal_advertising:
+      label: Publicidad horizontal
+    one_content_title:
+      label: Primero - Contenido
+    two_content:
+      label: Segundo - Contenido
+    one_vertical_advertising:
+      label: Publicidad vertical uno
+    two_vertical_advertising:
+      label: Publicidad vertical dos
+
+basic_page_with_block_image:
+  label: 'Basic Page with block image'
+  path: layouts/basic_page
+  template: layout--basic-page-with-block-image
+  category: 'Basic Page'
+  default_region: content
+  icon_map:
+    - [block_image]
+    - [horizontal_advertising]
+    - [one_content_title]
+    - [two_content]
+    - [one_vertical_advertising]
+    - [two_vertical_advertising]
+  regions:
+    block_image:
+      label: Bloque con imagen
+    horizontal_advertising:
+      label: Publicidad horizontal
+    two_content:
+      label: Segundo - Contenido
+    one_vertical_advertising:
+      label: Publicidad vertical uno
+    two_vertical_advertising:
+      label: Publicidad vertical dos
+
+al_dia_vacancy_default:
+  label: 'Al Día Vacancy Default'
+  path: layouts/vacancy
+  template: layout--al-dia-vacancy-default
+  category: 'Vacancy'
+  default_region: content
+  icon_map:
+    - [one_content_image]
+    - [horizontal_advertising]
+    - [one_content_title]
+    - [two_content]
+    - [one_vertical_advertising]
+    - [two_vertical_advertising]
+  regions:
+    one_content_image:
+      label: Primero - Contenido Imagen
+    horizontal_advertising:
+      label: Publicidad horizontal
+    one_content_title:
+      label: Primero - Contenido Titulo
+    two_content:
+      label: Segundo - Contenido Body
+    one_vertical_advertising:
+      label: Publicidad vertical uno
+    two_vertical_advertising:
+      label: Publicidad vertical dos
+

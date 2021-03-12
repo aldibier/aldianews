@@ -32,6 +32,11 @@ import initScrollMagic from "./scroll-magic.js";
             }
         });
 
+        $(".region-secondary-menu #block-al-dia-news-main-menu a").each(function(){
+            var text = $(this).html();
+            $(this).html(text.replace(/AL/g,'<br>AL'));
+        });
+
         //--------- initialization --------------------//
         initScrollMagic();
 

@@ -57,7 +57,19 @@ body.open-menu {
     @media(max-width:$tablet){
         flex-wrap: wrap;
         margin: 0 auto 7px;
-        padding: 50px 0 0px;
+        padding: 70px 0 0px;
+
+        &:after {
+            position: absolute;
+            top: 62px;
+            width: calc(100% - 30px);
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            height: 1px;
+            content: '';
+            background: $cgrey4;
+        }
     }
 }
 
@@ -108,6 +120,11 @@ body.open-menu {
 
         .menu {
             flex-wrap: wrap;
+            margin: 35px 0;
+
+            @media(max-width:$tablet){
+                margin: 0;
+            }
         }
 
         a {
@@ -119,6 +136,7 @@ body.open-menu {
             text-align: center;
             letter-spacing: 0.025em;
             padding: 8px 1.1em;
+            margin: auto 0;
         }
     }
 
@@ -127,9 +145,27 @@ body.open-menu {
 
         .menu-item{
             margin: 0;
+            display: flex;
+            flex-wrap: wrap;
 
             a{
                 color: $cblack0;
+            }
+
+            &:nth-child(8){
+                br{
+                    display: none;
+                }
+            }
+
+            @media (min-width: $mobile-mid){
+            
+                &:nth-child(10){
+                    a {
+                        max-width: 81px;
+                        text-align: center;
+                    }
+                }
             }
         }  
     }
@@ -203,6 +239,10 @@ body.open-menu {
             .menu-item{
                 width: 50%;
                 text-align: left;
+
+                br {
+                    display: none;
+                }
             }
         }
     }
@@ -552,6 +592,7 @@ body.open-menu {
             width: 78px;
             height: 86px;
             left: 10px;
+            overflow: hidden;
             transform: rotate(-17deg);
         }
 
@@ -559,6 +600,7 @@ body.open-menu {
             position: absolute;
             z-index: 4;
             width: 78px;
+            overflow: hidden;
             height: 86px;
             opacity: 0;
             left: 10px;
