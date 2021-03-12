@@ -74,6 +74,10 @@ display:
             automatically_load_content: true
       style:
         type: default
+        options:
+          grouping: {  }
+          row_class: card-one-column
+          default_row_class: true
       row:
         type: fields
       fields:
@@ -179,7 +183,7 @@ display:
             preserve_tags: ''
             html: false
           element_type: ''
-          element_class: ''
+          element_class: card-image
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
@@ -410,7 +414,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"card-one-column\">\r\n   <div class=\"card-name-category\">{{ field_category }}</div>\r\n   <div class=\"card-title\">{{ field_short_title }}</div>\r\n   <div class=\"card-date\">{{ created }}</div>\r\n</div>"
+            text: "<div class=\"card-content\">\r\n   <div class=\"card-name-category\">{{ field_category }}</div>\r\n   <div class=\"card-title\">{{ field_short_title }}</div>\r\n   <div class=\"card-date\">{{ created }}</div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -539,7 +543,7 @@ display:
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
-      css_class: content
+      css_class: ''
     cache_metadata:
       max-age: -1
       contexts:
