@@ -11,41 +11,14 @@
     padding: 0;
   }
 
- 
   .view-more {
     padding: 0 15px;
   }
 
   //------ title more in this section ------------//
   > h2 {
-    position: relative;
-    font-size: $px28;
-    font-family: $Mod-light;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 33.6px;
-    text-transform: uppercase;
-    color: #333333;
-    overflow: hidden;
-
-    &::after {
-      content: "";
-      width: 65px;
-      height: 3px;
-      margin-left: 15px;
-      display: inline-block;
-      position: absolute;
-      top: calc(50% - 5px);
-      background-color: #333333;
-    }
-
-    @media (max-width: $tablet) {
-      font-size: 20px;
-
-      &::after {
-        width: 100%;
-      }
-    }
+    padding: 0 15px;
+    @include title-section-line($px28, $Mod-light, $cblack3);
   }
 
   //------ related content ------------//
@@ -73,11 +46,11 @@
       margin-bottom: 30px;
       padding-bottom: 30px;
 
-      &:nth-child(2n+2) {
+      &:nth-child(2n + 2) {
         padding-left: 5px;
       }
-    
-      &:nth-child(2n+1) {
+
+      &:nth-child(2n + 1) {
         padding-right: 5px;
       }
     }

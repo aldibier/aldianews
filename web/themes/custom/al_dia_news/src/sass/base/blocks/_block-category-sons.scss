@@ -21,28 +21,8 @@
   > .view-content {
     > h3 {
       margin: 0 15px;
-      position: relative;
-      overflow: hidden;
-
       a {
-        border: none;
-        font-size: $px34;
-        font-family: $Modcond-reg;
-        font-style: normal;
-        font-weight: normal;
-        line-height: 41px;
-        color: $corange;
-      }
-
-      &::after {
-        content: "";
-        width: 100%;
-        height: 3px;
-        margin-left: 15px;
-        display: inline-block;
-        position: absolute;
-        top: calc(50% - 5px);
-        background-color: $corange;
+        @include title-section-line($px34, $Modcond-reg, $corange2);
       }
     }
 
@@ -84,8 +64,14 @@
   }
 
   //next two
-  .view-last-news {
-    .card-one-column {
+  .card-one-column {
+   /*  &:nth-child(1) {
+      padding-right: 15px;
+      border-right: 1px solid $cgrey4;
     }
+
+    &:nth-child(2) {
+      padding-left: 15px;
+    } */
   }
 }
