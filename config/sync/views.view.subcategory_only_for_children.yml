@@ -798,6 +798,7 @@ display:
         - 'config:core.entity_view_display.node.news.subcategory_more'
         - 'config:core.entity_view_display.node.news.subcategory_next_4'
         - 'config:core.entity_view_display.node.news.teaser'
+        - 'config:core.entity_view_display.node.page.basic_page_about_us'
         - 'config:core.entity_view_display.node.page.default'
         - 'config:core.entity_view_display.node.page.general_errors'
         - 'config:core.entity_view_display.node.page.teaser'
@@ -1269,6 +1270,7 @@ display:
         - 'config:core.entity_view_display.node.news.subcategory_more'
         - 'config:core.entity_view_display.node.news.subcategory_next_4'
         - 'config:core.entity_view_display.node.news.teaser'
+        - 'config:core.entity_view_display.node.page.basic_page_about_us'
         - 'config:core.entity_view_display.node.page.default'
         - 'config:core.entity_view_display.node.page.general_errors'
         - 'config:core.entity_view_display.node.page.teaser'
@@ -1309,6 +1311,9 @@ display:
         pager: false
         header: false
         fields: false
+        use_ajax: false
+        filters: false
+        filter_groups: false
       header: {  }
       fields:
         name:
@@ -1685,6 +1690,121 @@ display:
           view_mode: subcategory_more
           entity_type: node
           plugin_id: rendered_entity
+      use_ajax: true
+      filters:
+        status:
+          value: '1'
+          table: taxonomy_term_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: taxonomy_term
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+          group: 1
+        vid:
+          id: vid
+          table: taxonomy_term_field_data
+          field: vid
+          value:
+            categories: categories
+          entity_type: taxonomy_term
+          entity_field: vid
+          plugin_id: bundle
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+        langcode:
+          id: langcode
+          table: node_field_data
+          field: langcode
+          relationship: reverse__node__field_category
+          group_type: group
+          admin_label: ''
+          operator: in
+          value:
+            '***LANGUAGE_language_interface***': '***LANGUAGE_language_interface***'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: node
+          entity_field: langcode
+          plugin_id: language
+        langcode_1:
+          id: langcode_1
+          table: taxonomy_term_field_data
+          field: langcode
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value:
+            '***LANGUAGE_language_interface***': '***LANGUAGE_language_interface***'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: taxonomy_term
+          entity_field: langcode
+          plugin_id: language
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
     cache_metadata:
       max-age: -1
       contexts:
@@ -1706,6 +1826,7 @@ display:
         - 'config:core.entity_view_display.node.news.subcategory_more'
         - 'config:core.entity_view_display.node.news.subcategory_next_4'
         - 'config:core.entity_view_display.node.news.teaser'
+        - 'config:core.entity_view_display.node.page.basic_page_about_us'
         - 'config:core.entity_view_display.node.page.default'
         - 'config:core.entity_view_display.node.page.general_errors'
         - 'config:core.entity_view_display.node.page.teaser'
