@@ -152,14 +152,15 @@ body.open-menu {
                 color: $cblack0;
             }
 
-            @media (min-width: $mobile-mid){
-                &:nth-child(7){
-                    br{
-                        display: none;
-                    }
+            &:nth-child(7){
+                br{
+                    display: none;
                 }
-    
-                &:nth-child(9){
+            }
+
+            @media (min-width: $mobile-mid){
+            
+                &:nth-child(10){
                     a {
                         max-width: 81px;
                         text-align: center;
