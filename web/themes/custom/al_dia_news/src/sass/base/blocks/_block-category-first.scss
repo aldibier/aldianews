@@ -36,118 +36,15 @@
 //-------------block category first -----------------//
 .category-first-block {
   margin: 20px 0;
-  display: flex;
-
-  .node--view-mode-category-first {
-    .container-content {
-      height: 530px;
-      display: flex;
-      align-items: flex-end;
-      position: relative;
-
-      &::after {
-        content: "";
-        width: 100%;
-        height: 60%;
-        display: block;
-        position: absolute;
-        left: 0;
-        background: linear-gradient(
-          rgba(11, 11, 11, 0) 31.77%,
-          rgba(11, 11, 11, 0.630593),
-          #0b0b0b 77.63%
-        );
-      }
-    }
-  }
-
-  .one-content-category {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-
-    * {
-      width: inherit;
-      height: inherit;
-    }
-
-    img {
-      margin: 0;
-      object-fit: cover;
-    }
-  }
-
-  .two-content-category {
-    padding: 0 55px 50px;
-    position: relative;
-    z-index: 1;
-
-    > div {
-      margin-bottom: 10px;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-
-    .block-field-blocknodenewsbody {
-      width: auto;
-      max-width: none;
-      padding: 0;
-    }
-
-    .field--name-field-category {
-      margin: 0;
-      font-size: $px20;
-      font-family: $Modcond-bold;
-      font-style: normal;
-      font-weight: bold;
-      line-height: 24px;
-      letter-spacing: 0.08em;
-      color: $cwhite;
-    }
-
-    .field--name-field-short-title {
-      a {
-        border: none;
-        font-size: $px47;
-        font-family: $PrNovacond-bold;
-        font-style: normal;
-        font-weight: bold;
-        line-height: 1;
-        text-transform: uppercase;
-        color: $cwhite;
-      }
-    }
-
-    .field--name-body {
-      font-size: $px20;
-      font-family: $NimR-bold;
-      font-style: normal;
-      font-weight: normal;
-      line-height: 1.5;
-      color: $cwhite;
-    }
-
-    .field--name-created {
-      font-size: $px17;
-      font-family: $PrNovacond-reg;
-      font-style: normal;
-      font-weight: normal;
-      line-height: 20px;
-      color: $cwhite;
-
-      @media (max-width: $tablet) {
-        font-size: 10px;
-        line-height: 12px;
-      }
-    }
-  }
+  display: grid;
+  grid-template-columns: 850px auto;
+  grid-auto-rows: auto;
+  grid-template-areas:
+    "area-1 area-2"
+    "area-1 area-2";
 
   .block-views-blocklast-news-category-sons-block-1 {
-    flex: 1 1 100%;
+    grid-area: area-1 ;
 
     > .content {
       margin: 0;
@@ -155,10 +52,6 @@
   }
 
   .block-views-blocklast-news-category-sons-block-2 {
-    --padding-right: 410px;
-    width: var(--padding-right);
-    min-width: var(--padding-right);
-    height: 100%;
-    max-height: max-content;
+    grid-area: area-2;
   }
 }
