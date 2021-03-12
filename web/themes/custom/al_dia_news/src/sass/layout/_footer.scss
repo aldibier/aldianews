@@ -296,6 +296,14 @@
             display: block;
             background: url('../img/copy.png') center center no-repeat;
             background-size: contain;
+            margin: 0 5px 0 0;
+        }
+
+        .logo {
+            padding: 0 3px;
+            margin: 0 5px;
+            background: $corange;
+            font-weight: bold;
         }
     }
 
@@ -303,7 +311,7 @@
         list-style: none;
         display: flex;
         position: absolute;
-        bottom: 12px;
+        bottom: 20px;
         right: 13px;
         width: 50%;
 
@@ -315,6 +323,7 @@
             display: block;
             background: url('../img/seed-logo.png') center center no-repeat;
             background-size: contain;
+            margin: 0 0 0 5px;
         }
 
     }
