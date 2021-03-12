@@ -202,3 +202,30 @@ basic_page_general:
     two_vertical_advertising:
       label: Publicidad vertical dos
 
+al_dia_vacancy_default:
+  label: 'Al Día Vacancy Default'
+  path: layouts/vacancy
+  template: layout--al-dia-vacancy-default
+  category: 'Vacancy'
+  default_region: content
+  icon_map:
+    - [one_content_image]
+    - [horizontal_advertising]
+    - [one_content_title]
+    - [two_content]
+    - [one_vertical_advertising]
+    - [two_vertical_advertising]
+  regions:
+    one_content_image:
+      label: Primero - Contenido Imagen
+    horizontal_advertising:
+      label: Publicidad horizontal
+    one_content_title:
+      label: Primero - Contenido Titulo
+    two_content:
+      label: Segundo - Contenido Body
+    one_vertical_advertising:
+      label: Publicidad vertical uno
+    two_vertical_advertising:
+      label: Publicidad vertical dos
+
