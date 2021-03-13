@@ -66,11 +66,7 @@
             overflow: hidden;
         }
 
-        .more-content-landing {
-            height: 100%;
-            display: flex;
-            flex-wrap: wrap;
-            position: relative;
+        .author-information-more-content {
 
             &:after {
                 content: '';
@@ -81,8 +77,19 @@
                 top: 0;
                 left: 0;
                 background: linear-gradient(90deg, #0B0B0B 55.93%, rgba(11, 11, 11, 0) 72.49%);
-                transform: rotate(-90deg);
             }
+        }
+
+        .more-content-landing {
+            height: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            position: relative;
+        }
+
+        .job-author-landing-more,
+        .name-author-landing-more {
+            z-index: 2;
         }
     }
 }
