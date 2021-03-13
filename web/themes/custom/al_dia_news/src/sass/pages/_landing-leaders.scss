@@ -34,23 +34,25 @@
             width: calc(100% - 440px);
             max-width: 870px;
             padding: 0 15px;
+            overflow: hidden;
         }
 
         .views-row {
             max-height: 520px;
             position: relative;
             height: 520px;
+            
+            img {
+                height: 100%;
+                max-width: initial;
+                width: auto;
+                right: 0;
+            }
         }
 
         .photo-author-landing-more {
             height: 100%;
             position: absolute;
-        }
-
-        img {
-            height: 100%;
-            max-width: initial;
-            width: auto;
             right: 0;
         }
 
@@ -61,6 +63,7 @@
 
         .views-field-nothing {
             height: 100%;
+            overflow: hidden;
         }
 
         .more-content-landing {
@@ -77,7 +80,7 @@
                 display: block;
                 top: 0;
                 left: 0;
-                background: linear-gradient(180deg, #0B0B0B 55.93%, rgba(11, 11, 11, 0) 72.49%);
+                background: linear-gradient(90deg, #0B0B0B 55.93%, rgba(11, 11, 11, 0) 72.49%);
                 transform: rotate(-90deg);
             }
         }
