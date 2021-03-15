@@ -423,6 +423,7 @@
                 display: flex;
                 padding: 0 0 30px;
                 width: 100%;
+                flex-wrap: wrap;
                 border-bottom: 1px solid #C4C4C4;
             }
 
@@ -521,6 +522,7 @@
                     font-size: 17px;
                     line-height: 21px;
                     margin: 0;
+                    padding: 0;
                 }
 
                 li {
@@ -549,12 +551,6 @@
         }
     }
 
-    @media (max-width: 372px) {
-
-        .field--name-field-image  {
-            margin: -68px 0 0;
-        }
-    }
 
 }
 
