@@ -487,6 +487,7 @@
         .powerd {
             font-size: 12px;
             line-height: 15px;
+            padding: 0;
         }
 
         .copyr {
@@ -527,9 +528,15 @@
 
                 li {
                     height: 37px;
+                    flex-wrap: wrap;
+
+                    &:nth-child(2n) {
+                        margin: 31px 0 -34px;
+                    }
 
                     >div {
-                        margin: -14px -3px 0 0;
+                        margin: -33px -8px 0px -12px;
+                        position: absolute;
                     }
                 }
 
