@@ -20,16 +20,18 @@
       width: 33.33%;
       max-width: 100%;
 
-      &:before {
-        display: block;
-        content: '';
-        width: calc(100% - 30px);
-        height: 1px;
-        left: 0;
-        background: $cgrey4;
-        position: absolute;
-        right: 0;
-        margin: -35px auto 0;
+      &:nth-child(3n+4) {
+        &:before {
+          display: block;
+          content: '';
+          width: calc(100% - 30px);
+          height: 1px;
+          left: 0;
+          background: $cgrey4;
+          position: absolute;
+          right: 0;
+          margin: -35px auto 0;
+        }
       }
 
       @media screen and (max-width: $broken) {
