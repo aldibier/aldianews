@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.page.body
     - fixed_block_content.fixed_block_content._small_vertical_advertising
     - fixed_block_content.fixed_block_content.big_vertical_advertising
+    - fixed_block_content.fixed_block_content.header_page_about_us
     - fixed_block_content.fixed_block_content.horizontal_advertising
     - node.type.page
   module:
@@ -55,6 +56,18 @@ third_party_settings:
                 view_mode: view_mode
             additional: {  }
             weight: 0
+          2b66b274-fda1-45f3-a60b-c0fab914cb4c:
+            uuid: 2b66b274-fda1-45f3-a60b-c0fab914cb4c
+            region: block_image
+            configuration:
+              id: 'fixed_block_content:header_page_about_us'
+              label: 'Header page about us'
+              provider: fixed_block_content
+              label_display: '0'
+              view_mode: ''
+              context_mapping: {  }
+            additional: {  }
+            weight: 1
           ca90331c-75ea-4da1-9260-1adafd48f64d:
             uuid: ca90331c-75ea-4da1-9260-1adafd48f64d
             region: one_vertical_advertising
