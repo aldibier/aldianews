@@ -38,7 +38,11 @@ import initScrollMagic from "./scroll-magic.js";
         });
 
         //--------- initialization --------------------//
-        initScrollMagic();
+
+        if (window.matchMedia("(min-width: 768px)").matches) {
+            initScrollMagic();
+        }
+       
 
       
     });
