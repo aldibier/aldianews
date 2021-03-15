@@ -29,6 +29,25 @@ body.open-menu {
             font-size: 12px;
             line-height: 25px;
         }
+
+        #block-subscribeblockheader {
+            display: block!important;
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            background: $corange;
+            margin: 0 0 0 -100px;
+            width: 90px;
+            height: 25px;
+            align-items: center;
+            text-align: center;
+            letter-spacing: 0.741176px;
+            color: $cwhite;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 12px;
+            line-height: 25px;
+        }
     }
 
 }
@@ -650,6 +669,10 @@ body.open-menu {
     }
 
     @media(max-width:$tablet){
+
+        #block-loginformpopup {
+            display: none;
+        }
 
         &:after {
             margin: -10px 0 0 0;
