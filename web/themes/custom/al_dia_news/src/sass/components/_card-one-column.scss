@@ -12,9 +12,6 @@
     }
 
     img {
-      width: 400px;
-      height: 235px;
-
       @media screen and (max-width: $broken) {
         width: 100%;
         max-width: 100%;
@@ -39,6 +36,10 @@
       line-height: 22px;
       letter-spacing: 0.08em;
       color: $corange;
+
+      @media screen and (max-width:$tablet) {
+        font-size: $px12;
+      }
     }
   }
 
@@ -53,6 +54,11 @@
       line-height: 34px;
       text-transform: uppercase;
       color: $cblack;
+
+      @media screen and (max-width: $broken) {
+        font-size: 14px;
+        line-height: 17px;
+      }
     }
   }
 
