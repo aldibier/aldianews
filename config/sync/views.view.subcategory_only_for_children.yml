@@ -42,7 +42,7 @@ display:
         type: views_query
         options:
           disable_sql_rewrite: false
-          distinct: false
+          distinct: true
           replica: false
           query_comment: ''
           query_tags: {  }
@@ -786,6 +786,8 @@ display:
         - url
         - user.permissions
       tags:
+        - 'config:core.entity_view_display.node.al_dia_vacancy.default'
+        - 'config:core.entity_view_display.node.al_dia_vacancy.teaser'
         - 'config:core.entity_view_display.node.article.default'
         - 'config:core.entity_view_display.node.article.rss'
         - 'config:core.entity_view_display.node.article.teaser'
@@ -804,6 +806,8 @@ display:
         - 'config:core.entity_view_display.node.page.teaser'
         - 'config:core.entity_view_display.node.thought_leaders.default'
         - 'config:core.entity_view_display.node.thought_leaders.teaser'
+        - 'config:core.entity_view_display.node.webform.default'
+        - 'config:core.entity_view_display.node.webform.teaser'
   block_2:
     display_plugin: block
     id: block_2
@@ -1258,6 +1262,8 @@ display:
         - url
         - user.permissions
       tags:
+        - 'config:core.entity_view_display.node.al_dia_vacancy.default'
+        - 'config:core.entity_view_display.node.al_dia_vacancy.teaser'
         - 'config:core.entity_view_display.node.article.default'
         - 'config:core.entity_view_display.node.article.rss'
         - 'config:core.entity_view_display.node.article.teaser'
@@ -1276,6 +1282,8 @@ display:
         - 'config:core.entity_view_display.node.page.teaser'
         - 'config:core.entity_view_display.node.thought_leaders.default'
         - 'config:core.entity_view_display.node.thought_leaders.teaser'
+        - 'config:core.entity_view_display.node.webform.default'
+        - 'config:core.entity_view_display.node.webform.teaser'
         - 'config:field.storage.node.field_image'
         - 'config:field.storage.node.field_short_title'
   block_3:
@@ -1314,6 +1322,8 @@ display:
         use_ajax: false
         filters: false
         filter_groups: false
+        relationships: false
+        query: false
       header: {  }
       fields:
         name:
@@ -1805,6 +1815,45 @@ display:
         operator: AND
         groups:
           1: AND
+      relationships:
+        parent_target_id:
+          id: parent_target_id
+          table: taxonomy_term__parent
+          field: parent_target_id
+          relationship: none
+          group_type: group
+          admin_label: Parent
+          required: true
+          entity_type: taxonomy_term
+          entity_field: parent
+          plugin_id: standard
+        reverse__node__field_category:
+          id: reverse__node__field_category
+          table: taxonomy_term_field_data
+          field: reverse__node__field_category
+          relationship: none
+          group_type: group
+          admin_label: field_category
+          required: true
+          entity_type: taxonomy_term
+          plugin_id: entity_reverse
+        field_category:
+          id: field_category
+          table: node__field_category
+          field: field_category
+          relationship: reverse__node__field_category
+          group_type: group
+          admin_label: 'field_category: Taxonomy term'
+          required: true
+          plugin_id: standard
+      query:
+        type: views_query
+        options:
+          disable_sql_rewrite: false
+          distinct: true
+          replica: false
+          query_comment: ''
+          query_tags: null
     cache_metadata:
       max-age: -1
       contexts:
@@ -1814,6 +1863,8 @@ display:
         - url.query_args
         - user.permissions
       tags:
+        - 'config:core.entity_view_display.node.al_dia_vacancy.default'
+        - 'config:core.entity_view_display.node.al_dia_vacancy.teaser'
         - 'config:core.entity_view_display.node.article.default'
         - 'config:core.entity_view_display.node.article.rss'
         - 'config:core.entity_view_display.node.article.teaser'
@@ -1832,6 +1883,8 @@ display:
         - 'config:core.entity_view_display.node.page.teaser'
         - 'config:core.entity_view_display.node.thought_leaders.default'
         - 'config:core.entity_view_display.node.thought_leaders.teaser'
+        - 'config:core.entity_view_display.node.webform.default'
+        - 'config:core.entity_view_display.node.webform.teaser'
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_image'
         - 'config:field.storage.node.field_short_title'
