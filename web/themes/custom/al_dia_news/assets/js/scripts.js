@@ -156,17 +156,14 @@ var initScrollMagic = function initScrollMagic() {
     };
 
     var controller = new ScrollMagic.Controller({
-      addIndicators: true
+      /*addIndicators: true*/
     });
     var scene = new ScrollMagic.Scene({
       triggerElement: blockSticky,
       offset: "".concat(blockSticky.offsetHeight + header.offsetHeight),
       triggerHook: 1,
       duration: getDuration
-    }).addTo(controller).addIndicators({
-      name: "pin scene",
-      colorEnd: "#FFFFFF"
-    });
+    }).addTo(controller); //.addIndicators({name: "pin scene", colorEnd: "#FFFFFF"});
 
     if (window.matchMedia("(min-width: 768px)").matches) {
       scene.setPin(blockSticky, {

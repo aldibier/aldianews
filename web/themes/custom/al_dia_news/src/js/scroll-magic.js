@@ -8,7 +8,7 @@ const initScrollMagic = () => {
     
     if (document.body.contains(blockSticky)) {
 
-        const controller = new ScrollMagic.Controller({addIndicators: true});
+        const controller = new ScrollMagic.Controller({/*addIndicators: true*/});
 
         const scene = new ScrollMagic.Scene({
             triggerElement: blockSticky,
@@ -17,7 +17,7 @@ const initScrollMagic = () => {
             duration: getDuration
         })
         .addTo(controller)
-        .addIndicators({name: "pin scene", colorEnd: "#FFFFFF"});
+        //.addIndicators({name: "pin scene", colorEnd: "#FFFFFF"});
 
         if (window.matchMedia("(min-width: 768px)").matches) {
             scene.setPin(blockSticky, { pushFollowers: false });
