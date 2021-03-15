@@ -7,7 +7,6 @@ dependencies:
     - field.field.block_content.basic_block_with_image_and_custo.body
     - field.field.block_content.basic_block_with_image_and_custo.field_custom_title
     - field.field.block_content.basic_block_with_image_and_custo.field_image_block
-    - field.field.block_content.basic_block_with_image_and_custo.field_image_header_menu
     - image.style.thumbnail
   module:
     - image
@@ -37,14 +36,6 @@ content:
     region: content
   field_image_block:
     weight: 26
-    settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
-    third_party_settings: {  }
-    type: image_image
-    region: content
-  field_image_header_menu:
-    weight: 27
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
