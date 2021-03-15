@@ -2,4 +2,11 @@
     .content-news-internal-first .block-field-blocknodenewsbody {
         display: none;
     }
+
+    .container-content {
+        @media screen and (max-width:$tablet) {
+            display: flex;
+            flex-direction: column;
+        }
+    }
 }

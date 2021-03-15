@@ -156,7 +156,7 @@ var initScrollMagic = function initScrollMagic() {
     };
 
     var controller = new ScrollMagic.Controller({
-      addIndicators: true
+      /*addIndicators: true*/
     });
     var scene = new ScrollMagic.Scene({
       triggerElement: blockSticky,

@@ -8,7 +8,7 @@ const initScrollMagic = () => {
     
     if (document.body.contains(blockSticky)) {
 
-        const controller = new ScrollMagic.Controller({addIndicators: true});
+        const controller = new ScrollMagic.Controller({/*addIndicators: true*/});
 
         const scene = new ScrollMagic.Scene({
             triggerElement: blockSticky,
