@@ -6,7 +6,7 @@
 
   .category-title {
     height: 60px;
-    margin: 0 20px;
+    margin-top: 38px;
     padding-bottom: 10px;
     border-bottom: 3px solid $corange;
     display: flex;
@@ -37,7 +37,7 @@
 
 //-------------block category first -----------------//
 .category-first-block {
-  margin: 20px 0;
+  margin-top: 45px;
   display: grid;
   grid-template-columns: 1fr auto;
   grid-auto-rows: auto;
@@ -55,7 +55,8 @@
 
   .block-views-blocklast-news-category-sons-block-1 {
     max-width: 880px;
-    padding: 0 20px;
+    max-height: 540px;
+    margin-right: 20px;
     grid-area: area-1;
 
     @media screen and(max-width:$broken) {
@@ -64,6 +65,7 @@
     }
 
     > .content {
+      height: 100%;
       margin: 0;
     }
 
