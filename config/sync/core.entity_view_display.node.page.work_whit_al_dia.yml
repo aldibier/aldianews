@@ -1,0 +1,141 @@
+uuid: 807ef9d8-b597-4ec2-8f1b-3c875cd53017
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.work_whit_al_dia
+    - field.field.node.page.body
+    - fixed_block_content.fixed_block_content._small_vertical_advertising
+    - fixed_block_content.fixed_block_content.big_vertical_advertising
+    - fixed_block_content.fixed_block_content.header_work_with_al_dia
+    - fixed_block_content.fixed_block_content.horizontal_advertising
+    - node.type.page
+  module:
+    - al_dia_layouts
+    - fixed_block_content
+    - layout_builder
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: basic_page_work_with_al-dia
+        layout_settings:
+          label: 'Basic Page work with Al Día'
+        components:
+          f65bede5-1455-4b61-9e3a-4ad7945a0af9:
+            uuid: f65bede5-1455-4b61-9e3a-4ad7945a0af9
+            region: horizontal_advertising
+            configuration:
+              id: 'fixed_block_content:horizontal_advertising'
+              label: 'Horizontal advertising'
+              provider: fixed_block_content
+              label_display: '0'
+              view_mode: ''
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+          50f2e0ea-c3a4-448e-86ba-6c775ea3616a:
+            uuid: 50f2e0ea-c3a4-448e-86ba-6c775ea3616a
+            region: one_vertical_advertising
+            configuration:
+              id: 'fixed_block_content:_small_vertical_advertising'
+              label: ' Small vertical advertising'
+              provider: fixed_block_content
+              label_display: '0'
+              view_mode: ''
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+          60cbf499-d450-4d6d-89c9-84fac87661ec:
+            uuid: 60cbf499-d450-4d6d-89c9-84fac87661ec
+            region: two_vertical_advertising
+            configuration:
+              id: 'fixed_block_content:big_vertical_advertising'
+              label: 'Big vertical advertising'
+              provider: fixed_block_content
+              label_display: '0'
+              view_mode: ''
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+          d148f858-949c-4b0f-8876-5dca255d7ac1:
+            uuid: d148f858-949c-4b0f-8876-5dca255d7ac1
+            region: two_content
+            configuration:
+              id: 'field_block:node:page:title'
+              label: Title
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: string
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 0
+          2d3239d9-4b67-4ceb-a18e-53b22f4ecfa8:
+            uuid: 2d3239d9-4b67-4ceb-a18e-53b22f4ecfa8
+            region: two_content
+            configuration:
+              id: 'field_block:node:page:body'
+              label: Body
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: text_default
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 1
+          3959242f-c6ac-4811-b2d1-9b728df16346:
+            uuid: 3959242f-c6ac-4811-b2d1-9b728df16346
+            region: block_image
+            configuration:
+              id: 'fixed_block_content:header_work_with_al_dia'
+              label: 'Header Work with Al Día'
+              provider: fixed_block_content
+              label_display: '0'
+              view_mode: ''
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+        third_party_settings: {  }
+_core:
+  default_config_hash: g1S3_GLaxq4l3I9RIca5Mlz02MxI2KmOquZpHw59akM
+id: node.page.work_whit_al_dia
+targetEntityType: node
+bundle: page
+mode: work_whit_al_dia
+content:
+  addtoany:
+    weight: 101
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  body:
+    label: hidden
+    type: text_default
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  links:
+    weight: 101
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true
+  search_api_excerpt: true

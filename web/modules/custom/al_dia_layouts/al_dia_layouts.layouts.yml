@@ -254,3 +254,31 @@ al_dia_vacancy_default:
     two_vertical_advertising:
       label: Publicidad vertical dos
 
+basic_page_work_with_al-dia:
+  label: 'Basic Page work with Al Día'
+  path: layouts/basic_page
+  template: layout--basic-page-work-with-aldia
+  category: 'Basic Page'
+  default_region: content
+  icon_map:
+    - [block_image]
+    - [menu]
+    - [horizontal_advertising]
+    - [one_content_title]
+    - [two_content]
+    - [one_vertical_advertising]
+    - [two_vertical_advertising]
+  regions:
+    block_image:
+      label: Bloque con imagen
+    menu:
+      label: Menu
+    horizontal_advertising:
+      label: Publicidad horizontal
+    two_content:
+      label: Segundo - Contenido
+    one_vertical_advertising:
+      label: Publicidad vertical uno
+    two_vertical_advertising:
+      label: Publicidad vertical dos
+
