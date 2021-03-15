@@ -321,7 +321,17 @@ blockquote {
     h4,
     h5,
     h6 {
-        color: $corange;
+        margin: 30px 0;
+        
+        strong {
+            color: $corange;
+            font-family: $PrNovacond-bold;
+            font-weight: 700;
+            line-height: 36px;
+            font-style: normal;
+            font-size: $px36;
+            letter-spacing: initial;
+        }
     }
 
     .video-embed-field-provider-youtube {

@@ -51,12 +51,13 @@
             display: flex;
 
             p {
-                margin: auto 0;
+                margin: 36px 0 auto;
                 font-style: normal;
                 font-weight: normal;
                 font-size: 18px;
                 line-height: 22px;
                 font-family: $NimS-reg;
+                color: $cwhite;
 
                 strong {
                     color: $corange;
@@ -389,6 +390,10 @@
                     top: 0;
                     height: 5px;
                     background: $corange;
+                }
+
+                p {
+                    margin: auto 0;
                 }
             }
 
