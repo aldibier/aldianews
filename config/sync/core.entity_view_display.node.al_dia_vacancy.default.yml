@@ -10,6 +10,7 @@ dependencies:
     - fixed_block_content.fixed_block_content.big_vertical_advertising
     - fixed_block_content.fixed_block_content.horizontal_advertising
     - node.type.al_dia_vacancy
+    - webform.webform.apply_to_this_job
   module:
     - al_dia_layouts
     - fixed_block_content
@@ -17,6 +18,7 @@ dependencies:
     - layout_builder
     - text
     - user
+    - webform
 third_party_settings:
   layout_builder:
     allow_custom: false
@@ -120,6 +122,20 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: 0
+          26c4e740-008b-4435-8fba-22111231b418:
+            uuid: 26c4e740-008b-4435-8fba-22111231b418
+            region: two_vertical_advertising
+            configuration:
+              id: webform_block
+              label: Webform
+              provider: webform
+              label_display: '0'
+              webform_id: apply_to_this_job
+              default_data: ''
+              redirect: false
+              context_mapping: {  }
+            additional: {  }
+            weight: 1
         third_party_settings: {  }
 id: node.al_dia_vacancy.default
 targetEntityType: node
