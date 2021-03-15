@@ -129,7 +129,9 @@ __webpack_require__.r(__webpack_exports__);
       $(this).html(text.replace(/AL/g, '<br>AL'));
     }); //--------- initialization --------------------//
 
-    Object(_scroll_magic_js__WEBPACK_IMPORTED_MODULE_0__["default"])();
+    if (window.matchMedia("(min-width: 768px)").matches) {
+      Object(_scroll_magic_js__WEBPACK_IMPORTED_MODULE_0__["default"])();
+    }
   });
 })(jQuery, Drupal);
 
