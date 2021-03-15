@@ -529,6 +529,7 @@ $settings['update_free_access'] = FALSE;
  * about securing private files.
  */
 # $settings['file_private_path'] = '';
+$settings['file_private_path'] = 'sites/default/files/private'; 
 
 /**
  * Temporary file path:
@@ -779,5 +780,3 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
 if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
   include $app_root . '/' . $site_path . '/settings.local.php';
 }
-
-$settings['file_private_path'] = 'sites/default/files/private'; 
