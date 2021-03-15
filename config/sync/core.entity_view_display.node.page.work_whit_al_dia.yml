@@ -10,10 +10,12 @@ dependencies:
     - fixed_block_content.fixed_block_content.header_work_with_al_dia
     - fixed_block_content.fixed_block_content.horizontal_advertising
     - node.type.page
+    - system.menu.work-with-al-dia-menu
   module:
     - al_dia_layouts
     - fixed_block_content
     - layout_builder
+    - system
     - text
     - user
 third_party_settings:
@@ -108,6 +110,20 @@ third_party_settings:
               provider: fixed_block_content
               label_display: '0'
               view_mode: ''
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+          eda6a0b8-e997-4348-8bb8-bf64cdc5d9c6:
+            uuid: eda6a0b8-e997-4348-8bb8-bf64cdc5d9c6
+            region: menu
+            configuration:
+              id: 'system_menu_block:work-with-al-dia-menu'
+              label: 'Work with Al Día menú'
+              provider: system
+              label_display: '0'
+              level: 1
+              depth: 0
+              expand_all_items: false
               context_mapping: {  }
             additional: {  }
             weight: 0

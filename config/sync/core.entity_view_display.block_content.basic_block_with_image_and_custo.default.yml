@@ -7,7 +7,6 @@ dependencies:
     - field.field.block_content.basic_block_with_image_and_custo.body
     - field.field.block_content.basic_block_with_image_and_custo.field_custom_title
     - field.field.block_content.basic_block_with_image_and_custo.field_image_block
-    - field.field.block_content.basic_block_with_image_and_custo.field_image_header_menu
   module:
     - image
     - text
@@ -19,12 +18,12 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 0
+    weight: 1
     settings: {  }
     third_party_settings: {  }
     region: content
   field_custom_title:
-    weight: 1
+    weight: 0
     label: hidden
     settings: {  }
     third_party_settings: {  }
@@ -32,16 +31,7 @@ content:
     region: content
   field_image_block:
     weight: 2
-    label: above
-    settings:
-      image_style: ''
-      image_link: ''
-    third_party_settings: {  }
-    type: image
-    region: content
-  field_image_header_menu:
-    weight: 3
-    label: above
+    label: hidden
     settings:
       image_style: ''
       image_link: ''
