@@ -29,6 +29,25 @@ body.open-menu {
             font-size: 12px;
             line-height: 25px;
         }
+
+        #block-subscribeblockheader {
+            display: block!important;
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            background: $corange;
+            margin: 0 0 0 -100px;
+            width: 90px;
+            height: 25px;
+            align-items: center;
+            text-align: center;
+            letter-spacing: 0.741176px;
+            color: $cwhite;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 12px;
+            line-height: 25px;
+        }
     }
 
 }
@@ -208,6 +227,7 @@ body.open-menu {
         .menu-link-contentsocial-media {
             width: 25px;
             height: 25px;
+            padding: 2px 0 0;
             background: $cgrey5;
             border-radius: 100%;
             display: flex;
@@ -405,7 +425,7 @@ body.open-menu {
         width: 40px;
         height: 40px;
         position: relative;
-        margin: 20px auto 7px 0;
+        margin: 20px 35px 7px 0;
         cursor: pointer;
 
         &:before,
@@ -498,7 +518,7 @@ body.open-menu {
 
     #block-searchform {
         order: 4;
-        margin: auto 0 auto auto;   
+        margin: auto 0;   
     }
 
     .block-search {
@@ -526,7 +546,7 @@ body.open-menu {
 
     #block-languageswitcher {
         order: 5;
-        margin: 0 10px 0 0; 
+        margin: 0 auto 0 0; 
     }
 
     .block-language {
@@ -608,10 +628,23 @@ body.open-menu {
         }
     }
 
-    #block-loginformpopup {
+    #block-subscribeblockheader {
         order: 7;
+        font-style: normal;
+        font-size: 16px;
+        line-height: 25px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        margin: 0 auto;
+        text-transform: uppercase;
+        font-family: $PrNovacond-reg;
+    }
+
+    #block-loginformpopup {
+        order: 8;
         display: block;
-        margin: auto 0;
+        margin: auto 15px auto 0;
 
         a {
             font-style: normal;
@@ -636,6 +669,14 @@ body.open-menu {
     }
 
     @media(max-width:$tablet){
+
+        #block-subscribeblockheader {
+            display: none;
+        }
+
+        #block-loginformpopup {
+            display: none;
+        }
 
         &:after {
             margin: -10px 0 0 0;

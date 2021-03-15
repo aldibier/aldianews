@@ -1,0 +1,28 @@
+uuid: 2992bcbf-c57b-4d39-ac3a-b7e0e629e061
+langcode: en
+status: true
+dependencies:
+  config:
+    - fixed_block_content.fixed_block_content.header_page_about_us
+  module:
+    - fixed_block_content
+    - system
+  theme:
+    - al_dia_news
+id: headerpageaboutus
+theme: al_dia_news
+region: content
+weight: -14
+provider: null
+plugin: 'fixed_block_content:header_page_about_us'
+settings:
+  id: 'fixed_block_content:header_page_about_us'
+  label: 'Header page about us'
+  provider: fixed_block_content
+  label_display: '0'
+  view_mode: ''
+visibility:
+  request_path:
+    id: request_path
+    pages: /about-us
+    negate: false

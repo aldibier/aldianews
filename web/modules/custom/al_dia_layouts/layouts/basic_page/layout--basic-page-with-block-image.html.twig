@@ -13,11 +13,6 @@
 {% if content %}
   <div class="container-content">
 
-    {% if content.block_image %}
-        <div {{ region_attributes.block_image.addClass('block-image-basic-page') }}>
-          {{ content.block_image }} 
-        </div>
-    {% endif %}
     {% if content.horizontal_advertising %}
         <div {{ region_attributes.horizontal_advertising.addClass('horizontal-advertising-general-horizontal') }}>
           {{ content.horizontal_advertising }} 
