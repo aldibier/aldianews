@@ -163,10 +163,7 @@ var initScrollMagic = function initScrollMagic() {
       offset: "".concat(blockSticky.offsetHeight + header.offsetHeight),
       triggerHook: 1,
       duration: getDuration
-    }).addTo(controller).addIndicators({
-      name: "pin scene",
-      colorEnd: "#FFFFFF"
-    });
+    }).addTo(controller); //.addIndicators({name: "pin scene", colorEnd: "#FFFFFF"});
 
     if (window.matchMedia("(min-width: 768px)").matches) {
       scene.setPin(blockSticky, {
@@ -208,8 +205,8 @@ var initScrollMagic = function initScrollMagic() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/usuario/Desktop/Proyectos/AlDiaNews/4ld14-n3ws/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
-module.exports = __webpack_require__(/*! /Users/usuario/Desktop/Proyectos/AlDiaNews/4ld14-n3ws/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
+__webpack_require__(/*! /Users/andresmartinez/sites/News/code/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
+module.exports = __webpack_require__(/*! /Users/andresmartinez/sites/News/code/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
 
 
 /***/ })
