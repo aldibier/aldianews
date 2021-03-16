@@ -174,6 +174,11 @@
         max-width: 435px;
         padding: 0 15px 0 20px;
         border-left: 1px solid $cgrey4;
+        height: 520px;
+
+        .content {
+            margin: 0;
+        }
 
         .photo-author-landing-more {
             width: 235px;
@@ -193,6 +198,7 @@
             font-size: 22px;
             line-height: 26px;
             font-family: $Mod-bold;
+            margin: 20px 0;
         }
 
         .job-author-landing-more {
@@ -231,6 +237,29 @@
             line-height: 19px;
             padding: 15px 0 0;
             font-family: $PrNovacond-reg;
+        }
+    }
+
+    .views-infinite-scroll-content-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+
+        .views-row {
+            width: 33.33%;
+            max-width: 440px;
+            padding: 0 15px;
+            position: relative;
+
+            &:after {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 1px;
+                height: 100%;
+                background: $cgrey4;
+                content: '';
+                display: block;
+            }
         }
     }
 }
