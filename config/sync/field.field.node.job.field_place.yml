@@ -1,0 +1,19 @@
+uuid: 0f7cde0a-ba2a-4331-82f5-8c2de812cb73
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_place
+    - node.type.job
+id: node.job.field_place
+field_name: field_place
+entity_type: node
+bundle: job
+label: Place
+description: 'Add the place where this job will be exercised'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

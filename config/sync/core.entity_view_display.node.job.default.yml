@@ -1,0 +1,305 @@
+uuid: 8848419d-3d61-4d80-9fa4-bc17677e67a7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.job.body
+    - field.field.node.job.field_company_name
+    - field.field.node.job.field_expiration_date
+    - field.field.node.job.field_link_to_apply_for_the_job
+    - field.field.node.job.field_place
+    - field.field.node.job.field_requirements
+    - field.field.node.job.field_sector
+    - field.field.node.job.field_sponsored_profile
+    - field.field.node.job.field_type_of_working_day
+    - fixed_block_content.fixed_block_content._small_vertical_advertising
+    - fixed_block_content.fixed_block_content.big_vertical_advertising
+    - fixed_block_content.fixed_block_content.horizontal_advertising
+    - node.type.job
+    - views.view.internal_links_to_job_postings
+  module:
+    - al_dia_layouts
+    - datetime
+    - fixed_block_content
+    - layout_builder
+    - link
+    - text
+    - user
+    - views
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: job_posting_intern
+        layout_settings:
+          label: 'Job Posting intern'
+        components:
+          e989da50-45e4-4280-b07f-5e6075060e61:
+            uuid: e989da50-45e4-4280-b07f-5e6075060e61
+            region: horizontal_advertising
+            configuration:
+              id: 'fixed_block_content:horizontal_advertising'
+              label: 'Horizontal advertising'
+              provider: fixed_block_content
+              label_display: '0'
+              view_mode: ''
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+          a557bc77-58de-46eb-b016-3c48deb647e7:
+            uuid: a557bc77-58de-46eb-b016-3c48deb647e7
+            region: one_content_title
+            configuration:
+              id: 'field_block:node:job:title'
+              label: Title
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: string
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 0
+          9024d3ba-76a6-49f0-a05c-88f23c684478:
+            uuid: 9024d3ba-76a6-49f0-a05c-88f23c684478
+            region: one_content_information
+            configuration:
+              id: 'field_block:node:job:field_company_name'
+              label: 'Company name'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: entity_reference_label
+                settings:
+                  link: false
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 0
+          81396a2f-017a-47a5-a03f-4e1cdc7e7436:
+            uuid: 81396a2f-017a-47a5-a03f-4e1cdc7e7436
+            region: one_content_information
+            configuration:
+              id: 'field_block:node:job:field_place'
+              label: Place
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: string
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 1
+          e65cb328-9551-4b41-81c5-e6377f3779ba:
+            uuid: e65cb328-9551-4b41-81c5-e6377f3779ba
+            region: one_vertical_advertising
+            configuration:
+              id: 'fixed_block_content:_small_vertical_advertising'
+              label: ' Small vertical advertising'
+              provider: fixed_block_content
+              label_display: '0'
+              view_mode: ''
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+          d9d04a09-99b7-42dd-b491-be74031420df:
+            uuid: d9d04a09-99b7-42dd-b491-be74031420df
+            region: two_vertical_advertising
+            configuration:
+              id: 'fixed_block_content:big_vertical_advertising'
+              label: 'Big vertical advertising'
+              provider: fixed_block_content
+              label_display: '0'
+              view_mode: ''
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+          9755fae9-7f86-4e54-9d8c-93a0f1a01c7e:
+            uuid: 9755fae9-7f86-4e54-9d8c-93a0f1a01c7e
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:job:field_link_to_apply_for_the_job'
+              formatter:
+                label: above
+                settings:
+                  trim_length: 80
+                  url_only: false
+                  url_plain: false
+                  rel: ''
+                  target: ''
+                third_party_settings: {  }
+                type: link
+            additional: {  }
+            weight: 0
+          4e0b76c1-77be-45f0-819b-d2d9498e961e:
+            uuid: 4e0b76c1-77be-45f0-819b-d2d9498e961e
+            region: three_content_buttons
+            configuration:
+              id: 'views_block:internal_links_to_job_postings-block_1'
+              label: ''
+              provider: views
+              label_display: '0'
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: 4
+          9b0203ad-364b-4b18-806e-76cf136ae930:
+            uuid: 9b0203ad-364b-4b18-806e-76cf136ae930
+            region: two_content_body
+            configuration:
+              id: 'field_block:node:job:body'
+              label: Description
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: inline
+                type: text_default
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: -9
+          12bf7836-f873-4255-aea9-025fc945a18a:
+            uuid: 12bf7836-f873-4255-aea9-025fc945a18a
+            region: two_content_body
+            configuration:
+              id: 'field_block:node:job:field_requirements'
+              label: Requirements
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: text_default
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: -8
+          af784945-b669-4ce0-834d-aeac27546966:
+            uuid: af784945-b669-4ce0-834d-aeac27546966
+            region: two_content_body
+            configuration:
+              id: 'extra_field_block:node:job:addtoany'
+              label: 'SHARE THIS CONTENT:'
+              provider: layout_builder
+              label_display: visible
+              formatter:
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: -10
+        third_party_settings: {  }
+id: node.job.default
+targetEntityType: node
+bundle: job
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_company_name:
+    weight: 105
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_expiration_date:
+    weight: 104
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_link_to_apply_for_the_job:
+    weight: 109
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_place:
+    weight: 103
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_requirements:
+    weight: 102
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_sector:
+    weight: 106
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_sponsored_profile:
+    weight: 107
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_type_of_working_day:
+    weight: 108
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  langcode: true
+  search_api_excerpt: true

@@ -33,8 +33,9 @@
         .view-content {
             width: calc(100% - 440px);
             max-width: 870px;
-            padding: 0 15px;
+            padding: 0 20px 0 15px;
             overflow: hidden;
+            margin: 40px 0 0;
         }
 
         .views-row {
@@ -53,7 +54,7 @@
         .photo-author-landing-more {
             height: 100%;
             position: absolute;
-            right: 0;
+            right: -10%;
         }
 
         .information-node-more-content {
@@ -91,13 +92,174 @@
         .name-author-landing-more {
             z-index: 2;
         }
+
+
+        .author-information-more-content {
+            width: 100%;
+        }
+    
+        .name-author-landing-more {
+            padding: 14px 30px;
+            max-width: 450px;
+            position: relative;
+            margin: 30px 0 15px;
+            font-style: normal;
+            font-family: $Mod-Sbold;
+            font-size: $px26;
+            line-height: 31px;
+            letter-spacing: 0.02em;
+            color: $cwhite;
+    
+            &:after {
+                content: '';
+                width: calc(100% - 60px);
+                margin: 0 auto;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: $cwhite;
+                height: 1px;
+                position: absolute;
+            }
+            
+        }
+    
+        .job-author-landing-more {
+            margin: 15px 0;
+            padding: 0 30px;
+            font-family: $NimR-reg;
+            font-style: normal;
+            font-weight: normal;
+            font-size: $px20;
+            color: $cwhite;
+            position: relative;
+        }
+
+        .title-node-landing {
+            padding: 0 0 15px 30px;
+            max-width: 75%;
+            font-style: normal;
+            font-weight: bold;
+            font-size: $px60;
+            line-height: 98.1%;
+            color: $cwhite;
+            font-family: $PrNovacond-bold;
+
+            a{
+                font-style: normal;
+                font-weight: bold;
+                line-height: 98.1%;
+                color: $cwhite;
+                font-family: $PrNovacond-bold;
+                border: none;
+    
+            }
+        }
+
+        .authored-on-landing {
+            padding: 15px 15px 40px 30px;
+            color: $cwhite;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 17px;
+            line-height: 21px;
+            font-family: $PrNovacond-bold;
+        }
+    }
+    
+    .block-views-blocklanding-thought-leaders-block-1 {
+        position: absolute;
+        top: 127px;
+        right: 0;
+        max-width: 435px;
+        padding: 0 15px 0 20px;
+        border-left: 1px solid $cgrey4;
+        height: 520px;
+
+        .content {
+            margin: 0;
+        }
+
+        .photo-author-landing-more {
+            width: 235px;
+            height: 235px;
+            overflow: hidden;
+            border-radius: 100%;
+            box-shadow: 1px 3px 5px -2px rgb(0,0,0);
+        }
+        
+        .name-author-landing-more {
+            padding: 15px 10px 10px 0;
+            width: max-content;
+            display: block;
+            position: relative;
+            border-bottom: 1px solid $cblack3;
+            font-style: normal;
+            font-size: 22px;
+            line-height: 26px;
+            font-family: $Mod-bold;
+            margin: 20px 0;
+        }
+
+        .job-author-landing-more {
+            font-style: normal;
+            font-weight: normal;
+            font-size: $px16;
+            line-height: 125%;
+            font-family: $NimR-reg;
+            color: $cblack3;
+            padding: 15px 0 10px;
+        }
+
+        .title-node-landing {
+            font-style: normal;
+            font-weight: bold;
+            font-size: $px30;
+            line-height: 37px;
+            font-family: $PrNovacond-bold;
+            color: $cblack3;
+            padding: 5px 0 0;
+
+            a{
+                font-style: normal;
+                font-weight: bold;
+                font-family: $PrNovacond-bold;
+                color: $cblack3;
+                border: none;
+            }
+        }
+
+        .authored-on-landing {
+            color: $cgrey3;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 19px;
+            padding: 15px 0 0;
+            font-family: $PrNovacond-reg;
+        }
     }
 
+    .views-infinite-scroll-content-wrapper {
+        display: flex;
+        flex-wrap: wrap;
 
+        .views-row {
+            width: 33.33%;
+            max-width: 440px;
+            padding: 0 15px;
+            position: relative;
 
-    //---------layout----------------_//
-    .author-information-more-content {
-        width: 100%;
+            &:after {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 1px;
+                height: 100%;
+                background: $cgrey4;
+                content: '';
+                display: block;
+            }
+        }
     }
-
 }

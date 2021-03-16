@@ -279,3 +279,32 @@ basic_page_work_with_al-dia:
     two_vertical_advertising:
       label: Publicidad vertical dos
 
+job_posting_intern:
+  label: 'Job Posting Intern'
+  path: layouts/job_posting
+  template: layout--job-posting-intern
+  category: 'Job posting'
+  default_region: content
+  icon_map:
+    - [horizontal_advertising]
+    - [one_content_title]
+    - [one_content_information]
+    - [two_content_body]
+    - [three_content_buttons]
+    - [one_vertical_advertising]
+    - [two_vertical_advertising]
+  regions:
+    horizontal_advertising:
+      label: Publicidad horizontal
+    one_content_title:
+      label: Primero - Contenido Titulo
+    one_content_information:
+      label: Primero - Contenido información
+    two_content_body:
+      label: Segundo - Contenido
+    three_content_buttons:
+      label: Tercero - Contenido botones
+    one_vertical_advertising:
+      label: Publicidad vertical uno
+    two_vertical_advertising:
+      label: Publicidad vertical dos

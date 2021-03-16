@@ -1,0 +1,21 @@
+uuid: 000ccdc2-c475-4dbb-9e5b-e8ef38692561
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_requirements
+    - node.type.job
+  module:
+    - text
+id: node.job.field_requirements
+field_name: field_requirements
+entity_type: node
+bundle: job
+label: Requirements
+description: 'Add the requirements for this job posting'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
