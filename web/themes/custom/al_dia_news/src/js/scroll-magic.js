@@ -19,12 +19,12 @@ const initScrollMagic = () => {
         .addTo(controller)
         //.addIndicators({name: "pin scene", colorEnd: "#FFFFFF"});
 
-        if (window.matchMedia("(min-width: 768px)").matches) {
+        if (window.matchMedia("(min-width: 992px)").matches) {
             scene.setPin(blockSticky, { pushFollowers: false });
         }
 
         window.addEventListener("resize", () => {
-            if (window.matchMedia("(min-width: 768px)").matches) {
+            if (window.matchMedia("(min-width: 992px)").matches) {
                 scene.setPin(blockSticky, { pushFollowers: false });
             } else {
                 scene.removePin(blockSticky, true);
