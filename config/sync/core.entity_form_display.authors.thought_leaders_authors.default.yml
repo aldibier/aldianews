@@ -15,7 +15,7 @@ bundle: thought_leaders_authors
 mode: default
 content:
   field_authors_photo:
-    weight: 26
+    weight: 1
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
@@ -23,7 +23,7 @@ content:
     type: image_image
     region: content
   field_job_title_or_profession_co:
-    weight: 27
+    weight: 2
     settings:
       size: 60
       placeholder: ''
@@ -32,22 +32,27 @@ content:
     region: content
   langcode:
     type: language_select
-    weight: 2
+    weight: 3
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   name:
     type: string_textfield
-    weight: -4
+    weight: 0
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  translation:
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   user_id:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 4
     settings:
       match_operator: CONTAINS
       size: 60
