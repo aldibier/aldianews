@@ -1,4 +1,5 @@
 import initScrollMagic from "./scroll-magic.js";
+import initSlick from "./slick.js";
 
 (function ($, Drupal) {
     jQuery( document ).ready(function() {
@@ -43,7 +44,7 @@ import initScrollMagic from "./scroll-magic.js";
             initScrollMagic();
         }
        
-
-      
+        initSlick($, Drupal);
+        
     });
 })(jQuery, Drupal);

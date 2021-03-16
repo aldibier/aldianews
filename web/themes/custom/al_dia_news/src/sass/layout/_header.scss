@@ -152,13 +152,13 @@ body.open-menu {
 
         a {
             font-style: normal;
-            font-family: $PrNovacond-reg;
+            font-family: $PrNova-light;
             font-weight: normal;
             font-size: 16px;
             line-height: 19px;
             text-align: center;
             letter-spacing: 0.025em;
-            padding: 8px 1.1em;
+            padding: 8px 1em;
             margin: auto 0;
         }
     }
@@ -171,7 +171,7 @@ body.open-menu {
             display: flex;
             flex-wrap: wrap;
 
-            @media(max-width: 1164px){
+            @media(min-width: 1164px){
                 margin: 0 auto;
             }
 
