@@ -96,37 +96,48 @@
 
 
     //---------layout----------------_//
-    .author-information-more-content {
-        width: 100%;
-    }
 
-    .name-author-landing-more {
-        padding: 14px 30px;
-        max-width: 450px;
-        position: relative;
-        margin: 30px 0 15px;
-        font-style: normal;
-        font-family: $Modcomp-Sbold;
-        font-size: $px26;
-        line-height: 31px;
-        letter-spacing: 0.02em;
-        color: $cwhite;
+    .view-landing-thought-leaders {
 
-        &:after {
-            content: '';
-            width: calc(100% - 60px);
-            margin: 0 auto;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: $cwhite;
-            height: 1px;
+        .author-information-more-content {
+            width: 100%;
         }
-        
+    
+        .name-author-landing-more {
+            padding: 14px 30px;
+            max-width: 450px;
+            position: relative;
+            margin: 30px 0 15px;
+            font-style: normal;
+            font-family: $Mod-Sbold;
+            font-size: $px26;
+            line-height: 31px;
+            letter-spacing: 0.02em;
+            color: $cwhite;
+    
+            &:after {
+                content: '';
+                width: calc(100% - 60px);
+                margin: 0 auto;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: $cwhite;
+                height: 1px;
+            }
+            
+        }
+    
+        .job-author-landing-more {
+            margin: 15px 0;
+            padding: 0 30px;
+            font-family: $NimR-reg;
+            font-style: normal;
+            font-weight: normal;
+            font-size: $px20;
+            color: $cwhite;
+        }
+    
     }
-
-    .job-author-landing-more {
-        
-    }
-
+   
 }
