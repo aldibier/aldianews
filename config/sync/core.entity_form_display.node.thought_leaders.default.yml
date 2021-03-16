@@ -15,6 +15,7 @@ dependencies:
   module:
     - comment
     - image
+    - inline_entity_form
     - path
     - text
 id: node.thought_leaders.default
@@ -81,12 +82,19 @@ content:
   field_tags:
     weight: 6
     settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
       match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+      revision: false
+      override_labels: false
+      collapsible: false
+      collapsed: false
+      allow_duplicate: false
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: inline_entity_form_complex
     region: content
   path:
     type: path
