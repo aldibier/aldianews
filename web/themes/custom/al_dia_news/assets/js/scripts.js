@@ -96,6 +96,8 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _scroll_magic_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./scroll-magic.js */ "./src/js/scroll-magic.js");
+/* harmony import */ var _slick_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./slick.js */ "./src/js/slick.js");
+
 
 
 (function ($, Drupal) {
@@ -132,6 +134,8 @@ __webpack_require__.r(__webpack_exports__);
     if (window.matchMedia("(min-width: 768px)").matches) {
       Object(_scroll_magic_js__WEBPACK_IMPORTED_MODULE_0__["default"])();
     }
+
+    Object(_slick_js__WEBPACK_IMPORTED_MODULE_1__["default"])($, Drupal);
   });
 })(jQuery, Drupal);
 
@@ -186,6 +190,51 @@ var initScrollMagic = function initScrollMagic() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (initScrollMagic);
+
+/***/ }),
+
+/***/ "./src/js/slick.js":
+/*!*************************!*\
+  !*** ./src/js/slick.js ***!
+  \*************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var initSlick = function initSlick($, Drupal) {
+  var categoriesMore = document.querySelectorAll('.view-categories-sons .view-more-category .view-content');
+  var settings = {
+    infinite: false,
+    rows: 3,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    mobileFirst: true,
+    autoplay: false,
+    dots: false,
+    arrows: true,
+    responsive: [{
+      breakpoint: 768,
+      settings: 'unslick'
+    }]
+  };
+
+  if (window.matchMedia("(max-width: 768px)").matches) {
+    categoriesMore.forEach(function (element) {
+      return $(element).slick(settings);
+    });
+  }
+
+  window.addEventListener("resize", function () {
+    if (window.matchMedia("(max-width: 768px)").matches) {
+      categoriesMore.forEach(function (element) {
+        return $(element).slick(settings);
+      });
+    }
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (initSlick);
 
 /***/ }),
 
