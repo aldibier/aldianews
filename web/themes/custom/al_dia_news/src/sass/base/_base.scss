@@ -42,7 +42,7 @@ img {
     @media(max-width:$broken2){
         padding: 110px 0 0;
     }
-    
+
 }
 
 body.open-menu {
@@ -56,7 +56,7 @@ body.open-menu {
 
 body.toolbar-tray-open.user-logged-in {
     #header {
-        top: 79px; 
+        top: 79px;
     }
 }
 
@@ -64,16 +64,24 @@ body.toolbar-tray-open.user-logged-in {
     overflow: hidden;
 }
 
-@media (min-width: 851px) {
-    .layout-container {
+.layout-container {
+    max-width: 1440px;
+
+    .layout-main {
         max-width: 1310px;
+        padding: 0 15px;
+        margin: 0 auto 40px;
+
+        @media screen and (min-width: $tablet) {
+            margin-bottom: 100px;
+        }
     }
 }
 
 * {
 
     box-sizing: border-box !important;
-    
+
     &::selection {
         background: $cyello;
     }

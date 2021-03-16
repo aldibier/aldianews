@@ -1,0 +1,33 @@
+.block-hero-image {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 26% 74%;
+  align-items: flex-end;
+  padding: 40px 15px 25px;
+  margin: 0 -15px 20px;
+
+  @media screen and (min-width: $tablet) {
+    padding: 40px 85px 100px;
+    min-height: 710px;
+    margin: 0 -80px 70px;
+  }
+
+  .field--name-field-image-block {
+    &::after {
+      @include absolute(top 0 left 0);
+      @include esize(100%);
+      display: block;
+      z-index: -1;
+      content: '';
+      background-color: $rgba1;
+    }
+
+    img {
+      @include absolute(top 0 left 0);
+      @include esize(100%);
+      z-index: -2;
+      object-fit: cover;
+    }
+  }
+}
