@@ -27,12 +27,22 @@ display:
           label: Autor
         status:
           label: Status
+          settings:
+            format_custom_true: Publicado
+            format_custom_false: 'Sin publicar'
         operations:
           label: Operations
       filters:
         bundle:
           expose:
             label: Type
+        status:
+          group_info:
+            group_items:
+              1:
+                title: Publicado
+              2:
+                title: 'Sin publicar'
         langcode:
           expose:
             label: Language
