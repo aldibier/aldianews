@@ -137,17 +137,32 @@
         .title-node-landing {
             padding: 0 0 15px 30px;
             max-width: 75%;
+            font-style: normal;
+            font-weight: bold;
+            font-size: $px60;
+            line-height: 98.1%;
+            color: $cwhite;
+            font-family: $PrNovacond-bold;
 
             a{
                 font-style: normal;
                 font-weight: bold;
-                font-size: $px60;
                 line-height: 98.1%;
                 color: $cwhite;
                 font-family: $PrNovacond-bold;
                 border: none;
     
             }
+        }
+
+        .authored-on-landing {
+            padding: 15px 15px 40px 30px;
+            color: $cwhite;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 17px;
+            line-height: 21px;
+
         }
     }
 }
