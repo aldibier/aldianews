@@ -432,7 +432,12 @@
 
             .menu {
                 margin: 0 auto;
-                width: auto;
+                width: 100%;
+                max-width: 270px;
+            }
+
+            li.menu-item {
+                margin: 0 auto;
             }
         }
 
@@ -506,6 +511,10 @@
                 p{
                     font-size: 11px;
                     line-height: 13px;
+                }
+
+                &:after {
+                    height: 3px;
                 }
             }
         }
@@ -584,6 +593,21 @@
                 font-size: 10px;
                 line-height: 100%;
             }
+        }
+
+        .powerd {
+
+            &:after {
+                width: 50px;
+                height: 15px;
+                margin: 0; 
+            }
+        }
+
+        .copyr:before {
+            width: 10px;
+            height: 10px;
+            margin: 1px 5px -1px 0;
         }
     }
 
