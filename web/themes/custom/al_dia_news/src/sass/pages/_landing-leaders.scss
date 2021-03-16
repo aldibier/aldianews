@@ -169,10 +169,11 @@
     
     .block-views-blocklanding-thought-leaders-block-1 {
         position: absolute;
-        top: 117px;
+        top: 127px;
         right: 0;
         max-width: 435px;
         padding: 0 15px 0 20px;
+        border-left: 1px solid $cgrey4;
 
         .photo-author-landing-more {
             width: 235px;
@@ -180,6 +181,56 @@
             overflow: hidden;
             border-radius: 100%;
             box-shadow: 1px 3px 5px -2px rgb(0,0,0);
+        }
+        
+        .name-author-landing-more {
+            padding: 15px 10px 10px 0;
+            width: max-content;
+            display: block;
+            position: relative;
+            border-bottom: 1px solid $cblack3;
+            font-style: normal;
+            font-size: 22px;
+            line-height: 26px;
+            font-family: $Mod-bold;
+        }
+
+        .job-author-landing-more {
+            font-style: normal;
+            font-weight: normal;
+            font-size: $px16;
+            line-height: 125%;
+            font-family: $NimR-reg;
+            color: $cblack3;
+            padding: 15px 0 10px;
+        }
+
+        .title-node-landing {
+            font-style: normal;
+            font-weight: bold;
+            font-size: $px30;
+            line-height: 37px;
+            font-family: $PrNovacond-bold;
+            color: $cblack3;
+            padding: 5px 0 0;
+
+            a{
+                font-style: normal;
+                font-weight: bold;
+                font-family: $PrNovacond-bold;
+                color: $cblack3;
+                border: none;
+            }
+        }
+
+        .authored-on-landing {
+            color: $cgrey3;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 19px;
+            padding: 15px 0 0;
+            font-family: $PrNovacond-reg;
         }
     }
 }
