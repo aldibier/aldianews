@@ -91,13 +91,7 @@
         .name-author-landing-more {
             z-index: 2;
         }
-    }
 
-
-
-    //---------layout----------------_//
-
-    .view-landing-thought-leaders {
 
         .author-information-more-content {
             width: 100%;
@@ -141,16 +135,19 @@
         }
 
         .title-node-landing {
-            font-style: normal;
-            font-weight: bold;
-            font-size: $px60;
-            line-height: 98.1%;
-            color: $cwhite;
-            font-family: $PrNovacond-bold;
-            border: none;
-            
-        }
+            padding: 0 0 15px 30px;
+            max-width: 75%;
+
+            a{
+                font-style: normal;
+                font-weight: bold;
+                font-size: $px60;
+                line-height: 98.1%;
+                color: $cwhite;
+                font-family: $PrNovacond-bold;
+                border: none;
     
+            }
+        }
     }
-   
 }
