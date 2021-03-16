@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.feature_employer.body
+    - field.field.node.feature_employer.field_company_name
     - field.field.node.feature_employer.field_image
     - field.field.node.feature_employer.field_main_features
     - field.field.node.feature_employer.field_social_media
@@ -12,6 +13,7 @@ dependencies:
     - fixed_block_content.fixed_block_content.horizontal_advertising
     - node.type.feature_employer
     - views.view.feature_employed_information
+    - views.view.jobs_in_this_company
   module:
     - al_dia_layouts
     - entity_reference_revisions
@@ -165,6 +167,35 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: 1
+          4941604a-3ae2-4f05-981e-f5b7ce9c5e8b:
+            uuid: 4941604a-3ae2-4f05-981e-f5b7ce9c5e8b
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:feature_employer:field_company_name'
+              formatter:
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+                type: entity_reference_label
+            additional: {  }
+            weight: 0
+          44910c59-8055-4124-b8c7-29eec9f7d95d:
+            uuid: 44910c59-8055-4124-b8c7-29eec9f7d95d
+            region: three_content_jobs
+            configuration:
+              id: 'views_block:jobs_in_this_company-block_1'
+              label: ''
+              provider: views
+              label_display: '0'
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
         third_party_settings: {  }
 id: node.feature_employer.default
 targetEntityType: node
@@ -177,6 +208,14 @@ content:
     weight: 101
     settings: {  }
     third_party_settings: {  }
+    region: content
+  field_company_name:
+    weight: 105
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
     region: content
   field_image:
     weight: 102
