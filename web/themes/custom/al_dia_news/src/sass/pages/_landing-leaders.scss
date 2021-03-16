@@ -170,7 +170,7 @@
     .block-views-blocklanding-thought-leaders-block-1 {
         position: absolute;
         top: 127px;
-        right: 0;
+        right: 5px;
         max-width: 435px;
         padding: 0 15px 0 20px;
         border-left: 1px solid $cgrey4;
@@ -260,6 +260,19 @@
                 content: '';
                 display: block;
             }
+
+            &:nth-child(3n+1){
+
+                &:after {
+                    display: none;
+                }
+            }
+        }
+
+        .author-information-more-content,
+        .information-node-more-content {
+            max-width: 355px;
+            margin: 0 auto;
         }
     }
 }
