@@ -92,6 +92,11 @@
 
     .block-field-blocknodenewsfield-short-title {
       margin-bottom: 10px;
+
+      @media screen and (max-width: $tablet) {
+        margin-right: 0;
+        margin-bottom: 5px;
+      }
     }
 
     .last-content-category-childs {
@@ -123,6 +128,9 @@
         max-width: 100%;
         margin: 0;
         object-fit: contain;
+        @media (max-width: $broken) {
+          min-width: 140px;
+        }
       }
     }
 
@@ -141,6 +149,11 @@
         line-height: 14px;
         letter-spacing: 0.08em;
         color: $corange;
+
+        @media screen and(max-width:$tablet) {
+          font-size: $px10;
+          line-height: 12px;
+        }
       }
     }
 
@@ -167,12 +180,18 @@
       }
     }
 
+    .block-field-blocknodenewscreated {
+      @media (max-width: $tablet) {
+        line-height: 0;
+      }
+    }
+
     .field--name-created {
       font-size: $px16;
       font-family: $PrNovacond-reg;
       font-style: normal;
       font-weight: normal;
-      line-height: 20px;
+      line-height: 21px;
       color: $cgrey3;
 
       @media (max-width: $tablet) {

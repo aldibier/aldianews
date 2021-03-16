@@ -59,7 +59,7 @@
   &-category {
     h2 {
       margin-bottom: 10px;
-      font-size: $px24;
+      font-size: szrem(20px);
       font-family: $Modcond-bold;
       font-style: normal;
       font-weight: bold;
@@ -92,6 +92,7 @@
 
     @media screen and(max-width:$tablet) {
       margin-bottom: 5px;
+      line-height: 0;
 
       a {
         font-size: 18px;
@@ -119,7 +120,7 @@
     font-family: $PrNovacond-reg;
     font-style: normal;
     font-weight: normal;
-    line-height: 20px;
+    line-height: 21px;
     color: $cwhite;
 
     @media (max-width: $tablet) {

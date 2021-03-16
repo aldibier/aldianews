@@ -2,12 +2,6 @@
 
     //-------------titulo de la categoria------------//
 
-    .view-display-id-page_1 {
-        .view-header{
-            padding: 0 15px;
-        }
-    }
-    
     .catergory-logo {
         max-width: 180px;
         margin: 0 0 0 -8px;
@@ -249,6 +243,7 @@
             max-width: 440px;
             padding: 0 15px;
             position: relative;
+            margin: 40px 0;
 
             &:after {
                 position: absolute;
@@ -262,10 +257,15 @@
             }
 
             &:nth-child(3n+1){
-
+                padding: 0 15px 0 0;
+                
                 &:after {
                     display: none;
                 }
+            }
+
+            &:nth-child(3n+3){
+                padding: 0 0 0 15px;
             }
         }
 
@@ -305,10 +305,38 @@
         .job-author-landing-more  {
             font-style: normal;
             font-weight: normal;
-            font-size: $px6;
+            font-size: $px16;
             line-height: 125%;
             color: $cblack3;
             font-family: $NimR-reg;
+            margin: 15px 0;
+        }
+
+        .title-node-landing {
+            font-style: normal;
+            font-weight: bold;
+            font-size: $px30;
+            line-height: 37px;
+            margin: 20px 0 0;
+            font-family: $PrNovacond-bold;
+            color: $cblack3;
+
+            a {
+                font-style: normal;
+                font-weight: bold;
+                font-family: $PrNovacond-bold;
+                color: $cblack3;
+                border: none;
+            }
+        }
+
+        .authored-on-landing {
+            font-style: normal;
+            font-weight: normal;
+            font-size: $px20;
+            line-height: 24px;
+            color: $cblack3;
+            margin: 15px 0 0;
         }
     }
 }
