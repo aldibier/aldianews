@@ -1,0 +1,176 @@
+uuid: c9beafa6-2c4f-4f64-b7bb-df4e6d12f3b9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.al_dia_vacancy.body
+    - field.field.node.al_dia_vacancy.field_email
+    - field.field.node.al_dia_vacancy.field_picture
+    - fixed_block_content.fixed_block_content._small_vertical_advertising
+    - fixed_block_content.fixed_block_content.big_vertical_advertising
+    - fixed_block_content.fixed_block_content.horizontal_advertising
+    - node.type.al_dia_vacancy
+    - webform.webform.apply_to_this_job
+  module:
+    - al_dia_layouts
+    - fixed_block_content
+    - image
+    - layout_builder
+    - text
+    - user
+    - webform
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: al_dia_vacancy_default
+        layout_settings:
+          label: 'Al Dia Vacancy Layout'
+        components:
+          ce3ba20a-97fd-440c-83c9-e184b0186245:
+            uuid: ce3ba20a-97fd-440c-83c9-e184b0186245
+            region: one_content_image
+            configuration:
+              id: 'field_block:node:al_dia_vacancy:field_picture'
+              label: Picture
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: image
+                settings:
+                  image_style: ''
+                  image_link: ''
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 0
+          ec0d15cb-0928-4bae-8568-8557051af23d:
+            uuid: ec0d15cb-0928-4bae-8568-8557051af23d
+            region: horizontal_advertising
+            configuration:
+              id: 'fixed_block_content:horizontal_advertising'
+              label: 'Horizontal advertising'
+              provider: fixed_block_content
+              label_display: '0'
+              view_mode: ''
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+          623d18b1-5938-437e-8bc2-18b723636f92:
+            uuid: 623d18b1-5938-437e-8bc2-18b723636f92
+            region: one_content_title
+            configuration:
+              id: 'field_block:node:al_dia_vacancy:title'
+              label: Title
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: string
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 0
+          34767187-59ea-455c-a3bc-7cd40200c818:
+            uuid: 34767187-59ea-455c-a3bc-7cd40200c818
+            region: two_content
+            configuration:
+              id: 'field_block:node:al_dia_vacancy:body'
+              label: Body
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: text_default
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 0
+          3807bc84-6cf0-4beb-b971-550ee2a657a4:
+            uuid: 3807bc84-6cf0-4beb-b971-550ee2a657a4
+            region: one_vertical_advertising
+            configuration:
+              id: 'fixed_block_content:_small_vertical_advertising'
+              label: ' Small vertical advertising'
+              provider: fixed_block_content
+              label_display: '0'
+              view_mode: ''
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+          6d99cb25-fb67-41b3-a84f-a5c56fbe02ae:
+            uuid: 6d99cb25-fb67-41b3-a84f-a5c56fbe02ae
+            region: two_vertical_advertising
+            configuration:
+              id: 'fixed_block_content:big_vertical_advertising'
+              label: 'Big vertical advertising'
+              provider: fixed_block_content
+              label_display: '0'
+              view_mode: ''
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+          26c4e740-008b-4435-8fba-22111231b418:
+            uuid: 26c4e740-008b-4435-8fba-22111231b418
+            region: two_vertical_advertising
+            configuration:
+              id: webform_block
+              label: Webform
+              provider: webform
+              label_display: '0'
+              webform_id: apply_to_this_job
+              default_data: ''
+              redirect: false
+              context_mapping: {  }
+            additional: {  }
+            weight: 1
+        third_party_settings: {  }
+id: node.al_dia_vacancy.default
+targetEntityType: node
+bundle: al_dia_vacancy
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_email:
+    weight: 103
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_picture:
+    weight: 102
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  langcode: true
+  search_api_excerpt: true

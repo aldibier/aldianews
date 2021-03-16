@@ -1,0 +1,44 @@
+//-------------plantillas base-----------------//
+@import 'base/fonts/fonts';
+@import 'layout/layout';
+@import 'base/mixins/mixins';
+
+
+
+//---------------estrcucture base pages---------//
+@import 'blocks/blocks-leaders';
+@import 'base/pages/estructure-news';
+@import 'base/blocks/block-galery-news';
+@import 'base/pages/estructure-categories';
+
+
+//---------------blocks-------------------------//
+@import 'base/blocks/blocks-internal-news';
+@import 'base/blocks/block-category-first';
+@import 'base/blocks/block-category-sons';
+@import 'base/blocks/blocks-more';
+@import 'base/blocks/modal-login';
+@import 'blocks/blocks-landing-sub';
+@import 'base/blocks/block-notice-base';
+@import 'blocks/blocks-comments';
+
+//---------------layouts-----------------------//
+@import 'layout/footer';
+@import 'layout/header';
+
+//---------------components-----------------------//
+@import 'components/card-more-content';
+@import 'components/card-one-column';
+@import 'components/main-news';
+@import 'components/components';
+
+@import 'base/base';
+
+//------------------pages------------------------//
+@import 'pages/thought-leaders';
+@import 'pages/landing-leaders';
+@import 'pages/pages';
+
+.site-footer {
+    height: 600px;
+}

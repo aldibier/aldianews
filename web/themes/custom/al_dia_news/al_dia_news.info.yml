@@ -1,0 +1,33 @@
+name: AL DIA News Theme
+description: description
+type: theme
+base theme: bartik
+
+core_version_requirement: ^8 || ^9
+
+libraries:
+  - al_dia_news/global
+  - al_dia_news/scrollmagic
+  - al_dia_news/slick
+
+libraries-override:
+  selection_sharer/selection-shared:
+    js:
+      library/selection-sharer.js: js/selection-sharer.js
+
+regions:
+  sidebar_first: Sidebar first
+  sidebar_second: Sidebar second
+  content: Content
+  header: Header
+  primary_menu: Primary menu
+  secondary_menu: Secondary menu
+  footer_first: Footer first
+  footer_second: Footer second
+  footer_third: Footer third
+  footer_fourth: Footer fourth
+  footer_fifth: Footer fifth
+  highlighted: Highlighted
+  help: Help
+  breadcrumb: Breadcrumb
+

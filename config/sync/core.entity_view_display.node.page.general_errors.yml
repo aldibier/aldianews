@@ -1,0 +1,103 @@
+uuid: 7c84ea5d-273b-40ee-84f1-073f097531d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.general_errors
+    - field.field.node.page.body
+    - node.type.page
+    - views.view.last_news_in_error_page
+  module:
+    - al_dia_layouts
+    - layout_builder
+    - text
+    - user
+    - views
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: error_page
+        layout_settings:
+          label: 'Errors Page'
+        components:
+          08aea519-d20c-46eb-8010-6f122da8aede:
+            uuid: 08aea519-d20c-46eb-8010-6f122da8aede
+            region: one_content
+            configuration:
+              id: 'field_block:node:page:title'
+              label: Title
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: string
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 0
+          739a8505-6ac1-4baf-b0fa-66236b470c27:
+            uuid: 739a8505-6ac1-4baf-b0fa-66236b470c27
+            region: one_content
+            configuration:
+              id: 'field_block:node:page:body'
+              label: Body
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: text_default
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 1
+          4332f883-1645-429d-b20d-f58e1644caab:
+            uuid: 4332f883-1645-429d-b20d-f58e1644caab
+            region: two_content
+            configuration:
+              id: 'views_block:last_news_in_error_page-block_1'
+              label: ''
+              provider: views
+              label_display: '0'
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+        third_party_settings: {  }
+_core:
+  default_config_hash: g1S3_GLaxq4l3I9RIca5Mlz02MxI2KmOquZpHw59akM
+id: node.page.general_errors
+targetEntityType: node
+bundle: page
+mode: general_errors
+content:
+  addtoany:
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  body:
+    label: hidden
+    type: text_default
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  links:
+    weight: 101
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true
+  search_api_excerpt: true

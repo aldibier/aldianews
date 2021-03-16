@@ -1,0 +1,29 @@
+uuid: d7235ed1-8ee0-4975-a5dc-ae521b97d18b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_type_of_working_day
+    - node.type.job
+    - taxonomy.vocabulary.type_of_working_day
+id: node.job.field_type_of_working_day
+field_name: field_type_of_working_day
+entity_type: node
+bundle: job
+label: 'Type of working day'
+description: 'Add the type of working day'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      type_of_working_day: type_of_working_day
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

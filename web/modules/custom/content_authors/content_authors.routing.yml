@@ -1,0 +1,7 @@
+content_authors.welcome: 
+  path: '/welcome/page' 
+  defaults: 
+    _controller : '\Drupal\content_authors\Controller\WelcomeController::welcome' 
+    _title : 'Welcome to My Module in Drupal 8' 
+  requisitos: 
+    _permission : 'access content'

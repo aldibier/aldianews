@@ -1,0 +1,64 @@
+uuid: e6437c87-ef47-4149-97bf-4eea29bf267d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.category
+    - taxonomy.vocabulary.categories
+    - views.view.last_news
+  module:
+    - al_dia_layouts
+    - layout_builder
+    - text
+    - views
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: taxonomy_category
+        layout_settings:
+          label: Category
+        components:
+          e70b7ff9-7c52-4c65-861b-7dfd9e078781:
+            uuid: e70b7ff9-7c52-4c65-861b-7dfd9e078781
+            region: one_content
+            configuration:
+              id: 'views_block:last_news-block_1'
+              label: ''
+              provider: views
+              label_display: visible
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+          73848a35-a336-436b-87b2-28ca24ab80e1:
+            uuid: 73848a35-a336-436b-87b2-28ca24ab80e1
+            region: one_content
+            configuration:
+              id: 'views_block:last_news-block_2'
+              label: ''
+              provider: views
+              label_display: visible
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: 1
+        third_party_settings: {  }
+id: taxonomy_term.categories.category
+targetEntityType: taxonomy_term
+bundle: categories
+mode: category
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

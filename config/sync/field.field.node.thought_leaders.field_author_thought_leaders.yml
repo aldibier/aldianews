@@ -1,0 +1,29 @@
+uuid: 78d2c1a6-ffce-4d53-a5e6-71e823765083
+langcode: en
+status: true
+dependencies:
+  config:
+    - content_authors.authors_type.thought_leaders_authors
+    - field.storage.node.field_author_thought_leaders
+    - node.type.thought_leaders
+id: node.thought_leaders.field_author_thought_leaders
+field_name: field_author_thought_leaders
+entity_type: node
+bundle: thought_leaders
+label: Author
+description: 'Select, from the list, the author who wrote this story.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:authors'
+  handler_settings:
+    target_bundles:
+      thought_leaders_authors: thought_leaders_authors
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

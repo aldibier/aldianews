@@ -1,0 +1,22 @@
+uuid: dfe0636c-a1b7-4a30-9960-1cd32229c197
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - al_dia_news
+_core:
+  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
+id: al_dia_news_messages
+theme: al_dia_news
+region: highlighted
+weight: -16
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

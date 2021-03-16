@@ -1,0 +1,37 @@
+uuid: d0b36104-d77e-4040-a6e8-21776492aa21
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.al_dia_vacancy.body
+    - field.field.node.al_dia_vacancy.field_email
+    - field.field.node.al_dia_vacancy.field_picture
+    - node.type.al_dia_vacancy
+  module:
+    - text
+    - user
+id: node.al_dia_vacancy.teaser
+targetEntityType: node
+bundle: al_dia_vacancy
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  field_email: true
+  field_picture: true
+  langcode: true
+  search_api_excerpt: true

@@ -1,0 +1,35 @@
+uuid: c91f6cfd-b3aa-44e0-ae94-39ec75df39f0
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comments_content
+    - core.entity_view_mode.comment.full
+    - field.field.comment.comments_content.field_comment_body
+  module:
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: comment.comments_content.full
+targetEntityType: comment
+bundle: comments_content
+mode: full
+content:
+  field_comment_body:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  links:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  addtoany: true
+  langcode: true
+  search_api_excerpt: true

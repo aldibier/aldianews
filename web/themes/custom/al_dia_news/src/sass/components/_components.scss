@@ -1,0 +1,46 @@
+#selectionSharerPopover-inner,
+#selectionSharerPopunder{
+    .linkedin{
+        background: transparent url("../img/Licono.svg") center center no-repeat;
+        background-size: contain;
+    }
+    .whatsapp{
+        background: transparent url("../img/Wicono.svg") center center no-repeat;
+        background-size: contain;
+    }
+    .reddit{
+        background: transparent url("../img/Ricono.svg") center center no-repeat;
+        background-size: contain;
+    }
+    .facebook{
+        background: transparent url("../img/Ficono.svg") center center no-repeat;
+        background-size: contain;
+    }
+    .telegram{
+        display: none;
+    }
+}
+
+#selectionSharerPopunder.show{
+    height: 50px;
+}
+
+
+#selectionSharerPopunder-inner ul {
+    width: 100%;
+    float: none;
+    display: flex;
+
+    li {
+        padding: 0;
+        margin: 5px 5px 4px;
+
+        &.lemail {
+           margin: 5px 5px 4px auto !important;
+        }
+
+        &.lreddit {
+            margin: 5px auto 4px 5px !important;
+        }
+    }
+}   

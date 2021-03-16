@@ -1,0 +1,111 @@
+.field--type-comment {
+    display: flex;
+    flex-wrap: wrap;
+
+    .comment-form__title {
+        order: -2;
+        width: 100%;
+        padding: 0;
+        color: $cblack;
+    }
+
+    .comment-comments-content-form {
+        order: -1;
+        width: 100%;
+        margin: 0 auto 77px;
+        
+        .form-textarea {
+            min-height: 182px;
+        }
+
+        @media( max-width: $tablet){
+            .form-textarea {
+                min-height: 80px;
+            }
+        }
+    }
+}
+
+.comment {
+    position: relative;
+    background: #FBFBFB;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.17);
+    margin: 0 auto 25px;
+
+    .comment__meta {
+        position: absolute;
+        width: calc(100% - 60px);
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        top: 25px;
+        z-index: 2;
+        padding: 0;
+    }
+
+    .comment__author a{
+        font-family: $PrNovacond-reg;
+        font-style: normal;
+        font-weight: 600;
+        font-size: $px24;
+        line-height: 140%;
+        color: $cblack0;
+        border: none;
+    }
+
+    .comment__time {
+        font-style: normal;
+        font-weight: normal;
+        font-size: $px14;
+        line-height: 17px;
+        font-family: $PrNovacond-reg;
+        color: $cgrey3;
+    }
+
+    .comment__permalink {
+        display: none;
+    }
+
+    .comment__content {
+        padding: 100px 30px 25px;
+        display: flex;
+        flex-wrap: wrap;
+        border: none;
+
+        &:before,
+        &:after {
+            display: none;
+        }
+    }
+
+    h3 {
+        display: none;
+    }
+
+    .field--name-field-comment-body {
+        font-style: normal;
+        font-weight: normal;
+        font-size: $px20;
+        line-height: 140%;
+        color: $cblack3;
+        font-family: $PrNovacond-reg;
+        width: 100%;
+    }
+
+    .links {
+        margin: 0 0 0 auto;
+    }
+}
+
+.indented {
+    margin: -25px 0 0;
+    width: 100%;
+
+    .comment__meta  {
+        text-align: right;
+    }
+
+    .comment__content {
+        text-align: right;
+    }
+}

@@ -1,0 +1,129 @@
+//main-news
+.main-news {
+  //reset style
+  .block-field-blocknodenewsbody  {
+    all: initial;
+  }
+
+  h2,
+  h3 {
+    margin: 0;
+  }
+
+  .views-row,
+  .container-content {
+    position: relative;
+  }
+
+  .views-field-nothing,
+  .two-content-category {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(
+      rgba(11, 11, 11, 0) 31.77%,
+      rgba(11, 11, 11, 0.630593),
+      #0b0b0b 77.63%
+    );
+    width: 100%;
+    padding: 8rem 0 2.5rem;
+  }
+
+  &-image {
+    a {
+      border: none;
+    }
+
+    img {
+      height: 100%;
+      min-height: 480px;
+      max-height: 480px;
+      width: 100%;
+      max-width: initial;
+      object-fit: cover;
+
+      @media screen and(max-width:$broken) {
+        height: auto;
+        min-height: initial;
+        max-height: initial;
+      }
+    }
+  }
+
+  &-content  {
+    width: 100%;
+    max-width: 730px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+  &-category {
+    margin-bottom: 10px;
+    font-size: $px24;
+    font-family: $Modcond-bold;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 24px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: $cwhite;
+
+    @media screen and(max-width:$tablet) {
+      margin-bottom: 5px;
+      font-size: 12px;
+      line-height: 14px;
+    }
+  }
+
+  &-title {
+    margin-bottom: 10px;
+
+    a {
+      border: none;
+      font-size: $px47;
+      font-family: $PrNovacond-bold;
+      font-style: normal;
+      font-weight: bold;
+      line-height: 1;
+      text-transform: uppercase;
+      color: $cwhite;
+    }
+
+    @media screen and(max-width:$tablet) {
+      margin-bottom: 5px;
+
+      a {
+        font-size: 18px;
+        line-height: 22px;
+      }
+    }
+  }
+
+  &-body {
+    margin-bottom: 10px;
+    font-size: $px20;
+    font-family: $NimS-reg;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1.5;
+    color: $cwhite;
+
+    @media screen and(max-width:$tablet) {
+      display: none;
+    }
+  }
+
+  &-date {
+    font-size: $px17;
+    font-family: $PrNovacond-reg;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 20px;
+    color: $cwhite;
+
+    @media (max-width: $tablet) {
+      font-size: 10px;
+      line-height: 12px;
+    }
+  }
+}

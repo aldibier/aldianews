@@ -1,0 +1,22 @@
+uuid: affe4136-f6b0-46e0-ae38-8d90a407a1df
+langcode: es
+status: true
+dependencies:
+  config:
+    - block_content.type.block_for_image_and_text
+id: block_content.block_for_image_and_text.status
+field_name: status
+entity_type: block_content
+bundle: block_for_image_and_text
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

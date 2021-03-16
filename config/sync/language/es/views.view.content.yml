@@ -1,0 +1,53 @@
+label: Contenido
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filter
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      fields:
+        title:
+          label: Título
+        type:
+          label: 'Content type'
+        name:
+          label: Autor
+        status:
+          label: Status
+          settings:
+            format_custom_true: Publicado
+            format_custom_false: 'Sin publicar'
+        operations:
+          label: Operations
+      filters:
+        title:
+          expose:
+            label: Título
+        type:
+          expose:
+            label: 'Content type'
+        status:
+          expose:
+            label: Status
+          group_info:
+            group_items:
+              1:
+                title: Publicado
+              2:
+                title: 'Sin publicar'
+        langcode:
+          expose:
+            label: Language
+      title: Contenido
+    display_title: Master
+  page_1:
+    display_options:
+      menu:
+        title: Contenido
+      tab_options:
+        title: Contenido
+    display_title: Página

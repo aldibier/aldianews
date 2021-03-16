@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a two-column layout.
+ *
+ * Available variables:
+ * - content: The content for this layout.
+ * - attributes: HTML attributes for the layout <div>.
+ *
+ * @ingroup themeable
+ */
+#}
+{% if content %}
+  <div class="container-content">
+
+    {% if content.one_content %}
+        <div {{ region_attributes.one_content.addClass('one-content-subcategory-four') }}>
+          {{ content.one_content }} 
+        </div>
+    {% endif %}
+    {% if content.two_content %}
+        <div {{ region_attributes.two_content.addClass('two-content-subcategory-four short-title-date') }}>
+          {{ content.two_content }} 
+        </div>
+    {% endif %}
+
+  </div>
+{% endif %}
