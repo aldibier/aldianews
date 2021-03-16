@@ -1,0 +1,47 @@
+uuid: ffde3d53-3c1f-46eb-bb0a-b7604e387733
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.job.body
+    - field.field.node.job.field_company_name
+    - field.field.node.job.field_expiration_date
+    - field.field.node.job.field_place
+    - field.field.node.job.field_requirements
+    - field.field.node.job.field_sector
+    - field.field.node.job.field_sponsored_profile
+    - field.field.node.job.field_type_of_working_day
+    - node.type.job
+  module:
+    - text
+    - user
+id: node.job.teaser
+targetEntityType: node
+bundle: job
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  field_company_name: true
+  field_expiration_date: true
+  field_place: true
+  field_requirements: true
+  field_sector: true
+  field_sponsored_profile: true
+  field_type_of_working_day: true
+  langcode: true
+  search_api_excerpt: true
