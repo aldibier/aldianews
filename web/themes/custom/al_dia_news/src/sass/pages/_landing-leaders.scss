@@ -33,8 +33,9 @@
         .view-content {
             width: calc(100% - 440px);
             max-width: 870px;
-            padding: 0 15px;
+            padding: 0 20px 0 15px;
             overflow: hidden;
+            margin: 40px 0 0;
         }
 
         .views-row {
@@ -91,13 +92,7 @@
         .name-author-landing-more {
             z-index: 2;
         }
-    }
 
-
-
-    //---------layout----------------_//
-
-    .view-landing-thought-leaders {
 
         .author-information-more-content {
             width: 100%;
@@ -141,16 +136,50 @@
         }
 
         .title-node-landing {
+            padding: 0 0 15px 30px;
+            max-width: 75%;
             font-style: normal;
             font-weight: bold;
             font-size: $px60;
             line-height: 98.1%;
             color: $cwhite;
             font-family: $PrNovacond-bold;
-            border: none;
-            
-        }
+
+            a{
+                font-style: normal;
+                font-weight: bold;
+                line-height: 98.1%;
+                color: $cwhite;
+                font-family: $PrNovacond-bold;
+                border: none;
     
+            }
+        }
+
+        .authored-on-landing {
+            padding: 15px 15px 40px 30px;
+            color: $cwhite;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 17px;
+            line-height: 21px;
+            font-family: $PrNovacond-bold;
+        }
     }
-   
+    
+    .block-views-blocklanding-thought-leaders-block-1 {
+        position: absolute;
+        top: 117px;
+        right: 0;
+        max-width: 435px;
+        padding: 0 15px 0 20px;
+
+        .photo-author-landing-more {
+            width: 235px;
+            height: 235px;
+            overflow: hidden;
+            border-radius: 100%;
+            box-shadow: 1px 3px 5px -2px rgb(0,0,0);
+        }
+    }
 }
