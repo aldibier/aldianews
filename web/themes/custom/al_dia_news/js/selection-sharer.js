@@ -95,8 +95,9 @@
       var sel = window.getSelection();
       var selection = self.getSelectionText(sel);
 
-      if (sel.isCollapsed || selection.length < 10 || !selection.match(/ /))
+      if (sel.isCollapsed || selection.length < 10 || !selection.match(/ /)){
         return self.hidePopunder();
+      }
 
       if (self.popunder.classList.contains('fixed')) {
         self.popunder.style.bottom = 0;
