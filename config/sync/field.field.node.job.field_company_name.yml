@@ -1,0 +1,29 @@
+uuid: 8fe20689-05ef-4fe7-9a90-d32b982878ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_company_name
+    - node.type.job
+    - taxonomy.vocabulary.company_name
+id: node.job.field_company_name
+field_name: field_company_name
+entity_type: node
+bundle: job
+label: 'Company name'
+description: 'The company sponsoring this job posting. Note: Before adding a new company, make sure the company name doesn''t already exist'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      company_name: company_name
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

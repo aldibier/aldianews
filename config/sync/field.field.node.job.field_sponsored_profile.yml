@@ -1,0 +1,29 @@
+uuid: b68729c5-6b8d-4837-b93d-e85c401d17fd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sponsored_profile
+    - node.type.job
+    - taxonomy.vocabulary.sponsored_profile
+id: node.job.field_sponsored_profile
+field_name: field_sponsored_profile
+entity_type: node
+bundle: job
+label: 'Sponsored Profile'
+description: 'Link this Job posting to the Company Sponsored Profile (if available)'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      sponsored_profile: sponsored_profile
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
