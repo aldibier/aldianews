@@ -529,6 +529,7 @@ $settings['update_free_access'] = FALSE;
  * about securing private files.
  */
 # $settings['file_private_path'] = '';
+$settings['file_private_path'] = 'sites/default/files/private'; 
 
 /**
  * Temporary file path:
