@@ -95,9 +95,8 @@
       var sel = window.getSelection();
       var selection = self.getSelectionText(sel);
 
-      if (sel.isCollapsed || selection.length < 10 || !selection.match(/ /)){
+      if (sel.isCollapsed || selection.length < 10 || !selection.match(/ /))
         return self.hidePopunder();
-      }
 
       if (self.popunder.classList.contains('fixed')) {
         self.popunder.style.bottom = 0;
@@ -321,9 +320,17 @@
       e.preventDefault();
       var text = swapParaWithNewline(self.htmlSelection);
       var url =
-        'https://www.facebook.com/sharer/sharer.php?quote=' +
+        'https://www.facebook.com/dialog/feed?' +
+        'app_id=' +
+        self.appId +
+        '&display=popup' +
+        '&caption=' +
         encodeURIComponent(text) +
-        '&u=' +
+        '&link=' +
+        encodeURIComponent(self.url2share) +
+        '&href=' +
+        encodeURIComponent(self.url2share) +
+        '&redirect_uri=' +
         encodeURIComponent(self.url2share);
       var w = 640,
         h = 440;
@@ -348,7 +355,7 @@
       e.preventDefault();
       var text = swapParaWithNewline(self.htmlSelection);
       var url =
-        'https://www.linkedin.com/sharing/share-offsite/?url=' +
+        'https://www.linkedin.com/shareArticle?mini=true&url=' +
         encodeURIComponent(self.url2share) +
         '&title=' +
         encodeURIComponent(text);
@@ -374,7 +381,7 @@
       e.preventDefault();
       var text = swapParaWithNewline(self.htmlSelection);
       var url =
-        'https://www.reddit.com/submit?text=' +
+        'https://www.reddit.com/shareArticle?mini=true&url=' +
         encodeURIComponent(self.url2share) +
         '&title=' +
         encodeURIComponent(text);
@@ -472,16 +479,16 @@
         return acc.concat(p.icon).concat('\n');
       }, '');
       var shareIcons =
-        '    <ul>' +
-        '      <li class="ltweet"><a class="action tweet" href="" title="Share this selection on Twitter" target="_blank">Tweet</a></li>' +
-        '      <li class="lfacebook"><a class="action facebook" href="" title="Share this selection on Facebook" target="_blank">Facebook</a></li>' +
-        '      <li class="llinkedin"><a class="action linkedin" href="" title="Share this selection on LinkedIn" target="_blank">LinkedIn</a></li>' +
-        '      <li class="lwst"><a class="action whatsapp" href="" title="Share this selection on Whatsapp" target="_blank">Whatsapp</a></li>' +
-        '      <li class="lreddit"><a class="action reddit" href="" title="Share this selection on Reddit" target="_blank">Reddit</a></li>' +
-        // pickedShareIcons +
-        '      <li class="lemail"><a class="action email" href="" title="Share this selection by email" target="_blank"><svg width="20" height="20"><path stroke="%23FFF" stroke-width="6" d="m16,25h82v60H16zl37,37q4,3 8,0l37-37M16,85l30-30m22,0 30,30"/></svg></a></li>' +
-        '    </ul>' +
-        '  </div>';
+      '    <ul>' +
+      '      <li><a class="action tweet" href="" title="Share this selection on Twitter" target="_blank">Tweet</a></li>' +
+      '      <li><a class="action facebook" href="" title="Share this selection on Facebook" target="_blank">Facebook</a></li>' +
+      '      <li><a class="action linkedin" href="" title="Share this selection on LinkedIn" target="_blank">LinkedIn</a></li>' +
+      '      <li><a class="action whatsapp" href="" title="Share this selection on Whatsapp" target="_blank">Whatsapp</a></li>' +
+      '      <li><a class="action reddit" href="" title="Share this selection on Reddit" target="_blank">Reddit</a></li>' +
+      pickedShareIcons +
+      '      <li><a class="action email" href="" title="Share this selection by email" target="_blank"><svg width="20" height="20"><path stroke="%23FFF" stroke-width="6" d="m16,25h82v60H16zl37,37q4,3 8,0l37-37M16,85l30-30m22,0 30,30"/></svg></a></li>' +
+      '    </ul>' +
+      '  </div>';
 
       var popoverHTML =
         '<div class="selectionSharer" id="selectionSharerPopover" style="position:absolute;">' +
