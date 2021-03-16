@@ -8,8 +8,8 @@
     --padding-right: 440px;
     width: calc(100% - var(--padding-right));
     max-width: 930px;
-    padding: 0 15px;
     overflow: hidden;
+    padding-right: 15px;
 
     > *  {
         padding: 0;
@@ -19,8 +19,8 @@
     @media (max-width:$broken /*$tablet*/) {
         --padding-right: 0;
         max-width: 100%;
-        padding: 0 15px;
         width: 100%;
+        padding: 0;
 
         > *  {
             padding: 0;
@@ -45,7 +45,7 @@
             }
         }
 
-        @media (min-width:$tablet) { 
+        @media (min-width:$tablet) {
 
             .container-content >.block-field-blocknodenewsbody > div {
                 min-height: 955px;
@@ -53,16 +53,6 @@
         }
     }
 }
-
-.content-news-internal-first {
-    padding: 0 15px;
-
-    > * {
-        padding: 0;
-    }
-}
-
-
 
 //--------more notices---------//
 .container-right  {
