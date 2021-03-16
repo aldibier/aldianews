@@ -1,0 +1,23 @@
+uuid: e098792b-c3a6-4555-a738-cd105dcd9d48
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_link_to_apply_for_the_job
+    - node.type.job
+  module:
+    - link
+id: node.job.field_link_to_apply_for_the_job
+field_name: field_link_to_apply_for_the_job
+entity_type: node
+bundle: job
+label: 'Link to apply for the job'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link
