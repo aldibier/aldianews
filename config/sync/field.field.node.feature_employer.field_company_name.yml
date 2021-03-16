@@ -1,0 +1,29 @@
+uuid: a8eeb3d5-d658-4b9e-a0c4-76f11c0e2223
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_company_name
+    - node.type.feature_employer
+    - taxonomy.vocabulary.job_posting_company_name
+id: node.feature_employer.field_company_name
+field_name: field_company_name
+entity_type: node
+bundle: feature_employer
+label: 'Company name'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      job_posting_company_name: job_posting_company_name
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

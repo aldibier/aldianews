@@ -2,7 +2,13 @@
 
     //------- first block leader
     .content-advertising {
-        padding: 0 15px;
+        .block-field-blocknodethought-leadersfield-image {
+            margin: 0 -15px;
+
+            @media screen and (min-width: $broken) {
+                margin: 0 -80px;
+            }
+        }
 
         img {
             margin: 0;
@@ -65,7 +71,7 @@
             margin: 5px 0 0 0;
             padding: 0 0 0 35px;
         }
-        
+
         .author-information {
 
             .author-information {
@@ -76,18 +82,18 @@
                 font-family: $Modcond-reg;
                 margin: 0;
             }
-            
+
         }
 
         .date-authored-on {
             font-size: $px20;
-            line-height: 24px; 
+            line-height: 24px;
             margin: 10px 0 0;
         }
 
-        @media (max-width:$tablet){ 
+        @media (max-width:$tablet){
 
-            .by-author-information { 
+            .by-author-information {
                 font-size: 14px;
                 line-height: 17px;
                 top: 4;

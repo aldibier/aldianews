@@ -119,4 +119,10 @@ $lineheight: 1rem) {
   text-decoration: none;
   padding: 0 10px;
   border: 1px solid $colorBcolor;
+  transition: all .3s ease;
+
+  &:hover {
+    color: $cgrey6;
+    background-color: $colorBcolor;
+  }
 }

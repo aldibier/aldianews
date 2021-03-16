@@ -33,7 +33,7 @@
         .view-content {
             width: calc(100% - 440px);
             max-width: 870px;
-            padding: 0 20px 0 15px;
+            padding: 0 20px 0 0;
             overflow: hidden;
             margin: 40px 0 0;
         }
@@ -172,7 +172,7 @@
         top: 127px;
         right: 5px;
         max-width: 435px;
-        padding: 0 15px 0 20px;
+        padding: 0 0 0 20px;
         border-left: 1px solid $cgrey4;
         height: 520px;
 
@@ -282,8 +282,52 @@
         .photo-author-landing-more {
             width: 130px;
             height: 130px;
+            min-width: 130px;
             overflow: hidden;
             border-radius: 100%;
+            box-shadow: 1px 3px 5px -2px rgb(0,0,0);
+        }
+
+        .name-profession-author {
+            padding: 0 0 0 20px;
+        }
+
+        .name-author-landing-more {
+            padding: 15px 0;
+            border-bottom: 1px solid $cblack3;
+            font-style: normal;
+            font-size: $px22;
+            line-height: 26px;
+            color: $corange;
+            font-family: $Mod-bold;
+        }
+
+        .job-author-landing-more  {
+            font-style: normal;
+            font-weight: normal;
+            font-size: $px16;
+            line-height: 125%;
+            color: $cblack3;
+            font-family: $NimR-reg;
+            margin: 15px 0;
+        }
+
+        .title-node-landing {
+            font-style: normal;
+            font-weight: bold;
+            font-size: $px30;
+            line-height: 37px;
+            margin: 20px 0 0;
+            font-family: $PrNovacond-bold;
+            color: $cblack3;
+            border: none;
+
+            a {
+                font-style: normal;
+                font-weight: bold;
+                font-family: $PrNovacond-bold;
+                color: $cblack3;
+            }
         }
     }
 }
