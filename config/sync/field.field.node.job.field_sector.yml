@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_sector
     - node.type.job
-    - taxonomy.vocabulary.sector
+    - taxonomy.vocabulary.job_categories
 id: node.job.field_sector
 field_name: field_sector
 entity_type: node
@@ -20,7 +20,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      sector: sector
+      job_categories: job_categories
     sort:
       field: name
       direction: asc

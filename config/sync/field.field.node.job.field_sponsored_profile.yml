@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_sponsored_profile
     - node.type.job
-    - taxonomy.vocabulary.sponsored_profile
+    - taxonomy.vocabulary.feature_employer
 id: node.job.field_sponsored_profile
 field_name: field_sponsored_profile
 entity_type: node
@@ -20,7 +20,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      sponsored_profile: sponsored_profile
+      feature_employer: feature_employer
     sort:
       field: name
       direction: asc
