@@ -1,0 +1,32 @@
+uuid: b0403a53-693a-4b47-8d0f-2b8f8ec58b9c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.features_items.field_item_name
+    - field.field.paragraph.features_items.field_item_text
+    - paragraphs.paragraphs_type.features_items
+id: paragraph.features_items.default
+targetEntityType: paragraph
+bundle: features_items
+mode: default
+content:
+  field_item_name:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_item_text:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

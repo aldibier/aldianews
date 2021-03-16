@@ -26,10 +26,15 @@ display:
           label: Roles
         operations:
           label: Operations
+        mail:
+          separator: ', '
       filters:
         status:
           group_info:
             label: Status
+        roles_target_id:
+          expose:
+            label: Rol
   page_1:
     display_title: Página
     display_options:

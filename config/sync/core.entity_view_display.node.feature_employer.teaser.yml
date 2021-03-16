@@ -5,6 +5,9 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.feature_employer.body
+    - field.field.node.feature_employer.field_image
+    - field.field.node.feature_employer.field_main_features
+    - field.field.node.feature_employer.field_social_media
     - node.type.feature_employer
   module:
     - text
@@ -29,5 +32,8 @@ content:
     region: content
 hidden:
   addtoany: true
+  field_image: true
+  field_main_features: true
+  field_social_media: true
   langcode: true
   search_api_excerpt: true

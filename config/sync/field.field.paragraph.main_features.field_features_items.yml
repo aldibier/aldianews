@@ -1,0 +1,34 @@
+uuid: 1632814c-d2c6-4891-9533-0f3e9a92d3ad
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_features_items
+    - paragraphs.paragraphs_type.features_items
+    - paragraphs.paragraphs_type.main_features
+  module:
+    - entity_reference_revisions
+id: paragraph.main_features.field_features_items
+field_name: field_features_items
+entity_type: paragraph
+bundle: main_features
+label: 'Features items'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      features_items: features_items
+    target_bundles_drag_drop:
+      features_items:
+        enabled: true
+        weight: 3
+      main_features:
+        weight: 4
+        enabled: false
+field_type: entity_reference_revisions

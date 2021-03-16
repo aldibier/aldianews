@@ -79,12 +79,15 @@
         max-width: 300px;
         position: relative;
 
+        width: 280px;
+        height: 305px;
+
         a {
             position: absolute;
             display: block;
             top: 6px;
             width: 100%;
-            height: 100%;
+            height: 305px;
             font-size: 0;
             border: none;
         }
@@ -177,7 +180,7 @@
         .field--type-image {
             width: 18.75px;
             height: 25px;
-            margin: auto 15px auto 30px;
+            margin: auto 30px auto 15px;
 
             img {
                 height: 25px;
@@ -429,7 +432,12 @@
 
             .menu {
                 margin: 0 auto;
-                width: auto;
+                width: 100%;
+                max-width: 270px;
+            }
+
+            li.menu-item {
+                margin: 0 auto;
             }
         }
 
@@ -463,6 +471,17 @@
         .block-fixed-block-contentlast-print-edition {
             width: 50%;
             max-width: 140px;
+            height: 150px;
+            margin: 0 0 23px;
+
+            img {
+                width: 140px;
+                height: 150px;
+            }
+
+            a{
+                height: 150px; 
+            }
         }
 
         #block-footer {
@@ -504,12 +523,16 @@
                     font-size: 11px;
                     line-height: 13px;
                 }
+
+                &:after {
+                    height: 3px;
+                }
             }
         }
 
         #block-subscribeblockfooter {
             width: 257px;
-            top: 218px;
+            top: 209px;
             left: 0;
 
             a {
@@ -519,6 +542,15 @@
                 font-size: 14px;
                 line-height: 25px;
             }
+        }
+
+        .block-fixed-block-contentlast-print-edition {
+
+            img {
+                width: 140px;
+                height: 150px;
+            }
+
         }
 
         #block-footer{
@@ -572,6 +604,21 @@
                 font-size: 10px;
                 line-height: 100%;
             }
+        }
+
+        .powerd {
+
+            &:after {
+                width: 50px;
+                height: 15px;
+                margin: 0; 
+            }
+        }
+
+        .copyr:before {
+            width: 10px;
+            height: 10px;
+            margin: 1px 5px -1px 0;
         }
     }
 
