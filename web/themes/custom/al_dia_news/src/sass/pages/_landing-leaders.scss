@@ -187,11 +187,48 @@
             width: max-content;
             display: block;
             position: relative;
-            border: 1px solid $cblack3;
+            border-bottom: 1px solid $cblack3;
             font-style: normal;
             font-size: 22px;
             line-height: 26px;
             font-family: $Mod-bold;
+        }
+
+        .job-author-landing-more {
+            font-style: normal;
+            font-weight: normal;
+            font-size: $px16;
+            line-height: 125%;
+            font-family: $NimR-reg;
+            color: $cblack3;
+            padding: 15px 0 10px;
+        }
+
+        .title-node-landing {
+            font-style: normal;
+            font-weight: bold;
+            font-size: $px30;
+            line-height: 37px;
+            font-family: $PrNovacond-bold;
+            color: $cblack3;
+            padding: 5px 0 0;
+
+            a{
+                font-style: normal;
+                font-weight: bold;
+                font-family: $PrNovacond-bold;
+                color: $cblack3;
+                border: none;
+            }
+        }
+
+        .authored-on-landing {
+            color: $cgrey3;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 19px;
+            padding: 15px 0 0;
         }
     }
 }
