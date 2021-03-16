@@ -167,6 +167,10 @@ body.open-menu {
             display: flex;
             flex-wrap: wrap;
 
+            @media(max-width: 1164px){
+                margin: 0 auto;
+            }
+
             a{
                 color: $cblack0;
             }
