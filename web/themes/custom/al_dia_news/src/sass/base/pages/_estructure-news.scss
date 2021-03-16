@@ -16,7 +16,7 @@
         width: 100%;
     }
 
-    @media (max-width:$tablet) {
+    @media (max-width:$broken /*$tablet*/) {
         --padding-right: 0;
         max-width: 100%;
         padding: 0 15px;
@@ -33,7 +33,7 @@
 
     .node__content  {
 
-        @media (max-width:$tablet) {
+        @media (max-width:$broken) {
 
             >div {
                 display: flex;
@@ -71,7 +71,7 @@
     position: absolute;
     right: 0;
 
-    @media (max-width:$tablet) {
+    @media (max-width:$broken) {
         --padding-right: 100;
         width: 100%;
         padding: 0 15px;
