@@ -4,8 +4,14 @@ status: true
 dependencies:
   config:
     - field.field.node.feature_employer.body
+    - field.field.node.feature_employer.field_image
+    - field.field.node.feature_employer.field_main_features
+    - field.field.node.feature_employer.field_social_media
+    - image.style.thumbnail
     - node.type.feature_employer
   module:
+    - image
+    - paragraphs
     - path
     - text
 id: node.feature_employer.default
@@ -29,6 +35,38 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_image:
+    weight: 122
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_main_features:
+    type: entity_reference_paragraphs
+    weight: 123
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_social_media:
+    type: entity_reference_paragraphs
+    weight: 124
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
   langcode:
     type: language_select
     weight: 2
@@ -71,6 +109,11 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  translation:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   uid:
     type: entity_reference_autocomplete
     weight: 5

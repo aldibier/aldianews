@@ -1,0 +1,38 @@
+uuid: d9c68fa8-3f94-4b08-9a4c-3504ba6cc28f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.social_media.field_icon
+    - field.field.paragraph.social_media.field_link
+    - paragraphs.paragraphs_type.social_media
+  module:
+    - fontawesome
+    - link
+id: paragraph.social_media.default
+targetEntityType: paragraph
+bundle: social_media
+mode: default
+content:
+  field_icon:
+    weight: 1
+    label: above
+    settings:
+      layers: false
+    third_party_settings: {  }
+    type: fontawesome_icon_formatter
+    region: content
+  field_link:
+    weight: 0
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden:
+  search_api_excerpt: true
