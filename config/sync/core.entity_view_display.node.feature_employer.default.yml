@@ -7,12 +7,137 @@ dependencies:
     - field.field.node.feature_employer.field_image
     - field.field.node.feature_employer.field_main_features
     - field.field.node.feature_employer.field_social_media
+    - fixed_block_content.fixed_block_content._small_vertical_advertising
+    - fixed_block_content.fixed_block_content.big_vertical_advertising
+    - fixed_block_content.fixed_block_content.horizontal_advertising
     - node.type.feature_employer
   module:
+    - al_dia_layouts
     - entity_reference_revisions
+    - fixed_block_content
     - image
+    - layout_builder
     - text
     - user
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: feature_employer_intern
+        layout_settings:
+          label: 'Feature Employed intern'
+        components:
+          38516cc4-c482-4b43-bc7e-1a94fcb652ab:
+            uuid: 38516cc4-c482-4b43-bc7e-1a94fcb652ab
+            region: horizontal_advertising
+            configuration:
+              id: 'fixed_block_content:horizontal_advertising'
+              label: 'Horizontal advertising'
+              provider: fixed_block_content
+              label_display: '0'
+              view_mode: ''
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+          62d846a2-132c-419a-927d-6f451b22ff5c:
+            uuid: 62d846a2-132c-419a-927d-6f451b22ff5c
+            region: one_content_employer_information
+            configuration:
+              id: 'field_block:node:feature_employer:title'
+              label: Title
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: string
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 0
+          80b36a8b-fee4-4eed-8660-1c7d55a5e60a:
+            uuid: 80b36a8b-fee4-4eed-8660-1c7d55a5e60a
+            region: employer_information_image
+            configuration:
+              id: 'field_block:node:feature_employer:field_image'
+              label: Image
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: image
+                settings:
+                  image_style: ''
+                  image_link: ''
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 0
+          ca5e08f0-0e35-4471-9ec9-cec072309758:
+            uuid: ca5e08f0-0e35-4471-9ec9-cec072309758
+            region: two_content_body
+            configuration:
+              id: 'extra_field_block:node:feature_employer:addtoany'
+              label: 'SHARE THIS CONTENT:'
+              provider: layout_builder
+              label_display: visible
+              formatter:
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 0
+          ed120830-ae77-4eab-91f0-2fdb938dd9b9:
+            uuid: ed120830-ae77-4eab-91f0-2fdb938dd9b9
+            region: two_content_body
+            configuration:
+              id: 'field_block:node:feature_employer:body'
+              label: Body
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: text_default
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 1
+          5f30b0de-045e-449b-9d4e-ba604d782244:
+            uuid: 5f30b0de-045e-449b-9d4e-ba604d782244
+            region: one_vertical_advertising
+            configuration:
+              id: 'fixed_block_content:_small_vertical_advertising'
+              label: ' Small vertical advertising'
+              provider: fixed_block_content
+              label_display: '0'
+              view_mode: ''
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+          fdd06c1c-b4ac-4012-bdd9-55f711324c4a:
+            uuid: fdd06c1c-b4ac-4012-bdd9-55f711324c4a
+            region: two_vertical_advertising
+            configuration:
+              id: 'fixed_block_content:big_vertical_advertising'
+              label: 'Big vertical advertising'
+              provider: fixed_block_content
+              label_display: '0'
+              view_mode: ''
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+        third_party_settings: {  }
 id: node.feature_employer.default
 targetEntityType: node
 bundle: feature_employer
