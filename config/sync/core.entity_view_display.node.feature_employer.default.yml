@@ -11,6 +11,7 @@ dependencies:
     - fixed_block_content.fixed_block_content.big_vertical_advertising
     - fixed_block_content.fixed_block_content.horizontal_advertising
     - node.type.feature_employer
+    - views.view.feature_employed_information
   module:
     - al_dia_layouts
     - entity_reference_revisions
@@ -19,6 +20,7 @@ dependencies:
     - layout_builder
     - text
     - user
+    - views
 third_party_settings:
   layout_builder:
     allow_custom: false
@@ -137,6 +139,32 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: 0
+          8f5778a5-9ea6-43c7-bec4-68800cb9abee:
+            uuid: 8f5778a5-9ea6-43c7-bec4-68800cb9abee
+            region: employer_information_information
+            configuration:
+              id: 'views_block:feature_employed_information-block_1'
+              label: ''
+              provider: views
+              label_display: '0'
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+          f718bbdd-3d96-4d0d-a483-6851ab9f9a0c:
+            uuid: f718bbdd-3d96-4d0d-a483-6851ab9f9a0c
+            region: employer_information_information
+            configuration:
+              id: 'views_block:feature_employed_information-block_2'
+              label: ''
+              provider: views
+              label_display: '0'
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: 1
         third_party_settings: {  }
 id: node.feature_employer.default
 targetEntityType: node
