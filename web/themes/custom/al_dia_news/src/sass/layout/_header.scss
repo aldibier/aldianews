@@ -5,6 +5,10 @@
     width: 100%;
     top: 0;
     z-index: 30;
+
+    @media(max-width:$tablet){
+        border-bottom: 2px solid $corange;
+    }
 }
 
 body.open-menu {
@@ -710,7 +714,7 @@ body.open-menu {
         #block-al-dia-news-branding {
             max-width: 180px;
             max-height: 44px;
-            margin: -15px -13px 6px 0px;
+            margin: -15px -13px 10px 0px;
         }
 
         .block-language{
@@ -766,10 +770,12 @@ body.open-menu {
                 height: 20px;
 
                 input {
-                    background-size: 20px;
-                    width: 30px;
-                    height: 30px;
-                    margin: -4px 0 0;
+                    width: 20px;
+                    height: 20px;
+                    background-size: 15px 15px;
+                    background-position-x: 1px;
+                    background-position-y: 2px;
+                    margin: 2px 0 0 2px;
                 }
             }
         }
@@ -779,7 +785,7 @@ body.open-menu {
         }
 
         #block-sitedescription {
-            bottom: -37px;
+            bottom: -34px;
 
             p {
                 font-size: 11px;
