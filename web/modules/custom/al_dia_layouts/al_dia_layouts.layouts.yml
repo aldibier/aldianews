@@ -308,3 +308,37 @@ job_posting_intern:
       label: Publicidad vertical uno
     two_vertical_advertising:
       label: Publicidad vertical dos
+
+feature_employer_intern:
+  label: 'Feature Employer Intern'
+  path: layouts/feature-employer
+  template: layout--feature-employer-intern
+  category: 'Feature Employer'
+  default_region: content
+  icon_map:
+    - [horizontal_advertising]
+    - [one_content_employer_information]
+    - [employer_information_image]
+    - [employer_information_information]
+    - [two_content_body]
+    - [three_content_jobs]
+    - [one_vertical_advertising]
+    - [two_vertical_advertising]
+  regions:
+    horizontal_advertising:
+      label: Publicidad horizontal
+    one_content_employer_information:
+      label: Primero - Información empleador
+    employer_information_image:
+      label: Primero - Información empleador Imagen
+    employer_information_information:
+      label: Primero - Información empleador Información
+    two_content_body:
+      label: Segundo - Contenido
+    three_content_jobs:
+      label: Tercero - Contenido Jobs
+    one_vertical_advertising:
+      label: Publicidad vertical uno
+    two_vertical_advertising:
+      label: Publicidad vertical dos
+
