@@ -4,6 +4,7 @@ display:
     display_options:
       exposed_form:
         options:
+          submit_button: Aplicar
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
           sort_asc_label: Asc
@@ -17,8 +18,10 @@ display:
       fields:
         info:
           label: 'Descripción del bloque'
+          separator: ', '
         type:
           label: 'Tipo de bloque'
+          separator: ', '
         operations:
           label: Operations
       filters:

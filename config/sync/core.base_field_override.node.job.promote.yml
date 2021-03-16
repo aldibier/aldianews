@@ -1,0 +1,22 @@
+uuid: 73efc35a-7be7-4810-aa24-99acad2dc23d
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.job
+id: node.job.promote
+field_name: promote
+entity_type: node
+bundle: job
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

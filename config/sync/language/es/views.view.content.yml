@@ -14,10 +14,14 @@ display:
           label: Título
         type:
           label: 'Content type'
+          separator: ', '
         name:
           label: Autor
         status:
           label: Status
+          settings:
+            format_custom_true: Publicado
+            format_custom_false: 'Sin publicar'
         operations:
           label: Operations
       filters:
@@ -30,6 +34,12 @@ display:
         status:
           expose:
             label: Status
+          group_info:
+            group_items:
+              1:
+                title: Publicado
+              2:
+                title: 'Sin publicar'
         langcode:
           expose:
             label: Language

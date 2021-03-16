@@ -5,6 +5,10 @@
     width: 100%;
     top: 0;
     z-index: 30;
+
+    @media(max-width:$tablet){
+        border-bottom: 2px solid $corange;
+    }
 }
 
 body.open-menu {
@@ -131,7 +135,7 @@ body.open-menu {
         z-index: 1;
         margin: 0 -100% 0 0;
     }
-    
+
     #block-al-dia-news-main-menu {
         width: 100%;
         z-index: 2;
@@ -167,6 +171,10 @@ body.open-menu {
             display: flex;
             flex-wrap: wrap;
 
+            @media(max-width: 1164px){
+                margin: 0 auto;
+            }
+
             a{
                 color: $cblack0;
             }
@@ -178,7 +186,7 @@ body.open-menu {
             }
 
             @media (min-width: $mobile-mid){
-            
+
                 &:nth-child(10){
                     a {
                         max-width: 81px;
@@ -186,7 +194,7 @@ body.open-menu {
                     }
                 }
             }
-        }  
+        }
     }
 
     //------------- menu social media
@@ -206,9 +214,9 @@ body.open-menu {
             &:hover {
                 transform: scale(1.2);
             }
-            
+
         }
-        
+
         .menu.menu-level-0 {
             display: flex;
 
@@ -518,7 +526,7 @@ body.open-menu {
 
     #block-searchform {
         order: 4;
-        margin: auto 0;   
+        margin: auto 0;
     }
 
     .block-search {
@@ -526,7 +534,7 @@ body.open-menu {
         input {
             display: none;
         }
-        
+
         .form-actions {
             width: 46px;
             height: 65px;
@@ -546,12 +554,12 @@ body.open-menu {
 
     #block-languageswitcher {
         order: 5;
-        margin: 0 auto 0 0; 
+        margin: 0 auto 0 0;
     }
 
     .block-language {
-        position: relative;  
-        
+        position: relative;
+
         a {
             font-style: normal;
             font-weight: 600;
@@ -655,8 +663,8 @@ body.open-menu {
             font-family: $PrNovacond-reg;
             text-transform: uppercase;
         }
-    }  
-    
+    }
+
     @media(max-width:$broken2){
         #block-sitedescription{
             order: 7;
@@ -665,7 +673,7 @@ body.open-menu {
             background: #000;
             width: 100%;
             text-align: center;
-        } 
+        }
     }
 
     @media(max-width:$tablet){
@@ -706,7 +714,7 @@ body.open-menu {
         #block-al-dia-news-branding {
             max-width: 180px;
             max-height: 44px;
-            margin: -15px -13px 6px 0px;
+            margin: -15px -13px 10px 0px;
         }
 
         .block-language{
@@ -762,10 +770,12 @@ body.open-menu {
                 height: 20px;
 
                 input {
-                    background-size: 20px;
-                    width: 30px;
-                    height: 30px;
-                    margin: -4px 0 0;
+                    width: 20px;
+                    height: 20px;
+                    background-size: 15px 15px;
+                    background-position-x: 1px;
+                    background-position-y: 2px;
+                    margin: 2px 0 0 2px;
                 }
             }
         }
@@ -775,11 +785,11 @@ body.open-menu {
         }
 
         #block-sitedescription {
-            bottom: -37px;
+            bottom: -34px;
 
             p {
                 font-size: 11px;
-                line-height: 13px;  
+                line-height: 13px;
             }
         }
 
@@ -798,8 +808,8 @@ body.open-menu {
 
             &.open {
                 background: $cwhite url("../img/user.svg") center center no-repeat;
-                
-                @media(max-width:$tablet){ 
+
+                @media(max-width:$tablet){
                     .content {
                         &::before {
                             width: 100%;
@@ -815,7 +825,7 @@ body.open-menu {
                 }
             }
 
-            @media(max-width:$tablet){ 
+            @media(max-width:$tablet){
                 background: $cwhite url("../img/user.svg") no-repeat !important;
                 background-position-x: 10px !important;
                 background-size: 14px !important;
