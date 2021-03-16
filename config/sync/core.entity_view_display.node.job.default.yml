@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.job.body
     - field.field.node.job.field_company_name
     - field.field.node.job.field_expiration_date
+    - field.field.node.job.field_link_to_apply_for_the_job
     - field.field.node.job.field_place
     - field.field.node.job.field_requirements
     - field.field.node.job.field_sector
@@ -21,6 +22,7 @@ dependencies:
     - datetime
     - fixed_block_content
     - layout_builder
+    - link
     - text
     - user
 third_party_settings:
@@ -173,6 +175,26 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: 0
+          9755fae9-7f86-4e54-9d8c-93a0f1a01c7e:
+            uuid: 9755fae9-7f86-4e54-9d8c-93a0f1a01c7e
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:job:field_link_to_apply_for_the_job'
+              formatter:
+                label: above
+                settings:
+                  trim_length: 80
+                  url_only: false
+                  url_plain: false
+                  rel: ''
+                  target: ''
+                third_party_settings: {  }
+                type: link
+            additional: {  }
+            weight: 0
         third_party_settings: {  }
 id: node.job.default
 targetEntityType: node
@@ -202,6 +224,18 @@ content:
       timezone_override: ''
     third_party_settings: {  }
     type: datetime_default
+    region: content
+  field_link_to_apply_for_the_job:
+    weight: 109
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
     region: content
   field_place:
     weight: 103

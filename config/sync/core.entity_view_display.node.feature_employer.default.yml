@@ -1,0 +1,31 @@
+uuid: 2862e0da-885e-4f3f-b210-2339f79d29d0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.feature_employer.body
+    - node.type.feature_employer
+  module:
+    - text
+    - user
+id: node.feature_employer.default
+targetEntityType: node
+bundle: feature_employer
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  langcode: true
+  search_api_excerpt: true

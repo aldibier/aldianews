@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.job.body
     - field.field.node.job.field_company_name
     - field.field.node.job.field_expiration_date
+    - field.field.node.job.field_link_to_apply_for_the_job
     - field.field.node.job.field_place
     - field.field.node.job.field_requirements
     - field.field.node.job.field_sector
@@ -14,6 +15,7 @@ dependencies:
     - node.type.job
   module:
     - datetime
+    - link
     - path
     - text
 id: node.job.default
@@ -52,6 +54,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
+    region: content
+  field_link_to_apply_for_the_job:
+    weight: 26
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
     region: content
   field_place:
     weight: 6
