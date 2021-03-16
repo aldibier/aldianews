@@ -12,7 +12,7 @@
   }
 
   .view-more {
-    padding: 0 20px;
+    padding: 0px 0 0 20px;
 
     @media (max-width: $broken) {
       padding: 0;
@@ -28,6 +28,29 @@
 
     .slick-list {
       width: 100%;
+    }
+
+    .slick-arrow {
+      width: 15px;
+      height: 15px;
+      border: none;
+      position: absolute;
+      bottom: calc(0% - 21px);
+      background-color: transparent;
+      background-size: contain;
+      background-repeat: no-repeat;
+      font-size: 0;
+      transform: translateY(100%);
+    }
+
+    .slick-prev {
+      left: calc(50% - 25px);
+      background-image: url('../../assets/img/arrow-left.svg');
+    }
+
+    .slick-next {
+      left: calc(50% + 25px);
+      background-image: url('../../assets/img/arrow-right.svg');
     }
   }
 
@@ -163,6 +186,10 @@
     .views-row {
       margin-bottom: 25px;
       padding-bottom: 25px;
+
+      @media (max-width: $broken) {
+        margin-bottom: 0;
+      }
     }
   }
 }
@@ -179,5 +206,9 @@
   .views-row {
     margin-bottom: 19.5px;
     padding-bottom: 19.5px;
+
+    @media (max-width: $broken) {
+      margin-bottom: 0;
+    }
   }
 }

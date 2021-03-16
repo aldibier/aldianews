@@ -30,7 +30,7 @@
     >.views-row {
       display: grid;
       grid-template-columns: 1fr auto;
-      grid-template-rows: repeat(3, auto);
+      grid-template-rows: repeat(2, auto) 1fr;
       grid-template-areas:
         "head head"
         "area-1 area-3"
@@ -60,6 +60,11 @@
         margin-bottom: 20px;
         padding-bottom: 0;
         overflow: hidden;
+
+        img {
+          height: auto;
+          min-height: 245px;
+        }
       }
     }
 
