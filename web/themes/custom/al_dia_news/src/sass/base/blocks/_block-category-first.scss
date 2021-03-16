@@ -1,5 +1,5 @@
 //-------------block landing categories-----------------//
-.view-last-news-category-sons  {
+.view-last-news-category-sons {
   .view-header {
     display: none;
   }
@@ -7,7 +7,6 @@
   .category-title {
     height: 60px;
     margin-top: 38px;
-    margin: 0;
     padding-bottom: 10px;
     border-bottom: 3px solid $corange;
     display: flex;
@@ -51,7 +50,7 @@
     grid-template-areas:
       "area-1"
       "area-2";
-    grid-gap: 20px 0;
+    grid-gap: 0;
   }
 
   .block-views-blocklast-news-category-sons-block-1 {
@@ -66,7 +65,7 @@
       margin-right: 0;
     }
 
-    > .content {
+    >.content {
       height: 100%;
       margin: 0;
     }
@@ -75,7 +74,7 @@
       min-height: 520px;
       max-height: 520px;
 
-      @media screen and(max-width:$broken){
+      @media screen and(max-width:$broken) {
         height: auto;
         min-height: 245px;
       }

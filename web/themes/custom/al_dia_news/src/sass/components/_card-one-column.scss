@@ -1,4 +1,5 @@
 .card-one-column {
+
   h2,
   h3 {
     margin: 0;
@@ -22,6 +23,7 @@
 
   .card-name-category {
     margin-bottom: 10px;
+
     h2 {
       margin: 0;
       line-height: 0;
@@ -45,6 +47,7 @@
 
   .card-title {
     margin-bottom: 10px;
+
     a {
       border: none;
       font-size: $px28;
@@ -54,8 +57,16 @@
       line-height: 34px;
       text-transform: uppercase;
       color: $cblack;
+    }
 
-      @media screen and (max-width: $tablet) {
+    @media screen and (max-width: $tablet) {
+      margin-bottom: 5px;
+
+      h3 {
+        line-height: 0;
+      }
+
+      a {
         font-size: 14px;
         line-height: 17px;
       }
@@ -69,5 +80,10 @@
     font-weight: normal;
     line-height: 17px;
     color: $cgrey3;
+
+    @media screen and (max-width: $tablet) {
+      font-size: 10px;
+      line-height: 12px;
+    }
   }
 }
