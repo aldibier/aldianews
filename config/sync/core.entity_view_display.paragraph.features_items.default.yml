@@ -1,0 +1,31 @@
+uuid: e22d3e62-db9e-4bf1-8a77-0190f7b02948
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.features_items.field_item_name
+    - field.field.paragraph.features_items.field_item_text
+    - paragraphs.paragraphs_type.features_items
+id: paragraph.features_items.default
+targetEntityType: paragraph
+bundle: features_items
+mode: default
+content:
+  field_item_name:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_item_text:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  search_api_excerpt: true
