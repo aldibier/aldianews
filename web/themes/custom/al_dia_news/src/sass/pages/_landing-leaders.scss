@@ -262,10 +262,15 @@
             }
 
             &:nth-child(3n+1){
-
+                padding: 0 15px 0 0;
+                
                 &:after {
                     display: none;
                 }
+            }
+
+            &:nth-child(3n+3){
+                padding: 0 0 0 15px;
             }
         }
 
@@ -320,14 +325,23 @@
             margin: 20px 0 0;
             font-family: $PrNovacond-bold;
             color: $cblack3;
-            border: none;
 
             a {
                 font-style: normal;
                 font-weight: bold;
                 font-family: $PrNovacond-bold;
                 color: $cblack3;
+                border: none;
             }
+        }
+
+        .authored-on-landing {
+            font-style: normal;
+            font-weight: normal;
+            font-size: $px20;
+            line-height: 24px;
+            color: $cblack3;
+            margin: auto 0 0;
         }
     }
 }
