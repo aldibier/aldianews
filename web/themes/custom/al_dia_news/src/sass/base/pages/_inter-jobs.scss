@@ -61,4 +61,28 @@
         }
     }
 
+    .three-content-buttons {
+        a{
+            width: 230px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: $cwhite;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: bold;
+            font-family: $PrNovacond-bold;
+            margin: 0 40px 0 0;
+            border: none;
+
+            &:nth-child(1) {
+                background: $bgrey;
+            }
+
+            &:nth-child(2) {
+                background: $corange;
+            }
+        }
+    }
 }
