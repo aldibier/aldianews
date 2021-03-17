@@ -749,6 +749,10 @@ display:
         - 'config:core.entity_view_display.node.article.default'
         - 'config:core.entity_view_display.node.article.rss'
         - 'config:core.entity_view_display.node.article.teaser'
+        - 'config:core.entity_view_display.node.feature_employer.default'
+        - 'config:core.entity_view_display.node.feature_employer.teaser'
+        - 'config:core.entity_view_display.node.job.default'
+        - 'config:core.entity_view_display.node.job.teaser'
         - 'config:core.entity_view_display.node.news.category_childs'
         - 'config:core.entity_view_display.node.news.category_first'
         - 'config:core.entity_view_display.node.news.category_next_4'
@@ -762,6 +766,7 @@ display:
         - 'config:core.entity_view_display.node.page.default'
         - 'config:core.entity_view_display.node.page.general_errors'
         - 'config:core.entity_view_display.node.page.teaser'
+        - 'config:core.entity_view_display.node.page.work_whit_al_dia'
         - 'config:core.entity_view_display.node.thought_leaders.default'
         - 'config:core.entity_view_display.node.thought_leaders.teaser'
         - 'config:core.entity_view_display.node.webform.default'
@@ -1040,6 +1045,10 @@ display:
         - 'config:core.entity_view_display.node.article.default'
         - 'config:core.entity_view_display.node.article.rss'
         - 'config:core.entity_view_display.node.article.teaser'
+        - 'config:core.entity_view_display.node.feature_employer.default'
+        - 'config:core.entity_view_display.node.feature_employer.teaser'
+        - 'config:core.entity_view_display.node.job.default'
+        - 'config:core.entity_view_display.node.job.teaser'
         - 'config:core.entity_view_display.node.news.category_childs'
         - 'config:core.entity_view_display.node.news.category_first'
         - 'config:core.entity_view_display.node.news.category_next_4'
@@ -1053,6 +1062,7 @@ display:
         - 'config:core.entity_view_display.node.page.default'
         - 'config:core.entity_view_display.node.page.general_errors'
         - 'config:core.entity_view_display.node.page.teaser'
+        - 'config:core.entity_view_display.node.page.work_whit_al_dia'
         - 'config:core.entity_view_display.node.thought_leaders.default'
         - 'config:core.entity_view_display.node.thought_leaders.teaser'
         - 'config:core.entity_view_display.node.webform.default'
@@ -1077,7 +1087,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"category-title\">\r\n    <div class=\"catergory-logo\"><img src=\"/themes/custom/al_dia_news/assets/img/ADNL.png\" alt=\"MDN\"></div>\r\n    <h1>{{ arguments.parent_target_id }}</h1>\r\n</div>"
+            text: "<div class=\"category-title\">\r\n    <span class=\"logo\">AL DÍA</span>\r\n    <h1>{{ arguments.parent_target_id }}</h1>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
