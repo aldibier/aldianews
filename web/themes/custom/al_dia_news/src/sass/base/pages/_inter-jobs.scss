@@ -9,6 +9,14 @@
     #main {
         margin: 0 0 0;
     }
+
+    .horizontal-advertising-general-horizontal {
+        margin: 0 0 40px;
+
+        @media(max-width: $tablet){
+            margin: 40px 0;
+        }
+    }
 }
 
 .content-left-pages {
@@ -53,7 +61,8 @@
         line-height: 127.8%;
     }
 
-    .two-content-body-job {
+    .block-field-blocknodejobbody,
+    .text-formatted {
 
         p {
             font-style: normal;
@@ -102,5 +111,72 @@
                 background: $corange;
             }
         }
+    }
+
+    @media(max-width: $tablet){
+        width: 100%;
+        padding: 0;
+        max-width: 100%;
+
+        h1 {
+            font-size: 20px;
+            line-height: 24px;
+            margin: 0 0 15px;
+        }
+
+        .field--name-field-company-name {
+            font-size: 15px;
+            line-height: 18px;
+            margin: 0 0 10px;
+        }
+
+        .field--name-field-place {
+            padding: 0 0 15px;
+            margin: 0 0 20px;
+            font-size: 14px;
+            line-height: 17px;
+        }
+
+        .block-extra-field-blocknodenewsaddtoany h2 {
+            font-size: 12px;
+            line-height: 127.8%;
+            margin: 0 0 10px;
+        }
+
+        .block-field-blocknodejobbody,
+        .text-formatted {
+
+            p {
+                font-size: 15px;
+                line-height: 140%;
+            }
+
+            h2 {
+                font-size: 16px;
+                line-height: 140%;
+            }
+        }  
+        
+        .three-content-buttons  {
+            a {
+                width: 131.82px;
+                height: 30px;
+                font-size: 12px;
+
+                &:nth-child(1) {
+                    margin: 0 20px 0 0;
+                }
+
+                &:nth-child(2) {
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
+
+.content-right-pages {
+    @media(max-width: $tablet){
+        margin: 40px 0;
     }
 }

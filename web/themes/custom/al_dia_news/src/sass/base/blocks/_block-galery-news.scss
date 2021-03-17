@@ -28,15 +28,16 @@
       margin-top: 35px;
       margin-bottom: 35px;
 
+      $screen-query : 993px;
 
       &:nth-child(-n+3) {
-        @media screen and (min-width:$broken) {
+        @media screen and (min-width:$screen-query) {
           margin-top: 0;
         }
       }
 
       &:nth-child(3n + 2) {
-        @media screen and (min-width:$broken) {
+        @media screen and (min-width:$screen-query) {
           position: relative;
 
           &::before {
@@ -51,7 +52,7 @@
       }
 
       &:nth-child(3n) {
-        @media screen and (min-width:$broken) {
+        @media screen and (min-width:$screen-query) {
           position: relative;
 
           &::before {
@@ -66,7 +67,7 @@
       }
 
       &:nth-child(3n+4) {
-        @media screen and (min-width:$broken) {
+        @media screen and (min-width:$screen-query) {
           &:before {
             display: block;
             content: '';
@@ -117,7 +118,6 @@
       img {
         height: auto;
         max-width: 100%;
-        max-height: 228px;
       }
     }
   }
