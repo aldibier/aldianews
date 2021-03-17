@@ -47,13 +47,13 @@
 
 // Propiedades comunes para un texto
 @mixin text($family: $PrNovacond-reg,
-$size: 1rem,
-$color: $cgrey6,
-$lineheight: 1rem) {
-    font-family: $family;
-    font-size: $size;
-    color: $color;
-    line-height: $lineheight;
+  $size: 1rem,
+  $color: $cgrey6,
+  $lineheight: 1rem) {
+  font-family: $family;
+  font-size: $size;
+  color: $color;
+  line-height: $lineheight;
 }
 
 //-------------mixins-----------------//
@@ -90,12 +90,14 @@ $lineheight: 1rem) {
 
     &::after {
       width: 100%;
+      height: 2px;
+      top: calc(50% - 4px);
     }
   }
 }
 
 //------------- AL DÍA text/logo -----------------//
- @mixin alDia($fontsize) {
+@mixin alDia($fontsize) {
   @include text($PrNovacond-bold, $fontsize, $cwhite);
   display: inline-flex;
   align-items: center;
