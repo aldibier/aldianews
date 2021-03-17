@@ -491,15 +491,19 @@
     @media(max-width:$tablet){
 
         .category-title {
-            width: 75px;
-            margin: 0 0 -10px 0;
-            height: 22px;
+            
 
             h1 {
                 font-size: 20px;
                 line-height: 24px;
                 margin: 5px 0 -5px;
             }
+        }
+
+        .catergory-logo {
+            width: 75px;
+            margin: 0 0 -10px 0;
+            height: 22px;
         }
 
         #block-al-dia-news-content {
@@ -514,6 +518,10 @@
                     left: auto;
                     right: 0;
                 }
+            }
+
+            .view-content {
+                margin: 30px 0 0;
             }
 
             .photo-author-landing-more {
