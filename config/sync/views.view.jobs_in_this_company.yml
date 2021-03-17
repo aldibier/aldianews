@@ -409,7 +409,7 @@ display:
           exclude: true
           alter:
             alter_text: true
-            text: "{# Se obtiene la fecha actual #}\r\n{% set now = date() %}\r\n\r\n{# Mediante un condicional  se compara la fecha de expiracion con la fecha actual, ambas fechas se pasan se segundos en Unix y a la fecha actual se le suman 604800 segundos que corresponden a las 7 dias de diferencia horaria #}\r\n\r\n{% if ((field_expiration_date__value | date('U') )) <= ((now | date('U')) + 604800) %}\r\n<div class=\"container-content__date lightned\">\r\n  <p>{{ field_expiration_date__value | date(\"d\")  -  now | date(\"d\") }} DAYS LEFT TO APPLY </p>\r\n</div>\r\n{% else %}\r\n<div class=\"container-content__date\">\r\n  <p>{{ field_expiration_date__value | date(\"d\")  -  now | date(\"d\") }} DAYS LEFT TO APPLY</p>\r\n</div>\r\n{% endif %}"
+            text: "{# Se obtiene la fecha actual #}\r\n{% set now = date() %}\r\n\r\n{# Mediante un condicional  se compara la fecha de expiracion con la fecha actual, ambas fechas se pasan se segundos en Unix y a la fecha actual se le suman 604800 segundos que corresponden a las 7 dias de diferencia horaria #}\r\n\r\n{% if ((field_expiration_date__value | date('U') )) <= ((now | date('U')) + 604800) %}\r\n<div class=\"container-content__date lightned\">\r\n\r\n  {% if (now | date('U'))  > (field_expiration_date__value | date('U')) %}\r\n    {% set mydate = now | date('U') - field_expiration_date__value | date('U') %}\r\n    <p>{{ mydate |date(\"d\") }} DAYS LEFT TO APPLY </p>\r\n  {% else %}\r\n    {% set mydate = field_expiration_date__value | date('U')  -  now | date('U')  %}\r\n    <p>{{ mydate |date(\"d\") }} DAYS LEFT TO APPLY </p>\r\n  {% endif %}\r\n\r\n</div>\r\n{% else %}\r\n<div class=\"container-content__date\">\r\n  {% if (now | date('U'))  > (field_expiration_date__value | date('U')) %}\r\n    {% set mydate = now | date('U') - field_expiration_date__value | date('U') %}\r\n    <p>{{ mydate |date(\"d\") }} DAYS LEFT TO APPLY </p>\r\n  {% else %}\r\n    {% set mydate = field_expiration_date__value | date('U')  -  now | date('U')  %}\r\n    <p>{{ mydate |date(\"d\") }} DAYS LEFT TO APPLY </p>\r\n  {% endif %}\r\n</div>\r\n{% endif %}"
             make_link: false
             path: ''
             absolute: false
@@ -447,10 +447,10 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: datetime_custom
+          type: datetime_default
           settings:
             timezone_override: ''
-            date_format: d
+            format_type: html_date
           group_column: value
           group_columns: {  }
           group_rows: true
