@@ -1,7 +1,14 @@
 //------ related content card ------------//
 .card-more {
-  //------ more content news ------------//
+  @media (max-width: $broken) {
+    width: 50%;
+    max-width: 50%;
+    min-width: initial;
+    margin: 20px 0px 0px;
+    position: initial;
+  }
 
+  //------ more content news ------------//
   .one-content-category-four {
     margin-right: 15px;
 
@@ -12,7 +19,7 @@
   }
 
   &-news {
-    .related-content > a {
+    .related-content>a {
       width: 175px;
       height: 100px;
       min-height: 100px;
@@ -40,7 +47,7 @@
         margin: 0;
       }
 
-      a  {
+      a {
         border: none;
         font-size: $px24;
         font-family: $PrNovacond-Sbold;
@@ -128,6 +135,7 @@
         max-width: 100%;
         margin: 0;
         object-fit: contain;
+
         @media (max-width: $broken) {
           min-width: 140px;
         }
@@ -162,7 +170,7 @@
         margin: 0;
       }
 
-      a  {
+      a {
         border: none;
         font-size: $px24;
         font-family: $PrNovacond-Sbold;
@@ -203,7 +211,7 @@
 
   //------ more content author ------------//
   &-author {
-    .related-content > a {
+    .related-content>a {
       width: 115px;
       height: 115px;
       margin-right: 20px;
@@ -266,7 +274,7 @@
             content: "\201C";
           }
 
-          &::after  {
+          &::after {
             content: "\201D";
           }
         }
