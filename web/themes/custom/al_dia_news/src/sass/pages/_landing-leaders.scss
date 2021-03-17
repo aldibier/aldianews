@@ -196,8 +196,11 @@
         .photo-author-landing-more {
             width: 235px;
             height: 235px;
+            min-width: 235px;
+            min-height: 235px;
             overflow: hidden;
             border-radius: 100%;
+            filter: grayscale(100%);
             box-shadow: 1px 3px 5px -2px rgb(0,0,0);
         }
         
@@ -261,7 +264,6 @@
             width: 33.33%;
             max-width: 440px;
             padding: 0 15px;
-            position: relative;
             margin: 40px 0;
 
             &:after {
@@ -281,10 +283,35 @@
                 &:after {
                     display: none;
                 }
+
+                &:before {
+                    content: '';
+                    display: block;
+                    width: 100%;
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    height: 1px;
+                    background: $cgrey4;
+                    margin: -35px auto 0;
+                }
+            }
+
+            &:first-child{
+                &:after,
+                &:before  {
+                    display: none;
+                }
+            }
+
+
+            &:nth-child(3n+2){
+                position: relative;
             }
 
             &:nth-child(3n+3){
                 padding: 0 0 0 15px;
+                position: relative;
             }
         }
 
@@ -303,6 +330,7 @@
             height: 130px;
             min-width: 130px;
             overflow: hidden;
+            filter: grayscale(100%);
             border-radius: 100%;
             box-shadow: 1px 3px 5px -2px rgb(0,0,0);
         }
@@ -380,6 +408,214 @@
             top: auto;
             height: auto;
             margin: 15px 0;
+
+            .more-content-landing {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .author-information-more-content {
+                width: 100%;
+                display: flex;
+            }
+
+            .information-node-more-content {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                margin: 15px 0;
+            }
+
+            .title-node-landing {
+                margin: auto 0 0;
+                display: block;
+            }
+
+            .authored-on-landing {
+                margin: 0 0 auto;
+            }
+
+            .name-profession-author {
+                padding: 0 15px;
+            }
+        }
+
+        .views-infinite-scroll-content-wrapper {
+            .views-row {
+                width: 50%;
+                max-width: 100%;
+
+                &:nth-child(2n+1){
+                    padding: 0 15px 0 0;
+                    position: initial;
+
+                    &:after {
+                        display: block;
+                        position: absolute;
+                        width: 100%;
+                        height: 1px;
+                    }
+                }
+
+                &:nth-child(2n+2){
+                    padding: 0 0 0 15px;
+                }
+            }
+        }
+    }
+
+    @media(max-width:$tablet){
+        #block-al-dia-news-content {
+            .views-row {
+                max-height: 245px;
+                height: 245px;
+
+                img {
+                    height: auto;
+                    width: 100%;
+                    margin: 0 0 0 auto;
+                    left: auto;
+                    right: 0;
+                }
+            }
+
+            .photo-author-landing-more {
+                right: 0;
+                height: 100%;
+                width: calc(100% - 50%);
+            }
+
+            .name-author-landing-more {
+                margin: 17px 0 0;
+                padding: 0 10px 5px;
+                font-size: 14px;
+                line-height: 17px;
+                max-width: 190px;
+
+                &::after {
+                    width: calc(100% - 20px);
+                }
+            }
+
+            .job-author-landing-more {
+                font-size: 12px;
+                line-height: 122%;
+                max-width: 190px;
+                padding: 0 10px;
+                margin: 5px 0;
+            }
+
+            .title-node-landing {
+                max-width: 215px;
+                padding: 0 10px;
+                font-size: 22px;
+                line-height: 27px;
+                margin: auto 0 0 0;
+            }
+
+            .authored-on-landing {
+                padding: 0 10px 22px;
+                font-size: 10px;
+                line-height: 12px;
+                font-family: $PrNovacond-reg;
+            }
+        }
+
+        .block-views-blocklanding-thought-leaders-block-1  {
+
+            .photo-author-landing-more {
+                width: 100px;
+                height: 100px;
+                min-width: 100px;
+                min-height: 100px;
+                margin: 12px;
+            }
+
+            .name-profession-author {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .name-author-landing-more {
+                margin: auto 0 0;
+                width: 100%;
+                padding: 0 10px 5px 0;
+                font-size: 15px;
+                line-height: 18px;
+            }
+
+            .job-author-landing-more {
+                margin: 0 0 auto;
+                padding: 5px 0 0;
+                font-size: 10px;
+                line-height: 125%;
+            }
+
+            .title-node-landing {
+                font-size: 20px;
+                line-height: 24px;
+            }
+
+            .authored-on-landing {
+                font-size: 10px;
+                line-height: 12px;
+                padding: 5px 0 0;
+            }
+
+            .information-node-more-content {
+                margin: 0;
+            }
+        }
+
+        .views-infinite-scroll-content-wrapper { 
+
+            .views-row {
+
+                .author-information-more-content {
+                    flex-wrap: wrap;
+                }
+            }
+
+            .name-profession-author {
+                padding: 0; 
+            }
+
+            .name-author-landing-more {
+                padding: 15px 0 5px;
+                font-size: 12px;
+                line-height: 14px;
+            }
+
+            .job-author-landing-more {
+                margin: 10px 0;
+                font-size: 10px;
+                line-height: 125%;
+            }
+
+            .title-node-landing {
+                font-size: 15px;
+                line-height: 18px;
+                margin: 0;
+            }
+
+            .authored-on-landing {
+                font-size: 10px;
+                line-height: 12px;
+                margin: 5px 0;
+            }
+        }
+    }
+
+    @media(max-width: 519px){
+        #block-al-dia-news-content {
+
+            .views-row {
+
+                img {
+                    height: 100%;
+                    width: auto;
+                }
+            }
         }
     }
 
