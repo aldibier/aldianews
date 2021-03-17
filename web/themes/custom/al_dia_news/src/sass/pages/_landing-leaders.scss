@@ -289,9 +289,11 @@
                     display: block;
                     width: 100%;
                     position: absolute;
+                    left: 0;
+                    right: 0;
                     height: 1px;
                     background: $cgrey4;
-                    margin: -35px 0 0;
+                    margin: -35px auto 0;
                 }
             }
 
@@ -447,11 +449,12 @@
                     padding: 0 15px 0 0;
                     position: initial;
 
-                    // &:after {
-                    //     display: block;
-                    //     position: absolute;
-                    //     width: 100%;
-                    // }
+                    &:after {
+                        display: block;
+                        position: absolute;
+                        width: 100%;
+                        height: 1px;
+                    }
                 }
 
                 &:nth-child(2n+2){
