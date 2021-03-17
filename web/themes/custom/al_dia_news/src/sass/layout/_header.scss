@@ -223,6 +223,14 @@ body.open-menu {
                 transform: scale(1.2);
             }
 
+            @media(max-width:$mobile-mid){
+                margin: 0 15px 0 0;
+
+                &:last-child {
+                    margin: 0;
+                }
+            }
+
         }
 
         .menu.menu-level-0 {
@@ -348,7 +356,7 @@ body.open-menu {
     min-height: 20px;
     display: block;
     height: 20px;
-    margin: auto 15px auto 0;
+    margin: auto 10px auto 13px;
     position: relative;
     cursor: pointer;
 
@@ -396,6 +404,8 @@ body.open-menu {
 
         @media(max-width:$tablet){
             display: block;
+            left: 0;
+            margin: 0 auto;
         }
     }
 }
