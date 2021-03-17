@@ -13,7 +13,7 @@ disabled: false
 conditions:
   request_path:
     id: request_path
-    pages: /i-am-a-job-seeker
+    pages: /job-seeker
     negate: false
     uuid: 0539ae25-f248-42e1-812c-779e2edcca9f
     context_mapping: {  }
@@ -40,7 +40,7 @@ reactions:
         provider: fixed_block_content
         label_display: '0'
         region: content
-        weight: '0'
+        weight: '-2'
         view_mode: ''
         context_mapping: {  }
         custom_id: fixed_block_content_header_i_am_a_job_seeker
@@ -49,6 +49,51 @@ reactions:
         unique: 0
         context_id: i_am_a_job_seeker_landing
         uuid: 33a0fa06-2874-4fa4-9192-5147b5ce2699
+      9ef68bd8-b1e9-4bc4-85f9-33096b75a6fa:
+        id: 'fixed_block_content:horizontal_advertising'
+        label: 'Horizontal advertising'
+        provider: fixed_block_content
+        label_display: '0'
+        region: content
+        weight: '-1'
+        view_mode: ''
+        context_mapping: {  }
+        custom_id: fixed_block_content_horizontal_advertising
+        theme: al_dia_news
+        css_class: horizontal-advertising-general-horizontal
+        unique: 0
+        context_id: i_am_a_job_seeker_landing
+        uuid: 9ef68bd8-b1e9-4bc4-85f9-33096b75a6fa
+      6bbfdc89-c828-4f48-80c1-17b1b8ffb388:
+        id: 'fixed_block_content:_small_vertical_advertising'
+        label: ' Small vertical advertising'
+        provider: fixed_block_content
+        label_display: '0'
+        region: content
+        weight: '1'
+        view_mode: ''
+        context_mapping: {  }
+        custom_id: fixed_block_content__small_vertical_advertising
+        theme: al_dia_news
+        css_class: one-vertical-advertising
+        unique: 0
+        context_id: i_am_a_job_seeker_landing
+        uuid: 6bbfdc89-c828-4f48-80c1-17b1b8ffb388
+      a1f77d45-53e3-4e5d-b842-a14412bfde1c:
+        id: 'fixed_block_content:big_vertical_advertising'
+        label: 'Big vertical advertising'
+        provider: fixed_block_content
+        label_display: '0'
+        region: content
+        weight: '2'
+        view_mode: ''
+        context_mapping: {  }
+        custom_id: fixed_block_content_big_vertical_advertising
+        theme: al_dia_news
+        css_class: two-vertical-advertising
+        unique: 0
+        context_id: i_am_a_job_seeker_landing
+        uuid: a1f77d45-53e3-4e5d-b842-a14412bfde1c
     id: blocks
     saved: false
     uuid: d15b3e8d-4835-4d83-84c4-f45156b4bbdd

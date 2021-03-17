@@ -1,0 +1,88 @@
+.content-left-pages {
+    max-width: 880px;
+    padding: 0 20px 0 0;
+    width: calc(100% - 400px);
+
+    h1 {
+        margin: 0 0 25px;
+        font-style: normal;
+        font-weight: bold;
+        font-size: $px46;
+        line-height: 55px;
+        color: $cblack0;
+        font-family: $Mod-bold;
+    }
+
+    .field--name-field-company-name {
+        font-style: normal;
+        font-weight: bold;
+        font-size: $px30;
+        line-height: 36px;
+        color: $corange;
+        margin: 0 0 10px;
+        font-family: $Mod-bold;
+    }
+
+    .field--name-field-place {
+        font-style: normal;
+        font-weight: bold;
+        font-size: $px28;
+        line-height: 34px;
+        color: $cgrey;
+        font-family: $Mod-bold;
+        margin: 0 0 30px;
+        padding: 0 0 35px;
+        border-bottom: 1px solid $cgrey4;
+    }
+
+    .block-extra-field-blocknodenewsaddtoany h2 {
+        font-size: $px19;
+        line-height: 127.8%;
+    }
+
+    .two-content-body-job {
+
+        p {
+            font-style: normal;
+            font-weight: 600;
+            font-size: $px23;
+            line-height: 140%;
+            color: $cblack3;
+            font-family: $PrNovacond-reg;
+        }
+
+        h2 {
+            font-style: normal;
+            font-weight: 600;
+            font-size: $px24;
+            line-height: 140%;
+            color: $cblack3;
+            font-family: $PrNovacond-Sbold;
+        }
+    }
+
+    .three-content-buttons {
+        a{
+            width: 230px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: $cwhite;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: bold;
+            font-family: $PrNovacond-bold;
+            margin: 0 40px 0 0;
+            border: none;
+
+            &:nth-child(1) {
+                background: $bgrey;
+            }
+
+            &:nth-child(2) {
+                background: $corange;
+            }
+        }
+    }
+}
