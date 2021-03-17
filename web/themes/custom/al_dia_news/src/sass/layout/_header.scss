@@ -26,12 +26,13 @@ body.open-menu {
             top: 15px;
             left: 50%;
             width: 100px;
-            height: 25px;
+            height: 24px;
             box-shadow: 0px 2px 4px rgba(0,0,0,2.5);
             background: $cwhite;
             text-align: center;
             font-size: 12px;
             line-height: 25px;
+            margin: 0 0 0 -22px;
 
             a {
                 width: 100%;
@@ -46,7 +47,7 @@ body.open-menu {
             top: 15px;
             left: 50%;
             background: $corange;
-            margin: 0 0 0 -100px;
+            margin: 0 0 0 -125px;
             width: 90px;
             height: 25px;
             align-items: center;
@@ -278,6 +279,50 @@ body.open-menu {
                 br {
                     display: none;
                 }
+
+                &:nth-child(1) {
+                    order: 1;
+                }
+
+                &:nth-child(2) {
+                    order: 3;
+                }
+
+                &:nth-child(3) {
+                    order: 5;
+                }
+
+                &:nth-child(4) {
+                    order: 7;
+                }
+
+                &:nth-child(5) {
+                    order: 9;
+                }
+
+                &:nth-child(6) {
+                    order: 11;
+                }
+
+                &:nth-child(7) {
+                    order: 2;
+                }
+
+                &:nth-child(8) {
+                    order: 4;
+                }
+
+                &:nth-child(9) {
+                    order: 6;
+                }
+
+                &:nth-child(10) {
+                    order: 8;
+                }
+
+                &:nth-child(11) {
+                    order: 10;
+                }
             }
         }
 
@@ -291,10 +336,8 @@ body.open-menu {
             }
 
             .menu {
-                @media(max-width:$tablet){
-                    margin: 0 auto;
-                    max-width: 250px;
-                }
+                margin: 0 auto;
+                max-width: 250px;
             }
         }
     }
@@ -334,7 +377,7 @@ body.open-menu {
     @media(max-width:$tablet){
         position: absolute;
         top: 15px;
-        right: 0;
+        right: 20px;
     }
 }
 
