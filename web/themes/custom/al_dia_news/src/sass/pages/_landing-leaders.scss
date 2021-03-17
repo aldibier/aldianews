@@ -196,6 +196,8 @@
         .photo-author-landing-more {
             width: 235px;
             height: 235px;
+            min-width: 235px;
+            min-height: 235px;
             overflow: hidden;
             border-radius: 100%;
             box-shadow: 1px 3px 5px -2px rgb(0,0,0);
@@ -388,8 +390,13 @@
 
             .author-information-more-content {
                 width: 50%;
-                flex-wrap: wrap;
                 display: flex;
+            }
+
+            .information-node-more-content {
+                width: 50%;
+                display: flex;
+                flex-wrap: wrap;
             }
 
             .title-node-landing {
@@ -399,6 +406,63 @@
 
             .authored-on-landing {
                 margin: 0 0 auto;
+            }
+
+            .name-profession-author {
+                padding: 0 15px;
+            }
+        }
+
+        .author-information-more-content {
+            flex-wrap: wrap;
+        }
+    }
+
+    @media(max-width:$tablet){
+        #block-al-dia-news-content {
+            .views-row {
+                max-height: 245px;
+                height: 245px;
+            }
+
+            .photo-author-landing-more {
+                right: 0;
+                height: 100%;
+            }
+
+            .name-author-landing-more {
+                margin: 17px 0 0;
+                padding: 0 10px 5px;
+                font-size: 14px;
+                line-height: 17px;
+                max-width: 190px;
+
+                &::after {
+                    width: calc(100% - 20px);
+                }
+            }
+
+            .job-author-landing-more {
+                font-size: 12px;
+                line-height: 122%;
+                max-width: 190px;
+                padding: 0 10px;
+                margin: 5px 0;
+            }
+
+            .title-node-landing {
+                max-width: 215px;
+                padding: 0 10px;
+                font-size: 22px;
+                line-height: 27px;
+                margin: auto 0 0 0;
+            }
+
+            .authored-on-landing {
+                padding: 0 10px 22px;
+                font-size: 10px;
+                line-height: 12px;
+                font-family: $PrNovacond-reg;
             }
         }
     }
