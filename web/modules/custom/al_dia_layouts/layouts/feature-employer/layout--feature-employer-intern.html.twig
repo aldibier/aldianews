@@ -64,3 +64,28 @@
 
   </div>
 {% endif %}
+
+{# Se obtiene la fecha actual #}
+{% set now = date() %}
+
+{# Mediante un condicional  se compara la fecha de expiracion con la fecha actual, ambas fechas se pasan se segundos en Unix y a la fecha actual se le suman 604800 segundos que corresponden a las 7 dias de diferencia horaria #}
+
+{% if ((field_expiration_date__value | date('U') )) <= ((now | date('U')) + 604800) %}
+<div class="container-content__date lightned">
+
+  {% if ((now | date('U'))  > (field_expiration_date__value | date('U'))) %}
+    <p>{{ now | date("d") - field_expiration_date__value | date("d") }} DAYS LEFT TO APPLY </p>
+  {% else %}
+    <p>{{ field_expiration_date__value | date("d")  -  now | date("d") }} DAYS LEFT TO APPLY </p>
+  {% endif %}
+
+</div>
+{% else %}
+<div class="container-content__date">
+    {% if (now | date('d'))  > (field_expiration_date__value | date('d') ) %}
+    <p>{{ now | date('U') - field_expiration_date__value | date('U') }} DAYS LEFT TO APPLY </p>
+  {% else %}
+    <p>{{ field_expiration_date__value | date('U')  -  now | date('U') }} DAYS LEFT TO APPLY </p>
+  {% endif %}
+</div>
+{% endif %}
