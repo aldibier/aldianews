@@ -200,6 +200,7 @@
             min-height: 235px;
             overflow: hidden;
             border-radius: 100%;
+            filter: grayscale(100%);
             box-shadow: 1px 3px 5px -2px rgb(0,0,0);
         }
         
@@ -280,6 +281,10 @@
                 padding: 0 15px 0 0;
                 
                 &:after {
+                    display: none;
+                }
+
+                &:before {
                     content: '';
                     display: block;
                     width: 100%;
@@ -291,7 +296,8 @@
             }
 
             &:first-child{
-                &:after {
+                &:after,
+                &:before  {
                     display: none;
                 }
             }
@@ -322,6 +328,7 @@
             height: 130px;
             min-width: 130px;
             overflow: hidden;
+            filter: grayscale(100%);
             border-radius: 100%;
             box-shadow: 1px 3px 5px -2px rgb(0,0,0);
         }
