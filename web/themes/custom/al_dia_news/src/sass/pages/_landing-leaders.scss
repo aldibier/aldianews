@@ -389,14 +389,15 @@
             }
 
             .author-information-more-content {
-                width: 50%;
+                width: 100%;
                 display: flex;
             }
 
             .information-node-more-content {
-                width: 50%;
+                width: 100%;
                 display: flex;
                 flex-wrap: wrap;
+                margin: 15px 0;
             }
 
             .title-node-landing {
@@ -411,10 +412,6 @@
             .name-profession-author {
                 padding: 0 15px;
             }
-        }
-
-        .author-information-more-content {
-            flex-wrap: wrap;
         }
     }
 
@@ -472,6 +469,65 @@
                 font-size: 10px;
                 line-height: 12px;
                 font-family: $PrNovacond-reg;
+            }
+        }
+
+        .block-views-blocklanding-thought-leaders-block-1  {
+
+            .photo-author-landing-more {
+                width: 100px;
+                height: 100px;
+                min-width: 100px;
+                min-height: 100px;
+                margin: 12px;
+            }
+
+            .name-profession-author {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .name-author-landing-more {
+                margin: auto 0 0;
+                width: 100%;
+                padding: 0 10px 5px 0;
+                font-size: 15px;
+                line-height: 18px;
+            }
+
+            .job-author-landing-more {
+                margin: 0 0 auto;
+                padding: 5px 0 0;
+                font-size: 10px;
+                line-height: 125%;
+            }
+
+            .title-node-landing {
+                font-size: 20px;
+                line-height: 24px;
+            }
+
+            .authored-on-landing {
+                font-size: 10px;
+                line-height: 12px;
+                padding: 5px 0 0;
+            }
+
+            .information-node-more-content {
+                margin: 0;
+            }
+        }
+    }
+
+    @media(max-width: 519px){
+        #block-al-dia-news-content {
+
+            .views-row {
+
+                img {
+                    height: 100%;
+                    width: auto;
+                }
             }
         }
     }
