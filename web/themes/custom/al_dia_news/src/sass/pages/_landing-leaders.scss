@@ -263,7 +263,6 @@
             width: 33.33%;
             max-width: 440px;
             padding: 0 15px;
-            position: relative;
             margin: 40px 0;
 
             &:after {
@@ -279,6 +278,7 @@
 
             &:nth-child(3n+1){
                 padding: 0 15px 0 0;
+                position: relative;
                 
                 &:after {
                     display: none;
@@ -287,6 +287,7 @@
 
             &:nth-child(3n+3){
                 padding: 0 0 0 15px;
+                position: relative;
             }
         }
 
@@ -413,6 +414,28 @@
                 padding: 0 15px;
             }
         }
+
+        .views-infinite-scroll-content-wrapper {
+            .views-row {
+                width: 50%;
+                max-width: 100%;
+
+                &:nth-child(2n+1){
+                    padding: 0 15px 0 0;
+                    position: initial;
+
+                    // &:after {
+                    //     display: block;
+                    //     position: absolute;
+                    //     width: 100%;
+                    // }
+                }
+
+                &:nth-child(2n+2){
+                    padding: 0 0 0 15px;
+                }
+            }
+        }
     }
 
     @media(max-width:$tablet){
@@ -515,6 +538,44 @@
 
             .information-node-more-content {
                 margin: 0;
+            }
+        }
+
+        .views-infinite-scroll-content-wrapper { 
+
+            .views-row {
+
+                .author-information-more-content {
+                    flex-wrap: wrap;
+                }
+            }
+
+            .name-profession-author {
+                padding: 0; 
+            }
+
+            .name-author-landing-more {
+                padding: 15px 0 5px;
+                font-size: 12px;
+                line-height: 14px;
+            }
+
+            .job-author-landing-more {
+                margin: 10px 0;
+                font-size: 10px;
+                line-height: 125%;
+            }
+
+            .title-node-landing {
+                font-size: 15px;
+                line-height: 18px;
+                margin: 0;
+            }
+
+            .authored-on-landing {
+                font-size: 10px;
+                line-height: 12px;
+                margin: 5px 0;
             }
         }
     }
