@@ -585,7 +585,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"items-social-media-employer\">\r\n    <a href=\"{{ field_link }}\">{{ field_icon }}</a>\r\n</div>"
+            text: "<div class=\"items-social-media-employer\">\r\n    <a href=\"{{ field_link }}\" target=\"_blank\">{{ field_icon }}</a>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
