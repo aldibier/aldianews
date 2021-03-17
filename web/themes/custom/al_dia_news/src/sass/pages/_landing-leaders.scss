@@ -423,11 +423,20 @@
             .views-row {
                 max-height: 245px;
                 height: 245px;
+
+                img {
+                    height: auto;
+                    width: 100%;
+                    margin: 0 0 0 auto;
+                    left: auto;
+                    right: 0;
+                }
             }
 
             .photo-author-landing-more {
                 right: 0;
                 height: 100%;
+                width: calc(100% - 50%);
             }
 
             .name-author-landing-more {
