@@ -24,16 +24,18 @@
             {{ content.one_content_employer_information }} 
           </div>
       {% endif %}
-      {% if content.employer_information_image %}
-          <div {{ region_attributes.employer_information_image.addClass('employer-information-image') }}>
-            {{ content.employer_information_image }} 
-          </div>
-      {% endif %}
-      {% if content.employer_information_information %}
-          <div {{ region_attributes.employer_information_information.addClass('employer-information-information') }}>
-            {{ content.employer_information_information }} 
-          </div>
-      {% endif %}
+      <div class="business">
+        {% if content.employer_information_image %}
+            <div {{ region_attributes.employer_information_image.addClass('employer-information-image') }}>
+              {{ content.employer_information_image }} 
+            </div>
+        {% endif %}
+        {% if content.employer_information_information %}
+            <div {{ region_attributes.employer_information_information.addClass('employer-information-information') }}>
+              {{ content.employer_information_information }} 
+            </div>
+        {% endif %}
+      </div>
       {% if content.two_content_body %}
           <div {{ region_attributes.two_content_body.addClass('two-content-body-job') }}>
             {{ content.two_content_body }} 
