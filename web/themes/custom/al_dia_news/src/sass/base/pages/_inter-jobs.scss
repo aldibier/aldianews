@@ -5,11 +5,15 @@
             flex-wrap: wrap;
         }
     }
+
+    #main {
+        margin: 0 0 0;
+    }
 }
 
 .content-left-pages {
     max-width: 880px;
-    padding: 0 20px 0 0;
+    padding: 0 20px 100px 0;
     width: calc(100% - 400px);
 
     h1 {
@@ -71,6 +75,11 @@
     }
 
     .three-content-buttons {
+
+        .field-content {
+            display: flex;
+        }
+
         a{
             width: 230px;
             height: 55px;
