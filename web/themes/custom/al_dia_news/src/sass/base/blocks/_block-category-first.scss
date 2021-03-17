@@ -16,13 +16,18 @@
 
     h1 {
       margin: 0;
+      font-size: $px50;
       font-family: $Mod-light;
       font-style: normal;
       font-weight: normal;
-      font-size: $px50;
       line-height: 0;
       color: $corange;
       order: 2;
+
+      @media screen and (max-width: $tablet) {
+        font-size: 20px;
+        line-height: 24px;
+      }
     }
 
     img {
@@ -51,6 +56,10 @@
       "area-1"
       "area-2";
     grid-gap: 0;
+  }
+
+  @media screen and(max-width:$broken) {
+    margin-top: 20px;
   }
 
   .block-views-blocklast-news-category-sons-block-1 {

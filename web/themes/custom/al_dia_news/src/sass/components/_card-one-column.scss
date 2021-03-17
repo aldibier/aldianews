@@ -24,6 +24,10 @@
   .card-name-category {
     margin-bottom: 10px;
 
+    @media screen and (max-width:$tablet) {
+      margin-bottom: 5px;
+    }
+
     h2 {
       margin: 0;
       line-height: 0;
@@ -40,7 +44,8 @@
       color: $corange;
 
       @media screen and (max-width:$tablet) {
-        font-size: $px12;
+        font-size: $px10;
+        line-height: 12px;
       }
     }
   }
@@ -74,7 +79,7 @@
   }
 
   .card-date {
-    font-size: $px14;
+    font-size: 1rem;
     font-family: $PrNovacond-reg;
     font-style: normal;
     font-weight: normal;
