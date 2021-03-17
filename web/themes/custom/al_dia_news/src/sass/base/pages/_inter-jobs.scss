@@ -1,6 +1,19 @@
+.page-node-type-job {
+    main {
+        .container-content {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+
+    #main {
+        margin: 0 0 0;
+    }
+}
+
 .content-left-pages {
     max-width: 880px;
-    padding: 0 20px 0 0;
+    padding: 0 20px 100px 0;
     width: calc(100% - 400px);
 
     h1 {
@@ -61,4 +74,33 @@
         }
     }
 
+    .three-content-buttons {
+
+        .field-content {
+            display: flex;
+        }
+
+        a{
+            width: 230px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: $cwhite;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: bold;
+            font-family: $PrNovacond-bold;
+            margin: 0 40px 0 0;
+            border: none;
+
+            &:nth-child(1) {
+                background: $bgrey;
+            }
+
+            &:nth-child(2) {
+                background: $corange;
+            }
+        }
+    }
 }
