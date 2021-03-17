@@ -9,6 +9,14 @@
     #main {
         margin: 0 0 0;
     }
+
+    .horizontal-advertising-general-horizontal {
+        margin: 0 0 40px;
+
+        @media(max-width: $tablet){
+            margin: 40px 0;
+        }
+    }
 }
 
 .content-left-pages {
@@ -162,5 +170,11 @@
                 }
             }
         }
+    }
+}
+
+.content-right-pages {
+    @media(max-width: $tablet){
+        margin: 40px 0;
     }
 }
