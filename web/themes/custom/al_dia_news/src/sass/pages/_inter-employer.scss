@@ -33,6 +33,59 @@
         .employer-information-information {
             width: calc(100% - 290px);
             padding: 0 0 0 20px;
+
+            .view-header {
+                font-style: italic;
+                font-weight: 500;
+                font-size: $px28;
+                line-height: 34px;
+                font-family: $PrNovacond-reg;
+                color: $cblack3;
+                padding: 10px 0;
+                border-bottom: 1px solid $cblack3;
+            }
+
+            .views-row {
+                padding: 0 0 0 40px;
+                position: relative;
+
+
+                &:after {
+                    content: '';
+                    width: 15px;
+                    height: 15px;
+                    display: block;
+                    background: $cblack3;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    bottom: 0;
+                    margin: auto 0;
+                    border-radius: 100%;
+                }
+            }
+
+            .items-information-employer {
+                display: flex;
+            }
+
+            .information-employer-name {
+                font-style: normal;
+                font-weight: 600;
+                font-size: $px26;
+                font-family: $PrNovacond-Sbold;
+                line-height: 32px;
+                color: $cblack0;
+                min-width: 125px;
+            }
+
+            .information-employer-text {
+                font-style: normal;
+                font-weight: normal;
+                font-size: $px24;
+                line-height: 29px;
+                font-family: $PrNovacond-reg;
+            }
         }
     }
 }
