@@ -1,0 +1,175 @@
+.rows-employer {
+
+    h3{
+        font-style: normal;
+        font-weight: bold;
+        font-size: $px30;
+        line-height: 37px;
+        font-family: $PrNovacond-bold;
+        text-transform: uppercase;
+        margin: 0 0 10px;
+    }
+
+    .job-and-company {
+
+        span {
+            font-style: normal;
+            font-weight: 600;
+            font-size: $px22;
+            line-height: 27px;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            min-height: 60px;
+            display: block;
+            padding: 0 0 10px;
+            border-bottom: 1px solid;
+            margin: 0 0 5px;
+        }
+    }
+
+    .job-categories {
+        font-style: normal;
+        font-weight: normal;
+        font-size: $px22;
+        line-height: 27px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        list-style: none;
+
+        li {
+            position: relative;
+            padding: 0 0 0 25px;
+            margin: 15px 0 0;
+
+            &:after {
+                content: '';
+                width: 10px;
+                height: 10px;
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                margin: auto 0;
+                background: $cblack3;
+                border-radius: 100%;
+            }
+        }
+    }
+
+    .place-employer {
+        font-style: normal;
+        font-weight: bold;
+        font-size: $px20;
+        line-height: 24px;
+        align-items: center;
+        letter-spacing: 0.04em;
+        color: $cblack0;
+        margin: 30px 0 10px;
+    }
+
+    .container-content__date  {
+        min-height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 10px 0;
+
+        p {
+            font-style: normal;
+            font-weight: normal;
+            font-size: $px20;
+            line-height: 24px;
+            letter-spacing: 0.08em;
+            margin: 0;
+            text-align: left;
+            width: 100%;
+            display: block;
+            color: $cblack0;
+        }
+    }
+
+    .container-content__date.lightned {
+        background: $cgrey8;
+        padding: 0 20px;
+        display: flex;
+
+        &:before {
+            content: '';
+            width: 30px;
+            min-width: 30px;
+            height: 30px;
+            margin: 0 10px 0 0;
+            display: block;
+            background-image: url('../../assets/img/alert.svg');
+        }
+
+        p {
+            color: $corange;
+        }
+    }
+
+    .button-details a{
+        border: none;
+        min-width: 165px;
+        width: max-content;
+        min-height: 40px;
+        background: $bgrey;
+        font-style: normal;
+        font-weight: bold;
+        font-size: $px18;
+        line-height: 25px;
+        color: $cwhite;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        margin: 20px 0 0;
+        padding: 0 32px;
+        font-family: $PrNovacond-bold;
+    }
+
+    @media(min-width:768px)and(max-width: 1100px){
+        h3 {
+            font-size: 20px;
+            line-height: 22px;
+        }
+
+        .job-and-company {
+            span {
+                font-size: 15px;
+                line-height: 18px;
+            }
+        }
+
+        .job-categories {
+            font-size: 15px;
+            line-height: 18px;
+
+            li {
+                padding: 0 0 0 20px;
+            }
+        }
+
+        .place-employer {
+            font-size: 15px;
+            line-height: 18px;
+            margin: 10px 0;
+        }
+
+        .container-content__date.lightned {
+            padding: 0 10px;
+        }
+
+        .container-content__date {
+            font-size: 15px;
+            line-height: 18px;
+        }
+
+        .button-details  {
+            a {
+                font-size: 16px;
+                line-height: 0;
+                min-width: 100px; 
+            }
+        }
+    }
+}
