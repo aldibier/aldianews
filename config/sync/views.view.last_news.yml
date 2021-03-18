@@ -2278,6 +2278,7 @@ display:
         - 'config:core.entity_view_display.node.news.subcategory_next_4'
         - 'config:core.entity_view_display.node.news.teaser'
         - 'config:core.entity_view_display.node.page.basic_page_about_us'
+        - 'config:core.entity_view_display.node.page.contact_us'
         - 'config:core.entity_view_display.node.page.default'
         - 'config:core.entity_view_display.node.page.general_errors'
         - 'config:core.entity_view_display.node.page.teaser'
@@ -2299,8 +2300,8 @@ display:
       pager:
         type: infinite_scroll
         options:
-          items_per_page: 0
-          offset: 9
+          items_per_page: 9
+          offset: 0
           id: 0
           total_pages: null
           tags:
