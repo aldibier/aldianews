@@ -257,5 +257,24 @@
         .views-infinite-scroll-content-wrapper {
             display: flex;
         }
+
+        @media(min-width:768px)and(max-width: 1024px){
+
+            .views-infinite-scroll-content-wrapper {
+                flex-wrap: wrap;
+            }
+
+            .views-row {
+
+                &:nth-child(1){
+                    padding: 0;
+                }
+    
+                &:nth-child(2){
+                    padding: 0;
+                    border: none;
+                }
+            }
+        }
     }
 }
