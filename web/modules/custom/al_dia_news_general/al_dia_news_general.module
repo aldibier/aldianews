@@ -157,7 +157,6 @@ function al_dia_news_general_views_query_alter(ViewExecutable $view, QueryPlugin
           $query1->condition("nfd.status", 1, "=");
           $query1->distinct();
           $query1->orderBy("nfd.created", "DESC");
-          $query1->range(0, 30);
           $results = $query1->execute()->fetchCol();
           if($results){
             foreach ($query->where as &$condition_group) {
