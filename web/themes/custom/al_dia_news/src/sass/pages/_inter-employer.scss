@@ -228,6 +228,16 @@
         margin: 30px 0 0;
 
         .views-row {
+
+            &:nth-child(1){
+                padding: 0 20px 0 0;
+            }
+
+            &:nth-child(2){
+                padding: 0 0 0 20px;
+                border-left: 1px solid $cgrey4;
+            }
+
             @extend .rows-employer
         }
 
@@ -242,6 +252,10 @@
             max-width: max-content;
             padding: 0 20px 0 0;
             background: $cwhite;
+        }
+
+        .views-infinite-scroll-content-wrapper {
+            display: flex;
         }
     }
 }
