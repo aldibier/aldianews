@@ -1,0 +1,38 @@
+.page-node-type-feature-employer {
+    h1 {
+        font-size: $px40;
+        line-height: 49px;
+        color: $cblack3;
+        margin: 0 0 40px;
+    }
+
+    .block-field-blocknodefeature-employerfield-image {
+
+        .content {
+            margin: 0;
+        }
+    }
+
+    .bussiness {
+        display: flex;
+
+        .content {
+            margin: 0;
+        }
+
+        .employer-information-image {
+            max-width: 290px;
+            max-height: 260px;
+
+            img {
+                width: 290px;
+                height: 260px;
+            }
+        }
+
+        .employer-information-information {
+            width: calc(100% - 290px);
+            padding: 0 0 0 20px;
+        }
+    }
+}
