@@ -159,6 +159,7 @@ function al_dia_news_general_views_query_alter(ViewExecutable $view, QueryPlugin
           $query1->orderBy("nfd.created", "DESC");
           $results = $query1->execute()->fetchCol();
           if($results){
+            ksm($results);
             $query2 = $database->select('taxonomy_term__parent', 'ttp');
             $query2->addField("ttp", "entity_id");
             $query2->condition("ttp.parent_target_id", $path_args[3], "=");
@@ -171,7 +172,7 @@ function al_dia_news_general_views_query_alter(ViewExecutable $view, QueryPlugin
               $query1->leftJoin("taxonomy_term_field_data", "tfd", "nfc.field_category_target_id = tfd.tid");
               $query1->leftJoin("taxonomy_term__parent", "ttp", "tfd.tid = ttp.entity_id");
               $query1->innerJoin("taxonomy_term_field_data", "ttfd", "ttp.parent_target_id = ttfd.tid");
-              $query1->condition("ttp.parent_target_id", $hijo->entity_id, "=");
+              $query1->condition("ttfd.tid", $hijo->entity_id, "=");
               $query1->condition("nfd.type", "news", "=");
               $query1->condition("nfd.status", 1, "=");
               $query1->condition("nfd.nid", $nids, "NOT IN");
@@ -179,7 +180,11 @@ function al_dia_news_general_views_query_alter(ViewExecutable $view, QueryPlugin
               $query1->orderBy("nfd.created", "DESC");
               $query1->range(0, 9);
               $results = $query1->execute()->fetchCol();
-              $nids = array_merge( $nids, $results);
+              if ($results){
+                $nids = array_merge( $nids, $results);
+              }
+              ksm($nids);
+
             }
             if($nids){
               foreach ($query->where as &$condition_group) {
@@ -188,7 +193,6 @@ function al_dia_news_general_views_query_alter(ViewExecutable $view, QueryPlugin
                     $condition["value"] = $nids;
                     $condition["operator"] = "NOT IN";
                   }
-                  ksm($condition);
                 }
               }
             }
