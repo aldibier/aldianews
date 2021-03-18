@@ -69,6 +69,7 @@ function al_dia_news_general_views_query_alter(ViewExecutable $view, QueryPlugin
           $query1->orderBy("nfd.created", "DESC");
           $query1->range(0, 5);
           $results = $query1->execute()->fetchCol();
+          ksm($results);
           if($results){
             foreach ($query->where as &$condition_group) {
               foreach ($condition_group['conditions'] as &$condition) {
