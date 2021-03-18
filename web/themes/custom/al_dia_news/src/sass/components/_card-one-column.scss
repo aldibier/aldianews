@@ -64,6 +64,13 @@
       color: $cblack;
     }
 
+    @media screen and (max-width: $broken) {
+      a {
+        font-size: szrem(24);
+        line-height: 29px;
+      }
+    }
+
     @media screen and (max-width: $tablet) {
       margin-bottom: 5px;
 
