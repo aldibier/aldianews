@@ -42,6 +42,13 @@ import initSlick from "./slick.js";
 
         if (window.matchMedia("(min-width: 768px)").matches) {
             initScrollMagic();
+
+            var controller = new ScrollMagic.Controller();
+            var search_casosexito = new ScrollMagic.Scene({
+                triggerElement: ".content-right-pages"
+            })
+            .addTo(controller)
+            .setClassToggle(".pautas", "on");
         }
        
         initSlick($, Drupal);
