@@ -77,6 +77,7 @@ function al_dia_news_general_views_query_alter(ViewExecutable $view, QueryPlugin
                   $condition["value"] = $results;
                   $condition["operator"] = "NOT IN";
                 }
+                ksm($condition);
               }
             }
           }
