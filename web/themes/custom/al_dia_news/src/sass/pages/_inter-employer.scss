@@ -47,7 +47,7 @@
                 border-bottom: 1px solid $cblack3;
             }
 
-            .views-row {
+            .block-views-blockfeature-employed-information-block-1 .views-row {
                 padding: 0 0 0 40px;
                 position: relative;
 
@@ -109,6 +109,25 @@
                     font-style: normal;
                     color: $cblue;
                     font-family: $PrNovacond-reg;
+                    border: none;
+                    padding: 0;
+                    margin: 0 10px 0 0;
+                }
+
+                .views-row {
+                    width: 30px;
+                    height: 30px;
+                    background: $cblue;
+                    border-radius: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 0 15px 0 0;
+
+                    a {
+                        color: white;
+                        border: none;
+                    }
                 }
             }
         }
