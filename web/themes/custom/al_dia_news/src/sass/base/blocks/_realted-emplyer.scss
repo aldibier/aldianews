@@ -175,7 +175,12 @@
         }
     }
 
-    @media(min-width:$tablet) {
+    @media(max-width:$tablet) {
+
+        padding: 0 0 21px;
+        border-bottom: 0.5px solid $cgrey4;
+        margin: 0 0 20px;
+
         h3 {
             font-size: 18px;
             line-height: 22px;
@@ -214,7 +219,7 @@
             &:before {
                 width: 15px;
                 min-width: 15px;
-                background-size: 15px;
+                background-size: contain;
             }
         }
 
