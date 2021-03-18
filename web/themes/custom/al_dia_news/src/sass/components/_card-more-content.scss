@@ -1,5 +1,17 @@
 //------ related content card ------------//
 .card-more {
+
+
+   //reset style
+  
+   .field--type-entity-reference {
+    all: initial;
+    margin: 0;
+    font-family: initial;
+  }
+
+  //end reset style
+
   @media (max-width: $broken) {
     width: 50%;
     max-width: 50%;
@@ -14,7 +26,7 @@
 
     @media (max-width: $broken) {
       margin-right: 0;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
     }
   }
 
@@ -44,7 +56,12 @@
 
     .short-title-date {
       h3 {
-        margin: 0;
+        margin: 0 0 10px;
+        line-height: 0;
+
+        @media (max-width: $broken) {
+          margin: 0 0 5px;
+        }
       }
 
       a {
@@ -100,7 +117,7 @@
     .block-field-blocknodenewsfield-short-title {
       margin-bottom: 10px;
 
-      @media screen and (max-width: $tablet) {
+      @media screen and (max-width: $broken) {
         margin-right: 0;
         margin-bottom: 5px;
       }
@@ -144,13 +161,17 @@
 
     .field--name-field-category {
       h2 {
-        margin: 0;
+        margin: 0 0 10px;
         line-height: 0;
+
+        @media screen and(max-width:$broken) { 
+          margin: 0 0 5px;
+        }
       }
 
       a {
         border: none;
-        font-size: $px12;
+        font-size: szrem(12);
         font-family: $Modcond-bold;
         font-style: normal;
         font-weight: 600;
@@ -158,8 +179,13 @@
         letter-spacing: 0.08em;
         color: $corange;
 
+        @media screen and(max-width:$broken) { 
+         font-size: szrem(18);
+         line-height: 22px;
+        }
+
         @media screen and(max-width:$tablet) {
-          font-size: $px10;
+          font-size: 10px;
           line-height: 12px;
         }
       }
@@ -172,7 +198,7 @@
 
       a {
         border: none;
-        font-size: $px24;
+        font-size: szrem(24);
         font-family: $PrNovacond-Sbold;
         font-style: normal;
         font-weight: bold;
@@ -199,7 +225,7 @@
       font-family: $PrNovacond-reg;
       font-style: normal;
       font-weight: normal;
-      line-height: 21px;
+      line-height: 19px;
       color: $cgrey3;
 
       @media (max-width: $tablet) {
