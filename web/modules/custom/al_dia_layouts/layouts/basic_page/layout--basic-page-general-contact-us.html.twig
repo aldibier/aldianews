@@ -1,0 +1,41 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a two-column layout.
+ *
+ * Available variables:
+ * - content: The content for this layout.
+ * - attributes: HTML attributes for the layout <div>.
+ *
+ * @ingroup themeable
+ */
+#}
+{% if content %}
+  <div class="container-content">
+
+    {% if content.one_content_title %}
+        <div {{ region_attributes.one_content_title.addClass('one-content-general') }}>
+          {{ content.one_content_title }} 
+        </div>
+    {% endif %}
+    <div class="container-wrapper">
+        {% if content.two_content %}
+            <div {{ region_attributes.two_content.addClass('two-content-general content-left-pages') }}>
+            {{ content.two_content }} 
+            </div>
+        {% endif %}
+        {% if content.one_vertical_advertising %}
+            <div {{ region_attributes.one_vertical_advertising.addClass('one-vertical-advertising content-right-pages') }}>
+            {{ content.one_vertical_advertising }} 
+            </div>
+        {% endif %}
+    </div>
+    {% if content.horizontal_advertising %}
+        <div {{ region_attributes.horizontal_advertising.addClass('horizontal-advertising-general-horizontal') }}>
+          {{ content.horizontal_advertising }} 
+        </div>
+    {% endif %}
+
+
+  </div>
+{% endif %}
