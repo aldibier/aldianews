@@ -181,10 +181,10 @@ function al_dia_news_general_views_query_alter(ViewExecutable $view, QueryPlugin
               $results = $query1->execute()->fetchCol();
               $nids = array_merge( $nids, $results);
             }
-            //ksm($nids);
+            ksm($nids);
             foreach ($query->where as &$condition_group) {
               foreach ($condition_group['conditions'] as &$condition) {
-                if($condition["field"] == "node_field_data.nid"){
+                if($condition["field"] == "taxonomy_term__parent.entity_id"){
                   $condition["value"] = $nids;
                   $condition["operator"] = "NOT IN";
                 }
