@@ -18,42 +18,49 @@
           {{ content.horizontal_advertising }} 
         </div>
     {% endif %}
-    {% if content.one_content_employer_information %}
-        <div {{ region_attributes.one_content_employer_information.addClass('one-content-employer-information') }}>
-          {{ content.one_content_employer_information }} 
-        </div>
-    {% endif %}
-    {% if content.employer_information_image %}
-        <div {{ region_attributes.employer_information_image.addClass('employer-information-image') }}>
-          {{ content.employer_information_image }} 
-        </div>
-    {% endif %}
-    {% if content.employer_information_information %}
-        <div {{ region_attributes.employer_information_information.addClass('employer-information-information') }}>
-          {{ content.employer_information_information }} 
-        </div>
-    {% endif %}
-    {% if content.two_content_body %}
-        <div {{ region_attributes.two_content_body.addClass('two-content-body-job') }}>
-          {{ content.two_content_body }} 
-        </div>
-    {% endif %}
-    {% if content.three_content_jobs %}
-        <div {{ region_attributes.three_content_jobs.addClass('three-content-jobs') }}>
-          {{ content.three_content_jobs }} 
-        </div>
-    {% endif %}
-    {% if content.one_vertical_advertising %}
-        <div {{ region_attributes.one_vertical_advertising.addClass('one-vertical-advertising') }}>
-          {{ content.one_vertical_advertising }} 
-        </div>
-    {% endif %}
-    {% if content.two_vertical_advertising %}
-        <div {{ region_attributes.two_vertical_advertising.addClass('two-vertical-advertising') }}>
-          {{ content.two_vertical_advertising }} 
-        </div>
-    {% endif %}
-
+    <div class="content-left-pages">
+      {% if content.one_content_employer_information %}
+          <div {{ region_attributes.one_content_employer_information.addClass('one-content-employer-information') }}>
+            {{ content.one_content_employer_information }} 
+          </div>
+      {% endif %}
+      <div class="business">
+        {% if content.employer_information_image %}
+            <div {{ region_attributes.employer_information_image.addClass('employer-information-image') }}>
+              {{ content.employer_information_image }} 
+            </div>
+        {% endif %}
+        {% if content.employer_information_information %}
+            <div {{ region_attributes.employer_information_information.addClass('employer-information-information') }}>
+              {{ content.employer_information_information }} 
+            </div>
+        {% endif %}
+      </div>
+      {% if content.two_content_body %}
+          <div {{ region_attributes.two_content_body.addClass('two-content-body-job') }}>
+            {{ content.two_content_body }} 
+          </div>
+      {% endif %}
+      {% if content.three_content_jobs %}
+          <div {{ region_attributes.three_content_jobs.addClass('three-content-jobs') }}>
+            {{ content.three_content_jobs }} 
+          </div>
+      {% endif %}
+    </div>
+    <div class="content-right-pages">
+      <div class="pautas">
+        {% if content.one_vertical_advertising %}
+            <div {{ region_attributes.one_vertical_advertising.addClass('one-vertical-advertising') }}>
+              {{ content.one_vertical_advertising }} 
+            </div>
+        {% endif %}
+        {% if content.two_vertical_advertising %}
+            <div {{ region_attributes.two_vertical_advertising.addClass('two-vertical-advertising') }}>
+              {{ content.two_vertical_advertising }} 
+            </div>
+        {% endif %}
+      </div>
+    </div>
 
   </div>
 {% endif %}
