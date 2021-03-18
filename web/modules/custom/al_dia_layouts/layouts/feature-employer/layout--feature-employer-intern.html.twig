@@ -24,16 +24,18 @@
             {{ content.one_content_employer_information }} 
           </div>
       {% endif %}
-      {% if content.employer_information_image %}
-          <div {{ region_attributes.employer_information_image.addClass('employer-information-image') }}>
-            {{ content.employer_information_image }} 
-          </div>
-      {% endif %}
-      {% if content.employer_information_information %}
-          <div {{ region_attributes.employer_information_information.addClass('employer-information-information') }}>
-            {{ content.employer_information_information }} 
-          </div>
-      {% endif %}
+      <div class="business">
+        {% if content.employer_information_image %}
+            <div {{ region_attributes.employer_information_image.addClass('employer-information-image') }}>
+              {{ content.employer_information_image }} 
+            </div>
+        {% endif %}
+        {% if content.employer_information_information %}
+            <div {{ region_attributes.employer_information_information.addClass('employer-information-information') }}>
+              {{ content.employer_information_information }} 
+            </div>
+        {% endif %}
+      </div>
       {% if content.two_content_body %}
           <div {{ region_attributes.two_content_body.addClass('two-content-body-job') }}>
             {{ content.two_content_body }} 
@@ -61,4 +63,29 @@
     </div>
 
   </div>
+{% endif %}
+
+{# Se obtiene la fecha actual #}
+{% set now = date() %}
+
+{# Mediante un condicional  se compara la fecha de expiracion con la fecha actual, ambas fechas se pasan se segundos en Unix y a la fecha actual se le suman 604800 segundos que corresponden a las 7 dias de diferencia horaria #}
+
+{% if ((field_expiration_date__value | date('U') )) <= ((now | date('U')) + 604800) %}
+<div class="container-content__date lightned">
+
+  {% if ((now | date('U'))  > (field_expiration_date__value | date('U'))) %}
+    <p>{{ now | date("d") - field_expiration_date__value | date("d") }} DAYS LEFT TO APPLY </p>
+  {% else %}
+    <p>{{ field_expiration_date__value | date("d")  -  now | date("d") }} DAYS LEFT TO APPLY </p>
+  {% endif %}
+
+</div>
+{% else %}
+<div class="container-content__date">
+    {% if (now | date('d'))  > (field_expiration_date__value | date('d') ) %}
+    <p>{{ now | date('U') - field_expiration_date__value | date('U') }} DAYS LEFT TO APPLY </p>
+  {% else %}
+    <p>{{ field_expiration_date__value | date('U')  -  now | date('U') }} DAYS LEFT TO APPLY </p>
+  {% endif %}
+</div>
 {% endif %}
