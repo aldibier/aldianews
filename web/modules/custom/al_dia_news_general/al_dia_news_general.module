@@ -182,7 +182,6 @@ function al_dia_news_general_views_query_alter(ViewExecutable $view, QueryPlugin
                 $nids = array_merge( $nids, $results);
               }
             }
-            ksm($nids);
             if($nids){
               foreach ($query->where as &$condition_group) {
                 foreach ($condition_group['conditions'] as &$condition) {
