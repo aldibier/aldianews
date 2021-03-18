@@ -202,6 +202,27 @@ basic_page_general:
     two_vertical_advertising:
       label: Publicidad vertical dos
 
+basic_page_general_contact_us:
+  label: 'Basic Page Contact Us'
+  path: layouts/basic_page
+  template: layout--basic-page-general-contact-us
+  category: 'Basic Page'
+  default_region: content
+  icon_map:
+    - [one_content_title]
+    - [two_content]
+    - [one_vertical_advertising]
+    - [horizontal_advertising]
+  regions:
+    one_content_title:
+      label: Primero - Contenido
+    two_content:
+      label: Segundo - Contenido
+    one_vertical_advertising:
+      label: Publicidad vertical uno
+    horizontal_advertising:
+      label: Publicidad horizontal
+
 basic_page_with_block_image:
   label: 'Basic Page with block image'
   path: layouts/basic_page

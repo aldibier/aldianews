@@ -9,9 +9,11 @@ dependencies:
     - field.storage.node.field_image
     - field.storage.node.field_short_title
     - node.type.news
+    - responsive_image.styles.next_two_image_responsive
   module:
     - image
     - node
+    - responsive_image
     - taxonomy
     - text
     - user
@@ -1385,9 +1387,9 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: image
+          type: responsive_image
           settings:
-            image_style: ''
+            responsive_image_style: next_two_image_responsive
             image_link: content
           group_column: ''
           group_columns: {  }
