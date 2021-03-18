@@ -1229,6 +1229,7 @@ display:
         row: false
         filters: false
         filter_groups: false
+        cache: false
       arguments:
         tid:
           id: tid
@@ -1748,6 +1749,9 @@ display:
         operator: AND
         groups:
           1: AND
+      cache:
+        type: none
+        options: {  }
     cache_metadata:
       max-age: -1
       contexts:
@@ -1782,6 +1786,7 @@ display:
         row: false
         filters: false
         filter_groups: false
+        cache: false
       arguments:
         tid:
           id: tid
@@ -2240,6 +2245,9 @@ display:
         operator: AND
         groups:
           1: AND
+      cache:
+        type: none
+        options: {  }
     cache_metadata:
       max-age: -1
       contexts:
@@ -2317,6 +2325,7 @@ display:
         row: false
         filters: false
         filter_groups: false
+        cache: false
       fields:
         field_image:
           id: field_image
@@ -2804,6 +2813,9 @@ display:
         operator: AND
         groups:
           1: AND
+      cache:
+        type: none
+        options: {  }
     cache_metadata:
       max-age: -1
       contexts:

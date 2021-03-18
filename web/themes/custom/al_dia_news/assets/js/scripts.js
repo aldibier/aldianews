@@ -133,10 +133,6 @@ __webpack_require__.r(__webpack_exports__);
 
     if (window.matchMedia("(min-width: 768px)").matches) {
       Object(_scroll_magic_js__WEBPACK_IMPORTED_MODULE_0__["default"])();
-      var controller = new ScrollMagic.Controller();
-      var search_casosexito = new ScrollMagic.Scene({
-        triggerElement: ".content-right-pages"
-      }).addTo(controller).setClassToggle(".pautas", "on");
     }
 
     Object(_slick_js__WEBPACK_IMPORTED_MODULE_1__["default"])($, Drupal);
@@ -157,12 +153,13 @@ __webpack_require__.r(__webpack_exports__);
 var initScrollMagic = function initScrollMagic() {
   // init controller
   var header = document.querySelector('.header');
-  var newsInternalLeft = document.querySelector(".content-news-internal-left");
-  var blockSticky = document.querySelector(".block-views-blockmore-in-this-section-news-block-1");
+  var newsInternalLeft = document.querySelector(".content-news-internal-left , .content-right-pages");
+  var blockSticky = document.querySelector(".block-views-blockmore-in-this-section-news-block-1 , .pautas");
+  var footer = document.querySelector(".site-footer");
 
   if (document.body.contains(blockSticky)) {
     var getDuration = function getDuration() {
-      return newsInternalLeft.offsetHeight - blockSticky.offsetHeight;
+      return newsInternalLeft.offsetHeight + header.offsetHeight - footer.offsetHeight;
     };
 
     var controller = new ScrollMagic.Controller({
