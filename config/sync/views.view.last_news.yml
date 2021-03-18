@@ -596,6 +596,7 @@ display:
         css_class: false
         filters: false
         filter_groups: false
+        cache: false
       fields:
         field_category:
           id: field_category
@@ -1140,10 +1141,59 @@ display:
           entity_type: node
           entity_field: langcode
           plugin_id: language
+        nid:
+          id: nid
+          table: node_field_data
+          field: nid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '!='
+          value:
+            min: ''
+            max: ''
+            value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: node
+          entity_field: nid
+          plugin_id: numeric
       filter_groups:
         operator: AND
         groups:
           1: AND
+      cache:
+        type: none
+        options: {  }
     cache_metadata:
       max-age: -1
       contexts:
@@ -1179,6 +1229,7 @@ display:
         row: false
         filters: false
         filter_groups: false
+        cache: false
       arguments:
         tid:
           id: tid
@@ -1648,10 +1699,59 @@ display:
           entity_type: taxonomy_term
           entity_field: langcode
           plugin_id: language
+        nid:
+          id: nid
+          table: node_field_data
+          field: nid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '!='
+          value:
+            min: ''
+            max: ''
+            value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: node
+          entity_field: nid
+          plugin_id: numeric
       filter_groups:
         operator: AND
         groups:
           1: AND
+      cache:
+        type: none
+        options: {  }
     cache_metadata:
       max-age: -1
       contexts:
@@ -1686,6 +1786,7 @@ display:
         row: false
         filters: false
         filter_groups: false
+        cache: false
       arguments:
         tid:
           id: tid
@@ -2094,10 +2195,59 @@ display:
           entity_type: taxonomy_term
           entity_field: langcode
           plugin_id: language
+        nid:
+          id: nid
+          table: node_field_data
+          field: nid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '!='
+          value:
+            min: ''
+            max: ''
+            value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: node
+          entity_field: nid
+          plugin_id: numeric
       filter_groups:
         operator: AND
         groups:
           1: AND
+      cache:
+        type: none
+        options: {  }
     cache_metadata:
       max-age: -1
       contexts:
@@ -2112,6 +2262,10 @@ display:
         - 'config:core.entity_view_display.node.article.default'
         - 'config:core.entity_view_display.node.article.rss'
         - 'config:core.entity_view_display.node.article.teaser'
+        - 'config:core.entity_view_display.node.feature_employer.default'
+        - 'config:core.entity_view_display.node.feature_employer.teaser'
+        - 'config:core.entity_view_display.node.job.default'
+        - 'config:core.entity_view_display.node.job.teaser'
         - 'config:core.entity_view_display.node.news.category_childs'
         - 'config:core.entity_view_display.node.news.category_first'
         - 'config:core.entity_view_display.node.news.category_next_4'
@@ -2125,6 +2279,7 @@ display:
         - 'config:core.entity_view_display.node.page.default'
         - 'config:core.entity_view_display.node.page.general_errors'
         - 'config:core.entity_view_display.node.page.teaser'
+        - 'config:core.entity_view_display.node.page.work_whit_al_dia'
         - 'config:core.entity_view_display.node.thought_leaders.default'
         - 'config:core.entity_view_display.node.thought_leaders.teaser'
         - 'config:core.entity_view_display.node.webform.default'
@@ -2170,6 +2325,7 @@ display:
         row: false
         filters: false
         filter_groups: false
+        cache: false
       fields:
         field_image:
           id: field_image
@@ -2657,6 +2813,9 @@ display:
         operator: AND
         groups:
           1: AND
+      cache:
+        type: none
+        options: {  }
     cache_metadata:
       max-age: -1
       contexts:
