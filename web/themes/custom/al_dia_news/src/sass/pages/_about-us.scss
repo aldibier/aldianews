@@ -43,7 +43,7 @@
 
       @media screen and (max-width: $tablet) {
         font-size: szrem(12);
-        line-height: 1;
+        line-height: 1.5;
       }
     }
   }
@@ -89,11 +89,15 @@
     @media screen and (max-width: $broken) {
       margin-bottom: 50px;
     }
+
+    @media screen and (max-width: $tablet) {
+      margin: 0 0 50px;
+    }
   }
 
   h1 {
     &:nth-of-type(2) {
-      margin-top: 70px;
+      margin-top: 30px;
     }
   }
 
@@ -102,6 +106,10 @@
       width: 100%;
       max-width: 100%;
       justify-content: center;
+    }
+
+    @media screen and (max-width: $tablet) {
+      margin: 0;
     }
   }
 
@@ -118,7 +126,10 @@
         font-size: szrem(24);
         font-weight: normal;
 
-        @media screen and (max-width: $tablet) {}
+        @media screen and (max-width: $tablet) {
+          font-size: szrem(15);
+          line-height: 1.5;
+        }
       }
     }
   }
