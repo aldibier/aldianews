@@ -84,6 +84,11 @@
   }
 
   &-title {
+
+    h3 {
+      margin-bottom: 10px;
+    }
+
     a {
       border: none;
       font-size: szrem(45);
@@ -109,7 +114,7 @@
 
   &-body {
     margin-bottom: 10px;
-    font-size: $px20;
+    font-size: szrem(19);
     font-family: $NimR-reg;
     font-style: normal;
     font-weight: normal;
