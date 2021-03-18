@@ -182,11 +182,13 @@ function al_dia_news_general_views_query_alter(ViewExecutable $view, QueryPlugin
               $nids = array_merge( $nids, $results);
             }
             ksm($nids);
-            foreach ($query->where as &$condition_group) {
-              foreach ($condition_group['conditions'] as &$condition) {
-                if($condition["field"] == "node_field_data.nid"){
-                  $condition["value"] = $nids;
-                  $condition["operator"] = "NOT IN";
+            if($nids){
+              foreach ($query->where as &$condition_group) {
+                foreach ($condition_group['conditions'] as &$condition) {
+                  if($condition["field"] == "node_field_data.nid"){
+                    $condition["value"] = $nids;
+                    $condition["operator"] = "NOT IN";
+                  }
                 }
               }
             }
