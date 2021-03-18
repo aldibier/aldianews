@@ -142,10 +142,74 @@ function al_dia_news_general_views_query_alter(ViewExecutable $view, QueryPlugin
           }
         }
       }
+      if ($view->getDisplay()->display['id'] == 'block_4') {
+        $current_path = \Drupal::service('path.current')->getPath();
+        $path_args = explode('/', $current_path);
+        if ($path_args[1] == 'taxonomy' && is_numeric($path_args[3])) {
+          $database = \Drupal::database();
+          $query1 = $database->select('node_field_data', 'nfd');
+          $query1->addField("nfd", "nid");
+          $query1->leftJoin("node__field_category", "nfc", "nfd.nid = nfc.entity_id");
+          $query1->leftJoin("taxonomy_term_field_data", "tfd", "nfc.field_category_target_id = tfd.tid");
+          $query1->leftJoin("taxonomy_term__parent", "ttp", "tfd.tid = ttp.entity_id");
+          $query1->condition("ttp.parent_target_id", $path_args[3], "=");
+          $query1->condition("nfd.type", "news", "=");
+          $query1->condition("nfd.status", 1, "=");
+          $query1->range(0, 5);
+          $query1->distinct();
+          $query1->orderBy("nfd.created", "DESC");
+          $results = $query1->execute()->fetchCol();
+          if($results){
+            $query2 = $database->select('taxonomy_term__parent', 'ttp');
+            $query2->addField("ttp", "entity_id");
+            $query2->condition("ttp.parent_target_id", $path_args[3], "=");
+            $hijos = $query2->execute();
+            $nids = $results;
+            foreach ($hijos as $hijo){
+              $query1 = $database->select('node_field_data', 'nfd');
+              $query1->addField("nfd", "nid");
+              $query1->leftJoin("node__field_category", "nfc", "nfd.nid = nfc.entity_id");
+              $query1->innerJoin("taxonomy_term_field_data", "tfd", "nfc.field_category_target_id = tfd.tid");
+              $query1->condition("tfd.tid", $hijo->entity_id, "=");
+              $query1->condition("nfd.type", "news", "=");
+              $query1->condition("nfd.status", 1, "=");
+              $query1->condition("nfd.nid", $nids, "NOT IN");
+              $query1->distinct();
+              $query1->orderBy("nfd.created", "DESC");
+              $query1->range(0, 9);
+              $results = $query1->execute()->fetchCol();
+              if ($results){
+                $nids = array_merge( $nids, $results);
+              }
+            }
+            ksm($nids);
+            if($nids){
+              foreach ($query->where as &$condition_group) {
+                foreach ($condition_group['conditions'] as &$condition) {
+                  if($condition["field"] == "node_field_data.nid"){
+                    $condition["value"] = $nids;
+                    $condition["operator"] = "NOT IN";
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     break;
   }
    
 }
+// SELECT "node_field_data"."langcode" AS "node_field_data_langcode", "node_field_data"."created" AS "node_field_data_created", "node_field_data"."nid" AS "nid", "taxonomy_term_field_data_node__field_category"."tid" AS "taxonomy_term_field_data_node__field_category_tid"
+// FROM
+// {node_field_data} "node_field_data"
+// LEFT JOIN {node__field_category} "node__field_category" ON node_field_data.nid = node__field_category.entity_id AND (node__field_category.deleted = '0' AND node__field_category.langcode = node_field_data.langcode)
+// INNER JOIN {taxonomy_term_field_data} "taxonomy_term_field_data_node__field_category" ON node__field_category.field_category_target_id = taxonomy_term_field_data_node__field_category.tid
+// LEFT JOIN {taxonomy_term__parent} "taxonomy_term_field_data_node__field_category__taxonomy_term__parent" ON taxonomy_term_field_data_node__field_category.tid = taxonomy_term_field_data_node__field_category__taxonomy_term__parent.entity_id AND taxonomy_term_field_data_node__field_category__taxonomy_term__parent.deleted = '0'
+// WHERE ((taxonomy_term_field_data_node__field_category__taxonomy_term__parent.parent_target_id = '8')) AND (("node_field_data"."status" = '1') AND ("node_field_data"."type" IN ('news')) AND ("node_field_data"."langcode" IN ('en')) AND ("taxonomy_term_field_data_node__field_category"."langcode" IN ('en')))
+// ORDER BY "node_field_data_created" DESC
+// LIMIT 999999 OFFSET 9
+
 // SELECT "taxonomy_term_field_data_node__field_category"."langcode" AS "taxonomy_term_field_data_node__field_category_langcode", "node_field_data"."langcode" AS "node_field_data_langcode", "node_field_data"."created" AS "node_field_data_created", "node_field_data"."nid" AS "nid", "taxonomy_term_field_data_node__field_category"."tid" AS "taxonomy_term_field_data_node__field_category_tid", "taxonomy_term_field_data_taxonomy_term__parent"."tid" AS "taxonomy_term_field_data_taxonomy_term__parent_tid"
 // FROM
 // {node_field_data} "node_field_data"

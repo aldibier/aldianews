@@ -2,14 +2,21 @@
 .main-news {
 
   //reset style
+
   .block-field-blocknodenewsbody {
     all: initial;
+  }
+
+  .field--type-entity-reference {
+    margin: 0;
   }
 
   h2,
   h3 {
     margin: 0;
   }
+
+  //end reset style
 
   .views-row,
   .container-content {
@@ -77,7 +84,10 @@
   }
 
   &-title {
-    margin-bottom: 10px;
+
+    h3 {
+      margin-bottom: 10px;
+    }
 
     a {
       border: none;
@@ -90,10 +100,11 @@
       color: $cwhite;
     }
 
-    @media screen and(max-width:$tablet) {
-      margin-bottom: 5px;
+    @media screen and(max-width:$broken) {
       line-height: 0;
+    }
 
+    @media screen and(max-width:$tablet) {
       a {
         font-size: 18px;
         line-height: 22px;
@@ -103,8 +114,8 @@
 
   &-body {
     margin-bottom: 10px;
-    font-size: $px20;
-    font-family: $NimS-reg;
+    font-size: szrem(19);
+    font-family: $NimR-reg;
     font-style: normal;
     font-weight: normal;
     line-height: 1.5;

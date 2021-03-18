@@ -31,26 +31,6 @@ third_party_settings:
         layout_settings:
           label: 'Category first'
         components:
-          a7b3e895-2f5c-4b61-8de7-b9086e756f91:
-            uuid: a7b3e895-2f5c-4b61-8de7-b9086e756f91
-            region: one_content
-            configuration:
-              id: 'field_block:node:news:field_image'
-              label: Image
-              provider: layout_builder
-              label_display: '0'
-              formatter:
-                label: hidden
-                type: responsive_image
-                settings:
-                  responsive_image_style: image_landing_subcategory
-                  image_link: content
-                third_party_settings: {  }
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-            additional: {  }
-            weight: 4
           096921d6-534b-452d-a8eb-d683b5b15059:
             uuid: 096921d6-534b-452d-a8eb-d683b5b15059
             region: two_content
@@ -129,6 +109,26 @@ third_party_settings:
                 view_mode: view_mode
             additional: {  }
             weight: -8
+          078b5e9d-e44f-4a49-986c-0817241ffaa4:
+            uuid: 078b5e9d-e44f-4a49-986c-0817241ffaa4
+            region: one_content
+            configuration:
+              id: 'field_block:node:news:field_image'
+              label: Image
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: responsive_image
+                settings:
+                  responsive_image_style: image_landing_subcategory
+                  image_link: ''
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 5
         third_party_settings: {  }
 id: node.news.category_first
 targetEntityType: node

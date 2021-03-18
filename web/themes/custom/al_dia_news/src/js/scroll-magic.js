@@ -3,9 +3,8 @@ const initScrollMagic = () => {
     // init controller
 
     const header = document.querySelector('.header');
-    const newsInternalLeft = document.querySelector(".content-news-internal-left , .content-right-pages");
-    const blockSticky = document.querySelector(".block-views-blockmore-in-this-section-news-block-1 , .pautas");
-    const footer = document.querySelector(".site-footer");
+    const newsInternalLeft = document.querySelector(".content-news-internal-left");
+    const blockSticky = document.querySelector(".block-views-blockmore-in-this-section-news-block-1");
     
     if (document.body.contains(blockSticky)) {
 
@@ -33,7 +32,7 @@ const initScrollMagic = () => {
         });
 
         function getDuration() {
-            return newsInternalLeft.offsetHeight + header.offsetHeight - footer.offsetHeight;
+            return newsInternalLeft.offsetHeight - blockSticky.offsetHeight;
         }
     }
 

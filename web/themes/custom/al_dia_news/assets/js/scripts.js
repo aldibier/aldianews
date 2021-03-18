@@ -153,13 +153,12 @@ __webpack_require__.r(__webpack_exports__);
 var initScrollMagic = function initScrollMagic() {
   // init controller
   var header = document.querySelector('.header');
-  var newsInternalLeft = document.querySelector(".content-news-internal-left , .content-right-pages");
-  var blockSticky = document.querySelector(".block-views-blockmore-in-this-section-news-block-1 , .pautas");
-  var footer = document.querySelector(".site-footer");
+  var newsInternalLeft = document.querySelector(".content-news-internal-left");
+  var blockSticky = document.querySelector(".block-views-blockmore-in-this-section-news-block-1");
 
   if (document.body.contains(blockSticky)) {
     var getDuration = function getDuration() {
-      return newsInternalLeft.offsetHeight + header.offsetHeight - footer.offsetHeight;
+      return newsInternalLeft.offsetHeight - blockSticky.offsetHeight;
     };
 
     var controller = new ScrollMagic.Controller({
