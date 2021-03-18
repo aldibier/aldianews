@@ -133,10 +133,6 @@ __webpack_require__.r(__webpack_exports__);
 
     if (window.matchMedia("(min-width: 768px)").matches) {
       Object(_scroll_magic_js__WEBPACK_IMPORTED_MODULE_0__["default"])();
-      var controller = new ScrollMagic.Controller();
-      var search_casosexito = new ScrollMagic.Scene({
-        triggerElement: ".content-right-pages"
-      }).addTo(controller).setClassToggle(".pautas", "on");
     }
 
     Object(_slick_js__WEBPACK_IMPORTED_MODULE_1__["default"])($, Drupal);
