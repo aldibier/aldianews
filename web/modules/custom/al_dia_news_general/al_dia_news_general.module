@@ -143,14 +143,4 @@ function al_dia_news_general_views_query_alter(ViewExecutable $view, QueryPlugin
   }
    
 }
-// SELECT "taxonomy_term_field_data_node__field_category"."langcode" AS "taxonomy_term_field_data_node__field_category_langcode", "node_field_data"."langcode" AS "node_field_data_langcode", "node_field_data"."created" AS "node_field_data_created", "node_field_data"."nid" AS "nid", "taxonomy_term_field_data_node__field_category"."tid" AS "taxonomy_term_field_data_node__field_category_tid", "taxonomy_term_field_data_taxonomy_term__parent"."tid" AS "taxonomy_term_field_data_taxonomy_term__parent_tid"
-// FROM
-// {node_field_data} "node_field_data"
-// LEFT JOIN {node__field_category} "node__field_category" ON node_field_data.nid = node__field_category.entity_id AND (node__field_category.deleted = '0' AND node__field_category.langcode = node_field_data.langcode)
-// LEFT JOIN {taxonomy_term_field_data} "taxonomy_term_field_data_node__field_category" ON node__field_category.field_category_target_id = taxonomy_term_field_data_node__field_category.tid
-// LEFT JOIN {taxonomy_term__parent} "taxonomy_term_field_data_node__field_category__taxonomy_term__parent" ON taxonomy_term_field_data_node__field_category.tid = taxonomy_term_field_data_node__field_category__taxonomy_term__parent.entity_id AND taxonomy_term_field_data_node__field_category__taxonomy_term__parent.deleted = '0'
-// INNER JOIN {taxonomy_term_field_data} "taxonomy_term_field_data_taxonomy_term__parent" ON taxonomy_term_field_data_node__field_category__taxonomy_term__parent.parent_target_id = taxonomy_term_field_data_taxonomy_term__parent.tid
-// WHERE ((taxonomy_term_field_data_node__field_category__taxonomy_term__parent.parent_target_id = '8')) AND (("node_field_data"."status" = '1') AND ("node_field_data"."type" IN ('news')) AND ("node_field_data"."langcode" IN ('en')))
-// ORDER BY "node_field_data_created" DESC
-// LIMIT 1 OFFSET 0
 
