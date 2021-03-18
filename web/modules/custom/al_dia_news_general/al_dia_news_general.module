@@ -49,28 +49,101 @@ function al_dia_news_general_form_alter(&$form, $form_state, $form_id) {
  * @param view propiedades de la vista
  * @param query consulta sql de la vista
  */
-// function al_dia_news_general_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
-//   switch ($view->id()) {
-//     case 'categories_sons':
-//       ksm($view);
-//       if ($view->getDisplay()->display['id'] == 'block_1') {
-//         $current_path = \Drupal::service('path.current')->getPath();
-//         $path_args = explode('/', $current_path);
-//         if ($path_args[1] == 'group' && is_numeric($path_args[2])) {
-//           $database = \Drupal::database();
-//           $query1 = $database->select('node_field_data', 'nfd');
-//           $query1->addField("nfd", "nid");
-//           $query1->innerJoin("group_content__entity_id", "gei", "gfd.id = gei.entity_id");
-//           $query1->innerJoin("node_field_data", "nfd", "gei.entity_id_target_id = nfd.nid");
-//           $query1->innerJoin("node__field_categoria_destacada", "nfcd", "nfd.nid = nfcd.entity_id");
-//           $query1->condition("gfd.gid", $path_args[2], "=");
-//           $query1->condition("nfd.type", "articulo_categorizado", "=");
-//           $query1->condition("nfcd.field_categoria_destacada_value", "1", "=");
-//           $query1->orderBy("nfd.created", "DESC");
-//           $query1->range(0, 1);
-//           $results = $query1->execute()->fetchCol();
-//         }
-//         SELECT "taxonomy_term_field_data_node__field_category"."langcode" AS "taxonomy_term_field_data_node__field_category_langcode", "node_field_data"."langcode" AS "node_field_data_langcode", "node_field_data"."created" AS "node_field_data_created", "node_field_data"."nid" AS "nid", "taxonomy_term_field_data_node__field_category"."tid" AS "taxonomy_term_field_data_node__field_category_tid", "taxonomy_term_field_data_taxonomy_term__parent"."tid" AS "taxonomy_term_field_data_taxonomy_term__parent_tid"
+function al_dia_news_general_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
+  switch ($view->id()) {
+    case 'last_news':
+      if ($view->getDisplay()->display['id'] == 'block_1') {
+        $current_path = \Drupal::service('path.current')->getPath();
+        $path_args = explode('/', $current_path);
+        if ($path_args[1] == 'taxonomy' && is_numeric($path_args[3])) {
+          $database = \Drupal::database();
+          $query1 = $database->select('node_field_data', 'nfd');
+          $query1->addField("nfd", "nid");
+          $query1->leftJoin("node__field_category", "nfc", "nfd.nid = nfc.entity_id");
+          $query1->leftJoin("taxonomy_term_field_data", "tfd", "nfc.field_category_target_id = tfd.tid");
+          $query1->leftJoin("taxonomy_term__parent", "ttp", "tfd.tid = ttp.entity_id");
+          $query1->innerJoin("taxonomy_term_field_data", "ttfd", "ttp.parent_target_id = ttfd.tid");
+          $query1->condition("ttp.parent_target_id", $path_args[3], "=");
+          $query1->condition("nfd.type", "news", "=");
+          $query1->condition("nfd.status", 1, "=");
+          $query1->orderBy("nfd.created", "DESC");
+          $query1->range(0, 5);
+          $results = $query1->execute()->fetchCol();
+          if($results){
+            foreach ($query->where as &$condition_group) {
+              foreach ($condition_group['conditions'] as &$condition) {
+                if($condition["field"] == "node_field_data.nid"){
+                  $condition["value"] = $results;
+                  $condition["operator"] = "NOT IN";
+                }
+              }
+            }
+          }
+        }
+      }
+      if ($view->getDisplay()->display['id'] == 'block_2') {
+        $current_path = \Drupal::service('path.current')->getPath();
+        $path_args = explode('/', $current_path);
+        if ($path_args[1] == 'taxonomy' && is_numeric($path_args[3])) {
+          $database = \Drupal::database();
+          $query1 = $database->select('node_field_data', 'nfd');
+          $query1->addField("nfd", "nid");
+          $query1->leftJoin("node__field_category", "nfc", "nfd.nid = nfc.entity_id");
+          $query1->leftJoin("taxonomy_term_field_data", "tfd", "nfc.field_category_target_id = tfd.tid");
+          $query1->leftJoin("taxonomy_term__parent", "ttp", "tfd.tid = ttp.entity_id");
+          $query1->innerJoin("taxonomy_term_field_data", "ttfd", "ttp.parent_target_id = ttfd.tid");
+          $query1->condition("ttp.parent_target_id", $path_args[3], "=");
+          $query1->condition("nfd.type", "news", "=");
+          $query1->condition("nfd.status", 1, "=");
+          $query1->orderBy("nfd.created", "DESC");
+          $query1->range(0, 5);
+          $results = $query1->execute()->fetchCol();
+          if($results){
+            foreach ($query->where as &$condition_group) {
+              foreach ($condition_group['conditions'] as &$condition) {
+                if($condition["field"] == "node_field_data.nid"){
+                  $condition["value"] = $results;
+                  $condition["operator"] = "NOT IN";
+                }
+              }
+            }
+          }
+        }
+      }
+      if ($view->getDisplay()->display['id'] == 'block_3') {
+        $current_path = \Drupal::service('path.current')->getPath();
+        $path_args = explode('/', $current_path);
+        if ($path_args[1] == 'taxonomy' && is_numeric($path_args[3])) {
+          $database = \Drupal::database();
+          $query1 = $database->select('node_field_data', 'nfd');
+          $query1->addField("nfd", "nid");
+          $query1->leftJoin("node__field_category", "nfc", "nfd.nid = nfc.entity_id");
+          $query1->leftJoin("taxonomy_term_field_data", "tfd", "nfc.field_category_target_id = tfd.tid");
+          $query1->leftJoin("taxonomy_term__parent", "ttp", "tfd.tid = ttp.entity_id");
+          $query1->innerJoin("taxonomy_term_field_data", "ttfd", "ttp.parent_target_id = ttfd.tid");
+          $query1->condition("ttp.parent_target_id", $path_args[3], "=");
+          $query1->condition("nfd.type", "news", "=");
+          $query1->condition("nfd.status", 1, "=");
+          $query1->orderBy("nfd.created", "DESC");
+          $query1->range(0, 5);
+          $results = $query1->execute()->fetchCol();
+          if($results){
+            foreach ($query->where as &$condition_group) {
+              foreach ($condition_group['conditions'] as &$condition) {
+                if($condition["field"] == "node_field_data.nid"){
+                  $condition["value"] = $results;
+                  $condition["operator"] = "NOT IN";
+                }
+              }
+            }
+          }
+        }
+      }
+    break;
+  }
+   
+}
+// SELECT "taxonomy_term_field_data_node__field_category"."langcode" AS "taxonomy_term_field_data_node__field_category_langcode", "node_field_data"."langcode" AS "node_field_data_langcode", "node_field_data"."created" AS "node_field_data_created", "node_field_data"."nid" AS "nid", "taxonomy_term_field_data_node__field_category"."tid" AS "taxonomy_term_field_data_node__field_category_tid", "taxonomy_term_field_data_taxonomy_term__parent"."tid" AS "taxonomy_term_field_data_taxonomy_term__parent_tid"
 // FROM
 // {node_field_data} "node_field_data"
 // LEFT JOIN {node__field_category} "node__field_category" ON node_field_data.nid = node__field_category.entity_id AND (node__field_category.deleted = '0' AND node__field_category.langcode = node_field_data.langcode)
@@ -80,8 +153,4 @@ function al_dia_news_general_form_alter(&$form, $form_state, $form_id) {
 // WHERE ((taxonomy_term_field_data_node__field_category__taxonomy_term__parent.parent_target_id = '8')) AND (("node_field_data"."status" = '1') AND ("node_field_data"."type" IN ('news')) AND ("node_field_data"."langcode" IN ('en')))
 // ORDER BY "node_field_data_created" DESC
 // LIMIT 1 OFFSET 0
-//       }
-//     break;
-//   }
 
-// }
