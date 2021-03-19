@@ -77,7 +77,7 @@ import initSlick from "./slick.js";
             var scene3 = new ScrollMagic.Scene({triggerElement: '.container-right'})
             .setClassToggle(".block-views-blockmore-in-this-section-news-block-1", "active")
             .setPin('.block-views-blockmore-in-this-section-news-block-1', { pushFollowers: false })
-            .addIndicators()
+            //.addIndicators()
             .addTo(controller3)
             .offset(noticias);
 
