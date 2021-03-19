@@ -1,11 +1,48 @@
-#block-headerpageaboutus {
-  min-height: 560px;
-  padding: 40px 80px 55px;
+#block-headerpageaboutus,
+#block-headershareanewstip {
   margin: 0 -80px 70px;
   display: flex;
   align-items: flex-end;
   position: relative;
   z-index: 1;
+
+  @media screen and (max-width: $tablet) {
+    height: auto;
+    margin: initial;
+    margin-bottom: 20px;
+  }
+
+  .field--name-field-image,
+  .field--name-field-image-block {
+    img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -2;
+      object-fit: cover;
+    }
+
+    &::after {
+      top: 0;
+      left: 0;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: block;
+      z-index: -1;
+      content: '';
+      background-color: rgba(34, 33, 35, .4);
+    }
+  }
+}
+
+
+//-------------header about-us-----------------//
+#block-headerpageaboutus {
+  min-height: 560px;
+  padding: 40px 80px 55px;
 
   @media screen and (max-width: $tablet) {
     height: auto;
@@ -47,33 +84,42 @@
       }
     }
   }
+}
 
-  .field--name-field-image {
-    img {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: -2;
-      object-fit: cover;
-    }
+//-------------header news tip-----------------//
+#block-headershareanewstip {
+  min-height: 560px;
+  padding: 40px 80px 70px;
 
-    &::after {
-      top: 0;
-      left: 0;
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      display: block;
-      z-index: -1;
-      content: '';
-      background-color: rgba(34, 33, 35, .4);
+  @media screen and (max-width: $tablet) {
+    height: auto;
+    min-height: 215px;
+    margin: initial;
+    margin-bottom: 20px;
+    padding: 0 25px 25px;
+  }
+
+  .field--name-field-custom-title {
+    h1 {
+      margin: 0;
+      font-size: szrem(78);
+      font-family: $PrNovacond-bold;
+      font-style: normal;
+      font-weight: bold;
+      line-height: 95px;
+      color: $cwhite;
+
+      @media screen and (max-width: $tablet) {
+        margin-bottom: 5px;
+        font-size: szrem(25);
+        line-height: 1;
+      }
     }
   }
 }
 
-.about-us {
+//-------------block general-----------------//
+.block-information {
   .container-content {
     display: flex;
     flex-wrap: wrap;
