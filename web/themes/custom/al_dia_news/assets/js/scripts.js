@@ -132,39 +132,7 @@ __webpack_require__.r(__webpack_exports__);
     }); //--------- initialization --------------------//
 
     if (window.matchMedia("(min-width: 768px)").matches) {
-      //initScrollMagic();
-      var alto = $('.content-right-pages').height();
-      var pautas = $('.pautas').height();
-      var altoscroll = $(alto - pautas);
-      console.log(altoscroll[0]);
-      var controller1 = new ScrollMagic.Controller({
-        globalSceneOptions: {
-          triggerHook: 1,
-          duration: altoscroll[0]
-        }
-      });
-      var scene1 = new ScrollMagic.Scene({
-        triggerElement: '.content-right-pages'
-      }).setClassToggle(".pautas", "active").setPin('.pautas', {
-        pushFollowers: false
-      }) //.addIndicators()
-      .addTo(controller1).offset(pautas); //------------ scroll internas--------------//
-
-      var altorigh = $('.container-right').height();
-      var noticias = $('.block-views-blockmore-in-this-section-news-block-1').height();
-      var altoscrolltotal = $(altorigh - noticias);
-      console.log(altoscrolltotal[0]);
-      var controller3 = new ScrollMagic.Controller({
-        globalSceneOptions: {
-          triggerHook: 1,
-          duration: altoscrolltotal[0]
-        }
-      });
-      var scene3 = new ScrollMagic.Scene({
-        triggerElement: '.container-right'
-      }).setClassToggle(".block-views-blockmore-in-this-section-news-block-1", "active").setPin('.block-views-blockmore-in-this-section-news-block-1', {
-        pushFollowers: false
-      }).addIndicators().addTo(controller3).offset(noticias);
+      Object(_scroll_magic_js__WEBPACK_IMPORTED_MODULE_0__["default"])($, Drupal);
     }
 
     Object(_slick_js__WEBPACK_IMPORTED_MODULE_1__["default"])($, Drupal);
@@ -182,41 +150,42 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-var initScrollMagic = function initScrollMagic() {
-  // init controller
-  var header = document.querySelector('.header');
-  var newsInternalLeft = document.querySelector(".content-news-internal-left");
-  var blockSticky = document.querySelector(".block-views-blockmore-in-this-section-news-block-1");
+var initScrollMagic = function initScrollMagic($, Drupal) {
+  //------------ scroll jobs --------------//
+  var controller = new ScrollMagic.Controller({
+    globalSceneOptions: {
+      triggerHook: 1
+    }
+  });
 
-  if (document.body.contains(blockSticky)) {
-    var getDuration = function getDuration() {
-      return newsInternalLeft.offsetHeight - blockSticky.offsetHeight;
+  if ($('.content-right-pages').length && $('.pautas').length) {
+    var getDurationScene1 = function getDurationScene1() {
+      return $(rigthPages).height() - $(pautas).height();
     };
 
-    var controller = new ScrollMagic.Controller({
-      /*addIndicators: true*/
+    var rigthPages = $('.content-right-pages')[0];
+    var pautas = $('.pautas')[0];
+    var scene1 = new ScrollMagic.Scene({
+      triggerElement: $(rigthPages),
+      duration: getDurationScene1
+    }).addTo(controller).offset($(pautas).height()).setPin($(pautas), {
+      pushFollowers: false
     });
-    var scene = new ScrollMagic.Scene({
-      triggerElement: blockSticky,
-      offset: "".concat(blockSticky.offsetHeight + header.offsetHeight),
-      triggerHook: 1,
-      duration: getDuration
-    }).addTo(controller); //.addIndicators({name: "pin scene", colorEnd: "#FFFFFF"});
+  } //------------ scroll internas --------------//
 
-    if (window.matchMedia("(min-width: 992px)").matches) {
-      scene.setPin(blockSticky, {
-        pushFollowers: false
-      });
-    }
 
-    window.addEventListener("resize", function () {
-      if (window.matchMedia("(min-width: 992px)").matches) {
-        scene.setPin(blockSticky, {
-          pushFollowers: false
-        });
-      } else {
-        scene.removePin(blockSticky, true);
-      }
+  if ($('.container-right').length && $('.block-views-blockmore-in-this-section-news-block-1').length) {
+    var getDurationScene2 = function getDurationScene2() {
+      return $(containerRigth).height() - $(noticias).height();
+    };
+
+    var containerRigth = $('.container-right')[0];
+    var noticias = $('.block-views-blockmore-in-this-section-news-block-1')[0];
+    var scene2 = new ScrollMagic.Scene({
+      triggerElement: $(containerRigth)[0],
+      duration: getDurationScene2
+    }).addTo(controller).offset($(noticias).height()).setPin($(noticias)[0], {
+      pushFollowers: false
     });
   }
 };
@@ -288,8 +257,8 @@ var initSlick = function initSlick($, Drupal) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/andresmartinez/sites/News/code/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
-module.exports = __webpack_require__(/*! /Users/andresmartinez/sites/News/code/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
+__webpack_require__(/*! /Users/usuario/Desktop/Proyectos/AlDiaNews/4ld14-n3ws/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
+module.exports = __webpack_require__(/*! /Users/usuario/Desktop/Proyectos/AlDiaNews/4ld14-n3ws/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
 
 
 /***/ })
