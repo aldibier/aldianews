@@ -318,9 +318,13 @@
 
         .logo {
             padding: 0 3px;
-            margin: 0 5px;
-            background: $corange;
-            font-weight: bold;
+            margin: -4px 5px 0;
+            width: 56.59px;
+            height: 20px;
+            display: block;
+            font-size: 0;
+            background: url('../../assets/img/logo.png') center center no-repeat;
+            background-size: contain;
         }
     }
 
@@ -515,6 +519,12 @@
 
         .copyr {
             margin: 10px 0;
+
+            .logo {
+                width: 39.61px;
+                height: 15px;
+                margin: -2px 5px 0;
+            }
         }
         
         #block-footerlogo {

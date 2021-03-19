@@ -8,6 +8,13 @@
         font-family: $PrNovacond-bold;
         text-transform: uppercase;
         margin: 0 0 10px;
+        color: $cgrey6;
+        min-height: 75px;
+
+        a {
+            border: none;
+            color: $cgrey6;
+        }
     }
 
     .job-and-company {
@@ -100,7 +107,7 @@
             height: 30px;
             margin: 0 10px 0 0;
             display: block;
-            background-image: url('../../assets/img/alert.svg');
+            background: url('../../assets/img/alert.svg') center center no-repeat;
         }
 
         p {
@@ -127,7 +134,7 @@
         font-family: $PrNovacond-bold;
     }
 
-    @media(min-width:768px)and(max-width: 1100px){
+    @media(min-width:$tablet)and(max-width: 1100px){
         h3 {
             font-size: 20px;
             line-height: 22px;
@@ -160,8 +167,10 @@
         }
 
         .container-content__date {
-            font-size: 15px;
-            line-height: 18px;
+            p {
+                font-size: 15px;
+                line-height: 18px;
+            }
         }
 
         .button-details  {
@@ -169,6 +178,79 @@
                 font-size: 16px;
                 line-height: 0;
                 min-width: 100px; 
+            }
+        }
+    }
+
+    @media(max-width:$tablet) {
+
+        padding: 0 0 21px;
+        border-bottom: 0.5px solid $cgrey4;
+        margin: 0 0 20px;
+        width: 100%;
+
+        &:last-child {
+            border: none;
+        }
+
+        h3 {
+            font-size: 18px;
+            line-height: 22px;
+            min-height: initial;
+        }
+
+        .job-and-company {
+            span {
+                font-size: 14px;
+                line-height: 17px;
+            }
+        }
+
+        .job-categories {
+            font-size: 15px;
+            line-height: 18px;
+
+            li {
+                padding: 0 0 0 15px;
+
+                &:after {
+                    width: 5px;
+                    height: 5px;
+                }
+            }
+        }
+
+        .place-employer {
+            font-size: 15px;
+            line-height: 18px;
+            margin: 10px 0;
+        }
+
+        .container-content__date.lightned {
+            padding: 0 10px;
+
+            &:before {
+                width: 15px;
+                min-width: 15px;
+                background-size: contain;
+            }
+        }
+
+        .container-content__date {
+            min-height: 30px;
+
+            p {
+                font-size: 12px;
+                line-height: 15px;
+            }
+        }
+
+        .button-details  {
+            a {
+                font-size: 12px;
+                line-height: 0;
+                min-width: 100px; 
+                min-height: 30px;
             }
         }
     }
