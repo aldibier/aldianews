@@ -8,6 +8,13 @@
         font-family: $PrNovacond-bold;
         text-transform: uppercase;
         margin: 0 0 10px;
+        color: $cgrey6;
+        min-height: 75px;
+
+        a {
+            border: none;
+            color: $cgrey6;
+        }
     }
 
     .job-and-company {
@@ -189,6 +196,7 @@
         h3 {
             font-size: 18px;
             line-height: 22px;
+            min-height: initial;
         }
 
         .job-and-company {
