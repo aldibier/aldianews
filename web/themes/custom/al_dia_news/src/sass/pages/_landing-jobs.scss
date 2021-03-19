@@ -1,5 +1,35 @@
 .path-job-seeker {
 
+
+    .block-fixed-block-contentheader-i-am-a-job-seeker {
+
+        .field--name-field-image-block {
+            margin: 0 -15px 20px;
+
+            &::after {
+                @include absolute(top 0 left 0);
+                @include esize(100%);
+                display: block;
+                z-index: -1;
+                content: '';
+                background-color: $rgba1;
+            }
+
+            img {
+                @include absolute(top 0 left 0);
+                @include esize(100%);
+                z-index: -2;
+                object-fit: cover;
+            }
+
+            @media screen and (min-width: $tablet) {
+                padding: 40px 85px 100px;
+                min-height: 710px;
+                margin: 0 -80px 70px;
+            }
+        }
+    }
+   
     .views-infinite-scroll-content-wrapper {
         display: flex;
         flex-wrap: wrap;
