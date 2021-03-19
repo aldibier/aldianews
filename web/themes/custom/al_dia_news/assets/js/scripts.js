@@ -135,17 +135,19 @@ __webpack_require__.r(__webpack_exports__);
       Object(_scroll_magic_js__WEBPACK_IMPORTED_MODULE_0__["default"])();
       var alto = $('.content-right-pages').height();
       var pautas = $('.pautas').height();
+      console.log(pautas);
       var controller1 = new ScrollMagic.Controller({
         globalSceneOptions: {
-          duration: alto
+          duration: alto,
+          triggerHook: 1
         }
       });
       new ScrollMagic.Scene({
-        triggerElement: alto + pautas,
-        triggerHook: 1
-      }).setClassToggle(".pautas", "active") // add class toggle
-      .addIndicators() // add indicators (requires plugin)
-      .addTo(controller1);
+        triggerElement: '.pautas'
+      }).setClassToggle(".pautas", "active").addIndicators({
+        name: "pin scene",
+        colorEnd: "#0000"
+      }).addTo(controller1).offset(pautas);
     }
 
     Object(_slick_js__WEBPACK_IMPORTED_MODULE_1__["default"])($, Drupal);

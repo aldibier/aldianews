@@ -43,18 +43,25 @@ import initSlick from "./slick.js";
         if (window.matchMedia("(min-width: 768px)").matches) {
             initScrollMagic();
 
+           
             const alto = $('.content-right-pages').height();
             const pautas = $('.pautas').height();
+            console.log(pautas);
 
-            var controller1 = new ScrollMagic.Controller({globalSceneOptions: {duration: alto}});
-            new ScrollMagic.Scene({
-                triggerElement: alto + pautas,
+            var controller1 = new ScrollMagic.Controller({globalSceneOptions: {
+                duration: alto,
                 triggerHook: 1
+            }});
+
+            new ScrollMagic.Scene({
+                triggerElement: '.pautas'
             })
-            .setClassToggle(".pautas", "active") // add class toggle
-            .addIndicators()
-            // add indicators (requires plugin)
-            .addTo(controller1);
+            .setClassToggle(".pautas", "active")
+            .addIndicators({name: "pin scene", colorEnd: "#0000"})
+            .addTo(controller1)
+            .offset(pautas);
+
+            
         }
 
        
