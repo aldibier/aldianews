@@ -2,9 +2,9 @@
 .card-more {
 
 
-   //reset style
-  
-   .field--type-entity-reference {
+  //reset style
+
+  .field--type-entity-reference {
     all: initial;
     margin: 0;
     font-family: initial;
@@ -153,6 +153,12 @@
         margin: 0;
         object-fit: contain;
 
+        $screen-query: 993px;
+
+        @media (min-width: $screen-query) {
+          height: 100px;
+        }
+
         @media (max-width: $broken) {
           min-width: 140px;
         }
@@ -164,7 +170,7 @@
         margin: 0 0 10px;
         line-height: 0;
 
-        @media screen and(max-width:$broken) { 
+        @media screen and(max-width:$broken) {
           margin: 0 0 5px;
         }
       }
@@ -179,9 +185,9 @@
         letter-spacing: 0.08em;
         color: $corange;
 
-        @media screen and(max-width:$broken) { 
-         font-size: szrem(18);
-         line-height: 22px;
+        @media screen and(max-width:$broken) {
+          font-size: szrem(18);
+          line-height: 22px;
         }
 
         @media screen and(max-width:$tablet) {
