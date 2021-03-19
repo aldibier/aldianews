@@ -100,7 +100,7 @@
             height: 30px;
             margin: 0 10px 0 0;
             display: block;
-            background-image: url('../../assets/img/alert.svg') center center no-repeat;
+            background: url('../../assets/img/alert.svg') center center no-repeat;
         }
 
         p {
@@ -175,7 +175,16 @@
         }
     }
 
-    @media(min-width:$tablet) {
+    @media(max-width:$tablet) {
+
+        padding: 0 0 21px;
+        border-bottom: 0.5px solid $cgrey4;
+        margin: 0 0 20px;
+
+        &:last-child {
+            border: none;
+        }
+
         h3 {
             font-size: 18px;
             line-height: 22px;
@@ -214,7 +223,7 @@
             &:before {
                 width: 15px;
                 min-width: 15px;
-                background-size: 15px;
+                background-size: contain;
             }
         }
 

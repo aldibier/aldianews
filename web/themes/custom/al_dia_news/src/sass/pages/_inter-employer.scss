@@ -276,5 +276,19 @@
                 }
             }
         }
+
+        @media(max-width:$tablet) {
+            border-top: 1.5px solid $cgrey6;
+
+            .views-row {
+                width: 100%;
+            }
+
+            h2 {
+                font-size: 15px;
+                line-height: 18px;
+                margin: -9px 0 20px;
+            }
+        }
     }
 }
