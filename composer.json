@@ -12,7 +12,20 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "xdamman/selection-sharer",
+                "version": "1.2.2",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://github.com/xdamman/selection-sharer/archive/refs/heads/master.zip",
+                    "type": "zip"
+                }
+            }
         }
+
     ],
     "require": {
         "composer/installers": "^1.9",

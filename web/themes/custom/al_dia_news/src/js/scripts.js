@@ -1,16 +1,20 @@
-import initScrollMagic from "./scroll-magic.js";
+
+import "../../assets/libraries/selection-sharer/selection-sharer.css";
+import SelectionSharer from "../../assets/libraries/selection-sharer/selection-sharer.js";
 import initSlick from "./slick.js";
 
 (function ($, Drupal) {
-    jQuery( document ).ready(function() {
+    const sharer = new SelectionSharer();
+    sharer.setElements('p')
 
+    jQuery( document ).ready(function() {
         //--------- menu--------------------//
         $('.region-header #block-blockheader').click(function () {
             if ($('.region-secondary-menu').hasClass('open-menu')) {
                 $('.region-secondary-menu').removeClass('open-menu');
                 $('body').removeClass('open-menu');
             }
-            else {  
+            else {
                 $('.region-secondary-menu').addClass('open-menu');
                 $('body').addClass('open-menu');
             }
@@ -27,7 +31,7 @@ import initSlick from "./slick.js";
                 $(this).removeClass('open');
                 $('.user-logged-in #block-al-dia-news-account-menu').removeClass('open');
             }
-            else {  
+            else {
                 $('.user-logged-in #block-al-dia-news-account-menu').addClass('open');
                 $(this).addClass('open');
             }
@@ -83,9 +87,11 @@ import initSlick from "./slick.js";
 
         }
 
-       
-       
+
+
         initSlick($, Drupal);
-        
+
     });
+
+
 })(jQuery, Drupal);
