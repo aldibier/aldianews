@@ -29,6 +29,20 @@
                 position: relative;
             }
         }
+
+        .field--name-field-custom-title {
+            position: absolute;
+            z-index: 2;
+            bottom: 70px;
+           
+            h1 {
+                font-style: normal;
+                font-weight: bold;
+                font-size: $px78;
+                line-height: 95px;
+                font-family: $PrNovacond-bold;
+            }
+        }
     }
    
     .views-infinite-scroll-content-wrapper {
