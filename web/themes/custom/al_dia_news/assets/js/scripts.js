@@ -132,20 +132,39 @@ __webpack_require__.r(__webpack_exports__);
     }); //--------- initialization --------------------//
 
     if (window.matchMedia("(min-width: 768px)").matches) {
-      Object(_scroll_magic_js__WEBPACK_IMPORTED_MODULE_0__["default"])();
+      //initScrollMagic();
       var alto = $('.content-right-pages').height();
       var pautas = $('.pautas').height();
+      var altoscroll = $(alto - pautas);
+      console.log(altoscroll[0]);
       var controller1 = new ScrollMagic.Controller({
         globalSceneOptions: {
-          duration: alto
+          triggerHook: 1,
+          duration: altoscroll[0]
         }
       });
-      new ScrollMagic.Scene({
-        triggerElement: alto + pautas,
-        triggerHook: 1
-      }).setClassToggle(".pautas", "active") // add class toggle
-      .addIndicators() // add indicators (requires plugin)
-      .addTo(controller1);
+      var scene1 = new ScrollMagic.Scene({
+        triggerElement: '.content-right-pages'
+      }).setClassToggle(".pautas", "active").setPin('.pautas', {
+        pushFollowers: false
+      }) //.addIndicators()
+      .addTo(controller1).offset(pautas); //------------ scroll internas--------------//
+
+      var altorigh = $('.container-right').height();
+      var noticias = $('.block-views-blockmore-in-this-section-news-block-1').height();
+      var altoscrolltotal = $(altorigh - noticias);
+      console.log(altoscrolltotal[0]);
+      var controller3 = new ScrollMagic.Controller({
+        globalSceneOptions: {
+          triggerHook: 1,
+          duration: altoscrolltotal[0]
+        }
+      });
+      var scene3 = new ScrollMagic.Scene({
+        triggerElement: '.container-right'
+      }).setClassToggle(".block-views-blockmore-in-this-section-news-block-1", "active").setPin('.block-views-blockmore-in-this-section-news-block-1', {
+        pushFollowers: false
+      }).addIndicators().addTo(controller3).offset(noticias);
     }
 
     Object(_slick_js__WEBPACK_IMPORTED_MODULE_1__["default"])($, Drupal);
