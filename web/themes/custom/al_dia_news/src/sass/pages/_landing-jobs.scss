@@ -73,6 +73,30 @@
                 width: 100%;
                 margin: 40px 0;
                 padding: 0;
+
+                &:nth-child(3n+1){
+                    padding: 0;
+    
+                    &:before {
+                        display: none;
+                    }
+                }
+    
+                &:nth-child(3n+2){
+                    padding: 0;
+    
+                    &:after {
+                        display: none;
+                    }
+                }
+    
+                &:nth-child(3n+3){
+                    padding: 0;
+    
+                    &:after {
+                        display: none;
+                    }
+                }
             }
         }
     }
