@@ -24,7 +24,7 @@
         }
 
         .view-content {
-            padding: 0 15px;
+            padding: 0 20px 0 0;
             height: 520px;
             margin: 20px 0;
         }
@@ -122,6 +122,7 @@
 
             .view-content{
                 height: auto;
+                padding: 0;
             }
 
             img {
@@ -158,14 +159,14 @@
             @media(max-width:$broken){
                 
                 &:nth-child(2n + 1) {
-                    padding: 0 5px 0 15px;
+                    padding: 0 5px 0 0;
                     width: 50%;
                     max-width: 50%;
                     margin: 20px auto 20px 0;
                 }
 
                 &:nth-child(2n + 2) {
-                    padding: 0 15px 0 5px;
+                    padding: 0 0 0 5px;
                     width: 50%;
                     max-width: 50%;
                     margin: 20px 0 20px auto;

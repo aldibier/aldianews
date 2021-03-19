@@ -1290,7 +1290,8 @@ __webpack_require__.r(__webpack_exports__);
         triggerElement: '.container-right'
       }).setClassToggle(".block-views-blockmore-in-this-section-news-block-1", "active").setPin('.block-views-blockmore-in-this-section-news-block-1', {
         pushFollowers: false
-      }).addIndicators().addTo(controller3).offset(noticias);
+      }) //.addIndicators()
+      .addTo(controller3).offset(noticias);
     }
 
     Object(_slick_js__WEBPACK_IMPORTED_MODULE_2__["default"])($, Drupal);
