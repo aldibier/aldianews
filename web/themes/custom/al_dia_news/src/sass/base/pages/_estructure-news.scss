@@ -29,6 +29,22 @@
     }
 }
 
+.page-node-type-news,
+.page-node-type-thought-leaders{
+    @media(min-width: $tablet){
+        .node__content > .container-content{
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .container-right {
+            position: relative;
+            right: auto;
+            order: 3;
+        }
+    }
+}
+
 .page-node-type-news {
 
     .node__content  {
