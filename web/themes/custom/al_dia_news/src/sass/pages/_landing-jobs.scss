@@ -42,6 +42,23 @@
                 line-height: 95px;
                 font-family: $PrNovacond-bold;
                 color: $cwhite;
+                padding: 0 15px;
+            }
+        }
+
+        @media(max-width:$tablet) {
+
+            .field--name-field-image-block {
+                min-height: 215px;
+            }
+
+            .field--name-field-custom-title  {
+                bottom: 25px;
+
+                h1 {
+                    font-size: 25px;
+                    line-height: 30px;
+                }
             }
         }
     }
