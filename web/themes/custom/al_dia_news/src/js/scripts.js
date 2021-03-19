@@ -44,22 +44,22 @@ import initSlick from "./slick.js";
             //initScrollMagic();
 
 
-            // const alto = $('.content-right-pages').height();
-            // const pautas = $('.pautas').height();
-            // const altoscroll = $(alto - pautas);
-            // console.log(altoscroll[0]);
+            const alto = $('.content-right-pages').height();
+            const pautas = $('.pautas').height();
+            const altoscroll = $(alto - pautas);
+            console.log(altoscroll[0]);
 
-            // var controller1 = new ScrollMagic.Controller({globalSceneOptions: {
-            //     triggerHook: 1,
-            //     duration: altoscroll[0]
-            // }});
+            var controller1 = new ScrollMagic.Controller({globalSceneOptions: {
+                triggerHook: 1,
+                duration: altoscroll[0]
+            }});
 
-            // var scene1 = new ScrollMagic.Scene({triggerElement: '.content-right-pages'})
-            // .setClassToggle(".pautas", "active")
-            // .setPin('.pautas', { pushFollowers: false })
-            // //.addIndicators()
-            // .addTo(controller1)
-            // .offset(pautas);
+            var scene1 = new ScrollMagic.Scene({triggerElement: '.content-right-pages'})
+            .setClassToggle(".pautas", "active")
+            .setPin('.pautas', { pushFollowers: false })
+            //.addIndicators()
+            .addTo(controller1)
+            .offset(pautas);
 
 
             //------------ scroll internas--------------//
