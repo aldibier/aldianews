@@ -3,33 +3,43 @@ langcode: en
 status: true
 dependencies:
   config:
-    - image.style.next_two_image_desktop
-    - image.style.next_two_image_mobile
-    - image.style.next_two_image_tablet
+    - image.style.card_one_column_desktop
+    - image.style.card_one_column_mobile
+    - image.style.card_one_column_tablet
   theme:
     - al_dia_news
 id: next_two_image_responsive
-label: 'Next two image responsive'
+label: 'Card one column responsive'
 image_style_mappings:
+  -
+    breakpoint_id: al_dia_news.extra_x2_large
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: card_one_column_desktop
   -
     breakpoint_id: al_dia_news.extra_large
     multiplier: 1x
     image_mapping_type: image_style
-    image_mapping: next_two_image_desktop
+    image_mapping: card_one_column_desktop
+  -
+    breakpoint_id: al_dia_news.large
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: card_one_column_tablet
   -
     breakpoint_id: al_dia_news.medium
     multiplier: 1x
     image_mapping_type: image_style
-    image_mapping: next_two_image_tablet
+    image_mapping: card_one_column_tablet
   -
     breakpoint_id: al_dia_news.small
     multiplier: 1x
     image_mapping_type: image_style
-    image_mapping: next_two_image_mobile
+    image_mapping: card_one_column_mobile
   -
     breakpoint_id: al_dia_news.extra_small
     multiplier: 1x
     image_mapping_type: image_style
-    image_mapping: next_two_image_mobile
+    image_mapping: card_one_column_mobile
 breakpoint_group: 'Al dia news'
 fallback_image_style: '_original image_'
