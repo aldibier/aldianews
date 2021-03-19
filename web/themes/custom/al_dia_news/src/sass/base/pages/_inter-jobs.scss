@@ -21,7 +21,12 @@
     }
 
     .pautas {
+        height: max-content;
 
+        @media(min-width: $tablet) {
+            width: initial !important;
+        }
+        
         @media(max-width: $tablet) {
             .one-vertical-advertising{
                 width: 100%;
