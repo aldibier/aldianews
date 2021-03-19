@@ -42,7 +42,22 @@ import initSlick from "./slick.js";
 
         if (window.matchMedia("(min-width: 768px)").matches) {
             initScrollMagic();
+
+            const alto = $('.content-right-pages').height();
+            const pautas = $('.pautas').height();
+
+            var controller1 = new ScrollMagic.Controller({globalSceneOptions: {duration: alto}});
+            new ScrollMagic.Scene({
+                triggerElement: alto + pautas,
+                triggerHook: 1
+            })
+            .setClassToggle(".pautas", "active") // add class toggle
+            .addIndicators()
+            // add indicators (requires plugin)
+            .addTo(controller1);
         }
+
+       
        
         initSlick($, Drupal);
         
