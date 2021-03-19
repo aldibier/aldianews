@@ -136,7 +136,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<a href=\"/job-seeker\">{{ 'BACK'|trans }}</a>\r\n<a href=\"{{ field_link_to_apply_for_the_job }}\">{{ 'APPLY'|trans }}</a>"
+            text: "<a href=\"/job-seeker\">{{ 'BACK'|trans }}</a>\r\n<a href=\"{{ field_link_to_apply_for_the_job }} target:\"_blank\"\">{{ 'APPLY'|trans }}</a>"
             make_link: false
             path: ''
             absolute: false
