@@ -4,8 +4,7 @@
     .block-fixed-block-contentheader-i-am-a-job-seeker {
 
         .field--name-field-image-block {
-            margin: 0 -15px 20px;
-
+            
             &::after {
                 @include absolute(top 0 left 0);
                 @include esize(100%);
@@ -18,7 +17,7 @@
             img {
                 @include absolute(top 0 left 0);
                 @include esize(100%);
-                z-index: -2;
+                z-index: 0;
                 object-fit: cover;
             }
 
@@ -26,6 +25,7 @@
                 padding: 40px 85px 100px;
                 min-height: 710px;
                 margin: 0 -80px 70px;
+                position: relative;
             }
         }
     }
