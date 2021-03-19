@@ -6,19 +6,53 @@
 
         .views-row {
             width: 33.33%;
+            margin: 40px 0;
 
             &:nth-child(3n+1){
                 padding: 0 20px 0 0;
+
+                &:after {
+                    content: '';
+                    width: 100%;
+                    height: 1px;
+                    display: block;
+                    position: absolute;
+                    left: 0;
+                    margin: 0 0 -40px;
+                    background: $cgrey4;
+                }
             }
 
             &:nth-child(3n+2){
                 padding: 0 20px;
                 position: relative;
+
+                &:after {
+                    content: '';
+                    width: 1px;
+                    height: 100%;
+                    display: block;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    background: $cgrey4;
+                }
             }
 
             &:nth-child(3n+3){
-                padding: 0 20px 0 0;
+                padding: 0 0 0 20px;
                 position: relative;
+
+                &:after {
+                    content: '';
+                    width: 1px;
+                    height: 100%;
+                    display: block;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    background: $cgrey4;
+                }
             }
 
             @extend .rows-employer
