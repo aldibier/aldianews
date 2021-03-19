@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "34e570525dbb26a001b8a46a7e5a3e63",
+    "content-hash": "688f8d04cf1635d121981fc87a27cc17",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -4915,6 +4915,58 @@
             }
         },
         {
+            "name": "drupal/react_comments",
+            "version": "1.0.0-beta2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/react_comments.git",
+                "reference": "8.x-1.0-beta2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/react_comments-8.x-1.0-beta2.zip",
+                "reference": "8.x-1.0-beta2",
+                "shasum": "68cb26b7a752a50f0c169bb24e1d8891a4ddb411"
+            },
+            "require": {
+                "drupal/core": "^8.8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.0-beta2",
+                    "datestamp": "1593148771",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "elaman",
+                    "homepage": "https://www.drupal.org/user/702414"
+                },
+                {
+                    "name": "minnur",
+                    "homepage": "https://www.drupal.org/user/702026"
+                },
+                {
+                    "name": "void--",
+                    "homepage": "https://www.drupal.org/user/2990569"
+                }
+            ],
+            "description": "Commenting system built with React",
+            "homepage": "https://www.drupal.org/project/react_comments",
+            "support": {
+                "source": "https://git.drupalcode.org/project/react_comments"
+            }
+        },
+        {
             "name": "drupal/recaptcha",
             "version": "3.0.0",
             "source": {
@@ -9751,6 +9803,7 @@
         "drupal/better_exposed_filters": 20,
         "drupal/context": 10,
         "drupal/inline_entity_form": 5,
+        "drupal/react_comments": 10,
         "drupal/views_field_view": 10
     },
     "prefer-stable": true,
