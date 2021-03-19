@@ -1,8 +1,28 @@
 .path-job-seeker {
 
     .views-infinite-scroll-content-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+
         .views-row {
+            width: 33.33%;
+
+            &:nth-child(3n+1){
+                padding: 0 20px 0 0;
+            }
+
+            &:nth-child(3n+2){
+                padding: 0 20px;
+                position: relative;
+            }
+
+            &:nth-child(3n+3){
+                padding: 0 20px 0 0;
+                position: relative;
+            }
+
             @extend .rows-employer
+
         }
     }
 }
