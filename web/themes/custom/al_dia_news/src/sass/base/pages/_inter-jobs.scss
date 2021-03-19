@@ -19,6 +19,22 @@
             margin: 40px 0;
         }
     }
+
+    .pautas {
+
+        @media(max-width: $tablet) {
+            .one-vertical-advertising{
+                width: 100%;
+                margin: 0 auto;
+                padding: 0 60px;
+                max-width: 500px;
+            }
+
+            .two-vertical-advertising {
+                display: none;
+            }
+        }
+    }
 }
 
 .content-left-pages {
@@ -193,5 +209,7 @@
 
     @media(max-width: $tablet){
         margin: 40px 0;
+        max-width: 100%;
+        width: 100%;
     }
 }

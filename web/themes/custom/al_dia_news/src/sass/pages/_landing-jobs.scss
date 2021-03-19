@@ -1,0 +1,166 @@
+.path-job-seeker {
+
+
+    .block-fixed-block-contentheader-i-am-a-job-seeker {
+        margin: 0 -15px 20px;
+
+        .field--name-field-image-block {
+
+            &::after {
+                @include absolute(top 0 left 0);
+                @include esize(100%);
+                display: block;
+                z-index: 1;
+                content: '';
+                background-color: $rgba1;
+            }
+
+            img {
+                @include absolute(top 0 left 0);
+                @include esize(100%);
+                z-index: 0;
+                object-fit: cover;
+            }
+
+            @media screen and (min-width: $tablet) {
+                padding: 40px 85px 100px;
+                min-height: 470px;
+                margin: 0 -80px 70px;
+                position: relative;
+            }
+        }
+
+        .field--name-field-custom-title {
+            position: absolute;
+            z-index: 2;
+            bottom: 70px;
+           
+            h1 {
+                font-style: normal;
+                font-weight: bold;
+                font-size: $px78;
+                line-height: 95px;
+                font-family: $PrNovacond-bold;
+                color: $cwhite;
+                padding: 0 15px;
+            }
+        }
+
+        @media(max-width:$tablet) {
+
+            .field--name-field-image-block {
+                min-height: 215px;
+            }
+
+            .field--name-field-custom-title  {
+                bottom: 25px;
+
+                h1 {
+                    font-size: 25px;
+                    line-height: 30px;
+                }
+            }
+        }
+    }
+   
+    .views-infinite-scroll-content-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+
+        .views-row {
+            width: 33.33%;
+            margin: 40px 0;
+
+            &:nth-child(3n+1){
+                padding: 0 20px 0 0;
+
+                &:before {
+                    content: '';
+                    width: 100%;
+                    height: 1px;
+                    display: block;
+                    position: absolute;
+                    left: 0;
+                    margin: -40px 0 0;
+                    background: $cgrey4;
+                }
+            }
+
+            &:nth-child(3n+2){
+                padding: 0 20px;
+                position: relative;
+
+                &:after {
+                    content: '';
+                    width: 1px;
+                    height: 100%;
+                    display: block;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    background: $cgrey4;
+                }
+            }
+
+            &:nth-child(3n+3){
+                padding: 0 0 0 20px;
+                position: relative;
+
+                &:after {
+                    content: '';
+                    width: 1px;
+                    height: 100%;
+                    display: block;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    background: $cgrey4;
+                }
+            }
+
+            &:first-child{
+                &::before{
+                    display: none;
+                }
+            }
+
+            @extend .rows-employer
+
+        }
+    }
+
+
+    @media(max-width:$tablet) {
+        .views-infinite-scroll-content-wrapper {
+            .views-row {
+                width: 100%;
+                margin: 25px 0 0;
+                padding: 0;
+
+                &:nth-child(3n+1){
+                    padding: 0 0 25px;
+    
+                    &:before {
+                        display: none;
+                    }
+                }
+    
+                &:nth-child(3n+2){
+                    padding: 0 0 25px;
+    
+                    &:after {
+                        display: none;
+                    }
+                }
+    
+                &:nth-child(3n+3){
+                    padding: 0 0 25px;
+    
+                    &:after {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -133,6 +133,19 @@ __webpack_require__.r(__webpack_exports__);
 
     if (window.matchMedia("(min-width: 768px)").matches) {
       Object(_scroll_magic_js__WEBPACK_IMPORTED_MODULE_0__["default"])();
+      var alto = $('.content-right-pages').height();
+      var pautas = $('.pautas').height();
+      var controller1 = new ScrollMagic.Controller({
+        globalSceneOptions: {
+          duration: alto
+        }
+      });
+      new ScrollMagic.Scene({
+        triggerElement: alto + pautas,
+        triggerHook: 1
+      }).setClassToggle(".pautas", "active") // add class toggle
+      .addIndicators() // add indicators (requires plugin)
+      .addTo(controller1);
     }
 
     Object(_slick_js__WEBPACK_IMPORTED_MODULE_1__["default"])($, Drupal);
