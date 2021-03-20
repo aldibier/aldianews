@@ -12,10 +12,10 @@ const initScrollMagic = ($, Drupal) => {
         const rigthPages = $('.content-right-pages')[0];
         const pautas = $('.pautas')[0];
 
-        const scene1 = new ScrollMagic.Scene({ triggerElement: $(rigthPages), duration: getDurationScene1 })
+        const scene1 = new ScrollMagic.Scene({ triggerElement: $(rigthPages)[0], duration: getDurationScene1 })
             .addTo(controller)
             .offset($(pautas).height())
-            .setPin($(pautas), { pushFollowers: false });
+            .setPin($(pautas)[0], { pushFollowers: false });
 
         function getDurationScene1() {
             return $(rigthPages).height() - $(pautas).height();

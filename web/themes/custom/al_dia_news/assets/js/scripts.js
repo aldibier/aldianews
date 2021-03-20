@@ -1219,7 +1219,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_libraries_selection_sharer_selection_sharer_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_assets_libraries_selection_sharer_selection_sharer_css__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _assets_libraries_selection_sharer_selection_sharer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../assets/libraries/selection-sharer/selection-sharer.js */ "./assets/libraries/selection-sharer/selection-sharer.js");
 /* harmony import */ var _assets_libraries_selection_sharer_selection_sharer_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_assets_libraries_selection_sharer_selection_sharer_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _slick_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./slick.js */ "./src/js/slick.js");
+/* harmony import */ var _scroll_magic__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./scroll-magic */ "./src/js/scroll-magic.js");
+/* harmony import */ var _slick_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./slick.js */ "./src/js/slick.js");
+
 
 
 
@@ -1257,46 +1259,66 @@ __webpack_require__.r(__webpack_exports__);
       $(this).html(text.replace(/AL/g, '<br>AL'));
     }); //--------- initialization --------------------//
 
-    if (window.matchMedia("(min-width: 768px)").matches) {
-      //initScrollMagic();
-      var alto = $('.content-right-pages').height();
-      var pautas = $('.pautas').height();
-      var altoscroll = $(alto - pautas);
-      console.log(altoscroll[0]);
-      var controller1 = new ScrollMagic.Controller({
-        globalSceneOptions: {
-          triggerHook: 1,
-          duration: altoscroll[0]
-        }
-      });
-      var scene1 = new ScrollMagic.Scene({
-        triggerElement: '.content-right-pages'
-      }).setClassToggle(".pautas", "active").setPin('.pautas', {
-        pushFollowers: false
-      }) //.addIndicators()
-      .addTo(controller1).offset(pautas); //------------ scroll internas--------------//
-
-      var altorigh = $('.container-right').height();
-      var noticias = $('.block-views-blockmore-in-this-section-news-block-1').height();
-      var altoscrolltotal = $(altorigh - noticias);
-      console.log(altoscrolltotal[0]);
-      var controller3 = new ScrollMagic.Controller({
-        globalSceneOptions: {
-          triggerHook: 1,
-          duration: altoscrolltotal[0]
-        }
-      });
-      var scene3 = new ScrollMagic.Scene({
-        triggerElement: '.container-right'
-      }).setClassToggle(".block-views-blockmore-in-this-section-news-block-1", "active").setPin('.block-views-blockmore-in-this-section-news-block-1', {
-        pushFollowers: false
-      }) //.addIndicators()
-      .addTo(controller3).offset(noticias);
+    if (window.matchMedia("(min-width: 992px)").matches) {
+      Object(_scroll_magic__WEBPACK_IMPORTED_MODULE_2__["default"])($, Drupal);
     }
 
-    Object(_slick_js__WEBPACK_IMPORTED_MODULE_2__["default"])($, Drupal);
+    Object(_slick_js__WEBPACK_IMPORTED_MODULE_3__["default"])($, Drupal);
   });
 })(jQuery, Drupal);
+
+/***/ }),
+
+/***/ "./src/js/scroll-magic.js":
+/*!********************************!*\
+  !*** ./src/js/scroll-magic.js ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var initScrollMagic = function initScrollMagic($, Drupal) {
+  //------------ scroll jobs --------------//
+  var controller = new ScrollMagic.Controller({
+    globalSceneOptions: {
+      triggerHook: 1
+    }
+  });
+
+  if ($('.content-right-pages').length && $('.pautas').length) {
+    var getDurationScene1 = function getDurationScene1() {
+      return $(rigthPages).height() - $(pautas).height();
+    };
+
+    var rigthPages = $('.content-right-pages')[0];
+    var pautas = $('.pautas')[0];
+    var scene1 = new ScrollMagic.Scene({
+      triggerElement: $(rigthPages)[0],
+      duration: getDurationScene1
+    }).addTo(controller).offset($(pautas).height()).setPin($(pautas)[0], {
+      pushFollowers: false
+    });
+  } //------------ scroll internas --------------//
+
+
+  if ($('.container-right').length && $('.block-views-blockmore-in-this-section-news-block-1').length) {
+    var getDurationScene2 = function getDurationScene2() {
+      return $(containerRigth).height() - $(noticias).height();
+    };
+
+    var containerRigth = $('.container-right')[0];
+    var noticias = $('.block-views-blockmore-in-this-section-news-block-1')[0];
+    var scene2 = new ScrollMagic.Scene({
+      triggerElement: $(containerRigth)[0],
+      duration: getDurationScene2
+    }).addTo(controller).offset($(noticias).height()).setPin($(noticias)[0], {
+      pushFollowers: false
+    });
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (initScrollMagic);
 
 /***/ }),
 
