@@ -33,9 +33,18 @@
         #0b0b0b 77.63%);
     width: 100%;
     padding: 8rem 0 2.5rem;
+
+    @media screen and(max-width:$broken) {
+      padding: 8rem 0 25px;
+    }
   }
 
   &-image {
+
+    @media screen and(min-width:$broken) {
+      max-height: 520px;
+    }
+
     a {
       border: none;
     }
@@ -61,6 +70,10 @@
     max-width: 730px;
     margin: 0 auto;
     padding: 0 15px;
+
+    @media screen and(max-width:$tablet) {
+      padding: 0 20px;
+    }
   }
 
   &-category {

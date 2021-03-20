@@ -6,7 +6,13 @@
   }
 
   .card-image {
-    margin-bottom: 0;
+    margin-bottom: 10px;
+
+    $screen-query: 993px;
+
+    @media screen and (min-width: $screen-query) {
+      max-height: 235px;
+    }
 
     a {
       border: none;
@@ -55,11 +61,11 @@
 
     a {
       border: none;
-      font-size: szrem(30);
+      font-size: szrem(28);
       font-family: $PrNovacond-bold;
       font-style: normal;
       font-weight: bold;
-      line-height: 37px;
+      line-height: 34px;
       text-transform: uppercase;
       color: $cblack;
     }
@@ -86,11 +92,11 @@
   }
 
   .card-date {
-    font-size: 1rem;
+    font-size: szrem(14px);
     font-family: $PrNovacond-reg;
     font-style: normal;
     font-weight: normal;
-    line-height: 19px;
+    line-height: 17px;
     color: $cgrey3;
 
     @media screen and (max-width: $tablet) {
