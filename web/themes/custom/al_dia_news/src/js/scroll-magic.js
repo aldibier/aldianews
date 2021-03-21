@@ -1,13 +1,15 @@
 const initScrollMagic = ($, Drupal) => {
 
     //------------ scroll jobs --------------//
-    const controller = new ScrollMagic.Controller({
-        globalSceneOptions: {
-            triggerHook: 1,
-        }
-    });
+    
 
     if ($('.content-right-pages').length && $('.pautas').length) {
+
+        const controller = new ScrollMagic.Controller({
+            globalSceneOptions: {
+                triggerHook: 1,
+            }
+        });
 
         const rigthPages = $('.content-right-pages')[0];
         const pautas = $('.pautas')[0];
@@ -24,6 +26,12 @@ const initScrollMagic = ($, Drupal) => {
 
     //------------ scroll internas --------------//
     if ($('.container-right').length && $('.block-views-blockmore-in-this-section-news-block-1').length) {
+
+        const controller = new ScrollMagic.Controller({
+            globalSceneOptions: {
+                triggerHook: 0.97,
+            }
+        });
 
         const containerRigth = $('.container-right')[0];
         const noticias = $('.block-views-blockmore-in-this-section-news-block-1')[0];
