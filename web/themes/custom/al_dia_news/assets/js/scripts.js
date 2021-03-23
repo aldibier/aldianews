@@ -1263,11 +1263,11 @@ __webpack_require__.r(__webpack_exports__);
       Object(_scroll_magic__WEBPACK_IMPORTED_MODULE_2__["default"])($, Drupal);
     }
 
-    $('.button-apply').click(function () {
-      if ($('.block-webform-block').hasClass('open')) {
-        $('.block-webform-block').removeClass('open');
+    $('.page-node-type-al-dia-vacancy .button-apply').click(function () {
+      if ($('.page-node-type-al-dia-vacancy .block-webform-block').hasClass('open')) {
+        $('.page-node-type-al-dia-vacancy .block-webform-block').removeClass('open');
       } else {
-        $('.block-webform-block').addClass('open');
+        $('.page-node-type-al-dia-vacancy .block-webform-block').addClass('open');
       }
     });
     Object(_slick_js__WEBPACK_IMPORTED_MODULE_3__["default"])($, Drupal);
@@ -1286,7 +1286,12 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 var initScrollMagic = function initScrollMagic($, Drupal) {
-  //------------ scroll jobs --------------//
+  var controller = new ScrollMagic.Controller({
+    globalSceneOptions: {
+      triggerHook: 1
+    }
+  }); //------------ scroll jobs --------------//
+
   var rigthPages = document.querySelector('.content-right-pages');
   var pautas = document.querySelector('.pautas');
 
