@@ -231,5 +231,41 @@
                 line-height: 25px;
             }
         }
+
+        .block-webform-block.open{
+
+            >.modal-apply-webform {
+                top: 0;
+                min-height: auto;
+                height: max-content;
+                padding: 20px;
+                max-height: 72%;
+                overflow-y: auto;
+            }
+
+            h2 {
+                font-size: 20px;
+                line-height: 24px;
+                margin: 40px 0 0;
+                padding: 5px 0;
+            }
+
+            .js-form-item {
+
+                &:nth-child(2n+1) {
+                    padding: 0;
+                    width: 100%;
+                }
+
+                &:nth-child(2n+2) {
+                    padding: 0;
+                    width: 100%;
+                }
+            }
+        }
+
+        #edit-close-window {
+            margin: 20px 20px 0 0;
+        }
     }
 }
