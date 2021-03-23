@@ -197,6 +197,26 @@
 
         .webform-file-button {
             background: $bgrey;
+            min-width: 165px;
+            width: max-content;
+        }
+
+        #edit-actions-submit {
+            position: absolute;
+            left: 190px;
+            width: max-content;
+            bottom: 65px;
+            border: none;
+            border-radius: 0;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: $px18;
+            line-height: 25px;
+            color: $cwhite;
+            background: $corange;
+            min-width: 150px;
         }
     }
 
