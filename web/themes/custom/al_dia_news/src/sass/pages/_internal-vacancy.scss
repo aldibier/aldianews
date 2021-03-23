@@ -5,16 +5,7 @@
         width: 100%;
 
         .block-field-blocknodeal-dia-vacancyfield-picture {
-
-            &::after {
-                @include absolute(top 0 left 0);
-                @include esize(100%);
-                display: block;
-                z-index: 1;
-                content: '';
-                background-color: $rgba1;
-            }
-
+            
             img {
                 @include absolute(top 0 left 0);
                 @include esize(100%);

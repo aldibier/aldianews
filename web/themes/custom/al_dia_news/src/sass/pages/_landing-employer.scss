@@ -1,0 +1,42 @@
+.path-employer {
+
+    .block-fixed-block-contentheader-i-am-an-employer {
+        position: relative;
+        width: 100%;
+
+        .field--type-image {
+
+            &::after {
+                @include absolute(top 0 left 0);
+                @include esize(100%);
+                display: block;
+                z-index: 1;
+                content: '';
+                background-color: $rgba1;
+            }
+
+            img {
+                @include absolute(top 0 left 0);
+                @include esize(100%);
+                z-index: 0;
+                object-fit: cover;
+            }
+
+            @media screen and (min-width: $tablet) {
+                padding: 40px 85px 100px;
+                min-height: 470px;
+                margin: 0 -80px 70px;
+                position: relative;
+            }
+        }
+
+        @media(max-width:$tablet) {
+
+            .field--type-image {
+                min-height: 215px;
+                margin: 0 -15px;
+                position: relative;
+            }
+        }
+    }
+}
