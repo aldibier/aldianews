@@ -21,7 +21,8 @@
   }
 
   //------ more content news ------------//
-  .one-content-category-four {
+  .one-content-category-four,
+  .one-content-subcategory-four{
     margin-right: 15px;
 
     @media (max-width: $broken) {
@@ -98,12 +99,18 @@
   }
 
   //------ more content category ------------//
-  &-category {
+  &-category,
+  &-subcategory {
     min-width: 400px;
 
     @media (max-width: $broken) {
       min-width: initial;
     }
+  }
+
+  //------ more content category ------------//
+  &-category,
+  &-subcategory {
 
     .container-content,
     .last-content-category-childs {

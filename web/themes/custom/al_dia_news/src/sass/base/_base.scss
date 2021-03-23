@@ -98,3 +98,32 @@ body.toolbar-tray-open.user-logged-in {
        //margin: 0; revisar
     }
 }
+
+
+//---------------------breadcrumb------------------//
+.breadcrumb {
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 16px;
+
+    a {
+        color: $grey10;
+        border: none;
+    }
+
+    li {
+        color: $cblack0;
+
+        &:before {
+            background: url('../img/Path.svg') center center no-repeat;
+            height: 10px;
+            width: 6px;
+            font-size: 0;
+            display: block;
+        }
+    }
+}
+
+//---------------------end breadcrumb----------------------//
