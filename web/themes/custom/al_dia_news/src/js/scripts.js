@@ -59,6 +59,15 @@ import initSlick from "./slick.js";
             }
         });
 
+        $('#edit-close-window').click(function () {
+            if ($('.page-node-type-al-dia-vacancy .block-webform-block').hasClass('open')) {
+                $('.page-node-type-al-dia-vacancy .block-webform-block').removeClass('open');
+            }
+            else {
+                $('.page-node-type-al-dia-vacancy .block-webform-block').addClass('open');
+            }
+        });
+
         initSlick($, Drupal);
     });
 
