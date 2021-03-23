@@ -171,6 +171,22 @@
             padding: 0 20px 10px 0;
             border-bottom: 1px solid $corange;
         }
+
+        .button-action {
+            border: none;
+            border-radius: 0;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: $px18;
+            line-height: 25px;
+            color: $cwhite;
+        }
+
+        .webform-file-button {
+            background: $bgrey;
+        }
     }
 
     @media (max-width: $tablet) {
