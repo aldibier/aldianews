@@ -97,7 +97,7 @@
             top: 210px;
             bottom: 0;
             margin: auto;
-            padding: 0 75px;
+            padding: 70px 75px;
             height: max-content;
         }
 
@@ -109,6 +109,18 @@
         .js-form-item {
             width: 50%;
         }
+    }
 
+    @media (max-width: $tablet) {
+
+        .block-field-blocknodeal-dia-vacancybody {
+
+            .button-apply {
+                min-width: 131.82px;
+                height: 30px;
+                font-size: 12px;
+                line-height: 25px;
+            }
+        }
     }
 }
