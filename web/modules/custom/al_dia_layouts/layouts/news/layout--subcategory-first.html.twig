@@ -20,8 +20,10 @@
     {% endif %}
 
     {% if content.two_content %}
-        <div {{ region_attributes.two_content.addClass('two-content-subcategory block-info-short main-news-content') }}>
-          {{ content.two_content}} 
+        <div {{ region_attributes.two_content.addClass('two-content-subcategory block-info-short') }}>
+          <div class="main-news-content">
+            {{ content.two_content}} 
+          </div>
         </div>
     {% endif %}
 

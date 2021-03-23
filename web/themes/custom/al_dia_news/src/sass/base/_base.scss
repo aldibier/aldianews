@@ -98,3 +98,55 @@ body.toolbar-tray-open.user-logged-in {
        //margin: 0; revisar
     }
 }
+
+
+//---------------------breadcrumb------------------//
+.breadcrumb {
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 16px;
+    margin: 45px 0 10px;
+
+    ol {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    a {
+        color: $grey10;
+        border: none;
+    }
+
+    li {
+        color: $cblack0;
+        display: flex;
+
+        &:before {
+            background: url('../img/Path.svg') center center no-repeat;
+            height: 10px;
+            width: 6px;
+            font-size: 0;
+            display: block;
+            margin: 2px 5px 0;
+        }
+    }
+
+    @media (max-width: $tablet) {
+        margin: 0;
+        font-size: 10px;
+        line-height: 12px;
+
+        li {
+
+            &:before {
+                width: 9px;
+                height: 5px;
+                margin: 5px 5px 0;
+            }
+        }
+    }
+}
+
+//---------------------end breadcrumb----------------------//

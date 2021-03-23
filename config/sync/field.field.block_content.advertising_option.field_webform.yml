@@ -1,0 +1,32 @@
+uuid: 5668c342-2bef-4d4d-af59-daf3c80e8201
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.advertising_option
+    - field.storage.block_content.field_webform
+    - webform.webform.contact_us
+  module:
+    - webform
+id: block_content.advertising_option.field_webform
+field_name: field_webform
+entity_type: block_content
+bundle: advertising_option
+label: Webform
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    default_data: ''
+    status: open
+    open: ''
+    close: ''
+    target_uuid: 8deb409e-90d5-4fc9-b787-527bed43c487
+default_value_callback: ''
+settings:
+  handler: 'default:webform'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: webform
