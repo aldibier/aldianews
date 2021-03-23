@@ -59,8 +59,6 @@ import initSlick from "./slick.js";
             }
         });
 
-
-
         initSlick($, Drupal);
     });
 
