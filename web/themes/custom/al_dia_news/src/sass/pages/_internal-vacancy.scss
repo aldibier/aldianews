@@ -1,5 +1,42 @@
 .page-node-type-al-dia-vacancy {
 
+    .block-fixed-block-contentheader-i-am-a-job-seeker {
+        margin: 0 -15px 20px;
+
+        .field--name-field-image-block {
+
+            &::after {
+                @include absolute(top 0 left 0);
+                @include esize(100%);
+                display: block;
+                z-index: 1;
+                content: '';
+                background-color: $rgba1;
+            }
+
+            img {
+                @include absolute(top 0 left 0);
+                @include esize(100%);
+                z-index: 0;
+                object-fit: cover;
+            }
+
+            @media screen and (min-width: $tablet) {
+                padding: 40px 85px 100px;
+                min-height: 470px;
+                margin: 0 -80px 70px;
+                position: relative;
+            }
+        }
+
+        @media(max-width:$tablet) {
+
+            .field--name-field-image-block {
+                min-height: 215px;
+            }
+        }
+    }
+
     .block-field-blocknodeal-dia-vacancybody {
         width: 100%;
 
