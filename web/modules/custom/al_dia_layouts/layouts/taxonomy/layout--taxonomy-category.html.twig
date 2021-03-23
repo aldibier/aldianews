@@ -33,6 +33,16 @@
           {{ content.two_more_content}} 
         </div>
     {% endif %}
+    {% if content.header_subcategory %}
+        <div {{ region_attributes.header_subcategory.addClass('header-subcategory-taxonomy') }}>
+          {{ content.header_subcategory}} 
+        </div>
+    {% endif %}
+    {% if content.first_block_subcategory %}
+        <div {{ region_attributes.first_block_subcategory.addClass('first-block-subcategory-taxonomy') }}>
+          {{ content.first_block_subcategory}} 
+        </div>
+    {% endif %}
     {% if content.subcategory %}
         <div {{ region_attributes.subcategory.addClass('subcategory-taxonomy') }}>
           {{ content.subcategory}} 

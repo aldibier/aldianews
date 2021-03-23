@@ -47,32 +47,32 @@ function al_dia_news_general_form_alter(&$form, $form_state, $form_id) {
 /**
  * Implements hook_node_view()
  */
-function al_dia_news_general_node_view(array &$build, NodeInterface $node, EntityViewDisplayInterface $display, $view_mode) {
-  //ksm($node->get('body')->getString());
-  $strBody = $node->get('body')->getString();
+// function al_dia_news_general_node_view(array &$build, NodeInterface $node, EntityViewDisplayInterface $display, $view_mode) {
+//   //ksm($node->get('body')->getString());
+//   $strBody = $node->get('body')->getString();
 
-  $count = substr_count($strBody, '<p>');
-  $block_id = 'views_block__related_content_block_1';
-  $block = \Drupal\block\Entity\Block::load($block_id);
-  //ksm($block);
-  if($count < 5){     
-    // Get the body values if there is now a body field.
-    if (isset($node->body)) {
-      $newStrBody = "<h1>this is my new body</h1>";
-      $newBody = $newStrBody;
-      $format = $node->get('body')->format;
+//   $count = substr_count($strBody, '<p>');
+//   $block_id = 'views_block__related_content_block_1';
+//   $block = \Drupal\block\Entity\Block::load($block_id);
+//   //ksm($block);
+//   if($count < 5){     
+//     // Get the body values if there is now a body field.
+//     if (isset($node->body)) {
+//       $newStrBody = "<h1>this is my new body</h1>";
+//       $newBody = $newStrBody;
+//       $format = $node->get('body')->format;
 
 
-      // Copy the values to the new fields, being careful not to wipe out other values that might be there.
-      $node->body->setValue(['value' => $newBody, 'format' => $format]);
+//       // Copy the values to the new fields, being careful not to wipe out other values that might be there.
+//       $node->body->setValue(['value' => $newBody, 'format' => $format]);
 
-      // Clear the body values.
-      //$node->body->setValue([]);
-      // Force a node save even if there are no changes to force the pre_save hook to be executed.
-      $node->save();
+//       // Clear the body values.
+//       //$node->body->setValue([]);
+//       // Force a node save even if there are no changes to force the pre_save hook to be executed.
+//       $node->save();
 
-    }
-  }
+//     }
+//   }
   // public function inlineImage($value){
   //   $url_media = "https://arquimedia.s3.amazonaws.com/";
   //   $path = 'public://migrate/img/';
@@ -122,7 +122,7 @@ function al_dia_news_general_node_view(array &$build, NodeInterface $node, Entit
   // }
 
   // $node->content['body'][0]['#markup'] = 'my additional text' . $strBody;
-}
+//}
 
 /**
  * Implement hook_views_query_alter.
