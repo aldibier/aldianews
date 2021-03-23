@@ -364,7 +364,7 @@ display:
           click_sort_column: value
           type: string
           settings:
-            link_to_entity: false
+            link_to_entity: true
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -389,7 +389,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"employer-container\" id=\"block-block-content-{{ uuid }}\">\r\n   {{ field_custom_title }}\r\n   {{ body }}\r\n</div>"
+            text: "<div class=\"employer-container\" id=\"block-{{ uuid }}\">\r\n   {{ field_custom_title }}\r\n   {{ body }}\r\n</div>"
             make_link: false
             path: ''
             absolute: false
