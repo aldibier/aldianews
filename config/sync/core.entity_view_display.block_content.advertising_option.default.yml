@@ -1,0 +1,43 @@
+uuid: ea614e70-4a3d-4c4e-9352-d5d32f94adc9
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.advertising_option
+    - field.field.block_content.advertising_option.body
+    - field.field.block_content.advertising_option.field_custom_title
+    - field.field.block_content.advertising_option.field_image
+  module:
+    - image
+    - text
+id: block_content.advertising_option.default
+targetEntityType: block_content
+bundle: advertising_option
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_custom_title:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_image:
+    weight: 2
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

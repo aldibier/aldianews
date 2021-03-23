@@ -34,7 +34,8 @@
 
             .block-field-blocknodeal-dia-vacancyfield-picture {
                 min-height: 215px;
-                width: 100%;
+                margin: 0 -15px;
+                position: relative;
             }
         }
     }
@@ -56,6 +57,7 @@
             font-family: $PrNovacond-bold;
             border: none;
             background: $corange;
+            cursor: pointer;
         }
     }
 
@@ -84,19 +86,21 @@
             display: block;
         }
 
-        >.content {
+        >.modal-apply-webform {
             z-index: 2;
-            max-width: 990px;
+            max-width: 1020px;
             min-height: 650px;
             background: $cwhite;
             position: absolute;
+            width: calc(100% - 30px);
             left: 0;
             right: 0;
-            top: 210px;
+            top: 180px;
             bottom: 0;
             margin: auto;
             padding: 70px 75px;
             height: max-content;
+            box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.45);
         }
 
         form {
@@ -106,6 +110,120 @@
 
         .js-form-item {
             width: 50%;
+
+            &:nth-child(2n + 1) {
+                padding: 0 20px 0 0;
+            }
+
+            &:nth-child(2n + 2) {
+                padding: 0 0 0 20px ;
+            }
+        }
+
+
+        #ajax-wrapper {
+            width: 100%;
+            margin: 37px 0 0;
+
+            .managed-file-placeholder {
+                max-width: 165px;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 12px;
+                line-height: 15px;
+                color: $grey9;
+                font-family: $PrNovacond-reg;
+            }
+
+        }
+
+        label {
+            font-style: normal;
+            font-weight: 600;
+            font-size: $px20;
+            line-height: 24px;
+            color: $cgrey6;
+            font-family: $PrNovacond-reg;
+        }
+
+        #edit-close-window {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 20px;
+            height: 20px;
+            overflow: hidden;
+            cursor: pointer;
+            padding: 0;
+            display: block;
+            font-size: 0;
+            background: url('../img/close.svg') center center no-repeat;
+            background-size: contain;
+            margin: -90px 0 0;
+
+            .webform-custom-options-button {
+                padding: 0;
+                border: none;
+                margin: 0;
+            }
+        }
+
+        input {
+            height: 40px;
+            background: $cgrey8;
+            width: 100%;
+            font-family: $PrNovacond-reg;
+        }
+
+        h2 {
+            font-style: normal;
+            font-weight: 600;
+            font-size: $px34;
+            line-height: 41px;
+            font-family: $Mod-Sbold;
+            color: $corange;
+            padding: 0 20px 10px 0;
+            border-bottom: 1px solid $corange;
+        }
+
+        .button-action {
+            border: none;
+            border-radius: 0;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: $px18;
+            line-height: 25px;
+            color: $cwhite;
+        }
+
+        .webform-file-button {
+            background: $bgrey;
+            min-width: 165px;
+            width: max-content;
+
+            &:before {
+                display: none;
+            }
+        }
+
+        #edit-actions-submit {
+            position: absolute;
+            left: 190px;
+            width: max-content;
+            bottom: 67px;
+            border: none;
+            border-radius: 0;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: $px18;
+            line-height: 25px;
+            color: $cwhite;
+            background: $corange;
+            min-width: 150px;
         }
     }
 
@@ -118,6 +236,71 @@
                 height: 30px;
                 font-size: 12px;
                 line-height: 25px;
+            }
+        }
+
+        .block-webform-block.open{
+
+            >.modal-apply-webform {
+                top: 15px;
+                min-height: auto;
+                height: max-content;
+                padding: 20px;
+                max-height: 72%;
+                overflow-y: auto;
+            }
+
+            h2 {
+                font-size: 20px;
+                line-height: 24px;
+                margin: 40px 0 0;
+                padding: 5px 0;
+            }
+
+            .js-form-item {
+
+                &:nth-child(2n+1) {
+                    padding: 0;
+                    width: 100%;
+                }
+
+                &:nth-child(2n+2) {
+                    padding: 0;
+                    width: 100%;
+                }
+            }
+
+            label {
+                font-size: 15px;
+                line-height: 18px;
+            }
+
+            input {
+                height: 30px;
+                font-size: 16px;
+            }
+
+            .webform-file-button {
+                min-width: 120px;
+                font-size: 14px;
+                height: 30px;
+            }
+
+            #edit-actions-submit {
+                height: 30px;
+                left: 134px;
+                min-width: 120px;
+                font-size: 14px;
+            }
+
+            #ajax-wrapper {
+                margin: 0;
+            }
+
+            #edit-close-window {
+                margin: -80px 0 0 0;
+                width: 15px;
+                height: 15px;
             }
         }
     }
