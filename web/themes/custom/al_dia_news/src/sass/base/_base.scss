@@ -114,7 +114,15 @@ body.toolbar-tray-open.user-logged-in {
     }
 
     li {
-        color: $corange;
+        color: $cblack0;
+
+        &:before {
+            background: url('../img/Path.svg') center center no-repeat;
+            height: 10px;
+            width: 6px;
+            font-size: 0;
+            display: block;
+        }
     }
 }
 
