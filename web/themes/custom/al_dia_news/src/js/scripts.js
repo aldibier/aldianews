@@ -50,9 +50,25 @@ import initSlick from "./slick.js";
         }
 
 
+        $('.page-node-type-al-dia-vacancy .button-apply').click(function () {
+            if ($('.page-node-type-al-dia-vacancy .block-webform-block').hasClass('open')) {
+                $('.page-node-type-al-dia-vacancy .block-webform-block').removeClass('open');
+            }
+            else {
+                $('.page-node-type-al-dia-vacancy .block-webform-block').addClass('open');
+            }
+        });
+
+        $('#edit-close-window').click(function () {
+            if ($('.page-node-type-al-dia-vacancy .block-webform-block').hasClass('open')) {
+                $('.page-node-type-al-dia-vacancy .block-webform-block').removeClass('open');
+            }
+            else {
+                $('.page-node-type-al-dia-vacancy .block-webform-block').addClass('open');
+            }
+        });
 
         initSlick($, Drupal);
-
     });
 
 

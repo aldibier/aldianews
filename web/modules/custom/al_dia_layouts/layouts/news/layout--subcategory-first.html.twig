@@ -11,17 +11,19 @@
  */
 #}
 {% if content %}
-  <div class="container-content">
+  <div class="container-content main-news">
 
     {% if content.one_content %}
-        <div {{ region_attributes.one_content.addClass('one-content-subcategory') }}>
+        <div {{ region_attributes.one_content.addClass('one-content-subcategory main-news-image') }}>
           {{ content.one_content|without("title") }} 
         </div>
     {% endif %}
 
     {% if content.two_content %}
         <div {{ region_attributes.two_content.addClass('two-content-subcategory block-info-short') }}>
-          {{ content.two_content}} 
+          <div class="main-news-content">
+            {{ content.two_content}} 
+          </div>
         </div>
     {% endif %}
 
