@@ -1263,6 +1263,13 @@ __webpack_require__.r(__webpack_exports__);
       Object(_scroll_magic__WEBPACK_IMPORTED_MODULE_2__["default"])($, Drupal);
     }
 
+    $('.button-apply').click(function () {
+      if ($('.block-webform-block').hasClass('open')) {
+        $('.block-webform-block').removeClass('open');
+      } else {
+        $('.block-webform-block').addClass('open');
+      }
+    });
     Object(_slick_js__WEBPACK_IMPORTED_MODULE_3__["default"])($, Drupal);
   });
 })(jQuery, Drupal);
