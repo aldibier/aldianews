@@ -7,10 +7,12 @@ dependencies:
     - field.field.block_content.advertising_option.body
     - field.field.block_content.advertising_option.field_custom_title
     - field.field.block_content.advertising_option.field_image
+    - field.field.block_content.advertising_option.field_webform
     - image.style.thumbnail
   module:
     - image
     - text
+    - webform
 id: block_content.advertising_option.default
 targetEntityType: block_content
 bundle: advertising_option
@@ -41,6 +43,14 @@ content:
       preview_image_style: thumbnail
     third_party_settings: {  }
     type: image_image
+    region: content
+  field_webform:
+    weight: 26
+    settings:
+      default_data: true
+      webforms: {  }
+    third_party_settings: {  }
+    type: webform_entity_reference_select
     region: content
   info:
     type: string_textfield

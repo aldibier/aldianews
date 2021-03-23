@@ -7,9 +7,11 @@ dependencies:
     - field.field.block_content.advertising_option.body
     - field.field.block_content.advertising_option.field_custom_title
     - field.field.block_content.advertising_option.field_image
+    - field.field.block_content.advertising_option.field_webform
   module:
     - image
     - text
+    - webform
 id: block_content.advertising_option.default
 targetEntityType: block_content
 bundle: advertising_option
@@ -37,6 +39,14 @@ content:
       image_link: ''
     third_party_settings: {  }
     type: image
+    region: content
+  field_webform:
+    weight: 3
+    label: above
+    settings:
+      source_entity: true
+    third_party_settings: {  }
+    type: webform_entity_reference_entity_view
     region: content
 hidden:
   langcode: true
