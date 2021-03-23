@@ -1,9 +1,10 @@
 .page-node-type-al-dia-vacancy {
 
-    #block-al-dia-news-content {
+    .one-content-image-general {
         margin: 0 -15px 20px;
+        position: relative;
 
-        .one-content-image-general {
+        .block-field-blocknodeal-dia-vacancyfield-picture {
 
             &::after {
                 @include absolute(top 0 left 0);
@@ -32,7 +33,7 @@
 
         @media(max-width:$tablet) {
 
-            .one-content-image-general {
+            .block-field-blocknodeal-dia-vacancyfield-picture {
                 min-height: 215px;
                 width: 100%;
             }
@@ -41,6 +42,7 @@
 
     .block-field-blocknodeal-dia-vacancybody {
         width: 100%;
+        padding: 0;
 
         .button-apply {
             min-width: 230px;
@@ -96,6 +98,6 @@
             margin: 0;
         }
 
-        
+
     }
 }
