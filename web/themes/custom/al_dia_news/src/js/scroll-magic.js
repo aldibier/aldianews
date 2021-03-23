@@ -1,8 +1,12 @@
 const initScrollMagic = ($, Drupal) => {
 
-    //------------ scroll jobs --------------//
-    
+    const controller = new ScrollMagic.Controller({
+        globalSceneOptions: {
+            triggerHook: 1,
+        }
+    });
 
+    //------------ scroll jobs --------------//
     const rigthPages = document.querySelector('.content-right-pages');
     const pautas = document.querySelector('.pautas');
 
@@ -39,10 +43,8 @@ const initScrollMagic = ($, Drupal) => {
 
     function resizeActivation(element, scene) {
         if (window.matchMedia("(min-width: 992px)").matches) {
-            console.log('activate')
             if (element) scene.setPin(element, { pushFollowers: false });
         } else {
-            console.log('desactivate')
             scene.removePin(element, true);
         }
     }

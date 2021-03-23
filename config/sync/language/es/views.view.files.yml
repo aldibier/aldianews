@@ -19,6 +19,8 @@ display:
         filename:
           label: Name
           separator: ', '
+        filemime:
+          label: 'Tipo MIME'
         filesize:
           label: Size
         status:
@@ -26,6 +28,9 @@ display:
         count:
           label: 'Usado en'
       filters:
+        filemime:
+          expose:
+            label: 'Tipo MIME'
         status:
           expose:
             label: Status

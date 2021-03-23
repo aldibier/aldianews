@@ -14,8 +14,14 @@
   <div class="container-content">
 
     {% if content.one_content %}
-        <div {{ region_attributes.one_content.addClass('one-content-subcategory-more ') }}>
+        <div {{ region_attributes.one_content.addClass('one-content-subcategory-more') }}>
           {{ content.one_content }} 
+        </div>
+    {% endif %}
+
+    {% if content.two_content %}
+        <div {{ region_attributes.two_content.addClass('card-content') }}>
+          {{ content.two_content }} 
         </div>
     {% endif %}
 

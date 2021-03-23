@@ -131,28 +131,6 @@
         display: flex;
     }
 
-    .views-row{
-        padding: 0 0 40px;
-        position: relative;
-
-        &:after {
-            content: '';
-            width: 100%;
-            bottom: 20px;
-            position: absolute;
-            height: 1px;
-            background: $cgrey4;
-        }
-
-        &:last-child {
-            padding: 0 0 0;
-
-            &::after {
-                display: none;
-            }
-        }
-    }
-
     .one-content-subcategory {
         overflow: hidden;
     }
@@ -162,19 +140,19 @@
     }
 
     .one-content-subcategory-four {
-        min-width: 175px;
+        /* min-width: 175px;
         height: 100px;
         border: none;
         margin: 0 15px 0 0;
 
         img {
             width: 175px;
-        }
+        } */
     }
 
     .block-field-blocknodenewsfield-short-title {
         a {
-            font-style: normal;
+            /* font-style: normal;
             font-weight: bold;
             font-size: $px24;
             line-height: 29px;
@@ -184,16 +162,16 @@
             color: $cblack;
             border: none;
             display: block;
-            width: 100%;
+            width: 100%; */
         }
     }
 
     .block-field-blocknodenewscreated {
-        font-style: normal;
+        /* font-style: normal;
         font-weight: normal;
         font-size: 16px;
         line-height: 19px;
-        color: $cgrey3;
+        color: $cgrey3; */
     }
 
     @media (max-width:$broken){
@@ -206,13 +184,13 @@
         .views-row{
 
             &:nth-child(2n+1){
-                padding: 0 5px 0 0;
+                /* padding: 0 5px 0 0;
                 width: 50%;
                 margin: 20px auto 20px 0;
-                position: initial;
+                position: initial; */
 
                 &:before {
-                    display: block;
+                   /*  display: block;
                     content: '';
                     width: calc(100% - 30px);
                     height: 1px;
@@ -220,46 +198,46 @@
                     background: $cgrey4;
                     position: absolute;
                     right: 0;
-                    margin: -20px auto 0;
+                    margin: -20px auto 0; */
                 }
             }
 
             &:first-child {
                 &:before {
-                    display: none;
+                   /*  display: none; */
                 }
             }
 
             &:nth-child(2n+2) {
-                padding: 0 0 0 5px;
+                /* padding: 0 0 0 5px;
                 width: 50%;
                 margin: 20px 0 20px auto;
-                position: initial;
+                position: initial; */
             }
 
             &:after {
-                display: none;
+               /*  display: none; */
             }
         }
 
         .container-content {
-            flex-wrap: wrap;
+           /*  flex-wrap: wrap; */
         }
         
         .one-content-subcategory-four {
-            width: 100%;
+            /* width: 100%;
             max-width: 100%;
             margin: 0;
             height: initial;
-            min-width: 100%;
+            min-width: 100%; */
 
             img {
-                width: 100%;
+                //width: 100%;
             }
         }
 
         .block-field-blocknodenewsfield-short-title a {
-            margin: 10px 0;
+            /* margin: 10px 0;
             font-style: normal;
             font-weight: bold;
             font-size: $px30;
@@ -267,29 +245,29 @@
             line-height: 37px;
             text-transform: uppercase;
             color: $cblack;
-            border: none;
+            border: none; */
         }
         
         .block-field-blocknodenewscreated {
-            font-style: normal;
+            /* font-style: normal;
             font-weight: normal;
             font-size: 16px;
             line-height: 19px;
-            color: $cgrey3;
+            color: $cgrey3; */
         }
     }
 
     @media (max-width:$tablet){
 
         .block-field-blocknodenewsfield-short-title a {
-            font-size: 14px;
+          /*   font-size: 14px;
             line-height: 17px;
-            margin: 10px 0;
+            margin: 10px 0; */
         }
 
         .block-field-blocknodenewscreated {
-            font-size: 10px;
-            line-height: 12px;
+            /* font-size: 10px;
+            line-height: 12px; */
         }
     }
 }

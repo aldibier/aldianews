@@ -2,9 +2,11 @@
     
     .block-views-blocksubcategory-only-for-children-block-1 {
         .view-header {
+            border-bottom: 3px solid $corange;
+
             a {
                 font-style: normal;
-                font-family: $Modcond-reg;
+                font-family: $Mod-light;
                 font-weight: normal;
                 font-size: $px42;
                 line-height: 50px;
@@ -17,10 +19,6 @@
                 }
 
             }
-
-            border-bottom: 3px solid $corange;
-            width: calc(100% - 30px);
-            margin: 0 auto;
         }
 
         .view-content {
@@ -147,16 +145,16 @@
         }
 
         .views-row {
-            width: 33.33%;
-            max-width: 430px;
-            @extend .block-notice-base;
+            //width: 33.33%;
+            //max-width: 430px;
+            //@extend .block-notice-base;
 
             .block-field-blocknodenewsfield-image {
                 max-height: 235px;
                 overflow: hidden;
             }
 
-            @media(max-width:$broken){
+           /*  @media(max-width:$broken){
                 
                 &:nth-child(2n + 1) {
                     padding: 0 5px 0 0;
@@ -171,12 +169,12 @@
                     max-width: 50%;
                     margin: 20px 0 20px auto;
                 }
-            }
+            } */
         }
 
         .views-infinite-scroll-content-wrapper {
-            display: flex;
-            flex-wrap: wrap;
+            //display: flex;
+            //flex-wrap: wrap;
         }
     }
 }

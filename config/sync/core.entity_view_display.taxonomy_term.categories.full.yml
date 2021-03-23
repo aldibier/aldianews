@@ -50,32 +50,6 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: -5
-          faaf9552-0d66-4382-a548-067376f143ad:
-            uuid: faaf9552-0d66-4382-a548-067376f143ad
-            region: subcategory
-            configuration:
-              id: 'views_block:subcategory_only_for_children-block_1'
-              label: ''
-              provider: views
-              label_display: '0'
-              views_label: ''
-              items_per_page: none
-              context_mapping: {  }
-            additional: {  }
-            weight: 0
-          07a831fb-3a49-477d-9c91-84b6c5c27153:
-            uuid: 07a831fb-3a49-477d-9c91-84b6c5c27153
-            region: subcategory
-            configuration:
-              id: 'views_block:subcategory_only_for_children-block_2'
-              label: ''
-              provider: views
-              label_display: visible
-              views_label: ''
-              items_per_page: none
-              context_mapping: {  }
-            additional: {  }
-            weight: 1
           1a348f3d-11c3-4fb2-9a34-75e4e1ff0b18:
             uuid: 1a348f3d-11c3-4fb2-9a34-75e4e1ff0b18
             region: subcategory
@@ -88,7 +62,7 @@ third_party_settings:
               items_per_page: none
               context_mapping: {  }
             additional: {  }
-            weight: 2
+            weight: -4
           e5d05f37-3954-4926-a371-024cea51a873:
             uuid: e5d05f37-3954-4926-a371-024cea51a873
             region: one_content_right
@@ -154,6 +128,45 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: 0
+          cbd08c23-5f00-4b22-9c0f-3794590fed6e:
+            uuid: cbd08c23-5f00-4b22-9c0f-3794590fed6e
+            region: header_subcategory
+            configuration:
+              id: 'views_block:subcategory_only_for_children-block_4'
+              label: ''
+              provider: views
+              label_display: '0'
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: -10
+          faaf9552-0d66-4382-a548-067376f143ad:
+            uuid: faaf9552-0d66-4382-a548-067376f143ad
+            region: first_block_subcategory
+            configuration:
+              id: 'views_block:subcategory_only_for_children-block_1'
+              label: ''
+              provider: views
+              label_display: '0'
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: -8
+          07a831fb-3a49-477d-9c91-84b6c5c27153:
+            uuid: 07a831fb-3a49-477d-9c91-84b6c5c27153
+            region: first_block_subcategory
+            configuration:
+              id: 'views_block:subcategory_only_for_children-block_2'
+              label: ''
+              provider: views
+              label_display: '0'
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: -6
         third_party_settings: {  }
 id: taxonomy_term.categories.full
 targetEntityType: taxonomy_term
