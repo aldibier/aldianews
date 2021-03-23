@@ -54,6 +54,7 @@
 
 //-------------block category first -----------------//
 .category-first-block {
+  max-height: 520px;
   margin-top: 45px;
   display: grid;
   grid-template-columns: 1fr auto;
@@ -61,13 +62,16 @@
   grid-template-areas:
     "area-1 area-2"
     "area-1 area-2";
+  overflow: hidden;
 
   @media screen and(max-width:$broken) {
+    max-height: initial;
     grid-template-columns: 1fr;
     grid-template-areas:
       "area-1"
       "area-2";
     grid-gap: 0;
+    overflow: initial;
   }
 
   @media screen and(max-width:$broken) {
