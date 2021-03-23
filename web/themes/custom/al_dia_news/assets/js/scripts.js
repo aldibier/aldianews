@@ -1263,6 +1263,13 @@ __webpack_require__.r(__webpack_exports__);
       Object(_scroll_magic__WEBPACK_IMPORTED_MODULE_2__["default"])($, Drupal);
     }
 
+    $('.button-apply').click(function () {
+      if ($('.block-webform-block').hasClass('open')) {
+        $('.block-webform-block').removeClass('open');
+      } else {
+        $('.block-webform-block').addClass('open');
+      }
+    });
     Object(_slick_js__WEBPACK_IMPORTED_MODULE_3__["default"])($, Drupal);
   });
 })(jQuery, Drupal);
@@ -1280,46 +1287,54 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 var initScrollMagic = function initScrollMagic($, Drupal) {
   //------------ scroll jobs --------------//
-  if ($('.content-right-pages').length && $('.pautas').length) {
+  var rigthPages = document.querySelector('.content-right-pages');
+  var pautas = document.querySelector('.pautas');
+
+  if (!!rigthPages && !!pautas) {
     var getDurationScene1 = function getDurationScene1() {
-      return $(rigthPages).height() - $(pautas).height();
+      return rigthPages.offsetHeight - pautas.offsetHeight;
     };
 
-    var controller = new ScrollMagic.Controller({
-      globalSceneOptions: {
-        triggerHook: 1
-      }
-    });
-    var rigthPages = $('.content-right-pages')[0];
-    var pautas = $('.pautas')[0];
     var scene1 = new ScrollMagic.Scene({
-      triggerElement: $(rigthPages)[0],
+      triggerElement: rigthPages,
       duration: getDurationScene1
-    }).addTo(controller).offset($(pautas).height()).setPin($(pautas)[0], {
+    }).addTo(controller).offset(pautas.offsetHeight + 20).setPin(pautas, {
       pushFollowers: false
     });
-  } //------------ scroll internas --------------//
+    window.addEventListener("resize", function () {
+      return resizeActivation(pautas, scene1);
+    });
+  }
 
+  var containerRigth = document.querySelector('.container-right');
+  var noticias = document.querySelector('.block-views-blockmore-in-this-section-news-block-1'); //------------ scroll internas --------------//
 
-  if ($('.container-right').length && $('.block-views-blockmore-in-this-section-news-block-1').length) {
+  if (!!containerRigth && !!noticias) {
     var getDurationScene2 = function getDurationScene2() {
-      return $(containerRigth).height() - $(noticias).height();
+      return containerRigth.offsetHeight - noticias.offsetHeight;
     };
 
-    var _controller = new ScrollMagic.Controller({
-      globalSceneOptions: {
-        triggerHook: 0.97
-      }
-    });
-
-    var containerRigth = $('.container-right')[0];
-    var noticias = $('.block-views-blockmore-in-this-section-news-block-1')[0];
     var scene2 = new ScrollMagic.Scene({
-      triggerElement: $(containerRigth)[0],
+      triggerElement: containerRigth,
       duration: getDurationScene2
-    }).addTo(_controller).offset($(noticias).height()).setPin($(noticias)[0], {
+    }).addTo(controller).offset(noticias.offsetHeight + 20).setPin(noticias, {
       pushFollowers: false
     });
+    window.addEventListener("resize", function () {
+      return resizeActivation(noticias, scene2);
+    });
+  }
+
+  function resizeActivation(element, scene) {
+    if (window.matchMedia("(min-width: 992px)").matches) {
+      console.log('activate');
+      if (element) scene.setPin(element, {
+        pushFollowers: false
+      });
+    } else {
+      console.log('desactivate');
+      scene.removePin(element, true);
+    }
   }
 };
 

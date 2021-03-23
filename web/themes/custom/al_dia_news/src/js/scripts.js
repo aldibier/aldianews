@@ -50,9 +50,18 @@ import initSlick from "./slick.js";
         }
 
 
+        $('.button-apply').click(function () {
+            if ($('.block-webform-block').hasClass('open')) {
+                $('.block-webform-block').removeClass('open');
+            }
+            else {
+                $('.block-webform-block').addClass('open');
+            }
+        });
+
+
 
         initSlick($, Drupal);
-
     });
 
 
