@@ -342,6 +342,13 @@ blockquote {
     h5,
     h6 {
         margin: 30px 0;
+        color: $corange;
+        font-family: $PrNovacond-bold;
+        font-weight: 700;
+        line-height: 36px;
+        font-style: normal;
+        font-size: $px36;
+        letter-spacing: initial;
 
         strong {
             color: $corange;
@@ -349,7 +356,6 @@ blockquote {
             font-weight: 700;
             line-height: 36px;
             font-style: normal;
-            font-size: $px36;
             letter-spacing: initial;
         }
     }
@@ -359,6 +365,21 @@ blockquote {
     }
 
     @media(max-width:$tablet){
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6{
+            font-size: 15px;
+            line-height: 140%;
+
+            strong {
+                font-size: 15px;
+                line-height: 140%; 
+            }
+        }
 
         p,
         strong {
