@@ -43,10 +43,8 @@ const initScrollMagic = ($, Drupal) => {
 
     function resizeActivation(element, scene) {
         if (window.matchMedia("(min-width: 992px)").matches) {
-            console.log('activate')
             if (element) scene.setPin(element, { pushFollowers: false });
         } else {
-            console.log('desactivate')
             scene.removePin(element, true);
         }
     }
