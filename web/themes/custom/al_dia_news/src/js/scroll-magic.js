@@ -1,11 +1,7 @@
 const initScrollMagic = ($, Drupal) => {
 
     //------------ scroll jobs --------------//
-    const controller = new ScrollMagic.Controller({
-        globalSceneOptions: {
-            triggerHook: 1,
-        }
-    });
+    
 
     const rigthPages = document.querySelector('.content-right-pages');
     const pautas = document.querySelector('.pautas');

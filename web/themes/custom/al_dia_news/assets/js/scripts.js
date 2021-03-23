@@ -1280,11 +1280,6 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 var initScrollMagic = function initScrollMagic($, Drupal) {
   //------------ scroll jobs --------------//
-  var controller = new ScrollMagic.Controller({
-    globalSceneOptions: {
-      triggerHook: 1
-    }
-  });
   var rigthPages = document.querySelector('.content-right-pages');
   var pautas = document.querySelector('.pautas');
 
