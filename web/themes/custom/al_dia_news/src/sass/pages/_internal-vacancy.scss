@@ -56,6 +56,7 @@
             font-family: $PrNovacond-bold;
             border: none;
             background: $corange;
+            cursor: pointer;
         }
     }
 
@@ -84,7 +85,7 @@
             display: block;
         }
 
-        >.content {
+        >.modal-apply-webform {
             z-index: 2;
             max-width: 1020px;
             min-height: 650px;
@@ -140,12 +141,18 @@
             height: 20px;
             overflow: hidden;
             cursor: pointer;
+            padding: 0;
 
             .webform-custom-options-button {
                 padding: 0;
                 border: none;
                 margin: 0;
             }
+        }
+
+        input {
+            height: 40px;
+            background: $cgrey8;
         }
     }
 
