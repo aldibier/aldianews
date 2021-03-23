@@ -50,12 +50,12 @@ import initSlick from "./slick.js";
         }
 
 
-        $('.button-apply').click(function () {
-            if ($('.block-webform-block').hasClass('open')) {
-                $('.block-webform-block').removeClass('open');
+        $('.page-node-type-al-dia-vacancy .button-apply').click(function () {
+            if ($('.page-node-type-al-dia-vacancy .block-webform-block').hasClass('open')) {
+                $('.page-node-type-al-dia-vacancy .block-webform-block').removeClass('open');
             }
             else {
-                $('.block-webform-block').addClass('open');
+                $('.page-node-type-al-dia-vacancy .block-webform-block').addClass('open');
             }
         });
 
