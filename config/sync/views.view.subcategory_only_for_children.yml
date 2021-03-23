@@ -791,6 +791,10 @@ display:
         - 'config:core.entity_view_display.node.article.default'
         - 'config:core.entity_view_display.node.article.rss'
         - 'config:core.entity_view_display.node.article.teaser'
+        - 'config:core.entity_view_display.node.feature_employer.default'
+        - 'config:core.entity_view_display.node.feature_employer.teaser'
+        - 'config:core.entity_view_display.node.job.default'
+        - 'config:core.entity_view_display.node.job.teaser'
         - 'config:core.entity_view_display.node.news.category_childs'
         - 'config:core.entity_view_display.node.news.category_first'
         - 'config:core.entity_view_display.node.news.category_next_4'
@@ -801,9 +805,11 @@ display:
         - 'config:core.entity_view_display.node.news.subcategory_next_4'
         - 'config:core.entity_view_display.node.news.teaser'
         - 'config:core.entity_view_display.node.page.basic_page_about_us'
+        - 'config:core.entity_view_display.node.page.contact_us'
         - 'config:core.entity_view_display.node.page.default'
         - 'config:core.entity_view_display.node.page.general_errors'
         - 'config:core.entity_view_display.node.page.teaser'
+        - 'config:core.entity_view_display.node.page.work_whit_al_dia'
         - 'config:core.entity_view_display.node.thought_leaders.default'
         - 'config:core.entity_view_display.node.thought_leaders.teaser'
         - 'config:core.entity_view_display.node.webform.default'
@@ -1267,6 +1273,10 @@ display:
         - 'config:core.entity_view_display.node.article.default'
         - 'config:core.entity_view_display.node.article.rss'
         - 'config:core.entity_view_display.node.article.teaser'
+        - 'config:core.entity_view_display.node.feature_employer.default'
+        - 'config:core.entity_view_display.node.feature_employer.teaser'
+        - 'config:core.entity_view_display.node.job.default'
+        - 'config:core.entity_view_display.node.job.teaser'
         - 'config:core.entity_view_display.node.news.category_childs'
         - 'config:core.entity_view_display.node.news.category_first'
         - 'config:core.entity_view_display.node.news.category_next_4'
@@ -1277,9 +1287,11 @@ display:
         - 'config:core.entity_view_display.node.news.subcategory_next_4'
         - 'config:core.entity_view_display.node.news.teaser'
         - 'config:core.entity_view_display.node.page.basic_page_about_us'
+        - 'config:core.entity_view_display.node.page.contact_us'
         - 'config:core.entity_view_display.node.page.default'
         - 'config:core.entity_view_display.node.page.general_errors'
         - 'config:core.entity_view_display.node.page.teaser'
+        - 'config:core.entity_view_display.node.page.work_whit_al_dia'
         - 'config:core.entity_view_display.node.thought_leaders.default'
         - 'config:core.entity_view_display.node.thought_leaders.teaser'
         - 'config:core.entity_view_display.node.webform.default'
@@ -1324,6 +1336,8 @@ display:
         filter_groups: false
         relationships: false
         query: false
+        style: false
+        row: false
       header: {  }
       fields:
         name:
@@ -1854,6 +1868,15 @@ display:
           replica: false
           query_comment: ''
           query_tags: null
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: card-one-column
+          default_row_class: true
+      row:
+        type: fields
+        options: {  }
     cache_metadata:
       max-age: -1
       contexts:
@@ -1868,6 +1891,10 @@ display:
         - 'config:core.entity_view_display.node.article.default'
         - 'config:core.entity_view_display.node.article.rss'
         - 'config:core.entity_view_display.node.article.teaser'
+        - 'config:core.entity_view_display.node.feature_employer.default'
+        - 'config:core.entity_view_display.node.feature_employer.teaser'
+        - 'config:core.entity_view_display.node.job.default'
+        - 'config:core.entity_view_display.node.job.teaser'
         - 'config:core.entity_view_display.node.news.category_childs'
         - 'config:core.entity_view_display.node.news.category_first'
         - 'config:core.entity_view_display.node.news.category_next_4'
@@ -1878,9 +1905,11 @@ display:
         - 'config:core.entity_view_display.node.news.subcategory_next_4'
         - 'config:core.entity_view_display.node.news.teaser'
         - 'config:core.entity_view_display.node.page.basic_page_about_us'
+        - 'config:core.entity_view_display.node.page.contact_us'
         - 'config:core.entity_view_display.node.page.default'
         - 'config:core.entity_view_display.node.page.general_errors'
         - 'config:core.entity_view_display.node.page.teaser'
+        - 'config:core.entity_view_display.node.page.work_whit_al_dia'
         - 'config:core.entity_view_display.node.thought_leaders.default'
         - 'config:core.entity_view_display.node.thought_leaders.teaser'
         - 'config:core.entity_view_display.node.webform.default'
