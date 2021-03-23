@@ -57,6 +57,8 @@ taxonomy_category:
     - [one_content_first]
     - [one_content]
     - [two_more_content]
+    - [header_subcategory]
+    - [first_block_subcategory]
     - [subcategory]
   regions:
     header_category:
@@ -67,6 +69,10 @@ taxonomy_category:
       label: Primero - Contenido
     two_more_content:
       label: Segundo - Mas contenido
+    header_subcategory:
+      label: Header subacetorias
+    first_block_subcategory:
+      label: First Block Subacetorias
     subcategory:
       label: Subacetorias
 
@@ -155,9 +161,12 @@ subcategory_more:
   default_region: content
   icon_map:
     - [one_content]
+    - [two_content]
   regions:
     one_content:
       label: Primero - Contenido
+    two_content:
+      label: Segundo - Contenido
 
 
 error_page:
