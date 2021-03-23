@@ -1,0 +1,42 @@
+uuid: 567efd74-0712-49d5-a52b-fba89bf935ca
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+name: i_am_an_employer_landing
+label: 'I am an Employer Landing'
+group: 'General pages'
+description: 'I am an Employer Landing'
+requireAllConditions: false
+disabled: false
+conditions:
+  request_path:
+    id: request_path
+    pages: /employer
+    negate: false
+    uuid: 190d0698-32f8-418a-b8af-2bbb60aea6f0
+    context_mapping: {  }
+reactions:
+  blocks:
+    blocks:
+      d78d1a58-33d9-42d4-9527-cfc66a6c7df5:
+        id: 'fixed_block_content:header_i_am_an_employer'
+        label: 'Header I am an employer'
+        provider: fixed_block_content
+        label_display: '0'
+        region: content
+        weight: '0'
+        view_mode: ''
+        context_mapping: {  }
+        custom_id: fixed_block_content_header_i_am_an_employer
+        theme: al_dia_news
+        css_class: ''
+        unique: 0
+        context_id: i_am_an_employer_landing
+        uuid: d78d1a58-33d9-42d4-9527-cfc66a6c7df5
+    id: blocks
+    saved: false
+    uuid: add8fcd8-5caa-4afe-ab73-fd7c6c58e165
+    include_default_blocks: 1
+weight: 0
