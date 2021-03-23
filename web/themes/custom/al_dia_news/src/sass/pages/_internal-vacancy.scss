@@ -108,6 +108,14 @@
 
         .js-form-item {
             width: 50%;
+
+            &:nth-child(2n + 1) {
+                padding: 0 20px 0 0;
+            }
+
+            &:nth-child(2n + 2) {
+                padding: 0 0 0 20px ;
+            }
         }
 
 
@@ -122,6 +130,22 @@
             line-height: 24px;
             color: $cgrey6;
             font-family: $PrNovacond-reg;
+        }
+
+        #edit-close-window {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 20px;
+            height: 20px;
+            overflow: hidden;
+            cursor: pointer;
+
+            .webform-custom-options-button {
+                padding: 0;
+                border: none;
+                margin: 0;
+            }
         }
     }
 
