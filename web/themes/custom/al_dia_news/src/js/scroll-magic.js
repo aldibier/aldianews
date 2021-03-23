@@ -7,34 +7,47 @@ const initScrollMagic = ($, Drupal) => {
         }
     });
 
-    if ($('.content-right-pages').length && $('.pautas').length) {
+    const rigthPages = document.querySelector('.content-right-pages');
+    const pautas = document.querySelector('.pautas');
 
-        const rigthPages = $('.content-right-pages')[0];
-        const pautas = $('.pautas')[0];
-
-        const scene1 = new ScrollMagic.Scene({ triggerElement: $(rigthPages)[0], duration: getDurationScene1 })
+    if (!!rigthPages && !!pautas) {
+        const scene1 = new ScrollMagic.Scene({ triggerElement: rigthPages, duration: getDurationScene1 })
             .addTo(controller)
-            .offset($(pautas).height())
-            .setPin($(pautas)[0], { pushFollowers: false });
+            .offset(pautas.offsetHeight + 20)
+            .setPin(pautas, { pushFollowers: false });
 
         function getDurationScene1() {
-            return $(rigthPages).height() - $(pautas).height();
+            return rigthPages.offsetHeight - pautas.offsetHeight;
         }
+
+        window.addEventListener("resize", () => resizeActivation(pautas, scene1));
     }
 
+
+    const containerRigth = document.querySelector('.container-right');
+    const noticias = document.querySelector('.block-views-blockmore-in-this-section-news-block-1');
+
     //------------ scroll internas --------------//
-    if ($('.container-right').length && $('.block-views-blockmore-in-this-section-news-block-1').length) {
-
-        const containerRigth = $('.container-right')[0];
-        const noticias = $('.block-views-blockmore-in-this-section-news-block-1')[0];
-
-        const scene2 = new ScrollMagic.Scene({ triggerElement: $(containerRigth)[0], duration: getDurationScene2 })
+    if (!!containerRigth && !!noticias) {
+        const scene2 = new ScrollMagic.Scene({ triggerElement: containerRigth, duration: getDurationScene2 })
             .addTo(controller)
-            .offset($(noticias).height())
-            .setPin($(noticias)[0], { pushFollowers: false });
+            .offset(noticias.offsetHeight + 20)
+            .setPin(noticias, { pushFollowers: false });
 
         function getDurationScene2() {
-            return $(containerRigth).height() - $(noticias).height();
+            return containerRigth.offsetHeight - noticias.offsetHeight;
+        }
+
+        window.addEventListener("resize", () => resizeActivation(noticias, scene2));
+    }
+
+    function resizeActivation(element, scene) {
+        if (window.matchMedia("(min-width: 992px)").matches) {
+            console.log('activate')
+            if (element) scene.setPin(element, { pushFollowers: false });
+        } else {
+            console.log('desactivate')
+            scene.removePin(element, true);
         }
     }
 }
