@@ -66,10 +66,17 @@
 
         .menu {
             display: flex;
-        }
 
-        a{
-            @include link-box($cwhite, szrem(10), szrem(11));
+            li {
+                padding: 0 26px 0 0;
+            }
+
+            a{
+                @include link-box($cwhite, szrem(10), szrem(11));
+                font-size: $px22;
+                line-height: 27px;
+                min-height: 60px;
+            }
         }
     }
 }
