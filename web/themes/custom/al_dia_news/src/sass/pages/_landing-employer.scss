@@ -272,7 +272,7 @@
             display: none;
         }
     }
-
+    
     @media (max-width: $tablet) {
 
         h1 {
@@ -282,9 +282,11 @@
         }
 
         #block-system-menu-block-i-am-an-employer-menu {
-            margin: -115px 0 55px;
-            
+            margin: -115px 0 44px;
+
             .menu{
+                flex-wrap: wrap;
+
                 a{
                     font-size: 10px;
                     line-height: 12px;
@@ -293,6 +295,7 @@
 
                 li {
                     height: 20px;
+                    margin: 5px 0;
                 }
             }
         }
