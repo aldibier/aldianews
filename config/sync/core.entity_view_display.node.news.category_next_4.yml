@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.news.field_image
     - field.field.node.news.field_short_title
     - field.field.node.news.field_tags
+    - field.field.node.news.field_video
     - node.type.news
   module:
     - al_dia_layouts
@@ -187,6 +188,7 @@ content:
     type: entity_reference_label
     region: content
 hidden:
+  field_video: true
   langcode: true
   links: true
   search_api_excerpt: true
