@@ -79,13 +79,15 @@
     #block-system-menu-block-i-am-an-employer-menu {
         z-index: 3;
         margin: -192px 0 62px;
+        height: 60px;
 
         .menu {
             display: flex;
             padding: 0 15px;
             max-width: 1310px;
             margin: 0 auto;
-            transition: all 1s ease-out;
+            transition: all 1s ease-in-out;
+            z-index: 2;
 
             li {
                 padding: 0 26px 0 0;
@@ -97,13 +99,50 @@
                 line-height: 27px;
                 min-height: 60px;
             }
+
+            &:after,
+            &:before {
+                content: '';
+                width: 0;
+                height: 100%;
+                display: block;
+                position: absolute;
+                top: 0;
+                transition: all 1s ease-in-out;
+            }
+
+            &:after {
+                right: 0;
+            }
+
+            &:before {
+                left: 0;
+            }
+           
         }
 
         .menu.active {
-            margin: 165px auto 0!important;
+            margin: 87px auto 0!important;
             left: 0 !important;
             right: 0 !important;
-            background: #333333;
+            background: $cblack3;
+            transition: all 1s ease-in-out;
+            padding: 15px;
+
+            &:after,
+            &:before {
+                width: 100%;
+                transition: all 1s ease-in-out;
+                background: $cblack3;
+            }
+
+            &:after {
+                right: -100%;
+            }
+
+            &:before {
+                left: -100%;
+            }
         }
     }
 
@@ -112,7 +151,7 @@
         #block-system-menu-block-i-am-an-employer-menu {
 
             .menu.active {
-                padding: 178px 15px 15px;
+                margin: 165px auto 0!important;
             }
         }
     }
