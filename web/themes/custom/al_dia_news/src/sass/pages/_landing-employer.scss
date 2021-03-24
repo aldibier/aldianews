@@ -286,7 +286,7 @@
             max-width: 990px;
             max-height: 945px;
             height: 100%;
-            z-index: 2;
+            z-index: 6;
             top: 0;
             left: 0;
             right: 0;
@@ -303,6 +303,12 @@
                 height: 100%;
                 top: 0;
                 left: 0;
+            }
+
+            .field-content {
+                z-index: 3;
+                display: block;
+                position: relative;
             }
         }
     }
