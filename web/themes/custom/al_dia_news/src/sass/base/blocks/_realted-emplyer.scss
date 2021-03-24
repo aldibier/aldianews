@@ -37,6 +37,7 @@
     }
 
     .job-categories {
+        font-family: $PrNovacond-light;
         font-style: normal;
         font-weight: normal;
         font-size: $px22;
@@ -66,6 +67,7 @@
     }
 
     .place-employer {
+        font-family: $PrNovacond-bold;
         font-style: normal;
         font-weight: bold;
         font-size: $px20;
@@ -73,7 +75,8 @@
         align-items: center;
         letter-spacing: 0.04em;
         color: $cblack0;
-        margin: 30px 0 10px;
+        margin: 30px 0 25px;
+        text-transform: uppercase;
     }
 
     .container-content__date  {
@@ -81,9 +84,14 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        margin: 10px 0;
+        margin: 10px 0 30px;
+
+        @media (max-width: $tablet){
+            margin-bottom: 17px;
+        }
 
         p {
+            font-family: $PrNovacond-Sbold;
             font-style: normal;
             font-weight: normal;
             font-size: $px20;
@@ -133,7 +141,8 @@
         text-align: center;
         margin: 20px 0 0;
         padding: 0 32px;
-        font-family: $PrNovacond-bold;
+        font-family: $PrNovacond-Sbold;
+        letter-spacing: 0.741176px;
     }
 
     @media(min-width:$tablet)and(max-width: 1100px){
@@ -203,6 +212,7 @@
 
         .job-and-company {
             span {
+                min-height: initial;
                 font-size: 14px;
                 line-height: 17px;
             }
