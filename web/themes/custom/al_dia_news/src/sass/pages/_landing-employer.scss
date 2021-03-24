@@ -336,6 +336,23 @@
                 line-height: 17px;
                 margin: 0 0 15px;
             }
+
+            li {
+                font-size: 14px;
+                line-height: 17px;
+                margin: 0 0 10px;
+
+                &:after {
+                    width: 5px;
+                    height: 5px;
+                    left: -10px;
+                }
+            }
+
+            ul {
+                margin: 0 0 10px;
+                padding: 0 0 0 10px;
+            }
         }
     }
 }
