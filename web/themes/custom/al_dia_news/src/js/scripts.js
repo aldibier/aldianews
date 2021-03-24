@@ -88,6 +88,25 @@ import initSlick from "./slick.js";
             }
         });
 
+
+        $('.path-employer .button-apply').click(function () {
+            if ($(this).parents('.views-row').find('.views-field-field-webform').hasClass('open')) {
+                $(this).parents('.views-row').find('.views-field-field-webform').removeClass('open');
+            }
+            else {
+                $(this).parents('.views-row').find('.views-field-field-webform').addClass('open');
+            }
+        });
+
+        $('.path-employer form button').click(function () {
+            if ($(this).parents('.views-row').find('.views-field-field-webform').hasClass('open')) {
+                $(this).parents('.views-row').find('.views-field-field-webform').removeClass('open');
+            }
+            else {
+                $(this).parents('.views-row').find('.views-field-field-webform').addClass('open');
+            }
+        });
+
         initSlick($, Drupal);
     });
 
