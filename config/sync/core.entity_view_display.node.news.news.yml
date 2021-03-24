@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.news.field_image
     - field.field.node.news.field_short_title
     - field.field.node.news.field_tags
+    - field.field.node.news.field_video
     - node.type.news
   module:
     - image
@@ -65,4 +66,6 @@ hidden:
   field_category: true
   field_comments: true
   field_tags: true
+  field_video: true
   langcode: true
+  search_api_excerpt: true

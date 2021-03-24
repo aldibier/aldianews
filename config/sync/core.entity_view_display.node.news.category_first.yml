@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.news.field_image
     - field.field.node.news.field_short_title
     - field.field.node.news.field_tags
+    - field.field.node.news.field_video
     - node.type.news
   module:
     - al_dia_layouts
@@ -129,6 +130,26 @@ third_party_settings:
                 view_mode: view_mode
             additional: {  }
             weight: 5
+          a038d359-bd96-4394-aa61-51981730fb83:
+            uuid: a038d359-bd96-4394-aa61-51981730fb83
+            region: one_content
+            configuration:
+              id: 'field_block:node:news:field_video'
+              label: Video
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: video_embed_field_thumbnail
+                settings:
+                  image_style: ''
+                  link_image_to: content
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 6
         third_party_settings: {  }
 id: node.news.category_first
 targetEntityType: node
@@ -206,6 +227,7 @@ content:
     type: entity_reference_label
     region: content
 hidden:
+  field_video: true
   langcode: true
   links: true
   search_api_excerpt: true
