@@ -47,26 +47,26 @@ import initSlick from "./slick.js";
 
         if (window.matchMedia("(min-width: 992px)").matches) {
             initScrollMagic($, Drupal);
+        }
 
-            //------------ scroll jobs --------------//
-            const containermenu = document.querySelector('#block-system-menu-block-i-am-an-employer-menu');
-            const menu = document.querySelector('#block-system-menu-block-i-am-an-employer-menu .menu');
-            const time = document.querySelector('#block-system-main-block');            
+        //------------ scroll jobs --------------//
+        const containermenu = document.querySelector('#block-system-menu-block-i-am-an-employer-menu');
+        const menu = document.querySelector('#block-system-menu-block-i-am-an-employer-menu .menu');
+        const time = document.querySelector('#block-system-main-block');            
 
-            if (!!containermenu && !!menu) {
+        if (!!containermenu && !!menu) {
 
-                var controller2 = new ScrollMagic.Controller({globalSceneOptions: {
-                    triggerHook: 0,
-                    duration: time.offsetHeight
-                }});
+            var controller2 = new ScrollMagic.Controller({globalSceneOptions: {
+                triggerHook: 0,
+                duration: time.offsetHeight
+            }});
 
-                new ScrollMagic.Scene({triggerElement: menu})
-                    .setClassToggle(menu, "active") // add class toggle
-                    //.offset() 
-                    .setPin(menu, { pushFollowers: false })
-                    .addTo(controller2)
-                    //.addIndicators();
-            }
+            new ScrollMagic.Scene({triggerElement: menu})
+                .setClassToggle(menu, "active") // add class toggle
+                //.offset() 
+                .setPin(menu, { pushFollowers: false })
+                .addTo(controller2)
+                //.addIndicators();
         }
 
 

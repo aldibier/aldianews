@@ -1260,27 +1260,28 @@ __webpack_require__.r(__webpack_exports__);
     }); //--------- initialization --------------------//
 
     if (window.matchMedia("(min-width: 992px)").matches) {
-      Object(_scroll_magic__WEBPACK_IMPORTED_MODULE_2__["default"])($, Drupal); //------------ scroll jobs --------------//
+      Object(_scroll_magic__WEBPACK_IMPORTED_MODULE_2__["default"])($, Drupal);
+    } //------------ scroll jobs --------------//
 
-      var containermenu = document.querySelector('#block-system-menu-block-i-am-an-employer-menu');
-      var menu = document.querySelector('#block-system-menu-block-i-am-an-employer-menu .menu');
-      var time = document.querySelector('#block-system-main-block');
 
-      if (!!containermenu && !!menu) {
-        var controller2 = new ScrollMagic.Controller({
-          globalSceneOptions: {
-            triggerHook: 0,
-            duration: time.offsetHeight
-          }
-        });
-        new ScrollMagic.Scene({
-          triggerElement: menu
-        }).setClassToggle(menu, "active") // add class toggle
-        //.offset() 
-        .setPin(menu, {
-          pushFollowers: false
-        }).addTo(controller2); //.addIndicators();
-      }
+    var containermenu = document.querySelector('#block-system-menu-block-i-am-an-employer-menu');
+    var menu = document.querySelector('#block-system-menu-block-i-am-an-employer-menu .menu');
+    var time = document.querySelector('#block-system-main-block');
+
+    if (!!containermenu && !!menu) {
+      var controller2 = new ScrollMagic.Controller({
+        globalSceneOptions: {
+          triggerHook: 0,
+          duration: time.offsetHeight
+        }
+      });
+      new ScrollMagic.Scene({
+        triggerElement: menu
+      }).setClassToggle(menu, "active") // add class toggle
+      //.offset() 
+      .setPin(menu, {
+        pushFollowers: false
+      }).addTo(controller2); //.addIndicators();
     }
 
     $('.page-node-type-al-dia-vacancy .button-apply').click(function () {
