@@ -5,10 +5,12 @@ dependencies:
   config:
     - core.entity_view_mode.node.general_errors
     - field.field.node.page.body
+    - fixed_block_content.fixed_block_content.horizontal_advertising
     - node.type.page
     - views.view.last_news_in_error_page
   module:
     - al_dia_layouts
+    - fixed_block_content
     - layout_builder
     - text
     - user
@@ -70,6 +72,18 @@ third_party_settings:
               label_display: '0'
               views_label: ''
               items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+          3d3a6a8a-347a-4aa7-a4f6-0596925508ba:
+            uuid: 3d3a6a8a-347a-4aa7-a4f6-0596925508ba
+            region: advertising
+            configuration:
+              id: 'fixed_block_content:horizontal_advertising'
+              label: 'Horizontal advertising'
+              provider: fixed_block_content
+              label_display: '0'
+              view_mode: ''
               context_mapping: {  }
             additional: {  }
             weight: 0
