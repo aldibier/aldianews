@@ -1,0 +1,23 @@
+uuid: eff15f92-8a51-4f5e-8d11-ae6aa279d7f2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_my_content_has_a_main_vide
+    - node.type.news
+id: node.news.field_my_content_has_a_main_vide
+field_name: field_my_content_has_a_main_vide
+entity_type: node
+bundle: news
+label: 'My content has a main video'
+description: 'Enable this option if your content has a video instead of a main image.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
