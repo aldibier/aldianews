@@ -1,5 +1,11 @@
 .path-employer {
 
+    .layout-container .layout-main {
+        max-width: 1440px;
+        width: 100%;
+        padding: 0;
+    }
+
     h1 {
         font-style: normal;
         font-weight: bold;
@@ -11,6 +17,7 @@
         z-index: 2;
         bottom: 165px;
         text-transform: uppercase;
+        margin: 0;
     }
 
     .block-fixed-block-contentheader-i-am-an-employer {
@@ -38,7 +45,7 @@
             @media screen and (min-width: $tablet) {
                 padding: 40px 85px 100px;
                 min-height: 470px;
-                margin: 0 -80px 70px;
+                margin: 0 0 70px;
                 position: relative;
             }
         }
@@ -47,9 +54,22 @@
 
             .field--type-image {
                 min-height: 215px;
-                margin: 0 -15px;
+                margin: 0;
                 position: relative;
             }
+        }
+    }
+
+    #block-system-menu-block-i-am-an-employer-menu {
+        margin: -97px 0 0;
+        z-index: 3;
+
+        .menu {
+            display: flex;
+        }
+
+        a{
+            @include link-box($cwhite, szrem(10), szrem(11));
         }
     }
 }
