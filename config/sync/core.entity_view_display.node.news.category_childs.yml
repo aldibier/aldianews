@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.news.field_category
     - field.field.node.news.field_comments
     - field.field.node.news.field_image
+    - field.field.node.news.field_my_content_has_a_main_vide
     - field.field.node.news.field_short_title
     - field.field.node.news.field_tags
     - field.field.node.news.field_video
@@ -51,7 +52,7 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: 2
+            weight: -9
           d72ab3b2-c176-4d45-bf20-7017395b9b6a:
             uuid: d72ab3b2-c176-4d45-bf20-7017395b9b6a
             region: two_content
@@ -92,6 +93,27 @@ third_party_settings:
                 view_mode: view_mode
             additional: {  }
             weight: 2
+          e6ff4cda-c59d-461f-82e0-028133dc572c:
+            uuid: e6ff4cda-c59d-461f-82e0-028133dc572c
+            region: one_content
+            configuration:
+              id: 'field_block:node:news:field_my_content_has_a_main_vide'
+              label: 'My content has a main video'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: boolean
+                settings:
+                  format: default
+                  format_custom_true: ''
+                  format_custom_false: ''
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: -10
         third_party_settings: {  }
 id: node.news.category_childs
 targetEntityType: node
@@ -169,6 +191,7 @@ content:
     type: entity_reference_label
     region: content
 hidden:
+  field_my_content_has_a_main_vide: true
   field_video: true
   langcode: true
   links: true
