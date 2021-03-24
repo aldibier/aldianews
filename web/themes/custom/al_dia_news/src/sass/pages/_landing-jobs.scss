@@ -5,6 +5,10 @@
         margin: 0 -15px 20px;
         position: relative;
 
+        @media screen and (min-width: $tablet) {
+            margin:20px -15px;
+        }
+
         .field--name-field-image-block {
 
             &::after {
