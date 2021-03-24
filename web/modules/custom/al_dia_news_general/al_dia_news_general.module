@@ -39,6 +39,13 @@ function al_dia_news_general_form_alter(&$form, $form_state, $form_id) {
     // Alteración del botón submit de comentarios.
       $form['actions']['submit']['#value'] = t('POST COMMENT');
     break;
+    case "node_news_edit_form":
+      $image = $form['field_image']['widget'][0]['#default_value']['fids'];
+      // //ksm($image != 0);
+      // if ($image != 0){
+      //   $form['field_video']['#access'] = FALSE;
+      // }
+    break;
     
   }
 
