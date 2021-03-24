@@ -201,11 +201,13 @@
             line-height: 32px;
             font-family: $PrNovacond-reg;
             color: $cblack3;
+            margin: 0 0 25px;
         }
 
         ul {
             list-style: none;
             padding: 0 0 0 25px;
+            margin: 0 0 25px;
         }
 
         li {
@@ -216,6 +218,7 @@
             color: $cblack3;
             font-family: $PrNovacond-reg;
             position: relative;
+            margin: 0 0 15px;
 
             &::after {
                 content: '';
@@ -226,6 +229,7 @@
                 border-radius: 100%;
                 position: absolute;
                 left: -15px;
+                top: 10px;
             }
         }
 
