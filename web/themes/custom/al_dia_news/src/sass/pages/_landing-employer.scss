@@ -162,6 +162,38 @@
 
         }
 
+        p {
+            font-style: normal;
+            font-weight: normal;
+            font-size: $px26;
+            line-height: 32px;
+            font-family: $PrNovacond-reg;
+            color: $cblack3;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0 0 0 25px;
+        }
+
+        li {
+            font-style: normal;
+            font-weight: normal;
+            font-size: $px26;
+            line-height: 32px;
+            color: $cblack3;
+            font-family: $PrNovacond-reg;
+
+            &::after {
+                content: '';
+                width: 10px;
+                height: 10px;
+                background: #606060;
+                overflow: hidden;
+                margin: 0 0 0 -15px;
+            }
+        }
+
         .employer-image {
             position: relative;
             min-height: 400px;
