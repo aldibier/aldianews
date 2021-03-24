@@ -39,6 +39,13 @@ function al_dia_news_general_form_alter(&$form, $form_state, $form_id) {
     // Alteración del botón submit de comentarios.
       $form['actions']['submit']['#value'] = t('POST COMMENT');
     break;
+    case "node_news_edit_form":
+      $image = $form['field_image']['widget'][0]['#default_value']['fids'];
+      // //ksm($image != 0);
+      // if ($image != 0){
+      //   $form['field_video']['#access'] = FALSE;
+      // }
+    break;
     
   }
 
@@ -47,82 +54,102 @@ function al_dia_news_general_form_alter(&$form, $form_state, $form_id) {
 /**
  * Implements hook_node_view()
  */
-// function al_dia_news_general_node_view(array &$build, NodeInterface $node, EntityViewDisplayInterface $display, $view_mode) {
-//   //ksm($node->get('body')->getString());
-//   $strBody = $node->get('body')->getString();
+ function al_dia_news_general_node_view(array &$build, NodeInterface $node, EntityViewDisplayInterface $display, $view_mode) {
 
-//   $count = substr_count($strBody, '<p>');
-//   $block_id = 'views_block__related_content_block_1';
-//   $block = \Drupal\block\Entity\Block::load($block_id);
-//   //ksm($block);
-//   if($count < 5){     
-//     // Get the body values if there is now a body field.
-//     if (isset($node->body)) {
-//       $newStrBody = "<h1>this is my new body</h1>";
-//       $newBody = $newStrBody;
-//       $format = $node->get('body')->format;
+  $vid = $node->get('vid')->getString();
+
+  if($vid == 59){
+
+    $strBody = $node->get('body')->getString();
+    $count = substr_count($strBody, '<p>');
+
+    $block_id = 'views_block__related_content_block_1';
+    $block = \Drupal\block\Entity\Block::load($block_id);
+    //$render = \Drupal::entityTypeManager()->getViewBuilder('block_content')->view($block);
+
+    $con = \Drupal\block\BlockViewBuilder::lazyBuilder($block_id, 'full');
+    $d   = \Drupal::service('renderer')->renderPlain($con);
+
+    $html = $d->__toString();
+
+    //ksm($html);
+    //return $render;
+
+    //ksm($block);
+    if($count < 5){     
+      // Get the body values if there is now a body field.
+      if (isset($node->body)) {
+
+        //ksm($node->get('body')->getString());
+
+        $newStrBody = "<h1> this is my new body </h1>";
+        $newBody = $newStrBody . $html;
+        $format = $node->get('body')->format;
 
 
-//       // Copy the values to the new fields, being careful not to wipe out other values that might be there.
-//       $node->body->setValue(['value' => $newBody, 'format' => $format]);
+        // Copy the values to the new fields, being careful not to wipe out other values that might be there.
+        $node->body->setValue(['value' => $newBody, 'format' => $format]);
 
-//       // Clear the body values.
-//       //$node->body->setValue([]);
-//       // Force a node save even if there are no changes to force the pre_save hook to be executed.
-//       $node->save();
-
-//     }
-//   }
-  // public function inlineImage($value){
-  //   $url_media = "https://arquimedia.s3.amazonaws.com/";
-  //   $path = 'public://migrate/img/';
-  //   $dom = Html::load($value);
-
-  //   if (!file_exists($path)) {
-  //     mkdir($path, 0777, true);
-  //   }
-
-  //   foreach ($dom->getElementsByTagName('img') as $img) {
         
-  //     $src = $img->getAttribute('src');
+        // Clear the body values.
+        //$node->body->setValue([]);
+        // Force a node save even if there are no changes to force the pre_save hook to be executed.
+        $node->save();
+
+      }
+    }
+  }
+
+ }
+
+function inlineImage($value){
+  
+  $url_media = "https://arquimedia.s3.amazonaws.com/";
+  $path = 'public://migrate/img/';
+  $dom = Html::load($value);
+
+  if (!file_exists($path)) {
+    mkdir($path, 0777, true);
+  }
+
+  foreach ($dom->getElementsByTagName('img') as $img) {
         
-  //     // Sale del foreach
-  //     if($src != ""){ 
-  //       if(substr_count($src, 'http') == 0 ){
-  //         $portions = explode("/", $src);
-
-  //         // Si el directorio /media se encuentra en la URL es removido
-  //         if($portions[0] == 'media' || $portions[0] == ''){
-  //           unset($portions[0]);
-  //         }
-      
-  //         if($portions[1] == 'media'){
-  //           unset($portions[1]);
-  //         }
-      
-  //         if($portions[2] == ''){
-  //           unset($portions[2]);
-  //         }
-      
-  //         $image_url = $url_media . implode("/", $portions);
-
-  //         $info = pathinfo($src);
-  //         $file = file_save_data(file_get_contents($image_url),$path.'/'.$info['basename']);
-  //         if ($file === false) throw new MigrateException('Fail on saving file ' . $path);
+       $src = $img->getAttribute('src');
         
-  //         $img->setAttribute('src', $file->createFileUrl());
-  //         $img->setAttribute('data-entity-type', 'file');
-  //         $img->setAttribute('data-entity-uuid', $file->uuid());
-  //       }
-  //     }
-  //   }
-      
-  //   $html = $dom->saveHtml();
-  //   return $html;
-  // }
+       // Sale del foreach
+       if($src != ""){ 
+         if(substr_count($src, 'http') == 0 ){
+           $portions = explode("/", $src);
 
-  // $node->content['body'][0]['#markup'] = 'my additional text' . $strBody;
-//}
+           // Si el directorio /media se encuentra en la URL es removido
+           if($portions[0] == 'media' || $portions[0] == ''){
+             unset($portions[0]);
+           }
+      
+           if($portions[1] == 'media'){
+             unset($portions[1]);
+           }
+      
+           if($portions[2] == ''){
+             unset($portions[2]);
+           }
+      
+           $image_url = $url_media . implode("/", $portions);
+
+           $info = pathinfo($src);
+           $file = file_save_data(file_get_contents($image_url),$path.'/'.$info['basename']);
+           if ($file === false) throw new MigrateException('Fail on saving file ' . $path);
+        
+           $img->setAttribute('src', $file->createFileUrl());
+           $img->setAttribute('data-entity-type', 'file');
+           $img->setAttribute('data-entity-uuid', $file->uuid());
+         }
+       }
+     }
+      
+     $html = $dom->saveHtml();
+     return $html;
+}
 
 /**
  * Implement hook_views_query_alter.
