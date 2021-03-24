@@ -72,15 +72,20 @@
         }
     }
 
+    .scrollmagic-pin-spacer {
+        min-height: auto !important;
+    }
+
     #block-system-menu-block-i-am-an-employer-menu {
-        margin: -200px 0 70px;
         z-index: 3;
+        margin: -192px 0 62px;
 
         .menu {
             display: flex;
             padding: 0 15px;
             max-width: 1310px;
             margin: 0 auto;
+            transition: all 1s ease-out;
 
             li {
                 padding: 0 26px 0 0;
@@ -91,6 +96,23 @@
                 font-size: $px22;
                 line-height: 27px;
                 min-height: 60px;
+            }
+        }
+
+        .menu.active {
+            margin: 165px auto 0!important;
+            left: 0 !important;
+            right: 0 !important;
+            background: #333333;
+        }
+    }
+
+    &.user-logged-in {
+
+        #block-system-menu-block-i-am-an-employer-menu {
+
+            .menu.active {
+                padding: 178px 15px 15px;
             }
         }
     }
