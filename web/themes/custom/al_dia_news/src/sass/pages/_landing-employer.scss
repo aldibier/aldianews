@@ -161,6 +161,10 @@
 
             .menu.active {
                 margin: 165px auto 0!important;
+
+                @media (max-width: $tablet) {
+                    margin: 127px auto 0!important;
+                }
             }
         }
     }
