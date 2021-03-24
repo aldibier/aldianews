@@ -143,6 +143,13 @@
             &:before {
                 left: -100%;
             }
+
+            @media (max-width: $broken2)and(min-width: $tablet) {
+                margin: 127px auto 0!important;
+            }
+
+            @media (max-width: $tablet) {
+            }
         }
     }
 
@@ -263,6 +270,31 @@
 
         .views-field-field-webform {
             display: none;
+        }
+    }
+
+    @media (max-width: $tablet) {
+
+        h1 {
+            bottom: 115px;
+            font-size: 25px;
+            line-height: 30px;
+        }
+
+        #block-system-menu-block-i-am-an-employer-menu {
+            margin: -115px 0 55px;
+            
+            .menu{
+                a{
+                    font-size: 10px;
+                    line-height: 12px;
+                    min-height: 20px;
+                }
+
+                li {
+                    height: 20px;
+                }
+            }
         }
     }
 }
