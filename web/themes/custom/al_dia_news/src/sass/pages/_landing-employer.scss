@@ -162,6 +162,11 @@
 
         }
 
+        .employer-title-body {
+            padding: 50px;
+            width: 50%;
+        }
+
         .button-apply {
             min-width: 225px;
             height: 55px;
@@ -176,6 +181,7 @@
             font-family: $PrNovacond-bold;
             color: $cwhite;
             background: $corange;
+            width: max-content;
         }
 
         .title-employer {
@@ -209,6 +215,7 @@
             line-height: 32px;
             color: $cblack3;
             font-family: $PrNovacond-reg;
+            position: relative;
 
             &::after {
                 content: '';
@@ -216,7 +223,9 @@
                 height: 10px;
                 background: #606060;
                 overflow: hidden;
-                margin: 0 0 0 -15px;
+                border-radius: 100%;
+                position: absolute;
+                left: -15px;
             }
         }
 
