@@ -89,14 +89,14 @@
 
 //-------------header news tip-----------------//
 #block-headershareanewstip {
-  min-height: 560px;
+  min-height: 470px;
   padding: 40px 80px 70px;
 
   @media screen and (max-width: $tablet) {
     height: auto;
     min-height: 215px;
     margin: initial;
-    margin-bottom: 20px;
+    margin: 0 -15px 20px;
     padding: 0 25px 25px;
   }
 
@@ -169,6 +169,11 @@
     }
 
     .text-formatted {
+
+      strong {
+        font-family: $PrNovacond-bold;
+      }
+
       p {
         font-size: szrem(24);
         font-weight: normal;

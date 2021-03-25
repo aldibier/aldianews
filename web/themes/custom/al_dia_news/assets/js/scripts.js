@@ -1206,6 +1206,23 @@ module.exports = function (css) {
 
 /***/ }),
 
+/***/ "./src/js/main.js":
+/*!************************!*\
+  !*** ./src/js/main.js ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// js video
+var video_interna = document.querySelector(".block-field-blocknodenewsfield-video");
+var contenido_interna = document.querySelector(".content-news-internal-first");
+
+if (video_interna != null && contenido_interna != null) {
+  contenido_interna.classList.add("video-present");
+}
+
+/***/ }),
+
 /***/ "./src/js/scripts.js":
 /*!***************************!*\
   !*** ./src/js/scripts.js ***!
@@ -1221,6 +1238,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_libraries_selection_sharer_selection_sharer_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_assets_libraries_selection_sharer_selection_sharer_js__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _scroll_magic__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./scroll-magic */ "./src/js/scroll-magic.js");
 /* harmony import */ var _slick_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./slick.js */ "./src/js/slick.js");
+/* harmony import */ var _main_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./main.js */ "./src/js/main.js");
+/* harmony import */ var _main_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_main_js__WEBPACK_IMPORTED_MODULE_4__);
+
 
 
 
@@ -1228,73 +1248,93 @@ __webpack_require__.r(__webpack_exports__);
 
 (function ($, Drupal) {
   var sharer = new _assets_libraries_selection_sharer_selection_sharer_js__WEBPACK_IMPORTED_MODULE_1___default.a();
-  sharer.setElements('p');
+  sharer.setElements("p");
   jQuery(document).ready(function () {
     //--------- menu--------------------//
-    $('.region-header #block-blockheader').click(function () {
-      if ($('.region-secondary-menu').hasClass('open-menu')) {
-        $('.region-secondary-menu').removeClass('open-menu');
-        $('body').removeClass('open-menu');
+    $(".region-header #block-blockheader").click(function () {
+      if ($(".region-secondary-menu").hasClass("open-menu")) {
+        $(".region-secondary-menu").removeClass("open-menu");
+        $("body").removeClass("open-menu");
       } else {
-        $('.region-secondary-menu').addClass('open-menu');
-        $('body').addClass('open-menu');
+        $(".region-secondary-menu").addClass("open-menu");
+        $("body").addClass("open-menu");
       }
     });
-    $('#block-blockpreheader').click(function () {
-      $('.region-secondary-menu').removeClass('open-menu');
-      $('body').removeClass('open-menu');
+    $("#block-blockpreheader").click(function () {
+      $(".region-secondary-menu").removeClass("open-menu");
+      $("body").removeClass("open-menu");
     }); //--------puopup-- login-----------//
 
-    $('.user-logged-in #block-loginformpopup').click(function () {
-      if ($(this).hasClass('open')) {
-        $(this).removeClass('open');
-        $('.user-logged-in #block-al-dia-news-account-menu').removeClass('open');
+    $(".user-logged-in #block-loginformpopup").click(function () {
+      if ($(this).hasClass("open")) {
+        $(this).removeClass("open");
+        $(".user-logged-in #block-al-dia-news-account-menu").removeClass("open");
       } else {
-        $('.user-logged-in #block-al-dia-news-account-menu').addClass('open');
-        $(this).addClass('open');
+        $(".user-logged-in #block-al-dia-news-account-menu").addClass("open");
+        $(this).addClass("open");
       }
     });
     $(".region-secondary-menu #block-al-dia-news-main-menu a").each(function () {
       var text = $(this).html();
-      $(this).html(text.replace(/AL/g, '<br>AL'));
+      $(this).html(text.replace(/AL/g, "<br>AL"));
     }); //--------- initialization --------------------//
 
     if (window.matchMedia("(min-width: 992px)").matches) {
-      Object(_scroll_magic__WEBPACK_IMPORTED_MODULE_2__["default"])($, Drupal); //------------ scroll jobs --------------//
+      Object(_scroll_magic__WEBPACK_IMPORTED_MODULE_2__["default"])($, Drupal);
+    } //------------ scroll jobs --------------//
 
-      var containermenu = document.querySelector('#block-system-menu-block-i-am-an-employer-menu');
-      var menu = document.querySelector('#block-system-menu-block-i-am-an-employer-menu .menu');
-      var time = document.querySelector('#block-system-main-block');
 
-      if (!!containermenu && !!menu) {
-        var controller2 = new ScrollMagic.Controller({
-          globalSceneOptions: {
-            triggerHook: 0,
-            duration: time.offsetHeight
-          }
-        });
-        new ScrollMagic.Scene({
-          triggerElement: menu
-        }).setClassToggle(menu, "active") // add class toggle
-        //.offset() 
-        .setPin(menu, {
-          pushFollowers: false
-        }).addTo(controller2); //.addIndicators();
-      }
+    var containermenu = document.querySelector("#block-system-menu-block-i-am-an-employer-menu");
+    var menu = document.querySelector("#block-system-menu-block-i-am-an-employer-menu .menu");
+    var time = document.querySelector("#block-system-main-block");
+
+    if (!!containermenu && !!menu) {
+      var controller2 = new ScrollMagic.Controller({
+        globalSceneOptions: {
+          triggerHook: 0,
+          duration: time.offsetHeight
+        }
+      });
+      new ScrollMagic.Scene({
+        triggerElement: menu
+      }).setClassToggle(menu, "active") // add class toggle
+      //.offset()
+      .setPin(menu, {
+        pushFollowers: false
+      }).addTo(controller2); //.addIndicators();
     }
 
-    $('.page-node-type-al-dia-vacancy .button-apply').click(function () {
-      if ($('.page-node-type-al-dia-vacancy .block-webform-block').hasClass('open')) {
-        $('.page-node-type-al-dia-vacancy .block-webform-block').removeClass('open');
+    $(".page-node-type-al-dia-vacancy .button-apply").click(function () {
+      if ($(".page-node-type-al-dia-vacancy .block-webform-block").hasClass("open")) {
+        $(".page-node-type-al-dia-vacancy .block-webform-block").removeClass("open");
       } else {
-        $('.page-node-type-al-dia-vacancy .block-webform-block').addClass('open');
+        $(".page-node-type-al-dia-vacancy .block-webform-block").addClass("open");
       }
     });
-    $('#edit-close-window').click(function () {
-      if ($('.page-node-type-al-dia-vacancy .block-webform-block').hasClass('open')) {
-        $('.page-node-type-al-dia-vacancy .block-webform-block').removeClass('open');
+    $("#edit-close-window").click(function () {
+      if ($(".page-node-type-al-dia-vacancy .block-webform-block").hasClass("open")) {
+        $(".page-node-type-al-dia-vacancy .block-webform-block").removeClass("open");
       } else {
-        $('.page-node-type-al-dia-vacancy .block-webform-block').addClass('open');
+        $(".page-node-type-al-dia-vacancy .block-webform-block").addClass("open");
+      }
+    });
+    $('.views-field-field-webform  button[name="close"]').click(function () {
+      if ($(".path-employer .views-field-field-webform").hasClass("open")) {
+        $(".path-employer .views-field-field-webform").removeClass("open");
+      }
+    });
+    $(".path-employer .button-apply").click(function () {
+      if ($(this).parents(".views-row").find(".views-field-field-webform").hasClass("open")) {
+        $(this).parents(".views-row").find(".views-field-field-webform").removeClass("open");
+      } else {
+        $(this).parents(".views-row").find(".views-field-field-webform").addClass("open");
+      }
+    });
+    $(".path-employer form button").click(function () {
+      if ($(this).parents(".views-row").find(".views-field-field-webform").hasClass("open")) {
+        $(this).parents(".views-row").find(".views-field-field-webform").removeClass("open");
+      } else {
+        $(this).parents(".views-row").find(".views-field-field-webform").addClass("open");
       }
     });
     Object(_slick_js__WEBPACK_IMPORTED_MODULE_3__["default"])($, Drupal);
@@ -1435,8 +1475,8 @@ var initSlick = function initSlick($, Drupal) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/andresmartinez/sites/News/code/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
-module.exports = __webpack_require__(/*! /Users/andresmartinez/sites/News/code/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
+__webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
+module.exports = __webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
 
 
 /***/ })

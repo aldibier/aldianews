@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.news.field_category
     - field.field.node.news.field_comments
     - field.field.node.news.field_image
+    - field.field.node.news.field_my_content_has_a_main_vide
     - field.field.node.news.field_short_title
     - field.field.node.news.field_tags
     - field.field.node.news.field_video
@@ -28,6 +29,7 @@ third_party_settings:
       children:
         - field_image
         - field_video
+        - field_my_content_has_a_main_vide
       parent_name: ''
       weight: 2
       format_type: fieldset
@@ -96,6 +98,13 @@ content:
       preview_image_style: thumbnail
     third_party_settings: {  }
     type: image_image
+    region: content
+  field_my_content_has_a_main_vide:
+    weight: 5
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
     region: content
   field_short_title:
     weight: 1
