@@ -60,7 +60,7 @@ function al_dia_news_general_form_alter(&$form, $form_state, $form_id) {
   $content_type = $node->get('type')->getString();
 
   //if($vid == 59){
-
+  if ($content_type == "news") {
     $strBody = $node->get('body')->value;
     $count = substr_count($strBody, '<div data-embed-button="related_content">');
 
@@ -79,102 +79,102 @@ function al_dia_news_general_form_alter(&$form, $form_state, $form_id) {
 
 
 
-    
+      
     ksm($strBody);
     ksm($content_type);
     //$node->body->value = $newHtml;
     //$node->save();
 
 
-    
+      
     //ksm($newHtml);
     //ksm($node->body->values);
-    
+      
     //$build['body'][0]['#text'];
 
-      if (isset($node->body) && $newHtml != false) {
+    if (isset($node->body) && $newHtml != false) {
 
-        // Vaciamos los valores
-
-    
-        //$format = $node->get('body')->format;
-        $format = 'full_html';
-
-
-        // Copy the values to the new fields, being careful not to wipe out other values that might be there.
-        $node->body->setValue(['value' => $newHtml, 'format' => $format]);
-
-        // Clear the body values.
-        //
-        // Force a node save even if there are no changes to force the pre_save hook to be executed.
-        $node->save();
-
-      }
-
- }
-
-function newHtml($html_body, $html_block){
-  
-  $dom = new DomDocument;
-  $dom->loadHTML($html_body);
-
-  $count_related = 0;
-  foreach($dom->getElementsByTagName('div') as $item){
-    $count_related++;
-  }
-
-  $count_p = 0;
-  foreach($dom->getElementsByTagName('p') as $item){
-    $count_p++;
-  }
-
-  //return $count_related;
-
-  $position = intval($count_p / 2);
-  
-
-  if($count_p != 1){
-   if($position % 2 == 0){
-     
-     $par = true;
-   }else{
-     $par = false;
-     $position = $position + 1;
-   }
-  }else{
-    $par = null;
-  }
+      // Vaciamos los valores
 
   
-  
-  
-  //$dom->getElementsByTagName('p')->item(0)->nodeValue = $dom->getElementsByTagName('p')->item(0)->nodeValue."[related-content]";
-  if($count_related == 0){
+      //$format = $node->get('body')->format;
+      $format = 'full_html';
 
-    $count = 1;
-    foreach ($dom->getElementsByTagName('p') as $paragraph) {
-      //echo "encontré un párrafo. \n";
-      if ($position == $count){
-        //$paragraph->parentNode->removeChild($paragraph);
-        $paragraph->nodeValue = $paragraph->nodeValue."[related-content]";
-      }
-      $count++;
+
+      // Copy the values to the new fields, being careful not to wipe out other values that might be there.
+      $node->body->setValue(['value' => $newHtml, 'format' => $format]);
+
+      // Clear the body values.
+      //
+      // Force a node save even if there are no changes to force the pre_save hook to be executed.
+      $node->save();
+
     }
-    
-      $html = $dom->saveHtml();
-    
-      $related_content = "</p><div data-embed-button='related_content'>". $html_block ."</div>";
-    
-      $html = str_replace("[related-content]</p>", $related_content, $html);
-    
-      return $html;
-
-  }else{
-
-    return false;
 
   }
-  
+
+    function newHtml($html_body, $html_block){
+      
+      $dom = new DomDocument;
+      $dom->loadHTML($html_body);
+
+      $count_related = 0;
+      foreach($dom->getElementsByTagName('div') as $item){
+        $count_related++;
+      }
+
+      $count_p = 0;
+      foreach($dom->getElementsByTagName('p') as $item){
+        $count_p++;
+      }
+
+      //return $count_related;
+
+      $position = intval($count_p / 2);
+      
+
+      if($count_p != 1){
+      if($position % 2 == 0){
+        
+        $par = true;
+      }else{
+        $par = false;
+        $position = $position + 1;
+      }
+      }else{
+        $par = null;
+      }
+
+      
+      
+      
+      //$dom->getElementsByTagName('p')->item(0)->nodeValue = $dom->getElementsByTagName('p')->item(0)->nodeValue."[related-content]";
+      if($count_related == 0){
+
+        $count = 1;
+        foreach ($dom->getElementsByTagName('p') as $paragraph) {
+          //echo "encontré un párrafo. \n";
+          if ($position == $count){
+            //$paragraph->parentNode->removeChild($paragraph);
+            $paragraph->nodeValue = $paragraph->nodeValue."[related-content]";
+          }
+          $count++;
+        }
+        
+          $html = $dom->saveHtml();
+        
+          $related_content = "</p><div data-embed-button='related_content'>". $html_block ."</div>";
+        
+          $html = str_replace("[related-content]</p>", $related_content, $html);
+        
+          return $html;
+
+      }else{
+
+        return false;
+
+      }
+    }
   
     
 }
