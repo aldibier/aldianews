@@ -35,23 +35,6 @@ reactions:
         unique: 0
         context_id: jobs
         uuid: 2bfed59b-6bd4-44ad-af2f-627ee2c02cb9
-      f54775b7-63fd-4830-917b-b2713e025662:
-        id: 'system_menu_block:jobs-landing-menu'
-        label: 'Jobs landing menu'
-        provider: system
-        label_display: '0'
-        level: '1'
-        depth: '0'
-        expand_all_items: 0
-        region: content
-        weight: '0'
-        context_mapping: {  }
-        custom_id: system_menu_block_jobs_landing_menu
-        theme: al_dia_news
-        css_class: ''
-        unique: 0
-        context_id: jobs
-        uuid: f54775b7-63fd-4830-917b-b2713e025662
       fbeca817-bb51-4094-af9c-be1ff768becc:
         id: 'fixed_block_content:body_jobs_landing'
         label: 'Body Jobs landing'
@@ -67,6 +50,36 @@ reactions:
         unique: 0
         context_id: jobs
         uuid: fbeca817-bb51-4094-af9c-be1ff768becc
+      09e6e220-e224-4b6f-afa5-424ec60fe929:
+        id: system_main_block
+        label: 'Main page content'
+        provider: system
+        label_display: '0'
+        region: content
+        weight: '0'
+        context_mapping: {  }
+        custom_id: system_main_block
+        theme: al_dia_news
+        css_class: ''
+        unique: 0
+        context_id: jobs
+        uuid: 09e6e220-e224-4b6f-afa5-424ec60fe929
+      bbf14b59-60d8-4bc1-96f7-af0ea68c6291:
+        id: 'views_block:carousel_jobs_landing-block_1'
+        label: ''
+        provider: views
+        label_display: '0'
+        views_label: ''
+        items_per_page: none
+        region: content
+        weight: '2'
+        context_mapping: {  }
+        custom_id: views_block_carousel_jobs_landing_block_1
+        theme: al_dia_news
+        css_class: ''
+        unique: 0
+        context_id: jobs
+        uuid: bbf14b59-60d8-4bc1-96f7-af0ea68c6291
     id: blocks
     saved: false
     uuid: 3de707dd-4aed-4ae9-aa63-7a6bde34edc5
