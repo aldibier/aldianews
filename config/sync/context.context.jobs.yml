@@ -1,0 +1,74 @@
+uuid: 14bd6548-37d3-4bf6-b7d6-290642b80fd9
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+name: jobs
+label: Jobs
+group: 'General pages'
+description: 'Context for Jobs landing'
+requireAllConditions: false
+disabled: false
+conditions:
+  request_path:
+    id: request_path
+    pages: /jobs
+    negate: false
+    uuid: 21d1c5c5-18ae-4d59-8605-fbd987ea074b
+    context_mapping: {  }
+reactions:
+  blocks:
+    blocks:
+      2bfed59b-6bd4-44ad-af2f-627ee2c02cb9:
+        id: 'fixed_block_content:header_jobs_landing'
+        label: 'Header Jobs landing'
+        provider: fixed_block_content
+        label_display: '0'
+        region: content
+        weight: '-1'
+        view_mode: ''
+        context_mapping: {  }
+        custom_id: fixed_block_content_header_jobs_landing
+        theme: al_dia_news
+        css_class: ''
+        unique: 0
+        context_id: jobs
+        uuid: 2bfed59b-6bd4-44ad-af2f-627ee2c02cb9
+      f54775b7-63fd-4830-917b-b2713e025662:
+        id: 'system_menu_block:jobs-landing-menu'
+        label: 'Jobs landing menu'
+        provider: system
+        label_display: '0'
+        level: '1'
+        depth: '0'
+        expand_all_items: 0
+        region: content
+        weight: '0'
+        context_mapping: {  }
+        custom_id: system_menu_block_jobs_landing_menu
+        theme: al_dia_news
+        css_class: ''
+        unique: 0
+        context_id: jobs
+        uuid: f54775b7-63fd-4830-917b-b2713e025662
+      fbeca817-bb51-4094-af9c-be1ff768becc:
+        id: 'fixed_block_content:body_jobs_landing'
+        label: 'Body Jobs landing'
+        provider: fixed_block_content
+        label_display: '0'
+        region: content
+        weight: '1'
+        view_mode: ''
+        context_mapping: {  }
+        custom_id: fixed_block_content_body_jobs_landing
+        theme: al_dia_news
+        css_class: ''
+        unique: 0
+        context_id: jobs
+        uuid: fbeca817-bb51-4094-af9c-be1ff768becc
+    id: blocks
+    saved: false
+    uuid: 3de707dd-4aed-4ae9-aa63-7a6bde34edc5
+    include_default_blocks: 1
+weight: 0
