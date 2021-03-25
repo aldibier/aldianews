@@ -1298,6 +1298,20 @@ __webpack_require__.r(__webpack_exports__);
         $('.page-node-type-al-dia-vacancy .block-webform-block').addClass('open');
       }
     });
+    $('.path-employer .button-apply').click(function () {
+      if ($(this).parents('.views-row').find('.views-field-field-webform').hasClass('open')) {
+        $(this).parents('.views-row').find('.views-field-field-webform').removeClass('open');
+      } else {
+        $(this).parents('.views-row').find('.views-field-field-webform').addClass('open');
+      }
+    });
+    $('.path-employer form button').click(function () {
+      if ($(this).parents('.views-row').find('.views-field-field-webform').hasClass('open')) {
+        $(this).parents('.views-row').find('.views-field-field-webform').removeClass('open');
+      } else {
+        $(this).parents('.views-row').find('.views-field-field-webform').addClass('open');
+      }
+    });
     Object(_slick_js__WEBPACK_IMPORTED_MODULE_3__["default"])($, Drupal);
   });
 })(jQuery, Drupal);

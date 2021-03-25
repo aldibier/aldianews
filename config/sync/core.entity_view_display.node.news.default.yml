@@ -56,7 +56,7 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: 0
+            weight: -9
           64a35895-ea46-46ed-92b9-70070d4763da:
             uuid: 64a35895-ea46-46ed-92b9-70070d4763da
             region: one_content
@@ -75,7 +75,7 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: 1
+            weight: -8
           7308e853-0075-4268-8299-5427c1c9ef1e:
             uuid: 7308e853-0075-4268-8299-5427c1c9ef1e
             region: one_content
@@ -94,7 +94,7 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: 2
+            weight: -7
           52621a28-ac26-4d0a-a027-ed3e5e2bbfa0:
             uuid: 52621a28-ac26-4d0a-a027-ed3e5e2bbfa0
             region: one_content
@@ -113,7 +113,7 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: 3
+            weight: -6
           2b60f940-8167-473a-a7d4-08cf9b4e03e3:
             uuid: 2b60f940-8167-473a-a7d4-08cf9b4e03e3
             region: two_content
@@ -291,6 +291,28 @@ third_party_settings:
                 type: boolean
             additional: {  }
             weight: 4
+          311709d2-2980-4173-9300-0751f6fac023:
+            uuid: 311709d2-2980-4173-9300-0751f6fac023
+            region: one_content
+            configuration:
+              id: 'field_block:node:news:field_video'
+              label: Video
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: video_embed_field_video
+                settings:
+                  autoplay: true
+                  responsive: true
+                  width: 854
+                  height: 480
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: -10
         third_party_settings: {  }
 id: node.news.default
 targetEntityType: node
