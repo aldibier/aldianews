@@ -309,10 +309,10 @@
                 position: relative;
                 max-width: 990px;
                 max-height: 945px;
-                top: 148px;
+                top: 185px;
                 margin: auto;
                 background: $cwhite;
-                height: 64%;
+                height: 70%;
                 width: 100%;
                 overflow: hidden;
                 padding: 70px 75px;
@@ -322,6 +322,8 @@
             form {
                 overflow-y: scroll;
                 height: 100%;
+                display: flex;
+                flex-wrap: wrap;
             }
 
             .webform-contact-employer {
@@ -349,6 +351,11 @@
                 display: block;
                 font-size: 0;
                 background: url('../img/close.svg') center center no-repeat;
+                border: none;
+            }
+
+            .form-type-textfield {
+                width: 50%;
             }
         }
     }
