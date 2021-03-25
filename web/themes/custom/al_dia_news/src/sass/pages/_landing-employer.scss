@@ -94,7 +94,7 @@
             }
 
             a{
-                @include link-box($cwhite, szrem(10), szrem(11));
+                @include link-box($colorBcolor: $cwhite, $fontSize: szrem(10), $lineHeight: szrem(11));
                 font-size: $px22;
                 line-height: 27px;
                 min-height: 60px;
