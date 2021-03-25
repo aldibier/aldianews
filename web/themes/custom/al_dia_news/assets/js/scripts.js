@@ -1318,6 +1318,11 @@ __webpack_require__.r(__webpack_exports__);
         $(".page-node-type-al-dia-vacancy .block-webform-block").addClass("open");
       }
     });
+    $('.views-field-field-webform  button[name="close"]').click(function () {
+      if ($(".path-employer .views-field-field-webform").hasClass("open")) {
+        $(".path-employer .views-field-field-webform").removeClass("open");
+      }
+    });
     $(".path-employer .button-apply").click(function () {
       if ($(this).parents(".views-row").find(".views-field-field-webform").hasClass("open")) {
         $(this).parents(".views-row").find(".views-field-field-webform").removeClass("open");
