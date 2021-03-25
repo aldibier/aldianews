@@ -352,10 +352,21 @@
                 font-size: 0;
                 background: url('../img/close.svg') center center no-repeat;
                 border: none;
+                cursor: pointer;
             }
 
             .form-type-textfield {
                 width: 50%;
+            }
+
+            #edit-information-text {
+                font-style: normal;
+                font-weight: normal;
+                font-size: $px20;
+                line-height: 144%;
+                color: $cblack3;
+                width: 100%;
+                font-family: $PrNovacond-reg;
             }
         }
     }
