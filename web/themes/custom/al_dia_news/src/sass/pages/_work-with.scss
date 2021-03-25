@@ -6,6 +6,12 @@
   .block-fixed-block-contentheader-work-with-al-dia {
     color: $cwhite;
 
+    .container-content {
+      @media screen and (min-width: $tablet) {
+        margin-bottom: 100px;
+      }
+    }
+
     h1,
     h2,
     p {
@@ -17,7 +23,7 @@
 
       @media screen and (min-width: $tablet) {
         font-size: szrem(78);
-        line-height: szrem(84);
+        line-height: 108%;
       }
     }
 
@@ -44,15 +50,14 @@
   .menu--work-with-al-dia-menu .menu {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-column-gap: 3px;
     padding: 0;
 
     @media screen and (min-width: $tablet) {
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(auto-fill, minmax(100px, 232px));
     }
 
     @media screen and (min-width: $desktop) {
-      grid-column-gap: 30px;
+      //grid-column-gap: 30px;
     }
 
     .menu-item {
@@ -60,15 +65,36 @@
       min-height: 30px;
       margin-top: 5px;
 
+      &:nth-child(1) {
+        margin-right: 14px;
+      }
+
+      &:nth-child(2) {
+        margin-left: 14px;
+      }
+
+      &:nth-child(-n+2) {
+        max-width: 450px;
+        min-height: 80px;
+      }
+
+      &:nth-child(n+3) {
+        min-height: 70px;
+        margin-right: 25px;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+
       a {
-        @include link-box($cwhite, szrem(10), szrem(11));
+        @include link-box($colorBcolor: $cwhite, $fontSize: szrem(10), $lineHeight: szrem(11));
 
         @media screen and (min-width: $tablet) {
           font-size: 1rem;
           line-height: 1rem;
           letter-spacing: .74px;
           border-width: 2px;
-          min-height: 80px;
         }
 
         @media screen and (min-width: $desktop) {
@@ -108,8 +134,21 @@
 
   .two-content-general-work {
     .field--name-title h2 {
+      margin-top: 0;
+      margin-bottom: 20px;
       font-size: szrem(20);
+      font-family: $Mod-bold;
+      font-style: normal;
+      font-weight: bold;
       line-height: szrem(26);
+    }
+
+    @media screen and (min-width: $tablet) {
+      .field--name-title h2 {
+        margin-bottom: 50px;
+        font-size: szrem(46);
+        line-height: 134%;
+      }
     }
 
     @media screen and (min-width: $broken) {
@@ -117,11 +156,6 @@
       display: inline-block;
       margin-right: 40px;
       vertical-align: top;
-
-      .field--name-title h2 {
-        font-size: szrem(48);
-        line-height: szrem(62);
-      }
     }
   }
 
@@ -130,7 +164,24 @@
     text-align: center;
   }
 
-  // Blucidad para desktop
+  .block-field-blocknodepagebody {
+
+    strong {
+      font-family: $PrNovacond-bold;
+    }
+
+    p {
+      font-family: $PrNovacond-reg;
+      color: $cblack3;
+
+      @media screen and (min-width:$tablet) {
+        font-size: szrem(24);
+        font-weight: 400;
+      }
+    }
+  }
+
+  // Publicidad para desktop
   .two-vertical-advertising {
     display: none;
 
@@ -141,6 +192,8 @@
 
   // Publicidad para mobile
   .one-vertical-advertising {
+    display: none;
+
     @media screen and (min-width: $broken) {
       display: none;
     }
