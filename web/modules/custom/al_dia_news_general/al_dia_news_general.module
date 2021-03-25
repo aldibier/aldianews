@@ -95,7 +95,7 @@ function al_dia_news_general_form_alter(&$form, $form_state, $form_id) {
     }
   }
   
-
+}
 
 function newHtml($html_body, $html_block){
       
@@ -147,12 +147,12 @@ function newHtml($html_body, $html_block){
         
     return $html;
 
-    }else{
+  }else{
 
-      return false;
+    return false;
 
-    }
   }
+  
 }
     
 
