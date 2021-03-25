@@ -309,12 +309,64 @@
                 position: relative;
                 max-width: 990px;
                 max-height: 945px;
-                top: 148px;
+                top: 185px;
                 margin: auto;
                 background: $cwhite;
-                height: 64%;
+                height: 70%;
                 width: 100%;
-                overflow-y: auto;
+                overflow: hidden;
+                padding: 70px 75px;
+            }
+
+
+            form {
+                overflow-y: scroll;
+                height: 100%;
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .webform-contact-employer {
+                height: 100%;
+            }
+
+            .views-label {
+                width: 100%;
+                display: block;
+                padding: 0 0 10px;
+                border-bottom: 1px solid $corange;
+                font-weight: 600;
+                font-size: $px34;
+                line-height: 41px;
+                font-family: $Mod-Sbold;
+                color: $corange;
+            }
+
+            button[name="close"]{
+                position: absolute;
+                top: 70px;
+                right: 75px;
+                width: 20px;
+                height: 20px;
+                display: block;
+                font-size: 0;
+                background: url('../img/close.svg') center center no-repeat;
+                border: none;
+                cursor: pointer;
+            }
+
+            .form-type-textfield {
+                width: 50%;
+            }
+
+            #edit-information-text {
+                font-style: normal;
+                font-weight: normal;
+                font-size: $px20;
+                line-height: 144%;
+                color: $cblack3;
+                width: 100%;
+                font-family: $PrNovacond-reg;
             }
         }
     }
