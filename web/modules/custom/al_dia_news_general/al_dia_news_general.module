@@ -71,7 +71,7 @@ function al_dia_news_general_form_alter(&$form, $form_state, $form_id) {
     $d   = \Drupal::service('renderer')->renderPlain($con);
     $html_block = $d->__toString();
 
-    $newHtml = newHtml($strBody, $html_block);
+    //$newHtml = newHtml($strBody, $html_block);
 
     //ksm($strBody);
     //ksm($content_type);
@@ -93,8 +93,8 @@ function al_dia_news_general_form_alter(&$form, $form_state, $form_id) {
       $node->save();
 
     }
-
   }
+  
 }
 
 function newHtml($html_body, $html_block){
@@ -153,6 +153,8 @@ function newHtml($html_body, $html_block){
 
     }
 }
+    
+
 
 /**
  * Implement hook_views_query_alter.
