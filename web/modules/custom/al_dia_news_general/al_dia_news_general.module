@@ -55,7 +55,7 @@ function al_dia_news_general_form_alter(&$form, $form_state, $form_id) {
 /**
  * Implements hook_node_view()
  */
-//  function al_dia_news_general_node_view(array &$build, NodeInterface $node, EntityViewDisplayInterface $display, $view_mode) {
+function al_dia_news_general_node_view(array &$build, NodeInterface $node, EntityViewDisplayInterface $display, $view_mode) {
 
   $content_type = $node->get('type')->getString();
 
@@ -95,8 +95,8 @@ function al_dia_news_general_form_alter(&$form, $form_state, $form_id) {
     }
   }
   
-}
 
+}
 function newHtml($html_body, $html_block){
       
   $dom = new DomDocument;
