@@ -107,7 +107,7 @@ third_party_settings:
                 label: hidden
                 type: text_summary_or_trimmed
                 settings:
-                  trim_length: 170
+                  trim_length: 600
                 third_party_settings: {  }
               context_mapping:
                 entity: layout_builder.entity
@@ -124,7 +124,7 @@ third_party_settings:
               label_display: '0'
               formatter:
                 label: hidden
-                type: text_default
+                type: related_content_field_formatter
                 settings: {  }
                 third_party_settings: {  }
               context_mapping:
