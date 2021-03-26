@@ -20,43 +20,13 @@ conditions:
 reactions:
   blocks:
     blocks:
-      2bfed59b-6bd4-44ad-af2f-627ee2c02cb9:
-        id: 'fixed_block_content:header_jobs_landing'
-        label: 'Header Jobs landing'
-        provider: fixed_block_content
-        label_display: '0'
-        region: content
-        weight: '-3'
-        view_mode: ''
-        context_mapping: {  }
-        custom_id: fixed_block_content_header_jobs_landing
-        theme: al_dia_news
-        css_class: ''
-        unique: 0
-        context_id: jobs
-        uuid: 2bfed59b-6bd4-44ad-af2f-627ee2c02cb9
-      fbeca817-bb51-4094-af9c-be1ff768becc:
-        id: 'fixed_block_content:body_jobs_landing'
-        label: 'Body Jobs landing'
-        provider: fixed_block_content
-        label_display: '0'
-        region: content
-        weight: '0'
-        view_mode: ''
-        context_mapping: {  }
-        custom_id: fixed_block_content_body_jobs_landing
-        theme: al_dia_news
-        css_class: ''
-        unique: 0
-        context_id: jobs
-        uuid: fbeca817-bb51-4094-af9c-be1ff768becc
       09e6e220-e224-4b6f-afa5-424ec60fe929:
         id: system_main_block
         label: 'Main page content'
         provider: system
         label_display: '0'
         region: content
-        weight: '-2'
+        weight: '-3'
         context_mapping: {  }
         custom_id: system_main_block
         theme: al_dia_news
@@ -97,21 +67,6 @@ reactions:
         unique: 0
         context_id: jobs
         uuid: 1133f6fd-7f2a-41c0-828e-7e4241a86278
-      8173739c-5601-4494-b8e8-44ccaccb154e:
-        id: 'fixed_block_content:horizontal_advertising'
-        label: 'Horizontal advertising'
-        provider: fixed_block_content
-        label_display: '0'
-        region: content
-        weight: '-1'
-        view_mode: ''
-        context_mapping: {  }
-        custom_id: fixed_block_content_horizontal_advertising
-        theme: al_dia_news
-        css_class: ''
-        unique: 0
-        context_id: jobs
-        uuid: 8173739c-5601-4494-b8e8-44ccaccb154e
       56f7b97b-5b86-44d1-abf6-a03ba11460e9:
         id: 'fixed_block_content:_small_vertical_advertising'
         label: ' Small vertical advertising'
@@ -142,6 +97,53 @@ reactions:
         unique: 0
         context_id: jobs
         uuid: a6be30af-b5b8-4660-bbc3-17d401a003de
+      4cc8dc12-e672-4f7f-b9c0-c1ed94f2c54f:
+        id: 'fixed_block_content:body_jobs_landing'
+        label: 'Body Jobs landing'
+        provider: fixed_block_content
+        label_display: '0'
+        region: content
+        weight: '0'
+        view_mode: ''
+        context_mapping: {  }
+        custom_id: fixed_block_content_body_jobs_landing
+        theme: al_dia_news
+        css_class: ''
+        unique: 0
+        context_id: jobs
+        uuid: 4cc8dc12-e672-4f7f-b9c0-c1ed94f2c54f
+      1aabac36-2154-4466-b468-65ce8f202ba1:
+        id: 'system_menu_block:jobs-landing-menu'
+        label: 'Jobs landing menu'
+        provider: system
+        label_display: '0'
+        level: '1'
+        depth: '0'
+        expand_all_items: 0
+        region: content
+        weight: '-2'
+        context_mapping: {  }
+        custom_id: system_menu_block_jobs_landing_menu
+        theme: al_dia_news
+        css_class: ''
+        unique: 0
+        context_id: jobs
+        uuid: 1aabac36-2154-4466-b468-65ce8f202ba1
+      8a49ea06-ac46-4d59-b5d3-40e68ebeaf69:
+        id: 'fixed_block_content:horizontal_advertising'
+        label: 'Horizontal advertising'
+        provider: fixed_block_content
+        label_display: '0'
+        region: content
+        weight: '-1'
+        view_mode: ''
+        context_mapping: {  }
+        custom_id: fixed_block_content_horizontal_advertising
+        theme: al_dia_news
+        css_class: ''
+        unique: 0
+        context_id: jobs
+        uuid: 8a49ea06-ac46-4d59-b5d3-40e68ebeaf69
     id: blocks
     saved: false
     uuid: 3de707dd-4aed-4ae9-aa63-7a6bde34edc5
