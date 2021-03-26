@@ -13,7 +13,7 @@ use Drupal\Core\Form\FormStateInterface;
  *
  * @FieldFormatter(
  *   id = "related_content_field_formatter",
- *   label = @Translation("Related content field formatter"),
+ *   label = @Translation("Insert Related content"),
  *   field_types = {
  *     "text_with_summary"
  *   }
@@ -84,24 +84,68 @@ class RelatedContentFieldFormatter extends FormatterBase {
    * @param $value string
    * 
    */
-
   public function addRelatedContent($value, $entity){
 
-    $strBody = $value;
-    $nodeId = $entity->id();
-    $tags = $entity->get('field_tags')->getValue();
-    $target_ids = array();
+    $newContent = "";
 
-    foreach ($tags as $value) {
-      $target_ids[] = $value['target_id'];
+    // Only valid to node Entity
+    if($entity->getEntityType()->id() == 'node'){
+
+      $nodeId = $entity->id();
+
+      // get taxonomy tags ids
+      $tags = $entity->get('field_tags')->getValue();
+      $target_ids = [];
+
+      foreach ($tags as $tag) {
+        $target_ids[] = $tag['target_id'];
+      }
+
+      $tags_list = implode(',', $target_ids);
+
+      // get view ids of related content according to node bundle
+      switch ($entity->getType()) {
+        case 'thought_leaders':
+          $view_id = 'related_content_thought_leaders';
+          $view_display = 'block_1';
+
+          break;
+        
+        default:
+          $view_id = 'related_content';
+          $view_display = 'block_1';
+          break;
+      }
+
+      // get view
+      $view = \Drupal\views\Views::getView($view_id);
+      $view->setDisplay($view_display);
+      $view->setArguments([$nodeId, $tags_list]);
+      $title = $view->getTitle();
+      // Render.
+      $render = $view->render();
+      // get count results
+      $q = $view->query->query()->countQuery()->execute()->fetchAssoc();
+      $count = reset($q);
+
+      // If this content doesn't have related content, return original content
+      if($count == 0){
+        return $value; 
+      }
+
+      $the_title_render_array = [
+        '#markup' => '<h2>'.t('@title', ['@title'=> $title]).'</h2>',
+      ];
+
+      $variables['content']['view_title'] = $the_title_render_array;
+      $variables['content']['view_output'] = $render;
+
+      $rendered =  \Drupal::service('renderer')->render($variables);
+
+      // the view is inserted in content
+      $newContent = $this->newHtml($value, $rendered);
     }
-
-    $tags_list = implode(',', $target_ids);
-    $view = views_embed_view('related_content', 'block_1', $nodeId, $tags_list);
-
-    $rendered =  \Drupal::service('renderer')->render($view);
-
-    $newContent = $this->newHtml($strBody, $rendered);
+    
 
     return $newContent;
 
@@ -113,7 +157,7 @@ class RelatedContentFieldFormatter extends FormatterBase {
    * @param $html_body string
    * @param $view string
    */
-  public function newHtml($html_body, $view){
+  public function newHtml($html_body, $related_content){
       
     $dom= Html::load($html_body);
 
@@ -145,19 +189,13 @@ class RelatedContentFieldFormatter extends FormatterBase {
           
     $html = $dom->saveHtml();
 
-    // get view title 
-    $view_title = \Drupal\views\Views::getView('related_content');
-    $view_title->setDisplay('block_1');
-    $displayTitle = $view_title->getTitle();
-
-    $related_content = "</p><div data-embed-button='related_content'><h2>" . $displayTitle. "</h2>". $view ."</div>";
+    $content = "</p><div data-embed-button='related_content'>". $related_content ."</div>";
       
     // HTML to return
-    $html = str_replace("[related-content]</p>", $related_content, $html);
+    $html = str_replace("[related-content]</p>", $content, $html);
           
     return $html;
   
   }
-
 
 }
