@@ -156,19 +156,6 @@
     }
   }
 
-  &.user-logged-in {
-    .view-jobs-menu,
-    .block-menu-float {
-      .menu.active {
-        margin: 165px auto 0 !important;
-
-        @media (max-width: $tablet) {
-          margin: 127px auto 0 !important;
-        }
-      }
-    }
-  }
-
   .block-content-form {
     .views-row {
       &:nth-child(2n + 2) {
@@ -274,7 +261,8 @@
       }
     }
 
-    .views-field-field-webform {
+    .views-field-field-webform,
+    .modal-apply-webform {
       display: none;
     }
 
@@ -664,6 +652,18 @@
         height: 30px;
         font-size: 14px;
         line-height: 25px;
+      }
+    }
+  }
+}
+.user-logged-in .style-jobs {
+  .view-jobs-menu,
+  .block-menu-float {
+    .menu.active {
+      margin: 165px auto 0 !important;
+
+      @media (max-width: $tablet) {
+        margin: 127px auto 0 !important;
       }
     }
   }
