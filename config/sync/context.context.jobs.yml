@@ -26,7 +26,7 @@ reactions:
         provider: system
         label_display: '0'
         region: content
-        weight: '-6'
+        weight: '-5'
         context_mapping: {  }
         custom_id: system_main_block
         theme: al_dia_news
@@ -42,7 +42,7 @@ reactions:
         views_label: ''
         items_per_page: none
         region: content
-        weight: '2'
+        weight: '1'
         context_mapping: {  }
         custom_id: views_block_carousel_jobs_landing_block_1
         theme: al_dia_news
@@ -59,7 +59,7 @@ reactions:
         default_data: ''
         redirect: 0
         region: content
-        weight: '-2'
+        weight: '-1'
         context_mapping: {  }
         custom_id: webform_block
         theme: al_dia_news
@@ -73,7 +73,7 @@ reactions:
         provider: fixed_block_content
         label_display: '0'
         region: content
-        weight: '-3'
+        weight: '-2'
         view_mode: ''
         context_mapping: {  }
         custom_id: fixed_block_content_body_jobs_landing
@@ -91,7 +91,7 @@ reactions:
         depth: '0'
         expand_all_items: 0
         region: content
-        weight: '-5'
+        weight: '-4'
         context_mapping: {  }
         custom_id: system_menu_block_jobs_landing_menu
         theme: al_dia_news
@@ -105,7 +105,7 @@ reactions:
         provider: fixed_block_content
         label_display: '0'
         region: content
-        weight: '-4'
+        weight: '-3'
         view_mode: ''
         context_mapping: {  }
         custom_id: fixed_block_content_horizontal_advertising
@@ -122,7 +122,7 @@ reactions:
         views_label: ''
         items_per_page: none
         region: content
-        weight: '5'
+        weight: '4'
         context_mapping: {  }
         custom_id: views_block_career_news_block_1
         theme: al_dia_news
@@ -138,7 +138,7 @@ reactions:
         views_label: ''
         items_per_page: none
         region: content
-        weight: '4'
+        weight: '3'
         context_mapping: {  }
         custom_id: views_block_career_news_block_3
         theme: al_dia_news
@@ -146,22 +146,6 @@ reactions:
         unique: 0
         context_id: jobs
         uuid: 168611d5-0859-4f28-8727-64ccce6d3fa4
-      7ca40624-0fd3-4f74-934d-8e263ecfe010:
-        id: 'views_block:career_news-block_2'
-        label: ''
-        provider: views
-        label_display: '0'
-        views_label: ''
-        items_per_page: none
-        region: content
-        weight: '6'
-        context_mapping: {  }
-        custom_id: views_block_career_news_block_2
-        theme: al_dia_news
-        css_class: ''
-        unique: 0
-        context_id: jobs
-        uuid: 7ca40624-0fd3-4f74-934d-8e263ecfe010
       9289a888-2b9d-43d0-b316-3b469f4b6a2a:
         id: 'views_block:career_news-block_4'
         label: ''
@@ -170,7 +154,7 @@ reactions:
         views_label: ''
         items_per_page: none
         region: content
-        weight: '3'
+        weight: '2'
         context_mapping: {  }
         custom_id: views_block_career_news_block_4
         theme: al_dia_news
@@ -184,7 +168,7 @@ reactions:
         provider: blockgroup
         label_display: visible
         region: content
-        weight: '-1'
+        weight: '0'
         context_mapping: {  }
         custom_id: block_group_advertising_blocks_in_job_landing_pages
         theme: al_dia_news
@@ -192,6 +176,36 @@ reactions:
         unique: 0
         context_id: jobs
         uuid: e6048cb4-32b2-45b0-909b-29e4c6be8f39
+      dae1e0ec-4178-4377-922c-507e2af99773:
+        id: 'fixed_block_content:horizontal_advertising'
+        label: 'Horizontal advertising'
+        provider: fixed_block_content
+        label_display: '0'
+        region: content
+        weight: '6'
+        view_mode: ''
+        context_mapping: {  }
+        custom_id: fixed_block_content_horizontal_advertising
+        theme: al_dia_news
+        css_class: ''
+        unique: 0
+        context_id: jobs
+        uuid: dae1e0ec-4178-4377-922c-507e2af99773
+      1566f794-df51-4792-9a06-2888e2edec57:
+        id: 'fixed_block_content:big_vertical_advertising'
+        label: 'Big vertical advertising'
+        provider: fixed_block_content
+        label_display: '0'
+        region: content
+        weight: '5'
+        view_mode: ''
+        context_mapping: {  }
+        custom_id: fixed_block_content_big_vertical_advertising
+        theme: al_dia_news
+        css_class: ''
+        unique: 0
+        context_id: jobs
+        uuid: 1566f794-df51-4792-9a06-2888e2edec57
     id: blocks
     saved: false
     uuid: 3de707dd-4aed-4ae9-aa63-7a6bde34edc5
