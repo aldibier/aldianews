@@ -166,22 +166,29 @@
 
 .path-jobs .style-jobs {
   h1 {
-    bottom: 230px;
+    bottom: 310px;
     left: 65px;
   }
-  p {
-    position: absolute;
-    left: 80px;
-    bottom: 170px;
-    line-height: 38px;
-    color: $cwhite;
-    font-size: $px28;
-    z-index: 2;
+  .region-content {
+    display: flex;
+    flex-wrap: wrap;
   }
   .block-banner-page {
     .field--type-image {
       @media screen and (min-width: $tablet) {
         min-height: 710px;
+      }
+    }
+    .views-field-body {
+      max-height: 1px;
+      p {
+        position: relative;
+        left: 80px;
+        bottom: 310px;
+        line-height: 38px;
+        color: $cwhite;
+        font-size: $px28;
+        z-index: 2;
       }
     }
 
@@ -195,13 +202,14 @@
     margin: -220px 0px 62px;
     padding-left: 65px;
   }
-  .block-content-form:not(.block-system-main-block) {
-    display: inline-block;
-  }
+
   .block-block-groupadvertising-blocks-in-job-landing-pages {
     margin-top: 55px;
     .block-fixed-block-content-small-vertical-advertising {
       margin-bottom: 45px;
     }
+  }
+  .block-system-main-block {
+    width: 100%;
   }
 }
