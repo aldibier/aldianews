@@ -1335,6 +1335,14 @@ __webpack_require__.r(__webpack_exports__);
         $(".path-employer .views-field-field-webform").removeClass("open");
       }
     });
+    $(".style-jobs .button-apply").click(function () {
+      $(".style-jobs .modal-apply-webform").addClass("open");
+    });
+    $('.modal-apply-webform  button[name="close"]').click(function () {
+      if ($(".style-jobs .modal-apply-webform").hasClass("open")) {
+        $(".style-jobs .modal-apply-webform").removeClass("open");
+      }
+    });
     $(".path-employer .button-apply").click(function () {
       if ($(this).parents(".views-row").find(".views-field-field-webform").hasClass("open")) {
         $(this).parents(".views-row").find(".views-field-field-webform").removeClass("open");
@@ -1434,7 +1442,7 @@ var initScrollMagic = function initScrollMagic($, Drupal) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 var initSlick = function initSlick($, Drupal) {
-  var categoriesMore = document.querySelectorAll('.view-categories-sons .view-more-category .view-content');
+  var categoriesMore = document.querySelectorAll(".view-categories-sons .view-more-category .view-content");
   var settings = {
     infinite: false,
     rows: 3,
@@ -1446,7 +1454,7 @@ var initSlick = function initSlick($, Drupal) {
     arrows: true,
     responsive: [{
       breakpoint: 768,
-      settings: 'unslick'
+      settings: "unslick"
     }]
   };
 
@@ -1462,6 +1470,16 @@ var initSlick = function initSlick($, Drupal) {
         return $(element).slick(settings);
       });
     }
+  }); // slide landing jobs
+
+  $(document).ready(function () {
+    $(".block-views-blockcarousel-jobs-landing-block-1 .brands-carousel-wrapper .view-content").slick({
+      infinite: true,
+      slidesToShow: 3,
+      slidesToScroll: 3,
+      autoplay: true,
+      autoplaySpeed: 2000
+    });
   });
 };
 
