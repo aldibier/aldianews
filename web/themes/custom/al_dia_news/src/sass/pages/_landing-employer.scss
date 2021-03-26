@@ -306,18 +306,18 @@
         position: relative;
         max-width: 990px;
         max-height: 945px;
-        top: 185px;
+        top: 140px;
         margin: auto;
         background: $cwhite;
-        height: auto;
+        height: 70%;
         width: 100%;
         overflow: hidden;
         padding: 100px 75px 88px;
       }
 
       form {
-        overflow-y: initial;
-        height: auto;
+        overflow-y: auto;
+        height: 100%;
         display: flex;
         flex-wrap: wrap;
         min-height: 700px;
@@ -346,6 +346,7 @@
         background: $cgrey8;
         margin-top: 10px;
       }
+
       select {
         max-width: 265px;
         width: 100%;
@@ -361,6 +362,7 @@
         font-family: $PrNovacond-light;
         border-right: 14px solid rgb(242, 242, 242);
       }
+
       select {
         background-image: url(../img/fle.png); /*aquí deberás escribir la ruta de la imagen que utilizarás como flecha del desplegable*/
         background-repeat: no-repeat;
@@ -370,31 +372,37 @@
         -o-appearance: none;
         appearance: none;
       }
+
       select::-ms-expand {
         display: none; /*Evita que se muestre la flecha por defecto en versiones de IE*/
       }
+
       fieldset {
         border: 0px;
         padding: 0px;
         margin: 20px 25px 0 0;
         max-width: 265px;
-        width: 100%;
+        width: 33%;
       }
+
       textarea {
         max-width: 550px;
-        width: 100%;
+        width: 64%;
         min-height: 145px;
         background: $cgrey8;
         margin-top: 10px;
       }
+
       .form-type-textarea {
         max-width: 550px;
-        width: 100%;
+        width: 50%;
         margin-top: 20px;
       }
+
       .form-item-interest {
         margin: 0px;
       }
+
       button[name="close"] {
         position: absolute;
         top: 50px;
@@ -407,10 +415,12 @@
         border: none;
         cursor: pointer;
       }
+
       .form-actions {
         width: 100%;
         padding-top: 0px;
         margin: 0px;
+
         .button {
           max-width: 150px;
           width: 100%;
@@ -425,11 +435,13 @@
           border-radius: 0px;
         }
       }
+
       .form-item-last-name,
       .form-item-job-title,
       .form-item-phone-number {
         padding-left: 15px;
       }
+
       .form-type-textfield {
         width: 50%;
       }
