@@ -1,4 +1,4 @@
-.path-employer {
+.style-jobs {
   .breadcrumb {
     max-width: 1310px;
     margin: 45px auto 10px;
@@ -31,7 +31,7 @@
     padding: 0 15px;
   }
 
-  .block-fixed-block-contentheader-i-am-an-employer {
+  .block-banner-page {
     position: relative;
     width: 100%;
 
@@ -73,7 +73,8 @@
     min-height: auto !important;
   }
 
-  #block-system-menu-block-i-am-an-employer-menu {
+  .block-menu-float,
+  .view-jobs-menu {
     z-index: 3;
     margin: -192px 0 62px;
     height: 60px;
@@ -156,7 +157,8 @@
   }
 
   &.user-logged-in {
-    #block-system-menu-block-i-am-an-employer-menu {
+    .view-jobs-menu,
+    .block-menu-float {
       .menu.active {
         margin: 165px auto 0 !important;
 
@@ -167,7 +169,7 @@
     }
   }
 
-  #block-system-main-block {
+  .block-content-form {
     .views-row {
       &:nth-child(2n + 2) {
         background: #e6e7e8;
@@ -276,7 +278,8 @@
       display: none;
     }
 
-    .views-field-field-webform.open {
+    .views-field-field-webform.open,
+    .modal-apply-webform.open {
       display: block;
       position: fixed;
       width: 100%;
@@ -481,7 +484,7 @@
         margin: 25px 0px 35px;
       }
 
-      @media (max-width: $tablet) { 
+      @media (max-width: $tablet) {
         .field-content {
           top: 94px;
           padding: 30px 20px;
@@ -499,7 +502,7 @@
           line-height: 144%;
         }
 
-        button[name=close] {
+        button[name="close"] {
           width: 15px;
           height: 15px;
           background-size: contain;
@@ -554,7 +557,7 @@
           font-size: 15px;
         }
 
-        .webform-contact-employer  {
+        .webform-contact-employer {
           overflow: hidden;
         }
 
@@ -586,7 +589,8 @@
       padding: 0 25px;
     }
 
-    #block-system-menu-block-i-am-an-employer-menu {
+    .view-jobs-menu,
+    .block-menu-float {
       margin: -115px 0 44px;
 
       .menu {
@@ -607,7 +611,7 @@
       }
     }
 
-    #block-system-main-block {
+    .block-content-form {
       .views-field-nothing {
         .employer-container {
           flex-wrap: wrap;

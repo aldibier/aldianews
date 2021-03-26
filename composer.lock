@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1aa05086e0142a21cd8a3956192a9f3f",
+    "content-hash": "2cdcf994a94a85b23aebbe1181b3ac5d",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -4839,6 +4839,48 @@
                 "source": "https://git.drupalcode.org/project/menu_item_extras",
                 "issues": "https://www.drupal.org/project/issues/menu_item_extras"
             }
+        },
+        {
+            "name": "drupal/other_view_filter",
+            "version": "dev-1.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/other_view_filter.git",
+                "reference": "32dd7946a5f56ca84acc7f032511d35233683cce"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.1+2-dev",
+                    "datestamp": "1586783935",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Antonnavi",
+                    "homepage": "https://www.drupal.org/user/875410"
+                }
+            ],
+            "description": "Adds a filter to views that uses the results of another view.",
+            "homepage": "https://www.drupal.org/project/other_view_filter",
+            "support": {
+                "source": "https://git.drupalcode.org/project/other_view_filter"
+            },
+            "time": "2020-04-13T13:18:30+00:00"
         },
         {
             "name": "drupal/panelbutton",
@@ -10030,6 +10072,7 @@
         "drupal/better_exposed_filters": 20,
         "drupal/context": 10,
         "drupal/inline_entity_form": 5,
+        "drupal/other_view_filter": 20,
         "drupal/react_comments": 10,
         "drupal/term_csv_export_import": 15,
         "drupal/views_field_view": 10
