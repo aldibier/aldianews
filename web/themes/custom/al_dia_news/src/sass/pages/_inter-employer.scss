@@ -4,6 +4,20 @@
         line-height: 49px;
         color: $cblack3;
         margin: 0 0 40px;
+        font-family: $PrNovacond-reg;
+    }
+
+    .addtoany_list.a2a_kit_size_32 a {
+        padding: 0 15px 0 0;
+
+        > span {
+            width: 40px;
+            height: 40px;
+        }
+    } 
+
+    div.block-extra-field-blocknodenewsaddtoany {
+        margin-bottom: 60px;
     }
 
     .block-field-blocknodefeature-employerfield-image {
@@ -150,6 +164,8 @@
 
         @media(max-width: $tablet) {
             position: relative;
+            padding: 0 0 65px;
+            margin: 0 0 20px;
 
             .employer-information-image {
                 width: 110px;
@@ -217,7 +233,7 @@
 
             .block-views-blockfeature-employed-information-block-2 {
                 position: absolute;
-                bottom: 15px;
+                bottom: 30px;
                 left: 0;
             }
         }
@@ -283,6 +299,7 @@
 
         @media(max-width:$tablet) {
             border-top: 1.5px solid $cgrey6;
+            margin: 15px 0 0;
 
             .views-row {
                 width: 100%;
@@ -294,8 +311,47 @@
             h2 {
                 font-size: 15px;
                 line-height: 18px;
-                margin: -9px 0 20px;
+                margin: -9px 0 30px;
             }
+        }
+    }
+
+    .content-left-pages .text-formatted p {
+        font-size: $px24;
+        line-height: 140%;
+    }
+
+    .video-embed-field-provider-youtube {
+        margin: 0 0 35px;
+    }
+
+    @media(max-width: $tablet) {
+        .addtoany_list.a2a_kit_size_32 a {
+            padding: 0 10px 0 0;
+    
+            > span {
+                width: 25px;
+                height: 25px;
+            }
+        } 
+
+        .video-embed-field-provider-youtube {
+            margin: 0 0 25px;
+        }
+    
+        div.block-extra-field-blocknodenewsaddtoany {
+            margin-bottom: 30px;
+        }
+
+        .content-left-pages .text-formatted p {
+            font-size: 15px;
+            line-height: 140%;
+        }
+
+        h1 {
+            font-size: 20px;
+            line-height: 24px;
+            margin: 0 0 12px; 
         }
     }
 }

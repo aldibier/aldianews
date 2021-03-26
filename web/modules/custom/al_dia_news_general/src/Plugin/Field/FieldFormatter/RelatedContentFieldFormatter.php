@@ -56,7 +56,8 @@ class RelatedContentFieldFormatter extends FormatterBase {
     $elements = [];
 
     foreach ($items as $delta => $item) {
-      $elements[$delta] = ['#markup' => $this->addRelatedContent($this->viewValue($item)) ];
+      $entity = $item->getEntity();
+      $elements[$delta] = ['#markup' => $this->addRelatedContent($item->value, $entity) ];
     }
 
     return $elements;
@@ -77,38 +78,41 @@ class RelatedContentFieldFormatter extends FormatterBase {
     return nl2br(Html::escape($item->value));
   }
 
-  public function addRelatedContent($value){
+  /**
+   * Insert related content view to field
+   * 
+   * @param $value string
+   * 
+   */
+
+  public function addRelatedContent($value, $entity){
 
     $strBody = $value;
-    $count = substr_count($strBody, '<div data-embed-button="related_content">');
+    $nodeId = $entity->id();
+    $tags = $entity->get('field_tags')->getValue();
+    //ksm($tags);
 
-    $block_id = 'views_block__related_content_block_1';
-
-    $con = \Drupal\block\BlockViewBuilder::lazyBuilder($block_id, 'full_html');
-    $d   = \Drupal::service('renderer')->renderPlain($con);
-    $html_block = $d->__toString();
-
-    $newHtml = $this->newHtml($strBody, $html_block);
+    $view =  \Drupal::service('renderer')->render(views_embed_view('related_content', 'block_1', $nodeId, '2'));
+    $newHtml = $this->newHtml($strBody, $view);
 
     return $newHtml;
 
   }
-
-  public function newHtml($html_body, $html_block){
+  
+  /**
+   * Get and count paragraphs in field and insert related content HTML
+   * 
+   * @param $html_body string
+   * @param $view string
+   */
+  public function newHtml($html_body, $view){
       
     $dom= Html::load($html_body);
+
+    // get count paragraphs
+    $count_p = count($dom->getElementsByTagName('p'));
   
-    $count_related = 0;
-    foreach($dom->getElementsByTagName('div') as $item){
-      $count_related++;
-    }
-  
-    $count_p = 0;
-    foreach($dom->getElementsByTagName('p') as $item){
-      $count_p++;
-    }
-  
-  
+    // get paragraph position
     $position = intval($count_p / 2);
         
     if($count_p != 1){
@@ -121,33 +125,30 @@ class RelatedContentFieldFormatter extends FormatterBase {
     }else{
       $par = null;
     }
-  
-        
-    //$dom->getElementsByTagName('p')->item(0)->nodeValue = $dom->getElementsByTagName('p')->item(0)->nodeValue."[related-content]";
-    //if($count_related == 0){
-  
-      $count = 1;
-      foreach ($dom->getElementsByTagName('p') as $paragraph) {
-        if ($position == $count){
-          //$paragraph->parentNode->removeChild($paragraph);
-          $paragraph->nodeValue = $paragraph->nodeValue."[related-content]";
-        }
-        $count++;
+    
+    // insert a token into html to be replaced
+    $count = 1;
+    foreach ($dom->getElementsByTagName('p') as $paragraph) {
+      if ($position == $count){
+        $paragraph->nodeValue = $paragraph->nodeValue."[related-content]";
       }
+      $count++;
+    }
           
-      $html = $dom->saveHtml();
+    $html = $dom->saveHtml();
+
+    // get view title 
+    $view_title = \Drupal\views\Views::getView('related_content');
+    $view_title->setDisplay('block_1');
+    $displayTitle = $view_title->getTitle();
+
+    $related_content = "</p><div data-embed-button='related_content'><h2>" . $displayTitle. "</h2>". $view ."</div>";
+      
+    // HTML to return
+    $html = str_replace("[related-content]</p>", $related_content, $html);
           
-      $related_content = "</p><div data-embed-button='related_content'>". $html_block ."</div>";
-          
-      $html = str_replace("[related-content]</p>", $related_content, $html);
-          
-      return $html;
+    return $html;
   
-      //}else{
-  
-        //return false;
-  
-      //}
   }
 
 
