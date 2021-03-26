@@ -4,6 +4,11 @@ status: true
 dependencies:
   config:
     - block_content.type.basic_block_with_image_and_custo
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
 id: block_content.basic_block_with_image_and_custo
 target_entity_type_id: block_content
 target_bundle: basic_block_with_image_and_custo

@@ -1213,13 +1213,25 @@ module.exports = function (css) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-// js video
-var video_interna = document.querySelector(".block-field-blocknodenewsfield-video");
-var contenido_interna = document.querySelector(".content-news-internal-first");
+window.onload = function () {
+  // js video
+  var video_interna = document.querySelector(".block-field-blocknodenewsfield-video");
+  var contenido_interna = document.querySelector(".content-news-internal-first");
 
-if (video_interna != null && contenido_interna != null) {
-  contenido_interna.classList.add("video-present");
-}
+  if (video_interna != null && contenido_interna != null) {
+    contenido_interna.classList.add("video-present");
+  } //// js ajuste ancla en employed
+
+
+  Array.from(document.querySelectorAll(".menu--i-am-an-employer-menu li a")).map(function (e) {
+    e.addEventListener("click", function () {
+      setTimeout(function () {
+        var scroll_y = window.scrollY;
+        window.scrollTo(0, scroll_y - 173);
+      }, 20);
+    });
+  });
+};
 
 /***/ }),
 
@@ -1321,6 +1333,14 @@ __webpack_require__.r(__webpack_exports__);
     $('.views-field-field-webform  button[name="close"]').click(function () {
       if ($(".path-employer .views-field-field-webform").hasClass("open")) {
         $(".path-employer .views-field-field-webform").removeClass("open");
+      }
+    });
+    $(".style-jobs .button-apply").click(function () {
+      $(".style-jobs .modal-apply-webform").addClass("open");
+    });
+    $('.modal-apply-webform  button[name="close"]').click(function () {
+      if ($(".style-jobs .modal-apply-webform").hasClass("open")) {
+        $(".style-jobs .modal-apply-webform").removeClass("open");
       }
     });
     $(".path-employer .button-apply").click(function () {

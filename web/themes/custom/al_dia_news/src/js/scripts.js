@@ -112,6 +112,16 @@ import initMain from "./main.js";
       }
     });
 
+    $(".style-jobs .button-apply").click(function() {
+      $(".style-jobs .modal-apply-webform").addClass("open");
+    });
+
+    $('.modal-apply-webform  button[name="close"]').click(function() {
+      if ($(".style-jobs .modal-apply-webform").hasClass("open")) {
+        $(".style-jobs .modal-apply-webform").removeClass("open");
+      }
+    });
+
     $(".path-employer .button-apply").click(function() {
       if (
         $(this)

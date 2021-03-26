@@ -372,3 +372,26 @@ feature_employer_intern:
     two_vertical_advertising:
       label: Publicidad vertical dos
 
+basic_page_general_title_h2:
+  label: 'Basic Page Genral Title h2'
+  path: layouts/basic_page
+  template: layout--basic-page-general-title-h2
+  category: 'Basic Page'
+  default_region: content
+  icon_map:
+    - [horizontal_advertising]
+    - [one_content_title]
+    - [two_content]
+    - [one_vertical_advertising]
+    - [two_vertical_advertising]
+  regions:
+    horizontal_advertising:
+      label: Publicidad horizontal
+    one_content_title:
+      label: Primero - Contenido
+    two_content:
+      label: Segundo - Contenido
+    one_vertical_advertising:
+      label: Publicidad vertical uno
+    two_vertical_advertising:
+      label: Publicidad vertical dos
