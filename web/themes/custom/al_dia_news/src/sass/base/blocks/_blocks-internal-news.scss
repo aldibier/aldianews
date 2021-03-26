@@ -12,6 +12,8 @@
 //------ first block ------------//
 .content-news-internal-first {
   div.field--name-field-video {
+    max-height: 730px;
+    overflow: hidden;
     iframe,
     video {
       height: 730px;
@@ -19,7 +21,7 @@
   }
   div.field--name-field-image {
     margin: 0 -15px;
-
+    max-height: 180px;
     @media screen and (min-width: $broken) {
       margin: 0 -80px;
     }
@@ -36,7 +38,7 @@
     font-size: $px14;
     line-height: 17px;
     color: $cgrey3;
-    margin: -12px 0px 12px;
+    margin: 15px 0px 12px;
     font-family: $PrNovacond-reg;
   }
 
@@ -67,9 +69,17 @@
   }
 
   @media (max-width: $tablet) {
+    div.field--name-field-video {
+      max-height: 400px;
+      iframe,
+      video {
+        height: 400px;
+      }
+    }
     .block-field-blocknodenewsfield-caption {
       font-size: 11px;
       line-height: 13px;
+      margin: 5px 0px 12px;
     }
 
     .block-field-blocknodenewstitle h1 {
@@ -81,6 +91,15 @@
     .block-field-blocknodenewsbody {
       font-size: 18px;
       line-height: 140%;
+    }
+  }
+  @media (max-width: $mobile-max) {
+    div.field--name-field-video {
+      max-height: 180px;
+      iframe,
+      video {
+        height: 180px;
+      }
     }
   }
 }
