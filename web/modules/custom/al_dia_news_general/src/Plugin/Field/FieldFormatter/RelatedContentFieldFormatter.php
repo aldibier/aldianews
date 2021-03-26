@@ -90,12 +90,20 @@ class RelatedContentFieldFormatter extends FormatterBase {
     $strBody = $value;
     $nodeId = $entity->id();
     $tags = $entity->get('field_tags')->getValue();
-    //ksm($tags);
+    $target_ids = array();
 
-    $view =  \Drupal::service('renderer')->render(views_embed_view('related_content', 'block_1', $nodeId, '2'));
-    $newHtml = $this->newHtml($strBody, $view);
+    foreach ($tags as $value) {
+      $target_ids[] = $value['target_id'];
+    }
 
-    return $newHtml;
+    $tags_list = implode(',', $target_ids);
+    $view = views_embed_view('related_content', 'block_1', $nodeId, $tags_list);
+
+    $rendered =  \Drupal::service('renderer')->render($view);
+
+    $newContent = $this->newHtml($strBody, $rendered);
+
+    return $newContent;
 
   }
   
