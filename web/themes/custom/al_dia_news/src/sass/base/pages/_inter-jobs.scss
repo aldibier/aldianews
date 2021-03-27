@@ -2,10 +2,9 @@
 .page-node-type-feature-employer,
 .page-node-type-page,
 .page-node-type-al-dia-vacancy {
-
   .block {
-    >.content {
-        margin: 0;
+    > .content {
+      margin: 0;
     }
   }
 
@@ -23,7 +22,7 @@
   .horizontal-advertising-general-horizontal {
     margin: 0 0 40px;
 
-    @media(max-width: $tablet) {
+    @media (max-width: $tablet) {
       margin: 40px 0;
     }
   }
@@ -31,11 +30,11 @@
   .pautas {
     height: max-content;
 
-    @media(min-width: $tablet) {
+    @media (min-width: $tablet) {
       width: initial !important;
     }
 
-    @media(max-width: $tablet) {
+    @media (max-width: $tablet) {
       .one-vertical-advertising {
         width: 100%;
         margin: 0 auto;
@@ -49,14 +48,20 @@
     }
 
     @media screen and (max-width: $broken) {
-
       .two-vertical-advertising {
         display: none;
       }
     }
   }
 }
-
+.page-node-type-job .addtoany_list.a2a_kit_size_32 a > span {
+  @include size(40px, 40px);
+  margin-bottom: 55px;
+  @media (max-width: $tablet) {
+    @include size(25px, 25px);
+    margin-bottom: 30px;
+  }
+}
 .content-left-pages {
   max-width: 880px;
   padding: 0 40px 100px 0;
@@ -78,7 +83,7 @@
     font-style: normal;
     font-weight: bold;
     font-size: $px46;
-    line-height: 55px;
+    line-height: 51.89px;
     color: $cblack0;
     font-family: $Mod-bold;
   }
@@ -112,14 +117,16 @@
 
   .block-field-blocknodejobbody,
   .text-formatted {
-
     p {
       font-style: normal;
-      font-weight: normal;
-      font-size: $px23;
+      font-weight: 600;
+      font-size: $px24;
       line-height: 140%;
       color: $cblack3;
       font-family: $PrNovacond-reg;
+      strong {
+        font-family: $PrNovacond-Sbold;
+      }
     }
 
     h2 {
@@ -137,7 +144,6 @@
   }
 
   .three-content-buttons {
-
     .field-content {
       display: flex;
     }
@@ -166,7 +172,7 @@
     }
   }
 
-  @media(max-width: $tablet) {
+  @media (max-width: $tablet) {
     width: 100%;
     padding: 0;
     max-width: 100%;
@@ -198,7 +204,6 @@
 
     .block-field-blocknodejobbody,
     .text-formatted {
-
       p {
         font-size: 15px;
         line-height: 140%;
@@ -233,7 +238,7 @@
   flex-wrap: wrap;
   max-width: 400px;
 
-  @media(max-width: $tablet) {
+  @media (max-width: $tablet) {
     margin: 40px 0;
     max-width: 100%;
     width: 100%;

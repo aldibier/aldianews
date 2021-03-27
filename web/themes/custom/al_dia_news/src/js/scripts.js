@@ -106,6 +106,22 @@ import initMain from "./main.js";
       }
     });
 
+    $('.views-field-field-webform  button[name="close"]').click(function() {
+      if ($(".path-employer .views-field-field-webform").hasClass("open")) {
+        $(".path-employer .views-field-field-webform").removeClass("open");
+      }
+    });
+
+    $(".style-jobs .button-apply").click(function() {
+      $(".style-jobs .modal-apply-webform").addClass("open");
+    });
+
+    $('.modal-apply-webform  button[name="close"]').click(function() {
+      if ($(".style-jobs .modal-apply-webform").hasClass("open")) {
+        $(".style-jobs .modal-apply-webform").removeClass("open");
+      }
+    });
+
     $(".path-employer .button-apply").click(function() {
       if (
         $(this)

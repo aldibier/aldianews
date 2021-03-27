@@ -1213,13 +1213,25 @@ module.exports = function (css) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-// js video
-var video_interna = document.querySelector(".block-field-blocknodenewsfield-video");
-var contenido_interna = document.querySelector(".content-news-internal-first");
+window.onload = function () {
+  // js video
+  var video_interna = document.querySelector(".block-field-blocknodenewsfield-video");
+  var contenido_interna = document.querySelector(".content-news-internal-first");
 
-if (video_interna != null && contenido_interna != null) {
-  contenido_interna.classList.add("video-present");
-}
+  if (video_interna != null && contenido_interna != null) {
+    contenido_interna.classList.add("video-present");
+  } //// js ajuste ancla en employed
+
+
+  Array.from(document.querySelectorAll(".menu--i-am-an-employer-menu li a")).map(function (e) {
+    e.addEventListener("click", function () {
+      setTimeout(function () {
+        var scroll_y = window.scrollY;
+        window.scrollTo(0, scroll_y - 173);
+      }, 20);
+    });
+  });
+};
 
 /***/ }),
 
@@ -1316,6 +1328,19 @@ __webpack_require__.r(__webpack_exports__);
         $(".page-node-type-al-dia-vacancy .block-webform-block").removeClass("open");
       } else {
         $(".page-node-type-al-dia-vacancy .block-webform-block").addClass("open");
+      }
+    });
+    $('.views-field-field-webform  button[name="close"]').click(function () {
+      if ($(".path-employer .views-field-field-webform").hasClass("open")) {
+        $(".path-employer .views-field-field-webform").removeClass("open");
+      }
+    });
+    $(".style-jobs .button-apply").click(function () {
+      $(".style-jobs .modal-apply-webform").addClass("open");
+    });
+    $('.modal-apply-webform  button[name="close"]').click(function () {
+      if ($(".style-jobs .modal-apply-webform").hasClass("open")) {
+        $(".style-jobs .modal-apply-webform").removeClass("open");
       }
     });
     $(".path-employer .button-apply").click(function () {
@@ -1417,7 +1442,7 @@ var initScrollMagic = function initScrollMagic($, Drupal) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 var initSlick = function initSlick($, Drupal) {
-  var categoriesMore = document.querySelectorAll('.view-categories-sons .view-more-category .view-content');
+  var categoriesMore = document.querySelectorAll(".view-categories-sons .view-more-category .view-content");
   var settings = {
     infinite: false,
     rows: 3,
@@ -1429,7 +1454,7 @@ var initSlick = function initSlick($, Drupal) {
     arrows: true,
     responsive: [{
       breakpoint: 768,
-      settings: 'unslick'
+      settings: "unslick"
     }]
   };
 
@@ -1445,6 +1470,16 @@ var initSlick = function initSlick($, Drupal) {
         return $(element).slick(settings);
       });
     }
+  }); // slide landing jobs
+
+  $(document).ready(function () {
+    $(".block-views-blockcarousel-jobs-landing-block-1 .brands-carousel-wrapper .view-content").slick({
+      infinite: true,
+      slidesToShow: 3,
+      slidesToScroll: 3,
+      autoplay: true,
+      autoplaySpeed: 2000
+    });
   });
 };
 

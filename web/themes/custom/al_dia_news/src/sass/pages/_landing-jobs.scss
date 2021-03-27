@@ -1,171 +1,281 @@
 .path-job-seeker {
+  .block-fixed-block-contentheader-i-am-a-job-seeker {
+    margin: 0 -15px 20px;
+    position: relative;
 
+    @media screen and (min-width: $tablet) {
+      margin: 20px -15px;
+    }
 
-    .block-fixed-block-contentheader-i-am-a-job-seeker {
-        margin: 0 -15px 20px;
+    .field--name-field-image-block {
+      &::after {
+        @include absolute(top 0 left 0);
+        @include esize(100%);
+        display: block;
+        z-index: 1;
+        content: "";
+        background-color: $rgba1;
+      }
+
+      img {
+        @include absolute(top 0 left 0);
+        @include esize(100%);
+        z-index: 0;
+        object-fit: cover;
+      }
+
+      @media screen and (min-width: $tablet) {
+        padding: 40px 85px 100px;
+        min-height: 470px;
+        margin: 0 -80px 70px;
+        position: relative;
+      }
+    }
+
+    .field--name-field-custom-title {
+      position: absolute;
+      z-index: 2;
+      bottom: 70px;
+
+      h1 {
+        font-style: normal;
+        font-weight: bold;
+        font-size: $px78;
+        line-height: 95px;
+        font-family: $PrNovacond-bold;
+        color: $cwhite;
+        padding: 0 15px;
+      }
+    }
+
+    @media (max-width: $tablet) {
+      .field--name-field-image-block {
+        min-height: 215px;
+      }
+
+      .field--name-field-custom-title {
+        bottom: 25px;
+
+        h1 {
+          font-size: 25px;
+          line-height: 30px;
+        }
+      }
+    }
+  }
+
+  .views-infinite-scroll-content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+
+    .views-row {
+      width: 33.33%;
+      margin: 40px 0;
+
+      &:nth-child(3n + 1) {
+        padding: 0 20px 0 0;
+
+        &:before {
+          content: "";
+          width: 100%;
+          height: 1px;
+          display: block;
+          position: absolute;
+          left: 0;
+          margin: -40px 0 0;
+          background: $cgrey4;
+        }
+      }
+
+      &:nth-child(3n + 2) {
+        padding: 0 20px;
         position: relative;
 
-        @media screen and (min-width: $tablet) {
-            margin:20px -15px;
+        &:after {
+          content: "";
+          width: 1px;
+          height: 100%;
+          display: block;
+          position: absolute;
+          left: 0;
+          top: 0;
+          background: $cgrey4;
         }
+      }
 
-        .field--name-field-image-block {
+      &:nth-child(3n + 3) {
+        padding: 0 0 0 20px;
+        position: relative;
 
-            &::after {
-                @include absolute(top 0 left 0);
-                @include esize(100%);
-                display: block;
-                z-index: 1;
-                content: '';
-                background-color: $rgba1;
-            }
-
-            img {
-                @include absolute(top 0 left 0);
-                @include esize(100%);
-                z-index: 0;
-                object-fit: cover;
-            }
-
-            @media screen and (min-width: $tablet) {
-                padding: 40px 85px 100px;
-                min-height: 470px;
-                margin: 0 -80px 70px;
-                position: relative;
-            }
+        &:after {
+          content: "";
+          width: 1px;
+          height: 100%;
+          display: block;
+          position: absolute;
+          left: 0;
+          top: 0;
+          background: $cgrey4;
         }
+      }
 
-        .field--name-field-custom-title {
-            position: absolute;
-            z-index: 2;
-            bottom: 70px;
-           
-            h1 {
-                font-style: normal;
-                font-weight: bold;
-                font-size: $px78;
-                line-height: 95px;
-                font-family: $PrNovacond-bold;
-                color: $cwhite;
-                padding: 0 15px;
-            }
+      &:first-child {
+        &::before {
+          display: none;
         }
+      }
 
-        @media(max-width:$tablet) {
-
-            .field--name-field-image-block {
-                min-height: 215px;
-            }
-
-            .field--name-field-custom-title  {
-                bottom: 25px;
-
-                h1 {
-                    font-size: 25px;
-                    line-height: 30px;
-                }
-            }
-        }
+      @extend .rows-employer;
     }
-   
+  }
+
+  @media (max-width: $tablet) {
     .views-infinite-scroll-content-wrapper {
-        display: flex;
-        flex-wrap: wrap;
+      .views-row {
+        width: 100%;
+        margin: 25px 0 0;
+        padding: 0;
 
-        .views-row {
-            width: 33.33%;
-            margin: 40px 0;
+        &:nth-child(3n + 1) {
+          padding: 0 0 25px;
 
-            &:nth-child(3n+1){
-                padding: 0 20px 0 0;
-
-                &:before {
-                    content: '';
-                    width: 100%;
-                    height: 1px;
-                    display: block;
-                    position: absolute;
-                    left: 0;
-                    margin: -40px 0 0;
-                    background: $cgrey4;
-                }
-            }
-
-            &:nth-child(3n+2){
-                padding: 0 20px;
-                position: relative;
-
-                &:after {
-                    content: '';
-                    width: 1px;
-                    height: 100%;
-                    display: block;
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                    background: $cgrey4;
-                }
-            }
-
-            &:nth-child(3n+3){
-                padding: 0 0 0 20px;
-                position: relative;
-
-                &:after {
-                    content: '';
-                    width: 1px;
-                    height: 100%;
-                    display: block;
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                    background: $cgrey4;
-                }
-            }
-
-            &:first-child{
-                &::before{
-                    display: none;
-                }
-            }
-
-            @extend .rows-employer
-
+          &:before {
+            display: none;
+          }
         }
+
+        &:nth-child(3n + 2) {
+          padding: 0 0 25px;
+
+          &:after {
+            display: none;
+          }
+        }
+
+        &:nth-child(3n + 3) {
+          padding: 0 0 25px;
+
+          &:after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.path-jobs .style-jobs {
+  h1 {
+    bottom: 310px;
+    left: 65px;
+  }
+  .region-content {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .block-banner-page {
+    .field--type-image {
+      @media screen and (min-width: $tablet) {
+        min-height: 710px;
+      }
+    }
+    .views-field-body {
+      max-height: 1px;
+      p {
+        position: relative;
+        left: 80px;
+        bottom: 310px;
+        line-height: 38px;
+        color: $cwhite;
+        font-size: $px28;
+        z-index: 2;
+      }
     }
 
-
-    @media(max-width:$tablet) {
-        .views-infinite-scroll-content-wrapper {
-            .views-row {
-                width: 100%;
-                margin: 25px 0 0;
-                padding: 0;
-
-                &:nth-child(3n+1){
-                    padding: 0 0 25px;
-    
-                    &:before {
-                        display: none;
-                    }
-                }
-    
-                &:nth-child(3n+2){
-                    padding: 0 0 25px;
-    
-                    &:after {
-                        display: none;
-                    }
-                }
-    
-                &:nth-child(3n+3){
-                    padding: 0 0 25px;
-    
-                    &:after {
-                        display: none;
-                    }
-                }
-            }
-        }
+    @media (max-width: $tablet) {
+      .field--type-image {
+        min-height: 215px;
+      }
     }
+  }
+  .block-menu-float {
+    margin: -235px 0px 62px;
+    padding-left: 65px;
+    width: 100%;
+  }
+
+  .block-block-groupadvertising-blocks-in-job-landing-pages {
+    margin-top: 55px;
+    .block-fixed-block-content-small-vertical-advertising {
+      margin-bottom: 45px;
+    }
+  }
+  .block-system-main-block {
+    width: 100%;
+  }
+  .block-content-left {
+    h2 {
+      font-style: normal;
+      font-weight: bold;
+      font-size: $px54;
+      line-height: 72.36px;
+      font-family: $Modcond-reg;
+      color: $cblack0;
+      padding-top: 125px;
+      margin-bottom: 75px;
+    }
+    p {
+      line-height: 34.84px;
+      color: $cblack0;
+    }
+    .button-apply {
+      margin-top: 55px;
+    }
+  }
+  .block-views-blockcarousel-jobs-landing-block-1 {
+    margin: 75px 0 100px;
+    width: 100%;
+    h2 {
+      border-bottom: 2px solid $cblack3;
+      padding-bottom: 20px;
+      margin: 0 0 60px;
+      font-style: normal;
+      font-weight: 600;
+      font-size: $px42;
+      line-height: 50.4px;
+      font-family: $Modcomp-reg;
+      color: $cblack0;
+    }
+    .views-field-field-image {
+      max-width: 380px;
+      max-height: 200px;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .slick-list {
+      max-width: 1170px;
+      margin: 0 auto;
+    }
+    .slick-arrow {
+      border: 0px;
+      font-size: 0px;
+      width: 20px;
+      height: 35px;
+      position: absolute;
+      top: 40%;
+    }
+    .slick-prev {
+      background: transparent url(../img/izq.png) center center no-repeat;
+      background-size: contain;
+      left: 0px;
+    }
+    .slick-next {
+      background: transparent url(../img/der.png) center center no-repeat;
+      background-size: contain;
+      right: 0px;
+    }
+  }
 }
