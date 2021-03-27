@@ -219,15 +219,20 @@
         }
 
         .job-categories {
+            display: flex;
+            flex-wrap: wrap;
             font-size: 15px;
             line-height: 18px;
 
             li {
+                width: 50%;
                 padding: 0 0 0 15px;
 
                 &:after {
                     width: 5px;
                     height: 5px;
+                    top: 9px;
+                    bottom: initial;
                 }
             }
         }
