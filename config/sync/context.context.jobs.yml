@@ -26,7 +26,7 @@ reactions:
         provider: system
         label_display: '0'
         region: content
-        weight: '-5'
+        weight: '-6'
         context_mapping: {  }
         custom_id: system_main_block
         theme: al_dia_news
@@ -59,7 +59,7 @@ reactions:
         default_data: ''
         redirect: 0
         region: content
-        weight: '-1'
+        weight: '-2'
         context_mapping: {  }
         custom_id: webform_block
         theme: al_dia_news
@@ -73,7 +73,7 @@ reactions:
         provider: fixed_block_content
         label_display: '0'
         region: content
-        weight: '-2'
+        weight: '-3'
         view_mode: ''
         context_mapping: {  }
         custom_id: fixed_block_content_body_jobs_landing
@@ -91,7 +91,7 @@ reactions:
         depth: '0'
         expand_all_items: 0
         region: content
-        weight: '-4'
+        weight: '-5'
         context_mapping: {  }
         custom_id: system_menu_block_jobs_landing_menu
         theme: al_dia_news
@@ -105,7 +105,7 @@ reactions:
         provider: fixed_block_content
         label_display: '0'
         region: content
-        weight: '-3'
+        weight: '-4'
         view_mode: ''
         context_mapping: {  }
         custom_id: fixed_block_content_horizontal_advertising
@@ -114,22 +114,6 @@ reactions:
         unique: 0
         context_id: jobs
         uuid: 8a49ea06-ac46-4d59-b5d3-40e68ebeaf69
-      01a2023f-e529-46c2-ab20-539062f3c8c1:
-        id: 'views_block:career_news-block_1'
-        label: ''
-        provider: views
-        label_display: '0'
-        views_label: ''
-        items_per_page: none
-        region: content
-        weight: '4'
-        context_mapping: {  }
-        custom_id: views_block_career_news_block_1
-        theme: al_dia_news
-        css_class: ''
-        unique: 0
-        context_id: jobs
-        uuid: 01a2023f-e529-46c2-ab20-539062f3c8c1
       168611d5-0859-4f28-8727-64ccce6d3fa4:
         id: 'views_block:career_news-block_3'
         label: ''
@@ -168,7 +152,7 @@ reactions:
         provider: blockgroup
         label_display: '0'
         region: content
-        weight: '0'
+        weight: '-1'
         context_mapping: {  }
         custom_id: block_group_advertising_blocks_in_job_landing_pages
         theme: al_dia_news
@@ -182,7 +166,7 @@ reactions:
         provider: fixed_block_content
         label_display: '0'
         region: content
-        weight: '6'
+        weight: '7'
         view_mode: ''
         context_mapping: {  }
         custom_id: fixed_block_content_horizontal_advertising
@@ -197,7 +181,7 @@ reactions:
         provider: fixed_block_content
         label_display: '0'
         region: content
-        weight: '5'
+        weight: '6'
         view_mode: ''
         context_mapping: {  }
         custom_id: fixed_block_content_big_vertical_advertising
@@ -206,6 +190,35 @@ reactions:
         unique: 0
         context_id: jobs
         uuid: 1566f794-df51-4792-9a06-2888e2edec57
+      0bf59889-aa6a-4a53-89bf-9950ea542bfb:
+        id: 'fixed_block_content:horizontal_advertising'
+        label: 'Horizontal advertising'
+        provider: fixed_block_content
+        label_display: visible
+        region: content
+        weight: '0'
+        view_mode: ''
+        context_mapping: {  }
+        custom_id: fixed_block_content_horizontal_advertising
+        theme: al_dia_news
+        css_class: ''
+        unique: 0
+        context_id: jobs
+        uuid: 0bf59889-aa6a-4a53-89bf-9950ea542bfb
+      548c8f86-490a-4a8c-b866-fa8d3f5fc788:
+        id: 'block_group:group_career_news_jobs'
+        label: 'Group career news jobs'
+        provider: blockgroup
+        label_display: '0'
+        region: content
+        weight: '5'
+        context_mapping: {  }
+        custom_id: block_group_group_career_news_jobs
+        theme: al_dia_news
+        css_class: ''
+        unique: 0
+        context_id: jobs
+        uuid: 548c8f86-490a-4a8c-b866-fa8d3f5fc788
     id: blocks
     saved: false
     uuid: 3de707dd-4aed-4ae9-aa63-7a6bde34edc5
