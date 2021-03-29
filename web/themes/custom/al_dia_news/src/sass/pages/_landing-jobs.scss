@@ -65,15 +65,20 @@
   }
 
   .views-infinite-scroll-content-wrapper {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: minmax(200px, 420px) minmax(200px, 440px) minmax(
+        200px,
+        420px
+      );
+    gap: 0px 40px;
+    overflow: hidden;
 
     .views-row {
-      width: 33.33%;
+      //width: 33.33%;
       margin: 40px 0;
 
       &:nth-child(3n + 1) {
-        padding: 0 20px 0 0;
+        //padding: 0 20px 0 0;
 
         &:before {
           content: "";
@@ -88,7 +93,7 @@
       }
 
       &:nth-child(3n + 2) {
-        padding: 0 20px;
+        //padding: 0 20px;
         position: relative;
 
         &:after {
@@ -97,14 +102,14 @@
           height: 100%;
           display: block;
           position: absolute;
-          left: 0;
+          left: calc(0% - 20px);
           top: 0;
           background: $cgrey4;
         }
       }
 
       &:nth-child(3n + 3) {
-        padding: 0 0 0 20px;
+        //padding: 0 0 0 20px;
         position: relative;
 
         &:after {
@@ -113,7 +118,7 @@
           height: 100%;
           display: block;
           position: absolute;
-          left: 0;
+          left: calc(0% - 20px);
           top: 0;
           background: $cgrey4;
         }
@@ -131,6 +136,9 @@
 
   @media (max-width: $tablet) {
     .views-infinite-scroll-content-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+
       .views-row {
         width: 100%;
         margin: 25px 0 0;
@@ -166,7 +174,7 @@
 
 .path-jobs .style-jobs {
   h1 {
-    bottom: 310px;
+    bottom: 320px;
     left: 65px;
   }
   .region-content {
@@ -336,11 +344,15 @@
     margin-bottom: 15px;
     display: flex;
     max-width: 400px;
+    width: 100%;
     .views-field-field-image {
       max-width: 175px;
       max-height: 100px;
       overflow: hidden;
       margin-right: 15px;
+      a {
+        border-bottom: 0px dotted;
+      }
       img {
         width: 100%;
         height: auto;
@@ -385,7 +397,9 @@
     }
     .views-row:nth-child(1) {
       border-right: 1px solid $cgrey4;
+      max-width: 415px;
     }
+
     .views-row:nth-child(1),
     .views-row:nth-child(2) {
       padding-right: 15.4px;
@@ -408,6 +422,10 @@
         line-height: 37px;
       }
     }
+    .views-row:nth-child(2) {
+      padding-left: 15px;
+      padding-right: 0px;
+    }
     .views-row:nth-child(3) {
       position: relative;
       &::before {
@@ -421,6 +439,10 @@
         top: 0px;
       }
     }
+    .views-row:nth-child(7),
+    .views-row:nth-child(8) {
+      border-bottom: 0px solid $cgrey4;
+    }
   }
   .content {
     margin: 0px;
@@ -431,9 +453,11 @@
   .view-content {
     .views-row:nth-child(2) {
       border-right: 1px solid $cgrey4;
+      padding-right: 15.4px;
     }
     .views-row:nth-child(3) {
       padding-right: 15.4px;
+      padding-left: 15.4px;
       border-right: 1px solid $cgrey4;
       margin-bottom: 60px;
       flex-direction: column;
@@ -480,6 +504,16 @@
         top: 0px;
       }
     }
+
+    .views-row:nth-child(7),
+    .views-row:nth-child(8) {
+      border-bottom: 1px solid $cgrey4;
+    }
+    .views-row:nth-child(10),
+    .views-row:nth-child(11),
+    .views-row:nth-child(12) {
+      border-bottom: 0px solid $cgrey4;
+    }
   }
   .content {
     margin: 0px;
@@ -502,7 +536,6 @@
     padding-left: 20px;
     max-width: 420px;
     margin-left: 20px;
-    margin-bottom: 80px;
     .content {
       margin: 0px;
     }
@@ -518,9 +551,14 @@
     .block-block-groupadvertising-blocks-in-job-landing-pages {
       margin-top: 0px;
     }
-    .block-views-blockcarousel-jobs-landing-block-1 .views-field-field-image {
-      max-width: 300px;
-      max-height: 157px;
+    .block-views-blockcarousel-jobs-landing-block-1 {
+      .slick-list {
+        max-width: 900px;
+      }
+      .views-field-field-image {
+        max-width: 290px;
+        max-height: 157px;
+      }
     }
   }
   .block-views-blockcareer-news-block-4 {
@@ -534,6 +572,7 @@
     .views-row {
       border-bottom: 0px;
       border-top: 1px solid #b1b1b1;
+      padding: 20px 0px 0px;
     }
     .view-content {
       justify-content: space-around;
@@ -546,7 +585,9 @@
         border-right: 0px;
       }
       .views-row:nth-child(1) {
-        border-right: 1px solid #b1b1b1;
+        border-right: 0px solid #b1b1b1;
+        border-top: 0px;
+        padding-right: 15.4px;
       }
       .views-row:nth-child(3)::before,
       .views-row:nth-child(4)::before,
@@ -561,8 +602,7 @@
     margin-bottom: 0px;
     position: absolute;
     top: 0px;
-    right: 0px;
-    display: none; //////
+    right: 30px;
   }
 }
 
@@ -582,6 +622,9 @@
     .block-menu-float {
       margin: -75px 0 62px;
       padding-left: 3px;
+      .menu a {
+        max-width: 100px;
+      }
     }
     .block-content-left {
       h2 {
@@ -611,23 +654,27 @@
     }
     .block-views-blockcarousel-jobs-landing-block-1 {
       margin: 0px 0px 53px;
+      .slick-list {
+        max-width: 680px;
+      }
       .views-field-field-image {
-        max-width: 56px;
-        max-height: 52px;
+        max-width: 220px;
+        max-height: 115px;
       }
     }
   }
   .block-views-blockcareer-news-block-4 {
     width: 21.095%;
     max-width: 115px;
+    top: -15px;
     h2 {
       font-size: $px15;
       line-height: 18px;
     }
   }
   .block-views-blockcareer-news-block-3 {
-    max-width: 175px;
-    width: 78.9%;
+    max-width: none;
+    width: 83.9%;
     padding-top: 10px;
     a {
       font-size: $px10;
@@ -640,11 +687,13 @@
     border-left: 0px;
     width: 100%;
     padding-left: 0px;
-    max-width: 320px;
     margin-left: 0px;
     margin-bottom: 0px;
-    max-height: 120px;
+    max-height: none;
+    max-width: 320px;
+    max-height: 580px;
     overflow: hidden;
+    right: 0px;
   }
   .block-views-blockcareer-news-block-1 {
     .views-row {
@@ -653,10 +702,10 @@
       border-bottom: 0px;
       border-top: 1px solid $cgrey4;
       margin-bottom: 10px;
-      max-width: 290px;
+      max-width: none;
       .views-field-field-image {
-        max-width: 140px;
-        max-height: 80px;
+        max-width: 240px;
+        max-height: 180px;
         margin-right: 20px;
       }
       .card-title {
@@ -673,10 +722,6 @@
     }
     .view-content {
       flex-direction: column;
-      &::before {
-        display: block;
-        top: 365px;
-      }
       .views-row:nth-child(1),
       .views-row:nth-child(2) {
         padding-right: 165px;
@@ -684,11 +729,13 @@
         margin-bottom: 30px;
         flex-direction: column;
         padding-bottom: 30px;
-        border-bottom: 1px solid $cgrey4;
+        border-bottom: 0px solid $cgrey4;
+        max-width: none;
+        padding-left: 0px;
         .views-field-field-image {
-          max-width: 140px;
-          max-height: 80px;
-          margin-bottom: 20px;
+          max-width: 340px;
+          max-height: 180px;
+          margin-bottom: 10px;
         }
         .card-title {
           margin-bottom: 5px;
@@ -713,8 +760,8 @@
         border-right: 0px solid $cgrey4;
         margin-bottom: 0px;
         .views-field-field-image {
-          max-width: 140px;
-          max-height: 80px;
+          max-width: 340px;
+          max-height: 180px;
           margin-bottom: 0px;
         }
         .card-title {
@@ -737,5 +784,98 @@
         }
       }
     }
+  }
+}
+
+@media (max-width: $mobile-mid) {
+  .path-jobs .style-jobs {
+    .block-views-blockcarousel-jobs-landing-block-1 {
+      .slick-list {
+        max-width: 240px;
+      }
+      .views-field-field-image {
+        max-width: 115px;
+        max-height: 60px;
+      }
+    }
+  }
+
+  .block-views-blockcareer-news-block-3 {
+    width: 61.9%;
+    padding-top: 0px;
+    margin-bottom: 20px;
+  }
+  .block-views-blockcareer-news-block-4 {
+    width: 37.095%;
+  }
+
+  .block-block-groupgroup-career-news-jobs {
+    width: 100%;
+    margin-bottom: 35px;
+    .content {
+      margin: 0px;
+    }
+    .block-fixed-block-contentbig-vertical-advertising {
+      max-width: 120px;
+      max-height: 320px;
+    }
+  }
+
+  .block-views-blockcareer-news-block-1 {
+    .views-row {
+      .views-field-field-image {
+        max-width: 140px;
+        max-height: 80px;
+      }
+    }
+    .view-content {
+      .views-row:nth-child(1),
+      .views-row:nth-child(2) {
+        padding-left: 0px;
+        margin-right: 0px;
+        padding-top: 30px;
+        padding-bottom: 0px;
+        .views-field-field-image {
+          max-width: 140px;
+          max-height: 80px;
+        }
+      }
+      .views-row:nth-child(1) {
+        padding-top: 0px;
+        border-bottom: 0px;
+        .card-date {
+          position: relative;
+          &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            height: 1px;
+            background: $cgrey4;
+            width: 100%;
+            left: 0px;
+            bottom: -30px;
+          }
+        }
+      }
+    }
+  }
+
+  .block-views-blockcareer-news-block-1.view-complete {
+    .view-content {
+      .views-row:nth-child(3) {
+        padding-left: 0px;
+        margin-right: 0px;
+        padding-top: 30px;
+        padding-bottom: 0px;
+        .views-field-field-image {
+          max-width: 140px;
+          max-height: 80px;
+          margin-bottom: 0px;
+        }
+      }
+    }
+  }
+  .path-jobs .layout-container .layout-main {
+    margin: 0 auto 10px;
   }
 }

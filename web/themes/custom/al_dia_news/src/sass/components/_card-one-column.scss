@@ -33,7 +33,14 @@
 
   .views-field-field-my-content-has-a-main-vide {
     font-size: 0;
-    @include player-icon($desktop-size: 70px, $tablet-size:70px, $mobile-size:30px)
+
+    .field-content {
+      @include player-icon($desktop-size: 70px, $tablet-size:70px, $mobile-size:30px);
+
+      &:empty {
+        display: none;
+      }
+    }
   }
 
   .card-name-category {

@@ -7,16 +7,20 @@ dependencies:
     - field.storage.node.field_image
     - field.storage.node.field_my_content_has_a_main_vide
     - field.storage.node.field_short_title
+    - field.storage.node.field_video
     - node.type.news
     - responsive_image.styles.next_two_image_responsive
     - taxonomy.vocabulary.categories
   module:
     - better_exposed_filters
     - node
+    - other_view_filter
     - responsive_image
     - taxonomy
     - user
+    - video_embed_field
     - views_fieldsets
+    - views_infinite_scroll
 id: more_videos_in_landing
 label: 'More videos in Landing'
 module: views
@@ -84,9 +88,79 @@ display:
           offset: 0
       style:
         type: default
+        options:
+          grouping: {  }
+          row_class: card-one-column
+          default_row_class: true
       row:
         type: fields
       fields:
+        nid:
+          id: nid
+          table: node_field_data
+          field: nid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_integer
+          settings:
+            thousand_separator: ''
+            prefix_suffix: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: node
+          entity_field: nid
+          plugin_id: field
         fieldset:
           id: fieldset
           table: views
@@ -156,8 +230,8 @@ display:
           alter:
             alter_text: false
             text: ''
-            make_link: false
-            path: ''
+            make_link: true
+            path: '{{ field_video }}'
             absolute: false
             external: false
             replace_spaces: false
@@ -196,7 +270,7 @@ display:
           type: responsive_image
           settings:
             responsive_image_style: next_two_image_responsive
-            image_link: content
+            image_link: ''
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -259,8 +333,8 @@ display:
           click_sort_column: value
           type: boolean
           settings:
-            format: default
-            format_custom_true: ''
+            format: custom
+            format_custom_true: 'on'
             format_custom_false: ''
           group_column: value
           group_columns: {  }
@@ -515,6 +589,72 @@ display:
           empty_zero: false
           hide_alter_empty: false
           plugin_id: custom
+        field_video:
+          id: field_video
+          table: node__field_video
+          field: field_video
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: video_embed_field_colorbox
+          settings:
+            autoplay: true
+            responsive: true
+            width: 854
+            height: 480
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
       filters:
         status:
           value: '1'
@@ -650,7 +790,7 @@ display:
             reduce: false
           is_grouped: true
           group_info:
-            label: Term
+            label: 'SORT BY: '
             description: ''
             identifier: tid
             optional: true
@@ -661,6 +801,16 @@ display:
             default_group_multiple: {  }
             group_items:
               1:
+                title: LEADERSHIP
+                operator: or
+                value:
+                  125: '125'
+              2:
+                title: CULTURE
+                operator: or
+                value:
+                  126: '126'
+              3:
                 title: POLITICS
                 operator: or
                 value:
@@ -676,6 +826,48 @@ display:
           entity_type: taxonomy_term
           entity_field: tid
           plugin_id: taxonomy_index_tid
+        other_view_filter:
+          id: other_view_filter
+          table: node_field_data
+          field: other_view_filter
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: 'not in'
+          value:
+            'carousel_videos_landing:block_2': 'carousel_videos_landing:block_2'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          inherit_contextual_filters: 0
+          entity_type: node
+          plugin_id: other_views_filter
       sorts:
         created:
           id: created
@@ -713,6 +905,7 @@ display:
         groups:
           1: AND
       use_ajax: true
+      css_class: news-galery
     cache_metadata:
       max-age: -1
       contexts:
@@ -727,6 +920,7 @@ display:
         - 'config:field.storage.node.field_image'
         - 'config:field.storage.node.field_my_content_has_a_main_vide'
         - 'config:field.storage.node.field_short_title'
+        - 'config:field.storage.node.field_video'
   block_1:
     display_plugin: block
     id: block_1
@@ -734,12 +928,36 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
+      pager:
+        type: infinite_scroll
+        options:
+          items_per_page: 9
+          offset: 0
+          id: 0
+          total_pages: null
+          tags:
+            previous: '‹ Previous'
+            next: 'Next ›'
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+          views_infinite_scroll:
+            button_text: 'Load More'
+            automatically_load_content: false
+      defaults:
+        pager: false
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
+        - url.query_args
         - user
         - 'user.node_grants:view'
         - user.permissions
@@ -748,3 +966,190 @@ display:
         - 'config:field.storage.node.field_image'
         - 'config:field.storage.node.field_my_content_has_a_main_vide'
         - 'config:field.storage.node.field_short_title'
+        - 'config:field.storage.node.field_video'
+  block_2:
+    display_plugin: block
+    id: block_2
+    display_title: Title
+    position: 2
+    display_options:
+      display_extenders: {  }
+      fields:
+        nothing:
+          id: nothing
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: '<h3>MORE CONTENT</h3>'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
+          plugin_id: custom
+      defaults:
+        fields: false
+        filters: false
+        filter_groups: false
+        pager: false
+      filters:
+        status:
+          value: '1'
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+          group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          value:
+            news: news
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+          group: 1
+        field_my_content_has_a_main_vide_value:
+          id: field_my_content_has_a_main_vide_value
+          table: node__field_my_content_has_a_main_vide
+          field: field_my_content_has_a_main_vide_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: boolean
+        langcode:
+          id: langcode
+          table: node_field_data
+          field: langcode
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value:
+            '***LANGUAGE_language_interface***': '***LANGUAGE_language_interface***'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: node
+          entity_field: langcode
+          plugin_id: language
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      pager:
+        type: some
+        options:
+          items_per_page: 1
+          offset: 0
+      display_description: ''
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }

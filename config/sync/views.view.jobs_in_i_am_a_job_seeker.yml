@@ -105,14 +105,14 @@ display:
             suffix: ''
             target: ''
             nl2br: false
-            max_length: 0
+            max_length: 40
             word_boundary: false
-            ellipsis: false
+            ellipsis: true
             more_link: false
             more_link_text: ''
             more_link_path: ''
             strip_tags: false
-            trim: false
+            trim: true
             preserve_tags: ''
             html: false
           element_type: ''
@@ -130,7 +130,7 @@ display:
           click_sort_column: value
           type: string
           settings:
-            link_to_entity: true
+            link_to_entity: false
           group_column: value
           group_columns: {  }
           group_rows: true
