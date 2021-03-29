@@ -23,10 +23,14 @@ window.onload = function() {
   });
 
   //// js validador de publicidad en landing jobs
-  var block_ads = document.querySelector("#block-fixed-block-content-big-vertical-advertising");
-  var view_career = document.querySelector(".block-views-blockcareer-news-block-1");
-  if(block_ads === null && view_career != null){
-      view_career.classList.add("view-complete");
+  var block_ads = document.querySelector(
+    ".block-block-groupgroup-career-news-jobs .block-fixed-block-contentbig-vertical-advertising"
+  );
+  var view_career = document.querySelector(
+    ".block-views-blockcareer-news-block-1"
+  );
+  if (block_ads === null && view_career != null) {
+    view_career.classList.add("view-complete");
   }
 
   //// js para slider de video en landing de video
