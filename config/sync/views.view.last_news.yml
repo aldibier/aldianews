@@ -2475,7 +2475,7 @@ display:
           label: ''
           exclude: false
           alter:
-            alter_text: true
+            alter_text: false
             text: " {% if (( field_my_content_has_a_main_vide )) == \"On\" %}\r\n    {{ field_image }} \r\n     <span class=\"player-news\"></span>\r\n {% else %}\r\n    {{ field_image }} \r\n {% endif %}"
             make_link: false
             path: ''
