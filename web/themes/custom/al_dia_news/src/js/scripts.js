@@ -6,7 +6,7 @@ import initMain from "./main.js";
 
 (function($, Drupal) {
   const sharer = new SelectionSharer();
-  sharer.setElements("p");
+  sharer.setElements("p,a,h1,h2,h3,blockquote");
 
   jQuery(document).ready(function() {
     //--------- menu--------------------//
