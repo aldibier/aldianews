@@ -661,10 +661,22 @@ display:
             default_group_multiple: {  }
             group_items:
               1:
+                title: LEADERSHIP
+                operator: or
+                value:
+                  125: '125'
+              2:
+                title: CULTURE
+                operator: or
+                value:
+                  126: '126'
+              3:
                 title: POLITICS
                 operator: or
                 value:
-                  9: '9'
+                  5: '5'
+                  7: '7'
+                  6: '6'
           reduce_duplicates: false
           type: select
           limit: true
