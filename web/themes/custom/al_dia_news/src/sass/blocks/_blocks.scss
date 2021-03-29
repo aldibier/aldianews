@@ -1,5 +1,53 @@
+// clase para layout laterales izquierdo contenido
 .block-content-left {
   width: 100%;
   max-width: 815px;
   margin-right: 58px;
+}
+
+
+// tamaños generales de publicidad
+.block-fixed-block-contentbig-vertical-advertising{
+  max-width: 400px;
+  max-height: 790px;
+  overflow: hidden;
+  img{
+    width: 100%;
+    height: auto;
+  }
+}
+.block-fixed-block-contenthorizontal-advertising{
+  max-width: 1280px;
+  max-height: 150px;
+  overflow: hidden;
+  img{
+    width: 100%;
+    height: auto;
+  }
+}
+.block-content-small-vertical-advertising{
+  max-width: 400px;
+  max-height: 375px;
+  overflow: hidden;
+  img{
+    width: 100%;
+    height: auto;
+  }
+}
+
+
+@media (max-width: $desktop) {
+  .block-content-left{
+    max-width: 555px;
+    margin-right: 28px;
+  }
+ 
+}
+
+@media (max-width: $tablet) {
+  .block-content-left{
+    max-width: none;
+    margin-right: 0px;
+  }
+ 
 }

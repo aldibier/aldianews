@@ -21,4 +21,30 @@ window.onload = function() {
       }, 20);
     });
   });
+
+  //// js validador de publicidad en landing jobs
+  var block_ads = document.querySelector("#block-fixed-block-content-big-vertical-advertising");
+  var view_career = document.querySelector(".block-views-blockcareer-news-block-1");
+  if(block_ads === null && view_career != null){
+      view_career.classList.add("view-complete");
+  }
+
+  //// js para slider de video en landing de video
+  // Array.from(document.querySelectorAll(".block-views-blockcarousel-videos-landing-block-2 .views-field-id")).map(function(e) {
+  //   e.parentElement.addEventListener("click", () => {
+  //     Array.from(document.querySelectorAll(".view-id-carousel_videos_landing.view-display-id-page_1 .views-field-id")).map(function(ev) {
+  //      if(e.innerText === ev.innerText && ev.parentElement.classList.contain("video-present")){
+  //         ev.parentElement.parentElement.classList.remove("select-video");
+  //         ev.parentElement.parentElement.classList.remove("show-video");
+  //         ev.parentElement.classList.remove("video-present");
+  //         ev.parentElement.classList.remove("video-present");
+  //       }else if{
+  //         ev.parentElement.parentElement.classList.add("select-video");
+  //         ev.parentElement.parentElement.classList.add("show-video");
+  //         ev.parentElement.classList.add("video-present");
+  //         ev.parentElement.classList.add("video-present");
+  //       }
+  //     });
+  //   });
+  // });
 };
