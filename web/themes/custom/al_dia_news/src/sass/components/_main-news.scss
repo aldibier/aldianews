@@ -1,7 +1,7 @@
 //main-news
 .main-news {
   position: relative;
-  
+
   //reset style
 
   .block-field-blocknodenewsbody {
@@ -38,6 +38,14 @@
 
     @media screen and(max-width:$broken) {
       padding: 8rem 0 25px;
+    }
+  }
+
+  .block-field-blocknodenewsfield-my-content-has-a-main-vide {
+    font-size: 0;
+
+    .field--name-field-my-content-has-a-main-vide {
+      @include player-icon($desktop-size:100px,$tablet-size:100px,$mobile-size:50px);
     }
   }
 
