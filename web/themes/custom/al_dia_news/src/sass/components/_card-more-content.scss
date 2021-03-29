@@ -22,7 +22,7 @@
 
   //------ more content news ------------//
   .one-content-category-four,
-  .one-content-subcategory-four{
+  .one-content-subcategory-four {
     margin-right: 15px;
 
     @media (max-width: $broken) {
@@ -31,8 +31,9 @@
     }
   }
 
-  .one-content-category-four ,
-  .one-content-subcategory-four{
+  .one-content-category-four,
+  .one-content-subcategory-four,
+  .last-content-category-childs {
     position: relative;
 
     .block-field-blocknodenewsfield-my-content-has-a-main-vide {
@@ -40,7 +41,11 @@
     }
 
     .field--name-field-my-content-has-a-main-vide {
-      @include player-icon($desktop-size: 50px,$tablet-size:50px,$mobile-size:30px);
+      @include player-icon($desktop-size: 50px, $tablet-size:50px, $mobile-size:30px);
+
+      &:empty {
+        display: none;
+      }
     }
   }
 
