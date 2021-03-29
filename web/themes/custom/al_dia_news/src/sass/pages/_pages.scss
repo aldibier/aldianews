@@ -1,10 +1,35 @@
 .screen-margin {
-    max-width: $page-width;
+  max-width: $page-width;
 }
 
+article[about="/terms-of-service"] {
+  .content-left-pages h1 {
+    color: $cblack3;
+  }
+}
 
-article[about="/terms-of-service"]{
-    .content-left-pages h1 {
-        color: $cblack3;
-    }
+.al-dia-title {
+  text-transform: capitalize;
+  .logo {
+    text-transform: uppercase;
+    font-style: italic;
+    background: #ee2211;
+    font-family: "ProximaNovaCond-Bold";
+    font-weight: bold;
+    max-height: 60px;
+    overflow: hidden;
+    line-height: 60px;
+    position: relative;
+    padding-right: 18px;
+  }
+  .R {
+    font-size: 10px;
+    border: 1px solid white;
+    border-radius: 40px;
+    position: absolute;
+    line-height: 8px;
+    padding: 3px;
+    right: 2px;
+    top: 20px;
+  }
 }
