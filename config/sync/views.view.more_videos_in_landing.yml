@@ -10,12 +10,7 @@ dependencies:
     - node.type.news
     - responsive_image.styles.next_two_image_responsive
     - taxonomy.vocabulary.categories
-  content:
-    - 'taxonomy_term:categories:3fe175c4-7f73-43b0-a6e7-d14e6f86f16b'
-    - 'taxonomy_term:categories:453c4a7a-301c-4130-927f-2522b1267ca9'
-    - 'taxonomy_term:categories:cb86089f-1431-49f2-b0ad-940c0249bc34'
   module:
-    - better_exposed_filters
     - node
     - responsive_image
     - taxonomy
@@ -51,7 +46,7 @@ display:
           query_comment: ''
           query_tags: {  }
       exposed_form:
-        type: bef
+        type: basic
         options:
           submit_button: Apply
           reset_button: false
@@ -60,27 +55,6 @@ display:
           expose_sort_order: true
           sort_asc_label: Asc
           sort_desc_label: Desc
-          text_input_required: 'Select any filter and click on Apply to see results'
-          text_input_required_format: full_html
-          bef:
-            general:
-              autosubmit: true
-              autosubmit_exclude_textfield: false
-              autosubmit_textfield_delay: 500
-              autosubmit_hide: false
-              input_required: false
-              allow_secondary: false
-              secondary_label: 'Advanced options'
-              secondary_open: false
-            filter:
-              field_category_target_id:
-                plugin_id: default
-                advanced:
-                  sort_options: false
-                  rewrite:
-                    filter_rewrite_values: ''
-                  collapsible: false
-                  is_secondary: false
       pager:
         type: none
         options:
@@ -519,71 +493,6 @@ display:
           empty_zero: false
           hide_alter_empty: false
           plugin_id: custom
-        parent_target_id:
-          id: parent_target_id
-          table: taxonomy_term__parent
-          field: parent_target_id
-          relationship: field_category
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: true
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          entity_type: taxonomy_term
-          entity_field: parent
-          plugin_id: field
       filters:
         status:
           value: '1'
@@ -698,10 +607,7 @@ display:
           group_type: group
           admin_label: ''
           operator: or
-          value:
-            122: 122
-            8: 8
-            4: 4
+          value: {  }
           group: 1
           exposed: true
           expose:
@@ -738,7 +644,7 @@ display:
           type: select
           limit: true
           vid: categories
-          hierarchy: true
+          hierarchy: false
           error_message: true
           plugin_id: taxonomy_index_tid
       sorts:
@@ -761,27 +667,7 @@ display:
       header: {  }
       footer: {  }
       empty: {  }
-      relationships:
-        field_category:
-          id: field_category
-          table: node__field_category
-          field: field_category
-          relationship: none
-          group_type: group
-          admin_label: 'field_category: Taxonomy term'
-          required: true
-          plugin_id: standard
-        parent_target_id:
-          id: parent_target_id
-          table: taxonomy_term__parent
-          field: parent_target_id
-          relationship: field_category
-          group_type: group
-          admin_label: Parent
-          required: false
-          entity_type: taxonomy_term
-          entity_field: parent
-          plugin_id: standard
+      relationships: {  }
       arguments: {  }
       display_extenders: {  }
     cache_metadata:
