@@ -1238,35 +1238,25 @@ window.onload = function () {
   if (block_ads === null && view_career != null) {
     view_career.classList.add("view-complete");
   } //// js para slider de video en landing de video
-  // Array.from(
-  //   document.querySelectorAll(
-  //     ".block-views-blockcarousel-videos-landing-block-2 .views-field-nid"
-  //   )
-  // ).map(function(e) {
-  //   e.parentElement.addEventListener("click", () => {
-  //     Array.from(
-  //       document.querySelectorAll(
-  //         ".view-id-carousel_videos_landing.view-display-id-page_1 .views-field-nid"
-  //       )
-  //     ).map(function(ev) {
-  //       if (
-  //         e.innerText === ev.innerText &&
-  //         ev.parentElement.classList.contain("video-present")
-  //       ) {
-  //         ev.parentElement.parentElement.classList.remove("select-video");
-  //         ev.parentElement.parentElement.classList.remove("show-video");
-  //         ev.parentElement.classList.remove("video-present");
-  //         ev.parentElement.classList.remove("video-present");
-  //       } else {
-  //         ev.parentElement.parentElement.classList.add("select-video");
-  //         ev.parentElement.parentElement.classList.add("show-video");
-  //         ev.parentElement.classList.add("video-present");
-  //         ev.parentElement.classList.add("video-present");
-  //       }
-  //     });
-  //   });
-  // });
 
+
+  Array.from(document.querySelectorAll(".block-views-blockcarousel-videos-landing-block-2 .views-field-nid")).map(function (e) {
+    e.parentElement.addEventListener("click", function () {
+      Array.from(document.querySelectorAll(".view-id-carousel_videos_landing.view-display-id-page_1 .views-field-nid")).map(function (ev) {
+        if (e.innerText === ev.innerText && ev.parentElement.classList.contain("video-present")) {
+          ev.parentElement.parentElement.classList.remove("select-video");
+          ev.parentElement.parentElement.classList.remove("show-video");
+          ev.parentElement.classList.remove("video-present");
+          ev.parentElement.classList.remove("video-present");
+        } else {
+          ev.parentElement.parentElement.classList.add("select-video");
+          ev.parentElement.parentElement.classList.add("show-video");
+          ev.parentElement.classList.add("video-present");
+          ev.parentElement.classList.add("video-present");
+        }
+      });
+    });
+  });
 };
 
 /***/ }),
