@@ -341,6 +341,7 @@
     margin-bottom: 15px;
     display: flex;
     max-width: 400px;
+    width: 100%;
     .views-field-field-image {
       max-width: 175px;
       max-height: 100px;
@@ -533,9 +534,14 @@
     .block-block-groupadvertising-blocks-in-job-landing-pages {
       margin-top: 0px;
     }
-    .block-views-blockcarousel-jobs-landing-block-1 .views-field-field-image {
-      max-width: 300px;
-      max-height: 157px;
+    .block-views-blockcarousel-jobs-landing-block-1 {
+      .slick-list {
+        max-width: 900px;
+      }
+      .views-field-field-image {
+        max-width: 290px;
+        max-height: 157px;
+      }
     }
   }
   .block-views-blockcareer-news-block-4 {
@@ -549,6 +555,7 @@
     .views-row {
       border-bottom: 0px;
       border-top: 1px solid #b1b1b1;
+      padding: 20px 0px 0px;
     }
     .view-content {
       justify-content: space-around;
@@ -561,7 +568,8 @@
         border-right: 0px;
       }
       .views-row:nth-child(1) {
-        border-right: 1px solid #b1b1b1;
+        border-right: 0px solid #b1b1b1;
+        border-top: 0px;
       }
       .views-row:nth-child(3)::before,
       .views-row:nth-child(4)::before,
@@ -576,8 +584,7 @@
     margin-bottom: 0px;
     position: absolute;
     top: 0px;
-    right: 0px;
-    display: none; //////
+    right: 30px;
   }
 }
 
