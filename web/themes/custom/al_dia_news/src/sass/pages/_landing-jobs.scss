@@ -570,6 +570,7 @@
       .views-row:nth-child(1) {
         border-right: 0px solid #b1b1b1;
         border-top: 0px;
+        padding-right: 15.4px;
       }
       .views-row:nth-child(3)::before,
       .views-row:nth-child(4)::before,
@@ -604,6 +605,9 @@
     .block-menu-float {
       margin: -75px 0 62px;
       padding-left: 3px;
+      .menu a {
+        max-width: 100px;
+      }
     }
     .block-content-left {
       h2 {
@@ -633,23 +637,27 @@
     }
     .block-views-blockcarousel-jobs-landing-block-1 {
       margin: 0px 0px 53px;
+      .slick-list {
+        max-width: 680px;
+      }
       .views-field-field-image {
-        max-width: 56px;
-        max-height: 52px;
+        max-width: 220px;
+        max-height: 115px;
       }
     }
   }
   .block-views-blockcareer-news-block-4 {
     width: 21.095%;
     max-width: 115px;
+    top: -15px;
     h2 {
       font-size: $px15;
       line-height: 18px;
     }
   }
   .block-views-blockcareer-news-block-3 {
-    max-width: 175px;
-    width: 78.9%;
+    max-width: none;
+    width: 83.9%;
     padding-top: 10px;
     a {
       font-size: $px10;
@@ -662,11 +670,13 @@
     border-left: 0px;
     width: 100%;
     padding-left: 0px;
-    max-width: 320px;
     margin-left: 0px;
     margin-bottom: 0px;
-    max-height: 120px;
+    max-height: none;
+    max-width: 320px;
+    max-height: 580px;
     overflow: hidden;
+    right: 0px;
   }
   .block-views-blockcareer-news-block-1 {
     .views-row {
@@ -675,10 +685,10 @@
       border-bottom: 0px;
       border-top: 1px solid $cgrey4;
       margin-bottom: 10px;
-      max-width: 290px;
+      max-width: none;
       .views-field-field-image {
-        max-width: 140px;
-        max-height: 80px;
+        max-width: 240px;
+        max-height: 180px;
         margin-right: 20px;
       }
       .card-title {
@@ -695,10 +705,6 @@
     }
     .view-content {
       flex-direction: column;
-      &::before {
-        display: block;
-        top: 365px;
-      }
       .views-row:nth-child(1),
       .views-row:nth-child(2) {
         padding-right: 165px;
@@ -706,10 +712,11 @@
         margin-bottom: 30px;
         flex-direction: column;
         padding-bottom: 30px;
-        border-bottom: 1px solid $cgrey4;
+        border-bottom: 0px solid $cgrey4;
+        max-width: none;
         .views-field-field-image {
-          max-width: 140px;
-          max-height: 80px;
+          max-width: 340px;
+          max-height: 180px;
           margin-bottom: 20px;
         }
         .card-title {
@@ -735,8 +742,8 @@
         border-right: 0px solid $cgrey4;
         margin-bottom: 0px;
         .views-field-field-image {
-          max-width: 140px;
-          max-height: 80px;
+          max-width: 340px;
+          max-height: 180px;
           margin-bottom: 0px;
         }
         .card-title {
@@ -756,6 +763,57 @@
       .views-row:nth-child(5) {
         &::before {
           display: none;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $mobile-mid) {
+  .path-jobs .style-jobs {
+    .block-views-blockcarousel-jobs-landing-block-1 {
+      .slick-list {
+        max-width: 240px;
+      }
+      .views-field-field-image {
+        max-width: 115px;
+        max-height: 60px;
+      }
+    }
+  }
+
+  .block-block-groupgroup-career-news-jobs
+    .block-fixed-block-contentbig-vertical-advertising {
+    max-width: 120px;
+    max-height: 320px;
+  }
+
+  .block-views-blockcareer-news-block-1 {
+    .views-row {
+      max-width: 290px;
+      .views-field-field-image {
+        max-width: 140px;
+        max-height: 80px;
+      }
+    }
+    .view-content {
+      .views-row:nth-child(1),
+      .views-row:nth-child(2) {
+        .views-field-field-image {
+          max-width: 140px;
+          max-height: 80px;
+        }
+      }
+    }
+  }
+
+  .block-views-blockcareer-news-block-1.view-complete {
+    .view-content {
+      .views-row:nth-child(3) {
+        .views-field-field-image {
+          max-width: 140px;
+          max-height: 80px;
+          margin-bottom: 0px;
         }
       }
     }
