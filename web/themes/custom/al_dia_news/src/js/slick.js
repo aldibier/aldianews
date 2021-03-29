@@ -42,6 +42,17 @@ const initSlick = ($, Drupal) => {
       autoplaySpeed: 2000
     });
   });
+
+  // slide landing videos
+  $(document).ready(function() {
+    $(
+      ".block-views-blockcarousel-videos-landing-block-2 .view-id-carousel_videos_landing .view-content"
+    ).slick({
+      infinite: true,
+      slidesToShow: 5,
+      slidesToScroll: 1,
+    });
+  });
 };
 
 export default initSlick;

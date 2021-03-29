@@ -7,6 +7,11 @@
 
   .card-image {
     margin-bottom: 10px;
+    position: relative;
+
+    .player-news {
+      @include player-icon($desktop-size:70px,$tablet-size:70px,$mobile-size:30px);
+    }
 
     $screen-query: 993px;
 

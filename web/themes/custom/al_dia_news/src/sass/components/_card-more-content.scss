@@ -31,6 +31,19 @@
     }
   }
 
+  .one-content-category-four ,
+  .one-content-subcategory-four{
+    position: relative;
+
+    .block-field-blocknodenewsfield-my-content-has-a-main-vide {
+      font-size: 0;
+    }
+
+    .field--name-field-my-content-has-a-main-vide {
+      @include player-icon($desktop-size: 50px,$tablet-size:50px,$mobile-size:30px);
+    }
+  }
+
   &-news {
     .related-content>a {
       width: 175px;
