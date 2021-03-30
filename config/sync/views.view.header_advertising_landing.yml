@@ -58,12 +58,32 @@ display:
       pager:
         type: none
         options:
-          items_per_page: null
           offset: 0
       style:
         type: default
+        options:
+          grouping:
+            -
+              field: field_section_title
+              rendered: true
+              rendered_strip: false
+            -
+              field: body
+              rendered: true
+              rendered_strip: false
+            -
+              field: field_image
+              rendered: true
+              rendered_strip: false
+          row_class: ''
+          default_row_class: true
       row:
         type: fields
+        options:
+          default_field_elements: true
+          inline: {  }
+          separator: ''
+          hide_empty: false
       fields:
         field_image:
           id: field_image
@@ -73,7 +93,7 @@ display:
           group_type: group
           admin_label: ''
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -137,7 +157,7 @@ display:
           group_type: group
           admin_label: ''
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -200,7 +220,7 @@ display:
           group_type: group
           admin_label: ''
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
