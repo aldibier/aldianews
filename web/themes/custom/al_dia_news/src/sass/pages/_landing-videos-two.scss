@@ -1,0 +1,69 @@
+.path-videos {
+
+  .view-display-id-block_2 {
+    h3 {
+      margin: 90px 0 0;
+      @include title-section-line($px34, $Modcond-reg, $cwhite);
+    }
+  }
+
+  .view-filters {
+    margin-bottom: 60px;
+
+    .form-wrapper {
+      width: 100%;
+      height: 30px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    legend {
+      margin-right: 20px;
+      float: left;
+      font-size: szrem(20);
+      font-family: $PrNovacond-light;
+      line-height: 23px;
+      letter-spacing: 0.025em;
+      color: $cwhite;
+    }
+
+    .form-radios {
+      display: flex;
+    }
+
+    .form-item {
+      margin: 0 15px 0 0;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      input {
+        display: none;
+
+        &:checked + label {
+          color: $red1;
+        }
+      }
+
+      label {
+        font-size: szrem(20);
+        font-family: $PrNovacond-Sbold;
+        line-height: 23px;
+        letter-spacing: 0.025em;
+        color: $cwhite;
+      }
+    }
+
+    .form-actions {
+      display: none;
+    }
+  }
+
+  .fieldset-legend {}
+
+  .form-radios {
+    .form-item {}
+  }
+}
