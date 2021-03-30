@@ -72,6 +72,11 @@
     }
   }
 
+
+  .card-name-white {
+    color: $cwhite;
+  }
+
   .card-title {
     margin-bottom: 10px;
 
@@ -84,6 +89,12 @@
       line-height: 37px;
       text-transform: uppercase;
       color: $cblack;
+    }
+
+    &-white {
+      a {
+        color: $cwhite;
+      }
     }
 
     @media screen and (max-width: $broken) {
@@ -116,6 +127,10 @@
     font-weight: normal;
     line-height: 19px;
     color: $cgrey3;
+
+    &-white {
+      color: $cwhite;
+    }
 
     @media screen and (max-width: $tablet) {
       font-size: 10px;
