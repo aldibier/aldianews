@@ -58,23 +58,23 @@ window.onload = function() {
   }
 
 
-var lista1 = document.querySelectorAll('.block-views-blockcarousel-videos-landing-block-2 .views-field-nid')
-var lista2 = document.querySelectorAll('.view-id-carousel_videos_landing.view-display-id-page_1 .views-field-nid')
+  var lista1 = document.querySelectorAll('.block-views-blockcarousel-videos-landing-block-2 .views-field-nid')
+  var lista2 = document.querySelectorAll('.view-id-carousel_videos_landing.view-display-id-page_1 .views-field-nid')
 
-for (let i = 0; i < lista1.length; i++) {
-   const itemLista1 = lista1[i];
-   
-   itemLista1.parentElement.addEventListener("click", function (){
-      one();
-      two();
- if(itemLista1.children.innerHTML === lista2[i].children.innerHTML ){
-          itemLista1.parentElement.parentElement.classList.add("select-video");
-          lista2[i].parentElement.parentElement.classList.add("show-video");
-          itemLista1.parentElement.classList.add("video-present");
-          lista2[i].parentElement.classList.add("video-present");
-        }
-   })
-}
+  for (let i = 0; i < lista1.length; i++) {
+    const itemLista1 = lista1[i];
+    
+    itemLista1.parentElement.addEventListener("click", function (){
+        one();
+        two();
+  if(itemLista1.children.innerHTML === lista2[i].children.innerHTML ){
+            itemLista1.parentElement.parentElement.classList.add("select-video");
+            lista2[i].parentElement.parentElement.classList.add("show-video");
+            itemLista1.parentElement.classList.add("video-present");
+            lista2[i].parentElement.classList.add("video-present");
+          }
+    })
+  }
 
   
 };
