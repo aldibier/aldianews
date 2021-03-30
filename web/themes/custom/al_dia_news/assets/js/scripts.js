@@ -1262,15 +1262,17 @@ window.onload = function () {
   // var lista2 = document.querySelectorAll('.view-id-carousel_videos_landing.view-display-id-page_1 .views-field-nid')
   // for (let i = 0; i < lista1.length; i++) {
   //   const itemLista1 = lista1[i];
+  //   const itemLista2 = lista2[i];
+  //   console.log(itemLista1, itemLista2)
   //   itemLista1.parentElement.addEventListener("click", function (){
-  //       one();
-  //       two();
-  // if(itemLista1.children.innerHTML === lista2[i].children.innerHTML ){
-  //           itemLista1.parentElement.parentElement.classList.add("select-video");
-  //           lista2[i].parentElement.parentElement.classList.add("show-video");
-  //           itemLista1.parentElement.classList.add("video-present");
-  //           lista2[i].parentElement.classList.add("video-present");
-  //         }
+  //     one();
+  //     two();
+  //     if(itemLista1.children.innerHTML === itemLista2.children.innerHTML ){
+  //       itemLista1.parentElement.parentElement.classList.add("select-video");
+  //       itemLista2.parentElement.parentElement.classList.add("show-video");
+  //       itemLista1.parentElement.classList.add("video-present");
+  //       itemLista2.parentElement.classList.add("video-present");
+  //     }
   //   })
   // }
 
@@ -1576,7 +1578,7 @@ var initSlick = function initSlick($, Drupal) {
 
   $(document).ready(function () {
     $(".block-views-blockcarousel-videos-landing-block-2 .view-id-carousel_videos_landing .view-content").slick({
-      infinite: true,
+      infinite: false,
       slidesToShow: 5,
       slidesToScroll: 1,
       responsive: [{
