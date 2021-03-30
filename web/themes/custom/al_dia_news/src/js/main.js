@@ -1,5 +1,5 @@
 window.onload = function() {
-  // js video
+  // js video en interna
   var video_interna = document.querySelector(
     ".block-field-blocknodenewsfield-video"
   );
@@ -30,21 +30,48 @@ window.onload = function() {
   }
 
   //// js para slider de video en landing de video
-  // Array.from(document.querySelectorAll(".block-views-blockcarousel-videos-landing-block-2 .views-field-id")).map(function(e) {
-  //   e.parentElement.addEventListener("click", () => {
-  //     Array.from(document.querySelectorAll(".view-id-carousel_videos_landing.view-display-id-page_1 .views-field-id")).map(function(ev) {
-  //      if(e.innerText === ev.innerText && ev.parentElement.classList.contain("video-present")){
-  //         ev.parentElement.parentElement.classList.remove("select-video");
-  //         ev.parentElement.parentElement.classList.remove("show-video");
-  //         ev.parentElement.classList.remove("video-present");
-  //         ev.parentElement.classList.remove("video-present");
-  //       }else if{
-  //         ev.parentElement.parentElement.classList.add("select-video");
-  //         ev.parentElement.parentElement.classList.add("show-video");
-  //         ev.parentElement.classList.add("video-present");
-  //         ev.parentElement.classList.add("video-present");
-  //       }
-  //     });
-  //   });
-  // });
+ 
+  function one(){
+    Array.from(document.querySelectorAll(".block-views-blockcarousel-videos-landing-block-2")).map(function(e) {
+      var p = e.querySelector(".select-video");
+      var c = e.querySelector(".video-present");
+          if(p != null && c != null ){
+            p.classList.remove("select-video");
+            c.classList.remove("video-present");
+          }
+    });
+  }
+
+  function two(){
+    Array.from(document.querySelectorAll(".view-id-carousel_videos_landing.view-display-id-page_1")).map(function(ev) {
+      var a = ev.querySelector(".show-video");
+      var b = ev.querySelector(".video-present");
+          if(a != null && b != null ){
+            a.classList.remove("show-video");
+            b.classList.remove("video-present");
+          }
+    });
+  }
+
+
+var lista1 = document.querySelectorAll('.block-views-blockcarousel-videos-landing-block-2 .views-field-nid')
+var lista2 = document.querySelectorAll('.view-id-carousel_videos_landing.view-display-id-page_1 .views-field-nid')
+
+for (let i = 0; i < lista1.length; i++) {
+   const itemLista1 = lista1[i];
+   
+   itemLista1.parentElement.addEventListener("click", function (){
+      one();
+      two();
+ if(itemLista1.children.innerHTML === lista2[i].children.innerHTML ){
+          itemLista1.parentElement.parentElement.classList.add("select-video");
+          lista2[i].parentElement.parentElement.classList.add("show-video");
+          itemLista1.parentElement.classList.add("video-present");
+          lista2[i].parentElement.classList.add("video-present");
+        }
+   })
+}
+
+  
 };
+
