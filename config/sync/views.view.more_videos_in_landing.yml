@@ -948,10 +948,12 @@ display:
             offset_label: Offset
           views_infinite_scroll:
             button_text: 'Load More'
-            automatically_load_content: false
+            automatically_load_content: true
       defaults:
         pager: false
         fields: false
+        filters: false
+        filter_groups: false
       fields:
         nid:
           id: nid
@@ -1409,7 +1411,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"card-content\">\r\n   <div class=\"card-name-category card-name-white\">{{ field_category }}</div>\r\n   <div class=\"card-title card-title-white\">{{ field_short_title }}</div>\r\n   <div class=\"card-date card-date-white\">{{ created }}</div>\r\n</div>"
+            text: "<div class=\"card-content\">\r\n   <div class=\"card-name-category card-name-category-white\">{{ field_category }}</div>\r\n   <div class=\"card-title card-title-white\">{{ field_short_title }}</div>\r\n   <div class=\"card-date card-date-white\">{{ created }}</div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -1513,6 +1515,248 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
+      filters:
+        status:
+          value: '1'
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+          group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          value:
+            news: news
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+          group: 1
+        field_my_content_has_a_main_vide_value:
+          id: field_my_content_has_a_main_vide_value
+          table: node__field_my_content_has_a_main_vide
+          field: field_my_content_has_a_main_vide_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: boolean
+        langcode:
+          id: langcode
+          table: node_field_data
+          field: langcode
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value:
+            '***LANGUAGE_language_interface***': '***LANGUAGE_language_interface***'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: node
+          entity_field: langcode
+          plugin_id: language
+        tid:
+          id: tid
+          table: taxonomy_term_field_data
+          field: tid
+          relationship: field_category
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: tid_op
+            label: Term
+            description: null
+            use_operator: false
+            operator: tid_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: tid
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: true
+          group_info:
+            label: 'SORT BY: '
+            description: ''
+            identifier: tid
+            optional: true
+            widget: radios
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items:
+              1:
+                title: LEADERSHIP
+                operator: or
+                value:
+                  135: '135'
+                  136: '136'
+                  137: '137'
+                  138: '138'
+                  139: '139'
+                  140: '140'
+                  141: '141'
+                  142: '142'
+                  143: '143'
+                  144: '144'
+                  145: '145'
+                  146: '146'
+                  147: '147'
+                  148: '148'
+              2:
+                title: CULTURE
+                operator: or
+                value:
+                  131: '131'
+                  132: '132'
+                  133: '133'
+                  126: '126'
+                  134: '134'
+              3:
+                title: POLITICS
+                operator: or
+                value:
+                  149: '149'
+                  5: '5'
+                  150: '150'
+                  7: '7'
+                  151: '151'
+                  152: '152'
+                  6: '6'
+                  153: '153'
+                  154: '154'
+                  155: '155'
+                  144: '144'
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: categories
+          hierarchy: false
+          error_message: true
+          entity_type: taxonomy_term
+          entity_field: tid
+          plugin_id: taxonomy_index_tid
+        other_view_filter:
+          id: other_view_filter
+          table: node_field_data
+          field: other_view_filter
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: 'not in'
+          value:
+            'carousel_videos_landing:block_2': 'carousel_videos_landing:block_2'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          inherit_contextual_filters: 0
+          entity_type: node
+          plugin_id: other_views_filter
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
     cache_metadata:
       max-age: -1
       contexts:
