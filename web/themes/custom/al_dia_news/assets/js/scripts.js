@@ -1214,7 +1214,7 @@ module.exports = function (css) {
 /***/ (function(module, exports) {
 
 window.onload = function () {
-  // js video
+  // js video en interna
   var video_interna = document.querySelector(".block-field-blocknodenewsfield-video");
   var contenido_interna = document.querySelector(".content-news-internal-first");
 
@@ -1238,36 +1238,87 @@ window.onload = function () {
   if (block_ads === null && view_career != null) {
     view_career.classList.add("view-complete");
   } //// js para slider de video en landing de video
-  // Array.from(
-  //   document.querySelectorAll(
-  //     ".block-views-blockcarousel-videos-landing-block-2 .views-field-nid"
-  //   )
-  // ).map(function(e) {
-  //   e.parentElement.addEventListener("click", () => {
-  //     Array.from(
-  //       document.querySelectorAll(
-  //         ".view-id-carousel_videos_landing.view-display-id-page_1 .views-field-nid"
-  //       )
-  //     ).map(function(ev) {
-  //       if (
-  //         e.innerText === ev.innerText &&
-  //         ev.parentElement.classList.contain("video-present")
-  //       ) {
-  //         ev.parentElement.parentElement.classList.remove("select-video");
-  //         ev.parentElement.parentElement.classList.remove("show-video");
-  //         ev.parentElement.classList.remove("video-present");
-  //         ev.parentElement.classList.remove("video-present");
-  //       } else {
-  //         ev.parentElement.parentElement.classList.add("select-video");
-  //         ev.parentElement.parentElement.classList.add("show-video");
-  //         ev.parentElement.classList.add("video-present");
-  //         ev.parentElement.classList.add("video-present");
-  //       }
-  //     });
-  //   });
-  // });
 
+
+  function one() {
+    Array.from(document.querySelectorAll(".block-views-blockcarousel-videos-landing-block-2")).map(function (e) {
+      var p = e.querySelector(".select-video");
+      var c = e.querySelector(".video-present");
+
+      if (p != null && c != null) {
+        p.classList.remove("select-video");
+        c.classList.remove("video-present");
+      }
+    });
+  }
+
+  function two() {
+    Array.from(document.querySelectorAll(".view-id-carousel_videos_landing.view-display-id-page_1")).map(function (ev) {
+      var a = ev.querySelector(".show-video");
+      var b = ev.querySelector(".video-present");
+
+      if (a != null && b != null) {
+        a.classList.remove("show-video");
+        b.classList.remove("video-present");
+      }
+    });
+  }
+
+  var lista1 = document.querySelectorAll('.block-views-blockcarousel-videos-landing-block-2 .views-field-nid');
+  var lista2 = document.querySelectorAll('.view-id-carousel_videos_landing.view-display-id-page_1 .views-field-nid');
+
+  var _loop = function _loop(i) {
+    var itemLista1 = lista1[i];
+    itemLista1.parentElement.addEventListener("click", function () {
+      one();
+      two();
+
+      if (itemLista1.children.innerHTML === lista2[i].children.innerHTML) {
+        itemLista1.parentElement.parentElement.classList.add("select-video");
+        lista2[i].parentElement.parentElement.classList.add("show-video");
+        itemLista1.parentElement.classList.add("video-present");
+        lista2[i].parentElement.classList.add("video-present");
+      }
+    });
+  };
+
+  for (var i = 0; i < lista1.length; i++) {
+    _loop(i);
+  }
 };
+
+/***/ }),
+
+/***/ "./src/js/modules/replaceToken.js":
+/*!****************************************!*\
+  !*** ./src/js/modules/replaceToken.js ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/**
+ * Reemplazar palabra clave o token por algún valor dado
+ *
+ * @param {String} regexToken Palabra o token como bandera para buscar y reemplazar
+ * @param {String} value Texto o html para reemplazar el token
+ * @param {Element} elements Colección de elementos HTML especificos en los que debera buscar el token
+ */
+var replaceToken = function replaceToken(regexToken, value) {
+  var elements = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : [];
+  var search = new RegExp("".concat(regexToken), 'gim');
+
+  if (elements.length) {
+    Array.from(elements).map(function (element) {
+      if (element instanceof Element) {
+        element.innerHTML = element.innerHTML.replace(search, value);
+      }
+    });
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (replaceToken);
 
 /***/ }),
 
@@ -1286,8 +1337,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_libraries_selection_sharer_selection_sharer_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_assets_libraries_selection_sharer_selection_sharer_js__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _scroll_magic__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./scroll-magic */ "./src/js/scroll-magic.js");
 /* harmony import */ var _slick_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./slick.js */ "./src/js/slick.js");
-/* harmony import */ var _main_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./main.js */ "./src/js/main.js");
-/* harmony import */ var _main_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_main_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _modules_replaceToken__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/replaceToken */ "./src/js/modules/replaceToken.js");
+/* harmony import */ var _main_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./main.js */ "./src/js/main.js");
+/* harmony import */ var _main_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_main_js__WEBPACK_IMPORTED_MODULE_5__);
+
 
 
 
@@ -1295,8 +1348,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 (function ($, Drupal) {
+  // Selection share
   var sharer = new _assets_libraries_selection_sharer_selection_sharer_js__WEBPACK_IMPORTED_MODULE_1___default.a();
-  sharer.setElements("p");
+  sharer.setElements("p,a,h1,h2,h3,blockquote"); // Replace key word by another value
+
+  var headingTags = document.querySelectorAll('h1, h2, h3');
+  var paragraphTags = document.querySelectorAll("p");
+  var aldiaLogoStructure = "<a title=\"AL D\xCDA\" href=\"/\"><img alt=\"AL D\xCDA\" src=\"aldia.svg\"></a>";
+  Object(_modules_replaceToken__WEBPACK_IMPORTED_MODULE_4__["default"])("AL DÍA|al día", aldiaLogoStructure, headingTags);
+  Object(_modules_replaceToken__WEBPACK_IMPORTED_MODULE_4__["default"])("{aldia}", aldiaLogoStructure, paragraphTags);
   jQuery(document).ready(function () {
     //--------- menu--------------------//
     $(".region-header #block-blockheader").click(function () {
@@ -1569,8 +1629,8 @@ var initSlick = function initSlick($, Drupal) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
-module.exports = __webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
+__webpack_require__(/*! C:\Users\valer\Desktop\4ld14-n3ws\web\themes\custom\al_dia_news\src\js\scripts.js */"./src/js/scripts.js");
+module.exports = __webpack_require__(/*! C:\Users\valer\Desktop\4ld14-n3ws\web\themes\custom\al_dia_news\src\sass\styles.scss */"./src/sass/styles.scss");
 
 
 /***/ })

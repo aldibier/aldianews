@@ -2,11 +2,21 @@ import "../../assets/libraries/selection-sharer/selection-sharer.css";
 import SelectionSharer from "../../assets/libraries/selection-sharer/selection-sharer.js";
 import initScrollMagic from "./scroll-magic";
 import initSlick from "./slick.js";
+import replaceToken from "./modules/replaceToken";
 import initMain from "./main.js";
 
 (function($, Drupal) {
+  // Selection share
   const sharer = new SelectionSharer();
-  sharer.setElements("p");
+  sharer.setElements("p,a,h1,h2,h3,blockquote");
+
+  // Replace key word by another value
+  const headingTags = document.querySelectorAll('h1, h2, h3');
+  const paragraphTags = document.querySelectorAll("p");
+  const aldiaLogoStructure = `<a title="AL DÍA" href="/"><img alt="AL DÍA" src="aldia.svg"></a>`;
+  replaceToken("AL DÍA|al día", aldiaLogoStructure, headingTags);
+  replaceToken("{aldia}", aldiaLogoStructure, paragraphTags);
+
 
   jQuery(document).ready(function() {
     //--------- menu--------------------//

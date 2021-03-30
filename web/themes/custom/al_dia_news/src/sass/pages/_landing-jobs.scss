@@ -624,6 +624,7 @@
       padding-left: 3px;
       .menu a {
         max-width: 100px;
+        min-width: 100px;
       }
     }
     .block-content-left {
@@ -842,7 +843,6 @@
       }
       .views-row:nth-child(1) {
         padding-top: 0px;
-        border-bottom: 0px;
         .card-date {
           position: relative;
           &::before {
@@ -856,6 +856,9 @@
             bottom: -30px;
           }
         }
+      }
+      .views-row:nth-child(2) {
+        border-top: 0px;
       }
     }
   }

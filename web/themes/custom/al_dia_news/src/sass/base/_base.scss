@@ -1,152 +1,165 @@
 .main-content .section {
-    padding: 0;
+  padding: 0;
 }
-.field--type-image img, .field--name-user-picture img {
-    margin: 0;
+
+.field--type-image img,
+.field--name-user-picture img {
+  margin: 0;
 }
 
 .field--type-image a {
-    display: block;
-    line-height: 0;
-    border: none;
+  display: block;
+  line-height: 0;
+  border: none;
 }
 
 img {
-    margin: 0;
+  margin: 0;
 }
 
 .user-logged-in {
 
-    #header {
-        top: 39px;
-    }
+  #header {
+    top: 39px;
+  }
 }
 
 .node .field--type-image {
-    margin: 0;
+  margin: 0;
 }
 
 .user-logged-in.open-menu {
-    #page {
-        padding: 125px 0 0;
+  #page {
+    padding: 125px 0 0;
 
-        @media(max-width:$broken2){
-            padding: 208px 0 0;
-        }
+    @media(max-width:$broken2) {
+      padding: 208px 0 0;
     }
+  }
 }
 
 #page {
-    padding: 75px 0 0;
+  padding: 75px 0 0;
 
-    @media(max-width:$broken2){
-        padding: 110px 0 0;
-    }
+  @media(max-width:$broken2) {
+    padding: 110px 0 0;
+  }
 
 }
 
 body.open-menu {
-    #page {
-        padding: 125px 0 0;
-        @media(max-width:$broken2){
-            padding: 203px 0 0;
-        }
+  #page {
+    padding: 125px 0 0;
+
+    @media(max-width:$broken2) {
+      padding: 203px 0 0;
     }
+  }
 }
 
 body.toolbar-tray-open.user-logged-in {
-    #header {
-        top: 79px;
-    }
+  #header {
+    top: 79px;
+  }
 }
 
 #page {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .layout-container {
-    max-width: 1440px;
+  max-width: 1440px;
 
-    .layout-main {
-        max-width: 1310px;
-        padding: 0 15px;
-        margin: 0 auto 40px;
+  .layout-main {
+    max-width: 1310px;
+    padding: 0 15px;
+    margin: 0 auto 40px;
 
-        @media screen and (min-width: $tablet) {
-            margin-bottom: 100px;
-        }
+    @media screen and (min-width: $tablet) {
+      margin-bottom: 100px;
     }
+  }
 }
 
 .region-breadcrumb {
-    padding: 0;
+  padding: 0;
 }
 
 * {
 
-    box-sizing: border-box !important;
+  box-sizing: border-box !important;
 
-    &::selection {
-        background: $cyello;
-    }
+  &::selection {
+    background: $cyello;
+  }
 }
 
 //---style remplace ------//
-@media (min-width: 560px){
-    .node .field--type-image {
-        float: none;
-       //margin: 0; revisar
-    }
+@media (min-width: 560px) {
+  .node .field--type-image {
+    float: none;
+    //margin: 0; revisar
+  }
 }
 
 
 //---------------------breadcrumb------------------//
 .breadcrumb {
 
-    font-style: normal;
-    font-weight: normal;
-    font-size: 13px;
-    line-height: 16px;
-    margin: 45px 0 10px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 16px;
+  margin: 45px 0 10px;
 
-    ol {
-        display: flex;
-        flex-wrap: wrap;
-    }
+  ol {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
-    a {
-        color: $grey10;
-        border: none;
+  a {
+    color: $grey10;
+    border: none;
+  }
+
+  li {
+    color: $cblack0;
+    display: flex;
+
+    &:before {
+      background: url('../img/Path.svg') center center no-repeat;
+      height: 10px;
+      width: 6px;
+      font-size: 0;
+      display: block;
+      margin: 2px 5px 0;
     }
+  }
+
+  @media (max-width: $tablet) {
+    margin: 0;
+    font-size: 10px;
+    line-height: 12px;
 
     li {
-        color: $cblack0;
-        display: flex;
 
-        &:before {
-            background: url('../img/Path.svg') center center no-repeat;
-            height: 10px;
-            width: 6px;
-            font-size: 0;
-            display: block;
-            margin: 2px 5px 0;
-        }
+      &:before {
+        width: 9px;
+        height: 5px;
+        margin: 5px 5px 0;
+      }
     }
-
-    @media (max-width: $tablet) {
-        margin: 0;
-        font-size: 10px;
-        line-height: 12px;
-
-        li {
-
-            &:before {
-                width: 9px;
-                height: 5px;
-                margin: 5px 5px 0;
-            }
-        }
-    }
+  }
 }
 
 //---------------------end breadcrumb----------------------//
+
+//---------------------selection sharer----------------------//
+#selectionSharerPopover {
+  width: max-content;
+  transform: translateX(-50%) !important;
+  animation: none !important;
+  transition: none !important;
+}
+
+//---------------------end selection sharer----------------------//
