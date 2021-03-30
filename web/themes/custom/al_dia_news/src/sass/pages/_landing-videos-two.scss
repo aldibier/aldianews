@@ -1,5 +1,4 @@
 .path-videos {
-
   .view-display-id-block_2 {
     h3 {
       margin: 90px 0 0;
@@ -42,7 +41,7 @@
       input {
         display: none;
 
-        &:checked + label {
+        &:checked+label {
           color: $red1;
         }
       }
@@ -65,5 +64,51 @@
 
   .form-radios {
     .form-item {}
+  }
+
+
+  //------ pop-up video ------------//
+  .block-views-blockmore-videos-in-landing-block-1 {
+    .views-field-field-video {
+      width: 100vw;
+      height: auto;
+      min-height: max-content;
+      max-height: 695px;
+      padding: 100px 10% 98px;
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgb(0 0 0 / 80%);
+      transform: translateY(-50%);
+      z-index: 10;
+
+      &.active {
+        display: block;
+      }
+
+      @media screen and (max-width: $broken) {
+        padding: 77px 15px;
+      }
+
+      .field-content,
+      .video-embed-field-provider-youtube {
+        width: 100%;
+        height: 100%;
+        max-width: 860px;
+        margin: 0 auto;
+      }
+
+      .video-embed-field-provider-youtube {
+        @media screen and (max-width: $tablet) {
+          position: relative;
+          padding-bottom: 56.25%;
+          height: 0;
+          overflow: hidden
+        }
+      }
+    }
   }
 }

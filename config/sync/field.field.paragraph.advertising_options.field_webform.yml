@@ -1,0 +1,32 @@
+uuid: d70efa13-c35b-49bb-b2de-d80349b409fc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_webform
+    - paragraphs.paragraphs_type.advertising_options
+    - webform.webform.contact_us_advertising_landing
+  module:
+    - webform
+id: paragraph.advertising_options.field_webform
+field_name: field_webform
+entity_type: paragraph
+bundle: advertising_options
+label: Webform
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    default_data: ''
+    status: open
+    open: ''
+    close: ''
+    target_uuid: 674b686e-4c81-4ff8-9ba3-2bcdd016eaba
+default_value_callback: ''
+settings:
+  handler: 'default:webform'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: webform
