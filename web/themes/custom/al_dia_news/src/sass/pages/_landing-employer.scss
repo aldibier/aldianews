@@ -21,13 +21,21 @@
     position: absolute;
     z-index: 2;
     bottom: 165px;
-    text-transform: uppercase;
     margin: 0;
     width: 100%;
     max-width: 1310px;
     margin: 0 auto;
     left: 0;
     right: 0;
+    padding: 0 15px;
+  }
+  .field--name-body p{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.625rem;
+    line-height: 32px;
+    font-family: $PrNovacond-reg;
+    color: #333;
     padding: 0 15px;
   }
 
@@ -97,9 +105,13 @@
           $fontSize: szrem(10),
           $lineHeight: szrem(11)
         );
+        padding: 0 25px;
         font-size: $px22;
         line-height: 27px;
         min-height: 60px;
+        @media (max-width: $tablet) {
+          padding: 0px 10px;
+        }
       }
 
       &:after,
@@ -128,7 +140,7 @@
       right: 0 !important;
       background: $cblack3;
       transition: all 1s ease-in-out;
-      padding: 15px;
+      padding: 32.5px 8px;
 
       &:after,
       &:before {
@@ -660,6 +672,11 @@
     }
   }
 }
+.path-employer .layout-container .layout-main{
+  margin-bottom: 0px;
+}
+
+
 .user-logged-in .style-jobs {
   .view-jobs-menu,
   .block-menu-float {
@@ -670,5 +687,12 @@
         margin: 127px auto 0 !important;
       }
     }
+  }
+}
+
+
+@media (max-width: $tablet-min){
+  .path-jobs #page{
+    padding: 60px 0 0;
   }
 }
