@@ -21,7 +21,6 @@
     position: absolute;
     z-index: 2;
     bottom: 165px;
-    text-transform: uppercase;
     margin: 0;
     width: 100%;
     max-width: 1310px;
@@ -97,6 +96,7 @@
           $fontSize: szrem(10),
           $lineHeight: szrem(11)
         );
+        padding: 0 25px;
         font-size: $px22;
         line-height: 27px;
         min-height: 60px;
@@ -128,7 +128,7 @@
       right: 0 !important;
       background: $cblack3;
       transition: all 1s ease-in-out;
-      padding: 15px;
+      padding: 32.5px 8px;
 
       &:after,
       &:before {
@@ -659,6 +659,9 @@
       }
     }
   }
+}
+.path-employer .layout-container .layout-main{
+  margin-bottom: 0px;
 }
 .user-logged-in .style-jobs {
   .view-jobs-menu,

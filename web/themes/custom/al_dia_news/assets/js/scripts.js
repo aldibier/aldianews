@@ -1238,53 +1238,44 @@ window.onload = function () {
   if (block_ads === null && view_career != null) {
     view_career.classList.add("view-complete");
   } //// js para slider de video en landing de video
+  // function one(){
+  //   Array.from(document.querySelectorAll(".block-views-blockcarousel-videos-landing-block-2")).map(function(e) {
+  //     var p = e.querySelector(".select-video");
+  //     var c = e.querySelector(".video-present");
+  //         if(p != null && c != null ){
+  //           p.classList.remove("select-video");
+  //           c.classList.remove("video-present");
+  //         }
+  //   });
+  // }
+  // function two(){
+  //   Array.from(document.querySelectorAll(".view-id-carousel_videos_landing.view-display-id-page_1")).map(function(ev) {
+  //     var a = ev.querySelector(".show-video");
+  //     var b = ev.querySelector(".video-present");
+  //         if(a != null && b != null ){
+  //           a.classList.remove("show-video");
+  //           b.classList.remove("video-present");
+  //         }
+  //   });
+  // }
+  // var lista1 = document.querySelectorAll('.block-views-blockcarousel-videos-landing-block-2 .views-field-nid')
+  // var lista2 = document.querySelectorAll('.view-id-carousel_videos_landing.view-display-id-page_1 .views-field-nid')
+  // for (let i = 0; i < lista1.length; i++) {
+  //   const itemLista1 = lista1[i];
+  //   const itemLista2 = lista2[i];
+  //   console.log(itemLista1, itemLista2)
+  //   itemLista1.parentElement.addEventListener("click", function (){
+  //     one();
+  //     two();
+  //     if(itemLista1.children.innerHTML === itemLista2.children.innerHTML ){
+  //       itemLista1.parentElement.parentElement.classList.add("select-video");
+  //       itemLista2.parentElement.parentElement.classList.add("show-video");
+  //       itemLista1.parentElement.classList.add("video-present");
+  //       itemLista2.parentElement.classList.add("video-present");
+  //     }
+  //   })
+  // }
 
-
-  function one() {
-    Array.from(document.querySelectorAll(".block-views-blockcarousel-videos-landing-block-2")).map(function (e) {
-      var p = e.querySelector(".select-video");
-      var c = e.querySelector(".video-present");
-
-      if (p != null && c != null) {
-        p.classList.remove("select-video");
-        c.classList.remove("video-present");
-      }
-    });
-  }
-
-  function two() {
-    Array.from(document.querySelectorAll(".view-id-carousel_videos_landing.view-display-id-page_1")).map(function (ev) {
-      var a = ev.querySelector(".show-video");
-      var b = ev.querySelector(".video-present");
-
-      if (a != null && b != null) {
-        a.classList.remove("show-video");
-        b.classList.remove("video-present");
-      }
-    });
-  }
-
-  var lista1 = document.querySelectorAll('.block-views-blockcarousel-videos-landing-block-2 .views-field-nid');
-  var lista2 = document.querySelectorAll('.view-id-carousel_videos_landing.view-display-id-page_1 .views-field-nid');
-
-  var _loop = function _loop(i) {
-    var itemLista1 = lista1[i];
-    itemLista1.parentElement.addEventListener("click", function () {
-      one();
-      two();
-
-      if (itemLista1.children.innerHTML === lista2[i].children.innerHTML) {
-        itemLista1.parentElement.parentElement.classList.add("select-video");
-        lista2[i].parentElement.parentElement.classList.add("show-video");
-        itemLista1.parentElement.classList.add("video-present");
-        lista2[i].parentElement.classList.add("video-present");
-      }
-    });
-  };
-
-  for (var i = 0; i < lista1.length; i++) {
-    _loop(i);
-  }
 };
 
 /***/ }),
@@ -1587,7 +1578,7 @@ var initSlick = function initSlick($, Drupal) {
 
   $(document).ready(function () {
     $(".block-views-blockcarousel-videos-landing-block-2 .view-id-carousel_videos_landing .view-content").slick({
-      infinite: true,
+      infinite: false,
       slidesToShow: 5,
       slidesToScroll: 1,
       responsive: [{
