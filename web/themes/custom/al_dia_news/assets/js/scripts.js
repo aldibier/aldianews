@@ -1214,7 +1214,7 @@ module.exports = function (css) {
 /***/ (function(module, exports) {
 
 window.onload = function () {
-  // js video
+  // js video en interna
   var video_interna = document.querySelector(".block-field-blocknodenewsfield-video");
   var contenido_interna = document.querySelector(".content-news-internal-first");
 
@@ -1238,35 +1238,53 @@ window.onload = function () {
   if (block_ads === null && view_career != null) {
     view_career.classList.add("view-complete");
   } //// js para slider de video en landing de video
-  // Array.from(
-  //   document.querySelectorAll(
-  //     ".block-views-blockcarousel-videos-landing-block-2 .views-field-nid"
-  //   )
-  // ).map(function(e) {
-  //   e.parentElement.addEventListener("click", () => {
-  //     Array.from(
-  //       document.querySelectorAll(
-  //         ".view-id-carousel_videos_landing.view-display-id-page_1 .views-field-nid"
-  //       )
-  //     ).map(function(ev) {
-  //       if (
-  //         e.innerText === ev.innerText &&
-  //         ev.parentElement.classList.contain("video-present")
-  //       ) {
-  //         ev.parentElement.parentElement.classList.remove("select-video");
-  //         ev.parentElement.parentElement.classList.remove("show-video");
-  //         ev.parentElement.classList.remove("video-present");
-  //         ev.parentElement.classList.remove("video-present");
-  //       } else {
-  //         ev.parentElement.parentElement.classList.add("select-video");
-  //         ev.parentElement.parentElement.classList.add("show-video");
-  //         ev.parentElement.classList.add("video-present");
-  //         ev.parentElement.classList.add("video-present");
-  //       }
-  //     });
-  //   });
-  // });
 
+
+  function one() {
+    Array.from(document.querySelectorAll(".block-views-blockcarousel-videos-landing-block-2")).map(function (e) {
+      var p = e.querySelector(".select-video");
+      var c = e.querySelector(".video-present");
+
+      if (p != null && c != null) {
+        p.classList.remove("select-video");
+        c.classList.remove("video-present");
+      }
+    });
+  }
+
+  function two() {
+    Array.from(document.querySelectorAll(".view-id-carousel_videos_landing.view-display-id-page_1")).map(function (ev) {
+      var a = ev.querySelector(".show-video");
+      var b = ev.querySelector(".video-present");
+
+      if (a != null && b != null) {
+        a.classList.remove("show-video");
+        b.classList.remove("video-present");
+      }
+    });
+  }
+
+  var lista1 = document.querySelectorAll('.block-views-blockcarousel-videos-landing-block-2 .views-field-nid');
+  var lista2 = document.querySelectorAll('.view-id-carousel_videos_landing.view-display-id-page_1 .views-field-nid');
+
+  var _loop = function _loop(i) {
+    var itemLista1 = lista1[i];
+    itemLista1.parentElement.addEventListener("click", function () {
+      one();
+      two();
+
+      if (itemLista1.children.innerHTML === lista2[i].children.innerHTML) {
+        itemLista1.parentElement.parentElement.classList.add("select-video");
+        lista2[i].parentElement.parentElement.classList.add("show-video");
+        itemLista1.parentElement.classList.add("video-present");
+        lista2[i].parentElement.classList.add("video-present");
+      }
+    });
+  };
+
+  for (var i = 0; i < lista1.length; i++) {
+    _loop(i);
+  }
 };
 
 /***/ }),
@@ -1332,7 +1350,7 @@ __webpack_require__.r(__webpack_exports__);
 (function ($, Drupal) {
   // Selection share
   var sharer = new _assets_libraries_selection_sharer_selection_sharer_js__WEBPACK_IMPORTED_MODULE_1___default.a();
-  sharer.setElements("p"); // Replace key word by another value
+  sharer.setElements("p,a,h1,h2,h3,blockquote"); // Replace key word by another value
 
   var headingTags = document.querySelectorAll('h1, h2, h3');
   var paragraphTags = document.querySelectorAll("p");
@@ -1611,8 +1629,8 @@ var initSlick = function initSlick($, Drupal) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /usr/share/nginx/html/raiz/aldianews/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
-module.exports = __webpack_require__(/*! /usr/share/nginx/html/raiz/aldianews/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
+__webpack_require__(/*! C:\Users\valer\Desktop\4ld14-n3ws\web\themes\custom\al_dia_news\src\js\scripts.js */"./src/js/scripts.js");
+module.exports = __webpack_require__(/*! C:\Users\valer\Desktop\4ld14-n3ws\web\themes\custom\al_dia_news\src\sass\styles.scss */"./src/sass/styles.scss");
 
 
 /***/ })
