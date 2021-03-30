@@ -65,7 +65,7 @@ window.onload = function() {
     const itemLista1 = lista1[i];
     const itemLista2 = lista2[i];
 
-    console.log(itemLista1, itemLista2)
+    // console.log(itemLista1, itemLista2)
     itemLista1.parentElement.addEventListener("click", function (){
       one();
       two();

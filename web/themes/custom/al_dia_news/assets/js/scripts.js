@@ -1269,8 +1269,8 @@ window.onload = function () {
 
   var _loop = function _loop(i) {
     var itemLista1 = lista1[i];
-    var itemLista2 = lista2[i];
-    console.log(itemLista1, itemLista2);
+    var itemLista2 = lista2[i]; // console.log(itemLista1, itemLista2)
+
     itemLista1.parentElement.addEventListener("click", function () {
       one();
       two();
