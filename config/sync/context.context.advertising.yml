@@ -1,0 +1,41 @@
+uuid: 9624510b-8393-4d90-8d40-4019f204b653
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+name: advertising
+label: Advertising
+group: 'General pages'
+description: 'This is the context of the blocks of the landing page advertising'
+requireAllConditions: false
+disabled: false
+conditions:
+  request_path:
+    id: request_path
+    pages: /advertising
+    negate: false
+    uuid: 9bbbb3cb-3a6f-47c8-b89a-99e9bd9be771
+    context_mapping: {  }
+reactions:
+  blocks:
+    blocks:
+      a8c3193b-f1e0-4f68-a24a-cf5d645b8178:
+        id: system_main_block
+        label: 'Main page content'
+        provider: system
+        label_display: '0'
+        region: content
+        weight: '0'
+        context_mapping: {  }
+        custom_id: system_main_block
+        theme: al_dia_news
+        css_class: ''
+        unique: 0
+        context_id: advertising
+        uuid: a8c3193b-f1e0-4f68-a24a-cf5d645b8178
+    id: blocks
+    saved: false
+    uuid: cd435262-caab-47c7-9c29-b6aa3d857682
+    include_default_blocks: 1
+weight: 0

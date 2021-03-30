@@ -5,9 +5,12 @@ dependencies:
   config:
     - block_content.type.header_advertising
     - field.field.block_content.header_advertising.body
+    - field.field.block_content.header_advertising.field_image
     - field.field.block_content.header_advertising.field_information_with_icons
     - field.field.block_content.header_advertising.field_section_title
+    - image.style.thumbnail
   module:
+    - image
     - paragraphs
     - text
 id: block_content.header_advertising.default
@@ -25,9 +28,17 @@ content:
       show_summary: false
     third_party_settings: {  }
     region: content
+  field_image:
+    weight: 3
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
   field_information_with_icons:
     type: paragraphs
-    weight: 3
+    weight: 4
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -61,13 +72,13 @@ content:
     third_party_settings: {  }
   langcode:
     type: language_select
-    weight: 5
+    weight: 6
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   translation:
-    weight: 4
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }

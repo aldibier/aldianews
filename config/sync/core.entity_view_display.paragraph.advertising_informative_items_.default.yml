@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.advertising_informative_items_.field_description
     - field.field.paragraph.advertising_informative_items_.field_icon
     - field.field.paragraph.advertising_informative_items_.field_text
     - paragraphs.paragraphs_type.advertising_informative_items_
@@ -13,6 +14,14 @@ targetEntityType: paragraph
 bundle: advertising_informative_items_
 mode: default
 content:
+  field_description:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
   field_icon:
     weight: 0
     label: hidden
