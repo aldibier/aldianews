@@ -1354,7 +1354,7 @@ __webpack_require__.r(__webpack_exports__);
 
   var headingTags = document.querySelectorAll('h1, h2, h3');
   var paragraphTags = document.querySelectorAll("p");
-  var aldiaLogoStructure = "<a title=\"AL D\xCDA\" href=\"/\"><img alt=\"AL D\xCDA\" src=\"".concat(drupalSettings.baseUrl, "/themes/custom/al_dia_news/assets/img/aldia.svg\"></a>");
+  var aldiaLogoStructure = "<a title=\"AL D\xCDA\" href=\"/\"><img alt=\"AL D\xCDA\" src=\"/themes/custom/al_dia_news/assets/img/aldia.svg\"></a>";
   Object(_modules_replaceToken__WEBPACK_IMPORTED_MODULE_4__["default"])("AL DÍA|al día", aldiaLogoStructure, headingTags);
   Object(_modules_replaceToken__WEBPACK_IMPORTED_MODULE_4__["default"])("{aldia}", aldiaLogoStructure, paragraphTags);
   jQuery(document).ready(function () {
