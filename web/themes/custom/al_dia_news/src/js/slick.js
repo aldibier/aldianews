@@ -57,7 +57,7 @@ const initSlick = ($, Drupal) => {
     $(
       ".block-views-blockcarousel-videos-landing-block-2 .view-id-carousel_videos_landing .view-content"
     ).slick({
-      infinite: false,
+      infinite: true,
       slidesToShow: 5,
       slidesToScroll: 1,
       responsive: [
