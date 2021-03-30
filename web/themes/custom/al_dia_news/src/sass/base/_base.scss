@@ -20,7 +20,7 @@ img {
 .user-logged-in {
 
   #header {
-    top: 39px;
+    // top: 39px;
   }
 }
 
@@ -82,7 +82,8 @@ body.toolbar-tray-open.user-logged-in {
   .path-employer {
     max-width: 1440px;
     margin: 0 auto 40px;
-    @media screen and (min-width: $tablet) {
+    padding: 0px;
+    @media (max-width: $tablet) {
       margin-bottom: 100px;
       padding: 0 15px;
 
