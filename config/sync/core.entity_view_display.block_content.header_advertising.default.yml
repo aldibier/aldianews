@@ -1,0 +1,44 @@
+uuid: a9eea8bc-5f45-4cd7-b58e-04018048a81e
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.header_advertising
+    - field.field.block_content.header_advertising.body
+    - field.field.block_content.header_advertising.field_information_with_icons
+    - field.field.block_content.header_advertising.field_section_title
+  module:
+    - entity_reference_revisions
+    - text
+id: block_content.header_advertising.default
+targetEntityType: block_content
+bundle: header_advertising
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_information_with_icons:
+    type: entity_reference_revisions_entity_view
+    weight: 2
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_section_title:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true
