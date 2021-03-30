@@ -105,14 +105,14 @@ display:
             suffix: ''
             target: ''
             nl2br: false
-            max_length: 0
+            max_length: 40
             word_boundary: false
-            ellipsis: false
+            ellipsis: true
             more_link: false
             more_link_text: ''
             more_link_path: ''
             strip_tags: false
-            trim: false
+            trim: true
             preserve_tags: ''
             html: false
           element_type: ''
@@ -130,7 +130,7 @@ display:
           click_sort_column: value
           type: string
           settings:
-            link_to_entity: true
+            link_to_entity: false
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -524,7 +524,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"job-container\">\r\n  <div class=\"job-and-company\">\r\n     <h3><strong>{{ title }}</strong></h3>\r\n     <span>{{ field_company_name }}</span>\r\n  </div>\r\n  <div class=\"job-categories\">\r\n    <li>{{ field_sector }}</li>\r\n    <li>{{ field_type_of_working_day }}</li>\r\n  </div>\r\n   <div class=\"place-employer\">\r\n     {{ field_place }}\r\n   </div>\r\n   <div class=\"date-expiration-job\">\r\n      {{ field_expiration_date }}\r\n   </div>\r\n</div>\r\n<div class=\"button-details\">\r\n  <a href=\"{{ view_node }} \">VIEW DETAILS</a>\r\n</div>"
+            text: "<div class=\"job-container\">\r\n  <div class=\"job-and-company\">\r\n     <h3><strong>{{ title }}</strong></h3>\r\n     <span>{{ field_company_name }}</span>\r\n  </div>\r\n  <div class=\"job-categories\">\r\n    <ul>\r\n       <li>{{ field_sector }}</li>\r\n       <li>{{ field_type_of_working_day }}</li>\r\n   </ul>\r\n  </div>\r\n   <div class=\"place-employer\">\r\n     {{ field_place }}\r\n   </div>\r\n   <div class=\"date-expiration-job\">\r\n      {{ field_expiration_date }}\r\n   </div>\r\n</div>\r\n<div class=\"button-details\">\r\n  <a href=\"{{ view_node }} \">VIEW DETAILS</a>\r\n</div>"
             make_link: false
             path: ''
             absolute: false

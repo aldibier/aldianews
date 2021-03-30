@@ -5,14 +5,13 @@
     margin: 0;
   }
 
+  .container-wrapper {
+    position: relative;
+  }
+
   .card-image {
     margin-bottom: 10px;
     position: relative;
-
-    .player-news {
-      @include player-icon($desktop-size:70px,$tablet-size:70px,$mobile-size:30px);
-    }
-
     $screen-query: 993px;
 
     @media screen and (min-width: $screen-query) {
@@ -28,6 +27,18 @@
         width: 100%;
         max-width: 100%;
         height: auto;
+      }
+    }
+  }
+
+  .views-field-field-my-content-has-a-main-vide {
+    font-size: 0;
+
+    .field-content {
+      @include player-icon($desktop-size: 70px, $tablet-size:70px, $mobile-size:30px);
+
+      &:empty {
+        display: none;
       }
     }
   }
@@ -77,7 +88,7 @@
 
     @media screen and (max-width: $broken) {
       margin-bottom: 5px;
-      
+
       a {
         font-size: szrem(24);
         line-height: 29px;

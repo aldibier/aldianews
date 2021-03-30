@@ -1,10 +1,21 @@
 .screen-margin {
-    max-width: $page-width;
+  max-width: $page-width;
 }
 
+article[about="/terms-of-service"] {
+  .content-left-pages h1 {
+    color: $cblack3;
+  }
+}
 
-article[about="/terms-of-service"]{
-    .content-left-pages h1 {
-        color: $cblack3;
-    }
+.al-dia-title {
+  text-transform: capitalize;
+  a {
+    max-height: 60px;
+    overflow: hidden;
+  }
+  img {
+    width: 100%;
+    height: auto;
+  }
 }

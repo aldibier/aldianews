@@ -1232,7 +1232,7 @@ window.onload = function () {
     });
   }); //// js validador de publicidad en landing jobs
 
-  var block_ads = document.querySelector("#block-fixed-block-content-big-vertical-advertising");
+  var block_ads = document.querySelector(".block-block-groupgroup-career-news-jobs .block-fixed-block-contentbig-vertical-advertising");
   var view_career = document.querySelector(".block-views-blockcareer-news-block-1");
 
   if (block_ads === null && view_career != null) {
@@ -1289,6 +1289,39 @@ window.onload = function () {
 
 /***/ }),
 
+/***/ "./src/js/modules/replaceToken.js":
+/*!****************************************!*\
+  !*** ./src/js/modules/replaceToken.js ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/**
+ * Reemplazar palabra clave o token por algún valor dado
+ *
+ * @param {String} regexToken Palabra o token como bandera para buscar y reemplazar
+ * @param {String} value Texto o html para reemplazar el token
+ * @param {Element} elements Colección de elementos HTML especificos en los que debera buscar el token
+ */
+var replaceToken = function replaceToken(regexToken, value) {
+  var elements = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : [];
+  var search = new RegExp("".concat(regexToken), 'gim');
+
+  if (elements.length) {
+    Array.from(elements).map(function (element) {
+      if (element instanceof Element) {
+        element.innerHTML = element.innerHTML.replace(search, value);
+      }
+    });
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (replaceToken);
+
+/***/ }),
+
 /***/ "./src/js/scripts.js":
 /*!***************************!*\
   !*** ./src/js/scripts.js ***!
@@ -1304,8 +1337,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_libraries_selection_sharer_selection_sharer_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_assets_libraries_selection_sharer_selection_sharer_js__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _scroll_magic__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./scroll-magic */ "./src/js/scroll-magic.js");
 /* harmony import */ var _slick_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./slick.js */ "./src/js/slick.js");
-/* harmony import */ var _main_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./main.js */ "./src/js/main.js");
-/* harmony import */ var _main_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_main_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _modules_replaceToken__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/replaceToken */ "./src/js/modules/replaceToken.js");
+/* harmony import */ var _main_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./main.js */ "./src/js/main.js");
+/* harmony import */ var _main_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_main_js__WEBPACK_IMPORTED_MODULE_5__);
+
 
 
 
@@ -1313,8 +1348,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 (function ($, Drupal) {
+  // Selection share
   var sharer = new _assets_libraries_selection_sharer_selection_sharer_js__WEBPACK_IMPORTED_MODULE_1___default.a();
-  sharer.setElements("p");
+  sharer.setElements("p,a,h1,h2,h3,blockquote"); // Replace key word by another value
+
+  var headingTags = document.querySelectorAll('h1, h2, h3');
+  var paragraphTags = document.querySelectorAll("p");
+  var aldiaLogoStructure = "<a title=\"AL D\xCDA\" href=\"/\"><img alt=\"AL D\xCDA\" src=\"aldia.svg\"></a>";
+  Object(_modules_replaceToken__WEBPACK_IMPORTED_MODULE_4__["default"])("AL DÍA|al día", aldiaLogoStructure, headingTags);
+  Object(_modules_replaceToken__WEBPACK_IMPORTED_MODULE_4__["default"])("{aldia}", aldiaLogoStructure, paragraphTags);
   jQuery(document).ready(function () {
     //--------- menu--------------------//
     $(".region-header #block-blockheader").click(function () {
@@ -1530,9 +1572,16 @@ var initSlick = function initSlick($, Drupal) {
     $(".block-views-blockcarousel-jobs-landing-block-1 .brands-carousel-wrapper .view-content").slick({
       infinite: true,
       slidesToShow: 3,
-      slidesToScroll: 3,
+      slidesToScroll: 1,
       autoplay: true,
-      autoplaySpeed: 2000
+      autoplaySpeed: 2000,
+      responsive: [{
+        breakpoint: 500,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1
+        }
+      }]
     });
   }); // slide landing videos
 
@@ -1540,7 +1589,20 @@ var initSlick = function initSlick($, Drupal) {
     $(".block-views-blockcarousel-videos-landing-block-2 .view-id-carousel_videos_landing .view-content").slick({
       infinite: true,
       slidesToShow: 5,
-      slidesToScroll: 1
+      slidesToScroll: 1,
+      responsive: [{
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1
+        }
+      }, {
+        breakpoint: 500,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1
+        }
+      }]
     });
   });
 };

@@ -18,6 +18,7 @@ display:
       fields:
         filename:
           label: Name
+          separator: ', '
         filemime:
           label: 'Tipo MIME'
         filesize:
@@ -27,9 +28,6 @@ display:
         count:
           label: 'Usado en'
       filters:
-        filename:
-          expose:
-            label: Filename
         filemime:
           expose:
             label: 'Tipo MIME'

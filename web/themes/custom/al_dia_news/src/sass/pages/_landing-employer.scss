@@ -176,14 +176,15 @@
       justify-content: center;
       border: none;
       font-style: normal;
-      font-weight: bold;
       font-size: $px24;
       line-height: 25px;
-      font-family: $PrNovacond-bold;
+      font-family: $PrNovacond-Sbold;
       color: $cwhite;
       background: $corange;
       width: max-content;
       cursor: pointer;
+      letter-spacing: 0.74px;
+      text-transform: uppercase;
     }
 
     .title-employer {
@@ -195,6 +196,7 @@
       padding: 10px 0;
       border-bottom: 1px solid $cblack3;
       margin: 0 0 40px;
+      font-family: $ModernoFB-Regular;
     }
 
     p {
@@ -335,6 +337,7 @@
         min-height: 40px;
         background: $cgrey8;
         margin-top: 10px;
+        border: 0px;
       }
 
       select {
@@ -389,6 +392,7 @@
         min-height: 145px;
         background: $cgrey8;
         margin-top: 10px;
+        border: 0px;
       }
 
       .form-type-textarea {
@@ -660,7 +664,7 @@
   .view-jobs-menu,
   .block-menu-float {
     .menu.active {
-      margin: 165px auto 0 !important;
+      margin: 125px auto 0 !important;
 
       @media (max-width: $tablet) {
         margin: 127px auto 0 !important;

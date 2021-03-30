@@ -58,6 +58,7 @@
         "drupal/gin_lb": "1.0.0-beta3",
         "drupal/gin_toolbar": "1.0-beta14",
         "drupal/honeypot": "^2.0",
+        "drupal/html_titles": "1.x-dev",
         "drupal/image_widget_crop": "^2.3",
         "drupal/inline_entity_form": "1.0-rc8",
         "drupal/interval": "^1.7",
@@ -77,6 +78,7 @@
         "drupal/video_embed_field": "^2.4",
         "drupal/views_add_button": "^2.0",
         "drupal/views_field_view": "1.0-beta3",
+        "drupal/views_fieldsets": "3.x-dev@dev",
         "drupal/views_infinite_scroll": "^1.7",
         "drupal/webform": "^6.0",
         "drush/drush": "^10"
@@ -127,6 +129,9 @@
         "patches": {
             "drupal/selection_sharer": {
                 "Corregir la URL del compartidor de Facebook": "https://www.drupal.org/files/issues/2020-08-06/Fix-Facebook-sharer-URL-3163780-6.patch"
+            },
+            "drupal/core": {
+                "Grouped exposed taxonomy term filters do not work": "https://www.drupal.org/files/issues/1810148-58.patch"
             }
         },
         "drupal-core-project-message": {
