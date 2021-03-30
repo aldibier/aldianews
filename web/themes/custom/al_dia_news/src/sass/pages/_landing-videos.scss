@@ -154,7 +154,7 @@
     margin-bottom: 15px;
     position: relative;
     &::before {
-     @include player-icon(50px, 33px);
+      @include player-icon($desktop-size: 50px, $tablet-size:33px);
       top: 35px;
       z-index: 2;
     }
