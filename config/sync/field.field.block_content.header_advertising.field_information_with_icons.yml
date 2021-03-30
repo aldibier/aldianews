@@ -1,0 +1,43 @@
+uuid: de2a34c9-87ec-4d19-be15-a6249f323e20
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.header_advertising
+    - field.storage.block_content.field_information_with_icons
+    - paragraphs.paragraphs_type.advertising_informative_items_
+  module:
+    - entity_reference_revisions
+id: block_content.header_advertising.field_information_with_icons
+field_name: field_information_with_icons
+entity_type: block_content
+bundle: header_advertising
+label: 'Information with icons'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      advertising_informative_items_: advertising_informative_items_
+    target_bundles_drag_drop:
+      advertising_informative_items_:
+        enabled: true
+        weight: 6
+      features_items:
+        weight: 7
+        enabled: false
+      i_am_an_employer_sections:
+        weight: 8
+        enabled: false
+      main_features:
+        weight: 9
+        enabled: false
+      social_media:
+        weight: 10
+        enabled: false
+field_type: entity_reference_revisions

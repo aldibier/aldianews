@@ -1,0 +1,16 @@
+uuid: bb2361d8-0ae3-49ff-9c2e-b7ad6852b04d
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.header_advertising
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: block_content.header_advertising
+target_entity_type_id: block_content
+target_bundle: header_advertising
+default_langcode: site_default
+language_alterable: false
