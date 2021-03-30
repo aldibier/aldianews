@@ -1264,20 +1264,22 @@ window.onload = function () {
     });
   }
 
-  var lista1 = document.querySelectorAll('.block-views-blockcarousel-videos-landing-block-2 .views-field-nid');
+  var lista1 = document.querySelectorAll('.block-views-blockcarousel-videos-landing-block-2  .views-row.slick-slide:not(.slick-cloned) .views-field-nid');
   var lista2 = document.querySelectorAll('.view-id-carousel_videos_landing.view-display-id-page_1 .views-field-nid');
 
   var _loop = function _loop(i) {
     var itemLista1 = lista1[i];
+    var itemLista2 = lista2[i];
+    console.log(itemLista1, itemLista2);
     itemLista1.parentElement.addEventListener("click", function () {
       one();
       two();
 
-      if (itemLista1.children.innerHTML === lista2[i].children.innerHTML) {
+      if (itemLista1.children.innerHTML === itemLista2.children.innerHTML) {
         itemLista1.parentElement.parentElement.classList.add("select-video");
-        lista2[i].parentElement.parentElement.classList.add("show-video");
+        itemLista2.parentElement.parentElement.classList.add("show-video");
         itemLista1.parentElement.classList.add("video-present");
-        lista2[i].parentElement.classList.add("video-present");
+        itemLista2.parentElement.classList.add("video-present");
       }
     });
   };

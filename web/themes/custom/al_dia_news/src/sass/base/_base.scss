@@ -71,10 +71,11 @@ body.toolbar-tray-open.user-logged-in {
   max-width: 1440px;
 
   .layout-main {
-    max-width: 1310px;
-    padding: 0 15px;
+    max-width: 1440px;
     margin: 0 auto 40px;
-
+    @media screen and (min-width: $desktop){
+      padding: 0 15px;
+    }
     @media screen and (min-width: $tablet) {
       margin-bottom: 100px;
     }
