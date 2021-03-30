@@ -29,6 +29,15 @@
     right: 0;
     padding: 0 15px;
   }
+  .field--name-body p{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.625rem;
+    line-height: 32px;
+    font-family: $PrNovacond-reg;
+    color: #333;
+    padding: 0 15px;
+  }
 
   .block-banner-page {
     position: relative;
@@ -100,6 +109,9 @@
         font-size: $px22;
         line-height: 27px;
         min-height: 60px;
+        @media (max-width: $tablet) {
+          padding: 0px 10px;
+        }
       }
 
       &:after,
@@ -663,6 +675,8 @@
 .path-employer .layout-container .layout-main{
   margin-bottom: 0px;
 }
+
+
 .user-logged-in .style-jobs {
   .view-jobs-menu,
   .block-menu-float {
@@ -673,5 +687,12 @@
         margin: 127px auto 0 !important;
       }
     }
+  }
+}
+
+
+@media (max-width: $tablet-min){
+  .path-jobs #page{
+    padding: 60px 0 0;
   }
 }
