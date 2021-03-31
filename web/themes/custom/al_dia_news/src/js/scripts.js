@@ -13,9 +13,9 @@ import initMain from "./main.js";
   // Replace key word by another value
   const headingTags = document.querySelectorAll('h1, h2, h3');
   const paragraphTags = document.querySelectorAll("p");
-  const aldiaLogoStructure = `<a class="aldia-logo-in-text" title="AL DÍA" href="/">
+  const aldiaLogoStructure = `<span class="aldia-logo-in-text" title="AL DÍA">
                                 <img alt="AL DÍA" src="${drupalSettings.path.baseUrl}themes/custom/al_dia_news/assets/img/aldia.svg">
-                              </a>`;
+                              </span>`;
   replaceToken("AL DÍA", aldiaLogoStructure, headingTags);
   replaceToken("{aldia}", aldiaLogoStructure, paragraphTags);
 

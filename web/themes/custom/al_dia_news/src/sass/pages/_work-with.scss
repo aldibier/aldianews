@@ -29,16 +29,6 @@
       }
     }
 
-    h2 {
-      @include alDia(szrem(25));
-
-      @media screen and (min-width: $tablet) {
-        font-size: szrem(60);
-        line-height: szrem(60);
-        margin-bottom: 20px;
-      }
-    }
-
     p {
       @include text($family:$PrNovacond-light,$color: $cwhite, $size: szrem(14));
       line-height: 11px;
