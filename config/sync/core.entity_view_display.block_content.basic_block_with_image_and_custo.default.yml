@@ -4,8 +4,8 @@ status: true
 dependencies:
   config:
     - block_content.type.basic_block_with_image_and_custo
-    - field.field.block_content.basic_block_with_image_and_custo.body
     - field.field.block_content.basic_block_with_image_and_custo.field_custom_title
+    - field.field.block_content.basic_block_with_image_and_custo.field_description
     - field.field.block_content.basic_block_with_image_and_custo.field_image_block
   module:
     - image
@@ -15,19 +15,20 @@ targetEntityType: block_content
 bundle: basic_block_with_image_and_custo
 mode: default
 content:
-  body:
-    label: hidden
-    type: text_default
-    weight: 1
-    settings: {  }
-    third_party_settings: {  }
-    region: content
   field_custom_title:
     weight: 0
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
+  field_description:
+    weight: 3
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
   field_image_block:
     weight: 2
