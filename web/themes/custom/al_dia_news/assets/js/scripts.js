@@ -1286,20 +1286,37 @@ window.onload = function () {
 
   for (var i = 0; i < lista1.length; i++) {
     _loop(i);
-  } //// js para controlar pop-up video
+  }
+};
 
-
+window.addEventListener('DOMContentLoaded', function () {
+  //// js para controlar pop-up video
   if (!!document.querySelector('.path-videos')) {
     var allCardVideos = document.querySelectorAll('.card-one-column');
+    var allIframes = document.querySelectorAll('.card-one-column iframe');
+
+    var resetAlliframes = function resetAlliframes() {
+      allIframes.forEach(function (iframe) {
+        iframe.classList.add('change-src');
+        iframe.src = iframe.src;
+        setTimeout(function () {
+          return iframe.classList.remove('change-src');
+        }, 800);
+      });
+    };
+
     allCardVideos.forEach(function (cardVideo) {
       return cardVideo.addEventListener('click', function (event) {
         node = event.currentTarget.parentNode.firstElementChild;
 
         while (node) {
           if (node !== event.currentTarget && node.nodeType === Node.ELEMENT_NODE) {
-            node.querySelector('.views-field-field-video').classList.remove('active');
+            node.querySelector('.wrapper-popup').classList.remove('active');
+            resetAlliframes();
           } else {
-            node.querySelector('.views-field-field-video').classList.add('active');
+            if (event.target.closest('.wrapper-popup')) return;
+            node.querySelector('.wrapper-popup ').classList.toggle('active');
+            resetAlliframes();
           }
 
           node = node.nextElementSibling;
@@ -1310,11 +1327,17 @@ window.onload = function () {
       var contentActive = event.target.closest('.card-one-column') || false;
 
       if (!contentActive) {
-        document.querySelector('.views-field-field-video.active').classList.remove('active');
+        document.querySelector('.wrapper-popup.active').classList.remove('active');
+        resetAlliframes();
+      }
+
+      if (event.target.classList.contains('close')) {
+        document.querySelector('.wrapper-popup.active').classList.remove('active');
+        resetAlliframes();
       }
     });
   }
-};
+});
 
 /***/ }),
 
