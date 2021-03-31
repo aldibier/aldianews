@@ -6,6 +6,7 @@ dependencies:
     - block_content.type.basic_block_with_image_and_custo
     - field.field.block_content.basic_block_with_image_and_custo.body
     - field.field.block_content.basic_block_with_image_and_custo.field_custom_title
+    - field.field.block_content.basic_block_with_image_and_custo.field_description
     - field.field.block_content.basic_block_with_image_and_custo.field_image_block
   module:
     - image
@@ -28,6 +29,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
+  field_description:
+    weight: 3
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
   field_image_block:
     weight: 2
