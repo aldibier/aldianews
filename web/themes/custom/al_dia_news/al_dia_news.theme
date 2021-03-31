@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @file
+ * Theme functions.
+ */
+
+ /**
+ * Implements hook_preprocess_views_view()
+ */
+function al_dia_news_preprocess_views_view(&$vars) {
+  if (isset($_GET['token']))
+  {
+    $vars['get_token'] = $_GET['token'];
+  }
+}
