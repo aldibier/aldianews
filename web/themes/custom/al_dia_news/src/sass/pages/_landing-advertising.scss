@@ -1,0 +1,43 @@
+//-------------header advertising------------//
+.view-header-advertising-landing {}
+
+//-------------content advertising------------//
+.block-views-blockheader-advertising-landing-block-1 {
+
+  //hidden
+  form {
+    display: none;
+  }
+
+  h3 {
+    margin-bottom: 50px;
+    padding: 0 80px;
+    font-size: szrem(52);
+    font-family: $Mod-Sbold;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 62px;
+    text-transform: uppercase;
+    color: $cblack3;
+  }
+
+  .view-grouping-content {
+    .views-row {
+      &:nth-child(odd) {}
+
+      .field-content {
+        display: flex;
+      }
+
+      .employer-image,
+      .employer-title-body  {
+          width: 50%;
+          max-width: 50%;
+      }
+
+      .employer-image {}
+
+      .employer-title-body {}
+    }
+  }
+}
