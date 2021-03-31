@@ -209,14 +209,9 @@
       }
     }
 
-    .views-field-body,
-    .field--name-field-description {
+    .views-field-field-description {
       max-height: 1px;
-      .field__label {
-        display: none;
-      }
-      p,
-      .field__item {
+      .field-content {
         position: relative;
         left: 120px;
         bottom: 310px;
@@ -729,8 +724,7 @@
         top: 37px;
       }
     }
-    .block-banner-page .views-field-body p,
-    .block-banner-page .field--name-field-description .field__item {
+    .block-banner-page .views-field-field-description .field-content {
       left: 25px;
       bottom: 85px;
       line-height: 10px;
@@ -742,7 +736,7 @@
       padding-left: 3px;
 
       .menu a {
-        max-width: 100px;
+        max-width: none;
         min-width: 100px;
         font-size: 10px;
         padding: 0 5px;
