@@ -22,38 +22,37 @@ article[about="/terms-of-service"] {
   }
 }
 
-h1 .aldia-logo-in-text {
-  height: 20px;
+h1,
+h2 {
+  .aldia-logo-in-text img {
+    height: 20px;
 
-  @media screen and (min-width: $tablet) {
-    height: 35px;
+    @media screen and (min-width: $tablet) {
+      height: 35px;
+      width: 116px;
+    }
   }
 }
 
-h2 .aldia-logo-in-text {
-  height: 18px;
+.block-hero-image {
+  h1,
+  h2 {
+    .aldia-logo-in-text img {
+      height: 20px;
 
-  @media screen and (min-width: $tablet) {
-    height: 30px;
+      @media screen and (min-width: $tablet) {
+        height: 62px;
+        width: 200px;
+      }
+    }
   }
 }
 
-h2 .aldia-logo-in-text {
+p .aldia-logo-in-text img {
   height: 16px;
 
   @media screen and (min-width: $tablet) {
-    height: 25px;
-  }
-}
-
-p .aldia-logo-in-text {
-  height: 16px;
-
-  @media screen and (min-width: $tablet) {
-    height: 25px;
-  }
-
-  img {
-    width: auto !important;
+    height: 18px;
+    width: 58px !important;
   }
 }
