@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - block_content.type.basic_block_with_image_and_custo
-    - field.field.block_content.basic_block_with_image_and_custo.body
     - field.field.block_content.basic_block_with_image_and_custo.field_custom_title
     - field.field.block_content.basic_block_with_image_and_custo.field_description
     - field.field.block_content.basic_block_with_image_and_custo.field_image_block
@@ -17,16 +16,6 @@ targetEntityType: block_content
 bundle: basic_block_with_image_and_custo
 mode: default
 content:
-  body:
-    type: text_textarea_with_summary
-    weight: 2
-    settings:
-      rows: 1
-      placeholder: ''
-      summary_rows: 1
-      show_summary: false
-    third_party_settings: {  }
-    region: content
   field_custom_title:
     weight: 1
     settings:
