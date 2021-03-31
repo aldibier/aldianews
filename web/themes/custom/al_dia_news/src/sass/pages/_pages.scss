@@ -23,19 +23,35 @@ article[about="/terms-of-service"] {
 }
 
 h1 .aldia-logo-in-text {
-  height: 35px;
+  height: 20px;
+
+  @media screen and (min-width: $tablet) {
+    height: 35px;
+  }
 }
 
 h2 .aldia-logo-in-text {
-  height: 30px;
+  height: 18px;
+
+  @media screen and (min-width: $tablet) {
+    height: 30px;
+  }
 }
 
 h2 .aldia-logo-in-text {
-  height: 25px;
+  height: 16px;
+
+  @media screen and (min-width: $tablet) {
+    height: 25px;
+  }
 }
 
 p .aldia-logo-in-text {
-  height: 25px;
+  height: 16px;
+
+  @media screen and (min-width: $tablet) {
+    height: 25px;
+  }
 
   img {
     width: auto !important;
