@@ -82,8 +82,10 @@
 
   .views-infinite-scroll-content-wrapper {
     display: grid;
-    grid-template-columns: minmax(200px, 420px) minmax(200px, 440px) minmax(200px,
-        420px);
+    grid-template-columns: minmax(200px, 420px) minmax(200px, 440px) minmax(
+        200px,
+        420px
+      );
     gap: 0px 40px;
     overflow: hidden;
 
@@ -204,18 +206,24 @@
       }
     }
 
-    .views-field-body {
+    .views-field-body,
+    .field--name-field-description {
       max-height: 1px;
-
-      p {
+      .field__label {
+        display: none;
+      }
+      p,
+      .field__item {
         position: relative;
-        left: 80px;
+        left: 120px;
         bottom: 310px;
         line-height: 28px;
         color: $cwhite;
         font-size: $px28;
         font-weight: normal;
         z-index: 2;
+        max-width: 1200px;
+        padding-right: 50px;
       }
     }
 
@@ -233,6 +241,7 @@
 
     .menu a {
       min-width: 290px;
+      font-size: $px24;
     }
   }
 
@@ -271,14 +280,14 @@
       font-size: $px54;
       line-height: 72.36px;
       font-family: $ModernoFB-Regular;
-      color: $cblack0;
+      color: $cblack;
       padding-top: 125px;
       margin-bottom: 75px;
     }
 
     p {
       line-height: 34.84px;
-      color: $cblack0;
+      color: $cblack3;
     }
 
     .button-apply {
@@ -594,7 +603,7 @@
   position: relative;
   margin-bottom: 80px;
 
-  >div.content {
+  > div.content {
     display: flex;
     justify-content: space-between;
 
@@ -619,16 +628,21 @@
 
 @media (max-width: $desktop) {
   .jobs.style-jobs {
-    .block-content-left h2 {
-      padding-top: 0px;
-      margin-top: 0px;
+    .block-content-left {
+      h2 {
+        padding: 0px 15px;
+        margin-top: 0px;
+      }
+      .button-apply {
+        margin-left: 15px;
+      }
     }
-
     .block-block-groupadvertising-blocks-in-job-landing-pages {
       margin-top: 0px;
     }
 
     .block-views-blockcarousel-jobs-landing-block-1 {
+      padding: 0 15px;
       .slick-list {
         max-width: 900px;
       }
@@ -642,6 +656,7 @@
 
   .block-views-blockcareer-news-block-4 {
     width: 30%;
+    padding: 0 10px;
   }
 
   .block-views-blockcareer-news-block-3 {
@@ -684,7 +699,8 @@
     }
   }
 
-  .block-block-groupgroup-career-news-jobs .block-fixed-block-contentbig-vertical-advertising {
+  .block-block-groupgroup-career-news-jobs
+    .block-fixed-block-contentbig-vertical-advertising {
     margin-left: 0px;
     margin-bottom: 0px;
     position: absolute;
@@ -700,12 +716,17 @@
       left: 25px;
       padding: 0px;
     }
-
-    .block-banner-page .views-field-body p {
+    .block-content-form .modal-apply-webform.open {
+      button[name="close"] {
+        top: 37px;
+      }
+    }
+    .block-banner-page .views-field-body p,
+    .block-banner-page .field--name-field-description .field__item {
       left: 25px;
       bottom: 85px;
-      line-height: 28px;
-      font-size: $px12;
+      line-height: 10px;
+      font-size: $px10;
     }
 
     .block-menu-float {
@@ -715,6 +736,8 @@
       .menu a {
         max-width: 100px;
         min-width: 100px;
+        font-size: 10px;
+        padding: 0 5px;
       }
     }
 
@@ -786,17 +809,20 @@
     }
   }
 
-  .block-block-groupgroup-career-news-jobs .block-fixed-block-contentbig-vertical-advertising {
-    border-left: 0px;
-    width: 100%;
-    padding-left: 0px;
-    margin-left: 0px;
-    margin-bottom: 0px;
-    max-height: none;
-    max-width: 320px;
-    max-height: 580px;
-    overflow: hidden;
-    right: 0px;
+  .block-block-groupgroup-career-news-jobs {
+    padding: 0 15px;
+    .block-fixed-block-contentbig-vertical-advertising {
+      border-left: 0px;
+      width: 100%;
+      padding-left: 0px;
+      margin-left: 0px;
+      margin-bottom: 0px;
+      max-height: none;
+      max-width: 320px;
+      max-height: 580px;
+      overflow: hidden;
+      right: 15px;
+    }
   }
 
   .block-views-blockcareer-news-block-1 {
@@ -911,6 +937,9 @@
 
 @media (max-width: $mobile-mid) {
   .jobs.style-jobs {
+    h1 {
+      bottom: 82px;
+    }
     .block-views-blockcarousel-jobs-landing-block-1 {
       .slick-list {
         max-width: 240px;
@@ -935,13 +964,14 @@
   }
 
   .block-views-blockcareer-news-block-3 {
-    width: 61.9%;
+    width: 56.9%;
     padding-top: 0px;
     margin-bottom: 20px;
   }
 
   .block-views-blockcareer-news-block-4 {
-    width: 37.095%;
+    width: 39.095%;
+    max-width: none;
   }
 
   .block-block-groupgroup-career-news-jobs {
@@ -967,7 +997,6 @@
     }
 
     .view-content {
-
       .views-row:nth-child(1),
       .views-row:nth-child(2) {
         padding-left: 0px;

@@ -6,6 +6,7 @@ dependencies:
     - block_content.type.basic_block_with_image_and_custo
     - field.field.block_content.basic_block_with_image_and_custo.body
     - field.field.block_content.basic_block_with_image_and_custo.field_custom_title
+    - field.field.block_content.basic_block_with_image_and_custo.field_description
     - field.field.block_content.basic_block_with_image_and_custo.field_image_block
     - image.style.thumbnail
   module:
@@ -20,9 +21,9 @@ content:
     type: text_textarea_with_summary
     weight: 2
     settings:
-      rows: 9
-      summary_rows: 3
+      rows: 1
       placeholder: ''
+      summary_rows: 1
       show_summary: false
     third_party_settings: {  }
     region: content
@@ -34,8 +35,16 @@ content:
     third_party_settings: {  }
     type: text_textfield
     region: content
+  field_description:
+    weight: 3
+    settings:
+      size: 80
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   field_image_block:
-    weight: 26
+    weight: 6
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
@@ -56,5 +65,10 @@ content:
     region: content
     settings:
       include_locked: true
+    third_party_settings: {  }
+  translation:
+    weight: 5
+    region: content
+    settings: {  }
     third_party_settings: {  }
 hidden: {  }

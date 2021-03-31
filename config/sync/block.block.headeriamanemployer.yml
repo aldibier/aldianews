@@ -1,0 +1,32 @@
+uuid: 077b3f60-8f6f-43b9-a867-f663a2be0b0c
+langcode: en
+status: true
+dependencies:
+  config:
+    - fixed_block_content.fixed_block_content.header_i_am_an_employer
+  module:
+    - context
+    - fixed_block_content
+  theme:
+    - al_dia_news
+id: headeriamanemployer
+theme: al_dia_news
+region: meny_and_banner_employer
+weight: 0
+provider: null
+plugin: 'fixed_block_content:header_i_am_an_employer'
+settings:
+  id: 'fixed_block_content:header_i_am_an_employer'
+  label: 'Header I am an employer'
+  provider: fixed_block_content
+  label_display: '0'
+  view_mode: ''
+visibility:
+  request_path_exclusion:
+    id: request_path_exclusion
+    pages: ''
+    negate: null
+  view_inclusion:
+    id: view_inclusion
+    negate: null
+    view_inclusion: {  }

@@ -8,35 +8,52 @@ article[about="/terms-of-service"] {
   }
 }
 
+.aldia-logo-in-text {
+  border: 0;
+  display: inline-block;
 
+  &:hover {
+    text-decoration: none;
+  }
 
-.path-jobs h1 a[title*="AL D"] img{
-  width: 200px;
-  height: 60px;
+  img {
+    height: 100%;
+    width: auto;
+  }
 }
-.header-category h1 a[title*="AL D"] img{
-  width: 160px;
-  height: 45px;
-}
-h1 a[title*="AL D"] img{
-  width: 130px;
-  height: 35px;
-}
-p a[title*="AL D"] img{
-  width: 55px;
+
+h1 .aldia-logo-in-text {
   height: 20px;
+
+  @media screen and (min-width: $tablet) {
+    height: 35px;
+  }
 }
-@media (max-width: $tablet){
-  .path-jobs h1 a[title*="AL D"] img{
-    width: 60px;
-    height: 20px;
+
+h2 .aldia-logo-in-text {
+  height: 18px;
+
+  @media screen and (min-width: $tablet) {
+    height: 30px;
   }
-  .header-category h1 a[title*="AL D"] img{
-    width: 75px;
-    height: 22px;
+}
+
+h2 .aldia-logo-in-text {
+  height: 16px;
+
+  @media screen and (min-width: $tablet) {
+    height: 25px;
   }
-  h1 a[title*="AL D"] img{
-    width: 55px;
-    height: 20px;
+}
+
+p .aldia-logo-in-text {
+  height: 16px;
+
+  @media screen and (min-width: $tablet) {
+    height: 25px;
+  }
+
+  img {
+    width: auto !important;
   }
 }
