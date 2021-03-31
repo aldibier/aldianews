@@ -12,6 +12,23 @@
     margin-bottom: 20px;
   }
 
+  .field--name-body {
+    p {
+      margin: 0;
+      font-size: szrem(26);
+      font-family: $PrNovacond-light;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 32px;
+      color: $cwhite;
+
+      @media screen and(max-width:$tablet) {
+        font-size: szrem(12);
+        line-height: 1.5;
+      }
+    }
+  }
+
   .field--name-field-image,
   .field--name-field-image-block {
     img {
@@ -102,7 +119,7 @@
 
   .field--name-field-custom-title {
     h1 {
-      margin: 0;
+      margin: 0 0 20px;
       font-size: szrem(78);
       font-family: $PrNovacond-bold;
       font-style: normal;
@@ -170,7 +187,7 @@
 
     .text-formatted {
 
-      a {
+      a {
         border: none;
         color: $cgrey6;
         text-decoration: none;
