@@ -1,0 +1,16 @@
+uuid: 15dbbe75-fedb-4d15-acca-f79b8ae4d3aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.logo_with_title_and_description
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: block_content.logo_with_title_and_description
+target_entity_type_id: block_content
+target_bundle: logo_with_title_and_description
+default_langcode: site_default
+language_alterable: false

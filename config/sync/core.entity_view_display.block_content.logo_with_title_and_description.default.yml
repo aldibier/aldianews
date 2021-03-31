@@ -1,0 +1,26 @@
+uuid: 00277522-5433-4376-8f9d-66b650b9d840
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.logo_with_title_and_description
+    - field.field.block_content.logo_with_title_and_description.field_information_with_icons
+  module:
+    - entity_reference_revisions
+id: block_content.logo_with_title_and_description.default
+targetEntityType: block_content
+bundle: logo_with_title_and_description
+mode: default
+content:
+  field_information_with_icons:
+    weight: 1
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true
