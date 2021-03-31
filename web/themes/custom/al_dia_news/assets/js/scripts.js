@@ -1419,8 +1419,8 @@ __webpack_require__.r(__webpack_exports__);
 
   var headingTags = document.querySelectorAll('h1, h2, h3');
   var paragraphTags = document.querySelectorAll("p");
-  var aldiaLogoStructure = "<a title=\"AL D\xCDA\" href=\"/\"><img alt=\"AL D\xCDA\" src=\"/themes/custom/al_dia_news/assets/img/aldia.svg\"></a>";
-  Object(_modules_replaceToken__WEBPACK_IMPORTED_MODULE_4__["default"])("AL DÍA|al día", aldiaLogoStructure, headingTags);
+  var aldiaLogoStructure = "<a class=\"aldia-logo-in-text\" title=\"AL D\xCDA\" href=\"/\">\n                                <img alt=\"AL D\xCDA\" src=\"".concat(drupalSettings.path.baseUrl, "themes/custom/al_dia_news/assets/img/aldia.svg\">\n                              </a>");
+  Object(_modules_replaceToken__WEBPACK_IMPORTED_MODULE_4__["default"])("AL DÍA", aldiaLogoStructure, headingTags);
   Object(_modules_replaceToken__WEBPACK_IMPORTED_MODULE_4__["default"])("{aldia}", aldiaLogoStructure, paragraphTags);
   jQuery(document).ready(function () {
     //--------- menu--------------------//
@@ -1694,8 +1694,8 @@ var initSlick = function initSlick($, Drupal) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
-module.exports = __webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
+__webpack_require__(/*! /usr/share/nginx/html/raiz/aldianews/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
+module.exports = __webpack_require__(/*! /usr/share/nginx/html/raiz/aldianews/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
 
 
 /***/ })
