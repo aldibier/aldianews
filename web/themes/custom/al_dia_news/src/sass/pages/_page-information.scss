@@ -20,25 +20,18 @@
     z-index: 2;
     max-width: 1200px;
     padding-right: 50px;
-    .field__label {
-      display: none;
-    }
-    .field__item {
-      line-height: 28px;
-      color: $cwhite;
-      font-size: $px20;
-      font-weight: normal;
-    }
+    line-height: 28px;
+    color: $cwhite;
+    font-size: $px20;
+    font-weight: normal;
   }
   @media (max-width: $tablet) {
     .field--name-field-description {
       left: 25px;
       bottom: 25px;
       padding-right: 0px;
-      .field__item {
-        line-height: 9px;
-        font-size: $px10;
-      }
+      line-height: 9px;
+      font-size: $px10;
     }
   }
 
