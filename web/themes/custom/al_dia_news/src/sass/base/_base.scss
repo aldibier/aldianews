@@ -18,21 +18,20 @@ img {
 }
 
 .user-logged-in {
-
   #header {
     top: 39px;
-  } 
+  }
 }
 
 .node .field--type-image {
-  margin: 0; 
+  margin: 0;
 }
 
 .user-logged-in.open-menu {
   #page {
     padding: 125px 0 0;
 
-    @media(max-width:$broken2) {
+    @media (max-width: $broken2) {
       padding: 208px 0 0;
     }
   }
@@ -41,17 +40,16 @@ img {
 #page {
   padding: 75px 0 0;
 
-  @media(max-width:$broken2) {
+  @media (max-width: $broken2) {
     padding: 110px 0 0;
   }
-
 }
 
 body.open-menu {
   #page {
     padding: 125px 0 0;
 
-    @media(max-width:$broken2) {
+    @media (max-width: $broken2) {
       padding: 203px 0 0;
     }
   }
@@ -67,7 +65,7 @@ body.toolbar-tray-open.user-logged-in {
   overflow: hidden;
 }
 
-.layout-container { 
+.layout-container {
   max-width: 1440px;
 
   .layout-main {
@@ -79,14 +77,13 @@ body.toolbar-tray-open.user-logged-in {
       margin-bottom: 100px;
     }
   }
-  .style-jobs {
+  .width1440 {
     max-width: 1440px;
     margin: 0 auto 0px;
     padding: 0px;
     @media (max-width: $tablet) {
       margin-bottom: 0px;
       padding: 0px;
-
     }
   }
 }
@@ -96,7 +93,6 @@ body.toolbar-tray-open.user-logged-in {
 }
 
 * {
-
   box-sizing: border-box !important;
 
   &::selection {
@@ -112,10 +108,8 @@ body.toolbar-tray-open.user-logged-in {
   }
 }
 
-
 //---------------------breadcrumb------------------//
 .breadcrumb {
-
   font-style: normal;
   font-weight: normal;
   font-size: 13px;
@@ -137,7 +131,7 @@ body.toolbar-tray-open.user-logged-in {
     display: flex;
 
     &:before {
-      background: url('../img/Path.svg') center center no-repeat;
+      background: url("../img/Path.svg") center center no-repeat;
       height: 10px;
       width: 6px;
       font-size: 0;
@@ -152,7 +146,6 @@ body.toolbar-tray-open.user-logged-in {
     line-height: 12px;
 
     li {
-
       &:before {
         width: 9px;
         height: 5px;

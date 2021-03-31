@@ -1264,8 +1264,8 @@ window.onload = function () {
     });
   }
 
-  var lista1 = document.querySelectorAll('.block-views-blockcarousel-videos-landing-block-2  .views-row.slick-slide:not(.slick-cloned) .views-field-nid');
-  var lista2 = document.querySelectorAll('.view-id-carousel_videos_landing.view-display-id-page_1 .views-field-nid');
+  var lista1 = document.querySelectorAll(".block-views-blockcarousel-videos-landing-block-2  .views-row.slick-slide:not(.slick-cloned) .views-field-nid");
+  var lista2 = document.querySelectorAll(".view-id-carousel_videos_landing.view-display-id-page_1 .views-field-nid");
 
   var _loop = function _loop(i) {
     var itemLista1 = lista1[i];
@@ -1274,6 +1274,19 @@ window.onload = function () {
     itemLista1.parentElement.addEventListener("click", function () {
       one();
       two();
+      var allIframes = document.querySelectorAll(".view-id-carousel_videos_landing.view-display-id-page_1  iframe");
+
+      var resetAlliframes = function resetAlliframes() {
+        allIframes.forEach(function (iframe) {
+          iframe.classList.add("change-src");
+          iframe.src = iframe.src;
+          setTimeout(function () {
+            return iframe.classList.remove("change-src");
+          }, 800);
+        });
+      };
+
+      resetAlliframes();
 
       if (itemLista1.children.innerHTML === itemLista2.children.innerHTML) {
         itemLista1.parentElement.parentElement.classList.add("select-video");
@@ -1289,33 +1302,33 @@ window.onload = function () {
   }
 };
 
-window.addEventListener('DOMContentLoaded', function () {
+window.addEventListener("DOMContentLoaded", function () {
   //// js para controlar pop-up video
-  if (!!document.querySelector('.path-videos')) {
-    var allCardVideos = document.querySelectorAll('.card-one-column');
-    var allIframes = document.querySelectorAll('.card-one-column iframe');
+  if (!!document.querySelector(".path-videos")) {
+    var allCardVideos = document.querySelectorAll(".card-one-column");
+    var allIframes = document.querySelectorAll(".card-one-column iframe");
 
     var resetAlliframes = function resetAlliframes() {
       allIframes.forEach(function (iframe) {
-        iframe.classList.add('change-src');
+        iframe.classList.add("change-src");
         iframe.src = iframe.src;
         setTimeout(function () {
-          return iframe.classList.remove('change-src');
+          return iframe.classList.remove("change-src");
         }, 800);
       });
     };
 
     allCardVideos.forEach(function (cardVideo) {
-      return cardVideo.addEventListener('click', function (event) {
+      return cardVideo.addEventListener("click", function (event) {
         node = event.currentTarget.parentNode.firstElementChild;
 
         while (node) {
           if (node !== event.currentTarget && node.nodeType === Node.ELEMENT_NODE) {
-            node.querySelector('.wrapper-popup').classList.remove('active');
+            node.querySelector(".wrapper-popup").classList.remove("active");
             resetAlliframes();
           } else {
-            if (event.target.closest('.wrapper-popup')) return;
-            node.querySelector('.wrapper-popup ').classList.toggle('active');
+            if (event.target.closest(".wrapper-popup")) return;
+            node.querySelector(".wrapper-popup ").classList.toggle("active");
             resetAlliframes();
           }
 
@@ -1323,16 +1336,16 @@ window.addEventListener('DOMContentLoaded', function () {
         }
       });
     });
-    document.body.addEventListener('click', function (event) {
-      var contentActive = event.target.closest('.card-one-column') || false;
+    document.body.addEventListener("click", function (event) {
+      var contentActive = event.target.closest(".card-one-column") || false;
 
       if (!contentActive) {
-        document.querySelector('.wrapper-popup.active').classList.remove('active');
+        document.querySelector(".wrapper-popup.active").classList.remove("active");
         resetAlliframes();
       }
 
-      if (event.target.classList.contains('close')) {
-        document.querySelector('.wrapper-popup.active').classList.remove('active');
+      if (event.target.classList.contains("close")) {
+        document.querySelector(".wrapper-popup.active").classList.remove("active");
         resetAlliframes();
       }
     });
@@ -1681,8 +1694,8 @@ var initSlick = function initSlick($, Drupal) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/usuario/Desktop/Proyectos/AlDiaNews/4ld14-n3ws/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
-module.exports = __webpack_require__(/*! /Users/usuario/Desktop/Proyectos/AlDiaNews/4ld14-n3ws/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
+__webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
+module.exports = __webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
 
 
 /***/ })

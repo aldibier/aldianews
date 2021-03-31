@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_image
+    - image.style.crop_slider_jobs
     - node.type.feature_employer
   module:
     - image
@@ -178,7 +179,7 @@ display:
           click_sort_column: target_id
           type: image
           settings:
-            image_style: ''
+            image_style: crop_slider_jobs
             image_link: content
           group_column: ''
           group_columns: {  }
