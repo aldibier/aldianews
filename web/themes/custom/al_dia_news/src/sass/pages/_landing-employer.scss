@@ -48,9 +48,9 @@
 
     .field--name-field-description {
       max-height: 1px;
-      position: relative;
+      position: absolute;
       left: 80px;
-      bottom: 140px;
+      bottom: 170px;
       z-index: 2;
       max-width: 1200px;
       padding-right: 50px;
@@ -60,7 +60,7 @@
       .field__item {
         line-height: 28px;
         color: $cwhite;
-        font-size: $px28;
+        font-size: $px20;
         font-weight: normal;
       }
     }
@@ -614,16 +614,17 @@
 
   @media (max-width: $tablet) {
     h1 {
-      bottom: 115px;
+      bottom: 125px;
       font-size: 25px;
       line-height: 30px;
       padding: 0 25px;
     }
     .block-banner-page .field--name-field-description {
       left: 25px;
-      bottom: 85px;
+      bottom: 123px;
+      padding-right: 0px;
       .field__item {
-        line-height: 10px;
+        line-height: 9px;
         font-size: $px10;
       }
     }
