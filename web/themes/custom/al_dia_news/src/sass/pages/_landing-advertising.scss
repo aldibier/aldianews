@@ -3,9 +3,10 @@
 
 //-------------content advertising------------//
 .block-views-blockheader-advertising-landing-block-1 {
+  margin-bottom: 60px;
 
   //hidden
-  form {
+  .views-field-field-webform {
     display: none;
   }
 
@@ -23,21 +24,184 @@
 
   .view-grouping-content {
     .views-row {
-      &:nth-child(odd) {}
+      &:nth-child(odd) {
+        background-color: $cgrey8;
+      }
+
+      &:nth-child(1) {
+        min-height: 400px;
+      }
+
+      &:nth-child(2) {
+        min-height: 640px;
+      }
+
+      &:nth-child(3) {
+        min-height: 450px;
+      }
 
       .field-content {
         display: flex;
       }
 
-      .employer-image,
-      .employer-title-body  {
-          width: 50%;
-          max-width: 50%;
+      .views-field,
+      .field-content {
+        min-height: inherit;
       }
 
-      .employer-image {}
+      .employer-image,
+      .employer-title-body {
+        width: 50%;
+        max-width: 50%;
+      }
 
-      .employer-title-body {}
+      .employer-image {
+        position: relative;
+
+        img {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          object-fit: cover;
+        }
+      }
+
+      .employer-title-body {
+        padding: 50px;
+        align-self: center;
+      }
+
+      .title-employer {
+        width: auto;
+        height: 70px;
+        margin-bottom: 16px;
+        position: relative;
+        border-bottom: 1px solid $corange2;
+
+        img {
+          width: auto;
+          height: 100%;
+          padding-bottom: 10px;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          object-fit: contain;
+        }
+      }
+
+      .button-apply {
+        margin-bottom: 20px;
+        border: none;
+        display: block;
+        font-size: szrem(16);
+        font-family: $PrNovacond-reg;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 25px;
+        letter-spacing: 0.741176px;
+        text-align: right;
+        color: $corange;
+      }
+
+      .body-employer {
+        font-size: szrem(26);
+        font-family: $PrNovacond-reg;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 32px;
+        color: $cblack3;
+      }
+    }
+  }
+}
+
+.block-fixed-block-contentinformation-footer-advertising {
+  padding: 50px 80px 0;
+}
+
+.field--name-field-information-with-icons {
+  height: 480px;
+  margin-bottom: 60px;
+  display: grid;
+  grid-template-columns: minmax(250px, 510px) minmax(250px, 770px);
+  grid-template-rows: repeat(2,240px);
+  grid-template-areas:
+    'social-media email-blast'
+    'social-media videos';
+
+  >.field__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:nth-child(1) {
+      margin-right: 40px;
+      grid-area: social-media;
+      border-right: .5px solid $cgrey6;
+
+      .paragraph--type--advertising-informative-items- {
+        max-width: 300px;
+      }
+
+      .field--name-field-text {
+        max-width: 180px;
+      }
+    }
+
+    &:nth-child(2) {
+      padding-bottom: 50px;
+      border-bottom: .5px solid $cgrey6;
+      grid-area: email-blast;
+    }
+
+    &:nth-child(3) {
+      padding-top: 50px;
+      grid-area: videos;
+    }
+
+    .paragraph--type--advertising-informative-items- {
+      width: 100%;
+      display: inherit;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .field--type-fontawesome-icon {
+      margin-bottom: 30px;
+
+      svg {
+        width: 60px;
+        height: 60px;
+        color: $cgrey12;
+      }
+    }
+
+    .field--name-field-text {
+      margin: 0 0 20px;
+      padding: 0;
+      font-size: szrem(30);
+      font-family: $PrNovacond-Sbold;
+      font-style: normal;
+      font-weight: bold;
+      line-height: 148%;
+      text-align: center;
+      color: $cgrey13;
+    }
+
+    .field--name-field-description {
+      padding: 0;
+      font-size: szrem(21);
+      font-family: $PrNovacond-reg;
+      font-style: normal;
+      font-weight: normal;
+      text-align: center;
+      line-height: 26px;
+      color: $cgrey6;
     }
   }
 }
