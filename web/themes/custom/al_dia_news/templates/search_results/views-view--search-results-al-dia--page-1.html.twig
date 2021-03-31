@@ -36,27 +36,33 @@
   ]
 %}
 
-<div class="view-result">
-    <div class="block-region-first share">
+<div class="layout layout--twocol-section layout--twocol-section--33-67">
+  <div class="layout__region layout__region--first">
+    {{ drupal_view('/search_results_al_dia', 'page_1') }}
+    <div class="block-region-first section-contact-search-form share">
       {{ exposed }}
     </div>
+  </div>
 
-  <div class="test">
-    <div class="noclasses">
+  <div class="layout__region layout__region--second">
+    <div class="block-region-second">
 
       {% if header %}
-        <div class="search-results-as-text">
-          {{ header }}{{ get_token }}
+        <div class="search-results--text">
+          {{ header }} <span>{{ get_token }}</span>
         </div>
       {% endif %}
 
       </div>
-      <div class="news-galery">
+      <div{{ attributes.addClass(classes) }}>
         {% if rows %}
         {{ rows }}
 
         {% elseif empty -%}
-          {{ empty }}
+        <div class="no-result-search">
+         <div class="search-results--text">No hemos encontrado resultados para <span>{{ get_token }}</span></div>
+           {{ empty }} 
+        </div>
         {% endif %}
         {{ pager }}
       </div>
