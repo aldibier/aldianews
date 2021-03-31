@@ -774,7 +774,7 @@ display:
   block_1:
     display_plugin: block
     id: block_1
-    display_title: Block
+    display_title: Title
     position: 2
     display_options:
       display_extenders: {  }
@@ -907,6 +907,7 @@ display:
           items_per_page: 1
           offset: 0
       header: {  }
+      display_description: ''
     cache_metadata:
       max-age: -1
       contexts:
@@ -1194,7 +1195,7 @@ display:
                     filter_rewrite_values: ''
                   collapsible: false
                   is_secondary: false
-      exposed_block: false
+      exposed_block: true
       arguments: {  }
     cache_metadata:
       max-age: -1
