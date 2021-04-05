@@ -8,6 +8,189 @@
   //hidden
   .views-field-field-webform {
     display: none;
+    //display: block;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 6;
+    inset: 38px 0px 0px;
+    margin: auto;
+
+    .field-content {
+      z-index: 3;
+      display: block;
+      position: relative;
+      max-width: 990px;
+      max-height: 945px;
+      top: 140px;
+      margin: auto;
+      background: rgb(255, 255, 255);
+      height: 70%;
+      width: calc(100% - 30px);
+      overflow: hidden;
+      padding: 100px 75px 89px;
+    }
+
+    .webform-contact-employer {
+      height: 100%;
+
+      .form-item,
+      .form-actions {
+        margin: 0;
+      }
+
+      .views-label {
+        width: 100%;
+        display: block;
+        padding: 0px 0px 10px;
+        border-bottom: 1px solid rgb(238, 34, 17);
+        font-weight: 600;
+        font-size: 2.125rem;
+        line-height: 41px;
+        font-family: ModernoFB-Semibold;
+        color: rgb(238, 34, 17);
+      }
+
+      button[name="close"] {
+        position: absolute;
+        top: 50px;
+        right: 75px;
+        width: 20px;
+        height: 20px;
+        display: block;
+        font-size: 0px;
+        background: url('../img/close.svg') center center no-repeat;
+        border: none;
+        cursor: pointer
+      }
+
+      form {
+        overflow-y: auto;
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      [id*="edit-information-text"] {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.25rem;
+        line-height: 28.8px;
+        color: rgb(51, 51, 51);
+        width: 100%;
+        font-family: ProximaNovaCond-Regular;
+        margin: 25px 0px 35px;
+      }
+
+      .form-type-textfield,
+      .js-form-type-tel,
+      .js-form-type-email {
+        width: 50%;
+      }
+
+      .form-item-last-name,
+      .form-item-job-title,
+      .form-item-phone-number {
+        padding-left: 15px;
+      }
+
+      label {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 1.25rem;
+        line-height: 24px;
+        font-family: ProximaNovaCond-Regular;
+        color: rgb(51, 51, 51)
+      }
+
+      input {
+        max-width: 405px;
+        width: 100%;
+        min-height: 40px;
+        background: rgb(242, 242, 242);
+        margin-top: 10px;
+        border: 0px;
+      }
+
+      select {
+        max-width: 265px;
+        width: 100%;
+        min-height: 40px;
+        background: rgb(242, 242, 242);
+        margin-top: 10px;
+        border-width: 0px 14px 0px 0px;
+        border-top-style: initial;
+        border-bottom-style: initial;
+        border-left-style: initial;
+        border-top-color: initial;
+        border-bottom-color: initial;
+        border-left-color: initial;
+        border-image: initial;
+        margin-bottom: 30px;
+        color: rgb(76, 69, 70);
+        font-weight: 300;
+        font-size: 1.25rem;
+        line-height: 24px;
+        font-family: ProximaNovaCond-Light;
+        border-right-style: solid;
+        border-right-color: rgb(242, 242, 242);
+      }
+
+      textarea {
+        max-width: 550px;
+        width: 100%;
+        min-height: 145px;
+        background: rgb(242, 242, 242);
+        margin-top: 10px;
+        border: 0px;
+      }
+
+      fieldset {
+        border: 0px;
+        padding: 0px;
+        max-width: 290px;
+        width: 36%;
+        margin: 0px;
+
+        legend {
+          display: none;
+        }
+
+        .fieldset-wrapper {
+          margin: 20px 25px 0px 0px;
+        }
+      }
+
+      .form-item-interest {
+        margin: 0;
+      }
+
+      .form-type-textarea {
+        max-width: 550px;
+        width: 64%;
+        margin-top: 20px;
+      }
+
+      .form-actions {
+        width: 100%;
+        padding-top: 0px;
+        margin: 0px;
+      }
+
+      .button {
+        max-width: 150px;
+        width: 100%;
+        min-height: 40px;
+        background: rgb(237, 28, 36);
+        margin-top: 0px;
+        font-weight: 300;
+        font-size: 1.125rem;
+        line-height: 25px;
+        font-family: ProximaNovaCond-Regular;
+        color: rgb(255, 255, 255);
+        border-radius: 0px;
+      }
+    }
   }
 
   h3 {
@@ -119,6 +302,19 @@
   }
 }
 
+.title-footer {
+  margin: 0 80px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid $cblack3;
+  font-size: szrem(52);
+  font-family: $Mod-Sbold;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 62px;
+  text-transform: uppercase;
+  color: $cblack3;
+}
+
 .block-fixed-block-contentinformation-footer-advertising {
   padding: 50px 80px 0;
 }
@@ -128,7 +324,7 @@
   margin-bottom: 60px;
   display: grid;
   grid-template-columns: minmax(250px, 510px) minmax(250px, 770px);
-  grid-template-rows: repeat(2,240px);
+  grid-template-rows: repeat(2, 240px);
   grid-template-areas:
     'social-media email-blast'
     'social-media videos';
