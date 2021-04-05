@@ -680,7 +680,17 @@ display:
             label: 'Authored on'
           plugin_id: search_api
       title: Search
-      header: {  }
+      header:
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          content: 'We have found @total results for'
+          plugin_id: result
       footer: {  }
       empty: {  }
       relationships: {  }
