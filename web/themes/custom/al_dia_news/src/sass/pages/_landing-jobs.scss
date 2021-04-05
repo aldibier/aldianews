@@ -298,10 +298,10 @@
   }
 
   .block-views-blockcarousel-jobs-landing-block-1 {
-    margin: 75px 0 100px;
+    margin: 75px auto 100px;
     width: 100%;
     padding: 0 15px;
-
+    max-width: 1310px;
     h2 {
       border-bottom: 2px solid $cblack3;
       padding-bottom: 20px;
@@ -360,13 +360,14 @@
   position: relative;
   top: -23px;
   padding: 0 15px;
+  margin-left: auto;
   h2 {
     font-style: normal;
     font-weight: normal;
     font-size: $px34;
     line-height: 41px;
     font-family: $ModernoFB-Regular;
-    color: $corange2;
+    color: $red1;
   }
 }
 
@@ -376,7 +377,7 @@
   padding-top: 7px;
   margin-bottom: 25px;
   border-top: 3px solid $corange2;
-
+  margin-right: auto;
   a {
     font-style: normal;
     font-weight: 400;
@@ -423,7 +424,7 @@
       font-weight: 700;
       font-size: $px24;
       line-height: 29px;
-      font-family: $PrNovacond-reg;
+      font-family: $PrNovacond-bold;
       color: $cblack;
     }
 
@@ -458,7 +459,6 @@
 
     .views-row:nth-child(1) {
       border-right: 1px solid $cgrey4;
-      max-width: 415px;
     }
 
     .views-row:nth-child(1),
@@ -468,7 +468,7 @@
       flex-direction: column;
       padding-bottom: 0px;
       border-bottom: 0px solid $cgrey4;
-
+      max-width: 415px;
       .views-field-field-image {
         max-width: 400px;
         max-height: 235px;
@@ -604,7 +604,8 @@
 
 .block-block-groupgroup-career-news-jobs {
   position: relative;
-  margin-bottom: 80px;
+  max-width: 1310px;
+  margin: 0 auto 80px;
   padding: 0 15px;
   > div.content {
     display: flex;
@@ -629,6 +630,10 @@
   }
 }
 
+.block-block-groupgroup-career-news-jobs
+  + .block-fixed-block-contenthorizontal-advertising {
+  margin: 0 auto 100px;
+}
 @media (max-width: $desktop) {
   .jobs.style-jobs {
     .block-content-left {
@@ -804,10 +809,11 @@
     max-width: none;
     width: 83.9%;
     padding-top: 10px;
-
+    border-top: 1px solid #e92f31;
     a {
       font-size: $px10;
       line-height: 12.18px;
+      color: $red1;
     }
   }
 
@@ -935,6 +941,10 @@
       }
     }
   }
+  .block-block-groupgroup-career-news-jobs
+    + .block-fixed-block-contenthorizontal-advertising {
+    margin: 0px auto;
+  }
 }
 
 @media (max-width: $mobile-mid) {
@@ -992,6 +1002,7 @@
 
   .block-views-blockcareer-news-block-1 {
     .views-row {
+      align-items: center;
       .views-field-field-image {
         max-width: 140px;
         max-height: 80px;
@@ -1005,7 +1016,8 @@
         margin-right: 0px;
         padding-top: 30px;
         padding-bottom: 0px;
-
+        padding-right: 135px;
+        align-items: flex-start;
         .views-field-field-image {
           max-width: 140px;
           max-height: 80px;

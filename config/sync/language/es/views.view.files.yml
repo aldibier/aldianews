@@ -1,3 +1,4 @@
+label: Archivos
 display:
   default:
     display_title: Master
@@ -18,7 +19,6 @@ display:
       fields:
         filename:
           label: Name
-          separator: ', '
         filemime:
           label: 'Tipo MIME'
         filesize:
@@ -28,12 +28,20 @@ display:
         count:
           label: 'Usado en'
       filters:
+        filename:
+          expose:
+            label: Filename
         filemime:
           expose:
             label: 'Tipo MIME'
         status:
           expose:
             label: Status
+      title: Archivos
+  page_1:
+    display_options:
+      menu:
+        title: Archivos
   page_2:
     display_options:
       pager:
