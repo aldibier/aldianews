@@ -621,17 +621,28 @@ div[data-embed-button="related_content"] {
   }
 }
 
-.path-comment #comment-form {
-  margin: -25px 0 0;
-  background: #fbfbfb;
-  padding: 30px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.17);
-  label[for="edit-field-comment-body-0-value"] {
-    display: block;
+.path-comment {
+  article.comment:nth-child(1)::before {
+    display: none;
   }
-  textarea {
-    background: #ffffff;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  .comment {
+    box-shadow: 0 -3px 4px rgb(0 0 0 / 17%);
+  }
+  .comment-form .form-item {
+    overflow: initial;
+  }
+  #comment-form {
+    margin: -25px 0 0;
+    background: #fbfbfb;
+    padding: 30px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.17);
+    // label[for="edit-field-comment-body-0-value"] {
+    //   display: block;
+    // }
+    textarea {
+      background: #ffffff;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
   }
 }
 
