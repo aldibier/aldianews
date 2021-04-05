@@ -176,7 +176,7 @@ section > article.comment:nth-child(1) {
   }
 }
 .comment-translations {
-  display: none;
+  display: none !important;
 }
 .comment-show {
   color: $cgrey6 !important;
@@ -186,7 +186,7 @@ section > article.comment:nth-child(1) {
   margin: 0 5px;
 }
 .comment-reply a {
-  color: $corange;
+  color: $corange !important;
   text-transform: uppercase;
   border-bottom: 0px;
 }
