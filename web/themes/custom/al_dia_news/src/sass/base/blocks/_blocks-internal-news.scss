@@ -579,7 +579,8 @@ div[data-embed-button="related_content"] {
   }
 
   .form-actions {
-    input.button--primary {
+    input.button--primary,
+    .cbutton-back {
       background: $corange;
       border: none;
       height: 40px;
@@ -591,7 +592,9 @@ div[data-embed-button="related_content"] {
       font-family: $PrNovacond-bold;
       padding: 0 24px;
     }
-
+    .cbutton-back {
+      display: none;
+    }
     input[value="Preview"] {
       display: none;
     }
@@ -627,9 +630,13 @@ div[data-embed-button="related_content"] {
   }
   .comment {
     box-shadow: 0 -3px 4px rgb(0 0 0 / 17%);
+    border-bottom: 0px solid #b1b1b1;
   }
   .comment-form .form-item {
     overflow: initial;
+  }
+  .cbutton-back {
+    display: block;
   }
   #comment-form {
     margin: -25px 0 0;
@@ -648,6 +655,10 @@ div[data-embed-button="related_content"] {
 
 .comment {
   width: 100%;
+}
+
+#block-loginandregistrationformpopup {
+  display: none;
 }
 
 //-----------------share selected
