@@ -2,21 +2,97 @@ uuid: 33153a76-7d0e-41ee-b0ce-967d46a5cca5
 langcode: en
 status: true
 dependencies:
-  config:
-    - search_api.server.al_dia_news
   module:
-    - search_api
     - node
+    - search_api
     - taxonomy
+  config:
+    - field.storage.node.field_category
+    - field.storage.node.field_image
+    - field.storage.node.field_my_content_has_a_main_vide
+    - field.storage.node.field_short_title
+    - search_api.server.al_dia_news
 id: content
 name: Content
 description: ''
 read_only: false
-field_settings: {  }
+field_settings:
+  created:
+    label: 'Authored on'
+    datasource_id: 'entity:node'
+    property_path: created
+    type: date
+    dependencies:
+      module:
+        - node
+  field_category:
+    label: Category
+    datasource_id: 'entity:node'
+    property_path: field_category
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_category
+  field_image:
+    label: Imagen
+    datasource_id: 'entity:node'
+    property_path: field_image
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_image
+  field_image_1:
+    label: Image
+    datasource_id: 'entity:node'
+    property_path: field_image
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_image
+  field_my_content_has_a_main_vide:
+    label: 'My content has a main video'
+    datasource_id: 'entity:node'
+    property_path: field_my_content_has_a_main_vide
+    type: boolean
+    dependencies:
+      config:
+        - field.storage.node.field_my_content_has_a_main_vide
+  field_short_title:
+    label: 'Short title'
+    datasource_id: 'entity:node'
+    property_path: field_short_title
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_short_title
+  langcode:
+    label: Language
+    datasource_id: 'entity:node'
+    property_path: langcode
+    type: string
+    dependencies:
+      module:
+        - node
+  status:
+    label: status
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+    dependencies:
+      module:
+        - node
+  uid:
+    label: uid
+    datasource_id: 'entity:node'
+    property_path: uid
+    type: integer
+    dependencies:
+      module:
+        - node
 datasource_settings:
   'entity:node':
     bundles:
-      default: true
+      default: false
       selected:
         - news
     languages:
@@ -24,7 +100,7 @@ datasource_settings:
       selected: {  }
   'entity:taxonomy_term':
     bundles:
-      default: true
+      default: false
       selected:
         - categories
     languages:
@@ -33,8 +109,61 @@ datasource_settings:
 processor_settings:
   add_url: {  }
   aggregated_field: {  }
+  entity_status: {  }
+  highlight:
+    highlight: always
+    highlight_partial: false
+    excerpt: true
+    excerpt_length: 256
+    exclude_fields: {  }
+    prefix: '<strong>'
+    suffix: '</strong>'
+    weights:
+      postprocess_query: 0
+  html_filter:
+    all_fields: true
+    fields:
+      - field_short_title
+      - langcode
+    title: true
+    alt: true
+    tags:
+      b: 2
+      h1: 5
+      h2: 3
+      h3: 2
+      strong: 2
+    weights:
+      preprocess_index: -15
+      preprocess_query: -15
+  ignorecase:
+    all_fields: false
+    fields:
+      - field_short_title
+      - langcode
+    weights:
+      preprocess_index: -20
+      preprocess_query: -20
   language_with_fallback: {  }
   rendered_item: {  }
+  tokenizer:
+    all_fields: true
+    fields:
+      - field_short_title
+    ignored: ._-
+    spaces: ''
+    overlap_cjk: 1
+    minimum_word_size: '3'
+    weights:
+      preprocess_index: -6
+      preprocess_query: -6
+  transliteration:
+    all_fields: false
+    fields:
+      - field_short_title
+    weights:
+      preprocess_index: -20
+      preprocess_query: -20
 tracker_settings:
   default:
     indexing_order: fifo
