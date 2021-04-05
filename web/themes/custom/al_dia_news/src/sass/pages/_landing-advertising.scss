@@ -1,5 +1,71 @@
 //-------------header advertising------------//
-.view-header-advertising-landing {}
+.view-header-advertising-landing {
+  position: relative;
+
+  .advertising-title {
+    margin: 0 0 10px;
+    font-size: szrem(68);
+    font-family: $PrNovacond-bold;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 95px;
+  }
+
+  .advertising-body {
+    margin-bottom: 50px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid black;
+    font-size: szrem(26);
+    font-family: $PrNovacond-light;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 28px;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .views-field-field-image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      object-fit: cover;
+    }
+  }
+
+  .advertising-items {
+
+    ul {
+      display: flex;
+    }
+
+    li {
+      flex: 1;
+      text-align: center;
+    }
+
+    svg {
+      width: 40px;
+      height: 28px;
+    }
+
+    .field--name-field-text {
+      font-size: szrem(54);
+      font-family: $PrNovacond-reg;
+    }
+  }
+}
 
 //-------------content advertising------------//
 .block-views-blockheader-advertising-landing-block-1 {
@@ -205,99 +271,97 @@
     color: $cblack3;
   }
 
-  .view-grouping-content {
-    .views-row {
-      &:nth-child(odd) {
-        background-color: $cgrey8;
+  .views-row {
+    &:nth-child(odd) {
+      background-color: $cgrey8;
+    }
+
+    &:nth-child(1) {
+      min-height: 400px;
+    }
+
+    &:nth-child(2) {
+      min-height: 640px;
+    }
+
+    &:nth-child(3) {
+      min-height: 450px;
+    }
+
+    .field-content {
+      display: flex;
+    }
+
+    .views-field,
+    .field-content {
+      min-height: inherit;
+    }
+
+    .employer-image,
+    .employer-title-body {
+      width: 50%;
+      max-width: 50%;
+    }
+
+    .employer-image {
+      position: relative;
+
+      img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
       }
+    }
 
-      &:nth-child(1) {
-        min-height: 400px;
-      }
+    .employer-title-body {
+      padding: 50px;
+      align-self: center;
+    }
 
-      &:nth-child(2) {
-        min-height: 640px;
-      }
+    .title-employer {
+      width: auto;
+      height: 70px;
+      margin-bottom: 16px;
+      position: relative;
+      border-bottom: 1px solid $corange2;
 
-      &:nth-child(3) {
-        min-height: 450px;
-      }
-
-      .field-content {
-        display: flex;
-      }
-
-      .views-field,
-      .field-content {
-        min-height: inherit;
-      }
-
-      .employer-image,
-      .employer-title-body {
-        width: 50%;
-        max-width: 50%;
-      }
-
-      .employer-image {
-        position: relative;
-
-        img {
-          width: 100%;
-          height: 100%;
-          position: absolute;
-          top: 0;
-          left: 0;
-          object-fit: cover;
-        }
-      }
-
-      .employer-title-body {
-        padding: 50px;
-        align-self: center;
-      }
-
-      .title-employer {
+      img {
         width: auto;
-        height: 70px;
-        margin-bottom: 16px;
-        position: relative;
-        border-bottom: 1px solid $corange2;
-
-        img {
-          width: auto;
-          height: 100%;
-          padding-bottom: 10px;
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          object-fit: contain;
-        }
+        height: 100%;
+        padding-bottom: 10px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        object-fit: contain;
       }
+    }
 
-      .button-apply {
-        margin-bottom: 20px;
-        border: none;
-        display: block;
-        font-size: szrem(16);
-        font-family: $PrNovacond-reg;
-        font-style: normal;
-        font-weight: normal;
-        line-height: 25px;
-        letter-spacing: 0.741176px;
-        text-align: right;
-        color: $corange;
-      }
+    .button-apply {
+      margin-bottom: 20px;
+      border: none;
+      display: block;
+      font-size: szrem(16);
+      font-family: $PrNovacond-reg;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 25px;
+      letter-spacing: 0.741176px;
+      text-align: right;
+      color: $corange;
+    }
 
-      .body-employer {
-        font-size: szrem(26);
-        font-family: $PrNovacond-reg;
-        font-style: normal;
-        font-weight: normal;
-        line-height: 32px;
-        color: $cblack3;
-      }
+    .body-employer {
+      font-size: szrem(26);
+      font-family: $PrNovacond-reg;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 32px;
+      color: $cblack3;
     }
   }
 }
