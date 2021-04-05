@@ -94,6 +94,18 @@
 
   .links {
     margin: 0 0 0 auto;
+    display: flex;
+    font-style: normal;
+    font-size: $px20;
+    line-height: 28px;
+    font-weight: 600;
+    font-family: $PrNovacond-bold;
+    text-transform: uppercase;
+    color: $cblack3;
+    a {
+      border-bottom: 0px;
+      color: $cblack3;
+    }
   }
 }
 .comment.new span:nth-child(1) {
@@ -123,16 +135,15 @@
 article.comment {
   border-bottom: 1px solid $cgrey4;
 }
-article.comment:nth-child(1) {
+section > article.comment:nth-child(1) {
   position: relative;
-  padding-top: 50px;
   border-bottom: 0px solid transparent;
 
   &::before {
     content: "COMMENTS";
     display: block;
     position: absolute;
-    top: 0px;
+    top: -40px;
     left: 0px;
     font-style: normal;
     font-size: $px19;
@@ -143,11 +154,12 @@ article.comment:nth-child(1) {
   }
 }
 .comment-show {
-  display: flex;
+  display: flex !important;
   flex-direction: row-reverse;
   text-transform: uppercase;
   span:nth-child(1) {
     position: relative;
+    display: flex;
     &::after {
       content: "ANSWERS";
       display: block;
@@ -163,20 +175,27 @@ article.comment:nth-child(1) {
     }
   }
 }
-.show-hide,
-.comment-reply a {
-  font-style: normal;
-  font-size: $px20;
-  line-height: 28px;
-  font-weight: 600;
-  font-family: $PrNovacond-bold;
-  color: $cgrey6;
+.comment-translations {
+  display: none;
+}
+.comment-show {
+  color: $cgrey6 !important;
   position: relative;
+}
+.show-hide {
+  margin: 0 5px;
 }
 .comment-reply a {
   color: $corange;
   text-transform: uppercase;
-  text-decoration: none;
+  border-bottom: 0px;
+}
+.comment-forbidden {
+  text-transform: lowercase;
+  a {
+    text-transform: uppercase;
+    color: $corange !important;
+  }
 }
 .comment-comments-content-delete-form {
   padding: 30px;
@@ -198,5 +217,13 @@ article.comment:nth-child(1) {
     border-radius: 0;
     font-family: $PrNovacond-bold;
     padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .form-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
