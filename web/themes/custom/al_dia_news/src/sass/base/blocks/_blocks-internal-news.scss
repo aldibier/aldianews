@@ -580,8 +580,6 @@ div[data-embed-button="related_content"] {
 
   .form-actions {
     display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-end;
     input.button--primary,
     .cbutton-back {
       background: $corange;
@@ -600,6 +598,9 @@ div[data-embed-button="related_content"] {
       min-width: 165px;
       margin-right: 20px;
       background: #5c6165;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
     }
     input[value="Preview"] {
       display: none;
@@ -642,7 +643,12 @@ div[data-embed-button="related_content"] {
     overflow: initial;
   }
   .cbutton-back {
-    display: block !important;
+    display: flex !important;
+  }
+  .comment-delete,
+  .comment-edit,
+  .comment-show {
+    display: none;
   }
   #comment-form {
     margin: -25px 0 0;
