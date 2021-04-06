@@ -1,0 +1,45 @@
+uuid: e837e89e-dfc4-4c74-9f6a-c67df06ef64c
+langcode: en
+status: true
+dependencies:
+  config:
+    - fixed_block_content.fixed_block_content.block_comment_anonymous
+  module:
+    - context
+    - fixed_block_content
+    - system
+    - user
+  theme:
+    - al_dia_news
+id: blockcommentanonymous
+theme: al_dia_news
+region: content
+weight: 0
+provider: null
+plugin: 'fixed_block_content:block_comment_anonymous'
+settings:
+  id: 'fixed_block_content:block_comment_anonymous'
+  label: 'Block comment anonymous'
+  provider: fixed_block_content
+  label_display: '0'
+  view_mode: ''
+visibility:
+  request_path_exclusion:
+    id: request_path_exclusion
+    pages: ''
+    negate: null
+  view_inclusion:
+    id: view_inclusion
+    negate: null
+    view_inclusion: {  }
+  request_path:
+    id: request_path
+    pages: '/node/*'
+    negate: false
+  user_role:
+    id: user_role
+    roles:
+      anonymous: anonymous
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
