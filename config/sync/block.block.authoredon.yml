@@ -1,0 +1,37 @@
+uuid: f427e0b6-dd44-4092-911a-acff3c0fcb5c
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.authored_on
+  module:
+    - context
+    - facets
+    - system
+  theme:
+    - al_dia_news
+id: authoredon
+theme: al_dia_news
+region: content
+weight: -15
+provider: null
+plugin: 'facet_block:authored_on'
+settings:
+  id: 'facet_block:authored_on'
+  label: 'Authored on'
+  provider: facets
+  label_display: '0'
+  block_id: authoredon
+visibility:
+  request_path_exclusion:
+    id: request_path_exclusion
+    pages: ''
+    negate: null
+  view_inclusion:
+    id: view_inclusion
+    negate: null
+    view_inclusion: {  }
+  request_path:
+    id: request_path
+    pages: /search
+    negate: false
