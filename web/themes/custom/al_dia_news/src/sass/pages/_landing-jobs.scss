@@ -255,7 +255,12 @@
     }
 
     textarea {
-      margin-bottom: 30px;
+      margin-bottom: 15px;
+      min-height: 200px;
+    }
+    .form-actions .button {
+      max-width: 100px;
+      text-transform: uppercase;
     }
   }
 
@@ -726,12 +731,12 @@
     }
     .block-content-form .modal-apply-webform.open {
       button[name="close"] {
-        top: 37px;
+        top: 20px;
       }
     }
     .block-banner-page .views-field-field-description .field-content {
-      left: 25px;
-      bottom: 85px;
+      left: 27px;
+      bottom: 81px;
       line-height: 10px;
       font-size: $px10;
     }
@@ -745,6 +750,7 @@
         min-width: 100px;
         font-size: 10px;
         padding: 0 5px;
+        border-width: 1px;
       }
     }
 
@@ -950,7 +956,7 @@
 @media (max-width: $mobile-mid) {
   .jobs.style-jobs {
     h1 {
-      bottom: 82px;
+      bottom: 85px;
     }
     .block-views-blockcarousel-jobs-landing-block-1 {
       .slick-list {
@@ -1006,6 +1012,10 @@
       .views-field-field-image {
         max-width: 140px;
         max-height: 80px;
+      }
+      .views-field-nothing {
+        width: 100%;
+        max-width: 140px;
       }
     }
 
