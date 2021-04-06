@@ -1,0 +1,38 @@
+image_fields:
+  block_content--header_advertising--field_image--default: '1'
+  block_content--header_advertising--field_mobile_image--default: '1'
+  paragraph--advertising_options--field_mobile_image_for_title--default: '1'
+  paragraph--advertising_options--field_mobile_image_block--default: '1'
+alter_tag:
+  img: img
+  iframe: '0'
+formatters:
+  lazy_image: lazy_image
+  lazy_responsive_image: lazy_responsive_image
+skipClass: no-lazy
+disabled_paths: /rss.xml
+placeholderSrc: ''
+preferNative: false
+cssEffect: false
+lazysizes:
+  lazyClass: lazyload
+  loadedClass: lazyloaded
+  loadingClass: lazyloading
+  preloadClass: lazypreload
+  errorClass: lazyerror
+  autosizesClass: lazyautosizes
+  srcAttr: data-src
+  srcsetAttr: data-srcset
+  sizesAttr: data-sizes
+  minSize: 40
+  customMedia: {  }
+  init: true
+  expFactor: 1.5
+  hFac: 0.8
+  loadMode: 2
+  loadHidden: true
+  ricTimeout: 0
+  throttleDelay: 125
+  plugins: {  }
+_core:
+  default_config_hash: y7LBTPYVTcA6s3XuXz3mXS0he0kmx7NQWmTz2fDSI-s

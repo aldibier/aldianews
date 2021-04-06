@@ -6,10 +6,13 @@ dependencies:
     - field.field.paragraph.advertising_options.field_block_description
     - field.field.paragraph.advertising_options.field_image_block
     - field.field.paragraph.advertising_options.field_image_for_title
+    - field.field.paragraph.advertising_options.field_mobile_image_block
+    - field.field.paragraph.advertising_options.field_mobile_image_for_title
     - field.field.paragraph.advertising_options.field_webform
     - paragraphs.paragraphs_type.advertising_options
   module:
     - image
+    - lazy
     - webform
 id: paragraph.advertising_options.default
 targetEntityType: paragraph
@@ -39,6 +42,32 @@ content:
       image_style: ''
       image_link: ''
     third_party_settings: {  }
+    type: image
+    region: content
+  field_mobile_image_block:
+    weight: 6
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings:
+      lazy:
+        lazy_image: '1'
+        placeholder_style: ''
+        data_uri: true
+    type: image
+    region: content
+  field_mobile_image_for_title:
+    weight: 5
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings:
+      lazy:
+        lazy_image: '1'
+        placeholder_style: ''
+        data_uri: true
     type: image
     region: content
   field_webform:
