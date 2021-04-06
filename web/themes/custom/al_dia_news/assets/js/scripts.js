@@ -1380,6 +1380,34 @@ window.addEventListener("DOMContentLoaded", function () {
         resetAlliframes();
       }
     });
+  } //// js para controlar pop-up advertising
+
+
+  if (!!document.querySelector('.path-advertising')) {
+    var allButtonsApply = document.querySelectorAll('.button-apply');
+    var allButtonsClose = document.querySelectorAll('button[name="close"]');
+
+    var showModal = function showModal(event) {
+      var parent = event.path.find(function (elementPath) {
+        return elementPath.classList.contains('views-row');
+      });
+      var form = parent.querySelector('.views-field-field-webform');
+      form.classList.add('show');
+    };
+
+    var hideModal = function hideModal(event) {
+      var form = event.path.find(function (elementPath) {
+        return elementPath.classList.contains('views-field-field-webform');
+      });
+      form.classList.remove('show');
+    };
+
+    allButtonsApply.forEach(function (buttonApply) {
+      return buttonApply.addEventListener('click', showModal);
+    });
+    allButtonsClose.forEach(function (buttonClose) {
+      return buttonClose.addEventListener('click', hideModal);
+    });
   }
 });
 
