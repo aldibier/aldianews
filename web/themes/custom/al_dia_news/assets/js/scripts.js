@@ -1343,6 +1343,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
     allCardVideos.forEach(function (cardVideo) {
       return cardVideo.addEventListener("click", function (event) {
+        if (event.target.nodeName == "A") return;
         node = event.currentTarget.parentNode.firstElementChild;
 
         while (node) {
