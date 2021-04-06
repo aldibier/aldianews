@@ -18,7 +18,7 @@
       width: 20px;
       height: 20px;
       right: 0px;
-      top: 0px;
+      top: 15px;
       background: transparent url("../img/close.svg") center center no-repeat;
       background-size: contain;
       z-index: 2;
@@ -34,7 +34,7 @@
   label {
     display: none;
   }
-  .form-type-textfiel {
+  .form-type-textfield {
     padding-left: 55px;
     position: relative;
     &::before {
@@ -105,5 +105,60 @@
     letter-spacing: 0.025em;
     font-family: $PrNovacond-Sbold;
     color: $cblack3;
+  }
+}
+
+/// bloque buscador formulario
+#block-exposedformsearch-results-al-dia-solrpage-1 {
+  .form--inline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  label {
+    font-style: normal;
+    font-weight: 600;
+    font-size: $px20;
+    line-height: 24.4px;
+    font-family: $PrNovacond-reg;
+    color: $cblack3;
+    padding-bottom: 3px;
+  }
+  input,
+  select {
+    background: #ededed;
+    border: 0px;
+    min-height: 50px;
+  }
+  select {
+    font-style: normal;
+    font-weight: normal;
+    font-size: $px20;
+    line-height: 24.4px;
+    font-family: $PrNovacond-reg;
+    color: #8b8b8b;
+    border-right: 14px solid #ededed;
+  }
+  .form-type-textfield {
+    width: 100%;
+    max-width: 860px;
+  }
+  .form-actions input {
+    height: 50px;
+    min-width: 156px;
+  }
+}
+
+//// descripcion de token
+#block-al-dia-news-content .search-results--text {
+  font-style: normal;
+  font-weight: normal;
+  font-size: $px22;
+  line-height: 26.84px;
+  font-family: $PrNovacond-reg;
+  color: $cblack3;
+  margin-bottom: 80px;
+  span {
+    font-family: $PrNovacond-Sbold;
   }
 }
