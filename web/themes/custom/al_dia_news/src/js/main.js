@@ -1,4 +1,4 @@
-window.onload = function() {
+window.onload = function () {
   // js video en interna
   var video_interna = document.querySelector(
     ".block-field-blocknodenewsfield-video"
@@ -13,7 +13,7 @@ window.onload = function() {
   //// js ajuste ancla en employed
   Array.from(
     document.querySelectorAll(".menu--i-am-an-employer-menu li a")
-  ).map(function(e) {
+  ).map(function (e) {
     e.addEventListener("click", () => {
       setTimeout(() => {
         var scroll_y = window.scrollY;
@@ -40,7 +40,7 @@ window.onload = function() {
       document.querySelectorAll(
         ".block-views-blockcarousel-videos-landing-block-2"
       )
-    ).map(function(e) {
+    ).map(function (e) {
       var p = e.querySelector(".select-video");
       var c = e.querySelector(".video-present");
       if (p != null && c != null) {
@@ -55,7 +55,7 @@ window.onload = function() {
       document.querySelectorAll(
         ".view-id-carousel_videos_landing.view-display-id-page_1"
       )
-    ).map(function(ev) {
+    ).map(function (ev) {
       var a = ev.querySelector(".show-video");
       var b = ev.querySelector(".video-present");
       if (a != null && b != null) {
@@ -77,7 +77,7 @@ window.onload = function() {
     const itemLista2 = lista2[i];
 
     // console.log(itemLista1, itemLista2)
-    itemLista1.parentElement.addEventListener("click", function() {
+    itemLista1.parentElement.addEventListener("click", function () {
       one();
       two();
       const allIframes = document.querySelectorAll(
@@ -156,4 +156,25 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  //// js para controlar pop-up advertising
+  if (!!document.querySelector('.path-advertising')) {
+    const allButtonsApply = document.querySelectorAll('.button-apply');
+    const allButtonsClose = document.querySelectorAll('button[name="close"]');
+
+    const showModal = (event) => {
+      const parent = event.path.find(elementPath => elementPath.classList.contains('views-row'));
+      const form = parent.querySelector('.views-field-field-webform');
+      form.classList.add('show');
+    }
+
+    const hideModal = (event) => {
+      const form = event.path.find(elementPath => elementPath.classList.contains('views-field-field-webform'));
+      form.classList.remove('show');
+    }
+
+    allButtonsApply.forEach(buttonApply => buttonApply.addEventListener('click', showModal));
+    allButtonsClose.forEach(buttonClose => buttonClose.addEventListener('click', hideModal));
+  }
+
 });
