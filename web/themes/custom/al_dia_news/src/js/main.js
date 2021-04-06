@@ -161,6 +161,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
     allCardVideos.forEach(cardVideo =>
       cardVideo.addEventListener("click", event => {
+        if(event.target.nodeName == "A" ) return;
+        
         node = event.currentTarget.parentNode.firstElementChild;
 
         while (node) {
