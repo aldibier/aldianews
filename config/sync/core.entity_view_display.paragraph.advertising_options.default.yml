@@ -6,6 +6,8 @@ dependencies:
     - field.field.paragraph.advertising_options.field_block_description
     - field.field.paragraph.advertising_options.field_image_block
     - field.field.paragraph.advertising_options.field_image_for_title
+    - field.field.paragraph.advertising_options.field_mobile_image_block
+    - field.field.paragraph.advertising_options.field_mobile_image_for_title
     - field.field.paragraph.advertising_options.field_webform
     - paragraphs.paragraphs_type.advertising_options
   module:
@@ -35,6 +37,24 @@ content:
   field_image_for_title:
     weight: 0
     label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_mobile_image_block:
+    weight: 6
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_mobile_image_for_title:
+    weight: 5
+    label: above
     settings:
       image_style: ''
       image_link: ''

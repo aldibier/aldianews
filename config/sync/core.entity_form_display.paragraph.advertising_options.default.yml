@@ -6,6 +6,8 @@ dependencies:
     - field.field.paragraph.advertising_options.field_block_description
     - field.field.paragraph.advertising_options.field_image_block
     - field.field.paragraph.advertising_options.field_image_for_title
+    - field.field.paragraph.advertising_options.field_mobile_image_block
+    - field.field.paragraph.advertising_options.field_mobile_image_for_title
     - field.field.paragraph.advertising_options.field_webform
     - image.style.thumbnail
     - paragraphs.paragraphs_type.advertising_options
@@ -17,7 +19,7 @@ bundle: advertising_options
 mode: default
 content:
   field_block_description:
-    weight: 1
+    weight: 2
     settings:
       rows: 5
       placeholder: ''
@@ -25,7 +27,7 @@ content:
     type: string_textarea
     region: content
   field_image_block:
-    weight: 2
+    weight: 3
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
@@ -34,6 +36,22 @@ content:
     region: content
   field_image_for_title:
     weight: 0
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_mobile_image_block:
+    weight: 4
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_mobile_image_for_title:
+    weight: 1
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
