@@ -1,7 +1,7 @@
 //// bloque buscador modal
 #block-exposedformsearch-results-al-dia-solrpage-1-2 {
   position: absolute;
-  bottom: -64px;
+  bottom: -65px;
   left: 0px;
   right: 0px;
   margin: 0 auto;
@@ -18,7 +18,7 @@
       width: 20px;
       height: 20px;
       right: 0px;
-      top: 15px;
+      top: 20px;
       background: transparent url("../img/close.svg") center center no-repeat;
       background-size: contain;
       z-index: 2;
@@ -35,8 +35,9 @@
     display: none;
   }
   .form-type-textfield {
-    padding-left: 55px;
+    padding: 0px 15px 0px 55px;
     position: relative;
+    width: 100%;
     &::before {
       position: absolute;
       display: block;
@@ -64,6 +65,9 @@
       color: $cblack3;
     }
   }
+  .form-actions {
+    margin: 0 30px 0 0;
+  }
 }
 
 /// bloque buscador principal pagina
@@ -71,7 +75,7 @@
   padding: 0px;
   margin: 0px;
   input {
-    background: $corange;
+    background: $corange !important;
     border: none;
     height: 40px;
     font-style: normal;
@@ -81,6 +85,9 @@
     border-radius: 0;
     font-family: $PrNovacond-bold;
     padding: 0 24px;
+    &:focus {
+      outline: 0px;
+    }
   }
 }
 .block-fixed-block-contentheader-search-results {
@@ -112,8 +119,11 @@
 #block-exposedformsearch-results-al-dia-solrpage-1 {
   .form--inline {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
+  }
+  .form-item {
+    margin: 0px;
   }
   label {
     font-style: normal;
@@ -129,6 +139,7 @@
     background: #ededed;
     border: 0px;
     min-height: 50px;
+    width: 100%;
   }
   select {
     font-style: normal;
@@ -143,9 +154,14 @@
     width: 100%;
     max-width: 860px;
   }
+  .form-type-select {
+    max-width: 225px;
+    width: 100%;
+  }
   .form-actions input {
     height: 50px;
     min-width: 156px;
+    margin: 0px;
   }
 }
 
