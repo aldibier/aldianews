@@ -1,5 +1,5 @@
 //// bloque buscador modal
-.region-header .buscador-modal {
+#block-exposedformsearch-results-al-dia-solrpage-1-2 {
   position: absolute;
   bottom: -64px;
   left: 0px;
@@ -67,23 +67,23 @@
 }
 
 /// bloque buscador principal pagina
-.buscador-modal {
-  .form-actions {
-    padding: 0px;
-    margin: 0px;
-    input {
-      background: $corange;
-      border: none;
-      height: 40px;
-      font-style: normal;
-      font-weight: bold;
-      font-size: $px18;
-      color: $cwhite;
-      border-radius: 0;
-      font-family: $PrNovacond-bold;
-      padding: 0 24px;
-    }
+.bef-exposed-form .form-actions {
+  padding: 0px;
+  margin: 0px;
+  input {
+    background: $corange;
+    border: none;
+    height: 40px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: $px18;
+    color: $cwhite;
+    border-radius: 0;
+    font-family: $PrNovacond-bold;
+    padding: 0 24px;
   }
+}
+.block-fixed-block-contentheader-search-results {
   h2 {
     font-style: normal;
     font-weight: normal;
