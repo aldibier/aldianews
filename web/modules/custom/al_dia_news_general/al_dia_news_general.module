@@ -42,12 +42,13 @@ function al_dia_news_general_form_alter(&$form, $form_state, $form_id) {
       $form['actions']['submit']['#value'] = t('POST COMMENT');
       $myUrl = "My";
       $form['actions']['submit_cancel'] = [
-        '#type' => 'submit',
-        '#value' => t('BACK'),
-        '#weight' => 99,
-        '#limit_validation_errors' => [],
+        // '#type' => 'submit',
+        // '#value' => t('BACK'),
+        // '#weight' => 99,
+        // '#limit_validation_errors' => [],
+        '#markup' => '<div class="cbutton-back">BACK</div>',
       ];
-      $form['actions']['submit_cancel']['#attributes']['class'][] = 'cbutton-back';
+      // $form['actions']['submit_cancel']['#attributes']['class'][] = 'cbutton-back';
     
     break;
     
