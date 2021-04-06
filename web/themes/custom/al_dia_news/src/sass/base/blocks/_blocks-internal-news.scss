@@ -579,6 +579,9 @@ div[data-embed-button="related_content"] {
   }
 
   .form-actions {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
     input.button--primary,
     .cbutton-back {
       background: $corange;
@@ -594,6 +597,9 @@ div[data-embed-button="related_content"] {
     }
     .cbutton-back {
       display: none;
+      min-width: 165px;
+      margin-right: 20px;
+      background: #5c6165;
     }
     input[value="Preview"] {
       display: none;
@@ -636,7 +642,7 @@ div[data-embed-button="related_content"] {
     overflow: initial;
   }
   .cbutton-back {
-    display: block;
+    display: block !important;
   }
   #comment-form {
     margin: -25px 0 0;
