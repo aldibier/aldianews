@@ -1303,25 +1303,33 @@ window.onload = function () {
 
 
   Array.from(document.querySelectorAll(".cbutton-back")).map(function (e) {
-    e.addEventListener("click", function () {
-      window.history.back();
-    });
+    if (e != null) {
+      e.addEventListener("click", function () {
+        window.history.back();
+      });
+    }
   }); /// js login and register
 
   Array.from(document.querySelectorAll(".comment-forbidden a")).map(function (e) {
-    e.removeAttribute("href");
+    if (e != null) {
+      e.removeAttribute("href");
+    }
   });
   Array.from(document.querySelectorAll(".comment-forbidden a:nth-child(1)")).map(function (e) {
-    var button_login = document.querySelector('.Login-Register-popup-link.Login-Register-popup-link a[href*="login"]');
-    e.addEventListener("click", function () {
-      button_login.click();
-    });
+    if (e != null) {
+      var button_login = document.querySelector('.Login-Register-popup-link.Login-Register-popup-link a[href*="login"]');
+      e.addEventListener("click", function () {
+        button_login.click();
+      });
+    }
   });
   Array.from(document.querySelectorAll(".comment-forbidden a:nth-child(2)")).map(function (e) {
-    var button_regis = document.querySelector('.Login-Register-popup-link.Login-Register-popup-link a[href*="register"]');
-    e.addEventListener("click", function () {
-      button_regis.click();
-    });
+    if (e != null) {
+      var button_regis = document.querySelector('.Login-Register-popup-link.Login-Register-popup-link a[href*="register"]');
+      e.addEventListener("click", function () {
+        button_regis.click();
+      });
+    }
   });
 };
 
@@ -1745,8 +1753,8 @@ var initSlick = function initSlick($, Drupal) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/usuario/Desktop/Proyectos/AlDiaNews/4ld14-n3ws/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
-module.exports = __webpack_require__(/*! /Users/usuario/Desktop/Proyectos/AlDiaNews/4ld14-n3ws/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
+__webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
+module.exports = __webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
 
 
 /***/ })
