@@ -12,6 +12,7 @@ dependencies:
   module:
     - entity_reference_revisions
     - image
+    - lazy
     - text
 id: block_content.header_advertising.default
 targetEntityType: block_content
@@ -31,7 +32,11 @@ content:
     settings:
       image_style: ''
       image_link: ''
-    third_party_settings: {  }
+    third_party_settings:
+      lazy:
+        lazy_image: '1'
+        placeholder_style: ''
+        data_uri: false
     type: image
     region: content
   field_information_with_icons:
@@ -49,7 +54,11 @@ content:
     settings:
       image_style: ''
       image_link: ''
-    third_party_settings: {  }
+    third_party_settings:
+      lazy:
+        lazy_image: '1'
+        placeholder_style: ''
+        data_uri: false
     type: image
     region: content
   field_section_title:

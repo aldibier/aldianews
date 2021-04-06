@@ -12,6 +12,7 @@ dependencies:
     - paragraphs.paragraphs_type.advertising_options
   module:
     - image
+    - lazy
     - webform
 id: paragraph.advertising_options.default
 targetEntityType: paragraph
@@ -49,7 +50,11 @@ content:
     settings:
       image_style: ''
       image_link: ''
-    third_party_settings: {  }
+    third_party_settings:
+      lazy:
+        lazy_image: '1'
+        placeholder_style: ''
+        data_uri: true
     type: image
     region: content
   field_mobile_image_for_title:
@@ -58,7 +63,11 @@ content:
     settings:
       image_style: ''
       image_link: ''
-    third_party_settings: {  }
+    third_party_settings:
+      lazy:
+        lazy_image: '1'
+        placeholder_style: ''
+        data_uri: true
     type: image
     region: content
   field_webform:
