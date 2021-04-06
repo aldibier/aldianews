@@ -94,17 +94,18 @@
 
   .links {
     margin: 0 0 0 auto;
-    display: flex;
+    display: flex !important;
     font-style: normal;
     font-size: $px20;
     line-height: 28px;
     font-weight: 600;
-    font-family: $PrNovacond-bold;
+    font-family: $PrNovacond-reg;
     text-transform: uppercase;
     color: $cblack3;
     a {
       border-bottom: 0px;
       color: $cblack3;
+      cursor: pointer;
     }
   }
 }
@@ -170,8 +171,8 @@ section > article.comment:nth-child(1) {
       font-size: $px20;
       line-height: 28px;
       font-weight: 600;
-      font-family: $PrNovacond-bold;
-      color: $cgrey6;
+      font-family: $PrNovacond-reg;
+      color: #7e7e7e;
     }
   }
 }
@@ -184,6 +185,7 @@ section > article.comment:nth-child(1) {
 }
 .show-hide {
   margin: 0 5px;
+  color: #7e7e7e;
 }
 .comment-reply a {
   color: $corange !important;
@@ -220,6 +222,9 @@ section > article.comment:nth-child(1) {
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+  #edit-cancel {
+    background: #5c6165;
   }
   .form-actions {
     display: flex;

@@ -1299,7 +1299,30 @@ window.onload = function () {
 
   for (var i = 0; i < lista1.length; i++) {
     _loop(i);
-  }
+  } /// js boton back
+
+
+  Array.from(document.querySelectorAll(".cbutton-back")).map(function (e) {
+    e.addEventListener("click", function () {
+      window.history.back();
+    });
+  }); /// js login and register
+
+  Array.from(document.querySelectorAll(".comment-forbidden a")).map(function (e) {
+    e.removeAttribute("href");
+  });
+  Array.from(document.querySelectorAll(".comment-forbidden a:nth-child(1)")).map(function (e) {
+    var button_login = document.querySelector('.Login-Register-popup-link.Login-Register-popup-link a[href*="login"]');
+    e.addEventListener("click", function () {
+      button_login.click();
+    });
+  });
+  Array.from(document.querySelectorAll(".comment-forbidden a:nth-child(2)")).map(function (e) {
+    var button_regis = document.querySelector('.Login-Register-popup-link.Login-Register-popup-link a[href*="register"]');
+    e.addEventListener("click", function () {
+      button_regis.click();
+    });
+  });
 };
 
 window.addEventListener("DOMContentLoaded", function () {

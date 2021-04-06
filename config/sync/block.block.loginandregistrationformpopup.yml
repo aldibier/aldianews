@@ -1,0 +1,42 @@
+uuid: dc39875f-18e2-4d24-85d6-fe7d5ef67349
+langcode: en
+status: true
+dependencies:
+  module:
+    - context
+    - login_popup
+    - system
+    - user
+  theme:
+    - al_dia_news
+id: loginandregistrationformpopup
+theme: al_dia_news
+region: content
+weight: -10
+provider: null
+plugin: login_register_form_popup
+settings:
+  id: login_register_form_popup
+  label: 'Login and Registration Form Popup'
+  provider: login_popup
+  label_display: '0'
+visibility:
+  request_path_exclusion:
+    id: request_path_exclusion
+    pages: ''
+    negate: null
+  view_inclusion:
+    id: view_inclusion
+    negate: null
+    view_inclusion: {  }
+  request_path:
+    id: request_path
+    pages: '/node/*'
+    negate: false
+  user_role:
+    id: user_role
+    roles:
+      anonymous: anonymous
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
