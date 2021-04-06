@@ -1,0 +1,34 @@
+uuid: 621b2c02-11be-43ce-b476-8feadfd15129
+langcode: en
+status: true
+dependencies:
+  module:
+    - context
+    - search_api_sorts
+    - system
+  theme:
+    - al_dia_news
+id: sortbyviewsearchresultsaldiasolrdisplaypage
+theme: al_dia_news
+region: content
+weight: -14
+provider: null
+plugin: 'search_api_sorts_block:views_page:search_results_al_dia_solr__page_1'
+settings:
+  id: 'search_api_sorts_block:views_page:search_results_al_dia_solr__page_1'
+  label: 'Sort by (View Search results Al Día SOLR, display Page)'
+  provider: search_api_sorts
+  label_display: '0'
+visibility:
+  request_path_exclusion:
+    id: request_path_exclusion
+    pages: ''
+    negate: null
+  view_inclusion:
+    id: view_inclusion
+    negate: null
+    view_inclusion: {  }
+  request_path:
+    id: request_path
+    pages: /search-results
+    negate: false
