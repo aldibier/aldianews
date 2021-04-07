@@ -1506,23 +1506,23 @@ __webpack_require__.r(__webpack_exports__);
   var aldiaLogoStructure = "<span class=\"aldia-logo-in-text\" title=\"AL D\xCDA\">\n                                <img alt=\"AL D\xCDA\" src=\"".concat(drupalSettings.path.baseUrl, "themes/custom/al_dia_news/assets/img/aldia.svg\">\n                              </span>");
   Object(_modules_replaceToken__WEBPACK_IMPORTED_MODULE_4__["default"])("AL DÍA", aldiaLogoStructure, headingTags);
   Object(_modules_replaceToken__WEBPACK_IMPORTED_MODULE_4__["default"])("{aldia}", aldiaLogoStructure, paragraphTags);
-  jQuery(document).ready(function () {
-    var $window = $(window);
-    var $videoWrap = $(".page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video");
-    var $video = $(".page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video .content");
-    var videoHeight = $video.outerHeight();
-    $window.on('scroll', function () {
-      var windowScrollTop = $window.scrollTop();
-      var videoBottom = videoHeight + $videoWrap.offset().top;
+  var $window = $(window);
+  var $videoWrap = $(".page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video");
+  var $video = $(".page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video .content");
+  var videoHeight = $video.outerHeight();
+  $window.on('scroll', function () {
+    var windowScrollTop = $window.scrollTop();
+    var videoBottom = videoHeight + $videoWrap.offset().top;
 
-      if (windowScrollTop > videoBottom) {
-        $videoWrap.height(videoHeight);
-        $video.addClass('stuck');
-      } else {
-        $videoWrap.height('auto');
-        $video.removeClass('stuck');
-      }
-    });
+    if (windowScrollTop > videoBottom) {
+      $videoWrap.height(videoHeight);
+      $video.addClass('stuck');
+    } else {
+      $videoWrap.height('auto');
+      $video.removeClass('stuck');
+    }
+  });
+  jQuery(document).ready(function () {
     var url = $(".page-node-type-news .video-embed-field-responsive-video iframe")[0].src += "&mute=1";
     var video = url.replace('autoplay=0', 'autoplay=1');
     $(".page-node-type-news .video-embed-field-responsive-video iframe").attr("src", video); //--------- menu--------------------//

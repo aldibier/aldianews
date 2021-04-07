@@ -19,15 +19,10 @@ import initMain from "./main.js";
   replaceToken("AL DÍA", aldiaLogoStructure, headingTags);
   replaceToken("{aldia}", aldiaLogoStructure, paragraphTags);
 
-  jQuery(document).ready(function() {
 
-    var $window = $(window);
-    var $videoWrap = $(
-      ".page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video"
-    );
-    var $video = $(
-      ".page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video .content"
-    );
+  var $window = $(window);
+    var $videoWrap = $(".page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video");
+    var $video = $(".page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video .content");
     var videoHeight = $video.outerHeight();
     
 
@@ -44,6 +39,7 @@ import initMain from "./main.js";
       }
     });
 
+  jQuery(document).ready(function() {
     var url =  $(".page-node-type-news .video-embed-field-responsive-video iframe")[0].src += "&mute=1"; 
     var video = url.replace('autoplay=0', 'autoplay=1');
     $(".page-node-type-news .video-embed-field-responsive-video iframe").attr("src",video);
