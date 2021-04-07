@@ -221,9 +221,12 @@ window.onload = function () {
   var arrow = document.querySelector(".path-search-results .arrow");
   var blocks_search = document.querySelector("#block-exposedformsearch-results-al-dia-solrpage-1");
   var sort = document.querySelector(".block-search-api-sorts");
-  arrow.addEventListener("click", () => {
-          blocks_search.classList.toggle("open");
-        sort.classList.toggle("open-flex");
-        arrow.classList.toggle("rote");
-        });
+
+  if(!!arrow){
+    arrow.addEventListener("click", () => {
+      blocks_search.classList.toggle("open");
+    sort.classList.toggle("open-flex");
+    arrow.classList.toggle("rote");
+    });
+  }
 };

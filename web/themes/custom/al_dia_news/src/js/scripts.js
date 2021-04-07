@@ -191,18 +191,20 @@ import initMain from "./main.js";
     var $video = $('.page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video .content');
     var videoHeight = $video.outerHeight();
     
-    $window.on('scroll',  function() {
-      var windowScrollTop = $window.scrollTop();
-      var videoBottom = videoHeight + $videoWrap.offset().top;
-      
-      if (windowScrollTop > videoBottom) {
-        $videoWrap.height(videoHeight);
-        $video.addClass('stuck');
-      } else {
-        $videoWrap.height('auto');
-        $video.removeClass('stuck');
-      }
-    });
+    if(!!$video && document.querySelector('.path-node page-node-type-news')){
+      $window.on('scroll',  function() {
+        var windowScrollTop = $window.scrollTop();
+        var videoBottom = videoHeight + $videoWrap.offset().top;
+        
+        if (windowScrollTop > videoBottom) {
+          $videoWrap.height(videoHeight);
+          $video.addClass('stuck');
+        } else {
+          $videoWrap.height('auto');
+          $video.removeClass('stuck');
+        }
+      });
+    }
 
     initSlick($, Drupal);
   });
