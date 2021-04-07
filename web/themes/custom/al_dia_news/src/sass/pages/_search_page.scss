@@ -30,7 +30,6 @@
   form > .form--inline {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
   }
   label {
     display: none;
@@ -122,7 +121,6 @@
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    flex-wrap: wrap;
   }
   .form-item {
     margin: 0px;
@@ -181,6 +179,47 @@
   }
 }
 
+/// bloqur solr
+.block-search-api-sorts{
+  display: flex;
+  align-items: flex-end;
+  position: absolute;
+    right: 0px;
+    top: 50px;
+  *{
+    font-style: normal;
+    font-weight: normal;
+    font-size: $px20;
+    line-height: 23px;
+    letter-spacing: 0.025em;
+    font-family: $PrNovacond-reg;
+    color: $cblack3;
+    text-transform: uppercase;
+  }
+  h2{
+    color: #8E8E8E;
+  }
+  ul{
+    display: flex;
+  }
+  .is-active{
+    color: $corange;
+  }
+  .item-list ul li{
+    margin: 0 5px;
+    padding: 0px;
+    a{
+      border-bottom: 0px;
+    }
+    span{
+      display: none;
+    }
+  }
+}
+.path-search-results .region-content{
+position: relative;
+}
+
 @media (max-width: $tablet) {
   #block-exposedformsearch-results-al-dia-solrpage-1-2 {
     bottom: -142px;
@@ -194,6 +233,9 @@
         left: 20px;
         top: 15px;
       }
+    }
+    form > .form--inline {
+      flex-wrap: wrap;
     }
     .form-type-textfield {
       padding: 0px 20px 0px 25px;
@@ -244,6 +286,7 @@
   #block-exposedformsearch-results-al-dia-solrpage-1 {
     .form--inline {
       flex-direction: column;
+      flex-wrap: wrap;
     }
     .form-item {
       margin: 0px;
