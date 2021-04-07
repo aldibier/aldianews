@@ -170,18 +170,26 @@ import initMain from "./main.js";
           .find(".views-field-field-webform")
           .addClass("open");
       }
-    });
+    }); 
 
-    /// model header
+    /// modal header y deplegable buscador
 
     $(".block-search input").click(function() {
       $("#block-exposedformsearch-results-al-dia-solrpage-1-2").addClass("open");
+      $(".layout-main-wrapper.layout-container").addClass("color-mod");
     });
 
     $('#block-exposedformsearch-results-al-dia-solrpage-1-2  button[name="close"]').click(function() {
       if ($("#block-exposedformsearch-results-al-dia-solrpage-1-2").hasClass("open")) {
         $("#block-exposedformsearch-results-al-dia-solrpage-1-2").removeClass("open");
+        $(".layout-main-wrapper.layout-container").removeClass("color-mod");
       }
+    });
+
+    $(".path-search-results .arrow").click(function() {
+      $("#block-exposedformsearch-results-al-dia-solrpage-1").classList.toogle("open");
+      $(".block-search-api-sorts").classList.toggle("open-flex");
+      $(".path-search-results .arrow").classList.toggle("rote");
     });
 
     var $window = $(window);
