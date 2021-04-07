@@ -698,7 +698,7 @@ body.open-menu {
       z-index: 3;
       width: 78px;
       height: 86px;
-      left: 10px;
+      left: 20px;
       overflow: hidden;
       transform: rotate(-17deg);
     }
@@ -710,7 +710,7 @@ body.open-menu {
       overflow: hidden;
       height: 86px;
       opacity: 0;
-      left: 10px;
+      left: 20px;
       transform: rotate(-17deg);
     }
   }
@@ -727,6 +727,9 @@ body.open-menu {
     text-transform: uppercase;
     font-family: $PrNovacond-Sbold;
     letter-spacing: 0.741176px;
+    @media (min-width: $desktop) {
+      padding-right: 15px;
+    }
   }
 
   #block-loginformpopup {
