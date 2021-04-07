@@ -310,12 +310,12 @@
     label {
       font-size: $px15;
       line-height: 18px;
-      padding-bottom: px;
+      padding-bottom: 5px;
     }
     input,
     select {
       border: 0px;
-      min-height: 50px;
+      min-height: 30px;
       width: 100%;
       margin-bottom: 15px;
     }
@@ -323,7 +323,8 @@
       font-size: $px15;
       line-height: 18px;
       color: #4c4546;
-      border-right: 25px solid #ededed;
+      border-right: 15px solid #ededed;
+      border-left: 15px solid #ededed;
     }
     .form-type-select {
       max-width: none;
@@ -331,8 +332,8 @@
     }
     .form-actions input {
       height: 30px;
-      min-width: 156px;
-      margin: 0px;
+      min-width: 100px;
+      margin: 15px 0 0;
     }
   }
 
