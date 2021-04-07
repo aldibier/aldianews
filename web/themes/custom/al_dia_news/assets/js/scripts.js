@@ -1386,21 +1386,23 @@ window.addEventListener("DOMContentLoaded", function () {
 
   if (!!document.querySelector('.path-advertising')) {
     var allButtonsApply = document.querySelectorAll('.button-apply');
-    var allButtonsClose = document.querySelectorAll('button[name="close"]');
+    var allButtonsClose = document.querySelectorAll('[name="close"]');
     console.log(allButtonsClose);
 
     var showModal = function showModal(event) {
       var parent = event.path.find(function (elementPath) {
         return elementPath.classList.contains('advertising-card');
       });
-      var form = parent.querySelector('.modal-apply-webform');
+      var form = parent.querySelector('.modal-form');
       form.classList.add('show');
     };
 
     var hideModal = function hideModal(event) {
+      console.log('click!');
       var form = event.path.find(function (elementPath) {
-        return elementPath.classList.contains('modal-apply-webform');
+        return elementPath.classList.contains('modal-form');
       });
+      console.log(form);
       form.classList.remove('show');
     };
 

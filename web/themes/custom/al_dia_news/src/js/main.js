@@ -204,18 +204,20 @@ window.addEventListener("DOMContentLoaded", () => {
   //// js para controlar pop-up advertising
   if (!!document.querySelector('.path-advertising')) {
     const allButtonsApply = document.querySelectorAll('.button-apply');
-    const allButtonsClose = document.querySelectorAll('button[name="close"]');
+    const allButtonsClose = document.querySelectorAll('[name="close"]');
 
     console.log(allButtonsClose);
 
     const showModal = (event) => {
       const parent = event.path.find(elementPath => elementPath.classList.contains('advertising-card'));
-      const form = parent.querySelector('.modal-apply-webform');
+      const form = parent.querySelector('.modal-form');
       form.classList.add('show');
     }
 
     const hideModal = (event) => {
-      const form = event.path.find(elementPath => elementPath.classList.contains('modal-apply-webform'));
+      console.log('click!');
+      const form = event.path.find(elementPath => elementPath.classList.contains('modal-form'));
+      console.log(form);
       form.classList.remove('show');
     }
 
