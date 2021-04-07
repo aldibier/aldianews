@@ -172,6 +172,25 @@ import initMain from "./main.js";
       }
     });
 
+    
+    var $window = $(window);
+    var $videoWrap = $('.page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video');
+    var $video = $('.page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video .content');
+    var videoHeight = $video.outerHeight();
+    
+    $window.on('scroll',  function() {
+      var windowScrollTop = $window.scrollTop();
+      var videoBottom = videoHeight + $videoWrap.offset().top;
+      
+      if (windowScrollTop > videoBottom) {
+        $videoWrap.height(videoHeight);
+        $video.addClass('stuck');
+      } else {
+        $videoWrap.height('auto');
+        $video.removeClass('stuck');
+      }
+    });
+
     initSlick($, Drupal);
   });
 })(jQuery, Drupal);
