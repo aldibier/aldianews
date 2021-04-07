@@ -341,11 +341,15 @@ blockquote {
 
   blockquote,
   blockquote>p {
-    font-family: $NimS-reg;
+    font-family: $NimR-reg;
     font-style: normal;
     font-size: szrem(28);
     line-height: 140%;
     color: $cgrey2;
+
+    @media (max-width: $tablet) { 
+      font-size: szrem(18px);
+    }
   }
 
   span {
