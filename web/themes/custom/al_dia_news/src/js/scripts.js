@@ -187,9 +187,9 @@ import initMain from "./main.js";
     });
 
     $(".path-search-results .arrow").click(function() {
-      $("#block-exposedformsearch-results-al-dia-solrpage-1").toogleClass("open");
-      $(".block-search-api-sorts").toogleClass("open-flex");
-      $(".path-search-results .arrow").toogleClass("rote");
+      $("#block-exposedformsearch-results-al-dia-solrpage-1").classList.toogle("open");
+      $(".block-search-api-sorts").classList.toggle("open-flex");
+      $(".path-search-results .arrow").classList.toggle("rote");
     });
 
     var $window = $(window);
