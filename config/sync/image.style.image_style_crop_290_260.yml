@@ -1,0 +1,17 @@
+uuid: 736a3bb1-d29f-415a-9b77-21aa0aed7403
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.crop_290_260
+  module:
+    - crop
+name: image_style_crop_290_260
+label: 'Image Style crop 290:260'
+effects:
+  0e83f894-499e-4df4-9371-1e9c2e245084:
+    uuid: 0e83f894-499e-4df4-9371-1e9c2e245084
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: crop_290_260

@@ -1,0 +1,180 @@
+.subcategory-taxonomy {
+    
+    .block-views-blocksubcategory-only-for-children-block-1 {
+        .view-header {
+            border-bottom: 3px solid $corange;
+
+            a {
+                font-style: normal;
+                font-family: $Mod-light;
+                font-weight: normal;
+                font-size: $px42;
+                line-height: 50px;
+                color: $corange;
+                border: none;
+
+                &:hover {
+                    border: none;
+                    text-decoration: none;
+                }
+
+            }
+        }
+
+        .view-content {
+            padding: 0 20px 0 0;
+            height: 520px;
+            margin: 20px 0;
+        }
+
+        img {
+            height: 100%;
+            max-height: 520px;
+            width: auto;
+            max-width: initial;
+        }
+
+        .views-row {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .block-field-blocknodenewsfield-short-title {
+            width: 100%;
+            max-width: 730px;
+            margin: 0 auto;
+
+            a {
+                font-style: normal;
+                font-weight: bold;
+                font-size: $px47;
+                line-height: 110%;
+                text-transform: uppercase;
+                color: $cwhite;
+                border: none;
+                padding: 0 15px;
+                font-family: $PrNovacond-bold;
+
+                &:hover {
+                    text-decoration: none;
+                    border: none;
+                }
+            }
+        }
+
+        .block-field-blocknodenewsbody {
+            width: 100%;
+            max-width: 730px;
+            margin: 15px auto;
+            font-style: normal;
+            font-weight: normal;
+            font-size: $px20;
+            line-height: 122%;
+            font-family: $NimR-reg;
+            color: $cwhite;
+        }
+
+        .block-field-blocknodenewscreated {
+            font-style: normal;
+            font-weight: normal;
+            font-size: $px17;
+            line-height: 21px;
+            width: 100%;
+            color: $cwhite;
+            max-width: 730px;
+            margin: 15px auto;
+            padding: 0 15px;
+            font-family: $PrNovacond-reg;
+        }
+
+        .block-info-short {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(rgba(11,11,11,0) 31.77%,rgba(11,11,11,.630593),#0b0b0b 77.63%);
+            width: 100%;
+            padding: 8rem 0 2rem;
+        }
+
+        @media(max-width:$tablet) {
+            .block-field-blocknodenewsfield-short-title a{
+                font-size: 18px;
+                line-height: 22px;  
+            }
+
+            .block-field-blocknodenewscreated {
+                font-size: 10px;
+                line-height: 12px;
+            }
+
+            .block-field-blocknodenewsbody{
+                display: none;
+            }
+
+            .block-info-short {
+                padding: 8rem 0 25px;
+            }
+        }
+
+        @media(max-width:$broken) {
+
+            .view-content{
+                height: auto;
+                padding: 0;
+            }
+
+            img {
+                max-height: initial;
+                height: auto;
+                width: 100%;
+            }
+        }
+    }
+
+    .block-views-blocksubcategory-only-for-children-block-2  {
+        >h2 {
+            display: none;
+        }
+
+    }
+
+    .block-views-blocksubcategory-only-for-children-block-3 {
+
+        >h2 {
+            display: none;
+        }
+
+        .views-row {
+            //width: 33.33%;
+            //max-width: 430px;
+            //@extend .block-notice-base;
+
+            .block-field-blocknodenewsfield-image {
+                max-height: 235px;
+                overflow: hidden;
+            }
+
+           /*  @media(max-width:$broken){
+                
+                &:nth-child(2n + 1) {
+                    padding: 0 5px 0 0;
+                    width: 50%;
+                    max-width: 50%;
+                    margin: 20px auto 20px 0;
+                }
+
+                &:nth-child(2n + 2) {
+                    padding: 0 0 0 5px;
+                    width: 50%;
+                    max-width: 50%;
+                    margin: 20px 0 20px auto;
+                }
+            } */
+        }
+
+        .views-infinite-scroll-content-wrapper {
+            //display: flex;
+            //flex-wrap: wrap;
+        }
+    }
+}

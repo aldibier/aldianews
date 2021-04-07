@@ -1,0 +1,25 @@
+uuid: 2bd9dafd-c4fb-44f0-9978-3d30b344fa79
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - al_dia_news
+_core:
+  default_config_hash: NDwadleLD3YVSbDUaakxyYZyINYtkFtOVGShfq4kWy8
+id: al_dia_news_branding
+theme: al_dia_news
+region: header
+weight: -14
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

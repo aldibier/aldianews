@@ -1,0 +1,158 @@
+//-------------General mixins-----------------//
+
+// Position mixin
+//==========================================
+// @param [string] $position: position type
+// @param [list] $args: list of offsets and values
+//==========================================
+@mixin position($position, $args) {
+  @each $o in top right bottom left {
+    $i: index($args, $o);
+
+    @if $i and $i+1 <=length($args) and type-of(nth($args, $i + 1))==number {
+      #{$o}: nth($args, $i + 1);
+    }
+  }
+
+  position: $position;
+}
+
+// Absolute positioning mixin
+//==========================================
+// @param [list] $args: list of offsets and values
+//==========================================
+@mixin absolute($args) {
+  @include position(absolute, $args);
+}
+
+// Block size
+@mixin size($width: auto, $height: auto) {
+  width: $width;
+  height: $height;
+}
+
+// Block equal size
+@mixin esize($size) {
+  @include size($size, $size);
+}
+
+// Ellipsis multiline
+@mixin ellipsis($mxheight, $lines) {
+  max-height: $mxheight;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+}
+
+// Propiedades comunes para un texto
+@mixin text($family: $PrNovacond-reg,
+  $size: 1rem,
+  $color: $cgrey6,
+  $lineheight: 1rem) {
+  font-family: $family;
+  font-size: $size;
+  color: $color;
+  line-height: $lineheight;
+}
+
+//-------------mixins-----------------//
+//----------mixin---------------//
+
+//-------------title section line -----------------//
+@mixin title-section-line($f-size, $f-family, $color) {
+  border: none;
+  display: block;
+  position: relative;
+  font-size: $f-size;
+  font-family: $f-family;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 41px;
+  text-transform: uppercase;
+  color: $color;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 3px;
+    margin-left: 20px;
+    display: inline-block;
+    position: absolute;
+    top: calc(50% - 5px);
+    background-color: $color;
+  }
+
+  @media (max-width: $tablet) {
+    font-size: 15px;
+    line-height: 18px;
+
+    &::after {
+      width: 100%;
+      height: 2px;
+      top: calc(50% - 4px);
+    }
+  }
+}
+
+//------------- AL DÍA text/logo -----------------//
+@mixin alDia($fontsize) {
+  @include text($PrNovacond-bold, $fontsize, $cwhite);
+  display: inline-flex;
+  align-items: center;
+  font-style: italic;
+  text-transform: uppercase;
+  padding: 5px 0;
+  background-color: $corange;
+}
+
+// ---------- Links -------------------------//
+
+
+// Link box
+@mixin link-box($colorBcolor: $cgrey6, $fontSize: 1rem, $lineHeight: 1rem) {
+  @include text($PrNovacond-bold, $fontSize, $colorBcolor, $lineHeight);
+  @include esize(100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  padding: 0 10px;
+  border: 1px solid $colorBcolor;
+  transition: all .3s ease;
+
+  &:hover {
+    color: $cgrey6;
+    background-color: $colorBcolor;
+  }
+}
+
+
+//---------- Player -------------------------//
+
+@mixin player-icon($desktop-size: 100px, $tablet-size:50px, $mobile-size:25px) {
+  width: $desktop-size;
+  height: $desktop-size;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  background-image: icon('player');
+  background-size: contain;
+  pointer-events: none;
+
+  @media screen and (max-width:$broken) {
+    width: $tablet-size;
+    height: $tablet-size;
+  }
+
+  @media screen and (max-width:$tablet) {
+    width: $mobile-size;
+    height: $mobile-size;
+  }
+}

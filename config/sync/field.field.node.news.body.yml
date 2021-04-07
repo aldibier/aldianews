@@ -1,0 +1,27 @@
+uuid: 71e12e71-2788-4da9-9911-9bdd97b27ee5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.news
+  module:
+    - text
+id: node.news.body
+field_name: body
+entity_type: node
+bundle: news
+label: Body
+description: 'To make a small line break, press Shift + Enter'
+required: false
+translatable: true
+default_value:
+  -
+    summary: .
+    value: ''
+    format: full_html
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

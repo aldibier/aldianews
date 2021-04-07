@@ -1,0 +1,28 @@
+uuid: a2292fe2-a504-4e00-a077-1eb2f4935541
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.subcategory
+    - taxonomy.vocabulary.categories
+  module:
+    - layout_builder
+    - text
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: taxonomy_term.categories.subcategory
+targetEntityType: taxonomy_term
+bundle: categories
+mode: subcategory
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

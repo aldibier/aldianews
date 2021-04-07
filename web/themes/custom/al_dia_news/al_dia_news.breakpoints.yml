@@ -1,0 +1,48 @@
+# Configuración de breakpoints con restricción de max width en sus media queries
+al_dia_news.extra_small:
+  label: Extra Small
+  mediaQuery: 'all and (max-width: 500px)'
+  weight: 0
+  multipliers:
+    - 1x
+  group: Al dia news
+
+al_dia_news.small:
+  label: Small
+  mediaQuery: 'all and (min-width: 501px) and (max-width: 767px)'
+  weight: 1
+  multipliers:
+    - 1x
+  group: Al dia news
+
+al_dia_news.medium:
+  label: Medium
+  mediaQuery: 'all and (min-width: 768px) and (max-width: 930px)'
+  weight: 2
+  multipliers:
+    - 1x
+  group: Al dia news
+
+al_dia_news.large:
+  label: Large
+  mediaQuery: 'all and (min-width: 931px) and (max-width: 992px)'
+  weight: 3
+  multipliers:
+    - 1x
+  group: Al dia news
+
+al_dia_news.extra_large:
+  label: Extra Large
+  mediaQuery: 'all and (min-width: 993px) and (max-width: 1024px)'
+  weight: 4
+  multipliers:
+    - 1x
+  group: Al dia news
+
+al_dia_news.extra_x2_large:
+  label: X2 Large
+  mediaQuery: 'all and (min-width: 1024px)'
+  weight: 5
+  multipliers:
+    - 1x
+  group: Al dia news

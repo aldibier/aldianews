@@ -1,0 +1,30 @@
+//== Functions
+//==========================================
+
+// Return background with icon and predefined properties
+@function bg-icon($icon, $extra:null, $format:svg) {
+  $path: $images-base-path + '/';
+
+  @if $format=='svg' {
+    $path: $images-base-path + '/svg/';
+  }
+
+  @return $extra no-repeat url($path + $icon + '.#{$format}');
+}
+
+// Return only icon
+@function icon($icon, $format: svg) {
+    $path: $images-base-path + '/';
+
+    @if $format=='svg' {
+        $path: $images-base-path + '/svg/';
+    }
+
+    @return url($path + $icon + '.#{$format}');
+}
+
+// Size rem
+// Asumes the default size is 16px
+@function szrem($value_px, $base: 16) {
+  @return ($value_px / $base)+rem;
+}

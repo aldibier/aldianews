@@ -1,0 +1,37 @@
+uuid: 1bf84771-d1ef-4734-9ccc-31d59d714d8b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_main_features
+    - node.type.feature_employer
+    - paragraphs.paragraphs_type.main_features
+  module:
+    - entity_reference_revisions
+id: node.feature_employer.field_main_features
+field_name: field_main_features
+entity_type: node
+bundle: feature_employer
+label: 'Main features'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      main_features: main_features
+    target_bundles_drag_drop:
+      features_items:
+        weight: 4
+        enabled: false
+      main_features:
+        enabled: true
+        weight: 5
+      social_media:
+        weight: 6
+        enabled: false
+field_type: entity_reference_revisions

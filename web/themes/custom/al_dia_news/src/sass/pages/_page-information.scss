@@ -1,0 +1,232 @@
+#block-headerpageaboutus,
+#block-headershareanewstip {
+  margin: 0 -80px 70px;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  z-index: 1;
+
+  @media screen and (max-width: $tablet) {
+    height: auto;
+    margin: initial;
+    margin-bottom: 20px;
+  }
+
+  .field--name-field-description {
+    max-height: 1px;
+    position: absolute;
+    left: 80px;
+    bottom: 100px;
+    z-index: 2;
+    max-width: 1200px;
+    padding-right: 50px;
+    line-height: 28px;
+    color: $cwhite;
+    font-size: $px20;
+    font-weight: normal;
+  }
+  @media (max-width: $tablet) {
+    .field--name-field-description {
+      left: 25px;
+      bottom: 25px;
+      padding-right: 0px;
+      line-height: 9px;
+      font-size: $px10;
+    }
+  }
+
+  .field--name-body {
+    p {
+      margin: 0;
+      font-size: szrem(26);
+      font-family: $PrNovacond-light;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 32px;
+      color: $cwhite;
+
+      @media screen and(max-width:$tablet) {
+        font-size: szrem(12);
+        line-height: 1.5;
+      }
+    }
+  }
+
+  .field--name-field-image,
+  .field--name-field-image-block {
+    img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -2;
+      object-fit: cover;
+    }
+
+    &::after {
+      top: 0;
+      left: 0;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: block;
+      z-index: -1;
+      content: "";
+      background-color: rgba(34, 33, 35, 0.4);
+    }
+  }
+}
+
+//-------------header about-us-----------------//
+#block-headerpageaboutus {
+  min-height: 560px;
+  margin-top: 20px;
+  padding: 40px 80px 55px;
+
+  @media screen and (max-width: $tablet) {
+    height: auto;
+    min-height: 215px;
+    margin: initial;
+    margin: 20px -15px;
+    padding: 0 25px 25px;
+  }
+
+  .field--name-field-section-title {
+    margin-bottom: 20px;
+    font-size: szrem(80);
+    font-family: $PrNovacond-bold;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 1;
+    color: $cwhite;
+
+    @media screen and (max-width: $tablet) {
+      margin-bottom: 5px;
+      font-size: szrem(25);
+      line-height: 1;
+    }
+  }
+
+  .field--name-body {
+    p {
+      margin: 0;
+      font-size: szrem(26);
+      font-family: $PrNovacond-light;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 32px;
+      color: $cwhite;
+
+      @media screen and (max-width: $tablet) {
+        font-size: szrem(12);
+        line-height: 1.5;
+      }
+    }
+  }
+}
+
+//-------------header news tip-----------------//
+#block-headershareanewstip {
+  min-height: 470px;
+  padding: 40px 80px 70px;
+
+  @media screen and (max-width: $tablet) {
+    height: auto;
+    min-height: 215px;
+    margin: initial;
+    margin: 0 -15px 20px;
+    padding: 0 25px 25px;
+  }
+
+  .field--name-field-custom-title {
+    h1 {
+      margin: 0 0 20px;
+      font-size: szrem(78);
+      font-family: $PrNovacond-bold;
+      font-style: normal;
+      font-weight: bold;
+      line-height: 95px;
+      color: $cwhite;
+
+      @media screen and (max-width: $tablet) {
+        margin-bottom: 5px;
+        font-size: szrem(25);
+        line-height: 1;
+      }
+    }
+  }
+}
+
+//-------------block general-----------------//
+.block-information {
+  .container-content {
+    display: flex;
+    flex-wrap: wrap;
+
+    @media screen and (max-width: $broken) {
+      flex-direction: column;
+    }
+  }
+
+  .horizontal-advertising-general-horizontal {
+    margin-bottom: 90px;
+
+    @media screen and (max-width: $broken) {
+      margin-bottom: 50px;
+    }
+
+    @media screen and (max-width: $tablet) {
+      margin: 0 0 50px;
+    }
+  }
+
+  h1 {
+    &:nth-of-type(2) {
+      margin-top: 30px;
+    }
+  }
+
+  .content-right-pages {
+    @media screen and (max-width: $broken) {
+      width: 100%;
+      max-width: 100%;
+      justify-content: center;
+    }
+
+    @media screen and (max-width: $tablet) {
+      margin: 0;
+    }
+  }
+
+  .content-left-pages {
+    @media screen and (max-width: $broken) {
+      width: 100%;
+      max-width: 100%;
+      padding: 0 0 30px;
+    }
+
+    .text-formatted {
+      a {
+        border: none;
+        color: $cgrey6;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      strong {
+        font-family: $PrNovacond-bold;
+      }
+
+      p {
+        font-size: szrem(24);
+        font-weight: normal;
+
+        @media screen and (max-width: $tablet) {
+          font-size: szrem(15);
+          line-height: 1.5;
+        }
+      }
+    }
+  }
+}

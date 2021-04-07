@@ -1,0 +1,37 @@
+uuid: 474e1a60-1bfa-4692-bc3e-2d4781b32706
+langcode: en
+status: true
+dependencies:
+  config:
+    - fixed_block_content.fixed_block_content.header_search_results
+  module:
+    - context
+    - fixed_block_content
+    - system
+  theme:
+    - al_dia_news
+id: headersearchresults_2
+theme: al_dia_news
+region: content
+weight: -18
+provider: null
+plugin: 'fixed_block_content:header_search_results'
+settings:
+  id: 'fixed_block_content:header_search_results'
+  label: 'Search results'
+  provider: fixed_block_content
+  label_display: visible
+  view_mode: ''
+visibility:
+  request_path_exclusion:
+    id: request_path_exclusion
+    pages: ''
+    negate: null
+  view_inclusion:
+    id: view_inclusion
+    negate: null
+    view_inclusion: {  }
+  request_path:
+    id: request_path
+    pages: /search-results
+    negate: false

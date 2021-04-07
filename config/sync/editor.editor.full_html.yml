@@ -20,6 +20,7 @@ settings:
             - Bold
             - Italic
             - Strike
+            - Underline
             - Superscript
             - Subscript
             - '-'
@@ -39,6 +40,7 @@ settings:
           items:
             - Blockquote
             - DrupalImage
+            - video_embed
             - Table
             - HorizontalRule
         -
@@ -48,16 +50,37 @@ settings:
         -
           name: Tools
           items:
+            - Embed
             - ShowBlocks
             - Source
+        -
+          name: Alignment
+          items:
+            - JustifyLeft
+            - JustifyCenter
+            - JustifyBlock
+            - JustifyRight
   plugins:
+    language:
+      language_list: un
     stylescombo:
       styles: ''
+    autoembed:
+      status: ''
+    colorbutton:
+      colors: ''
+    video_embed:
+      defaults:
+        children:
+          autoplay: true
+          responsive: true
+          width: '854'
+          height: '480'
 image_upload:
   status: true
   scheme: public
   directory: inline-images
   max_size: ''
   max_dimensions:
-    width: 0
-    height: 0
+    width: null
+    height: null

@@ -1,0 +1,120 @@
+uuid: cef95039-a739-4bdb-b0b7-02962f65ac69
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+name: videos_landing
+label: 'Videos landing'
+group: 'General pages'
+description: 'This is the context of the blocks of the landing page videos'
+requireAllConditions: false
+disabled: false
+conditions:
+  request_path:
+    id: request_path
+    pages: /videos
+    negate: false
+    uuid: 2012412a-fd7d-474b-93b7-bcd8d3d351be
+    context_mapping: {  }
+reactions:
+  blocks:
+    blocks:
+      698017e2-2161-48c0-93ba-688d0ad9dbd3:
+        id: 'views_block:carousel_videos_landing-block_1'
+        label: ''
+        provider: views
+        label_display: '0'
+        views_label: ''
+        items_per_page: none
+        region: content
+        weight: '-2'
+        context_mapping: {  }
+        custom_id: views_block_carousel_videos_landing_block_1
+        theme: al_dia_news
+        css_class: title-white
+        unique: 0
+        context_id: videos_landing
+        uuid: 698017e2-2161-48c0-93ba-688d0ad9dbd3
+      bcfbc7b9-bbb2-498e-bdc3-9d6a4a5bb65e:
+        id: system_main_block
+        label: 'Main page content'
+        provider: system
+        label_display: '0'
+        region: content
+        weight: '-1'
+        context_mapping: {  }
+        custom_id: system_main_block
+        theme: al_dia_news
+        css_class: ''
+        unique: 0
+        context_id: videos_landing
+        uuid: bcfbc7b9-bbb2-498e-bdc3-9d6a4a5bb65e
+      fcadc401-7c42-4b29-958a-bd165b3a224b:
+        id: 'views_block:carousel_videos_landing-block_2'
+        label: ''
+        provider: views
+        label_display: '0'
+        views_label: ''
+        items_per_page: none
+        region: content
+        weight: '0'
+        context_mapping: {  }
+        custom_id: views_block_carousel_videos_landing_block_2
+        theme: al_dia_news
+        css_class: ''
+        unique: 0
+        context_id: videos_landing
+        uuid: fcadc401-7c42-4b29-958a-bd165b3a224b
+      96fa0d5c-71aa-43d7-aca9-5b1eaaca162d:
+        id: 'fixed_block_content:horizontal_advertising'
+        label: 'Horizontal advertising'
+        provider: fixed_block_content
+        label_display: '0'
+        region: content
+        weight: '1'
+        view_mode: ''
+        context_mapping: {  }
+        custom_id: fixed_block_content_horizontal_advertising
+        theme: al_dia_news
+        css_class: ''
+        unique: 0
+        context_id: videos_landing
+        uuid: 96fa0d5c-71aa-43d7-aca9-5b1eaaca162d
+      5d715c39-4072-49d4-b3d7-0a8b966434b7:
+        id: 'views_block:more_videos_in_landing-block_1'
+        label: ''
+        provider: views
+        label_display: '0'
+        views_label: ''
+        items_per_page: none
+        region: content
+        weight: '3'
+        context_mapping: {  }
+        custom_id: views_block_more_videos_in_landing_block_1
+        theme: al_dia_news
+        css_class: ''
+        unique: 0
+        context_id: videos_landing
+        uuid: 5d715c39-4072-49d4-b3d7-0a8b966434b7
+      78cf10eb-68f0-4ff4-94ff-4705d0540ccd:
+        id: 'views_block:more_videos_in_landing-block_2'
+        label: ''
+        provider: views
+        label_display: '0'
+        views_label: ''
+        items_per_page: none
+        region: content
+        weight: '2'
+        context_mapping: {  }
+        custom_id: views_block_more_videos_in_landing_block_2
+        theme: al_dia_news
+        css_class: ''
+        unique: 0
+        context_id: videos_landing
+        uuid: 78cf10eb-68f0-4ff4-94ff-4705d0540ccd
+    id: blocks
+    saved: false
+    uuid: 090e6277-acec-42ea-aeb2-8992d0353bd5
+    include_default_blocks: 1
+weight: 0

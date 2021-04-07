@@ -1,0 +1,19 @@
+uuid: c3171aa5-df55-4357-9db0-ce208e065087
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_short_title
+    - node.type.news
+id: node.news.field_short_title
+field_name: field_short_title
+entity_type: node
+bundle: news
+label: 'Short title'
+description: 'Add a short title (more impact headline) for the content, so it can be visible on the Home page and the landing pages.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

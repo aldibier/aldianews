@@ -1,0 +1,29 @@
+uuid: 7289359f-8121-420e-82c9-3a5fb664c459
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tags
+    - node.type.thought_leaders
+    - taxonomy.vocabulary.tags
+id: node.thought_leaders.field_tags
+field_name: field_tags
+entity_type: node
+bundle: thought_leaders
+label: Tags
+description: 'Tags related to the article topic'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tags: tags
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

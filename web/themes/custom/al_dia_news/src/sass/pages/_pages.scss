@@ -1,0 +1,61 @@
+.screen-margin {
+  max-width: $page-width;
+}
+
+article[about="/terms-of-service"] {
+  .content-left-pages h1 {
+    color: $cblack3;
+  }
+}
+
+.aldia-logo-in-text {
+  border: 0;
+  display: inline-block;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  img {
+    height: 100%;
+    width: auto;
+  }
+}
+
+h1,
+h2 {
+  .aldia-logo-in-text img {
+    width: 50px;
+    height: 15px;
+
+    @media screen and (min-width: $tablet) {
+      height: 35px;
+      width: 116px;
+    }
+  }
+}
+
+.block-hero-image {
+  h1,
+  h2 {
+    .aldia-logo-in-text img {
+      width: 63px;
+      height: 20px;
+
+      @media screen and (min-width: $tablet) {
+        height: 62px;
+        width: 200px;
+      }
+    }
+  }
+}
+
+p .aldia-logo-in-text img {
+  width: 40px;
+  height: 13px;
+
+  @media screen and (min-width: $tablet) {
+    height: 18px;
+    width: 58px !important;
+  }
+}

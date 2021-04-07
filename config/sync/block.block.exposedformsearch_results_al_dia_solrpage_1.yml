@@ -1,0 +1,37 @@
+uuid: a501e4dc-948e-49d8-8ecc-15c9a8d13032
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.search_results_al_dia_solr
+  module:
+    - context
+    - system
+    - views
+  theme:
+    - al_dia_news
+id: exposedformsearch_results_al_dia_solrpage_1
+theme: al_dia_news
+region: content
+weight: -15
+provider: null
+plugin: 'views_exposed_filter_block:search_results_al_dia_solr-page_1'
+settings:
+  id: 'views_exposed_filter_block:search_results_al_dia_solr-page_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+visibility:
+  request_path_exclusion:
+    id: request_path_exclusion
+    pages: ''
+    negate: null
+  view_inclusion:
+    id: view_inclusion
+    negate: null
+    view_inclusion: {  }
+  request_path:
+    id: request_path
+    pages: /search-results
+    negate: false

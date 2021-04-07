@@ -1,0 +1,25 @@
+global:
+  version: VERSION
+  js:
+    assets/js/scripts.js: {}
+    assets/libraries/YTPlayer/YTPlayer.js: {}
+    assets/libraries/browserclass.js: {}
+  css:
+    theme:
+      assets/css/styles.css: {}
+  dependencies:
+    - core/jquery
+
+scrollmagic:
+  version: 2.0.7
+  js:
+    assets/libraries/scrollmagic/uncompressed/ScrollMagic.js: {}
+    #assets/libraries/scrollmagic/uncompressed/plugins/debug.addIndicators.js: {}
+
+slick:
+  version: 1.8.1
+  js:
+    assets/libraries/slick/js/slick.min.js: {}
+  css:
+    theme:
+      assets/libraries/slick/css/slick.css: {}

@@ -1,0 +1,56 @@
+uuid: 517dc9c7-50e0-4758-b5a1-a85d3182bec3
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+name: i_am_a_job_seeker_landing
+label: 'I am a job seeker Landing'
+group: 'General pages'
+description: 'This is the context of the blocks of the landing page i am a job seeker'
+requireAllConditions: false
+disabled: false
+conditions:
+  request_path:
+    id: request_path
+    pages: /jobs/job-seeker
+    negate: false
+    uuid: 0539ae25-f248-42e1-812c-779e2edcca9f
+    context_mapping: {  }
+reactions:
+  blocks:
+    blocks:
+      3a543f2d-8d65-4b3f-8d29-1207e56465ed:
+        id: system_main_block
+        label: 'Main page content'
+        provider: system
+        label_display: '0'
+        region: content
+        weight: '0'
+        context_mapping: {  }
+        custom_id: system_main_block
+        theme: al_dia_news
+        css_class: ''
+        unique: 0
+        context_id: i_am_a_job_seeker_landing
+        uuid: 3a543f2d-8d65-4b3f-8d29-1207e56465ed
+      33a0fa06-2874-4fa4-9192-5147b5ce2699:
+        id: 'fixed_block_content:header_i_am_a_job_seeker'
+        label: 'Header I am a job seeker'
+        provider: fixed_block_content
+        label_display: '0'
+        region: content
+        weight: '-2'
+        view_mode: ''
+        context_mapping: {  }
+        custom_id: fixed_block_content_header_i_am_a_job_seeker
+        theme: al_dia_news
+        css_class: ''
+        unique: 0
+        context_id: i_am_a_job_seeker_landing
+        uuid: 33a0fa06-2874-4fa4-9192-5147b5ce2699
+    id: blocks
+    saved: false
+    uuid: d15b3e8d-4835-4d83-84c4-f45156b4bbdd
+    include_default_blocks: 1
+weight: 0

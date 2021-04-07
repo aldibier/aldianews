@@ -1,0 +1,230 @@
+.node--view-mode-work-whit-al-dia {
+  .content {
+    margin: 0;
+  }
+
+  .block-fixed-block-contentheader-work-with-al-dia {
+    margin-right: 15px;
+    color: $cwhite;
+
+    .container-content {
+      @media screen and (min-width: $tablet) {
+        margin-bottom: 100px;
+      }
+    }
+
+    h1,
+    h2,
+    p {
+      margin: 0;
+    }
+
+    h1 {
+      margin-bottom: 5px;
+      @include text($PrNovacond-bold, szrem(25), $cwhite, 95%);
+
+      @media screen and (min-width: $tablet) {
+        font-size: szrem(78);
+        line-height: 108%;
+      }
+    }
+
+    p {
+      @include text($family:$PrNovacond-light,$color: $cwhite, $size: szrem(14));
+      line-height: 11px;
+
+      @media screen and (min-width: $tablet) {
+        font-size: szrem(26);
+        line-height: szrem(28);
+      }
+    }
+  }
+
+  .menu--work-with-al-dia-menu .menu {
+    min-width: 205px;
+    max-height: 135px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+
+    @media screen and (min-width: $tablet) {
+      max-height: initial;
+    }
+
+    @media screen and (min-width: $desktop) {
+      //grid-column-gap: 30px;
+    }
+
+    .menu-item {
+      width: 100%;
+      max-width: 100%;
+      flex: 1 1 100%;
+      padding: 0;
+      min-height: 30px;
+      margin-top: 5px;
+
+      &:nth-child(3) {
+        width: 52.43902%;
+        max-width: 52.43902%;
+        padding-right: 1.5px;
+      }
+
+      &:nth-child(4) {
+        width: 47.56098%;
+        max-width: 47.56098%;
+        padding-left: 1.5px;
+      }
+
+      &:nth-last-child(2) {
+        min-width: 100px;
+        max-width: 50%;
+        padding-right: 2.5px;
+      }
+
+      &:nth-last-child(1) {
+        min-width: 100px;
+        max-width: 50%;
+        padding-right: 2.5px;
+      }
+
+      @media screen and (min-width: $tablet) {
+        height: 50px;
+        margin-top: 30px;
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+
+      @media screen and (min-width:$broken) {
+        &:nth-child(1) {
+          margin-top: 30px;
+          padding-right: 15px;
+        }
+
+        &:nth-child(2) {
+          padding-left: 15px;
+        }
+
+        &:nth-child(-n+2) {
+          max-width: 50%; //450px
+          min-height: 80px;
+        }
+
+        &:nth-child(3),
+        &:nth-child(4) {
+          max-width: 29.56989%; //275px
+          min-height: 80px;
+          padding-left: 0;
+        }
+
+        &:nth-child(n+3):not(:last-child) {
+          min-height: 70px;
+          padding-right: 24.5px;
+        }
+
+        &:nth-last-child(2) {
+          max-width: 18.8172%; //175px
+        }
+
+        &:last-child {
+          height: 70px;
+          max-width: 21.50538%; //200px
+          padding-right: 0;
+        }
+      }
+
+      a {
+        @include link-box($colorBcolor: $cwhite, $fontSize: szrem(10), $lineHeight: szrem(11));
+        padding: 0;
+
+        @media screen and (min-width: $tablet) {
+          font-size: 1rem;
+          line-height: 1rem;
+          letter-spacing: .74px;
+          border-width: 2px;
+        }
+
+        @media screen and (min-width: $desktop) {
+          font-size: szrem(20);
+          line-height: szrem(25);
+        }
+      }
+    }
+  }
+
+  .horizontal-advertising-general-horizontal {
+    margin-bottom: 50px;
+
+    @media screen and (min-width: $broken) {
+      margin-bottom: 90px;
+    }
+  }
+
+  .two-content-general-work {
+    .field--name-title h2 {
+      margin-top: 0;
+      margin-bottom: 20px;
+      font-size: szrem(20);
+      font-family: $Mod-bold;
+      font-style: normal;
+      font-weight: bold;
+      line-height: szrem(26);
+    }
+
+    @media screen and (min-width: $tablet) {
+      .field--name-title h2 {
+        margin-bottom: 50px;
+        font-size: szrem(46);
+        line-height: 134%;
+      }
+    }
+
+    @media screen and (min-width: $broken) {
+      @include size(calc(100% - 444px));
+      display: inline-block;
+      margin-right: 40px;
+      vertical-align: top;
+    }
+  }
+
+  .two-vertical-advertising,
+  .one-vertical-advertising {
+    text-align: center;
+  }
+
+  .block-field-blocknodepagebody {
+
+    strong {
+      font-family: $PrNovacond-bold;
+    }
+
+    p {
+      font-family: $PrNovacond-reg;
+      color: $cblack3;
+
+      @media screen and (min-width:$tablet) {
+        font-size: szrem(24);
+        font-weight: 400;
+      }
+    }
+  }
+
+  // Publicidad para desktop
+  .two-vertical-advertising {
+    display: none;
+
+    @media screen and (min-width: $broken) {
+      display: inline-block;
+    }
+  }
+
+  // Publicidad para mobile
+  .one-vertical-advertising {
+    display: none;
+
+    @media screen and (min-width: $broken) {
+      display: none;
+    }
+  }
+}

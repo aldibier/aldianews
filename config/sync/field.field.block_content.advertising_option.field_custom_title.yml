@@ -1,0 +1,21 @@
+uuid: 1bc0bd86-5db5-4e87-8f9c-4f439d874a43
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.advertising_option
+    - field.storage.block_content.field_custom_title
+  module:
+    - text
+id: block_content.advertising_option.field_custom_title
+field_name: field_custom_title
+entity_type: block_content
+bundle: advertising_option
+label: 'Custom title'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

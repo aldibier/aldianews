@@ -1,0 +1,61 @@
+.node--view-mode-general-errors {
+
+  .one-content-general {
+    width: 100%;
+  }
+
+  h1 {
+    margin: 127px 0 25px;
+    border-bottom: 1px solid $cblack0;
+    font-family: $Mod-light;
+    font-size: szrem(80);
+    font-style: normal;
+    font-weight: normal;
+    line-height: 96px;
+    letter-spacing: 0.025em;
+    color: $cgrey6;
+
+    @media screen and (max-width:$tablet) {
+      margin: 30px 0 18.5px;
+      border-bottom-width: 2px;
+      font-size: 25px;
+      line-height: 30px;
+    }
+  }
+
+  .block-field-blocknodepagebody {
+    p {
+      margin: 0 0 50px;
+      font-family: $PrNovacond-light;
+      font-size: szrem(36);
+      font-style: normal;
+      font-weight: normal;
+      line-height: 44px;
+      letter-spacing: 0.025em;
+      color: $cgrey6;
+
+      @media screen and (max-width:$tablet) {
+        margin: 0 0 30px;
+        font-size: 12px;
+        line-height: 1;
+      }
+    }
+  }
+
+  .view-header {
+    margin-bottom: 60px;
+    font-family: $PrNovacond-bold;
+    font-size: szrem(28);
+    font-style: normal;
+    font-weight: bold;
+    line-height: 34px;
+    letter-spacing: 0.025em;
+    color: $cgrey6;
+
+    @media screen and (max-width:$tablet) {
+      margin-bottom: 40px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+  }
+}

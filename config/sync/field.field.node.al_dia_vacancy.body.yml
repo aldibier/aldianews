@@ -1,0 +1,23 @@
+uuid: 8302dd53-e298-4f9a-b889-567627053436
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.al_dia_vacancy
+  module:
+    - text
+id: node.al_dia_vacancy.body
+field_name: body
+entity_type: node
+bundle: al_dia_vacancy
+label: Body
+description: 'To make a small line break, press Shift + Enter'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

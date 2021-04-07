@@ -1,0 +1,236 @@
+.field--type-comment {
+  display: flex;
+  flex-wrap: wrap;
+
+  .comment-form__title {
+    order: -2;
+    width: 100%;
+    padding: 0;
+    color: $cblack;
+  }
+
+  .comment-comments-content-form {
+    order: -1;
+    width: 100%;
+    margin: 0 auto 77px;
+
+    .form-textarea {
+      min-height: 182px;
+    }
+
+    @media (max-width: $tablet) {
+      .form-textarea {
+        min-height: 80px;
+      }
+    }
+  }
+}
+.comment {
+  position: relative;
+  background: #fbfbfb;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.17);
+  margin: 0 auto 25px;
+
+  .comment__meta {
+    position: absolute;
+    width: calc(100% - 60px);
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 25px;
+    z-index: 2;
+    padding: 0;
+  }
+
+  .comment__author a {
+    font-family: $PrNovacond-reg;
+    font-style: normal;
+    font-weight: 600;
+    font-size: $px24;
+    line-height: 140%;
+    color: $cblack0;
+    border: none;
+    text-transform: capitalize;
+  }
+
+  .comment__time {
+    font-style: normal;
+    font-weight: normal;
+    font-size: $px14;
+    line-height: 17px;
+    font-family: $PrNovacond-reg;
+    color: $cgrey3;
+  }
+
+  .comment__permalink {
+    display: none;
+  }
+
+  .comment__content {
+    padding: 100px 30px 25px;
+    display: flex;
+    flex-wrap: wrap;
+    border: none;
+
+    &:before,
+    &:after {
+      display: none;
+    }
+  }
+
+  h3 {
+    display: none;
+  }
+
+  .field--name-field-comment-body {
+    font-style: normal;
+    font-weight: normal;
+    font-size: $px20;
+    line-height: 140%;
+    color: $cblack3;
+    font-family: $PrNovacond-reg;
+    width: 100%;
+  }
+
+  .links {
+    margin: 0 0 0 auto;
+    display: flex !important;
+    font-style: normal;
+    font-size: $px20;
+    line-height: 28px;
+    font-weight: 600;
+    font-family: $PrNovacond-reg;
+    text-transform: uppercase;
+    color: $cblack3;
+    a {
+      border-bottom: 0px;
+      color: $cblack3;
+      cursor: pointer;
+    }
+  }
+}
+.comment.new span:nth-child(1) {
+  display: none;
+}
+.indented {
+  margin: -25px 0 0;
+  width: 100%;
+
+  .comment {
+    margin: 0;
+  }
+
+  .comment-show,
+  .comment-reply {
+    display: none;
+  }
+
+  .comment__meta {
+    text-align: right;
+  }
+
+  .comment__content {
+    text-align: right;
+  }
+}
+article.comment {
+  border-bottom: 1px solid $cgrey4;
+}
+section > article.comment:nth-child(1) {
+  position: relative;
+  border-bottom: 0px solid transparent;
+
+  &::before {
+    content: "COMMENTS";
+    display: block;
+    position: absolute;
+    top: -40px;
+    left: 0px;
+    font-style: normal;
+    font-size: $px19;
+    line-height: 24px;
+    font-family: $PrNovacond-bold;
+    color: $cblack;
+    letter-spacing: 0.2px;
+  }
+}
+.comment-show {
+  display: flex !important;
+  flex-direction: row-reverse;
+  text-transform: uppercase;
+  span:nth-child(1) {
+    position: relative;
+    display: flex;
+    &::after {
+      content: "ANSWERS";
+      display: block;
+      position: relative;
+      top: 0px;
+      right: -5px;
+      font-style: normal;
+      font-size: $px20;
+      line-height: 28px;
+      font-weight: 600;
+      font-family: $PrNovacond-reg;
+      color: #7e7e7e;
+    }
+  }
+  span {
+    color: #7e7e7e;
+  }
+}
+.comment-translations {
+  display: none !important;
+}
+.comment-show {
+  color: $cgrey6 !important;
+  position: relative;
+}
+.show-hide {
+  margin: 0 5px;
+}
+.comment-reply a {
+  color: $corange !important;
+  text-transform: uppercase;
+  border-bottom: 0px;
+}
+.comment-forbidden {
+  text-transform: lowercase;
+  a {
+    text-transform: uppercase;
+    color: $corange !important;
+  }
+}
+.comment-comments-content-delete-form {
+  padding: 30px;
+  text-align: center;
+  font-style: normal;
+  font-size: $px19;
+  line-height: 24px;
+  font-family: $PrNovacond-bold;
+  color: $cblack;
+  #edit-submit,
+  #edit-cancel {
+    background: $corange;
+    border: none;
+    height: 40px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: $px18;
+    color: $cwhite;
+    border-radius: 0;
+    font-family: $PrNovacond-bold;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #edit-cancel {
+    background: #5c6165;
+  }
+  .form-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,44 @@
+uuid: 2906248e-4da1-45fb-9741-347b86b2787b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.main_features.field_features_items
+    - field.field.paragraph.main_features.field_subtitle
+    - paragraphs.paragraphs_type.main_features
+  module:
+    - paragraphs
+id: paragraph.main_features.default
+targetEntityType: paragraph
+bundle: main_features
+mode: default
+content:
+  field_features_items:
+    type: paragraphs
+    weight: 1
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+    region: content
+  field_subtitle:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,84 @@
+.contact-us {
+  .container-content {
+    flex-direction: column;
+  }
+
+  .field--name-title {
+    h1 {
+      margin: 50px 0;
+      font-size: szrem(46);
+      font-family: $Mod-bold;
+      line-height: 55px;
+      color: $cblack2;
+
+      @media screen and (max-width: $broken) {
+        margin: 20px 0;
+      }
+
+      @media screen and (max-width: $tablet) {
+        font-size: szrem(20);
+        line-height: 24px;
+      }
+    }
+  }
+
+  .container-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+
+    @media screen and (max-width: $broken) {
+      margin-bottom: 40px;
+      flex-direction: column;
+    }
+
+    @media screen and (max-width: $broken) {
+      margin-bottom: 0;
+    }
+
+    .content-right-pages {
+      @media screen and (max-width: $broken) {
+        width: 100%;
+        max-width: 100%;
+        justify-content: center;
+      }
+
+      @media screen and (max-width: $broken) {
+        margin: 0;
+      }
+    }
+
+    .content-left-pages {
+
+      @media screen and (max-width: $broken) {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 0 0 30px;
+      }
+
+      p {
+        font-size: szrem(24);
+        font-weight: normal;
+      }
+
+      strong {
+        font-family: $PrNovacond-bold;
+      }
+
+      a {
+        border: none;
+        font-size: inherit;
+        font-weight: inherit;
+        text-decoration: none;
+        color: $cblack3;
+      }
+
+      @media screen and (max-width: $tablet) {
+        p {
+          font-size: szrem(15);
+          line-height: 140%;
+        }
+      }
+    }
+  }
+}

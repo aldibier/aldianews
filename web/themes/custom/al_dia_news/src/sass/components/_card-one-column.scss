@@ -1,0 +1,151 @@
+.card-one-column {
+
+  h2,
+  h3 {
+    margin: 0;
+  }
+
+  .container-wrapper {
+    position: relative;
+  }
+
+  .card-image {
+    margin-bottom: 10px;
+    position: relative;
+    $screen-query: 993px;
+
+    @media screen and (min-width: $screen-query) {
+      max-height: 235px;
+    }
+
+    a {
+      border: none;
+    }
+
+    img {
+      @media screen and (max-width: $broken) {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  .views-field-field-my-content-has-a-main-vide {
+    font-size: 0;
+
+    .field-content {
+      @include player-icon($desktop-size: 70px, $tablet-size:70px, $mobile-size:30px);
+
+      &:empty {
+        display: none;
+      }
+    }
+  }
+
+  .card-name-category {
+    margin-bottom: 10px;
+
+    @media screen and (max-width:$broken) {
+      margin-bottom: 5px;
+    }
+
+    h2 {
+      margin: 0;
+      line-height: 0;
+    }
+
+    a {
+      border: none;
+      font-size: $px18;
+      font-family: $Modcond-bold;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 22px;
+      letter-spacing: 0.08em;
+      color: $corange;
+
+      @media screen and (max-width:$tablet) {
+        font-size: $px10;
+        line-height: 12px;
+      }
+    }
+
+    &-white {
+      a {
+        color: $cgrey8;
+      }
+    }
+  }
+
+  .card-title {
+    margin-bottom: 10px;
+
+    a {
+      border: none;
+      font-size: szrem(30);
+      font-family: $PrNovacond-bold;
+      font-style: normal;
+      font-weight: bold;
+      line-height: 37px;
+      text-transform: uppercase;
+      color: $cblack;
+    }
+
+    &-white {
+      a {
+        color: $cwhite;
+      }
+    }
+
+    @media screen and (max-width: $broken) {
+      margin-bottom: 5px;
+
+      a {
+        font-size: szrem(24);
+        line-height: 29px;
+      }
+    }
+
+    @media screen and (max-width: $tablet) {
+      margin-bottom: 5px;
+
+      h3 {
+        line-height: 0;
+      }
+
+      a {
+        font-size: 14px;
+        line-height: 17px;
+      }
+    }
+  }
+
+  .card-date {
+    font-size: szrem(16);
+    font-family: $PrNovacond-reg;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 19px;
+    color: $cgrey3;
+
+    &-white {
+      color: $cwhite;
+    }
+
+    @media screen and (max-width: $tablet) {
+      font-size: 10px;
+      line-height: 12px;
+    }
+  }
+}
+
+.view-id-more_videos_in_landing {
+  .card-one-column  {
+    .container-wrapper {
+      @media screen and(max-width:767px) {
+        width: max-content;
+      }
+    }
+  }
+}

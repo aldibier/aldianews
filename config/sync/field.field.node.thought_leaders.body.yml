@@ -1,0 +1,23 @@
+uuid: 871279e8-cc9d-4f9c-9f1b-f13695344af1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.thought_leaders
+  module:
+    - text
+id: node.thought_leaders.body
+field_name: body
+entity_type: node
+bundle: thought_leaders
+label: Body
+description: 'To make a small line break, press Shift + Enter'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

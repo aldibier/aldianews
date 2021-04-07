@@ -1,0 +1,23 @@
+uuid: 99d59267-75fa-4bfc-bdbc-cc059a39434d
+langcode: en
+status: true
+dependencies:
+  config:
+    - fixed_block_content.fixed_block_content.site_description
+  module:
+    - fixed_block_content
+  theme:
+    - al_dia_news
+id: sitedescription
+theme: al_dia_news
+region: header
+weight: -24
+provider: null
+plugin: 'fixed_block_content:site_description'
+settings:
+  id: 'fixed_block_content:site_description'
+  label: 'Site description'
+  provider: fixed_block_content
+  label_display: '0'
+  view_mode: ''
+visibility: {  }

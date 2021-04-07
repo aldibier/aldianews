@@ -1,0 +1,22 @@
+uuid: e66933d0-d65b-4525-9698-46ae26cec6ea
+langcode: en
+status: true
+dependencies:
+  theme:
+    - al_dia_news
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: al_dia_news_local_tasks
+theme: al_dia_news
+region: content
+weight: -23
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

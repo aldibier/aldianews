@@ -1,0 +1,20 @@
+uuid: 6066c1a2-a181-4217-83f6-939a542fb8c7
+langcode: en
+status: true
+dependencies:
+  module:
+    - login_popup
+  theme:
+    - al_dia_news
+id: loginformpopup
+theme: al_dia_news
+region: header
+weight: -16
+provider: null
+plugin: login_form_popup
+settings:
+  id: login_form_popup
+  label: 'Login Form Popup'
+  provider: login_popup
+  label_display: '0'
+visibility: {  }

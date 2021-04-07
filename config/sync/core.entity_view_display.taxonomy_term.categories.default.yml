@@ -1,0 +1,63 @@
+uuid: 8999523b-37f8-4af6-b46d-569793bb66d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.categories
+    - views.view.last_news
+  module:
+    - layout_builder
+    - layout_discovery
+    - text
+    - views
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          a5e591c2-9370-4bc0-a561-77438f474626:
+            uuid: a5e591c2-9370-4bc0-a561-77438f474626
+            region: content
+            configuration:
+              id: 'views_block:last_news-block_1'
+              label: ''
+              provider: views
+              label_display: visible
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+          2f0f2542-2da4-4c3b-97ca-73379debf437:
+            uuid: 2f0f2542-2da4-4c3b-97ca-73379debf437
+            region: content
+            configuration:
+              id: 'views_block:last_news-block_2'
+              label: ''
+              provider: views
+              label_display: visible
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: 1
+        third_party_settings: {  }
+id: taxonomy_term.categories.default
+targetEntityType: taxonomy_term
+bundle: categories
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

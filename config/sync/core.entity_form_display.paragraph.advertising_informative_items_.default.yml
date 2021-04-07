@@ -1,0 +1,41 @@
+uuid: b2a8307d-636c-4f8c-aafd-65c59d83cd51
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.advertising_informative_items_.field_description
+    - field.field.paragraph.advertising_informative_items_.field_icon
+    - field.field.paragraph.advertising_informative_items_.field_text
+    - paragraphs.paragraphs_type.advertising_informative_items_
+  module:
+    - fontawesome
+id: paragraph.advertising_informative_items_.default
+targetEntityType: paragraph
+bundle: advertising_informative_items_
+mode: default
+content:
+  field_description:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_icon:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: fontawesome_icon_widget
+    region: content
+  field_text:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
