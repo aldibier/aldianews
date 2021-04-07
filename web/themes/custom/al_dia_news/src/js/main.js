@@ -216,4 +216,14 @@ window.onload = function () {
     allButtonsApply.forEach(buttonApply => buttonApply.addEventListener('click', showModal));
     allButtonsClose.forEach(buttonClose => buttonClose.addEventListener('click', hideModal));
   }
+
+  //// js desplegable buscador
+  var arrow = document.querySelector(".path-search-results .arrow");
+  var blocks_search = document.querySelector("#block-exposedformsearch-results-al-dia-solrpage-1");
+  var sort = document.querySelector(".block-search-api-sorts");
+  arrow.addEventListener("click", () => {
+          blocks_search.classList.toggle("open");
+        sort.classList.toggle("open-flex");
+        arrow.classList.toggle("rote");
+        });
 };

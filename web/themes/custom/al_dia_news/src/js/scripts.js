@@ -172,7 +172,7 @@ import initMain from "./main.js";
       }
     }); 
 
-    /// modal header y deplegable buscador
+    /// modal header buscador
 
     $(".block-search input").click(function() {
       $("#block-exposedformsearch-results-al-dia-solrpage-1-2").addClass("open");
@@ -184,12 +184,6 @@ import initMain from "./main.js";
         $("#block-exposedformsearch-results-al-dia-solrpage-1-2").removeClass("open");
         $(".layout-main-wrapper.layout-container").removeClass("color-mod");
       }
-    });
-
-    $(".path-search-results .arrow").click(function() {
-      $("#block-exposedformsearch-results-al-dia-solrpage-1").classList.toogle("open");
-      $(".block-search-api-sorts").classList.toggle("open-flex");
-      $(".path-search-results .arrow").classList.toggle("rote");
     });
 
     var $window = $(window);
