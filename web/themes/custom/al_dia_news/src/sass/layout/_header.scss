@@ -14,7 +14,7 @@
 .site-branding__logo{
     max-width: 257px;
     padding-right: 15px;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
 body.open-menu {
@@ -501,6 +501,9 @@ body.open-menu {
     max-width: 1315px;
     margin: 0 auto;
     position: relative;
+    @media(min-width:$desktop){
+        max-height: 90px;
+    }
     &:after {
         display: block;
         height: 15px;
@@ -578,7 +581,7 @@ body.open-menu {
         order: 2;
         max-width: 272px;
         max-height: 75px;
-        margin: -18px 0 10px;
+        margin: -18px 0 10px 20px;
         z-index: 2;
 
         .site-branding__text {
@@ -604,6 +607,7 @@ body.open-menu {
         p{
             margin: 0 0 7px 0;
             font-family: $NimS-reg;
+            letter-spacing: 0.025em;
         }
     }
 
@@ -626,7 +630,7 @@ body.open-menu {
 
             input {
                 width: 100%;
-                height: 100%;
+                height: 45px;
                 display: block;
                 background: transparent url("../img/search.svg") center center no-repeat;
                 border: none;
@@ -733,7 +737,8 @@ body.open-menu {
         text-align: center;
         margin: 0 auto;
         text-transform: uppercase;
-        font-family: $PrNovacond-reg;
+        font-family: $PrNovacond-Sbold;
+        letter-spacing: 0.741176px;
     }
 
     #block-loginformpopup {
@@ -747,8 +752,9 @@ body.open-menu {
             font-size: 16px;
             line-height: 25px;
             color: $corange;
-            font-family: $PrNovacond-reg;
+            font-family: $PrNovacond-Sbold;
             text-transform: uppercase;
+            letter-spacing: 0.741176px;
         }
     }
 
