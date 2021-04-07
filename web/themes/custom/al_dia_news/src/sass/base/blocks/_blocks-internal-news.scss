@@ -790,4 +790,9 @@ div#selectionSharerPopover {
   transform: translateY(100%);
   animation: fade-in-up 0.75s ease forwards;
   z-index: 1;
+
+  @media(max-width:$tablet){
+    width: 275px;
+    height: 177px;
+  }
 }
