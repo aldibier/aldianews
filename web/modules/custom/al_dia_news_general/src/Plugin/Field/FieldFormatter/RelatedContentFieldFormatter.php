@@ -101,7 +101,7 @@ class RelatedContentFieldFormatter extends FormatterBase {
         $target_ids[] = $tag['target_id'];
       }
 
-      $tags_list = implode(',', $target_ids);
+      $tags_list = implode('+', $target_ids);
 
       // get view ids of related content according to node bundle
       switch ($entity->getType()) {
@@ -121,6 +121,7 @@ class RelatedContentFieldFormatter extends FormatterBase {
       $view = \Drupal\views\Views::getView($view_id);
       $view->setDisplay($view_display);
       $view->setArguments([$nodeId, $tags_list]);
+      dsm($tags_list);
 
       $title = $view->getTitle();
       // Render.
@@ -176,7 +177,7 @@ class RelatedContentFieldFormatter extends FormatterBase {
         $position = $position + 1;
       }
     }else{
-      $par = null;
+      $position = 1;
     }
 
     // insert a token into html to be replaced
