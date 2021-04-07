@@ -8,21 +8,9 @@
   background: $cwhite;
   max-width: 640px;
   border-bottom: 1px solid #b1b1b1;
-  > .content {
-    padding-right: 25px;
-    position: relative;
-    &::before {
-      position: absolute;
-      display: block;
-      content: "";
-      width: 20px;
-      height: 20px;
-      right: 5px;
-      top: 20px;
-      background: transparent url("../img/close.svg") center center no-repeat;
-      background-size: contain;
-      z-index: 2;
-    }
+  display: none;
+  &.open{
+    display: block;
   }
   .form-item-field-category {
     display: none;
@@ -33,6 +21,18 @@
   }
   label {
     display: none;
+  }
+  button[name="close"] {
+    position: absolute;
+    top: 20px;
+    right: 4px;
+    width: 20px;
+    height: 20px;
+    display: block;
+    font-size: 0;
+    background: url("../img/close.svg") center center no-repeat;
+    border: none;
+    cursor: pointer;
   }
   .form-type-textfield {
     padding: 0px 15px 0px 55px;
@@ -66,7 +66,7 @@
     }
   }
   .form-actions {
-    margin: 0 30px 0 0;
+    margin: 0 50px 0 0;
   }
 }
 
@@ -117,10 +117,14 @@
 
 /// bloque buscador formulario
 #block-exposedformsearch-results-al-dia-solrpage-1 {
+  margin-bottom: 70px;
   .form--inline {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
+  }
+  button[name="close"]{
+    display: none;
   }
   .form-item {
     margin: 0px;
@@ -149,6 +153,7 @@
     font-family: $PrNovacond-reg;
     color: #8b8b8b;
     border-right: 14px solid #ededed;
+    border-left: 14px solid #ededed;
   }
   .form-type-textfield {
     width: 100%;
@@ -165,19 +170,6 @@
   }
 }
 
-//// descripcion de token
-#block-al-dia-news-content .search-results--text {
-  font-style: normal;
-  font-weight: normal;
-  font-size: $px22;
-  line-height: 26.84px;
-  font-family: $PrNovacond-reg;
-  color: $cblack3;
-  margin-bottom: 80px;
-  span {
-    font-family: $PrNovacond-Sbold;
-  }
-}
 
 /// bloqur solr
 .block-search-api-sorts{
@@ -192,14 +184,16 @@
     font-size: $px20;
     line-height: 23px;
     letter-spacing: 0.025em;
-    font-family: $PrNovacond-reg;
+    font-family: $PrNovacond-Sbold;
     color: $cblack3;
     text-transform: uppercase;
   }
   h2{
     color: #8E8E8E;
+    font-family: $PrNovacond-reg;
+
   }
-  ul{
+  .item-list ul{
     display: flex;
   }
   .is-active{
@@ -225,15 +219,6 @@ position: relative;
     bottom: -142px;
     min-height: 110px;
     border-bottom: 0px;
-    > .content {
-      padding: 15px 20px 15px 15px;
-      &::before {
-        width: 15px;
-        height: 15px;
-        left: 20px;
-        top: 15px;
-      }
-    }
     form > .form--inline {
       flex-wrap: wrap;
     }
@@ -331,17 +316,13 @@ position: relative;
     }
   }
 
-  //// descripcion de token
-  #block-al-dia-news-content .search-results--text {
-    font-style: normal;
-    font-weight: normal;
-    font-size: $px22;
-    line-height: 26.84px;
-    font-family: $PrNovacond-reg;
-    color: $cblack3;
-    margin-bottom: 80px;
-    span {
-      font-family: $PrNovacond-Sbold;
-    }
+  //// arrow
+  .path-search-results .arrow{
+      background: transparent url(../img/arrow.png) center center no-repeat;
+      background-size: contain;
+      width: 20px;
+      height: 12px;
+      margin: 0 auto 24px;
+
   }
 }

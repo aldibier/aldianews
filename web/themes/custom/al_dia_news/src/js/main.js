@@ -204,29 +204,25 @@ window.addEventListener("DOMContentLoaded", () => {
   //// js para controlar pop-up advertising
   if (!!document.querySelector('.path-advertising')) {
     const allButtonsApply = document.querySelectorAll('.button-apply');
-    const allButtonsClose = document.querySelectorAll('button[name="close"]');
+    const allButtonsClose = document.querySelectorAll('[name="close"]');
+
+    console.log(allButtonsClose);
 
     const showModal = (event) => {
-      const parent = event.path.find(elementPath => elementPath.classList.contains('views-row'));
-      const form = parent.querySelector('.views-field-field-webform');
+      const parent = event.path.find(elementPath => elementPath.classList.contains('advertising-card'));
+      const form = parent.querySelector('.modal-form');
       form.classList.add('show');
     }
 
     const hideModal = (event) => {
-      const form = event.path.find(elementPath => elementPath.classList.contains('views-field-field-webform'));
+      console.log('click!');
+      const form = event.path.find(elementPath => elementPath.classList.contains('modal-form'));
+      console.log(form);
       form.classList.remove('show');
     }
 
     allButtonsApply.forEach(buttonApply => buttonApply.addEventListener('click', showModal));
     allButtonsClose.forEach(buttonClose => buttonClose.addEventListener('click', hideModal));
-
-    //js temporary
-    const buttonApply = document.querySelector('.block-fixed-block-contentinformation-footer-advertising + .button-apply');
-    const buttonClose = document.querySelector('.modal-apply-webform')
-    const lastForm = document.querySelector('.modal-apply-webform button[name="close"]');
-
-    buttonApply.addEventListener('click', () => lastForm.classList.add('show'));
-    buttonClose.addEventListener('click', () => lastForm.classList.remove('show'))
   }
 
 });
