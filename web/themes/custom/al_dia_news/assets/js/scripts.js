@@ -1381,41 +1381,51 @@ window.onload = function () {
   } //// js para controlar pop-up advertising
 
 
-  if (!!document.querySelector('.path-advertising')) {
-    var allButtonsApply = document.querySelectorAll('.button-apply');
-    var allButtonsClose = document.querySelectorAll('.webform-contact-employer .close-modal');
+  if (!!document.querySelector(".path-advertising")) {
+    var allButtonsApply = document.querySelectorAll(".button-apply");
+    var allButtonsClose = document.querySelectorAll(".webform-contact-employer .close-modal");
 
     var showModal = function showModal(event) {
       var parent = event.path.find(function (elementPath) {
-        return elementPath.classList.contains('advertising-card');
+        return elementPath.classList.contains("advertising-card");
       });
-      var form = parent.querySelector('.modal-form');
-      form.classList.add('show');
+      var form = parent.querySelector(".modal-form");
+      form.classList.add("show");
     };
 
     var hideModal = function hideModal(event) {
       var form = event.path.find(function (elementPath) {
-        return elementPath.classList.contains('modal-form');
+        return elementPath.classList.contains("modal-form");
       });
-      form.classList.remove('show');
+      form.classList.remove("show");
     };
 
     allButtonsApply.forEach(function (buttonApply) {
-      return buttonApply.addEventListener('click', showModal);
+      return buttonApply.addEventListener("click", showModal);
     });
     allButtonsClose.forEach(function (buttonClose) {
-      return buttonClose.addEventListener('click', hideModal);
+      return buttonClose.addEventListener("click", hideModal);
     });
-  } //// js desplegable buscador
+  } //// js desplegable buscador y close modal
 
 
   var arrow = document.querySelector(".path-search-results .arrow");
   var blocks_search = document.querySelector("#block-exposedformsearch-results-al-dia-solrpage-1");
   var sort = document.querySelector(".block-search-api-sorts");
-  arrow.addEventListener("click", function () {
-    blocks_search.classList.toggle("open");
-    sort.classList.toggle("open-flex");
-    arrow.classList.toggle("rote");
+
+  if (arrow != null && blocks_search != null && sort != null) {
+    arrow.addEventListener("click", function () {
+      blocks_search.classList.toggle("open");
+      sort.classList.toggle("open-flex");
+      arrow.classList.toggle("rote");
+    });
+  }
+
+  var close = document.querySelector('#block-exposedformsearch-results-al-dia-solrpage-1-2  button[name="close"]');
+  close.addEventListener("click", function () {
+    if (close != null && close.parentElement.classList.contains("open")) {
+      close.parentElement.classList.remove("open");
+    }
   });
 };
 
@@ -1484,7 +1494,7 @@ __webpack_require__.r(__webpack_exports__);
   var sharer = new _assets_libraries_selection_sharer_selection_sharer_js__WEBPACK_IMPORTED_MODULE_1___default.a();
   sharer.setElements("p,a,h1,h2,h3,blockquote,em,strong"); // Replace key word by another value
 
-  var headingTags = document.querySelectorAll('h1, h2, h3');
+  var headingTags = document.querySelectorAll("h1, h2, h3");
   var paragraphTags = document.querySelectorAll("p");
   var aldiaLogoStructure = "<span class=\"aldia-logo-in-text\" title=\"AL D\xCDA\">\n                                <img alt=\"AL D\xCDA\" src=\"".concat(drupalSettings.path.baseUrl, "themes/custom/al_dia_news/assets/img/aldia.svg\">\n                              </span>");
   Object(_modules_replaceToken__WEBPACK_IMPORTED_MODULE_4__["default"])("AL DÍA", aldiaLogoStructure, headingTags);
@@ -1590,26 +1600,20 @@ __webpack_require__.r(__webpack_exports__);
       $("#block-exposedformsearch-results-al-dia-solrpage-1-2").addClass("open");
       $(".layout-main-wrapper.layout-container").addClass("color-mod");
     });
-    $('#block-exposedformsearch-results-al-dia-solrpage-1-2  button[name="close"]').click(function () {
-      if ($("#block-exposedformsearch-results-al-dia-solrpage-1-2").hasClass("open")) {
-        $("#block-exposedformsearch-results-al-dia-solrpage-1-2").removeClass("open");
-        $(".layout-main-wrapper.layout-container").removeClass("color-mod");
-      }
-    });
     var $window = $(window);
-    var $videoWrap = $('.page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video');
-    var $video = $('.page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video .content');
+    var $videoWrap = $(".page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video");
+    var $video = $(".page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video .content");
     var videoHeight = $video.outerHeight();
-    $window.on('scroll', function () {
+    $window.on("scroll", function () {
       var windowScrollTop = $window.scrollTop();
       var videoBottom = videoHeight + $videoWrap.offset().top;
 
       if (windowScrollTop > videoBottom) {
         $videoWrap.height(videoHeight);
-        $video.addClass('stuck');
+        $video.addClass("stuck");
       } else {
-        $videoWrap.height('auto');
-        $video.removeClass('stuck');
+        $videoWrap.height("auto");
+        $video.removeClass("stuck");
       }
     });
     Object(_slick_js__WEBPACK_IMPORTED_MODULE_3__["default"])($, Drupal);
