@@ -20,6 +20,12 @@ import initMain from "./main.js";
   replaceToken("{aldia}", aldiaLogoStructure, paragraphTags);
 
   jQuery(document).ready(function() {
+
+    var url =  $(".page-node-type-news .video-embed-field-responsive-video iframe")[0].src += "&mute=1"; 
+    var video = url.replace('autoplay=0', 'autoplay=1');
+    $(".page-node-type-news .video-embed-field-responsive-video iframe").attr("src",video);
+
+
     //--------- menu--------------------//
     $(".region-header #block-blockheader").click(function() {
       if ($(".region-secondary-menu").hasClass("open-menu")) {
@@ -203,9 +209,6 @@ import initMain from "./main.js";
         }
       });
 
-      var url =  $(".page-node-type-news .video-embed-field-responsive-video iframe")[0].src += "&mute=1"; 
-      var video = url.replace('autoplay=0', 'autoplay=1');
-      $(".page-node-type-news .video-embed-field-responsive-video iframe").attr("src",video);
     }
 
     initSlick($, Drupal);
