@@ -21,10 +21,16 @@ import initMain from "./main.js";
 
   jQuery(document).ready(function() {
 
-    var url =  $(".page-node-type-news .video-embed-field-responsive-video iframe")[0].src += "&mute=1"; 
-    var video = url.replace('autoplay=0', 'autoplay=1');
-    $(".page-node-type-news .video-embed-field-responsive-video iframe").attr("src",video);
+    var $window = $(window);
+    var $videoWrap = $(
+      ".page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video"
+    );
+    var $video = $(
+      ".page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video .content"
+    );
+    var videoHeight = $video.outerHeight();
     
+
     $window.on('scroll',  function() {
       var windowScrollTop = $window.scrollTop();
       var videoBottom = videoHeight + $videoWrap.offset().top;
@@ -37,6 +43,10 @@ import initMain from "./main.js";
         $video.removeClass('stuck');
       }
     });
+
+    var url =  $(".page-node-type-news .video-embed-field-responsive-video iframe")[0].src += "&mute=1"; 
+    var video = url.replace('autoplay=0', 'autoplay=1');
+    $(".page-node-type-news .video-embed-field-responsive-video iframe").attr("src",video);
 
 
     //--------- menu--------------------//
@@ -199,15 +209,6 @@ import initMain from "./main.js";
       $(".layout-main-wrapper.layout-container").addClass("color-mod");
     });
 
-    var $window = $(window);
-    var $videoWrap = $(
-      ".page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video"
-    );
-    var $video = $(
-      ".page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video .content"
-    );
-    var videoHeight = $video.outerHeight();
-    
     
 
     initSlick($, Drupal);
