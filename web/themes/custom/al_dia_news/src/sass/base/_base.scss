@@ -2,6 +2,17 @@
   padding: 0;
 }
 
+.main-news-body {
+  color: initial;
+  margin-bottom: initial;
+  font-size: initial;
+  font-family: initial;
+  font-style: initial;
+  font-weight: initial;
+  line-height: initial;
+  display: initial;
+}
+
 .field--type-image img,
 .field--name-user-picture img {
   margin: 0;
@@ -154,12 +165,9 @@ body.toolbar-tray-open.user-logged-in {
     }
   }
 }
-*:focus{
-  outline: 0px;
-}
 
 select {
-  background: #ededed url(../img/fle.png); /*aquí deberás escribir la ruta de la imagen que utilizarás como flecha del desplegable*/
+  background-image: url(../img/fle.png); /*aquí deberás escribir la ruta de la imagen que utilizarás como flecha del desplegable*/
   background-repeat: no-repeat;
   background-position: right center;
   -webkit-appearance: none;
