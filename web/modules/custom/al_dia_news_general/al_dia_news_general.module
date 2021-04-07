@@ -61,6 +61,9 @@ function al_dia_news_form_views_exposed_form_alter(&$form, &$form_state) {
   if($form["#id"] == 'views-exposed-form-more-videos-in-landing-block-1'){
     $form['tid']['#options']['All'] = 'Any';
   }
+  if($form["#id"] == 'views-exposed-form-search-results-al-dia-solr-page-1'){
+    $form['field_category']['#options']['All'] = 'Select';
+  }
 }
 
 
