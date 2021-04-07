@@ -115,7 +115,7 @@
       }
 
       @media screen and (max-width: $broken) {
-        padding: 77px 15px;
+        padding: 67.5px 15px;
       }
 
 
@@ -144,10 +144,17 @@
       }
 
       .video-embed-field-provider-youtube {
+        height: 490px;
+        
+        @media screen and (max-width: $broken) {
+          height: 100%;
+        }
+
         @media screen and (max-width: $tablet) {
           position: relative;
           padding-bottom: 56.25%;
           height: 0;
+          min-height: 165px;
           overflow: hidden
         }
       }

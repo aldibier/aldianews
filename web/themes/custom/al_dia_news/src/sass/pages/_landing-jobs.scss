@@ -193,9 +193,12 @@
     bottom: 320px;
     left: 65px;
   }
-  .aldia-logo-in-text img {
-    width: 200px;
-    height: 60px;
+  .aldia-logo-in-text {
+    max-width: none;
+    img {
+      width: 200px;
+      height: 62px;
+    }
   }
   .region-content {
     display: flex;
@@ -722,7 +725,7 @@
 @media (max-width: $tablet) {
   .jobs.style-jobs {
     h1 {
-      bottom: 110px; 
+      bottom: 110px;
       left: 25px;
       padding: 0px;
     }
