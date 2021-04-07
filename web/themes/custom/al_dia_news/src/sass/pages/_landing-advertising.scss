@@ -57,6 +57,21 @@
   }
 
   .views-field-field-image {
+    @media (max-width: $tablet) {
+      display: none;
+    }
+  }
+
+  .views-field-field-mobile-image {
+    display: none;
+
+    @media (max-width: $tablet) {
+      display: block;
+    }
+  }
+
+  .views-field-field-image,
+  .views-field-field-mobile-image {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -313,6 +328,21 @@
     }
 
     .title-employer {
+      @media (max-width: $tablet) {
+        display: none;
+      }
+    }
+
+    .title-employer-mobile {
+      display: none;
+
+      @media (max-width: $tablet) {
+        display: block;
+      }
+    }
+
+    .title-employer,
+    .title-employer-mobile {
       width: auto;
       height: 70px;
       margin-bottom: 16px;
@@ -578,7 +608,7 @@
 .block-webform-block,
 .block-views-blockheader-advertising-landing-block-1 {
 
-  .modal-apply-webform {
+  .modal-form {
     display: none;
     position: fixed;
     width: 100%;
@@ -669,6 +699,7 @@
       height: 100%;
       display: flex;
       flex-wrap: wrap;
+      overscroll-behavior: contain;
     }
 
     [id*="edit-information-text"] {
