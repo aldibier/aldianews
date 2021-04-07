@@ -26,7 +26,7 @@ reactions:
         provider: system
         label_display: '0'
         region: content
-        weight: '-1'
+        weight: '-2'
         context_mapping: {  }
         custom_id: system_main_block
         theme: al_dia_news
@@ -42,7 +42,7 @@ reactions:
         views_label: ''
         items_per_page: none
         region: content
-        weight: '0'
+        weight: '-1'
         context_mapping: {  }
         custom_id: views_block_header_advertising_landing_block_1
         theme: al_dia_news
@@ -55,8 +55,8 @@ reactions:
         label: 'Information footer Advertising'
         provider: fixed_block_content
         label_display: '0'
-        region: content
-        weight: '1'
+        region: advertising_webform
+        weight: '-7'
         view_mode: ''
         context_mapping: {  }
         custom_id: fixed_block_content_information_footer_advertising
@@ -73,8 +73,8 @@ reactions:
         webform_id: contact_us_advertising_landing
         default_data: ''
         redirect: 0
-        region: content
-        weight: '2'
+        region: advertising_webform
+        weight: '-2'
         context_mapping: {  }
         custom_id: webform_block
         theme: al_dia_news
@@ -82,6 +82,20 @@ reactions:
         unique: 0
         context_id: advertising
         uuid: 50a28dd4-a057-41c6-a9f2-da7fcb9bea2e
+      dd03b2b2-9c41-4388-9b3d-9159408aae19:
+        id: 'block_group:advertising_webform'
+        label: 'Advertising webform'
+        provider: blockgroup
+        label_display: '0'
+        region: content
+        weight: '0'
+        context_mapping: {  }
+        custom_id: block_group_advertising_webform
+        theme: al_dia_news
+        css_class: advertising-card
+        unique: 0
+        context_id: advertising
+        uuid: dd03b2b2-9c41-4388-9b3d-9159408aae19
     id: blocks
     saved: false
     uuid: cd435262-caab-47c7-9c29-b6aa3d857682
