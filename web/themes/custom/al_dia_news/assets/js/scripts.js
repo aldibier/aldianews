@@ -1426,7 +1426,14 @@ window.onload = function () {
     if (close != null && close.parentElement.classList.contains("open")) {
       close.parentElement.classList.remove("open");
     }
-  });
+  }); // js bloque login en comentarios
+
+  var comments = document.querySelector(".block-field-blocknodenewsfield-comments .comment");
+  var block_login_c = document.querySelector("#block-blockcommentanonymous");
+
+  if (comments != null && block_login_c != null) {
+    block_login_c.style.display = "none";
+  }
 };
 
 /***/ }),

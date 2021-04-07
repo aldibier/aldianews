@@ -176,7 +176,7 @@ section > article.comment:nth-child(1) {
     }
   }
   span {
-    color: #7e7e7e;
+    color: #7e7e7e !important;
   }
 }
 .comment-translations {
@@ -232,5 +232,20 @@ section > article.comment:nth-child(1) {
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+}
+
+.Login-Register-popup-link {
+  font-style: normal;
+  font-size: $px20;
+  line-height: 28px;
+  font-weight: 600;
+  font-family: $PrNovacond-reg;
+  color: $cblack3;
+  a {
+    border-bottom: 0px;
+    color: $cblack3;
+    text-transform: uppercase;
+    cursor: pointer;
   }
 }
