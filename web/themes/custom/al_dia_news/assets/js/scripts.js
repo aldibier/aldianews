@@ -1387,18 +1387,19 @@ window.addEventListener("DOMContentLoaded", function () {
   if (!!document.querySelector('.path-advertising')) {
     var allButtonsApply = document.querySelectorAll('.button-apply');
     var allButtonsClose = document.querySelectorAll('button[name="close"]');
+    console.log(allButtonsClose);
 
     var showModal = function showModal(event) {
       var parent = event.path.find(function (elementPath) {
-        return elementPath.classList.contains('views-row');
+        return elementPath.classList.contains('advertising-card');
       });
-      var form = parent.querySelector('.views-field-field-webform');
+      var form = parent.querySelector('.modal-apply-webform');
       form.classList.add('show');
     };
 
     var hideModal = function hideModal(event) {
       var form = event.path.find(function (elementPath) {
-        return elementPath.classList.contains('views-field-field-webform');
+        return elementPath.classList.contains('modal-apply-webform');
       });
       form.classList.remove('show');
     };
@@ -1408,16 +1409,6 @@ window.addEventListener("DOMContentLoaded", function () {
     });
     allButtonsClose.forEach(function (buttonClose) {
       return buttonClose.addEventListener('click', hideModal);
-    }); //js temporary
-
-    var buttonApply = document.querySelector('.block-fixed-block-contentinformation-footer-advertising + .button-apply');
-    var buttonClose = document.querySelector('.modal-apply-webform');
-    var lastForm = document.querySelector('.modal-apply-webform button[name="close"]');
-    buttonApply.addEventListener('click', function () {
-      return lastForm.classList.add('show');
-    });
-    buttonClose.addEventListener('click', function () {
-      return lastForm.classList.remove('show');
     });
   }
 });
@@ -1485,7 +1476,7 @@ __webpack_require__.r(__webpack_exports__);
 (function ($, Drupal) {
   // Selection share
   var sharer = new _assets_libraries_selection_sharer_selection_sharer_js__WEBPACK_IMPORTED_MODULE_1___default.a();
-  sharer.setElements("p,a,h1,h2,h3,blockquote"); // Replace key word by another value
+  sharer.setElements("p,a,h1,h2,h3,blockquote,em,strong"); // Replace key word by another value
 
   var headingTags = document.querySelectorAll('h1, h2, h3');
   var paragraphTags = document.querySelectorAll("p");
@@ -1780,8 +1771,8 @@ var initSlick = function initSlick($, Drupal) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/andresmartinez/sites/News/code/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
-module.exports = __webpack_require__(/*! /Users/andresmartinez/sites/News/code/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
+__webpack_require__(/*! /Users/usuario/Desktop/Proyectos/AlDiaNews/4ld14-n3ws/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
+module.exports = __webpack_require__(/*! /Users/usuario/Desktop/Proyectos/AlDiaNews/4ld14-n3ws/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
 
 
 /***/ })
