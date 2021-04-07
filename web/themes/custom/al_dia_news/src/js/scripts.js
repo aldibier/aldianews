@@ -20,6 +20,25 @@ import initMain from "./main.js";
   replaceToken("{aldia}", aldiaLogoStructure, paragraphTags);
 
   jQuery(document).ready(function() {
+
+    var url =  $(".page-node-type-news .video-embed-field-responsive-video iframe")[0].src += "&mute=1"; 
+    var video = url.replace('autoplay=0', 'autoplay=1');
+    $(".page-node-type-news .video-embed-field-responsive-video iframe").attr("src",video);
+    
+    $window.on('scroll',  function() {
+      var windowScrollTop = $window.scrollTop();
+      var videoBottom = videoHeight + $videoWrap.offset().top;
+      
+      if (windowScrollTop > videoBottom) {
+        $videoWrap.height(videoHeight);
+        $video.addClass('stuck');
+      } else {
+        $videoWrap.height('auto');
+        $video.removeClass('stuck');
+      }
+    });
+
+
     //--------- menu--------------------//
     $(".region-header #block-blockheader").click(function() {
       if ($(".region-secondary-menu").hasClass("open-menu")) {
@@ -189,24 +208,7 @@ import initMain from "./main.js";
     );
     var videoHeight = $video.outerHeight();
     
-    if(!!$video && document.querySelector('.path-node page-node-type-news')){
-      $window.on('scroll',  function() {
-        var windowScrollTop = $window.scrollTop();
-        var videoBottom = videoHeight + $videoWrap.offset().top;
-        
-        if (windowScrollTop > videoBottom) {
-          $videoWrap.height(videoHeight);
-          $video.addClass('stuck');
-        } else {
-          $videoWrap.height('auto');
-          $video.removeClass('stuck');
-        }
-      });
-
-      var url =  $(".page-node-type-news .video-embed-field-responsive-video iframe")[0].src += "&mute=1"; 
-      var video = url.replace('autoplay=0', 'autoplay=1');
-      $(".page-node-type-news .video-embed-field-responsive-video iframe").attr("src",video);
-    }
+    
 
     initSlick($, Drupal);
   });
