@@ -1587,6 +1587,15 @@ __webpack_require__.r(__webpack_exports__);
       } else {
         $(this).parents(".views-row").find(".views-field-field-webform").addClass("open");
       }
+    }); /// model header
+
+    $(".block-search input").click(function () {
+      $("#block-exposedformsearch-results-al-dia-solrpage-1-2").addClass("open");
+    });
+    $('#block-exposedformsearch-results-al-dia-solrpage-1-2  button[name="close"]').click(function () {
+      if ($("#block-exposedformsearch-results-al-dia-solrpage-1-2").hasClass("open")) {
+        $("#block-exposedformsearch-results-al-dia-solrpage-1-2").removeClass("open");
+      }
     });
     var $window = $(window);
     var $videoWrap = $('.page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video');
@@ -1780,8 +1789,8 @@ var initSlick = function initSlick($, Drupal) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/andresmartinez/sites/News/code/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
-module.exports = __webpack_require__(/*! /Users/andresmartinez/sites/News/code/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
+__webpack_require__(/*! C:\Users\valer\Desktop\4ld14-n3ws\web\themes\custom\al_dia_news\src\js\scripts.js */"./src/js/scripts.js");
+module.exports = __webpack_require__(/*! C:\Users\valer\Desktop\4ld14-n3ws\web\themes\custom\al_dia_news\src\sass\styles.scss */"./src/sass/styles.scss");
 
 
 /***/ })

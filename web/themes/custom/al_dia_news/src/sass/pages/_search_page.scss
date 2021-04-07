@@ -8,6 +8,10 @@
   background: $cwhite;
   max-width: 640px;
   border-bottom: 1px solid #b1b1b1;
+  display: none;
+  &.open{
+    display: block;
+  }
   .form-item-field-category {
     display: none;
   }
@@ -20,8 +24,8 @@
   }
   button[name="close"] {
     position: absolute;
-    top: 50px;
-    right: 75px;
+    top: 20px;
+    right: 4px;
     width: 20px;
     height: 20px;
     display: block;
@@ -62,7 +66,7 @@
     }
   }
   .form-actions {
-    margin: 0 30px 0 0;
+    margin: 0 50px 0 0;
   }
 }
 
@@ -113,6 +117,7 @@
 
 /// bloque buscador formulario
 #block-exposedformsearch-results-al-dia-solrpage-1 {
+  margin-bottom: 70px;
   .form--inline {
     display: flex;
     align-items: flex-end;
@@ -148,6 +153,7 @@
     font-family: $PrNovacond-reg;
     color: #8b8b8b;
     border-right: 14px solid #ededed;
+    border-left: 14px solid #ededed;
   }
   .form-type-textfield {
     width: 100%;
@@ -178,12 +184,14 @@
     font-size: $px20;
     line-height: 23px;
     letter-spacing: 0.025em;
-    font-family: $PrNovacond-reg;
+    font-family: $PrNovacond-Sbold;
     color: $cblack3;
     text-transform: uppercase;
   }
   h2{
     color: #8E8E8E;
+    font-family: $PrNovacond-reg;
+
   }
   .item-list ul{
     display: flex;
@@ -315,6 +323,6 @@ position: relative;
       width: 20px;
       height: 12px;
       margin: 0 auto 24px;
-      
+
   }
 }
