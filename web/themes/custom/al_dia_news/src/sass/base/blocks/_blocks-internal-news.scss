@@ -52,7 +52,7 @@
     font-size: $px76;
     line-height: 112.8%;
     color: $cblack;
-    font-family: $Modcond-reg;
+    font-family: $Modcond-bold;
     margin: 60px 0 20px;
   }
 
@@ -292,14 +292,35 @@ blockquote {
   }
 
   @media (max-width: $tablet) {
+    display: flex;
+    align-items: center;
+    padding: 0;
+
     p {
+      padding: 10px;
       font-size: 18px;
       line-height: 140%;
     }
 
+    &:before,
     &:after {
-      right: 25px;
-      top: 44px;
+      width: 30px;
+      height: 30px;
+      position: relative;
+      top: initial;
+      bottom: initial;
+      left: initial;
+      right: initial;
+      font-size: szrem(80);
+      line-height: 1;
+    }
+
+    &:before {
+      align-self: flex-start;
+    }
+  
+    &:after {
+      align-self: flex-end;
     }
   }
 }
@@ -341,14 +362,14 @@ blockquote {
 
   blockquote,
   blockquote>p {
-    font-family: $NimS-reg;
+    font-family: $NimR-reg;
     font-style: normal;
     font-size: szrem(28);
     line-height: 140%;
     color: $cgrey2;
 
-    @media (max-width: $tablet) { 
-      font-size: szrem(18px);
+    @media (max-width: $tablet) {
+      font-size: szrem(18);
     }
   }
 
