@@ -1406,7 +1406,17 @@ window.onload = function () {
     allButtonsClose.forEach(function (buttonClose) {
       return buttonClose.addEventListener('click', hideModal);
     });
-  }
+  } //// js desplegable buscador
+
+
+  var arrow = document.querySelector(".path-search-results .arrow");
+  var blocks_search = document.querySelector("#block-exposedformsearch-results-al-dia-solrpage-1");
+  var sort = document.querySelector(".block-search-api-sorts");
+  arrow.addEventListener("click", function () {
+    blocks_search.classList.toggle("open");
+    sort.classList.toggle("open-flex");
+    arrow.classList.toggle("rote");
+  });
 };
 
 /***/ }),
@@ -1574,7 +1584,7 @@ __webpack_require__.r(__webpack_exports__);
       } else {
         $(this).parents(".views-row").find(".views-field-field-webform").addClass("open");
       }
-    }); /// modal header y deplegable buscador
+    }); /// modal header buscador
 
     $(".block-search input").click(function () {
       $("#block-exposedformsearch-results-al-dia-solrpage-1-2").addClass("open");
@@ -1585,11 +1595,6 @@ __webpack_require__.r(__webpack_exports__);
         $("#block-exposedformsearch-results-al-dia-solrpage-1-2").removeClass("open");
         $(".layout-main-wrapper.layout-container").removeClass("color-mod");
       }
-    });
-    $(".path-search-results .arrow").click(function () {
-      $("#block-exposedformsearch-results-al-dia-solrpage-1").classList.toogle("open");
-      $(".block-search-api-sorts").classList.toggle("open-flex");
-      $(".path-search-results .arrow").classList.toggle("rote");
     });
     var $window = $(window);
     var $videoWrap = $('.page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video');

@@ -140,10 +140,12 @@
   }
   input,
   select {
-    background: #ededed;
-    border: 0px;
     min-height: 50px;
     width: 100%;
+  }
+  input{
+    background: #ededed;
+    border: 0px;
   }
   select {
     font-style: normal;
@@ -154,6 +156,8 @@
     color: #8b8b8b;
     border-right: 14px solid #ededed;
     border-left: 14px solid #ededed;
+    border-top:0px;
+    border-bottom:0px;
   }
   .form-type-textfield {
     width: 100%;
@@ -319,7 +323,6 @@ position: relative;
     }
     input,
     select {
-      background: #ededed;
       border: 0px;
       min-height: 50px;
       width: 100%;
@@ -374,10 +377,11 @@ position: relative;
       font-family: $PrNovacond-bold;
     }
     h2{
-      margin: 2px 0px;
+      margin: 0px 3px 0px 0px;
+      font-size: $px14;
     }
     .item-list ul{
-      margin: 0px;
+      margin: 0 0 1px;
       li{
         margin: 0 3px;
       }
