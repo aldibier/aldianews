@@ -3,6 +3,7 @@
     margin: 0 auto;
     max-height: 730px;
     overflow: hidden;
+
     @media screen and (min-width: $broken) {
       margin: 0 auto;
     }
@@ -14,14 +15,17 @@
   div.field--name-field-video {
     max-height: 730px;
     overflow: hidden;
+
     iframe,
     video {
       height: 730px;
     }
   }
+
   div.field--name-field-image {
     margin: 0 -15px;
     max-height: 180px;
+
     @media screen and (min-width: $broken) {
       margin: 0 -80px;
     }
@@ -63,7 +67,7 @@
     line-height: 140%;
     font-family: $PrNovacond-reg;
 
-    > .content {
+    >.content {
       padding: 0;
     }
   }
@@ -71,11 +75,13 @@
   @media (max-width: $tablet) {
     div.field--name-field-video {
       max-height: 400px;
+
       iframe,
       video {
         height: 400px;
       }
     }
+
     .block-field-blocknodenewsfield-caption {
       font-size: 11px;
       line-height: 13px;
@@ -93,9 +99,11 @@
       line-height: 140%;
     }
   }
+
   @media (max-width: $mobile-max) {
     div.field--name-field-video {
       max-height: 180px;
+
       iframe,
       video {
         height: 180px;
@@ -103,8 +111,10 @@
     }
   }
 }
+
 //  estilo para video en interna noticias
 .content-news-internal-first.video-present {
+
   .block-field-blocknodenewsfield-image,
   div.field--name-field-image {
     display: none;
@@ -216,13 +226,13 @@
     font-family: $PrNovacond-bold;
   }
 
-  .addtoany_list.a2a_kit_size_32 a > span {
+  .addtoany_list.a2a_kit_size_32 a>span {
     padding: 4px;
     border-radius: 100%;
     background: $cgrey !important;
   }
 
-  > .content {
+  >.content {
     margin: 10px auto 25px 0;
   }
 
@@ -273,7 +283,7 @@ blockquote {
     top: 74px;
   }
 
-  p.selectionShareable {
+  p {
     font-family: $NimR-reg;
     font-style: normal;
     font-weight: normal;
@@ -282,7 +292,7 @@ blockquote {
   }
 
   @media (max-width: $tablet) {
-    p.selectionShareable {
+    p {
       font-size: 18px;
       line-height: 140%;
     }
@@ -304,11 +314,11 @@ blockquote {
     width: 100%;
   }
 
-  > * {
+  >* {
     padding: 0;
   }
 
-  > figcaption {
+  >figcaption {
     padding: 15px 0;
     border: none;
     text-align: left;
@@ -327,6 +337,15 @@ blockquote {
   .r-vakc41 {
     width: 100%;
     max-width: 100%;
+  }
+
+  blockquote,
+  blockquote>p {
+    font-family: $NimS-reg;
+    font-style: normal;
+    font-size: szrem(28);
+    line-height: 140%;
+    color: $cgrey2;
   }
 
   span {
@@ -387,6 +406,7 @@ blockquote {
   }
 
   @media (max-width: $tablet) {
+
     h1,
     h2,
     h3,
@@ -559,6 +579,7 @@ div[data-embed-button="related_content"] {
 //--------------coments
 .block-field-blocknodenewsfield-comments,
 #comment-form {
+
   h2.comment-form__title,
   label {
     font-style: normal;
@@ -581,6 +602,7 @@ div[data-embed-button="related_content"] {
 
   .form-actions {
     display: flex;
+
     input.button--primary,
     .cbutton-back {
       background: $corange;
@@ -594,6 +616,7 @@ div[data-embed-button="related_content"] {
       font-family: $PrNovacond-bold;
       padding: 0 24px;
     }
+
     .cbutton-back {
       display: none;
       min-width: 165px;
@@ -603,6 +626,7 @@ div[data-embed-button="related_content"] {
       align-items: center;
       cursor: pointer;
     }
+
     input[value="Preview"] {
       display: none;
     }
@@ -636,26 +660,32 @@ div[data-embed-button="related_content"] {
   article.comment:nth-child(1)::before {
     display: none;
   }
+
   .comment {
-    box-shadow: 0 -3px 4px rgba(0,0,0,17%);
+    box-shadow: 0 -3px 4px rgba(0, 0, 0, 17%);
     border-bottom: 0px solid #b1b1b1;
   }
+
   .comment-form .form-item {
     overflow: initial;
   }
+
   .cbutton-back {
     display: flex !important;
   }
+
   .comment-delete,
   .comment-edit,
   .comment-show {
     display: none;
   }
+
   #comment-form {
     margin: -25px 0 0;
     background: #fbfbfb;
     padding: 30px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.17);
+
     // label[for="edit-field-comment-body-0-value"] {
     //   display: block;
     // }
@@ -741,6 +771,7 @@ div#selectionSharerPopunder {
     display: flex;
   }
 }
+
 .selectionSharer a.email {
   background: url("../img/email.svg") center center no-repeat;
 }
@@ -774,11 +805,12 @@ div#selectionSharerPopover {
 @keyframes fade-in-up {
   0% {
     opacity: 0;
- }
+  }
+
   100% {
     transform: translateY(0);
     opacity: 1;
- }
+  }
 }
 
 .page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video .content iframe {
@@ -796,7 +828,7 @@ div#selectionSharerPopover {
   animation: fade-in-up 0.75s ease forwards;
   z-index: 1;
 
-  @media(max-width:$tablet){
+  @media(max-width:$tablet) {
     width: 275px;
     height: 177px;
   }
