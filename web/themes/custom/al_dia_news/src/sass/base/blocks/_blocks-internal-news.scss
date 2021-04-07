@@ -292,14 +292,35 @@ blockquote {
   }
 
   @media (max-width: $tablet) {
+    display: flex;
+    align-items: center;
+    padding: 0;
+
     p {
+      padding: 10px;
       font-size: 18px;
       line-height: 140%;
     }
 
+    &:before,
     &:after {
-      right: 25px;
-      top: 44px;
+      width: 30px;
+      height: 30px;
+      position: relative;
+      top: initial;
+      bottom: initial;
+      left: initial;
+      right: initial;
+      font-size: szrem(80);
+      line-height: 1;
+    }
+
+    &:before {
+      align-self: flex-start;
+    }
+  
+    &:after {
+      align-self: flex-end;
     }
   }
 }
@@ -347,8 +368,8 @@ blockquote {
     line-height: 140%;
     color: $cgrey2;
 
-    @media (max-width: $tablet) { 
-      font-size: szrem(18px);
+    @media (max-width: $tablet) {
+      font-size: szrem(18);
     }
   }
 
