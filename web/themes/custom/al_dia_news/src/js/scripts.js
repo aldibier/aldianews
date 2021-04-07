@@ -172,7 +172,18 @@ import initMain from "./main.js";
       }
     });
 
-    
+    /// model header
+
+    $(".block-search input").click(function() {
+      $("#block-exposedformsearch-results-al-dia-solrpage-1-2").addClass("open");
+    });
+
+    $('#block-exposedformsearch-results-al-dia-solrpage-1-2  button[name="close"]').click(function() {
+      if ($("#block-exposedformsearch-results-al-dia-solrpage-1-2").hasClass("open")) {
+        $("#block-exposedformsearch-results-al-dia-solrpage-1-2").removeClass("open");
+      }
+    });
+
     var $window = $(window);
     var $videoWrap = $('.page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video');
     var $video = $('.page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video .content');
