@@ -12,7 +12,7 @@
   &.open{
     display: block;
   }
-  .form-item-field-category {
+  .form-item-field-category { 
     display: none;
   }
   form > .form--inline {
@@ -214,13 +214,35 @@
 position: relative;
 }
 
+@media (max-width: $desktop){
+  #block-exposedformsearch-results-al-dia-solrpage-1 {
+    .form--inline {
+      flex-direction: column;
+      flex-wrap: wrap;
+    align-items: flex-start;
+    }
+  }
+  .block-search-api-sorts{
+    position: relative;
+      right: auto;
+      top: auto;
+  }
+}
+
 @media (max-width: $tablet) {
   #block-exposedformsearch-results-al-dia-solrpage-1-2 {
-    bottom: -142px;
+    bottom: -148px;
     min-height: 110px;
     border-bottom: 0px;
+    padding: 15px;
     form > .form--inline {
       flex-wrap: wrap;
+    }
+    button[name=close]{
+      top: 15px;
+      right: 20px;
+      width: 15px;
+      height: 15px;
     }
     .form-type-textfield {
       padding: 0px 20px 0px 25px;
@@ -228,8 +250,8 @@ position: relative;
       &::before {
         width: 13.5px;
         height: 13.5px;
-        right: 15px;
-        top: 20px;
+        left: 0px;
+        top: 3px;
       }
       input {
         max-width: 252px;
@@ -241,10 +263,16 @@ position: relative;
       }
     }
     .form-actions {
-      margin: 15px 0px 0 0;
+      margin: 0px 0 0;
+      input{
+        margin: 0px;
+      }
     }
   }
-
+  .color-mod{
+    background: #000000;
+    opacity: 0.8;
+  }
   /// bloque buscador principal pagina
   .bef-exposed-form .form-actions {
     input {
@@ -264,14 +292,18 @@ position: relative;
       margin-bottom: 14px;
       font-size: $px14;
       line-height: 17.08px;
+      font-family: $PrNovacond-bold;
     }
   }
 
   /// bloque buscador formulario
   #block-exposedformsearch-results-al-dia-solrpage-1 {
+    display: none;
+    &.open{
+      display: block;
+    }
     .form--inline {
       flex-direction: column;
-      flex-wrap: wrap;
     }
     .form-item {
       margin: 0px;
@@ -291,6 +323,7 @@ position: relative;
       border: 0px;
       min-height: 50px;
       width: 100%;
+      margin-bottom: 15px;;
     }
     select {
       font-style: normal;
@@ -306,11 +339,11 @@ position: relative;
       max-width: 860px;
     }
     .form-type-select {
-      max-width: 225px;
+      max-width: none;
       width: 100%;
     }
     .form-actions input {
-      height: 50px;
+      height: 30px;
       min-width: 156px;
       margin: 0px;
     }
@@ -322,7 +355,32 @@ position: relative;
       background-size: contain;
       width: 20px;
       height: 12px;
-      margin: 0 auto 24px;
+      margin: 0 auto;
+      &.rote{
+        transform: rotate(180deg);
+      }
 
+  }
+  /// bloqur solr
+  .block-search-api-sorts{
+    margin-bottom: 15px;
+    display: none;
+    &.open-flex{
+      display: flex;
+    }
+    *{
+      font-size: $px14;
+      line-height: 17px;
+      font-family: $PrNovacond-bold;
+    }
+    h2{
+      margin: 2px 0px;
+    }
+    .item-list ul{
+      margin: 0px;
+      li{
+        margin: 0 3px;
+      }
+    } 
   }
 }
