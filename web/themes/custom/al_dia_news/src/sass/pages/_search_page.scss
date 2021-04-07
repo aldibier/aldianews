@@ -8,21 +8,9 @@
   background: $cwhite;
   max-width: 640px;
   border-bottom: 1px solid #b1b1b1;
-  > .content {
-    padding-right: 25px;
-    position: relative;
-    &::before {
-      position: absolute;
-      display: block;
-      content: "";
-      width: 20px;
-      height: 20px;
-      right: 5px;
-      top: 20px;
-      background: transparent url("../img/close.svg") center center no-repeat;
-      background-size: contain;
-      z-index: 2;
-    }
+  display: none;
+  &.open {
+    display: block;
   }
   .form-item-field-category {
     display: none;
@@ -30,10 +18,21 @@
   form > .form--inline {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
   }
   label {
     display: none;
+  }
+  button[name="close"] {
+    position: absolute;
+    top: 20px;
+    right: 4px;
+    width: 20px;
+    height: 20px;
+    display: block;
+    font-size: 0;
+    background: url("../img/close.svg") center center no-repeat;
+    border: none;
+    cursor: pointer;
   }
   .form-type-textfield {
     padding: 0px 15px 0px 55px;
@@ -67,7 +66,7 @@
     }
   }
   .form-actions {
-    margin: 0 30px 0 0;
+    margin: 0 50px 0 0;
   }
 }
 
@@ -118,11 +117,14 @@
 
 /// bloque buscador formulario
 #block-exposedformsearch-results-al-dia-solrpage-1 {
+  margin-bottom: 70px;
   .form--inline {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    flex-wrap: wrap;
+  }
+  button[name="close"] {
+    display: none;
   }
   .form-item {
     margin: 0px;
@@ -138,10 +140,12 @@
   }
   input,
   select {
-    background: #ededed;
-    border: 0px;
     min-height: 50px;
     width: 100%;
+  }
+  input {
+    background: #ededed;
+    border: 0px;
   }
   select {
     font-style: normal;
@@ -151,6 +155,9 @@
     font-family: $PrNovacond-reg;
     color: #8b8b8b;
     border-right: 14px solid #ededed;
+    border-left: 14px solid #ededed;
+    border-top: 0px;
+    border-bottom: 0px;
   }
   .form-type-textfield {
     width: 100%;
@@ -167,33 +174,77 @@
   }
 }
 
-//// descripcion de token
-#block-al-dia-news-content .search-results--text {
-  font-style: normal;
-  font-weight: normal;
-  font-size: $px22;
-  line-height: 26.84px;
-  font-family: $PrNovacond-reg;
-  color: $cblack3;
-  margin-bottom: 80px;
-  span {
+/// bloqur solr
+.block-search-api-sorts {
+  display: flex;
+  align-items: flex-end;
+  position: absolute;
+  right: 0px;
+  top: 50px;
+  * {
+    font-style: normal;
+    font-weight: normal;
+    font-size: $px20;
+    line-height: 23px;
+    letter-spacing: 0.025em;
     font-family: $PrNovacond-Sbold;
+    color: $cblack3;
+    text-transform: uppercase;
+  }
+  h2 {
+    color: #8e8e8e;
+    font-family: $PrNovacond-reg;
+  }
+  .item-list ul {
+    display: flex;
+  }
+  .is-active {
+    color: $corange;
+  }
+  .item-list ul li {
+    margin: 0 5px;
+    padding: 0px;
+    a {
+      border-bottom: 0px;
+    }
+    span {
+      display: none;
+    }
+  }
+}
+.path-search-results .region-content {
+  position: relative;
+}
+
+@media (max-width: $desktop) {
+  #block-exposedformsearch-results-al-dia-solrpage-1 {
+    .form--inline {
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+  }
+  .block-search-api-sorts {
+    position: relative;
+    right: auto;
+    top: auto;
   }
 }
 
 @media (max-width: $tablet) {
   #block-exposedformsearch-results-al-dia-solrpage-1-2 {
-    bottom: -142px;
+    bottom: -148px;
     min-height: 110px;
     border-bottom: 0px;
-    > .content {
-      padding: 15px 20px 15px 15px;
-      &::before {
-        width: 15px;
-        height: 15px;
-        right: 20px;
-        top: 15px;
-      }
+    padding: 15px;
+    form > .form--inline {
+      flex-wrap: wrap;
+    }
+    button[name="close"] {
+      top: 15px;
+      right: 20px;
+      width: 15px;
+      height: 15px;
     }
     .form-type-textfield {
       padding: 0px 20px 0px 25px;
@@ -201,8 +252,8 @@
       &::before {
         width: 13.5px;
         height: 13.5px;
-        right: 15px;
-        top: 20px;
+        left: 0px;
+        top: 3px;
       }
       input {
         max-width: 252px;
@@ -214,10 +265,16 @@
       }
     }
     .form-actions {
-      margin: 15px 0px 0 0;
+      margin: 0px 0 0;
+      input {
+        margin: 0px;
+      }
     }
   }
-
+  .color-mod {
+    background: #000000;
+    opacity: 0.8;
+  }
   /// bloque buscador principal pagina
   .bef-exposed-form .form-actions {
     input {
@@ -237,11 +294,16 @@
       margin-bottom: 14px;
       font-size: $px14;
       line-height: 17.08px;
+      font-family: $PrNovacond-bold;
     }
   }
 
   /// bloque buscador formulario
   #block-exposedformsearch-results-al-dia-solrpage-1 {
+    display: none;
+    &.open {
+      display: block;
+    }
     .form--inline {
       flex-direction: column;
     }
@@ -252,7 +314,9 @@
     }
     input,
     select {
-      min-height: 30px;
+      border: 0px;
+      min-height: 50px;
+      width: 100%;
       margin-bottom: 15px;
     }
     select {
@@ -263,18 +327,47 @@
     }
     .form-type-select {
       max-width: none;
+      width: 100%;
     }
     .form-actions input {
       height: 30px;
+      min-width: 156px;
+      margin: 0px;
     }
   }
 
-  //// descripcion de token
-  #block-al-dia-news-content .search-results--text {
-    font-size: $px12;
-    line-height: 14px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #b1b1b1;
-    margin-bottom: 25px;
+  //// arrow
+  .path-search-results .arrow {
+    background: transparent url(../img/arrow.png) center center no-repeat;
+    background-size: contain;
+    width: 20px;
+    height: 12px;
+    margin: 0 auto;
+    &.rote {
+      transform: rotate(180deg);
+    }
+  }
+  /// bloqur solr
+  .block-search-api-sorts {
+    margin-bottom: 15px;
+    display: none;
+    &.open-flex {
+      display: flex;
+    }
+    * {
+      font-size: $px14;
+      line-height: 17px;
+      font-family: $PrNovacond-bold;
+    }
+    h2 {
+      margin: 0px 3px 0px 0px;
+      font-size: $px14;
+    }
+    .item-list ul {
+      margin: 0 0 1px;
+      li {
+        margin: 0 3px;
+      }
+    }
   }
 }

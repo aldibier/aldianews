@@ -1053,6 +1053,7 @@ display:
         exposed_form: false
         fields: false
         use_ajax: false
+        header: false
       filter_groups:
         operator: AND
         groups:
@@ -1062,7 +1063,7 @@ display:
         options:
           items_per_page: 9
           offset: 0
-          id: 0
+          id: 1
           total_pages: null
           tags:
             previous: '‹ Previous'
@@ -1213,12 +1214,12 @@ display:
             preserve_tags: ''
             html: false
           element_type: ''
-          element_class: card-image
+          element_class: ''
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
-          element_wrapper_class: ''
+          element_wrapper_class: card-image
           element_default_classes: true
           empty: ''
           hide_empty: false
@@ -1601,7 +1602,8 @@ display:
           empty_zero: false
           hide_alter_empty: false
           plugin_id: custom
-      use_ajax: false
+      use_ajax: true
+      header: {  }
     cache_metadata:
       max-age: -1
       contexts:

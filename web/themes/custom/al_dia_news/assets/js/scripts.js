@@ -1331,10 +1331,7 @@ window.onload = function () {
       });
     }
   });
-};
 
-window.addEventListener("DOMContentLoaded", function () {
-  //// js para controlar pop-up video
   if (!!document.querySelector(".path-videos")) {
     var allCardVideos = document.querySelectorAll(".card-one-column");
     var allIframes = document.querySelectorAll(".card-one-column iframe");
@@ -1386,19 +1383,19 @@ window.addEventListener("DOMContentLoaded", function () {
 
   if (!!document.querySelector('.path-advertising')) {
     var allButtonsApply = document.querySelectorAll('.button-apply');
-    var allButtonsClose = document.querySelectorAll('button[name="close"]');
+    var allButtonsClose = document.querySelectorAll('.webform-contact-employer .close-modal');
 
     var showModal = function showModal(event) {
       var parent = event.path.find(function (elementPath) {
-        return elementPath.classList.contains('views-row');
+        return elementPath.classList.contains('advertising-card');
       });
-      var form = parent.querySelector('.views-field-field-webform');
+      var form = parent.querySelector('.modal-form');
       form.classList.add('show');
     };
 
     var hideModal = function hideModal(event) {
       var form = event.path.find(function (elementPath) {
-        return elementPath.classList.contains('views-field-field-webform');
+        return elementPath.classList.contains('modal-form');
       });
       form.classList.remove('show');
     };
@@ -1409,8 +1406,18 @@ window.addEventListener("DOMContentLoaded", function () {
     allButtonsClose.forEach(function (buttonClose) {
       return buttonClose.addEventListener('click', hideModal);
     });
-  }
-});
+  } //// js desplegable buscador
+
+
+  var arrow = document.querySelector(".path-search-results .arrow");
+  var blocks_search = document.querySelector("#block-exposedformsearch-results-al-dia-solrpage-1");
+  var sort = document.querySelector(".block-search-api-sorts");
+  arrow.addEventListener("click", function () {
+    blocks_search.classList.toggle("open");
+    sort.classList.toggle("open-flex");
+    arrow.classList.toggle("rote");
+  });
+};
 
 /***/ }),
 
@@ -1475,7 +1482,7 @@ __webpack_require__.r(__webpack_exports__);
 (function ($, Drupal) {
   // Selection share
   var sharer = new _assets_libraries_selection_sharer_selection_sharer_js__WEBPACK_IMPORTED_MODULE_1___default.a();
-  sharer.setElements("p,a,h1,h2,h3,blockquote"); // Replace key word by another value
+  sharer.setElements("p,a,h1,h2,h3,blockquote,em,strong"); // Replace key word by another value
 
   var headingTags = document.querySelectorAll('h1, h2, h3');
   var paragraphTags = document.querySelectorAll("p");
@@ -1576,6 +1583,33 @@ __webpack_require__.r(__webpack_exports__);
         $(this).parents(".views-row").find(".views-field-field-webform").removeClass("open");
       } else {
         $(this).parents(".views-row").find(".views-field-field-webform").addClass("open");
+      }
+    }); /// modal header buscador
+
+    $(".block-search input").click(function () {
+      $("#block-exposedformsearch-results-al-dia-solrpage-1-2").addClass("open");
+      $(".layout-main-wrapper.layout-container").addClass("color-mod");
+    });
+    $('#block-exposedformsearch-results-al-dia-solrpage-1-2  button[name="close"]').click(function () {
+      if ($("#block-exposedformsearch-results-al-dia-solrpage-1-2").hasClass("open")) {
+        $("#block-exposedformsearch-results-al-dia-solrpage-1-2").removeClass("open");
+        $(".layout-main-wrapper.layout-container").removeClass("color-mod");
+      }
+    });
+    var $window = $(window);
+    var $videoWrap = $('.page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video');
+    var $video = $('.page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video .content');
+    var videoHeight = $video.outerHeight();
+    $window.on('scroll', function () {
+      var windowScrollTop = $window.scrollTop();
+      var videoBottom = videoHeight + $videoWrap.offset().top;
+
+      if (windowScrollTop > videoBottom) {
+        $videoWrap.height(videoHeight);
+        $video.addClass('stuck');
+      } else {
+        $videoWrap.height('auto');
+        $video.removeClass('stuck');
       }
     });
     Object(_slick_js__WEBPACK_IMPORTED_MODULE_3__["default"])($, Drupal);

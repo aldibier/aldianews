@@ -8,7 +8,7 @@ import initMain from "./main.js";
 (function($, Drupal) {
   // Selection share
   const sharer = new SelectionSharer();
-  sharer.setElements("p,a,h1,h2,h3,blockquote");
+  sharer.setElements("p,a,h1,h2,h3,blockquote,em,strong");
 
   // Replace key word by another value
   const headingTags = document.querySelectorAll('h1, h2, h3');
@@ -169,6 +169,38 @@ import initMain from "./main.js";
           .parents(".views-row")
           .find(".views-field-field-webform")
           .addClass("open");
+      }
+    }); 
+
+    /// modal header buscador
+
+    $(".block-search input").click(function() {
+      $("#block-exposedformsearch-results-al-dia-solrpage-1-2").addClass("open");
+      $(".layout-main-wrapper.layout-container").addClass("color-mod");
+    });
+
+    $('#block-exposedformsearch-results-al-dia-solrpage-1-2  button[name="close"]').click(function() {
+      if ($("#block-exposedformsearch-results-al-dia-solrpage-1-2").hasClass("open")) {
+        $("#block-exposedformsearch-results-al-dia-solrpage-1-2").removeClass("open");
+        $(".layout-main-wrapper.layout-container").removeClass("color-mod");
+      }
+    });
+
+    var $window = $(window);
+    var $videoWrap = $('.page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video');
+    var $video = $('.page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video .content');
+    var videoHeight = $video.outerHeight();
+    
+    $window.on('scroll',  function() {
+      var windowScrollTop = $window.scrollTop();
+      var videoBottom = videoHeight + $videoWrap.offset().top;
+      
+      if (windowScrollTop > videoBottom) {
+        $videoWrap.height(videoHeight);
+        $video.addClass('stuck');
+      } else {
+        $videoWrap.height('auto');
+        $video.removeClass('stuck');
       }
     });
 

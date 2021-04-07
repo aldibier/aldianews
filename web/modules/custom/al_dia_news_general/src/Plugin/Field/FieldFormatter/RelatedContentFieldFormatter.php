@@ -80,9 +80,9 @@ class RelatedContentFieldFormatter extends FormatterBase {
 
   /**
    * Insert related content view to field
-   * 
+   *
    * @param $value string
-   * 
+   *
    */
   public function addRelatedContent($value, $entity){
 
@@ -101,7 +101,7 @@ class RelatedContentFieldFormatter extends FormatterBase {
         $target_ids[] = $tag['target_id'];
       }
 
-      $tags_list = implode(',', $target_ids);
+      $tags_list = implode('+', $target_ids);
 
       // get view ids of related content according to node bundle
       switch ($entity->getType()) {
@@ -110,7 +110,7 @@ class RelatedContentFieldFormatter extends FormatterBase {
           $view_display = 'block_1';
 
           break;
-        
+
         default:
           $view_id = 'related_content';
           $view_display = 'block_1';
@@ -121,6 +121,8 @@ class RelatedContentFieldFormatter extends FormatterBase {
       $view = \Drupal\views\Views::getView($view_id);
       $view->setDisplay($view_display);
       $view->setArguments([$nodeId, $tags_list]);
+      dsm($tags_list);
+
       $title = $view->getTitle();
       // Render.
       $render = $view->render();
@@ -130,7 +132,7 @@ class RelatedContentFieldFormatter extends FormatterBase {
 
       // If this content doesn't have related content, return original content
       if($count == 0){
-        return $value; 
+        return $value;
       }
 
       $the_title_render_array = [
@@ -145,39 +147,39 @@ class RelatedContentFieldFormatter extends FormatterBase {
       // the view is inserted in content
       $newContent = $this->newHtml($value, $rendered);
     }
-    
+
 
     return $newContent;
 
   }
-  
+
   /**
    * Get and count paragraphs in field and insert related content HTML
-   * 
+   *
    * @param $html_body string
    * @param $view string
    */
   public function newHtml($html_body, $related_content){
-      
+
     $dom= Html::load($html_body);
 
     // get count paragraphs
     $count_p = count($dom->getElementsByTagName('p'));
-  
+
     // get paragraph position
     $position = intval($count_p / 2);
-        
+
     if($count_p != 1){
-      if($count_p % 2 == 0){    
+      if($count_p % 2 == 0){
         $par = true;
       }else{
         $par = false;
         $position = $position + 1;
       }
     }else{
-      $par = null;
+      $position = 1;
     }
-    
+
     // insert a token into html to be replaced
     $count = 1;
     foreach ($dom->getElementsByTagName('p') as $paragraph) {
@@ -186,16 +188,16 @@ class RelatedContentFieldFormatter extends FormatterBase {
       }
       $count++;
     }
-          
+
     $html = $dom->saveHtml();
 
     $content = "</p><div data-embed-button='related_content'>". $related_content ."</div>";
-      
+
     // HTML to return
     $html = str_replace("[related-content]</p>", $content, $html);
-          
+
     return $html;
-  
+
   }
 
 }

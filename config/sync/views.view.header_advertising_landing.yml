@@ -1031,6 +1031,8 @@ display:
         filters: false
         filter_groups: false
         header: false
+        style: false
+        row: false
       relationships:
         field_block:
           id: field_block
@@ -1126,6 +1128,19 @@ display:
             value: '<h3>Discover Our Unique Solutions</h3>'
             format: full_html
           plugin_id: text
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: advertising-card
+          default_row_class: true
+      row:
+        type: fields
+        options:
+          default_field_elements: true
+          inline: {  }
+          separator: ''
+          hide_empty: false
     cache_metadata:
       max-age: -1
       contexts:

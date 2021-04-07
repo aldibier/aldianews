@@ -102,7 +102,7 @@ window.onload = function () {
   }
 
   /// js boton back
-  Array.from(document.querySelectorAll(".cbutton-back")).map(function(e) {
+  Array.from(document.querySelectorAll(".cbutton-back")).map(function (e) {
     if (e != null) {
       e.addEventListener("click", () => {
         window.history.back();
@@ -111,7 +111,7 @@ window.onload = function () {
   });
 
   /// js login and register
-  Array.from(document.querySelectorAll(".comment-forbidden a")).map(function(
+  Array.from(document.querySelectorAll(".comment-forbidden a")).map(function (
     e
   ) {
     if (e != null) {
@@ -120,7 +120,7 @@ window.onload = function () {
   });
   Array.from(
     document.querySelectorAll(".comment-forbidden a:nth-child(1)")
-  ).map(function(e) {
+  ).map(function (e) {
     if (e != null) {
       var button_login = document.querySelector(
         '.Login-Register-popup-link.Login-Register-popup-link a[href*="login"]'
@@ -132,7 +132,7 @@ window.onload = function () {
   });
   Array.from(
     document.querySelectorAll(".comment-forbidden a:nth-child(2)")
-  ).map(function(e) {
+  ).map(function (e) {
     if (e != null) {
       var button_regis = document.querySelector(
         '.Login-Register-popup-link.Login-Register-popup-link a[href*="register"]'
@@ -142,10 +142,6 @@ window.onload = function () {
       });
     }
   });
-};
-
-window.addEventListener("DOMContentLoaded", () => {
-  //// js para controlar pop-up video
 
   if (!!document.querySelector(".path-videos")) {
     const allCardVideos = document.querySelectorAll(".card-one-column");
@@ -161,8 +157,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
     allCardVideos.forEach(cardVideo =>
       cardVideo.addEventListener("click", event => {
-        if(event.target.nodeName == "A" ) return;
-        
+        if (event.target.nodeName == "A") return;
+
         node = event.currentTarget.parentNode.firstElementChild;
 
         while (node) {
@@ -204,16 +200,16 @@ window.addEventListener("DOMContentLoaded", () => {
   //// js para controlar pop-up advertising
   if (!!document.querySelector('.path-advertising')) {
     const allButtonsApply = document.querySelectorAll('.button-apply');
-    const allButtonsClose = document.querySelectorAll('button[name="close"]');
+    const allButtonsClose = document.querySelectorAll('.webform-contact-employer .close-modal');
 
     const showModal = (event) => {
-      const parent = event.path.find(elementPath => elementPath.classList.contains('views-row'));
-      const form = parent.querySelector('.views-field-field-webform');
+      const parent = event.path.find(elementPath => elementPath.classList.contains('advertising-card'));
+      const form = parent.querySelector('.modal-form');
       form.classList.add('show');
     }
 
     const hideModal = (event) => {
-      const form = event.path.find(elementPath => elementPath.classList.contains('views-field-field-webform'));
+      const form = event.path.find(elementPath => elementPath.classList.contains('modal-form'));
       form.classList.remove('show');
     }
 
@@ -221,4 +217,13 @@ window.addEventListener("DOMContentLoaded", () => {
     allButtonsClose.forEach(buttonClose => buttonClose.addEventListener('click', hideModal));
   }
 
-});
+  //// js desplegable buscador
+  var arrow = document.querySelector(".path-search-results .arrow");
+  var blocks_search = document.querySelector("#block-exposedformsearch-results-al-dia-solrpage-1");
+  var sort = document.querySelector(".block-search-api-sorts");
+  arrow.addEventListener("click", () => {
+          blocks_search.classList.toggle("open");
+        sort.classList.toggle("open-flex");
+        arrow.classList.toggle("rote");
+        });
+};

@@ -607,7 +607,7 @@ body.open-menu {
         }
     }
 
-    #block-searchform {
+    #block-magnifierheader {
         order: 4;
         margin: auto 0;
     }
@@ -630,6 +630,10 @@ body.open-menu {
                 display: block;
                 background: transparent url("../img/search.svg") center center no-repeat;
                 border: none;
+                cursor: pointer;
+                &:focus{
+                    outline: 0px;
+                }
             }
         }
 
