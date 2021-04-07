@@ -25,7 +25,7 @@ import initMain from "./main.js";
     var video = url.replace('autoplay=0', 'autoplay=1');
     $(".page-node-type-news .video-embed-field-responsive-video iframe").attr("src",video);
 
-    if(!!$video && document.querySelector('.path-node.page-node-type-news')){
+    if(!!$video && document.querySelector('.page-node-type-news')){
       $window.on('scroll',  function() {
         var windowScrollTop = $window.scrollTop();
         var videoBottom = videoHeight + $videoWrap.offset().top;
