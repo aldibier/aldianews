@@ -102,7 +102,7 @@ window.onload = function () {
   }
 
   /// js boton back
-  Array.from(document.querySelectorAll(".cbutton-back")).map(function(e) {
+  Array.from(document.querySelectorAll(".cbutton-back")).map(function (e) {
     if (e != null) {
       e.addEventListener("click", () => {
         window.history.back();
@@ -111,7 +111,7 @@ window.onload = function () {
   });
 
   /// js login and register
-  Array.from(document.querySelectorAll(".comment-forbidden a")).map(function(
+  Array.from(document.querySelectorAll(".comment-forbidden a")).map(function (
     e
   ) {
     if (e != null) {
@@ -120,7 +120,7 @@ window.onload = function () {
   });
   Array.from(
     document.querySelectorAll(".comment-forbidden a:nth-child(1)")
-  ).map(function(e) {
+  ).map(function (e) {
     if (e != null) {
       var button_login = document.querySelector(
         '.Login-Register-popup-link.Login-Register-popup-link a[href*="login"]'
@@ -132,7 +132,7 @@ window.onload = function () {
   });
   Array.from(
     document.querySelectorAll(".comment-forbidden a:nth-child(2)")
-  ).map(function(e) {
+  ).map(function (e) {
     if (e != null) {
       var button_regis = document.querySelector(
         '.Login-Register-popup-link.Login-Register-popup-link a[href*="register"]'
@@ -161,8 +161,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
     allCardVideos.forEach(cardVideo =>
       cardVideo.addEventListener("click", event => {
-        if(event.target.nodeName == "A" ) return;
-        
+        if (event.target.nodeName == "A") return;
+
         node = event.currentTarget.parentNode.firstElementChild;
 
         while (node) {
@@ -219,6 +219,14 @@ window.addEventListener("DOMContentLoaded", () => {
 
     allButtonsApply.forEach(buttonApply => buttonApply.addEventListener('click', showModal));
     allButtonsClose.forEach(buttonClose => buttonClose.addEventListener('click', hideModal));
+
+    //js temporary
+    const buttonApply = document.querySelector('.block-fixed-block-contentinformation-footer-advertising + .button-apply');
+    const buttonClose = document.querySelector('.modal-apply-webform')
+    const lastForm = document.querySelector('.modal-apply-webform button[name="close"]');
+
+    buttonApply.addEventListener('click', () => lastForm.classList.add('show'));
+    buttonClose.addEventListener('click', () => lastForm.classList.remove('show'))
   }
 
 });
