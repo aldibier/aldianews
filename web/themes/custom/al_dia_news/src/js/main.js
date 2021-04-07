@@ -142,10 +142,6 @@ window.onload = function () {
       });
     }
   });
-};
-
-window.addEventListener("DOMContentLoaded", () => {
-  //// js para controlar pop-up video
 
   if (!!document.querySelector(".path-videos")) {
     const allCardVideos = document.querySelectorAll(".card-one-column");
@@ -204,9 +200,7 @@ window.addEventListener("DOMContentLoaded", () => {
   //// js para controlar pop-up advertising
   if (!!document.querySelector('.path-advertising')) {
     const allButtonsApply = document.querySelectorAll('.button-apply');
-    const allButtonsClose = document.querySelectorAll('[name="close"]');
-
-    console.log(allButtonsClose);
+    const allButtonsClose = document.querySelectorAll('.webform-contact-employer .close-modal');
 
     const showModal = (event) => {
       const parent = event.path.find(elementPath => elementPath.classList.contains('advertising-card'));
@@ -215,14 +209,11 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
     const hideModal = (event) => {
-      console.log('click!');
       const form = event.path.find(elementPath => elementPath.classList.contains('modal-form'));
-      console.log(form);
       form.classList.remove('show');
     }
 
     allButtonsApply.forEach(buttonApply => buttonApply.addEventListener('click', showModal));
     allButtonsClose.forEach(buttonClose => buttonClose.addEventListener('click', hideModal));
   }
-
-});
+};

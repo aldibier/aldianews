@@ -1331,10 +1331,7 @@ window.onload = function () {
       });
     }
   });
-};
 
-window.addEventListener("DOMContentLoaded", function () {
-  //// js para controlar pop-up video
   if (!!document.querySelector(".path-videos")) {
     var allCardVideos = document.querySelectorAll(".card-one-column");
     var allIframes = document.querySelectorAll(".card-one-column iframe");
@@ -1386,8 +1383,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
   if (!!document.querySelector('.path-advertising')) {
     var allButtonsApply = document.querySelectorAll('.button-apply');
-    var allButtonsClose = document.querySelectorAll('[name="close"]');
-    console.log(allButtonsClose);
+    var allButtonsClose = document.querySelectorAll('.webform-contact-employer .close-modal');
 
     var showModal = function showModal(event) {
       var parent = event.path.find(function (elementPath) {
@@ -1398,11 +1394,9 @@ window.addEventListener("DOMContentLoaded", function () {
     };
 
     var hideModal = function hideModal(event) {
-      console.log('click!');
       var form = event.path.find(function (elementPath) {
         return elementPath.classList.contains('modal-form');
       });
-      console.log(form);
       form.classList.remove('show');
     };
 
@@ -1413,7 +1407,7 @@ window.addEventListener("DOMContentLoaded", function () {
       return buttonClose.addEventListener('click', hideModal);
     });
   }
-});
+};
 
 /***/ }),
 
@@ -1580,15 +1574,22 @@ __webpack_require__.r(__webpack_exports__);
       } else {
         $(this).parents(".views-row").find(".views-field-field-webform").addClass("open");
       }
-    }); /// model header
+    }); /// modal header y deplegable buscador
 
     $(".block-search input").click(function () {
       $("#block-exposedformsearch-results-al-dia-solrpage-1-2").addClass("open");
+      $(".layout-main-wrapper.layout-container").addClass("color-mod");
     });
     $('#block-exposedformsearch-results-al-dia-solrpage-1-2  button[name="close"]').click(function () {
       if ($("#block-exposedformsearch-results-al-dia-solrpage-1-2").hasClass("open")) {
         $("#block-exposedformsearch-results-al-dia-solrpage-1-2").removeClass("open");
+        $(".layout-main-wrapper.layout-container").removeClass("color-mod");
       }
+    });
+    $(".path-search-results .arrow").click(function () {
+      $("#block-exposedformsearch-results-al-dia-solrpage-1").classList.toogle("open");
+      $(".block-search-api-sorts").classList.toggle("open-flex");
+      $(".path-search-results .arrow").classList.toggle("rote");
     });
     var $window = $(window);
     var $videoWrap = $('.page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video');
