@@ -764,3 +764,30 @@ div#selectionSharerPopover {
     display: none;
   }
 }
+
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+ }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+ }
+}
+
+.page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video .content iframe {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video .content.stuck {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 360px;
+  height: 200px;
+  transform: translateY(100%);
+  animation: fade-in-up 0.75s ease forwards;
+  z-index: 1;
+}

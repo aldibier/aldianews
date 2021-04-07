@@ -174,8 +174,8 @@ import initMain from "./main.js";
 
     
     var $window = $(window);
-    var $videoWrap = $('.video-wrap');
-    var $video = $('.video');
+    var $videoWrap = $('.page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video');
+    var $video = $('.page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video .content');
     var videoHeight = $video.outerHeight();
     
     $window.on('scroll',  function() {
