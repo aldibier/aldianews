@@ -202,6 +202,10 @@ import initMain from "./main.js";
       }
     });
 
+    var url =  $(".page-node-type-news .video-embed-field-responsive-video iframe")[0].src += "&mute=1"; 
+    var video = url.replace('autoplay=0', 'autoplay=1');
+    $(".page-node-type-news .video-embed-field-responsive-video iframe").attr("src",video);
+
     initSlick($, Drupal);
   });
 })(jQuery, Drupal);
