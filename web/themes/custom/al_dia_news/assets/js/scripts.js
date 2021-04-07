@@ -1509,7 +1509,23 @@ __webpack_require__.r(__webpack_exports__);
   jQuery(document).ready(function () {
     var url = $(".page-node-type-news .video-embed-field-responsive-video iframe")[0].src += "&mute=1";
     var video = url.replace('autoplay=0', 'autoplay=1');
-    $(".page-node-type-news .video-embed-field-responsive-video iframe").attr("src", video); //--------- menu--------------------//
+    $(".page-node-type-news .video-embed-field-responsive-video iframe").attr("src", video);
+
+    if (!!$video && document.querySelector('.path-node.page-node-type-news')) {
+      $window.on('scroll', function () {
+        var windowScrollTop = $window.scrollTop();
+        var videoBottom = videoHeight + $videoWrap.offset().top;
+
+        if (windowScrollTop > videoBottom) {
+          $videoWrap.height(videoHeight);
+          $video.addClass('stuck');
+        } else {
+          $videoWrap.height('auto');
+          $video.removeClass('stuck');
+        }
+      });
+    } //--------- menu--------------------//
+
 
     $(".region-header #block-blockheader").click(function () {
       if ($(".region-secondary-menu").hasClass("open-menu")) {
@@ -1614,22 +1630,6 @@ __webpack_require__.r(__webpack_exports__);
     var $videoWrap = $(".page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video");
     var $video = $(".page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video .content");
     var videoHeight = $video.outerHeight();
-
-    if (!!$video && document.querySelector('.path-node page-node-type-news')) {
-      $window.on('scroll', function () {
-        var windowScrollTop = $window.scrollTop();
-        var videoBottom = videoHeight + $videoWrap.offset().top;
-
-        if (windowScrollTop > videoBottom) {
-          $videoWrap.height(videoHeight);
-          $video.addClass('stuck');
-        } else {
-          $videoWrap.height('auto');
-          $video.removeClass('stuck');
-        }
-      });
-    }
-
     Object(_slick_js__WEBPACK_IMPORTED_MODULE_3__["default"])($, Drupal);
   });
 })(jQuery, Drupal);

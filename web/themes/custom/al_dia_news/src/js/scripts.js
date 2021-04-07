@@ -25,6 +25,22 @@ import initMain from "./main.js";
     var video = url.replace('autoplay=0', 'autoplay=1');
     $(".page-node-type-news .video-embed-field-responsive-video iframe").attr("src",video);
 
+    if(!!$video && document.querySelector('.path-node.page-node-type-news')){
+      $window.on('scroll',  function() {
+        var windowScrollTop = $window.scrollTop();
+        var videoBottom = videoHeight + $videoWrap.offset().top;
+        
+        if (windowScrollTop > videoBottom) {
+          $videoWrap.height(videoHeight);
+          $video.addClass('stuck');
+        } else {
+          $videoWrap.height('auto');
+          $video.removeClass('stuck');
+        }
+      });
+
+    }
+
 
     //--------- menu--------------------//
     $(".region-header #block-blockheader").click(function() {
@@ -195,21 +211,7 @@ import initMain from "./main.js";
     );
     var videoHeight = $video.outerHeight();
     
-    if(!!$video && document.querySelector('.path-node page-node-type-news')){
-      $window.on('scroll',  function() {
-        var windowScrollTop = $window.scrollTop();
-        var videoBottom = videoHeight + $videoWrap.offset().top;
-        
-        if (windowScrollTop > videoBottom) {
-          $videoWrap.height(videoHeight);
-          $video.addClass('stuck');
-        } else {
-          $videoWrap.height('auto');
-          $video.removeClass('stuck');
-        }
-      });
-
-    }
+    
 
     initSlick($, Drupal);
   });
