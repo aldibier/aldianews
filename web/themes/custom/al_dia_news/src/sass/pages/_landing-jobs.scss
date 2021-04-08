@@ -737,6 +737,11 @@
         border-right: 0px solid #b1b1b1;
         max-width: 300px;
         padding-right: 0px;
+        border-top: 0px;
+      }
+      .views-row:nth-child(4)::before,
+      .views-row:nth-child(5)::before {
+        display: none;
       }
     }
   }
@@ -939,6 +944,8 @@
       .views-row:nth-child(2) {
         max-width: none;
         align-items: center;
+        border-top: 1px;
+        width: 100%;
         .views-field-nothing {
           max-width: none;
         }
@@ -946,8 +953,11 @@
       .views-row:nth-child(3) {
         padding-right: 0px;
         border-right: 0px solid $cgrey4;
-        margin-bottom: 0px;
+        margin-bottom: 20px;
+        margin-right: 0px;
         max-width: none;
+        border-top: 1px;
+        width: 100%;
         .views-field-field-image {
           max-width: 340px;
           max-height: 180px;
