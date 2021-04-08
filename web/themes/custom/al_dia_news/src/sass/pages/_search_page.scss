@@ -67,7 +67,9 @@
   }
   .form-actions {
     margin: 0 50px 0 0;
-    min-width: 120px;
+    input {
+      min-width: 120px;
+    }
   }
 }
 
@@ -267,9 +269,9 @@
     }
     .form-actions {
       margin: 0px 0 0;
-      min-width: 100;
       input {
         margin: 0px;
+        min-width: 100;
       }
     }
   }
