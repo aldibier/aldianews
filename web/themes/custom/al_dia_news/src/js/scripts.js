@@ -21,11 +21,11 @@ import initMain from "./main.js";
 
 
   var $window = $(window);
-    var $videoWrap = $(".page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video");
-    var $video = $(".page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video .content");
-    var videoHeight = $video.outerHeight();
-    
-
+  var $videoWrap = $(".page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video");
+  var $video = $(".page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video .content");
+  var videoHeight = $video.outerHeight();
+  
+  if(!!$videoWrap){
     $window.on('scroll',  function() {
       var windowScrollTop = $window.scrollTop();
       var videoBottom = videoHeight + $videoWrap.offset().top;
@@ -38,6 +38,8 @@ import initMain from "./main.js";
         $video.removeClass('stuck');
       }
     });
+  }
+      
 
   jQuery(document).ready(function() {
     var url =  $(".page-node-type-news .video-embed-field-responsive-video iframe")[0].src += "&mute=1"; 
