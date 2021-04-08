@@ -607,6 +607,9 @@ body.open-menu {
   #block-magnifierheader {
     order: 4;
     margin: auto 0;
+    @media (max-width: $tablet) {
+      order: 6;
+    }
   }
 
   .block-search {
@@ -854,7 +857,7 @@ body.open-menu {
       .form-actions {
         width: 20px;
         height: 20px;
-
+        margin-left: 10px;
         input {
           width: 20px;
           height: 20px;
@@ -862,6 +865,8 @@ body.open-menu {
           background-position-x: 1px;
           background-position-y: 2px;
           margin: 2px 0 0 2px;
+          position: relative;
+          top: -4px;
         }
       }
     }

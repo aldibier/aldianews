@@ -1330,7 +1330,7 @@ window.onload = function () {
         button_regis.click();
       });
     }
-  });
+  }); //// js modal landing videos
 
   if (!!document.querySelector(".path-videos")) {
     var allCardVideos = document.querySelectorAll(".card-one-column");
@@ -1353,6 +1353,7 @@ window.onload = function () {
 
         while (node) {
           if (node !== event.currentTarget && node.nodeType === Node.ELEMENT_NODE) {
+            if (event.target.closest(".wrapper-popup")) return;
             node.querySelector(".wrapper-popup").classList.remove("active");
             resetAlliframes();
           } else {
@@ -1506,8 +1507,34 @@ __webpack_require__.r(__webpack_exports__);
   var aldiaLogoStructure = "<span class=\"aldia-logo-in-text\" title=\"AL D\xCDA\">\n                                <img alt=\"AL D\xCDA\" src=\"".concat(drupalSettings.path.baseUrl, "themes/custom/al_dia_news/assets/img/aldia.svg\">\n                              </span>");
   Object(_modules_replaceToken__WEBPACK_IMPORTED_MODULE_4__["default"])("AL DÍA", aldiaLogoStructure, headingTags);
   Object(_modules_replaceToken__WEBPACK_IMPORTED_MODULE_4__["default"])("{aldia}", aldiaLogoStructure, paragraphTags);
+  var $window = $(window);
+  var $videoWrap = $(".page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video");
+  var $video = $(".page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video .content");
+  var videoHeight = $video.outerHeight();
+
+  if (!!document.querySelector('.page-node-type-news') && !!$video) {
+    $window.on('scroll', function () {
+      var windowScrollTop = $window.scrollTop();
+      var videoBottom = videoHeight + $videoWrap.offset().top;
+
+      if (windowScrollTop > videoBottom) {
+        $videoWrap.height(videoHeight);
+        $video.addClass('stuck');
+      } else {
+        $videoWrap.height('auto');
+        $video.removeClass('stuck');
+      }
+    });
+  }
+
   jQuery(document).ready(function () {
-    //--------- menu--------------------//
+    if ($(".page-node-type-news .video-embed-field-responsive-video iframe").length) {
+      var url = $(".page-node-type-news .video-embed-field-responsive-video iframe")[0].src += "&mute=1";
+      var video = url.replace('autoplay=0', 'autoplay=1');
+      $(".page-node-type-news .video-embed-field-responsive-video iframe").attr("src", video);
+    } //--------- menu--------------------//
+
+
     $(".region-header #block-blockheader").click(function () {
       if ($(".region-secondary-menu").hasClass("open-menu")) {
         $(".region-secondary-menu").removeClass("open-menu");
@@ -1607,29 +1634,6 @@ __webpack_require__.r(__webpack_exports__);
       $("#block-exposedformsearch-results-al-dia-solrpage-1-2").addClass("open");
       $(".layout-main-wrapper.layout-container").addClass("color-mod");
     });
-    var $window = $(window);
-    var $videoWrap = $(".page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video");
-    var $video = $(".page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video .content");
-    var videoHeight = $video.outerHeight();
-
-    if (!!$video && document.querySelector('.path-node page-node-type-news')) {
-      $window.on('scroll', function () {
-        var windowScrollTop = $window.scrollTop();
-        var videoBottom = videoHeight + $videoWrap.offset().top;
-
-        if (windowScrollTop > videoBottom) {
-          $videoWrap.height(videoHeight);
-          $video.addClass('stuck');
-        } else {
-          $videoWrap.height('auto');
-          $video.removeClass('stuck');
-        }
-      });
-      var url = $(".page-node-type-news .video-embed-field-responsive-video iframe")[0].src += "&mute=1";
-      var video = url.replace('autoplay=0', 'autoplay=1');
-      $(".page-node-type-news .video-embed-field-responsive-video iframe").attr("src", video);
-    }
-
     Object(_slick_js__WEBPACK_IMPORTED_MODULE_3__["default"])($, Drupal);
   });
 })(jQuery, Drupal);
@@ -1806,8 +1810,8 @@ var initSlick = function initSlick($, Drupal) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
-module.exports = __webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
+__webpack_require__(/*! /Users/usuario/Desktop/Proyectos/AlDiaNews/4ld14-n3ws/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
+module.exports = __webpack_require__(/*! /Users/usuario/Desktop/Proyectos/AlDiaNews/4ld14-n3ws/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
 
 
 /***/ })
