@@ -12,8 +12,8 @@
 }
 
 .site-branding__logo {
-  max-width: 257px;
-  padding-right: 15px;
+  max-width: 260px;
+  padding-right: 13px;
   margin-top: 15px;
   @media (max-width: $tablet) {
     margin-top: 12px;
@@ -607,6 +607,9 @@ body.open-menu {
   #block-magnifierheader {
     order: 4;
     margin: auto 0;
+    @media (max-width: $tablet) {
+      order: 6;
+    }
   }
 
   .block-search {
@@ -854,7 +857,7 @@ body.open-menu {
       .form-actions {
         width: 20px;
         height: 20px;
-
+        margin-left: 10px;
         input {
           width: 20px;
           height: 20px;
@@ -862,6 +865,8 @@ body.open-menu {
           background-position-x: 1px;
           background-position-y: 2px;
           margin: 2px 0 0 2px;
+          position: relative;
+          top: -4px;
         }
       }
     }
@@ -889,7 +894,7 @@ body.open-menu {
       display: block;
       background: transparent url("../img/user.svg") center center no-repeat;
       z-index: 8;
-      margin: auto 0 -5px 0;
+      margin: auto 0 auto 0;
 
       &.open {
         background: $cwhite url("../img/user.svg") center center no-repeat;

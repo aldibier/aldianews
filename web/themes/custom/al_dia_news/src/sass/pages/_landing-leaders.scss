@@ -1,679 +1,675 @@
 .path-thought-leaders {
+  //--------structure------------------//
 
-    //--------structure------------------//
-
-    @media(max-width: 1086px) and (min-width: $broken) {
-        div.block-views-blocklanding-thought-leaders-block-1 {
-            max-width: 358px;
-        }
-    
-        div#block-al-dia-news-content {
-
-            .view-content {
-                width: calc(100% - 363px);
-            }
-
-            .title-node-landing{
-                font-size: $px44;
-            }
-        } 
-    }
-   
-    //-------------titulo de la categoria------------//
-
-    .catergory-logo {
-        max-width: 180px;
-        margin: 0 0 0 -8px;
+  @media (max-width: 1086px) and (min-width: $broken) {
+    div.block-views-blocklanding-thought-leaders-block-1 {
+      max-width: 358px;
     }
 
-    .category-title {
-        display: flex;
-        border-bottom: 3px solid $corange;
-  
-        h1 {
-            margin: 14px 0 0px;
-            font-style: normal;
-            font-weight: normal;
-            font-size: $px50;
-            line-height: 60px;
-            color: $corange;
-            font-family: $Mod-light;
+    div#block-al-dia-news-content {
+      .view-content {
+        width: calc(100% - 363px);
+      }
+
+      .title-node-landing {
+        font-size: $px44;
+      }
+    }
+  }
+
+  //-------------titulo de la categoria------------//
+
+  .catergory-logo {
+    max-width: 145px;
+    margin: 0 0 0 -8px;
+    display: flex;
+    align-items: center;
+    img{
+        @media (min-width: $desktop){
+            height: 45px;
+            width: 145px;
         }
     }
+  }
 
-    #block-al-dia-news-content {
-        
-        .view-content {
-            width: calc(100% - 420px);
-            max-width: 870px;
-            padding: 0 20px 0 0;
-            overflow: hidden;
-            margin: 40px 0 0;
-        }
+  .category-title {
+    display: flex;
+    border-bottom: 3px solid $corange;
 
-        .views-row {
-            max-height: 520px;
-            position: relative;
-            height: 520px;
-            
-            img {
-                height: 100%;
-                max-width: initial;
-                width: auto;
-                right: 0;
-            }
-        }
-
-        .photo-author-landing-more {
-            height: 100%;
-            position: absolute;
-            right: -10%;
-        }
-
-        .information-node-more-content {
-            z-index: 2;
-            margin: auto 0 0 0;
-        }
-
-        .views-field-nothing {
-            height: 100%;
-            overflow: hidden;
-        }
-
-        .author-information-more-content {
-
-            &:after {
-                content: '';
-                width: 100%;
-                height: 100%;
-                position: absolute;
-                display: block;
-                top: 0;
-                left: 0;
-                background: linear-gradient(90deg, #0B0B0B 55.93%, rgba(11, 11, 11, 0) 72.49%);
-            }
-        }
-
-        .more-content-landing {
-            height: 100%;
-            display: flex;
-            flex-wrap: wrap;
-            position: relative;
-        }
-
-        .job-author-landing-more,
-        .name-author-landing-more {
-            z-index: 2;
-        }
-
-
-        .author-information-more-content {
-            width: 100%;
-        }
-    
-        .name-author-landing-more {
-            padding: 14px 30px;
-            max-width: 450px;
-            position: relative;
-            margin: 30px 0 15px;
-            font-style: normal;
-            font-family: $Mod-Sbold;
-            font-size: $px26;
-            line-height: 31px;
-            letter-spacing: 0.02em;
-            color: $cwhite;
-    
-            &:after {
-                content: '';
-                width: calc(100% - 60px);
-                margin: 0 auto;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: $cwhite;
-                height: 1px;
-                position: absolute;
-            }
-            
-        }
-    
-        .job-author-landing-more {
-            margin: 15px 0;
-            padding: 0 30px;
-            font-family: $NimR-reg;
-            font-style: normal;
-            font-weight: normal;
-            font-size: $px20;
-            color: $cwhite;
-            position: relative;
-        }
-
-        .title-node-landing {
-            padding: 0 0 15px 30px;
-            max-width: 75%;
-            font-style: normal;
-            font-weight: bold;
-            font-size: $px60;
-            line-height: 98.1%;
-            color: $cwhite;
-            font-family: $PrNovacond-bold;
-
-            a{
-                font-style: normal;
-                font-weight: bold;
-                line-height: 98.1%;
-                color: $cwhite;
-                font-family: $PrNovacond-bold;
-                border: none;
-    
-            }
-        }
-
-        .authored-on-landing {
-            padding: 15px 15px 40px 30px;
-            color: $cwhite;
-            font-style: normal;
-            font-weight: 600;
-            font-size: 17px;
-            line-height: 21px;
-            font-family: $PrNovacond-bold;
-        }
+    h1 {
+      margin: 14px 0 0px;
+      font-style: normal;
+      font-weight: normal;
+      font-size: $px50;
+      line-height: 60px;
+      color: $corange;
+      font-family: $Mod-light;
     }
-    
-    .block-views-blocklanding-thought-leaders-block-1 {
+  }
+
+  #block-al-dia-news-content {
+    .view-content {
+      width: calc(100% - 420px);
+      max-width: 870px;
+      padding: 0 20px 0 0;
+      overflow: hidden;
+      margin: 40px 0 0;
+    }
+
+    .views-row {
+      max-height: 520px;
+      position: relative;
+      height: 520px;
+
+      img {
+        height: 100%;
+        max-width: initial;
+        width: auto;
+        right: 0;
+      }
+    }
+
+    .photo-author-landing-more {
+      height: 100%;
+      position: absolute;
+      right: -10%;
+    }
+
+    .information-node-more-content {
+      z-index: 2;
+      margin: auto 0 0 0;
+    }
+
+    .views-field-nothing {
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .author-information-more-content {
+      &:after {
+        content: "";
+        width: 100%;
+        height: 100%;
         position: absolute;
-        top: 127px;
-        right: 5px;
-        max-width: 415px;
-        padding: 0 0 0 20px;
-        border-left: 1px solid $cgrey4;
-        height: 520px;
+        display: block;
+        top: 0;
+        left: 0;
+        background: linear-gradient(
+          90deg,
+          #0b0b0b 55.93%,
+          rgba(11, 11, 11, 0) 72.49%
+        );
+      }
+    }
 
-        .content {
-            margin: 0;
+    .more-content-landing {
+      height: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      position: relative;
+    }
+
+    .job-author-landing-more,
+    .name-author-landing-more {
+      z-index: 2;
+    }
+
+    .author-information-more-content {
+      width: 100%;
+    }
+
+    .name-author-landing-more {
+      padding: 14px 30px;
+      max-width: 450px;
+      position: relative;
+      margin: 30px 0 15px;
+      font-style: normal;
+      font-family: $Mod-Sbold;
+      font-size: $px26;
+      line-height: 31px;
+      letter-spacing: 0.02em;
+      color: $cwhite;
+
+      &:after {
+        content: "";
+        width: calc(100% - 60px);
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: $cwhite;
+        height: 1px;
+        position: absolute;
+      }
+    }
+
+    .job-author-landing-more {
+      margin: 15px 0;
+      padding: 0 30px;
+      font-family: $NimR-reg;
+      font-style: normal;
+      font-weight: normal;
+      font-size: $px20;
+      color: $cwhite;
+      position: relative;
+    }
+
+    .title-node-landing {
+      padding: 0 0 15px 30px;
+      max-width: 75%;
+      font-style: normal;
+      font-weight: bold;
+      font-size: $px60;
+      line-height: 98.1%;
+      color: $cwhite;
+      font-family: $PrNovacond-bold;
+
+      a {
+        font-style: normal;
+        font-weight: bold;
+        line-height: 98.1%;
+        color: $cwhite;
+        font-family: $PrNovacond-bold;
+        border: none;
+      }
+    }
+
+    .authored-on-landing {
+      padding: 15px 15px 40px 30px;
+      color: $cwhite;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 17px;
+      line-height: 21px;
+      font-family: $PrNovacond-bold;
+    }
+  }
+
+  .block-views-blocklanding-thought-leaders-block-1 {
+    position: absolute;
+    top: 127px;
+    right: 5px;
+    max-width: 415px;
+    padding: 0 0 0 20px;
+    border-left: 1px solid $cgrey4;
+    height: 520px;
+
+    .content {
+      margin: 0;
+    }
+
+    .photo-author-landing-more {
+      width: 235px;
+      height: 235px;
+      min-width: 235px;
+      min-height: 235px;
+      overflow: hidden;
+      border-radius: 100%;
+      filter: grayscale(100%);
+      box-shadow: 1px 3px 5px -2px rgb(0, 0, 0);
+    }
+
+    .name-author-landing-more {
+      padding: 15px 10px 10px 0;
+      width: max-content;
+      display: block;
+      position: relative;
+      border-bottom: 1px solid $cblack3;
+      font-style: normal;
+      font-size: 22px;
+      line-height: 26px;
+      font-family: $Mod-bold;
+      margin: 20px 0;
+    }
+
+    .job-author-landing-more {
+      font-style: normal;
+      font-weight: normal;
+      font-size: $px16;
+      line-height: 125%;
+      font-family: $NimR-reg;
+      color: $cblack3;
+      padding: 15px 0 10px;
+    }
+
+    .title-node-landing {
+      font-style: normal;
+      font-weight: bold;
+      font-size: $px30;
+      line-height: 37px;
+      font-family: $PrNovacond-bold;
+      color: $cblack3;
+      padding: 5px 0 0;
+
+      a {
+        font-style: normal;
+        font-weight: bold;
+        font-family: $PrNovacond-bold;
+        color: $cblack3;
+        border: none;
+      }
+    }
+
+    .authored-on-landing {
+      color: $cgrey3;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 19px;
+      padding: 15px 0 0;
+      font-family: $PrNovacond-reg;
+    }
+  }
+
+  .views-infinite-scroll-content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+
+    .views-row {
+      width: 33.33%;
+      max-width: 440px;
+      padding: 0 15px;
+      margin: 40px 0;
+
+      &:after {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1px;
+        height: 100%;
+        background: $cgrey4;
+        content: "";
+        display: block;
+      }
+
+      &:nth-child(3n + 1) {
+        padding: 0 15px 0 0;
+
+        &:after {
+          display: none;
         }
 
-        .photo-author-landing-more {
-            width: 235px;
-            height: 235px;
-            min-width: 235px;
-            min-height: 235px;
-            overflow: hidden;
-            border-radius: 100%;
-            filter: grayscale(100%);
-            box-shadow: 1px 3px 5px -2px rgb(0,0,0);
+        &:before {
+          content: "";
+          display: block;
+          width: 100%;
+          position: absolute;
+          left: 0;
+          right: 0;
+          height: 1px;
+          background: $cgrey4;
+          margin: -35px auto 0;
         }
-        
-        .name-author-landing-more {
-            padding: 15px 10px 10px 0;
-            width: max-content;
-            display: block;
-            position: relative;
-            border-bottom: 1px solid $cblack3;
-            font-style: normal;
-            font-size: 22px;
-            line-height: 26px;
-            font-family: $Mod-bold;
-            margin: 20px 0;
-        }
+      }
 
-        .job-author-landing-more {
-            font-style: normal;
-            font-weight: normal;
-            font-size: $px16;
-            line-height: 125%;
-            font-family: $NimR-reg;
-            color: $cblack3;
-            padding: 15px 0 10px;
+      &:first-child {
+        &:after,
+        &:before {
+          display: none;
         }
+      }
 
-        .title-node-landing {
-            font-style: normal;
-            font-weight: bold;
-            font-size: $px30;
-            line-height: 37px;
-            font-family: $PrNovacond-bold;
-            color: $cblack3;
-            padding: 5px 0 0;
+      &:nth-child(3n + 2) {
+        position: relative;
+      }
 
-            a{
-                font-style: normal;
-                font-weight: bold;
-                font-family: $PrNovacond-bold;
-                color: $cblack3;
-                border: none;
-            }
-        }
+      &:nth-child(3n + 3) {
+        padding: 0 0 0 15px;
+        position: relative;
+      }
+    }
 
-        .authored-on-landing {
-            color: $cgrey3;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 16px;
-            line-height: 19px;
-            padding: 15px 0 0;
-            font-family: $PrNovacond-reg;
-        }
+    .author-information-more-content,
+    .information-node-more-content {
+      max-width: 355px;
+      margin: 0 auto;
+    }
+
+    .author-information-more-content {
+      display: flex;
+    }
+
+    .photo-author-landing-more {
+      width: 130px;
+      height: 130px;
+      min-width: 130px;
+      overflow: hidden;
+      filter: grayscale(100%);
+      border-radius: 100%;
+      box-shadow: 1px 3px 5px -2px rgb(0, 0, 0);
+    }
+
+    .name-profession-author {
+      padding: 0 0 0 20px;
+    }
+
+    .name-author-landing-more {
+      padding: 15px 0;
+      border-bottom: 1px solid $cblack3;
+      font-style: normal;
+      font-size: $px22;
+      line-height: 26px;
+      color: $corange;
+      font-family: $Mod-bold;
+    }
+
+    .job-author-landing-more {
+      font-style: normal;
+      font-weight: normal;
+      font-size: $px16;
+      line-height: 125%;
+      color: $cblack3;
+      font-family: $NimR-reg;
+      margin: 15px 0;
+    }
+
+    .title-node-landing {
+      font-style: normal;
+      font-weight: bold;
+      font-size: $px30;
+      line-height: 37px;
+      margin: 20px 0 0;
+      font-family: $PrNovacond-bold;
+      color: $cblack3;
+
+      a {
+        font-style: normal;
+        font-weight: bold;
+        font-family: $PrNovacond-bold;
+        color: $cblack3;
+        border: none;
+      }
+    }
+
+    .authored-on-landing {
+      font-style: normal;
+      font-weight: normal;
+      font-size: $px20;
+      line-height: 24px;
+      color: $cblack3;
+      margin: 15px 0 0;
+      font-family: $PrNovacond-reg;
+    }
+  }
+
+  @media (max-width: $broken) {
+    #block-al-dia-news-content {
+      .view-content {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+      }
+    }
+
+    .block-views-blocklanding-thought-leaders-block-1 {
+      position: relative;
+      width: 100%;
+      max-width: 100%;
+      border: none;
+      padding: 0;
+      right: 0;
+      top: auto;
+      height: auto;
+      margin: 15px 0;
+
+      .more-content-landing {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .author-information-more-content {
+        width: 100%;
+        display: flex;
+      }
+
+      .information-node-more-content {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 15px 0;
+      }
+
+      .title-node-landing {
+        margin: auto 0 0;
+        display: block;
+      }
+
+      .authored-on-landing {
+        margin: 0 0 auto;
+      }
+
+      .name-profession-author {
+        padding: 0 15px;
+      }
     }
 
     .views-infinite-scroll-content-wrapper {
+      .views-row {
+        width: 50%;
+        max-width: 100%;
+
+        &:nth-child(2n + 1) {
+          padding: 0 15px 0 0;
+          position: initial;
+
+          &:before {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            top: initial;
+            margin: -30px 0 0;
+            content: "";
+            background: $cgrey4;
+          }
+
+          &:after {
+            display: none;
+          }
+        }
+
+        &:first-child {
+          &:after,
+          &:before {
+            display: none;
+          }
+        }
+
+        &:nth-child(2n + 2) {
+          padding: 0 0 0 15px;
+          position: relative;
+
+          &:before {
+            left: 0;
+            right: auto;
+            height: 100%;
+            width: 1px;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: $tablet) {
+    .category-title {
+      padding: 0 0 5px;
+      border-bottom: 1px solid $corange;
+
+      h1 {
+        font-size: 20px;
+        line-height: 24px;
+        margin: 5px 0 -5px;
+      }
+    }
+
+    .catergory-logo {
+      width: 75px;
+      margin: 0 0 -10px 0;
+      height: 22px;
+    }
+
+    #block-al-dia-news-content {
+      .views-row {
+        max-height: 245px;
+        height: 245px;
+
+        img {
+          height: auto;
+          width: 100%;
+          margin: 0 0 0 auto;
+          left: auto;
+          right: 0;
+        }
+      }
+
+      .view-content {
+        margin: 30px 0 0;
+      }
+
+      .photo-author-landing-more {
+        right: 0;
+        height: 100%;
+        width: calc(100% - 50%);
+      }
+
+      .name-author-landing-more {
+        margin: 17px 0 0;
+        padding: 0 10px 5px;
+        font-size: 14px;
+        line-height: 17px;
+        max-width: 190px;
+
+        &::after {
+          width: calc(100% - 20px);
+        }
+      }
+
+      .job-author-landing-more {
+        font-size: 12px;
+        line-height: 122%;
+        max-width: 190px;
+        padding: 0 10px;
+        margin: 5px 0;
+      }
+
+      .title-node-landing {
+        max-width: 215px;
+        padding: 0 10px;
+        font-size: 22px;
+        line-height: 27px;
+        margin: auto 0 0 0;
+      }
+
+      .authored-on-landing {
+        padding: 0 10px 22px;
+        font-size: 10px;
+        line-height: 12px;
+        font-family: $PrNovacond-reg;
+      }
+    }
+
+    .block-views-blocklanding-thought-leaders-block-1 {
+      .photo-author-landing-more {
+        width: 100px;
+        height: 100px;
+        min-width: 100px;
+        min-height: 100px;
+        margin: 12px;
+      }
+
+      .name-profession-author {
         display: flex;
         flex-wrap: wrap;
+      }
 
-        .views-row {
-            width: 33.33%;
-            max-width: 440px;
-            padding: 0 15px;
-            margin: 40px 0;
+      .name-author-landing-more {
+        margin: auto 0 0;
+        width: 100%;
+        padding: 0 10px 5px 0;
+        font-size: 15px;
+        line-height: 18px;
+        border-bottom: 0.5px solid #333;
+      }
 
-            &:after {
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 1px;
-                height: 100%;
-                background: $cgrey4;
-                content: '';
-                display: block;
-            }
+      .job-author-landing-more {
+        margin: 0 0 auto;
+        padding: 5px 0 0;
+        font-size: 10px;
+        line-height: 125%;
+      }
 
-            &:nth-child(3n+1){
-                padding: 0 15px 0 0;
-                
-                &:after {
-                    display: none;
-                }
+      .title-node-landing {
+        font-size: 20px;
+        line-height: 24px;
+      }
 
-                &:before {
-                    content: '';
-                    display: block;
-                    width: 100%;
-                    position: absolute;
-                    left: 0;
-                    right: 0;
-                    height: 1px;
-                    background: $cgrey4;
-                    margin: -35px auto 0;
-                }
-            }
+      .authored-on-landing {
+        font-size: 10px;
+        line-height: 12px;
+        padding: 5px 0 0;
+      }
 
-            &:first-child{
-                &:after,
-                &:before  {
-                    display: none;
-                }
-            }
-
-
-            &:nth-child(3n+2){
-                position: relative;
-            }
-
-            &:nth-child(3n+3){
-                padding: 0 0 0 15px;
-                position: relative;
-            }
-        }
-
-        .author-information-more-content,
-        .information-node-more-content {
-            max-width: 355px;
-            margin: 0 auto;
-        }
-
-        .author-information-more-content  {
-            display: flex;
-        }
-
-        .photo-author-landing-more {
-            width: 130px;
-            height: 130px;
-            min-width: 130px;
-            overflow: hidden;
-            filter: grayscale(100%);
-            border-radius: 100%;
-            box-shadow: 1px 3px 5px -2px rgb(0,0,0);
-        }
-
-        .name-profession-author {
-            padding: 0 0 0 20px;
-        }
-
-        .name-author-landing-more {
-            padding: 15px 0;
-            border-bottom: 1px solid $cblack3;
-            font-style: normal;
-            font-size: $px22;
-            line-height: 26px;
-            color: $corange;
-            font-family: $Mod-bold;
-        }
-
-        .job-author-landing-more  {
-            font-style: normal;
-            font-weight: normal;
-            font-size: $px16;
-            line-height: 125%;
-            color: $cblack3;
-            font-family: $NimR-reg;
-            margin: 15px 0;
-        }
-
-        .title-node-landing {
-            font-style: normal;
-            font-weight: bold;
-            font-size: $px30;
-            line-height: 37px;
-            margin: 20px 0 0;
-            font-family: $PrNovacond-bold;
-            color: $cblack3;
-
-            a {
-                font-style: normal;
-                font-weight: bold;
-                font-family: $PrNovacond-bold;
-                color: $cblack3;
-                border: none;
-            }
-        }
-
-        .authored-on-landing {
-            font-style: normal;
-            font-weight: normal;
-            font-size: $px20;
-            line-height: 24px;
-            color: $cblack3;
-            margin: 15px 0 0;
-            font-family: $PrNovacond-reg;
-        }
+      .information-node-more-content {
+        margin: 0;
+      }
     }
 
-    @media(max-width: $broken) {
+    .views-infinite-scroll-content-wrapper {
+      .views-row {
+        margin: 30px 0;
 
-        #block-al-dia-news-content {
-
-            .view-content{
-                width: 100%;
-                max-width: 100%;
-                padding: 0;
-            }
+        .author-information-more-content {
+          flex-wrap: wrap;
         }
+      }
 
-        .block-views-blocklanding-thought-leaders-block-1 {
-            position: relative;
-            width: 100%;
-            max-width: 100%;
-            border: none;
-            padding: 0;
-            right: 0;
-            top: auto;
-            height: auto;
-            margin: 15px 0;
+      .name-profession-author {
+        padding: 0;
+        width: 100%;
+      }
 
-            .more-content-landing {
-                display: flex;
-                flex-wrap: wrap;
-            }
+      .name-author-landing-more {
+        padding: 15px 0 5px;
+        font-size: 12px;
+        line-height: 14px;
+      }
 
-            .author-information-more-content {
-                width: 100%;
-                display: flex;
-            }
+      .job-author-landing-more {
+        margin: 10px 0;
+        font-size: 10px;
+        line-height: 125%;
+      }
 
-            .information-node-more-content {
-                width: 100%;
-                display: flex;
-                flex-wrap: wrap;
-                margin: 15px 0;
-            }
+      .title-node-landing {
+        font-size: 15px;
+        line-height: 18px;
+        margin: 0;
+      }
 
-            .title-node-landing {
-                margin: auto 0 0;
-                display: block;
-            }
+      .authored-on-landing {
+        font-size: 10px;
+        line-height: 12px;
+        margin: 5px 0;
+      }
 
-            .authored-on-landing {
-                margin: 0 0 auto;
-            }
-
-            .name-profession-author {
-                padding: 0 15px;
-            }
-        }
-
-        .views-infinite-scroll-content-wrapper {
-            .views-row {
-                width: 50%;
-                max-width: 100%;
-
-                &:nth-child(2n+1){
-                    padding: 0 15px 0 0;
-                    position: initial;
-
-                    &:before {
-                        display: block;
-                        position: absolute;
-                        width: 100%;
-                        height: 1px;
-                        top: initial;
-                        margin: -30px 0 0;
-                        content: '';
-                        background: $cgrey4;
-                    }
-
-                    &:after {
-                        display: none;
-                    }
-                }
-
-                &:first-child {
-                    &:after,
-                    &:before {
-                        display: none;
-                    }
-                }
-
-                &:nth-child(2n+2){
-                    padding: 0 0 0 15px;
-                    position: relative;
-
-                    &:before {
-                        left: 0;
-                        right: auto;
-                        height: 100%;
-                        width: 1px;
-                        margin: 0;
-                    }
-                }
-            }
-        }
+      .photo-author-landing-more {
+        width: 90px;
+        height: 90px;
+        min-width: 90px;
+        min-height: 90px;
+      }
     }
+  }
 
-    @media(max-width:$tablet){
-
-        .category-title {
-            padding: 0 0 5px;
-            border-bottom: 1px solid $corange;
-
-            h1 {
-                font-size: 20px;
-                line-height: 24px;
-                margin: 5px 0 -5px;
-            }
+  @media (max-width: 519px) {
+    #block-al-dia-news-content {
+      .views-row {
+        img {
+          height: 100%;
+          width: auto;
         }
-
-        .catergory-logo {
-            width: 75px;
-            margin: 0 0 -10px 0;
-            height: 22px;
-        }
-
-        #block-al-dia-news-content {
-            .views-row {
-                max-height: 245px;
-                height: 245px;
-
-                img {
-                    height: auto;
-                    width: 100%;
-                    margin: 0 0 0 auto;
-                    left: auto;
-                    right: 0;
-                }
-            }
-
-            .view-content {
-                margin: 30px 0 0;
-            }
-
-            .photo-author-landing-more {
-                right: 0;
-                height: 100%;
-                width: calc(100% - 50%);
-            }
-
-            .name-author-landing-more {
-                margin: 17px 0 0;
-                padding: 0 10px 5px;
-                font-size: 14px;
-                line-height: 17px;
-                max-width: 190px;
-
-                &::after {
-                    width: calc(100% - 20px);
-                }
-            }
-
-            .job-author-landing-more {
-                font-size: 12px;
-                line-height: 122%;
-                max-width: 190px;
-                padding: 0 10px;
-                margin: 5px 0;
-            }
-
-            .title-node-landing {
-                max-width: 215px;
-                padding: 0 10px;
-                font-size: 22px;
-                line-height: 27px;
-                margin: auto 0 0 0;
-            }
-
-            .authored-on-landing {
-                padding: 0 10px 22px;
-                font-size: 10px;
-                line-height: 12px;
-                font-family: $PrNovacond-reg;
-            }
-        }
-
-        .block-views-blocklanding-thought-leaders-block-1  {
-
-            .photo-author-landing-more {
-                width: 100px;
-                height: 100px;
-                min-width: 100px;
-                min-height: 100px;
-                margin: 12px;
-            }
-
-            .name-profession-author {
-                display: flex;
-                flex-wrap: wrap;
-            }
-
-            .name-author-landing-more {
-                margin: auto 0 0;
-                width: 100%;
-                padding: 0 10px 5px 0;
-                font-size: 15px;
-                line-height: 18px;
-                border-bottom: 0.5px solid #333;
-            }
-
-            .job-author-landing-more {
-                margin: 0 0 auto;
-                padding: 5px 0 0;
-                font-size: 10px;
-                line-height: 125%;
-            }
-
-            .title-node-landing {
-                font-size: 20px;
-                line-height: 24px;
-            }
-
-            .authored-on-landing {
-                font-size: 10px;
-                line-height: 12px;
-                padding: 5px 0 0;
-            }
-
-            .information-node-more-content {
-                margin: 0;
-            }
-        }
-
-        .views-infinite-scroll-content-wrapper { 
-
-            .views-row {
-                margin: 30px 0;
-
-                .author-information-more-content {
-                    flex-wrap: wrap;
-                }
-            }
-
-            .name-profession-author {
-                padding: 0; 
-                width: 100%;
-            }
-
-            .name-author-landing-more {
-                padding: 15px 0 5px;
-                font-size: 12px;
-                line-height: 14px;
-            }
-
-            .job-author-landing-more {
-                margin: 10px 0;
-                font-size: 10px;
-                line-height: 125%;
-            }
-
-            .title-node-landing {
-                font-size: 15px;
-                line-height: 18px;
-                margin: 0;
-            }
-
-            .authored-on-landing {
-                font-size: 10px;
-                line-height: 12px;
-                margin: 5px 0;
-            }
-
-            .photo-author-landing-more {
-                width: 90px;
-                height: 90px;
-                min-width: 90px;
-                min-height: 90px; 
-            }
-        }
+      }
     }
-
-    @media(max-width: 519px){
-        #block-al-dia-news-content {
-
-            .views-row {
-
-                img {
-                    height: 100%;
-                    width: auto;
-                }
-            }
-        }
-    }
-
+  }
 }
