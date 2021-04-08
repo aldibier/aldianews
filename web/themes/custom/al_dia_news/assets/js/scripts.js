@@ -1512,7 +1512,7 @@ __webpack_require__.r(__webpack_exports__);
   var $video = $(".page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video .content");
   var videoHeight = $video.outerHeight();
 
-  if (!!$videoWrap) {
+  if (!!document.querySelector('.page-node-type-news') && !!$video) {
     $window.on('scroll', function () {
       var windowScrollTop = $window.scrollTop();
       var videoBottom = videoHeight + $videoWrap.offset().top;
@@ -1528,9 +1528,12 @@ __webpack_require__.r(__webpack_exports__);
   }
 
   jQuery(document).ready(function () {
-    var url = $(".page-node-type-news .video-embed-field-responsive-video iframe")[0].src += "&mute=1";
-    var video = url.replace('autoplay=0', 'autoplay=1');
-    $(".page-node-type-news .video-embed-field-responsive-video iframe").attr("src", video); //--------- menu--------------------//
+    if ($(".page-node-type-news .video-embed-field-responsive-video iframe").length) {
+      var url = $(".page-node-type-news .video-embed-field-responsive-video iframe")[0].src += "&mute=1";
+      var video = url.replace('autoplay=0', 'autoplay=1');
+      $(".page-node-type-news .video-embed-field-responsive-video iframe").attr("src", video);
+    } //--------- menu--------------------//
+
 
     $(".region-header #block-blockheader").click(function () {
       if ($(".region-secondary-menu").hasClass("open-menu")) {
@@ -1807,8 +1810,8 @@ var initSlick = function initSlick($, Drupal) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/andresmartinez/sites/News/code/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
-module.exports = __webpack_require__(/*! /Users/andresmartinez/sites/News/code/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
+__webpack_require__(/*! /Users/usuario/Desktop/Proyectos/AlDiaNews/4ld14-n3ws/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
+module.exports = __webpack_require__(/*! /Users/usuario/Desktop/Proyectos/AlDiaNews/4ld14-n3ws/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
 
 
 /***/ })
