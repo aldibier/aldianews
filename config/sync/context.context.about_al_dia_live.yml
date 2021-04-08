@@ -1,0 +1,41 @@
+uuid: cd894bc7-ac27-42ba-ac6d-7e62066af6d5
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+name: about_al_dia_live
+label: 'About Al Día Live'
+group: 'General pages'
+description: 'About Al Día Live landing'
+requireAllConditions: false
+disabled: false
+conditions:
+  request_path:
+    id: request_path
+    pages: /about-al-dia-live
+    negate: false
+    uuid: 78b7afeb-ce3d-4a84-ac4b-d7b69a51ba38
+    context_mapping: {  }
+reactions:
+  blocks:
+    blocks:
+      126535ed-53b6-4e23-b01b-ac1cb16cd26d:
+        id: system_main_block
+        label: 'Main page content'
+        provider: system
+        label_display: '0'
+        region: content
+        weight: '0'
+        context_mapping: {  }
+        custom_id: system_main_block
+        theme: al_dia_news
+        css_class: ''
+        unique: 0
+        context_id: about_al_dia_live
+        uuid: 126535ed-53b6-4e23-b01b-ac1cb16cd26d
+    id: blocks
+    saved: false
+    uuid: e8523adf-eacb-45ff-bd80-ac4e8c76b9db
+    include_default_blocks: 1
+weight: 0
