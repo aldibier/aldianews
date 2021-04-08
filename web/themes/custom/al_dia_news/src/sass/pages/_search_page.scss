@@ -1,7 +1,7 @@
 //// bloque buscador modal
 #block-exposedformsearch-results-al-dia-solrpage-1-2 {
   position: absolute;
-  bottom: -65px;
+  bottom: -78px;
   left: 0px;
   right: 0px;
   margin: 0 auto;
@@ -18,13 +18,14 @@
   form > .form--inline {
     display: flex;
     align-items: center;
+    padding: 13.04px 0 0;
   }
   label {
     display: none;
   }
   button[name="close"] {
     position: absolute;
-    top: 20px;
+    top: 32px;
     right: 4px;
     width: 20px;
     height: 20px;
@@ -67,7 +68,9 @@
   }
   .form-actions {
     margin: 0 50px 0 0;
-    min-width: 120px;
+    input {
+      min-width: 120px;
+    }
   }
 }
 
@@ -240,6 +243,7 @@
     padding: 15px;
     form > .form--inline {
       flex-wrap: wrap;
+      padding: 0px 0 0;
     }
     button[name="close"] {
       top: 15px;
@@ -267,9 +271,9 @@
     }
     .form-actions {
       margin: 0px 0 0;
-      min-width: 100;
       input {
         margin: 0px;
+        min-width: 100px;
       }
     }
   }
