@@ -1330,7 +1330,7 @@ window.onload = function () {
         button_regis.click();
       });
     }
-  });
+  }); //// js modal landing videos
 
   if (!!document.querySelector(".path-videos")) {
     var allCardVideos = document.querySelectorAll(".card-one-column");
@@ -1353,6 +1353,7 @@ window.onload = function () {
 
         while (node) {
           if (node !== event.currentTarget && node.nodeType === Node.ELEMENT_NODE) {
+            if (event.target.closest(".wrapper-popup")) return;
             node.querySelector(".wrapper-popup").classList.remove("active");
             resetAlliframes();
           } else {
