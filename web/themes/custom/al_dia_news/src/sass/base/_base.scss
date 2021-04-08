@@ -178,6 +178,10 @@ select::-ms-expand {
   transform: translateX(-50%) !important;
   animation: none !important;
   transition: none !important;
+
+  @media (max-width: $tablet) {
+   display: none !important;
+  }
 }
 
 //---------------------end selection sharer----------------------//
