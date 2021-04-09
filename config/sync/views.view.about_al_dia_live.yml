@@ -10,6 +10,7 @@ dependencies:
     - field.storage.block_content.field_image
     - field.storage.block_content.field_image_carousel
     - field.storage.block_content.field_image_for_the_title
+    - field.storage.block_content.field_image_for_the_title_mobile
     - field.storage.block_content.field_section_title
     - field.storage.block_content.field_url_video
     - field.storage.block_content.field_video_thumbnail
@@ -25,6 +26,7 @@ dependencies:
     - image
     - paragraphs
     - video_embed_field
+    - views_fieldsets
 id: about_al_dia_live
 label: 'About Al Día Live'
 module: views
@@ -449,6 +451,64 @@ display:
         groups:
           1: AND
       fields:
+        fieldset:
+          id: fieldset
+          table: views
+          field: fieldset
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          fields:
+            - field_video_title
+            - field_video_thumbnail
+            - nothing
+          wrapper: div
+          legend: ''
+          classes: about-al-dia-live-container-video
+          collapsible: 1
+          collapsed: 0
+          plugin_id: fieldset
         field_video_title:
           id: field_video_title
           table: block_content__field_video_title
@@ -460,7 +520,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<img src=\"/themes/custom/al_dia_news/assets/img/logo-al-dia-live-blanco.png\"></img>\r\n<div class=\"video-title\">Video title: {{ field_video_title }}</div>"
+            text: "<div class=\"title-video-about-al-dia-live\">\r\n    <img src=\"/themes/custom/al_dia_news/assets/img/logo-al-dia-live-blanco.png\"></img>\r\n    <div class=\"video-title\">Video title: {{ field_video_title }}</div>\r\n<div>"
             make_link: false
             path: ''
             absolute: false
@@ -520,7 +580,7 @@ display:
           group_type: group
           admin_label: ''
           label: ''
-          exclude: true
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -549,7 +609,7 @@ display:
             preserve_tags: ''
             html: false
           element_type: ''
-          element_class: ''
+          element_class: about-al-dia-live-image
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
@@ -587,7 +647,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<div class="play">{{ field_video_thumbnail }}</div>'
+            text: '<span class="play-icon"></span>'
             make_link: false
             path: ''
             absolute: false
@@ -662,7 +722,7 @@ display:
             preserve_tags: ''
             html: false
           element_type: ''
-          element_class: ''
+          element_class: about-al-dia-live-video
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
@@ -864,7 +924,7 @@ display:
             preserve_tags: ''
             html: false
           element_type: ''
-          element_class: ''
+          element_class: 'slider about-al-dia-live-slider'
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
@@ -887,7 +947,7 @@ display:
           delta_offset: 0
           delta_reversed: false
           delta_first_last: false
-          multi_type: separator
+          multi_type: ul
           separator: ', '
           field_api_classes: false
           plugin_id: field
@@ -984,6 +1044,63 @@ display:
         groups:
           1: AND
       fields:
+        fieldset:
+          id: fieldset
+          table: views
+          field: fieldset
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          fields:
+            - field_item_name
+            - field_item_text
+          wrapper: div
+          legend: ''
+          classes: about-al-dia-live-statistics
+          collapsible: 1
+          collapsed: 0
+          plugin_id: fieldset
         field_item_name:
           id: field_item_name
           table: paragraph__field_item_name
@@ -1224,68 +1341,6 @@ display:
           required: false
           plugin_id: standard
       fields:
-        field_testimonial:
-          id: field_testimonial
-          table: paragraph__field_testimonial
-          field: field_testimonial
-          relationship: field_testimonies
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: basic_string
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
         field_name:
           id: field_name
           table: paragraph__field_name
@@ -1476,6 +1531,125 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
+        fieldset:
+          id: fieldset
+          table: views
+          field: fieldset
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          fields:
+            - field_testimonial
+            - nothing
+          wrapper: div
+          legend: ''
+          classes: about-al-dia-live-testimonies
+          collapsible: 1
+          collapsed: 0
+          plugin_id: fieldset
+        field_testimonial:
+          id: field_testimonial
+          table: paragraph__field_testimonial
+          field: field_testimonial
+          relationship: field_testimonies
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: basic_string
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
         nothing:
           id: nothing
           table: views
@@ -1544,6 +1718,63 @@ display:
       display_extenders: {  }
       path: about-al-dia-live
       fields:
+        fieldset:
+          id: fieldset
+          table: views
+          field: fieldset
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          fields:
+            - field_section_title
+            - fieldset_1
+          wrapper: fieldset
+          legend: ''
+          classes: about-al-dia-live-title
+          collapsible: 1
+          collapsed: 0
+          plugin_id: fieldset
         field_section_title:
           id: field_section_title
           table: block_content__field_section_title
@@ -1607,10 +1838,131 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
+        fieldset_1:
+          id: fieldset_1
+          table: views
+          field: fieldset
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          fields:
+            - field_image_for_the_title
+            - field_image_for_the_title_mobile
+          wrapper: div
+          legend: ''
+          classes: wrapper-image
+          collapsible: 1
+          collapsed: 0
+          plugin_id: fieldset
         field_image_for_the_title:
           id: field_image_for_the_title
           table: block_content__field_image_for_the_title
           field: field_image_for_the_title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: image
+          settings:
+            image_style: ''
+            image_link: ''
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_image_for_the_title_mobile:
+          id: field_image_for_the_title_mobile
+          table: block_content__field_image_for_the_title_mobile
+          field: field_image_for_the_title_mobile
           relationship: none
           group_type: group
           admin_label: ''
@@ -1745,4 +2097,5 @@ display:
       tags:
         - 'config:field.storage.block_content.field_image'
         - 'config:field.storage.block_content.field_image_for_the_title'
+        - 'config:field.storage.block_content.field_image_for_the_title_mobile'
         - 'config:field.storage.block_content.field_section_title'
