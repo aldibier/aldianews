@@ -256,10 +256,10 @@
     width: 100%;
     max-width: 440px;
   }
-  // .form-item-field-category{
-  //   max-width: 225px;
-  //   width: 100%;
-  // }
+  .form-item-field-my-content-has-a-main-vide {
+    max-width: 225px;
+    width: 100%;
+  }
   .form-item-sort-bef-combine,
   .form-item-field-category {
     max-width: 200px;
@@ -415,6 +415,9 @@
     .SumoSelect {
       width: 100%;
     }
+    .SumoSelect.open>.optWrapper{
+      top: 34px;
+    }
     .SumoSelect > .CaptionCont {
       background: url(../img/fle_mobil.png) center right no-repeat
         rgb(237, 237, 237);
@@ -433,8 +436,7 @@
       border-right: 15px solid #ededed;
       border-left: 15px solid #ededed;
     }
-    .form-item-sort-bef-combine,
-    .form-item-field-category {
+    .form-type-select {
       max-width: none;
       width: 100%;
     }
