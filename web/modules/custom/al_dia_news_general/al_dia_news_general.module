@@ -65,7 +65,9 @@ function al_dia_news_form_views_exposed_form_alter(&$form, &$form_state) {
     $form['tid']['#options']['All'] = 'Any';
   }
   if($form["#id"] == 'views-exposed-form-search-results-al-dia-solr-page-1'){
+    ksm($form);
     $form['field_category']['#options']['All'] = 'Select';
+    $form['field_my_content_has_a_main_vide']['#options']['All'] = 'Select';
     $form['sort_bef_combine']['#options']['created_ASC'] = 'OLDEST';
     $form['sort_bef_combine']['#options']['created_DESC'] = 'NEWEST';
     $form['sort_bef_combine']['#options']['search_api_relevance_DESC'] = 'RELEVANCE';
