@@ -155,21 +155,6 @@ body.toolbar-tray-open.user-logged-in {
   }
 }
 
-select {
-  background: #ededed url(../img/fle.png); /*aquí deberás escribir la ruta de la imagen que utilizarás como flecha del desplegable*/
-  background-repeat: no-repeat;
-  background-position: right center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -o-appearance: none;
-  appearance: none;
-  border-right: 14px solid transparent;
-}
-
-select::-ms-expand {
-  display: none; /*Evita que se muestre la flecha por defecto en versiones de IE*/
-}
-
 //---------------------end breadcrumb----------------------//
 
 //---------------------selection sharer----------------------//
@@ -180,7 +165,7 @@ select::-ms-expand {
   transition: none !important;
 
   @media (max-width: $tablet) {
-   display: none !important;
+    display: none !important;
   }
 }
 
