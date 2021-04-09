@@ -56,19 +56,19 @@
 {% if label_hidden %}
   {% if multiple %}
       {% for item in items %}
-        <h1>{{ item.content }}</h1>
+        <h1 class="main-title">{{ item.content }}</h1>
       {% endfor %}
   {% else %}
     {% for item in items %}
-      <h1>{{ item.content }}</h1>
+      <h1 class="main-title">{{ item.content }}</h1>
     {% endfor %}
   {% endif %}
 {% else %}
-    <h1>{{ label }}</h1>
+    <h1 class="main-title">{{ label }}</h1>
     {% if multiple %}
     {% endif %}
     {% for item in items %}
-      <h1>{{ item.content }}</h1>
+      <h1 class="main-title">{{ item.content }}</h1>
     {% endfor %}
     {% if multiple %}
     {% endif %}

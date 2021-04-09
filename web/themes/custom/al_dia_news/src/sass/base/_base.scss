@@ -170,3 +170,21 @@ body.toolbar-tray-open.user-logged-in {
 }
 
 //---------------------end selection sharer----------------------//
+
+//---------------------main title----------------------//
+.main-title {
+  font-style: normal;
+  font-weight: bold;
+  font-size: $px76;
+  line-height: 112.8%;
+  color: $cblack;
+  font-family: $Modcond-bold;
+  margin: 60px 0 20px;
+
+  @media screen and(max-width: $tablet) {
+    font-size: 30px;
+    line-height: 112.8%;
+    margin: 30px 0 10px;
+  }
+}
+//---------------------end main title----------------------//
