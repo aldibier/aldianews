@@ -12,7 +12,8 @@
   &.open {
     display: block;
   }
-  .form-item-field-category {
+  .form-item-field-category,
+  .form-type-select {
     display: none;
   }
   form > .form--inline {
@@ -151,7 +152,8 @@
   .SumoSelect.open > .optWrapper {
     top: 54px;
   }
-  .search_api_relevance_ASC {
+  .search_api_relevance_ASC,
+  .form-item-sort-bef-combine .options li:nth-child(3) {
     display: none;
   }
   /////
@@ -206,7 +208,10 @@
       border-top: 0.5px solid #b1b1b1;
       display: flex;
       align-items: center;
-      text-transform: capitalize;
+      text-transform: lowercase;
+      &::first-letter {
+        text-transform: uppercase;
+      }
       &::nth-child(1) {
         border-top: 0px;
       }
@@ -251,10 +256,10 @@
     width: 100%;
     max-width: 440px;
   }
-  // .form-item-field-category{
-  //   max-width: 225px;
-  //   width: 100%;
-  // }
+  .form-item-field-my-content-has-a-main-vide {
+    max-width: 225px;
+    width: 100%;
+  }
   .form-item-sort-bef-combine,
   .form-item-field-category {
     max-width: 200px;
@@ -410,6 +415,9 @@
     .SumoSelect {
       width: 100%;
     }
+    .SumoSelect.open>.optWrapper{
+      top: 34px;
+    }
     .SumoSelect > .CaptionCont {
       background: url(../img/fle_mobil.png) center right no-repeat
         rgb(237, 237, 237);
@@ -428,8 +436,7 @@
       border-right: 15px solid #ededed;
       border-left: 15px solid #ededed;
     }
-    .form-item-sort-bef-combine,
-    .form-item-field-category {
+    .form-type-select {
       max-width: none;
       width: 100%;
     }

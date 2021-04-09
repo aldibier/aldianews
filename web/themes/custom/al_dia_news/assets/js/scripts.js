@@ -1412,12 +1412,10 @@ window.onload = function () {
 
   var arrow = document.querySelector(".path-search-results .arrow");
   var blocks_search = document.querySelector("#block-exposedformsearch-results-al-dia-solrpage-1");
-  var sort = document.querySelector(".block-search-api-sorts");
 
-  if (arrow != null && blocks_search != null && sort != null) {
+  if (arrow != null && blocks_search != null) {
     arrow.addEventListener("click", function () {
       blocks_search.classList.toggle("open");
-      sort.classList.toggle("open-flex");
       arrow.classList.toggle("rote");
     });
   }
