@@ -1,4 +1,19 @@
-window.onload = function() {
+window.onload = function () {
+  // blockquote para selection-sharer
+  const allBlockquote = document.querySelectorAll('blockquote:not([class*="twitter"])');
+
+
+  if (!!allBlockquote && allBlockquote.length) {
+    allBlockquote.forEach(blockquote => {
+      console.log(blockquote.querySelector('p'));
+      if (blockquote.firstElementChild.tagName === 'P') {
+        let text = blockquote.firstElementChild.textContent;
+        blockquote.textContent = text;
+      }
+    })
+  }
+
+
   // js video en interna
   var video_interna = document.querySelector(
     ".block-field-blocknodenewsfield-video"
@@ -13,7 +28,7 @@ window.onload = function() {
   //// js ajuste ancla en employed
   Array.from(
     document.querySelectorAll(".menu--i-am-an-employer-menu li a")
-  ).map(function(e) {
+  ).map(function (e) {
     e.addEventListener("click", () => {
       setTimeout(() => {
         var scroll_y = window.scrollY;
@@ -40,7 +55,7 @@ window.onload = function() {
       document.querySelectorAll(
         ".block-views-blockcarousel-videos-landing-block-2"
       )
-    ).map(function(e) {
+    ).map(function (e) {
       var p = e.querySelector(".select-video");
       var c = e.querySelector(".video-present");
       if (p != null && c != null) {
@@ -55,7 +70,7 @@ window.onload = function() {
       document.querySelectorAll(
         ".view-id-carousel_videos_landing.view-display-id-page_1"
       )
-    ).map(function(ev) {
+    ).map(function (ev) {
       var a = ev.querySelector(".show-video");
       var b = ev.querySelector(".video-present");
       if (a != null && b != null) {
@@ -77,7 +92,7 @@ window.onload = function() {
     const itemLista2 = lista2[i];
 
     // console.log(itemLista1, itemLista2)
-    itemLista1.parentElement.addEventListener("click", function() {
+    itemLista1.parentElement.addEventListener("click", function () {
       one();
       two();
       const allIframes = document.querySelectorAll(
@@ -102,7 +117,7 @@ window.onload = function() {
   }
 
   /// js boton back
-  Array.from(document.querySelectorAll(".cbutton-back")).map(function(e) {
+  Array.from(document.querySelectorAll(".cbutton-back")).map(function (e) {
     if (e != null) {
       e.addEventListener("click", () => {
         window.history.back();
@@ -111,7 +126,7 @@ window.onload = function() {
   });
 
   /// js login and register
-  Array.from(document.querySelectorAll(".comment-forbidden a")).map(function(
+  Array.from(document.querySelectorAll(".comment-forbidden a")).map(function (
     e
   ) {
     if (e != null) {
@@ -120,7 +135,7 @@ window.onload = function() {
   });
   Array.from(
     document.querySelectorAll(".comment-forbidden a:nth-child(1)")
-  ).map(function(e) {
+  ).map(function (e) {
     if (e != null) {
       var button_login = document.querySelector(
         '.Login-Register-popup-link.Login-Register-popup-link a[href*="login"]'
@@ -132,7 +147,7 @@ window.onload = function() {
   });
   Array.from(
     document.querySelectorAll(".comment-forbidden a:nth-child(2)")
-  ).map(function(e) {
+  ).map(function (e) {
     if (e != null) {
       var button_regis = document.querySelector(
         '.Login-Register-popup-link.Login-Register-popup-link a[href*="register"]'
