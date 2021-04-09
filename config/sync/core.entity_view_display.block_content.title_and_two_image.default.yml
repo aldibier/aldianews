@@ -7,6 +7,7 @@ dependencies:
     - field.field.block_content.title_and_two_image.body
     - field.field.block_content.title_and_two_image.field_image
     - field.field.block_content.title_and_two_image.field_image_for_the_title
+    - field.field.block_content.title_and_two_image.field_image_for_the_title_mobile
     - field.field.block_content.title_and_two_image.field_section_title
   module:
     - image
@@ -34,6 +35,15 @@ content:
     region: content
   field_image_for_the_title:
     weight: 3
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_image_for_the_title_mobile:
+    weight: 4
     label: above
     settings:
       image_style: ''

@@ -1512,17 +1512,17 @@ __webpack_require__.r(__webpack_exports__);
   var $video = $(".page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video .content");
   var videoHeight = $video.outerHeight();
 
-  if (!!document.querySelector('.page-node-type-news') && !!$video) {
-    $window.on('scroll', function () {
+  if (!!document.querySelector(".page-node-type-news") && !!$video) {
+    $window.on("scroll", function () {
       var windowScrollTop = $window.scrollTop();
       var videoBottom = videoHeight + $videoWrap.offset().top;
 
       if (windowScrollTop > videoBottom) {
         $videoWrap.height(videoHeight);
-        $video.addClass('stuck');
+        $video.addClass("stuck");
       } else {
-        $videoWrap.height('auto');
-        $video.removeClass('stuck');
+        $videoWrap.height("auto");
+        $video.removeClass("stuck");
       }
     });
   }
@@ -1530,7 +1530,7 @@ __webpack_require__.r(__webpack_exports__);
   jQuery(document).ready(function () {
     if ($(".page-node-type-news .video-embed-field-responsive-video iframe").length) {
       var url = $(".page-node-type-news .video-embed-field-responsive-video iframe")[0].src += "&mute=1";
-      var video = url.replace('autoplay=0', 'autoplay=1');
+      var video = url.replace("autoplay=0", "autoplay=1");
       $(".page-node-type-news .video-embed-field-responsive-video iframe").attr("src", video);
     } //--------- menu--------------------//
 
@@ -1547,6 +1547,17 @@ __webpack_require__.r(__webpack_exports__);
     $("#block-blockpreheader").click(function () {
       $(".region-secondary-menu").removeClass("open-menu");
       $("body").removeClass("open-menu");
+    }); //// sumo select
+
+    Array.from(document.querySelectorAll(".region-content select")).map(function (e) {
+      if (e != null) {
+        e.classList.add("testselect1");
+        console.log("1");
+        $(".testselect1").SumoSelect({
+          forceCustomRendering: true,
+          floatWidth: 300
+        });
+      }
     }); //--------puopup-- login-----------//
 
     $(".user-logged-in #block-loginformpopup").click(function () {
