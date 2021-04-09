@@ -1,0 +1,26 @@
+uuid: 57efb789-9abe-4239-a0f8-ea94cbd1380e
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.carousel_of_images
+    - field.field.block_content.carousel_of_images.field_image_carousel
+  module:
+    - image
+id: block_content.carousel_of_images.default
+targetEntityType: block_content
+bundle: carousel_of_images
+mode: default
+content:
+  field_image_carousel:
+    weight: 1
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true
