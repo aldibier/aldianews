@@ -26,7 +26,7 @@ reactions:
         provider: system
         label_display: '0'
         region: content
-        weight: '-1'
+        weight: '-4'
         context_mapping: {  }
         custom_id: system_main_block
         theme: al_dia_news
@@ -40,13 +40,13 @@ reactions:
         provider: fixed_block_content
         label_display: '0'
         region: content
-        weight: '1'
+        weight: '-2'
         view_mode: ''
         context_mapping: {  }
         custom_id: fixed_block_content_horizontal_advertising
         theme: al_dia_news
         css_class: ''
-        unique: 0
+        unique: 1
         context_id: about_al_dia_live
         uuid: 8aa736f2-aee5-4dc7-a79a-9ae2532a2161
       003b3d29-e812-44ad-aaa8-51db5992a5c2:
@@ -55,7 +55,7 @@ reactions:
         provider: blockgroup
         label_display: '0'
         region: content
-        weight: '0'
+        weight: '-3'
         context_mapping: {  }
         custom_id: block_group_advertising_body_in_about_al_dia_live
         theme: al_dia_news
@@ -63,6 +63,100 @@ reactions:
         unique: 0
         context_id: about_al_dia_live
         uuid: 003b3d29-e812-44ad-aaa8-51db5992a5c2
+      0347d10c-53d3-48da-b004-3d87655372d1:
+        id: 'views_block:about_al_dia_live-block_1'
+        label: ''
+        provider: views
+        label_display: '0'
+        views_label: ''
+        items_per_page: none
+        region: content
+        weight: '-1'
+        context_mapping: {  }
+        custom_id: views_block_about_al_dia_live_block_1
+        theme: al_dia_news
+        css_class: ''
+        unique: 0
+        context_id: about_al_dia_live
+        uuid: 0347d10c-53d3-48da-b004-3d87655372d1
+      5fcfa6ec-226b-44e2-80ef-965f8a6cd09f:
+        id: 'views_block:about_al_dia_live-block_2'
+        label: ''
+        provider: views
+        label_display: '0'
+        views_label: ''
+        items_per_page: none
+        region: content
+        weight: '0'
+        context_mapping: {  }
+        custom_id: views_block_about_al_dia_live_block_2
+        theme: al_dia_news
+        css_class: ''
+        unique: 0
+        context_id: about_al_dia_live
+        uuid: 5fcfa6ec-226b-44e2-80ef-965f8a6cd09f
+      a12bd9a1-547b-4c3b-a65f-ff475abd1a17:
+        id: 'views_block:about_al_dia_live-block_3'
+        label: ''
+        provider: views
+        label_display: '0'
+        views_label: ''
+        items_per_page: none
+        region: content
+        weight: '1'
+        context_mapping: {  }
+        custom_id: views_block_about_al_dia_live_block_3
+        theme: al_dia_news
+        css_class: ''
+        unique: 0
+        context_id: about_al_dia_live
+        uuid: a12bd9a1-547b-4c3b-a65f-ff475abd1a17
+      95f119d7-150d-40d2-8fff-f5f3515a837c:
+        id: 'views_block:about_al_dia_live-block_4'
+        label: ''
+        provider: views
+        label_display: '0'
+        views_label: ''
+        items_per_page: none
+        region: content
+        weight: '2'
+        context_mapping: {  }
+        custom_id: views_block_about_al_dia_live_block_4
+        theme: al_dia_news
+        css_class: ''
+        unique: 0
+        context_id: about_al_dia_live
+        uuid: 95f119d7-150d-40d2-8fff-f5f3515a837c
+      5b70c25e-bcb2-4823-869b-6c6db6632280:
+        id: 'fixed_block_content:_small_vertical_advertising'
+        label: ' Small vertical advertising'
+        provider: fixed_block_content
+        label_display: '0'
+        region: content
+        weight: '3'
+        view_mode: ''
+        context_mapping: {  }
+        custom_id: fixed_block_content__small_vertical_advertising
+        theme: al_dia_news
+        css_class: ''
+        unique: 0
+        context_id: about_al_dia_live
+        uuid: 5b70c25e-bcb2-4823-869b-6c6db6632280
+      5262c94b-aa11-454f-8987-4775b3cf7068:
+        id: 'fixed_block_content:horizontal_advertising'
+        label: 'Horizontal advertising'
+        provider: fixed_block_content
+        label_display: '0'
+        region: content
+        weight: '4'
+        view_mode: ''
+        context_mapping: {  }
+        custom_id: fixed_block_content_horizontal_advertising
+        theme: al_dia_news
+        css_class: ''
+        unique: 0
+        context_id: about_al_dia_live
+        uuid: 5262c94b-aa11-454f-8987-4775b3cf7068
     id: blocks
     saved: false
     uuid: e8523adf-eacb-45ff-bd80-ac4e8c76b9db
