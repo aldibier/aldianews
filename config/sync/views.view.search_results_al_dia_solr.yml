@@ -870,7 +870,8 @@ display:
     display_title: Page
     position: 1
     display_options:
-      display_extenders: {  }
+      display_extenders:
+        ajax_history: {  }
       path: search-results
       filters:
         search_api_fulltext:
@@ -1054,6 +1055,7 @@ display:
         fields: false
         use_ajax: false
         header: false
+        sorts: false
       filter_groups:
         operator: AND
         groups:
@@ -1088,8 +1090,8 @@ display:
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
           expose_sort_order: true
-          sort_asc_label: Asc
-          sort_desc_label: Desc
+          sort_asc_label: OLDEST
+          sort_desc_label: NEWEST
           text_input_required: 'Select any filter and click on Apply to see results'
           text_input_required_format: full_html
           bef:
@@ -1102,6 +1104,16 @@ display:
               allow_secondary: false
               secondary_label: 'Advanced options'
               secondary_open: false
+            sort:
+              plugin_id: default
+              advanced:
+                combine: true
+                combine_rewrite: "Post date Asc|Oldest first\r\nPost date Desc|Newest first"
+                reset: false
+                reset_label: ''
+                collapsible: false
+                collapsible_label: 'Sort options'
+                is_secondary: false
             filter:
               search_api_fulltext:
                 plugin_id: default
@@ -1604,6 +1616,31 @@ display:
           plugin_id: custom
       use_ajax: true
       header: {  }
+      sorts:
+        created:
+          id: created
+          table: search_api_index_news
+          field: created
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: DESC
+          exposed: true
+          expose:
+            label: 'Authored on'
+          plugin_id: search_api
+        search_api_relevance:
+          id: search_api_relevance
+          table: search_api_index_news
+          field: search_api_relevance
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: DESC
+          exposed: true
+          expose:
+            label: Relevance
+          plugin_id: search_api
     cache_metadata:
       max-age: -1
       contexts:
@@ -1611,6 +1648,8 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - 'url.query_args:sort_by'
+        - 'url.query_args:sort_order'
         - user
         - 'user.node_grants:view'
       tags:
