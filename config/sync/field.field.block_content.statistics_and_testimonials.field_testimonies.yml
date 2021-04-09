@@ -1,0 +1,49 @@
+uuid: 96d6764f-220c-480f-ab5b-f62987dcd3ac
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.statistics_and_testimonials
+    - field.storage.block_content.field_testimonies
+    - paragraphs.paragraphs_type.testimonies
+  module:
+    - entity_reference_revisions
+id: block_content.statistics_and_testimonials.field_testimonies
+field_name: field_testimonies
+entity_type: block_content
+bundle: statistics_and_testimonials
+label: Testimonies
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      testimonies: testimonies
+    target_bundles_drag_drop:
+      advertising_informative_items_:
+        weight: 8
+        enabled: false
+      advertising_options:
+        weight: 9
+        enabled: false
+      features_items:
+        weight: 10
+        enabled: false
+      i_am_an_employer_sections:
+        weight: 11
+        enabled: false
+      main_features:
+        weight: 12
+        enabled: false
+      social_media:
+        weight: 13
+        enabled: false
+      testimonies:
+        enabled: true
+        weight: 14
+field_type: entity_reference_revisions

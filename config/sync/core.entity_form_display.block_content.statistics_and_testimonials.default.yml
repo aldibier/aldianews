@@ -1,0 +1,55 @@
+uuid: 3c5c27d2-6250-45c9-8401-41ba4b09138b
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.statistics_and_testimonials
+    - field.field.block_content.statistics_and_testimonials.field_statistics
+    - field.field.block_content.statistics_and_testimonials.field_testimonies
+  module:
+    - paragraphs
+id: block_content.statistics_and_testimonials.default
+targetEntityType: block_content
+bundle: statistics_and_testimonials
+mode: default
+content:
+  field_statistics:
+    type: entity_reference_paragraphs
+    weight: 27
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_testimonies:
+    type: entity_reference_paragraphs
+    weight: 28
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  info:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden: {  }
