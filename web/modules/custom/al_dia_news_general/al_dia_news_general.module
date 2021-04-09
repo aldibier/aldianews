@@ -51,9 +51,6 @@ function al_dia_news_general_form_alter(&$form, $form_state, $form_id) {
       // $form['actions']['submit_cancel']['#attributes']['class'][] = 'cbutton-back';
     
     break;
-    // case "webform_submission_contact_us_advertising_landing_add_form":
-    //   ksm($form);
-    // break;
     
   }
 
@@ -66,6 +63,7 @@ function al_dia_news_form_views_exposed_form_alter(&$form, &$form_state) {
   }
   if($form["#id"] == 'views-exposed-form-search-results-al-dia-solr-page-1'){
     $form['field_category']['#options']['All'] = 'Select';
+    $form['field_my_content_has_a_main_vide']['#options']['All'] = 'Select';
     $form['sort_bef_combine']['#options']['created_ASC'] = 'OLDEST';
     $form['sort_bef_combine']['#options']['created_DESC'] = 'NEWEST';
     $form['sort_bef_combine']['#options']['search_api_relevance_DESC'] = 'RELEVANCE';
