@@ -1,0 +1,26 @@
+uuid: 6dd8802e-d2f7-4778-b31e-fac521aeda32
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.carousel_of_images
+    - field.field.block_content.carousel_of_images.field_image_carousel
+    - image.style.thumbnail
+  module:
+    - image
+id: block_content.carousel_of_images.default
+targetEntityType: block_content
+bundle: carousel_of_images
+mode: default
+content:
+  field_image_carousel:
+    weight: 0
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+hidden:
+  info: true
+  langcode: true
