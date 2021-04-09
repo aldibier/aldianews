@@ -1,0 +1,25 @@
+uuid: de921bd9-c551-4ea3-9659-8b6328c5a843
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.video
+    - field.storage.block_content.field_url_video
+  module:
+    - video_embed_field
+id: block_content.video.field_url_video
+field_name: field_url_video
+entity_type: block_content
+bundle: video
+label: 'Url video'
+description: 'Add the url of the YouTube video as https://www.youtube.com/watch?v=RTPk-AVc1xo'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_providers:
+    youtube: youtube
+    vimeo: '0'
+    youtube_playlist: '0'
+field_type: video_embed_field
