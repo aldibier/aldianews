@@ -12,7 +12,8 @@
   &.open {
     display: block;
   }
-  .form-item-field-category {
+  .form-item-field-category,
+  .form-type-select {
     display: none;
   }
   form > .form--inline {
@@ -151,7 +152,8 @@
   .SumoSelect.open > .optWrapper {
     top: 54px;
   }
-  .search_api_relevance_ASC {
+  .search_api_relevance_ASC,
+  .form-item-sort-bef-combine .options li:nth-child(3) {
     display: none;
   }
   /////
@@ -206,7 +208,10 @@
       border-top: 0.5px solid #b1b1b1;
       display: flex;
       align-items: center;
-      text-transform: capitalize;
+      text-transform: lowercase;
+      &::first-letter {
+        text-transform: uppercase;
+      }
       &::nth-child(1) {
         border-top: 0px;
       }
