@@ -1,0 +1,32 @@
+uuid: 4c87a144-cc20-469b-9b61-b7c030a5d157
+langcode: en
+status: true
+dependencies:
+  config:
+    - fixed_block_content.fixed_block_content.body_about_al_dia_live
+  module:
+    - context
+    - fixed_block_content
+  theme:
+    - al_dia_news
+id: bodyaboutaldialive
+theme: al_dia_news
+region: advertising_body_in_about_al_dia_live
+weight: -26
+provider: null
+plugin: 'fixed_block_content:body_about_al_dia_live'
+settings:
+  id: 'fixed_block_content:body_about_al_dia_live'
+  label: 'Body About Al Día Live'
+  provider: fixed_block_content
+  label_display: '0'
+  view_mode: ''
+visibility:
+  request_path_exclusion:
+    id: request_path_exclusion
+    pages: ''
+    negate: null
+  view_inclusion:
+    id: view_inclusion
+    negate: null
+    view_inclusion: {  }

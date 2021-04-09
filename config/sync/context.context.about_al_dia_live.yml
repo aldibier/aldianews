@@ -26,7 +26,7 @@ reactions:
         provider: system
         label_display: '0'
         region: content
-        weight: '0'
+        weight: '-1'
         context_mapping: {  }
         custom_id: system_main_block
         theme: al_dia_news
@@ -34,6 +34,35 @@ reactions:
         unique: 0
         context_id: about_al_dia_live
         uuid: 126535ed-53b6-4e23-b01b-ac1cb16cd26d
+      8aa736f2-aee5-4dc7-a79a-9ae2532a2161:
+        id: 'fixed_block_content:horizontal_advertising'
+        label: 'Horizontal advertising'
+        provider: fixed_block_content
+        label_display: '0'
+        region: content
+        weight: '1'
+        view_mode: ''
+        context_mapping: {  }
+        custom_id: fixed_block_content_horizontal_advertising
+        theme: al_dia_news
+        css_class: ''
+        unique: 0
+        context_id: about_al_dia_live
+        uuid: 8aa736f2-aee5-4dc7-a79a-9ae2532a2161
+      003b3d29-e812-44ad-aaa8-51db5992a5c2:
+        id: 'block_group:advertising_body_in_about_al_dia_live'
+        label: 'Advertising body in About Al Día Live'
+        provider: blockgroup
+        label_display: '0'
+        region: content
+        weight: '0'
+        context_mapping: {  }
+        custom_id: block_group_advertising_body_in_about_al_dia_live
+        theme: al_dia_news
+        css_class: ''
+        unique: 0
+        context_id: about_al_dia_live
+        uuid: 003b3d29-e812-44ad-aaa8-51db5992a5c2
     id: blocks
     saved: false
     uuid: e8523adf-eacb-45ff-bd80-ac4e8c76b9db
