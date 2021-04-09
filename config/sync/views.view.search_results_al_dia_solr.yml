@@ -1047,6 +1047,56 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           plugin_id: search_api_language
+        field_my_content_has_a_main_vide:
+          id: field_my_content_has_a_main_vide
+          table: search_api_index_news
+          field: field_my_content_has_a_main_vide
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: ''
+            label: 'My content has a main video'
+            description: null
+            use_operator: false
+            operator: field_my_content_has_a_main_vide_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_my_content_has_a_main_vide
+            required: true
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: true
+          group_info:
+            label: 'Type of content'
+            description: ''
+            identifier: field_my_content_has_a_main_vide
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items:
+              1:
+                title: Articles
+                operator: '='
+                value: '0'
+              2:
+                title: 'Only articles with video'
+                operator: '='
+                value: '1'
+              3:
+                title: ''
+                operator: '='
+                value: ''
+          plugin_id: search_api_boolean
       defaults:
         filters: false
         filter_groups: false
