@@ -1,0 +1,46 @@
+uuid: 952eb7a8-6459-46c8-b014-07e4cc4091f2
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.statistics_and_testimonials
+    - field.storage.block_content.field_statistics
+    - paragraphs.paragraphs_type.features_items
+  module:
+    - entity_reference_revisions
+id: block_content.statistics_and_testimonials.field_statistics
+field_name: field_statistics
+entity_type: block_content
+bundle: statistics_and_testimonials
+label: Statistics
+description: 'Site statistics, for example 100+ Al Día Live Events'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      features_items: features_items
+    target_bundles_drag_drop:
+      advertising_informative_items_:
+        weight: 7
+        enabled: false
+      advertising_options:
+        weight: 8
+        enabled: false
+      features_items:
+        enabled: true
+        weight: 9
+      i_am_an_employer_sections:
+        weight: 10
+        enabled: false
+      main_features:
+        weight: 11
+        enabled: false
+      social_media:
+        weight: 12
+        enabled: false
+field_type: entity_reference_revisions
