@@ -64,26 +64,31 @@ p .aldia-logo-in-text img {
   }
 }
 
-.block-fixed-block-content-horizontal-advertising-close {
+#block-fixed-block-content-horizontal-advertising-close {
+  margin: 100px auto;
+  position: relative;
   button[name="close"] {
     position: absolute;
-    top: 50px;
-    right: 75px;
+    top: 20px;
+    right: 20px;
     width: 20px;
     height: 20px;
     display: block;
     font-size: 0;
-    background: url("../img/close.svg") center center no-repeat;
+    background: url("../img/close-white.png") center center no-repeat;
     border: none;
     cursor: pointer;
   }
   @media (max-width: $tablet) {
+    margin: 0px auto 20px;
+
     button[name="close"] {
-      width: 15px;
-      height: 15px;
+      width: 10px;
+      height: 10px;
+      background: url("../img/close-black.png") center center no-repeat;
       background-size: contain;
-      top: 20px;
-      right: 20px;
+      top: 10px;
+      right: 10px;
     }
   }
 }
