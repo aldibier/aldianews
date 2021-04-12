@@ -16,6 +16,7 @@ dependencies:
     - field.field.node.news.field_video
     - node.type.news
   module:
+    - al_dia_layouts
     - image
     - layout_builder
     - text
@@ -23,27 +24,118 @@ dependencies:
 third_party_settings:
   layout_builder:
     allow_custom: false
-    enabled: false
+    enabled: true
+    sections:
+      -
+        layout_id: categories_home
+        layout_settings:
+          label: 'Categories home'
+        components:
+          6f12e88c-1ea5-4925-880e-4872ccdec43c:
+            uuid: 6f12e88c-1ea5-4925-880e-4872ccdec43c
+            region: two_content
+            configuration:
+              id: 'field_block:node:news:field_category'
+              label: Category
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: entity_reference_label
+                settings:
+                  link: true
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 0
+          ad007856-7237-4be0-8ba8-30aec08dacee:
+            uuid: ad007856-7237-4be0-8ba8-30aec08dacee
+            region: two_content
+            configuration:
+              id: 'field_block:node:news:field_short_title'
+              label: 'Short title'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: string
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 1
+          33108c91-b759-47b0-b28c-69748976e42a:
+            uuid: 33108c91-b759-47b0-b28c-69748976e42a
+            region: two_content
+            configuration:
+              id: 'field_block:node:news:created'
+              label: 'Authored on'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: above
+                type: timestamp
+                settings:
+                  date_format: related_news
+                  custom_date_format: ''
+                  timezone: ''
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 2
+          bba698e3-d482-4f4c-bc4b-82c99de6fbcf:
+            uuid: bba698e3-d482-4f4c-bc4b-82c99de6fbcf
+            region: one_content
+            configuration:
+              id: 'field_block:node:news:field_image'
+              label: Image
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: responsive_image
+                settings:
+                  responsive_image_style: next_two_image_responsive
+                  image_link: content
+                third_party_settings:
+                  lazy:
+                    lazy_image: '0'
+                    placeholder_style: ''
+                    data_uri: false
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 0
+        third_party_settings: {  }
 id: node.news.categories_home
 targetEntityType: node
 bundle: news
 mode: categories_home
 content:
   body:
-    type: text_default
+    type: text_summary_or_trimmed
     weight: 3
-    region: content
+    region: ds_content
     label: hidden
-    settings: {  }
+    settings:
+      trim_length: 600
     third_party_settings: {  }
   field_category:
     weight: 1
-    label: above
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-    region: content
+    region: ds_content
   field_image:
     weight: 0
     label: hidden
@@ -52,7 +144,7 @@ content:
       image_link: ''
     third_party_settings: {  }
     type: image
-    region: content
+    region: ds_content
   field_short_title:
     weight: 2
     label: hidden
@@ -60,7 +152,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
+    region: ds_content
 hidden:
   addtoany: true
   field_author: true
