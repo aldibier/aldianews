@@ -217,6 +217,7 @@
      .about-al-dia-live-slider {
 
         .slick-slider {
+            margin-bottom: 60px;
             padding-bottom: 50px;
             position: relative;
         }
@@ -224,6 +225,16 @@
         .slick-list {
             height: 335px;
             margin-bottom: 40px;
+        }
+
+        .slick-track {
+            height: inherit;
+            display: flex;
+            align-items: center;
+        }
+
+        .slick-slide {
+            height: initial;
         }
 
         .slick-arrow {
@@ -240,15 +251,13 @@
         }
         
         .slick-prev {
-            left: 50%;
-            left: calc(50% + 28px);
+            left: calc(50% - 28px);
             transform: translateX(-50%);
             background-image: url('../../assets/img/arrow-left.svg');
         }
 
         .slick-next {
-            right: 50%;
-            right: calc(50% - 28px);
+            left: calc(50% + 28px);
             transform: translateX(50%);
             background-image: url('../../assets/img/arrow-right.svg');
         }
