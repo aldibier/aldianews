@@ -78,6 +78,22 @@ const initSlick = ($, Drupal) => {
       ]
     });
   });
+
+
+  //slide about al dia events
+
+  $(document).ready(function() {
+    if(!$('.about-al-dia-live-slider').length) return;
+
+    $('.about-al-dia-live-slider ul').slick({
+      infinite: true,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      dots: true,
+    })
+
+  });
+
 };
 
 export default initSlick;
