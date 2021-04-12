@@ -1219,8 +1219,6 @@ window.onload = function () {
 
   if (!!allBlockquote && allBlockquote.length) {
     allBlockquote.forEach(function (blockquote) {
-      console.log(blockquote.querySelector('p'));
-
       if (blockquote.firstElementChild.tagName === 'P') {
         var text = blockquote.firstElementChild.textContent;
         blockquote.textContent = text;
@@ -1807,6 +1805,16 @@ var initSlick = function initSlick($, Drupal) {
           slidesToScroll: 1
         }
       }]
+    });
+  }); //slide about al dia events
+
+  $(document).ready(function () {
+    if (!$('.about-al-dia-live-slider').length) return;
+    $('.about-al-dia-live-slider ul').slick({
+      infinite: true,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      dots: true
     });
   });
 };
