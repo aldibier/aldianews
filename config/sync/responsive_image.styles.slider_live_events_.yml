@@ -1,0 +1,44 @@
+uuid: e229e06e-b6bb-4d60-8894-3af7cba11767
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.slider_195_x_105
+    - image.style.slider_620_x_335
+  theme:
+    - al_dia_news
+id: slider_live_events_
+label: 'Slider (live - events)'
+image_style_mappings:
+  -
+    breakpoint_id: al_dia_news.extra_x2_large
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: slider_620_x_335
+  -
+    breakpoint_id: al_dia_news.extra_large
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: slider_620_x_335
+  -
+    breakpoint_id: al_dia_news.large
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: slider_620_x_335
+  -
+    breakpoint_id: al_dia_news.medium
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: slider_620_x_335
+  -
+    breakpoint_id: al_dia_news.small
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: slider_195_x_105
+  -
+    breakpoint_id: al_dia_news.extra_small
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: slider_195_x_105
+breakpoint_group: 'Al dia news'
+fallback_image_style: '_original image_'
