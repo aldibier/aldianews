@@ -179,21 +179,32 @@
   .form-type-textfield {
     width: 100%;
     max-width: 440px;
+    order: 1;
   }
   .form-item-field-my-content-has-a-main-vide {
     max-width: 225px;
     width: 100%;
+    order: 3;
   }
   .form-item-sort-bef-combine,
   .form-item-field-category {
     max-width: 200px;
     width: 100%;
   }
-  .form-actions input {
-    height: 50px;
-    min-width: 155px;
-    margin: 0px;
-    font-size: 20px;
+  .form-item-field-category {
+    order: 4;
+  }
+  .form-item-sort-bef-combine {
+    order: 2;
+  }
+  .form-actions {
+    order: 5;
+    input {
+      height: 50px;
+      min-width: 155px;
+      margin: 0px;
+      font-size: 20px;
+    }
   }
 }
 
