@@ -36,7 +36,8 @@ form {
       border-radius: 0px;
     }
   }
-  label {
+  label,
+  .form-item label {
     font-style: normal;
     font-weight: 600;
     font-size: $px20;
@@ -130,9 +131,6 @@ form {
     display: none; /*Evita que se muestre la flecha por defecto en versiones de IE*/
   }
 
-  .testselect1 {
-  }
-
   textarea {
     width: 100%;
     min-height: 145px;
@@ -149,7 +147,8 @@ form {
       top: 20px;
       right: 20px;
     }
-    label {
+    label,
+    .form-item label {
       font-size: 15px;
       line-height: 18px;
     }

@@ -1,0 +1,150 @@
+.contact-form {
+  .field-content {
+    z-index: 3;
+    display: block;
+    position: relative;
+    max-width: 990px;
+    max-height: 945px;
+    top: 140px;
+    margin: auto;
+    background: $cwhite;
+    height: 70%;
+    width: calc(100% - 30px);
+    overflow: hidden;
+    padding: 100px 75px 89px;
+  }
+
+  form {
+    overflow-y: auto;
+    display: flex;
+  }
+
+  input {
+    max-width: 405px;
+    margin-top: 10px;
+  }
+
+  select {
+    max-width: 265px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    color: $grey11;
+  }
+
+  fieldset {
+    max-width: 290px;
+    width: 36%;
+    .fieldset-wrapper {
+      margin: 20px 25px 0 0;
+    }
+  }
+
+  .js-form-item-how-did-you-learn-about-us- {
+    margin: 0;
+  }
+
+  textarea {
+    max-width: 550px;
+    margin-top: 10px;
+  }
+
+  .form-type-textarea {
+    max-width: 550px;
+    width: 64%;
+    margin-top: 20px;
+  }
+
+  .form-item-interest {
+    margin: 0px;
+  }
+
+  .form-actions {
+    width: 100%;
+  }
+
+  .form-item-last-name,
+  .form-item-job-title,
+  .form-item-phone-number {
+    padding-left: 15px;
+  }
+
+  .form-type-textfield {
+    width: 50%;
+  }
+
+  .js-form-type-email {
+    width: 50%;
+  }
+
+  .js-form-type-tel {
+    width: 50%;
+  }
+
+  #edit-information-text {
+    font-style: normal;
+    font-weight: normal;
+    font-size: $px20;
+    line-height: 28.8px;
+    color: $cblack3;
+    width: 100%;
+    font-family: $PrNovacond-reg;
+    margin: 25px 0px 35px;
+  }
+
+  @media (max-width: $tablet) {
+    .field-content {
+      top: 112px;
+      padding: 30px 20px;
+    }
+
+    .views-label {
+      font-size: 18px;
+      line-height: 22px;
+      padding: 5px 0;
+    }
+
+    #edit-information-text {
+      margin: 10px 0;
+      font-size: 14px;
+      line-height: 144%;
+    }
+
+    .form-type-textfield,
+    .js-form-type-email,
+    .js-form-type-tel {
+      width: 100%;
+      padding: 0;
+      margin: 10px 0;
+    }
+
+    fieldset .fieldset-wrapper {
+      margin: 10px 0 0;
+    }
+
+    .form-type-textarea {
+      max-width: 100%;
+      width: 100%;
+      margin-top: 0;
+    }
+
+    .webform-contact-employer {
+      overflow: hidden;
+    }
+
+    .form-actions {
+      margin: 0 0 35px;
+    }
+  }
+}
+
+.views-label.views-label-field-webform {
+  width: 100%;
+  display: block;
+  padding: 0 0 10px;
+  border-bottom: 1px solid $corange;
+  font-weight: 600;
+  font-size: $px34;
+  line-height: 41px;
+  font-family: $Mod-Sbold;
+  color: $corange;
+}
