@@ -5,7 +5,6 @@ window.onload = function () {
 
   if (!!allBlockquote && allBlockquote.length) {
     allBlockquote.forEach(blockquote => {
-      console.log(blockquote.querySelector('p'));
       if (blockquote.firstElementChild.tagName === 'P') {
         let text = blockquote.firstElementChild.textContent;
         blockquote.textContent = text;
