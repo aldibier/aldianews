@@ -1,23 +1,35 @@
 .path-about-al-dia-live {
-    .view-about-al-dia-live {
-        height: 560px;
-        margin-bottom: 70px;
-        padding: 0 85px 75px;
-        display: flex;
-        align-items: flex-end;
-        position: relative;
-        z-index: 1;
 
-        @media screen and (max-width: $broken) {
-            padding: 25px;
-        }
-
-        @media screen and (max-width: $tablet) {
-            height: 215px;
-            margin-bottom: 20px;
+    //------ about al dia live banner ------------//
+    .block-system-main-block {
+        .view-about-al-dia-live {
+            height: 560px;
+            margin-bottom: 70px;
+            padding: 0 85px 75px;
+            display: flex;
+            align-items: flex-end;
+            position: relative;
+            z-index: 1;
+    
+            .about-al-dia-live-title {
+                margin: 0;
+                padding: 0;
+                border: none;
+                display: flex;
+                align-items: center;
+            }
+    
+            @media screen and (max-width: $broken) {
+                padding: 25px;
+            }
+    
+            @media screen and (max-width: $tablet) {
+                height: 215px;
+                margin-bottom: 20px;
+            }
         }
     }
-
+   
     .views-field-field-section-title {
         margin-right: 15px;
         display: inline-block;
@@ -32,10 +44,6 @@
             font-size: szrem(25);
             line-height: 30px;
         }
-    }
-
-    .views-field-field-image-for-the-title {
-        display: inline-block;
     }
 
    .views-field-field-image {
@@ -71,5 +79,127 @@
         @media screen and (max-width: $tablet) {
             margin: 0 auto 40px;
         }
+    }
+
+    .block-block-groupadvertising-body-in-about-al-dia-live {
+        a {
+            font-size: szrem(24);
+            @include button($btnWidth:250px,$btnHeight:55px,$btnBackground:$corange,$btnColor:$cwhite);
+        }
+
+        .button-apply {
+            font-size: szrem(24);
+            @include button($btnWidth:250px,$btnHeight:55px,$btnBackground:$bgrey,$btnColor:$cwhite);
+        }
+    }
+
+    .block-fixed-block-contentbody-about-al-dia-live {
+        h2 {
+            font-size: szrem(54);
+            font-family: $Mod-bold;
+            font-style: normal;
+            font-weight: bold;
+            line-height: 65px;
+            color: $cgrey6;
+        }
+
+        p {
+            font-size: szrem(26);
+            font-family: $PrNovacond-light;
+            font-style: normal;
+            font-weight: normal;
+            line-height: 140%;
+            color: $cgrey6;
+        }
+    }
+
+     //------ about al dia live video ------------//
+    .about-al-dia-live-container-video{
+        height: 630px;
+        margin-bottom: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+
+        .views-field-nothing {
+            height: 100px;
+            margin-bottom: 74px;
+            position: relative;
+        }
+
+        .play-icon {
+            @include player-icon($desktop-size: 100px, $tablet-size:100px, $mobile-size:30px) 
+        }
+
+        .title-video-about-al-dia-live {
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .video-title {
+            font-size: szrem(59);
+            font-family: $PrNovacond-bold;
+            font-style: normal;
+            font-weight: bold;
+            line-height: 72px;
+            color: $cwhite;
+        }
+
+        .views-field-field-video-thumbnail {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: -1;
+
+            &::after {
+                @include absolute(top 0 left 0);
+                @include esize(100%);
+                display: block;
+                content: '';
+                background-color: rgba(34, 33, 35, 0.5);;
+            }
+        }
+
+        .about-al-dia-live-image {
+            width: 100%;
+            height: 100%;
+            
+            img {
+                width: inherit;
+                height: inherit;
+                object-fit: cover;
+            }
+        }
+
+        .views-field-field-url-video {
+            display: none;
+        }
+    }
+
+     //------ about al dia live slider ------------//
+     .about-al-dia-live-slider {
+        .slick-arrow {}
+        
+        .slick-prev {}
+
+        .slick-next {}
+
+        .slick-dots {}
+     }
+
+    //------ about al dia live statistics ------------//
+    .about-al-dia-live-statistics {
+
+    }
+
+    //------ about al dia live testimonies ------------//
+    .about-al-dia-live-testimonies {
+
     }
 }

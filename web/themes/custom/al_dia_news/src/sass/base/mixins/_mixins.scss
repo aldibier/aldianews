@@ -157,6 +157,23 @@
   }
 }
 
+
+//---------- Buttons -------------------------//
+
+@mixin button($btnWidth:250px,$btnHeight:55px,$btnBackground:$corange,$btnColor:$cwhite) {
+  width: $btnWidth;
+  height: $btnHeight;
+  border: none;
+  display: inline-block;
+  font-family: $PrNovacond-bold;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.741176px;
+  line-height: $btnHeight;
+  background-color: $btnBackground;
+  color: $btnColor;
+}
+
 //---------- Modal vide -------------------------//
 
 @mixin  modal-video {
