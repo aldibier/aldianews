@@ -104,7 +104,7 @@ class LatestCategories extends BlockBase implements ContainerFactoryPluginInterf
       }
       $user = $this->entityTypeManager->getStorage('node')->load($results->nid);
       $render_controller = $this->entityTypeManager->getViewBuilder($user->getEntityTypeId());
-      $mode = $render_controller->view($user, 'categories_home');
+      $mode = $render_controller->view($user, 'first_category_home');
       $return["main"]["main"] = $mode; 
     }
     $query2 = $this->database->select('node_field_data', 'n');
@@ -138,7 +138,7 @@ class LatestCategories extends BlockBase implements ContainerFactoryPluginInterf
       }
       $user = $this->entityTypeManager->getStorage('node')->load($results->nid);
       $render_controller = $this->entityTypeManager->getViewBuilder($user->getEntityTypeId());
-      $mode = $render_controller->view($user, 'category_next_4');
+      $mode = $render_controller->view($user, 'categories_home');
       $return["second"]["one"] = $mode; 
     }
     $query3 = $this->database->select('node_field_data', 'n');
@@ -160,7 +160,7 @@ class LatestCategories extends BlockBase implements ContainerFactoryPluginInterf
       $nids[] = $results->nid;
       $user = $this->entityTypeManager->getStorage('node')->load($results->nid);
       $render_controller = $this->entityTypeManager->getViewBuilder($user->getEntityTypeId());
-      $mode = $render_controller->view($user, 'category_next_4');
+      $mode = $render_controller->view($user, 'categories_home');
       $return["second"]["two"] = $mode; 
     }
     $this->cache->set("nids_home", $nids, CacheBackendInterface::CACHE_PERMANENT);

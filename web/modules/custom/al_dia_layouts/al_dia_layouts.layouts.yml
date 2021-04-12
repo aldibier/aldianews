@@ -395,3 +395,34 @@ basic_page_general_title_h2:
       label: Publicidad vertical uno
     two_vertical_advertising:
       label: Publicidad vertical dos
+
+categories_home:
+  label: 'Categories Home'
+  path: layouts/news
+  template: layout--categories-home
+  category: 'Home'
+  default_region: content
+  icon_map:
+    - [one_content]
+    - [two_content]   
+  regions:
+    one_content:
+      label: Primero - Imagen
+    two_content:
+      label: Segundo - Contenido
+
+
+first_category_home:
+  label: 'First Category Home'
+  path: layouts/news
+  template: layout--first-category-home
+  category: 'Home'
+  default_region: content
+  icon_map:
+    - [one_content]
+    - [two_content]   
+  regions:
+    one_content:
+      label: Primero - Imagen
+    two_content:
+      label: Segundo - Contenido
