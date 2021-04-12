@@ -21,10 +21,12 @@ dependencies:
     - field.storage.paragraph.field_photo
     - field.storage.paragraph.field_position
     - field.storage.paragraph.field_testimonial
+    - responsive_image.styles.slider_live_events_
   module:
     - block_content
     - image
     - paragraphs
+    - responsive_image
     - video_embed_field
     - views_fieldsets
 id: about_al_dia_live
@@ -936,9 +938,9 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: image
+          type: responsive_image
           settings:
-            image_style: ''
+            responsive_image_style: slider_live_events_
             image_link: ''
           group_column: ''
           group_columns: {  }
