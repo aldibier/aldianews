@@ -17,6 +17,7 @@ dependencies:
     - node.type.news
   module:
     - ds
+    - field_formatter_class
     - field_group
     - image
     - layout_builder
@@ -48,6 +49,7 @@ third_party_settings:
         - group_featured_news
         - field_image
         - field_my_content_has_a_main_vide
+        - group_featured_news_wrapper
         - field_short_title
         - body
   field_group:
@@ -55,8 +57,7 @@ third_party_settings:
       children:
         - field_image
         - field_my_content_has_a_main_vide
-        - field_short_title
-        - body
+        - group_featured_news_wrapper
       parent_name: ''
       weight: 0
       format_type: html_element
@@ -72,6 +73,25 @@ third_party_settings:
         id: ''
         classes: featured-news
       label: 'Featured News'
+    group_featured_news_wrapper:
+      children:
+        - field_short_title
+        - body
+      parent_name: group_featured_news
+      weight: 3
+      format_type: html_element
+      region: ds_content
+      format_settings:
+        id: ''
+        classes: featured-news-wrapper
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Featured News Wrapper'
 id: node.news.first_category_home
 targetEntityType: node
 bundle: news
@@ -79,12 +99,14 @@ mode: first_category_home
 content:
   body:
     type: text_summary_or_trimmed
-    weight: 4
+    weight: 5
     region: ds_content
     label: hidden
     settings:
       trim_length: 54
-    third_party_settings: {  }
+    third_party_settings:
+      field_formatter_class:
+        class: featured-news-body
   field_image:
     weight: 1
     label: hidden
@@ -92,6 +114,8 @@ content:
       image_style: ''
       image_link: content
     third_party_settings:
+      field_formatter_class:
+        class: featured-news-image
       lazy:
         placeholder_style: ''
         lazy_image: '0'
@@ -109,11 +133,13 @@ content:
     type: boolean
     region: ds_content
   field_short_title:
-    weight: 3
+    weight: 4
     label: hidden
     settings:
       link_to_entity: false
-    third_party_settings: {  }
+    third_party_settings:
+      field_formatter_class:
+        class: featured-news-title
     type: string
     region: ds_content
 hidden:
