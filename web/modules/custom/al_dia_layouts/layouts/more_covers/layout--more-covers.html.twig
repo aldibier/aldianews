@@ -12,23 +12,28 @@
 #}
 {% if content %}
   <div class="container-content">
-    <div class="container-wrapper">
-      {% if content.one_content %}
-          <div {{ region_attributes.one_content.addClass('one-content-covers') }}>
-            {{ content.one_content }} 
-          </div>
-      {% endif %}
-    </div>
-    {% if content.two_content %}
-        <div {{ region_attributes.two_content.addClass('advertising-covers') }}>
-          {{ content.two_content }} 
-        </div>
-    {% endif %}
-    {% if content.three_content %}
+      <div class="content-left-pages">
+        {% if content.one_content %}
+            <div {{ region_attributes.one_content.addClass('one-content-covers') }}>
+              {{ content.one_content }} 
+            </div>
+        {% endif %}
+
+        {% if content.three_content %}
         <div {{ region_attributes.three_content.addClass('related-content-covers') }}>
           {{ content.three_content }} 
         </div>
-    {% endif %}
+        {% endif %}
+      </div>
 
+      <div class="content-right-pages">
+        <div class="pautas">
+          {% if content.two_content %}
+            <div {{ region_attributes.two_content.addClass('advertising-covers') }}>
+              {{ content.two_content }} 
+            </div>
+          {% endif %}
+        </div>
+      </div>
   </div>
 {% endif %}
