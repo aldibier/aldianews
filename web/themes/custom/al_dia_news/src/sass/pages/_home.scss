@@ -88,6 +88,23 @@
     .block-fixed-block-contentbig-vertical-advertising {
       display: none;
     }
+    .category-title h1 {
+      margin-bottom: 0px;
+      a {
+        font-size: 20px;
+        line-height: 24px;
+        display: flex;
+        align-items: center;
+        &::after {
+          top: auto;
+          position: relative;
+        }
+      }
+    }
+    .aldia-logo-in-text img {
+      width: 77px;
+      height: 24px;
+    }
   }
   .mobile-less {
     display: flex;
