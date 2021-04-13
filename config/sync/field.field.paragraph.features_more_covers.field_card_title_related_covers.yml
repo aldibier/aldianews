@@ -1,0 +1,21 @@
+uuid: 24e00ddd-4bb5-44ea-a2b6-eb65a6a366ed
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_card_title_related_covers
+    - paragraphs.paragraphs_type.features_more_covers
+  module:
+    - text
+id: paragraph.features_more_covers.field_card_title_related_covers
+field_name: field_card_title_related_covers
+entity_type: paragraph
+bundle: features_more_covers
+label: 'card title related covers'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

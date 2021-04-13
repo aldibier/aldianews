@@ -6,12 +6,14 @@ dependencies:
     - field.field.node.more_covers.body
     - field.field.node.more_covers.field_cover_page
     - field.field.node.more_covers.field_end_date
+    - field.field.node.more_covers.field_related_more_covers
     - field.field.node.more_covers.field_start_date
     - image.style.thumbnail
     - node.type.more_covers
   module:
     - datetime
     - image
+    - paragraphs
     - path
     - text
 id: node.more_covers.default
@@ -48,6 +50,18 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
+    region: content
+  field_related_more_covers:
+    type: entity_reference_paragraphs
+    weight: 26
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: features_more_covers
+    third_party_settings: {  }
     region: content
   field_start_date:
     weight: 2
@@ -99,9 +113,9 @@ content:
     third_party_settings: {  }
   translation:
     weight: 10
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
   uid:
     type: entity_reference_autocomplete
     weight: 6
