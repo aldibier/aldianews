@@ -1,0 +1,20 @@
+uuid: b2516ce5-200b-4929-8c8b-101d42374bde
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - taxonomy
+id: paragraph.field_taxonomy_term_related_cove
+field_name: field_taxonomy_term_related_cove
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
