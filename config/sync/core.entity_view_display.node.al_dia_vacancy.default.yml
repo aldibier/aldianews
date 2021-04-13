@@ -41,9 +41,15 @@ third_party_settings:
                 label: hidden
                 type: image
                 settings:
-                  image_style: ''
+                  image_style: header_1440_x_470
                   image_link: ''
-                third_party_settings: {  }
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+                  lazy:
+                    lazy_image: '0'
+                    placeholder_style: ''
+                    data_uri: false
               context_mapping:
                 entity: layout_builder.entity
                 view_mode: view_mode
