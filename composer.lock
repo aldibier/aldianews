@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "094eff13bafe390b945b2ab035b75de5",
+    "content-hash": "354cc7ef13251e7bb4adb367653d0cbc",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -6734,6 +6734,58 @@
             }
         },
         {
+            "name": "drupal/views_block_area",
+            "version": "1.0.0-beta3",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/views_block_area.git",
+                "reference": "8.x-1.0-beta3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/views_block_area-8.x-1.0-beta3.zip",
+                "reference": "8.x-1.0-beta3",
+                "shasum": "bfc4a4b2c85545ef53f91f5f6633f7465c655494"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.0-beta3",
+                    "datestamp": "1592206687",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Leon Kessler",
+                    "homepage": "https://www.drupal.org/user/595374"
+                },
+                {
+                    "name": "cafuego",
+                    "homepage": "https://www.drupal.org/user/218525"
+                },
+                {
+                    "name": "nils.destoop",
+                    "homepage": "https://www.drupal.org/user/361625"
+                }
+            ],
+            "description": "Exposes all blocks as a views area.",
+            "homepage": "https://www.drupal.org/project/views_block_area",
+            "support": {
+                "source": "https://git.drupalcode.org/project/views_block_area"
+            }
+        },
+        {
             "name": "drupal/views_field_view",
             "version": "1.0.0-beta3",
             "source": {
@@ -11493,6 +11545,7 @@
         "drupal/other_view_filter": 20,
         "drupal/react_comments": 10,
         "drupal/term_csv_export_import": 15,
+        "drupal/views_block_area": 10,
         "drupal/views_field_view": 10,
         "drupal/views_fieldsets": 20
     },

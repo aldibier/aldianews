@@ -1,0 +1,38 @@
+uuid: 7d4acbf1-8179-41b9-bf0d-74513a7b953b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_image_related_covers
+    - paragraphs.paragraphs_type.features_more_covers
+  module:
+    - image
+id: paragraph.features_more_covers.field_image_related_covers
+field_name: field_image_related_covers
+entity_type: paragraph
+bundle: features_more_covers
+label: 'image related covers'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ' 32 MB'
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image
