@@ -426,3 +426,22 @@ first_category_home:
       label: Primero - Imagen
     two_content:
       label: Segundo - Contenido
+
+
+more_covers:
+  label: 'More Covers'
+  path: layouts/more_covers
+  template: layout--more-covers
+  category: 'content'
+  default_region: content
+  icon_map:
+    - [one_content]
+    - [two_content]   
+    - [three_content]   
+  regions:
+    one_content:
+      label: Primero - Contenido
+    two_content:
+      label: Segundo - Publividad
+    three_content:
+      label: Tercero - Relacionados

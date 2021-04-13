@@ -7,11 +7,16 @@ dependencies:
     - field.field.node.more_covers.field_cover_page
     - field.field.node.more_covers.field_end_date
     - field.field.node.more_covers.field_start_date
+    - fixed_block_content.fixed_block_content._small_vertical_advertising
+    - fixed_block_content.fixed_block_content.big_vertical_advertising
     - node.type.more_covers
   module:
+    - al_dia_layouts
     - datetime
     - field_group
+    - fixed_block_content
     - image
+    - layout_builder
     - user
 third_party_settings:
   field_group:
@@ -34,6 +39,131 @@ third_party_settings:
         effect: none
         speed: fast
       label: dates
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: more_covers
+        layout_settings:
+          label: 'More Covers'
+        components:
+          c6ea9853-8d1a-424e-9a00-81d076acf09e:
+            uuid: c6ea9853-8d1a-424e-9a00-81d076acf09e
+            region: one_content
+            configuration:
+              id: 'field_block:node:more_covers:title'
+              label: Title
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: string
+                settings:
+                  link_to_entity: false
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 0
+          91991f8f-5193-4a66-b348-8e5081239f65:
+            uuid: 91991f8f-5193-4a66-b348-8e5081239f65
+            region: one_content
+            configuration:
+              id: 'field_block:node:more_covers:field_cover_page'
+              label: 'cover page'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: image
+                settings:
+                  image_style: ''
+                  image_link: ''
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+                  lazy:
+                    lazy_image: '0'
+                    placeholder_style: ''
+                    data_uri: false
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 1
+          3591c5f2-40db-4f8c-b3cf-448e6e15b013:
+            uuid: 3591c5f2-40db-4f8c-b3cf-448e6e15b013
+            region: one_content
+            configuration:
+              id: 'field_block:node:more_covers:field_start_date'
+              label: 'start date'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: datetime_custom
+                settings:
+                  timezone_override: ''
+                  date_format: 'F jS'
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 2
+          66df1d46-065f-4c3d-be3d-31e0b199243d:
+            uuid: 66df1d46-065f-4c3d-be3d-31e0b199243d
+            region: one_content
+            configuration:
+              id: 'field_block:node:more_covers:field_end_date'
+              label: 'end date'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: datetime_custom
+                settings:
+                  timezone_override: ''
+                  date_format: 'F jS / Y'
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 3
+          abcee420-f178-4468-b791-05146882168b:
+            uuid: abcee420-f178-4468-b791-05146882168b
+            region: two_content
+            configuration:
+              id: 'fixed_block_content:_small_vertical_advertising'
+              label: ' Small vertical advertising'
+              provider: fixed_block_content
+              label_display: '0'
+              view_mode: ''
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+          1f9bb8c1-0392-49f1-9bc2-76ea5ecaa5c7:
+            uuid: 1f9bb8c1-0392-49f1-9bc2-76ea5ecaa5c7
+            region: two_content
+            configuration:
+              id: 'fixed_block_content:big_vertical_advertising'
+              label: 'Big vertical advertising'
+              provider: fixed_block_content
+              label_display: '0'
+              view_mode: ''
+              context_mapping: {  }
+            additional: {  }
+            weight: 1
+        third_party_settings: {  }
 id: node.more_covers.default
 targetEntityType: node
 bundle: more_covers
