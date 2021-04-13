@@ -1,4 +1,4 @@
-///////// Estilos bloques leadership ///////
+///////// Estilos bloques leadership, cultura y politics ///////
 .paddmar .views-row {
   margin-bottom: 25px;
   padding-bottom: 25px;
@@ -39,12 +39,27 @@
       padding-left: 19px;
       margin-top: 50px;
     }
+    .views-field-view-2 {
+      .views-row:last-child {
+        margin-bottom: 25px;
+        padding-bottom: 25px;
+        border-bottom: 1px solid #b1b1b1;
+      }
+      .content {
+        margin: 0px;
+      }
+      .block-fixed-block-content-small-vertical-advertising {
+        padding-bottom: 40px;
+        border-bottom: 1px solid #b1b1b1;
+        margin-bottom: 25px;
+      }
+    }
     @media (max-width: 1250px) {
       .card-one-column:nth-child(3)::before {
         display: none;
       }
       .card-one-column {
-        border-right: 0px;
+        border-right: 0px !important;
         padding-left: 0px;
         padding-right: 0px;
       }
@@ -56,6 +71,49 @@
       .card-one-column .card-image {
         max-width: 400px;
       }
+      > .view-content .views-field-view-1 .view-content {
+        grid-gap: 10px;
+      }
+    }
+  }
+}
+
+@media (max-width: $tablet) {
+  .path-frontpage .view-categories-sons {
+    > .view-content > h3 a {
+      line-height: initial;
+    }
+
+    .block-fixed-block-content-small-vertical-advertising,
+    .block-fixed-block-contentbig-vertical-advertising {
+      display: none;
+    }
+    .category-title h1 {
+      margin-bottom: 0px;
+      a {
+        font-size: 20px;
+        line-height: 24px;
+        display: flex;
+        align-items: center;
+        &::after {
+          top: auto;
+          position: relative;
+        }
+      }
+    }
+    .aldia-logo-in-text img {
+      width: 77px;
+      height: 24px;
+    }
+  }
+  .mobile-less {
+    display: flex;
+    .view-footer {
+      min-width: 50%;
+    }
+    .card-one-column {
+      width: auto;
+      max-width: none;
     }
   }
 }
