@@ -12,6 +12,8 @@ dependencies:
     - datetime
     - field_group
     - image
+    - layout_builder
+    - layout_discovery
     - user
 third_party_settings:
   field_group:
@@ -34,6 +36,77 @@ third_party_settings:
         effect: none
         speed: fast
       label: dates
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          cc44593f-d117-4247-b28a-a9ba7a915083:
+            uuid: cc44593f-d117-4247-b28a-a9ba7a915083
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:more_covers:links'
+            additional: {  }
+            weight: 0
+          99d777c6-c3fd-4990-b923-8432c2ef2415:
+            uuid: 99d777c6-c3fd-4990-b923-8432c2ef2415
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:more_covers:field_cover_page'
+              formatter:
+                label: hidden
+                settings:
+                  image_style: ''
+                  image_link: ''
+                third_party_settings: {  }
+                type: image
+            additional: {  }
+            weight: 1
+          d1f28741-5f50-452c-b4c8-d94ac831be5a:
+            uuid: d1f28741-5f50-452c-b4c8-d94ac831be5a
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:more_covers:field_start_date'
+              formatter:
+                label: hidden
+                settings:
+                  timezone_override: ''
+                  date_format: ' F jS'
+                third_party_settings: {  }
+                type: datetime_custom
+            additional: {  }
+            weight: 2
+          2eb7eceb-1fc9-43c7-9964-36e6b1e6c299:
+            uuid: 2eb7eceb-1fc9-43c7-9964-36e6b1e6c299
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:more_covers:field_end_date'
+              formatter:
+                label: hidden
+                settings:
+                  timezone_override: ''
+                  date_format: ' F jS / Y'
+                third_party_settings: {  }
+                type: datetime_custom
+            additional: {  }
+            weight: 3
+        third_party_settings: {  }
 id: node.more_covers.default
 targetEntityType: node
 bundle: more_covers
