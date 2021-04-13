@@ -1672,7 +1672,7 @@ display:
         row: false
         filters: false
         filter_groups: false
-      css_class: ''
+      css_class: mobile-less
       pager:
         type: some
         options:
@@ -2173,7 +2173,7 @@ display:
         row: false
         filters: false
         filter_groups: false
-      css_class: 'view-more view-more-category paddmar'
+      css_class: 'view-more view-more-category paddmar mobile-plus'
       pager:
         type: some
         options:
@@ -2417,6 +2417,8 @@ display:
         - 'config:core.entity_view_display.node.feature_employer.teaser'
         - 'config:core.entity_view_display.node.job.default'
         - 'config:core.entity_view_display.node.job.teaser'
+        - 'config:core.entity_view_display.node.more_covers.default'
+        - 'config:core.entity_view_display.node.more_covers.teaser'
         - 'config:core.entity_view_display.node.news.categories_home'
         - 'config:core.entity_view_display.node.news.category_childs'
         - 'config:core.entity_view_display.node.news.category_first'
