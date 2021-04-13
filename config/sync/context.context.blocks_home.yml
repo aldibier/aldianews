@@ -28,7 +28,7 @@ reactions:
         views_label: ''
         items_per_page: none
         region: content
-        weight: '1'
+        weight: '0'
         context_mapping: {  }
         custom_id: views_block_leadership_mix_block_1
         theme: al_dia_news
@@ -42,7 +42,7 @@ reactions:
         provider: fixed_block_content
         label_display: '0'
         region: content
-        weight: '-1'
+        weight: '-2'
         view_mode: ''
         context_mapping: {  }
         custom_id: fixed_block_content_horizontal_advertising_close
@@ -57,7 +57,7 @@ reactions:
         provider: al_dia_news_general
         label_display: '0'
         region: content
-        weight: '0'
+        weight: '-1'
         context_mapping: {  }
         custom_id: latest_categories
         theme: al_dia_news
@@ -73,7 +73,7 @@ reactions:
         views_label: ''
         items_per_page: none
         region: content
-        weight: '2'
+        weight: '1'
         context_mapping: {  }
         custom_id: views_block_culture_mix_block_1
         theme: al_dia_news
@@ -81,6 +81,22 @@ reactions:
         unique: 0
         context_id: blocks_home
         uuid: 267bd6b6-f4ad-404b-8d8d-cff267743713
+      0885c087-efd0-47e6-bb8d-cf729b72fdfb:
+        id: 'views_block:politics_mix-block_1'
+        label: ''
+        provider: views
+        label_display: '0'
+        views_label: ''
+        items_per_page: none
+        region: content
+        weight: '2'
+        context_mapping: {  }
+        custom_id: views_block_politics_mix_block_1
+        theme: al_dia_news
+        css_class: ''
+        unique: 0
+        context_id: blocks_home
+        uuid: 0885c087-efd0-47e6-bb8d-cf729b72fdfb
     id: blocks
     saved: false
     uuid: 4fc7f4cb-182d-41eb-9a90-4caf42ab57f8
