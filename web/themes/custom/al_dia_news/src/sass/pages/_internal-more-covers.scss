@@ -1,3 +1,39 @@
 .page-node-type-more-covers {
-    
+    h1 {
+        font-size: $px42;
+        line-height: 50px;
+        letter-spacing: 1px;
+    }
+
+    .block-field-blocknodemore-coversfield-cover-page {
+        img {
+            width: 100%;
+        }
+    }
+
+    .block-field-blocknodemore-coversfield-start-date {
+        width: max-content;
+        display: inline-block;
+    }
+
+    .block-field-blocknodemore-coversfield-end-date {
+        width: max-content;
+        display: inline-block;
+        font-family: $PrNovacond-bold;
+        font-style: normal;
+        font-weight: bold;
+        font-size: $px26;
+        line-height: 32px;
+        text-transform: uppercase;
+
+        &:before {
+            content: '-';
+            margin: 0 5px;
+            display: inline-block;
+        }
+
+        .content {
+            display: inline-block;
+        }
+    }
 }

@@ -9,6 +9,7 @@ dependencies:
     - field.storage.node.field_my_content_has_a_main_vide
     - field.storage.node.field_short_title
     - field.storage.node.field_video
+    - image.style.crop_videos_210x120
     - node.type.news
   module:
     - image
@@ -1075,7 +1076,7 @@ display:
           click_sort_column: target_id
           type: image
           settings:
-            image_style: ''
+            image_style: crop_videos_210x120
             image_link: ''
           group_column: ''
           group_columns: {  }

@@ -1663,7 +1663,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class\"testimonial-author\">\r\n      <div class\"testimonial-author-photo\">{{ field_photo }}</div>\r\n      <div class=\"testimonial-author-name\">{{ field_name }}</div>\r\n      <div class=\"testimonial-author-position\">{{ field_position }}</div>\r\n</div>"
+            text: "<div class=\"testimonial-author\">\r\n      <div class=\"testimonial-author-photo\">{{ field_photo }}</div>\r\n      <div class=\"testimonial-author-name\">{{ field_name }}</div>\r\n      <div class=\"testimonial-author-position\">{{ field_position }}</div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -2037,7 +2037,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"logo-title-live\">\r\n    {{ field_image_for_the_title }}\r\n    {{ field_image_for_the_title_mobile }}\r\n</div>"
+            text: "<div class=\"logo-title-live\">\r\n    <div class=\"logo-title-desktop\">{{ field_image_for_the_title }}</div>\r\n    <div class=\"logo-title-mobil\">{{ field_image_for_the_title_mobile }}</div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false

@@ -1773,46 +1773,41 @@ var initSlick = function initSlick($, Drupal) {
     }
   }); // slide landing jobs
 
-  $(document).ready(function () {
-    $(".block-views-blockcarousel-jobs-landing-block-1 .brands-carousel-wrapper .view-content").slick({
-      infinite: true,
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: 2000,
-      responsive: [{
-        breakpoint: 500,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1
-        }
-      }]
-    });
+  $(".block-views-blockcarousel-jobs-landing-block-1 .brands-carousel-wrapper .view-content").slick({
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    responsive: [{
+      breakpoint: 500,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1
+      }
+    }]
   }); // slide landing videos
 
-  $(document).ready(function () {
-    $(".block-views-blockcarousel-videos-landing-block-2 .view-id-carousel_videos_landing .view-content").slick({
-      infinite: true,
-      slidesToShow: 5,
-      slidesToScroll: 1,
-      responsive: [{
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1
-        }
-      }, {
-        breakpoint: 500,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1
-        }
-      }]
-    });
+  $(".block-views-blockcarousel-videos-landing-block-2 .view-id-carousel_videos_landing .view-content").slick({
+    infinite: true,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    responsive: [{
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1
+      }
+    }, {
+      breakpoint: 500,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1
+      }
+    }]
   }); //slide about al dia events
 
-  $(document).ready(function () {
-    if (!$('.about-al-dia-live-slider').length) return;
+  if ($('.about-al-dia-live-slider').length) {
     $('.about-al-dia-live-slider ul').slick({
       infinite: true,
       slidesToShow: 3,
@@ -1822,7 +1817,17 @@ var initSlick = function initSlick($, Drupal) {
       variableWidth: true,
       dots: true
     });
-  });
+  } //slide about al dia testimonial 
+
+
+  if ($('.block-views-blockabout-al-dia-live-block-4')) {
+    $('.block-views-blockabout-al-dia-live-block-4 .view-content').slick({
+      infinite: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      dots: true
+    });
+  }
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (initSlick);
