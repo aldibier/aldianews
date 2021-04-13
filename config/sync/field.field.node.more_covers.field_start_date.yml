@@ -1,0 +1,21 @@
+uuid: 676b9ecd-3d62-45ce-a3e1-de31a5830ee2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_start_date
+    - node.type.more_covers
+  module:
+    - datetime
+id: node.more_covers.field_start_date
+field_name: field_start_date
+entity_type: node
+bundle: more_covers
+label: 'start date'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

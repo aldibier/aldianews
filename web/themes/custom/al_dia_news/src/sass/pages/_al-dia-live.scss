@@ -1,23 +1,35 @@
 .path-about-al-dia-live {
-    .view-about-al-dia-live {
-        height: 560px;
-        margin-bottom: 70px;
-        padding: 0 85px 75px;
-        display: flex;
-        align-items: flex-end;
-        position: relative;
-        z-index: 1;
 
-        @media screen and (max-width: $broken) {
-            padding: 25px;
-        }
-
-        @media screen and (max-width: $tablet) {
-            height: 215px;
-            margin-bottom: 20px;
+    //------ about al dia live banner ------------//
+    .block-system-main-block {
+        .view-about-al-dia-live {
+            height: 560px;
+            margin-bottom: 70px;
+            padding: 0 85px 75px;
+            display: flex;
+            align-items: flex-end;
+            position: relative;
+            z-index: 1;
+    
+            .about-al-dia-live-title {
+                margin: 0;
+                padding: 0;
+                border: none;
+                display: flex;
+                align-items: center;
+            }
+    
+            @media screen and (max-width: $broken) {
+                padding: 25px;
+            }
+    
+            @media screen and (max-width: $tablet) {
+                height: 215px;
+                margin-bottom: 20px;
+            }
         }
     }
-
+   
     .views-field-field-section-title {
         margin-right: 15px;
         display: inline-block;
@@ -32,10 +44,6 @@
             font-size: szrem(25);
             line-height: 30px;
         }
-    }
-
-    .views-field-field-image-for-the-title {
-        display: inline-block;
     }
 
    .views-field-field-image {
@@ -71,5 +79,230 @@
         @media screen and (max-width: $tablet) {
             margin: 0 auto 40px;
         }
+    }
+
+    .block-block-groupadvertising-body-in-about-al-dia-live {
+        max-width: 1310px;
+        margin: 0 auto;
+        padding: 0 15px;
+
+        > .content {
+            display: flex;
+        }
+
+        a {
+            margin-right: 30px;
+            font-size: szrem(24);
+            @include button($btnWidth:250px,$btnHeight:55px,$btnBackground:$corange,$btnColor:$cwhite);
+        }
+
+        .button-apply {
+            font-size: szrem(24);
+            @include button($btnWidth:250px,$btnHeight:55px,$btnBackground:$bgrey,$btnColor:$cwhite);
+        }
+    }
+
+    .block-fixed-block-contentbody-about-al-dia-live {
+        max-width: 800px;
+        margin-right: 80px;
+
+        .field--type-text-with-summary {
+            margin-bottom: 90px;
+        }
+
+        h2 {
+            margin: 0 0 50px;
+            padding-top: 47px;  
+            font-size: szrem(54);
+            font-family: $Mod-bold;
+            font-style: normal;
+            font-weight: bold;
+            line-height: 65px;
+            color: $cgrey6;
+        }
+
+        p {
+            font-size: szrem(26);
+            font-family: $PrNovacond-light;
+            font-style: normal;
+            font-weight: normal;
+            line-height: 140%;
+            color: $cgrey6;
+        }
+    }
+
+     //------ about al dia live video ------------//
+    .about-al-dia-live-container-video{
+        height: 630px;
+        margin-bottom: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+        cursor: pointer;
+
+        .field-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .views-field-nothing {
+            height: 100px;
+            margin-bottom: 74px;
+            position: relative;
+            order: -1;
+        }
+
+        .play-icon {
+            @include player-icon($desktop-size: 100px, $tablet-size:100px, $mobile-size:30px) 
+        }
+
+        .title-video-about-al-dia-live {
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .video-title {
+            font-size: szrem(59);
+            font-family: $PrNovacond-bold;
+            font-style: normal;
+            font-weight: bold;
+            line-height: 72px;
+            color: $cwhite;
+        }
+
+        .views-field-field-video-thumbnail {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: -1;
+
+            &::after {
+                @include absolute(top 0 left 0);
+                @include esize(100%);
+                display: block;
+                content: '';
+                background-color: rgba(34, 33, 35, 0.5);;
+            }
+        }
+
+        .about-al-dia-live-image {
+            width: 100%;
+            height: 100%;
+            
+            img {
+                width: inherit;
+                height: inherit;
+                object-fit: cover;
+            }
+        }
+
+        .views-field-field-url-video {
+            display: none;
+        }
+    }
+
+     //------ about al dia live slider ------------//
+     .block-views-blockabout-al-dia-live-block-2 {
+        max-width: 1310px;
+        margin: 0 auto;
+        padding: 0 15px;
+     }
+
+     .about-al-dia-live-slider {
+
+        .slick-slider {
+            margin-bottom: 60px;
+            padding-bottom: 50px;
+            position: relative;
+        }
+
+        .slick-list {
+            height: 335px;
+            margin-bottom: 40px;
+        }
+
+        .slick-track {
+            height: inherit;
+            display: flex;
+            align-items: center;
+        }
+
+        .slick-slide {
+            height: initial;
+        }
+
+        .slick-arrow {
+            width: 20px;
+            height: 12px;
+            border: none;
+            position: absolute;
+            bottom: 0;
+            font-size: 0;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: transparent;
+        }
+        
+        .slick-prev {
+            left: calc(50% - 28px);
+            transform: translateX(-50%);
+            background-image: url('../../assets/img/arrow-left.svg');
+        }
+
+        .slick-next {
+            left: calc(50% + 28px);
+            transform: translateX(50%);
+            background-image: url('../../assets/img/arrow-right.svg');
+        }
+
+        .slick-dots {
+            display: flex;
+            justify-content: center;
+            align-content: center;
+
+            .slick-active {
+                background-color: $red1;
+            }
+
+            li {
+                margin-right: 10px;
+                width: 0;
+                height: 0;
+                padding: 5px;
+                border: none;
+                font-size: 0;
+                background-color: #C4C4C4;
+                border-radius: 50%;
+                cursor: pointer;
+            }
+
+            button {
+                width: 0;
+                height: 0;
+                margin: 0;
+                padding: 0;
+                border: none;
+                font-size: 0;
+                background-color: transparent;
+                visibility: hidden;
+            }
+        }
+     }
+
+    //------ about al dia live statistics ------------//
+    .about-al-dia-live-statistics {
+
+    }
+
+    //------ about al dia live testimonies ------------//
+    .about-al-dia-live-testimonies {
+
     }
 }

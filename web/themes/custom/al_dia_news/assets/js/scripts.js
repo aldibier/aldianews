@@ -1214,7 +1214,19 @@ module.exports = function (css) {
 /***/ (function(module, exports) {
 
 window.onload = function () {
-  // js video en interna
+  // blockquote para selection-sharer
+  var allBlockquote = document.querySelectorAll('blockquote:not([class*="twitter"])');
+
+  if (!!allBlockquote && allBlockquote.length) {
+    allBlockquote.forEach(function (blockquote) {
+      if (blockquote.firstElementChild.tagName === 'P') {
+        var text = blockquote.firstElementChild.textContent;
+        blockquote.textContent = text;
+      }
+    });
+  } // js video en interna
+
+
   var video_interna = document.querySelector(".block-field-blocknodenewsfield-video");
   var contenido_interna = document.querySelector(".content-news-internal-first");
 
@@ -1597,6 +1609,9 @@ __webpack_require__.r(__webpack_exports__);
       }).addTo(controller2); //.addIndicators();
     }
 
+    $('#block-fixed-block-content-horizontal-advertising-close  button[name="close"]').click(function () {
+      $("#block-fixed-block-content-horizontal-advertising-close").addClass("dis-none");
+    });
     $(".page-node-type-al-dia-vacancy .button-apply").click(function () {
       if ($(".page-node-type-al-dia-vacancy .block-webform-block").hasClass("open")) {
         $(".page-node-type-al-dia-vacancy .block-webform-block").removeClass("open");
@@ -1793,6 +1808,16 @@ var initSlick = function initSlick($, Drupal) {
           slidesToScroll: 1
         }
       }]
+    });
+  }); //slide about al dia events
+
+  $(document).ready(function () {
+    if (!$('.about-al-dia-live-slider').length) return;
+    $('.about-al-dia-live-slider ul').slick({
+      infinite: true,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      dots: true
     });
   });
 };

@@ -1,0 +1,88 @@
+uuid: 04031411-3032-4d38-a525-9509369317ec
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+name: blocks_home
+label: Home
+group: Home
+description: 'Blocks and views in Home page'
+requireAllConditions: false
+disabled: false
+conditions:
+  request_path:
+    id: request_path
+    pages: /node
+    negate: false
+    uuid: 2aabf948-266f-49ed-9620-e2c5cc67ca5e
+    context_mapping: {  }
+reactions:
+  blocks:
+    blocks:
+      ecb29fe8-aebd-489f-8626-952080641647:
+        id: 'views_block:leadership_mix-block_1'
+        label: ''
+        provider: views
+        label_display: '0'
+        views_label: ''
+        items_per_page: none
+        region: content
+        weight: '1'
+        context_mapping: {  }
+        custom_id: views_block_leadership_mix_block_1
+        theme: al_dia_news
+        css_class: ''
+        unique: 0
+        context_id: blocks_home
+        uuid: ecb29fe8-aebd-489f-8626-952080641647
+      cb81f0b3-a64a-428e-ad6d-3852da5bddf4:
+        id: 'fixed_block_content:horizontal_advertising_close'
+        label: 'Horizontal advertising close'
+        provider: fixed_block_content
+        label_display: '0'
+        region: content
+        weight: '-1'
+        view_mode: ''
+        context_mapping: {  }
+        custom_id: fixed_block_content_horizontal_advertising_close
+        theme: al_dia_news
+        css_class: ''
+        unique: 0
+        context_id: blocks_home
+        uuid: cb81f0b3-a64a-428e-ad6d-3852da5bddf4
+      5733e99c-d10c-45d3-b5cf-0b05f1c54d6e:
+        id: latest_categories
+        label: LatestCategories
+        provider: al_dia_news_general
+        label_display: '0'
+        region: content
+        weight: '0'
+        context_mapping: {  }
+        custom_id: latest_categories
+        theme: al_dia_news
+        css_class: ''
+        unique: 0
+        context_id: blocks_home
+        uuid: 5733e99c-d10c-45d3-b5cf-0b05f1c54d6e
+      267bd6b6-f4ad-404b-8d8d-cff267743713:
+        id: 'views_block:culture_mix-block_1'
+        label: ''
+        provider: views
+        label_display: '0'
+        views_label: ''
+        items_per_page: none
+        region: content
+        weight: '2'
+        context_mapping: {  }
+        custom_id: views_block_culture_mix_block_1
+        theme: al_dia_news
+        css_class: ''
+        unique: 0
+        context_id: blocks_home
+        uuid: 267bd6b6-f4ad-404b-8d8d-cff267743713
+    id: blocks
+    saved: false
+    uuid: 4fc7f4cb-182d-41eb-9a90-4caf42ab57f8
+    include_default_blocks: 1
+weight: 0

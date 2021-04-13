@@ -1,195 +1,197 @@
-// form {
-//   height: 100%;
-//   display: flex;
-//   flex-wrap: wrap;
-//   fieldset {
-//     border: 0px;
-//     padding: 0px;
-//     margin: 0;
-//   }
-//   button[name="close"] {
-//     position: absolute;
-//     top: 50px;
-//     right: 75px;
-//     width: 20px;
-//     height: 20px;
-//     display: block;
-//     font-size: 0;
-//     background: url("../img/close.svg") center center no-repeat;
-//     border: none;
-//     cursor: pointer;
-//   }
-//   .form-actions {
-//     padding-top: 0px;
-//     margin: 0px;
+form {
+  height: 100%;
+  flex-wrap: wrap;
+  fieldset {
+    border: 0px;
+    padding: 0px;
+    margin: 0;
+  }
+  button[name="close"] {
+    position: absolute;
+    top: 50px;
+    right: 75px;
+    width: 20px;
+    height: 20px;
+    display: block;
+    font-size: 0;
+    background: url("../img/close.svg") center center no-repeat;
+    border: none;
+    cursor: pointer;
+  }
+  .form-actions {
+    padding-top: 0px;
+    margin: 0px;
 
-//     .button {
-//       max-width: 150px;
-//       width: 100%;
-//       min-height: 40px;
-//       background: $red1;
-//       margin-top: 0px;
-//       font-weight: 300;
-//       font-size: $px18;
-//       line-height: 25px;
-//       font-family: $PrNovacond-reg;
-//       color: $cwhite;
-//       border-radius: 0px;
-//     }
-//   }
-//   label {
-//     font-style: normal;
-//     font-weight: 600;
-//     font-size: $px20;
-//     line-height: 24px;
-//     font-family: $PrNovacond-reg;
-//     color: $cblack;
-//   }
-//   input {
-//     width: 100%;
-//     min-height: 40px;
-//     background: $cgrey8;
-//     margin-top: 5px;
-//     border: 0px;
-//   }
+    .button {
+      max-width: 150px;
+      width: 100%;
+      min-height: 40px;
+      background: $red1;
+      margin-top: 0px;
+      font-weight: 300;
+      font-size: $px18;
+      line-height: 25px;
+      font-family: $PrNovacond-reg;
+      color: $cwhite;
+      border-radius: 0px;
+    }
+  }
+  label,
+  .form-item label {
+    font-style: normal;
+    font-weight: 600;
+    font-size: $px20;
+    line-height: 24px;
+    font-family: $PrNovacond-reg;
+    color: $cblack;
+  }
+  input {
+    width: 100%;
+    min-height: 40px;
+    background: $cgrey8;
+    margin-top: 5px;
+    border: 0px;
+  }
 
-//   select,
-//   .SumoSelect > .CaptionCont {
-// padding: 0px;
-//     width: 100%;
-//     min-height: 40px;
-//     background: $cgrey8;
-//     margin-top: 5px;
-//     border: 0px;
-//     color: $grey11;
-//     font-weight: 300;
-//     font-size: $px20;
-//     line-height: 24px;
-//     font-family: $PrNovacond-light;
-//     border-radius: 0px;
-//     border-right: 14px solid rgb(242, 242, 242);
-//   }
-//   .SumoSelect > .CaptionCont {
-//     display: flex;
-//     align-items: center;
-//     > label > i {
-//       display: none;
-//     }
-//   }
-//   .SumoSelect.open {
-//     > .optWrapper {
-//       border: 0px;
-//       border-radius: 0px;
-//       box-shadow: 0px 0px 0px transparent;
-//     }
-//     > .CaptionCont {
-//       box-shadow: 0px 0px 0px transparent;
-// padding: 0px;
-//     }
-//   }
-//   .SumoSelect .optWrapper > .options > li {
-//     background: #ededed;
-//     color: $cblack3;
-//     font-weight: 300;
-//     font-size: $px20;
-//     line-height: 24px;
-//     font-family: $PrNovacond-light;
-//     display: flex;
-//     align-items: center;
-//     border: 0px;
-//     label {
-//       width: 100%;
-//       min-height: 53px;
-//       padding-bottom: 0px;
-//       border-top: 0.5px solid #b1b1b1;
-//       display: flex;
-//       align-items: center;
-//       text-transform: capitalize;
-//       &::nth-child(1) {
-//         border-top: 0px;
-//       }
-//     }
-//     &.opt {
-//       padding: 0 13px;
-//       border-bottom: 0px;
-//     }
-//   }
+  select,
+  .SumoSelect > .CaptionCont {
+    padding: 0px;
+    width: 100%;
+    min-height: 40px;
+    background: $cgrey8;
+    margin-top: 5px;
+    border: 0px;
+    color: $grey11;
+    font-weight: 300;
+    font-size: $px20;
+    line-height: 24px;
+    font-family: $PrNovacond-light;
+    border-radius: 0px;
+    border-right: 14px solid rgb(242, 242, 242);
+  }
+  .SumoSelect > .CaptionCont {
+    display: flex;
+    align-items: center;
+    > label > i {
+      display: none;
+    }
+  }
+  .SumoSelect.open {
+    > .optWrapper {
+      border: 0px;
+      border-radius: 0px;
+      box-shadow: 0px 0px 0px transparent;
+    }
+    > .CaptionCont {
+      box-shadow: 0px 0px 0px transparent;
+      padding: 0px;
+    }
+  }
+  .SumoSelect .optWrapper > .options > li {
+    background: #ededed;
+    color: $cblack3;
+    font-weight: 300;
+    font-size: $px20;
+    line-height: 24px;
+    font-family: $PrNovacond-light;
+    display: flex;
+    align-items: center;
+    border: 0px;
+    label {
+      width: 100%;
+      min-height: 53px;
+      padding-bottom: 0px;
+      border-top: 0.5px solid #b1b1b1;
+      display: flex;
+      align-items: center;
+      text-transform: capitalize;
+      &::nth-child(1) {
+        border-top: 0px;
+      }
+    }
+    &.opt.selected {
+      display: none;
+    }
+    &.opt {
+      padding: 0 13px;
+      border-bottom: 0px;
+    }
+  }
 
-//   select,
-//   .SumoSelect > .CaptionCont {
-//     background: #ededed url(../img/fle.png); /*aquí deberás escribir la ruta de la imagen que utilizarás como flecha del desplegable*/
-//     background-repeat: no-repeat;
-//     background-position: right center;
-//     -webkit-appearance: none;
-//     -moz-appearance: none;
-//     -o-appearance: none;
-//     appearance: none;
-//     border-right: 14px solid transparent;
-//   }
+  select,
+  .SumoSelect > .CaptionCont {
+    background: #ededed url(../img/fle.png); /*aquí deberás escribir la ruta de la imagen que utilizarás como flecha del desplegable*/
+    background-repeat: no-repeat;
+    background-position: right center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    border-right: 14px solid transparent;
+  }
 
-//   select::-ms-expand {
-//     display: none; /*Evita que se muestre la flecha por defecto en versiones de IE*/
-//   }
+  select::-ms-expand {
+    display: none; /*Evita que se muestre la flecha por defecto en versiones de IE*/
+  }
 
-//   .testselect1 {
-//   }
+  textarea {
+    width: 100%;
+    min-height: 145px;
+    background: $cgrey8;
+    margin-top: 5px;
+    border: 0px;
+  }
 
-//   textarea {
-//     width: 100%;
-//     min-height: 145px;
-//     background: $cgrey8;
-//     margin-top: 5px;
-//     border: 0px;
-//   }
+  @media (max-width: $tablet) {
+    button[name="close"] {
+      width: 15px;
+      height: 15px;
+      background-size: contain;
+      top: 20px;
+      right: 20px;
+    }
+    label,
+    .form-item label {
+      font-size: 15px;
+      line-height: 18px;
+    }
 
-//   @media (max-width: $tablet) {
-//     button[name="close"] {
-//       width: 15px;
-//       height: 15px;
-//       background-size: contain;
-//       top: 20px;
-//       right: 20px;
-//     }
-//     label {
-//       font-size: 15px;
-//       line-height: 18px;
-//     }
+    input {
+      font-size: 15px;
+      min-height: 30px;
+      max-width: 100%;
+    }
 
-//     input {
-//       font-size: 15px;
-//       min-height: 30px;
-//       max-width: 100%;
-//     }
-
-//     fieldset {
-//       width: 100%;
-//       max-width: 100%;
-//     }
-//     select {
-//       max-width: 100%;
-//       width: 100%;
-//       min-height: 30px;
-//       font-size: 15px;
-//       background-size: 11px;
-//     }
-//   select,
-//   .SumoSelect > .CaptionCont {
-//         background: url(../img/fle_mobil.png) center right no-repeat rgb(237, 237, 237);
-//   }
-//     textarea {
-//       max-width: 100%;
-//       font-size: 15px;
-//     }
-//     .form-actions {
-//       .button {
-//         min-width: 100px;
-//         font-size: 14px;
-//         line-height: 16px;
-//         min-height: 30px;
-//       }
-//     }
-// .SumoSelect {
-//   width: 100%;
-// }
-//   }
-// }
+    fieldset {
+      width: 100%;
+      max-width: 100%;
+    }
+    select {
+      max-width: 100%;
+      width: 100%;
+      min-height: 30px;
+      font-size: 15px;
+      background-size: 11px;
+    }
+    select,
+    .SumoSelect > .CaptionCont {
+      background: url(../img/fle_mobil.png) center right no-repeat
+        rgb(237, 237, 237);
+    }
+    textarea {
+      max-width: 100%;
+      font-size: 15px;
+    }
+    .form-actions {
+      .button {
+        min-width: 100px;
+        font-size: 14px;
+        line-height: 16px;
+        min-height: 30px;
+      }
+    }
+    .SumoSelect {
+      width: 100%;
+    }
+  }
+}

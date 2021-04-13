@@ -1,0 +1,56 @@
+///////// Estilos bloques leadership ///////
+.paddmar .views-row {
+  margin-bottom: 25px;
+  padding-bottom: 25px;
+}
+.path-frontpage {
+  .view-categories-sons > .view-content .views-field-view-1 .view-content {
+    flex-wrap: wrap;
+  }
+  .category-title h1 {
+    display: flex;
+    a {
+      width: 100%;
+      font-size: 38px;
+      margin-left: 5px;
+    }
+  }
+  .view-categories-sons {
+    .card-one-column {
+      margin-bottom: 25px;
+    }
+    .card-one-column:nth-child(3) {
+      padding-right: 19px;
+      border-right: 1px solid #b1b1b1;
+      margin-top: 50px;
+      position: relative;
+      &::before {
+        display: block;
+        content: "";
+        position: absolute;
+        width: 840px;
+        height: 1px;
+        background: #b1b1b1;
+        top: -25px;
+        left: 0px;
+      }
+    }
+    .card-one-column:nth-child(4) {
+      padding-left: 19px;
+      margin-top: 50px;
+    }
+    @media (max-width: 1250px) {
+      .card-one-column:nth-child(3)::before {
+        display: none;
+      }
+      .card-one-column {
+        border-right: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+      }
+      .card-one-column .card-image {
+        max-width: none;
+      }
+    }
+  }
+}

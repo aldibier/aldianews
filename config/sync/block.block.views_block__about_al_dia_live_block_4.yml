@@ -1,0 +1,33 @@
+uuid: 54826c53-5b0c-4ce7-af07-4cef2ac9e826
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.about_al_dia_live
+  module:
+    - context
+    - views
+  theme:
+    - al_dia_news
+id: views_block__about_al_dia_live_block_4
+theme: al_dia_news
+region: testimonial_and_advertising_vertical
+weight: -27
+provider: null
+plugin: 'views_block:about_al_dia_live-block_4'
+settings:
+  id: 'views_block:about_al_dia_live-block_4'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path_exclusion:
+    id: request_path_exclusion
+    pages: ''
+    negate: null
+  view_inclusion:
+    id: view_inclusion
+    negate: null
+    view_inclusion: {  }
