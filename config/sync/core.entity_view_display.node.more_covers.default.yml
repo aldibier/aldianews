@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.more_covers.body
     - field.field.node.more_covers.field_cover_page
     - field.field.node.more_covers.field_end_date
+    - field.field.node.more_covers.field_related_more_covers
     - field.field.node.more_covers.field_start_date
     - fixed_block_content.fixed_block_content._small_vertical_advertising
     - fixed_block_content.fixed_block_content.big_vertical_advertising
@@ -13,6 +14,7 @@ dependencies:
   module:
     - al_dia_layouts
     - datetime
+    - entity_reference_revisions
     - field_group
     - fixed_block_content
     - image
@@ -163,6 +165,23 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: 1
+          d1bbdd52-7ed2-474a-8748-8b3d1b4e842a:
+            uuid: d1bbdd52-7ed2-474a-8748-8b3d1b4e842a
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:more_covers:field_related_more_covers'
+              formatter:
+                type: entity_reference_revisions_entity_view
+                label: above
+                settings:
+                  view_mode: default
+                  link: ''
+                third_party_settings: {  }
+            additional: {  }
+            weight: 0
         third_party_settings: {  }
 id: node.more_covers.default
 targetEntityType: node
@@ -186,6 +205,15 @@ content:
       date_format: ' F jS / Y'
     third_party_settings: {  }
     type: datetime_custom
+    region: content
+  field_related_more_covers:
+    type: entity_reference_revisions_entity_view
+    weight: 4
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
     region: content
   field_start_date:
     weight: 2

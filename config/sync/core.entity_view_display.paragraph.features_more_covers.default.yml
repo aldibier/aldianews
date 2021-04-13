@@ -1,0 +1,46 @@
+uuid: 9d3855a9-9b01-4d0d-b50d-8766a3dbc234
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.features_more_covers.field_card_title_related_covers
+    - field.field.paragraph.features_more_covers.field_image_related_covers
+    - field.field.paragraph.features_more_covers.field_taxonomy_term_related_cove
+    - paragraphs.paragraphs_type.features_more_covers
+  module:
+    - field_formatter_class
+    - image
+    - text
+id: paragraph.features_more_covers.default
+targetEntityType: paragraph
+bundle: features_more_covers
+mode: default
+content:
+  field_card_title_related_covers:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings:
+      field_formatter_class:
+        class: card-title
+    type: text_default
+    region: content
+  field_image_related_covers:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_taxonomy_term_related_cove:
+    weight: 1
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  search_api_excerpt: true
