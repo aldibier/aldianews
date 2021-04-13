@@ -151,6 +151,23 @@
         }
     }
 
+    @media( min-width: $broken){
+        .content-right-pages {
+            position: relative;
+            
+            &::after {
+                content: '';
+                width: 1px;
+                position: absolute;
+                height: 100%;
+                display: block;
+                background: $cgrey4;
+                left: -20px;
+                top: 0;
+            }
+        }
+    }
+
 
     @media( max-width: $broken){
 
