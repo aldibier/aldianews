@@ -43,15 +43,6 @@
     height: auto;
   }
 }
-.block-fixed-block-contentvertical-advertising-mobile {
-  max-width: 120px;
-  max-height: 320px;
-  overflow: hidden;
-  img {
-    width: 100%;
-    height: auto;
-  }
-}
 
 .block-fixed-block-contentsquare-advertising-mobile,
 .block-fixed-block-contentvertical-advertising-mobile {
@@ -73,5 +64,16 @@
   .block-fixed-block-contentsquare-advertising-mobile,
   .block-fixed-block-contentvertical-advertising-mobile {
     display: block;
+  }
+}
+@media (max-width: 350px) {
+  .block-fixed-block-contentvertical-advertising-mobile {
+    max-width: 120px;
+    max-height: 320px;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: auto;
+    }
   }
 }
