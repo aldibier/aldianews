@@ -90,6 +90,18 @@ body.toolbar-tray-open.user-logged-in {
       padding: 0px;
     }
   }
+  .width1310 {
+    max-width: 1310px;
+    padding: 0 15px;
+    margin: 0 auto 40px;
+    @media (max-width: $tablet) {
+      margin-bottom: 40px;
+      padding: 0px;
+      .padd15 {
+        padding: 0 15px;
+      }
+    }
+  }
 }
 
 .region-breadcrumb {
@@ -101,6 +113,29 @@ body.toolbar-tray-open.user-logged-in {
 
   &::selection {
     background: $cyello;
+  }
+}
+
+.mobile-plus {
+  .card-more:nth-child(1),
+  .card-more:nth-child(2) {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .mobile-plus {
+    .card-more:nth-child(1),
+    .card-more:nth-child(2) {
+      display: block;
+    }
+  }
+
+  .mobile-less {
+    .card-one-column:last-child,
+    .card-one-column:nth-last-child(2) {
+      display: none;
+    }
   }
 }
 

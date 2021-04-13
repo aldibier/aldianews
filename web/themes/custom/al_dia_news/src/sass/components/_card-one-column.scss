@@ -1,5 +1,4 @@
 .card-one-column {
-
   h2,
   h3 {
     margin: 0;
@@ -16,6 +15,8 @@
 
     @media screen and (min-width: $screen-query) {
       max-height: 235px;
+      overflow: hidden;
+      max-width: 400px;
     }
 
     a {
@@ -35,7 +36,11 @@
     font-size: 0;
 
     .field-content {
-      @include player-icon($desktop-size: 70px, $tablet-size:70px, $mobile-size:30px);
+      @include player-icon(
+        $desktop-size: 70px,
+        $tablet-size: 70px,
+        $mobile-size: 30px
+      );
 
       &:empty {
         display: none;
@@ -46,7 +51,7 @@
   .card-name-category {
     margin-bottom: 10px;
 
-    @media screen and (max-width:$broken) {
+    @media screen and (max-width: $broken) {
       margin-bottom: 5px;
     }
 
@@ -65,7 +70,7 @@
       letter-spacing: 0.08em;
       color: $corange;
 
-      @media screen and (max-width:$tablet) {
+      @media screen and (max-width: $tablet) {
         font-size: $px10;
         line-height: 12px;
       }
@@ -140,8 +145,8 @@
   }
 }
 
-.view-id-more_videos_in_landing {
-  .card-one-column  {
+.view-id-more_videos_in_landing  {
+  .card-one-column   {
     .container-wrapper {
       @media screen and(max-width:767px) {
         width: max-content;

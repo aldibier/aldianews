@@ -7,6 +7,14 @@
   .view-categories-sons > .view-content .views-field-view-1 .view-content {
     flex-wrap: wrap;
   }
+  .category-title h1 {
+    display: flex;
+    a {
+      width: 100%;
+      font-size: 38px;
+      margin-left: 5px;
+    }
+  }
   .view-categories-sons {
     .card-one-column {
       margin-bottom: 25px;
@@ -20,8 +28,7 @@
         display: block;
         content: "";
         position: absolute;
-        max-width: 840px;
-        width: 100%;
+        width: 840px;
         height: 1px;
         background: #b1b1b1;
         top: -25px;
@@ -32,13 +39,18 @@
       padding-left: 19px;
       margin-top: 50px;
     }
-  }
-  .category-title h1 {
-    display: flex;
-    a {
-      width: 100%;
-      font-size: 38px;
-      margin-left: 5px;
+    @media (max-width: 1250px) {
+      .card-one-column:nth-child(3)::before {
+        display: none;
+      }
+      .card-one-column {
+        border-right: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+      }
+      .card-one-column .card-image {
+        max-width: none;
+      }
     }
   }
 }

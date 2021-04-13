@@ -1,0 +1,23 @@
+uuid: faca0dfe-3b6c-4128-a7f1-cf6fc9d254ac
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.more_covers
+  module:
+    - text
+id: node.more_covers.body
+field_name: body
+entity_type: node
+bundle: more_covers
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary
