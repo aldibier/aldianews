@@ -79,7 +79,7 @@ const initSlick = ($, Drupal) => {
   if ($('.about-al-dia-live-slider').length) {
     $('.about-al-dia-live-slider ul').slick({
       infinite: true,
-      slidesToShow: 3,
+      slidesToShow: 2,
       slidesToScroll: 1,
       centerPadding: '60px',
       centerMode: true,
