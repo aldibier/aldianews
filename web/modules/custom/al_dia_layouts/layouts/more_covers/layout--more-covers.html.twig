@@ -27,11 +27,13 @@
       </div>
 
       <div class="content-right-pages">
-        {% if content.two_content %}
-          <div {{ region_attributes.two_content.addClass('advertising-covers') }}>
-            {{ content.two_content }} 
-          </div>
-        {% endif %}
+        <div class="pautas">
+          {% if content.two_content %}
+            <div {{ region_attributes.two_content.addClass('advertising-covers') }}>
+              {{ content.two_content }} 
+            </div>
+          {% endif %}
+        </div>
       </div>
   </div>
 {% endif %}
