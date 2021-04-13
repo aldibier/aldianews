@@ -1,4 +1,4 @@
-///////// Estilos bloques leadership ///////
+///////// Estilos bloques leadership, cultura y politics ///////
 .paddmar .views-row {
   margin-bottom: 25px;
   padding-bottom: 25px;
@@ -44,7 +44,7 @@
         display: none;
       }
       .card-one-column {
-        border-right: 0px;
+        border-right: 0px !important;
         padding-left: 0px;
         padding-right: 0px;
       }
@@ -56,6 +56,24 @@
       .card-one-column .card-image {
         max-width: 400px;
       }
+      > .view-content .views-field-view-1 .view-content {
+        grid-gap: 10px;
+      }
+    }
+  }
+}
+
+@media (max-width: $tablet) {
+  .path-frontpage .view-categories-sons {
+    > .view-content > h3 a {
+      line-height: initial;
+    }
+    .block-fixed-block-content-small-vertical-advertising,
+    .block-fixed-block-contentbig-vertical-advertising {
+      display: none;
+    }
+    .mobile-less {
+      display: flex;
     }
   }
 }
