@@ -71,39 +71,58 @@
       }
     }
 
+    .logo-title-live-desktop {
+        @media screen and (max-width: $tablet) {
+            display: none;
+        }
+    }
+
+    .logo-title-live-mobile {
+        display: none;
+        @media screen and (max-width: $tablet) {
+           display: block;
+        }
+    }
+
    //-------------advertising-----------------//
    .block-fixed-block-contenthorizontal-advertising {
-        margin: 0 auto 137px;
+        margin: 0 auto 90px;
 
-        @media screen and (max-width: $tablet) {
+        @media screen and (max-width: $broken) {
             margin: 0 auto 40px;
         }
     }
 
+    //-------------our events-----------------//
     .block-block-groupadvertising-body-in-about-al-dia-live {
         max-width: 1310px;
         margin: 0 auto 90px;
         padding: 0 15px;
 
+        @media screen and (max-width: $tablet) {
+            margin: 0 auto 45px;
+        }
+
+        .block-fixed-block-contentbig-vertical-advertising {
+            @media screen and (max-width: $broken) {
+                display: none;
+            }
+        }
+
         > .content {
             display: flex;
-        }
-
-        a {
-            margin-right: 30px;
-            font-size: szrem(24);
-            @include button($btnWidth:250px,$btnHeight:55px,$btnBackground:$corange,$btnColor:$cwhite);
-        }
-
-        .button-apply {
-            font-size: szrem(24);
-            @include button($btnWidth:250px,$btnHeight:55px,$btnBackground:$bgrey,$btnColor:$cwhite);
         }
     }
 
     .block-fixed-block-contentbody-about-al-dia-live {
-        max-width: 800px;
+        width: 800px;
+        max-width: 100%;
         margin-right: 80px;
+
+        @media screen and (max-width: $broken) {
+            width: 100%;
+            margin-right: 0;
+        }
 
         .field--type-text-with-summary {
             margin-bottom: 90px;
@@ -118,6 +137,16 @@
             font-weight: bold;
             line-height: 65px;
             color: $cgrey6;
+
+            @media screen and (max-width: $broken) {
+                padding-top: 0;  
+            }
+
+            @media screen and (max-width: $tablet) {
+                margin: 0 0 27px;
+                font-size: szrem(20);
+                line-height: 24px;
+            }
         }
 
         p {
@@ -127,7 +156,38 @@
             font-weight: normal;
             line-height: 140%;
             color: $cgrey6;
+
+            @media screen and (max-width: $tablet) {
+                font-size: szrem(15);
+            }
         }
+
+        a {
+            margin-right: 30px;
+            font-size: szrem(24);
+            @include button($btnWidth:250px,$btnHeight:55px,$btnBackground:$corange,$btnColor:$cwhite);
+
+            @media screen and (max-width: $tablet) {
+                width: 130px;
+                height: 30px;
+                margin-right: 20px;
+                font-size: szrem(12);
+                line-height: 30px;
+            }
+        }
+
+        .button-apply {
+            font-size: szrem(24);
+            @include button($btnWidth:250px,$btnHeight:55px,$btnBackground:$bgrey,$btnColor:$cwhite);
+
+            @media screen and (max-width: $tablet) {
+                width: 130px;
+                height: 30px;
+                font-size: szrem(12);
+                line-height: 30px;
+            }
+        }
+
     }
 
      //------ about al dia live video ------------//
@@ -141,6 +201,11 @@
         z-index: 1;
         cursor: pointer;
 
+        @media screen and (max-width: $tablet) {
+            height: 140px;
+            margin-bottom: 35px;
+        }
+
         .field-content {
             display: flex;
             flex-direction: column;
@@ -151,6 +216,11 @@
             margin-bottom: 74px;
             position: relative;
             order: -1;
+
+            @media screen and (max-width: $tablet) {
+                height: 30px;
+                margin-bottom: 20px;
+            }
         }
 
         .play-icon {
@@ -160,6 +230,10 @@
         .title-video-about-al-dia-live {
             margin-bottom: 12px;
             text-align: center;
+
+            @media screen and (max-width: $tablet) {
+                margin-bottom: 0;
+            }
         }
 
         .video-title {
@@ -169,6 +243,11 @@
             font-weight: bold;
             line-height: 72px;
             color: $cwhite;
+
+            @media screen and (max-width: $tablet) {
+                font-size: szrem(15);
+                line-height: 18px;
+            }
         }
 
         .views-field-field-video-thumbnail {
@@ -246,7 +325,11 @@
         .slick-center {
             will-change: transform;
             transform: scaleX(2.139) scaley(2.031); 
-            transition: transform 500ms ease;
+            transition: all 500ms ease;
+
+            @media screen and (max-width: $large-min) {
+                transform: scaleX(1.4) scaley(1.4);
+            }
         }
      }
 
@@ -263,6 +346,13 @@
             display: grid;
             grid-template-columns: repeat(3,1fr);
             justify-items: center;
+
+            @media screen and (max-width: $tablet) {
+                padding: 20px 0;
+                border-width: 1px;
+                grid-template-columns: 140px;
+                justify-content: center;
+            }
         }
 
         .views-row {
@@ -270,6 +360,27 @@
                 padding: 0 124px;
                 border-left: 2px solid $cgrey4;
                 border-right:  2px solid $cgrey4;
+            }
+
+            @media screen and (max-width: $broken) {
+                &:nth-child(2){
+                    padding: 0 35px;
+                }
+            }
+
+            @media screen and (max-width: $tablet) {
+                &:nth-child(2){
+                    padding: 0;
+                    border-left: none;
+                    border-right: none;
+                }
+
+                &:not(:last-child){
+                    width: 100%;
+                    margin-bottom: 10px;
+                    padding-bottom: 10px;
+                    border-bottom: 1px solid $cgrey4;
+                }
             }
         }
 
@@ -282,6 +393,13 @@
             line-height: 85px;
             letter-spacing: 0.025em;
             color: $cgrey6;
+
+            @media screen and (max-width: $tablet) {
+                margin-bottom: 0;
+                font-size: szrem(25);
+                line-height: 30px;
+                text-align: center;
+            }
         }
 
         .views-field-field-item-text {
@@ -292,6 +410,12 @@
             line-height: 37px;
             letter-spacing: 0.025em;
             color: $cgrey6;
+
+            @media screen and (max-width: $tablet) {
+                font-size: szrem(15);
+                line-height: 18px;
+                text-align: center;
+            }
         }
     }
 
