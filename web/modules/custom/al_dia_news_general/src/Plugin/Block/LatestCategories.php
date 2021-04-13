@@ -73,7 +73,7 @@ class LatestCategories extends BlockBase implements ContainerFactoryPluginInterf
    * {@inheritdoc}
    */
   public function build() {
-
+    //Consulto el primer nodo, último publicado, ontendo el parent para armar el enlace, alias tt
     $query1 = $this->database->select('node_field_data', 'n');
     $query1->fields("n", ["nid", "created"]);
     $query1->addField("t", "parent_target_id");
@@ -86,6 +86,7 @@ class LatestCategories extends BlockBase implements ContainerFactoryPluginInterf
     $query1->orderBy("n.created", "DESC");
     $query1->range(0, 1);
     $results = $query1->execute()->fetchObject();
+    //armo contenedor
     $return["main"] = [
       "#type" => "container",
       '#attributes' => [
@@ -94,6 +95,8 @@ class LatestCategories extends BlockBase implements ContainerFactoryPluginInterf
     ];
     $category = [];
     $nids = [];
+
+    //Condición para almacenar el id de la categoria y no repetirlo, dependiendo si es parent tt o si es un padre sin nietos
     if ($results) {
       $nids[] = $results->nid;
       if ($results->tt_parent_target_id) {
@@ -104,9 +107,11 @@ class LatestCategories extends BlockBase implements ContainerFactoryPluginInterf
       }
       $user = $this->entityTypeManager->getStorage('node')->load($results->nid);
       $render_controller = $this->entityTypeManager->getViewBuilder($user->getEntityTypeId());
-      $mode = $render_controller->view($user, 'first_category_home');
+      $mode = $render_controller->view($user, 'first_category_home'); //selecciono el modo de visualización en news, first_category_home
       $return["main"]["main"] = $mode; 
     }
+
+    //Segunda consulta, omitiendo el id de la categoria con la variable $category, la omito en el padre con nietos y en el padre sin nietos
     $query2 = $this->database->select('node_field_data', 'n');
     $query2->fields("n", ["nid", "created"]);
     $query2->addField("t", "parent_target_id");
@@ -122,12 +127,15 @@ class LatestCategories extends BlockBase implements ContainerFactoryPluginInterf
     $query2->range(0, 1);
     $results = $query2->execute()->fetchObject();
 
+    //armo contenedor
     $return["second"] = [
       "#type" => "container",
       '#attributes' => [
         'class' => 'second-news',
       ],
     ];
+    
+    //Condición para almacenar el id de la categoria y no repetirlo, dependiendo si es parent tt o si es un padre sin nietos
     if ($results) {
       $nids[] = $results->nid;
       if ($results->tt_parent_target_id) {
@@ -138,9 +146,11 @@ class LatestCategories extends BlockBase implements ContainerFactoryPluginInterf
       }
       $user = $this->entityTypeManager->getStorage('node')->load($results->nid);
       $render_controller = $this->entityTypeManager->getViewBuilder($user->getEntityTypeId());
-      $mode = $render_controller->view($user, 'categories_home');
+      $mode = $render_controller->view($user, 'categories_home'); //selecciono el modo de visualización en news, first_category_home
       $return["second"]["one"] = $mode; 
     }
+    
+    //Tercera consulta, omitiendo el id de la categoria con la variable $category, la omito en el padre con nietos y en el padre sin nietos
     $query3 = $this->database->select('node_field_data', 'n');
     $query3->fields("n", ["nid", "created"]);
     $query3->addField("t", "parent_target_id");

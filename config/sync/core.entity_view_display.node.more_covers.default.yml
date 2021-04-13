@@ -1,0 +1,78 @@
+uuid: f3f7575a-9894-4536-84e3-d8abd810f7cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.more_covers.body
+    - field.field.node.more_covers.field_cover_page
+    - field.field.node.more_covers.field_end_date
+    - field.field.node.more_covers.field_start_date
+    - node.type.more_covers
+  module:
+    - datetime
+    - field_group
+    - image
+    - user
+third_party_settings:
+  field_group:
+    group_date:
+      children:
+        - field_start_date
+        - field_end_date
+      parent_name: ''
+      weight: 2
+      format_type: html_element
+      region: content
+      format_settings:
+        id: ''
+        classes: dates-group
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: dates
+id: node.more_covers.default
+targetEntityType: node
+bundle: more_covers
+mode: default
+content:
+  field_cover_page:
+    weight: 1
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_end_date:
+    weight: 3
+    label: hidden
+    settings:
+      timezone_override: ''
+      date_format: ' F jS / Y'
+    third_party_settings: {  }
+    type: datetime_custom
+    region: content
+  field_start_date:
+    weight: 2
+    label: hidden
+    settings:
+      timezone_override: ''
+      date_format: ' F jS'
+    third_party_settings: {  }
+    type: datetime_custom
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  addtoany: true
+  body: true
+  langcode: true
+  search_api_excerpt: true
