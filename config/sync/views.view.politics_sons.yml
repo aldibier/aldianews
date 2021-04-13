@@ -46,6 +46,7 @@ dependencies:
     - taxonomy
     - text
     - user
+    - views_block_area
     - views_fieldsets
 id: politics_sons
 label: 'POLITICS SONS'
@@ -945,6 +946,7 @@ display:
         row: false
         filters: false
         filter_groups: false
+        header: false
       row:
         type: fields
         options: {  }
@@ -1165,6 +1167,7 @@ display:
         operator: AND
         groups:
           1: AND
+      header: {  }
     cache_metadata:
       max-age: -1
       contexts:
@@ -1688,6 +1691,7 @@ display:
         row: false
         filters: false
         filter_groups: false
+        footer: false
       css_class: mobile-less
       pager:
         type: some
@@ -1920,6 +1924,17 @@ display:
         operator: AND
         groups:
           1: AND
+      footer:
+        views_block_area:
+          id: views_block_area
+          table: views
+          field: views_block_area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          block_id: 'fixed_block_content:vertical_advertising_mobile'
+          plugin_id: views_block_area
     cache_metadata:
       max-age: -1
       contexts:
@@ -2197,12 +2212,14 @@ display:
         row: false
         filters: false
         filter_groups: false
+        header: false
+        footer: false
       css_class: 'view-more view-more-category paddmar mobile-plus'
       pager:
         type: some
         options:
-          items_per_page: 9
-          offset: 5
+          items_per_page: 11
+          offset: 3
       style:
         type: default
         options:
@@ -2429,6 +2446,38 @@ display:
         operator: AND
         groups:
           1: AND
+      header:
+        views_block_area:
+          id: views_block_area
+          table: views
+          field: views_block_area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          block_id: 'fixed_block_content:_small_vertical_advertising'
+          plugin_id: views_block_area
+      footer:
+        views_block_area:
+          id: views_block_area
+          table: views
+          field: views_block_area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          block_id: 'fixed_block_content:big_vertical_advertising'
+          plugin_id: views_block_area
+        views_block_area_1:
+          id: views_block_area_1
+          table: views
+          field: views_block_area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          block_id: 'fixed_block_content:square_advertising_mobile'
+          plugin_id: views_block_area
     cache_metadata:
       max-age: -1
       contexts:
