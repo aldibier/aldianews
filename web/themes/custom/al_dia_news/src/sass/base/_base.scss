@@ -104,6 +104,29 @@ body.toolbar-tray-open.user-logged-in {
   }
 }
 
+.mobile-plus {
+  .card-more:nth-child(1),
+  .card-more:nth-child(2) {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .mobile-plus {
+    .card-more:nth-child(1),
+    .card-more:nth-child(2) {
+      display: block;
+    }
+  }
+
+  .mobile-less {
+    .card-one-column:last-child,
+    .card-one-column:nth-last-child(2) {
+      display: none;
+    }
+  }
+}
+
 //---style remplace ------//
 @media (min-width: 560px) {
   .node .field--type-image {
