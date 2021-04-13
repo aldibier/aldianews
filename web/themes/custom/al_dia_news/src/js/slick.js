@@ -89,6 +89,9 @@ const initSlick = ($, Drupal) => {
       infinite: true,
       slidesToShow: 3,
       slidesToScroll: 1,
+      centerPadding: '60px',
+      centerMode: true,
+      variableWidth: true,
       dots: true,
     })
 

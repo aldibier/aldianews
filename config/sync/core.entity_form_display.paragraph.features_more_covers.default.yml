@@ -1,0 +1,47 @@
+uuid: 8e52717d-4f54-42e6-98e7-6c3a1da082ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.features_more_covers.field_card_title_related_covers
+    - field.field.paragraph.features_more_covers.field_image_related_covers
+    - field.field.paragraph.features_more_covers.field_taxonomy_term_related_cove
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.features_more_covers
+  module:
+    - image
+    - text
+id: paragraph.features_more_covers.default
+targetEntityType: paragraph
+bundle: features_more_covers
+mode: default
+content:
+  field_card_title_related_covers:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_image_related_covers:
+    weight: 0
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_taxonomy_term_related_cove:
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+hidden:
+  created: true
+  status: true
