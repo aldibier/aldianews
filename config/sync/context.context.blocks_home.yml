@@ -28,7 +28,7 @@ reactions:
         views_label: ''
         items_per_page: none
         region: content
-        weight: '0'
+        weight: '1'
         context_mapping: {  }
         custom_id: views_block_leadership_mix_block_1
         theme: al_dia_news
@@ -57,7 +57,7 @@ reactions:
         provider: al_dia_news_general
         label_display: '0'
         region: content
-        weight: '-1'
+        weight: '0'
         context_mapping: {  }
         custom_id: latest_categories
         theme: al_dia_news
@@ -73,7 +73,7 @@ reactions:
         views_label: ''
         items_per_page: none
         region: content
-        weight: '2'
+        weight: '3'
         context_mapping: {  }
         custom_id: views_block_culture_mix_block_1
         theme: al_dia_news
@@ -89,7 +89,7 @@ reactions:
         views_label: ''
         items_per_page: none
         region: content
-        weight: '3'
+        weight: '4'
         context_mapping: {  }
         custom_id: views_block_politics_mix_block_1
         theme: al_dia_news
@@ -105,7 +105,7 @@ reactions:
         views_label: ''
         items_per_page: none
         region: content
-        weight: '1'
+        weight: '2'
         context_mapping: {  }
         custom_id: views_block_thought_leaders_home_block_4
         theme: al_dia_news
@@ -113,22 +113,20 @@ reactions:
         unique: 0
         context_id: blocks_home
         uuid: 7d37d2dc-43ff-457d-9080-323f2622f7b5
-      0137b17d-fec7-45ee-9369-fd9bee56cc57:
-        id: 'views_block:high_impact_news_home-block_1'
-        label: ''
-        provider: views
+      bbdff550-49b1-4aa9-bb1e-3be618bfe1ad:
+        id: 'block_group:high_impact_and_most_visited_news_home'
+        label: 'High impact and most visited news - HOME'
+        provider: blockgroup
         label_display: '0'
-        views_label: ''
-        items_per_page: none
         region: content
         weight: '-2'
         context_mapping: {  }
-        custom_id: views_block_high_impact_news_home_block_1
+        custom_id: block_group_high_impact_and_most_visited_news_home
         theme: al_dia_news
         css_class: ''
         unique: 0
         context_id: blocks_home
-        uuid: 0137b17d-fec7-45ee-9369-fd9bee56cc57
+        uuid: bbdff550-49b1-4aa9-bb1e-3be618bfe1ad
     id: blocks
     saved: false
     uuid: 4fc7f4cb-182d-41eb-9a90-4caf42ab57f8
