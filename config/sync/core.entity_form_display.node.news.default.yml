@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.news.field_caption
     - field.field.node.news.field_category
     - field.field.node.news.field_comments
+    - field.field.node.news.field_high_impact_news
     - field.field.node.news.field_image
     - field.field.node.news.field_my_content_has_a_main_vide
     - field.field.node.news.field_short_title
@@ -46,7 +47,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 6
+    weight: 4
     settings:
       rows: 9
       placeholder: ''
@@ -56,12 +57,12 @@ content:
     region: content
   created:
     type: datetime_timestamp
-    weight: 11
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
   field_author:
-    weight: 7
+    weight: 5
     settings:
       match_operator: CONTAINS
       match_limit: 10
@@ -71,7 +72,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_caption:
-    weight: 5
+    weight: 3
     settings:
       size: 60
       placeholder: ''
@@ -79,16 +80,23 @@ content:
     type: string_textfield
     region: content
   field_category:
-    weight: 9
+    weight: 7
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_comments:
-    weight: 17
+    weight: 16
     settings: {  }
     third_party_settings: {  }
     type: comment_default
+    region: content
+  field_high_impact_news:
+    weight: 8
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
     region: content
   field_image:
     weight: 3
@@ -114,7 +122,7 @@ content:
     type: string_textfield
     region: content
   field_tags:
-    weight: 8
+    weight: 6
     settings:
       match_operator: CONTAINS
       match_limit: 10
@@ -131,7 +139,7 @@ content:
     region: content
   path:
     type: path
-    weight: 14
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -139,21 +147,21 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 12
+    weight: 11
     region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 16
+    weight: 15
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 13
+    weight: 12
     region: content
     third_party_settings: {  }
   title:
@@ -165,13 +173,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
   translation:
-    weight: 15
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 10
+    weight: 9
     settings:
       match_operator: CONTAINS
       size: 60
