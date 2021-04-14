@@ -302,11 +302,21 @@
             margin-bottom: 60px;
             padding-bottom: 50px;
             position: relative;
+
+            @media screen and (max-width: $tablet) {
+                margin-bottom: 30px;
+                padding-bottom: 30px;
+            }
         }
 
         .slick-list {
             height: 335px;
             margin-bottom: 40px;
+
+            @media screen and (max-width: $tablet) {
+                height: 105px;
+                margin-bottom: 15px;
+            }
         }
 
         .slick-track {
@@ -320,6 +330,17 @@
             height: 165px;
             margin: 0 100px;
             padding: 0;
+            transition: margin 1s ease-in-out ;
+
+            @media screen and (max-width: $large-min) {
+                margin: 0 50px;
+            }
+
+            @media screen and (max-width: $tablet) {
+                width: 120px;
+                height: 65px;
+                margin: 0 15px;
+            }
         }
 
         .slick-center {
@@ -330,6 +351,10 @@
             @media screen and (max-width: $large-min) {
                 transform: scaleX(1.4) scaley(1.4);
             }
+
+            @media screen and (max-width: $tablet) {
+                //transform: scaleX(1.02) scaley(1);
+            }
         }
      }
 
@@ -338,6 +363,10 @@
         max-width: 1310px;
         margin: 0 auto 64px;
         padding: 0 15px;
+
+        @media screen and (max-width: $tablet) {
+            margin: 0 auto 35px;
+        }
 
         .view-content {
             padding: 43px 0 41px;
@@ -427,11 +456,26 @@
 
         >.content {
             display: flex;
+
+            @media screen and (max-width: $broken) {
+                align-items: center;
+                flex-direction: column;
+            }
         }
 
         .block-views-blockabout-al-dia-live-block-4 {
-            max-width: 805px;
+            max-width: 62.89063%;//805px
             margin-right: 75px;
+
+            @media screen and (max-width: $broken) {
+                max-width: 90%;
+                margin: 0 auto;
+            }
+
+            @media screen and (max-width: $tablet) {
+                max-width: 100%;
+                margin: 0 auto 40px;
+            }
         }
 
         .slick-slider {
@@ -441,6 +485,10 @@
     }
 
     .about-al-dia-live-testimonies {
+
+        @media screen and (max-width: $tablet) {
+            margin-bottom: 15px;
+        }
 
         .testimonial-author-testimonial {
             margin-bottom: 10.5px;
@@ -472,6 +520,18 @@
                 background-repeat: no-repeat;
                 background-position: center;
             }
+
+            @media screen and (max-width: $tablet) {
+                margin-bottom: 20px;
+                font-size: szrem(14);
+                line-height: 17px;
+
+                &::before,
+                &::after  {
+                    width: 20px;
+                    height: 14px;
+                }
+            }
         }
 
         .testimonial-author {
@@ -481,6 +541,11 @@
             grid-template-areas: 'photo name'
                                  'photo position';
             grid-gap: 0 30px;
+
+            @media screen and (max-width: $tablet) {
+                grid-template-columns: 55px 1fr;
+                grid-gap: 0 10px;
+            }
         }
 
         .testimonial-author-photo {
@@ -492,6 +557,11 @@
             grid-area: photo;
             border-radius: 100%;
             overflow: hidden;
+
+            @media screen and (max-width: $tablet) {
+                width: 55px;
+                height: 55px;
+            }
         }
 
         img {
@@ -508,6 +578,12 @@
             font-weight: bold;
             line-height: 22px;
             color: $cgrey6;
+
+            @media screen and (max-width: $tablet) {
+                margin-bottom: 5px;
+                font-size: szrem(14);
+                line-height: 17px;
+            }
         }
 
         .testimonial-author-position {
@@ -518,6 +594,10 @@
             font-weight: normal;
             line-height: 125%;
             color: $cgrey6;
+
+            @media screen and (max-width: $tablet) {
+                font-size: szrem(10);
+            }
         }
     }
 
@@ -542,9 +622,13 @@
             background-color: #C4C4C4;
             border-radius: 50%;
             cursor: pointer;
-
+            
             &:last-child {
                 margin: 0;
+            }
+            
+            @media screen and (max-width: $tablet) {
+                padding: 2.5px;
             }
         }
 
@@ -572,17 +656,31 @@
         background-repeat: no-repeat;
         background-position: center;
         background-color: transparent;
+
+        @media screen and (max-width: $tablet) {
+            width: 15px;
+            height: 10px;
+            bottom: calc(0% + 10px);
+        }
     }
     
     .slick-prev {
         left: calc(50% - 28px);
         transform: translateX(-50%);
         background-image: url('../../assets/img/arrow-left.svg');
+
+        @media screen and (max-width: $tablet) {
+            left: calc(50% - 25px);
+        }
     }
 
     .slick-next {
         left: calc(50% + 28px);
         transform: translateX(-50%);
         background-image: url('../../assets/img/arrow-right.svg');
+
+        @media screen and (max-width: $tablet) {
+            left: calc(50% + 25px);
+        }
     }
 }

@@ -1743,6 +1743,9 @@ var initScrollMagic = function initScrollMagic($, Drupal) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 var initSlick = function initSlick($, Drupal) {
+  var enterMobile = 0;
+  var enterTablet = 0;
+  var enterDesktop = 0;
   var categoriesMore = document.querySelectorAll(".view-categories-sons .view-more-category .view-content");
   var settings = {
     infinite: false,
@@ -1757,7 +1760,7 @@ var initSlick = function initSlick($, Drupal) {
       breakpoint: 768,
       settings: "unslick"
     }]
-  };
+  }; //slide edit resize
 
   if (window.matchMedia("(max-width: 768px)").matches) {
     categoriesMore.forEach(function (element) {
@@ -1815,7 +1818,18 @@ var initSlick = function initSlick($, Drupal) {
       centerPadding: '60px',
       centerMode: true,
       variableWidth: true,
-      dots: true
+      dots: true,
+      mobileFirst: true,
+      responsive: [{
+        breakpoint: 1300,
+        settings: "reInit"
+      }, {
+        breakpoint: 992,
+        settings: "reInit"
+      }, {
+        breakpoint: 768,
+        settings: "reInit"
+      }]
     });
   } //slide about al dia testimonial 
 
