@@ -1,5 +1,5 @@
 .block-hero-image {
-  max-height: 200px;  
+  max-height: 200px;
   position: relative;
   z-index: 1;
   display: grid;
@@ -7,6 +7,7 @@
   align-items: center;
   padding: 40px 15px 25px;
   margin: 0 -15px 20px;
+  overflow: hidden;
 
   @media screen and (min-width: $tablet) {
     max-height: initial;
@@ -14,10 +15,10 @@
     min-height: 710px;
     margin: 0 -80px 70px;
     align-items: flex-end;
+    max-height: 710px;
   }
 
-
-  @media screen and (min-width:$broken) {
+  @media screen and (min-width: $broken) {
     grid-template-columns: minmax(200px, 350px) minmax(700px, 930px);
   }
 
@@ -27,7 +28,7 @@
       @include esize(100%);
       display: block;
       z-index: -1;
-      content: '';
+      content: "";
       background-color: $rgba1;
     }
 
