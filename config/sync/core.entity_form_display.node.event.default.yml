@@ -4,8 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.node.event.body
+    - field.field.node.event.field_date_of_event
     - node.type.event
   module:
+    - datetime
     - path
     - text
 id: node.event.default
@@ -29,6 +31,12 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_date_of_event:
+    weight: 122
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
   langcode:
     type: language_select
     weight: 2
@@ -71,6 +79,11 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  translation:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   uid:
     type: entity_reference_autocomplete
     weight: 5
