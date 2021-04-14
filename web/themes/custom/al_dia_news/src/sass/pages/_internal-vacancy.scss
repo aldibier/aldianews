@@ -134,7 +134,7 @@
         }
 
         .js-form-type-checkbox  {
-            margin: 60px 25px 0 0;
+            margin: 70px 25px 0 0;
             float: left;
             display: flex;
 
@@ -169,6 +169,7 @@
                     font-size: $px18;
                     color: #555555;
                     font-family: $PrNovacond-reg;
+                    text-transform: uppercase;
                 }
             }
 
@@ -194,6 +195,7 @@
                 height: 100%;
                 text-overflow: ellipsis;
                 background: #F2F2F2;
+                overflow-y: hidden;
             }
 
             .file--application-pdf {
@@ -218,6 +220,29 @@
                 &:after {
                     content: 'jpg';
                 }
+            }
+        }
+
+
+        input[value="Remove selected"]{
+            min-width: 180px;
+            height: 40px;
+            background: #BEC0C1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: max-content;
+            font-size: $px18;
+            color: $cwhite;
+            text-align: center;
+            border-radius: 0;
+            border: none;
+            margin: 38px 0 0;
+            position: absolute;
+            bottom: -70px;
+
+            &:hover {
+                background: #5C6165;
             }
         }
 
