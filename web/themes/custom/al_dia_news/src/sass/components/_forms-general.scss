@@ -8,7 +8,7 @@
   overflow: hidden;
   z-index: 3;
 
-   form {
+  form {
     overflow-y: overlay;
     height: 100%;
     display: flex;
@@ -410,17 +410,16 @@ button[name="close"],
 } */
 
 //-------------form advertising ------------//
-.webform-advertising  {
+.webform-advertising,
+.webform-about-al-dia-live {
   height: 100%;
-  max-width: 990px;
-  max-height: 945px;
   height: 70%;
-  width: calc(100% - 30px);
-  padding: 100px 75px 89px;
 
   .form-type-textfield,
   .js-form-type-tel,
-  .js-form-type-email {
+  .js-form-type-email,
+  .js-form-item-city,
+  .js-form-item-state {
     width: 50%;
     margin: 0 0 25px;
 
@@ -432,7 +431,9 @@ button[name="close"],
 
   .form-item-last-name,
   .form-item-job-title,
-  .form-item-phone-number {
+  .form-item-phone-number,
+  .js-form-item-city,
+  .js-form-item-state {
     padding-left: 15px;
 
     @media (max-width: $tablet) {
@@ -464,8 +465,13 @@ button[name="close"],
       }
     }
 
-    .form-item-interest {
+    .form-item-interest,
+    .form-item-budget {
       margin-bottom: 30px;
+    }
+
+    select {
+      margin-top: 10px;
     }
   }
 
@@ -491,4 +497,18 @@ button[name="close"],
     min-height: 145px;
     margin-top: 10px;
   }
+}
+
+//-------------form advertising ------------//
+.webform-advertising {
+  max-width: 990px;
+  max-height: 945px;
+  padding: 100px 75px 89px;
+}
+
+//-------------form al dia live ------------//
+.webform-about-al-dia-live {
+  max-width: 990px;
+  max-height: 890px;
+  padding: 100px 75px 89px;
 }
