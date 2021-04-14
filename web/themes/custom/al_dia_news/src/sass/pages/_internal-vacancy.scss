@@ -156,6 +156,20 @@
                 height: 100%;
                 padding: 0 0 0 65px;
                 display: flex;
+                position: relative;
+
+                &:after {
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 20px;
+                    display: block;
+                    height: max-content;
+                    margin: auto 0;
+                    font-size: $px18;
+                    color: #555555;
+                    font-family: $PrNovacond-reg;
+                }
             }
 
             input {
@@ -183,20 +197,26 @@
             }
 
             .file--application-pdf {
-                position: relative;
-
                 &:after {
-                    position: absolute;
-                    top: 0;
-                    bottom: 0;
-                    left: 20px;
                     content: 'pdf';
-                    display: block;
-                    height: max-content;
-                    margin: auto 0;
-                    font-size: $px18;
-                    color: #555555;
-                    font-family: $PrNovacond-reg;
+                }
+            }
+
+            .file--mime-image-jpeg {
+                &:after {
+                    content: 'jpeg';
+                }
+            }
+
+            .file--mime-image-png {
+                &:after {
+                    content: 'png';
+                }
+            }
+
+            .file--mime-image-jpg {
+                &:after {
+                    content: 'jpg';
                 }
             }
         }
