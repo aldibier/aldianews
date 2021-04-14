@@ -1,4 +1,8 @@
 const initSlick = ($, Drupal) => {
+  let enterMobile = 0;
+  let enterTablet = 0;
+  let enterDesktop = 0;
+
   let categoriesMore = document.querySelectorAll(
     ".view-categories-sons .view-more-category .view-content"
   );
@@ -20,6 +24,7 @@ const initSlick = ($, Drupal) => {
     ]
   };
 
+  //slide edit resize
   if (window.matchMedia("(max-width: 768px)").matches) {
     categoriesMore.forEach(element => $(element).slick(settings));
   }
@@ -79,12 +84,27 @@ const initSlick = ($, Drupal) => {
   if ($('.about-al-dia-live-slider').length) {
     $('.about-al-dia-live-slider ul').slick({
       infinite: true,
-      slidesToShow: 3,
+      slidesToShow: 2,
       slidesToScroll: 1,
       centerPadding: '60px',
       centerMode: true,
       variableWidth: true,
       dots: true,
+      mobileFirst: true,
+      responsive: [
+        {
+          breakpoint: 1300,
+          settings:  "reInit"
+        },
+        {
+          breakpoint: 992,
+          settings:  "reInit"
+        },
+        {
+          breakpoint: 768,
+          settings: "reInit"
+        }
+      ]
     })
   }
 
