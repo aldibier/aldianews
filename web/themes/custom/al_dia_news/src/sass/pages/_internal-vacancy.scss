@@ -134,7 +134,7 @@
         }
 
         .js-form-type-checkbox  {
-            margin: 60px 0 0 0;
+            margin: 20px 25px 0 0;
             float: left;
             display: flex;
 
@@ -156,6 +156,21 @@
                 height: 100%;
                 padding: 0 0 0 65px;
                 display: flex;
+                position: relative;
+
+                &:after {
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 20px;
+                    display: block;
+                    height: max-content;
+                    margin: auto 0;
+                    font-size: $px18;
+                    color: #555555;
+                    font-family: $PrNovacond-reg;
+                    text-transform: uppercase;
+                }
             }
 
             input {
@@ -180,6 +195,57 @@
                 height: 100%;
                 text-overflow: ellipsis;
                 background: #F2F2F2;
+                overflow-y: hidden;
+            }
+
+            .file--application-pdf {
+                &:after {
+                    content: 'pdf';
+                }
+            }
+
+            .file--mime-image-jpeg {
+                &:after {
+                    content: 'jpeg';
+                }
+            }
+
+            .file--mime-image-png {
+                &:after {
+                    content: 'png';
+                }
+            }
+
+            .file--mime-image-jpg {
+                &:after {
+                    content: 'jpg';
+                }
+            }
+        }
+
+        .js-form-managed-file {
+            padding: 50px 0 0;
+        }   
+
+        input[value="Remove selected"]{
+            min-width: 180px;
+            height: 40px;
+            background: #BEC0C1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: max-content;
+            font-size: $px18;
+            color: $cwhite;
+            text-align: center;
+            border-radius: 0;
+            border: none;
+            margin: 38px 0 0;
+            position: absolute;
+            bottom: -70px;
+
+            &:hover {
+                background: #5C6165;
             }
         }
 
