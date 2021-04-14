@@ -134,7 +134,7 @@
         }
 
         .js-form-type-checkbox  {
-            margin: 60px 0 0 0;
+            margin: 60px 25px 0 0;
             float: left;
             display: flex;
 
@@ -180,6 +180,24 @@
                 height: 100%;
                 text-overflow: ellipsis;
                 background: #F2F2F2;
+            }
+
+            .file--application-pdf {
+                position: relative;
+
+                &:after {
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 20px;
+                    content: 'pdf';
+                    display: block;
+                    height: max-content;
+                    margin: auto 0;
+                    font-size: $px18;
+                    color: #555555;
+                    font-family: $PrNovacond-reg;
+                }
             }
         }
 
