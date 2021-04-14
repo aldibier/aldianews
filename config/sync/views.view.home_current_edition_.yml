@@ -15,6 +15,7 @@ dependencies:
     - paragraphs
     - text
     - user
+    - views_block_area
     - views_field_view
 id: home_current_edition_
 label: 'HOME - CURRENT EDITION '
@@ -445,6 +446,7 @@ display:
         fields: false
         pager: false
         header: false
+        footer: false
       fields:
         field_card_title_related_covers:
           id: field_card_title_related_covers
@@ -513,6 +515,16 @@ display:
         options:
           offset: 0
       header:
+        views_block_area:
+          id: views_block_area
+          table: views
+          field: views_block_area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          block_id: 'fixed_block_content:title_into_current_edition_block'
+          plugin_id: views_block_area
         area_text_custom:
           id: area_text_custom
           table: views
@@ -524,6 +536,17 @@ display:
           tokenize: false
           content: '<span>This week’s edition: </span>'
           plugin_id: text_custom
+      footer:
+        views_block_area:
+          id: views_block_area
+          table: views
+          field: views_block_area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          block_id: 'block_content:a29e616f-e57c-4e08-90c9-878ea5d2c859'
+          plugin_id: views_block_area
     cache_metadata:
       max-age: -1
       contexts:
