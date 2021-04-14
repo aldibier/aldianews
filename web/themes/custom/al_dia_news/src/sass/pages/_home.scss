@@ -1,4 +1,4 @@
-///////// Estilos bloques leadership, cultura y politics ///////
+//-------------------  Estilos bloques leadership, cultura y politics ---------------//
 .paddmar .views-row {
   margin-bottom: 25px;
   padding-bottom: 25px;
@@ -9,7 +9,8 @@
   }
   .category-title h1 {
     display: flex;
-    a {
+    a,
+    span {
       width: 100%;
       font-size: 38px;
       margin-left: 5px;
@@ -80,7 +81,8 @@
 
 @media (max-width: $tablet) {
   .path-frontpage .view-categories-sons {
-    > .view-content > h3 a {
+    > .view-content > h3 a,
+    > .view-content > h3 span {
       line-height: initial;
     }
 
@@ -90,7 +92,8 @@
     }
     .category-title h1 {
       margin-bottom: 0px;
-      a {
+      a,
+      span {
         font-size: 20px;
         line-height: 24px;
         display: flex;
@@ -115,5 +118,67 @@
       width: auto;
       max-width: none;
     }
+  }
+}
+
+//-------------------------------------  THOUGHT LEADERS ----------------------------//
+
+.block-views-blockthought-leaders-home-block-4 {
+  background: #f1f1f1;
+}
+.view-thought-leaders-home {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.card-leaders {
+  background: #282828;
+  opacity: 0.7;
+  max-width: 280px;
+  min-height: 440px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 25px;
+  .views-field-field-authors-photo {
+    max-width: 120px;
+    width: 100%;
+    max-height: 120px;
+    overflow: hidden;
+    border-radius: 40px;
+    filter: drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.25));
+    margin: 0 auto 15px;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .views-field-name {
+    font-family: $ModernoFB-Regular;
+    font-style: normal;
+    font-weight: bold;
+    font-size: $px20;
+    line-height: 24px;
+    text-align: center;
+    color: $cwhite;
+    margin-bottom: 20px;
+  }
+  .views-field-title a {
+    font-family: $PrNovacond-Sbold;
+    font-style: normal;
+    font-weight: bold;
+    font-size: $px28;
+    line-height: 34px;
+    color: $cwhite;
+    margin-bottom: 10px;
+  }
+  .views-field-created {
+    font-family: $PrNovacond-reg;
+    font-style: normal;
+    font-weight: normal;
+    font-size: $px14;
+    line-height: 17px;
+    color: $cwhite;
   }
 }

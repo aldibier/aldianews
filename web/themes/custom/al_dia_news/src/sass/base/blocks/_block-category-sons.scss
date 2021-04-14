@@ -23,20 +23,21 @@
 
 //block category sons
 .view-categories-sons {
-  >.view-content {
-    >h3 {
+  > .view-content {
+    > h3 {
       margin: 60px 0 0;
 
       @media (max-width: $tablet) {
         margin: 20px 0 0;
       }
 
-      a {
+      a,
+      span {
         @include title-section-line($px34, $Modcond-reg, $corange2);
       }
     }
 
-    >.views-row {
+    > .views-row {
       display: grid;
       grid-template-columns: 1fr auto;
       grid-template-rows: repeat(2, auto) 1fr;
@@ -98,13 +99,13 @@
       grid-area: area-3;
 
       .view-content {
-        @media screen and (max-width:$broken) { 
+        @media screen and (max-width: $broken) {
           .last-content-category-childs {
             margin-bottom: 10px;
           }
         }
 
-        @media screen and (max-width:$tablet) {
+        @media screen and (max-width: $tablet) {
           margin-top: 20px;
 
           .views-row {
@@ -129,7 +130,7 @@
           }
 
           .slick-slide {
-            >div {
+            > div {
               .views-row {
                 padding-top: 10px;
                 padding-bottom: 10px;
