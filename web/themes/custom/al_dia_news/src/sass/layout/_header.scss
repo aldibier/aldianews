@@ -16,7 +16,12 @@
   padding-right: 13px;
   margin-top: 15px;
   @media (max-width: $tablet) {
-    margin-top: 12px;
+    max-height: 45px;
+    margin-bottom: 0px;
+    margin-top: 8px;
+    img {
+      max-height: 45px;
+    }
   }
 }
 
@@ -28,6 +33,9 @@ body.open-menu {
     }
   }
   @media (max-width: $tablet) {
+    .region-header {
+      max-height: 46px;
+    }
     .region-header div#block-loginformpopup {
       display: block !important;
       position: absolute;
@@ -876,8 +884,9 @@ body.open-menu {
     }
 
     #block-sitedescription {
-      bottom: -34px;
+      bottom: -36px;
       margin: auto auto auto -15px;
+      padding: 7px 0 0;
       p {
         font-size: 11px;
         line-height: 13px;

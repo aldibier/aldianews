@@ -1219,7 +1219,7 @@ window.onload = function () {
 
   if (!!allBlockquote && allBlockquote.length) {
     allBlockquote.forEach(function (blockquote) {
-      if (blockquote.firstElementChild.tagName === 'P') {
+      if (blockquote.firstElementChild.tagName === "P") {
         var text = blockquote.firstElementChild.textContent;
         blockquote.textContent = text;
       }
@@ -1444,7 +1444,14 @@ window.onload = function () {
 
   if (comments != null && block_login_c != null) {
     block_login_c.style.display = "none";
-  }
+  } ///// js para select de categorias
+
+
+  Array.from(document.querySelectorAll("#views-exposed-form-search-results-al-dia-solr-page-1 .form-item-field-category li label")).map(function (e) {
+    if (e != null && !e.innerHTML.includes("-")) {
+      e.classList.add("category");
+    }
+  });
 };
 
 /***/ }),
@@ -1866,8 +1873,8 @@ var initSlick = function initSlick($, Drupal) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/usuario/Desktop/Proyectos/AlDiaNews/4ld14-n3ws/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
-module.exports = __webpack_require__(/*! /Users/usuario/Desktop/Proyectos/AlDiaNews/4ld14-n3ws/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
+__webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
+module.exports = __webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
 
 
 /***/ })

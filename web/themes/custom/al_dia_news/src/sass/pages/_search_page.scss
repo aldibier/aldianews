@@ -197,6 +197,19 @@
   }
   .form-item-field-category {
     order: 4;
+    .opt label {
+      padding-left: 20px;
+      &::first-letter {
+        display: none;
+      }
+    }
+    .category {
+      font-family: $PrNovacond-Sbold;
+      padding-left: 0px;
+      &::first-letter {
+        display: block;
+      }
+    }
   }
   .form-item-sort-bef-combine {
     order: 2;
