@@ -57,6 +57,10 @@ display:
           offset: 0
       style:
         type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
       row:
         type: fields
       fields:
@@ -485,6 +489,7 @@ display:
           plugin_id: standard
       arguments: {  }
       display_extenders: {  }
+      css_class: ''
     cache_metadata:
       max-age: -1
       contexts:
@@ -506,6 +511,17 @@ display:
       header: {  }
       defaults:
         header: false
+        style: false
+        row: false
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: card-leaders
+          default_row_class: true
+      row:
+        type: fields
+        options: {  }
     cache_metadata:
       max-age: -1
       contexts:
@@ -615,7 +631,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"category-view-more\">\r\n   <a href=\"/thought-leaders\">MORE THOUGHTS</a>\r\n</div>"
+            text: "\r\n<div class=\"category-view-more\">\r\n\r\n   <a href=\"/thought-leaders\">MORE THOUGHTS</a>\r\n\r\n</div>\r\n"
             make_link: false
             path: ''
             absolute: false
@@ -684,6 +700,7 @@ display:
         filter_groups: false
         pager: false
         header: false
+        css_class: false
       fields:
         nothing:
           id: nothing
@@ -696,7 +713,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<h2>AL DÍA THOUGHT LEADERS</h2>'
+            text: "<h3>\r\n  <div class=\"category-title\">\r\n    <h1>\r\n      <span>AL DÍA THOUGHT LEADERS</span>\r\n    </h1>\r\n  </div>\r\n</h3>"
             make_link: false
             path: ''
             absolute: false
@@ -812,6 +829,7 @@ display:
           items_per_page: 1
           offset: 0
       header: {  }
+      css_class: view-categories-sons
     cache_metadata:
       max-age: -1
       contexts:
@@ -903,6 +921,9 @@ display:
         relationships: false
         pager: false
         header: false
+        style: false
+        row: false
+        css_class: false
       filter_groups:
         operator: AND
         groups:
@@ -1071,6 +1092,15 @@ display:
           items_per_page: 1
           offset: 0
       header: {  }
+      style:
+        type: default
+        options:
+          row_class: ''
+          default_row_class: true
+      row:
+        type: fields
+        options: {  }
+      css_class: section1310
     cache_metadata:
       max-age: -1
       contexts:

@@ -18,7 +18,7 @@ bundle: title_and_two_image
 mode: default
 content:
   field_image:
-    weight: 4
+    weight: 3
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
@@ -27,14 +27,6 @@ content:
     region: content
   field_image_for_the_title:
     weight: 2
-    settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
-    third_party_settings: {  }
-    type: image_image
-    region: content
-  field_image_for_the_title_mobile:
-    weight: 3
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
@@ -59,4 +51,5 @@ content:
     third_party_settings: {  }
 hidden:
   body: true
+  field_image_for_the_title_mobile: true
   langcode: true
