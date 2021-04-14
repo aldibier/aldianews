@@ -1542,20 +1542,21 @@ __webpack_require__.r(__webpack_exports__);
         $video.removeClass("stuck");
       }
     });
-  } //// sumo select
+  }
 
-
-  Array.from(document.querySelectorAll(".region-content select")).map(function (e) {
-    if (e != null) {
-      e.classList.add("testselect1");
-      console.log("1");
-      $(".testselect1").SumoSelect({
-        forceCustomRendering: true,
-        floatWidth: 300
-      });
-    }
-  });
   jQuery(document).ready(function () {
+    //// sumo select
+    Array.from(document.querySelectorAll(".region-content select")).map(function (e) {
+      if (e != null) {
+        e.classList.add("testselect1");
+        console.log("1");
+        $(".testselect1").SumoSelect({
+          forceCustomRendering: true,
+          floatWidth: 300
+        });
+      }
+    }); ////////
+
     if ($(".page-node-type-news .video-embed-field-responsive-video iframe").length) {
       var url = $(".page-node-type-news .video-embed-field-responsive-video iframe")[0].src += "&mute=1";
       var video = url.replace("autoplay=0", "autoplay=1");
@@ -1575,17 +1576,6 @@ __webpack_require__.r(__webpack_exports__);
     $("#block-blockpreheader").click(function () {
       $(".region-secondary-menu").removeClass("open-menu");
       $("body").removeClass("open-menu");
-    }); //// sumo select
-
-    Array.from(document.querySelectorAll(".region-content select")).map(function (e) {
-      if (e != null) {
-        e.classList.add("testselect1");
-        console.log("1");
-        $(".testselect1").SumoSelect({
-          forceCustomRendering: true,
-          floatWidth: 300
-        });
-      }
     }); //--------puopup-- login-----------//
 
     $(".user-logged-in #block-loginformpopup").click(function () {
