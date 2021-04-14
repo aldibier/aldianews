@@ -114,8 +114,8 @@
 
 
         #ajax-wrapper {
-            width: 100%;
-            margin: 37px 0 0;
+            width: auto;
+            margin: 0;
 
             .form-type-managed-file {
                 width: 100%;
@@ -126,16 +126,22 @@
                 display: none;
             }
 
-            .managed-file-placeholder {
-                max-width: 165px;
-                font-style: normal;
-                font-weight: 600;
-                font-size: 12px;
-                line-height: 15px;
-                color: $grey9;
-                font-family: $PrNovacond-reg;
+            .js-form-item {
+                width: auto;
+                padding: 0;
             }
 
+        }
+
+
+        .managed-file-placeholder {
+            max-width: 165px;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 15px;
+            color: $grey9;
+            font-family: $PrNovacond-reg;
         }
 
         label {
@@ -203,10 +209,19 @@
             background: $bgrey;
             min-width: 165px;
             width: max-content;
+            display: flex;
+            z-index: 2;
+            top: 39px;
+            position: absolute;
+            left: 0;
 
             &:before {
                 display: none;
             }
+        }
+
+        .js-form-item-upload-file {
+            width: auto;
         }
 
         #edit-actions-submit {
@@ -225,6 +240,41 @@
             color: $cwhite;
             background: $corange;
             min-width: 150px;
+            margin: 48px 0 0;
+            top: 0;
+            text-transform: uppercase;
+        }
+
+        input[value="Upload"] {
+            border: none;
+            border-radius: 0;
+            height: 40px;
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.125rem;
+            line-height: 25px;
+            color: #fff;
+            background: #5c6165;
+            min-width: 165px;
+            width: max-content;
+            position: absolute;
+            top: 48px;
+            left: 0;
+            margin: 0;
+            z-index: 1;
+        }
+
+        #edit-upload-file {
+            padding: 56px 0 0;
+        }
+
+        .webform-element-more--link {
+            display: none;
+        }
+
+        .upload-and-files{
+            position: relative;
         }
     }
 
