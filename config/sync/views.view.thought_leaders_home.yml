@@ -517,7 +517,7 @@ display:
         type: default
         options:
           grouping: {  }
-          row_class: ''
+          row_class: card-leaders
           default_row_class: true
       row:
         type: fields
@@ -631,7 +631,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"category-view-more\">\r\n   <a href=\"/thought-leaders\">MORE THOUGHTS</a>\r\n</div>"
+            text: "\r\n<div class=\"category-view-more\">\r\n\r\n   <a href=\"/thought-leaders\">MORE THOUGHTS</a>\r\n\r\n</div>\r\n"
             make_link: false
             path: ''
             absolute: false
@@ -1095,7 +1095,7 @@ display:
       style:
         type: default
         options:
-          row_class: card-leaders
+          row_class: ''
           default_row_class: true
       row:
         type: fields
