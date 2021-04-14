@@ -161,7 +161,10 @@
 .block-views-blockthought-leaders-home-block-4 {
   background: #f1f1f1;
 }
-.view-thought-leaders-home .view-content {
+.view-thought-leaders-home.view-display-id-block_1 .view-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   .views-row {
     display: flex;
     grid-gap: 0px;
@@ -170,11 +173,6 @@
       width: 100%;
     }
   }
-}
-.view-thought-leaders-home.view-display-id-block_1 .view-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
 }
 .card-leaders {
   background: #282828;
