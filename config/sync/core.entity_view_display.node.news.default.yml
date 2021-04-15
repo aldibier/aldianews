@@ -97,27 +97,6 @@ third_party_settings:
                 view_mode: view_mode
             additional: {  }
             weight: -7
-          52621a28-ac26-4d0a-a027-ed3e5e2bbfa0:
-            uuid: 52621a28-ac26-4d0a-a027-ed3e5e2bbfa0
-            region: one_content
-            configuration:
-              id: 'field_block:node:news:body'
-              label: Body
-              provider: layout_builder
-              label_display: '0'
-              formatter:
-                label: hidden
-                type: text_summary_or_trimmed
-                settings:
-                  trim_length: 600
-                third_party_settings:
-                  field_formatter_class:
-                    class: test-class
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-            additional: {  }
-            weight: -6
           2b60f940-8167-473a-a7d4-08cf9b4e03e3:
             uuid: 2b60f940-8167-473a-a7d4-08cf9b4e03e3
             region: two_content
