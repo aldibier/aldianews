@@ -1396,7 +1396,7 @@ window.onload = function () {
 
   if (!!document.querySelector(".path-advertising")) {
     var allButtonsApply = document.querySelectorAll(".button-apply");
-    var allButtonsClose = document.querySelectorAll(".webform-contact-employer .close-modal");
+    var allButtonsClose = document.querySelectorAll(".close-modal");
 
     var showModal = function showModal(event) {
       var parent = event.path.find(function (elementPath) {
