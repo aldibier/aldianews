@@ -189,12 +189,12 @@ window.onload = function() {
             node !== event.currentTarget &&
             node.nodeType === Node.ELEMENT_NODE
           ) {
-            if (event.target.closest(".wrapper-popup")) return;
-            node.querySelector(".wrapper-popup").classList.remove("active");
+            if (event.target.closest(".modal-video")) return;
+            node.querySelector(".modal-video").classList.remove("show");
             resetAlliframes();
           } else {
             if (event.target.closest(".wrapper-popup")) return;
-            node.querySelector(".wrapper-popup ").classList.toggle("active");
+            node.querySelector(".modal-video").classList.toggle("show");
             resetAlliframes();
           }
           node = node.nextElementSibling;
@@ -207,15 +207,15 @@ window.onload = function() {
 
       if (!contentActive) {
         document
-          .querySelector(".wrapper-popup.active")
-          .classList.remove("active");
+          .querySelector(".modal-video.show")
+          .classList.remove("show");
         resetAlliframes();
       }
 
       if (event.target.classList.contains("close")) {
         document
-          .querySelector(".wrapper-popup.active")
-          .classList.remove("active");
+          .querySelector(".modal-video.show")
+          .classList.remove("show");
         resetAlliframes();
       }
     });
@@ -235,20 +235,31 @@ window.onload = function() {
       const form = parent.querySelector(".modal-form");
       form.classList.add("show");
     };
-
+  
     const hideModal = event => {
       const form = event.path.find(elementPath =>
         elementPath.classList.contains("modal-form")
       );
       form.classList.remove("show");
     };
-
+  
     allButtonsApply.forEach(buttonApply =>
       buttonApply.addEventListener("click", showModal)
     );
     allButtonsClose.forEach(buttonClose =>
       buttonClose.addEventListener("click", hideModal)
     );
+  }
+
+  //// js para controlar pop-up about al dia live
+  if (!!document.querySelector(".path-about-al-dia-live")) {
+
+    const buttonApply = document.querySelector('.path-about-al-dia-live .button-apply');
+    const buttonClose = document.querySelector('.close-modal');
+    const modalForm = document.querySelector('.modal-form');
+    
+    buttonApply.addEventListener('click',()=>modalForm.classList.add('show'));
+    buttonClose.addEventListener('click',()=>modalForm.classList.remove('show'));
   }
 
   //// js desplegable buscador y close modal
