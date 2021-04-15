@@ -702,12 +702,14 @@ body.open-menu {
     }
   }
 
-  #block-lastprintedition {
+  #block-lastprintedition,
+  #block-views-block-current-edition-header-and-footer-block-1 {
     order: 6;
     position: relative;
     min-width: 100px;
 
-    .field--name-field-image {
+    .field--name-field-image,
+    .views-field-field-cover-page {
       position: absolute;
       z-index: 3;
       width: 78px;
@@ -715,6 +717,11 @@ body.open-menu {
       left: 20px;
       overflow: hidden;
       transform: rotate(-17deg);
+      img {
+        width: 100%;
+        height: auto;
+        max-width: none;
+      }
     }
 
     .field--name-field-link {
@@ -852,7 +859,8 @@ body.open-menu {
       }
     }
 
-    #block-lastprintedition {
+    #block-lastprintedition,
+    #block-views-block-current-edition-header-and-footer-block-1 {
       display: none;
     }
 
