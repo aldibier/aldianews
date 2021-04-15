@@ -314,7 +314,7 @@ window.onload = function() {
     if (e != null && !e.innerHTML.includes("-")) {
       e.classList.add("category");
     } else if (e != null && e.innerHTML.includes("--")) {
-      e.classList.add("subsubcategory");
+      e.parentElement.classList.add("subsubcategory");
     }
   });
 };
