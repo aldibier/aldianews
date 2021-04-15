@@ -1,15 +1,3 @@
-global:
-  version: VERSION
-  js:
-    assets/js/scripts.js: {}
-    assets/libraries/YTPlayer/YTPlayer.js: {}
-    assets/libraries/browserclass.js: {}
-  css:
-    theme:
-      assets/css/styles.css: {}
-  dependencies:
-    - core/jquery
-
 sumoselect:
   version: 3.0.2
   js:
@@ -31,3 +19,15 @@ slick:
   css:
     theme:
       assets/libraries/slick/css/slick.css: {}
+
+global:
+  version: VERSION
+  js:
+    assets/js/scripts.js: {}
+    assets/libraries/YTPlayer/YTPlayer.js: {}
+    assets/libraries/browserclass.js: {}
+  css:
+    theme:
+      assets/css/styles.css: {}
+  dependencies:
+    - core/jquery
