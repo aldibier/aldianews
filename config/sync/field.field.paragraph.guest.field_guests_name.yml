@@ -1,0 +1,19 @@
+uuid: 9ecda051-cf8e-4106-af7b-0321ef017fba
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_guests_name
+    - paragraphs.paragraphs_type.guest
+id: paragraph.guest.field_guests_name
+field_name: field_guests_name
+entity_type: paragraph
+bundle: guest
+label: 'Guest''s name '
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,33 @@
+uuid: 5c7032a2-fc28-4723-b49d-9597450f8aaa
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_style
+field_name: field_style
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'One column'
+      label: 'One column'
+    -
+      value: 'Two columns'
+      label: 'Two columns'
+    -
+      value: 'Three columns'
+      label: 'Three columns'
+    -
+      value: 'More than three columns'
+      label: 'More than three columns'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
