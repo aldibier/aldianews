@@ -254,12 +254,25 @@ window.onload = function() {
   //// js para controlar pop-up about al dia live
   if (!!document.querySelector(".path-about-al-dia-live")) {
 
+    //// js pop-up about al dia live
     const buttonApply = document.querySelector('.path-about-al-dia-live .button-apply');
     const buttonClose = document.querySelector('.close-modal');
     const modalForm = document.querySelector('.modal-form');
     
     buttonApply.addEventListener('click',()=>modalForm.classList.add('show'));
     buttonClose.addEventListener('click',()=>modalForm.classList.remove('show'));
+
+     //// js pop-up about al dia live
+     const triggerVideo = document.querySelector('.about-al-dia-live-image');
+     const buttonCloseVideo = document.querySelector('.close');
+     const video = document.querySelector('.modal-video');
+
+    console.log(triggerVideo);
+    console.log(buttonCloseVideo);
+    console.log(video);
+
+    /* triggerVideo.addEventListener('click',()=>video.classList.add('show'));
+    buttonCloseVideo.addEventListener('click',()=>video.classList.remove('show')); */
   }
 
   //// js desplegable buscador y close modal
