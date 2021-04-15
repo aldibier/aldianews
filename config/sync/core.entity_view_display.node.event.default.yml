@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.event.field_venue_of_the_event
     - fixed_block_content.fixed_block_content._small_vertical_advertising
     - node.type.event
+    - views.view.block_guest
   module:
     - addtoany
     - al_dia_layouts
@@ -22,6 +23,7 @@ dependencies:
     - layout_builder
     - text
     - user
+    - views
 third_party_settings:
   layout_builder:
     allow_custom: false
@@ -274,6 +276,19 @@ third_party_settings:
                   view_mode: default
                   link: ''
                 third_party_settings: {  }
+            additional: {  }
+            weight: 0
+          597df0a5-898e-469f-9448-01ea169014a7:
+            uuid: 597df0a5-898e-469f-9448-01ea169014a7
+            region: three_content
+            configuration:
+              id: 'views_block:block_guest-block_1'
+              label: ''
+              provider: views
+              label_display: '0'
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
             additional: {  }
             weight: 0
         third_party_settings: {  }

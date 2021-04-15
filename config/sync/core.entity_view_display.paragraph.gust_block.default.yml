@@ -9,6 +9,7 @@ dependencies:
     - paragraphs.paragraphs_type.gust_block
   module:
     - entity_reference_revisions
+    - field_formatter_class
     - options
 id: paragraph.gust_block.default
 targetEntityType: paragraph
@@ -17,26 +18,28 @@ mode: default
 content:
   field_guest:
     type: entity_reference_revisions_entity_view
-    weight: 1
-    label: above
+    weight: 2
+    label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
     region: content
   field_style:
-    weight: 2
-    label: above
+    weight: 1
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: list_default
     region: content
   field_title:
     weight: 0
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
-    third_party_settings: {  }
+    third_party_settings:
+      field_formatter_class:
+        class: guest-block-title
     type: string
     region: content
 hidden:
