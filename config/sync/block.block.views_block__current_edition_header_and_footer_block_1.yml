@@ -1,0 +1,33 @@
+uuid: 52cb6900-3148-4ce7-b5d5-1613acd17080
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.current_edition_header_and_footer
+  module:
+    - context
+    - views
+  theme:
+    - al_dia_news
+id: views_block__current_edition_header_and_footer_block_1
+theme: al_dia_news
+region: header
+weight: -25
+provider: null
+plugin: 'views_block:current_edition_header_and_footer-block_1'
+settings:
+  id: 'views_block:current_edition_header_and_footer-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path_exclusion:
+    id: request_path_exclusion
+    pages: ''
+    negate: null
+  view_inclusion:
+    id: view_inclusion
+    negate: null
+    view_inclusion: {  }
