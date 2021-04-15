@@ -14,11 +14,13 @@ window.onload = function() {
   }
 
   //text summary para selection-sharer
-  let containerSummary = document.querySelector('.content-news-internal-first .views-element-container');
+  let containerSummary = document.querySelector(
+    ".content-news-internal-first .views-element-container"
+  );
 
-  if(!!containerSummary){
-    let summary = containerSummary.querySelector('.summary-news');
-    containerSummary.insertAdjacentElement('beforebegin',summary);
+  if (!!containerSummary) {
+    let summary = containerSummary.querySelector(".summary-news");
+    containerSummary.insertAdjacentElement("beforebegin", summary);
   }
 
   // js video en interna
@@ -224,9 +226,7 @@ window.onload = function() {
   //// js para controlar pop-up advertising
   if (!!document.querySelector(".path-advertising")) {
     const allButtonsApply = document.querySelectorAll(".button-apply");
-    const allButtonsClose = document.querySelectorAll(
-      ".close-modal"
-    );
+    const allButtonsClose = document.querySelectorAll(".close-modal");
 
     const showModal = event => {
       const parent = event.path.find(elementPath =>
@@ -281,7 +281,7 @@ window.onload = function() {
     block_login_c.style.display = "none";
   }
 
-  ///// js para select de categorias
+  ///// js para select de categorias, subcategorias y subsubcategorias
   Array.from(
     document.querySelectorAll(
       "#views-exposed-form-search-results-al-dia-solr-page-1 .form-item-field-category li label"
@@ -289,6 +289,8 @@ window.onload = function() {
   ).map(function(e) {
     if (e != null && !e.innerHTML.includes("-")) {
       e.classList.add("category");
+    } else if (e != null && e.innerHTML.includes("--")) {
+      e.classList.add("subsubcategory");
     }
   });
 };
