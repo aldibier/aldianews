@@ -9,9 +9,11 @@ dependencies:
     - field.field.node.event.field_image
     - field.field.node.event.field_logo
     - field.field.node.event.field_nomination_status
+    - field.field.node.event.field_present_by
     - field.field.node.event.field_venue_of_the_event
     - fixed_block_content.fixed_block_content._small_vertical_advertising
     - node.type.event
+    - views.view.block_guest
   module:
     - addtoany
     - al_dia_layouts
@@ -22,6 +24,7 @@ dependencies:
     - layout_builder
     - text
     - user
+    - views
 third_party_settings:
   layout_builder:
     allow_custom: false
@@ -276,6 +279,62 @@ third_party_settings:
                 third_party_settings: {  }
             additional: {  }
             weight: 0
+          597df0a5-898e-469f-9448-01ea169014a7:
+            uuid: 597df0a5-898e-469f-9448-01ea169014a7
+            region: three_content
+            configuration:
+              id: 'views_block:block_guest-block_1'
+              label: ''
+              provider: views
+              label_display: '0'
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: -9
+          7ee1dfbd-5c6b-4bd0-affd-c2ece9cf1a64:
+            uuid: 7ee1dfbd-5c6b-4bd0-affd-c2ece9cf1a64
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:event:field_present_by'
+              formatter:
+                label: above
+                settings:
+                  image_style: ''
+                  image_link: ''
+                third_party_settings: {  }
+                type: image
+            additional: {  }
+            weight: 1
+          bc302704-d950-46f7-8994-0a0443a549d3:
+            uuid: bc302704-d950-46f7-8994-0a0443a549d3
+            region: three_content
+            configuration:
+              id: 'field_block:node:event:field_present_by'
+              label: 'Present By'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: image
+                settings:
+                  image_style: ''
+                  image_link: ''
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+                  lazy:
+                    lazy_image: '0'
+                    placeholder_style: ''
+                    data_uri: false
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: -10
         third_party_settings: {  }
 id: node.event.default
 targetEntityType: node
@@ -332,6 +391,15 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_present_by:
+    weight: 109
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
     region: content
   field_venue_of_the_event:
     weight: 107
