@@ -204,7 +204,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '"{{ title }} "'
+            text: '"{{ title }}"'
             make_link: false
             path: ''
             absolute: false
@@ -244,7 +244,7 @@ display:
           click_sort_column: value
           type: string
           settings:
-            link_to_entity: false
+            link_to_entity: true
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -713,7 +713,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"view-categories-sons\">\r\n<div class=\"view-content\">\r\n<h3>\r\n  <div class=\"category-title\">\r\n    <h1>\r\n      <span>AL DÍA THOUGHT LEADERS</span>\r\n    </h1>\r\n  </div>\r\n</h3>\r\n  </div>\r\n  </div>"
+            text: "<div class=\"view-categories-sons\">\r\n<div class=\"view-content\">\r\n<h3>\r\n  <div class=\"category-title\">\r\n    <h1>\r\n      <a>AL DÍA THOUGHT LEADERS</a>\r\n    </h1>\r\n  </div>\r\n</h3>\r\n  </div>\r\n  </div>"
             make_link: false
             path: ''
             absolute: false
@@ -1100,7 +1100,7 @@ display:
       row:
         type: fields
         options: {  }
-      css_class: section1310
+      css_class: 'section1310 arrows-bottom'
     cache_metadata:
       max-age: -1
       contexts:

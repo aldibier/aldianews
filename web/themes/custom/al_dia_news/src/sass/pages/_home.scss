@@ -22,8 +22,7 @@
     display: flex;
     align-items: center;
     margin-bottom: 0px;
-    a,
-    span {
+    a {
       width: 100%;
       font-size: 38px;
       margin-left: 5px;
@@ -116,8 +115,7 @@
 
 @media (max-width: $tablet) {
   .path-frontpage .view-categories-sons {
-    > .view-content > h3 a,
-    > .view-content > h3 span {
+    > .view-content > h3 a {
       line-height: initial;
     }
 
@@ -174,6 +172,17 @@
       width: 100%;
     }
   }
+  h1 a {
+    display: flex;
+    align-items: center;
+    &::after {
+      position: relative;
+      max-width: 783px;
+    }
+  }
+  .aldia-logo-in-text {
+    margin-right: 5px;
+  }
 }
 .card-leaders {
   background: #282828;
@@ -189,6 +198,9 @@
   &::hover {
     background: #979797;
     opacity: 0.7;
+  }
+  @media (max-width: $desktop) {
+    max-width: 230px;
   }
   .views-field-field-authors-photo {
     max-width: 120px;
@@ -236,7 +248,7 @@
   }
 }
 
-@media (max-width: $desktop) {
+@media (max-width: $tablet) {
   .block-views-blockthought-leaders-home-block-4 {
     margin-bottom: 35px auto 20px;
   }

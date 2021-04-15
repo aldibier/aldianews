@@ -1,0 +1,32 @@
+.arrows-bottom {
+  .slick-slider {
+    margin-bottom: 55px;
+  }
+
+  .slick-list {
+    width: 100%;
+  }
+
+  .slick-arrow {
+    width: 15px;
+    height: 15px;
+    border: none;
+    position: absolute;
+    bottom: calc(0% - 21px);
+    background-color: transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+    font-size: 0;
+    transform: translateY(100%);
+  }
+
+  .slick-prev {
+    left: calc(50% - 25px);
+    background-image: url("../../assets/img/arrow-left.svg");
+  }
+
+  .slick-next {
+    left: calc(50% + 25px);
+    background-image: url("../../assets/img/arrow-right.svg");
+  }
+}
