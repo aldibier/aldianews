@@ -182,7 +182,7 @@
     align-items: center;
     &::after {
       position: relative;
-      max-width: 783px;
+      max-width: 780px;
     }
   }
   .aldia-logo-in-text {
@@ -252,7 +252,20 @@
     width: 100%;
   }
 }
-
+@media (max-width: $desktop) {
+  .view-thought-leaders-home .views-field-view,
+  .view-thought-leaders-home .views-field-view-1 {
+    padding: 0 15px;
+  }
+  .view-thought-leaders-home.view-display-id-block_3 .view-content h1 a {
+    padding-bottom: 10px;
+    &::after {
+      position: absolute;
+      bottom: 0px;
+      margin-left: 0px;
+    }
+  }
+}
 @media (max-width: $tablet) {
   .block-views-blockthought-leaders-home-block-4 {
     margin-bottom: 35px auto 20px;
@@ -261,6 +274,7 @@
   }
   .card-leaders {
     max-width: 130px;
+    // min-width: 130px;
     min-height: 300px;
     padding: 17px 12px 13px;
     margin-top: 30px;
@@ -285,20 +299,15 @@
       line-height: 12px;
     }
   }
-
-  @media (max-width: 580px) {
-    .view-thought-leaders-home.view-display-id-block_1 .view-content {
-      max-width: 280px;
-      margin-left: auto;
-      margin-right: auto;
-    }
+}
+@media (max-width: 580px) {
+  .view-thought-leaders-home.view-display-id-block_1 .view-content {
+    max-width: 305px;
+    margin-left: auto;
+    margin-right: auto;
   }
-  .view-thought-leaders-home.view-display-id-block_3 .view-content {
-    h1 a {
-      &::after {
-        position: absolute;
-        bottom: 0px;
-      }
-    }
+  .block-views-blockthought-leaders-home-block-4 .slick-track {
+    display: flex;
+    grid-gap: 20px;
   }
 }

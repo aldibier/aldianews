@@ -1459,7 +1459,7 @@ window.onload = function () {
     if (e != null && !e.innerHTML.includes("-")) {
       e.classList.add("category");
     } else if (e != null && e.innerHTML.includes("--")) {
-      e.classList.add("subsubcategory");
+      e.parentElement.classList.add("subsubcategory");
     }
   });
 };
@@ -1871,7 +1871,7 @@ var initSlick = function initSlick($, Drupal) {
         slidesToShow: 2,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 2000
+        autoplaySpeed: 3000
       });
     }
   }
