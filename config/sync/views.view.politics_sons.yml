@@ -29,11 +29,9 @@ dependencies:
     - 'taxonomy_term:categories:626a661f-10c8-4692-8d34-9dd7df07c043'
     - 'taxonomy_term:categories:7636b70c-911c-4fbc-bc08-ab29c975c297'
     - 'taxonomy_term:categories:8427b6b3-d468-4151-9ade-3706a669d2d2'
-    - 'taxonomy_term:categories:91a72607-f5ae-488c-83bf-10956697c5e1'
     - 'taxonomy_term:categories:aec049fa-a86a-42fb-8dc9-173f58881fde'
     - 'taxonomy_term:categories:baa0a831-19ba-45bf-ba8a-be44d13892bd'
     - 'taxonomy_term:categories:c51d8cc3-4350-4d6c-8668-9a89f7a0d2f0'
-    - 'taxonomy_term:categories:ce75d793-8c04-42c0-bcdb-abf0fa29cd0e'
     - 'taxonomy_term:categories:cf1eec84-47c1-4745-b3fe-62d661529eaf'
     - 'taxonomy_term:categories:eee54e65-ed4e-4b29-891e-229a2f2a4f1c'
     - 'taxonomy_term:categories:f20ef667-e56f-4996-8bf4-24fe58ed0f9b'
@@ -2908,7 +2906,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"category-view-more\">\r\n   <a href=\"/politics\">MORE ABOUT {{ parent_target_id }}</a>\r\n</div>"
+            text: "<div class=\"category-view-more\">\r\n   <a href=\"/politics\">MORE ON {{ parent_target_id }}</a>\r\n</div>"
             make_link: false
             path: ''
             absolute: false

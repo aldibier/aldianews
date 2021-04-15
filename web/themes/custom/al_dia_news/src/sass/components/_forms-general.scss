@@ -217,7 +217,7 @@ button[name="close"],
 } */
 //end contact form
 
-//form advertising 
+//form advertising
 /* .webform-contact-employer {
   height: 100%;
   z-index: 3;
@@ -411,9 +411,10 @@ button[name="close"],
 
 //-------------form advertising ------------//
 .webform-advertising,
-.webform-about-al-dia-live {
+.webform-about-al-dia-live,
+.contact-form {
   height: 100%;
-  height: 70%;
+  // height: 70%;
 
   .form-type-textfield,
   .js-form-type-tel,
@@ -511,4 +512,19 @@ button[name="close"],
   max-width: 990px;
   max-height: 890px;
   padding: 100px 75px 89px;
+}
+
+//-------------- contact employer -------------//
+.contact-form-father {
+  max-height: 945px;
+  .field-content {
+    height: 70%;
+  }
+}
+.contact-form {
+  max-height: 945px;
+  overflow: hidden;
+  padding: 100px 75px 89px;
+  max-width: 990px;
+  height: 100%;
 }
