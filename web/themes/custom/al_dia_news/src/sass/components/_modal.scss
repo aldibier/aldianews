@@ -37,16 +37,16 @@
   background-color: rgba(0,0,0,80%);
   transform: translateY(-50%);
   z-index: 10;
+}
 
-  .close {
-    width: 20px;
-    height: 20px;
-    margin-left: auto;
-    display: block;
-    background-image: icon('close');
-    background-size: contain;
-    cursor: pointer;
-  }
+.close-video {
+  width: 20px;
+  height: 20px;
+  margin-left: auto;
+  display: block;
+  background-image: icon('close');
+  background-size: contain;
+  cursor: pointer;
 }
 
 .modal-video-landing{
@@ -64,9 +64,5 @@
 
   @media screen and (max-width: $broken) {
     padding: 67.5px 15px;
-  }
-
-  .close {
-    margin-bottom: 27px;
   }
 }

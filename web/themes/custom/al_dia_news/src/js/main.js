@@ -263,16 +263,22 @@ window.onload = function() {
     buttonClose.addEventListener('click',()=>modalForm.classList.remove('show'));
 
      //// js pop-up about al dia live
-     const triggerVideo = document.querySelector('.about-al-dia-live-image');
-     const buttonCloseVideo = document.querySelector('.close');
+     const triggerVideo = document.querySelector('.block-views-blockabout-al-dia-live-block-1');
+     const buttonCloseVideo = document.querySelector('.close-video');
      const video = document.querySelector('.modal-video');
 
-    console.log(triggerVideo);
-    console.log(buttonCloseVideo);
-    console.log(video);
+    //js temporal
+    video.insertAdjacentElement('afterbegin',buttonCloseVideo);
 
-    /* triggerVideo.addEventListener('click',()=>video.classList.add('show'));
-    buttonCloseVideo.addEventListener('click',()=>video.classList.remove('show')); */
+    triggerVideo.addEventListener('click',()=>{
+      video.classList.add('show')
+    });
+
+    buttonCloseVideo.addEventListener('click',(event)=>{
+      debugger
+      event.stopPropagation();
+      video.classList.remove('show');
+    });
   }
 
   //// js desplegable buscador y close modal
