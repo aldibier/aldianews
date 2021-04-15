@@ -1,0 +1,19 @@
+uuid: 83468229-90a7-4b56-897e-c6ba04de144c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_nomination_status
+    - node.type.event
+id: node.event.field_nomination_status
+field_name: field_nomination_status
+entity_type: node
+bundle: event
+label: 'Nomination status'
+description: 'For example: (Nominations NOW OPEN)'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
