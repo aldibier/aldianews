@@ -161,6 +161,10 @@
   margin: 70px auto;
   padding-top: 30px;
   padding-bottom: 50px;
+  .view-thought-leaders-home {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
 }
 
 .view-thought-leaders-home.view-display-id-block_1 .view-content {
@@ -232,7 +236,7 @@
   }
   .views-field-title {
     margin-bottom: 10px;
-    a {
+    * {
       font-family: $PrNovacond-Sbold;
       font-style: normal;
       font-weight: bold;
@@ -263,6 +267,8 @@
       position: absolute;
       bottom: 0px;
       margin-left: 0px;
+      top: auto;
+      max-width: none;
     }
   }
 }
@@ -289,7 +295,7 @@
     }
     .views-field-title {
       margin-bottom: 20px;
-      a {
+      * {
         font-size: $px16;
         line-height: 19px;
       }
