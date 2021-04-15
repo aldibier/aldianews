@@ -1,4 +1,13 @@
 .path-about-al-dia-live {
+
+    .modal-form {
+        display: none;
+    }
+
+    .modal-form.show {
+        display: block;
+    }
+
     //------ about al dia live banner ------------//
     .block-system-main-block {
         .view-about-al-dia-live {
@@ -235,6 +244,10 @@
                 margin-bottom: 0;
             }
         }
+
+        .image-desktop {}
+
+        .image-mobile {}
 
         .video-title {
             font-size: szrem(59);
@@ -492,15 +505,7 @@
             margin-bottom: 15px;
         }
 
-        .testimonial-author-testimonial {
-            margin-bottom: 10.5px;
-            font-size: szrem(30);
-            font-family: $PrNovacond-Sbold;
-            font-style: normal;
-            font-weight: 600;
-            line-height: 140%;
-            color: $cgrey6;
-
+        .views-field-field-testimonial {
             &::before {
                 content: '';
                 width: 30px;
@@ -524,15 +529,28 @@
             }
 
             @media screen and (max-width: $tablet) {
-                margin-bottom: 20px;
-                font-size: szrem(14);
-                line-height: 17px;
-
                 &::before,
                 &::after  {
                     width: 20px;
                     height: 14px;
                 }
+            }
+        }
+
+        .testimonial-author-testimonial {
+            margin-bottom: 10.5px;
+            display: inline;
+            font-size: szrem(30);
+            font-family: $PrNovacond-Sbold;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 140%;
+            color: $cgrey6;
+
+            @media screen and (max-width: $tablet) {
+                margin-bottom: 20px;
+                font-size: szrem(14);
+                line-height: 17px;
             }
         }
 

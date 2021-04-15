@@ -1,3 +1,13 @@
+.path-advertising {
+  .modal-form {
+    display: none;
+  } 
+
+  .modal-form.show {
+    display: block;
+  }
+}
+
 //-------------header advertising------------//
 .advertising-header {
   padding: 63px 80px;
@@ -9,6 +19,7 @@
   z-index: 1;
   max-height: 710px;
   overflow: hidden;
+
   @media (max-width: $broken) {
     padding: 63px 15px;
   }
@@ -596,11 +607,3 @@
   }
 }
 
-.path-advertising {
-  .block-webform-block,
-  .block-views-blockheader-advertising-landing-block-1 {
-    &.show {
-      display: block;
-    }
-  }
-}
