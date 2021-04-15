@@ -90,7 +90,7 @@ class LatestCategories extends BlockBase implements ContainerFactoryPluginInterf
     $return["main"] = [
       "#type" => "container",
       '#attributes' => [
-        'class' => 'main-news',
+        'class' => 'last-news-home',
       ],
     ];
     $category = [];
