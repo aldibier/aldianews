@@ -271,8 +271,8 @@ window.onload = function() {
     console.log(buttonCloseVideo);
     console.log(video);
 
-    /* triggerVideo.addEventListener('click',()=>video.classList.add('show'));
-    buttonCloseVideo.addEventListener('click',()=>video.classList.remove('show')); */
+    triggerVideo.addEventListener('click',()=>video.classList.add('show'));
+    buttonCloseVideo.addEventListener('click',()=>video.classList.remove('show'));
   }
 
   //// js desplegable buscador y close modal
