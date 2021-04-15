@@ -28,7 +28,7 @@ reactions:
         views_label: ''
         items_per_page: none
         region: content
-        weight: '1'
+        weight: '0'
         context_mapping: {  }
         custom_id: views_block_leadership_mix_block_1
         theme: al_dia_news
@@ -57,7 +57,7 @@ reactions:
         provider: al_dia_news_general
         label_display: '0'
         region: content
-        weight: '0'
+        weight: '-1'
         context_mapping: {  }
         custom_id: latest_categories
         theme: al_dia_news
@@ -73,7 +73,7 @@ reactions:
         views_label: ''
         items_per_page: none
         region: content
-        weight: '3'
+        weight: '2'
         context_mapping: {  }
         custom_id: views_block_culture_mix_block_1
         theme: al_dia_news
@@ -89,7 +89,7 @@ reactions:
         views_label: ''
         items_per_page: none
         region: content
-        weight: '4'
+        weight: '3'
         context_mapping: {  }
         custom_id: views_block_politics_mix_block_1
         theme: al_dia_news
@@ -105,7 +105,7 @@ reactions:
         views_label: ''
         items_per_page: none
         region: content
-        weight: '2'
+        weight: '1'
         context_mapping: {  }
         custom_id: views_block_thought_leaders_home_block_4
         theme: al_dia_news
@@ -127,6 +127,20 @@ reactions:
         unique: 0
         context_id: blocks_home
         uuid: bbdff550-49b1-4aa9-bb1e-3be618bfe1ad
+      8e22ad3e-8ae6-4b94-9cdf-c1d7829b57ec:
+        id: 'block_group:current_edition_advertising_home'
+        label: 'Current Edition - Advertising - HOME'
+        provider: blockgroup
+        label_display: '0'
+        region: content
+        weight: '4'
+        context_mapping: {  }
+        custom_id: block_group_current_edition_advertising_home
+        theme: al_dia_news
+        css_class: ''
+        unique: 0
+        context_id: blocks_home
+        uuid: 8e22ad3e-8ae6-4b94-9cdf-c1d7829b57ec
     id: blocks
     saved: false
     uuid: 4fc7f4cb-182d-41eb-9a90-4caf42ab57f8
