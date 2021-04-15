@@ -3,14 +3,14 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.category_childs
+    - core.entity_view_mode.node.category_next_4
     - field.storage.node.body
     - field.storage.node.field_category
     - field.storage.node.field_image
     - field.storage.node.field_my_content_has_a_main_vide
     - field.storage.node.field_short_title
+    - image.style.card_one_column_desktop
     - node.type.news
-    - responsive_image.styles.next_two_image_responsive
     - taxonomy.vocabulary.categories
   content:
     - 'taxonomy_term:categories:01a8bc97-1ab4-43eb-bd86-b3c9f3e1d0f6'
@@ -34,7 +34,6 @@ dependencies:
   module:
     - image
     - node
-    - responsive_image
     - taxonomy
     - text
     - user
@@ -664,7 +663,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"main-news-content\">\r\n   <div class=\"main-news-title\">{{ field_short_title }}</div>\r\n   <div class=\"main-news-body\">{{ body }}</div>\r\n   <div class=\"main-news-date\">{{ created }}</div>\r\n</div>"
+            text: "<div class=\"main-news-content\">\r\n <div class=\"main-news-category\">{{ field_category }}</div>\r\n   <div class=\"main-news-title\">{{ field_short_title }}</div>\r\n   <div class=\"main-news-body\">{{ body }}</div>\r\n   <div class=\"main-news-date\">{{ created }}</div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -1383,9 +1382,9 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: responsive_image
+          type: image
           settings:
-            responsive_image_style: next_two_image_responsive
+            image_style: card_one_column_desktop
             image_link: content
           group_column: ''
           group_columns: {  }
@@ -1667,7 +1666,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"card-content\">\r\n   <div class=\"card-title\">{{ field_short_title }}</div>\r\n   <div class=\"card-date\">{{ created }}</div>\r\n</div>"
+            text: "<div class=\"card-content\">\r\n <div class=\"card-category\">{{ field_category }} </div>\r\n   <div class=\"card-title\">{{ field_short_title }}</div>\r\n   <div class=\"card-date\">{{ created }}</div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -2255,7 +2254,7 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          view_mode: category_childs
+          view_mode: category_next_4
           entity_type: node
           plugin_id: rendered_entity
       defaults:
