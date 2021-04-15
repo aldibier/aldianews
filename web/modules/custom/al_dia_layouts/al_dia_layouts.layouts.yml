@@ -445,3 +445,24 @@ more_covers:
       label: Segundo - Publividad
     three_content:
       label: Tercero - Relacionados
+
+events:
+  label: 'Interna de eventos'
+  path: layouts/events
+  template: layout--events
+  category: 'content'
+  default_region: content
+  icon_map:
+    - [header_content]
+    - [one_first, one_second]   
+    - [two_content]   
+    - [three_content]   
+  regions:
+    header_content:
+      label: Header - Contenido
+    one_first:
+      label: Primero - Contenido
+    one_second:
+      label: Primero - Contenido - Publicidad
+    three_content:
+      label: Tercero - Relacionados
