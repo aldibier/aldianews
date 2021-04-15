@@ -22,8 +22,7 @@
     display: flex;
     align-items: center;
     margin-bottom: 0px;
-    a,
-    span {
+    a {
       width: 100%;
       font-size: 38px;
       margin-left: 5px;
@@ -116,8 +115,7 @@
 
 @media (max-width: $tablet) {
   .path-frontpage .view-categories-sons {
-    > .view-content > h3 a,
-    > .view-content > h3 span {
+    > .view-content > h3 a {
       line-height: initial;
     }
 
@@ -160,8 +158,11 @@
 
 .block-views-blockthought-leaders-home-block-4 {
   background: #f1f1f1;
-  margin-bottom: 70px auto;
+  margin: 70px auto;
+  padding-top: 30px;
+  padding-bottom: 50px;
 }
+
 .view-thought-leaders-home.view-display-id-block_1 .view-content {
   display: flex;
   justify-content: space-between;
@@ -173,6 +174,19 @@
     > div {
       width: 100%;
     }
+  }
+}
+.view-thought-leaders-home.view-display-id-block_3 .view-content {
+  h1 a {
+    display: flex;
+    align-items: center;
+    &::after {
+      position: relative;
+      max-width: 783px;
+    }
+  }
+  .aldia-logo-in-text {
+    margin-right: 5px;
   }
 }
 .card-leaders {
@@ -189,6 +203,9 @@
   &::hover {
     background: #979797;
     opacity: 0.7;
+  }
+  @media (max-width: $desktop) {
+    max-width: 230px;
   }
   .views-field-field-authors-photo {
     max-width: 120px;
@@ -236,9 +253,11 @@
   }
 }
 
-@media (max-width: $desktop) {
+@media (max-width: $tablet) {
   .block-views-blockthought-leaders-home-block-4 {
     margin-bottom: 35px auto 20px;
+    padding-top: 5px;
+    padding-bottom: 2px;
   }
   .card-leaders {
     max-width: 130px;
@@ -264,6 +283,22 @@
     .views-field-created {
       font-size: $px10;
       line-height: 12px;
+    }
+  }
+
+  @media (max-width: 580px) {
+    .view-thought-leaders-home.view-display-id-block_1 .view-content {
+      max-width: 280px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  .view-thought-leaders-home.view-display-id-block_3 .view-content {
+    h1 a {
+      &::after {
+        position: absolute;
+        bottom: 0px;
+      }
     }
   }
 }

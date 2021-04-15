@@ -1,0 +1,52 @@
+uuid: f23db767-d4a9-4683-a3e5-03bcc3d5226d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.guest.field_company
+    - field.field.paragraph.guest.field_guest_s_photo
+    - field.field.paragraph.guest.field_guest_s_position
+    - field.field.paragraph.guest.field_guests_name
+    - paragraphs.paragraphs_type.guest
+  module:
+    - image
+id: paragraph.guest.default
+targetEntityType: paragraph
+bundle: guest
+mode: default
+content:
+  field_company:
+    weight: 3
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_guest_s_photo:
+    weight: 1
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_guest_s_position:
+    weight: 2
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_guests_name:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  search_api_excerpt: true

@@ -214,6 +214,22 @@
         color: #333 !important;
       }
     }
+    .subsubcategory {
+      font-family: $PrNovacond-light;
+      font-size: 16px !important;
+      padding-left: 60px !important;
+      position: relative;
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 8px;
+        height: 100%;
+        top: 0px;
+        left: 60px;
+        background: #ededed;
+      }
+    }
   }
   .form-item-sort-bef-combine {
     order: 2;
