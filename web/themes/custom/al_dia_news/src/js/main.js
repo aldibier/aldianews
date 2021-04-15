@@ -13,6 +13,14 @@ window.onload = function() {
     });
   }
 
+  //text summary para selection-sharer
+  let containerSummary = document.querySelector('.content-news-internal-first .views-element-container');
+
+  if(!!containerSummary){
+    let summary = containerSummary.querySelector('.summary-news');
+    containerSummary.insertAdjacentElement('beforebegin',summary);
+  }
+
   // js video en interna
   var video_interna = document.querySelector(
     ".block-field-blocknodenewsfield-video"
@@ -217,7 +225,7 @@ window.onload = function() {
   if (!!document.querySelector(".path-advertising")) {
     const allButtonsApply = document.querySelectorAll(".button-apply");
     const allButtonsClose = document.querySelectorAll(
-      ".webform-contact-employer .close-modal"
+      ".close-modal"
     );
 
     const showModal = event => {
