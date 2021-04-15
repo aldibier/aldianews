@@ -29,7 +29,6 @@
       margin-left: 5px;
       line-height: 46px;
       color: $corange;
-      font-family: $ModernoFB-Regular;
     }
   }
 
@@ -186,6 +185,10 @@
   align-items: center;
   padding: 30px 25px;
   margin-top: 40px;
+  &::hover {
+    background: #979797;
+    opacity: 0.7;
+  }
   .views-field-field-authors-photo {
     max-width: 120px;
     width: 100%;
@@ -229,5 +232,34 @@
     line-height: 17px;
     color: $cwhite;
     width: 100%;
+  }
+}
+
+@media (max-width: $desktop) {
+  .card-leaders {
+    max-width: 130px;
+    min-height: 300px;
+    padding: 17px 12px 13px;
+    margin-top: 30px;
+    .views-field-field-authors-photo {
+      max-width: 80px;
+      max-height: 80px;
+      margin: 0 auto 10px;
+    }
+    .views-field-name {
+      font-size: $px14;
+      line-height: 17px;
+    }
+    .views-field-title {
+      margin-bottom: 20px;
+      a {
+        font-size: $px16;
+        line-height: 19px;
+      }
+    }
+    .views-field-created {
+      font-size: $px10;
+      line-height: 12px;
+    }
   }
 }
