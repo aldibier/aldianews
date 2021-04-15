@@ -13,6 +13,14 @@ window.onload = function() {
     });
   }
 
+  //text summary para selection-sharer
+  let containerSummary = document.querySelector('.content-news-internal-first .views-element-container');
+
+  if(!!containerSummary){
+    let summary = containerSummary.querySelector('.summary-news');
+    containerSummary.insertAdjacentElement('beforebegin',summary);
+  }
+
   // js video en interna
   var video_interna = document.querySelector(
     ".block-field-blocknodenewsfield-video"
