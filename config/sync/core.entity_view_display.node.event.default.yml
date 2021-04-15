@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.event.body
     - field.field.node.event.field_date_of_event
+    - field.field.node.event.field_guest_block
     - field.field.node.event.field_image
     - field.field.node.event.field_logo
     - field.field.node.event.field_nomination_status
@@ -15,6 +16,7 @@ dependencies:
     - addtoany
     - al_dia_layouts
     - datetime
+    - entity_reference_revisions
     - fixed_block_content
     - image
     - layout_builder
@@ -257,6 +259,23 @@ third_party_settings:
                 entity: layout_builder.entity
             additional: {  }
             weight: -10
+          6d6b1f99-48da-40f7-8984-4239b08a8204:
+            uuid: 6d6b1f99-48da-40f7-8984-4239b08a8204
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:event:field_guest_block'
+              formatter:
+                type: entity_reference_revisions_entity_view
+                label: above
+                settings:
+                  view_mode: default
+                  link: ''
+                third_party_settings: {  }
+            additional: {  }
+            weight: 0
         third_party_settings: {  }
 id: node.event.default
 targetEntityType: node
@@ -278,6 +297,15 @@ content:
       timezone_override: ''
     third_party_settings: {  }
     type: datetime_default
+    region: content
+  field_guest_block:
+    type: entity_reference_revisions_entity_view
+    weight: 108
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
     region: content
   field_image:
     weight: 103

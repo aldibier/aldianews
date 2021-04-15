@@ -1,0 +1,58 @@
+uuid: 63a5cd95-245b-42b3-bc2d-91d635c3a14f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_guest_block
+    - node.type.event
+    - paragraphs.paragraphs_type.gust_block
+  module:
+    - entity_reference_revisions
+id: node.event.field_guest_block
+field_name: field_guest_block
+entity_type: node
+bundle: event
+label: 'Guest block'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      gust_block: gust_block
+    target_bundles_drag_drop:
+      advertising_informative_items_:
+        weight: 11
+        enabled: false
+      advertising_options:
+        weight: 12
+        enabled: false
+      features_items:
+        weight: 13
+        enabled: false
+      features_more_covers:
+        weight: 14
+        enabled: false
+      guest:
+        weight: 15
+        enabled: false
+      gust_block:
+        enabled: true
+        weight: 16
+      i_am_an_employer_sections:
+        weight: 17
+        enabled: false
+      main_features:
+        weight: 18
+        enabled: false
+      social_media:
+        weight: 19
+        enabled: false
+      testimonies:
+        weight: 20
+        enabled: false
+field_type: entity_reference_revisions
