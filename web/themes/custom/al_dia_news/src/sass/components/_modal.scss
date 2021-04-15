@@ -59,10 +59,14 @@
 }
 
 .modal-video-al-dia {
-  max-height: 695px;
+  max-height: 900px;
   padding: 100px 10% 98px;
-  
+
   @media screen and (max-width: $broken) {
     padding: 67.5px 15px;
+  }
+
+  .close {
+    margin-bottom: 27px;
   }
 }

@@ -1,7 +1,24 @@
 .path-about-al-dia-live {
 
-    .modal-form {
+    .modal-video{
         display: none;
+
+        &.show {
+            display: block;
+        }
+    }
+
+    .modal-video.show {
+        display: block;
+    }
+
+
+    .modal-form{
+        display: none;
+
+        &.show {
+            display: block;
+        }
     }
 
     .modal-form.show {
