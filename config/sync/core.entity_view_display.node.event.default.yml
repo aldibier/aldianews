@@ -210,17 +210,6 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: 0
-          a729c1f5-5aeb-461f-a777-fc9a2a589777:
-            uuid: a729c1f5-5aeb-461f-a777-fc9a2a589777
-            region: one_first
-            configuration:
-              id: addtoany_block
-              label: 'AddToAny buttons'
-              provider: addtoany
-              label_display: '0'
-              context_mapping: {  }
-            additional: {  }
-            weight: 0
           830d5c54-ccfc-457f-aa97-0139b1cb963c:
             uuid: 830d5c54-ccfc-457f-aa97-0139b1cb963c
             region: one_first
@@ -240,7 +229,7 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: 1
+            weight: -9
           c89b37a8-a7e1-49c9-bec1-d01ba7875573:
             uuid: c89b37a8-a7e1-49c9-bec1-d01ba7875573
             region: one_second
@@ -253,6 +242,21 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: 0
+          58c7b2bf-9921-4e54-8fd4-aa58c2838b4d:
+            uuid: 58c7b2bf-9921-4e54-8fd4-aa58c2838b4d
+            region: one_first
+            configuration:
+              id: 'extra_field_block:node:event:addtoany'
+              label: 'SHARE THIS CONTENT:'
+              provider: layout_builder
+              label_display: visible
+              formatter:
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: -10
         third_party_settings: {  }
 id: node.event.default
 targetEntityType: node
