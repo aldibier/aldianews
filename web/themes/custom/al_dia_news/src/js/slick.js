@@ -120,7 +120,7 @@ const initSlick = ($, Drupal) => {
 
   /// Slider para thought leaders
   var width_h = window.innerWidth;
-  if (width_h <= 768) {
+  if (width_h <= 580) {
     if ($(".view-id-thought_leaders_home.view-display-id-block_1")) {
       $(
         ".view-id-thought_leaders_home.view-display-id-block_1 .view-content"

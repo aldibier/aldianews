@@ -1373,12 +1373,12 @@ window.onload = function () {
 
         while (node) {
           if (node !== event.currentTarget && node.nodeType === Node.ELEMENT_NODE) {
-            if (event.target.closest(".wrapper-popup")) return;
-            node.querySelector(".wrapper-popup").classList.remove("active");
+            if (event.target.closest(".modal-video")) return;
+            node.querySelector(".modal-video").classList.remove("show");
             resetAlliframes();
           } else {
             if (event.target.closest(".wrapper-popup")) return;
-            node.querySelector(".wrapper-popup ").classList.toggle("active");
+            node.querySelector(".modal-video").classList.toggle("show");
             resetAlliframes();
           }
 
@@ -1390,12 +1390,12 @@ window.onload = function () {
       var contentActive = event.target.closest(".card-one-column") || false;
 
       if (!contentActive) {
-        document.querySelector(".wrapper-popup.active").classList.remove("active");
+        document.querySelector(".modal-video.show").classList.remove("show");
         resetAlliframes();
       }
 
       if (event.target.classList.contains("close")) {
-        document.querySelector(".wrapper-popup.active").classList.remove("active");
+        document.querySelector(".modal-video.show").classList.remove("show");
         resetAlliframes();
       }
     });
@@ -1426,6 +1426,19 @@ window.onload = function () {
     });
     allButtonsClose.forEach(function (buttonClose) {
       return buttonClose.addEventListener("click", hideModal);
+    });
+  } //// js para controlar pop-up about al dia live
+
+
+  if (!!document.querySelector(".path-about-al-dia-live")) {
+    var buttonApply = document.querySelector('.path-about-al-dia-live .button-apply');
+    var buttonClose = document.querySelector('.close-modal');
+    var modalForm = document.querySelector('.modal-form');
+    buttonApply.addEventListener('click', function () {
+      return modalForm.classList.add('show');
+    });
+    buttonClose.addEventListener('click', function () {
+      return modalForm.classList.remove('show');
     });
   } //// js desplegable buscador y close modal
 
@@ -1864,7 +1877,7 @@ var initSlick = function initSlick($, Drupal) {
 
   var width_h = window.innerWidth;
 
-  if (width_h <= 768) {
+  if (width_h <= 580) {
     if ($(".view-id-thought_leaders_home.view-display-id-block_1")) {
       $(".view-id-thought_leaders_home.view-display-id-block_1 .view-content").slick({
         infinite: true,
@@ -1899,8 +1912,8 @@ var initSlick = function initSlick($, Drupal) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
-module.exports = __webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
+__webpack_require__(/*! /Users/usuario/Desktop/Proyectos/AlDiaNews/4ld14-n3ws/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
+module.exports = __webpack_require__(/*! /Users/usuario/Desktop/Proyectos/AlDiaNews/4ld14-n3ws/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
 
 
 /***/ })
