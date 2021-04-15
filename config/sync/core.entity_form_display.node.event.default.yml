@@ -6,6 +6,9 @@ dependencies:
     - field.field.node.event.body
     - field.field.node.event.field_date_of_event
     - field.field.node.event.field_image
+    - field.field.node.event.field_logo
+    - field.field.node.event.field_nomination_status
+    - field.field.node.event.field_venue_of_the_event
     - image.style.thumbnail
     - node.type.event
   module:
@@ -35,7 +38,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_date_of_event:
-    weight: 122
+    weight: 126
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
@@ -47,6 +50,30 @@ content:
       preview_image_style: thumbnail
     third_party_settings: {  }
     type: image_image
+    region: content
+  field_logo:
+    weight: 124
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_nomination_status:
+    weight: 125
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_venue_of_the_event:
+    weight: 127
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
     region: content
   langcode:
     type: language_select
