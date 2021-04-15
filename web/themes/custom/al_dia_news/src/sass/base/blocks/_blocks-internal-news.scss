@@ -10,6 +10,27 @@
   }
 }
 
+//------ summary -----------// 
+.view--summary-news-intern {
+  .view-content:empty {
+    display: none;
+  }
+}
+
+.summary-news {
+  font-size: szrem(24);
+  font-family: $PrNovacond-Sbold;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%;
+  color: $cblack3;
+
+  @media screen and (max-width:$tablet) {
+    padding: 10px;
+    font-size: szrem(18);
+  }
+}
+
 //------ first block ------------//
 .content-news-internal-first {
   div.field--name-field-video {
@@ -318,7 +339,7 @@ blockquote {
     &:before {
       align-self: flex-start;
     }
-  
+
     &:after {
       align-self: flex-end;
     }
