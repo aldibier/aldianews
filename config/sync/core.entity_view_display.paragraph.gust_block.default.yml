@@ -4,13 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.gust_block.field_guest
-    - field.field.paragraph.gust_block.field_style
     - field.field.paragraph.gust_block.field_title
     - paragraphs.paragraphs_type.gust_block
   module:
     - entity_reference_revisions
     - field_formatter_class
-    - options
 id: paragraph.gust_block.default
 targetEntityType: paragraph
 bundle: gust_block
@@ -24,13 +22,6 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    region: content
-  field_style:
-    weight: 1
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: list_default
     region: content
   field_title:
     weight: 0
