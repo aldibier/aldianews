@@ -250,20 +250,6 @@ window.onload = function() {
   //// js para controlar pop-up about al dia live
   if (!!document.querySelector(".path-about-al-dia-live")) {
     //// js pop-up about al dia live
-    const buttonApply = document.querySelector(
-      ".path-about-al-dia-live .button-apply"
-    );
-    const buttonClose = document.querySelector(".close-modal");
-    const modalForm = document.querySelector(".modal-form");
-
-    buttonApply.addEventListener("click", () =>
-      modalForm.classList.add("show")
-    );
-    buttonClose.addEventListener("click", () =>
-      modalForm.classList.remove("show")
-    );
-
-    //// js pop-up about al dia live
     const buttonApply = document.querySelector('.path-about-al-dia-live .button-apply');
     const buttonClose = document.querySelector('.close-modal');
     const modalForm = document.querySelector('.modal-form');
