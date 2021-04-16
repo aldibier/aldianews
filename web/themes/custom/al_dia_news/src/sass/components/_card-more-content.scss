@@ -1,7 +1,5 @@
 //------ related content card ------------//
 .card-more {
-
-
   //reset style
 
   .field--type-entity-reference {
@@ -41,7 +39,11 @@
     }
 
     .field--name-field-my-content-has-a-main-vide {
-      @include player-icon($desktop-size: 50px, $tablet-size:50px, $mobile-size:30px);
+      @include player-icon(
+        $desktop-size: 50px,
+        $tablet-size: 50px,
+        $mobile-size: 30px
+      );
 
       &:empty {
         display: none;
@@ -49,8 +51,14 @@
     }
   }
 
+  .two-content-category-four {
+    @media (max-width: $broken) {
+      margin-left: 10px;
+    }
+  }
+
   &-news {
-    .related-content>a {
+    .related-content > a {
       width: 175px;
       height: 100px;
       min-height: 100px;
@@ -129,7 +137,6 @@
   //------ more content category ------------//
   &-category,
   &-subcategory {
-
     .container-content,
     .last-content-category-childs {
       display: flex;
@@ -269,7 +276,7 @@
 
   //------ more content author ------------//
   &-author {
-    .related-content>a {
+    .related-content > a {
       width: 115px;
       height: 115px;
       margin-right: 20px;

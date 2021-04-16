@@ -1776,7 +1776,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"main-news-content\">\r\n<div class=\"main-news-category\">{{ field_category }}</div>\r\n   <div class=\"main-news-title\">{{ field_short_title }}</div>\r\n   <div class=\"main-news-body\">{{ body }}</div>\r\n   <div class=\"main-news-date\">{{ created }}</div>\r\n</div>"
+            text: "<div class=\"main-news-content\">\r\n <div class=\"main-news-category\"><h2>{{ field_category }}</h2></div>\r\n   <div class=\"main-news-title\">{{ field_short_title }}</div>\r\n   <div class=\"main-news-body\">{{ body }}</div>\r\n   <div class=\"main-news-date\">{{ created }}</div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false

@@ -1495,7 +1495,7 @@ window.onload = function () {
     if (e.children.children != null) {
       e.closest(".mobile-less").parentElement.parentElement.classList.add("life-advertising");
     } else {
-      e.parentElement.classList.add("dis-none");
+      e.parentElement.parentElement.classList.add("mobile-free");
     }
   });
 };
@@ -1714,6 +1714,36 @@ __webpack_require__.r(__webpack_exports__);
     });
     Object(_slick_js__WEBPACK_IMPORTED_MODULE_3__["default"])($, Drupal);
   });
+  Drupal.behaviors.form_checkbox = {
+    attach: function attach(context, settings) {
+      $(document).ready(function () {
+        // Relacionando clase de selector al nombre de este archivo
+        var currentClass = "js-form-fake-checkbox";
+
+        if ($(".form-checkbox").length) {
+          $(".form-checkbox").addClass(currentClass);
+
+          if (!$(".fake-checkbox").length) {
+            $('<div class="fake-checkbox" />').insertAfter(".form-checkbox");
+          }
+
+          $(".form-checkbox").each(function () {
+            var context = $(this);
+
+            if (context.prop("checked") == true) {
+              context.addClass("active-check");
+            }
+          });
+        } // Pone clase activa cuando el radio está seleccionado
+
+
+        $("." + currentClass, context).once("js-form-fake-checkbox").click(function () {
+          var context = $(this);
+          context.toggleClass("active-check");
+        });
+      });
+    }
+  };
 })(jQuery, Drupal);
 
 /***/ }),
