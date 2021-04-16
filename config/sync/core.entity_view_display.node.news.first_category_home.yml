@@ -1,0 +1,136 @@
+uuid: cc349b37-9b79-46c9-8445-909d0d767d11
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.first_category_home
+    - field.field.node.news.body
+    - field.field.node.news.field_author
+    - field.field.node.news.field_caption
+    - field.field.node.news.field_category
+    - field.field.node.news.field_comments
+    - field.field.node.news.field_high_impact_news
+    - field.field.node.news.field_image
+    - field.field.node.news.field_my_content_has_a_main_vide
+    - field.field.node.news.field_short_title
+    - field.field.node.news.field_tags
+    - field.field.node.news.field_video
+    - node.type.news
+  module:
+    - ds
+    - field_formatter_class
+    - field_group
+    - image
+    - layout_builder
+    - lazy
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - field_image
+        - field_my_content_has_a_main_vide
+        - group_featured_news_wrapper
+        - field_short_title
+        - body
+  field_group:
+    group_featured_news_wrapper:
+      children:
+        - field_short_title
+        - body
+      parent_name: ''
+      weight: 3
+      format_type: html_element
+      region: ds_content
+      format_settings:
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: last-news-home-wrapper
+      label: 'Last News Home Wrapper'
+id: node.news.first_category_home
+targetEntityType: node
+bundle: news
+mode: first_category_home
+content:
+  body:
+    type: text_summary_or_trimmed
+    weight: 5
+    region: ds_content
+    label: hidden
+    settings:
+      trim_length: 54
+    third_party_settings:
+      field_formatter_class:
+        class: last-news-home-body
+  field_image:
+    weight: 1
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: content
+    third_party_settings:
+      field_formatter_class:
+        class: last-news-home-image
+      lazy:
+        placeholder_style: ''
+        lazy_image: '0'
+        data_uri: false
+    type: image
+    region: ds_content
+  field_my_content_has_a_main_vide:
+    weight: 2
+    label: hidden
+    settings:
+      format: custom
+      format_custom_true: 'on'
+      format_custom_false: ''
+    third_party_settings: {  }
+    type: boolean
+    region: ds_content
+  field_short_title:
+    weight: 4
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings:
+      field_formatter_class:
+        class: last-news-home-title
+    type: string
+    region: ds_content
+hidden:
+  addtoany: true
+  field_author: true
+  field_caption: true
+  field_category: true
+  field_comments: true
+  field_high_impact_news: true
+  field_tags: true
+  field_video: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

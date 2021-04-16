@@ -1,4 +1,28 @@
 window.onload = function() {
+  // blockquote para selection-sharer
+  const allBlockquote = document.querySelectorAll(
+    'blockquote:not([class*="twitter"])'
+  );
+
+  if (!!allBlockquote && allBlockquote.length) {
+    allBlockquote.forEach(blockquote => {
+      if (blockquote.firstElementChild.tagName === "P") {
+        let text = blockquote.firstElementChild.textContent;
+        blockquote.textContent = text;
+      }
+    });
+  }
+
+  //text summary para selection-sharer
+  let containerSummary = document.querySelector(
+    ".content-news-internal-first .views-element-container"
+  );
+
+  if (!!containerSummary) {
+    let summary = containerSummary.querySelector(".summary-news");
+    containerSummary.insertAdjacentElement("beforebegin", summary);
+  }
+
   // js video en interna
   var video_interna = document.querySelector(
     ".block-field-blocknodenewsfield-video"
@@ -167,12 +191,12 @@ window.onload = function() {
             node !== event.currentTarget &&
             node.nodeType === Node.ELEMENT_NODE
           ) {
-            if (event.target.closest(".wrapper-popup")) return;
-            node.querySelector(".wrapper-popup").classList.remove("active");
+            if (event.target.closest(".modal-video")) return;
+            node.querySelector(".modal-video").classList.remove("show");
             resetAlliframes();
           } else {
             if (event.target.closest(".wrapper-popup")) return;
-            node.querySelector(".wrapper-popup ").classList.toggle("active");
+            node.querySelector(".modal-video").classList.toggle("show");
             resetAlliframes();
           }
           node = node.nextElementSibling;
@@ -184,16 +208,12 @@ window.onload = function() {
       const contentActive = event.target.closest(".card-one-column") || false;
 
       if (!contentActive) {
-        document
-          .querySelector(".wrapper-popup.active")
-          .classList.remove("active");
+        document.querySelector(".modal-video.show").classList.remove("show");
         resetAlliframes();
       }
 
       if (event.target.classList.contains("close")) {
-        document
-          .querySelector(".wrapper-popup.active")
-          .classList.remove("active");
+        document.querySelector(".modal-video.show").classList.remove("show");
         resetAlliframes();
       }
     });
@@ -202,9 +222,7 @@ window.onload = function() {
   //// js para controlar pop-up advertising
   if (!!document.querySelector(".path-advertising")) {
     const allButtonsApply = document.querySelectorAll(".button-apply");
-    const allButtonsClose = document.querySelectorAll(
-      ".webform-contact-employer .close-modal"
-    );
+    const allButtonsClose = document.querySelectorAll(".close-modal");
 
     const showModal = event => {
       const parent = event.path.find(elementPath =>
@@ -229,16 +247,51 @@ window.onload = function() {
     );
   }
 
+  //// js para controlar pop-up about al dia live
+  if (!!document.querySelector(".path-about-al-dia-live")) {
+    //// js pop-up about al dia live
+    const buttonApply = document.querySelector(
+      ".path-about-al-dia-live .button-apply"
+    );
+    const buttonClose = document.querySelector(".close-modal");
+    const modalForm = document.querySelector(".modal-form");
+
+    buttonApply.addEventListener("click", () =>
+      modalForm.classList.add("show")
+    );
+    buttonClose.addEventListener("click", () =>
+      modalForm.classList.remove("show")
+    );
+
+    //// js pop-up about al dia live
+    const triggerVideo = document.querySelector(
+      ".block-views-blockabout-al-dia-live-block-1"
+    );
+    const buttonCloseVideo = document.querySelector(".close-video");
+    const video = document.querySelector(".modal-video");
+
+    //js temporal
+    video.insertAdjacentElement("afterbegin", buttonCloseVideo);
+
+    triggerVideo.addEventListener("click", () => {
+      video.classList.add("show");
+    });
+
+    buttonCloseVideo.addEventListener("click", event => {
+      debugger;
+      event.stopPropagation();
+      video.classList.remove("show");
+    });
+  }
+
   //// js desplegable buscador y close modal
   var arrow = document.querySelector(".path-search-results .arrow");
   var blocks_search = document.querySelector(
     "#block-exposedformsearch-results-al-dia-solrpage-1"
   );
-  var sort = document.querySelector(".block-search-api-sorts");
-  if (arrow != null && blocks_search != null && sort != null) {
+  if (arrow != null && blocks_search != null) {
     arrow.addEventListener("click", () => {
       blocks_search.classList.toggle("open");
-      sort.classList.toggle("open-flex");
       arrow.classList.toggle("rote");
     });
   }
@@ -260,4 +313,32 @@ window.onload = function() {
   if (comments != null && block_login_c != null) {
     block_login_c.style.display = "none";
   }
+
+  ///// js para select de categorias, subcategorias y subsubcategorias
+  Array.from(
+    document.querySelectorAll(
+      "#views-exposed-form-search-results-al-dia-solr-page-1 .form-item-field-category li label"
+    )
+  ).map(function(e) {
+    if (e != null && !e.innerHTML.includes("-")) {
+      e.classList.add("category");
+    } else if (e != null && e.innerHTML.includes("--")) {
+      e.parentElement.classList.add("subsubcategory");
+    }
+  });
+
+  ///// js para publicidad en bloques de categorias de noticias
+  Array.from(
+    document.querySelectorAll(
+      ".block-fixed-block-contentvertical-advertising-mobile"
+    )
+  ).map(function(e) {
+    if (e.children.children != null) {
+      e.closest(".mobile-less").parentElement.parentElement.classList.add(
+        "life-advertising"
+      );
+    } else {
+      e.parentElement.classList.add("dis-none");
+    }
+  });
 };

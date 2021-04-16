@@ -39,11 +39,17 @@ third_party_settings:
               label_display: '0'
               formatter:
                 label: hidden
-                type: image
+                type: responsive_image
                 settings:
-                  image_style: ''
+                  responsive_image_style: image_style_crop_page_headers_responsive
                   image_link: ''
-                third_party_settings: {  }
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+                  lazy:
+                    lazy_image: '0'
+                    placeholder_style: ''
+                    data_uri: false
               context_mapping:
                 entity: layout_builder.entity
                 view_mode: view_mode

@@ -1,0 +1,61 @@
+uuid: 358587ec-395f-4257-8a5d-a518465c6551
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_slider_block
+    - node.type.event
+    - paragraphs.paragraphs_type.sliders_in_internal_events
+  module:
+    - entity_reference_revisions
+id: node.event.field_slider_block
+field_name: field_slider_block
+entity_type: node
+bundle: event
+label: 'Slider block'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      sliders_in_internal_events: sliders_in_internal_events
+    target_bundles_drag_drop:
+      advertising_informative_items_:
+        weight: 12
+        enabled: false
+      advertising_options:
+        weight: 13
+        enabled: false
+      features_items:
+        weight: 14
+        enabled: false
+      features_more_covers:
+        weight: 15
+        enabled: false
+      guest:
+        weight: 16
+        enabled: false
+      gust_block:
+        weight: 17
+        enabled: false
+      i_am_an_employer_sections:
+        weight: 18
+        enabled: false
+      main_features:
+        weight: 19
+        enabled: false
+      sliders_in_internal_events:
+        enabled: true
+        weight: 20
+      social_media:
+        weight: 21
+        enabled: false
+      testimonies:
+        weight: 22
+        enabled: false
+field_type: entity_reference_revisions

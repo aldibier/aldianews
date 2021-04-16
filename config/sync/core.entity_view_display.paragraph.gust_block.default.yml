@@ -1,0 +1,37 @@
+uuid: d581ec7a-0da9-4b0a-979f-dbc1c17ffb94
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.gust_block.field_guest
+    - field.field.paragraph.gust_block.field_title
+    - paragraphs.paragraphs_type.gust_block
+  module:
+    - entity_reference_revisions
+    - field_formatter_class
+id: paragraph.gust_block.default
+targetEntityType: paragraph
+bundle: gust_block
+mode: default
+content:
+  field_guest:
+    type: entity_reference_revisions_entity_view
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings:
+      field_formatter_class:
+        class: guest-block-title
+    type: string
+    region: content
+hidden:
+  search_api_excerpt: true

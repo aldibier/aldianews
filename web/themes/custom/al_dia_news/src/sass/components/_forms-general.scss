@@ -1,0 +1,244 @@
+//-------------form style general------------//
+.form-general {
+  margin: auto;
+  display: block;
+  position: relative;
+  top: 140px;
+  background-color: $cwhite;
+  overflow: hidden;
+  z-index: 3;
+
+  form {
+    overflow-y: overlay;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    overscroll-behavior: contain;
+  }
+
+  .form-item-interest {
+    margin: 0;
+  }
+}
+
+//-------------form title------------//
+.views-label.views-label-field-webform {
+  width: 100%;
+  margin-bottom: 25px;
+  padding: 0 0 10px;
+  border-bottom: 1px solid $corange;
+  display: block;
+  font-size: szrem(34);
+  font-family: $Mod-Sbold;
+  font-weight: 600;
+  line-height: 41px;
+  color: $corange;
+}
+
+//-------------text information------------//
+.form-item-information-text {
+  width: 100%;
+  margin-bottom: 50px;
+  font-size: szrem(20);
+  font-family: $PrNovacond-reg;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 144%;
+  color: $cgrey6;
+
+  @media (max-width: $tablet) {
+    margin: 10px 0px 20px;
+    font-size: szrem(14);
+  }
+}
+
+//-------------button close form------------//
+button[name="close"],
+.close-modal {
+  position: absolute;
+  top: 50px;
+  right: 75px;
+  width: 20px;
+  height: 20px;
+  display: block;
+  font-size: 0;
+  background: url("../img/close.svg") center center no-repeat;
+  border: none;
+  cursor: pointer;
+}
+
+//-------------form advertising ------------//
+.webform-advertising,
+.webform-about-al-dia-live,
+.contact-form {
+  height: 100%;
+  // height: 70%;
+
+  .form-type-textfield,
+  .js-form-type-tel,
+  .js-form-type-email,
+  .js-form-item-city,
+  .js-form-item-state {
+    width: 50%;
+    margin: 0 0 25px;
+
+    @media (max-width: $tablet) {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+
+  .form-item-last-name,
+  .form-item-job-title,
+  .form-item-phone-number,
+  .js-form-item-city,
+  .js-form-item-state {
+    padding-left: 15px;
+
+    @media (max-width: $tablet) {
+      padding-left: 0;
+    }
+  }
+
+  fieldset {
+    border: 0px;
+    padding: 0px;
+    max-width: 290px;
+    width: 34.52381%;
+    margin: 0px;
+
+    @media (max-width: $tablet) {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    legend {
+      display: none;
+    }
+
+    .fieldset-wrapper {
+      margin: 20px 25px 0px 0px;
+
+      @media (max-width: $tablet) {
+        margin: 0;
+      }
+    }
+
+    .form-item-interest,
+    .form-item-budget {
+      margin-bottom: 30px;
+    }
+
+    .CaptionCont {
+      margin-top: 10px;
+    }
+  }
+
+  .SumoSelect {
+    width: 100%;
+  }
+
+  .form-type-textarea {
+    max-width: 65.4762%;
+    width: 100%;
+    margin-top: 20px;
+
+    @media (max-width: $tablet) {
+      width: 100%;
+      max-width: 100%;
+      margin-top: 0;
+      margin-bottom: 30px;
+    }
+  }
+
+  textarea {
+    max-width: 550px;
+    min-height: 145px;
+    margin-top: 10px;
+  }
+}
+
+//-------------form advertising ------------//
+.webform-advertising {
+  max-width: 990px;
+  height: 70%;
+  max-height: 945px;
+  padding: 100px 75px 89px;
+}
+
+//-------------form al dia live ------------//
+.webform-about-al-dia-live {
+  max-width: 990px;
+  height: 70%;
+  max-height: 890px;
+  padding: 100px 75px 89px;
+}
+
+//-------------- contact employer -------------//
+.contact-form-father {
+  max-height: 945px;
+  .field-content {
+    height: 70%;
+  }
+}
+.contact-form {
+  max-height: 945px;
+  overflow: hidden;
+  padding: 100px 75px 89px;
+  max-width: 990px;
+  height: 100%;
+}
+
+@media (max-width: $tablet) {
+  //-------------form style general------------//
+  .form-general {
+    top: 125px;
+    form {
+      height: 90%;
+    }
+  }
+
+  //-------------form title------------//
+  .views-label.views-label-field-webform {
+    margin-bottom: 15px;
+    padding: 0 0 7px;
+    font-size: szrem(18);
+    line-height: 22px;
+  }
+
+  //-------------button close form------------//
+  button[name="close"],
+  .close-modal {
+    width: 15px;
+    height: 15px;
+    background-size: contain;
+    top: 20px;
+    right: 20px;
+  }
+
+  //-------------form advertising ------------//
+  .webform-advertising {
+    width: calc(100% - 30px);
+    max-width: 990px;
+    max-height: 945px;
+    padding: 32px 20px 32px;
+  }
+
+  //-------------form al dia live ------------//
+  .webform-about-al-dia-live {
+    max-width: 990px;
+    max-height: 890px;
+    padding: 100px 75px 89px;
+  }
+
+  //-------------- contact employer -------------//
+  .contact-form-father {
+    .field-content {
+      width: calc(100% - 30px);
+      margin: 0 auto;
+    }
+  }
+  .contact-form {
+    padding: 32px 20px 27px;
+  }
+}

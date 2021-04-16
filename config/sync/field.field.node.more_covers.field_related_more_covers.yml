@@ -1,0 +1,52 @@
+uuid: 7af18722-d4de-4a80-9006-4b842d58e8f5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_related_more_covers
+    - node.type.more_covers
+    - paragraphs.paragraphs_type.features_more_covers
+  module:
+    - entity_reference_revisions
+id: node.more_covers.field_related_more_covers
+field_name: field_related_more_covers
+entity_type: node
+bundle: more_covers
+label: 'related more covers'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      features_more_covers: features_more_covers
+    target_bundles_drag_drop:
+      advertising_informative_items_:
+        weight: 9
+        enabled: false
+      advertising_options:
+        weight: 10
+        enabled: false
+      features_items:
+        weight: 11
+        enabled: false
+      features_more_covers:
+        enabled: true
+        weight: 12
+      i_am_an_employer_sections:
+        weight: 13
+        enabled: false
+      main_features:
+        weight: 14
+        enabled: false
+      social_media:
+        weight: 15
+        enabled: false
+      testimonies:
+        weight: 16
+        enabled: false
+field_type: entity_reference_revisions

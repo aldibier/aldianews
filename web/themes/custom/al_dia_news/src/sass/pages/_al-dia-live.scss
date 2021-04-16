@@ -1,23 +1,60 @@
 .path-about-al-dia-live {
-    .view-about-al-dia-live {
-        height: 560px;
-        margin-bottom: 70px;
-        padding: 0 85px 75px;
-        display: flex;
-        align-items: flex-end;
-        position: relative;
-        z-index: 1;
 
-        @media screen and (max-width: $broken) {
-            padding: 25px;
-        }
+    .modal-video{
+        display: none;
 
-        @media screen and (max-width: $tablet) {
-            height: 215px;
-            margin-bottom: 20px;
+        &.show {
+            display: block;
         }
     }
 
+    .modal-video.show {
+        display: block;
+    }
+
+
+    .modal-form{
+        display: none;
+
+        &.show {
+            display: block;
+        }
+    }
+
+    .modal-form.show {
+        display: block;
+    }
+
+    //------ about al dia live banner ------------//
+    .block-system-main-block {
+        .view-about-al-dia-live {
+            height: 560px;
+            margin-bottom: 70px;
+            padding: 0 85px 75px;
+            display: flex;
+            align-items: flex-end;
+            position: relative;
+            z-index: 1;
+    
+            .about-al-dia-live-title {
+                margin: 0;
+                padding: 0;
+                border: none;
+                display: flex;
+                align-items: center;
+            }
+    
+            @media screen and (max-width: $broken) {
+                padding: 25px;
+            }
+    
+            @media screen and (max-width: $tablet) {
+                height: 215px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+   
     .views-field-field-section-title {
         margin-right: 15px;
         display: inline-block;
@@ -29,16 +66,23 @@
         color:$cwhite ;
 
         @media screen and (max-width: $tablet) {
+            margin-right: 5px;
             font-size: szrem(25);
             line-height: 30px;
         }
     }
 
-    .views-field-field-image-for-the-title {
-        display: inline-block;
+    .views-field-fieldset-1 {
+        @media screen and (max-width: $tablet) {
+            img {
+                width: 95px;
+                height: 20px;
+                vertical-align: middle;
+            }
+        }
     }
 
-   .views-field-field-image {
+    .views-field-field-image {
        width: 100%;
        height: 100%;
        position: absolute;
@@ -64,12 +108,666 @@
       }
     }
 
+    .logo-title-live-desktop {
+        @media screen and (max-width: $tablet) {
+            display: none;
+        }
+    }
+
+    .logo-title-live-mobile {
+        display: none;
+        @media screen and (max-width: $tablet) {
+           display: block;
+        }
+    }
+
    //-------------advertising-----------------//
    .block-fixed-block-contenthorizontal-advertising {
-        margin: 0 auto 137px;
+        margin: 0 auto 90px;
+
+        @media screen and (max-width: $broken) {
+            margin: 0 auto 40px;
+        }
+    }
+
+    //-------------our events-----------------//
+    .block-block-groupadvertising-body-in-about-al-dia-live {
+        max-width: 1310px;
+        margin: 0 auto 90px;
+        padding: 0 15px;
 
         @media screen and (max-width: $tablet) {
-            margin: 0 auto 40px;
+            margin: 0 auto 45px;
+        }
+
+        .block-fixed-block-contentbig-vertical-advertising {
+            @media screen and (max-width: $broken) {
+                display: none;
+            }
+        }
+
+        > .content {
+            display: flex;
+        }
+    }
+
+    .block-fixed-block-contentbody-about-al-dia-live {
+        width: 800px;
+        max-width: 100%;
+        margin-right: 80px;
+
+        @media screen and (max-width: $broken) {
+            width: 100%;
+            margin-right: 0;
+        }
+
+        .field--type-text-with-summary {
+            margin-bottom: 90px;
+        }
+
+        h2 {
+            margin: 0 0 50px;
+            padding-top: 47px;  
+            font-size: szrem(54);
+            font-family: $Mod-bold;
+            font-style: normal;
+            font-weight: bold;
+            line-height: 65px;
+            color: $cgrey6;
+
+            @media screen and (max-width: $broken) {
+                padding-top: 0;  
+            }
+
+            @media screen and (max-width: $tablet) {
+                margin: 0 0 27px;
+                font-size: szrem(20);
+                line-height: 24px;
+            }
+        }
+
+        p {
+            font-size: szrem(26);
+            font-family: $PrNovacond-light;
+            font-style: normal;
+            font-weight: normal;
+            line-height: 140%;
+            color: $cgrey6;
+
+            @media screen and (max-width: $tablet) {
+                font-size: szrem(15);
+            }
+        }
+
+        a {
+            margin-right: 30px;
+            font-size: szrem(24);
+            @include button($btnWidth:250px,$btnHeight:55px,$btnBackground:$corange,$btnColor:$cwhite);
+
+            @media screen and (max-width: $tablet) {
+                width: 130px;
+                height: 30px;
+                margin-right: 20px;
+                font-size: szrem(12);
+                line-height: 30px;
+            }
+        }
+
+        .button-apply {
+            font-size: szrem(24);
+            @include button($btnWidth:250px,$btnHeight:55px,$btnBackground:$bgrey,$btnColor:$cwhite);
+
+            @media screen and (max-width: $tablet) {
+                width: 130px;
+                height: 30px;
+                font-size: szrem(12);
+                line-height: 30px;
+            }
+        }
+
+    }
+
+     //------ about al dia live video ------------//
+    .about-al-dia-live-container-video{
+        height: 630px;
+        margin-bottom: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+        cursor: pointer;
+
+        @media screen and (max-width: $tablet) {
+            height: 140px;
+            margin-bottom: 35px;
+        }
+
+        .field-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .views-field-nothing {
+            height: 100px;
+            margin-bottom: 74px;
+            position: relative;
+            order: -1;
+
+            @media screen and (max-width: $tablet) {
+                height: 30px;
+                margin-bottom: 20px;
+            }
+        }
+
+        .play-icon {
+            @include player-icon($desktop-size: 100px, $tablet-size:100px, $mobile-size:30px) 
+        }
+
+        .title-video-about-al-dia-live {
+            margin-bottom: 12px;
+            text-align: center;
+
+            @media screen and (max-width: $tablet) {
+                margin-bottom: 0;
+            }
+        }
+
+        .image-desktop {
+            @media screen and (max-width: $tablet) {
+                display: none;
+            }
+        }
+
+        .image-mobile {
+            display: none;
+            @media screen and (max-width: $tablet) {
+                display: block;
+                margin: 0 auto;
+            }
+        }
+
+        .video-title {
+            font-size: szrem(59);
+            font-family: $PrNovacond-bold;
+            font-style: normal;
+            font-weight: bold;
+            line-height: 72px;
+            color: $cwhite;
+
+            @media screen and (max-width: $tablet) {
+                font-size: szrem(15);
+                line-height: 18px;
+            }
+        }
+
+        .views-field-field-video-thumbnail {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: -1;
+
+            &::after {
+                @include absolute(top 0 left 0);
+                @include esize(100%);
+                display: block;
+                content: '';
+                background-color: rgba(34, 33, 35, 0.5);;
+            }
+        }
+
+        .about-al-dia-live-image {
+            width: 100%;
+            height: 100%;
+            
+            img {
+                width: inherit;
+                height: inherit;
+                object-fit: cover;
+            }
+        }
+
+        .about-al-dia-live-video {
+            width: 100%;
+            height: 100%;
+            max-width: 1280px;
+            margin: 0px auto;
+        }
+
+        .video-embed-field-provider-youtube {
+            height: 100%;
+            max-height: 720px;
+        }
+    }
+
+     //------ about al dia live slider ------------//
+     .block-views-blockabout-al-dia-live-block-2 {
+        max-width: 1310px;
+        margin: 0 auto;
+        padding: 0 15px;
+     }
+
+     .about-al-dia-live-slider {
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .slick-slider {
+            margin-bottom: 60px;
+            padding-bottom: 50px;
+            position: relative;
+
+            @media screen and (max-width: $tablet) {
+                margin-bottom: 30px;
+                padding-bottom: 30px;
+            }
+        }
+
+        .slick-list {
+            height: 335px;
+            margin-bottom: 40px;
+
+            @media screen and (max-width: $tablet) {
+                max-width: 500px;
+                margin: 0 auto;
+                height: 105px;
+                margin-bottom: 15px;
+            }
+        }
+
+        .slick-track {
+            height: inherit;
+            display: flex;
+            align-items: center;
+        }
+
+        .slick-slide {
+            width: 290px;
+            height: 165px;
+            margin: 0 100px;
+            padding: 0;
+            transition: margin 1s ease-in-out ;
+
+            @media screen and (max-width: $large-min) {
+                margin: 0 50px;
+            }
+
+            @media screen and (max-width: $tablet) {
+                width: 120px;
+                height: 65px;
+                margin: 0 22px;
+            }
+        }
+
+        .slick-center {
+            will-change: transform;
+            transform: scaleX(2.139) scaley(2.031); 
+            transition: all 500ms ease;
+
+            @media screen and (max-width: $large-min) {
+                transform: scaleX(1.4) scaley(1.4);
+            }
+
+            @media screen and (max-width: $tablet) {
+                transform: scaleX(1.63) scaleY(1.63);
+            }
+        }
+     }
+
+    //------ about al dia live statistics ------------//
+   .block-views-blockabout-al-dia-live-block-3 {
+        max-width: 1310px;
+        margin: 0 auto 64px;
+        padding: 0 15px;
+
+        @media screen and (max-width: $tablet) {
+            margin: 0 auto 35px;
+        }
+
+        .view-content {
+            padding: 43px 0 41px;
+            border-top: 2px solid $cgrey4;
+            border-bottom: 2px solid $cgrey4;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            justify-items: center;
+
+            @media screen and (max-width: $tablet) {
+                padding: 20px 0;
+                border-width: 1px;
+                grid-template-columns: 140px;
+                justify-content: center;
+            }
+        }
+
+        .views-row {
+            &:nth-child(2){
+                padding: 0 124px;
+                border-left: 2px solid $cgrey4;
+                border-right:  2px solid $cgrey4;
+            }
+
+            @media screen and (max-width: $broken) {
+                &:nth-child(2){
+                    padding: 0 35px;
+                }
+            }
+
+            @media screen and (max-width: $tablet) {
+                &:nth-child(2){
+                    padding: 0;
+                    border-left: none;
+                    border-right: none;
+                }
+
+                &:not(:last-child){
+                    width: 100%;
+                    margin-bottom: 10px;
+                    padding-bottom: 10px;
+                    border-bottom: 1px solid $cgrey4;
+                }
+            }
+        }
+
+        .views-field-field-item-name {
+            margin-bottom: 10px;
+            font-size: szrem(70);
+            font-family: $PrNovacond-bold;
+            font-style: normal;
+            font-weight: bold;
+            line-height: 85px;
+            letter-spacing: 0.025em;
+            color: $cgrey6;
+
+            @media screen and (max-width: $tablet) {
+                margin-bottom: 0;
+                font-size: szrem(25);
+                line-height: 30px;
+                text-align: center;
+            }
+        }
+
+        .views-field-field-item-text {
+            font-size: szrem(30);
+            font-family: $PrNovacond-light;
+            font-style: normal;
+            font-weight: normal;
+            line-height: 37px;
+            letter-spacing: 0.025em;
+            color: $cgrey6;
+
+            @media screen and (max-width: $tablet) {
+                font-size: szrem(15);
+                line-height: 18px;
+                text-align: center;
+            }
+        }
+    }
+
+    //------ about al dia live testimonies ------------//
+    .testimonial-wrapper {
+        max-width: 1310px;
+        margin: 0 auto 64px;
+        padding: 0 15px;
+
+        >.content {
+            display: flex;
+
+            @media screen and (max-width: $broken) {
+                align-items: center;
+                flex-direction: column;
+            }
+        }
+
+        .block-views-blockabout-al-dia-live-block-4 {
+            max-width: 63.67188%;//815px
+            margin-right: 75px;
+
+            @media screen and (max-width: $broken) {
+                max-width: 90%;
+                margin: 0 auto;
+            }
+
+            @media screen and (max-width: $tablet) {
+                max-width: 100%;
+                margin: 0 auto 40px;
+            }
+        }
+
+        .slick-slider {
+            padding-bottom: 50px;
+            position: relative;
+        }
+    }
+
+    .about-al-dia-live-testimonies {
+
+        @media screen and (max-width: $tablet) {
+            margin-bottom: 15px;
+        }
+
+        .views-field-field-testimonial {
+            position: relative;
+            margin-left: 40px;
+            margin-bottom: 10.5px;
+
+            @media screen and (max-width: $tablet) {
+                margin-left: 25px;
+                margin-bottom: 20px;
+            }
+
+            &::before {
+                content: '';
+                width: 30px;
+                height: 22px;
+                display: inline-block;
+                position: absolute;
+                left: calc(0% - 40px);
+                background-image: icon('left-quotes-gray');
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                
+                @media screen and (max-width: $tablet) {
+                    left: calc(0% - 25px);
+                }
+            }
+
+            &::after {
+                content: '';
+                width: 30px;
+                height: 22px;
+                display: inline-block;
+                background-image: icon('right-quotes-gray');
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+
+            @media screen and (max-width: $tablet) {
+                &::before,
+                &::after  {
+                    width: 20px;
+                    height: 14px;
+                }
+            }
+        }
+
+        .testimonial-author-testimonial {
+            margin-right: 10px;
+            display: inline;
+            font-size: szrem(30);
+            font-family: $PrNovacond-Sbold;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 140%;
+            color: $cgrey6;
+
+            @media screen and (max-width: $tablet) {
+                margin-bottom: 20px;
+                font-size: szrem(14);
+                line-height: 17px;
+            }
+        }
+
+        .testimonial-author {
+            margin-left: 40px;
+            display: grid;
+            grid-template-columns: 75px 1fr;
+            grid-auto-rows: auto;
+            grid-template-areas: 'photo name'
+                                 'photo position';
+            grid-gap: 0 30px;
+
+            @media screen and (max-width: $tablet) {
+                margin-left: 0;
+                grid-template-columns: 55px 1fr;
+                grid-gap: 0 10px;
+            }
+        }
+
+        .testimonial-author-photo {
+            width: 75px;
+            height: 75px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            grid-area: photo;
+            border-radius: 100%;
+            overflow: hidden;
+
+            @media screen and (max-width: $tablet) {
+                width: 55px;
+                height: 55px;
+            }
+        }
+
+        img {
+            transform: scale(1.5);
+        }
+
+        .testimonial-author-name {
+            margin-bottom: 10px;
+            grid-area: name;
+            align-self: flex-end;
+            font-size: szrem(18);
+            font-family: $Mod-bold;
+            font-style: normal;
+            font-weight: bold;
+            line-height: 22px;
+            color: $cgrey6;
+
+            @media screen and (max-width: $tablet) {
+                margin-bottom: 5px;
+                font-size: szrem(14);
+                line-height: 17px;
+            }
+        }
+
+        .testimonial-author-position {
+            grid-area: position;
+            font-size: szrem(14);
+            font-family: $PrNovacond-light;
+            font-style: normal;
+            font-weight: normal;
+            line-height: 125%;
+            color: $cgrey6;
+
+            @media screen and (max-width: $tablet) {
+                font-size: szrem(10);
+            }
+        }
+    }
+
+     //------ slick dots custom style ------------//
+     .slick-dots {
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+
+        .slick-active {
+            background-color: $red1;
+        }
+
+        li {
+            width: 0;
+            height: 0;
+            margin-right: 10px;
+            padding: 5px;
+            border: none;
+            font-size: 0;
+            background-color: #C4C4C4;
+            border-radius: 50%;
+            cursor: pointer;
+            
+            &:only-child {
+                display: none;
+            }
+
+            &:last-child {
+                margin: 0;
+            }
+            
+            @media screen and (max-width: $tablet) {
+                padding: 2.5px;
+            }
+        }
+
+        button {
+            width: 0;
+            height: 0;
+            margin: 0;
+            padding: 0;
+            border: none;
+            font-size: 0;
+            background-color: transparent;
+            visibility: hidden;
+        }
+    }
+
+    //------ slick arrows custom style ------------//
+    .slick-arrow {
+        width: 20px;
+        height: 12px;
+        border: none;
+        position: absolute;
+        bottom: calc(0% + 15px);
+        font-size: 0;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: transparent;
+
+        @media screen and (max-width: $tablet) {
+            width: 15px;
+            height: 10px;
+            bottom: calc(0% + 10px);
+        }
+    }
+    
+    .slick-prev {
+        left: calc(50% - 28px);
+        transform: translateX(-50%);
+        background-image: url('../../assets/img/arrow-left.svg');
+
+        @media screen and (max-width: $tablet) {
+            left: calc(50% - 25px);
+        }
+    }
+
+    .slick-next {
+        left: calc(50% + 28px);
+        transform: translateX(-50%);
+        background-image: url('../../assets/img/arrow-right.svg');
+
+        @media screen and (max-width: $tablet) {
+            left: calc(50% + 25px);
         }
     }
 }

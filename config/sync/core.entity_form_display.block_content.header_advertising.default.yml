@@ -11,7 +11,7 @@ dependencies:
     - field.field.block_content.header_advertising.field_section_title
     - image.style.thumbnail
   module:
-    - image
+    - image_widget_crop
     - paragraphs
     - text
 id: block_content.header_advertising.default
@@ -32,14 +32,22 @@ content:
   field_image:
     weight: 3
     settings:
-      progress_indicator: throbber
+      show_default_crop: true
+      warn_multiple_usages: true
       preview_image_style: thumbnail
+      crop_preview_image_style: crop_thumbnail
+      progress_indicator: throbber
+      crop_list:
+        - page_headers
+        - page_headers_mobile
+      crop_types_required: {  }
+      show_crop_area: false
     third_party_settings: {  }
-    type: image_image
+    type: image_widget_crop
     region: content
   field_information_with_icons:
     type: paragraphs
-    weight: 5
+    weight: 4
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -54,14 +62,6 @@ content:
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
     third_party_settings: {  }
-    region: content
-  field_mobile_image:
-    weight: 4
-    settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
-    third_party_settings: {  }
-    type: image_image
     region: content
   field_section_title:
     weight: 1
@@ -81,14 +81,15 @@ content:
     third_party_settings: {  }
   langcode:
     type: language_select
-    weight: 7
+    weight: 6
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   translation:
-    weight: 6
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_mobile_image: true

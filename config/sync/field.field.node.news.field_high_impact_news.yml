@@ -1,0 +1,23 @@
+uuid: e37087cb-2615-41ca-ae78-0317859451b3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_high_impact_news
+    - node.type.news
+id: node.news.field_high_impact_news
+field_name: field_high_impact_news
+entity_type: node
+bundle: news
+label: 'High-impact news'
+description: 'Activate this checkbox if the news or article is of great impact, it will be shown in the Home page with the related ones according to the tags that have been defined. '
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

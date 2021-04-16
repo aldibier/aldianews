@@ -17,6 +17,10 @@ img {
   margin: 0;
 }
 
+a {
+  border-bottom: 0px;
+}
+
 .user-logged-in {
   #header {
     top: 39px;
@@ -61,6 +65,10 @@ body.toolbar-tray-open.user-logged-in {
   }
 }
 
+.view-id-frontpage {
+  display: none;
+}
+
 #page {
   overflow: hidden;
 }
@@ -81,9 +89,29 @@ body.toolbar-tray-open.user-logged-in {
     max-width: 1440px;
     margin: 0 auto 0px;
     padding: 0px;
+    .section1310 {
+      max-width: 1310px;
+      padding: 0 15px;
+      margin: 0 auto;
+    }
     @media (max-width: $tablet) {
       margin-bottom: 0px;
       padding: 0px;
+      .padd15 {
+        padding: 0 15px;
+      }
+    }
+  }
+  .width1310 {
+    max-width: 1310px;
+    padding: 0 15px;
+    margin: 0 auto 40px;
+    @media (max-width: $tablet) {
+      margin-bottom: 40px;
+      padding: 0px;
+      .padd15 {
+        padding: 0 15px;
+      }
     }
   }
 }
@@ -97,6 +125,39 @@ body.toolbar-tray-open.user-logged-in {
 
   &::selection {
     background: $cyello;
+  }
+}
+
+.mobile-plus {
+  .card-more:nth-child(1),
+  .card-more:nth-child(2) {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .life-advertising {
+    .mobile-plus {
+      .card-more:nth-child(1),
+      .card-more:nth-child(2) {
+        display: block;
+      }
+    }
+
+    .mobile-less {
+      display: flex;
+      .card-one-column:last-child,
+      .card-one-column:nth-last-child(2) {
+        display: none;
+      }
+      .view-footer {
+        min-width: 50%;
+      }
+      .card-one-column {
+        width: auto;
+        max-width: none;
+      }
+    }
   }
 }
 
@@ -170,3 +231,26 @@ body.toolbar-tray-open.user-logged-in {
 }
 
 //---------------------end selection sharer----------------------//
+
+//---------------------main title----------------------//
+.main-title {
+  font-style: normal;
+  font-weight: bold;
+  font-size: $px76;
+  line-height: 112.8%;
+  color: $cblack;
+  font-family: $Modcond-bold;
+  margin: 60px 0 20px;
+
+  @media screen and(max-width: $tablet) {
+    font-size: 30px;
+    line-height: 112.8%;
+    margin: 30px 0 10px;
+  }
+}
+//---------------------end main title----------------------//
+
+//---------------------Clases generales----------------------//
+.dis-none {
+  display: none;
+}

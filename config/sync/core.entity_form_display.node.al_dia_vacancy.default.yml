@@ -9,7 +9,7 @@ dependencies:
     - image.style.thumbnail
     - node.type.al_dia_vacancy
   module:
-    - image
+    - image_widget_crop
     - path
     - text
 id: node.al_dia_vacancy.default
@@ -44,10 +44,18 @@ content:
   field_picture:
     weight: 122
     settings:
-      progress_indicator: throbber
+      show_default_crop: true
+      warn_multiple_usages: true
       preview_image_style: thumbnail
+      crop_preview_image_style: crop_thumbnail
+      progress_indicator: throbber
+      crop_list:
+        - page_headers
+        - page_headers_mobile
+      crop_types_required: {  }
+      show_crop_area: false
     third_party_settings: {  }
-    type: image_image
+    type: image_widget_crop
     region: content
   langcode:
     type: language_select
@@ -93,9 +101,9 @@ content:
     third_party_settings: {  }
   translation:
     weight: 10
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
   uid:
     type: entity_reference_autocomplete
     weight: 5

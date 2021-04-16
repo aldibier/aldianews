@@ -44,6 +44,22 @@ import initMain from "./main.js";
   }
 
   jQuery(document).ready(function() {
+    //// sumo select
+
+    Array.from(document.querySelectorAll(".region-content select")).map(
+      function(e) {
+        if (e != null) {
+          e.classList.add("testselect1");
+          console.log("1");
+          $(".testselect1").SumoSelect({
+            forceCustomRendering: true,
+            floatWidth: 300
+          });
+        }
+      }
+    );
+    ////////
+
     if (
       $(".page-node-type-news .video-embed-field-responsive-video iframe")
         .length
@@ -73,21 +89,6 @@ import initMain from "./main.js";
       $(".region-secondary-menu").removeClass("open-menu");
       $("body").removeClass("open-menu");
     });
-
-    //// sumo select
-
-    Array.from(document.querySelectorAll(".region-content select")).map(
-      function(e) {
-        if (e != null) {
-          e.classList.add("testselect1");
-          console.log("1");
-          $(".testselect1").SumoSelect({
-            forceCustomRendering: true,
-            floatWidth: 300
-          });
-        }
-      }
-    );
 
     //--------puopup-- login-----------//
     $(".user-logged-in #block-loginformpopup").click(function() {
@@ -137,6 +138,14 @@ import initMain from "./main.js";
         .addTo(controller2);
       //.addIndicators();
     }
+
+    $(
+      '#block-fixed-block-content-horizontal-advertising-close  button[name="close"]'
+    ).click(function() {
+      $("#block-fixed-block-content-horizontal-advertising-close").addClass(
+        "dis-none"
+      );
+    });
 
     $(".page-node-type-al-dia-vacancy .button-apply").click(function() {
       if (

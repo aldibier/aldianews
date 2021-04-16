@@ -6,7 +6,8 @@
     display: flex;
     align-items: flex-end;
     position: relative;
-
+    max-height: 710px;
+    overflow: hidden;
     @media screen and (min-width: $tablet) {
       min-height: 470px;
       margin: 0 -80px 70px;
@@ -257,7 +258,9 @@
       max-width: none;
       width: 100%;
     }
-
+    select li {
+      margin-bottom: 0px !important;
+    }
     textarea {
       margin-bottom: 15px;
       min-height: 200px;
@@ -793,6 +796,7 @@
       p {
         line-height: 21px;
         font-size: $px15;
+        padding: 0 15px;
       }
 
       .button-apply {

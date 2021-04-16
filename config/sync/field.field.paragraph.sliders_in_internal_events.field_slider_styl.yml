@@ -1,0 +1,21 @@
+uuid: 441c61c0-9ac7-422f-a3fb-2a42042f0803
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_slider_styl
+    - paragraphs.paragraphs_type.sliders_in_internal_events
+  module:
+    - options
+id: paragraph.sliders_in_internal_events.field_slider_styl
+field_name: field_slider_styl
+entity_type: paragraph
+bundle: sliders_in_internal_events
+label: 'Slider style'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

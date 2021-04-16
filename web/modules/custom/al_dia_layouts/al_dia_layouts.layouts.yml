@@ -395,3 +395,74 @@ basic_page_general_title_h2:
       label: Publicidad vertical uno
     two_vertical_advertising:
       label: Publicidad vertical dos
+
+categories_home:
+  label: 'Categories Home'
+  path: layouts/news
+  template: layout--categories-home
+  category: 'Home'
+  default_region: content
+  icon_map:
+    - [one_content]
+    - [two_content]   
+  regions:
+    one_content:
+      label: Primero - Imagen
+    two_content:
+      label: Segundo - Contenido
+
+
+first_category_home:
+  label: 'First Category Home'
+  path: layouts/news
+  template: layout--first-category-home
+  category: 'Home'
+  default_region: content
+  icon_map:
+    - [one_content]
+    - [two_content]   
+  regions:
+    one_content:
+      label: Primero - Imagen
+    two_content:
+      label: Segundo - Contenido
+
+
+more_covers:
+  label: 'More Covers'
+  path: layouts/more_covers
+  template: layout--more-covers
+  category: 'content'
+  default_region: content
+  icon_map:
+    - [one_content]
+    - [two_content]   
+    - [three_content]   
+  regions:
+    one_content:
+      label: Primero - Contenido
+    two_content:
+      label: Segundo - Publividad
+    three_content:
+      label: Tercero - Relacionados
+
+events:
+  label: 'Interna de eventos'
+  path: layouts/events
+  template: layout--events
+  category: 'content'
+  default_region: content
+  icon_map:
+    - [header_content]
+    - [one_first, one_second]   
+    - [two_content]   
+    - [three_content]   
+  regions:
+    header_content:
+      label: Header - Contenido
+    one_first:
+      label: Primero - Contenido
+    one_second:
+      label: Primero - Contenido - Publicidad
+    three_content:
+      label: Tercero - Relacionados
