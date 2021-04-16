@@ -272,6 +272,19 @@ import initMain from "./main.js";
             var context = $(this);
             context.toggleClass("active-check");
           });
+
+        /// js para esrilos de boton de eliminar archivo
+        Array.from(
+          document.querySelectorAll(
+            ".webform-submission-apply-to-this-job-form .form-type-checkbox input"
+          )
+        ).map(function(e) {
+          if (e != null) {
+            e.addEventListener("click", () => {
+              e.closest(".form-managed-file").classList.add("action-button");
+            });
+          }
+        });
       });
     }
   };

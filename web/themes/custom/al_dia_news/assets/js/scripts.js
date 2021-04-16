@@ -1740,6 +1740,14 @@ __webpack_require__.r(__webpack_exports__);
         $("." + currentClass, context).once("js-form-fake-checkbox").click(function () {
           var context = $(this);
           context.toggleClass("active-check");
+        }); /// js para esrilos de boton de eliminar archivo
+
+        Array.from(document.querySelectorAll(".webform-submission-apply-to-this-job-form .form-type-checkbox input")).map(function (e) {
+          if (e != null) {
+            e.addEventListener("click", function () {
+              e.closest(".form-managed-file").classList.add("action-button");
+            });
+          }
         });
       });
     }
