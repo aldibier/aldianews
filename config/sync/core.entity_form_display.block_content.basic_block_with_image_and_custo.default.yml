@@ -9,7 +9,7 @@ dependencies:
     - field.field.block_content.basic_block_with_image_and_custo.field_image_block
     - image.style.thumbnail
   module:
-    - image
+    - image_widget_crop
     - text
 id: block_content.basic_block_with_image_and_custo.default
 targetEntityType: block_content
@@ -35,10 +35,18 @@ content:
   field_image_block:
     weight: 6
     settings:
-      progress_indicator: throbber
+      show_default_crop: true
+      warn_multiple_usages: true
       preview_image_style: thumbnail
+      crop_preview_image_style: crop_thumbnail
+      progress_indicator: throbber
+      crop_list:
+        - page_headers
+        - page_headers_mobile
+      crop_types_required: {  }
+      show_crop_area: false
     third_party_settings: {  }
-    type: image_image
+    type: image_widget_crop
     region: content
   info:
     type: string_textfield
