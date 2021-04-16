@@ -3,24 +3,38 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.sliders_in_internal_events.field_image
+    - field.field.paragraph.sliders_in_internal_events.field_image_slider
+    - field.field.paragraph.sliders_in_internal_events.field_images
     - field.field.paragraph.sliders_in_internal_events.field_title
     - image.style.thumbnail
     - paragraphs.paragraphs_type.sliders_in_internal_events
   module:
     - image
+    - paragraphs
 id: paragraph.sliders_in_internal_events.default
 targetEntityType: paragraph
 bundle: sliders_in_internal_events
 mode: default
 content:
-  field_image:
-    weight: 1
+  field_image_slider:
+    weight: 2
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
     type: image_image
+    region: content
+  field_images:
+    type: entity_reference_paragraphs
+    weight: 1
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
     region: content
   field_title:
     weight: 0

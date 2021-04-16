@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.event.field_logo
     - field.field.node.event.field_nomination_status
     - field.field.node.event.field_present_by
+    - field.field.node.event.field_slider_block
     - field.field.node.event.field_venue_of_the_event
     - fixed_block_content.fixed_block_content._small_vertical_advertising
     - node.type.event
@@ -335,6 +336,23 @@ third_party_settings:
                 view_mode: view_mode
             additional: {  }
             weight: -10
+          ada1435c-e844-4f7f-900f-e61c2afe5de5:
+            uuid: ada1435c-e844-4f7f-900f-e61c2afe5de5
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:event:field_slider_block'
+              formatter:
+                type: entity_reference_revisions_entity_view
+                label: above
+                settings:
+                  view_mode: default
+                  link: ''
+                third_party_settings: {  }
+            additional: {  }
+            weight: 2
         third_party_settings: {  }
 id: node.event.default
 targetEntityType: node
@@ -400,6 +418,15 @@ content:
       image_link: ''
     third_party_settings: {  }
     type: image
+    region: content
+  field_slider_block:
+    type: entity_reference_revisions_entity_view
+    weight: 110
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
     region: content
   field_venue_of_the_event:
     weight: 107
