@@ -1,0 +1,44 @@
+uuid: c14cae2a-2172-4d6a-9c38-8fd23226f907
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.image_style_crop_page_headers_desktop
+    - image.style.image_style_crop_page_headers_mobile
+  theme:
+    - al_dia_news
+id: image_style_crop_page_headers_responsive
+label: 'Image Style crop Page headers RESPONSIVE'
+image_style_mappings:
+  -
+    breakpoint_id: al_dia_news.extra_x2_large
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: image_style_crop_page_headers_desktop
+  -
+    breakpoint_id: al_dia_news.extra_large
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: image_style_crop_page_headers_desktop
+  -
+    breakpoint_id: al_dia_news.large
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: image_style_crop_page_headers_desktop
+  -
+    breakpoint_id: al_dia_news.medium
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: image_style_crop_page_headers_desktop
+  -
+    breakpoint_id: al_dia_news.small
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: image_style_crop_page_headers_mobile
+  -
+    breakpoint_id: al_dia_news.extra_small
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: image_style_crop_page_headers_mobile
+breakpoint_group: 'Al dia news'
+fallback_image_style: '_original image_'

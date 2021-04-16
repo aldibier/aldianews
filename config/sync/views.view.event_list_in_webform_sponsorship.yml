@@ -309,6 +309,7 @@ display:
           field_api_classes: false
       defaults:
         fields: false
+        footer: false
       row:
         type: entity_reference
         options:
@@ -328,6 +329,18 @@ display:
         options:
           items_per_page: 5
           offset: 0
+      footer:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content: Other
+          plugin_id: text_custom
     cache_metadata:
       max-age: -1
       contexts:

@@ -17,6 +17,10 @@ img {
   margin: 0;
 }
 
+a {
+  border-bottom: 0px;
+}
+
 .user-logged-in {
   #header {
     top: 39px;
@@ -132,17 +136,27 @@ body.toolbar-tray-open.user-logged-in {
 }
 
 @media (max-width: 768px) {
-  .mobile-plus {
-    .card-more:nth-child(1),
-    .card-more:nth-child(2) {
-      display: block;
+  .life-advertising {
+    .mobile-plus {
+      .card-more:nth-child(1),
+      .card-more:nth-child(2) {
+        display: block;
+      }
     }
-  }
 
-  .mobile-less {
-    .card-one-column:last-child,
-    .card-one-column:nth-last-child(2) {
-      display: none;
+    .mobile-less {
+      display: flex;
+      .card-one-column:last-child,
+      .card-one-column:nth-last-child(2) {
+        display: none;
+      }
+      .view-footer {
+        min-width: 50%;
+      }
+      .card-one-column {
+        width: auto;
+        max-width: none;
+      }
     }
   }
 }

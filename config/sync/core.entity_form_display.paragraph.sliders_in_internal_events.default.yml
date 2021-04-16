@@ -4,13 +4,12 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.sliders_in_internal_events.field_image_slider
-    - field.field.paragraph.sliders_in_internal_events.field_images
+    - field.field.paragraph.sliders_in_internal_events.field_slider_styl
     - field.field.paragraph.sliders_in_internal_events.field_title
     - image.style.thumbnail
     - paragraphs.paragraphs_type.sliders_in_internal_events
   module:
     - image
-    - paragraphs
 id: paragraph.sliders_in_internal_events.default
 targetEntityType: paragraph
 bundle: sliders_in_internal_events
@@ -24,17 +23,11 @@ content:
     third_party_settings: {  }
     type: image_image
     region: content
-  field_images:
-    type: entity_reference_paragraphs
-    weight: 1
-    settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: open
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: ''
+  field_slider_styl:
+    weight: 3
+    settings: {  }
     third_party_settings: {  }
+    type: options_select
     region: content
   field_title:
     weight: 0

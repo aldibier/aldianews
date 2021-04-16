@@ -1,0 +1,17 @@
+uuid: 35bb6fdd-200e-4eb7-8e98-c936905990cc
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.page_headers_mobile
+  module:
+    - crop
+name: image_style_crop_page_headers_mobile
+label: 'Image Style crop Page headers MOBILE'
+effects:
+  6b06396c-a8b7-41b1-9fe1-89bf5ace7775:
+    uuid: 6b06396c-a8b7-41b1-9fe1-89bf5ace7775
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: page_headers_mobile

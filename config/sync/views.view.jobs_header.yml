@@ -8,9 +8,10 @@ dependencies:
     - field.storage.block_content.field_custom_title
     - field.storage.block_content.field_description
     - field.storage.block_content.field_image_block
+    - responsive_image.styles.image_style_crop_page_headers_responsive
   module:
     - block_content
-    - image
+    - responsive_image
     - text
 id: jobs_header
 label: 'Jobs Header'
@@ -174,9 +175,9 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: image
+          type: responsive_image
           settings:
-            image_style: ''
+            responsive_image_style: image_style_crop_page_headers_responsive
             image_link: ''
           group_column: ''
           group_columns: {  }

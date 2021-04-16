@@ -1,0 +1,17 @@
+uuid: 15353dc5-4c44-41c8-9a69-79aa947f5e89
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.page_headers
+  module:
+    - crop
+name: image_style_crop_page_headers_desktop
+label: 'Image Style crop Page headers DESKTOP'
+effects:
+  b1dbad11-ace8-48ca-ae36-8b4b4c18c70b:
+    uuid: b1dbad11-ace8-48ca-ae36-8b4b4c18c70b
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: page_headers
