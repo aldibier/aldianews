@@ -208,16 +208,12 @@ window.onload = function() {
       const contentActive = event.target.closest(".card-one-column") || false;
 
       if (!contentActive) {
-        document
-          .querySelector(".modal-video.show")
-          .classList.remove("show");
+        document.querySelector(".modal-video.show").classList.remove("show");
         resetAlliframes();
       }
 
       if (event.target.classList.contains("close")) {
-        document
-          .querySelector(".modal-video.show")
-          .classList.remove("show");
+        document.querySelector(".modal-video.show").classList.remove("show");
         resetAlliframes();
       }
     });
@@ -235,14 +231,14 @@ window.onload = function() {
       const form = parent.querySelector(".modal-form");
       form.classList.add("show");
     };
-  
+
     const hideModal = event => {
       const form = event.path.find(elementPath =>
         elementPath.classList.contains("modal-form")
       );
       form.classList.remove("show");
     };
-  
+
     allButtonsApply.forEach(buttonApply =>
       buttonApply.addEventListener("click", showModal)
     );
@@ -253,31 +249,38 @@ window.onload = function() {
 
   //// js para controlar pop-up about al dia live
   if (!!document.querySelector(".path-about-al-dia-live")) {
+    //// js pop-up about al dia live
+    const buttonApply = document.querySelector(
+      ".path-about-al-dia-live .button-apply"
+    );
+    const buttonClose = document.querySelector(".close-modal");
+    const modalForm = document.querySelector(".modal-form");
+
+    buttonApply.addEventListener("click", () =>
+      modalForm.classList.add("show")
+    );
+    buttonClose.addEventListener("click", () =>
+      modalForm.classList.remove("show")
+    );
 
     //// js pop-up about al dia live
-    const buttonApply = document.querySelector('.path-about-al-dia-live .button-apply');
-    const buttonClose = document.querySelector('.close-modal');
-    const modalForm = document.querySelector('.modal-form');
-    
-    buttonApply.addEventListener('click',()=>modalForm.classList.add('show'));
-    buttonClose.addEventListener('click',()=>modalForm.classList.remove('show'));
-
-     //// js pop-up about al dia live
-     const triggerVideo = document.querySelector('.block-views-blockabout-al-dia-live-block-1');
-     const buttonCloseVideo = document.querySelector('.close-video');
-     const video = document.querySelector('.modal-video');
+    const triggerVideo = document.querySelector(
+      ".block-views-blockabout-al-dia-live-block-1"
+    );
+    const buttonCloseVideo = document.querySelector(".close-video");
+    const video = document.querySelector(".modal-video");
 
     //js temporal
-    video.insertAdjacentElement('afterbegin',buttonCloseVideo);
+    video.insertAdjacentElement("afterbegin", buttonCloseVideo);
 
-    triggerVideo.addEventListener('click',()=>{
-      video.classList.add('show')
+    triggerVideo.addEventListener("click", () => {
+      video.classList.add("show");
     });
 
-    buttonCloseVideo.addEventListener('click',(event)=>{
-      debugger
+    buttonCloseVideo.addEventListener("click", event => {
+      debugger;
       event.stopPropagation();
-      video.classList.remove('show');
+      video.classList.remove("show");
     });
   }
 
@@ -321,6 +324,21 @@ window.onload = function() {
       e.classList.add("category");
     } else if (e != null && e.innerHTML.includes("--")) {
       e.parentElement.classList.add("subsubcategory");
+    }
+  });
+
+  ///// js para publicidad en bloques de categorias de noticias
+  Array.from(
+    document.querySelectorAll(
+      ".block-fixed-block-contentvertical-advertising-mobile"
+    )
+  ).map(function(e) {
+    if (e.children.children != null) {
+      e.closest(".mobile-less").parentElement.parentElement.classList.add(
+        "life-advertising"
+      );
+    } else {
+      e.parentElement.classList.add("dis-none");
     }
   });
 };
