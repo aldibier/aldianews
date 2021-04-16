@@ -264,11 +264,17 @@ window.onload = function() {
     );
 
     //// js pop-up about al dia live
-    const triggerVideo = document.querySelector(
-      ".block-views-blockabout-al-dia-live-block-1"
-    );
-    const buttonCloseVideo = document.querySelector(".close-video");
-    const video = document.querySelector(".modal-video");
+    const buttonApply = document.querySelector('.path-about-al-dia-live .button-apply');
+    const buttonClose = document.querySelector('.close-modal');
+    const modalForm = document.querySelector('.modal-form');
+    
+    buttonApply.addEventListener('click',()=>modalForm.classList.add('show'));
+    buttonClose.addEventListener('click',()=>modalForm.classList.remove('show'));
+
+     //// js pop-up about al dia live
+     const triggerVideo = document.querySelector('.block-views-blockabout-al-dia-live-block-1 .about-al-dia-live-container-video');
+     const buttonCloseVideo = document.querySelector('.close-video');
+     const video = document.querySelector('.modal-video');
 
     //js temporal
     video.insertAdjacentElement("afterbegin", buttonCloseVideo);
