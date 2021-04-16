@@ -1442,7 +1442,7 @@ window.onload = function () {
       return modalForm.classList.remove('show');
     }); //// js pop-up about al dia live
 
-    var triggerVideo = document.querySelector('.block-views-blockabout-al-dia-live-block-1');
+    var triggerVideo = document.querySelector('.block-views-blockabout-al-dia-live-block-1 .about-al-dia-live-container-video');
     var buttonCloseVideo = document.querySelector('.close-video');
     var video = document.querySelector('.modal-video'); //js temporal
 

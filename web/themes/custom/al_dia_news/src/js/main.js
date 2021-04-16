@@ -263,7 +263,7 @@ window.onload = function() {
     buttonClose.addEventListener('click',()=>modalForm.classList.remove('show'));
 
      //// js pop-up about al dia live
-     const triggerVideo = document.querySelector('.block-views-blockabout-al-dia-live-block-1');
+     const triggerVideo = document.querySelector('.block-views-blockabout-al-dia-live-block-1 .about-al-dia-live-container-video');
      const buttonCloseVideo = document.querySelector('.close-video');
      const video = document.querySelector('.modal-video');
 
