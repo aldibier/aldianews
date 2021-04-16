@@ -338,7 +338,7 @@ window.onload = function() {
         "life-advertising"
       );
     } else {
-      e.parentElement.classList.add("dis-none");
+      e.parentElement.parentElement.classList.add("mobile-free");
     }
   });
 };

@@ -92,6 +92,10 @@
       font-weight: 600;
       line-height: 19px;
       color: $corange;
+      @media screen and (max-width: $tablet) {
+        font-size: 10px;
+        line-height: 12px;
+      }
     }
   }
   .card-title {
@@ -118,8 +122,8 @@
       margin-bottom: 5px;
 
       a {
-        font-size: szrem(24);
-        line-height: 29px;
+        font-size: szrem(14);
+        line-height: 17px;
       }
     }
 
