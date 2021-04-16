@@ -3,24 +3,35 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.sliders_in_internal_events.field_image
+    - field.field.paragraph.sliders_in_internal_events.field_image_slider
+    - field.field.paragraph.sliders_in_internal_events.field_images
     - field.field.paragraph.sliders_in_internal_events.field_title
     - paragraphs.paragraphs_type.sliders_in_internal_events
   module:
+    - entity_reference_revisions
     - image
 id: paragraph.sliders_in_internal_events.default
 targetEntityType: paragraph
 bundle: sliders_in_internal_events
 mode: default
 content:
-  field_image:
-    weight: 1
-    label: hidden
+  field_image_slider:
+    weight: 2
+    label: above
     settings:
       image_style: ''
       image_link: ''
     third_party_settings: {  }
     type: image
+    region: content
+  field_images:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
     region: content
   field_title:
     weight: 0

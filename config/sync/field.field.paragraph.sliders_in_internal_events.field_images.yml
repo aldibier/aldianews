@@ -1,0 +1,64 @@
+uuid: 5d8d47f2-3031-41c3-8778-be403173c5ca
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_images
+    - paragraphs.paragraphs_type.images
+    - paragraphs.paragraphs_type.sliders_in_internal_events
+  module:
+    - entity_reference_revisions
+id: paragraph.sliders_in_internal_events.field_images
+field_name: field_images
+entity_type: paragraph
+bundle: sliders_in_internal_events
+label: Images
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      images: images
+    target_bundles_drag_drop:
+      advertising_informative_items_:
+        weight: 13
+        enabled: false
+      advertising_options:
+        weight: 14
+        enabled: false
+      features_items:
+        weight: 15
+        enabled: false
+      features_more_covers:
+        weight: 16
+        enabled: false
+      guest:
+        weight: 17
+        enabled: false
+      gust_block:
+        weight: 18
+        enabled: false
+      i_am_an_employer_sections:
+        weight: 20
+        enabled: false
+      images:
+        enabled: true
+        weight: 19
+      main_features:
+        weight: 21
+        enabled: false
+      sliders_in_internal_events:
+        weight: 22
+        enabled: false
+      social_media:
+        weight: 23
+        enabled: false
+      testimonies:
+        weight: 24
+        enabled: false
+field_type: entity_reference_revisions
