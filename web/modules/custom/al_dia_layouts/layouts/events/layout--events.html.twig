@@ -18,6 +18,11 @@
           {{ content.header_content }} 
         </div>
     {% endif %}
+    {% if content.content_header %}
+        <div {{ region_attributes.content_header.addClass('header-content-date-place') }}>
+          {{ content.content_header }} 
+        </div>
+    {% endif %}
 	<div {{ region_attributes.two_content.addClass('container-right-event') }}>
 		<div class="section-event-body">
 			{% if content.one_first %}
