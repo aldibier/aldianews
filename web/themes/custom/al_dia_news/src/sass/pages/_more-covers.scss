@@ -1,368 +1,357 @@
 // --------interna more-covers -----------///
 .page-node-type-more-covers {
-    h1 {
-        font-size: $px42;
-        line-height: 50px;
-        letter-spacing: 1px;
+  h1 {
+    font-size: $px42;
+    line-height: 50px;
+    letter-spacing: 1px;
+  }
+
+  .block-field-blocknodemore-coversfield-cover-page {
+    img {
+      width: 100%;
+    }
+  }
+
+  .block-field-blocknodemore-coversfield-start-date {
+    width: max-content;
+    display: inline-block;
+    width: max-content;
+    display: inline-block;
+    font-family: $PrNovacond-bold;
+    font-style: normal;
+    font-weight: bold;
+    font-size: $px26;
+    line-height: 32px;
+    text-transform: uppercase;
+    color: $cblack;
+  }
+
+  .block-field-blocknodemore-coversfield-end-date {
+    width: max-content;
+    color: $cblack;
+    display: inline-block;
+    font-family: $PrNovacond-bold;
+    font-style: normal;
+    font-weight: bold;
+    font-size: $px26;
+    line-height: 32px;
+    text-transform: uppercase;
+
+    &:before {
+      content: "-";
+      margin: 0 5px;
+      display: inline-block;
+    }
+
+    .content {
+      display: inline-block;
+    }
+  }
+
+  .related-content-covers {
+    border-top: 3px solid $cblack3;
+    margin: 50px auto 0;
+
+    .field__label {
+      font-style: normal;
+      font-weight: 600;
+      font-size: $px34;
+      line-height: 41px;
+      color: $cblack3;
+      background: white;
+      padding: 0 20px 0 0;
+      margin: -20px 0 20px;
+      width: max-content;
+      text-transform: uppercase;
+      font-family: $Mod-Sbold;
+    }
+
+    .field__items {
+      display: flex;
+      flex-wrap: wrap;
+
+      > .field__item {
+        width: 50%;
+        margin: 35px 0;
+        &:nth-child(2n) {
+          padding: 0 0 0 20px;
+          position: relative;
+
+          &:after {
+            content: "";
+            width: 1px;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: block;
+            background: $cgrey4;
+          }
+        }
+
+        &:nth-child(2n + 1) {
+          padding: 0 20px 0 0;
+
+          &:before {
+            content: "";
+            width: calc(100% - 440px);
+            height: 1px;
+            position: absolute;
+            left: 0;
+            display: block;
+            background: $cgrey4;
+            margin: -35px 0 35px;
+          }
+        }
+
+        &:first-child {
+          &::before {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .field--name-field-image-related-covers {
+      width: 100%;
+      max-height: 235px;
+      overflow: hidden;
+      margin: 0 0 20px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .field--name-field-taxonomy-term-related-cove {
+      margin: 0 0 20px;
+
+      a {
+        font-style: normal;
+        font-weight: 600;
+        font-size: $px16;
+        line-height: 19px;
+        color: $corange;
+        font-family: $ModernoFB-Regular;
+        text-decoration: none;
+        border: none;
+      }
+    }
+
+    .card-title {
+      font-style: normal;
+      font-weight: bold;
+      font-size: $px28;
+      line-height: 34px;
+      text-transform: uppercase;
+      color: $cblack;
+      font-family: $PrNovacond-bold;
+    }
+  }
+
+  @media (min-width: $broken) {
+    .content-right-pages {
+      position: relative;
+
+      &::after {
+        content: "";
+        width: 1px;
+        position: absolute;
+        height: 100%;
+        display: block;
+        background: $cgrey4;
+        left: -20px;
+        top: 0;
+      }
+    }
+  }
+
+  @media (max-width: $broken) {
+    .related-content-covers {
+      .field__items {
+        > .field__item {
+          &:nth-child(2n + 1) {
+            &:before {
+              width: 100%;
+            }
+          }
+        }
+      }
     }
 
     .block-field-blocknodemore-coversfield-cover-page {
-        img {
-            width: 100%;
-        }
+      margin: 0 0 15px;
     }
 
+    .block-fixed-block-contentbig-vertical-advertising {
+      display: none;
+    }
+  }
+
+  @media (max-width: $tablet) {
+    h1 {
+      font-size: 20px;
+      line-height: 24px;
+    }
+
+    .block-field-blocknodemore-coversfield-end-date,
     .block-field-blocknodemore-coversfield-start-date {
-        width: max-content;
-        display: inline-block;
-        width: max-content;
-        display: inline-block;
-        font-family: $PrNovacond-bold;
-        font-style: normal;
-        font-weight: bold;
-        font-size: $px26;
-        line-height: 32px;
-        text-transform: uppercase;
-        color: $cblack;
-    }
-
-    .block-field-blocknodemore-coversfield-end-date {
-        width: max-content;
-        color: $cblack;
-        display: inline-block;
-        font-family: $PrNovacond-bold;
-        font-style: normal;
-        font-weight: bold;
-        font-size: $px26;
-        line-height: 32px;
-        text-transform: uppercase;
-
-        &:before {
-            content: '-';
-            margin: 0 5px;
-            display: inline-block;
-        }
-
-        .content {
-            display: inline-block;
-        }
+      font-size: 14px;
+      line-height: 17px;
     }
 
     .related-content-covers {
-        border-top: 3px solid $cblack3;
-        margin: 50px auto 0;
+      border-top: 1.5px solid $cblack3;
+      margin: 30px auto 0;
 
-        .field__label {
-            font-style: normal;
-            font-weight: 600;
-            font-size: $px34;
-            line-height: 41px;
-            color: $cblack3;
-            background: white;
-            padding: 0 20px 0 0;
-            margin: -20px 0 20px;
-            width: max-content;
-            text-transform: uppercase;
-            font-family: $Mod-Sbold;
+      .field__label {
+        font-size: 15px;
+        line-height: 18px;
+        margin: -10px 0 10px;
+      }
+
+      .field--name-field-image-related-covers {
+        margin: 0 0 10px;
+      }
+
+      .field--name-field-taxonomy-term-related-cove {
+        margin: 0 0 10px;
+
+        a {
+          font-size: 10px;
+          line-height: 12px;
         }
+      }
 
-        .field__items {
-            display: flex;
-            flex-wrap: wrap;
+      .card-title {
+        font-size: 14px;
+        line-height: 17px;
+      }
 
-            >.field__item {
-                width: 50%;
-                margin: 35px 0;
-                &:nth-child(2n){
-                    padding: 0 0 0 20px;
-                    position: relative;
+      .field__items {
+        display: flex;
+        flex-wrap: wrap;
 
-                    &:after {
-                        content: '';
-                        width: 1px;
-                        height: 100%;
-                        position: absolute;
-                        left: 0;
-                        top: 0;
-                        display: block;
-                        background: $cgrey4;
-                    }
-                }
+        > .field__item {
+          margin: 20px 0;
 
-                &:nth-child(2n + 1){
-                    padding: 0 20px 0 0;
-
-                    &:before {
-                        content: '';
-                        width: calc(100% - 440px);
-                        height: 1px;
-                        position: absolute;
-                        left: 0;
-                        display: block;
-                        background: $cgrey4;
-                        margin: -35px 0 35px;
-                    }
-                }
-
-                &:first-child {
-                    &::before {
-                        display: none;
-                    }
-                }
-
-            }
-        }
-
-        .field--name-field-image-related-covers {
-            width: 100%;
-            max-height: 235px;
-            overflow: hidden;
-            margin: 0 0 20px;
-
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-        }
-
-        .field--name-field-taxonomy-term-related-cove {
-            margin: 0 0 20px;
-
-            a {
-                font-style: normal;
-                font-weight: 600;
-                font-size: $px16;
-                line-height: 19px;
-                color: $corange;
-                font-family: $ModernoFB-Regular;
-                text-decoration: none;
-                border: none;
-            }
-        }
-
-        .card-title {
-            font-style: normal;
-            font-weight: bold;
-            font-size: $px28;
-            line-height: 34px;
-            text-transform: uppercase;
-            color: $cblack;
-            font-family: $PrNovacond-bold;
-        }
-    }
-
-    @media( min-width: $broken){
-        .content-right-pages {
+          &:nth-child(2n) {
+            padding: 0 0 0 5px;
             position: relative;
-            
-            &::after {
-                content: '';
-                width: 1px;
-                position: absolute;
-                height: 100%;
-                display: block;
-                background: $cgrey4;
-                left: -20px;
-                top: 0;
+
+            &:after {
+              display: none;
             }
+          }
+
+          &:nth-child(2n + 1) {
+            padding: 0 5px 0 0;
+
+            &:before {
+              margin: -20px 0 20px;
+            }
+          }
         }
+      }
     }
-
-    @media( max-width: $broken){
-
-        .related-content-covers {
-
-            .field__items {
-
-                >.field__item {
-
-                    &:nth-child(2n+1){
-                        &:before {
-                            width: 100%;
-                        }
-                    }
-                }
-            }
-        }
-
-        .block-field-blocknodemore-coversfield-cover-page {
-            margin: 0 0 15px;
-        }
-
-        .block-fixed-block-contentbig-vertical-advertising {
-            display: none;
-        }
-    }
-
-    @media( max-width: $tablet){
-
-        h1 {
-            font-size: 20px;
-            line-height: 24px;
-        }
-
-        .block-field-blocknodemore-coversfield-end-date,
-        .block-field-blocknodemore-coversfield-start-date {
-            font-size: 14px;
-            line-height: 17px;
-        }
-
-        .related-content-covers {
-            border-top: 1.5px solid $cblack3;
-            margin: 30px auto 0;
-
-            .field__label {
-                font-size: 15px;
-                line-height: 18px;
-                margin: -10px 0 10px;
-            }
-
-            .field--name-field-image-related-covers {
-                margin: 0 0 10px;
-            }
-
-            .field--name-field-taxonomy-term-related-cove {
-                margin: 0 0 10px;
-
-                a {
-                    font-size: 10px;
-                    line-height: 12px;
-                }
-            }
-
-            .card-title {
-                font-size: 14px;
-                line-height: 17px;
-            }
-
-            .field__items {
-                display: flex;
-                flex-wrap: wrap;
-    
-                >.field__item {
-                    margin: 20px 0;
-    
-                    &:nth-child(2n){
-                        padding: 0 0 0 5px;
-                        position: relative;
-    
-                        &:after {
-                            display: none;
-                        }
-                    }
-    
-                    &:nth-child(2n + 1){
-                        padding: 0 5px 0 0;
-
-                        &:before {
-                            margin: -20px 0 20px;
-                        }
-                    }
-    
-                }
-            }
-        }
-    }
+  }
 }
-
-
 
 // --------landing more-covers -----------///
 
-.flex-style .view-content > div{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    position: relative;
-    .views-row{
-        padding-right: 20px;
-        border-right: 1px solid #B1B1B1;
-        &:nth-child(3n){
-            border-right: 0px;
-            padding-right: 0px;
-        }
-        &:nth-child(3n+4):before{
-            display: block;
-            content: "";
-            width: 100%;
-            height: 1px;
-            left: 0;
-            background: #b1b1b1;
-            position: absolute;
-            right: 0;
-            margin: -35px 0;
-        }
+.flex-style .view-content > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: relative;
+  .views-row {
+    padding-right: 20px;
+    border-right: 1px solid #b1b1b1;
+    &:nth-child(3n) {
+      border-right: 0px;
+      padding-right: 0px;
     }
+    &:nth-child(3n + 4):before {
+      display: block;
+      content: "";
+      width: 100%;
+      height: 1px;
+      left: 0;
+      background: #b1b1b1;
+      position: absolute;
+      right: 0;
+      margin: -35px 0;
+    }
+  }
 }
 
-.view-more-covers-landing{
-    .views-row{
-        max-width: 420px;
+.view-more-covers-landing {
+  .views-row {
+    max-width: 420px;
+  }
+  .views-field-field-cover-page {
+    max-width: 400px;
+    width: 100%;
+    max-height: 440px;
+    height: auto;
+    overflow: hidden;
+    margin-bottom: 20px;
+    img {
+      width: 100%;
+      height: auto;
     }
-    .views-field-field-cover-page{
-        max-width: 400px;
-        width: 100%;
-        max-height: 440px;
-        height: auto;
-        overflow: hidden;
-        margin-bottom: 20px;
-        img{
-            width: 100%;
-            height: auto;
-        }
+  }
+  .views-field-title {
+    margin-bottom: 5px;
+    a {
+      font-family: $PrNovacond-Sbold;
+      font-style: normal;
+      font-weight: bold;
+      font-size: $px28;
+      line-height: 34px;
+      text-transform: uppercase;
+      color: $cblack;
     }
-    .views-field-title{
-        margin-bottom: 5px;
-        a{
-            font-family: $PrNovacond-Sbold;
-            font-style: normal;
-            font-weight: bold;
-            font-size: $px28;
-            line-height: 34px;
-            text-transform: uppercase;
-            color: $cblack;
-        }
-    }
-    .date-more-covers{
-        font-family: $PrNovacond-reg;
-        font-style: normal;
-        font-weight: normal;
-        font-size: $px14;
-        line-height: 17px;
-        color: $cgrey3;
-    }
+  }
+  .date-more-covers {
+    font-family: $PrNovacond-reg;
+    font-style: normal;
+    font-weight: normal;
+    font-size: $px14;
+    line-height: 17px;
+    color: $cgrey3;
+  }
 }
 
 @media (max-width: $tablet) {
-    
-.flex-style .view-content > div{
-    .views-row{
-        padding-right: 0px;
-        border-right: 0px solid #B1B1B1;
-        
+  .flex-style .view-content > div {
+    .views-row {
+      padding-right: 0px;
+      border-right: 0px solid #b1b1b1;
     }
-}
+  }
 
-    .view-more-covers-landing{
-        .views-row{
-            max-width: 140px;
-        }
-        .views-field-field-cover-page{
-            max-width: 140px;
-            max-height: 155px;
-            margin-bottom: 10px;
-        }
-        .views-field-title{
-            a{
-                font-size: $px14;
-                line-height: 17px;
-            }
-        }
-        .date-more-covers{
-            font-size: $px10;
-            line-height: 12px;
-        }
+  .view-more-covers-landing {
+    .views-row {
+      max-width: 140px;
     }
+    .views-field-field-cover-page {
+      max-width: 140px;
+      max-height: 155px;
+      margin-bottom: 10px;
+    }
+    .views-field-title {
+      a {
+        font-size: $px14;
+        line-height: 17px;
+      }
+    }
+    .date-more-covers {
+      font-size: $px10;
+      line-height: 12px;
+    }
+  }
 }
