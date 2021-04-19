@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.event.body
     - field.field.node.event.field_contact_block
     - field.field.node.event.field_date_of_event
+    - field.field.node.event.field_email
     - field.field.node.event.field_guest_block
     - field.field.node.event.field_image
     - field.field.node.event.field_logo
@@ -19,6 +20,7 @@ dependencies:
     - views.view.block_guest
     - views.view.contact_event
     - views.view.slider_internal_event
+    - webform.webform.nominate
   module:
     - addtoany
     - al_dia_layouts
@@ -30,6 +32,7 @@ dependencies:
     - text
     - user
     - views
+    - webform
 third_party_settings:
   layout_builder:
     allow_custom: false
@@ -436,6 +439,35 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: 1
+          a0f690c3-4eb5-494d-a5cc-aa2435716ef0:
+            uuid: a0f690c3-4eb5-494d-a5cc-aa2435716ef0
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:event:field_email'
+              formatter:
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+                type: basic_string
+            additional: {  }
+            weight: 4
+          e5c6ad6a-9b12-4248-966a-f26849e2571f:
+            uuid: e5c6ad6a-9b12-4248-966a-f26849e2571f
+            region: content_header
+            configuration:
+              id: webform_block
+              label: Webform
+              provider: webform
+              label_display: '0'
+              webform_id: nominate
+              default_data: ''
+              redirect: false
+              context_mapping: {  }
+            additional: {  }
+            weight: -4
         third_party_settings: {  }
 id: node.event.default
 targetEntityType: node
@@ -466,6 +498,13 @@ content:
       timezone_override: ''
     third_party_settings: {  }
     type: datetime_default
+    region: content
+  field_email:
+    weight: 112
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
     region: content
   field_guest_block:
     type: entity_reference_revisions_entity_view

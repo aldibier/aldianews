@@ -168,9 +168,9 @@ third_party_settings:
               id: 'field_block:node:more_covers:field_related_more_covers'
               label: FEATURES
               provider: layout_builder
-              label_display: '0'
+              label_display: visible
               formatter:
-                label: above
+                label: hidden
                 type: entity_reference_revisions_entity_view
                 settings:
                   view_mode: default
