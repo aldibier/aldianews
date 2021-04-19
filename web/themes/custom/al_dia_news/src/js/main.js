@@ -1,17 +1,42 @@
-window.onload = function () {
-  // blockquote para selection-sharer
-  const allBlockquote = document.querySelectorAll('blockquote:not([class*="twitter"])');
+window.onload = function() {
+  ///// js para publicidad en bloques de categorias de noticias
+  Array.from(
+    document.querySelectorAll(
+      ".block-fixed-block-contentvertical-advertising-mobile"
+    )
+  ).map(function(e) {
+    if (e.children.children != null) {
+      e.closest(".mobile-less").parentElement.parentElement.classList.add(
+        "life-advertising"
+      );
+    } else {
+      e.parentElement.parentElement.classList.add("mobile-free");
+    }
+  });
 
+  // blockquote para selection-sharer
+  const allBlockquote = document.querySelectorAll(
+    'blockquote:not([class*="twitter"])'
+  );
 
   if (!!allBlockquote && allBlockquote.length) {
     allBlockquote.forEach(blockquote => {
-      if (blockquote.firstElementChild.tagName === 'P') {
+      if (blockquote.firstElementChild.tagName === "P") {
         let text = blockquote.firstElementChild.textContent;
         blockquote.textContent = text;
       }
-    })
+    });
   }
 
+  //text summary para selection-sharer
+  let containerSummary = document.querySelector(
+    ".content-news-internal-first .views-element-container"
+  );
+
+  if (!!containerSummary) {
+    let summary = containerSummary.querySelector(".summary-news");
+    containerSummary.insertAdjacentElement("beforebegin", summary);
+  }
 
   // js video en interna
   var video_interna = document.querySelector(
@@ -27,7 +52,7 @@ window.onload = function () {
   //// js ajuste ancla en employed
   Array.from(
     document.querySelectorAll(".menu--i-am-an-employer-menu li a")
-  ).map(function (e) {
+  ).map(function(e) {
     e.addEventListener("click", () => {
       setTimeout(() => {
         var scroll_y = window.scrollY;
@@ -54,7 +79,7 @@ window.onload = function () {
       document.querySelectorAll(
         ".block-views-blockcarousel-videos-landing-block-2"
       )
-    ).map(function (e) {
+    ).map(function(e) {
       var p = e.querySelector(".select-video");
       var c = e.querySelector(".video-present");
       if (p != null && c != null) {
@@ -69,7 +94,7 @@ window.onload = function () {
       document.querySelectorAll(
         ".view-id-carousel_videos_landing.view-display-id-page_1"
       )
-    ).map(function (ev) {
+    ).map(function(ev) {
       var a = ev.querySelector(".show-video");
       var b = ev.querySelector(".video-present");
       if (a != null && b != null) {
@@ -91,7 +116,7 @@ window.onload = function () {
     const itemLista2 = lista2[i];
 
     // console.log(itemLista1, itemLista2)
-    itemLista1.parentElement.addEventListener("click", function () {
+    itemLista1.parentElement.addEventListener("click", function() {
       one();
       two();
       const allIframes = document.querySelectorAll(
@@ -116,7 +141,7 @@ window.onload = function () {
   }
 
   /// js boton back
-  Array.from(document.querySelectorAll(".cbutton-back")).map(function (e) {
+  Array.from(document.querySelectorAll(".cbutton-back")).map(function(e) {
     if (e != null) {
       e.addEventListener("click", () => {
         window.history.back();
@@ -125,7 +150,7 @@ window.onload = function () {
   });
 
   /// js login and register
-  Array.from(document.querySelectorAll(".comment-forbidden a")).map(function (
+  Array.from(document.querySelectorAll(".comment-forbidden a")).map(function(
     e
   ) {
     if (e != null) {
@@ -134,7 +159,7 @@ window.onload = function () {
   });
   Array.from(
     document.querySelectorAll(".comment-forbidden a:nth-child(1)")
-  ).map(function (e) {
+  ).map(function(e) {
     if (e != null) {
       var button_login = document.querySelector(
         '.Login-Register-popup-link.Login-Register-popup-link a[href*="login"]'
@@ -146,7 +171,7 @@ window.onload = function () {
   });
   Array.from(
     document.querySelectorAll(".comment-forbidden a:nth-child(2)")
-  ).map(function (e) {
+  ).map(function(e) {
     if (e != null) {
       var button_regis = document.querySelector(
         '.Login-Register-popup-link.Login-Register-popup-link a[href*="register"]'
@@ -181,12 +206,12 @@ window.onload = function () {
             node !== event.currentTarget &&
             node.nodeType === Node.ELEMENT_NODE
           ) {
-            if (event.target.closest(".wrapper-popup")) return;
-            node.querySelector(".wrapper-popup").classList.remove("active");
+            if (event.target.closest(".modal-video")) return;
+            node.querySelector(".modal-video").classList.remove("show");
             resetAlliframes();
           } else {
             if (event.target.closest(".wrapper-popup")) return;
-            node.querySelector(".wrapper-popup ").classList.toggle("active");
+            node.querySelector(".modal-video").classList.toggle("show");
             resetAlliframes();
           }
           node = node.nextElementSibling;
@@ -198,16 +223,12 @@ window.onload = function () {
       const contentActive = event.target.closest(".card-one-column") || false;
 
       if (!contentActive) {
-        document
-          .querySelector(".wrapper-popup.active")
-          .classList.remove("active");
+        document.querySelector(".modal-video.show").classList.remove("show");
         resetAlliframes();
       }
 
       if (event.target.classList.contains("close")) {
-        document
-          .querySelector(".wrapper-popup.active")
-          .classList.remove("active");
+        document.querySelector(".modal-video.show").classList.remove("show");
         resetAlliframes();
       }
     });
@@ -216,9 +237,7 @@ window.onload = function () {
   //// js para controlar pop-up advertising
   if (!!document.querySelector(".path-advertising")) {
     const allButtonsApply = document.querySelectorAll(".button-apply");
-    const allButtonsClose = document.querySelectorAll(
-      ".webform-contact-employer .close-modal"
-    );
+    const allButtonsClose = document.querySelectorAll(".close-modal");
 
     const showModal = event => {
       const parent = event.path.find(elementPath =>
@@ -241,6 +260,43 @@ window.onload = function () {
     allButtonsClose.forEach(buttonClose =>
       buttonClose.addEventListener("click", hideModal)
     );
+  }
+
+  //// js para controlar pop-up about al dia live
+  if (!!document.querySelector(".path-about-al-dia-live")) {
+    //// js pop-up about al dia live
+    const buttonApply = document.querySelector(
+      ".path-about-al-dia-live .button-apply"
+    );
+    const buttonClose = document.querySelector(".close-modal");
+    const modalForm = document.querySelector(".modal-form");
+
+    buttonApply.addEventListener("click", () =>
+      modalForm.classList.add("show")
+    );
+    buttonClose.addEventListener("click", () =>
+      modalForm.classList.remove("show")
+    );
+
+    //// js pop-up about al dia live
+    const triggerVideo = document.querySelector(
+      ".block-views-blockabout-al-dia-live-block-1 .about-al-dia-live-container-video"
+    );
+    const buttonCloseVideo = document.querySelector(".close-video");
+    const video = document.querySelector(".modal-video");
+
+    //js temporal
+    video.insertAdjacentElement("afterbegin", buttonCloseVideo);
+
+    triggerVideo.addEventListener("click", () => {
+      video.classList.add("show");
+    });
+
+    buttonCloseVideo.addEventListener("click", event => {
+      debugger;
+      event.stopPropagation();
+      video.classList.remove("show");
+    });
   }
 
   //// js desplegable buscador y close modal
@@ -272,4 +328,41 @@ window.onload = function () {
   if (comments != null && block_login_c != null) {
     block_login_c.style.display = "none";
   }
+
+  ///// js para select de categorias, subcategorias y subsubcategorias
+  Array.from(
+    document.querySelectorAll(
+      "#views-exposed-form-search-results-al-dia-solr-page-1 .form-item-field-category li label"
+    )
+  ).map(function(e) {
+    if (e != null && !e.innerHTML.includes("-")) {
+      e.classList.add("category");
+    } else if (e != null && e.innerHTML.includes("--")) {
+      e.parentElement.classList.add("subsubcategory");
+    }
+  });
+
+  //// publicidad horizontal cada 6 en more covers
+  Array.from(
+    document.querySelectorAll(
+      ".block-fixed-block-contenthorizontal-advertising"
+    )
+  ).map(function(e) {
+    if (e != null) {
+      Array.from(
+        document.querySelectorAll(
+          ".view-more-covers-landing  .view-content .views-row:nth-child(7n)"
+        )
+      ).map(function(evt) {
+        if (
+          evt != null &&
+          !evt.nextElementSibling.classList.contains(
+            "block-fixed-block-contenthorizontal-advertising"
+          )
+        ) {
+          evt.parentElement.insertBefore(e, evt);
+        }
+      });
+    }
+  });
 };

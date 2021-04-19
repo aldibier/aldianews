@@ -1214,16 +1214,32 @@ module.exports = function (css) {
 /***/ (function(module, exports) {
 
 window.onload = function () {
-  // blockquote para selection-sharer
+  ///// js para publicidad en bloques de categorias de noticias
+  Array.from(document.querySelectorAll(".block-fixed-block-contentvertical-advertising-mobile")).map(function (e) {
+    if (e.children.children != null) {
+      e.closest(".mobile-less").parentElement.parentElement.classList.add("life-advertising");
+    } else {
+      e.parentElement.parentElement.classList.add("mobile-free");
+    }
+  }); // blockquote para selection-sharer
+
   var allBlockquote = document.querySelectorAll('blockquote:not([class*="twitter"])');
 
   if (!!allBlockquote && allBlockquote.length) {
     allBlockquote.forEach(function (blockquote) {
-      if (blockquote.firstElementChild.tagName === 'P') {
+      if (blockquote.firstElementChild.tagName === "P") {
         var text = blockquote.firstElementChild.textContent;
         blockquote.textContent = text;
       }
     });
+  } //text summary para selection-sharer
+
+
+  var containerSummary = document.querySelector(".content-news-internal-first .views-element-container");
+
+  if (!!containerSummary) {
+    var summary = containerSummary.querySelector(".summary-news");
+    containerSummary.insertAdjacentElement("beforebegin", summary);
   } // js video en interna
 
 
@@ -1365,12 +1381,12 @@ window.onload = function () {
 
         while (node) {
           if (node !== event.currentTarget && node.nodeType === Node.ELEMENT_NODE) {
-            if (event.target.closest(".wrapper-popup")) return;
-            node.querySelector(".wrapper-popup").classList.remove("active");
+            if (event.target.closest(".modal-video")) return;
+            node.querySelector(".modal-video").classList.remove("show");
             resetAlliframes();
           } else {
             if (event.target.closest(".wrapper-popup")) return;
-            node.querySelector(".wrapper-popup ").classList.toggle("active");
+            node.querySelector(".modal-video").classList.toggle("show");
             resetAlliframes();
           }
 
@@ -1382,12 +1398,12 @@ window.onload = function () {
       var contentActive = event.target.closest(".card-one-column") || false;
 
       if (!contentActive) {
-        document.querySelector(".wrapper-popup.active").classList.remove("active");
+        document.querySelector(".modal-video.show").classList.remove("show");
         resetAlliframes();
       }
 
       if (event.target.classList.contains("close")) {
-        document.querySelector(".wrapper-popup.active").classList.remove("active");
+        document.querySelector(".modal-video.show").classList.remove("show");
         resetAlliframes();
       }
     });
@@ -1396,7 +1412,7 @@ window.onload = function () {
 
   if (!!document.querySelector(".path-advertising")) {
     var allButtonsApply = document.querySelectorAll(".button-apply");
-    var allButtonsClose = document.querySelectorAll(".webform-contact-employer .close-modal");
+    var allButtonsClose = document.querySelectorAll(".close-modal");
 
     var showModal = function showModal(event) {
       var parent = event.path.find(function (elementPath) {
@@ -1418,6 +1434,34 @@ window.onload = function () {
     });
     allButtonsClose.forEach(function (buttonClose) {
       return buttonClose.addEventListener("click", hideModal);
+    });
+  } //// js para controlar pop-up about al dia live
+
+
+  if (!!document.querySelector(".path-about-al-dia-live")) {
+    //// js pop-up about al dia live
+    var buttonApply = document.querySelector(".path-about-al-dia-live .button-apply");
+    var buttonClose = document.querySelector(".close-modal");
+    var modalForm = document.querySelector(".modal-form");
+    buttonApply.addEventListener("click", function () {
+      return modalForm.classList.add("show");
+    });
+    buttonClose.addEventListener("click", function () {
+      return modalForm.classList.remove("show");
+    }); //// js pop-up about al dia live
+
+    var triggerVideo = document.querySelector(".block-views-blockabout-al-dia-live-block-1 .about-al-dia-live-container-video");
+    var buttonCloseVideo = document.querySelector(".close-video");
+    var video = document.querySelector(".modal-video"); //js temporal
+
+    video.insertAdjacentElement("afterbegin", buttonCloseVideo);
+    triggerVideo.addEventListener("click", function () {
+      video.classList.add("show");
+    });
+    buttonCloseVideo.addEventListener("click", function (event) {
+      debugger;
+      event.stopPropagation();
+      video.classList.remove("show");
     });
   } //// js desplegable buscador y close modal
 
@@ -1444,7 +1488,26 @@ window.onload = function () {
 
   if (comments != null && block_login_c != null) {
     block_login_c.style.display = "none";
-  }
+  } ///// js para select de categorias, subcategorias y subsubcategorias
+
+
+  Array.from(document.querySelectorAll("#views-exposed-form-search-results-al-dia-solr-page-1 .form-item-field-category li label")).map(function (e) {
+    if (e != null && !e.innerHTML.includes("-")) {
+      e.classList.add("category");
+    } else if (e != null && e.innerHTML.includes("--")) {
+      e.parentElement.classList.add("subsubcategory");
+    }
+  }); //// publicidad horizontal cada 6 en more covers
+
+  Array.from(document.querySelectorAll(".block-fixed-block-contenthorizontal-advertising")).map(function (e) {
+    if (e != null) {
+      Array.from(document.querySelectorAll(".view-more-covers-landing  .view-content .views-row:nth-child(7n)")).map(function (evt) {
+        if (evt != null && !evt.nextElementSibling.classList.contains("block-fixed-block-contenthorizontal-advertising")) {
+          evt.parentElement.insertBefore(e, evt);
+        }
+      });
+    }
+  });
 };
 
 /***/ }),
@@ -1538,6 +1601,18 @@ __webpack_require__.r(__webpack_exports__);
   }
 
   jQuery(document).ready(function () {
+    //// sumo select
+    Array.from(document.querySelectorAll(".region-content select")).map(function (e) {
+      if (e != null) {
+        e.classList.add("testselect1");
+        console.log("1");
+        $(".testselect1").SumoSelect({
+          forceCustomRendering: true,
+          floatWidth: 300
+        });
+      }
+    }); ////////
+
     if ($(".page-node-type-news .video-embed-field-responsive-video iframe").length) {
       var url = $(".page-node-type-news .video-embed-field-responsive-video iframe")[0].src += "&mute=1";
       var video = url.replace("autoplay=0", "autoplay=1");
@@ -1557,17 +1632,6 @@ __webpack_require__.r(__webpack_exports__);
     $("#block-blockpreheader").click(function () {
       $(".region-secondary-menu").removeClass("open-menu");
       $("body").removeClass("open-menu");
-    }); //// sumo select
-
-    Array.from(document.querySelectorAll(".region-content select")).map(function (e) {
-      if (e != null) {
-        e.classList.add("testselect1");
-        console.log("1");
-        $(".testselect1").SumoSelect({
-          forceCustomRendering: true,
-          floatWidth: 300
-        });
-      }
     }); //--------puopup-- login-----------//
 
     $(".user-logged-in #block-loginformpopup").click(function () {
@@ -1660,6 +1724,44 @@ __webpack_require__.r(__webpack_exports__);
     });
     Object(_slick_js__WEBPACK_IMPORTED_MODULE_3__["default"])($, Drupal);
   });
+  Drupal.behaviors.form_checkbox = {
+    attach: function attach(context, settings) {
+      $(document).ready(function () {
+        // Relacionando clase de selector al nombre de este archivo
+        var currentClass = "js-form-fake-checkbox";
+
+        if ($(".form-checkbox").length) {
+          $(".form-checkbox").addClass(currentClass);
+
+          if (!$(".fake-checkbox").length) {
+            $('<div class="fake-checkbox" />').insertAfter(".form-checkbox");
+          }
+
+          $(".form-checkbox").each(function () {
+            var context = $(this);
+
+            if (context.prop("checked") == true) {
+              context.addClass("active-check");
+            }
+          });
+        } // Pone clase activa cuando el radio está seleccionado
+
+
+        $("." + currentClass, context).once("js-form-fake-checkbox").click(function () {
+          var context = $(this);
+          context.toggleClass("active-check");
+        }); /// js para esrilos de boton de eliminar archivo
+
+        Array.from(document.querySelectorAll(".webform-submission-apply-to-this-job-form .form-type-checkbox input")).map(function (e) {
+          if (e != null) {
+            e.addEventListener("click", function () {
+              e.closest(".form-managed-file").classList.add("action-button");
+            });
+          }
+        });
+      });
+    }
+  };
 })(jQuery, Drupal);
 
 /***/ }),
@@ -1743,6 +1845,9 @@ var initScrollMagic = function initScrollMagic($, Drupal) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 var initSlick = function initSlick($, Drupal) {
+  var enterMobile = 0;
+  var enterTablet = 0;
+  var enterDesktop = 0;
   var categoriesMore = document.querySelectorAll(".view-categories-sons .view-more-category .view-content");
   var settings = {
     infinite: false,
@@ -1757,7 +1862,7 @@ var initSlick = function initSlick($, Drupal) {
       breakpoint: 768,
       settings: "unslick"
     }]
-  };
+  }; //slide edit resize
 
   if (window.matchMedia("(max-width: 768px)").matches) {
     categoriesMore.forEach(function (element) {
@@ -1807,26 +1912,52 @@ var initSlick = function initSlick($, Drupal) {
     }]
   }); //slide about al dia events
 
-  if ($('.about-al-dia-live-slider').length) {
-    $('.about-al-dia-live-slider ul').slick({
+  if ($(".about-al-dia-live-slider").length) {
+    $(".about-al-dia-live-slider ul").slick({
       infinite: true,
-      slidesToShow: 3,
+      slidesToShow: 2,
       slidesToScroll: 1,
-      centerPadding: '60px',
+      centerPadding: "60px",
       centerMode: true,
       variableWidth: true,
-      dots: true
+      dots: true,
+      mobileFirst: true,
+      responsive: [{
+        breakpoint: 1300,
+        settings: "reInit"
+      }, {
+        breakpoint: 992,
+        settings: "reInit"
+      }, {
+        breakpoint: 768,
+        settings: "reInit"
+      }]
     });
-  } //slide about al dia testimonial 
+  } //slide about al dia testimonial
 
 
-  if ($('.block-views-blockabout-al-dia-live-block-4')) {
-    $('.block-views-blockabout-al-dia-live-block-4 .view-content').slick({
+  if ($(".block-views-blockabout-al-dia-live-block-4")) {
+    $(".block-views-blockabout-al-dia-live-block-4 .view-content").slick({
       infinite: true,
       slidesToShow: 1,
       slidesToScroll: 1,
       dots: true
     });
+  } /// Slider para thought leaders
+
+
+  var width_h = window.innerWidth;
+
+  if (width_h <= 580) {
+    if ($(".view-id-thought_leaders_home.view-display-id-block_1")) {
+      $(".view-id-thought_leaders_home.view-display-id-block_1 .view-content").slick({
+        infinite: true,
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3000
+      });
+    }
   }
 };
 
@@ -1852,8 +1983,8 @@ var initSlick = function initSlick($, Drupal) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/usuario/Desktop/Proyectos/AlDiaNews/4ld14-n3ws/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
-module.exports = __webpack_require__(/*! /Users/usuario/Desktop/Proyectos/AlDiaNews/4ld14-n3ws/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
+__webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
+module.exports = __webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
 
 
 /***/ })

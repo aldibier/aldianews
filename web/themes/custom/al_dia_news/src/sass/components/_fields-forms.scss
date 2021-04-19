@@ -97,6 +97,7 @@ form {
     display: flex;
     align-items: center;
     border: 0px;
+    margin-bottom: 0px;
     label {
       width: 100%;
       min-height: 53px;
@@ -128,6 +129,12 @@ form {
     -o-appearance: none;
     appearance: none;
     border-right: 14px solid transparent;
+  }
+
+  .SumoSelect > .CaptionCont > span {
+    padding-right: 0;
+    padding-left: 15px;
+    font-size: $px20;
   }
 
   select::-ms-expand {
@@ -177,6 +184,9 @@ form {
     .SumoSelect > .CaptionCont {
       background: url(../img/fle_mobil.png) center right no-repeat
         rgb(237, 237, 237);
+      > span {
+        font-size: $px13;
+      }
     }
     textarea {
       max-width: 100%;
@@ -193,5 +203,67 @@ form {
     .SumoSelect {
       width: 100%;
     }
+  }
+}
+
+// ---------- Estilols para fake-checbox -------------//
+.fake-checkbox {
+  position: relative;
+  margin-top: 5px;
+  cursor: pointer;
+  z-index: 2;
+  height: 26px;
+  width: 26px;
+  order: 1;
+  &::before {
+    content: "";
+    height: 25px;
+    width: 25px;
+    border-radius: 2px;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    border: 2px solid #ed1c24;
+  }
+  &::after {
+    content: "✔";
+    height: 29px;
+    width: 29px;
+    left: 5px;
+    top: 5px;
+    border: 0;
+    color: white;
+    font-size: 23px;
+    background: #ed1c24;
+    display: none;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.active-check + .fake-checkbox::after {
+  display: flex;
+}
+.js-form-fake-checkbox {
+  order: 2;
+  position: relative;
+  z-index: 20 !important;
+  width: 30px;
+  height: 30px;
+  opacity: 0;
+  cursor: pointer;
+  margin-left: -26px !important;
+}
+.fake-checkbox + label {
+  order: 4;
+}
+
+.action-button {
+  input[value="Upload"] {
+    background: #c4c4c4;
+  }
+  input[value*="Remove"] {
+    background: #5c6165;
   }
 }

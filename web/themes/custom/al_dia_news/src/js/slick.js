@@ -1,4 +1,8 @@
 const initSlick = ($, Drupal) => {
+  let enterMobile = 0;
+  let enterTablet = 0;
+  let enterDesktop = 0;
+
   let categoriesMore = document.querySelectorAll(
     ".view-categories-sons .view-more-category .view-content"
   );
@@ -20,6 +24,7 @@ const initSlick = ($, Drupal) => {
     ]
   };
 
+  //slide edit resize
   if (window.matchMedia("(max-width: 768px)").matches) {
     categoriesMore.forEach(element => $(element).slick(settings));
   }
@@ -76,26 +81,57 @@ const initSlick = ($, Drupal) => {
   });
 
   //slide about al dia events
-  if ($('.about-al-dia-live-slider').length) {
-    $('.about-al-dia-live-slider ul').slick({
+  if ($(".about-al-dia-live-slider").length) {
+    $(".about-al-dia-live-slider ul").slick({
       infinite: true,
-      slidesToShow: 3,
+      slidesToShow: 2,
       slidesToScroll: 1,
-      centerPadding: '60px',
+      centerPadding: "60px",
       centerMode: true,
       variableWidth: true,
       dots: true,
-    })
+      mobileFirst: true,
+      responsive: [
+        {
+          breakpoint: 1300,
+          settings: "reInit"
+        },
+        {
+          breakpoint: 992,
+          settings: "reInit"
+        },
+        {
+          breakpoint: 768,
+          settings: "reInit"
+        }
+      ]
+    });
   }
 
-  //slide about al dia testimonial 
-  if ($('.block-views-blockabout-al-dia-live-block-4')) {
-    $('.block-views-blockabout-al-dia-live-block-4 .view-content').slick({
+  //slide about al dia testimonial
+  if ($(".block-views-blockabout-al-dia-live-block-4")) {
+    $(".block-views-blockabout-al-dia-live-block-4 .view-content").slick({
       infinite: true,
       slidesToShow: 1,
       slidesToScroll: 1,
-      dots: true,
-    })
+      dots: true
+    });
+  }
+
+  /// Slider para thought leaders
+  var width_h = window.innerWidth;
+  if (width_h <= 580) {
+    if ($(".view-id-thought_leaders_home.view-display-id-block_1")) {
+      $(
+        ".view-id-thought_leaders_home.view-display-id-block_1 .view-content"
+      ).slick({
+        infinite: true,
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3000
+      });
+    }
   }
 };
 

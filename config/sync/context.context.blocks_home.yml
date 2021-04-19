@@ -42,29 +42,15 @@ reactions:
         provider: fixed_block_content
         label_display: '0'
         region: content
-        weight: '-2'
+        weight: '-4'
         view_mode: ''
         context_mapping: {  }
         custom_id: fixed_block_content_horizontal_advertising_close
         theme: al_dia_news
-        css_class: ''
+        css_class: section1310
         unique: 0
         context_id: blocks_home
         uuid: cb81f0b3-a64a-428e-ad6d-3852da5bddf4
-      5733e99c-d10c-45d3-b5cf-0b05f1c54d6e:
-        id: latest_categories
-        label: LatestCategories
-        provider: al_dia_news_general
-        label_display: '0'
-        region: content
-        weight: '-1'
-        context_mapping: {  }
-        custom_id: latest_categories
-        theme: al_dia_news
-        css_class: ''
-        unique: 0
-        context_id: blocks_home
-        uuid: 5733e99c-d10c-45d3-b5cf-0b05f1c54d6e
       267bd6b6-f4ad-404b-8d8d-cff267743713:
         id: 'views_block:culture_mix-block_1'
         label: ''
@@ -105,7 +91,7 @@ reactions:
         views_label: ''
         items_per_page: none
         region: content
-        weight: '0'
+        weight: '1'
         context_mapping: {  }
         custom_id: views_block_thought_leaders_home_block_4
         theme: al_dia_news
@@ -113,6 +99,48 @@ reactions:
         unique: 0
         context_id: blocks_home
         uuid: 7d37d2dc-43ff-457d-9080-323f2622f7b5
+      bbdff550-49b1-4aa9-bb1e-3be618bfe1ad:
+        id: 'block_group:high_impact_and_most_visited_news_home'
+        label: 'High impact and most visited news - HOME'
+        provider: blockgroup
+        label_display: '0'
+        region: content
+        weight: '-3'
+        context_mapping: {  }
+        custom_id: block_group_high_impact_and_most_visited_news_home
+        theme: al_dia_news
+        css_class: ''
+        unique: 0
+        context_id: blocks_home
+        uuid: bbdff550-49b1-4aa9-bb1e-3be618bfe1ad
+      8e22ad3e-8ae6-4b94-9cdf-c1d7829b57ec:
+        id: 'block_group:current_edition_advertising_home'
+        label: 'Current Edition - Advertising - HOME'
+        provider: blockgroup
+        label_display: '0'
+        region: content
+        weight: '4'
+        context_mapping: {  }
+        custom_id: block_group_current_edition_advertising_home
+        theme: al_dia_news
+        css_class: ''
+        unique: 0
+        context_id: blocks_home
+        uuid: 8e22ad3e-8ae6-4b94-9cdf-c1d7829b57ec
+      72eb6c0c-f50e-41cc-8004-45c47643a374:
+        id: 'block_group:latest_categories_tending_block'
+        label: 'Latest Categories - Tending block'
+        provider: blockgroup
+        label_display: '0'
+        region: content
+        weight: '-2'
+        context_mapping: {  }
+        custom_id: block_group_latest_categories_tending_block
+        theme: al_dia_news
+        css_class: wrapper-news-trending
+        unique: 0
+        context_id: blocks_home
+        uuid: 72eb6c0c-f50e-41cc-8004-45c47643a374
     id: blocks
     saved: false
     uuid: 4fc7f4cb-182d-41eb-9a90-4caf42ab57f8

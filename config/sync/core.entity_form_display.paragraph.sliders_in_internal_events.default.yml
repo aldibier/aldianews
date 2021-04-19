@@ -1,0 +1,42 @@
+uuid: 8226c5e0-be21-43c4-bdf0-2fd1d2f49065
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.sliders_in_internal_events.field_image_slider
+    - field.field.paragraph.sliders_in_internal_events.field_slider_styl
+    - field.field.paragraph.sliders_in_internal_events.field_title
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.sliders_in_internal_events
+  module:
+    - image
+id: paragraph.sliders_in_internal_events.default
+targetEntityType: paragraph
+bundle: sliders_in_internal_events
+mode: default
+content:
+  field_image_slider:
+    weight: 2
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_slider_styl:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

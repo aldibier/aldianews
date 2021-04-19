@@ -71,7 +71,7 @@ reactions:
         views_label: ''
         items_per_page: none
         region: content
-        weight: '-1'
+        weight: '0'
         context_mapping: {  }
         custom_id: views_block_about_al_dia_live_block_1
         theme: al_dia_news
@@ -87,7 +87,7 @@ reactions:
         views_label: ''
         items_per_page: none
         region: content
-        weight: '0'
+        weight: '1'
         context_mapping: {  }
         custom_id: views_block_about_al_dia_live_block_2
         theme: al_dia_news
@@ -103,7 +103,7 @@ reactions:
         views_label: ''
         items_per_page: none
         region: content
-        weight: '1'
+        weight: '2'
         context_mapping: {  }
         custom_id: views_block_about_al_dia_live_block_3
         theme: al_dia_news
@@ -117,7 +117,7 @@ reactions:
         provider: fixed_block_content
         label_display: '0'
         region: content
-        weight: '5'
+        weight: '4'
         view_mode: ''
         context_mapping: {  }
         custom_id: fixed_block_content_horizontal_advertising
@@ -132,7 +132,7 @@ reactions:
         provider: blockgroup
         label_display: '0'
         region: content
-        weight: '2'
+        weight: '3'
         context_mapping: {  }
         custom_id: block_group_testimonial_and_advertising_vertical
         theme: al_dia_news
@@ -140,6 +140,23 @@ reactions:
         unique: 0
         context_id: about_al_dia_live
         uuid: 7612dc51-baf2-4b9e-b2ad-0e5f38a9674c
+      334663ca-bcc3-4ba0-b076-4882289ca36b:
+        id: webform_block
+        label: Webform
+        provider: webform
+        label_display: '0'
+        webform_id: sponsorship
+        default_data: ''
+        redirect: 0
+        region: content
+        weight: '-1'
+        context_mapping: {  }
+        custom_id: webform_block
+        theme: al_dia_news
+        css_class: ''
+        unique: 0
+        context_id: about_al_dia_live
+        uuid: 334663ca-bcc3-4ba0-b076-4882289ca36b
     id: blocks
     saved: false
     uuid: e8523adf-eacb-45ff-bd80-ac4e8c76b9db

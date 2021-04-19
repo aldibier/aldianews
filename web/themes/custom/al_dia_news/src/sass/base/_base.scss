@@ -17,13 +17,17 @@ img {
   margin: 0;
 }
 
+a {
+  border-bottom: 0px;
+}
+
 .user-logged-in {
   #header {
     top: 39px;
   }
 }
 
-.node .field--type-image {
+.node .field--type-image:not(.card-image) {
   margin: 0;
 }
 
@@ -85,9 +89,17 @@ body.toolbar-tray-open.user-logged-in {
     max-width: 1440px;
     margin: 0 auto 0px;
     padding: 0px;
+    .section1310 {
+      max-width: 1310px;
+      padding: 0 15px;
+      margin: 0 auto;
+    }
     @media (max-width: $tablet) {
       margin-bottom: 0px;
       padding: 0px;
+      .padd15 {
+        padding: 0 15px;
+      }
     }
   }
   .width1310 {
@@ -116,6 +128,20 @@ body.toolbar-tray-open.user-logged-in {
   }
 }
 
+
+.comun-title h1{
+  width: 100%;
+  margin: 0px auto 10px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid $corange;
+  font-family: $ModernoFB-Regular;
+  font-style: normal;
+  font-weight: normal;
+  font-size: $px42;
+  line-height: 50px;
+  color: $corange;
+}
+
 .mobile-plus {
   .card-more:nth-child(1),
   .card-more:nth-child(2) {
@@ -124,18 +150,45 @@ body.toolbar-tray-open.user-logged-in {
 }
 
 @media (max-width: 768px) {
-  .mobile-plus {
-    .card-more:nth-child(1),
-    .card-more:nth-child(2) {
-      display: block;
+  .life-advertising {
+    .mobile-plus {
+      .card-more:nth-child(1),
+      .card-more:nth-child(2) {
+        display: block;
+      }
+    }
+
+    .mobile-less {
+      display: flex;
+      .card-one-column:last-child,
+      .card-one-column:nth-last-child(2) {
+        display: none;
+      }
+      .view-footer {
+        min-width: 50%;
+      }
+      .card-one-column {
+        width: auto;
+        max-width: none;
+      }
     }
   }
-
-  .mobile-less {
-    .card-one-column:last-child,
-    .card-one-column:nth-last-child(2) {
+  .mobile-free {
+    .view-content {
+      justify-content: space-between;
+    }
+    .card-one-column {
+      max-width: 140px;
+    }
+    .view-footer {
       display: none;
     }
+  }
+  .comun-title h1{
+    margin: 0px auto 7px;
+    border-bottom: 1px solid $corange;
+    font-size: $px20;
+    line-height: 24px;
   }
 }
 

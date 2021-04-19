@@ -74,7 +74,8 @@
         padding: 0px 0 62px;
     }
 
-    .block-fixed-block-contentlast-print-edition {
+    .block-fixed-block-contentlast-print-edition,
+    #block-views-block-current-edition-header-and-footer-block-1-2 {
         left: 0;
         max-width: 300px;
         position: relative;
@@ -83,11 +84,11 @@
         height: 305px;
 
         a {
-            position: absolute;
-            display: block;
-            top: 6px;
-            width: 100%;
-            height: 305px;
+            // position: absolute;
+            // display: block;
+            // top: 6px;
+            // width: 100%;
+            // height: 305px;
             font-size: 0;
             border: none;
         }
@@ -473,7 +474,8 @@
             right: 0;
         }
 
-        .block-fixed-block-contentlast-print-edition {
+        .block-fixed-block-contentlast-print-edition,
+        #block-views-block-current-edition-header-and-footer-block-1-2 {
             width: 50%;
             max-width: 140px;
             height: 150px;
@@ -484,9 +486,9 @@
                 height: 150px;
             }
 
-            a{
-                height: 150px; 
-            }
+            // a{
+            //     height: 150px; 
+            // }
         }
 
         #block-footer {
@@ -543,7 +545,7 @@
 
         #block-subscribeblockfooter {
             width: 257px;
-            top: 209px;
+            top: 218px;
             left: 0;
 
             a {
@@ -555,11 +557,12 @@
             }
         }
 
-        .block-fixed-block-contentlast-print-edition {
+        .block-fixed-block-contentlast-print-edition,
+        #block-views-block-current-edition-header-and-footer-block-1-2 { 
 
-            img {
+            img { 
                 width: 140px;
-                height: 150px;
+                height: 150px; 
             }
 
         }
@@ -571,7 +574,7 @@
                     line-height: 21px;
                     margin: 0;
                     padding: 0;
-                }
+                } 
 
                 li {
                     height: 37px;

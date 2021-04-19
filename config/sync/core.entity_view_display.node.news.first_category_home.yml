@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.news.field_caption
     - field.field.node.news.field_category
     - field.field.node.news.field_comments
+    - field.field.node.news.field_high_impact_news
     - field.field.node.news.field_image
     - field.field.node.news.field_my_content_has_a_main_vide
     - field.field.node.news.field_short_title
@@ -46,44 +47,21 @@ third_party_settings:
           layout_class: {  }
     regions:
       ds_content:
-        - group_featured_news
         - field_image
         - field_my_content_has_a_main_vide
         - group_featured_news_wrapper
         - field_short_title
         - body
   field_group:
-    group_featured_news:
-      children:
-        - field_image
-        - field_my_content_has_a_main_vide
-        - group_featured_news_wrapper
-      parent_name: ''
-      weight: 0
-      format_type: html_element
-      region: ds_content
-      format_settings:
-        element: div
-        show_label: false
-        label_element: h3
-        label_element_classes: ''
-        attributes: ''
-        effect: none
-        speed: fast
-        id: ''
-        classes: featured-news
-      label: 'Featured News'
     group_featured_news_wrapper:
       children:
         - field_short_title
         - body
-      parent_name: group_featured_news
+      parent_name: ''
       weight: 3
       format_type: html_element
       region: ds_content
       format_settings:
-        id: ''
-        classes: featured-news-wrapper
         element: div
         show_label: false
         label_element: h3
@@ -91,7 +69,9 @@ third_party_settings:
         attributes: ''
         effect: none
         speed: fast
-      label: 'Featured News Wrapper'
+        id: ''
+        classes: last-news-home-wrapper
+      label: 'Last News Home Wrapper'
 id: node.news.first_category_home
 targetEntityType: node
 bundle: news
@@ -106,7 +86,7 @@ content:
       trim_length: 54
     third_party_settings:
       field_formatter_class:
-        class: featured-news-body
+        class: last-news-home-body
   field_image:
     weight: 1
     label: hidden
@@ -115,7 +95,7 @@ content:
       image_link: content
     third_party_settings:
       field_formatter_class:
-        class: featured-news-image
+        class: last-news-home-image
       lazy:
         placeholder_style: ''
         lazy_image: '0'
@@ -136,10 +116,10 @@ content:
     weight: 4
     label: hidden
     settings:
-      link_to_entity: false
+      link_to_entity: true
     third_party_settings:
       field_formatter_class:
-        class: featured-news-title
+        class: last-news-home-title
     type: string
     region: ds_content
 hidden:
@@ -148,6 +128,7 @@ hidden:
   field_caption: true
   field_category: true
   field_comments: true
+  field_high_impact_news: true
   field_tags: true
   field_video: true
   langcode: true

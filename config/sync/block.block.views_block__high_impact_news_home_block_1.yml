@@ -1,0 +1,33 @@
+uuid: 1b8afdfe-1512-437a-bb2f-85abcfef1347
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.high_impact_news_home
+  module:
+    - context
+    - views
+  theme:
+    - al_dia_news
+id: views_block__high_impact_news_home_block_1
+theme: al_dia_news
+region: high_impact_and_most_visited_news_home
+weight: -28
+provider: null
+plugin: 'views_block:high_impact_news_home-block_1'
+settings:
+  id: 'views_block:high_impact_news_home-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path_exclusion:
+    id: request_path_exclusion
+    pages: ''
+    negate: null
+  view_inclusion:
+    id: view_inclusion
+    negate: null
+    view_inclusion: {  }

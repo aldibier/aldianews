@@ -12,29 +12,30 @@ dependencies:
     - image.style.thumbnail
   module:
     - image
+    - image_widget_crop
 id: block_content.title_and_two_image.default
 targetEntityType: block_content
 bundle: title_and_two_image
 mode: default
 content:
   field_image:
-    weight: 4
+    weight: 3
     settings:
-      progress_indicator: throbber
+      show_default_crop: true
+      warn_multiple_usages: true
       preview_image_style: thumbnail
+      crop_preview_image_style: crop_thumbnail
+      progress_indicator: throbber
+      crop_list:
+        - page_headers
+        - page_headers_mobile
+      crop_types_required: {  }
+      show_crop_area: false
     third_party_settings: {  }
-    type: image_image
+    type: image_widget_crop
     region: content
   field_image_for_the_title:
     weight: 2
-    settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
-    third_party_settings: {  }
-    type: image_image
-    region: content
-  field_image_for_the_title_mobile:
-    weight: 3
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
@@ -59,4 +60,5 @@ content:
     third_party_settings: {  }
 hidden:
   body: true
+  field_image_for_the_title_mobile: true
   langcode: true

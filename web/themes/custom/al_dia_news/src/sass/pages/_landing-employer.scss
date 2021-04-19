@@ -66,6 +66,8 @@
     }
 
     .field--type-image {
+      max-height: 710px;
+      overflow: hidden;
       &::after {
         @include absolute(top 0 left 0);
         @include esize(100%);
@@ -728,7 +730,10 @@
 }
 
 .path-jobs {
-  .region-header #block-lastprintedition .field--name-field-image {
+  .region-header #block-lastprintedition .field--name-field-image,
+  .region-header
+    #block-views-block-current-edition-header-and-footer-block-1
+    .field--name-field-image {
     top: -13px;
   }
 }

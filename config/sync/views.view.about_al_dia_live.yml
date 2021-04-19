@@ -10,7 +10,6 @@ dependencies:
     - field.storage.block_content.field_image
     - field.storage.block_content.field_image_carousel
     - field.storage.block_content.field_image_for_the_title
-    - field.storage.block_content.field_image_for_the_title_mobile
     - field.storage.block_content.field_section_title
     - field.storage.block_content.field_url_video
     - field.storage.block_content.field_video_thumbnail
@@ -21,6 +20,7 @@ dependencies:
     - field.storage.paragraph.field_photo
     - field.storage.paragraph.field_position
     - field.storage.paragraph.field_testimonial
+    - responsive_image.styles.image_style_crop_page_headers_responsive
     - responsive_image.styles.slider_live_events_
   module:
     - block_content
@@ -522,7 +522,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"title-video-about-al-dia-live\">\r\n    <img src=\"/themes/custom/al_dia_news/assets/img/logo-al-dia-live-blanco.png\"></img>\r\n    <img src=\"/themes/custom/al_dia_news/assets/img/logo-al-dia-live-blanco-mobile.png\"></img>\r\n    <div class=\"video-title\">Video title: {{ field_video_title }}</div>\r\n<div>"
+            text: "<div class=\"title-video-about-al-dia-live\">\r\n    <img class=\"image-desktop\" src=\"/themes/custom/al_dia_news/assets/img/logo-al-dia-live-blanco.png\"></img>\r\n    <img class=\"image-mobile\" src=\"/themes/custom/al_dia_news/assets/img/logo-al-dia-live-blanco-mobile.png\"></img>\r\n    <div class=\"video-title\">Video title: {{ field_video_title }}</div>\r\n<div>"
             make_link: false
             path: ''
             absolute: false
@@ -687,6 +687,112 @@ display:
           empty_zero: false
           hide_alter_empty: false
           plugin_id: custom
+        fieldset_1:
+          id: fieldset_1
+          table: views
+          field: fieldset
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          fields:
+            - nothing_1
+            - field_url_video
+          wrapper: div
+          legend: ''
+          classes: 'modal-video  modal-video-al-dia'
+          collapsible: 1
+          collapsed: 0
+          plugin_id: fieldset
+        nothing_1:
+          id: nothing_1
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: '<span class="close-video"></span>'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
+          plugin_id: custom
         field_url_video:
           id: field_url_video
           table: block_content__field_url_video
@@ -724,13 +830,13 @@ display:
             preserve_tags: ''
             html: false
           element_type: ''
-          element_class: about-al-dia-live-video
+          element_class: 'about-al-dia-live-video '
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -1626,7 +1732,7 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: ''
+          element_type: p
           element_class: testimonial-author-testimonial
           element_label_type: ''
           element_label_class: ''
@@ -1962,70 +2068,6 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        field_image_for_the_title_mobile:
-          id: field_image_for_the_title_mobile
-          table: block_content__field_image_for_the_title_mobile
-          field: field_image_for_the_title_mobile
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: image
-          settings:
-            image_style: ''
-            image_link: ''
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
         nothing:
           id: nothing
           table: views
@@ -2037,7 +2079,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"logo-title-live\">\r\n    <div class=\"logo-title-desktop\">{{ field_image_for_the_title }}</div>\r\n    <div class=\"logo-title-mobil\">{{ field_image_for_the_title_mobile }}</div>\r\n</div>"
+            text: "<div class=\"logo-title-live\">\r\n    <div class=\"logo-title-desktop\">{{ field_image_for_the_title }}</div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -2124,9 +2166,9 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: image
+          type: responsive_image
           settings:
-            image_style: ''
+            responsive_image_style: image_style_crop_page_headers_responsive
             image_link: ''
           group_column: ''
           group_columns: {  }
@@ -2149,5 +2191,4 @@ display:
       tags:
         - 'config:field.storage.block_content.field_image'
         - 'config:field.storage.block_content.field_image_for_the_title'
-        - 'config:field.storage.block_content.field_image_for_the_title_mobile'
         - 'config:field.storage.block_content.field_section_title'

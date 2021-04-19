@@ -48,7 +48,8 @@
     }
   }
 
-  .card-name-category {
+  .card-name-category,
+  .field--name-category-home {
     margin-bottom: 10px;
 
     @media screen and (max-width: $broken) {
@@ -83,6 +84,23 @@
     }
   }
 
+  .card-category {
+    margin-bottom: 10px;
+    max-width: 400px;
+    a {
+      font-size: szrem(16);
+      font-family: $ModernoFB-Regular;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 19px;
+      color: $corange;
+      @media screen and (max-width: $tablet) {
+        font-size: 10px;
+        line-height: 12px;
+      }
+    }
+  }
+
   .card-title {
     margin-bottom: 10px;
 
@@ -107,8 +125,8 @@
       margin-bottom: 5px;
 
       a {
-        font-size: szrem(24);
-        line-height: 29px;
+        font-size: szrem(14);
+        line-height: 17px;
       }
     }
 
@@ -126,7 +144,8 @@
     }
   }
 
-  .card-date {
+  .card-date,
+  .field--name-dynamic-token-fieldnode-authored-on {
     font-size: szrem(16);
     font-family: $PrNovacond-reg;
     font-style: normal;
@@ -141,6 +160,28 @@
     @media screen and (max-width: $tablet) {
       font-size: 10px;
       line-height: 12px;
+    }
+  }
+}
+
+
+.card-one-column-home {
+
+  .card-image {
+    margin: 0 0 15px;
+  }
+
+  .field--name-category-home {
+    a {
+      font-size: szrem(16);
+    }
+  }
+
+  .field--name-dynamic-token-fieldnode-authored-on  {
+    font-size: szrem(14);
+
+    p {
+      margin: 0;
     }
   }
 }

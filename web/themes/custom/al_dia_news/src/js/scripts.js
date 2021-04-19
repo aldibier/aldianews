@@ -44,6 +44,22 @@ import initMain from "./main.js";
   }
 
   jQuery(document).ready(function() {
+    //// sumo select
+
+    Array.from(document.querySelectorAll(".region-content select")).map(
+      function(e) {
+        if (e != null) {
+          e.classList.add("testselect1");
+          console.log("1");
+          $(".testselect1").SumoSelect({
+            forceCustomRendering: true,
+            floatWidth: 300
+          });
+        }
+      }
+    );
+    ////////
+
     if (
       $(".page-node-type-news .video-embed-field-responsive-video iframe")
         .length
@@ -73,21 +89,6 @@ import initMain from "./main.js";
       $(".region-secondary-menu").removeClass("open-menu");
       $("body").removeClass("open-menu");
     });
-
-    //// sumo select
-
-    Array.from(document.querySelectorAll(".region-content select")).map(
-      function(e) {
-        if (e != null) {
-          e.classList.add("testselect1");
-          console.log("1");
-          $(".testselect1").SumoSelect({
-            forceCustomRendering: true,
-            floatWidth: 300
-          });
-        }
-      }
-    );
 
     //--------puopup-- login-----------//
     $(".user-logged-in #block-loginformpopup").click(function() {
@@ -243,4 +244,48 @@ import initMain from "./main.js";
 
     initSlick($, Drupal);
   });
+
+  Drupal.behaviors.form_checkbox = {
+    attach: function(context, settings) {
+      $(document).ready(function() {
+        // Relacionando clase de selector al nombre de este archivo
+        var currentClass = "js-form-fake-checkbox";
+
+        if ($(".form-checkbox").length) {
+          $(".form-checkbox").addClass(currentClass);
+          if (!$(".fake-checkbox").length) {
+            $('<div class="fake-checkbox" />').insertAfter(".form-checkbox");
+          }
+
+          $(".form-checkbox").each(function() {
+            var context = $(this);
+            if (context.prop("checked") == true) {
+              context.addClass("active-check");
+            }
+          });
+        }
+
+        // Pone clase activa cuando el radio está seleccionado
+        $("." + currentClass, context)
+          .once("js-form-fake-checkbox")
+          .click(function() {
+            var context = $(this);
+            context.toggleClass("active-check");
+          });
+
+        /// js para esrilos de boton de eliminar archivo
+        Array.from(
+          document.querySelectorAll(
+            ".webform-submission-apply-to-this-job-form .form-type-checkbox input"
+          )
+        ).map(function(e) {
+          if (e != null) {
+            e.addEventListener("click", () => {
+              e.closest(".form-managed-file").classList.add("action-button");
+            });
+          }
+        });
+      });
+    }
+  };
 })(jQuery, Drupal);

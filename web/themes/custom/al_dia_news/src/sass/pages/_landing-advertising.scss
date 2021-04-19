@@ -1,3 +1,13 @@
+.path-advertising {
+  .modal-form {
+    display: none;
+  } 
+
+  .modal-form.show {
+    display: block;
+  }
+}
+
 //-------------header advertising------------//
 .advertising-header {
   padding: 63px 80px;
@@ -7,6 +17,8 @@
   flex-direction: column;
   justify-content: flex-end;
   z-index: 1;
+  max-height: 710px;
+  overflow: hidden;
 
   @media (max-width: $broken) {
     padding: 63px 15px;
@@ -53,20 +65,6 @@
 
     p {
       margin: 0;
-    }
-  }
-
-  .views-field-field-image {
-    @media (max-width: $tablet) {
-      display: none;
-    }
-  }
-
-  .views-field-field-mobile-image {
-    display: none;
-
-    @media (max-width: $tablet) {
-      display: block;
     }
   }
 
@@ -595,291 +593,3 @@
   }
 }
 
-.path-advertising {
-  .block-webform-block,
-  .block-views-blockheader-advertising-landing-block-1 {
-    // .modal-form {
-    //   overscroll-behavior: contain;
-    //   display: none;
-    //   position: fixed;
-    //   width: 100%;
-    //   height: 100%;
-    //   z-index: 6;
-    //   inset: 38px 0px 0px;
-    //   margin: auto;
-
-    //   &:after {
-    //     position: fixed;
-    //     z-index: 1;
-    //     background: #222123;
-    //     opacity: 0.6;
-    //     content: "";
-    //     width: 100%;
-    //     height: 100%;
-    //     top: 0;
-    //     left: 0;
-    //   }
-
-    &.show {
-      display: block;
-    }
-    // }
-
-    .webform-contact-employer {
-      height: 100%;
-      z-index: 3;
-      display: block;
-      position: relative;
-      max-width: 990px;
-      max-height: 945px;
-      top: 140px;
-      margin: auto;
-      background: rgb(255, 255, 255);
-      height: 70%;
-      width: calc(100% - 30px);
-      overflow: hidden;
-      padding: 100px 75px 89px;
-
-      @media (max-width: $tablet) {
-        padding: 32px 20px;
-      }
-
-      //   .form-item,
-      //   .form-actions {
-      //     margin: 0;
-      //   }
-
-      //   .views-label {
-      //     width: 100%;
-      //     display: block;
-      //     padding: 0px 0px 10px;
-      //     border-bottom: 1px solid rgb(238, 34, 17);
-      //     font-weight: 600;
-      //     font-size: 2.125rem;
-      //     line-height: 41px;
-      //     font-family: ModernoFB-Semibold;
-      //     color: rgb(238, 34, 17);
-
-      //     @media (max-width: $tablet) {
-      //       padding: 0px 0px 5px;
-      //       font-size: szrem(18);
-      //       line-height: 22px;
-      //     }
-      //   }
-
-      //   button[name="close"] {
-      //     position: absolute;
-      //     top: 50px;
-      //     right: 75px;
-      //     width: 20px;
-      //     height: 20px;
-      //     display: block;
-      //     font-size: 0px;
-      //     background: url('../img/close.svg') center center no-repeat;
-      //     border: none;
-      //     cursor: pointer;
-
-      //     @media (max-width: $tablet) {
-      //       top: 16px;
-      //       right: 24px;
-      //     }
-      //   }
-
-      //   form {
-      //     overflow-y: overlay;
-      //     height: 100%;
-      //     display: flex;
-      //     flex-wrap: wrap;
-      //     overscroll-behavior: contain;
-      //   }
-
-      //   [id*="edit-information-text"] {
-      //     font-style: normal;
-      //     font-weight: 400;
-      //     font-size: 1.25rem;
-      //     line-height: 28.8px;
-      //     color: rgb(51, 51, 51);
-      //     width: 100%;
-      //     font-family: ProximaNovaCond-Regular;
-      //     margin: 25px 0px 35px;
-
-      //     @media (max-width: $tablet) {
-      //       margin: 10px 0px 20px;
-      //       font-size: szrem(14);
-      //       line-height: 144%;
-      //     }
-      //   }
-
-      //   .form-type-textfield,
-      //   .js-form-type-tel,
-      //   .js-form-type-email {
-      //     width: 50%;
-      //     margin-bottom: 25px;
-
-      //     @media (max-width: $tablet) {
-      //       width: 100%;
-      //       margin-bottom: 20px;
-      //     }
-      //   }
-
-      //   .form-item-last-name,
-      //   .form-item-job-title,
-      //   .form-item-phone-number {
-      //     padding-left: 15px;
-
-      //     @media (max-width: $tablet) {
-      //       padding-left: 0;
-      //     }
-      //   }
-
-      //   label {
-      //     font-style: normal;
-      //     font-weight: 600;
-      //     font-size: 1.25rem;
-      //     line-height: 24px;
-      //     font-family: ProximaNovaCond-Regular;
-      //     color: rgb(51, 51, 51);
-
-      //     @media (max-width: $tablet) {
-      //       font-family: $PrNovacond-Sbold;
-      //       font-size: szrem(15);
-      //       line-height: 18px;
-      //       color: $cblack;
-      //     }
-      //   }
-
-      //   input {
-      //     max-width: 405px;
-      //     width: 100%;
-      //     min-height: 40px;
-      //     background: rgb(242, 242, 242);
-      //     margin-top: 10px;
-      //     border: 0px;
-
-      //     @media (max-width: $tablet) {
-      //       min-height: 30px;
-      //       max-width: 100%;
-      //     }
-      //   }
-
-      //   select {
-      //     max-width: 265px;
-      //     width: 100%;
-      //     min-height: 40px;
-      //     background: rgb(242, 242, 242);
-      //     margin-top: 10px;
-      //     border-width: 0px 14px 0px 0px;
-      //     border-top-style: initial;
-      //     border-bottom-style: initial;
-      //     border-left-style: initial;
-      //     border-top-color: initial;
-      //     border-bottom-color: initial;
-      //     border-left-color: initial;
-      //     border-image: initial;
-      //     margin-bottom: 30px;
-      //     color: rgb(76, 69, 70);
-      //     font-weight: 300;
-      //     font-size: 1.25rem;
-      //     line-height: 24px;
-      //     font-family: ProximaNovaCond-Light;
-      //     border-right-style: solid;
-      //     border-right-color: rgb(242, 242, 242);
-      //     border-right: 0;
-
-      //     @media (max-width: $tablet) {
-      //       width: 100%;
-      //       max-width: 100%;
-      //       min-height: 30px;
-      //       margin-bottom: 20px;
-      //       font-size: szrem(13);
-      //     }
-      //   }
-
-      //   textarea {
-      //     max-width: 550px;
-      //     width: 100%;
-      //     min-height: 145px;
-      //     background: rgb(242, 242, 242);
-      //     margin-top: 10px;
-      //     border: 0px;
-
-      //     @media (max-width: $tablet) {
-      //       max-width: 100%;
-      //       min-height: 200px;
-      //     }
-      //   }
-
-      //   fieldset {
-      //     border: 0px;
-      //     padding: 0px;
-      //     max-width: 290px;
-      //     width: 34.52381%; //36%;
-      //     margin: 0px;
-
-      //     @media (max-width: $tablet) {
-      //       width: 100%;
-      //       max-width: 100%;
-      //     }
-
-      //     legend {
-      //       display: none;
-      //     }
-
-      //     .fieldset-wrapper {
-      //       margin: 20px 25px 0px 0px;
-
-      //       @media (max-width: $tablet) {
-      //         margin: 0;
-      //       }
-      //     }
-      //   }
-
-      //   .form-item-interest {
-      //     margin: 0;
-      //   }
-
-      //   .form-type-textarea {
-      //     max-width: 65.4762%;
-      //     width: 100%;
-      //     margin-top: 20px;
-
-      //     @media (max-width: $tablet) {
-      //       width: 100%;
-      //       max-width: 100%;
-      //       margin-top: 0;
-      //       margin-bottom: 30px;
-      //     }
-      //   }
-
-      //   .form-actions {
-      //     width: 100%;
-      //     padding-top: 0px;
-      //     margin: 0px;
-      //   }
-
-      //   .button {
-      //     max-width: 150px;
-      //     width: 100%;
-      //     min-height: 40px;
-      //     background: rgb(237, 28, 36);
-      //     margin-top: 0px;
-      //     font-weight: 300;
-      //     font-size: 1.125rem;
-      //     line-height: 25px;
-      //     font-family: ProximaNovaCond-Regular;
-      //     color: rgb(255, 255, 255);
-      //     border-radius: 0px;
-      //     text-transform: uppercase;
-
-      //     @media (max-width: $tablet) {
-      //       max-width: 100px;
-      //       min-height: 30px;
-      //       max-height: 30px;
-      //       font-size: szrem(14);
-      //       line-height: 16px;
-      //       letter-spacing: 0.4px;
-      //     }
-      //   }
-    }
-  }
-}
