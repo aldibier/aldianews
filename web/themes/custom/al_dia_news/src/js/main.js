@@ -1,4 +1,22 @@
 window.onload = function() {
+
+  ///// js para publicidad en bloques de categorias de noticias
+  Array.from(
+    document.querySelectorAll(
+      ".block-fixed-block-contentvertical-advertising-mobile"
+    )
+  ).map(function(e) {
+    if (e.children.children != null) {
+      e.closest(".mobile-less").parentElement.parentElement.classList.add(
+        "life-advertising"
+      );
+    } else {
+      e.parentElement.parentElement.classList.add("mobile-free");
+    }
+  });
+
+
+  
   // blockquote para selection-sharer
   const allBlockquote = document.querySelectorAll(
     'blockquote:not([class*="twitter"])'
@@ -250,17 +268,25 @@ window.onload = function() {
   //// js para controlar pop-up about al dia live
   if (!!document.querySelector(".path-about-al-dia-live")) {
     //// js pop-up about al dia live
-    const buttonApply = document.querySelector('.path-about-al-dia-live .button-apply');
-    const buttonClose = document.querySelector('.close-modal');
-    const modalForm = document.querySelector('.modal-form');
-    
-    buttonApply.addEventListener('click',()=>modalForm.classList.add('show'));
-    buttonClose.addEventListener('click',()=>modalForm.classList.remove('show'));
+    const buttonApply = document.querySelector(
+      ".path-about-al-dia-live .button-apply"
+    );
+    const buttonClose = document.querySelector(".close-modal");
+    const modalForm = document.querySelector(".modal-form");
 
-     //// js pop-up about al dia live
-     const triggerVideo = document.querySelector('.block-views-blockabout-al-dia-live-block-1 .about-al-dia-live-container-video');
-     const buttonCloseVideo = document.querySelector('.close-video');
-     const video = document.querySelector('.modal-video');
+    buttonApply.addEventListener("click", () =>
+      modalForm.classList.add("show")
+    );
+    buttonClose.addEventListener("click", () =>
+      modalForm.classList.remove("show")
+    );
+
+    //// js pop-up about al dia live
+    const triggerVideo = document.querySelector(
+      ".block-views-blockabout-al-dia-live-block-1 .about-al-dia-live-container-video"
+    );
+    const buttonCloseVideo = document.querySelector(".close-video");
+    const video = document.querySelector(".modal-video");
 
     //js temporal
     video.insertAdjacentElement("afterbegin", buttonCloseVideo);
@@ -319,18 +345,5 @@ window.onload = function() {
     }
   });
 
-  ///// js para publicidad en bloques de categorias de noticias
-  Array.from(
-    document.querySelectorAll(
-      ".block-fixed-block-contentvertical-advertising-mobile"
-    )
-  ).map(function(e) {
-    if (e.children.children != null) {
-      e.closest(".mobile-less").parentElement.parentElement.classList.add(
-        "life-advertising"
-      );
-    } else {
-      e.parentElement.parentElement.classList.add("mobile-free");
-    }
-  });
+  
 };

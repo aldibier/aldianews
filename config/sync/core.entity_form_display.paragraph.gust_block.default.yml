@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.gust_block.field_guest
+    - field.field.paragraph.gust_block.field_style
     - field.field.paragraph.gust_block.field_title
     - paragraphs.paragraphs_type.gust_block
   module:
@@ -24,6 +25,12 @@ content:
       form_display_mode: default
       default_paragraph_type: ''
     third_party_settings: {  }
+    region: content
+  field_style:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
     region: content
   field_title:
     weight: 0

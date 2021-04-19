@@ -128,6 +128,20 @@ body.toolbar-tray-open.user-logged-in {
   }
 }
 
+
+.comun-title h1{
+  width: 100%;
+  margin: 0px auto 10px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid $corange;
+  font-family: $ModernoFB-Regular;
+  font-style: normal;
+  font-weight: normal;
+  font-size: $px42;
+  line-height: 50px;
+  color: $corange;
+}
+
 .mobile-plus {
   .card-more:nth-child(1),
   .card-more:nth-child(2) {
@@ -158,18 +172,23 @@ body.toolbar-tray-open.user-logged-in {
         max-width: none;
       }
     }
-    .mobile-free {
-      .view-content {
-        justify-content: space-between;
-        justify-content: space-between;
-      }
-      .card-one-column {
-        max-width: 140px;
-      }
-      .view-footer {
-        display: none;
-      }
+  }
+  .mobile-free {
+    .view-content {
+      justify-content: space-between;
     }
+    .card-one-column {
+      max-width: 140px;
+    }
+    .view-footer {
+      display: none;
+    }
+  }
+  .comun-title h1{
+    margin: 0px auto 7px;
+    border-bottom: 1px solid $corange;
+    font-size: $px20;
+    line-height: 24px;
   }
 }
 

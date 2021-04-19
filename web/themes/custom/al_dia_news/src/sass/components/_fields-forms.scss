@@ -228,7 +228,7 @@ form {
     border: 2px solid #ed1c24;
   }
   &::after {
-    content: "✓";
+    content: "✔";
     height: 29px;
     width: 29px;
     left: 5px;
@@ -238,6 +238,8 @@ form {
     font-size: 23px;
     background: #ed1c24;
     display: none;
+    align-items: center;
+    justify-content: center;
   }
 }
 .active-check + .fake-checkbox::after {
@@ -246,13 +248,22 @@ form {
 .js-form-fake-checkbox {
   order: 2;
   position: relative;
-  z-index: 20;
+  z-index: 20 !important;
   width: 30px;
   height: 30px;
   opacity: 0;
   cursor: pointer;
-  margin-left: -26px;
+  margin-left: -26px !important;
 }
-.active-check + label {
+.fake-checkbox + label {
   order: 4;
+}
+
+.action-button {
+  input[value="Upload"] {
+    background: #c4c4c4;
+  }
+  input[value*="Remove"] {
+    background: #5c6165;
+  }
 }

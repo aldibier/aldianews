@@ -1214,7 +1214,15 @@ module.exports = function (css) {
 /***/ (function(module, exports) {
 
 window.onload = function () {
-  // blockquote para selection-sharer
+  ///// js para publicidad en bloques de categorias de noticias
+  Array.from(document.querySelectorAll(".block-fixed-block-contentvertical-advertising-mobile")).map(function (e) {
+    if (e.children.children != null) {
+      e.closest(".mobile-less").parentElement.parentElement.classList.add("life-advertising");
+    } else {
+      e.parentElement.parentElement.classList.add("mobile-free");
+    }
+  }); // blockquote para selection-sharer
+
   var allBlockquote = document.querySelectorAll('blockquote:not([class*="twitter"])');
 
   if (!!allBlockquote && allBlockquote.length) {
@@ -1432,19 +1440,19 @@ window.onload = function () {
 
   if (!!document.querySelector(".path-about-al-dia-live")) {
     //// js pop-up about al dia live
-    var buttonApply = document.querySelector('.path-about-al-dia-live .button-apply');
-    var buttonClose = document.querySelector('.close-modal');
-    var modalForm = document.querySelector('.modal-form');
-    buttonApply.addEventListener('click', function () {
-      return modalForm.classList.add('show');
+    var buttonApply = document.querySelector(".path-about-al-dia-live .button-apply");
+    var buttonClose = document.querySelector(".close-modal");
+    var modalForm = document.querySelector(".modal-form");
+    buttonApply.addEventListener("click", function () {
+      return modalForm.classList.add("show");
     });
-    buttonClose.addEventListener('click', function () {
-      return modalForm.classList.remove('show');
+    buttonClose.addEventListener("click", function () {
+      return modalForm.classList.remove("show");
     }); //// js pop-up about al dia live
 
-    var triggerVideo = document.querySelector('.block-views-blockabout-al-dia-live-block-1 .about-al-dia-live-container-video');
-    var buttonCloseVideo = document.querySelector('.close-video');
-    var video = document.querySelector('.modal-video'); //js temporal
+    var triggerVideo = document.querySelector(".block-views-blockabout-al-dia-live-block-1 .about-al-dia-live-container-video");
+    var buttonCloseVideo = document.querySelector(".close-video");
+    var video = document.querySelector(".modal-video"); //js temporal
 
     video.insertAdjacentElement("afterbegin", buttonCloseVideo);
     triggerVideo.addEventListener("click", function () {
@@ -1488,14 +1496,6 @@ window.onload = function () {
       e.classList.add("category");
     } else if (e != null && e.innerHTML.includes("--")) {
       e.parentElement.classList.add("subsubcategory");
-    }
-  }); ///// js para publicidad en bloques de categorias de noticias
-
-  Array.from(document.querySelectorAll(".block-fixed-block-contentvertical-advertising-mobile")).map(function (e) {
-    if (e.children.children != null) {
-      e.closest(".mobile-less").parentElement.parentElement.classList.add("life-advertising");
-    } else {
-      e.parentElement.parentElement.classList.add("mobile-free");
     }
   });
 };
@@ -1740,6 +1740,14 @@ __webpack_require__.r(__webpack_exports__);
         $("." + currentClass, context).once("js-form-fake-checkbox").click(function () {
           var context = $(this);
           context.toggleClass("active-check");
+        }); /// js para esrilos de boton de eliminar archivo
+
+        Array.from(document.querySelectorAll(".webform-submission-apply-to-this-job-form .form-type-checkbox input")).map(function (e) {
+          if (e != null) {
+            e.addEventListener("click", function () {
+              e.closest(".form-managed-file").classList.add("action-button");
+            });
+          }
         });
       });
     }
@@ -1965,8 +1973,8 @@ var initSlick = function initSlick($, Drupal) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/usuario/Desktop/Proyectos/AlDiaNews/4ld14-n3ws/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
-module.exports = __webpack_require__(/*! /Users/usuario/Desktop/Proyectos/AlDiaNews/4ld14-n3ws/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
+__webpack_require__(/*! C:\Users\valer\Desktop\4ld14-n3ws\web\themes\custom\al_dia_news\src\js\scripts.js */"./src/js/scripts.js");
+module.exports = __webpack_require__(/*! C:\Users\valer\Desktop\4ld14-n3ws\web\themes\custom\al_dia_news\src\sass\styles.scss */"./src/sass/styles.scss");
 
 
 /***/ })
