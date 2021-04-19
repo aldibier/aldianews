@@ -180,10 +180,6 @@
     width: 100%;
     max-width: 440px;
     order: 1;
-    @media (min-width: 1024px) {
-      position: relative;
-      right: 10px;
-    }
   }
   .form-item-field-my-content-has-a-main-vide {
     max-width: 225px;
@@ -192,47 +188,32 @@
   }
   .form-item-sort-bef-combine,
   .form-item-field-category {
-    max-width: 200px;
+    max-width: 160px;
     width: 100%;
   }
   .form-item-field-category {
     order: 4;
+    max-width: 250px;
+    margin-right: 10px;
     .opt label {
-      padding-left: 40px;
+      padding-left: 12px;
       display: block;
       padding-top: 14px;
-      font-size: 18px;
+      font-size: 20px;
+      border-bottom: 0.5px solid #b1b1b1;
+      text-transform: lowercase;
       &:first-letter {
         color: transparent;
       }
     }
     .category {
+      padding-left: 17px !important;
       font-family: $PrNovacond-Sbold;
-      font-size: 20px !important;
-      padding-left: 20px !important;
+      text-transform: uppercase !important;
+      border-top: 0.5px solid #333333;
+      border-bottom: 0px solid #333333;
       &:first-letter {
         color: #333 !important;
-      }
-    }
-    .subsubcategory label {
-      font-family: $PrNovacond-light;
-      font-size: 16px !important;
-      padding-left: 60px !important;
-      position: relative;
-      &::before {
-        content: "";
-        display: block;
-        position: absolute;
-        width: 8px;
-        height: 100%;
-        top: 0px;
-        left: 60px;
-        background: #ededed;
-      }
-    }
-    .subsubcategory:hover {
-      label::before {
-        background: #e4e4e4;
       }
     }
   }
@@ -435,7 +416,9 @@
       max-width: none;
       width: 100%;
     }
-
+    .form-item-field-category {
+      margin-right: 0px;
+    }
     .form-actions input {
       height: 30px;
       min-width: 100px;
