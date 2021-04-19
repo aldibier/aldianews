@@ -17,9 +17,9 @@
     display: inline-block;
     width: max-content;
     display: inline-block;
-    font-family: $PrNovacond-bold;
+    font-family: $PrNovacond-reg;
     font-style: normal;
-    font-weight: bold;
+    font-weight: 500;
     font-size: $px26;
     line-height: 32px;
     text-transform: uppercase;
@@ -30,9 +30,9 @@
     width: max-content;
     color: $cblack;
     display: inline-block;
-    font-family: $PrNovacond-bold;
+    font-family: $PrNovacond-reg;
     font-style: normal;
-    font-weight: bold;
+    font-weight: 500;
     font-size: $px26;
     line-height: 32px;
     text-transform: uppercase;
@@ -154,7 +154,7 @@
   @media (min-width: $broken) {
     .content-right-pages {
       position: relative;
-
+      margin-bottom: 69px;
       &::after {
         content: "";
         width: 1px;
@@ -213,11 +213,12 @@
       }
 
       .field--name-field-image-related-covers {
-        margin: 0 0 10px;
+        margin: 0 0 5px;
+        max-height: 80px;
       }
 
       .field--name-field-taxonomy-term-related-cove {
-        margin: 0 0 10px;
+        margin: 0 0 0px;
 
         a {
           font-size: 10px;
@@ -255,6 +256,11 @@
           }
         }
       }
+    }
+    .content-right-pages {
+      border-top: 0.5px solid #b1b1b1;
+      padding-top: 40px;
+      margin-top: 0px;
     }
   }
 }
