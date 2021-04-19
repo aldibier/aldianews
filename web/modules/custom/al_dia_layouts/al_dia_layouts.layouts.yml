@@ -456,7 +456,11 @@ events:
     - [header_content]
     - [one_first, one_second]   
     - [two_content]   
-    - [three_content]   
+    - [three_content, three_content_second]   
+    - [four_content, four_content_second]   
+    - [five_content] 
+    - [six_content]  
+
   regions:
     header_content:
       label: Header - Contenido
@@ -464,5 +468,18 @@ events:
       label: Primero - Contenido
     one_second:
       label: Primero - Contenido - Publicidad
+    two_content:
+      label: Segundo - Content
     three_content:
-      label: Tercero - Relacionados
+      label: Tercero - Present by
+    three_content_second:
+      label: Segundo - Present by - Publicidad
+    four_content:
+      label: Cuarto - Guest
+    four_content_second:
+      label: Cuarto - Guest - Publicidad
+    five_content:
+      label: Quinto - Sliders
+    six_content:
+      label: Sexto - Contact
+

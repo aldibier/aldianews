@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.event.field_slider_block
     - field.field.node.event.field_venue_of_the_event
     - fixed_block_content.fixed_block_content._small_vertical_advertising
+    - fixed_block_content.fixed_block_content.horizontal_advertising
     - node.type.event
     - views.view.block_guest
   module:
@@ -280,19 +281,6 @@ third_party_settings:
                 third_party_settings: {  }
             additional: {  }
             weight: 0
-          597df0a5-898e-469f-9448-01ea169014a7:
-            uuid: 597df0a5-898e-469f-9448-01ea169014a7
-            region: three_content
-            configuration:
-              id: 'views_block:block_guest-block_1'
-              label: ''
-              provider: views
-              label_display: '0'
-              views_label: ''
-              items_per_page: none
-              context_mapping: {  }
-            additional: {  }
-            weight: -9
           7ee1dfbd-5c6b-4bd0-affd-c2ece9cf1a64:
             uuid: 7ee1dfbd-5c6b-4bd0-affd-c2ece9cf1a64
             region: content
@@ -335,7 +323,7 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: -10
+            weight: -9
           ada1435c-e844-4f7f-900f-e61c2afe5de5:
             uuid: ada1435c-e844-4f7f-900f-e61c2afe5de5
             region: content
@@ -353,6 +341,43 @@ third_party_settings:
                 third_party_settings: {  }
             additional: {  }
             weight: 2
+          7e99797b-662d-4493-9976-5be1977ec640:
+            uuid: 7e99797b-662d-4493-9976-5be1977ec640
+            region: three_content_second
+            configuration:
+              id: 'fixed_block_content:horizontal_advertising'
+              label: 'Horizontal advertising'
+              provider: fixed_block_content
+              label_display: '0'
+              view_mode: ''
+              context_mapping: {  }
+            additional: {  }
+            weight: -9
+          992f1545-8891-4121-bd3e-9cf33d0abcee:
+            uuid: 992f1545-8891-4121-bd3e-9cf33d0abcee
+            region: four_content
+            configuration:
+              id: 'views_block:block_guest-block_1'
+              label: ''
+              provider: views
+              label_display: '0'
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+          927b7376-2637-4000-93cc-a8881d3ca0da:
+            uuid: 927b7376-2637-4000-93cc-a8881d3ca0da
+            region: four_content_second
+            configuration:
+              id: 'fixed_block_content:_small_vertical_advertising'
+              label: ' Small vertical advertising'
+              provider: fixed_block_content
+              label_display: '0'
+              view_mode: ''
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
         third_party_settings: {  }
 id: node.event.default
 targetEntityType: node
