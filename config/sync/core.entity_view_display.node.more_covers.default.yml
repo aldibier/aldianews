@@ -50,27 +50,6 @@ third_party_settings:
         layout_settings:
           label: 'More Covers'
         components:
-          c6ea9853-8d1a-424e-9a00-81d076acf09e:
-            uuid: c6ea9853-8d1a-424e-9a00-81d076acf09e
-            region: one_content
-            configuration:
-              id: 'field_block:node:more_covers:title'
-              label: Title
-              provider: layout_builder
-              label_display: '0'
-              formatter:
-                label: hidden
-                type: string
-                settings:
-                  link_to_entity: false
-                third_party_settings:
-                  field_formatter_class:
-                    class: ''
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-            additional: {  }
-            weight: 0
           91991f8f-5193-4a66-b348-8e5081239f65:
             uuid: 91991f8f-5193-4a66-b348-8e5081239f65
             region: one_content
@@ -96,7 +75,7 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: 1
+            weight: -10
           3591c5f2-40db-4f8c-b3cf-448e6e15b013:
             uuid: 3591c5f2-40db-4f8c-b3cf-448e6e15b013
             region: one_content
@@ -118,7 +97,7 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: 2
+            weight: -8
           66df1d46-065f-4c3d-be3d-31e0b199243d:
             uuid: 66df1d46-065f-4c3d-be3d-31e0b199243d
             region: one_content
@@ -140,7 +119,7 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: 3
+            weight: -7
           abcee420-f178-4468-b791-05146882168b:
             uuid: abcee420-f178-4468-b791-05146882168b
             region: two_content
@@ -189,9 +168,9 @@ third_party_settings:
               id: 'field_block:node:more_covers:field_related_more_covers'
               label: FEATURES
               provider: layout_builder
-              label_display: '0'
+              label_display: visible
               formatter:
-                label: above
+                label: hidden
                 type: entity_reference_revisions_entity_view
                 settings:
                   view_mode: default
@@ -203,6 +182,27 @@ third_party_settings:
                 view_mode: view_mode
             additional: {  }
             weight: 0
+          c6ea9853-8d1a-424e-9a00-81d076acf09e:
+            uuid: c6ea9853-8d1a-424e-9a00-81d076acf09e
+            region: one_content
+            configuration:
+              id: 'field_block:node:more_covers:title'
+              label: Title
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: string
+                settings:
+                  link_to_entity: false
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: -9
         third_party_settings: {  }
 id: node.more_covers.default
 targetEntityType: node
