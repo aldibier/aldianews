@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.event.body
+    - field.field.node.event.field_contact_block
     - field.field.node.event.field_date_of_event
     - field.field.node.event.field_guest_block
     - field.field.node.event.field_image
@@ -37,6 +38,7 @@ content:
     region: content
 hidden:
   addtoany: true
+  field_contact_block: true
   field_date_of_event: true
   field_guest_block: true
   field_image: true

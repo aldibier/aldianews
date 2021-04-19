@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.event.body
+    - field.field.node.event.field_contact_block
     - field.field.node.event.field_date_of_event
     - field.field.node.event.field_guest_block
     - field.field.node.event.field_image
@@ -37,10 +38,28 @@ content:
     region: content
   created:
     type: datetime_timestamp
-    weight: 12
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_contact_block:
+    type: paragraphs
+    weight: 11
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+    region: content
   field_date_of_event:
     weight: 4
     settings: {  }
@@ -133,7 +152,7 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 16
+    weight: 17
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -141,21 +160,21 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 14
+    weight: 15
     region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 17
+    weight: 18
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 15
+    weight: 16
     region: content
     third_party_settings: {  }
   title:
@@ -167,13 +186,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
   translation:
-    weight: 13
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 11
+    weight: 12
     settings:
       match_operator: CONTAINS
       size: 60
