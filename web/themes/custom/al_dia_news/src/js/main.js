@@ -1,4 +1,22 @@
 window.onload = function() {
+
+  ///// js para publicidad en bloques de categorias de noticias
+  Array.from(
+    document.querySelectorAll(
+      ".block-fixed-block-contentvertical-advertising-mobile"
+    )
+  ).map(function(e) {
+    if (e.children.children != null) {
+      e.closest(".mobile-less").parentElement.parentElement.classList.add(
+        "life-advertising"
+      );
+    } else {
+      e.parentElement.parentElement.classList.add("mobile-free");
+    }
+  });
+
+
+  
   // blockquote para selection-sharer
   const allBlockquote = document.querySelectorAll(
     'blockquote:not([class*="twitter"])'
@@ -327,18 +345,5 @@ window.onload = function() {
     }
   });
 
-  ///// js para publicidad en bloques de categorias de noticias
-  Array.from(
-    document.querySelectorAll(
-      ".block-fixed-block-contentvertical-advertising-mobile"
-    )
-  ).map(function(e) {
-    if (e.children.children != null) {
-      e.closest(".mobile-less").parentElement.parentElement.classList.add(
-        "life-advertising"
-      );
-    } else {
-      e.parentElement.parentElement.classList.add("mobile-free");
-    }
-  });
+  
 };

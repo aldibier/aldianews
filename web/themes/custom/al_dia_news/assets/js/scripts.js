@@ -1214,7 +1214,15 @@ module.exports = function (css) {
 /***/ (function(module, exports) {
 
 window.onload = function () {
-  // blockquote para selection-sharer
+  ///// js para publicidad en bloques de categorias de noticias
+  Array.from(document.querySelectorAll(".block-fixed-block-contentvertical-advertising-mobile")).map(function (e) {
+    if (e.children.children != null) {
+      e.closest(".mobile-less").parentElement.parentElement.classList.add("life-advertising");
+    } else {
+      e.parentElement.parentElement.classList.add("mobile-free");
+    }
+  }); // blockquote para selection-sharer
+
   var allBlockquote = document.querySelectorAll('blockquote:not([class*="twitter"])');
 
   if (!!allBlockquote && allBlockquote.length) {
@@ -1488,14 +1496,6 @@ window.onload = function () {
       e.classList.add("category");
     } else if (e != null && e.innerHTML.includes("--")) {
       e.parentElement.classList.add("subsubcategory");
-    }
-  }); ///// js para publicidad en bloques de categorias de noticias
-
-  Array.from(document.querySelectorAll(".block-fixed-block-contentvertical-advertising-mobile")).map(function (e) {
-    if (e.children.children != null) {
-      e.closest(".mobile-less").parentElement.parentElement.classList.add("life-advertising");
-    } else {
-      e.parentElement.parentElement.classList.add("mobile-free");
     }
   });
 };
@@ -1973,8 +1973,8 @@ var initSlick = function initSlick($, Drupal) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
-module.exports = __webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
+__webpack_require__(/*! C:\Users\valer\Desktop\4ld14-n3ws\web\themes\custom\al_dia_news\src\js\scripts.js */"./src/js/scripts.js");
+module.exports = __webpack_require__(/*! C:\Users\valer\Desktop\4ld14-n3ws\web\themes\custom\al_dia_news\src\sass\styles.scss */"./src/sass/styles.scss");
 
 
 /***/ })
