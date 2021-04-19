@@ -167,6 +167,12 @@
 
 .card-one-column-home {
 
+  .field--type-image a {
+    display: block;
+    line-height: 0;
+    border: none;
+  }
+
   .card-image {
     margin: 0 0 15px;
   }
@@ -174,6 +180,10 @@
   .field--name-category-home {
     a {
       font-size: szrem(16);
+
+      @media screen and(max-width:$tablet) {
+        font-size: szrem(10);
+      }
     }
   }
 

@@ -1,18 +1,55 @@
 .featured-news {
     height: 770px;
+    max-height: 770px;
     margin-bottom: 40px;
     padding-bottom: 40px;
     border-bottom: 1px solid $cgrey4;
     position: relative;
+
+    @media screen and (max-width: $broken) {
+        margin: 0 -15px 40px;
+        padding-bottom: 0;
+        border-bottom: 0;
+
+        &::after {
+            content: '';
+            width: calc(100% - 30px);
+            margin: 40px auto 0;
+            height: 1px;
+            display: block;
+            background-color: $cgrey4;
+        }
+    }
+
+    @media screen and (max-width: $tablet) {
+        height: auto;
+        min-height: 215px;
+        margin: 0 -15px 15px;
+
+        &::after {
+            margin-top: 15px;
+        }
+    }
 }
 
 .featured-news-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     img {
         width: 100%;
         max-height: 730px;
         min-height: 730px;
         max-width: initial;
         object-fit: cover;
+
+        @media screen and (max-width: $tablet) {
+            max-width: 100%;
+            max-height: initial;
+            min-height: 200px;
+            object-fit: initial;
+        }
     }
 }
 
@@ -26,10 +63,20 @@
     position: absolute;
     bottom: calc(0% + 97px);
     background-color: rgba(0,0,0,0.6);
+
+    @media screen and (max-width: $tablet) {
+        height: 80px;
+        bottom: calc(0% + 15px);
+    }
 }
 
 .featured-news-title {
     margin-bottom: 10px;
+
+    @media screen and (max-width: $tablet) {
+       margin-bottom: 5px;
+    }
+
     a {
         font-size: szrem(56);
         font-family: $PrNovacond-bold;
@@ -39,10 +86,15 @@
         text-transform: uppercase;
         text-decoration: none;
         color: $cwhite;
+
+        @media screen and (max-width: $tablet) {
+            font-size: szrem(20);
+        }
     }
 }
 
 .featured-news-body {
+    @include ellipsis(52px,2);
     font-size: szrem(22);
     font-family: $NimR-reg;
     font-style: normal;
@@ -50,4 +102,8 @@
     line-height: 122%;
     text-align: center;
     color: $cwhite;
+    
+    @media screen and (max-width: $tablet) {
+        font-size: szrem(12);
+    }
 }
