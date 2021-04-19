@@ -4,7 +4,9 @@ status: true
 dependencies:
   config:
     - field.field.node.event.body
+    - field.field.node.event.field_contact_block
     - field.field.node.event.field_date_of_event
+    - field.field.node.event.field_email
     - field.field.node.event.field_guest_block
     - field.field.node.event.field_image
     - field.field.node.event.field_logo
@@ -16,7 +18,9 @@ dependencies:
     - fixed_block_content.fixed_block_content.horizontal_advertising
     - node.type.event
     - views.view.block_guest
+    - views.view.contact_event
     - views.view.slider_internal_event
+    - webform.webform.nominate
   module:
     - addtoany
     - al_dia_layouts
@@ -28,6 +32,7 @@ dependencies:
     - text
     - user
     - views
+    - webform
 third_party_settings:
   layout_builder:
     allow_custom: false
@@ -392,6 +397,77 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: 0
+          3cf06b27-29eb-4f7b-b81e-a044c993d527:
+            uuid: 3cf06b27-29eb-4f7b-b81e-a044c993d527
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:event:field_contact_block'
+              formatter:
+                type: entity_reference_revisions_entity_view
+                label: above
+                settings:
+                  view_mode: default
+                  link: ''
+                third_party_settings: {  }
+            additional: {  }
+            weight: 3
+          2f57b093-e53b-416b-b528-fd1146e639d9:
+            uuid: 2f57b093-e53b-416b-b528-fd1146e639d9
+            region: six_content
+            configuration:
+              id: 'views_block:contact_event-block_1'
+              label: ''
+              provider: views
+              label_display: '0'
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+          3a4614c7-b005-4c70-9fed-a806174ff7cc:
+            uuid: 3a4614c7-b005-4c70-9fed-a806174ff7cc
+            region: six_content
+            configuration:
+              id: 'fixed_block_content:horizontal_advertising'
+              label: 'Horizontal advertising'
+              provider: fixed_block_content
+              label_display: '0'
+              view_mode: ''
+              context_mapping: {  }
+            additional: {  }
+            weight: 1
+          a0f690c3-4eb5-494d-a5cc-aa2435716ef0:
+            uuid: a0f690c3-4eb5-494d-a5cc-aa2435716ef0
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:event:field_email'
+              formatter:
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+                type: basic_string
+            additional: {  }
+            weight: 4
+          e5c6ad6a-9b12-4248-966a-f26849e2571f:
+            uuid: e5c6ad6a-9b12-4248-966a-f26849e2571f
+            region: content_header
+            configuration:
+              id: webform_block
+              label: Webform
+              provider: webform
+              label_display: '0'
+              webform_id: nominate
+              default_data: ''
+              redirect: false
+              context_mapping: {  }
+            additional: {  }
+            weight: -4
         third_party_settings: {  }
 id: node.event.default
 targetEntityType: node
@@ -405,6 +481,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
+  field_contact_block:
+    type: entity_reference_revisions_entity_view
+    weight: 111
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
   field_date_of_event:
     weight: 106
     label: above
@@ -413,6 +498,13 @@ content:
       timezone_override: ''
     third_party_settings: {  }
     type: datetime_default
+    region: content
+  field_email:
+    weight: 112
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
     region: content
   field_guest_block:
     type: entity_reference_revisions_entity_view

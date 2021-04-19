@@ -1494,8 +1494,6 @@ window.onload = function () {
   Array.from(document.querySelectorAll("#views-exposed-form-search-results-al-dia-solr-page-1 .form-item-field-category li label")).map(function (e) {
     if (e != null && !e.innerHTML.includes("-")) {
       e.classList.add("category");
-    } else if (e != null && e.innerHTML.includes("--")) {
-      e.parentElement.classList.add("subsubcategory");
     }
   }); //// publicidad horizontal cada 6 en more covers
 

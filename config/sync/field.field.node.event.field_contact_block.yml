@@ -1,0 +1,64 @@
+uuid: 7aa56cb2-dac8-4edd-9e2d-315ca123da4e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contact_block
+    - node.type.event
+    - paragraphs.paragraphs_type.contact
+  module:
+    - entity_reference_revisions
+id: node.event.field_contact_block
+field_name: field_contact_block
+entity_type: node
+bundle: event
+label: 'Contact block'
+description: 'Add contact blocks for the event you are going to publish'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      contact: contact
+    target_bundles_drag_drop:
+      advertising_informative_items_:
+        weight: 13
+        enabled: false
+      advertising_options:
+        weight: 14
+        enabled: false
+      contact:
+        enabled: true
+        weight: 15
+      features_items:
+        weight: 16
+        enabled: false
+      features_more_covers:
+        weight: 17
+        enabled: false
+      guest:
+        weight: 18
+        enabled: false
+      gust_block:
+        weight: 19
+        enabled: false
+      i_am_an_employer_sections:
+        weight: 20
+        enabled: false
+      main_features:
+        weight: 21
+        enabled: false
+      sliders_in_internal_events:
+        weight: 22
+        enabled: false
+      social_media:
+        weight: 23
+        enabled: false
+      testimonies:
+        weight: 24
+        enabled: false
+field_type: entity_reference_revisions
