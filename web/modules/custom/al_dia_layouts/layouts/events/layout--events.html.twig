@@ -13,25 +13,26 @@
 {% if content %}
 	<div class="container-content">
 
-    {% if content.header_content %}
-        <div {{ region_attributes.header_content.addClass('header-content banner-events') }}>
-          {{ content.header_content }} 
-        </div>
-    {% endif %}
-    {% if content.content_header %}
-        <div {{ region_attributes.content_header.addClass('header-content-date-place') }}>
-          {{ content.content_header }} 
-        </div>
-    {% endif %}
-    <button name="nominee" type="button">{{ 'NOMINATE'|trans }}</button>
-	<button name="nominee" type="button">{{ 'REGISTER HERE'|trans }}</button>
-    <button name="nominee" type="button">{{ 'SPONSORSHIP'|trans }}</button>
-	<div {{ region_attributes.two_content.addClass('container-right-event') }}>
-		<div class="section-event-body">
-			{% if content.one_first %}
-				<div {{ region_attributes.one_first.addClass('body-lateral-section') }}>
-					{{ content.one_first }}
-				</div>
+		{% if content.header_content %}
+			<div {{ region_attributes.header_content.addClass('header-content banner-events') }}>
+				{{ content.header_content }}
+				{% if content.content_header %}
+					<div {{ region_attributes.content_header.addClass('header-content-date-place') }}>
+						{{ content.content_header }}
+					</div>
+				{% endif %}
+				<button name="nominee" type="button">{{ 'NOMINATE'|trans }}</button>
+				<button name="nominee" type="button">{{ 'REGISTER HERE'|trans }}</button>
+				<button name="nominee" type="button">{{ 'SPONSORSHIP'|trans }}</button>
+			</div>
+		{% endif %}
+
+		<div {{ region_attributes.two_content.addClass('container-right-event') }}>
+			<div class="section-event-body section-flex">
+				{% if content.one_first %}
+					<div {{ region_attributes.one_first.addClass('body-lateral-section') }}>
+						{{ content.one_first }}
+					</div>
 
 				{% endif %}
 				{% if content.one_second %}
@@ -41,14 +42,14 @@
 				{% endif %}
 			</div>
 		</div>
-		<div class="content-present-by-advertising">
+		<div class="content-present-by-advertising section-flex">
 			{% if content.three_content %}
-				<div {{ region_attributes.three_content.addClass('three-content-event') }}>
+				<div {{ region_attributes.three_content.addClass('three-content-event body-lateral-section') }}>
 					{{ content.three_content }}
 				</div>
 			{% endif %}
 			{% if content.three_content_second %}
-				<div {{ region_attributes.three_content_second.addClass('three-content-event-advertising') }}>
+				<div {{ region_attributes.three_content_second.addClass('three-content-event-advertising body-lateral-section-advertising') }}>
 					{{ content.three_content_second }}
 				</div>
 			{% endif %}
