@@ -3,8 +3,12 @@
 }
 
 .current-edition {
-    width: 840px;
-    background-color: #4D4D4D;
+    width: 880px;
+    padding-left: 40px;
+
+    .view-content {
+        background-color: #4D4D4D;
+    }
 }
 
 .current-edition-header {
@@ -63,8 +67,6 @@
 }
 
 .current-edition-cover-page {
-    margin-right: 45px;
-
     img {
         width: 100%;
         height: auto;
@@ -74,21 +76,102 @@
 }
 
 .current-edition-content {
-    display: flex;
     padding: 0 40px 55px;
+    display: grid;
+    grid-template-columns: minmax(320px,435px);
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 'cover-image title'
+                         'cover-image content';
+    grid-gap: 0 45px;
 
-    .block-fixed-block-contenttitle-into-current-edition-block {
-        margin-bottom: 50px;
-        
-        a {
-            font-size: szrem(18);
-            font-family: $PrNovacond-bold;
+    .current-edition-cover-page {
+        grid-area: cover-image;
+    }
+
+    .views-field-view-1 {
+        grid-area: content;
+
+        .view-header {
+            margin-bottom: 20px;
+            font-size: szrem(22);
+            font-family: $Mod-Sbold;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 26px;
+            color: $cwhite;
+        }
+
+        li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            &::before {
+                content: '';
+                margin-right: 25px;
+                padding: 5px;
+                display: block;
+                background-color: $corange;
+                border-radius: 50%;
+            }
+        }
+
+        .views-field-field-card-title-related-covers {
+            font-size: szrem(16);
+            font-family: $PrNovacond-Sbold;
             font-style: normal;
             font-weight: bold;
-            letter-spacing: 0.741176px;
-            color: $corange;
+            text-transform: uppercase;
+            line-height: 19px;
+            color: $cwhite;
         }
-    } 
+
+        .view-content {
+            margin-bottom: 40px;
+        }
+
+        .view-footer {
+            p {
+                font-size: szrem(17);
+                font-family: $Mod-bold;
+                font-style: normal;
+                font-weight: bold;
+                line-height: 35px;
+                letter-spacing: 0.741176px;
+                color: $cwhite;
+            }
+
+            button {
+                font-size: szrem(18);
+                letter-spacing: 0.741176px;
+                @include button($btnWidth:165px,$btnHeight:40px,$btnBackground:$corange,$btnColor:$cwhite)
+            }
+        }
+    }
+
+    .views-field-view-2 {
+        grid-area: title;
+    }
+
+    .view-title-into-current-edition-home {
+        margin-bottom: 50px;
+
+        .views-field-nothing {
+            a {
+                font-size: szrem(18);
+                font-family: $PrNovacond-bold;
+                font-style: normal;
+                font-weight: bold;
+                letter-spacing: 0.741176px;
+                color: $corange;
+            }
+        }
+    }
+
 }
 
 
