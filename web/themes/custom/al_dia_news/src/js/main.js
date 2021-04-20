@@ -383,13 +383,13 @@ window.onload = function() {
   ).map(e => {
     if (e != null) {
       if (e.innerText == "one") {
-        e.closest(".guest-event-advertising").classList.add("mode-one");
+        e.closest(".item-list").classList.add("mode-one");
       } else if (e.innerText == "two") {
-        e.closest(".guest-event-advertising").classList.add("mode-two");
+        e.closest(".item-list").classList.add("mode-two");
       } else if (e.innerText == "three") {
-        e.closest(".guest-event-advertising").classList.add("mode-three");
+        e.closest(".item-list").classList.add("mode-three");
       } else if (e.innerText == "more") {
-        e.closest(".guest-event-advertising").classList.add("mode-more");
+        e.closest(".item-list").classList.add("mode-more");
       }
     }
   });
