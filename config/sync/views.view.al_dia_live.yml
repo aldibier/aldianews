@@ -400,8 +400,34 @@ display:
             label: ''
           granularity: second
       title: 'Al día live'
-      header: {  }
-      footer: {  }
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content:
+            value: '<img class="image-desktop" src="/themes/custom/al_dia_news/assets/img/al-dia-live-logo.png"></img>'
+            format: full_html
+          plugin_id: text
+      footer:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content:
+            value: "<button name=\"sponsorship\" type=\"button\">SPONSORSHIP</button>\r\n<button name=\"register-here\" type=\"button\">REGISTER HERE</button>"
+            format: full_html
+          plugin_id: text
       empty: {  }
       relationships: {  }
       arguments: {  }

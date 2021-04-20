@@ -21,9 +21,12 @@
 						{{ content.content_header }}
 					</div>
 				{% endif %}
-				<button name="nominee" type="button">{{ 'NOMINATE'|trans }}</button>
-				<button name="nominee" type="button">{{ 'REGISTER HERE'|trans }}</button>
-				<button name="nominee" type="button">{{ 'SPONSORSHIP'|trans }}</button>
+				<div class="text-and-buttons-event">
+					<span>{{ 'Click here to register, to nominate, or to sponsor.'|trans }}</span>
+					<button name="nominee" type="button">{{ 'NOMINATE'|trans }}</button>
+					<button name="register-here" type="button">{{ 'REGISTER HERE'|trans }}</button>
+					<button name="sponsorship" type="button">{{ 'SPONSORSHIP'|trans }}</button>
+				</div>
 			</div>
 		{% endif %}
 

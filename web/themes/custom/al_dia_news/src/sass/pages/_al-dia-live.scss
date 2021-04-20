@@ -161,8 +161,13 @@
             margin-right: 0;
         }
 
+        >.content ,
         .field--type-text-with-summary {
             margin-bottom: 90px;
+
+            @media screen and (max-width: $tablet) {
+                margin-bottom: 20px;
+            }
         }
 
         h2 {
@@ -172,6 +177,7 @@
             font-family: $Mod-bold;
             font-style: normal;
             font-weight: bold;
+            text-transform: uppercase;
             line-height: 65px;
             color: $cgrey6;
 
@@ -283,7 +289,7 @@
             display: none;
             @media screen and (max-width: $tablet) {
                 display: block;
-                margin: 0 auto;
+                margin: 0 auto 7px;
             }
         }
 
@@ -332,15 +338,11 @@
         }
 
         .about-al-dia-live-video {
-            width: 100%;
+            width: 90.97222%;
             height: 100%;
-            max-width: 1280px;
+            max-width: 1310px;
             margin: 0px auto;
-        }
-
-        .video-embed-field-provider-youtube {
-            height: 100%;
-            max-height: 720px;
+            padding: 0 15px;
         }
     }
 
@@ -557,8 +559,7 @@
             margin-bottom: 10.5px;
 
             @media screen and (max-width: $tablet) {
-                margin-left: 25px;
-                margin-bottom: 20px;
+                margin: 0 25px 20px;
             }
 
             &::before {
@@ -587,6 +588,10 @@
                 background-size: contain;
                 background-repeat: no-repeat;
                 background-position: center;
+
+                @media screen and (max-width: $tablet) {
+                    right: calc(0% - 25px);
+                }
             }
 
             @media screen and (max-width: $tablet) {
@@ -594,6 +599,8 @@
                 &::after  {
                     width: 20px;
                     height: 14px;
+                    display: inline-block;
+                    position: absolute;
                 }
             }
         }
@@ -610,8 +617,7 @@
 
             @media screen and (max-width: $tablet) {
                 margin-bottom: 20px;
-                font-size: szrem(14);
-                line-height: 17px;
+                font-size: szrem(15);
             }
         }
 
@@ -627,6 +633,7 @@
             @media screen and (max-width: $tablet) {
                 margin-left: 0;
                 grid-template-columns: 55px 1fr;
+                grid-template-rows: auto 1fr;
                 grid-gap: 0 10px;
             }
         }
@@ -664,6 +671,7 @@
 
             @media screen and (max-width: $tablet) {
                 margin-bottom: 5px;
+                align-self: initial;
                 font-size: szrem(14);
                 line-height: 17px;
             }
