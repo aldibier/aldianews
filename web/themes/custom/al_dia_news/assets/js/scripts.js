@@ -1223,11 +1223,11 @@ window.onload = function () {
     }
   }); // block trending se inserta en noticia de impacto
 
-  var blockTrending = document.querySelector('.block-block-grouphigh-impact-and-most-visited-news-home .block-fixed-block-contentbloque-dummy-noticias-home');
+  var blockTrending = document.querySelector(".block-block-grouphigh-impact-and-most-visited-news-home .block-fixed-block-contentbloque-dummy-noticias-home");
 
   if (!!blockTrending) {
-    var blockTwoFeaturedNews = document.querySelector('.view-high-impact-news-home .view-display-id-block_2');
-    blockTwoFeaturedNews.insertAdjacentElement('beforeend', blockTrending);
+    var blockTwoFeaturedNews = document.querySelector(".view-high-impact-news-home .view-display-id-block_2");
+    blockTwoFeaturedNews.insertAdjacentElement("beforeend", blockTrending);
   } // blockquote para selection-sharer
 
 
@@ -1512,6 +1512,20 @@ window.onload = function () {
           evt.parentElement.insertBefore(e, evt);
         }
       });
+    }
+  }); ///// js para modos de visualizacion de guest event
+
+  Array.from(document.querySelectorAll(".view-block-guest .views-field-field-style div")).map(function (e) {
+    if (e != null) {
+      if (e.innerText == "one") {
+        e.closest(".guest-event-advertising").classList.add("mode-one");
+      } else if (e.innerText == "two") {
+        e.closest(".guest-event-advertising").classList.add("mode-two");
+      } else if (e.innerText == "three") {
+        e.closest(".guest-event-advertising").classList.add("mode-three");
+      } else if (e.innerText == "more") {
+        e.closest(".guest-event-advertising").classList.add("mode-more");
+      }
     }
   });
 };
