@@ -105,11 +105,11 @@
       width: 50%;
 
       &:nth-child(2n + 1) {
-        padding: 0 20px 0 0;
+        padding: 0 15px 0 0;
       }
 
       &:nth-child(2n + 2) {
-        padding: 0 0 0 20px;
+        padding: 0 0 0 15px;
       }
     }
 
@@ -332,12 +332,21 @@
       top: 39px;
       position: absolute;
       left: 0;
-
       &:before {
         display: none;
       }
+      @media (max-width: $tablet) {
+        background: #5c6165;
+      }
     }
-
+    .action-button {
+      input[value="Upload"] {
+        background: #c4c4c4;
+      }
+      input[value*="Remove"] {
+        background: #5c6165;
+      }
+    }
     .js-form-item-upload-file {
       width: auto;
     }
@@ -382,6 +391,10 @@
       margin: 0;
       z-index: 1;
       text-transform: uppercase;
+      @media (max-width: $tablet) {
+        min-width: 120px;
+        max-height: 30px;
+      }
     }
 
     #edit-upload-file {

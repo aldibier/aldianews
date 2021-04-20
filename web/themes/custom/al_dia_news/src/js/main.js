@@ -1,4 +1,27 @@
 window.onload = function() {
+  ///// js para publicidad en bloques de categorias de noticias
+  Array.from(
+    document.querySelectorAll(
+      ".block-fixed-block-contentvertical-advertising-mobile"
+    )
+  ).map(function(e) {
+    if (e.children.children != null) {
+      e.closest(".mobile-less").parentElement.parentElement.classList.add(
+        "life-advertising"
+      );
+    } else {
+      e.parentElement.parentElement.classList.add("mobile-free");
+    }
+  });
+
+  // block trending se inserta en noticia de impacto
+  const blockTrending = document.querySelector('.block-block-grouphigh-impact-and-most-visited-news-home .block-fixed-block-contentbloque-dummy-noticias-home')
+  
+  if(!!blockTrending){
+    const blockTwoFeaturedNews = document.querySelector('.view-high-impact-news-home .view-display-id-block_2');
+    blockTwoFeaturedNews.insertAdjacentElement('beforeend',blockTrending);
+  }
+
   // blockquote para selection-sharer
   const allBlockquote = document.querySelectorAll(
     'blockquote:not([class*="twitter"])'
@@ -265,7 +288,7 @@ window.onload = function() {
 
     //// js pop-up about al dia live
     const triggerVideo = document.querySelector(
-      ".block-views-blockabout-al-dia-live-block-1"
+      ".block-views-blockabout-al-dia-live-block-1 .about-al-dia-live-container-video"
     );
     const buttonCloseVideo = document.querySelector(".close-video");
     const video = document.querySelector(".modal-video");
@@ -322,23 +345,30 @@ window.onload = function() {
   ).map(function(e) {
     if (e != null && !e.innerHTML.includes("-")) {
       e.classList.add("category");
-    } else if (e != null && e.innerHTML.includes("--")) {
-      e.parentElement.classList.add("subsubcategory");
     }
   });
 
-  ///// js para publicidad en bloques de categorias de noticias
+  //// publicidad horizontal cada 6 en more covers
   Array.from(
     document.querySelectorAll(
-      ".block-fixed-block-contentvertical-advertising-mobile"
+      ".block-fixed-block-contenthorizontal-advertising"
     )
   ).map(function(e) {
-    if (e.children.children != null) {
-      e.closest(".mobile-less").parentElement.parentElement.classList.add(
-        "life-advertising"
-      );
-    } else {
-      e.parentElement.classList.add("dis-none");
+    if (e != null) {
+      Array.from(
+        document.querySelectorAll(
+          ".view-more-covers-landing  .view-content .views-row:nth-child(7n)"
+        )
+      ).map(function(evt) {
+        if (
+          evt != null &&
+          !evt.nextElementSibling.classList.contains(
+            "block-fixed-block-contenthorizontal-advertising"
+          )
+        ) {
+          evt.parentElement.insertBefore(e, evt);
+        }
+      });
     }
   });
 };

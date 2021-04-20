@@ -1214,7 +1214,23 @@ module.exports = function (css) {
 /***/ (function(module, exports) {
 
 window.onload = function () {
-  // blockquote para selection-sharer
+  ///// js para publicidad en bloques de categorias de noticias
+  Array.from(document.querySelectorAll(".block-fixed-block-contentvertical-advertising-mobile")).map(function (e) {
+    if (e.children.children != null) {
+      e.closest(".mobile-less").parentElement.parentElement.classList.add("life-advertising");
+    } else {
+      e.parentElement.parentElement.classList.add("mobile-free");
+    }
+  }); // block trending se inserta en noticia de impacto
+
+  var blockTrending = document.querySelector('.block-block-grouphigh-impact-and-most-visited-news-home .block-fixed-block-contentbloque-dummy-noticias-home');
+
+  if (!!blockTrending) {
+    var blockTwoFeaturedNews = document.querySelector('.view-high-impact-news-home .view-display-id-block_2');
+    blockTwoFeaturedNews.insertAdjacentElement('beforeend', blockTrending);
+  } // blockquote para selection-sharer
+
+
   var allBlockquote = document.querySelectorAll('blockquote:not([class*="twitter"])');
 
   if (!!allBlockquote && allBlockquote.length) {
@@ -1442,7 +1458,7 @@ window.onload = function () {
       return modalForm.classList.remove("show");
     }); //// js pop-up about al dia live
 
-    var triggerVideo = document.querySelector(".block-views-blockabout-al-dia-live-block-1");
+    var triggerVideo = document.querySelector(".block-views-blockabout-al-dia-live-block-1 .about-al-dia-live-container-video");
     var buttonCloseVideo = document.querySelector(".close-video");
     var video = document.querySelector(".modal-video"); //js temporal
 
@@ -1486,16 +1502,16 @@ window.onload = function () {
   Array.from(document.querySelectorAll("#views-exposed-form-search-results-al-dia-solr-page-1 .form-item-field-category li label")).map(function (e) {
     if (e != null && !e.innerHTML.includes("-")) {
       e.classList.add("category");
-    } else if (e != null && e.innerHTML.includes("--")) {
-      e.parentElement.classList.add("subsubcategory");
     }
-  }); ///// js para publicidad en bloques de categorias de noticias
+  }); //// publicidad horizontal cada 6 en more covers
 
-  Array.from(document.querySelectorAll(".block-fixed-block-contentvertical-advertising-mobile")).map(function (e) {
-    if (e.children.children != null) {
-      e.closest(".mobile-less").parentElement.parentElement.classList.add("life-advertising");
-    } else {
-      e.parentElement.classList.add("dis-none");
+  Array.from(document.querySelectorAll(".block-fixed-block-contenthorizontal-advertising")).map(function (e) {
+    if (e != null) {
+      Array.from(document.querySelectorAll(".view-more-covers-landing  .view-content .views-row:nth-child(7n)")).map(function (evt) {
+        if (evt != null && !evt.nextElementSibling.classList.contains("block-fixed-block-contenthorizontal-advertising")) {
+          evt.parentElement.insertBefore(e, evt);
+        }
+      });
     }
   });
 };
@@ -1714,6 +1730,44 @@ __webpack_require__.r(__webpack_exports__);
     });
     Object(_slick_js__WEBPACK_IMPORTED_MODULE_3__["default"])($, Drupal);
   });
+  Drupal.behaviors.form_checkbox = {
+    attach: function attach(context, settings) {
+      $(document).ready(function () {
+        // Relacionando clase de selector al nombre de este archivo
+        var currentClass = "js-form-fake-checkbox";
+
+        if ($(".form-checkbox").length) {
+          $(".form-checkbox").addClass(currentClass);
+
+          if (!$(".fake-checkbox").length) {
+            $('<div class="fake-checkbox" />').insertAfter(".form-checkbox");
+          }
+
+          $(".form-checkbox").each(function () {
+            var context = $(this);
+
+            if (context.prop("checked") == true) {
+              context.addClass("active-check");
+            }
+          });
+        } // Pone clase activa cuando el radio está seleccionado
+
+
+        $("." + currentClass, context).once("js-form-fake-checkbox").click(function () {
+          var context = $(this);
+          context.toggleClass("active-check");
+        }); /// js para esrilos de boton de eliminar archivo
+
+        Array.from(document.querySelectorAll(".webform-submission-apply-to-this-job-form .form-type-checkbox input")).map(function (e) {
+          if (e != null) {
+            e.addEventListener("click", function () {
+              e.closest(".form-managed-file").classList.add("action-button");
+            });
+          }
+        });
+      });
+    }
+  };
 })(jQuery, Drupal);
 
 /***/ }),
@@ -1935,8 +1989,8 @@ var initSlick = function initSlick($, Drupal) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
-module.exports = __webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
+__webpack_require__(/*! /Users/usuario/Desktop/Proyectos/AlDiaNews/4ld14-n3ws/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
+module.exports = __webpack_require__(/*! /Users/usuario/Desktop/Proyectos/AlDiaNews/4ld14-n3ws/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
 
 
 /***/ })

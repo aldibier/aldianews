@@ -10,7 +10,19 @@ field_name: field_slider_styl
 entity_type: paragraph
 type: list_string
 settings:
-  allowed_values: {  }
+  allowed_values:
+    -
+      value: sone
+      label: 'One Item'
+    -
+      value: stwo
+      label: 'Two Items'
+    -
+      value: sthree
+      label: 'Three Items'
+    -
+      value: smor
+      label: 'More than three items'
   allowed_values_function: ''
 module: options
 locked: false
