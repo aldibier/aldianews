@@ -11,27 +11,37 @@
  */
 #}
 {% if content %}
-	<div class="container-content">
+	<div class="container-content width1440">
 
-    {% if content.header_content %}
-        <div {{ region_attributes.header_content.addClass('header-content banner-events') }}>
-          {{ content.header_content }} 
-        </div>
-    {% endif %}
-    {% if content.content_header %}
-        <div {{ region_attributes.content_header.addClass('header-content-date-place') }}>
-          {{ content.content_header }} 
-        </div>
-    {% endif %}
-    <button name="nominee" type="button">{{ 'NOMINATE'|trans }}</button>
-	<button name="nominee" type="button">{{ 'REGISTER HERE'|trans }}</button>
-    <button name="nominee" type="button">{{ 'SPONSORSHIP'|trans }}</button>
-	<div {{ region_attributes.two_content.addClass('container-right-event') }}>
-		<div class="section-event-body">
-			{% if content.one_first %}
-				<div {{ region_attributes.one_first.addClass('body-lateral-section') }}>
-					{{ content.one_first }}
+		{% if content.header_content %}
+			<div {{ region_attributes.header_content.addClass('header-content banner-events') }}>
+				{{ content.header_content }}
+				{% if content.content_header %}
+					<div {{ region_attributes.content_header.addClass('header-content-date-place') }}>
+						{{ content.content_header }}
+					</div>
+				{% endif %}
+				<div class="text-and-buttons-event section-flex">
+					<span>{{ 'Click here to register, to nominate, or to sponsor.'|trans }}</span>
+					<button name="nominee" type="button">{{ 'NOMINATE'|trans }}</button>
+					<button name="register-here" type="button">{{ 'REGISTER HERE'|trans }}</button>
+					<button name="sponsorship" type="button">{{ 'SPONSORSHIP'|trans }}</button>
 				</div>
+			</div>
+		{% endif %}
+
+		{% if content.advertising_content %}
+			<div {{ region_attributes.advertising_content.addClass('body-adversiting-section') }}>
+				{{ content.advertising_content }}
+			</div>
+		{% endif %}
+
+		<div {{ region_attributes.two_content.addClass('container-right-event') }}>
+			<div class="section-event-body section-flex section1310">
+				{% if content.one_first %}
+					<div {{ region_attributes.one_first.addClass('body-lateral-section') }}>
+						{{ content.one_first }}
+					</div>
 
 				{% endif %}
 				{% if content.one_second %}
@@ -41,19 +51,19 @@
 				{% endif %}
 			</div>
 		</div>
-		<div class="content-present-by-advertising">
+		<div class="content-present-by-advertising section-flex section1310">
 			{% if content.three_content %}
-				<div {{ region_attributes.three_content.addClass('three-content-event') }}>
+				<div {{ region_attributes.three_content.addClass('three-content-event body-lateral-section') }}>
 					{{ content.three_content }}
 				</div>
 			{% endif %}
 			{% if content.three_content_second %}
-				<div {{ region_attributes.three_content_second.addClass('three-content-event-advertising') }}>
+				<div {{ region_attributes.three_content_second.addClass('three-content-event-advertising body-lateral-section-advertising') }}>
 					{{ content.three_content_second }}
 				</div>
 			{% endif %}
 		</div>
-		<div class="guest-event-advertising">
+		<div class="guest-event-advertising section1310">
 			{% if content.four_content %}
 				<div {{ region_attributes.four_content.addClass('four-content-event') }}>
 					{{ content.four_content }}
@@ -66,12 +76,12 @@
 			{% endif %}
 		</div>
 		{% if content.five_content %}
-			<div {{ region_attributes.five_content.addClass('five-content-event-sliders') }}>
+			<div {{ region_attributes.five_content.addClass('five-content-event-sliders section1310') }}>
 				{{ content.five_content }}
 			</div>
 		{% endif %}
 		{% if content.six_content %}
-			<div {{ region_attributes.six_content.addClass('five-content-event-contact') }}>
+			<div {{ region_attributes.six_content.addClass('five-content-event-contact section1310') }}>
 				{{ content.six_content }}
 			</div>
 		{% endif %}

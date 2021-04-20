@@ -10,15 +10,38 @@ dependencies:
     - paragraphs.paragraphs_type.guest
   module:
     - field_formatter_class
+    - field_group
     - image
     - lazy
+third_party_settings:
+  field_group:
+    group_guest_information:
+      children:
+        - field_guests_name
+        - field_guest_s_position
+        - field_company
+      parent_name: ''
+      weight: 1
+      format_type: html_element
+      region: content
+      format_settings:
+        id: ''
+        classes: information-guest-container
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Guest information'
 id: paragraph.guest.default
 targetEntityType: paragraph
 bundle: guest
 mode: default
 content:
   field_company:
-    weight: 3
+    weight: 4
     label: hidden
     settings:
       link_to_entity: false
@@ -43,7 +66,7 @@ content:
     type: image
     region: content
   field_guest_s_position:
-    weight: 2
+    weight: 3
     label: hidden
     settings:
       link_to_entity: false
@@ -53,7 +76,7 @@ content:
     type: string
     region: content
   field_guests_name:
-    weight: 1
+    weight: 2
     label: hidden
     settings:
       link_to_entity: false

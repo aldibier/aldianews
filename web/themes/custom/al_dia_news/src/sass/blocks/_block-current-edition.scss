@@ -1,0 +1,94 @@
+.block-views-blockhome-current-edition--block-1 {
+    margin-bottom: 100px;
+}
+
+.current-edition {
+    width: 840px;
+    background-color: #4D4D4D;
+}
+
+.current-edition-header {
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+
+    .view-header {
+        width: 220px;
+        height: 40px;
+        margin: 0 20px 0 -40px;
+        position: relative;
+        text-align: center;
+        background-color: $red2;
+        box-shadow: 0 5px 4px #00000045;
+
+        &::before{
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -40px;
+            border-top: 20px solid #8E070F;
+            border-right: 20px solid #8E070F;
+            border-bottom: 20px solid transparent;
+            border-left: 20px solid transparent;
+        }
+
+        &::after {
+            content: '';
+            width: 30px;
+            position: absolute;
+            left: 0;
+            box-shadow: 10px 3px 4px 2px #00000045;
+        }
+    }
+
+    h3 {
+        margin: 0;
+        font-size: szrem(20);
+        font-family: $PrNovacond-bold;
+        font-style: normal;
+        font-weight: bold;
+        line-height: 40px;
+        letter-spacing: 0.025em;
+        color: $cwhite;
+    }
+
+    .date-current-edition {
+        font-size: szrem(20);
+        font-family: $PrNovacond-light;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 24px;
+        color: $cwhite;
+    }
+}
+
+.current-edition-cover-page {
+    margin-right: 45px;
+
+    img {
+        width: 100%;
+        height: auto;
+        max-width: 435px;
+        max-height: 480px;
+    }
+}
+
+.current-edition-content {
+    display: flex;
+    padding: 0 40px 55px;
+
+    .block-fixed-block-contenttitle-into-current-edition-block {
+        margin-bottom: 50px;
+        
+        a {
+            font-size: szrem(18);
+            font-family: $PrNovacond-bold;
+            font-style: normal;
+            font-weight: bold;
+            letter-spacing: 0.741176px;
+            color: $corange;
+        }
+    } 
+}
+
+

@@ -1,0 +1,57 @@
+uuid: d94bb259-1bd1-4b2b-9015-506a265167e9
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+name: al_dia_live
+label: 'Al Día Live'
+group: 'General pages'
+description: 'Blocks and views in Al Día Live landing'
+requireAllConditions: false
+disabled: false
+conditions:
+  request_path:
+    id: request_path
+    pages: /about-al-dia-live/al-dia-live
+    negate: false
+    uuid: 787ac18f-4f2b-4a05-a2f2-a54368c45a5b
+    context_mapping: {  }
+reactions:
+  blocks:
+    blocks:
+      918072a5-aa84-47b2-b604-a9fbae12272e:
+        id: system_main_block
+        label: 'Main page content'
+        provider: system
+        label_display: '0'
+        region: content
+        weight: '1'
+        context_mapping: {  }
+        custom_id: system_main_block
+        theme: al_dia_news
+        css_class: ''
+        unique: 0
+        context_id: al_dia_live
+        uuid: 918072a5-aa84-47b2-b604-a9fbae12272e
+      d1072c67-8a34-4b92-9d5b-bae0e0dc230b:
+        id: 'views_block:al_dia_live-block_3'
+        label: ''
+        provider: views
+        label_display: '0'
+        views_label: ''
+        items_per_page: none
+        region: content
+        weight: '0'
+        context_mapping: {  }
+        custom_id: views_block_al_dia_live_block_3
+        theme: al_dia_news
+        css_class: ''
+        unique: 0
+        context_id: al_dia_live
+        uuid: d1072c67-8a34-4b92-9d5b-bae0e0dc230b
+    id: blocks
+    saved: false
+    uuid: 1e18c41f-793a-4336-bf9f-4175a3202278
+    include_default_blocks: 1
+weight: 0

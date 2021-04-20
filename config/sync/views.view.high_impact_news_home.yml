@@ -1005,6 +1005,7 @@ display:
         operator: AND
         groups:
           1: AND
+      block_hide_empty: true
     cache_metadata:
       max-age: -1
       contexts:
@@ -1342,7 +1343,7 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: ''
+          element_type: h3
           element_class: ''
           element_label_type: ''
           element_label_class: ''
@@ -1575,7 +1576,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"card-content\">\r\n   <div class=\"card-name-category\">{{ parent_target_id }}</div>\r\n   <div class=\"card-title\">{{ field_short_title }}</div>\r\n   <div class=\"card-date\">{{ created }}</div>\r\n</div>"
+            text: "<div class=\"card-content\">\r\n   <div class=\"card-name-category\"><h2>{{ parent_target_id }}</h2></div>\r\n   <div class=\"card-title\"><h3>{{ field_short_title }}</h3></div>\r\n   <div class=\"card-date\">{{ created }}</div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
