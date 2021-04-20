@@ -63,8 +63,6 @@
 }
 
 .current-edition-cover-page {
-    margin-right: 45px;
-
     img {
         width: 100%;
         height: auto;
@@ -74,12 +72,25 @@
 }
 
 .current-edition-content {
-    display: flex;
     padding: 0 40px 55px;
+    display: grid;
+    grid-template-columns: minmax(200px,435px);
+    grid-auto-rows: auto;
+    grid-template-areas: 'cover-image title'
+                         'cover-image content';
+    grid-gap: 0 45px;
+
+    .views-field-view-1 {
+        grid-area: content;
+    }
+
+    .views-field-view-2 {
+        grid-area: title;
+    }
 
     .block-fixed-block-contenttitle-into-current-edition-block {
         margin-bottom: 50px;
-        
+
         a {
             font-size: szrem(18);
             font-family: $PrNovacond-bold;
