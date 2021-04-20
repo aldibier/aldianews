@@ -15,6 +15,7 @@ dependencies:
     - field.field.node.event.field_slider_block
     - field.field.node.event.field_venue_of_the_event
     - fixed_block_content.fixed_block_content._small_vertical_advertising
+    - fixed_block_content.fixed_block_content.big_vertical_advertising
     - fixed_block_content.fixed_block_content.horizontal_advertising
     - node.type.event
     - views.view.block_guest
@@ -244,7 +245,7 @@ third_party_settings:
               provider: layout_builder
               label_display: '0'
               formatter:
-                label: hidden
+                label: inline
                 type: image
                 settings:
                   image_style: ''
@@ -278,18 +279,6 @@ third_party_settings:
                 third_party_settings: {  }
             additional: {  }
             weight: 2
-          7e99797b-662d-4493-9976-5be1977ec640:
-            uuid: 7e99797b-662d-4493-9976-5be1977ec640
-            region: three_content_second
-            configuration:
-              id: 'fixed_block_content:horizontal_advertising'
-              label: 'Horizontal advertising'
-              provider: fixed_block_content
-              label_display: '0'
-              view_mode: ''
-              context_mapping: {  }
-            additional: {  }
-            weight: -9
           992f1545-8891-4121-bd3e-9cf33d0abcee:
             uuid: 992f1545-8891-4121-bd3e-9cf33d0abcee
             region: four_content
@@ -480,6 +469,18 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: -10
+          86205167-8156-4c24-a53b-888d426f49d7:
+            uuid: 86205167-8156-4c24-a53b-888d426f49d7
+            region: three_content_second
+            configuration:
+              id: 'fixed_block_content:big_vertical_advertising'
+              label: 'Big vertical advertising'
+              provider: fixed_block_content
+              label_display: '0'
+              view_mode: ''
+              context_mapping: {  }
+            additional: {  }
+            weight: -8
         third_party_settings: {  }
 id: node.event.default
 targetEntityType: node
