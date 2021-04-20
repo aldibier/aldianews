@@ -150,6 +150,9 @@
   .body-adversiting-section {
     margin: 30px auto 50px;
     width: 100%;
+    .block {
+      margin: 0 auto;
+    }
   }
 }
 
@@ -177,10 +180,20 @@
     justify-content: space-between;
     flex-wrap: wrap;
     margin-bottom: 100px;
+    position: relative;
+    li {
+      width: 100%;
+      margin: 0 auto;
+      margin-bottom: 40px;
+      border-right: 1px solid #b1b1b1;
+      &:last-child {
+        border-right: 0px;
+      }
+    }
   }
   .paragraph--type--guest {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     align-items: center;
     text-align: center;
@@ -193,7 +206,7 @@
     overflow: hidden;
     border-radius: 120px;
     box-shadow: 2px 2px 2px $cblack3;
-    margin: 0 auto 30px;
+    margin: 0 auto 30px !important;
     img {
       width: 100%;
       height: auto;
@@ -207,7 +220,8 @@
     line-height: 32px;
     color: $corange;
     text-transform: uppercase;
-    margin-bottom: 20px;
+    margin: 0 auto 20px;
+    max-width: 340px;
   }
   .event-guest-position {
     font-family: $ModernoFB-Regular;
@@ -217,7 +231,8 @@
     line-height: 26px;
     color: $cblack3;
     text-transform: uppercase;
-    margin-bottom: 5px;
+    margin: 0 auto 5px;
+    max-width: 340px;
   }
   .event-guest-company {
     font-family: $ModernoFB-Regular;
@@ -227,6 +242,70 @@
     line-height: 31px;
     color: #5a5a5a;
     text-transform: capitalize;
+    max-width: 340px;
+    margin: 0 auto;
+  }
+  .four-content-event-advertising {
+    display: none;
+  }
+}
+.mode-one.guest-event-advertising {
+  max-width: 840px;
+  margin-right: auto;
+  .item-list ul li {
+    max-width: 650px;
+    border-right: 0px;
+  }
+}
+.mode-two.guest-event-advertising {
+  display: flex;
+  .item-list ul li {
+    max-width: 400px;
+  }
+  .four-content-event-advertising {
+    display: block;
+  }
+}
+.mode-three.guest-event-advertising .item-list ul li {
+  max-width: 400px;
+}
+.more.guest-event-advertising {
+  .item-list ul li {
+    max-width: 330px;
+    margin-bottom: 70px;
+    &:nth-child(4n) {
+      border-right: 0px;
+    }
+    &:nth-child(4n + 4):before {
+      display: block;
+      content: "";
+      width: 100%;
+      height: 1px;
+      left: 0;
+      background: #b1b1b1;
+      position: absolute;
+      right: 0;
+      margin: -35px 0;
+    }
+  }
+  .event-guest-photo {
+    max-width: 170px;
+    max-height: 170px;
+  }
+  .event-guest-name {
+    font-size: $px20;
+    line-height: 24px;
+    max-width: 270px;
+  }
+  .event-guest-position {
+    font-size: $px16;
+    line-height: 19px;
+    max-width: 270px;
+  }
+  .event-guest-company {
+    font-size: $px20;
+    line-height: 24px;
+    max-width: 270px;
   }
 }
 
