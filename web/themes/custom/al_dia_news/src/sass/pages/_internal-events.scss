@@ -66,7 +66,7 @@
   }
   button {
     max-width: 200px;
-    max-height: 55px;
+    min-height: 55px;
     border: 2px solid #ffffff;
     display: flex;
     align-items: center;
@@ -78,6 +78,8 @@
     line-height: 27px;
     color: $cwhite;
     text-transform: uppercase;
+    width: 100%;
+    background: transparent;
     &:last-child {
       margin-right: 0px;
     }
@@ -102,23 +104,38 @@
     display: flex;
     flex-wrap: wrap;
   }
+
   .body-lateral-section {
     max-width: 840px;
     margin-right: 40px;
     width: 100%;
     p {
-      font-family: $PrNovacond-Sbold;
+      font-family: $PrNovacond-reg;
       font-style: normal;
       font-size: $px24;
       line-height: 33px;
       color: $cblack3;
     }
     .field__label {
-      font-family: $Mod-Sbold;
+      font-family: $ModernoFB-Regular;
+      font-weight: bold;
       font-style: normal;
       font-size: $px34;
       line-height: 41px;
       color: $cblack3;
+      text-transform: uppercase;
+    }
+    .field--type-image .field__item {
+      max-width: 351px;
+      width: 100%;
+      max-height: 174px;
+      height: auto;
+      overflow: hidden;
+      margin: 60px auto;
+      img {
+        width: 100%;
+        height: auto;
+      }
     }
   }
   .body-lateral-section-advertising {
