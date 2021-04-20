@@ -98,6 +98,12 @@
       @media screen and (max-width: $tablet) {
         font-size: 10px;
         line-height: 12px;
+        width: 140px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        display: block;
+        margin: 10px auto 5px;
       }
     }
   }
