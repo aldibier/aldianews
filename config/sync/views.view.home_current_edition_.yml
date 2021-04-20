@@ -17,6 +17,7 @@ dependencies:
     - user
     - views_block_area
     - views_field_view
+    - views_fieldsets
 id: home_current_edition_
 label: 'HOME - CURRENT EDITION '
 module: views
@@ -241,7 +242,8 @@ display:
     display_title: Block
     position: 1
     display_options:
-      display_extenders: {  }
+      display_extenders:
+        ajax_history: {  }
       fields:
         view:
           id: view
@@ -295,6 +297,63 @@ display:
           display: block_3
           arguments: ''
           plugin_id: view
+        fieldset:
+          id: fieldset
+          table: views
+          field: fieldset
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          fields:
+            - field_cover_page
+            - view_1
+          wrapper: div
+          legend: ''
+          classes: current-edition-content
+          collapsible: 1
+          collapsed: 0
+          plugin_id: fieldset
         field_cover_page:
           id: field_cover_page
           table: node__field_cover_page
@@ -332,13 +391,13 @@ display:
             preserve_tags: ''
             html: false
           element_type: ''
-          element_class: ''
+          element_class: current-edition-cover-page
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -413,6 +472,8 @@ display:
           plugin_id: view
       defaults:
         fields: false
+        css_class: false
+      css_class: current-edition
     cache_metadata:
       max-age: -1
       contexts:
@@ -746,6 +807,7 @@ display:
       defaults:
         fields: false
         header: false
+        css_class: false
       header:
         area_text_custom:
           id: area_text_custom
@@ -758,6 +820,7 @@ display:
           tokenize: false
           content: '<h3>CURRENT EDITION</h3>'
           plugin_id: text_custom
+      css_class: current-edition-header
     cache_metadata:
       max-age: -1
       contexts:
