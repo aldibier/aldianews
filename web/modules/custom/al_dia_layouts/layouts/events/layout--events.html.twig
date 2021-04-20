@@ -11,7 +11,7 @@
  */
 #}
 {% if content %}
-	<div class="container-content">
+	<div class="container-content width1440">
 
 		{% if content.header_content %}
 			<div {{ region_attributes.header_content.addClass('header-content banner-events') }}>
@@ -27,6 +27,12 @@
 					<button name="register-here" type="button">{{ 'REGISTER HERE'|trans }}</button>
 					<button name="sponsorship" type="button">{{ 'SPONSORSHIP'|trans }}</button>
 				</div>
+			</div>
+		{% endif %}
+
+		{% if content.advertising_content %}
+			<div {{ region_attributes.advertising_content.addClass('body-adversiting-section') }}>
+				{{ content.advertising_content }}
 			</div>
 		{% endif %}
 
@@ -49,6 +55,18 @@
 			{% if content.three_content %}
 				<div {{ region_attributes.three_content.addClass('three-content-event body-lateral-section') }}>
 					{{ content.three_content }}
+					<div class="guest-event-advertising section1310">
+						{% if content.four_content %}
+							<div {{ region_attributes.four_content.addClass('four-content-event') }}>
+								{{ content.four_content }}
+							</div>
+						{% endif %}
+						{% if content.four_content_second %}
+							<div {{ region_attributes.four_content_second.addClass('four-content-event-advertising') }}>
+								{{ content.four_content_second }}
+							</div>
+						{% endif %}
+					</div>
 				</div>
 			{% endif %}
 			{% if content.three_content_second %}
@@ -57,18 +75,7 @@
 				</div>
 			{% endif %}
 		</div>
-		<div class="guest-event-advertising section1310">
-			{% if content.four_content %}
-				<div {{ region_attributes.four_content.addClass('four-content-event') }}>
-					{{ content.four_content }}
-				</div>
-			{% endif %}
-			{% if content.four_content_second %}
-				<div {{ region_attributes.four_content_second.addClass('four-content-event-advertising') }}>
-					{{ content.four_content_second }}
-				</div>
-			{% endif %}
-		</div>
+
 		{% if content.five_content %}
 			<div {{ region_attributes.five_content.addClass('five-content-event-sliders section1310') }}>
 				{{ content.five_content }}
