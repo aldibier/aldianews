@@ -30,6 +30,12 @@
 			</div>
 		{% endif %}
 
+		{% if content.advertising_content %}
+			<div {{ region_attributes.advertising_content.addClass('body-lateral-section') }}>
+					{{ content.advertising_content }}
+			</div>
+		{% endif %}
+
 		<div {{ region_attributes.two_content.addClass('container-right-event') }}>
 			<div class="section-event-body section-flex section1310">
 				{% if content.one_first %}

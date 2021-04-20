@@ -174,7 +174,7 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: -8
+            weight: -7
           c89b37a8-a7e1-49c9-bec1-d01ba7875573:
             uuid: c89b37a8-a7e1-49c9-bec1-d01ba7875573
             region: one_second
@@ -201,7 +201,7 @@ third_party_settings:
               context_mapping:
                 entity: layout_builder.entity
             additional: {  }
-            weight: -9
+            weight: -8
           6d6b1f99-48da-40f7-8984-4239b08a8204:
             uuid: 6d6b1f99-48da-40f7-8984-4239b08a8204
             region: content
@@ -245,7 +245,7 @@ third_party_settings:
               provider: layout_builder
               label_display: '0'
               formatter:
-                label: inline
+                label: above
                 type: image
                 settings:
                   image_style: ''
@@ -457,18 +457,6 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: -4
-          87a2a6f9-fd9f-4b3b-a4ee-b41a1702ad85:
-            uuid: 87a2a6f9-fd9f-4b3b-a4ee-b41a1702ad85
-            region: one_first
-            configuration:
-              id: 'fixed_block_content:horizontal_advertising'
-              label: 'Horizontal advertising'
-              provider: fixed_block_content
-              label_display: '0'
-              view_mode: ''
-              context_mapping: {  }
-            additional: {  }
-            weight: -10
           86205167-8156-4c24-a53b-888d426f49d7:
             uuid: 86205167-8156-4c24-a53b-888d426f49d7
             region: three_content_second
@@ -481,6 +469,18 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: -8
+          87a2a6f9-fd9f-4b3b-a4ee-b41a1702ad85:
+            uuid: 87a2a6f9-fd9f-4b3b-a4ee-b41a1702ad85
+            region: advertising_content
+            configuration:
+              id: 'fixed_block_content:horizontal_advertising'
+              label: 'Horizontal advertising'
+              provider: fixed_block_content
+              label_display: '0'
+              view_mode: ''
+              context_mapping: {  }
+            additional: {  }
+            weight: -10
         third_party_settings: {  }
 id: node.event.default
 targetEntityType: node
