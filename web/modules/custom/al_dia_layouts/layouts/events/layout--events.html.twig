@@ -11,7 +11,7 @@
  */
 #}
 {% if content %}
-	<div class="container-content">
+	<div class="container-content width1440">
 
 		{% if content.header_content %}
 			<div {{ region_attributes.header_content.addClass('header-content banner-events') }}>
@@ -30,8 +30,14 @@
 			</div>
 		{% endif %}
 
+		{% if content.advertising_content %}
+			<div {{ region_attributes.advertising_content.addClass('body-lateral-section') }}>
+					{{ content.advertising_content }}
+			</div>
+		{% endif %}
+
 		<div {{ region_attributes.two_content.addClass('container-right-event') }}>
-			<div class="section-event-body section-flex">
+			<div class="section-event-body section-flex section1310">
 				{% if content.one_first %}
 					<div {{ region_attributes.one_first.addClass('body-lateral-section') }}>
 						{{ content.one_first }}
@@ -45,10 +51,22 @@
 				{% endif %}
 			</div>
 		</div>
-		<div class="content-present-by-advertising section-flex">
+		<div class="content-present-by-advertising section-flex section1310">
 			{% if content.three_content %}
 				<div {{ region_attributes.three_content.addClass('three-content-event body-lateral-section') }}>
 					{{ content.three_content }}
+					<div class="guest-event-advertising section1310">
+						{% if content.four_content %}
+							<div {{ region_attributes.four_content.addClass('four-content-event') }}>
+								{{ content.four_content }}
+							</div>
+						{% endif %}
+						{% if content.four_content_second %}
+							<div {{ region_attributes.four_content_second.addClass('four-content-event-advertising') }}>
+								{{ content.four_content_second }}
+							</div>
+						{% endif %}
+					</div>
 				</div>
 			{% endif %}
 			{% if content.three_content_second %}
@@ -57,25 +75,14 @@
 				</div>
 			{% endif %}
 		</div>
-		<div class="guest-event-advertising">
-			{% if content.four_content %}
-				<div {{ region_attributes.four_content.addClass('four-content-event') }}>
-					{{ content.four_content }}
-				</div>
-			{% endif %}
-			{% if content.four_content_second %}
-				<div {{ region_attributes.four_content_second.addClass('four-content-event-advertising') }}>
-					{{ content.four_content_second }}
-				</div>
-			{% endif %}
-		</div>
+
 		{% if content.five_content %}
-			<div {{ region_attributes.five_content.addClass('five-content-event-sliders') }}>
+			<div {{ region_attributes.five_content.addClass('five-content-event-sliders section1310') }}>
 				{{ content.five_content }}
 			</div>
 		{% endif %}
 		{% if content.six_content %}
-			<div {{ region_attributes.six_content.addClass('five-content-event-contact') }}>
+			<div {{ region_attributes.six_content.addClass('five-content-event-contact section1310') }}>
 				{{ content.six_content }}
 			</div>
 		{% endif %}

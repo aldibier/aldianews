@@ -66,7 +66,7 @@
   }
   button {
     max-width: 200px;
-    max-height: 55px;
+    min-height: 55px;
     border: 2px solid #ffffff;
     display: flex;
     align-items: center;
@@ -78,6 +78,8 @@
     line-height: 27px;
     color: $cwhite;
     text-transform: uppercase;
+    width: 100%;
+    background: transparent;
     &:last-child {
       margin-right: 0px;
     }
@@ -102,28 +104,125 @@
     display: flex;
     flex-wrap: wrap;
   }
+
   .body-lateral-section {
     max-width: 840px;
     margin-right: 40px;
     width: 100%;
     p {
-      font-family: $PrNovacond-Sbold;
+      font-family: $PrNovacond-reg;
       font-style: normal;
       font-size: $px24;
       line-height: 33px;
       color: $cblack3;
     }
     .field__label {
-      font-family: $Mod-Sbold;
+      font-family: $ModernoFB-Regular;
+      font-weight: bold;
       font-style: normal;
       font-size: $px34;
       line-height: 41px;
       color: $cblack3;
+      text-transform: uppercase;
+    }
+    .field--type-image .field__item {
+      max-width: 351px;
+      width: 100%;
+      max-height: 174px;
+      height: auto;
+      overflow: hidden;
+      margin: 60px auto;
+      img {
+        width: 100%;
+        height: auto;
+      }
     }
   }
   .body-lateral-section-advertising {
     max-width: 400px;
     width: 100%;
+  }
+  .layout-container .layout-main {
+    max-width: 1440px;
+    margin: 0 auto 0px;
+    padding: 0px;
+  }
+}
+
+//------------------ modos de visulizacion eventos grupo de personas ------------//
+
+.guest-event-advertising {
+  .views-field-field-title {
+    font-family: $ModernoFB-Regular;
+    font-style: normal;
+    font-weight: 600;
+    font-size: $px42;
+    line-height: 50px;
+    text-transform: uppercase;
+    color: $cblack3;
+    width: 100%;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #333333;
+    margin-bottom: 50px;
+  }
+  .views-field-field-style {
+    display: none;
+  }
+  .item-list ul {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 100px;
+  }
+  .paragraph--type--guest {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+  }
+  .event-guest-photo {
+    max-width: 220px;
+    width: 100%;
+    max-height: 220px;
+    height: auto;
+    overflow: hidden;
+    border-radius: 120px;
+    box-shadow: 2px 2px 2px $cblack3;
+    margin: 0 auto 30px;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .event-guest-name {
+    font-family: $PrNovacond-Sbold;
+    font-style: normal;
+    font-weight: bold;
+    font-size: $px26;
+    line-height: 32px;
+    color: $corange;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .event-guest-position {
+    font-family: $ModernoFB-Regular;
+    font-style: normal;
+    font-weight: bold;
+    font-size: $px22;
+    line-height: 26px;
+    color: $cblack3;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+  .event-guest-company {
+    font-family: $ModernoFB-Regular;
+    font-style: normal;
+    font-weight: bold;
+    font-size: $px26;
+    line-height: 31px;
+    color: #5a5a5a;
+    text-transform: capitalize;
   }
 }
 
