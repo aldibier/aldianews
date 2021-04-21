@@ -3,14 +3,14 @@ langcode: en
 status: true
 dependencies:
   module:
-    - fixed_block_content
     - paragraphs
+    - views
 id: paragraph.field_advertising
 field_name: field_advertising
 entity_type: paragraph
 type: entity_reference
 settings:
-  target_type: fixed_block_content
+  target_type: view
 module: core
 locked: false
 cardinality: 1

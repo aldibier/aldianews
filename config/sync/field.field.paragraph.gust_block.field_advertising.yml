@@ -4,8 +4,8 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_advertising
-    - fixed_block_content.fixed_block_content._small_vertical_advertising
     - paragraphs.paragraphs_type.gust_block
+    - views.view.small_vertical_advertising
 id: paragraph.gust_block.field_advertising
 field_name: field_advertising
 entity_type: paragraph
@@ -16,10 +16,10 @@ required: false
 translatable: false
 default_value:
   -
-    target_uuid: bcf372ec-94d4-4bf4-9b86-ff1cc60285ce
+    target_uuid: 3fcbbcf7-10d3-4c8d-863b-ff67b0956cd9
 default_value_callback: ''
 settings:
-  handler: 'default:fixed_block_content'
+  handler: 'default:view'
   handler_settings:
     target_bundles: null
     auto_create: false
