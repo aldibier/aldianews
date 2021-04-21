@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.gust_block.field_advertising
     - field.field.paragraph.gust_block.field_guest
     - field.field.paragraph.gust_block.field_style
     - field.field.paragraph.gust_block.field_title
@@ -42,4 +43,5 @@ content:
     region: content
 hidden:
   created: true
+  field_advertising: true
   status: true

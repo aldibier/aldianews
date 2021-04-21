@@ -1518,13 +1518,39 @@ window.onload = function () {
   Array.from(document.querySelectorAll(".view-block-guest .views-field-field-style div")).map(function (e) {
     if (e != null) {
       if (e.innerText == "one") {
-        e.closest(".item-list").classList.add("mode-one");
+        e.closest(".views-row").classList.add("mode-one");
       } else if (e.innerText == "two") {
-        e.closest(".item-list").classList.add("mode-two");
+        e.closest(".views-row").classList.add("mode-two");
       } else if (e.innerText == "three") {
-        e.closest(".item-list").classList.add("mode-three");
+        e.closest(".views-row").classList.add("mode-three");
       } else if (e.innerText == "more") {
-        e.closest(".item-list").classList.add("mode-more");
+        e.closest(".views-row").classList.add("mode-more");
+      }
+    }
+  }); ///// js indentificar de primer modo de vista en guest event
+
+  var adversiting = document.querySelector(".three-content-event-advertising");
+  var first_element = document.querySelector(".view-block-guest  .views-row:nth-child(1) .views-field-field-style > div");
+
+  if (adversiting != null && first_element != null) {
+    if (first_element.innerText == "one") {
+      adversiting.classList.add("maxim");
+    } else {
+      adversiting.classList.add("dis-none");
+    }
+  } ///// js para modos de visualizacion de slider event
+
+
+  Array.from(document.querySelectorAll(".view-slider-internal-event .views-field-field-style div")).map(function (e) {
+    if (e != null) {
+      if (e.innerText == "sone") {
+        e.closest(".views-row").classList.add("slider-one");
+      } else if (e.innerText == "stwo") {
+        e.closest(".views-row").classList.add("slider-two");
+      } else if (e.innerText == "sthree") {
+        e.closest(".views-row").classList.add("slider-three");
+      } else if (e.innerText == "smore") {
+        e.closest(".views-row").classList.add("slider-more");
       }
     }
   });
@@ -1978,6 +2004,86 @@ var initSlick = function initSlick($, Drupal) {
         autoplaySpeed: 3000
       });
     }
+  } // slide interna eventos modo de vista ONE
+
+
+  var view_mode_one = $(".view-slider-internal-event .slider-one");
+
+  if (view_mode_one != null) {
+    $(".view-slider-internal-event .slider-one .views-field-field-image-slider").slick({
+      infinite: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 2000,
+      responsive: [{
+        breakpoint: 500,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1
+        }
+      }]
+    });
+  } // slide interna eventos modo de vista TWO
+
+
+  var view_mode_two = $(".view-slider-internal-event .slider-two");
+
+  if (view_mode_two != null) {
+    $(".view-slider-internal-event .slider-two .views-field-field-image-slider").slick({
+      infinite: true,
+      slidesToShow: 2,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 2000,
+      responsive: [{
+        breakpoint: 500,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1
+        }
+      }]
+    });
+  } // slide interna eventos modo de vista THREE
+
+
+  var view_mode_three = $(".view-slider-internal-event .slider-three");
+
+  if (view_mode_three != null) {
+    $(".view-slider-internal-event .slider-three .views-field-field-image-slider").slick({
+      infinite: true,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 2000,
+      responsive: [{
+        breakpoint: 500,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1
+        }
+      }]
+    });
+  } // slide interna eventos modo de vista MORE
+
+
+  var view_mode_more = $(".view-slider-internal-event .slider-more");
+
+  if (view_mode_more != null) {
+    $(".view-slider-internal-event .slider-more .views-field-field-image-slider").slick({
+      infinite: true,
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 2000,
+      responsive: [{
+        breakpoint: 500,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1
+        }
+      }]
+    });
   }
 };
 

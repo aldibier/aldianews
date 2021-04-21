@@ -392,7 +392,9 @@
       width: 100%;
     }
     .SumoSelect.open > .optWrapper {
-      top: 34px;
+      top: auto;
+      position: relative;
+      z-index: 1;
     }
     .SumoSelect > .CaptionCont {
       background: url(../img/fle_mobil.png) center right no-repeat
@@ -404,6 +406,9 @@
       min-height: 30px;
       width: 100%;
       margin-bottom: 15px;
+    }
+    .SumoSelect.open > .CaptionCont {
+      margin-bottom: 0px;
     }
     .SumoSelect > .CaptionCont {
       font-size: $px15;
@@ -418,6 +423,17 @@
     }
     .form-item-field-category {
       margin-right: 0px;
+      .opt label {
+        padding-left: 0px;
+        padding-top: 10px;
+        font-size: 15px;
+      }
+      .category {
+        padding-left: 0px !important;
+      }
+      .SumoSelect > .optWrapper > .options {
+        max-height: 330px;
+      }
     }
     .form-actions input {
       height: 30px;

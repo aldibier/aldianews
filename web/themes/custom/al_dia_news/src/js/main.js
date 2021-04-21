@@ -383,13 +383,46 @@ window.onload = function() {
   ).map(e => {
     if (e != null) {
       if (e.innerText == "one") {
-        e.closest(".item-list").classList.add("mode-one");
+        e.closest(".views-row").classList.add("mode-one");
       } else if (e.innerText == "two") {
-        e.closest(".item-list").classList.add("mode-two");
+        e.closest(".views-row").classList.add("mode-two");
       } else if (e.innerText == "three") {
-        e.closest(".item-list").classList.add("mode-three");
+        e.closest(".views-row").classList.add("mode-three");
       } else if (e.innerText == "more") {
-        e.closest(".item-list").classList.add("mode-more");
+        e.closest(".views-row").classList.add("mode-more");
+      }
+    }
+  });
+
+  ///// js indentificar de primer modo de vista en guest event
+  var adversiting = document.querySelector(".three-content-event-advertising");
+  var first_element = document.querySelector(
+    ".view-block-guest  .views-row:nth-child(1) .views-field-field-style > div"
+  );
+  if (adversiting != null && first_element != null) {
+    if (first_element.innerText == "one") {
+      adversiting.classList.add("maxim");
+    } else {
+      adversiting.classList.add("dis-none");
+    }
+  }
+
+  ///// js para modos de visualizacion de slider event
+
+  Array.from(
+    document.querySelectorAll(
+      ".view-slider-internal-event .views-field-field-style div"
+    )
+  ).map(e => {
+    if (e != null) {
+      if (e.innerText == "sone") {
+        e.closest(".views-row").classList.add("slider-one");
+      } else if (e.innerText == "stwo") {
+        e.closest(".views-row").classList.add("slider-two");
+      } else if (e.innerText == "sthree") {
+        e.closest(".views-row").classList.add("slider-three");
+      } else if (e.innerText == "smore") {
+        e.closest(".views-row").classList.add("slider-more");
       }
     }
   });
