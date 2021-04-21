@@ -538,7 +538,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "{# Se obtiene la fecha actual #}\r\n{% set now = date() %}\r\n{% if ( now | date(\"Y\")) < ( field_end_date_1 ) %}\r\n  <div class=\"date-more-covers\">{{ field_start_date_1 }} - {{ field_end_date_2 }}</div>\r\n{% else %}\r\n{{ now | date(\"Y\") }}\r\n  <div class=\"date-more-covers\">{{ field_start_date }} - {{ field_end_date }}</div>\r\n{% endif %}"
+            text: "{# Se obtiene la fecha actual #}\r\n{% set now = date() %}\r\n{% if ( now | date(\"Y\")) < ( field_end_date_1 ) %}\r\n  <div class=\"date-more-covers\">{{ field_start_date_1 }} - {{ field_end_date_2 }}</div>\r\n{% else %}\r\n  <div class=\"date-more-covers\">{{ field_start_date }} - {{ field_end_date }}</div>\r\n{% endif %}"
             make_link: false
             path: ''
             absolute: false

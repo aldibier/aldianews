@@ -48,6 +48,7 @@ third_party_settings:
     regions:
       ds_content:
         - field_image
+        - group_container_icon
         - field_my_content_has_a_main_vide
         - group_featured_news_wrapper
         - field_short_title
@@ -72,6 +73,24 @@ third_party_settings:
         id: ''
         classes: last-news-home-wrapper
       label: 'Last News Home Wrapper'
+    group_container_icon:
+      children:
+        - field_my_content_has_a_main_vide
+      parent_name: ''
+      weight: 1
+      format_type: html_element
+      region: ds_content
+      format_settings:
+        id: ''
+        classes: icon-player
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Container icon'
 id: node.news.first_category_home
 targetEntityType: node
 bundle: news
@@ -88,7 +107,7 @@ content:
       field_formatter_class:
         class: last-news-home-body
   field_image:
-    weight: 1
+    weight: 0
     label: hidden
     settings:
       image_style: ''

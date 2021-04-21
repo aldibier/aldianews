@@ -49,8 +49,9 @@ third_party_settings:
       ds_content:
         - group_container_news
         - field_image
-        - field_my_content_has_a_main_vide
+        - group_container_icon
         - group_container_news_wrapper
+        - field_my_content_has_a_main_vide
         - group_container_news_info
         - category_home
         - field_short_title
@@ -89,7 +90,7 @@ third_party_settings:
     group_container_news_wrapper:
       children:
         - field_image
-        - field_my_content_has_a_main_vide
+        - group_container_icon
       parent_name: group_container_news
       weight: 3
       format_type: html_element
@@ -125,6 +126,24 @@ third_party_settings:
         effect: none
         speed: fast
       label: 'Container news info'
+    group_container_icon:
+      children:
+        - field_my_content_has_a_main_vide
+      parent_name: group_container_news_wrapper
+      weight: 2
+      format_type: html_element
+      region: ds_content
+      format_settings:
+        id: ''
+        classes: icon-player
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Container icon'
 id: node.news.categories_home
 targetEntityType: node
 bundle: news
@@ -147,7 +166,7 @@ content:
         data_uri: false
   field_my_content_has_a_main_vide:
     type: boolean
-    weight: 2
+    weight: 3
     region: ds_content
     label: hidden
     settings:
