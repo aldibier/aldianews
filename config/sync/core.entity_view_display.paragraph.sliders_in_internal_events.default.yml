@@ -8,7 +8,10 @@ dependencies:
     - field.field.paragraph.sliders_in_internal_events.field_title
     - paragraphs.paragraphs_type.sliders_in_internal_events
   module:
+    - ds
+    - field_formatter_class
     - image
+    - lazy
     - options
 id: paragraph.sliders_in_internal_events.default
 targetEntityType: paragraph
@@ -21,7 +24,15 @@ content:
     settings:
       image_style: ''
       image_link: ''
-    third_party_settings: {  }
+    third_party_settings:
+      field_formatter_class:
+        class: item
+      lazy:
+        placeholder_style: ''
+        lazy_image: '0'
+        data_uri: false
+      ds:
+        ds_limit: ''
     type: image
     region: content
   field_slider_styl:
