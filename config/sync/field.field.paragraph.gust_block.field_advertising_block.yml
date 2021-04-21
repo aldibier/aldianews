@@ -1,0 +1,26 @@
+uuid: dfa3c1c2-23ee-439f-bb29-2f880cf034f5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_advertising_block
+    - fixed_block_content.fixed_block_content._small_vertical_advertising
+    - paragraphs.paragraphs_type.gust_block
+id: paragraph.gust_block.field_advertising_block
+field_name: field_advertising_block
+entity_type: paragraph
+bundle: gust_block
+label: 'Advertising block'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    target_uuid: bcf372ec-94d4-4bf4-9b86-ff1cc60285ce
+default_value_callback: ''
+settings:
+  handler: 'default:fixed_block_content'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

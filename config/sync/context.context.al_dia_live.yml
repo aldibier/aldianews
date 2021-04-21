@@ -13,7 +13,7 @@ disabled: false
 conditions:
   request_path:
     id: request_path
-    pages: /about-al-dia-live/al-dia-live
+    pages: "/about-al-dia-live/al-dia-live\r\n/about-al-dia-live/al-dia-live/past-events"
     negate: false
     uuid: 787ac18f-4f2b-4a05-a2f2-a54368c45a5b
     context_mapping: {  }
@@ -50,6 +50,22 @@ reactions:
         unique: 0
         context_id: al_dia_live
         uuid: d1072c67-8a34-4b92-9d5b-bae0e0dc230b
+      ec2d022c-0a54-40d7-b03c-17a04e113154:
+        id: local_tasks_block
+        label: Tabs
+        provider: core
+        label_display: '0'
+        primary: 1
+        secondary: 1
+        region: content
+        weight: '0'
+        context_mapping: {  }
+        custom_id: local_tasks_block
+        theme: al_dia_news
+        css_class: ''
+        unique: 0
+        context_id: al_dia_live
+        uuid: ec2d022c-0a54-40d7-b03c-17a04e113154
     id: blocks
     saved: false
     uuid: 1e18c41f-793a-4336-bf9f-4175a3202278
