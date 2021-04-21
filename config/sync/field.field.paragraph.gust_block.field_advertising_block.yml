@@ -3,8 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
+    - block.block.smallverticaladvertising
     - field.storage.paragraph.field_advertising_block
-    - fixed_block_content.fixed_block_content._small_vertical_advertising
     - paragraphs.paragraphs_type.gust_block
 id: paragraph.gust_block.field_advertising_block
 field_name: field_advertising_block
@@ -16,10 +16,10 @@ required: false
 translatable: false
 default_value:
   -
-    target_uuid: bcf372ec-94d4-4bf4-9b86-ff1cc60285ce
+    target_uuid: a3799461-842b-4847-8394-7284d0c3baf3
 default_value_callback: ''
 settings:
-  handler: 'default:fixed_block_content'
+  handler: 'default:block'
   handler_settings:
     target_bundles: null
     auto_create: false
