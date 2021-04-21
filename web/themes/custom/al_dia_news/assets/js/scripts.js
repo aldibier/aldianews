@@ -1605,10 +1605,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_libraries_selection_sharer_selection_sharer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../assets/libraries/selection-sharer/selection-sharer.js */ "./assets/libraries/selection-sharer/selection-sharer.js");
 /* harmony import */ var _assets_libraries_selection_sharer_selection_sharer_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_assets_libraries_selection_sharer_selection_sharer_js__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _scroll_magic__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./scroll-magic */ "./src/js/scroll-magic.js");
-/* harmony import */ var _slick_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./slick.js */ "./src/js/slick.js");
-/* harmony import */ var _modules_replaceToken__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/replaceToken */ "./src/js/modules/replaceToken.js");
-/* harmony import */ var _main_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./main.js */ "./src/js/main.js");
-/* harmony import */ var _main_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_main_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _main_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./main.js */ "./src/js/main.js");
+/* harmony import */ var _main_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_main_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _slick_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./slick.js */ "./src/js/slick.js");
+/* harmony import */ var _modules_replaceToken__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/replaceToken */ "./src/js/modules/replaceToken.js");
 
 
 
@@ -1624,8 +1624,8 @@ __webpack_require__.r(__webpack_exports__);
   var headingTags = document.querySelectorAll("h1, h2, h3");
   var paragraphTags = document.querySelectorAll("p");
   var aldiaLogoStructure = "<span class=\"aldia-logo-in-text\" title=\"AL D\xCDA\">\n                                <img alt=\"AL D\xCDA\" src=\"".concat(drupalSettings.path.baseUrl, "themes/custom/al_dia_news/assets/img/aldia.svg\">\n                              </span>");
-  Object(_modules_replaceToken__WEBPACK_IMPORTED_MODULE_4__["default"])("AL DÍA", aldiaLogoStructure, headingTags);
-  Object(_modules_replaceToken__WEBPACK_IMPORTED_MODULE_4__["default"])("{aldia}", aldiaLogoStructure, paragraphTags);
+  Object(_modules_replaceToken__WEBPACK_IMPORTED_MODULE_5__["default"])("AL DÍA", aldiaLogoStructure, headingTags);
+  Object(_modules_replaceToken__WEBPACK_IMPORTED_MODULE_5__["default"])("{aldia}", aldiaLogoStructure, paragraphTags);
   var $window = $(window);
   var $videoWrap = $(".page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video");
   var $video = $(".page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video .content");
@@ -1768,7 +1768,7 @@ __webpack_require__.r(__webpack_exports__);
       $("#block-exposedformsearch-results-al-dia-solrpage-1-2").addClass("open");
       $(".layout-main-wrapper.layout-container").addClass("color-mod");
     });
-    Object(_slick_js__WEBPACK_IMPORTED_MODULE_3__["default"])($, Drupal);
+    Object(_slick_js__WEBPACK_IMPORTED_MODULE_4__["default"])($, Drupal);
   });
   Drupal.behaviors.form_checkbox = {
     attach: function attach(context, settings) {
