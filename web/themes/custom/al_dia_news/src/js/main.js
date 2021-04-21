@@ -406,4 +406,24 @@ window.onload = function() {
       adversiting.classList.add("dis-none");
     }
   }
+
+  ///// js para modos de visualizacion de slider event
+
+  Array.from(
+    document.querySelectorAll(
+      ".view-slider-internal-event .views-field-field-slider-styl div"
+    )
+  ).map(e => {
+    if (e != null) {
+      if (e.innerText == "sone") {
+        e.closest(".views-row").classList.add("slider-one");
+      } else if (e.innerText == "stwo") {
+        e.closest(".views-row").classList.add("slider-two");
+      } else if (e.innerText == "sthree") {
+        e.closest(".views-row").classList.add("slider-three");
+      } else if (e.innerText == "smore") {
+        e.closest(".views-row").classList.add("slider-more");
+      }
+    }
+  });
 };

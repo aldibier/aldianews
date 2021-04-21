@@ -343,9 +343,12 @@
         }
       }
 
-      .aldia-logo-in-text img {
-        width: 70px;
-        height: 26.12px;
+      .aldia-logo-in-text {
+        max-width: 70px;
+        img {
+          width: 100%;
+          height: 24.25px;
+        }
       }
       .views-field-view-3 {
         top: auto;
@@ -450,7 +453,7 @@
   padding: 30px 25px;
   margin-top: 40px;
 
-  &::hover {
+  &:hover {
     background: #979797;
     opacity: 0.7;
   }
@@ -507,6 +510,38 @@
     line-height: 17px;
     color: $cwhite;
     width: 100%;
+  }
+}
+
+.block-block-groupcurrent-edition-advertising-home {
+  >.content {
+    display: flex;
+
+    @media screen and (max-width: $broken) {
+      flex-direction: column;
+    }
+  }
+
+  .block-views-blockhome-current-edition--block-1 {
+    margin-right: 40px;
+    padding-left: 80px;
+
+    @media screen and (max-width: $broken) {
+      margin-right: 0;
+      padding: 0 40px;
+    }
+
+    @media screen and (max-width: $tablet) {
+      padding: 0 15px;
+    }
+  }
+
+  .block-fixed-block-contentmedium-advertising {
+    padding-right: 80px;
+    
+    @media screen and (max-width: $broken) {
+      padding: 15px;
+    }
   }
 }
 

@@ -32,6 +32,7 @@
     }
   }
 
+  //css temporal
   .views-field-field-my-content-has-a-main-vide {
     font-size: 0;
 
@@ -45,6 +46,19 @@
       &:empty {
         display: none;
       }
+    }
+  }
+
+  //css temporal
+  .icon-player {
+    font-size: 0;
+
+    .field--name-field-my-content-has-a-main-vide:not(:empty){
+      @include player-icon(
+        $desktop-size: 70px,
+        $tablet-size: 70px,
+        $mobile-size: 30px
+      );
     }
   }
 
@@ -128,15 +142,6 @@
       }
     }
 
-    @media screen and (max-width: $broken) {
-      margin-bottom: 5px;
-
-      a {
-        font-size: szrem(14);
-        line-height: 17px;
-      }
-    }
-
     @media screen and (max-width: $tablet) {
       margin-bottom: 5px;
 
@@ -160,6 +165,12 @@
     line-height: 19px;
     color: $cgrey3;
 
+    p {
+      margin: 0;
+      font-size: inherit;
+      line-height: inherit;
+    }
+
     &-white {
       color: $cgrey8;
     }
@@ -180,23 +191,33 @@
 
   .card-image {
     margin: 0 0 15px;
+
+    @media screen and(max-width:$tablet) {
+      margin: 0 0 10px;
+    }
   }
 
   .field--name-category-home {
     a {
       font-size: szrem(16);
+      line-height: 19px;
 
       @media screen and(max-width:$tablet) {
         font-size: szrem(10);
+        line-height: 12px;
       }
     }
   }
 
-  .field--name-dynamic-token-fieldnode-authored-on   {
-    font-size: szrem(14);
+  .card-title {
+    a {
+      font-size: szrem(28);
+      line-height: 34px;
 
-    p {
-      margin: 0;
+      @media screen and(max-width:$tablet) {
+        font-size: szrem(14);
+        line-height: 17px;
+      }
     }
   }
 }

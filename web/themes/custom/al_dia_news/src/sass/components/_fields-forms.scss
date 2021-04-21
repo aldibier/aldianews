@@ -54,7 +54,7 @@ form {
   }
 
   input[class*="form"],
-  textarea[class*="form"]{
+  textarea[class*="form"] {
     border: 0;
   }
 
@@ -185,6 +185,9 @@ form {
       font-size: 15px;
       background-size: 11px;
     }
+    .SumoSelect .optWrapper > .options > li label {
+      min-height: 40px;
+    }
     select,
     .SumoSelect > .CaptionCont {
       min-height: 30px;
@@ -192,6 +195,7 @@ form {
         rgb(237, 237, 237);
       > span {
         font-size: $px13;
+        padding-left: 0px;
       }
     }
     textarea {
