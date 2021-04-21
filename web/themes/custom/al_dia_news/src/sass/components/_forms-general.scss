@@ -9,11 +9,15 @@
   z-index: 3;
 
   form {
-    overflow-y: overlay;
+    overflow-y: scroll;
     height: 100%;
     display: flex;
     flex-wrap: wrap;
     overscroll-behavior: contain;
+
+    @supports (overflow-y: overlay){
+      overflow-y: overlay;
+    }
   }
 
   .form-item-interest {
@@ -26,13 +30,13 @@
   width: 100%;
   margin-bottom: 25px;
   padding: 0 0 10px;
-  border-bottom: 1px solid $corange;
+  border-bottom: 1px solid $red1;
   display: block;
   font-size: szrem(34);
   font-family: $Mod-Sbold;
   font-weight: 600;
   line-height: 41px;
-  color: $corange;
+  color: $red1;
 }
 
 //-------------text information------------//
@@ -214,7 +218,7 @@ button[name="close"],
     margin-bottom: 15px;
     padding: 0 0 7px;
     font-size: szrem(20);
-    line-height: 22px;
+    line-height: 24px;
   }
 
   //-------------button close form------------//
@@ -238,7 +242,7 @@ button[name="close"],
   //-------------form al dia live ------------//
   .webform-about-al-dia-live {
     width: calc(100% - 30px);
-    padding: 54px 25px 0;
+    padding: 54px 20px 0;
 
     form {
       padding-bottom: 39px;
@@ -258,6 +262,7 @@ button[name="close"],
     
     textarea {
       max-width: 100%;
+      min-height: 200px;
     }
   }
 
