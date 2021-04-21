@@ -158,6 +158,9 @@
       margin: 0 auto;
     }
   }
+  .maxim {
+    max-height: 350px;
+  }
 }
 
 //------------------ modos de visulizacion eventos grupo de personas ------------//
@@ -253,7 +256,7 @@
     display: none;
   }
 }
-.mode-one.guest-event-advertising {
+.guest-event-advertising .mode-one {
   max-width: 840px;
   margin-right: auto;
   .item-list ul li {
@@ -261,7 +264,7 @@
     border-right: 0px;
   }
 }
-.mode-two.guest-event-advertising {
+.guest-event-advertising .mode-two {
   display: flex;
   .item-list ul li {
     max-width: 400px;
@@ -270,10 +273,10 @@
     display: block;
   }
 }
-.mode-three.guest-event-advertising .item-list ul li {
+.guest-event-advertising .mode-three .item-list ul li {
   max-width: 400px;
 }
-.more.guest-event-advertising {
+.guest-event-advertising .more {
   .item-list ul li {
     max-width: 330px;
     margin-bottom: 70px;
