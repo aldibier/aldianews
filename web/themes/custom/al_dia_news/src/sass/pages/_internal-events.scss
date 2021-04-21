@@ -253,6 +253,17 @@
     }
   }
   .mode-two {
+    display: flex;
+    flex-wrap: wrap;
+    .views-field-field-guest {
+      max-width: 840px;
+      margin-right: auto;
+      width: 100%;
+    }
+    .paragraph {
+      display: flex;
+      flex-direction: column;
+    }
     .item-list ul li {
       max-width: 400px;
     }
@@ -334,7 +345,10 @@
       height: auto;
     }
   }
-  .views-field-field-image-slider {
+  .views-field-field-slider-styl {
+    display: none;
+  }
+  .item-list ul {
     margin: 0px auto 100px;
     width: 100%;
   }

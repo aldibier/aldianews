@@ -1541,7 +1541,7 @@ window.onload = function () {
   } ///// js para modos de visualizacion de slider event
 
 
-  Array.from(document.querySelectorAll(".view-slider-internal-event .views-field-field-style div")).map(function (e) {
+  Array.from(document.querySelectorAll(".view-slider-internal-event .views-field-field-slider-styl div")).map(function (e) {
     if (e != null) {
       if (e.innerText == "sone") {
         e.closest(".views-row").classList.add("slider-one");

@@ -411,7 +411,7 @@ window.onload = function() {
 
   Array.from(
     document.querySelectorAll(
-      ".view-slider-internal-event .views-field-field-style div"
+      ".view-slider-internal-event .views-field-field-slider-styl div"
     )
   ).map(e => {
     if (e != null) {
