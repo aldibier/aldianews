@@ -2010,7 +2010,7 @@ var initSlick = function initSlick($, Drupal) {
   var view_mode_one = $(".view-slider-internal-event .slider-one");
 
   if (view_mode_one != null) {
-    $(".view-slider-internal-event .slider-one .views-field-field-image-slider").slick({
+    $(".view-slider-internal-event .slider-one .item-list ul").slick({
       infinite: true,
       slidesToShow: 1,
       slidesToScroll: 1,
@@ -2030,7 +2030,7 @@ var initSlick = function initSlick($, Drupal) {
   var view_mode_two = $(".view-slider-internal-event .slider-two");
 
   if (view_mode_two != null) {
-    $(".view-slider-internal-event .slider-two .views-field-field-image-slider").slick({
+    $(".view-slider-internal-event .slider-two .item-list ul").slick({
       infinite: true,
       slidesToShow: 2,
       slidesToScroll: 1,
@@ -2050,7 +2050,7 @@ var initSlick = function initSlick($, Drupal) {
   var view_mode_three = $(".view-slider-internal-event .slider-three");
 
   if (view_mode_three != null) {
-    $(".view-slider-internal-event .slider-three .views-field-field-image-slider").slick({
+    $(".view-slider-internal-event .slider-three .item-list ul").slick({
       infinite: true,
       slidesToShow: 3,
       slidesToScroll: 1,
@@ -2070,7 +2070,7 @@ var initSlick = function initSlick($, Drupal) {
   var view_mode_more = $(".view-slider-internal-event .slider-more");
 
   if (view_mode_more != null) {
-    $(".view-slider-internal-event .slider-more .views-field-field-image-slider").slick({
+    $(".view-slider-internal-event .slider-more .item-list ul").slick({
       infinite: true,
       slidesToShow: 4,
       slidesToScroll: 1,

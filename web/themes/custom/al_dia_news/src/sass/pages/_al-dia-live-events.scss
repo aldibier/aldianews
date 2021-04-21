@@ -5,11 +5,12 @@
   margin-bottom: 70px;
   .view-header {
     width: 100%;
-    margin-bottom: 5px;
+    padding-bottom: 5px;
     border-bottom: 3px solid #ee2211;
     max-width: 1310px;
     padding: 0 15px;
     margin: 0 auto;
+    margin-bottom: 40px;
     > div {
       max-width: 265px;
       width: 100%;
@@ -21,7 +22,7 @@
       width: 100%;
       height: auto;
     }
-  } 
+  }
   .view-text {
     max-width: 1310px;
     padding: 0 15px;
@@ -89,8 +90,7 @@
     display: flex;
   }
   button {
-    max-width: 250px;
-    width: 100%;
+    width: 250px;
     min-height: 55px;
     display: flex;
     align-items: center;
@@ -103,15 +103,32 @@
     color: $cwhite;
     letter-spacing: 0.741176px;
     background: #ee2211;
+    border: 0px;
   }
   button[name*="sponsorship"] {
     background: #5c6165;
     margin-right: 15px;
   }
-}
 
-@media (max-width: $tablet) {
-  .red-banner {
+  @media (max-width: 1230px) {
+    .view-footer {
+      position: relative;
+      right: auto;
+      bottom: auto;
+      justify-content: center;
+    }
+    button {
+      width: 140px;
+      min-height: 30px;
+      font-style: normal;
+      font-size: $px12;
+      margin-bottom: 25px;
+    }
+    button[name*="sponsorship"] {
+      margin-right: 10px;
+    }
+  }
+  @media (max-width: $tablet) {
     border-bottom: 1px solid #333333;
     margin-bottom: 30px;
     .view-header {
@@ -149,21 +166,6 @@
     }
     .views-field-field-venue-of-the-event {
       max-width: 125px;
-    }
-    .view-footer {
-      position: relative;
-      right: auto;
-      bottom: auto;
-    }
-    button {
-      max-width: 140px;
-      min-height: 30px;
-      font-style: normal;
-      font-size: $px12;
-      margin-bottom: 25px;
-    }
-    button[name*="sponsorship"] {
-      margin-right: 10px;
     }
   }
 }
