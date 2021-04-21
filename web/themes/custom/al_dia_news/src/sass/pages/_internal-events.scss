@@ -265,7 +265,6 @@
   }
 }
 .guest-event-advertising .mode-two {
-  display: flex;
   .item-list ul li {
     max-width: 400px;
   }
@@ -276,14 +275,18 @@
 .guest-event-advertising .mode-three .item-list ul li {
   max-width: 400px;
 }
-.guest-event-advertising .more {
+.guest-event-advertising .mode-more {
   .item-list ul li {
-    max-width: 330px;
+    max-width: 300px;
     margin-bottom: 70px;
+    .paragraph {
+      display: flex;
+      flex-direction: column;
+    }
     &:nth-child(4n) {
       border-right: 0px;
     }
-    &:nth-child(4n + 4):before {
+    &:nth-child(1n + 4):before {
       display: block;
       content: "";
       width: 100%;

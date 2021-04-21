@@ -89,7 +89,6 @@
         margin: 0 5px 0 0;
       }
 
-
       &:last-child {
         margin-right: 0;
       }
@@ -97,7 +96,7 @@
       input {
         display: none;
 
-        &:checked+label {
+        &:checked + label {
           color: $red1;
         }
       }
@@ -159,7 +158,7 @@
           padding-bottom: 56.25%;
           height: 0;
           min-height: 165px;
-          overflow: hidden
+          overflow: hidden;
         }
       }
 
@@ -277,7 +276,7 @@
     font-weight: normal;
     font-size: $px18;
     line-height: 28.76px;
-    font-family: $NimR-reg;
+    font-family: $CenturyOld-Regular;
     color: $cwhite;
     margin-bottom: 35px;
   }
@@ -317,9 +316,11 @@
       height: 100%;
       width: 100%;
       z-index: 2;
-      background: linear-gradient(179deg,
-          #333333 45.68%,
-          rgba(51, 51, 51, 0) 91%);
+      background: linear-gradient(
+        179deg,
+        #333333 45.68%,
+        rgba(51, 51, 51, 0) 91%
+      );
       opacity: 0.8;
     }
   }
@@ -345,9 +346,11 @@
         height: 100%;
         width: 100%;
         z-index: 2;
-        background: linear-gradient(179deg,
-            #333333 45.68%,
-            rgba(51, 51, 51, 0) 91%);
+        background: linear-gradient(
+          179deg,
+          #333333 45.68%,
+          rgba(51, 51, 51, 0) 91%
+        );
         opacity: 0.8;
       }
     }
@@ -435,17 +438,21 @@
       max-width: 150px;
       height: 100%;
       top: 0px;
-      background: linear-gradient(90deg,
-          #333333 57.68%,
-          rgba(51, 51, 51, 0) 100%);
+      background: linear-gradient(
+        90deg,
+        #333333 57.68%,
+        rgba(51, 51, 51, 0) 100%
+      );
       z-index: 2;
     }
 
     &::after {
       right: 0px;
-      background: linear-gradient(270deg,
-          #333333 57.68%,
-          rgba(51, 51, 51, 0) 100%);
+      background: linear-gradient(
+        270deg,
+        #333333 57.68%,
+        rgba(51, 51, 51, 0) 100%
+      );
     }
 
     &::before {
@@ -583,7 +590,6 @@
     }
 
     .slick-list {
-
       &::before,
       &::after {
         max-width: 50px;

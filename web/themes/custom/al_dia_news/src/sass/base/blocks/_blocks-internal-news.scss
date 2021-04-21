@@ -10,7 +10,7 @@
   }
 }
 
-//------ summary -----------// 
+//------ summary -----------//
 .view--summary-news-intern {
   .view-content:empty {
     display: none;
@@ -25,7 +25,7 @@
   line-height: 140%;
   color: $cblack3;
 
-  @media screen and (max-width:$tablet) {
+  @media screen and (max-width: $tablet) {
     padding: 10px;
     font-size: szrem(18);
   }
@@ -88,7 +88,7 @@
     line-height: 140%;
     font-family: $PrNovacond-reg;
 
-    >.content {
+    > .content {
       padding: 0;
     }
   }
@@ -135,7 +135,6 @@
 
 //  estilo para video en interna noticias
 .content-news-internal-first.video-present {
-
   .block-field-blocknodenewsfield-image,
   div.field--name-field-image {
     display: none;
@@ -247,13 +246,13 @@
     font-family: $PrNovacond-bold;
   }
 
-  .addtoany_list.a2a_kit_size_32 a>span {
+  .addtoany_list.a2a_kit_size_32 a > span {
     padding: 4px;
     border-radius: 100%;
     background: $cgrey !important;
   }
 
-  >.content {
+  > .content {
     margin: 10px auto 25px 0;
   }
 
@@ -305,7 +304,7 @@ blockquote {
   }
 
   p {
-    font-family: $NimR-reg;
+    font-family: $CenturyOld-Regular;
     font-style: normal;
     font-weight: normal;
     font-size: $px28;
@@ -356,11 +355,11 @@ blockquote {
     width: 100%;
   }
 
-  >* {
+  > * {
     padding: 0;
   }
 
-  >figcaption {
+  > figcaption {
     padding: 15px 0;
     border: none;
     text-align: left;
@@ -382,8 +381,8 @@ blockquote {
   }
 
   blockquote,
-  blockquote>p {
-    font-family: $NimR-reg;
+  blockquote > p {
+    font-family: $CenturyOld-Regular;
     font-style: normal;
     font-size: szrem(28);
     line-height: 140%;
@@ -403,7 +402,7 @@ blockquote {
     font-weight: normal;
     font-size: $px19;
     line-height: 140%;
-    font-family: $NimR-reg;
+    font-family: $CenturyOld-Regular;
     color: $cgrey6;
   }
 
@@ -416,7 +415,8 @@ blockquote {
   }
 
   strong {
-    font-family: $NimR-bold;
+    font-family: $CenturyOld-Regular;
+    font-weight: bold;
     font-style: normal;
     font-size: 1.4rem;
     line-height: 140%;
@@ -452,7 +452,6 @@ blockquote {
   }
 
   @media (max-width: $tablet) {
-
     h1,
     h2,
     h3,
@@ -571,7 +570,7 @@ div[data-embed-button="related_content"] {
     line-height: 127.8%;
     letter-spacing: 0.2px;
     margin: 20px 0 0;
-    font-family: $NimR-reg;
+    font-family: $CenturyOld-Regular;
     color: $corange;
     padding: 0 0 20px;
     border-bottom: 1px solid $cgrey4;
@@ -588,7 +587,7 @@ div[data-embed-button="related_content"] {
       font-weight: normal;
       font-size: 20px;
       line-height: 127.8%;
-      font-family: $NimR-reg;
+      font-family: $CenturyOld-Regular;
 
       &:before {
         content: "/";
@@ -625,7 +624,6 @@ div[data-embed-button="related_content"] {
 //--------------coments
 .block-field-blocknodenewsfield-comments,
 #comment-form {
-
   h2.comment-form__title,
   label {
     font-style: normal;
@@ -832,7 +830,7 @@ div#selectionSharerPopunder {
     margin: 5px 4px !important;
   }
 
-  @media(min-width: 768px) {
+  @media (min-width: 768px) {
     display: none !important;
   }
 }
@@ -847,7 +845,6 @@ div#selectionSharerPopover {
   }
 }
 
-
 @keyframes fade-in-up {
   0% {
     opacity: 0;
@@ -859,12 +856,19 @@ div#selectionSharerPopover {
   }
 }
 
-.page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video .content iframe {
+.page-node-type-news
+  .content-news-internal-first
+  .block-field-blocknodenewsfield-video
+  .content
+  iframe {
   max-width: 100%;
   max-height: 100%;
 }
 
-.page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video .content.stuck {
+.page-node-type-news
+  .content-news-internal-first
+  .block-field-blocknodenewsfield-video
+  .content.stuck {
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -874,7 +878,7 @@ div#selectionSharerPopover {
   animation: fade-in-up 0.75s ease forwards;
   z-index: 1;
 
-  @media(max-width:$tablet) {
+  @media (max-width: $tablet) {
     width: 275px;
     height: 177px;
   }
