@@ -1,9 +1,9 @@
 import "../../assets/libraries/selection-sharer/selection-sharer.css";
 import SelectionSharer from "../../assets/libraries/selection-sharer/selection-sharer.js";
 import initScrollMagic from "./scroll-magic";
+import initMain from "./main.js";
 import initSlick from "./slick.js";
 import replaceToken from "./modules/replaceToken";
-import initMain from "./main.js";
 
 (function($, Drupal) {
   // Selection share
