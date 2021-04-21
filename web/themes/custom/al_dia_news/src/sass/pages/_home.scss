@@ -510,6 +510,38 @@
   }
 }
 
+.block-block-groupcurrent-edition-advertising-home {
+  >.content {
+    display: flex;
+
+    @media screen and (max-width: $broken) {
+      flex-direction: column;
+    }
+  }
+
+  .block-views-blockhome-current-edition--block-1 {
+    margin-right: 40px;
+    padding-left: 80px;
+
+    @media screen and (max-width: $broken) {
+      margin-right: 0;
+      padding: 0 40px;
+    }
+
+    @media screen and (max-width: $tablet) {
+      padding: 0 15px;
+    }
+  }
+
+  .block-fixed-block-contentmedium-advertising {
+    padding-right: 80px;
+    
+    @media screen and (max-width: $broken) {
+      padding: 15px;
+    }
+  }
+}
+
 @media (max-width: $desktop) {
   .view-thought-leaders-home {
     .views-field-view,

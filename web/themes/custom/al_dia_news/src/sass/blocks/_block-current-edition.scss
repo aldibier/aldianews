@@ -1,20 +1,42 @@
 .block-views-blockhome-current-edition--block-1 {
     margin-bottom: 100px;
-}
 
-.current-edition {
-    width: 880px;
-    padding-left: 40px;
-
-    .view-content {
-        background-color: #4D4D4D;
+    @media screen and (max-width: $broken) {
+        margin-bottom: 30px;
     }
 }
 
+.current-edition {
+    max-width: 840px;
+    background-color: #4D4D4D;
+
+    >.view-content {
+        height: 615px;
+    }
+
+    @media screen and (max-width: $broken) {
+        margin: 0 auto;
+    }
+
+    @media screen and (max-width: $tablet) {
+        margin: 0px -15px 0 0;
+
+        >.view-content {
+            height: auto;
+        }
+    }  
+}
+
 .current-edition-header {
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     display: flex;
     align-items: center;
+
+    @media screen and (max-width: $tablet) {
+        margin-bottom: 17px;
+        align-items: flex-start;
+        flex-direction: column;
+    }
 
     .view-header {
         width: 220px;
@@ -43,6 +65,21 @@
             left: 0;
             box-shadow: 10px 3px 4px 2px #00000045;
         }
+
+        @media screen and (max-width: $tablet) {
+            width: 150px;
+            height: 30px;
+            margin: 0 0 10px -15px;
+
+            &::before{
+                bottom: -15px;
+                border-width: 7.5px;
+            }
+
+            &::after {
+                box-shadow: 10px 4px 10px 2px #00000045;
+            }
+        }
     }
 
     h3 {
@@ -54,6 +91,17 @@
         line-height: 40px;
         letter-spacing: 0.025em;
         color: $cwhite;
+
+        @media screen and (max-width: $tablet) {
+            font-size: szrem(16);
+            line-height: 30px;
+        }
+    }
+
+    .view-content {
+        @media screen and (max-width: $tablet) {
+            padding: 0 15px;
+        }
     }
 
     .date-current-edition {
@@ -63,6 +111,13 @@
         font-weight: normal;
         line-height: 24px;
         color: $cwhite;
+
+        @media screen and (max-width: $tablet) {
+            font-size: szrem(14);
+            line-height: 17px;
+            letter-spacing: 0.1px;
+
+        }
     }
 }
 
@@ -72,17 +127,30 @@
         height: auto;
         max-width: 435px;
         max-height: 480px;
+
+        @media screen and (max-width: $tablet) {
+            min-width: 130px;
+            min-height: 145px;
+        }
     }
 }
 
 .current-edition-content {
     padding: 0 40px 55px;
     display: grid;
-    grid-template-columns: minmax(320px,435px);
-    grid-template-rows: auto 1fr;
+    grid-template-columns: minmax(auto, 435px) minmax(auto,280px);
+    grid-template-rows: repeat(2,auto);
     grid-template-areas: 'cover-image title'
                          'cover-image content';
     grid-gap: 0 45px;
+
+    @media screen and (max-width: $tablet) {
+        padding: 0px 15px 22px;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-areas: 'cover-image title'
+        'content content';
+        grid-gap: 23px 10px;
+    }
 
     .current-edition-cover-page {
         grid-area: cover-image;
@@ -99,12 +167,28 @@
             font-weight: 600;
             line-height: 26px;
             color: $cwhite;
+
+            @media screen and(max-width:$tablet) {
+                margin-bottom: 23px;
+                font-size: szrem(16);
+                line-height: 19px;
+            }
+        }
+
+        ul {
+            margin: 0;
         }
 
         li {
+            max-height: 35px;
             margin-bottom: 15px;
+            padding: 0;
             display: flex;
             align-items: center;
+
+            @media screen and(max-width:$tablet) {
+                margin-bottom: 20px;
+            }
 
             &:last-child {
                 margin-bottom: 0;
@@ -121,6 +205,7 @@
         }
 
         .views-field-field-card-title-related-covers {
+            @include ellipsis(35px,2);
             font-size: szrem(16);
             font-family: $PrNovacond-Sbold;
             font-style: normal;
@@ -128,27 +213,69 @@
             text-transform: uppercase;
             line-height: 19px;
             color: $cwhite;
+
+            @media screen and(max-width:$tablet) {
+                font-size: szrem(12);
+                line-height: 15px;
+            }
         }
 
         .view-content {
-            margin-bottom: 40px;
+            margin-bottom: 43px;
+
+            @media screen and(max-width:$tablet) {
+                margin-bottom: 20px;
+            }
         }
 
         .view-footer {
+
+            .block-fixed-block-contentorder-today-current-edition-bloc {
+                @media screen and(max-width:$tablet) {
+                   display: flex;
+                   justify-content: flex-end;
+                   flex-direction: row-reverse;
+                }
+            }
+
+            .content {
+                margin: 0;
+            }
+
             p {
                 font-size: szrem(17);
                 font-family: $Mod-bold;
                 font-style: normal;
                 font-weight: bold;
-                line-height: 35px;
+                line-height: 1.5;
                 letter-spacing: 0.741176px;
                 color: $cwhite;
+
+                @media screen and(max-width:$tablet) {
+                    margin: 0;
+                    font-size: szrem(12);
+                    line-height: 14px;
+                    letter-spacing: 0.025em;
+                }
+
+                &:empty {
+                    display: none;
+                }
             }
 
             button {
                 font-size: szrem(18);
                 letter-spacing: 0.741176px;
-                @include button($btnWidth:165px,$btnHeight:40px,$btnBackground:$corange,$btnColor:$cwhite)
+                @include button($btnWidth:165px,$btnHeight:40px,$btnBackground:$corange,$btnColor:$cwhite);
+            
+                @media screen and(max-width:$tablet) {
+                    width: 100px;
+                    min-width: 100px;
+                    height: 30px;
+                    margin-right: 15px;
+                    font-size: szrem(12);
+                    line-height: 25px;
+                }
             }
         }
     }
@@ -160,18 +287,41 @@
     .view-title-into-current-edition-home {
         margin-bottom: 50px;
 
+        .views-field-body {
+            p {
+                margin-bottom: 5px;
+                font-size: szrem(40);
+                font-family: $PrNovacond-bold;
+                font-style: normal;
+                font-weight: bold;
+                line-height: 95%;
+                text-transform: uppercase;
+                color: $cwhite;
+
+                @media screen and (max-width:$tablet) {
+                    font-size: szrem(20);
+                }
+            }
+        }
+
         .views-field-nothing {
+            margin: 0;
+
             a {
                 font-size: szrem(18);
                 font-family: $PrNovacond-bold;
                 font-style: normal;
                 font-weight: bold;
+                line-height: 25px;
                 letter-spacing: 0.741176px;
                 color: $corange;
+
+                @media screen and (max-width:$tablet) {
+                    font-size: szrem(15);
+                }
             }
         }
     }
-
 }
 
 
