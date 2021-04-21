@@ -166,19 +166,6 @@
 //------------------ modos de visulizacion eventos grupo de personas ------------//
 
 .guest-event-advertising {
-  .views-field-field-title {
-    font-family: $ModernoFB-Regular;
-    font-style: normal;
-    font-weight: 600;
-    font-size: $px42;
-    line-height: 50px;
-    text-transform: uppercase;
-    color: $cblack3;
-    width: 100%;
-    padding-bottom: 15px;
-    border-bottom: 1px solid #333333;
-    margin-bottom: 50px;
-  }
   .views-field-field-style {
     display: none;
   }
@@ -255,67 +242,135 @@
   .four-content-event-advertising {
     display: none;
   }
-}
-.guest-event-advertising .mode-one {
-  max-width: 840px;
-  margin-right: auto;
-  .item-list ul li {
-    max-width: 650px;
-    border-right: 0px;
-  }
-}
-.guest-event-advertising .mode-two {
-  .item-list ul li {
-    max-width: 400px;
-  }
-  .four-content-event-advertising {
-    display: block;
-  }
-}
-.guest-event-advertising .mode-three .item-list ul li {
-  max-width: 400px;
-}
-.guest-event-advertising .mode-more {
-  .item-list ul li {
-    max-width: 300px;
-    margin-bottom: 70px;
-    .paragraph {
-      display: flex;
-      flex-direction: column;
-    }
-    &:nth-child(4n) {
+
+  ///--- view modes -----//
+  .mode-one {
+    max-width: 840px;
+    margin-right: auto;
+    .item-list ul li {
+      max-width: 650px;
       border-right: 0px;
     }
-    &:nth-child(1n + 4):before {
+  }
+  .mode-two {
+    .item-list ul li {
+      max-width: 400px;
+    }
+    .four-content-event-advertising {
       display: block;
-      content: "";
-      width: 100%;
-      height: 1px;
-      left: 0;
-      background: #b1b1b1;
-      position: absolute;
-      right: 0;
-      margin: -35px 0;
     }
   }
-  .event-guest-photo {
-    max-width: 170px;
-    max-height: 170px;
+  .mode-three .item-list ul li {
+    max-width: 400px;
   }
-  .event-guest-name {
-    font-size: $px20;
-    line-height: 24px;
-    max-width: 270px;
+  .mode-more {
+    .item-list ul li {
+      max-width: 300px;
+      margin-bottom: 70px;
+      .paragraph {
+        display: flex;
+        flex-direction: column;
+      }
+      &:nth-child(4n) {
+        border-right: 0px;
+      }
+      &:nth-child(1n + 4):before {
+        display: block;
+        content: "";
+        width: 100%;
+        height: 1px;
+        left: 0;
+        background: #b1b1b1;
+        position: absolute;
+        right: 0;
+        margin: -35px 0;
+      }
+    }
+    .event-guest-photo {
+      max-width: 170px;
+      max-height: 170px;
+    }
+    .event-guest-name {
+      font-size: $px20;
+      line-height: 24px;
+      max-width: 270px;
+    }
+    .event-guest-position {
+      font-size: $px16;
+      line-height: 19px;
+      max-width: 270px;
+    }
+    .event-guest-company {
+      font-size: $px20;
+      line-height: 24px;
+      max-width: 270px;
+    }
   }
-  .event-guest-position {
-    font-size: $px16;
-    line-height: 19px;
-    max-width: 270px;
+}
+
+.subtitle-events {
+  font-family: $ModernoFB-Regular;
+  font-style: normal;
+  font-weight: 600;
+  font-size: $px42;
+  line-height: 50px;
+  text-transform: uppercase;
+  color: $cblack3;
+  width: 100%;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #333333;
+  margin-bottom: 50px;
+}
+
+//------------------ modos de visulizacion slider interna de eventos ------------//
+
+.view-slider-internal-event {
+  .item {
+    overflow: hidden;
+    max-width: 570px;
+    max-height: 300px;
+    img {
+      width: 100%;
+      height: auto;
+    }
   }
-  .event-guest-company {
-    font-size: $px20;
-    line-height: 24px;
-    max-width: 270px;
+  .views-field-field-image-slider {
+    margin: 0px auto 100px;
+    width: 100%;
+  }
+  .slick-list {
+    max-width: 1170px;
+    margin: 0 auto;
+  }
+
+  .slick-arrow {
+    border: 0px;
+    font-size: 0px;
+    width: 20px;
+    height: 35px;
+    position: absolute;
+    top: 40%;
+  }
+
+  .slick-prev {
+    background: transparent url(../img/izq.png) center center no-repeat;
+    background-size: contain;
+    left: 0px;
+  }
+
+  .slick-next {
+    background: transparent url(../img/der.png) center center no-repeat;
+    background-size: contain;
+    right: 0px;
+  }
+  ///---- view modes-----//
+  .slider-three .item {
+    max-width: 380px;
+    max-height: 200px;
+  }
+  .slider-more .item {
+    max-width: 280px;
+    max-height: 147px;
   }
 }
 
@@ -397,12 +452,6 @@
   //------------------ modos de visulizacion eventos grupo de personas ------------//
 
   .guest-event-advertising {
-    .views-field-field-title {
-      font-size: $px20;
-      line-height: 24px;
-      padding-bottom: 10px;
-      margin-bottom: 30px;
-    }
     .item-list ul {
       margin-bottom: 50px;
       li {
@@ -430,59 +479,68 @@
       line-height: 14px;
       max-width: 130px;
     }
-  }
-  .mode-one.guest-event-advertising {
-    max-width: none;
-    margin: 0 auto;
-    .item-list ul li {
+
+    ///--- view modes -----//
+    .mode-one {
       max-width: none;
-    }
-  }
-  .mode-two.guest-event-advertising {
-    .item-list ul li {
-      max-width: 140px;
-    }
-  }
-  .mode-three.guest-event-advertising .item-list ul li {
-    max-width: 140px;
-    &:last-child {
-      max-width: none;
-    }
-  }
-  .more.guest-event-advertising {
-    .item-list ul li {
-      max-width: 140px;
-      margin-bottom: 50px;
-      &:nth-child(4n + 4):before {
-        display: block;
-        content: "";
-        width: 100%;
-        height: 1px;
-        left: 0;
-        background: #b1b1b1;
-        position: absolute;
-        right: 0;
-        margin: -35px 0;
+      margin: 0 auto;
+      .item-list ul li {
+        max-width: none;
       }
     }
-    .event-guest-photo {
-      max-width: 105px;
-      max-height: 105px;
+    .mode-two {
+      .item-list ul li {
+        max-width: 140px;
+      }
     }
-    .event-guest-name {
-      font-size: $px14;
-      line-height: 17px;
-      max-width: 130px;
+    .mode-three .item-list ul li {
+      max-width: 140px;
+      &:last-child {
+        max-width: none;
+      }
     }
-    .event-guest-position {
-      font-size: $px10;
-      line-height: 12px;
-      max-width: 130px;
+    .mode-more {
+      .item-list ul li {
+        max-width: 140px;
+        margin-bottom: 50px;
+        &:nth-child(4n + 4):before {
+          display: block;
+          content: "";
+          width: 100%;
+          height: 1px;
+          left: 0;
+          background: #b1b1b1;
+          position: absolute;
+          right: 0;
+          margin: -35px 0;
+        }
+      }
+      .event-guest-photo {
+        max-width: 105px;
+        max-height: 105px;
+      }
+      .event-guest-name {
+        font-size: $px14;
+        line-height: 17px;
+        max-width: 130px;
+      }
+      .event-guest-position {
+        font-size: $px10;
+        line-height: 12px;
+        max-width: 130px;
+      }
+      .event-guest-company {
+        font-size: $px12;
+        line-height: 14px;
+        max-width: 130px;
+      }
     }
-    .event-guest-company {
-      font-size: $px12;
-      line-height: 14px;
-      max-width: 130px;
-    }
+  }
+
+  .subtitle-events {
+    font-size: $px20;
+    line-height: 24px;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
   }
 }
