@@ -149,11 +149,18 @@ body.toolbar-tray-open.user-logged-in {
 }
 
 @media (max-width: 768px) {
+  .mobile-plus {
+    .card-more:nth-child(1),
+    .card-more:nth-child(2) {
+      display: none !important;
+    }
+  }
+
   .life-advertising {
     .mobile-plus {
       .card-more:nth-child(1),
       .card-more:nth-child(2) {
-        display: block;
+        display: block !important;
       }
     }
 
@@ -184,12 +191,7 @@ body.toolbar-tray-open.user-logged-in {
       display: none;
     }
   }
-  .mobile-plus {
-    .card-more:nth-child(1),
-    .card-more:nth-child(2) {
-      display: none;
-    }
-  }
+
   .comun-title h1 {
     margin: 0px auto 7px;
     border-bottom: 1px solid $corange;
