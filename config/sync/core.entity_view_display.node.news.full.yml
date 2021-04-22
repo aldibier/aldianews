@@ -15,6 +15,7 @@ dependencies:
     - field.field.node.news.field_my_content_has_a_main_vide
     - field.field.node.news.field_short_title
     - field.field.node.news.field_tags
+    - field.field.node.news.field_type_of_content
     - field.field.node.news.field_video
     - node.type.news
   module:
@@ -126,6 +127,7 @@ content:
     region: content
 hidden:
   field_high_impact_news: true
+  field_type_of_content: true
   langcode: true
   links: true
   search_api_excerpt: true
