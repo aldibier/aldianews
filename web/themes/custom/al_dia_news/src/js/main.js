@@ -1,6 +1,18 @@
 const initMain = ($, Drupal) => {
   //// js remove element home
-
+  Array.from(
+    document.querySelectorAll(
+      ".block-fixed-block-contentvertical-advertising-mobile"
+    )
+  ).map(function(e) {
+    if (e.children.children != null) {
+      e.closest(".mobile-less").parentElement.parentElement.classList.add(
+        "life-advertising"
+      );
+    } else {
+      e.closest(".views-row").classList.add("mobile-free");
+    }
+  });
   Array.from(
     document.querySelectorAll(
       ".mobile-free .mobile-plus .slick-track .slick-slide:nth-child(1) div:nth-child(1) .card-more"
@@ -22,19 +34,6 @@ const initMain = ($, Drupal) => {
 
   window.onload = function() {
     ///// js para publicidad en bloques de categorias de noticias
-    Array.from(
-      document.querySelectorAll(
-        ".block-fixed-block-contentvertical-advertising-mobile"
-      )
-    ).map(function(e) {
-      if (e.children.children != null) {
-        e.closest(".mobile-less").parentElement.parentElement.classList.add(
-          "life-advertising"
-        );
-      } else {
-        e.closest(".views-row").classList.add("mobile-free");
-      }
-    });
 
     if (
       !!document.querySelector(
