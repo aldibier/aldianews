@@ -153,7 +153,7 @@ body.toolbar-tray-open.user-logged-in {
     .mobile-plus {
       .card-more:nth-child(1),
       .card-more:nth-child(2) {
-        display: block !important;
+        display: block;
       }
     }
 
@@ -187,8 +187,8 @@ body.toolbar-tray-open.user-logged-in {
     }
 
     .mobile-plus {
-      .card-more:nth-child(1),
-      .card-more:nth-child(2) {
+      .slick-track .slick-slide:nth-child(1) div:nth-child(1) .card-more,
+      .slick-track .slick-slide:nth-child(1) div:nth-child(2) .card-more {
         display: none !important;
       }
     }
