@@ -1,44 +1,45 @@
 const initSlick = ($, Drupal) => {
-  let enterMobile = 0;
-  let enterTablet = 0;
-  let enterDesktop = 0;
+  jQuery(document).ready(function() {
+    let enterMobile = 0;
+    let enterTablet = 0;
+    let enterDesktop = 0;
 
-  let categoriesMore = document.querySelectorAll(
-    ".view-categories-sons .view-more-category .view-content"
-  );
+    let categoriesMore = document.querySelectorAll(
+      ".view-categories-sons .view-more-category .view-content"
+    );
 
-  const settings = {
-    infinite: false,
-    rows: 3,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    mobileFirst: true,
-    autoplay: false,
-    dots: false,
-    arrows: true,
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: "unslick"
-      }
-    ]
-  };
+    const settings = {
+      infinite: false,
+      rows: 3,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      mobileFirst: true,
+      autoplay: false,
+      dots: false,
+      arrows: true,
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: "unslick"
+        }
+      ]
+    };
 
-  //slide edit resize
-  if (window.matchMedia("(max-width: 768px)").matches) {
-    setTimeout(function() {
-      categoriesMore.forEach(element => $(element).slick(settings));
-    }, 2000);
-  }
-
-  window.addEventListener("resize", () => {
+    //slide edit resize
     if (window.matchMedia("(max-width: 768px)").matches) {
       setTimeout(function() {
         categoriesMore.forEach(element => $(element).slick(settings));
       }, 2000);
     }
-  });
 
+    window.addEventListener("resize", () => {
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        setTimeout(function() {
+          categoriesMore.forEach(element => $(element).slick(settings));
+        }, 2000);
+      }
+    });
+  });
   // slide landing jobs
   $(
     ".block-views-blockcarousel-jobs-landing-block-1 .brands-carousel-wrapper .view-content"
