@@ -43,6 +43,13 @@ import replaceToken from "./modules/replaceToken";
     });
   }
 
+  $(
+    ".mobile-free .mobile-plus .slick-track .slick-slide:nth-child(1) div:nth-child(1) .card-more"
+  ).remove();
+  $(
+    ".mobile-free .mobile-plus .slick-track .slick-slide:nth-child(1) div:nth-child(2) .card-more"
+  ).remove();
+
   jQuery(document).ready(function() {
     //// sumo select
 
