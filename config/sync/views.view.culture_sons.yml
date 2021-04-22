@@ -25,9 +25,11 @@ dependencies:
     - 'taxonomy_term:categories:4969e35d-adab-4b7f-bda6-4e9a7f60aae9'
     - 'taxonomy_term:categories:4f42d147-084b-4591-9dac-456e7e3704b3'
     - 'taxonomy_term:categories:5c694ec9-71d1-4ee6-ab3c-56d20a158a71'
+    - 'taxonomy_term:categories:91a72607-f5ae-488c-83bf-10956697c5e1'
     - 'taxonomy_term:categories:aec049fa-a86a-42fb-8dc9-173f58881fde'
     - 'taxonomy_term:categories:baa0a831-19ba-45bf-ba8a-be44d13892bd'
     - 'taxonomy_term:categories:c51d8cc3-4350-4d6c-8668-9a89f7a0d2f0'
+    - 'taxonomy_term:categories:ce75d793-8c04-42c0-bcdb-abf0fa29cd0e'
     - 'taxonomy_term:categories:eee54e65-ed4e-4b29-891e-229a2f2a4f1c'
     - 'taxonomy_term:categories:fc9a2fed-71d1-442c-8f5a-a24f095e7020'
     - 'taxonomy_term:categories:fd49a7f8-2d48-4a3e-b99f-a7fb82320620'
@@ -1148,44 +1150,6 @@ display:
           entity_type: node
           entity_field: nid
           plugin_id: numeric
-        field_high_impact_news_value:
-          id: field_high_impact_news_value
-          table: node__field_high_impact_news
-          field: field_high_impact_news_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: '!='
-          value: '1'
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          plugin_id: boolean
       filter_groups:
         operator: AND
         groups:
@@ -2546,44 +2510,6 @@ display:
           entity_type: node
           entity_field: nid
           plugin_id: numeric
-        field_high_impact_news_value:
-          id: field_high_impact_news_value
-          table: node__field_high_impact_news
-          field: field_high_impact_news_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: '!='
-          value: '1'
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          plugin_id: boolean
       filter_groups:
         operator: AND
         groups:
@@ -3100,44 +3026,6 @@ display:
           entity_type: node
           entity_field: nid
           plugin_id: numeric
-        field_high_impact_news_value:
-          id: field_high_impact_news_value
-          table: node__field_high_impact_news
-          field: field_high_impact_news_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: '!='
-          value: '1'
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          plugin_id: boolean
       filter_groups:
         operator: AND
         groups:

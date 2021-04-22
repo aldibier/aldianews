@@ -134,93 +134,88 @@ const initSlick = ($, Drupal) => {
     }
   }
 
-  // slide interna eventos modo de vista ONE
+  // slider interna eventos modo de vista
 
-  var view_mode_one = $(".view-slider-internal-event .slider-one");
-  if (view_mode_one != null) {
-    $(".view-slider-internal-event .slider-one .item-list ul").slick({
-      infinite: true,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: 2000,
-      responsive: [
-        {
-          breakpoint: 500,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 1
-          }
+  const slider_general = {
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    slidesToScroll: 1
+  };
+
+  const slider_one = {
+    ...slider_general,
+    slidesToShow: 1,
+    responsive: [
+      {
+        breakpoint: 500,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1
         }
-      ]
-    });
-  }
-
-  // slide interna eventos modo de vista TWO
-
-  var view_mode_two = $(".view-slider-internal-event .slider-two");
-  if (view_mode_two != null) {
-    $(".view-slider-internal-event .slider-two .item-list ul").slick({
-      infinite: true,
-      slidesToShow: 2,
-      slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: 2000,
-      responsive: [
-        {
-          breakpoint: 500,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 1
-          }
+      }
+    ]
+  };
+  const slider_two = {
+    ...slider_general,
+    slidesToShow: 2,
+    responsive: [
+      {
+        breakpoint: 500,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1
         }
-      ]
-    });
-  }
-
-  // slide interna eventos modo de vista THREE
-
-  var view_mode_three = $(".view-slider-internal-event .slider-three");
-  if (view_mode_three != null) {
-    $(".view-slider-internal-event .slider-three .item-list ul").slick({
-      infinite: true,
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: 2000,
-      responsive: [
-        {
-          breakpoint: 500,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 1
-          }
+      }
+    ]
+  };
+  const slider_three = {
+    ...slider_general,
+    slidesToShow: 3,
+    responsive: [
+      {
+        breakpoint: 500,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1
         }
-      ]
-    });
-  }
-
-  // slide interna eventos modo de vista MORE
-
-  var view_mode_more = $(".view-slider-internal-event .slider-more");
-  if (view_mode_more != null) {
-    $(".view-slider-internal-event .slider-more .item-list ul").slick({
-      infinite: true,
-      slidesToShow: 4,
-      slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: 2000,
-      responsive: [
-        {
-          breakpoint: 500,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 1
-          }
+      }
+    ]
+  };
+  const slider_more = {
+    ...slider_general,
+    slidesToShow: 4,
+    responsive: [
+      {
+        breakpoint: 500,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1
         }
-      ]
-    });
-  }
+      }
+    ]
+  };
+  Array.from(
+    document.querySelectorAll(".view-slider-internal-event .views-row")
+  ).map(e => {
+    if (e != null) {
+      var mode_slider = e.querySelector(".item-list ul");
+      switch (e.className) {
+        case "views-row slider-one":
+          $(mode_slider).slick(slider_one);
+          break;
+        case "views-row slider-two":
+          $(mode_slider).slick(slider_two);
+          break;
+        case "views-row slider-three":
+          $(mode_slider).slick(slider_three);
+          break;
+        case "views-row slider-more":
+          $(mode_slider).slick(slider_more);
+          break;
+      }
+    }
+  });
 };
 
 export default initSlick;

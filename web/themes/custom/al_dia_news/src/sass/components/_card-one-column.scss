@@ -53,7 +53,7 @@
   .icon-player {
     font-size: 0;
 
-    .field--name-field-my-content-has-a-main-vide:not(:empty){
+    .field--name-field-my-content-has-a-main-vide:not(:empty) {
       @include player-icon(
         $desktop-size: 70px,
         $tablet-size: 70px,
@@ -84,7 +84,7 @@
       line-height: 22px;
       letter-spacing: 0.08em;
       color: $corange;
-
+      text-transform: uppercase;
       @media screen and (max-width: $tablet) {
         font-size: $px10;
         line-height: 12px;

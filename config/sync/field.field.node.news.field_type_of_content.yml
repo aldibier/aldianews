@@ -1,0 +1,29 @@
+uuid: bc52df27-68b1-4010-9143-4df3533f0681
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_type_of_content
+    - node.type.news
+    - taxonomy.vocabulary.type_of_content
+id: node.news.field_type_of_content
+field_name: field_type_of_content
+entity_type: node
+bundle: news
+label: 'Type of content'
+description: 'Select the option that best suits the content you want to publish.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      type_of_content: type_of_content
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
