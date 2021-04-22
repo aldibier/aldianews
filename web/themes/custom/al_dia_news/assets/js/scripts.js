@@ -1224,12 +1224,12 @@ var initMain = function initMain($, Drupal) {
       e.closest(".views-row").classList.add("mobile-free");
     }
   });
-  Array.from(document.querySelectorAll(".mobile-free .mobile-plus .slick-track .slick-slide:nth-child(1) div:nth-child(1) .card-more")).map(function (e) {
+  Array.from(document.querySelectorAll(".mobile-free .mobile-plus .card-more:nth-child(1)")).map(function (e) {
     if (e != null) {
       e.parentElement.remove();
     }
   });
-  Array.from(document.querySelectorAll(".mobile-free .mobile-plus .slick-track .slick-slide:nth-child(1) div:nth-child(2) .card-more")).map(function (evt) {
+  Array.from(document.querySelectorAll(".mobile-free .mobile-plus .card-more:nth-child(2)")).map(function (evt) {
     if (evt != null) {
       evt.parentElement.remove();
     }
@@ -1255,7 +1255,10 @@ var initMain = function initMain($, Drupal) {
 
     if (!!blockTrending) {
       var blockTwoFeaturedNews = document.querySelector(".view-high-impact-news-home .view-display-id-block_2");
-      blockTwoFeaturedNews.insertAdjacentElement("beforeend", blockTrending);
+
+      if (blockTwoFeaturedNews != null) {
+        blockTwoFeaturedNews.insertAdjacentElement("beforeend", blockTrending);
+      }
     } // blockquote para selection-sharer
 
 
