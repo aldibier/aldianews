@@ -36,6 +36,24 @@ const initMain = ($, Drupal) => {
       }
     });
 
+    if (
+      !!document.querySelector(
+        ".block-views-blockhigh-impact-news-home-block-1"
+      )
+    ) {
+      //hidden last news home
+      const lastNewsHome = document.querySelector(
+        ".block-block-grouplatest-categories-tending-block"
+      );
+      lastNewsHome.classList.add("not-show");
+    } else {
+      //hidden high impact news home
+      const impactNewsHome = document.querySelector(
+        ".block-block-grouphigh-impact-and-most-visited-news-home"
+      );
+      impactNewsHome.classList.add("not-show");
+    }
+
     // block trending se inserta en noticia de impacto
     const blockTrending = document.querySelector(
       ".block-block-grouphigh-impact-and-most-visited-news-home .block-fixed-block-contentbloque-dummy-noticias-home"
