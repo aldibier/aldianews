@@ -1347,6 +1347,17 @@ var initMain = function initMain($, Drupal) {
           window.history.back();
         });
       }
+    }); //// js remove element home
+
+    Array.from(document.querySelectorAll(".mobile-free .mobile-plus .slick-track .slick-slide:nth-child(1) div:nth-child(1) .card-more")).map(function (e) {
+      if (e != null) {
+        e.parentElement.remove();
+      }
+    });
+    Array.from(document.querySelectorAll(".mobile-free .mobile-plus .slick-track .slick-slide:nth-child(1) div:nth-child(2) .card-more")).map(function (evt) {
+      if (evt != null) {
+        evt.parentElement.remove();
+      }
     }); /// js login and register
 
     Array.from(document.querySelectorAll(".comment-forbidden a")).map(function (e) {
@@ -1553,7 +1564,7 @@ var initMain = function initMain($, Drupal) {
         e.closest(".views-row").classList.add("slider-two");
       } else if (e.innerText.trim() == "sthree") {
         e.closest(".views-row").classList.add("slider-three");
-      } else if (e.innerText.trim() == "more") {
+      } else if (e.innerText.trim() == "smor") {
         e.closest(".views-row").classList.add("slider-more");
       }
     }
@@ -1651,8 +1662,6 @@ __webpack_require__.r(__webpack_exports__);
     });
   }
 
-  $(".mobile-free .mobile-plus .slick-track .slick-slide:nth-child(1) div:nth-child(1) .card-more").remove();
-  $(".mobile-free .mobile-plus .slick-track .slick-slide:nth-child(1) div:nth-child(2) .card-more").remove();
   jQuery(document).ready(function () {
     //// sumo select
     Array.from(document.querySelectorAll(".region-content select")).map(function (e) {
