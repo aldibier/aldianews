@@ -6,6 +6,7 @@ dependencies:
     - field.storage.paragraph.field_image_slider
     - field.storage.paragraph.field_slider_styl
     - field.storage.paragraph.field_title
+    - image.style.crop_slider_570_x_300
     - node.type.event
   module:
     - image
@@ -238,7 +239,7 @@ display:
           click_sort_column: target_id
           type: image
           settings:
-            image_style: ''
+            image_style: crop_slider_570_x_300
             image_link: ''
           group_column: ''
           group_columns: {  }

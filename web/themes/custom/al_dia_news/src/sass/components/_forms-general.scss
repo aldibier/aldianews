@@ -15,7 +15,7 @@
     flex-wrap: wrap;
     overscroll-behavior: contain;
 
-    @supports (overflow-y: overlay){
+    @supports (overflow-y: overlay) {
       overflow-y: overlay;
     }
   }
@@ -182,7 +182,7 @@ button[name="close"],
     padding-bottom: 98px;
   }
 
-  #edit-actions .webform-button--submit {
+  #edit-actions .webform-button--submit  {
     width: 150px;
     height: 40px;
     margin: 50px 0 0;
@@ -248,7 +248,7 @@ button[name="close"],
       padding-bottom: 39px;
     }
 
-    #edit-actions .webform-button--submit {
+    #edit-actions .webform-button--submit  {
       width: 110px;
       height: 30px;
       margin: 20px 0 0;
@@ -259,8 +259,8 @@ button[name="close"],
         margin-top: 5px;
       }
     }
-    
-    textarea {
+
+    textarea  {
       max-width: 100%;
       min-height: 200px;
     }
