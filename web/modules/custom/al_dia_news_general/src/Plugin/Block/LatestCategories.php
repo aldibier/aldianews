@@ -178,7 +178,6 @@ class LatestCategories extends BlockBase implements ContainerFactoryPluginInterf
       foreach ($res as $re) {
         $nids[] = $re->nid; 
       }
-      ksm($nids);
     }
     $this->tempStore->set("nids_home", $nids);
     $return['#cache'] = ["max-age" => 0];
