@@ -1,4 +1,25 @@
 const initMain = ($, Drupal) => {
+  //// js remove element home
+
+  Array.from(
+    document.querySelectorAll(
+      ".mobile-free .mobile-plus .slick-track .slick-slide:nth-child(1) div:nth-child(1) .card-more"
+    )
+  ).map(function(e) {
+    if (e != null) {
+      e.parentElement.remove();
+    }
+  });
+  Array.from(
+    document.querySelectorAll(
+      ".mobile-free .mobile-plus .slick-track .slick-slide:nth-child(1) div:nth-child(2) .card-more"
+    )
+  ).map(function(evt) {
+    if (evt != null) {
+      evt.parentElement.remove();
+    }
+  });
+
   window.onload = function() {
     ///// js para publicidad en bloques de categorias de noticias
     Array.from(
@@ -159,27 +180,6 @@ const initMain = ($, Drupal) => {
         e.addEventListener("click", () => {
           window.history.back();
         });
-      }
-    });
-
-    //// js remove element home
-
-    Array.from(
-      document.querySelectorAll(
-        ".mobile-free .mobile-plus .slick-track .slick-slide:nth-child(1) div:nth-child(1) .card-more"
-      )
-    ).map(function(e) {
-      if (e != null) {
-        e.parentElement.remove();
-      }
-    });
-    Array.from(
-      document.querySelectorAll(
-        ".mobile-free .mobile-plus .slick-track .slick-slide:nth-child(1) div:nth-child(2) .card-more"
-      )
-    ).map(function(evt) {
-      if (evt != null) {
-        evt.parentElement.remove();
       }
     });
 
