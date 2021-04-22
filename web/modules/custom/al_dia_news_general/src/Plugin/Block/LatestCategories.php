@@ -173,9 +173,15 @@ class LatestCategories extends BlockBase implements ContainerFactoryPluginInterf
       $mode = $render_controller->view($user, 'categories_home');
       $return["second"]["two"] = $mode; 
     }
+    $res = views_get_view_result("high_impact_news_home", "block_1");
+    if($res) {
+      foreach ($res as $re) {
+        $nids[] = $re->nid; 
+      }
+      ksm($nids);
+    }
     $this->tempStore->set("nids_home", $nids);
     $return['#cache'] = ["max-age" => 0];
-
     return $return;
   }
 
