@@ -101,9 +101,6 @@
 }
 
 .page-node-type-event {
-  .block-webform-block {
-    display: none;
-  }
   .section-flex {
     display: flex;
     flex-wrap: wrap;
@@ -549,6 +546,12 @@
       }
     }
   }
+  //------------------ modos de visulizacion slider interna de eventos ------------//
+  .view-contact-event {
+    .views-row {
+      max-width: 400px;
+    }
+  }
 }
 
 @media (max-width: $tablet) {
@@ -763,9 +766,11 @@
       border-bottom: 1px solid #b1b1b1;
       padding-bottom: 20px;
       margin-right: 0px;
+      margin-bottom: 20px;
       &:last-child {
         border-bottom: 0px;
         padding-bottom: 0px;
+        margin-bottom: 0px;
       }
     }
     .views-field-field-description-contact {
