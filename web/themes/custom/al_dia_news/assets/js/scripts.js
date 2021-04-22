@@ -1223,24 +1223,17 @@ var initMain = function initMain($, Drupal) {
     } else {
       e.closest(".views-row").classList.add("mobile-free");
     }
-  }); // Array.from(
-  //   document.querySelectorAll(
-  //     ".mobile-free .mobile-plus .card-more:nth-child(1)"
-  //   )
-  // ).map(function(e) {
-  //   if (e != null) {
-  //     e.parentElement.remove();
-  //   }
-  // });
-  // Array.from(
-  //   document.querySelectorAll(
-  //     ".mobile-free .mobile-plus .card-more:nth-child(2)"
-  //   )
-  // ).map(function(evt) {
-  //   if (evt != null) {
-  //     evt.parentElement.remove();
-  //   }
-  // });
+  });
+  Array.from(document.querySelectorAll(".mobile-free .mobile-plus .card-more:nth-child(1)")).map(function (e) {
+    if (e != null) {
+      e.remove();
+    }
+  });
+  Array.from(document.querySelectorAll(".mobile-free .mobile-plus .card-more:nth-child(2)")).map(function (evt) {
+    if (evt != null) {
+      evt.remove();
+    }
+  });
 
   window.onload = function () {
     ///// js para publicidad en bloques de categorias de noticias
