@@ -26,12 +26,16 @@ const initSlick = ($, Drupal) => {
 
   //slide edit resize
   if (window.matchMedia("(max-width: 768px)").matches) {
-    categoriesMore.forEach(element => $(element).slick(settings));
+    setTimeout(function() {
+      categoriesMore.forEach(element => $(element).slick(settings));
+    }, 2000);
   }
 
   window.addEventListener("resize", () => {
     if (window.matchMedia("(max-width: 768px)").matches) {
-      categoriesMore.forEach(element => $(element).slick(settings));
+      setTimeout(function() {
+        categoriesMore.forEach(element => $(element).slick(settings));
+      }, 2000);
     }
   });
 

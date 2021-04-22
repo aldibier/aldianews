@@ -1951,16 +1951,20 @@ var initSlick = function initSlick($, Drupal) {
   }; //slide edit resize
 
   if (window.matchMedia("(max-width: 768px)").matches) {
-    categoriesMore.forEach(function (element) {
-      return $(element).slick(settings);
-    });
+    setTimeout(function () {
+      categoriesMore.forEach(function (element) {
+        return $(element).slick(settings);
+      });
+    }, 2000);
   }
 
   window.addEventListener("resize", function () {
     if (window.matchMedia("(max-width: 768px)").matches) {
-      categoriesMore.forEach(function (element) {
-        return $(element).slick(settings);
-      });
+      setTimeout(function () {
+        categoriesMore.forEach(function (element) {
+          return $(element).slick(settings);
+        });
+      }, 2000);
     }
   }); // slide landing jobs
 
