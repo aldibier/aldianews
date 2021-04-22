@@ -32,7 +32,6 @@ dependencies:
   module:
     - image
     - node
-    - other_view_filter
     - taxonomy
     - text
     - user
@@ -57,8 +56,12 @@ display:
         options:
           perm: 'access content'
       cache:
-        type: tag
-        options: {  }
+        type: time
+        options:
+          results_lifespan: 0
+          results_lifespan_custom: 0
+          output_lifespan: 0
+          output_lifespan_custom: 0
       query:
         type: views_query
         options:
@@ -937,6 +940,7 @@ display:
         filters: false
         filter_groups: false
         fields: false
+        cache: false
       row:
         type: fields
         options: {  }
@@ -1157,49 +1161,6 @@ display:
           entity_type: node
           entity_field: nid
           plugin_id: numeric
-        other_view_filter:
-          id: other_view_filter
-          table: node_field_data
-          field: other_view_filter
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: 'not in'
-          value:
-            'high_impact_news_home:block_1': 'high_impact_news_home:block_1'
-            'high_impact_news_home:block_2': 'high_impact_news_home:block_2'
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          inherit_contextual_filters: 0
-          entity_type: node
-          plugin_id: other_views_filter
       filter_groups:
         operator: AND
         groups:
@@ -1814,6 +1775,13 @@ display:
           empty_zero: false
           hide_alter_empty: false
           plugin_id: custom
+      cache:
+        type: time
+        options:
+          results_lifespan: 0
+          results_lifespan_custom: 0
+          output_lifespan: 0
+          output_lifespan_custom: 0
     cache_metadata:
       max-age: -1
       contexts:
@@ -2570,49 +2538,6 @@ display:
           entity_type: node
           entity_field: nid
           plugin_id: numeric
-        other_view_filter:
-          id: other_view_filter
-          table: node_field_data
-          field: other_view_filter
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: 'not in'
-          value:
-            'high_impact_news_home:block_1': 'high_impact_news_home:block_1'
-            'high_impact_news_home:block_2': 'high_impact_news_home:block_2'
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          inherit_contextual_filters: 0
-          entity_type: node
-          plugin_id: other_views_filter
       filter_groups:
         operator: AND
         groups:
@@ -3139,49 +3064,6 @@ display:
           entity_type: node
           entity_field: nid
           plugin_id: numeric
-        other_view_filter:
-          id: other_view_filter
-          table: node_field_data
-          field: other_view_filter
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: 'not in'
-          value:
-            'high_impact_news_home:block_1': 'high_impact_news_home:block_1'
-            'high_impact_news_home:block_2': 'high_impact_news_home:block_2'
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          inherit_contextual_filters: 0
-          entity_type: node
-          plugin_id: other_views_filter
       filter_groups:
         operator: AND
         groups:
