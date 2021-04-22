@@ -351,7 +351,7 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: -6
+            weight: -5
           282a08d7-fec3-4f12-941c-816c8ee3e7f5:
             uuid: 282a08d7-fec3-4f12-941c-816c8ee3e7f5
             region: content_header
@@ -372,7 +372,7 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: -5
+            weight: -4
           f9d15303-538e-4993-8b55-de9ba603163f:
             uuid: f9d15303-538e-4993-8b55-de9ba603163f
             region: five_content
@@ -443,20 +443,6 @@ third_party_settings:
                 type: basic_string
             additional: {  }
             weight: 4
-          e5c6ad6a-9b12-4248-966a-f26849e2571f:
-            uuid: e5c6ad6a-9b12-4248-966a-f26849e2571f
-            region: content_header
-            configuration:
-              id: webform_block
-              label: Webform
-              provider: webform
-              label_display: '0'
-              webform_id: nominate
-              default_data: ''
-              redirect: false
-              context_mapping: {  }
-            additional: {  }
-            weight: -4
           86205167-8156-4c24-a53b-888d426f49d7:
             uuid: 86205167-8156-4c24-a53b-888d426f49d7
             region: three_content_second
@@ -478,6 +464,20 @@ third_party_settings:
               provider: fixed_block_content
               label_display: '0'
               view_mode: ''
+              context_mapping: {  }
+            additional: {  }
+            weight: -9
+          e5c6ad6a-9b12-4248-966a-f26849e2571f:
+            uuid: e5c6ad6a-9b12-4248-966a-f26849e2571f
+            region: advertising_content
+            configuration:
+              id: webform_block
+              label: Webform
+              provider: webform
+              label_display: '0'
+              webform_id: nominate
+              default_data: ''
+              redirect: false
               context_mapping: {  }
             additional: {  }
             weight: -10
