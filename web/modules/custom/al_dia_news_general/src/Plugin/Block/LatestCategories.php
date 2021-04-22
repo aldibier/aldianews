@@ -6,7 +6,7 @@ use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Database\Connection;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\Core\Cache\CacheBackendInterface;
+use Drupal\Core\TempStore\PrivateTempStoreFactory;
 use Drupal\Core\Datetime\DateFormatter;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 
@@ -39,20 +39,20 @@ class LatestCategories extends BlockBase implements ContainerFactoryPluginInterf
    */
   protected $entityTypeManager;
   /**
-   * The cache backend.
-   *
-   * @var \Drupal\Core\Cache\CacheBackendInterface
-   */
-  protected $cache;
+  * Variables de sesion.
+  *
+  * @var Drupal\Core\TempStore\PrivateTempStoreFactory
+  */
+  protected $tempStore;
 
   /**
    * {@inheritdoc}
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, Connection $connection, EntityTypeManagerInterface $entity_type_manager, CacheBackendInterface $cache) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, Connection $connection, EntityTypeManagerInterface $entity_type_manager, PrivateTempStoreFactory $temp_store_factory) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->database = $connection;
     $this->entityTypeManager = $entity_type_manager;
-    $this->cache = $cache;
+    $this->tempStore = $temp_store_factory->get('al_dia_news');  
   }
 
   /**
@@ -65,7 +65,7 @@ class LatestCategories extends BlockBase implements ContainerFactoryPluginInterf
       $plugin_definition,
       $container->get('database'),
       $container->get('entity_type.manager'),
-      $container->get('cache.data')
+      $container->get('tempstore.private')
     );
   }
 
@@ -173,7 +173,7 @@ class LatestCategories extends BlockBase implements ContainerFactoryPluginInterf
       $mode = $render_controller->view($user, 'categories_home');
       $return["second"]["two"] = $mode; 
     }
-    $this->cache->set("nids_home", $nids, CacheBackendInterface::CACHE_PERMANENT);
+    $this->tempStore->set("nids_home", $nids);
     $return['#cache'] = ["max-age" => 0];
 
     return $return;
