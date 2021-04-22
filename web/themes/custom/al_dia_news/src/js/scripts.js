@@ -242,6 +242,7 @@ import replaceToken from "./modules/replaceToken";
       $(".layout-main-wrapper.layout-container").addClass("color-mod");
     });
 
+    initMain();
     initSlick($, Drupal);
   });
 

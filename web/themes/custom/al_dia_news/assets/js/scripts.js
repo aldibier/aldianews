@@ -1210,107 +1210,170 @@ module.exports = function (css) {
 /*!************************!*\
   !*** ./src/js/main.js ***!
   \************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-window.onload = function () {
-  ///// js para publicidad en bloques de categorias de noticias
-  Array.from(document.querySelectorAll(".block-fixed-block-contentvertical-advertising-mobile")).map(function (e) {
-    if (e.children.children != null) {
-      e.closest(".mobile-less").parentElement.parentElement.classList.add("life-advertising");
-    } else {
-      e.parentElement.parentElement.classList.add("mobile-free");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var initMain = function initMain() {
+  window.onload = function () {
+    ///// js para publicidad en bloques de categorias de noticias
+    Array.from(document.querySelectorAll(".block-fixed-block-contentvertical-advertising-mobile")).map(function (e) {
+      if (e.children.children != null) {
+        e.closest(".mobile-less").parentElement.parentElement.classList.add("life-advertising");
+      } else {
+        e.closest(".views-row").classList.add("mobile-free");
+      }
+    }); // block trending se inserta en noticia de impacto
+
+    var blockTrending = document.querySelector(".block-block-grouphigh-impact-and-most-visited-news-home .block-fixed-block-contentbloque-dummy-noticias-home");
+
+    if (!!blockTrending) {
+      var blockTwoFeaturedNews = document.querySelector(".view-high-impact-news-home .view-display-id-block_2");
+      blockTwoFeaturedNews.insertAdjacentElement("beforeend", blockTrending);
+    } // blockquote para selection-sharer
+
+
+    var allBlockquote = document.querySelectorAll('blockquote:not([class*="twitter"])');
+
+    if (!!allBlockquote && allBlockquote.length) {
+      allBlockquote.forEach(function (blockquote) {
+        if (blockquote.firstElementChild.tagName === "P") {
+          var text = blockquote.firstElementChild.textContent;
+          blockquote.textContent = text;
+        }
+      });
+    } //text summary para selection-sharer
+
+
+    var containerSummary = document.querySelector(".content-news-internal-first .views-element-container");
+
+    if (!!containerSummary) {
+      var summary = containerSummary.querySelector(".summary-news");
+      containerSummary.insertAdjacentElement("beforebegin", summary);
+    } // js video en interna
+
+
+    var video_interna = document.querySelector(".block-field-blocknodenewsfield-video");
+    var contenido_interna = document.querySelector(".content-news-internal-first");
+
+    if (video_interna != null && contenido_interna != null) {
+      contenido_interna.classList.add("video-present");
+    } //// js ajuste ancla en employed
+
+
+    Array.from(document.querySelectorAll(".menu--i-am-an-employer-menu li a")).map(function (e) {
+      e.addEventListener("click", function () {
+        setTimeout(function () {
+          var scroll_y = window.scrollY;
+          window.scrollTo(0, scroll_y - 173);
+        }, 20);
+      });
+    }); //// js validador de publicidad en landing jobs
+
+    var block_ads = document.querySelector(".block-block-groupgroup-career-news-jobs .block-fixed-block-contentbig-vertical-advertising");
+    var view_career = document.querySelector(".block-views-blockcareer-news-block-1");
+
+    if (block_ads === null && view_career != null) {
+      view_career.classList.add("view-complete");
+    } //// js para slider de video en landing de video
+
+
+    function one() {
+      Array.from(document.querySelectorAll(".block-views-blockcarousel-videos-landing-block-2")).map(function (e) {
+        var p = e.querySelector(".select-video");
+        var c = e.querySelector(".video-present");
+
+        if (p != null && c != null) {
+          p.classList.remove("select-video");
+          c.classList.remove("video-present");
+        }
+      });
     }
-  }); // block trending se inserta en noticia de impacto
 
-  var blockTrending = document.querySelector(".block-block-grouphigh-impact-and-most-visited-news-home .block-fixed-block-contentbloque-dummy-noticias-home");
+    function two() {
+      Array.from(document.querySelectorAll(".view-id-carousel_videos_landing.view-display-id-page_1")).map(function (ev) {
+        var a = ev.querySelector(".show-video");
+        var b = ev.querySelector(".video-present");
 
-  if (!!blockTrending) {
-    var blockTwoFeaturedNews = document.querySelector(".view-high-impact-news-home .view-display-id-block_2");
-    blockTwoFeaturedNews.insertAdjacentElement("beforeend", blockTrending);
-  } // blockquote para selection-sharer
+        if (a != null && b != null) {
+          a.classList.remove("show-video");
+          b.classList.remove("video-present");
+        }
+      });
+    }
+
+    var lista1 = document.querySelectorAll(".block-views-blockcarousel-videos-landing-block-2  .views-row.slick-slide:not(.slick-cloned) .views-field-nid");
+    var lista2 = document.querySelectorAll(".view-id-carousel_videos_landing.view-display-id-page_1 .views-field-nid");
+
+    var _loop = function _loop(i) {
+      var itemLista1 = lista1[i];
+      var itemLista2 = lista2[i]; // console.log(itemLista1, itemLista2)
+
+      itemLista1.parentElement.addEventListener("click", function () {
+        one();
+        two();
+        var allIframes = document.querySelectorAll(".view-id-carousel_videos_landing.view-display-id-page_1  iframe");
+
+        var resetAlliframes = function resetAlliframes() {
+          allIframes.forEach(function (iframe) {
+            iframe.classList.add("change-src");
+            iframe.src = iframe.src;
+            setTimeout(function () {
+              return iframe.classList.remove("change-src");
+            }, 800);
+          });
+        };
+
+        resetAlliframes();
+
+        if (itemLista1.children.innerHTML === itemLista2.children.innerHTML) {
+          itemLista1.parentElement.parentElement.classList.add("select-video");
+          itemLista2.parentElement.parentElement.classList.add("show-video");
+          itemLista1.parentElement.classList.add("video-present");
+          itemLista2.parentElement.classList.add("video-present");
+        }
+      });
+    };
+
+    for (var i = 0; i < lista1.length; i++) {
+      _loop(i);
+    } /// js boton back
 
 
-  var allBlockquote = document.querySelectorAll('blockquote:not([class*="twitter"])');
+    Array.from(document.querySelectorAll(".cbutton-back")).map(function (e) {
+      if (e != null) {
+        e.addEventListener("click", function () {
+          window.history.back();
+        });
+      }
+    }); /// js login and register
 
-  if (!!allBlockquote && allBlockquote.length) {
-    allBlockquote.forEach(function (blockquote) {
-      if (blockquote.firstElementChild.tagName === "P") {
-        var text = blockquote.firstElementChild.textContent;
-        blockquote.textContent = text;
+    Array.from(document.querySelectorAll(".comment-forbidden a")).map(function (e) {
+      if (e != null) {
+        e.removeAttribute("href");
       }
     });
-  } //text summary para selection-sharer
-
-
-  var containerSummary = document.querySelector(".content-news-internal-first .views-element-container");
-
-  if (!!containerSummary) {
-    var summary = containerSummary.querySelector(".summary-news");
-    containerSummary.insertAdjacentElement("beforebegin", summary);
-  } // js video en interna
-
-
-  var video_interna = document.querySelector(".block-field-blocknodenewsfield-video");
-  var contenido_interna = document.querySelector(".content-news-internal-first");
-
-  if (video_interna != null && contenido_interna != null) {
-    contenido_interna.classList.add("video-present");
-  } //// js ajuste ancla en employed
-
-
-  Array.from(document.querySelectorAll(".menu--i-am-an-employer-menu li a")).map(function (e) {
-    e.addEventListener("click", function () {
-      setTimeout(function () {
-        var scroll_y = window.scrollY;
-        window.scrollTo(0, scroll_y - 173);
-      }, 20);
-    });
-  }); //// js validador de publicidad en landing jobs
-
-  var block_ads = document.querySelector(".block-block-groupgroup-career-news-jobs .block-fixed-block-contentbig-vertical-advertising");
-  var view_career = document.querySelector(".block-views-blockcareer-news-block-1");
-
-  if (block_ads === null && view_career != null) {
-    view_career.classList.add("view-complete");
-  } //// js para slider de video en landing de video
-
-
-  function one() {
-    Array.from(document.querySelectorAll(".block-views-blockcarousel-videos-landing-block-2")).map(function (e) {
-      var p = e.querySelector(".select-video");
-      var c = e.querySelector(".video-present");
-
-      if (p != null && c != null) {
-        p.classList.remove("select-video");
-        c.classList.remove("video-present");
+    Array.from(document.querySelectorAll(".comment-forbidden a:nth-child(1)")).map(function (e) {
+      if (e != null) {
+        var button_login = document.querySelector('.Login-Register-popup-link.Login-Register-popup-link a[href*="login"]');
+        e.addEventListener("click", function () {
+          button_login.click();
+        });
       }
     });
-  }
-
-  function two() {
-    Array.from(document.querySelectorAll(".view-id-carousel_videos_landing.view-display-id-page_1")).map(function (ev) {
-      var a = ev.querySelector(".show-video");
-      var b = ev.querySelector(".video-present");
-
-      if (a != null && b != null) {
-        a.classList.remove("show-video");
-        b.classList.remove("video-present");
+    Array.from(document.querySelectorAll(".comment-forbidden a:nth-child(2)")).map(function (e) {
+      if (e != null) {
+        var button_regis = document.querySelector('.Login-Register-popup-link.Login-Register-popup-link a[href*="register"]');
+        e.addEventListener("click", function () {
+          button_regis.click();
+        });
       }
-    });
-  }
+    }); //// js modal landing videos
 
-  var lista1 = document.querySelectorAll(".block-views-blockcarousel-videos-landing-block-2  .views-row.slick-slide:not(.slick-cloned) .views-field-nid");
-  var lista2 = document.querySelectorAll(".view-id-carousel_videos_landing.view-display-id-page_1 .views-field-nid");
-
-  var _loop = function _loop(i) {
-    var itemLista1 = lista1[i];
-    var itemLista2 = lista2[i]; // console.log(itemLista1, itemLista2)
-
-    itemLista1.parentElement.addEventListener("click", function () {
-      one();
-      two();
-      var allIframes = document.querySelectorAll(".view-id-carousel_videos_landing.view-display-id-page_1  iframe");
+    if (!!document.querySelector(".path-videos")) {
+      var allCardVideos = document.querySelectorAll(".card-one-column");
+      var allIframes = document.querySelectorAll(".card-one-column iframe");
 
       var resetAlliframes = function resetAlliframes() {
         allIframes.forEach(function (iframe) {
@@ -1322,239 +1385,182 @@ window.onload = function () {
         });
       };
 
-      resetAlliframes();
+      allCardVideos.forEach(function (cardVideo) {
+        return cardVideo.addEventListener("click", function (event) {
+          if (event.target.nodeName == "A") return;
+          node = event.currentTarget.parentNode.firstElementChild;
 
-      if (itemLista1.children.innerHTML === itemLista2.children.innerHTML) {
-        itemLista1.parentElement.parentElement.classList.add("select-video");
-        itemLista2.parentElement.parentElement.classList.add("show-video");
-        itemLista1.parentElement.classList.add("video-present");
-        itemLista2.parentElement.classList.add("video-present");
-      }
-    });
-  };
+          while (node) {
+            if (node !== event.currentTarget && node.nodeType === Node.ELEMENT_NODE) {
+              if (event.target.closest(".modal-video")) return;
+              node.querySelector(".modal-video").classList.remove("show");
+              resetAlliframes();
+            } else {
+              if (event.target.closest(".wrapper-popup")) return;
+              node.querySelector(".modal-video").classList.toggle("show");
+              resetAlliframes();
+            }
 
-  for (var i = 0; i < lista1.length; i++) {
-    _loop(i);
-  } /// js boton back
-
-
-  Array.from(document.querySelectorAll(".cbutton-back")).map(function (e) {
-    if (e != null) {
-      e.addEventListener("click", function () {
-        window.history.back();
-      });
-    }
-  }); /// js login and register
-
-  Array.from(document.querySelectorAll(".comment-forbidden a")).map(function (e) {
-    if (e != null) {
-      e.removeAttribute("href");
-    }
-  });
-  Array.from(document.querySelectorAll(".comment-forbidden a:nth-child(1)")).map(function (e) {
-    if (e != null) {
-      var button_login = document.querySelector('.Login-Register-popup-link.Login-Register-popup-link a[href*="login"]');
-      e.addEventListener("click", function () {
-        button_login.click();
-      });
-    }
-  });
-  Array.from(document.querySelectorAll(".comment-forbidden a:nth-child(2)")).map(function (e) {
-    if (e != null) {
-      var button_regis = document.querySelector('.Login-Register-popup-link.Login-Register-popup-link a[href*="register"]');
-      e.addEventListener("click", function () {
-        button_regis.click();
-      });
-    }
-  }); //// js modal landing videos
-
-  if (!!document.querySelector(".path-videos")) {
-    var allCardVideos = document.querySelectorAll(".card-one-column");
-    var allIframes = document.querySelectorAll(".card-one-column iframe");
-
-    var resetAlliframes = function resetAlliframes() {
-      allIframes.forEach(function (iframe) {
-        iframe.classList.add("change-src");
-        iframe.src = iframe.src;
-        setTimeout(function () {
-          return iframe.classList.remove("change-src");
-        }, 800);
-      });
-    };
-
-    allCardVideos.forEach(function (cardVideo) {
-      return cardVideo.addEventListener("click", function (event) {
-        if (event.target.nodeName == "A") return;
-        node = event.currentTarget.parentNode.firstElementChild;
-
-        while (node) {
-          if (node !== event.currentTarget && node.nodeType === Node.ELEMENT_NODE) {
-            if (event.target.closest(".modal-video")) return;
-            node.querySelector(".modal-video").classList.remove("show");
-            resetAlliframes();
-          } else {
-            if (event.target.closest(".wrapper-popup")) return;
-            node.querySelector(".modal-video").classList.toggle("show");
-            resetAlliframes();
+            node = node.nextElementSibling;
           }
+        });
+      });
+      document.body.addEventListener("click", function (event) {
+        var contentActive = event.target.closest(".card-one-column") || false;
 
-          node = node.nextElementSibling;
+        if (!contentActive) {
+          document.querySelector(".modal-video.show").classList.remove("show");
+          resetAlliframes();
+        }
+
+        if (event.target.classList.contains("close")) {
+          document.querySelector(".modal-video.show").classList.remove("show");
+          resetAlliframes();
         }
       });
-    });
-    document.body.addEventListener("click", function (event) {
-      var contentActive = event.target.closest(".card-one-column") || false;
-
-      if (!contentActive) {
-        document.querySelector(".modal-video.show").classList.remove("show");
-        resetAlliframes();
-      }
-
-      if (event.target.classList.contains("close")) {
-        document.querySelector(".modal-video.show").classList.remove("show");
-        resetAlliframes();
-      }
-    });
-  } //// js para controlar pop-up advertising
+    } //// js para controlar pop-up advertising
 
 
-  if (!!document.querySelector(".path-advertising")) {
-    var allButtonsApply = document.querySelectorAll(".button-apply");
-    var allButtonsClose = document.querySelectorAll(".close-modal");
+    if (!!document.querySelector(".path-advertising")) {
+      var allButtonsApply = document.querySelectorAll(".button-apply");
+      var allButtonsClose = document.querySelectorAll(".close-modal");
 
-    var showModal = function showModal(event) {
-      var parent = event.path.find(function (elementPath) {
-        return elementPath.classList.contains("advertising-card");
+      var showModal = function showModal(event) {
+        var parent = event.path.find(function (elementPath) {
+          return elementPath.classList.contains("advertising-card");
+        });
+        var form = parent.querySelector(".modal-form");
+        form.classList.add("show");
+      };
+
+      var hideModal = function hideModal(event) {
+        var form = event.path.find(function (elementPath) {
+          return elementPath.classList.contains("modal-form");
+        });
+        form.classList.remove("show");
+      };
+
+      allButtonsApply.forEach(function (buttonApply) {
+        return buttonApply.addEventListener("click", showModal);
       });
-      var form = parent.querySelector(".modal-form");
-      form.classList.add("show");
-    };
-
-    var hideModal = function hideModal(event) {
-      var form = event.path.find(function (elementPath) {
-        return elementPath.classList.contains("modal-form");
+      allButtonsClose.forEach(function (buttonClose) {
+        return buttonClose.addEventListener("click", hideModal);
       });
-      form.classList.remove("show");
-    };
-
-    allButtonsApply.forEach(function (buttonApply) {
-      return buttonApply.addEventListener("click", showModal);
-    });
-    allButtonsClose.forEach(function (buttonClose) {
-      return buttonClose.addEventListener("click", hideModal);
-    });
-  } //// js para controlar pop-up about al dia live
+    } //// js para controlar pop-up about al dia live
 
 
-  if (!!document.querySelector(".path-about-al-dia-live")) {
-    //// js pop-up about al dia live
-    var buttonApply = document.querySelector(".path-about-al-dia-live .button-apply");
-    var buttonClose = document.querySelector(".close-modal");
-    var modalForm = document.querySelector(".modal-form");
-    buttonApply.addEventListener("click", function () {
-      return modalForm.classList.add("show");
-    });
-    buttonClose.addEventListener("click", function () {
-      return modalForm.classList.remove("show");
-    }); //// js pop-up about al dia live
+    if (!!document.querySelector(".path-about-al-dia-live")) {
+      //// js pop-up about al dia live
+      var buttonApply = document.querySelector(".path-about-al-dia-live .button-apply");
+      var buttonClose = document.querySelector(".close-modal");
+      var modalForm = document.querySelector(".modal-form");
+      buttonApply.addEventListener("click", function () {
+        return modalForm.classList.add("show");
+      });
+      buttonClose.addEventListener("click", function () {
+        return modalForm.classList.remove("show");
+      }); //// js pop-up about al dia live
 
-    var triggerVideo = document.querySelector(".block-views-blockabout-al-dia-live-block-1 .about-al-dia-live-container-video");
-    var buttonCloseVideo = document.querySelector(".close-video");
-    var video = document.querySelector(".modal-video"); //js temporal
+      var triggerVideo = document.querySelector(".block-views-blockabout-al-dia-live-block-1 .about-al-dia-live-container-video");
+      var buttonCloseVideo = document.querySelector(".close-video");
+      var video = document.querySelector(".modal-video"); //js temporal
 
-    video.insertAdjacentElement("afterbegin", buttonCloseVideo);
-    triggerVideo.addEventListener("click", function () {
-      video.classList.add("show");
-    });
-    buttonCloseVideo.addEventListener("click", function (event) {
-      debugger;
-      event.stopPropagation();
-      video.classList.remove("show");
-    });
-  } //// js desplegable buscador y close modal
+      video.insertAdjacentElement("afterbegin", buttonCloseVideo);
+      triggerVideo.addEventListener("click", function () {
+        video.classList.add("show");
+      });
+      buttonCloseVideo.addEventListener("click", function (event) {
+        debugger;
+        event.stopPropagation();
+        video.classList.remove("show");
+      });
+    } //// js desplegable buscador y close modal
 
 
-  var arrow = document.querySelector(".path-search-results .arrow");
-  var blocks_search = document.querySelector("#block-exposedformsearch-results-al-dia-solrpage-1");
+    var arrow = document.querySelector(".path-search-results .arrow");
+    var blocks_search = document.querySelector("#block-exposedformsearch-results-al-dia-solrpage-1");
 
-  if (arrow != null && blocks_search != null) {
-    arrow.addEventListener("click", function () {
-      blocks_search.classList.toggle("open");
-      arrow.classList.toggle("rote");
-    });
-  }
-
-  var close = document.querySelector('#block-exposedformsearch-results-al-dia-solrpage-1-2  button[name="close"]');
-  close.addEventListener("click", function () {
-    if (close != null && close.parentElement.classList.contains("open")) {
-      close.parentElement.classList.remove("open");
+    if (arrow != null && blocks_search != null) {
+      arrow.addEventListener("click", function () {
+        blocks_search.classList.toggle("open");
+        arrow.classList.toggle("rote");
+      });
     }
-  }); // js bloque login en comentarios
 
-  var comments = document.querySelector(".block-field-blocknodenewsfield-comments .comment");
-  var block_login_c = document.querySelector("#block-blockcommentanonymous");
+    var close = document.querySelector('#block-exposedformsearch-results-al-dia-solrpage-1-2  button[name="close"]');
+    close.addEventListener("click", function () {
+      if (close != null && close.parentElement.classList.contains("open")) {
+        close.parentElement.classList.remove("open");
+      }
+    }); // js bloque login en comentarios
 
-  if (comments != null && block_login_c != null) {
-    block_login_c.style.display = "none";
-  } ///// js para select de categorias, subcategorias y subsubcategorias
+    var comments = document.querySelector(".block-field-blocknodenewsfield-comments .comment");
+    var block_login_c = document.querySelector("#block-blockcommentanonymous");
+
+    if (comments != null && block_login_c != null) {
+      block_login_c.style.display = "none";
+    } ///// js para select de categorias, subcategorias y subsubcategorias
 
 
-  Array.from(document.querySelectorAll("#views-exposed-form-search-results-al-dia-solr-page-1 .form-item-field-category li label")).map(function (e) {
-    if (e != null && !e.innerHTML.includes("-")) {
-      e.classList.add("category");
-    }
-  }); //// publicidad horizontal cada 6 en more covers
+    Array.from(document.querySelectorAll("#views-exposed-form-search-results-al-dia-solr-page-1 .form-item-field-category li label")).map(function (e) {
+      if (e != null && !e.innerHTML.includes("-")) {
+        e.classList.add("category");
+      }
+    }); //// publicidad horizontal cada 6 en more covers
 
-  Array.from(document.querySelectorAll(".block-fixed-block-contenthorizontal-advertising")).map(function (e) {
-    if (e != null) {
-      Array.from(document.querySelectorAll(".view-more-covers-landing  .view-content .views-row:nth-child(7n)")).map(function (evt) {
-        if (evt != null && !evt.nextElementSibling.classList.contains("block-fixed-block-contenthorizontal-advertising")) {
-          evt.parentElement.insertBefore(e, evt);
+    Array.from(document.querySelectorAll(".block-fixed-block-contenthorizontal-advertising")).map(function (e) {
+      if (e != null) {
+        Array.from(document.querySelectorAll(".view-more-covers-landing  .view-content .views-row:nth-child(7n)")).map(function (evt) {
+          if (evt != null && !evt.nextElementSibling.classList.contains("block-fixed-block-contenthorizontal-advertising")) {
+            evt.parentElement.insertBefore(e, evt);
+          }
+        });
+      }
+    }); ///// js para modos de visualizacion de guest event
+
+    Array.from(document.querySelectorAll(".view-block-guest .views-field-field-style div")).map(function (e) {
+      if (e != null) {
+        if (e.innerText == "one") {
+          e.closest(".views-row").classList.add("mode-one");
+        } else if (e.innerText == "two") {
+          e.closest(".views-row").classList.add("mode-two");
+        } else if (e.innerText == "three") {
+          e.closest(".views-row").classList.add("mode-three");
+        } else if (e.innerText == "more") {
+          e.closest(".views-row").classList.add("mode-more");
         }
-      });
-    }
-  }); ///// js para modos de visualizacion de guest event
+      }
+    }); ///// js indentificar de primer modo de vista en guest event
 
-  Array.from(document.querySelectorAll(".view-block-guest .views-field-field-style div")).map(function (e) {
-    if (e != null) {
-      if (e.innerText == "one") {
-        e.closest(".views-row").classList.add("mode-one");
-      } else if (e.innerText == "two") {
-        e.closest(".views-row").classList.add("mode-two");
-      } else if (e.innerText == "three") {
-        e.closest(".views-row").classList.add("mode-three");
-      } else if (e.innerText == "more") {
-        e.closest(".views-row").classList.add("mode-more");
+    var adversiting = document.querySelector(".three-content-event-advertising");
+    var first_element = document.querySelector(".view-block-guest  .views-row:nth-child(1) .views-field-field-style > div");
+
+    if (adversiting != null && first_element != null) {
+      if (first_element.innerText == "one") {
+        adversiting.classList.add("maxim");
+      } else {
+        adversiting.classList.add("dis-none");
       }
     }
-  }); ///// js indentificar de primer modo de vista en guest event
-
-  var adversiting = document.querySelector(".three-content-event-advertising");
-  var first_element = document.querySelector(".view-block-guest  .views-row:nth-child(1) .views-field-field-style > div");
-
-  if (adversiting != null && first_element != null) {
-    if (first_element.innerText == "one") {
-      adversiting.classList.add("maxim");
-    } else {
-      adversiting.classList.add("dis-none");
-    }
-  } ///// js para modos de visualizacion de slider event
+  }; ///// js para modos de visualizacion de slider event
 
 
   Array.from(document.querySelectorAll(".view-slider-internal-event .views-field-field-slider-styl div")).map(function (e) {
     if (e != null) {
-      if (e.innerText == "sone") {
+      if (e.innerText.trim() == "sone") {
         e.closest(".views-row").classList.add("slider-one");
-      } else if (e.innerText == "stwo") {
+      } else if (e.innerText.trim() == "stwo") {
         e.closest(".views-row").classList.add("slider-two");
-      } else if (e.innerText == "sthree") {
+      } else if (e.innerText.trim() == "sthree") {
         e.closest(".views-row").classList.add("slider-three");
-      } else if (e.innerText == "smore") {
+      } else if (e.innerText.trim() == "smore") {
         e.closest(".views-row").classList.add("slider-more");
       }
     }
   });
 };
+
+/* harmony default export */ __webpack_exports__["default"] = (initMain);
 
 /***/ }),
 
@@ -1606,7 +1612,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_libraries_selection_sharer_selection_sharer_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_assets_libraries_selection_sharer_selection_sharer_js__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _scroll_magic__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./scroll-magic */ "./src/js/scroll-magic.js");
 /* harmony import */ var _main_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./main.js */ "./src/js/main.js");
-/* harmony import */ var _main_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_main_js__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _slick_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./slick.js */ "./src/js/slick.js");
 /* harmony import */ var _modules_replaceToken__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/replaceToken */ "./src/js/modules/replaceToken.js");
 
@@ -1768,6 +1773,7 @@ __webpack_require__.r(__webpack_exports__);
       $("#block-exposedformsearch-results-al-dia-solrpage-1-2").addClass("open");
       $(".layout-main-wrapper.layout-container").addClass("color-mod");
     });
+    Object(_main_js__WEBPACK_IMPORTED_MODULE_3__["default"])();
     Object(_slick_js__WEBPACK_IMPORTED_MODULE_4__["default"])($, Drupal);
   });
   Drupal.behaviors.form_checkbox = {
@@ -1890,6 +1896,12 @@ var initScrollMagic = function initScrollMagic($, Drupal) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 var initSlick = function initSlick($, Drupal) {
   var enterMobile = 0;
   var enterTablet = 0;
@@ -2004,87 +2016,83 @@ var initSlick = function initSlick($, Drupal) {
         autoplaySpeed: 3000
       });
     }
-  } // slide interna eventos modo de vista ONE
+  } // slider interna eventos modo de vista
 
 
-  var view_mode_one = $(".view-slider-internal-event .slider-one");
+  var slider_general = {
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    slidesToScroll: 1
+  };
 
-  if (view_mode_one != null) {
-    $(".view-slider-internal-event .slider-one .item-list ul").slick({
-      infinite: true,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: 2000,
-      responsive: [{
-        breakpoint: 500,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1
-        }
-      }]
-    });
-  } // slide interna eventos modo de vista TWO
+  var slider_one = _objectSpread(_objectSpread({}, slider_general), {}, {
+    slidesToShow: 1,
+    responsive: [{
+      breakpoint: 500,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1
+      }
+    }]
+  });
 
+  var slider_two = _objectSpread(_objectSpread({}, slider_general), {}, {
+    slidesToShow: 2,
+    responsive: [{
+      breakpoint: 500,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1
+      }
+    }]
+  });
 
-  var view_mode_two = $(".view-slider-internal-event .slider-two");
+  var slider_three = _objectSpread(_objectSpread({}, slider_general), {}, {
+    slidesToShow: 3,
+    responsive: [{
+      breakpoint: 500,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1
+      }
+    }]
+  });
 
-  if (view_mode_two != null) {
-    $(".view-slider-internal-event .slider-two .item-list ul").slick({
-      infinite: true,
-      slidesToShow: 2,
-      slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: 2000,
-      responsive: [{
-        breakpoint: 500,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1
-        }
-      }]
-    });
-  } // slide interna eventos modo de vista THREE
+  var slider_more = _objectSpread(_objectSpread({}, slider_general), {}, {
+    slidesToShow: 4,
+    responsive: [{
+      breakpoint: 500,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1
+      }
+    }]
+  });
 
+  Array.from(document.querySelectorAll(".view-slider-internal-event .views-row")).map(function (e) {
+    if (e != null) {
+      var mode_slider = e.querySelector(".item-list ul");
 
-  var view_mode_three = $(".view-slider-internal-event .slider-three");
+      switch (e.className) {
+        case "views-row slider-one":
+          $(mode_slider).slick(slider_one);
+          break;
 
-  if (view_mode_three != null) {
-    $(".view-slider-internal-event .slider-three .item-list ul").slick({
-      infinite: true,
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: 2000,
-      responsive: [{
-        breakpoint: 500,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1
-        }
-      }]
-    });
-  } // slide interna eventos modo de vista MORE
+        case "views-row slider-two":
+          $(mode_slider).slick(slider_two);
+          break;
 
+        case "views-row slider-three":
+          $(mode_slider).slick(slider_three);
+          break;
 
-  var view_mode_more = $(".view-slider-internal-event .slider-more");
-
-  if (view_mode_more != null) {
-    $(".view-slider-internal-event .slider-more .item-list ul").slick({
-      infinite: true,
-      slidesToShow: 4,
-      slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: 2000,
-      responsive: [{
-        breakpoint: 500,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1
-        }
-      }]
-    });
-  }
+        case "views-row slider-more":
+          $(mode_slider).slick(slider_more);
+          break;
+      }
+    }
+  });
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (initSlick);

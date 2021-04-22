@@ -149,13 +149,6 @@ body.toolbar-tray-open.user-logged-in {
 }
 
 @media (max-width: 768px) {
-  .mobile-plus {
-    .card-more:nth-child(1),
-    .card-more:nth-child(2) {
-      display: none !important;
-    }
-  }
-
   .life-advertising {
     .mobile-plus {
       .card-more:nth-child(1),
@@ -181,14 +174,23 @@ body.toolbar-tray-open.user-logged-in {
   }
   .mobile-free {
     border-bottom: 0.5px solid #b1b1b1;
-    .view-content {
-      justify-content: space-between;
+    .mobile-less {
+      .view-content {
+        justify-content: space-between;
+      }
+      .card-one-column {
+        max-width: 140px;
+      }
+      .view-footer {
+        display: none;
+      }
     }
-    .card-one-column {
-      max-width: 140px;
-    }
-    .view-footer {
-      display: none;
+
+    .mobile-plus {
+      .card-more:nth-child(1),
+      .card-more:nth-child(2) {
+        display: none !important;
+      }
     }
   }
 
