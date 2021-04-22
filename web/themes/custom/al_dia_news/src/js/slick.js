@@ -140,17 +140,18 @@ const initSlick = ($, Drupal) => {
     infinite: true,
     autoplay: true,
     autoplaySpeed: 2000,
-    slidesToScroll: 1
+    variableWidth: true
   };
 
   const slider_one = {
     ...slider_general,
     slidesToShow: 1,
+    slidesToScroll: 1,
     responsive: [
       {
         breakpoint: 500,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
           slidesToScroll: 1
         }
       }
@@ -159,12 +160,13 @@ const initSlick = ($, Drupal) => {
   const slider_two = {
     ...slider_general,
     slidesToShow: 2,
+    slidesToScroll: 2,
     responsive: [
       {
         breakpoint: 500,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 1
+          slidesToScroll: 2
         }
       }
     ]
@@ -172,12 +174,13 @@ const initSlick = ($, Drupal) => {
   const slider_three = {
     ...slider_general,
     slidesToShow: 3,
+    slidesToScroll: 3,
     responsive: [
       {
         breakpoint: 500,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 1
+          slidesToScroll: 2
         }
       }
     ]
@@ -185,12 +188,13 @@ const initSlick = ($, Drupal) => {
   const slider_more = {
     ...slider_general,
     slidesToShow: 4,
+    slidesToScroll: 4,
     responsive: [
       {
         breakpoint: 500,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 1
+          slidesToScroll: 2
         }
       }
     ]

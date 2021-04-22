@@ -1217,6 +1217,13 @@ module.exports = function (css) {
 __webpack_require__.r(__webpack_exports__);
 var initMain = function initMain($, Drupal) {
   //// js remove element home
+  Array.from(document.querySelectorAll(".block-fixed-block-contentvertical-advertising-mobile")).map(function (e) {
+    if (e.children.children != null) {
+      e.closest(".mobile-less").parentElement.parentElement.classList.add("life-advertising");
+    } else {
+      e.closest(".views-row").classList.add("mobile-free");
+    }
+  });
   Array.from(document.querySelectorAll(".mobile-free .mobile-plus .slick-track .slick-slide:nth-child(1) div:nth-child(1) .card-more")).map(function (e) {
     if (e != null) {
       e.parentElement.remove();
@@ -1230,14 +1237,6 @@ var initMain = function initMain($, Drupal) {
 
   window.onload = function () {
     ///// js para publicidad en bloques de categorias de noticias
-    Array.from(document.querySelectorAll(".block-fixed-block-contentvertical-advertising-mobile")).map(function (e) {
-      if (e.children.children != null) {
-        e.closest(".mobile-less").parentElement.parentElement.classList.add("life-advertising");
-      } else {
-        e.closest(".views-row").classList.add("mobile-free");
-      }
-    });
-
     if (!!document.querySelector(".block-views-blockhigh-impact-news-home-block-1")) {
       //hidden last news home
       var lastNewsHome = document.querySelector(".block-block-grouplatest-categories-tending-block");
@@ -2049,15 +2048,16 @@ var initSlick = function initSlick($, Drupal) {
     infinite: true,
     autoplay: true,
     autoplaySpeed: 2000,
-    slidesToScroll: 1
+    variableWidth: true
   };
 
   var slider_one = _objectSpread(_objectSpread({}, slider_general), {}, {
     slidesToShow: 1,
+    slidesToScroll: 1,
     responsive: [{
       breakpoint: 500,
       settings: {
-        slidesToShow: 2,
+        slidesToShow: 1,
         slidesToScroll: 1
       }
     }]
@@ -2065,33 +2065,36 @@ var initSlick = function initSlick($, Drupal) {
 
   var slider_two = _objectSpread(_objectSpread({}, slider_general), {}, {
     slidesToShow: 2,
+    slidesToScroll: 2,
     responsive: [{
       breakpoint: 500,
       settings: {
         slidesToShow: 2,
-        slidesToScroll: 1
+        slidesToScroll: 2
       }
     }]
   });
 
   var slider_three = _objectSpread(_objectSpread({}, slider_general), {}, {
     slidesToShow: 3,
+    slidesToScroll: 3,
     responsive: [{
       breakpoint: 500,
       settings: {
         slidesToShow: 2,
-        slidesToScroll: 1
+        slidesToScroll: 2
       }
     }]
   });
 
   var slider_more = _objectSpread(_objectSpread({}, slider_general), {}, {
     slidesToShow: 4,
+    slidesToScroll: 4,
     responsive: [{
       breakpoint: 500,
       settings: {
         slidesToShow: 2,
-        slidesToScroll: 1
+        slidesToScroll: 2
       }
     }]
   });
@@ -2143,8 +2146,8 @@ var initSlick = function initSlick($, Drupal) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
-module.exports = __webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
+__webpack_require__(/*! /Users/usuario/Desktop/Proyectos/AlDiaNews/4ld14-n3ws/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
+module.exports = __webpack_require__(/*! /Users/usuario/Desktop/Proyectos/AlDiaNews/4ld14-n3ws/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
 
 
 /***/ })

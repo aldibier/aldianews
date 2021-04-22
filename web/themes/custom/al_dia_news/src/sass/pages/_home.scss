@@ -536,17 +536,20 @@
 }
 
 .block-block-groupcurrent-edition-advertising-home {
+  padding: 0 80px;
   >.content {
     display: flex;
+  }
 
-    @media screen and (max-width: $broken) {
+  @media screen and (max-width: $broken) {
+    padding: 0;
+    >.content {
       flex-direction: column;
     }
   }
 
   .block-views-blockhome-current-edition--block-1 {
     margin-right: 40px;
-    padding-left: 80px;
 
     @media screen and (max-width: $broken) {
       margin-right: 0;
@@ -559,8 +562,6 @@
   }
 
   .block-fixed-block-contentmedium-advertising {
-    padding-right: 80px;
-
     @media screen and (max-width: $broken) {
       padding: 15px;
     }

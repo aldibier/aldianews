@@ -11,7 +11,13 @@
     background-color: #4D4D4D;
 
     >.view-content {
-        height: 615px;
+        height: auto;
+        max-height: 615px;
+
+        .views-row {
+            max-height: inherit;
+            min-height: inherit;
+        }
     }
 
     @media screen and (max-width: $broken) {
@@ -22,7 +28,8 @@
         margin: 0px -15px 0 0;
 
         >.view-content {
-            height: auto;
+            max-height: initial;
+            min-height: 455px;
         }
     }  
 }
