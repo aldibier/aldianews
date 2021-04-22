@@ -421,8 +421,10 @@
     max-width: 470px;
     padding-right: 70px;
     border-right: 1px solid #b1b1b1;
+    margin-right: 40px;
     &:last-child {
       border-right: 0px;
+      margin-right: 0px;
     }
   }
   .views-field-field-description-contact {
@@ -465,6 +467,9 @@
     line-height: 39px;
     color: $cblack2;
   }
+}
+.five-content-event-contact {
+  margin-bottom: 100px;
 }
 
 @media (max-width: $desktop) {
@@ -756,6 +761,7 @@
       border-right: 0px solid #b1b1b1;
       border-bottom: 1px solid #b1b1b1;
       padding-bottom: 20px;
+      margin-right: 0px;
       &:last-child {
         border-bottom: 0px;
         padding-bottom: 0px;
@@ -783,5 +789,8 @@
       font-size: $px16;
       line-height: 19px;
     }
+  }
+  .five-content-event-contact {
+    margin-bottom: 40px;
   }
 }
