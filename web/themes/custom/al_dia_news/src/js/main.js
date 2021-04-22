@@ -51,7 +51,9 @@ const initMain = ($, Drupal) => {
       const impactNewsHome = document.querySelector(
         ".block-block-grouphigh-impact-and-most-visited-news-home"
       );
-      impactNewsHome.classList.add("not-show");
+      if (impactNewsHome != null) {
+        impactNewsHome.classList.add("not-show");
+      }
     }
 
     // block trending se inserta en noticia de impacto

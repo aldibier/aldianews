@@ -1238,14 +1238,17 @@ var initMain = function initMain($, Drupal) {
       }
     });
 
-    if (!!document.querySelector('.block-views-blockhigh-impact-news-home-block-1')) {
-      //hidden last news home 
-      var lastNewsHome = document.querySelector('.block-block-grouplatest-categories-tending-block');
-      lastNewsHome.classList.add('not-show');
+    if (!!document.querySelector(".block-views-blockhigh-impact-news-home-block-1")) {
+      //hidden last news home
+      var lastNewsHome = document.querySelector(".block-block-grouplatest-categories-tending-block");
+      lastNewsHome.classList.add("not-show");
     } else {
-      //hidden high impact news home 
-      var impactNewsHome = document.querySelector('.block-block-grouphigh-impact-and-most-visited-news-home');
-      impactNewsHome.classList.add('not-show');
+      //hidden high impact news home
+      var impactNewsHome = document.querySelector(".block-block-grouphigh-impact-and-most-visited-news-home");
+
+      if (impactNewsHome != null) {
+        impactNewsHome.classList.add("not-show");
+      }
     } // block trending se inserta en noticia de impacto
 
 
@@ -2140,8 +2143,8 @@ var initSlick = function initSlick($, Drupal) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/usuario/Desktop/Proyectos/AlDiaNews/4ld14-n3ws/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
-module.exports = __webpack_require__(/*! /Users/usuario/Desktop/Proyectos/AlDiaNews/4ld14-n3ws/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
+__webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
+module.exports = __webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
 
 
 /***/ })
