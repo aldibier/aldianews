@@ -14,6 +14,7 @@ dependencies:
     - field.field.node.news.field_my_content_has_a_main_vide
     - field.field.node.news.field_short_title
     - field.field.node.news.field_tags
+    - field.field.node.news.field_type_of_content
     - field.field.node.news.field_video
     - node.type.news
     - views.view._summary_news_intern
@@ -327,6 +328,22 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: -5
+          fba2a807-7975-42f4-ac33-f0c29a8cfd65:
+            uuid: fba2a807-7975-42f4-ac33-f0c29a8cfd65
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:news:field_type_of_content'
+              formatter:
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+                type: entity_reference_label
+            additional: {  }
+            weight: 6
         third_party_settings: {  }
 id: node.news.default
 targetEntityType: node
@@ -417,6 +434,14 @@ content:
     region: content
   field_tags:
     weight: 7
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_type_of_content:
+    weight: 12
     label: above
     settings:
       link: true

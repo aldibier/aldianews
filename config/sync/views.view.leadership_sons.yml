@@ -56,12 +56,8 @@ display:
         options:
           perm: 'access content'
       cache:
-        type: time
-        options:
-          results_lifespan: 0
-          results_lifespan_custom: 0
-          output_lifespan: 0
-          output_lifespan_custom: 0
+        type: none
+        options: {  }
       query:
         type: views_query
         options:
@@ -940,7 +936,7 @@ display:
         filters: false
         filter_groups: false
         fields: false
-        cache: false
+        cache: true
       row:
         type: fields
         options: {  }
@@ -1775,13 +1771,6 @@ display:
           empty_zero: false
           hide_alter_empty: false
           plugin_id: custom
-      cache:
-        type: time
-        options:
-          results_lifespan: 0
-          results_lifespan_custom: 0
-          output_lifespan: 0
-          output_lifespan_custom: 0
     cache_metadata:
       max-age: -1
       contexts:

@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.news.field_my_content_has_a_main_vide
     - field.field.node.news.field_short_title
     - field.field.node.news.field_tags
+    - field.field.node.news.field_type_of_content
     - field.field.node.news.field_video
     - image.style.thumbnail
     - node.type.news
@@ -31,7 +32,7 @@ third_party_settings:
         - field_video
         - field_my_content_has_a_main_vide
       parent_name: ''
-      weight: 2
+      weight: 3
       format_type: fieldset
       region: content
       format_settings:
@@ -47,7 +48,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 4
+    weight: 5
     settings:
       rows: 9
       placeholder: ''
@@ -57,12 +58,12 @@ content:
     region: content
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
   field_author:
-    weight: 5
+    weight: 6
     settings:
       match_operator: CONTAINS
       match_limit: 10
@@ -72,7 +73,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_caption:
-    weight: 3
+    weight: 4
     settings:
       size: 60
       placeholder: ''
@@ -80,19 +81,19 @@ content:
     type: string_textfield
     region: content
   field_category:
-    weight: 7
+    weight: 8
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_comments:
-    weight: 16
+    weight: 17
     settings: {  }
     third_party_settings: {  }
     type: comment_default
     region: content
   field_high_impact_news:
-    weight: 8
+    weight: 9
     settings:
       display_label: true
     third_party_settings: {  }
@@ -122,7 +123,7 @@ content:
     type: string_textfield
     region: content
   field_tags:
-    weight: 6
+    weight: 7
     settings:
       match_operator: CONTAINS
       match_limit: 10
@@ -130,6 +131,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete_tags
+    region: content
+  field_type_of_content:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
     region: content
   field_video:
     weight: 4
@@ -139,7 +146,7 @@ content:
     region: content
   path:
     type: path
-    weight: 13
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -147,21 +154,21 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 11
+    weight: 12
     region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 15
+    weight: 16
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 12
+    weight: 13
     region: content
     third_party_settings: {  }
   title:
@@ -173,13 +180,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
   translation:
-    weight: 14
+    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 9
+    weight: 10
     settings:
       match_operator: CONTAINS
       size: 60
