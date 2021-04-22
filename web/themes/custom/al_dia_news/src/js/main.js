@@ -1,4 +1,4 @@
-const initMain = () => {
+const initMain = ($, Drupal) => {
   window.onload = function() {
     ///// js para publicidad en bloques de categorias de noticias
     Array.from(
@@ -425,7 +425,7 @@ const initMain = () => {
         e.closest(".views-row").classList.add("slider-two");
       } else if (e.innerText.trim() == "sthree") {
         e.closest(".views-row").classList.add("slider-three");
-      } else if (e.innerText.trim() == "smore") {
+      } else if (e.innerText.trim() == "more") {
         e.closest(".views-row").classList.add("slider-more");
       }
     }

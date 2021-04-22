@@ -1215,7 +1215,7 @@ module.exports = function (css) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-var initMain = function initMain() {
+var initMain = function initMain($, Drupal) {
   window.onload = function () {
     ///// js para publicidad en bloques de categorias de noticias
     Array.from(document.querySelectorAll(".block-fixed-block-contentvertical-advertising-mobile")).map(function (e) {
@@ -1553,7 +1553,7 @@ var initMain = function initMain() {
         e.closest(".views-row").classList.add("slider-two");
       } else if (e.innerText.trim() == "sthree") {
         e.closest(".views-row").classList.add("slider-three");
-      } else if (e.innerText.trim() == "smore") {
+      } else if (e.innerText.trim() == "more") {
         e.closest(".views-row").classList.add("slider-more");
       }
     }
@@ -1651,6 +1651,8 @@ __webpack_require__.r(__webpack_exports__);
     });
   }
 
+  $(".mobile-free .mobile-plus .slick-track .slick-slide:nth-child(1) div:nth-child(1) .card-more").remove();
+  $(".mobile-free .mobile-plus .slick-track .slick-slide:nth-child(1) div:nth-child(2) .card-more").remove();
   jQuery(document).ready(function () {
     //// sumo select
     Array.from(document.querySelectorAll(".region-content select")).map(function (e) {
