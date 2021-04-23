@@ -1,4 +1,5 @@
-.news-galery {
+.news-galery,
+.events-gallery {
   .view-header {
     h3 {
       margin: 60px 0 60px;
@@ -11,20 +12,6 @@
   }
 
   .view-content {
-    >div {
-      display: grid;
-      grid-template-columns: minmax(250px, 420px) minmax(250px, 440px) minmax(250px, 420px);
-      grid-gap: 0 40px;
-      overflow: hidden;
-
-      @media screen and (max-width: $broken) {
-        all: initial;
-        display: flex;
-        flex-wrap: wrap;
-        position: relative;
-      }
-    }
-
     .views-row {
       margin-top: 35px;
       margin-bottom: 35px;
@@ -37,21 +24,7 @@
         }
       }
 
-      &:nth-child(3n + 2) {
-        @media screen and (min-width:$screen-query) {
-          position: relative;
-
-          &::before {
-            content: '';
-            width: 1px;
-            height: 100%;
-            position: absolute;
-            left: calc(0% - 20px);
-            background-color: $cgrey4;
-          }
-        }
-      }
-
+      &:nth-child(3n + 2),
       &:nth-child(3n) {
         @media screen and (min-width:$screen-query) {
           position: relative;
@@ -72,13 +45,13 @@
           &:before {
             display: block;
             content: '';
-            width: 100%;
+            width: calc(100% - 30px);
             height: 1px;
             left: 0;
             background: $cgrey4;
             position: absolute;
             right: 0;
-            margin: -35px 0;
+            margin: -35px auto;
           }
         }
       }
@@ -130,6 +103,62 @@
       img {
         height: auto;
         max-width: 100%;
+      }
+    }
+  }
+}
+
+.news-galery {
+  .view-content {
+    >div {
+      display: grid;
+      grid-template-columns: minmax(250px, 420px) minmax(250px, 440px) minmax(250px, 420px);
+      grid-gap: 0 40px;
+      overflow: hidden;
+
+      @media screen and (max-width: $broken) {
+        all: initial;
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+      }
+    }
+  }
+}
+
+.events-gallery {
+  max-width: 1310px;
+  padding: 0 15px;
+  margin: 0 auto 40px;
+  
+  .view-content {
+    margin-bottom: 60px;
+    display: grid;
+    grid-template-columns: minmax(250px, 420px) minmax(250px, 440px) minmax(250px, 420px);
+    grid-gap: 0 40px;
+    overflow: hidden;
+
+    @media screen and (max-width: $broken) {
+      all: initial;
+      margin-bottom: 60px;
+      display: flex;
+      flex-wrap: wrap;
+      position: relative;
+    }
+
+    @media screen and (max-width: $broken) {
+      margin-bottom: 40px;
+    }
+
+    .views-row {
+      @media screen and (max-width: $broken) {
+        margin: 25px 0px;
+
+        &:nth-child(2n+3) {
+          &:before {
+            margin: -25px 0;
+          }
+        }
       }
     }
   }
