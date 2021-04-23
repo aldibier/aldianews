@@ -20,6 +20,7 @@ dependencies:
     - node.type.event
     - views.view.block_guest
     - views.view.contact_event
+    - views.view.header_of_the_event_internal
     - views.view.slider_internal_event
     - webform.webform.nominate
   module:
@@ -344,19 +345,6 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: -10
-          e459b096-891b-4077-ada6-b7b9bdf28ca7:
-            uuid: e459b096-891b-4077-ada6-b7b9bdf28ca7
-            region: header_content
-            configuration:
-              id: 'views_block:header_of_the_event_internal-block_1'
-              label: ''
-              provider: views
-              label_display: '0'
-              views_label: ''
-              items_per_page: none
-              context_mapping: {  }
-            additional: {  }
-            weight: -10
           15c5ab79-f144-41f6-bdfb-9706abeb56ea:
             uuid: 15c5ab79-f144-41f6-bdfb-9706abeb56ea
             region: content
@@ -372,6 +360,19 @@ third_party_settings:
                 type: basic_string
             additional: {  }
             weight: 5
+          48585ad0-3491-47a9-ab55-7a63625a16fb:
+            uuid: 48585ad0-3491-47a9-ab55-7a63625a16fb
+            region: header_content
+            configuration:
+              id: 'views_block:header_of_the_event_internal-block_3'
+              label: ''
+              provider: views
+              label_display: '0'
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: -9
         third_party_settings: {  }
 id: node.event.default
 targetEntityType: node
