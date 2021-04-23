@@ -1216,27 +1216,26 @@ module.exports = function (css) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 var initMain = function initMain($, Drupal) {
-  //// js remove element home
-  Array.from(document.querySelectorAll(".block-fixed-block-contentvertical-advertising-mobile")).map(function (e) {
-    if (e.children.children != null) {
-      e.closest(".mobile-less").parentElement.parentElement.classList.add("life-advertising");
-    } else {
-      e.closest(".views-row").classList.add("mobile-free");
-    }
-  });
-  Array.from(document.querySelectorAll(".mobile-free .mobile-plus .slick-track .slick-slide:nth-child(1) div:nth-child(1) .card-more")).map(function (e) {
-    if (e != null) {
-      e.parentElement.remove();
-    }
-  });
-  Array.from(document.querySelectorAll(".mobile-free .mobile-plus .slick-track .slick-slide:nth-child(1) div:nth-child(2) .card-more")).map(function (evt) {
-    if (evt != null) {
-      evt.parentElement.remove();
-    }
-  });
-
   window.onload = function () {
-    ///// js para publicidad en bloques de categorias de noticias
+    //// js remove element home
+    Array.from(document.querySelectorAll(".block-fixed-block-contentvertical-advertising-mobile")).map(function (e) {
+      if (e.children.children != null) {
+        e.closest(".mobile-less").parentElement.parentElement.classList.add("life-advertising");
+      } else {
+        e.closest(".views-row").classList.add("mobile-free");
+      }
+    });
+    Array.from(document.querySelectorAll(".mobile-free .mobile-plus .card-more:nth-child(1)")).map(function (e) {
+      if (e != null) {
+        e.remove();
+      }
+    });
+    Array.from(document.querySelectorAll(".mobile-free .mobile-plus .card-more:nth-child(2)")).map(function (evt) {
+      if (evt != null) {
+        evt.remove();
+      }
+    }); ///// js para publicidad en bloques de categorias de noticias
+
     if (!!document.querySelector(".block-views-blockhigh-impact-news-home-block-1")) {
       //hidden last news home
       var lastNewsHome = document.querySelector(".block-block-grouplatest-categories-tending-block");
@@ -1255,7 +1254,10 @@ var initMain = function initMain($, Drupal) {
 
     if (!!blockTrending) {
       var blockTwoFeaturedNews = document.querySelector(".view-high-impact-news-home .view-display-id-block_2");
-      blockTwoFeaturedNews.insertAdjacentElement("beforeend", blockTrending);
+
+      if (blockTwoFeaturedNews != null) {
+        blockTwoFeaturedNews.insertAdjacentElement("beforeend", blockTrending);
+      }
     } // blockquote para selection-sharer
 
 
@@ -1928,37 +1930,43 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 var initSlick = function initSlick($, Drupal) {
-  var enterMobile = 0;
-  var enterTablet = 0;
-  var enterDesktop = 0;
-  var categoriesMore = document.querySelectorAll(".view-categories-sons .view-more-category .view-content");
-  var settings = {
-    infinite: false,
-    rows: 3,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    mobileFirst: true,
-    autoplay: false,
-    dots: false,
-    arrows: true,
-    responsive: [{
-      breakpoint: 768,
-      settings: "unslick"
-    }]
-  }; //slide edit resize
+  jQuery(document).ready(function () {
+    var enterMobile = 0;
+    var enterTablet = 0;
+    var enterDesktop = 0;
+    var categoriesMore = document.querySelectorAll(".view-categories-sons .view-more-category .view-content");
+    var settings = {
+      infinite: false,
+      rows: 3,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      mobileFirst: true,
+      autoplay: false,
+      dots: false,
+      arrows: true,
+      responsive: [{
+        breakpoint: 768,
+        settings: "unslick"
+      }]
+    }; //slide edit resize
 
-  if (window.matchMedia("(max-width: 768px)").matches) {
-    categoriesMore.forEach(function (element) {
-      return $(element).slick(settings);
-    });
-  }
-
-  window.addEventListener("resize", function () {
     if (window.matchMedia("(max-width: 768px)").matches) {
-      categoriesMore.forEach(function (element) {
-        return $(element).slick(settings);
-      });
+      setTimeout(function () {
+        categoriesMore.forEach(function (element) {
+          return $(element).slick(settings);
+        });
+      }, 2000);
     }
+
+    window.addEventListener("resize", function () {
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        setTimeout(function () {
+          categoriesMore.forEach(function (element) {
+            return $(element).slick(settings);
+          });
+        }, 2000);
+      }
+    });
   }); // slide landing jobs
 
   $(".block-views-blockcarousel-jobs-landing-block-1 .brands-carousel-wrapper .view-content").slick({

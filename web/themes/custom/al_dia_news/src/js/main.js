@@ -1,38 +1,38 @@
 const initMain = ($, Drupal) => {
-  //// js remove element home
-  Array.from(
-    document.querySelectorAll(
-      ".block-fixed-block-contentvertical-advertising-mobile"
-    )
-  ).map(function(e) {
-    if (e.children.children != null) {
-      e.closest(".mobile-less").parentElement.parentElement.classList.add(
-        "life-advertising"
-      );
-    } else {
-      e.closest(".views-row").classList.add("mobile-free");
-    }
-  });
-  Array.from(
-    document.querySelectorAll(
-      ".mobile-free .mobile-plus .slick-track .slick-slide:nth-child(1) div:nth-child(1) .card-more"
-    )
-  ).map(function(e) {
-    if (e != null) {
-      e.parentElement.remove();
-    }
-  });
-  Array.from(
-    document.querySelectorAll(
-      ".mobile-free .mobile-plus .slick-track .slick-slide:nth-child(1) div:nth-child(2) .card-more"
-    )
-  ).map(function(evt) {
-    if (evt != null) {
-      evt.parentElement.remove();
-    }
-  });
-
   window.onload = function() {
+    //// js remove element home
+    Array.from(
+      document.querySelectorAll(
+        ".block-fixed-block-contentvertical-advertising-mobile"
+      )
+    ).map(function(e) {
+      if (e.children.children != null) {
+        e.closest(".mobile-less").parentElement.parentElement.classList.add(
+          "life-advertising"
+        );
+      } else {
+        e.closest(".views-row").classList.add("mobile-free");
+      }
+    });
+    Array.from(
+      document.querySelectorAll(
+        ".mobile-free .mobile-plus .card-more:nth-child(1)"
+      )
+    ).map(function(e) {
+      if (e != null) {
+        e.remove();
+      }
+    });
+    Array.from(
+      document.querySelectorAll(
+        ".mobile-free .mobile-plus .card-more:nth-child(2)"
+      )
+    ).map(function(evt) {
+      if (evt != null) {
+        evt.remove();
+      }
+    });
+
     ///// js para publicidad en bloques de categorias de noticias
 
     if (
@@ -64,7 +64,9 @@ const initMain = ($, Drupal) => {
       const blockTwoFeaturedNews = document.querySelector(
         ".view-high-impact-news-home .view-display-id-block_2"
       );
-      blockTwoFeaturedNews.insertAdjacentElement("beforeend", blockTrending);
+      if (blockTwoFeaturedNews != null) {
+        blockTwoFeaturedNews.insertAdjacentElement("beforeend", blockTrending);
+      }
     }
 
     // blockquote para selection-sharer
