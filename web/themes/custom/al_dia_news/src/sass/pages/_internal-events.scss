@@ -76,14 +76,15 @@
       padding-left: 18px;
       margin-left: 18px;
       position: relative;
+      max-width: 330px;
       &::before {
         content: "";
         display: block;
         position: absolute;
-        right: 0px;
-        bottom: 3px;
+        left: 0px;
+        bottom: 15%;
         width: 1px;
-        height: 90%;
+        height: 67%;
         background: #ffffff;
       }
     }
