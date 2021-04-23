@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.event.field_email
     - field.field.node.event.field_guest_block
     - field.field.node.event.field_image
+    - field.field.node.event.field_images_of_the_event
     - field.field.node.event.field_logo
     - field.field.node.event.field_nomination_status
     - field.field.node.event.field_present_by
@@ -39,7 +40,7 @@ content:
     region: content
   created:
     type: datetime_timestamp
-    weight: 14
+    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -68,7 +69,7 @@ content:
     type: datetime_default
     region: content
   field_email:
-    weight: 12
+    weight: 13
     settings:
       size: 60
       placeholder: ''
@@ -96,6 +97,14 @@ content:
     region: content
   field_image:
     weight: 2
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_images_of_the_event:
+    weight: 12
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
@@ -161,7 +170,7 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 18
+    weight: 19
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -169,21 +178,21 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 16
+    weight: 17
     region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 19
+    weight: 20
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 17
+    weight: 18
     region: content
     third_party_settings: {  }
   title:
@@ -195,13 +204,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
   translation:
-    weight: 15
+    weight: 16
     region: content
     settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 13
+    weight: 14
     settings:
       match_operator: CONTAINS
       size: 60
