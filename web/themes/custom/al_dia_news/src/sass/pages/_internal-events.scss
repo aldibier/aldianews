@@ -18,11 +18,11 @@
     width: 100%;
     height: auto;
   }
-  .contextual-region{
-    position:initial;
+  .contextual-region {
+    position: initial;
   }
   .block-field-blocknodeeventfield-image {
-    > div.content{
+    > div.content {
       position: absolute;
       top: 0px;
       left: 0px;
@@ -30,7 +30,7 @@
       height: 100%;
       z-index: -2;
     }
-    &::before{
+    &::before {
       content: "";
       display: block;
       position: absolute;
@@ -76,7 +76,7 @@
       padding-right: 18px;
       margin-right: 18px;
       position: relative;
-      &::before{
+      &::before {
         content: "";
         display: block;
         position: absolute;
@@ -94,7 +94,7 @@
   .field--name-field-venue-of-the-event {
     font-weight: normal;
   }
-  button {
+  a.buttton-link {
     max-width: 200px;
     min-height: 55px;
     border: 2px solid #ffffff;
@@ -131,16 +131,16 @@
     display: flex;
     flex-wrap: wrap;
   }
-  .breadcrumb{
+  .breadcrumb {
     max-width: 1310px;
     margin: 45px auto 0px;
     padding: 0 15px;
   }
-  h1 .aldia-logo-in-text{
+  h1 .aldia-logo-in-text {
     max-width: 150px;
-    img{
+    img {
       height: 40px;
-    width: 100%;
+      width: 100%;
     }
   }
   .content-present-by-advertising {
@@ -301,7 +301,7 @@
   .mode-two {
     display: flex;
     flex-wrap: wrap;
-    .subtitle-events{
+    .subtitle-events {
       max-width: 840px;
     }
     .views-field-field-guest {
@@ -513,13 +513,13 @@
 
 //------------------ Formulario modal nominate ------------//
 
-.webform-submission-nominate-form{
-    justify-content: space-between;
-  #edit-fieldset{
+.webform-submission-nominate-form {
+  justify-content: space-between;
+  #edit-fieldset {
     width: 100%;
   }
   #edit-markup,
-  label[for*="nominee-information"]{
+  label[for*="nominee-information"] {
     font-family: $ModernoFB-Regular;
     font-style: normal;
     font-weight: 600;
@@ -532,31 +532,31 @@
     border-bottom: 1px solid $corange;
     margin-bottom: 50px;
   }
-  .fieldset-wrapper{
+  .fieldset-wrapper {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
   }
   .form-type-email,
-  .form-type-textarea{
+  .form-type-textarea {
     width: 100%;
     max-width: none;
   }
-  textarea{
+  textarea {
     max-width: none;
     min-height: 230px;
   }
-  .form-type-textfield{
+  .form-type-textfield {
     max-width: 405px;
   }
-  .form-item-last-name{
+  .form-item-last-name {
     padding-left: 0px;
   }
 }
 
 @media (max-width: $desktop) {
   .banner-events {
-    button {
+    a.buttton-link {
       max-width: 105px;
       min-height: 25px;
       margin-right: 10px;
@@ -739,7 +739,7 @@
     .mode-one {
       max-width: none;
       margin: 0 auto;
-      .item-list ul{
+      .item-list ul {
         margin-bottom: 0px;
       }
       .item-list ul li {
