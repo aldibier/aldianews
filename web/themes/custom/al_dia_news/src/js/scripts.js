@@ -195,6 +195,17 @@ import replaceToken from "./modules/replaceToken";
       }
     });
 
+    ///// modal nominate interna eventos
+    $('.banner-events button[name*="nominee"]').click(function() {
+      $(".modal-open .modal-apply-webform").addClass("open");
+    });
+
+    $('.modal-apply-webform  button[name="close"]').click(function() {
+      if ($(".modal-open .modal-apply-webform").hasClass("open")) {
+        $(".modal-open .modal-apply-webform").removeClass("open");
+      }
+    });
+
     $(".path-employer .button-apply").click(function() {
       if (
         $(this)
