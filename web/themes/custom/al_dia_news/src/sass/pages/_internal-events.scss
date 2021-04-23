@@ -18,10 +18,13 @@
     width: 100%;
     height: auto;
   }
+  .contextual-region{
+    position:initial;
+  }
   .block-field-blocknodeeventfield-image {
     > div.content{
       position: absolute;
-      top: 10px;
+      top: 0px;
       left: 0px;
       width: 100%;
       height: 100%;
@@ -33,7 +36,7 @@
       position: absolute;
       width: 100%;
       height: 100%;
-      top: 0px;
+      top: 10px;
       left: 0px;
       background: #000000;
       opacity: 0.75;
@@ -508,6 +511,49 @@
   margin-bottom: 100px !important;
 }
 
+//------------------ Formulario modal nominate ------------//
+
+.webform-submission-nominate-form{
+    justify-content: space-between;
+  #edit-fieldset{
+    width: 100%;
+  }
+  #edit-markup,
+  label[for*="nominee-information"]{
+    font-family: $ModernoFB-Regular;
+    font-style: normal;
+    font-weight: 600;
+    font-size: $px34;
+    line-height: 41px;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    color: $corange;
+    width: 100%;
+    border-bottom: 1px solid $corange;
+    margin-bottom: 50px;
+  }
+  .fieldset-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .form-type-email,
+  .form-type-textarea{
+    width: 100%;
+    max-width: none;
+  }
+  textarea{
+    max-width: none;
+    min-height: 230px;
+  }
+  .form-type-textfield{
+    max-width: 405px;
+  }
+  .form-item-last-name{
+    padding-left: 0px;
+  }
+}
+
 @media (max-width: $desktop) {
   .banner-events {
     button {
@@ -803,6 +849,7 @@
   //------------------ modos de visulizacion slider interna de eventos ------------//
   .view-contact-event {
     margin: 0 auto 40px;
+    padding: 0px;
     .views-row {
       max-width: none;
       padding-right: 0px;
@@ -824,21 +871,21 @@
       min-height: auto;
     }
     .name-contact-event {
-      font-size: $px16;
-      line-height: 19px;
+      font-size: $px20;
+      line-height: 24px;
     }
     .position-contact-event {
-      font-size: $px16;
-      line-height: 19px;
+      font-size: $px20;
+      line-height: 24px;
       margin-bottom: 20px;
     }
     .phone-contact-event {
-      font-size: $px16;
-      line-height: 19px;
+      font-size: $px20;
+      line-height: 24px;
     }
     .views-field-field-email {
-      font-size: $px16;
-      line-height: 19px;
+      font-size: $px20;
+      line-height: 24px;
     }
   }
   .five-content-event-contact {
