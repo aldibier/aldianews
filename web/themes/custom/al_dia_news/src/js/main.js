@@ -326,6 +326,8 @@ const initMain = ($, Drupal) => {
       const buttonClose = document.querySelector(".close-modal");
       const modalForm = document.querySelector(".modal-form");
 
+      if(!document.body.contains(buttonApply)) return;
+
       buttonApply.addEventListener("click", () =>
         modalForm.classList.add("show")
       );
