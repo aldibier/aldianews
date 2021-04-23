@@ -1,12 +1,13 @@
 uuid: 4888d9e5-7997-47ae-a309-d99cee897d68
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - field.storage.node.field_date_of_event
     - field.storage.node.field_image
     - field.storage.node.field_logo
     - field.storage.node.field_nomination_status
+    - field.storage.node.field_venue_of_the_event
     - node.type.event
   module:
     - datetime
@@ -440,6 +441,69 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
+        field_venue_of_the_event:
+          id: field_venue_of_the_event
+          table: node__field_venue_of_the_event
+          field: field_venue_of_the_event
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: div
+          element_class: 'field field--name-field-venue-of-the-event field--type-string field--label-hidden field__item'
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: div
+          element_wrapper_class: 'block block-layout-builder block-field-blocknodeeventfield-venue-of-the-event'
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
       filters:
         status:
           value: '1'
@@ -523,6 +587,7 @@ display:
         - 'config:field.storage.node.field_image'
         - 'config:field.storage.node.field_logo'
         - 'config:field.storage.node.field_nomination_status'
+        - 'config:field.storage.node.field_venue_of_the_event'
   block_1:
     display_plugin: block
     id: block_1
@@ -545,3 +610,27 @@ display:
         - 'config:field.storage.node.field_image'
         - 'config:field.storage.node.field_logo'
         - 'config:field.storage.node.field_nomination_status'
+        - 'config:field.storage.node.field_venue_of_the_event'
+  block_2:
+    display_plugin: block
+    id: block_2
+    display_title: 'PAST EVENTS'
+    position: 1
+    display_options:
+      display_extenders:
+        ajax_history: {  }
+      display_description: ''
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.field_date_of_event'
+        - 'config:field.storage.node.field_image'
+        - 'config:field.storage.node.field_logo'
+        - 'config:field.storage.node.field_nomination_status'
+        - 'config:field.storage.node.field_venue_of_the_event'

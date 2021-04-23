@@ -13,13 +13,13 @@ dependencies:
     - field.field.node.event.field_nomination_status
     - field.field.node.event.field_present_by
     - field.field.node.event.field_slider_block
+    - field.field.node.event.field_venue_of_the_event
     - fixed_block_content.fixed_block_content._small_vertical_advertising
     - fixed_block_content.fixed_block_content.big_vertical_advertising
     - fixed_block_content.fixed_block_content.horizontal_advertising
     - node.type.event
     - views.view.block_guest
     - views.view.contact_event
-    - views.view.header_of_the_event_internal
     - views.view.slider_internal_event
     - webform.webform.nominate
   module:
@@ -357,6 +357,21 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: -10
+          15c5ab79-f144-41f6-bdfb-9706abeb56ea:
+            uuid: 15c5ab79-f144-41f6-bdfb-9706abeb56ea
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:event:field_venue_of_the_event'
+              formatter:
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+                type: basic_string
+            additional: {  }
+            weight: 5
         third_party_settings: {  }
 id: node.event.default
 targetEntityType: node
@@ -447,6 +462,13 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    region: content
+  field_venue_of_the_event:
+    weight: 113
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
     region: content
   links:
     weight: 100
