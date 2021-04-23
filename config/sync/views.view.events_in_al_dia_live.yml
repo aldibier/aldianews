@@ -6,7 +6,6 @@ dependencies:
     - field.storage.node.field_date_of_event
     - field.storage.node.field_image
     - field.storage.node.field_start_date
-    - field.storage.node.field_venue_of_the_event
     - node.type.event
     - responsive_image.styles.next_two_image_responsive
   module:
@@ -515,70 +514,7 @@ display:
           type: datetime_custom
           settings:
             timezone_override: ''
-            date_format: 'F jS / Y h:m a'
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
-        field_venue_of_the_event:
-          id: field_venue_of_the_event
-          table: node__field_venue_of_the_event
-          field: field_venue_of_the_event
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: card-event-venue
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: false
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
+            date_format: 'F jS, Y h:m a'
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -622,7 +558,6 @@ display:
       tags:
         - 'config:field.storage.node.field_date_of_event'
         - 'config:field.storage.node.field_image'
-        - 'config:field.storage.node.field_venue_of_the_event'
   page_2:
     display_plugin: page
     id: page_2
@@ -966,70 +901,7 @@ display:
           type: datetime_custom
           settings:
             timezone_override: ''
-            date_format: 'F jS / Y'
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
-        field_venue_of_the_event:
-          id: field_venue_of_the_event
-          table: node__field_venue_of_the_event
-          field: field_venue_of_the_event
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: card-event-venue
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: false
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
+            date_format: 'F jS, Y'
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -1073,4 +945,3 @@ display:
       tags:
         - 'config:field.storage.node.field_image'
         - 'config:field.storage.node.field_start_date'
-        - 'config:field.storage.node.field_venue_of_the_event'

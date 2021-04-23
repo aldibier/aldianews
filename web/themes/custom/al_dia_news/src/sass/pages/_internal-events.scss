@@ -18,13 +18,30 @@
     width: 100%;
     height: auto;
   }
+  .contextual-region{
+    position:initial;
+  }
   .block-field-blocknodeeventfield-image {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
+    > div.content{
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+    }
+    &::before{
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 10px;
+      left: 0px;
+      background: #000000;
+      opacity: 0.75;
+      z-index: -1;
+    }
   }
   .block-field-blocknodeeventfield-logo {
     max-width: 290px;
@@ -38,9 +55,8 @@
     }
   }
   .field--name-field-nomination-status {
-    font-family: $PrNovacond-reg;
+    font-family: $PrNovacond-Sbold;
     font-style: normal;
-    font-weight: bold;
     font-size: $px28;
     line-height: 34px;
     color: $red1;
@@ -59,7 +75,17 @@
     .block-field-blocknodeeventfield-date-of-event {
       padding-right: 18px;
       margin-right: 18px;
-      border-right: 1px solid #ffffff;
+      position: relative;
+      &::before{
+        content: "";
+        display: block;
+        position: absolute;
+        right: 0px;
+        bottom: 3px;
+        width: 1px;
+        height: 15px;
+        background: #ffffff;
+      }
     }
   }
   .datetime {
@@ -104,6 +130,18 @@
   .section-flex {
     display: flex;
     flex-wrap: wrap;
+  }
+  .breadcrumb{
+    max-width: 1310px;
+    margin: 45px auto 0px;
+    padding: 0 15px;
+  }
+  h1 .aldia-logo-in-text{
+    max-width: 150px;
+    img{
+      height: 40px;
+    width: 100%;
+    }
   }
   .content-present-by-advertising {
     display: flex;
@@ -263,6 +301,9 @@
   .mode-two {
     display: flex;
     flex-wrap: wrap;
+    .subtitle-events{
+      max-width: 840px;
+    }
     .views-field-field-guest {
       max-width: 840px;
       margin-right: auto;
@@ -470,6 +511,49 @@
   margin-bottom: 100px !important;
 }
 
+//------------------ Formulario modal nominate ------------//
+
+.webform-submission-nominate-form{
+    justify-content: space-between;
+  #edit-fieldset{
+    width: 100%;
+  }
+  #edit-markup,
+  label[for*="nominee-information"]{
+    font-family: $ModernoFB-Regular;
+    font-style: normal;
+    font-weight: 600;
+    font-size: $px34;
+    line-height: 41px;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    color: $corange;
+    width: 100%;
+    border-bottom: 1px solid $corange;
+    margin-bottom: 50px;
+  }
+  .fieldset-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .form-type-email,
+  .form-type-textarea{
+    width: 100%;
+    max-width: none;
+  }
+  textarea{
+    max-width: none;
+    min-height: 230px;
+  }
+  .form-type-textfield{
+    max-width: 405px;
+  }
+  .form-item-last-name{
+    padding-left: 0px;
+  }
+}
+
 @media (max-width: $desktop) {
   .banner-events {
     button {
@@ -488,6 +572,9 @@
   .page-node-type-event {
     .section-flex {
       justify-content: center;
+    }
+    .text-and-buttons-event {
+      justify-content: flex-start;
     }
     .body-lateral-section-advertising {
       margin: 10px auto 40px;
@@ -559,7 +646,7 @@
     max-height: 285px;
     padding: 30px;
     h1 {
-      font-size: $px18;
+      font-size: $px16;
       line-height: 19px;
       margin: 0px 0px 10px;
     }
@@ -652,6 +739,9 @@
     .mode-one {
       max-width: none;
       margin: 0 auto;
+      .item-list ul{
+        margin-bottom: 0px;
+      }
       .item-list ul li {
         max-width: none;
       }
@@ -759,6 +849,7 @@
   //------------------ modos de visulizacion slider interna de eventos ------------//
   .view-contact-event {
     margin: 0 auto 40px;
+    padding: 0px;
     .views-row {
       max-width: none;
       padding-right: 0px;
@@ -780,21 +871,21 @@
       min-height: auto;
     }
     .name-contact-event {
-      font-size: $px16;
-      line-height: 19px;
+      font-size: $px20;
+      line-height: 24px;
     }
     .position-contact-event {
-      font-size: $px16;
-      line-height: 19px;
+      font-size: $px20;
+      line-height: 24px;
       margin-bottom: 20px;
     }
     .phone-contact-event {
-      font-size: $px16;
-      line-height: 19px;
+      font-size: $px20;
+      line-height: 24px;
     }
     .views-field-field-email {
-      font-size: $px16;
-      line-height: 19px;
+      font-size: $px20;
+      line-height: 24px;
     }
   }
   .five-content-event-contact {
