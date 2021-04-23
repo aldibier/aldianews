@@ -13,7 +13,6 @@ dependencies:
     - field.field.node.event.field_nomination_status
     - field.field.node.event.field_present_by
     - field.field.node.event.field_slider_block
-    - field.field.node.event.field_venue_of_the_event
     - fixed_block_content.fixed_block_content._small_vertical_advertising
     - fixed_block_content.fixed_block_content.big_vertical_advertising
     - fixed_block_content.fixed_block_content.horizontal_advertising
@@ -448,14 +447,6 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    region: content
-  field_venue_of_the_event:
-    weight: 107
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
     region: content
   links:
     weight: 100
