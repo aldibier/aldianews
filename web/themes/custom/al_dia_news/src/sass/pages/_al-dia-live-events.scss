@@ -80,7 +80,7 @@
     font-style: normal;
     font-size: $px26;
     line-height: 33px;
-    text-transform: uppercase;
+    text-transform: capitalize;
     color: $cblack;
     margin: 0;
   }
@@ -161,6 +161,9 @@
       >div {
         max-width: 93px;
         max-height: 20.35px;
+        border-bottom: 1px solid #ee2211;
+        padding-bottom: 5px;
+        margin-bottom: 0px;
       }
     }
 
@@ -169,7 +172,7 @@
     }
 
     .views-field-field-image {
-      max-height: 215;
+      max-height: 215px;
     }
 
     h1 a {
