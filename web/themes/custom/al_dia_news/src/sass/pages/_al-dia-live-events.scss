@@ -153,17 +153,19 @@
 
   @media (max-width: $tablet) {
     border-bottom: 1px solid #333333;
-    margin-bottom: 30px;
-
+    margin-bottom: 20px;
     .view-header {
-      border-bottom: 1px solid #ee2211;
+      border-bottom: 0px solid #ee2211;
+      margin-bottom: 20px;
 
-      >div {
-        max-width: 93px;
-        max-height: 20.35px;
+      > div {
         border-bottom: 1px solid #ee2211;
-        padding-bottom: 5px;
-        margin-bottom: 0px;
+        max-width: none;
+        max-height: 25px;
+        img {
+          max-width: 93px;
+          max-height: 20.35px;
+        }
       }
     }
 
@@ -387,4 +389,8 @@
       }
     }
   }
+}
+
+.path-about-al-dia-live .block .content {
+  margin-top: 0px;
 }
