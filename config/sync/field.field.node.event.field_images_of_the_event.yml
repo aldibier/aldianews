@@ -1,0 +1,38 @@
+uuid: 0392d6a1-5096-4477-b86c-b112110e46a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_images_of_the_event
+    - node.type.event
+  module:
+    - image
+id: node.event.field_images_of_the_event
+field_name: field_images_of_the_event
+entity_type: node
+bundle: event
+label: 'Images of the event'
+description: 'If the event has already happened, please add the pictures you have taken.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image
