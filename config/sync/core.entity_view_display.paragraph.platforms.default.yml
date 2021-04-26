@@ -3,25 +3,26 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.platforms.field_icon
+    - field.field.paragraph.platforms.field_icon_platform
     - field.field.paragraph.platforms.field_link_platform
     - field.field.paragraph.platforms.field_platform_name
     - paragraphs.paragraphs_type.platforms
   module:
-    - fontawesome
+    - image
     - link
 id: paragraph.platforms.default
 targetEntityType: paragraph
 bundle: platforms
 mode: default
 content:
-  field_icon:
+  field_icon_platform:
     weight: 0
     label: hidden
     settings:
-      layers: false
+      image_style: ''
+      image_link: ''
     third_party_settings: {  }
-    type: fontawesome_icon_formatter
+    type: image
     region: content
   field_link_platform:
     weight: 1
