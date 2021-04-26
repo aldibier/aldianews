@@ -196,7 +196,7 @@ import replaceToken from "./modules/replaceToken";
     });
 
     ///// modal nominate interna eventos
-    $('.banner-events button[name*="nominee"]').click(function() {
+    $(".banner-events a#nominee").click(function() {
       $(".modal-open .modal-apply-webform").addClass("open");
     });
 

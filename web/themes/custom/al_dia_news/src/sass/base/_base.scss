@@ -144,7 +144,13 @@ body.toolbar-tray-open.user-logged-in {
 .mobile-plus {
   .card-more:nth-child(1),
   .card-more:nth-child(2) {
-    display: none;
+    display: none; 
+  }
+}
+.mobile-free .mobile-plus {
+  .card-more:nth-child(1),
+  .card-more:nth-child(2) {
+    display: block;
   }
 }
 
