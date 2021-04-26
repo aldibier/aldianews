@@ -502,8 +502,25 @@ display:
         fields: false
         relationships: false
         css_class: false
+        title: false
+        style: false
+        row: false
       relationships: {  }
       css_class: slider-al-dia
+      title: 'Slider internal past event'
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: false
+      row:
+        type: fields
+        options:
+          default_field_elements: true
+          inline: {  }
+          separator: ''
+          hide_empty: false
     cache_metadata:
       max-age: -1
       contexts:

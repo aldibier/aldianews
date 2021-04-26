@@ -1,0 +1,67 @@
+uuid: b39b0b3a-0ad7-4d37-8295-1ec46a6ba551
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.image_and_icons_with_links
+    - field.storage.block_content.field_platforms
+    - paragraphs.paragraphs_type.platforms
+  module:
+    - entity_reference_revisions
+id: block_content.image_and_icons_with_links.field_platforms
+field_name: field_platforms
+entity_type: block_content
+bundle: image_and_icons_with_links
+label: Platforms
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      platforms: platforms
+    target_bundles_drag_drop:
+      advertising_informative_items_:
+        weight: 14
+        enabled: false
+      advertising_options:
+        weight: 15
+        enabled: false
+      contact:
+        weight: 16
+        enabled: false
+      features_items:
+        weight: 17
+        enabled: false
+      features_more_covers:
+        weight: 18
+        enabled: false
+      guest:
+        weight: 19
+        enabled: false
+      gust_block:
+        weight: 20
+        enabled: false
+      i_am_an_employer_sections:
+        weight: 21
+        enabled: false
+      main_features:
+        weight: 22
+        enabled: false
+      platforms:
+        enabled: true
+        weight: 23
+      sliders_in_internal_events:
+        weight: 24
+        enabled: false
+      social_media:
+        weight: 25
+        enabled: false
+      testimonies:
+        weight: 26
+        enabled: false
+field_type: entity_reference_revisions
