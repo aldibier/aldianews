@@ -208,26 +208,26 @@
       padding: 0 0 30px;
     }
 
-    .text-formatted {
-      a {
-        border: none;
-        color: $cgrey6;
-        text-decoration: none;
-        cursor: pointer;
-      }
+    a {
+      border: none;
+      color: $cgrey6;
+      text-decoration: none;
+      cursor: pointer;
+    }
 
-      strong {
-        font-family: $PrNovacond-bold;
-      }
+    strong {
+      font-family: $PrNovacond-Sbold;
+    }
 
-      p {
-        font-size: szrem(24);
-        font-weight: normal;
+    p {
+      font-size: szrem(24);
+      font-family: $PrNovacond-light;
+      font-style: normal;
+      font-weight: normal;
 
-        @media screen and (max-width: $tablet) {
-          font-size: szrem(15);
-          line-height: 1.5;
-        }
+      @media screen and (max-width: $tablet) {
+        font-size: szrem(15);
+        line-height: 1.5;
       }
     }
   }
