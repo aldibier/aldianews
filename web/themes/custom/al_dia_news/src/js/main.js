@@ -342,9 +342,6 @@ const initMain = ($, Drupal) => {
       const buttonCloseVideo = document.querySelector(".close-video");
       const video = document.querySelector(".modal-video");
 
-      //js temporal
-      video.insertAdjacentElement("afterbegin", buttonCloseVideo);
-
       triggerVideo.addEventListener("click", () => {
         video.classList.add("show");
       });

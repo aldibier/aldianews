@@ -1491,9 +1491,7 @@ var initMain = function initMain($, Drupal) {
 
       var triggerVideo = document.querySelector(".block-views-blockabout-al-dia-live-block-1 .about-al-dia-live-container-video");
       var buttonCloseVideo = document.querySelector(".close-video");
-      var video = document.querySelector(".modal-video"); //js temporal
-
-      video.insertAdjacentElement("afterbegin", buttonCloseVideo);
+      var video = document.querySelector(".modal-video");
       triggerVideo.addEventListener("click", function () {
         video.classList.add("show");
       });
