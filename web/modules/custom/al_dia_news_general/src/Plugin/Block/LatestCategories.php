@@ -178,7 +178,8 @@ class LatestCategories extends BlockBase implements ContainerFactoryPluginInterf
     // $variables['related_articles'] = drupal_render($relatedArticles);
     
     $res = views_get_view_result("high_impact_news_home", "block_1");
-    $args = FALSE;
+    //Defino variable para pasar argumentos en la línea 192
+    $args = FALSE; 
     if($res) {
       foreach ($res as $re) {
         $nids[] = $re->nid; 
@@ -190,18 +191,22 @@ class LatestCategories extends BlockBase implements ContainerFactoryPluginInterf
       }
     }
     if ($args) {
-      $view = Views::getView('high_impact_news_home');
+      $view = Views::getView('high_impact_news_home'); //Selecciono vista que depende de un filtro contextual
       if (is_object($view)) {
         $view->setArguments($args);
         $view->setDisplay('block_2');
         $view->preExecute();
         $view->execute();
-        $content = $view->buildRenderable('block_2', $args);
+        //Paso argumentos a la vista
+        $content = $view->buildRenderable('block_2', $args); 
         foreach ($content["#view"]->result as $ids) {
+          //Almacenos los id de la vista en el mismo arrat de nids, no se borran los datos anteriores, se sigue almacenando
           $nids[] = $ids->nid;
         }
       }
     }
+    //Defino vatiable nids_home, la cual tiene los valores almacenados en el array nids
+    //Esta variable se usa en el .module, para excluir estos id de las vistas de categorias del home
     $this->tempStore->set("nids_home", $nids);
     $return['#cache'] = ["max-age" => 0];
     return $return;

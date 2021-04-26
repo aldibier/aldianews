@@ -1,0 +1,29 @@
+uuid: c5e72dad-2cf6-4588-9bae-181615b67cee
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_postcast_categories
+    - node.type.news
+    - taxonomy.vocabulary.podcast_category
+id: node.news.field_postcast_categories
+field_name: field_postcast_categories
+entity_type: node
+bundle: news
+label: 'Postcast categories'
+description: 'If your content is a PODCAST, please select a category, otherwise, please do not select any option.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      podcast_category: podcast_category
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
