@@ -277,3 +277,63 @@ form {
     background: #5c6165;
   }
 }
+
+// ---------- Estilos para campos de carga de archivos --------////
+.file-upload .upload-and-files {
+  position: relative;
+  #ajax-wrapper {
+    width: auto;
+    margin: 0;
+    .js-form-item {
+      width: auto;
+      padding: 0;
+    }
+  }
+  label {
+    font-style: normal;
+    font-weight: 600;
+    font-size: $px20;
+    line-height: 24px;
+    color: #333;
+    font-family: $PrNovacond-reg;
+  }
+  .form-managed-file {
+    padding: 56px 0 0;
+  }
+  .webform-file-button {
+    background: #5c6165;
+    min-width: 165px;
+    width: max-content;
+    display: flex;
+    z-index: 2;
+    top: 39px;
+    position: absolute;
+    left: 0;
+    border: none;
+    border-radius: 0;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    font-size: $px18;
+    line-height: 25px;
+    color: #fff;
+  }
+  .managed-file-placeholder {
+    max-width: 165px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: $px12;
+    line-height: 15px;
+    color: #767676;
+    font-family: $PrNovacond-reg;
+  }
+  .webform-button--submit {
+    position: absolute;
+    left: 190px;
+    width: max-content;
+    bottom: 67px;
+    min-width: 150px;
+    margin: 48px 0 0;
+    top: 0;
+  }
+}
