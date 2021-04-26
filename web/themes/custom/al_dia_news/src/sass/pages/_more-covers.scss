@@ -52,7 +52,8 @@
     border-top: 3px solid $cblack3;
     margin: 50px auto 0;
 
-    .field__label {
+    // .field__label,
+    h2 {
       font-style: normal;
       font-weight: 600;
       font-size: $px34;
@@ -127,7 +128,12 @@
 
     .field--name-field-taxonomy-term-related-cove {
       margin: 0 0 20px;
-
+      font-style: normal;
+      font-weight: 600;
+      font-size: $px16;
+      line-height: 19px;
+      color: $corange;
+      font-family: $ModernoFB-Regular;
       a {
         font-style: normal;
         font-weight: 600;
@@ -206,7 +212,8 @@
       border-top: 1.5px solid $cblack3;
       margin: 30px auto 0;
 
-      .field__label {
+      // .field__label,
+      h2 {
         font-size: 15px;
         line-height: 18px;
         margin: -10px 0 10px;
@@ -219,7 +226,8 @@
 
       .field--name-field-taxonomy-term-related-cove {
         margin: 0 0 0px;
-
+        font-size: 10px;
+        line-height: 12px;
         a {
           font-size: 10px;
           line-height: 12px;
@@ -234,7 +242,7 @@
       .field__items {
         display: flex;
         flex-wrap: wrap;
-
+        position: relative;
         > .field__item {
           margin: 20px 0;
 
