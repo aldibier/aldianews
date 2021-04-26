@@ -1286,6 +1286,15 @@ var initMain = function initMain($, Drupal) {
 
     if (video_interna != null && contenido_interna != null) {
       contenido_interna.classList.add("video-present");
+    } //add dots date events time 
+
+
+    if (!!document.querySelector('.card-event-date-hour')) {
+      var allEventsTime = document.querySelectorAll('.card-event-date-hour');
+      allEventsTime.forEach(function (eventTime) {
+        var txt = eventTime.innerText;
+        eventTime.innerText = "".concat(txt.substring(0, 7), ".").concat(txt.charAt(7), ".");
+      });
     } //// js ajuste ancla en employed
 
 
