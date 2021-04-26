@@ -19,7 +19,37 @@ conditions:
     context_mapping: {  }
 reactions:
   blocks:
-    blocks: {  }
+    blocks:
+      f92622c5-352d-463a-ba5d-bc3c8f1b2f3e:
+        id: system_main_block
+        label: 'Main page content'
+        provider: system
+        label_display: '0'
+        region: content
+        weight: '0'
+        context_mapping: {  }
+        custom_id: system_main_block
+        theme: al_dia_news
+        css_class: ''
+        unique: 0
+        context_id: podcast_landing
+        uuid: f92622c5-352d-463a-ba5d-bc3c8f1b2f3e
+      f2297b39-37ed-478d-ac7e-d51823492e9c:
+        id: 'views_block:last_category_podcast-block_1'
+        label: ''
+        provider: views
+        label_display: '0'
+        views_label: ''
+        items_per_page: none
+        region: content
+        weight: '1'
+        context_mapping: {  }
+        custom_id: views_block_last_category_podcast_block_1
+        theme: al_dia_news
+        css_class: ''
+        unique: 0
+        context_id: podcast_landing
+        uuid: f2297b39-37ed-478d-ac7e-d51823492e9c
     id: blocks
     saved: false
     uuid: 1384a8cd-1b7c-4583-a77d-066dda2b7928
