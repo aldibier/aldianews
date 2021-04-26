@@ -9,7 +9,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\TempStore\PrivateTempStoreFactory;
 use Drupal\Core\Datetime\DateFormatter;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
-
+use Drupal\views\Views;
 /**
  * Class LatestCategories.
  *
@@ -173,10 +173,33 @@ class LatestCategories extends BlockBase implements ContainerFactoryPluginInterf
       $mode = $render_controller->view($user, 'categories_home');
       $return["second"]["two"] = $mode; 
     }
+
+    // $relatedArticles = views_embed_view('high_impact_news_home', 'block_2', 23);
+    // $variables['related_articles'] = drupal_render($relatedArticles);
+    
     $res = views_get_view_result("high_impact_news_home", "block_1");
+    $args = FALSE;
     if($res) {
       foreach ($res as $re) {
         $nids[] = $re->nid; 
+        $entity = $re->_entity;
+        $tags = $entity->field_tags->getValue();
+        if ($tags) {
+          $args = [$tags[0]["target_id"]];
+        }
+      }
+    }
+    if ($args) {
+      $view = Views::getView('high_impact_news_home');
+      if (is_object($view)) {
+        $view->setArguments($args);
+        $view->setDisplay('block_2');
+        $view->preExecute();
+        $view->execute();
+        $content = $view->buildRenderable('block_2', $args);
+        foreach ($content["#view"]->result as $ids) {
+          $nids[] = $ids->nid;
+        }
       }
     }
     $this->tempStore->set("nids_home", $nids);
