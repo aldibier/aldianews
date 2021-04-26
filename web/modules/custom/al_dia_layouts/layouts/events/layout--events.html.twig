@@ -70,6 +70,11 @@
 				{{ content.five_content }}
 			</div>
 		{% endif %}
+		{% if content.slider_past_event %}
+			<div {{ region_attributes.slider_past_event.addClass('past-event-slider') }}>
+				{{ content.slider_past_event }}
+			</div>
+		{% endif %}
 		{% if content.six_content %}
 			<div {{ region_attributes.six_content.addClass('five-content-event-contact section1310') }}>
 				{{ content.six_content }}
