@@ -132,10 +132,8 @@
     display: flex;
     flex-wrap: wrap;
   }
-  .block-webform-block {
-    display: none;
-  }
-  .breadcrumb { 
+
+  .breadcrumb {
     max-width: 1310px;
     margin: 45px auto 0px;
     padding: 0 15px;
@@ -907,16 +905,16 @@
   }
   //------------------ Formulario modal nominate ------------//
 
-.webform-submission-nominate-form {
-  #edit-markup,
-  label[for*="nominee-information"] {
-    font-size: $px20;
-    line-height: 24px;
-    padding-bottom: 5px;
-    margin-bottom: 30px;
+  .webform-submission-nominate-form {
+    #edit-markup,
+    label[for*="nominee-information"] {
+      font-size: $px20;
+      line-height: 24px;
+      padding-bottom: 5px;
+      margin-bottom: 30px;
+    }
+    textarea {
+      min-height: 200px;
+    }
   }
-  textarea {
-    min-height: 200px;
-  }
-}
 }

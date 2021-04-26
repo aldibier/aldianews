@@ -1788,7 +1788,8 @@ __webpack_require__.r(__webpack_exports__);
       if ($(".modal-open .modal-apply-webform").hasClass("open")) {
         $(".modal-open .modal-apply-webform").removeClass("open");
       }
-    });
+    }); ///// modal employer
+
     $(".path-employer .button-apply").click(function () {
       if ($(this).parents(".views-row").find(".views-field-field-webform").hasClass("open")) {
         $(this).parents(".views-row").find(".views-field-field-webform").removeClass("open");
