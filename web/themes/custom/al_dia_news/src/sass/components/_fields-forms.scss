@@ -365,6 +365,7 @@ form {
       padding: 0 0 0 65px;
       display: flex;
       position: relative;
+      min-height: 65px;
       &::after {
         position: absolute;
         top: 0;
@@ -387,6 +388,7 @@ form {
       font-weight: 400;
       font-size: 0.75rem;
       line-height: 15px;
+      min-height: 65px;
       text-decoration: none;
       border: none;
       color: #555;
@@ -449,9 +451,8 @@ form {
   }
 }
 
-.user-logged-in
-  .file-upload
-  #edit-container
+.user-logged-in.page-node-type-al-dia-vacancy
+  .block-webform-block.open
   .js-form-type-checkbox
   span
   a:not(a[href]) {
