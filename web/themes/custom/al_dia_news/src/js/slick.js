@@ -165,7 +165,7 @@ const initSlick = ($, Drupal) => {
   const slider_two = {
     ...slider_general,
     slidesToShow: 2,
-    slidesToScroll: 2,
+    slidesToScroll: 1,
     responsive: [
       {
         breakpoint: 500,
@@ -193,7 +193,7 @@ const initSlick = ($, Drupal) => {
   const slider_more = {
     ...slider_general,
     slidesToShow: 4,
-    slidesToScroll: 4,
+    slidesToScroll: 1,
     responsive: [
       {
         breakpoint: 500,
