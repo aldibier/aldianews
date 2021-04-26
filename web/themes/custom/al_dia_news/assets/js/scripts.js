@@ -1790,14 +1790,15 @@ __webpack_require__.r(__webpack_exports__);
       }
     }); ///// modal nominate interna eventos
 
-    $('.banner-events button[name*="nominee"]').click(function () {
+    $(".banner-events a#nominee").click(function () {
       $(".modal-open .modal-apply-webform").addClass("open");
     });
     $('.modal-apply-webform  button[name="close"]').click(function () {
       if ($(".modal-open .modal-apply-webform").hasClass("open")) {
         $(".modal-open .modal-apply-webform").removeClass("open");
       }
-    });
+    }); ///// modal employer
+
     $(".path-employer .button-apply").click(function () {
       if ($(this).parents(".views-row").find(".views-field-field-webform").hasClass("open")) {
         $(this).parents(".views-row").find(".views-field-field-webform").removeClass("open");

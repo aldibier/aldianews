@@ -196,7 +196,7 @@ import replaceToken from "./modules/replaceToken";
     });
 
     ///// modal nominate interna eventos
-    $('.banner-events button[name*="nominee"]').click(function() {
+    $(".banner-events a#nominee").click(function() {
       $(".modal-open .modal-apply-webform").addClass("open");
     });
 
@@ -205,6 +205,8 @@ import replaceToken from "./modules/replaceToken";
         $(".modal-open .modal-apply-webform").removeClass("open");
       }
     });
+
+    ///// modal employer
 
     $(".path-employer .button-apply").click(function() {
       if (

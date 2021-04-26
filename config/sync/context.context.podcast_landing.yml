@@ -1,0 +1,27 @@
+uuid: 374e205c-07aa-4bfb-b67c-c474dc7523d3
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+name: podcast_landing
+label: 'Podcast landing'
+group: 'General pages'
+description: 'Blocks and views in Podcast landing'
+requireAllConditions: false
+disabled: false
+conditions:
+  request_path:
+    id: request_path
+    pages: /podcast
+    negate: false
+    uuid: cd97fede-61c9-452b-a2da-7919da2cbbfc
+    context_mapping: {  }
+reactions:
+  blocks:
+    blocks: {  }
+    id: blocks
+    saved: false
+    uuid: 1384a8cd-1b7c-4583-a77d-066dda2b7928
+    include_default_blocks: 0
+weight: 0
