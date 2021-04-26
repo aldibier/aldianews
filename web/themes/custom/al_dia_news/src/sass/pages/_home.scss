@@ -1,6 +1,5 @@
 //------------ Bloque noticia destacada ---------------//
 .block-block-grouphigh-impact-and-most-visited-news-home {
-
   &.not-show {
     display: none;
   }
@@ -113,7 +112,7 @@
 .wrapper-news-trending {
   margin-bottom: 80px;
 
-  >.content {
+  > .content {
     display: flex;
 
     @media (max-width: $broken) {
@@ -141,7 +140,7 @@
     margin-bottom: 47px;
   }
 
-  >.node--type-news {
+  > .node--type-news {
     &:nth-child(1) {
       padding-right: 55px;
       border-right: 1px solid $cgrey4;
@@ -196,7 +195,7 @@
     line-height: 19.49px;
   }
 
-  .view-categories-sons>.view-content .views-field-view-1 .view-content {
+  .view-categories-sons > .view-content .views-field-view-1 .view-content {
     flex-wrap: wrap;
   }
 
@@ -304,7 +303,7 @@
         max-width: 400px;
       }
 
-      >.view-content .views-field-view-1 .view-content {
+      > .view-content .views-field-view-1 .view-content {
         grid-gap: 10px;
       }
 
@@ -319,19 +318,22 @@
 @media (max-width: $tablet) {
   .path-frontpage {
     .view-categories-sons {
-      >.view-content>h3 a {
+      > .view-content > h3 a {
         line-height: initial;
       }
 
-      >.view-content .views-field-view-2 .view-content {
+      > .view-content .views-field-view-2 .view-content {
         margin-top: 0px;
       }
 
-      .views-field-view-2 .views-row:last-child {
-        margin-bottom: 0px;
+      .views-field-view-2 {
+        border-top: 1px solid #b1b1b1;
+        .views-row:last-child {
+          margin-bottom: 0px;
+        }
       }
 
-      >.view-content .views-field-view-1 .view-content {
+      > .view-content .views-field-view-1 .view-content {
         position: relative;
       }
 
@@ -441,7 +443,7 @@
     grid-gap: 0px;
     width: 100%;
 
-    >div {
+    > div {
       width: 100%;
     }
   }
@@ -537,13 +539,13 @@
 
 .block-block-groupcurrent-edition-advertising-home {
   padding: 0 80px;
-  >.content {
+  > .content {
     display: flex;
   }
 
   @media screen and (max-width: $broken) {
     padding: 0;
-    >.content {
+    > .content {
       flex-direction: column;
     }
   }
@@ -570,7 +572,6 @@
 
 @media (max-width: $desktop) {
   .view-thought-leaders-home {
-
     .views-field-view,
     .views-field-view-1 {
       padding: 0 15px;
@@ -621,7 +622,9 @@
     }
   }
 
-  .view-thought-leaders-home.view-display-id-block_3 .view-content .aldia-logo-in-text {
+  .view-thought-leaders-home.view-display-id-block_3
+    .view-content
+    .aldia-logo-in-text {
     margin-bottom: 6px;
   }
 }

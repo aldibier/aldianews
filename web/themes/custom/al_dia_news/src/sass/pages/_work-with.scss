@@ -25,12 +25,16 @@
 
       @media screen and (min-width: $tablet) {
         font-size: szrem(78);
-        line-height: 108%;
+        line-height: 75%;
       }
     }
 
     p {
-      @include text($family:$PrNovacond-light,$color: $cwhite, $size: szrem(14));
+      @include text(
+        $family: $PrNovacond-light,
+        $color: $cwhite,
+        $size: szrem(14)
+      );
       line-height: 11px;
 
       @media screen and (min-width: $tablet) {
@@ -96,7 +100,7 @@
         }
       }
 
-      @media screen and (min-width:$broken) {
+      @media screen and (min-width: $broken) {
         &:nth-child(1) {
           margin-top: 30px;
           padding-right: 15px;
@@ -106,7 +110,7 @@
           padding-left: 15px;
         }
 
-        &:nth-child(-n+2) {
+        &:nth-child(-n + 2) {
           max-width: 50%; //450px
           min-height: 80px;
         }
@@ -118,7 +122,7 @@
           padding-left: 0;
         }
 
-        &:nth-child(n+3):not(:last-child) {
+        &:nth-child(n + 3):not(:last-child) {
           min-height: 70px;
           padding-right: 24.5px;
         }
@@ -135,13 +139,17 @@
       }
 
       a {
-        @include link-box($colorBcolor: $cwhite, $fontSize: szrem(10), $lineHeight: szrem(11));
+        @include link-box(
+          $colorBcolor: $cwhite,
+          $fontSize: szrem(10),
+          $lineHeight: szrem(11)
+        );
         padding: 0;
 
         @media screen and (min-width: $tablet) {
           font-size: 1rem;
           line-height: 1rem;
-          letter-spacing: .74px;
+          letter-spacing: 0.74px;
           border-width: 2px;
         }
 
@@ -194,7 +202,6 @@
   }
 
   .block-field-blocknodepagebody {
-
     strong {
       font-family: $PrNovacond-bold;
     }
@@ -203,7 +210,7 @@
       font-family: $PrNovacond-reg;
       color: $cblack3;
 
-      @media screen and (min-width:$tablet) {
+      @media screen and (min-width: $tablet) {
         font-size: szrem(24);
         font-weight: 400;
       }
