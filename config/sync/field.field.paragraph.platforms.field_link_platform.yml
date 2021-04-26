@@ -1,0 +1,23 @@
+uuid: 8a508b8d-4bb9-435c-8c4c-fe70585af429
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_link_platform
+    - paragraphs.paragraphs_type.platforms
+  module:
+    - link
+id: paragraph.platforms.field_link_platform
+field_name: field_link_platform
+entity_type: paragraph
+bundle: platforms
+label: Link
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link
