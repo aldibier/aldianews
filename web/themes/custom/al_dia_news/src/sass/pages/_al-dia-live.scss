@@ -342,7 +342,24 @@
                 height: 0;
                 padding-bottom: 56.25%;
                 overflow: hidden;
+                transition: padding .5s ease;
+
+                @media screen and (min-width: $broken) and (max-height: 900px) {
+                    padding-bottom: 44.44%;
+                }
             }
+
+            iframe {
+                @media screen and (min-width: $tablet) {
+                    min-height: 165px;
+                }
+            }
+        }
+
+        .close-video {
+            position: absolute;
+            top: 50px;
+            right: 5%;
         }
     }
 
