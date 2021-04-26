@@ -2091,7 +2091,7 @@ var initSlick = function initSlick($, Drupal) {
 
   var slider_two = _objectSpread(_objectSpread({}, slider_general), {}, {
     slidesToShow: 2,
-    slidesToScroll: 2,
+    slidesToScroll: 1,
     responsive: [{
       breakpoint: 500,
       settings: {
@@ -2115,7 +2115,7 @@ var initSlick = function initSlick($, Drupal) {
 
   var slider_more = _objectSpread(_objectSpread({}, slider_general), {}, {
     slidesToShow: 4,
-    slidesToScroll: 4,
+    slidesToScroll: 1,
     responsive: [{
       breakpoint: 500,
       settings: {
