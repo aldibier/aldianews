@@ -6,7 +6,7 @@
   }
 
   .category-title {
-    margin-top: 35px;
+    margin-top: 40px;
     padding-bottom: 10px;
     border-bottom: 3px solid $corange;
     display: flex;
@@ -141,6 +141,12 @@
   .block-views-blocklast-news-category-sons-block-2,
   .block-views-blocksubcategory-only-for-children-block-2 {
     grid-area: area-2;
+  }
+}
+
+.category-first-block {
+  &:empty {
+    display: none;
   }
 }
 

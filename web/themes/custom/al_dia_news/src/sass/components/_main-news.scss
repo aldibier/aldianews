@@ -158,15 +158,15 @@
   }
 
   &-date {
-    font-size: $px17;
-    font-family: $PrNovacond-reg;
+    font-size: szrem(17);
+    font-family: $PrNovacond-light;
     font-style: normal;
     font-weight: normal;
     line-height: 21px;
     color: $cwhite;
 
     @media (max-width: $tablet) {
-      font-size: 10px;
+      font-size: szrem(10);
       line-height: 12px;
     }
   }
