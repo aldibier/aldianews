@@ -277,3 +277,193 @@ form {
     background: #5c6165;
   }
 }
+
+// ---------- Estilos para campos de carga de archivos --------////
+.file-upload #edit-container {
+  position: relative;
+  #ajax-wrapper {
+    width: auto;
+    margin: 0;
+    .js-form-item {
+      width: auto;
+      padding: 0;
+    }
+  }
+  label {
+    font-style: normal;
+    font-weight: 600;
+    font-size: $px20;
+    line-height: 24px;
+    color: #333;
+    font-family: $PrNovacond-reg;
+  }
+  .form-managed-file {
+    padding: 56px 0 0;
+  }
+  .webform-file-button {
+    background: #5c6165;
+    min-width: 165px;
+    width: max-content;
+    display: flex;
+    z-index: 2;
+    top: 39px;
+    position: absolute;
+    left: 0;
+    border: none;
+    border-radius: 0;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    font-size: $px18;
+    line-height: 25px;
+    color: #fff;
+  }
+  .managed-file-placeholder {
+    max-width: 165px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: $px12;
+    line-height: 15px;
+    color: #767676;
+    font-family: $PrNovacond-reg;
+  }
+  .webform-button--submit {
+    position: absolute;
+    left: 190px;
+    width: max-content;
+    bottom: 67px;
+    min-width: 150px;
+    margin: 48px 0 0;
+    top: 0;
+    height: 40px;
+  }
+  .js-form-type-checkbox:nth-child(2n + 1),
+  .js-form-type-checkbox:nth-child(2n + 2) {
+    padding: 0;
+    width: max-content;
+    margin-bottom: 20px;
+  }
+  .js-form-type-checkbox {
+    margin: 20px 25px 0 0;
+    float: left;
+    display: flex;
+    input {
+      width: 25px;
+      height: 25px;
+      margin: auto 10px auto 0;
+      background: #f2f2f2;
+      max-width: 405px;
+      border: 0;
+    }
+    .option {
+      width: 165px;
+      height: 65px;
+    }
+    span {
+      background: #c4c4c4;
+      width: 100%;
+      height: auto;
+      padding: 0 0 0 65px;
+      display: flex;
+      position: relative;
+      min-height: 65px;
+      &::after {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 20px;
+        display: block;
+        height: max-content;
+        margin: auto 0;
+        font-size: 1.125rem;
+        color: #555;
+        font-family: $PrNovacond-reg;
+        text-transform: uppercase;
+      }
+    }
+    a {
+      display: flex;
+      font-family: $PrNovacond-reg;
+      padding: 12px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 0.75rem;
+      line-height: 15px;
+      min-height: 65px;
+      text-decoration: none;
+      border: none;
+      color: #555;
+      margin: auto 0 auto;
+      width: 100%;
+      height: auto;
+      text-overflow: ellipsis;
+      background: #f2f2f2;
+      overflow-y: hidden;
+    }
+    .file--mime-image-png:after {
+      content: "png";
+    }
+  }
+  input[value="Remove selected"] {
+    min-width: 180px;
+    height: 40px;
+    background: #bec0c1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    font-size: 1.125rem;
+    color: #fff;
+    text-align: center;
+    border-radius: 0;
+    border: none;
+    margin: 38px 0 0;
+    position: absolute;
+    bottom: -70px;
+  }
+  @media (max-width: $tablet) {
+    .js-form-item:nth-child(2n + 1) {
+      padding: 0;
+      width: 100%;
+    }
+    label {
+      font-size: 15px;
+      line-height: 18px;
+    }
+    .webform-file-button {
+      min-width: 120px;
+      font-size: 14px;
+      height: 30px;
+      background: #5c6165;
+    }
+    input[value="Upload"] {
+      min-width: 120px;
+      max-height: 30px;
+    }
+    input {
+      font-size: 16px;
+    }
+    .webform-button--submit {
+      height: 30px;
+      left: 134px;
+      min-width: 120px;
+      font-size: 14px;
+    }
+  }
+}
+
+.user-logged-in.page-node-type-al-dia-vacancy
+  .block-webform-block.open
+  .js-form-type-checkbox
+  span
+  a:not(a[href]) {
+  display: none;
+}
+.user-logged-in
+  .file-upload
+  #edit-container
+  .js-form-type-checkbox
+  span
+  a:not(a[href]) {
+  display: none;
+}
