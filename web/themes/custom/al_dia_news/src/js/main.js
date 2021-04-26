@@ -104,6 +104,16 @@ const initMain = ($, Drupal) => {
       contenido_interna.classList.add("video-present");
     }
 
+    //add dots date events time 
+    if(!!document.querySelector('.card-event-date-hour')){
+      const allEventsTime = document.querySelectorAll('.card-event-date-hour');
+
+      allEventsTime.forEach(eventTime => {
+        const txt = eventTime.innerText;
+        eventTime.innerText = `${txt.substring(0,7)}.${txt.charAt(7)}.`;
+      })
+    }
+
     //// js ajuste ancla en employed
     Array.from(
       document.querySelectorAll(".menu--i-am-an-employer-menu li a")

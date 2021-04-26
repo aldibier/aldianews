@@ -1286,6 +1286,15 @@ var initMain = function initMain($, Drupal) {
 
     if (video_interna != null && contenido_interna != null) {
       contenido_interna.classList.add("video-present");
+    } //add dots date events time 
+
+
+    if (!!document.querySelector('.card-event-date-hour')) {
+      var allEventsTime = document.querySelectorAll('.card-event-date-hour');
+      allEventsTime.forEach(function (eventTime) {
+        var txt = eventTime.innerText;
+        eventTime.innerText = "".concat(txt.substring(0, 7), ".").concat(txt.charAt(7), ".");
+      });
     } //// js ajuste ancla en employed
 
 
@@ -2162,8 +2171,8 @@ var initSlick = function initSlick($, Drupal) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\valer\Desktop\4ld14-n3ws\web\themes\custom\al_dia_news\src\js\scripts.js */"./src/js/scripts.js");
-module.exports = __webpack_require__(/*! C:\Users\valer\Desktop\4ld14-n3ws\web\themes\custom\al_dia_news\src\sass\styles.scss */"./src/sass/styles.scss");
+__webpack_require__(/*! /Users/usuario/Desktop/Proyectos/AlDiaNews/4ld14-n3ws/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
+module.exports = __webpack_require__(/*! /Users/usuario/Desktop/Proyectos/AlDiaNews/4ld14-n3ws/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
 
 
 /***/ })
