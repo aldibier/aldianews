@@ -206,6 +206,8 @@ import replaceToken from "./modules/replaceToken";
       }
     });
 
+    ///// modal employer
+
     $(".path-employer .button-apply").click(function() {
       if (
         $(this)
