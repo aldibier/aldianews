@@ -40,6 +40,9 @@ import replaceToken from "./modules/replaceToken";
         $videoWrap.height("auto");
         $video.removeClass("stuck");
       }
+      $('.stuck button[name="close"]').click(function() {
+        $video.addClass("disnone");
+      });
     });
   }
 

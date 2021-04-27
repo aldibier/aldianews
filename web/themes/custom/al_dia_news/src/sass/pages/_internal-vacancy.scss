@@ -142,6 +142,7 @@
       &:nth-child(2n + 2) {
         padding: 0;
         width: max-content;
+        position: relative;
       }
 
       .option {
@@ -178,6 +179,9 @@
         width: 25px;
         height: 25px;
         margin: auto 10px auto 0;
+        position: absolute;
+        right: -22px;
+        top: -17px;
       }
 
       a {
@@ -440,16 +444,20 @@
         margin: 40px 0 0;
         padding: 5px 0;
       }
+      .js-form-managed-file {
+        display: flex;
+        flex-direction: column;
+      }
 
       .js-form-item {
         &:nth-child(2n + 1) {
           padding: 0;
-          width: 100%;
+          width: max-content;
         }
 
         &:nth-child(2n + 2) {
           padding: 0;
-          width: 100%;
+          width: max-content;
         }
       }
 

@@ -34,12 +34,21 @@ const initMain = ($, Drupal) => {
     });
 
     ///// js para caption en imagenes news
-    if(!!document.querySelector('.page-node-type-news .block-field-blocknodenewsbody img')){
-      const images = document.querySelectorAll('.page-node-type-news .block-field-blocknodenewsbody img');
+    if (
+      !!document.querySelector(
+        ".page-node-type-news .block-field-blocknodenewsbody img"
+      )
+    ) {
+      const images = document.querySelectorAll(
+        ".page-node-type-news .block-field-blocknodenewsbody img"
+      );
       images.forEach(img => {
         const caption = img.dataset.caption;
-        img.insertAdjacentHTML('afterend',`<p class="image-caption">${caption}</p>`)
-      })
+        img.insertAdjacentHTML(
+          "afterend",
+          `<p class="image-caption">${caption}</p>`
+        );
+      });
     }
 
     ///// js para publicidad en bloques de categorias de noticias
@@ -402,14 +411,17 @@ const initMain = ($, Drupal) => {
     }
 
     // bloque vacio en home
-    Array.from(document.querySelectorAll(".view-more-category")).map(function(
-      e
-    ) {
-      if (e !== null && e.children.length === 2) {
-        e.closest(".views-field.views-field-view-2").style.display = "none";
-        e.closest(".mobile-free").style.border = "0px";
-      }
-    });
+    var width_b = window.innerWidth;
+    if (width_b <= 768) {
+      Array.from(document.querySelectorAll(".view-more-category")).map(function(
+        e
+      ) {
+        if (e !== null && e.children.length === 2) {
+          e.closest(".views-field.views-field-view-2").style.display = "none";
+          e.closest(".mobile-free").style.border = "0px";
+        }
+      });
+    }
 
     ///// js para select de categorias, subcategorias y subsubcategorias
     Array.from(
