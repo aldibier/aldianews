@@ -950,7 +950,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"views-field views-field-fieldset-3\">\r\n<span class=\"views-label\">DATE AND TIME: </span>\r\n<span class=\"field-content\">\r\n<div class=\"al-dia-wrapper-container\">\r\n  <div class=\"al-dia-date\">{{ field_date_of_event }} </div>\r\n  <div class=\"card-event-date-hour  al-dia-hour\">{{ field_date_of_event_1 }}</div>\r\n </div>\r\n</span>\r\n</div>"
+            text: "<div class=\"views-field views-field-fieldset-3\">\r\n  <span class=\"views-label\">DATE AND TIME: </span>\r\n  <span class=\"field-content\">\r\n    <div class=\"al-dia-date al-dia-wrapper-container\">{{ field_date_of_event }} \r\n       <span class=\"card-event-date-hour  al-dia-hour\">{{ field_date_of_event_1 }}</span>\r\n    </div>\r\n  </span>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
