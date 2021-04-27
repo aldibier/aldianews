@@ -7,8 +7,7 @@
   .view-header {
     width: 100%;
     border-bottom: 3px solid #ee2211;
-    max-width: 1310px;
-    padding: 0 15px;
+    max-width: 1280px;
     margin: 0 auto;
     margin-bottom: 40px;
 
@@ -84,16 +83,34 @@
     color: $cblack;
     margin: 0;
   }
+  .al-dia-wrapper-container{
+    display: flex;
+  }
 
-  .views-field-field-date-of-event {
+  .al-dia-date {
     padding-right: 15px;
     margin-right: 15px;
     border-right: 1px solid #b1b1b1;
     max-width: 470px;
   }
 
-  .views-field-field-venue-of-the-event {
+  .al-dia-hour {
     max-width: 230px;
+    text-transform: uppercase;
+    position: relative;
+    margin-left: 20px;
+    &::before{
+      display: block;
+      position: relative;
+      content: "-";
+      font-family: $PrNovacond-Sbold;
+      font-size: $px26;
+      line-height: 33px;
+      color: $cblack;
+      left: 0px;
+      top: 0px;
+      margin-right: 3px;
+    }
   }
 
   .parent-dates {
@@ -157,7 +174,7 @@
     .view-header {
       border-bottom: 0px solid #ee2211;
       margin-bottom: 20px;
-
+      padding: 0 15px;
       > div {
         border-bottom: 1px solid #ee2211;
         max-width: none;
@@ -195,13 +212,13 @@
       line-height: 20px;
     }
 
-    .views-field-field-date-of-event {
+    .al-dia-date {
       padding-right: 20px;
       margin-right: 20px;
       max-width: 145px;
     }
 
-    .views-field-field-venue-of-the-event {
+    .al-dia-hour {
       max-width: 125px;
     }
   }

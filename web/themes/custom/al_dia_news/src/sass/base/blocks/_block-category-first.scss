@@ -28,6 +28,7 @@
     }
 
     h1 {
+      max-height: 60px;
       margin: 0;
       font-family: $Mod-light;
       font-style: normal;
@@ -36,16 +37,19 @@
       order: 2;
     }
 
+    span {
+      max-height: 60px;
+    }
+
     .aldia-logo-in-text {
-      max-width: 140px;
+      max-width: 145px;
     }
 
     img {
-      width: 160px;
+      width: 100%;
       height: 45px;
       margin-right: 5px;
       order: 1;
-      object-fit: cover;
     }
   }
 }
