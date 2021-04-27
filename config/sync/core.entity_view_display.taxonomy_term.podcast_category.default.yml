@@ -5,9 +5,50 @@ dependencies:
   config:
     - field.field.taxonomy_term.podcast_category.field_category_image
     - taxonomy.vocabulary.podcast_category
+    - views.view.categories_podcast
   module:
+    - al_dia_layouts
     - image
+    - layout_builder
     - text
+    - views
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: podcast_category
+        layout_settings:
+          label: 'Podcast category'
+        components:
+          ec1d6f02-c0d4-40b6-ad53-6a6e173062db:
+            uuid: ec1d6f02-c0d4-40b6-ad53-6a6e173062db
+            region: one_content
+            configuration:
+              id: 'views_block:categories_podcast-block_4'
+              label: ''
+              provider: views
+              label_display: '0'
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: -9
+          aa22d461-79cc-4ccc-8c5c-36ef2a68d6a9:
+            uuid: aa22d461-79cc-4ccc-8c5c-36ef2a68d6a9
+            region: one_content
+            configuration:
+              id: 'views_block:categories_podcast-block_2'
+              label: ''
+              provider: views
+              label_display: '0'
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: -10
+        third_party_settings: {  }
 id: taxonomy_term.podcast_category.default
 targetEntityType: taxonomy_term
 bundle: podcast_category
