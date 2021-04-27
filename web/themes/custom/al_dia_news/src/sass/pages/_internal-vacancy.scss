@@ -234,10 +234,10 @@
     }
 
     input[value="Remove selected"] {
+      display: none;
       min-width: 180px;
       height: 40px;
       background: #bec0c1;
-      display: flex;
       align-items: center;
       justify-content: center;
       width: max-content;
@@ -401,6 +401,7 @@
       @media (max-width: $tablet) {
         min-width: 120px;
         max-height: 30px;
+        font-size: $px14;
       }
     }
 
