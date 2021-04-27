@@ -1783,6 +1783,9 @@ __webpack_require__.r(__webpack_exports__);
     $('#block-fixed-block-content-horizontal-advertising-close  button[name="close"]').click(function () {
       $("#block-fixed-block-content-horizontal-advertising-close").addClass("dis-none");
     });
+    $('.stuck button[name="close"]').click(function () {
+      $(".stuck").addClass("disnone");
+    });
     $(".page-node-type-al-dia-vacancy .button-apply").click(function () {
       if ($(".page-node-type-al-dia-vacancy .block-webform-block").hasClass("open")) {
         $(".page-node-type-al-dia-vacancy .block-webform-block").removeClass("open");

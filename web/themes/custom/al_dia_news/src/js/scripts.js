@@ -147,6 +147,10 @@ import replaceToken from "./modules/replaceToken";
       );
     });
 
+    $('.stuck button[name="close"]').click(function() {
+      $(".stuck").addClass("disnone");
+    });
+
     $(".page-node-type-al-dia-vacancy .button-apply").click(function() {
       if (
         $(".page-node-type-al-dia-vacancy .block-webform-block").hasClass(
