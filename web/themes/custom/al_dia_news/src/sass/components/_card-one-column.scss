@@ -4,6 +4,10 @@
     margin: 0;
   }
 
+  .node .field--type-image {
+    margin: 0;
+  }
+
   .container-wrapper {
     position: relative;
   }
@@ -33,10 +37,12 @@
   }
 
   //css temporal
-  .views-field-field-my-content-has-a-main-vide {
+  .views-field-field-my-content-has-a-main-vide,
+  .block-field-blocknodenewsfield-my-content-has-a-main-vide {
     font-size: 0;
 
-    .field-content {
+    .field-content,
+    .field--name-field-my-content-has-a-main-vide {
       @include player-icon(
         $desktop-size: 70px,
         $tablet-size: 70px,
