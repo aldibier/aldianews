@@ -1880,6 +1880,14 @@ __webpack_require__.r(__webpack_exports__);
               e.closest(".form-managed-file").classList.add("action-button");
             });
           }
+        }); /// x que elimina archivos
+
+        Array.from(document.querySelectorAll('.form-managed-file input[type*="checkbox"]')).map(function (e) {
+          if (e != null) {
+            e.addEventListener("click", function () {
+              e.closest(".form-type-checkbox").remove();
+            });
+          }
         });
       });
     }
