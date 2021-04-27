@@ -863,13 +863,6 @@ div#selectionSharerPopover {
   iframe {
   max-width: 100%;
   max-height: 100%;
-  width: 560px;
-  height: 320px;
-  margin: 0 auto;
-  @media (max-width: $tablet) {
-    width: 245px;
-    height: 153px;
-  }
 }
 
 .page-node-type-news
@@ -889,9 +882,17 @@ div#selectionSharerPopover {
   z-index: 1;
   background: #000000;
   opacity: 0.8;
-
+  iframe {
+    width: 560px;
+    height: 320px;
+    margin: 0 auto;
+  }
   @media (max-width: $tablet) {
     height: 200px;
-    padding: 20p 0;
+    padding: 20px 0;
+    iframe {
+      width: 245px;
+      height: 153px;
+    }
   }
 }
