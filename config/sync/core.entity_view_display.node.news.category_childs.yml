@@ -36,26 +36,6 @@ third_party_settings:
         layout_settings:
           label: 'Category childs'
         components:
-          ab1749d1-beca-4e3f-adb7-6eb599d2ca01:
-            uuid: ab1749d1-beca-4e3f-adb7-6eb599d2ca01
-            region: one_content
-            configuration:
-              id: 'field_block:node:news:field_image'
-              label: Image
-              provider: layout_builder
-              label_display: '0'
-              formatter:
-                label: hidden
-                type: responsive_image
-                settings:
-                  responsive_image_style: more_content_responsive
-                  image_link: content
-                third_party_settings: {  }
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-            additional: {  }
-            weight: -9
           d72ab3b2-c176-4d45-bf20-7017395b9b6a:
             uuid: d72ab3b2-c176-4d45-bf20-7017395b9b6a
             region: two_content
@@ -116,7 +96,27 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: -10
+            weight: -9
+          ab1749d1-beca-4e3f-adb7-6eb599d2ca01:
+            uuid: ab1749d1-beca-4e3f-adb7-6eb599d2ca01
+            region: one_content
+            configuration:
+              id: 'field_block:node:news:field_image'
+              label: Image
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: responsive_image
+                settings:
+                  responsive_image_style: more_content_responsive
+                  image_link: content
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: -9
         third_party_settings: {  }
 id: node.news.category_childs
 targetEntityType: node

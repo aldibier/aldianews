@@ -26,7 +26,7 @@ reactions:
         provider: system
         label_display: '0'
         region: content
-        weight: '0'
+        weight: '-1'
         context_mapping: {  }
         custom_id: system_main_block
         theme: al_dia_news
@@ -42,7 +42,7 @@ reactions:
         views_label: ''
         items_per_page: none
         region: content
-        weight: '1'
+        weight: '0'
         context_mapping: {  }
         custom_id: views_block_last_category_podcast_block_1
         theme: al_dia_news
@@ -50,8 +50,55 @@ reactions:
         unique: 0
         context_id: podcast_landing
         uuid: f2297b39-37ed-478d-ac7e-d51823492e9c
+      792e9bdf-c74f-47e8-ab5d-d3bc2130e555:
+        id: 'fixed_block_content:horizontal_advertising'
+        label: 'Horizontal advertising'
+        provider: fixed_block_content
+        label_display: '0'
+        region: content
+        weight: '1'
+        view_mode: ''
+        context_mapping: {  }
+        custom_id: fixed_block_content_horizontal_advertising
+        theme: al_dia_news
+        css_class: ''
+        unique: 0
+        context_id: podcast_landing
+        uuid: 792e9bdf-c74f-47e8-ab5d-d3bc2130e555
+      1381eeb2-fc14-4787-a37d-76e4a53a3291:
+        id: 'views_block:last_category_podcast-block_2'
+        label: ''
+        provider: views
+        label_display: '0'
+        views_label: ''
+        items_per_page: none
+        region: content
+        weight: '-2'
+        context_mapping: {  }
+        custom_id: views_block_last_category_podcast_block_2
+        theme: al_dia_news
+        css_class: ''
+        unique: 0
+        context_id: podcast_landing
+        uuid: 1381eeb2-fc14-4787-a37d-76e4a53a3291
+      a9d8a383-e27e-490b-af4c-2c56d3379099:
+        id: 'views_block:last_category_podcast-block_3'
+        label: ''
+        provider: views
+        label_display: '0'
+        views_label: ''
+        items_per_page: none
+        region: content
+        weight: '2'
+        context_mapping: {  }
+        custom_id: views_block_last_category_podcast_block_3
+        theme: al_dia_news
+        css_class: ''
+        unique: 0
+        context_id: podcast_landing
+        uuid: a9d8a383-e27e-490b-af4c-2c56d3379099
     id: blocks
     saved: false
     uuid: 1384a8cd-1b7c-4583-a77d-066dda2b7928
-    include_default_blocks: 0
+    include_default_blocks: 1
 weight: 0
