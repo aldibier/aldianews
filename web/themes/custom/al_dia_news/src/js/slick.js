@@ -1,9 +1,6 @@
 const initSlick = ($, Drupal) => {
   jQuery(document).ready(function() {
-    let enterMobile = 0;
-    let enterTablet = 0;
-    let enterDesktop = 0;
-
+    
     let categoriesMore = document.querySelectorAll(
       ".view-categories-sons .view-more-category .view-content"
     );
