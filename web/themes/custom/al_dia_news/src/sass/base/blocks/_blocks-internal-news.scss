@@ -898,6 +898,9 @@ div#selectionSharerPopover {
   z-index: 1;
   background: #000000;
   opacity: 0.8;
+  &.disnone {
+    display: none;
+  }
   iframe {
     width: 560px;
     height: 320px;
@@ -911,4 +914,11 @@ div#selectionSharerPopover {
       height: 153px;
     }
   }
+}
+
+.user-logged-in.page-node-type-news
+  .content-news-internal-first
+  .block-field-blocknodenewsfield-video
+  .content.stuck {
+  top: 125px;
 }

@@ -34,12 +34,21 @@ const initMain = ($, Drupal) => {
     });
 
     ///// js para caption en imagenes news
-    if(!!document.querySelector('.page-node-type-news .block-field-blocknodenewsbody img')){
-      const images = document.querySelectorAll('.page-node-type-news .block-field-blocknodenewsbody img');
+    if (
+      !!document.querySelector(
+        ".page-node-type-news .block-field-blocknodenewsbody img"
+      )
+    ) {
+      const images = document.querySelectorAll(
+        ".page-node-type-news .block-field-blocknodenewsbody img"
+      );
       images.forEach(img => {
         const caption = img.dataset.caption;
-        img.insertAdjacentHTML('afterend',`<p class="image-caption">${caption}</p>`)
-      })
+        img.insertAdjacentHTML(
+          "afterend",
+          `<p class="image-caption">${caption}</p>`
+        );
+      });
     }
 
     ///// js para publicidad en bloques de categorias de noticias
@@ -112,14 +121,14 @@ const initMain = ($, Drupal) => {
       contenido_interna.classList.add("video-present");
     }
 
-    //add dots date events time 
-    if(!!document.querySelector('.card-event-date-hour')){
-      const allEventsTime = document.querySelectorAll('.card-event-date-hour');
+    //add dots date events time
+    if (!!document.querySelector(".card-event-date-hour")) {
+      const allEventsTime = document.querySelectorAll(".card-event-date-hour");
 
       allEventsTime.forEach(eventTime => {
         const txt = eventTime.innerText;
-        eventTime.innerText = `${txt.substring(0,7)}.${txt.charAt(7)}.`;
-      })
+        eventTime.innerText = `${txt.substring(0, 7)}.${txt.charAt(7)}.`;
+      });
     }
 
     //// js ajuste ancla en employed
@@ -344,7 +353,7 @@ const initMain = ($, Drupal) => {
       const buttonClose = document.querySelector(".close-modal");
       const modalForm = document.querySelector(".modal-form");
 
-      if(!document.body.contains(buttonApply)) return;
+      if (!document.body.contains(buttonApply)) return;
 
       buttonApply.addEventListener("click", () =>
         modalForm.classList.add("show")
@@ -399,6 +408,19 @@ const initMain = ($, Drupal) => {
     var block_login_c = document.querySelector("#block-blockcommentanonymous");
     if (comments != null && block_login_c != null) {
       block_login_c.style.display = "none";
+    }
+
+    // bloque vacio en home
+    var width_b = window.innerWidth;
+    if (width_b <= 768) {
+      Array.from(document.querySelectorAll(".view-more-category")).map(function(
+        e
+      ) {
+        if (e !== null && e.children.length === 2) {
+          e.closest(".views-field.views-field-view-2").style.display = "none";
+          e.closest(".mobile-free").style.border = "0px";
+        }
+      });
     }
 
     ///// js para select de categorias, subcategorias y subsubcategorias
