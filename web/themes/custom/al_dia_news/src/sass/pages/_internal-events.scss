@@ -106,7 +106,7 @@
     font-family: $PrNovacond-Sbold;
     font-style: normal;
     font-size: $px22;
-    line-height: 27px;
+    line-height: 27px; 
     color: $cwhite;
     text-transform: uppercase;
     width: 100%;
@@ -117,7 +117,7 @@
   }
   .text-and-buttons-event span {
     width: 100%;
-    font-family: $PrNovacond-reg;
+    font-family: $PrNovacond-Sbold;
     font-style: normal;
     font-weight: 500;
     font-size: $px25;
@@ -582,6 +582,9 @@
         width: 100%;
       }
     }
+    .breadcrumb {
+      margin: 10px auto 0px;
+    }
     .section-flex {
       justify-content: center;
     }
@@ -665,7 +668,12 @@
     .block-field-blocknodeeventfield-logo {
       max-width: 140px;
       max-height: 34.38px;
+      overflow: hidden;
       margin-bottom: 15px;
+      > div{
+        max-height: 34.38px;
+        overflow: hidden;
+      }
     }
     .field--name-field-nomination-status {
       font-size: $px12;

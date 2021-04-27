@@ -20,21 +20,16 @@ dependencies:
     - 'taxonomy_term:categories:1867ed5e-0304-40ee-80d6-42a3cf4676bb'
     - 'taxonomy_term:categories:289b2ec5-5021-47dd-bd88-06b7f4ad9d7c'
     - 'taxonomy_term:categories:35e711a0-e9d4-45fe-8147-997d1394844b'
-    - 'taxonomy_term:categories:3ab51e1b-7299-4242-976b-5b8c2e6a21d0'
     - 'taxonomy_term:categories:3d19b461-771e-41d1-8330-df316faf8b47'
-    - 'taxonomy_term:categories:44f3b062-e330-4f5e-91b0-1cfd0039456e'
     - 'taxonomy_term:categories:4969e35d-adab-4b7f-bda6-4e9a7f60aae9'
     - 'taxonomy_term:categories:49a8a0eb-c50c-4500-9077-8226a3833e5b'
-    - 'taxonomy_term:categories:57d63386-f0f4-4e22-aef7-c4828f93790c'
-    - 'taxonomy_term:categories:626a661f-10c8-4692-8d34-9dd7df07c043'
-    - 'taxonomy_term:categories:7636b70c-911c-4fbc-bc08-ab29c975c297'
-    - 'taxonomy_term:categories:8427b6b3-d468-4151-9ade-3706a669d2d2'
+    - 'taxonomy_term:categories:91a72607-f5ae-488c-83bf-10956697c5e1'
     - 'taxonomy_term:categories:aec049fa-a86a-42fb-8dc9-173f58881fde'
     - 'taxonomy_term:categories:baa0a831-19ba-45bf-ba8a-be44d13892bd'
     - 'taxonomy_term:categories:c51d8cc3-4350-4d6c-8668-9a89f7a0d2f0'
+    - 'taxonomy_term:categories:ce75d793-8c04-42c0-bcdb-abf0fa29cd0e'
     - 'taxonomy_term:categories:cf1eec84-47c1-4745-b3fe-62d661529eaf'
     - 'taxonomy_term:categories:eee54e65-ed4e-4b29-891e-229a2f2a4f1c'
-    - 'taxonomy_term:categories:f20ef667-e56f-4996-8bf4-24fe58ed0f9b'
     - 'taxonomy_term:categories:fc9a2fed-71d1-442c-8f5a-a24f095e7020'
     - 'taxonomy_term:categories:fd49a7f8-2d48-4a3e-b99f-a7fb82320620'
   module:
@@ -1776,6 +1771,7 @@ display:
           empty_zero: false
           hide_alter_empty: false
           plugin_id: custom
+      block_hide_empty: true
     cache_metadata:
       max-age: -1
       contexts:
@@ -2545,12 +2541,9 @@ display:
           block_id: 'fixed_block_content:vertical_advertising_mobile'
           plugin_id: views_block_area
       cache:
-        type: time
-        options:
-          results_lifespan: 0
-          results_lifespan_custom: 0
-          output_lifespan: 0
-          output_lifespan_custom: 0
+        type: none
+        options: {  }
+      block_hide_empty: true
     cache_metadata:
       max-age: -1
       contexts:
@@ -3094,6 +3087,7 @@ display:
           empty: false
           block_id: 'fixed_block_content:square_advertising_mobile'
           plugin_id: views_block_area
+      block_hide_empty: true
     cache_metadata:
       max-age: -1
       contexts:
