@@ -1,0 +1,21 @@
+uuid: f62d0109-3aa9-40e9-a4a3-84fdeeae174e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_podcast_player
+    - node.type.news
+  module:
+    - text
+id: node.news.field_podcast_player
+field_name: field_podcast_player
+entity_type: node
+bundle: news
+label: 'Podcast player'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
