@@ -1236,11 +1236,11 @@ var initMain = function initMain($, Drupal) {
       }
     }); ///// js para caption en imagenes news
 
-    if (!!document.querySelector('.page-node-type-news .block-field-blocknodenewsbody img')) {
-      var images = document.querySelectorAll('.page-node-type-news .block-field-blocknodenewsbody img');
+    if (!!document.querySelector(".page-node-type-news .block-field-blocknodenewsbody img")) {
+      var images = document.querySelectorAll(".page-node-type-news .block-field-blocknodenewsbody img");
       images.forEach(function (img) {
         var caption = img.dataset.caption;
-        img.insertAdjacentHTML('afterend', "<p class=\"image-caption\">".concat(caption, "</p>"));
+        img.insertAdjacentHTML("afterend", "<p class=\"image-caption\">".concat(caption, "</p>"));
       });
     } ///// js para publicidad en bloques de categorias de noticias
 
@@ -1546,12 +1546,17 @@ var initMain = function initMain($, Drupal) {
     } // bloque vacio en home
 
 
-    Array.from(document.querySelectorAll(".view-more-category")).map(function (e) {
-      if (e !== null && e.children.length === 2) {
-        e.closest(".views-field.views-field-view-2").style.display = "none";
-        e.closest(".mobile-free").style.border = "0px";
-      }
-    }); ///// js para select de categorias, subcategorias y subsubcategorias
+    var width_b = window.innerWidth;
+
+    if (width_b <= 768) {
+      Array.from(document.querySelectorAll(".view-more-category")).map(function (e) {
+        if (e !== null && e.children.length === 2) {
+          e.closest(".views-field.views-field-view-2").style.display = "none";
+          e.closest(".mobile-free").style.border = "0px";
+        }
+      });
+    } ///// js para select de categorias, subcategorias y subsubcategorias
+
 
     Array.from(document.querySelectorAll("#views-exposed-form-search-results-al-dia-solr-page-1 .form-item-field-category li label")).map(function (e) {
       if (e != null && !e.innerHTML.includes("-")) {
