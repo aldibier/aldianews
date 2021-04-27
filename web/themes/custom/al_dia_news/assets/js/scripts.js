@@ -1234,7 +1234,16 @@ var initMain = function initMain($, Drupal) {
       if (evt != null) {
         evt.remove();
       }
-    }); ///// js para publicidad en bloques de categorias de noticias
+    }); ///// js para caption en imagenes news
+
+    if (!!document.querySelector('.page-node-type-news .block-field-blocknodenewsbody img')) {
+      var images = document.querySelectorAll('.page-node-type-news .block-field-blocknodenewsbody img');
+      images.forEach(function (img) {
+        var caption = img.dataset.caption;
+        img.insertAdjacentHTML('afterend', "<p class=\"image-caption\">".concat(caption, "</p>"));
+      });
+    } ///// js para publicidad en bloques de categorias de noticias
+
 
     if (!!document.querySelector(".block-views-blockhigh-impact-news-home-block-1")) {
       //hidden last news home
@@ -1286,11 +1295,11 @@ var initMain = function initMain($, Drupal) {
 
     if (video_interna != null && contenido_interna != null) {
       contenido_interna.classList.add("video-present");
-    } //add dots date events time 
+    } //add dots date events time
 
 
-    if (!!document.querySelector('.card-event-date-hour')) {
-      var allEventsTime = document.querySelectorAll('.card-event-date-hour');
+    if (!!document.querySelector(".card-event-date-hour")) {
+      var allEventsTime = document.querySelectorAll(".card-event-date-hour");
       allEventsTime.forEach(function (eventTime) {
         var txt = eventTime.innerText;
         eventTime.innerText = "".concat(txt.substring(0, 7), ".").concat(txt.charAt(7), ".");
@@ -1534,8 +1543,15 @@ var initMain = function initMain($, Drupal) {
 
     if (comments != null && block_login_c != null) {
       block_login_c.style.display = "none";
-    } ///// js para select de categorias, subcategorias y subsubcategorias
+    } // bloque vacio en home
 
+
+    Array.from(document.querySelectorAll(".view-more-category")).map(function (e) {
+      if (e !== null && e.children.length === 2) {
+        e.closest(".views-field.views-field-view-2").style.display = "none";
+        e.closest(".mobile-free").style.border = "0px";
+      }
+    }); ///// js para select de categorias, subcategorias y subsubcategorias
 
     Array.from(document.querySelectorAll("#views-exposed-form-search-results-al-dia-solr-page-1 .form-item-field-category li label")).map(function (e) {
       if (e != null && !e.innerHTML.includes("-")) {
@@ -2169,8 +2185,8 @@ var initSlick = function initSlick($, Drupal) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/usuario/Desktop/Proyectos/AlDiaNews/4ld14-n3ws/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
-module.exports = __webpack_require__(/*! /Users/usuario/Desktop/Proyectos/AlDiaNews/4ld14-n3ws/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
+__webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
+module.exports = __webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
 
 
 /***/ })
