@@ -36,26 +36,6 @@ third_party_settings:
         layout_settings:
           label: 'Subcategory More'
         components:
-          9da796c5-8659-44b1-9b47-0cd5e23bf23d:
-            uuid: 9da796c5-8659-44b1-9b47-0cd5e23bf23d
-            region: one_content
-            configuration:
-              id: 'field_block:node:news:field_image'
-              label: Image
-              provider: layout_builder
-              label_display: '0'
-              formatter:
-                label: hidden
-                type: responsive_image
-                settings:
-                  responsive_image_style: next_two_image_responsive
-                  image_link: content
-                third_party_settings: {  }
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-            additional: {  }
-            weight: -10
           4db06975-0c69-40f5-b486-b0ea391077b9:
             uuid: 4db06975-0c69-40f5-b486-b0ea391077b9
             region: two_content
@@ -116,7 +96,33 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: -9
+            weight: -8
+          9da796c5-8659-44b1-9b47-0cd5e23bf23d:
+            uuid: 9da796c5-8659-44b1-9b47-0cd5e23bf23d
+            region: one_content_image
+            configuration:
+              id: 'field_block:node:news:field_image'
+              label: Image
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: responsive_image
+                settings:
+                  responsive_image_style: next_two_image_responsive
+                  image_link: content
+                third_party_settings:
+                  field_formatter_class:
+                    class: card-image
+                  lazy:
+                    lazy_image: '0'
+                    placeholder_style: ''
+                    data_uri: false
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: -10
         third_party_settings: {  }
 id: node.news.subcategory_more
 targetEntityType: node

@@ -1949,9 +1949,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 var initSlick = function initSlick($, Drupal) {
   jQuery(document).ready(function () {
-    var enterMobile = 0;
-    var enterTablet = 0;
-    var enterDesktop = 0;
     var categoriesMore = document.querySelectorAll(".view-categories-sons .view-more-category .view-content");
     var settings = {
       infinite: false,
@@ -2172,8 +2169,8 @@ var initSlick = function initSlick($, Drupal) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
-module.exports = __webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
+__webpack_require__(/*! /Users/usuario/Desktop/Proyectos/AlDiaNews/4ld14-n3ws/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
+module.exports = __webpack_require__(/*! /Users/usuario/Desktop/Proyectos/AlDiaNews/4ld14-n3ws/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
 
 
 /***/ })

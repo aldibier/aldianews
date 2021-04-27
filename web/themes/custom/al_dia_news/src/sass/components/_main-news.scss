@@ -43,15 +43,22 @@
     }
   }
 
-  .block-field-blocknodenewsfield-my-content-has-a-main-vide {
+  .one-content-category {
+    position: relative;
+  }
+
+  .block-field-blocknodenewsfield-my-content-has-a-main-vide,
+  .views-field-field-my-content-has-a-main-vide {
     font-size: 0;
 
-    .field--name-field-my-content-has-a-main-vide {
+    .field--name-field-my-content-has-a-main-vide,
+    .field-content   {
       @include player-icon(
-        $desktop-size: 100px,
-        $tablet-size: 100px,
+        $desktop-size: 80px,
+        $tablet-size: 80px,
         $mobile-size: 50px
       );
+      z-index: 10;
 
       &:empty {
         display: none;
