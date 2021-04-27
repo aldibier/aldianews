@@ -1,6 +1,5 @@
 const initSlick = ($, Drupal) => {
   jQuery(document).ready(function() {
-    
     let categoriesMore = document.querySelectorAll(
       ".view-categories-sons .view-more-category .view-content"
     );
@@ -149,29 +148,12 @@ const initSlick = ($, Drupal) => {
     ...slider_general,
     slidesToShow: 1,
     slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 500,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
+    variableWidth: false
   };
   const slider_two = {
     ...slider_general,
     slidesToShow: 2,
-    slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 500,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2
-        }
-      }
-    ]
+    slidesToScroll: 1
   };
   const slider_three = {
     ...slider_general,

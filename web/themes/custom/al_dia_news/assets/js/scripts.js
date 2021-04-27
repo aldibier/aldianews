@@ -1704,6 +1704,10 @@ __webpack_require__.r(__webpack_exports__);
         $videoWrap.height("auto");
         $video.removeClass("stuck");
       }
+
+      $('.stuck button[name="close"]').click(function () {
+        $video.addClass("disnone");
+      });
     });
   }
 
@@ -1782,9 +1786,6 @@ __webpack_require__.r(__webpack_exports__);
 
     $('#block-fixed-block-content-horizontal-advertising-close  button[name="close"]').click(function () {
       $("#block-fixed-block-content-horizontal-advertising-close").addClass("dis-none");
-    });
-    $('.stuck button[name="close"]').click(function () {
-      $(".stuck").addClass("disnone");
     });
     $(".page-node-type-al-dia-vacancy .button-apply").click(function () {
       if ($(".page-node-type-al-dia-vacancy .block-webform-block").hasClass("open")) {
@@ -2101,25 +2102,12 @@ var initSlick = function initSlick($, Drupal) {
   var slider_one = _objectSpread(_objectSpread({}, slider_general), {}, {
     slidesToShow: 1,
     slidesToScroll: 1,
-    responsive: [{
-      breakpoint: 500,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1
-      }
-    }]
+    variableWidth: false
   });
 
   var slider_two = _objectSpread(_objectSpread({}, slider_general), {}, {
     slidesToShow: 2,
-    slidesToScroll: 1,
-    responsive: [{
-      breakpoint: 500,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2
-      }
-    }]
+    slidesToScroll: 1
   });
 
   var slider_three = _objectSpread(_objectSpread({}, slider_general), {}, {

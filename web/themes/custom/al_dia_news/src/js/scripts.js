@@ -40,6 +40,9 @@ import replaceToken from "./modules/replaceToken";
         $videoWrap.height("auto");
         $video.removeClass("stuck");
       }
+      $('.stuck button[name="close"]').click(function() {
+        $video.addClass("disnone");
+      });
     });
   }
 
@@ -145,10 +148,6 @@ import replaceToken from "./modules/replaceToken";
       $("#block-fixed-block-content-horizontal-advertising-close").addClass(
         "dis-none"
       );
-    });
-
-    $('.stuck button[name="close"]').click(function() {
-      $(".stuck").addClass("disnone");
     });
 
     $(".page-node-type-al-dia-vacancy .button-apply").click(function() {
