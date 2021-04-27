@@ -1234,7 +1234,16 @@ var initMain = function initMain($, Drupal) {
       if (evt != null) {
         evt.remove();
       }
-    }); ///// js para publicidad en bloques de categorias de noticias
+    }); ///// js para caption en imagenes news
+
+    if (!!document.querySelector('.page-node-type-news .block-field-blocknodenewsbody img')) {
+      var images = document.querySelectorAll('.page-node-type-news .block-field-blocknodenewsbody img');
+      images.forEach(function (img) {
+        var caption = img.dataset.caption;
+        img.insertAdjacentHTML('afterend', "<p class=\"image-caption\">".concat(caption, "</p>"));
+      });
+    } ///// js para publicidad en bloques de categorias de noticias
+
 
     if (!!document.querySelector(".block-views-blockhigh-impact-news-home-block-1")) {
       //hidden last news home

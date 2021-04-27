@@ -33,8 +33,16 @@ const initMain = ($, Drupal) => {
       }
     });
 
-    ///// js para publicidad en bloques de categorias de noticias
+    ///// js para caption en imagenes news
+    if(!!document.querySelector('.page-node-type-news .block-field-blocknodenewsbody img')){
+      const images = document.querySelectorAll('.page-node-type-news .block-field-blocknodenewsbody img');
+      images.forEach(img => {
+        const caption = img.dataset.caption;
+        img.insertAdjacentHTML('afterend',`<p class="image-caption">${caption}</p>`)
+      })
+    }
 
+    ///// js para publicidad en bloques de categorias de noticias
     if (
       !!document.querySelector(
         ".block-views-blockhigh-impact-news-home-block-1"

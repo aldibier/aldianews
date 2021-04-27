@@ -7,7 +7,6 @@ dependencies:
     - field.storage.node.field_category
     - field.storage.taxonomy_term.field_category_image
     - taxonomy.vocabulary.podcast_category
-    - views.view.block_in_podcast
   module:
     - image
     - node
@@ -16,6 +15,7 @@ dependencies:
     - user
     - views_block_area
     - views_field_view
+    - views_fieldsets
 id: last_category_podcast
 label: 'Last category PODCAST'
 module: views
@@ -308,6 +308,7 @@ display:
         relationships: false
         fields: false
         sorts: false
+        footer: false
       pager:
         type: some
         options:
@@ -443,6 +444,17 @@ display:
           entity_field: weight
           plugin_id: standard
       display_description: ''
+      footer:
+        views_block_area:
+          id: views_block_area
+          table: views
+          field: views_block_area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          block_id: 'fixed_block_content:horizontal_advertising'
+          plugin_id: views_block_area
     cache_metadata:
       max-age: -1
       contexts:
@@ -839,17 +851,6 @@ display:
           field_api_classes: false
           plugin_id: field
       header:
-        view:
-          id: view
-          table: views
-          field: view
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: false
-          view_to_insert: 'last_category_podcast:block_1'
-          inherit_arguments: false
-          plugin_id: view
         views_block_area:
           id: views_block_area
           table: views
@@ -858,7 +859,17 @@ display:
           group_type: group
           admin_label: ''
           empty: false
-          block_id: 'block_content:2ae61587-d314-4f21-9166-80ddec401589'
+          block_id: 'block_content:1207d672-d01a-4bda-aa66-848a5250e550'
+          plugin_id: views_block_area
+        views_block_area_1:
+          id: views_block_area_1
+          table: views
+          field: views_block_area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          block_id: 'block_content:d596aada-2424-4ca6-bbb4-55d63b8b1eb9'
           plugin_id: views_block_area
     cache_metadata:
       max-age: -1
@@ -880,6 +891,117 @@ display:
         ajax_history: {  }
       path: podcast
       fields:
+        fieldset:
+          id: fieldset
+          table: views
+          field: fieldset
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          fields:
+            - view_1
+            - field_category_image
+            - name
+            - description__value
+          wrapper: div
+          legend: podcast-category-block
+          classes: ''
+          collapsible: 1
+          collapsed: 0
+          plugin_id: fieldset
+        view_1:
+          id: view_1
+          table: views
+          field: view
+          relationship: none
+          group_type: group
+          admin_label: 'Block in PODCAST'
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          view: block_in_podcast
+          display: default
+          arguments: ''
+          plugin_id: view
         field_category_image:
           id: field_category_image
           table: taxonomy_term__field_category_image
@@ -917,13 +1039,13 @@ display:
             preserve_tags: ''
             html: false
           element_type: ''
-          element_class: ''
+          element_class: podcast-category-image
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -948,39 +1070,54 @@ display:
           id: name
           table: taxonomy_term_field_data
           field: name
-          entity_type: taxonomy_term
-          entity_field: name
-          label: ''
-          alter:
-            alter_text: false
-            make_link: false
-            absolute: false
-            trim: false
-            word_boundary: false
-            ellipsis: false
-            strip_tags: false
-            html: false
-          hide_empty: false
-          empty_zero: false
-          type: string
-          settings:
-            link_to_entity: true
-          plugin_id: term_name
           relationship: none
           group_type: group
           admin_label: ''
+          label: ''
           exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: false
+            ellipsis: false
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
           element_type: ''
-          element_class: ''
+          element_class: podcast-category-image
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
           empty: ''
+          hide_empty: false
+          empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: true
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -992,6 +1129,9 @@ display:
           separator: ', '
           field_api_classes: false
           convert_spaces: false
+          entity_type: taxonomy_term
+          entity_field: name
+          plugin_id: term_name
         description__value:
           id: description__value
           table: taxonomy_term_field_data
@@ -1029,13 +1169,13 @@ display:
             preserve_tags: ''
             html: false
           element_type: ''
-          element_class: ''
+          element_class: podcast-category-image
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -1122,13 +1262,65 @@ display:
           entity_type: taxonomy_term
           entity_field: tid
           plugin_id: field
+        view_2:
+          id: view_2
+          table: views
+          field: view
+          relationship: none
+          group_type: group
+          admin_label: 'Podcast category list'
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          view: last_category_podcast
+          display: block_1
+          arguments: ''
+          plugin_id: view
         view:
           id: view
           table: views
           field: view
           relationship: none
           group_type: group
-          admin_label: ''
+          admin_label: 'Other articles'
           label: ''
           exclude: false
           alter:
@@ -1198,18 +1390,7 @@ display:
           plugin_id: date
       title: PODCASTS
       footer: {  }
-      header:
-        view:
-          id: view
-          table: views
-          field: view
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: false
-          view_to_insert: 'block_in_podcast:block_1'
-          inherit_arguments: false
-          plugin_id: view
+      header: {  }
     cache_metadata:
       max-age: -1
       contexts:
