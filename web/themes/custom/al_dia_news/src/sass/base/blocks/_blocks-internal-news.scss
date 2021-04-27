@@ -451,6 +451,16 @@ blockquote {
     margin: 0 0 1.2em;
   }
 
+  .image-caption {
+    margin: 15px 0 45px;
+    font-size: szrem(14);
+    font-family: $PrNovacond-light;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 17px;
+    color: $cgrey3;
+  }
+
   @media (max-width: $tablet) {
     h1,
     h2,
@@ -471,6 +481,12 @@ blockquote {
     strong {
       font-size: 15px;
       line-height: 140%;
+    }
+
+    .image-caption {
+      margin: 10px 0 30px;
+      font-size: szrem(10);
+      line-height: 12px;
     }
   }
 }
