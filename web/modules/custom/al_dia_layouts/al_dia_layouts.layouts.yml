@@ -494,3 +494,14 @@ events:
     six_content:
       label: Sexto - Contact
 
+podcast_category:
+  label: 'Podcast category'
+  path: layouts/taxonomy
+  template: layout--podcast-category
+  category: 'content'
+  default_region: content
+  icon_map:
+    - [one_content]
+  regions:
+    one_content:
+      label: Primero - content
