@@ -1,11 +1,11 @@
 const initMain = ($, Drupal) => {
-  window.onload = function() {
+  window.onload = function () {
     //// js remove element home
     Array.from(
       document.querySelectorAll(
         ".block-fixed-block-contentvertical-advertising-mobile"
       )
-    ).map(function(e) {
+    ).map(function (e) {
       if (e.children.children != null) {
         e.closest(".mobile-less").parentElement.parentElement.classList.add(
           "life-advertising"
@@ -18,7 +18,7 @@ const initMain = ($, Drupal) => {
       document.querySelectorAll(
         ".mobile-free .mobile-plus .card-more:nth-child(1)"
       )
-    ).map(function(e) {
+    ).map(function (e) {
       if (e != null) {
         e.remove();
       }
@@ -27,7 +27,7 @@ const initMain = ($, Drupal) => {
       document.querySelectorAll(
         ".mobile-free .mobile-plus .card-more:nth-child(2)"
       )
-    ).map(function(evt) {
+    ).map(function (evt) {
       if (evt != null) {
         evt.remove();
       }
@@ -110,6 +110,15 @@ const initMain = ($, Drupal) => {
       containerSummary.insertAdjacentElement("beforebegin", summary);
     }
 
+    //hidden header-category header-category
+    if(!!document.querySelector('.path-taxonomy')){
+      const headerCategory = document.querySelector('.header-category');
+      const categoryFirstBlock = document.querySelector('.category-first-block');
+
+      if(headerCategory.childElementCount === 0) headerCategory.classList.add('empty');
+      if(categoryFirstBlock.childElementCount === 0) categoryFirstBlock.classList.add('empty');
+    }
+
     // js video en interna
     var video_interna = document.querySelector(
       ".block-field-blocknodenewsfield-video"
@@ -134,7 +143,7 @@ const initMain = ($, Drupal) => {
     //// js ajuste ancla en employed
     Array.from(
       document.querySelectorAll(".menu--i-am-an-employer-menu li a")
-    ).map(function(e) {
+    ).map(function (e) {
       e.addEventListener("click", () => {
         setTimeout(() => {
           var scroll_y = window.scrollY;
@@ -161,7 +170,7 @@ const initMain = ($, Drupal) => {
         document.querySelectorAll(
           ".block-views-blockcarousel-videos-landing-block-2"
         )
-      ).map(function(e) {
+      ).map(function (e) {
         var p = e.querySelector(".select-video");
         var c = e.querySelector(".video-present");
         if (p != null && c != null) {
@@ -176,7 +185,7 @@ const initMain = ($, Drupal) => {
         document.querySelectorAll(
           ".view-id-carousel_videos_landing.view-display-id-page_1"
         )
-      ).map(function(ev) {
+      ).map(function (ev) {
         var a = ev.querySelector(".show-video");
         var b = ev.querySelector(".video-present");
         if (a != null && b != null) {
@@ -198,7 +207,7 @@ const initMain = ($, Drupal) => {
       const itemLista2 = lista2[i];
 
       // console.log(itemLista1, itemLista2)
-      itemLista1.parentElement.addEventListener("click", function() {
+      itemLista1.parentElement.addEventListener("click", function () {
         one();
         two();
         const allIframes = document.querySelectorAll(
@@ -223,7 +232,7 @@ const initMain = ($, Drupal) => {
     }
 
     /// js boton back
-    Array.from(document.querySelectorAll(".cbutton-back")).map(function(e) {
+    Array.from(document.querySelectorAll(".cbutton-back")).map(function (e) {
       if (e != null) {
         e.addEventListener("click", () => {
           window.history.back();
@@ -232,7 +241,7 @@ const initMain = ($, Drupal) => {
     });
 
     /// js login and register
-    Array.from(document.querySelectorAll(".comment-forbidden a")).map(function(
+    Array.from(document.querySelectorAll(".comment-forbidden a")).map(function (
       e
     ) {
       if (e != null) {
@@ -241,7 +250,7 @@ const initMain = ($, Drupal) => {
     });
     Array.from(
       document.querySelectorAll(".comment-forbidden a:nth-child(1)")
-    ).map(function(e) {
+    ).map(function (e) {
       if (e != null) {
         var button_login = document.querySelector(
           '.Login-Register-popup-link.Login-Register-popup-link a[href*="login"]'
@@ -253,7 +262,7 @@ const initMain = ($, Drupal) => {
     });
     Array.from(
       document.querySelectorAll(".comment-forbidden a:nth-child(2)")
-    ).map(function(e) {
+    ).map(function (e) {
       if (e != null) {
         var button_regis = document.querySelector(
           '.Login-Register-popup-link.Login-Register-popup-link a[href*="register"]'
@@ -413,7 +422,7 @@ const initMain = ($, Drupal) => {
     // bloque vacio en home
     var width_b = window.innerWidth;
     if (width_b <= 768) {
-      Array.from(document.querySelectorAll(".view-more-category")).map(function(
+      Array.from(document.querySelectorAll(".view-more-category")).map(function (
         e
       ) {
         if (e !== null && e.children.length === 2) {
@@ -428,7 +437,7 @@ const initMain = ($, Drupal) => {
       document.querySelectorAll(
         "#views-exposed-form-search-results-al-dia-solr-page-1 .form-item-field-category li label"
       )
-    ).map(function(e) {
+    ).map(function (e) {
       if (e != null && !e.innerHTML.includes("-")) {
         e.classList.add("category");
       }
@@ -439,13 +448,13 @@ const initMain = ($, Drupal) => {
       document.querySelectorAll(
         ".block-fixed-block-contenthorizontal-advertising"
       )
-    ).map(function(e) {
+    ).map(function (e) {
       if (e != null) {
         Array.from(
           document.querySelectorAll(
             ".view-more-covers-landing  .view-content .views-row:nth-child(7n)"
           )
-        ).map(function(evt) {
+        ).map(function (evt) {
           if (
             evt != null &&
             !evt.nextElementSibling.classList.contains(
