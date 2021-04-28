@@ -22,10 +22,17 @@
     h1 {
       margin-bottom: 5px;
       @include text($PrNovacond-bold, szrem(25), $cwhite, 95%);
-
+      .aldia-logo-in-text {
+        max-width: 200px;
+        position: relative;
+        left: -4px;
+        img {
+          height: 60px;
+        }
+      }
       @media screen and (min-width: $tablet) {
         font-size: szrem(78);
-        line-height: 75%;
+        line-height: 97%;
       }
     }
 

@@ -298,24 +298,62 @@ import replaceToken from "./modules/replaceToken";
         ).map(function(e) {
           if (e != null) {
             e.addEventListener("click", () => {
-              e.closest(".form-managed-file").classList.add("action-button");
+              var mng_field = e.closest(".form-managed-file");
+              if (mng_field != null) {
+                mng_field.classList.add("action-button");
+              }
             });
           }
         });
 
         /// x que elimina archivos
-        Array.from(
-          document.querySelectorAll(
-            '.form-managed-file input[type*="checkbox"]'
-          )
-        ).map(function(e) {
-          if (e !== null) {
-            e.addEventListener("click", () => {
-              $('input[name="upload_file[fids]"]').removeAttr("value");
-              e.closest(".form-type-checkbox").remove();
-            });
-          }
-        });
+        var firts_check = document.querySelector(
+          '.form-managed-file .form-item:nth-of-type(1) input[type*="checkbox"]'
+        );
+        var second_check = document.querySelector(
+          '.form-managed-file .form-item:nth-of-type(2) input[type*="checkbox"]'
+        );
+        var input_value = document.querySelector(
+          'input[name="upload_file[fids]"]'
+        );
+        if (
+          firts_check !== null &&
+          input_value !== null &&
+          second_check !== null
+        ) {
+          firts_check.addEventListener("click", () => {
+            var atributo1 = input_value
+              .getAttribute("value")
+              .split("")
+              .slice(4, 7)
+              .join("");
+            input_value.setAttribute("value", atributo1);
+            firts_check.closest(".form-type-checkbox").remove();
+          });
+        }
+
+        if (
+          firts_check !== null &&
+          input_value !== null &&
+          second_check === null
+        ) {
+          firts_check.addEventListener("click", () => {
+            input_value.setAttribute("value", "");
+            firts_check.closest(".form-type-checkbox").remove();
+          });
+        }
+
+        if (second_check !== null && input_value !== null) {
+          second_check.addEventListener("click", () => {
+            var atributo = input_value
+              .getAttribute("value")
+              .split("")
+              .slice(0, 3)
+              .join("");
+            input_value.setAttribute("value", atributo);
+            second_check.closest(".form-type-checkbox").remove();
+          });
+        }
       });
     }
   };
