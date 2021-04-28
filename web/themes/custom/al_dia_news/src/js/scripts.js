@@ -302,6 +302,19 @@ import replaceToken from "./modules/replaceToken";
             });
           }
         });
+
+        /// x que elimina archivos
+        Array.from(
+          document.querySelectorAll(
+            '.form-managed-file input[type*="checkbox"]'
+          )
+        ).map(function(e) {
+          if (e != null) {
+            e.addEventListener("click", () => {
+              e.closest(".form-type-checkbox").remove();
+            });
+          }
+        });
       });
     }
   };
