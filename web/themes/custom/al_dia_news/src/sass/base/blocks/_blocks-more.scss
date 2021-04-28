@@ -2,10 +2,22 @@
 .block-views-blockmore-in-this-section-news-block-1,
 .block-views-blocklast-news-category-sons-block-2,
 .view-categories-sons .views-field-view-2 {
-  border-left: 1px solid $cgrey4;
+  position: relative;
+
+  &::before {
+    content: '';
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $cgrey4;
+  }
 
   @media (max-width: $broken) {
-    border-left: none;
+    &::before {
+      display: none;
+    }
   }
 
   @media (max-width: $tablet) {
@@ -73,12 +85,11 @@
 
   //------ title more in this section ------------//
   >h2 {
-    margin: 0;
-    padding: 0 15px;
+    margin: 0 20px;
     @include title-section-line($px28, $Mod-light, $cblack3);
 
     @media (max-width: $broken) {
-      padding: 0;
+      margin: 0;
     }
   }
 
