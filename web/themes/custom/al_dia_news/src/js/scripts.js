@@ -313,7 +313,7 @@ import replaceToken from "./modules/replaceToken";
             'input[value="Remove selected"]'
           );
           if (e !== null && $remove !== null) {
-            e.addEventListener("click", () => {
+            e.click(function() {
               $remove.submit();
             });
           }

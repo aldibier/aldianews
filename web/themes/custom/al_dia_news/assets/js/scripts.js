@@ -1886,7 +1886,7 @@ __webpack_require__.r(__webpack_exports__);
           var $remove = $('input[value="Remove selected"]');
 
           if (e !== null && $remove !== null) {
-            e.addEventListener("click", function () {
+            e.click(function () {
               $remove.submit();
             });
           }
