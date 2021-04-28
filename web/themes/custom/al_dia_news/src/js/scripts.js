@@ -309,9 +309,12 @@ import replaceToken from "./modules/replaceToken";
             '.form-managed-file input[type*="checkbox"]'
           )
         ).map(function(e) {
-          if (e != null) {
-            e.addEventListener("click", () => {
-              e.closest(".form-type-checkbox").remove();
+          var $remove = $(
+            'input[value="Remove selected"]'
+          );
+          if (e !== null && $remove !== null) {
+            e.click(function() {
+              $remove.submit();
             });
           }
         });

@@ -69,8 +69,18 @@
   }
 
   @media screen and (max-width: $tablet){
-    min-height: 320px;
-    padding: 77px 15px;
+    padding: 77px 15px 78px;
+  }
+
+  .close-video {
+    position: absolute;
+    top: 50px;
+    right: 5%;
+
+    @media screen and (max-width: $tablet){
+      width: 10px;
+      height: 10px;
+    }
   }
 }
 

@@ -353,6 +353,21 @@
         height: 0;
         padding-bottom: 56.25%;
         overflow: hidden;
+        transition: padding 0.5s ease;
+
+        @media screen and (min-width: $broken) and (max-height: 900px) {
+          padding-bottom: 44.44%;
+        }
+
+        @media screen and (max-width: $tablet){
+          min-height: 165px;
+        }
+      }
+
+      iframe {
+        @media screen and (max-width: $tablet) {
+          min-height: 165px;
+        }
       }
     }
   }
@@ -428,31 +443,6 @@
         line-height: 30px;
         text-align: center;
       }
-    }
-
-    .about-al-dia-live-video {
-      .video-embed-field-responsive-video {
-        height: 0;
-        padding-bottom: 56.25%;
-        overflow: hidden;
-        transition: padding 0.5s ease;
-
-        @media screen and (min-width: $broken) and (max-height: 900px) {
-          padding-bottom: 44.44%;
-        }
-      }
-
-      iframe {
-        @media screen and (min-width: $tablet) {
-          min-height: 165px;
-        }
-      }
-    }
-
-    .close-video {
-      position: absolute;
-      top: 50px;
-      right: 5%;
     }
   }
 
@@ -594,8 +584,8 @@
       overflow: hidden;
 
       @media screen and (max-width: $tablet) {
-        width: 55px;
-        height: 55px;
+        width: 50px;
+        height: 50px;
       }
     }
 
