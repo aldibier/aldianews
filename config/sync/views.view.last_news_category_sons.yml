@@ -545,7 +545,8 @@ display:
     display_title: First
     position: 1
     display_options:
-      display_extenders: {  }
+      display_extenders:
+        ajax_history: {  }
       display_description: ''
       arguments:
         parent_target_id:
@@ -735,6 +736,7 @@ display:
           plugin_id: rendered_entity
       header: {  }
       css_class: main-news
+      block_hide_empty: true
     cache_metadata:
       max-age: -1
       contexts:
@@ -790,7 +792,8 @@ display:
     display_title: 'Block 2'
     position: 2
     display_options:
-      display_extenders: {  }
+      display_extenders:
+        ajax_history: {  }
       pager:
         type: some
         options:
@@ -1045,6 +1048,7 @@ display:
         operator: AND
         groups:
           1: AND
+      block_hide_empty: true
     cache_metadata:
       max-age: -1
       contexts:
@@ -1099,7 +1103,8 @@ display:
     display_title: 'Header Category'
     position: 3
     display_options:
-      display_extenders: {  }
+      display_extenders:
+        ajax_history: {  }
       display_description: ''
       fields:
         nothing:
@@ -1226,6 +1231,7 @@ display:
           entity_field: parent
           plugin_id: taxonomy
       header: {  }
+      block_hide_empty: true
     cache_metadata:
       max-age: -1
       contexts:
