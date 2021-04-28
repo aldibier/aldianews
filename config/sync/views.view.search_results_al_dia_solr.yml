@@ -864,6 +864,61 @@ display:
         - 'user.node_grants:view'
       tags:
         - 'config:search_api.index.news'
+  block_2:
+    display_plugin: block
+    id: block_2
+    display_title: 'No results'
+    position: 3
+    display_options:
+      display_extenders:
+        ajax_history: {  }
+      filters: {  }
+      defaults:
+        filters: false
+        filter_groups: false
+        header: false
+        sorts: false
+      filter_groups:
+        operator: AND
+        groups: {  }
+      header:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content: "<div class=\"red-text\">We’re sorry. We could not find results for your search.</div>\r\n<div class=\"normal-text\">Explore our latest content</div>"
+          plugin_id: text_custom
+      sorts:
+        created:
+          id: created
+          table: search_api_index_news
+          field: created
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: DESC
+          exposed: false
+          expose:
+            label: ''
+          plugin_id: search_api
+      display_description: ''
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+      tags:
+        - 'config:field.storage.node.field_category'
+        - 'config:field.storage.node.field_image'
+        - 'config:field.storage.node.field_my_content_has_a_main_vide'
+        - 'config:field.storage.node.field_short_title'
+        - 'config:search_api.index.news'
   page_1:
     display_plugin: page
     id: page_1
@@ -1109,6 +1164,7 @@ display:
         use_ajax: false
         header: false
         sorts: false
+        empty: false
       filter_groups:
         operator: AND
         groups:
@@ -1694,6 +1750,18 @@ display:
           expose:
             label: Relevance
           plugin_id: search_api
+      empty:
+        view:
+          id: view
+          table: views
+          field: view
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          view_to_insert: 'search_results_al_dia_solr:block_2'
+          inherit_arguments: false
+          plugin_id: view
     cache_metadata:
       max-age: -1
       contexts:
