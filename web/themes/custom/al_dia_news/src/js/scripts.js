@@ -311,7 +311,7 @@ import replaceToken from "./modules/replaceToken";
         ).map(function(e) {
           if (e !== null) {
             e.addEventListener("click", () => {
-              $('input[name="upload_file[fids]"]').removeAttribute("value");
+              $('input[name="upload_file[fids]"]').removeAttr("value");
             });
           }
         });
