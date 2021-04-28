@@ -301,6 +301,28 @@ display:
         - url.query_args
       tags:
         - 'config:field.storage.block_content.field_image'
+  block_1:
+    display_plugin: block
+    id: block_1
+    display_title: Block
+    position: 1
+    display_options:
+      display_extenders:
+        ajax_history: {  }
+      style:
+        type: entity_reference
+        options:
+          search_fields:
+            field_image: field_image
+            info: '0'
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url.query_args
+      tags:
+        - 'config:field.storage.block_content.field_image'
   entity_reference_1:
     display_plugin: entity_reference
     id: entity_reference_1
