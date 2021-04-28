@@ -1883,9 +1883,11 @@ __webpack_require__.r(__webpack_exports__);
         }); /// x que elimina archivos
 
         Array.from(document.querySelectorAll('.form-managed-file input[type*="checkbox"]')).map(function (e) {
-          if (e != null) {
+          var $remove = $('input[value="Remove selected"]');
+
+          if (e !== null && $remove !== null) {
             e.addEventListener("click", function () {
-              e.closest(".form-type-checkbox").remove();
+              $remove.submit();
             });
           }
         });
@@ -2189,8 +2191,8 @@ var initSlick = function initSlick($, Drupal) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/usuario/Desktop/Proyectos/AlDiaNews/4ld14-n3ws/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
-module.exports = __webpack_require__(/*! /Users/usuario/Desktop/Proyectos/AlDiaNews/4ld14-n3ws/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
+__webpack_require__(/*! C:\Users\valer\Desktop\4ld14-n3ws\web\themes\custom\al_dia_news\src\js\scripts.js */"./src/js/scripts.js");
+module.exports = __webpack_require__(/*! C:\Users\valer\Desktop\4ld14-n3ws\web\themes\custom\al_dia_news\src\sass\styles.scss */"./src/sass/styles.scss");
 
 
 /***/ })
