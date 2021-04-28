@@ -314,7 +314,7 @@ import replaceToken from "./modules/replaceToken";
           );
           if (e !== null && $remove !== null) {
             console.log("2");
-            e.on('click','button', function(){
+            $(e).on('click','button', function(){
               console.log("3");
               $remove.submit();
           });
