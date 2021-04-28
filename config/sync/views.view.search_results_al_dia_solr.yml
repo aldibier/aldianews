@@ -1109,6 +1109,7 @@ display:
         use_ajax: false
         header: false
         sorts: false
+        empty: false
       filter_groups:
         operator: AND
         groups:
@@ -1694,6 +1695,7 @@ display:
           expose:
             label: Relevance
           plugin_id: search_api
+      empty: {  }
     cache_metadata:
       max-age: -1
       contexts:

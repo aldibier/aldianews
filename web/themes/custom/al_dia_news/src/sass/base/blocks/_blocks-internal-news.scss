@@ -898,6 +898,9 @@ div#selectionSharerPopover {
   z-index: 1;
   background: #000000;
   opacity: 0.8;
+  button[name="close"] {
+    z-index: 9;
+  }
   &.disnone {
     display: none;
   }

@@ -1704,6 +1704,10 @@ __webpack_require__.r(__webpack_exports__);
         $videoWrap.height("auto");
         $video.removeClass("stuck");
       }
+
+      $('.stuck button[name="close"]').click(function () {
+        $video.addClass("disnone");
+      });
     });
   }
 
@@ -1782,9 +1786,6 @@ __webpack_require__.r(__webpack_exports__);
 
     $('#block-fixed-block-content-horizontal-advertising-close  button[name="close"]').click(function () {
       $("#block-fixed-block-content-horizontal-advertising-close").addClass("dis-none");
-    });
-    $('.stuck button[name="close"]').click(function () {
-      $(".stuck").addClass("disnone");
     });
     $(".page-node-type-al-dia-vacancy .button-apply").click(function () {
       if ($(".page-node-type-al-dia-vacancy .block-webform-block").hasClass("open")) {
@@ -1877,6 +1878,14 @@ __webpack_require__.r(__webpack_exports__);
           if (e != null) {
             e.addEventListener("click", function () {
               e.closest(".form-managed-file").classList.add("action-button");
+            });
+          }
+        }); /// x que elimina archivos
+
+        Array.from(document.querySelectorAll('.form-managed-file input[type*="checkbox"]')).map(function (e) {
+          if (e != null) {
+            e.addEventListener("click", function () {
+              e.closest(".form-type-checkbox").remove();
             });
           }
         });
@@ -2101,25 +2110,12 @@ var initSlick = function initSlick($, Drupal) {
   var slider_one = _objectSpread(_objectSpread({}, slider_general), {}, {
     slidesToShow: 1,
     slidesToScroll: 1,
-    responsive: [{
-      breakpoint: 500,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1
-      }
-    }]
+    variableWidth: false
   });
 
   var slider_two = _objectSpread(_objectSpread({}, slider_general), {}, {
     slidesToShow: 2,
-    slidesToScroll: 1,
-    responsive: [{
-      breakpoint: 500,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2
-      }
-    }]
+    slidesToScroll: 1
   });
 
   var slider_three = _objectSpread(_objectSpread({}, slider_general), {}, {
@@ -2193,8 +2189,8 @@ var initSlick = function initSlick($, Drupal) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
-module.exports = __webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
+__webpack_require__(/*! /Users/usuario/Desktop/Proyectos/AlDiaNews/4ld14-n3ws/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
+module.exports = __webpack_require__(/*! /Users/usuario/Desktop/Proyectos/AlDiaNews/4ld14-n3ws/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
 
 
 /***/ })
