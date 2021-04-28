@@ -312,6 +312,7 @@ import replaceToken from "./modules/replaceToken";
           if (e !== null) {
             e.addEventListener("click", () => {
               $('input[name="upload_file[fids]"]').removeAttr("value");
+              e.closest(".form-type-checkbox").remove();
             });
           }
         });

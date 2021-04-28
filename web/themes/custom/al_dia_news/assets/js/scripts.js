@@ -1894,6 +1894,7 @@ __webpack_require__.r(__webpack_exports__);
           if (e !== null) {
             e.addEventListener("click", function () {
               $('input[name="upload_file[fids]"]').removeAttr("value");
+              e.closest(".form-type-checkbox").remove();
             });
           }
         });
