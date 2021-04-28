@@ -316,31 +316,33 @@ import replaceToken from "./modules/replaceToken";
         var input_value = document.querySelector(
           'input[name="upload_file[fids]"]'
         );
-        var check_number = document.querySelectorAll(
-          ".form-managed-file .form-item"
-        ).length;
 
-        if (check_number === 1) {
-          if (firts_check !== null && input_value !== null) {
-            firts_check.addEventListener("click", () => {
-              input_value.setAttribute("value", "");
-              firts_check.closest(".form-type-checkbox").remove();
-            });
-          }
-        } else {
-          if (firts_check !== null && input_value !== null) {
-            firts_check.addEventListener("click", () => {
-              var atributo1 = input_value
-                .getAttribute("value")
-                .split("")
-                .slice(4, 7)
-                .join("");
-              input_value.setAttribute("value", atributo1);
-              firts_check.closest(".form-type-checkbox").remove();
-            });
-          }
-          if (second_check !== null && input_value !== null) {
-            second_check.addEventListener("click", () => {
+        if (!!firts_check && !!input_value && second_check === null) {
+          firts_check.addEventListener("click", () => {
+            input_value.setAttribute("value", "");
+            firts_check.closest(".form-type-checkbox").remove();
+          });
+        }
+
+        if (!!firts_check && !!input_value && !!second_check) {
+          firts_check.addEventListener("click", e => {
+            e.stopImmediatePropagation();
+            var atributo1 = input_value
+              .getAttribute("value")
+              .split("")
+              .slice(4, 7)
+              .join("");
+            input_value.setAttribute("value", atributo1);
+            firts_check.closest(".form-type-checkbox").remove();
+          });
+
+          second_check.addEventListener("click", e => {
+            e.stopImmediatePropagation();
+            if (
+              !!second_check.parentElement.previousElementSibling.classList.contains(
+                "form-item"
+              )
+            ) {
               var atributo = input_value
                 .getAttribute("value")
                 .split("")
@@ -348,8 +350,11 @@ import replaceToken from "./modules/replaceToken";
                 .join("");
               input_value.setAttribute("value", atributo);
               second_check.closest(".form-type-checkbox").remove();
-            });
-          }
+            } else {
+              input_value.setAttribute("value", "");
+              second_check.closest(".form-type-checkbox").remove();
+            }
+          });
         }
       });
     }
