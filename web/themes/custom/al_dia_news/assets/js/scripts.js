@@ -1893,8 +1893,7 @@ __webpack_require__.r(__webpack_exports__);
         Array.from(document.querySelectorAll('.form-managed-file input[type*="checkbox"]')).map(function (e) {
           if (e !== null) {
             e.addEventListener("click", function () {
-              console.log("3");
-              $('input[value="Remove selected"]').submit();
+              $('input[name="upload_file[fids]"]').removeAttribute("value");
             });
           }
         });
