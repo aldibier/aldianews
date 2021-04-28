@@ -1891,13 +1891,10 @@ __webpack_require__.r(__webpack_exports__);
         }); /// x que elimina archivos
 
         Array.from(document.querySelectorAll('.form-managed-file input[type*="checkbox"]')).map(function (e) {
-          var $remove = $('input[value="Remove selected"]');
-
           if (e !== null && $remove !== null) {
-            console.log("2");
-            $(e).on('click', 'button', function () {
+            e.addEventListener("click", function () {
               console.log("3");
-              $remove.submit();
+              $('input[value="Remove selected"]').submit();
             });
           }
         });
