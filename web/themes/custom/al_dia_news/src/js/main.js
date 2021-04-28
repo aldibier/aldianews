@@ -353,7 +353,6 @@ const initMain = ($, Drupal) => {
       );
     }
 
-    //// js para controlar pop-up about al dia live
     if (!!document.querySelector(".path-about-al-dia-live")) {
       //// js pop-up about al dia live
       const buttonApply = document.querySelector(
@@ -377,15 +376,22 @@ const initMain = ($, Drupal) => {
       );
       const buttonCloseVideo = document.querySelector(".close-video");
       const video = document.querySelector(".modal-video");
+      const iframe = document.querySelector('.about-al-dia-live-container-video iframe');
+
+      //reset src iframe
+      if(iframe.src.indexOf('?') > 0){
+        const srcEdit = iframe.src.split('?');
+        iframe.src = `${srcEdit[0]}?start=0&rel=0`;
+      }
 
       triggerVideo.addEventListener("click", () => {
         video.classList.add("show");
       });
 
       buttonCloseVideo.addEventListener("click", event => {
-        debugger;
         event.stopPropagation();
         video.classList.remove("show");
+        iframe.src = iframe.src;
       });
     }
 

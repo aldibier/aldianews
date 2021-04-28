@@ -1499,8 +1499,7 @@ var initMain = function initMain($, Drupal) {
       allButtonsClose.forEach(function (buttonClose) {
         return buttonClose.addEventListener("click", hideModal);
       });
-    } //// js para controlar pop-up about al dia live
-
+    }
 
     if (!!document.querySelector(".path-about-al-dia-live")) {
       //// js pop-up about al dia live
@@ -1518,13 +1517,20 @@ var initMain = function initMain($, Drupal) {
       var triggerVideo = document.querySelector(".block-views-blockabout-al-dia-live-block-1 .about-al-dia-live-container-video");
       var buttonCloseVideo = document.querySelector(".close-video");
       var video = document.querySelector(".modal-video");
+      var iframe = document.querySelector('.about-al-dia-live-container-video iframe'); //reset src iframe
+
+      if (iframe.src.indexOf('?') > 0) {
+        var srcEdit = iframe.src.split('?');
+        iframe.src = "".concat(srcEdit[0], "?start=0&rel=0");
+      }
+
       triggerVideo.addEventListener("click", function () {
         video.classList.add("show");
       });
       buttonCloseVideo.addEventListener("click", function (event) {
-        debugger;
         event.stopPropagation();
         video.classList.remove("show");
+        iframe.src = iframe.src;
       });
     } //// js desplegable buscador y close modal
 
