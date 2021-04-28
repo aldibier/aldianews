@@ -1728,7 +1728,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "{# Se obtiene la fecha actual #}\r\n{% set now = date() %}\r\n{% if ( now | date(\"F-d-Y\")) < ( field_date_of_event ) %}\r\n  {{ view }}\r\n{% else %}\r\n  {{ view_1 }}\r\n{% endif %}"
+            text: "{# Se obtiene la fecha actual #}\r\n{% set now = date() %}\r\n{% if ( field_date_of_event | date(\"U\")) > ( now | date(\"U\"))%}\r\n  {{ view }}\r\n{% else %}\r\n  {{ view_1 }}\r\n{% endif %}"
             make_link: false
             path: ''
             absolute: false

@@ -11,6 +11,7 @@ dependencies:
   module:
     - datetime
     - node
+    - other_view_filter
     - responsive_image
     - user
     - views_fieldsets
@@ -232,7 +233,7 @@ display:
             min: ''
             max: ''
             value: now
-            type: date
+            type: offset
           group: 1
           exposed: false
           expose:
@@ -265,6 +266,48 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           plugin_id: datetime
+        other_view_filter:
+          id: other_view_filter
+          table: node_field_data
+          field: other_view_filter
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: 'not in'
+          value:
+            'al_dia_live:block_3': 'al_dia_live:block_3'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          inherit_contextual_filters: 0
+          entity_type: node
+          plugin_id: other_views_filter
       defaults:
         filters: false
         filter_groups: false
@@ -803,7 +846,7 @@ display:
             min: ''
             max: ''
             value: now
-            type: date
+            type: offset
           group: 1
           exposed: false
           expose:
@@ -836,6 +879,48 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           plugin_id: datetime
+        other_view_filter:
+          id: other_view_filter
+          table: node_field_data
+          field: other_view_filter
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: 'not in'
+          value:
+            'al_dia_live:block_3': 'al_dia_live:block_3'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          inherit_contextual_filters: 0
+          entity_type: node
+          plugin_id: other_views_filter
       defaults:
         filters: false
         filter_groups: false
