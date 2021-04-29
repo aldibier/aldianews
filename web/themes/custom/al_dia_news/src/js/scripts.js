@@ -338,10 +338,10 @@ import replaceToken from "./modules/replaceToken";
 
         if (!!firts_check && !!input_value && !!second_check) {
           firts_check.addEventListener("click", e => {
-            e.stopImmediatePropagation();
+            e.stopImmediatePropagation(); 
             var atributo1 = input_value
-              .getAttribute("value")
-              .split("")
+              .getAttribute("value") 
+              .split("") 
               .slice(4, 7)
               .join("");
             input_value.setAttribute("value", atributo1);
