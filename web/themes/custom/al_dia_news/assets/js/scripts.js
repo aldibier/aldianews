@@ -1902,9 +1902,9 @@ __webpack_require__.r(__webpack_exports__);
 
         Array.from(document.querySelectorAll("#edit-container .js-form-type-checkbox a")).map(function (e) {
           if (e != null) {
-            if (textOv.innerText.length > 25) {
-              var newt = textOv.innerText.substring(0, 25) + '...';
-              textOv.innerHTML = newt;
+            if (e.innerText.length > 25) {
+              var newt = e.innerText.substring(0, 25) + '...';
+              e.innerHTML = newt;
             }
           }
         }); /// x que elimina archivos
