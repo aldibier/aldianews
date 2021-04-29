@@ -4,7 +4,7 @@
   position: relative;
 
   &:after {
-    width: 63%;
+    width: 55%;
     position: absolute;
     content: "";
     display: block;
@@ -41,9 +41,9 @@
       img {
         margin: -12px 0px;
       }
-      @media screen and (min-width: $tablet) {
+      @media (max-width: $tablet) {
         img {
-          margin: -6px 0px;
+          margin: -12px 0px;
         }
       }
     }
@@ -404,7 +404,7 @@
           position: absolute;
           content: "";
           left: -15px;
-          top: 0;
+          top: -6px;
           height: 5px;
           background: $corange;
         }
@@ -539,6 +539,7 @@
 
         &:after {
           height: 3px;
+          top: 6px;
         }
       }
     }

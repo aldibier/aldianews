@@ -295,6 +295,10 @@ form {
       padding: 0;
     }
   }
+  .form-type-managed-file{
+    display: flex;
+    flex-direction: column;
+  }
   input[value="Upload"] {
     border: none;
     border-radius: 0px;
@@ -321,10 +325,12 @@ form {
     font-size: $px20;
     line-height: 24px;
     color: #333;
-    font-family: $PrNovacond-reg;
+    font-family: $PrNovacond-Sbold;
+    order: 1;
   }
   .form-managed-file {
-    padding: 56px 0 0;
+    padding: 0px 0 0;
+    order: 3;
   }
   .webform-file-button {
     background: #5c6165;
@@ -362,9 +368,11 @@ form {
     margin: 48px 0 0;
     top: 0;
     height: 40px;
+    font-family: $PrNovacond-Sbold;
   }
-  .webform-element-description {
-    display: none;
+  .description {
+    order: 2;
+    margin-top: 60px;
   }
   .js-form-type-checkbox:nth-child(2n + 1),
   .js-form-type-checkbox:nth-child(2n + 2) {
@@ -390,17 +398,17 @@ form {
       border: 0;
     }
     .option {
-      width: 165px;
+      width: 165px; 
       height: 65px;
     }
     span {
       background: #c4c4c4;
       width: 100%;
-      height: auto;
       padding: 0 0 0 65px;
       display: flex;
       position: relative;
-      min-height: 65px;
+      height: 65px;
+      overflow: hidden;
       &::after {
         position: absolute;
         top: 0;
@@ -432,7 +440,7 @@ form {
       height: auto;
       text-overflow: ellipsis;
       background: #f2f2f2;
-      overflow-y: hidden;
+      overflow: hidden;
     }
     .file--mime-image-png:after {
       content: "png";

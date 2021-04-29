@@ -306,6 +306,21 @@ import replaceToken from "./modules/replaceToken";
           }
         });
 
+        //// elipsis para archivos
+        Array.from(
+          document.querySelectorAll(
+            "#edit-container .js-form-type-checkbox a"
+          )
+        ).map(function(e) {
+          if (e != null) {
+            if (textOv.innerText.length > 25){
+              var newt = textOv.innerText.substring(0,25) + '...';
+              textOv.innerHTML = newt;
+             } 
+          }
+        });
+       
+
         /// x que elimina archivos
         var firts_check = document.querySelector(
           '.form-managed-file .form-item:nth-of-type(1) input[type*="checkbox"]'
@@ -326,10 +341,10 @@ import replaceToken from "./modules/replaceToken";
 
         if (!!firts_check && !!input_value && !!second_check) {
           firts_check.addEventListener("click", e => {
-            e.stopImmediatePropagation();
+            e.stopImmediatePropagation(); 
             var atributo1 = input_value
-              .getAttribute("value")
-              .split("")
+              .getAttribute("value") 
+              .split("") 
               .slice(4, 7)
               .join("");
             input_value.setAttribute("value", atributo1);
