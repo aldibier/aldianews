@@ -295,7 +295,7 @@ form {
       padding: 0;
     }
   }
-  .form-type-managed-file{
+  .form-type-managed-file {
     display: flex;
     flex-direction: column;
   }
@@ -350,7 +350,11 @@ form {
     line-height: 25px;
     color: #fff;
   }
-  .managed-file-placeholder {
+  .webform-element-description {
+    font-size: 0px;
+  }
+  .text-description,
+  .description strong {
     max-width: 165px;
     font-style: normal;
     font-weight: 600;
@@ -358,6 +362,9 @@ form {
     line-height: 15px;
     color: #767676;
     font-family: $PrNovacond-reg;
+  }
+  .managed-file-placeholder {
+    display: none;
   }
   .webform-button--submit {
     position: absolute;
@@ -372,7 +379,7 @@ form {
   }
   .description {
     order: 2;
-    margin-top: 60px;
+    margin-top: 70px;
   }
   .js-form-type-checkbox:nth-child(2n + 1),
   .js-form-type-checkbox:nth-child(2n + 2) {
@@ -398,7 +405,7 @@ form {
       border: 0;
     }
     .option {
-      width: 165px; 
+      width: 165px;
       height: 65px;
     }
     span {
