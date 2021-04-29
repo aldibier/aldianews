@@ -102,7 +102,7 @@ field_settings:
     label: 'Short title'
     datasource_id: 'entity:node'
     property_path: field_short_title
-    type: text
+    type: solr_text_spellcheck
     dependencies:
       config:
         - field.storage.node.field_short_title

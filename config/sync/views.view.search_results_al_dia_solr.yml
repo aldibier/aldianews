@@ -14,6 +14,7 @@ dependencies:
     - better_exposed_filters
     - responsive_image
     - search_api
+    - search_api_spellcheck
     - views_fieldsets
     - views_infinite_scroll
 id: search_results_al_dia_solr
@@ -1110,6 +1111,7 @@ display:
         header: false
         sorts: false
         empty: false
+        footer: false
       filter_groups:
         operator: AND
         groups:
@@ -1696,6 +1698,19 @@ display:
             label: Relevance
           plugin_id: search_api
       empty: {  }
+      footer:
+        search_api_spellcheck_did_you_mean:
+          id: search_api_spellcheck_did_you_mean
+          table: views
+          field: search_api_spellcheck_did_you_mean
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          search_api_spellcheck_count: 1
+          search_api_spellcheck_hide_on_result: 1
+          search_api_spellcheck_collate: true
+          plugin_id: search_api_spellcheck_did_you_mean
     cache_metadata:
       max-age: -1
       contexts:
