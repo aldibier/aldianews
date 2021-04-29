@@ -115,7 +115,7 @@ const initSlick = ($, Drupal) => {
   if ($(".block-views-blockabout-al-dia-live-block-4")) {
     $(".block-views-blockabout-al-dia-live-block-4 .view-content").slick({
       autoplay: true,
-      autoplaySpeed: 5500,
+      autoplaySpeed: 10000,
       infinite: true,
       slidesToShow: 1,
       slidesToScroll: 1,
