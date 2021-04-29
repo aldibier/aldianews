@@ -2119,6 +2119,8 @@ var initSlick = function initSlick($, Drupal) {
 
   if ($(".about-al-dia-live-slider").length) {
     $(".about-al-dia-live-slider ul").slick({
+      autoplay: true,
+      autoplaySpeed: 3000,
       infinite: true,
       slidesToShow: 2,
       slidesToScroll: 1,
@@ -2143,6 +2145,8 @@ var initSlick = function initSlick($, Drupal) {
 
   if ($(".block-views-blockabout-al-dia-live-block-4")) {
     $(".block-views-blockabout-al-dia-live-block-4 .view-content").slick({
+      autoplay: true,
+      autoplaySpeed: 5500,
       infinite: true,
       slidesToShow: 1,
       slidesToScroll: 1,
