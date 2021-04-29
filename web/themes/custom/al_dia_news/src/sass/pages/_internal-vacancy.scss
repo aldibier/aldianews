@@ -151,7 +151,7 @@
 
       .option {
         width: 165px;
-        height: 65px; 
+        height: 65px;
       }
 
       span {
@@ -186,7 +186,7 @@
         right: -22px;
         top: -17px;
       }
- 
+
       a {
         display: flex;
         font-family: $PrNovacond-reg;
@@ -239,7 +239,7 @@
     .webform-element-more--content {
       display: block;
     }
-    .js-webform-element-more{
+    .js-webform-element-more {
       order: 2;
       margin: 80px 0 10px;
     }
@@ -266,7 +266,7 @@
       }
     }
 
-    .managed-file-placeholder {
+    .webform-element-description {
       max-width: 165px;
       font-style: normal;
       font-weight: 600;
@@ -275,7 +275,12 @@
       color: $grey9;
       font-family: $PrNovacond-reg;
     }
-
+    .managed-file-placeholder {
+      display: none;
+    }
+    .description {
+      order: 2;
+    }
     label {
       font-style: normal;
       font-weight: 600;
@@ -426,7 +431,7 @@
 
     .upload-and-files {
       position: relative;
-      label{
+      label {
         order: 1;
       }
     }
