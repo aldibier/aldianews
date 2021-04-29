@@ -294,8 +294,8 @@ import replaceToken from "./modules/replaceToken";
         var check_number = document.querySelectorAll(
           ".form-managed-file .form-item"
         ).length;
+        var mng_field = document.querySelector(".form-managed-file");
         if (!!check_number && check_number >= 1) {
-          var mng_field = document.querySelector(".form-managed-file");
           var button_field = document.querySelector(
             ".action-button input[value=Upload]"
           );
@@ -309,6 +309,10 @@ import replaceToken from "./modules/replaceToken";
             button_field.addEventListener("click", () => {
               button_field2.dbclick();
             });
+          }
+        } else {
+          if (!!mng_field) {
+            mng_field.classList.remove("action-button");
           }
         }
         //// elipsis para archivos

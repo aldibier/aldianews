@@ -1889,9 +1889,9 @@ __webpack_require__.r(__webpack_exports__);
         }); /// js para esrilos de boton de eliminar archivo
 
         var check_number = document.querySelectorAll(".form-managed-file .form-item").length;
+        var mng_field = document.querySelector(".form-managed-file");
 
         if (!!check_number && check_number >= 1) {
-          var mng_field = document.querySelector(".form-managed-file");
           var button_field = document.querySelector(".action-button input[value=Upload]");
           var button_field2 = document.querySelector(".js-hide.button.js-form-submit.form-submit");
 
@@ -1903,6 +1903,10 @@ __webpack_require__.r(__webpack_exports__);
             button_field.addEventListener("click", function () {
               button_field2.dbclick();
             });
+          }
+        } else {
+          if (!!mng_field) {
+            mng_field.classList.remove("action-button");
           }
         } //// elipsis para archivos
 
