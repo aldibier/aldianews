@@ -901,13 +901,13 @@ div#selectionSharerPopover {
   button[name="close"] {
     z-index: 9;
     right: 20px;
-    background: url(/themes/custom/al_dia_news/assets/img/closew.svg) center
+    background: url(/themes/custom/al_dia_news/assets/img/closew.png) center
       center no-repeat;
+    @media (min-width: 1380px) and (max-width: 1830px) {
+      right: 28%;
+    }
     @media (min-width: 1830px) {
       right: 33%;
-    }
-    @media (min-width: 1380px) {
-      right: 28%;
     }
   }
   &.disnone {
