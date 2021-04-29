@@ -1890,25 +1890,17 @@ __webpack_require__.r(__webpack_exports__);
 
         var check_number = document.querySelectorAll(".form-managed-file .form-item").length;
         var mng_field = document.querySelector(".form-managed-file");
+        var container_field = document.querySelector("#edit-container");
 
-        if (!!check_number && check_number >= 1) {
-          var button_field = document.querySelector(".action-button input[value=Upload]");
-          var button_field2 = document.querySelector(".js-hide.button.js-form-submit.form-submit");
-
-          if (!!mng_field) {
+        if (!!container_field && !!mng_field && !!check_number) {
+          if (check_number >= 1) {
             mng_field.classList.add("action-button");
+          } else {
+            mng_field.classList.remove("action-button");
           }
 
-          if (!!button_field && !!button_field2) {
-            button_field.addEventListener("click", function () {
-              setTimeout(function () {
-                button_field2.dbclick();
-              }, 3000);
-            });
-          }
-        } else {
-          if (!!mng_field) {
-            mng_field.classList.remove("action-button");
+          if (check_number === 2) {
+            container_field.classList.add("disable-button");
           }
         } //// elipsis para archivos
 
@@ -1925,6 +1917,7 @@ __webpack_require__.r(__webpack_exports__);
         var firts_check = document.querySelector('.form-managed-file .form-item:nth-of-type(1) input[type*="checkbox"]');
         var second_check = document.querySelector('.form-managed-file .form-item:nth-of-type(2) input[type*="checkbox"]');
         var input_value = document.querySelector('input[name="upload_file[fids]"]');
+        var cont_field = document.querySelector("#edit-container");
 
         if (!!firts_check && !!input_value && second_check === null) {
           firts_check.addEventListener("click", function () {
@@ -1933,12 +1926,13 @@ __webpack_require__.r(__webpack_exports__);
           });
         }
 
-        if (!!firts_check && !!input_value && !!second_check) {
+        if (!!cont_field && !!firts_check && !!input_value && !!second_check) {
           firts_check.addEventListener("click", function (e) {
             e.stopImmediatePropagation();
             var atributo1 = input_value.getAttribute("value").split("").slice(4, 7).join("");
             input_value.setAttribute("value", atributo1);
             firts_check.closest(".form-type-checkbox").remove();
+            cont_field.classList.remove("disable-button");
           });
           second_check.addEventListener("click", function (e) {
             e.stopImmediatePropagation();
@@ -1948,13 +1942,16 @@ __webpack_require__.r(__webpack_exports__);
               var atributo = input_value.getAttribute("value").split("").slice(0, 3).join("");
               input_value.setAttribute("value", atributo);
               second_check.closest(".form-type-checkbox").remove();
+              cont_field.classList.remove("disable-button");
             } else if (logueado === null && !!second_check.parentElement.previousElementSibling.previousElementSibling.classList.contains("form-item")) {
               var atributo = input_value.getAttribute("value").split("").slice(0, 3).join("");
               input_value.setAttribute("value", atributo);
               second_check.closest(".form-type-checkbox").remove();
+              cont_field.classList.remove("disable-button");
             } else {
               input_value.setAttribute("value", "");
               second_check.closest(".form-type-checkbox").remove();
+              cont_field.classList.remove("disable-button");
             }
           });
         }

@@ -370,6 +370,26 @@
         background: #c4c4c4 !important;
       }
     }
+    .disable-button#edit-container {
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        display: block;
+        background: transparent;
+        top: 0px;
+        left: 0px;
+        width: 175px;
+        height: 100px;
+        z-index: 9;
+      }
+      @media (max-width: $tablet) {
+        &::before {
+          width: 130px;
+        }
+      }
+    }
+
     .js-form-item-upload-file {
       width: auto;
     }
