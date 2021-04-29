@@ -34,6 +34,7 @@ function al_dia_news_general_help($route_name, RouteMatchInterface $route_match)
  * Implements hook_form_alter()
  */
 function al_dia_news_general_form_alter(&$form, $form_state, $form_id) {
+
   switch ($form_id) {
    case  "comment_comments_content_form":
     // Alteración del botón submit de comentarios.
