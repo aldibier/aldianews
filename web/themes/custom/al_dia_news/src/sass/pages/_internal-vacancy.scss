@@ -107,10 +107,14 @@
 
       &:nth-child(2n + 1) {
         padding: 0 15px 0 0;
+        display: flex;
+        flex-direction: column;
       }
 
       &:nth-child(2n + 2) {
         padding: 0 0 0 15px;
+        display: flex;
+        flex-direction: column;
       }
     }
 
@@ -121,8 +125,6 @@
       .form-type-managed-file {
         width: 100%;
         padding: 0;
-        display: flex;
-    flex-direction: column;
       }
 
       #edit-upload-file--more {
@@ -202,7 +204,7 @@
         min-height: 65px;
         text-overflow: ellipsis;
         background: #f2f2f2;
-        overflow-y: hidden;
+        overflow: hidden;
       }
 
       .file--application-pdf {
@@ -234,9 +236,12 @@
       padding: 0px 0 0;
       order: 3;
     }
-    .description {
+    .webform-element-more--content {
+      display: block;
+    }
+    .js-webform-element-more{
       order: 2;
-      margin-top: 60px;
+      margin: 80px 0 10px;
     }
 
     input[value="Remove selected"] {

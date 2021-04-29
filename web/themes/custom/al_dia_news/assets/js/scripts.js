@@ -1900,17 +1900,14 @@ __webpack_require__.r(__webpack_exports__);
           }
         }); //// elipsis para archivos
 
-        var fileHeight = $(".file-upload #edit-container .js-form-type-checkbox span").height();
-        var $text = $(".file-upload #edit-container .js-form-type-checkbox a");
-
-        if (!!fileHeight && !!$text) {
-          while ($text.outerHeight() > fileHeight) {
-            $text.text(function (index, text) {
-              return text.replace(/\W*\s(\S)*$/, '...');
-            });
+        Array.from(document.querySelectorAll("#edit-container .js-form-type-checkbox a")).map(function (e) {
+          if (e != null) {
+            if (textOv.innerText.length > 25) {
+              var newt = textOv.innerText.substring(0, 25) + '...';
+              textOv.innerHTML = newt;
+            }
           }
-        } /// x que elimina archivos
-
+        }); /// x que elimina archivos
 
         var firts_check = document.querySelector('.form-managed-file .form-item:nth-of-type(1) input[type*="checkbox"]');
         var second_check = document.querySelector('.form-managed-file .form-item:nth-of-type(2) input[type*="checkbox"]');

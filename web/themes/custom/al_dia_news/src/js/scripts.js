@@ -307,15 +307,18 @@ import replaceToken from "./modules/replaceToken";
         });
 
         //// elipsis para archivos
-        var fileHeight = $(".file-upload #edit-container .js-form-type-checkbox span").height();
-        var $text = $(".file-upload #edit-container .js-form-type-checkbox a");
-        if(!!fileHeight && !!$text){
-          while ( $text.outerHeight() > fileHeight ) {
-            $text.text(function (index, text) {
-                return text.replace(/\W*\s(\S)*$/, '...');
-              });
-            }
-        }
+        Array.from(
+          document.querySelectorAll(
+            "#edit-container .js-form-type-checkbox a"
+          )
+        ).map(function(e) {
+          if (e != null) {
+            if (textOv.innerText.length > 25){
+              var newt = textOv.innerText.substring(0,25) + '...';
+              textOv.innerHTML = newt;
+             } 
+          }
+        });
        
 
         /// x que elimina archivos
