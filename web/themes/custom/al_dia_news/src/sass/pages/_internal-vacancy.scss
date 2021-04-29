@@ -134,6 +134,7 @@
       .js-form-item {
         width: auto;
         padding: 0;
+        margin-top: 5px;
       }
     }
 
@@ -151,7 +152,7 @@
 
       .option {
         width: 165px;
-        height: 65px; 
+        height: 65px;
       }
 
       span {
@@ -237,11 +238,11 @@
       order: 3;
     }
     .webform-element-more--content {
-      display: block;
+      display: none;
     }
-    .js-webform-element-more{
+    .js-webform-element-more {
       order: 2;
-      margin: 80px 0 10px;
+      margin: 0px 0 0px;
     }
 
     input[value="Remove selected"] {
@@ -266,7 +267,7 @@
       }
     }
 
-    .managed-file-placeholder {
+    .webform-element-description {
       max-width: 165px;
       font-style: normal;
       font-weight: 600;
@@ -275,7 +276,13 @@
       color: $grey9;
       font-family: $PrNovacond-reg;
     }
-
+    .managed-file-placeholder {
+      display: none;
+    }
+    .description {
+      order: 2;
+      margin-top: 70px;
+    }
     label {
       font-style: normal;
       font-weight: 600;
@@ -426,7 +433,7 @@
 
     .upload-and-files {
       position: relative;
-      label{
+      label {
         order: 1;
       }
     }

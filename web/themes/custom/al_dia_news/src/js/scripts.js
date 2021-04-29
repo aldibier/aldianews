@@ -302,7 +302,7 @@ import replaceToken from "./modules/replaceToken";
               if (mng_field != null) {
                 mng_field.classList.add("action-button");
               }
-            });
+            }); 
           }
         });
 
@@ -313,9 +313,9 @@ import replaceToken from "./modules/replaceToken";
           )
         ).map(function(e) {
           if (e != null) {
-            if (textOv.innerText.length > 25){
-              var newt = textOv.innerText.substring(0,25) + '...';
-              textOv.innerHTML = newt;
+            if (e.innerText.length > 25){
+              var newt = e.innerText.substring(0,25) + '...';
+              e.innerHTML = newt;
              } 
           }
         });
