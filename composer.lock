@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1e45eeb64f79e943eb26940c8c658b32",
+    "content-hash": "84c3b2802b66923a09ad6c048e16814c",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -5424,6 +5424,67 @@
             }
         },
         {
+            "name": "drupal/jsonapi_hypermedia",
+            "version": "1.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/jsonapi_hypermedia.git",
+                "reference": "8.x-1.6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/jsonapi_hypermedia-8.x-1.6.zip",
+                "reference": "8.x-1.6",
+                "shasum": "10f9e9fdfe8ae465d277f13c1d98e9389b14dec1"
+            },
+            "require": {
+                "drupal/core": "^8.8 || ^9.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.6",
+                    "datestamp": "1582916946",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Gabriel SULLICE",
+                    "homepage": "https://www.drupal.org/user/3616626",
+                    "email": "gabriel@sullice.com"
+                },
+                {
+                    "name": "Wim Leers",
+                    "homepage": "https://www.drupal.org/user/99777"
+                },
+                {
+                    "name": "e0ipso",
+                    "homepage": "https://www.drupal.org/user/550110"
+                },
+                {
+                    "name": "gabesullice",
+                    "homepage": "https://www.drupal.org/user/2287430"
+                },
+                {
+                    "name": "zrpnr",
+                    "homepage": "https://www.drupal.org/user/1448368"
+                }
+            ],
+            "description": "Complements the JSON API module with Hypermedia as the Engine of Application State",
+            "homepage": "https://www.drupal.org/project/jsonapi_hypermedia",
+            "support": {
+                "source": "https://git.drupalcode.org/project/jsonapi_hypermedia"
+            }
+        },
+        {
             "name": "drupal/lazy",
             "version": "3.6.0",
             "source": {
@@ -6312,6 +6373,60 @@
             "homepage": "https://www.drupal.org/project/search_api_sorts",
             "support": {
                 "source": "https://git.drupalcode.org/project/search_api_sorts"
+            }
+        },
+        {
+            "name": "drupal/search_api_spellcheck",
+            "version": "3.0.0-beta1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/search_api_spellcheck.git",
+                "reference": "8.x-3.0-beta1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/search_api_spellcheck-8.x-3.0-beta1.zip",
+                "reference": "8.x-3.0-beta1",
+                "shasum": "b5bd31765918170c55370a16defc0e6ec8374feb"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9",
+                "drupal/search_api": "~1.17"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-3.0-beta1",
+                    "datestamp": "1605436873",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Contributors",
+                    "homepage": "https://www.drupal.org/node/1150950/committers"
+                },
+                {
+                    "name": "mkalkbrenner",
+                    "homepage": "https://www.drupal.org/user/124705"
+                },
+                {
+                    "name": "welly",
+                    "homepage": "https://www.drupal.org/user/354705"
+                }
+            ],
+            "description": "Allows you to display search spellcheck suggestions in views.",
+            "homepage": "https://www.drupal.org/project/search_api_spellcheck",
+            "support": {
+                "source": "http://git.drupal.org/project/search_api_spellcheck.git",
+                "issues": "https://www.drupal.org/project/issues/search_api_spellcheck"
             }
         },
         {
@@ -11868,6 +11983,7 @@
         "drupal/inline_entity_form": 5,
         "drupal/other_view_filter": 20,
         "drupal/react_comments": 10,
+        "drupal/search_api_spellcheck": 10,
         "drupal/shs": 15,
         "drupal/term_csv_export_import": 15,
         "drupal/views_block_area": 10,

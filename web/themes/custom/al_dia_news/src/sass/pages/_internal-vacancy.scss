@@ -134,6 +134,7 @@
       .js-form-item {
         width: auto;
         padding: 0;
+        margin-top: 5px;
       }
     }
 
@@ -151,7 +152,7 @@
 
       .option {
         width: 165px;
-        height: 65px; 
+        height: 65px;
       }
 
       span {
@@ -237,11 +238,11 @@
       order: 3;
     }
     .webform-element-more--content {
-      display: block;
+      display: none;
     }
-    .js-webform-element-more{
+    .js-webform-element-more {
       order: 2;
-      margin: 80px 0 10px;
+      margin: 0px 0 0px;
     }
 
     input[value="Remove selected"] {
@@ -266,7 +267,7 @@
       }
     }
 
-    .managed-file-placeholder {
+    .webform-element-description {
       max-width: 165px;
       font-style: normal;
       font-weight: 600;
@@ -275,7 +276,13 @@
       color: $grey9;
       font-family: $PrNovacond-reg;
     }
-
+    .managed-file-placeholder {
+      display: none;
+    }
+    .description {
+      order: 2;
+      margin-top: 70px;
+    }
     label {
       font-style: normal;
       font-weight: 600;
@@ -311,7 +318,7 @@
       height: 40px;
       background: $cgrey8;
       width: 100%;
-      font-family: $PrNovacond-reg;
+      font-family: $PrNovacond-Sbold;
       margin: 5px auto 0;
       max-width: 405px;
       border: 0px;
@@ -358,11 +365,9 @@
       }
     }
     .action-button {
-      input[value="Upload"] {
+      input[value="Upload"],
+      .webform-file-button {
         background: #c4c4c4;
-      }
-      input[value*="Remove"] {
-        background: #5c6165;
       }
     }
     .js-form-item-upload-file {
@@ -385,6 +390,7 @@
       color: $cwhite;
       background: $corange;
       min-width: 150px;
+      font-family: $PrNovacond-Sbold;
       margin: 48px 0 0;
       top: 0;
       text-transform: uppercase;
@@ -404,6 +410,7 @@
       min-width: 165px;
       width: max-content;
       position: absolute;
+      font-family: $PrNovacond-Sbold;
       top: 48px;
       left: 0;
       margin: 0;
@@ -426,7 +433,7 @@
 
     .upload-and-files {
       position: relative;
-      label{
+      label {
         order: 1;
       }
     }

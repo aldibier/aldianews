@@ -893,14 +893,22 @@ div#selectionSharerPopover {
   margin: 0 auto;
   width: 100%;
   padding: 40px 0px;
-  height: 380px;
+  height: 400px;
   transform: translateY(100%);
   animation: fade-in-up 0.75s ease forwards;
   z-index: 1;
-  background: #000000;
-  opacity: 0.8;
+  background: rgb(0 0 0 / 80%);
   button[name="close"] {
     z-index: 9;
+    right: 20px;
+    background: url(/themes/custom/al_dia_news/assets/img/closew.png) center
+      center no-repeat;
+    @media (min-width: 1380px) and (max-width: 1830px) {
+      right: 28%;
+    }
+    @media (min-width: 1830px) {
+      right: 33%;
+    }
   }
   &.disnone {
     display: none;
