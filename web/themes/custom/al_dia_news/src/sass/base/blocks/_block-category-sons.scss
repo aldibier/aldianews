@@ -5,6 +5,10 @@
   text-align: right;
   transform: translateY(-5px);
 
+  @media (max-width: $tablet) {
+    transform: none;
+  }
+
   a {
     border: none;
     font-size: szrem(16);
@@ -101,13 +105,11 @@
       .view-content {
         @media screen and (max-width: $broken) {
           .last-content-category-childs {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
           }
         }
 
         @media screen and (max-width: $tablet) {
-          margin-top: 20px;
-
           .views-row {
             width: 100%;
             max-width: 100%;
