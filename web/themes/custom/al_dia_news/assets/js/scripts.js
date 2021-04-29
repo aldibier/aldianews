@@ -1901,7 +1901,9 @@ __webpack_require__.r(__webpack_exports__);
 
           if (!!button_field && !!button_field2) {
             button_field.addEventListener("click", function () {
-              button_field2.dbclick();
+              setTimeout(function () {
+                button_field2.dbclick();
+              }, 3000);
             });
           }
         } else {
@@ -1940,8 +1942,13 @@ __webpack_require__.r(__webpack_exports__);
           });
           second_check.addEventListener("click", function (e) {
             e.stopImmediatePropagation();
+            var logueado = document.querySelector(".user-logged-in");
 
-            if (!!second_check.parentElement.previousElementSibling.classList.contains("form-item")) {
+            if (!!logueado && !!second_check.parentElement.previousElementSibling.classList.contains("form-item")) {
+              var atributo = input_value.getAttribute("value").split("").slice(0, 3).join("");
+              input_value.setAttribute("value", atributo);
+              second_check.closest(".form-type-checkbox").remove();
+            } else if (logueado === null && !!second_check.parentElement.previousElementSibling.previousElementSibling.classList.contains("form-item")) {
               var atributo = input_value.getAttribute("value").split("").slice(0, 3).join("");
               input_value.setAttribute("value", atributo);
               second_check.closest(".form-type-checkbox").remove();

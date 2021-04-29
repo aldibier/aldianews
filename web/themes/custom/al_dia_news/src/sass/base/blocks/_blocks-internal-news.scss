@@ -900,9 +900,10 @@ div#selectionSharerPopover {
   background: rgb(0 0 0 / 80%);
   button[name="close"] {
     z-index: 9;
-    right: 20px;
+    right: 13px;
     background: url(/themes/custom/al_dia_news/assets/img/closew.png) center
       center no-repeat;
+    background-size: contain;
     @media (min-width: 1380px) and (max-width: 1830px) {
       right: 28%;
     }
@@ -921,6 +922,7 @@ div#selectionSharerPopover {
   @media (max-width: $tablet) {
     height: 200px;
     padding: 20px 0;
+    top: 99px;
     iframe {
       width: 245px;
       height: 153px;
@@ -933,4 +935,7 @@ div#selectionSharerPopover {
   .block-field-blocknodenewsfield-video
   .content.stuck {
   top: 125px;
+  @media (max-width: $tablet) {
+    top: 138px;
+  }
 }
