@@ -307,7 +307,9 @@ import replaceToken from "./modules/replaceToken";
           }
           if (!!button_field && !!button_field2) {
             button_field.addEventListener("click", () => {
-              button_field2.dbclick();
+              setTimeout(function() {
+                button_field2.dbclick();
+              }, 3000);
             });
           }
         } else {
