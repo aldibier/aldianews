@@ -121,6 +121,8 @@
       .form-type-managed-file {
         width: 100%;
         padding: 0;
+        display: flex;
+    flex-direction: column;
       }
 
       #edit-upload-file--more {
@@ -154,12 +156,11 @@
         background: #c4c4c4;
         display: block;
         width: 100%;
-        height: auto;
-        min-height: 65px;
+        height: 65px;
         padding: 0 0 0 65px;
         display: flex;
         position: relative;
-
+        overflow: hidden;
         &:after {
           position: absolute;
           top: 0;
@@ -230,7 +231,12 @@
     }
 
     .js-form-managed-file {
-      padding: 50px 0 0;
+      padding: 0px 0 0;
+      order: 3;
+    }
+    .description {
+      order: 2;
+      margin-top: 60px;
     }
 
     input[value="Remove selected"] {
@@ -415,6 +421,9 @@
 
     .upload-and-files {
       position: relative;
+      label{
+        order: 1;
+      }
     }
   }
 

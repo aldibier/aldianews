@@ -306,6 +306,18 @@ import replaceToken from "./modules/replaceToken";
           }
         });
 
+        //// elipsis para archivos
+        var fileHeight = $(".file-upload #edit-container .js-form-type-checkbox span").height();
+        var $text = $(".file-upload #edit-container .js-form-type-checkbox a");
+        if(!!fileHeight && !!$text){
+          while ( $text.outerHeight() > fileHeight ) {
+            $text.text(function (index, text) {
+                return text.replace(/\W*\s(\S)*$/, '...');
+              });
+            }
+        }
+       
+
         /// x que elimina archivos
         var firts_check = document.querySelector(
           '.form-managed-file .form-item:nth-of-type(1) input[type*="checkbox"]'
