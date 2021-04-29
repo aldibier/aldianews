@@ -291,35 +291,37 @@ import replaceToken from "./modules/replaceToken";
           });
 
         /// js para esrilos de boton de eliminar archivo
-        Array.from(
-          document.querySelectorAll(
-            ".webform-submission-apply-to-this-job-form .form-type-checkbox input"
-          )
-        ).map(function(e) {
-          if (e != null) {
-            e.addEventListener("click", () => {
-              var mng_field = e.closest(".form-managed-file");
-              if (mng_field != null) {
-                mng_field.classList.add("action-button");
-              }
-            }); 
+        var check_number = document.querySelectorAll(
+          ".form-managed-file .form-item"
+        ).length;
+        if (!!check_number && check_number >= 1) {
+          var mng_field = document.querySelector(".form-managed-file");
+          var button_field = document.querySelector(
+            ".action-button input[value=Upload]"
+          );
+          var button_field2 = document.querySelector(
+            ".js-hide.button.js-form-submit.form-submit"
+          );
+          if (!!mng_field) {
+            mng_field.classList.add("action-button");
           }
-        });
-
+          if (!!button_field && !!button_field2) {
+            button_field.addEventListener("click", () => {
+              button_field2.dbclick();
+            });
+          }
+        }
         //// elipsis para archivos
         Array.from(
-          document.querySelectorAll(
-            "#edit-container .js-form-type-checkbox a"
-          )
+          document.querySelectorAll("#edit-container .js-form-type-checkbox a")
         ).map(function(e) {
           if (e != null) {
-            if (e.innerText.length > 25){
-              var newt = e.innerText.substring(0,25) + '...';
+            if (e.innerText.length > 25) {
+              var newt = e.innerText.substring(0, 25) + "...";
               e.innerHTML = newt;
-             } 
+            }
           }
         });
-       
 
         /// x que elimina archivos
         var firts_check = document.querySelector(
@@ -341,10 +343,10 @@ import replaceToken from "./modules/replaceToken";
 
         if (!!firts_check && !!input_value && !!second_check) {
           firts_check.addEventListener("click", e => {
-            e.stopImmediatePropagation(); 
+            e.stopImmediatePropagation();
             var atributo1 = input_value
-              .getAttribute("value") 
-              .split("") 
+              .getAttribute("value")
+              .split("")
               .slice(4, 7)
               .join("");
             input_value.setAttribute("value", atributo1);

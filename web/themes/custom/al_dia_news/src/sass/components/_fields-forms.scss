@@ -276,11 +276,9 @@ form {
 }
 
 .action-button {
-  input[value="Upload"] {
+  input[value="Upload"],
+  .webform-file-button {
     background: #c4c4c4;
-  }
-  input[value*="Remove"] {
-    background: #5c6165;
   }
 }
 
@@ -311,6 +309,7 @@ form {
     background: rgb(92, 97, 101);
     min-width: 165px;
     width: max-content;
+    font-family: $PrNovacond-Sbold;
     position: absolute;
     top: 48px;
     left: 0px;

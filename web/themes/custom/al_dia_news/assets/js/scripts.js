@@ -1888,22 +1888,29 @@ __webpack_require__.r(__webpack_exports__);
           context.toggleClass("active-check");
         }); /// js para esrilos de boton de eliminar archivo
 
-        Array.from(document.querySelectorAll(".webform-submission-apply-to-this-job-form .form-type-checkbox input")).map(function (e) {
-          if (e != null) {
-            e.addEventListener("click", function () {
-              var mng_field = e.closest(".form-managed-file");
+        var check_number = document.querySelectorAll(".form-managed-file .form-item").length;
 
-              if (mng_field != null) {
-                mng_field.classList.add("action-button");
-              }
+        if (!!check_number && check_number >= 1) {
+          var mng_field = document.querySelector(".form-managed-file");
+          var button_field = document.querySelector(".action-button input[value=Upload]");
+          var button_field2 = document.querySelector(".js-hide.button.js-form-submit.form-submit");
+
+          if (!!mng_field) {
+            mng_field.classList.add("action-button");
+          }
+
+          if (!!button_field && !!button_field2) {
+            button_field.addEventListener("click", function () {
+              button_field2.dbclick();
             });
           }
-        }); //// elipsis para archivos
+        } //// elipsis para archivos
+
 
         Array.from(document.querySelectorAll("#edit-container .js-form-type-checkbox a")).map(function (e) {
           if (e != null) {
             if (e.innerText.length > 25) {
-              var newt = e.innerText.substring(0, 25) + '...';
+              var newt = e.innerText.substring(0, 25) + "...";
               e.innerHTML = newt;
             }
           }
