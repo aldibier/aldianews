@@ -1,0 +1,15 @@
+name: JSON:API Comment
+type: module
+description: Provides routes and links that enhance comments over JSON:API
+package: Core
+core: 8.x
+core_version_requirement: ^8 || ^9
+dependencies:
+  - drupal:comment
+  - drupal:jsonapi
+  - drupal:jsonapi_hypermedia
+
+# Information added by Drupal.org packaging script on 2019-11-14
+version: '8.x-1.0-beta2+1-dev'
+project: 'jsonapi_comment'
+datestamp: 1573771986

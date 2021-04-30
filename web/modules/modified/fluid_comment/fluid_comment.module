@@ -1,0 +1,46 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for Fluid Comments module.
+ *
+ * @DCG
+ * This file is no longer required in Drupal 8.
+ * @see https://www.drupal.org/node/2217931
+ */
+
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\user\EntityOwnerInterface;
+
+/**
+ * Implements hook_theme().
+ */
+function fluid_comment_theme($existing, $type, $theme, $path) {
+  return [
+    'fluid_comment_formatter' => [
+      'variables' => [
+        'commented_resource_url' => NULL,
+        'comment_type' => NULL,
+        'comment_field_name' => NULL,
+        'comment_display_mode' => NULL,
+        'filter_default_format' => NULL,
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_entity_access().
+ */
+function fluid_comment_comment_access(EntityInterface $entity, $operation, AccountInterface $account) {
+  assert($entity instanceof EntityOwnerInterface);
+  switch ($operation) {
+    case 'view':
+      return AccessResult::allowedIf($account->hasPermission('access comments') && !$account->isAnonymous() && $entity->getOwnerId() == $account->id())->cachePerUser();
+
+    default:
+      return AccessResult::neutral();
+  }
+}

@@ -7,11 +7,31 @@ dependencies:
     - core.entity_view_mode.comment.full
     - field.field.comment.comments_content.field_comment_body
   module:
+    - ds
     - layout_builder
 third_party_settings:
   layout_builder:
     allow_custom: false
     enabled: false
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - field_comment_body
 id: comment.comments_content.full
 targetEntityType: comment
 bundle: comments_content
@@ -23,13 +43,9 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: basic_string
-    region: content
-  links:
-    weight: 1
-    region: content
-    settings: {  }
-    third_party_settings: {  }
+    region: ds_content
 hidden:
   addtoany: true
   langcode: true
+  links: true
   search_api_excerpt: true

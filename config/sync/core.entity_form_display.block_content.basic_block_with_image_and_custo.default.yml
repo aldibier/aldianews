@@ -41,9 +41,11 @@ content:
       crop_preview_image_style: crop_thumbnail
       progress_indicator: throbber
       crop_list:
-        - page_headers
         - page_headers_mobile
-      crop_types_required: {  }
+        - page_headers
+      crop_types_required:
+        - page_headers_mobile
+        - page_headers
       show_crop_area: false
     third_party_settings: {  }
     type: image_widget_crop
