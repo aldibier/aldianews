@@ -275,16 +275,35 @@ form {
   order: 4;
 }
 
-.action-button {
-  input[value="Upload"],
-  .webform-file-button {
-    background: #c4c4c4 !important;
-  }
-}
-
 // ---------- Estilos para campos de carga de archivos --------////
 .file-upload #edit-container {
   position: relative;
+
+  .action-button {
+    input[value="Upload"],
+    .webform-file-button {
+      background: #c4c4c4 !important;
+    }
+  }
+  &.disable-button {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      background: transparent;
+      top: 0px;
+      left: 0px;
+      width: 175px;
+      height: 100px;
+      z-index: 9;
+    }
+    @media (max-width: $tablet) {
+      &::before {
+        width: 130px;
+      }
+    }
+  }
   #ajax-wrapper {
     width: auto;
     margin: 0;
