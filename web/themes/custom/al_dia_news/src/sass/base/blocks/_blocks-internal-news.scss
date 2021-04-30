@@ -919,6 +919,9 @@ div#selectionSharerPopover {
     height: 320px;
     margin: 0 auto;
   }
+  .video-embed-field-responsive-video:after{
+    padding-bottom: 320px;
+  }
   @media (max-width: $tablet) {
     height: 200px;
     padding: 20px 0;
@@ -926,6 +929,9 @@ div#selectionSharerPopover {
     iframe {
       width: 245px;
       height: 153px;
+    }
+    .video-embed-field-responsive-video:after{
+      padding-bottom: 180px;
     }
   }
 }
