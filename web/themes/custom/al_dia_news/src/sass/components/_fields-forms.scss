@@ -275,18 +275,35 @@ form {
   order: 4;
 }
 
-.action-button {
-  input[value="Upload"] {
-    background: #c4c4c4;
-  }
-  input[value*="Remove"] {
-    background: #5c6165;
-  }
-}
-
 // ---------- Estilos para campos de carga de archivos --------////
 .file-upload #edit-container {
   position: relative;
+
+  .action-button {
+    input[value="Upload"],
+    .webform-file-button {
+      background: #c4c4c4 !important;
+    }
+  }
+  &.disable-button {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      background: transparent;
+      top: 0px;
+      left: 0px;
+      width: 175px;
+      height: 100px;
+      z-index: 9;
+    }
+    @media (max-width: $tablet) {
+      &::before {
+        width: 130px;
+      }
+    }
+  }
   #ajax-wrapper {
     width: auto;
     margin: 0;
@@ -295,7 +312,7 @@ form {
       padding: 0;
     }
   }
-  .form-type-managed-file{
+  .form-type-managed-file {
     display: flex;
     flex-direction: column;
   }
@@ -311,6 +328,7 @@ form {
     background: rgb(92, 97, 101);
     min-width: 165px;
     width: max-content;
+    font-family: $PrNovacond-Sbold;
     position: absolute;
     top: 48px;
     left: 0px;
@@ -350,7 +368,11 @@ form {
     line-height: 25px;
     color: #fff;
   }
-  .managed-file-placeholder {
+  .webform-element-description {
+    font-size: 0px;
+  }
+  .text-description,
+  .description strong {
     max-width: 165px;
     font-style: normal;
     font-weight: 600;
@@ -358,6 +380,9 @@ form {
     line-height: 15px;
     color: #767676;
     font-family: $PrNovacond-reg;
+  }
+  .managed-file-placeholder {
+    display: none;
   }
   .webform-button--submit {
     position: absolute;
@@ -372,7 +397,7 @@ form {
   }
   .description {
     order: 2;
-    margin-top: 60px;
+    margin-top: 70px;
   }
   .js-form-type-checkbox:nth-child(2n + 1),
   .js-form-type-checkbox:nth-child(2n + 2) {
@@ -398,7 +423,7 @@ form {
       border: 0;
     }
     .option {
-      width: 165px; 
+      width: 165px;
       height: 65px;
     }
     span {

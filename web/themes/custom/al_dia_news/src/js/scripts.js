@@ -291,35 +291,33 @@ import replaceToken from "./modules/replaceToken";
           });
 
         /// js para esrilos de boton de eliminar archivo
-        Array.from(
-          document.querySelectorAll(
-            ".webform-submission-apply-to-this-job-form .form-type-checkbox input"
-          )
-        ).map(function(e) {
-          if (e != null) {
-            e.addEventListener("click", () => {
-              var mng_field = e.closest(".form-managed-file");
-              if (mng_field != null) {
-                mng_field.classList.add("action-button");
-              }
-            }); 
+        var check_number = document.querySelectorAll(
+          ".form-managed-file .form-item"
+        ).length;
+        var mng_field = document.querySelector(".form-managed-file");
+        var container_field = document.querySelector("#edit-container");
+        if (!!container_field && !!mng_field && !!check_number) {
+          if (check_number >= 1) {
+            mng_field.classList.add("action-button");
+          } else {
+            mng_field.classList.remove("action-button");
           }
-        });
+          if (check_number === 2) {
+            container_field.classList.add("disable-button");
+          }
+        }
 
         //// elipsis para archivos
         Array.from(
-          document.querySelectorAll(
-            "#edit-container .js-form-type-checkbox a"
-          )
+          document.querySelectorAll("#edit-container .js-form-type-checkbox a")
         ).map(function(e) {
           if (e != null) {
-            if (e.innerText.length > 25){
-              var newt = e.innerText.substring(0,25) + '...';
+            if (e.innerText.length > 25) {
+              var newt = e.innerText.substring(0, 25) + "...";
               e.innerHTML = newt;
-             } 
+            }
           }
         });
-       
 
         /// x que elimina archivos
         var firts_check = document.querySelector(
@@ -331,6 +329,7 @@ import replaceToken from "./modules/replaceToken";
         var input_value = document.querySelector(
           'input[name="upload_file[fids]"]'
         );
+        var cont_field = document.querySelector("#edit-container");
 
         if (!!firts_check && !!input_value && second_check === null) {
           firts_check.addEventListener("click", () => {
@@ -339,21 +338,25 @@ import replaceToken from "./modules/replaceToken";
           });
         }
 
-        if (!!firts_check && !!input_value && !!second_check) {
+        if (!!cont_field && !!firts_check && !!input_value && !!second_check) {
           firts_check.addEventListener("click", e => {
-            e.stopImmediatePropagation(); 
+            e.stopImmediatePropagation();
             var atributo1 = input_value
-              .getAttribute("value") 
-              .split("") 
+              .getAttribute("value")
+              .split("")
               .slice(4, 7)
               .join("");
             input_value.setAttribute("value", atributo1);
             firts_check.closest(".form-type-checkbox").remove();
+            cont_field.classList.remove("disable-button");
           });
 
           second_check.addEventListener("click", e => {
             e.stopImmediatePropagation();
+            var logueado = document.querySelector(".user-logged-in");
+
             if (
+              !!logueado &&
               !!second_check.parentElement.previousElementSibling.classList.contains(
                 "form-item"
               )
@@ -365,9 +368,25 @@ import replaceToken from "./modules/replaceToken";
                 .join("");
               input_value.setAttribute("value", atributo);
               second_check.closest(".form-type-checkbox").remove();
+              cont_field.classList.remove("disable-button");
+            } else if (
+              logueado === null &&
+              !!second_check.parentElement.previousElementSibling.previousElementSibling.classList.contains(
+                "form-item"
+              )
+            ) {
+              var atributo = input_value
+                .getAttribute("value")
+                .split("")
+                .slice(0, 3)
+                .join("");
+              input_value.setAttribute("value", atributo);
+              second_check.closest(".form-type-checkbox").remove();
+              cont_field.classList.remove("disable-button");
             } else {
               input_value.setAttribute("value", "");
               second_check.closest(".form-type-checkbox").remove();
+              cont_field.classList.remove("disable-button");
             }
           });
         }

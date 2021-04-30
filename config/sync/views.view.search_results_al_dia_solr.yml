@@ -865,6 +865,30 @@ display:
         - 'user.node_grants:view'
       tags:
         - 'config:search_api.index.news'
+  block_2:
+    display_plugin: block
+    id: block_2
+    display_title: 'Block 2'
+    position: 3
+    display_options:
+      display_extenders: {  }
+      arguments: {  }
+      defaults:
+        arguments: false
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - user
+        - 'user.node_grants:view'
+      tags:
+        - 'config:field.storage.node.field_category'
+        - 'config:field.storage.node.field_image'
+        - 'config:field.storage.node.field_my_content_has_a_main_vide'
+        - 'config:field.storage.node.field_short_title'
+        - 'config:search_api.index.news'
   page_1:
     display_plugin: page
     id: page_1
@@ -872,7 +896,8 @@ display:
     position: 1
     display_options:
       display_extenders:
-        ajax_history: {  }
+        ajax_history:
+          enable_history: false
       path: search-results
       filters:
         search_api_fulltext:
@@ -921,6 +946,7 @@ display:
           parse_mode: terms
           min_length: null
           fields:
+            - aggregated_field
             - field_short_title
           plugin_id: search_api_fulltext
         field_category:
@@ -1697,8 +1723,7 @@ display:
           expose:
             label: Relevance
           plugin_id: search_api
-      empty: {  }
-      footer:
+      empty:
         search_api_spellcheck_did_you_mean:
           id: search_api_spellcheck_did_you_mean
           table: views
@@ -1706,11 +1731,24 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          empty: false
+          empty: true
           search_api_spellcheck_count: 1
           search_api_spellcheck_hide_on_result: 1
           search_api_spellcheck_collate: true
           plugin_id: search_api_spellcheck_did_you_mean
+        search_api_spellcheck_suggetions:
+          id: search_api_spellcheck_suggetions
+          table: views
+          field: search_api_spellcheck_suggetions
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          search_api_spellcheck_count: '7'
+          search_api_spellcheck_hide_on_result: 1
+          search_api_spellcheck_collate: false
+          plugin_id: search_api_spellcheck_suggestions
+      footer: {  }
     cache_metadata:
       max-age: -1
       contexts:

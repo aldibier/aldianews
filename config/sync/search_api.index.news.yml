@@ -58,6 +58,16 @@ name: News
 description: ''
 read_only: false
 field_settings:
+  aggregated_field:
+    label: 'Aggregated field'
+    property_path: aggregated_field
+    type: solr_text_spellcheck
+    configuration:
+      type: union
+      fields:
+        - 'entity:node/body'
+        - 'entity:node/field_short_title'
+        - 'entity:node/title'
   created:
     label: 'Authored on'
     datasource_id: 'entity:node'
@@ -102,7 +112,7 @@ field_settings:
     label: 'Short title'
     datasource_id: 'entity:node'
     property_path: field_short_title
-    type: solr_text_spellcheck
+    type: text
     dependencies:
       config:
         - field.storage.node.field_short_title

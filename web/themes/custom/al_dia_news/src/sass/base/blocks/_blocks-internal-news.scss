@@ -893,14 +893,23 @@ div#selectionSharerPopover {
   margin: 0 auto;
   width: 100%;
   padding: 40px 0px;
-  height: 380px;
+  height: 400px;
   transform: translateY(100%);
   animation: fade-in-up 0.75s ease forwards;
   z-index: 1;
-  background: #000000;
-  opacity: 0.8;
+  background: rgb(0 0 0 / 80%);
   button[name="close"] {
     z-index: 9;
+    right: 13px;
+    background: url(/themes/custom/al_dia_news/assets/img/closew.png) center
+      center no-repeat;
+    background-size: contain;
+    @media (min-width: 1380px) and (max-width: 1830px) {
+      right: 28%;
+    }
+    @media (min-width: 1830px) {
+      right: 33%;
+    }
   }
   &.disnone {
     display: none;
@@ -913,6 +922,7 @@ div#selectionSharerPopover {
   @media (max-width: $tablet) {
     height: 200px;
     padding: 20px 0;
+    top: 99px;
     iframe {
       width: 245px;
       height: 153px;
@@ -925,4 +935,7 @@ div#selectionSharerPopover {
   .block-field-blocknodenewsfield-video
   .content.stuck {
   top: 125px;
+  @media (max-width: $tablet) {
+    top: 138px;
+  }
 }
