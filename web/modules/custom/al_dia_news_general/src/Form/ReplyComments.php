@@ -159,8 +159,8 @@ class ReplyComments extends FormBase {
     $comment->set('field_comment_body', $form_state->getValue('comment'));
     //$comment->comment_body->format = 'full_html';
     $comment->save();
-    ksm($form_state->getTriggeringElement()['#name']);
-    ksm($form_state->getValue('data'));
+    // ksm($form_state->getTriggeringElement()['#name']);
+    // ksm($form_state->getValue('data'));
     
   }
   /**
