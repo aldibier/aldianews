@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_display.comment.comments_content.full
     - core.entity_view_mode.node.news
     - field.field.node.news.body
     - field.field.node.news.field_author
@@ -16,10 +17,13 @@ dependencies:
     - field.field.node.news.field_postcast_categories
     - field.field.node.news.field_short_title
     - field.field.node.news.field_tags
+    - field.field.node.news.field_test
     - field.field.node.news.field_type_of_content
     - field.field.node.news.field_video
     - node.type.news
   module:
+    - comment
+    - field_formatter_class
     - image
     - text
     - user
@@ -43,6 +47,17 @@ content:
     third_party_settings: {  }
     type: string
     region: content
+  field_comments:
+    type: comment_default
+    weight: 5
+    region: content
+    label: above
+    settings:
+      view_mode: full
+      pager_id: 0
+    third_party_settings:
+      field_formatter_class:
+        class: ''
   field_image:
     weight: 0
     label: hidden
@@ -69,12 +84,12 @@ hidden:
   addtoany: true
   field_author: true
   field_category: true
-  field_comments: true
   field_high_impact_news: true
   field_my_content_has_a_main_vide: true
   field_podcast_player: true
   field_postcast_categories: true
   field_tags: true
+  field_test: true
   field_type_of_content: true
   field_video: true
   langcode: true

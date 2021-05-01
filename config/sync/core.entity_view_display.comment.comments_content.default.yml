@@ -5,6 +5,35 @@ dependencies:
   config:
     - comment.type.comments_content
     - field.field.comment.comments_content.field_comment_body
+  module:
+    - ds
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - field_comment_body
+        - comment_display_custom
+    fields:
+      comment_display_custom:
+        plugin_id: comment_display_custom
+        weight: 1
+        label: hidden
+        formatter: default
 id: comment.comments_content.default
 targetEntityType: comment
 bundle: comments_content
@@ -16,13 +45,9 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: basic_string
-    region: content
-  links:
-    weight: 1
-    region: content
-    settings: {  }
-    third_party_settings: {  }
+    region: ds_content
 hidden:
   addtoany: true
   langcode: true
+  links: true
   search_api_excerpt: true
