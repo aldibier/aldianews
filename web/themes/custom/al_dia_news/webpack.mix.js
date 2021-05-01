@@ -44,7 +44,7 @@ mix.sass('src/sass/styles.scss', 'css');
  | JS
  |--------------------------------------------------------------------------
  */
-mix.js('src/js/scripts.js', 'js');
+mix.js('src/js/main.js', 'js');
 
 // Full API
 // mix.js(src, output);
