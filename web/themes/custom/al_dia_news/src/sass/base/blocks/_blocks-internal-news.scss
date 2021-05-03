@@ -134,9 +134,15 @@
 }
 
 //  estilo para video en interna noticias
-.content-news-internal-first.video-present {
+/* .content-news-internal-first.video-present {
   .block-field-blocknodenewsfield-image,
   div.field--name-field-image {
+    display: none;
+  }
+} */
+
+.block-field-blocknodenewsfield-video {
+  + .block-field-blocknodenewsfield-image {
     display: none;
   }
 }

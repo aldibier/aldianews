@@ -4,6 +4,7 @@
   }
 
   .block-fixed-block-contentheader-work-with-al-dia {
+    min-width: 75px;
     margin-right: 15px;
     color: $cwhite;
 
@@ -20,14 +21,14 @@
     }
 
     h1 {
-      margin-bottom: 5px;
       @include text($PrNovacond-bold, szrem(25), $cwhite, 95%);
       .aldia-logo-in-text {
         max-width: 200px;
+        margin: 5px 0;
         position: relative;
-        left: -4px;
+        /* left: -4px; */
         img {
-          height: 60px;
+          height: auto;
         }
       }
       @media screen and (min-width: $tablet) {
@@ -36,7 +37,10 @@
       }
     }
 
-    p {
+
+    
+    p,
+    .field--name-field-description {
       @include text(
         $family: $PrNovacond-light,
         $color: $cwhite,
