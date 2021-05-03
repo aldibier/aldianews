@@ -95,6 +95,9 @@ class Comments extends DsFieldBase {
         ],
       ];
       $items[] = [
+        '#markup' => '<div class="container-reply"></div>',
+      ];
+      $items[] = [
         '#markup' => '<ul class="container-show-hide"><li>SEE <span></span> ANSWERS</li><li>HIDE <span></span> ANSWERS</li></ul>',
         '#attributes' => [
           'class' => [
