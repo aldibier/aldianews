@@ -1,0 +1,257 @@
+.path-podcast {
+
+}
+
+.view-last-category-podcast {
+    h1 {
+		max-height: 58px;
+		margin: 0 0 45px;
+		padding-bottom: 10px;
+		border-bottom: 3px solid $corange;
+		font-size: szrem(42);
+		font-family: $Mod-light;
+       	font-style: normal;
+		font-weight: normal;
+		line-height: 50px;
+		color: $corange;
+    }
+
+	.views-field-view-2 {
+		.block-fixed-block-contenthorizontal-advertising {
+			margin-bottom: 90px;
+		}
+	}
+}
+
+.podcast-category-block {
+	margin-bottom: 75px;
+	display: grid;
+	grid-template-columns: minmax(auto,840px) 1fr;
+	grid-template-rows: 490px auto;
+	grid-template-areas: 'last-category podcast-image'
+						 'last-category social-media';
+	grid-gap: 20px 40px;
+}
+
+.last-category-podcast {
+	grid-area: last-category;
+}
+
+.podcast-category-image {
+	margin-bottom: 30px;
+	line-height: 0;
+
+	img {
+		max-width: 100%;
+		max-height: 480px;
+	}
+}
+
+.podcast-category-name {
+	margin-bottom: 10px;
+
+	a {
+		font-size: szrem(30);
+		font-family: $PrNovacond-bold;
+		font-style: normal;
+		font-weight: bold;
+		text-transform: uppercase;
+		text-decoration: none;
+		letter-spacing: 0.741176px;
+		color: $cgrey6;
+	}
+}
+
+.podcast-category-description {
+	p {
+		margin: 0;
+		font-size: szrem(19);
+		font-style: normal;
+		font-weight: normal;
+		font-family: $CenturyOld-Regular;
+		line-height: 140%;
+		letter-spacing: 0.741176px;
+		color: $cgrey6;
+	}
+}
+
+.al-dia-podcast-image {
+	grid-area: podcast-image;
+}
+
+.al-dia-podcast-social-media {
+	padding-top: 45px;
+	border-top: 2px solid $cgrey4;
+	grid-area: social-media;
+
+	ul {
+		display: flex;
+		justify-content: space-evenly;
+		text-align: center;
+
+		li {
+			margin: 0;
+			padding: 0;
+			position: relative;
+		}
+	}
+
+	.views-field-field-icon-platform {
+		margin-bottom: 15px;
+
+		a {
+			display: block;
+			line-height: 0;
+		}
+	}
+
+	.views-field-field-platform-name {
+		font-size: szrem(14);
+		font-family: $PrNovacond-reg;
+		font-style: normal;
+		//font-weight: 600;
+		line-height: 25px;
+		letter-spacing: 0.741176px;
+		color: $cgrey3;
+	}
+}
+
+.category-list {
+	margin-bottom: 90px;
+
+	h3 {
+		display: none;
+	}
+
+	ul {
+		margin: 0;
+		padding: 0;
+		display: grid;
+		grid-template-columns: repeat(auto-fill,minmax(auto,180px));
+		grid-template-rows: 255px;
+		grid-column-gap: 40px;
+	}
+
+	li:not(:last-child) {
+		&::before {
+			content: '';
+			width: 1px;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			right: calc(0% - 20px);
+			background-color: $cgrey4;
+		}
+	} 
+}
+
+.podcast-category {
+	position: relative;
+	list-style: none;
+
+	.views-field-field-category-image {
+		margin-bottom: 15px;
+
+		a {
+			display: block;
+			line-height: 0;
+		}
+
+		img {
+			width: 180px;
+			height: 180px;
+		}
+	}
+
+	.views-field-name {
+		a {
+			font-size: szrem(21);
+			font-family: $PrNovacond-bold;
+			font-style: normal;
+			font-weight: bold;
+			line-height: 26px;
+			text-decoration: none;
+			color: $cgrey6;
+		}
+	}
+}
+
+.podcast-content-list {
+	display: flex;
+	flex-wrap: wrap;
+
+	.view-header {}
+
+	.view-content {
+		max-width: 840px;
+		margin-right: 40px;
+		order: -1;
+	}
+
+	.view-footer {
+		display: none;
+	}
+}
+
+.podcast-item {
+	margin-bottom: 40px;
+	padding-bottom: 40px;
+	border-bottom: 1px solid $cgrey4;
+}
+
+.podcast-item-category {
+	margin-bottom: 10px;
+
+	a {
+		font-size: szrem(18);
+		font-family: $ModernoFB-Regular;
+		font-style: normal;
+		font-weight: normal;
+		line-height: 22px;
+		letter-spacing: 0.08em;
+		color: $corange;
+	}
+}
+
+.podcast-item-title {
+	margin-bottom: 10px;
+	display: block;
+
+	a {
+		font-size: szrem(30);
+		font-family: $PrNovacond-bold;
+		font-style: normal;
+		font-weight: bold;
+		line-height: 35px;
+		letter-spacing: 0.741176px;
+		text-transform: uppercase;
+		color: $cgrey6;
+	}
+}
+
+.podcast-item-authored-on {
+	margin-bottom: 15px;
+	display: block;
+	font-size: szrem(18);
+	font-family: $PrNovacond-light;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 22px;
+	color: $cgrey3;
+}
+
+.podcast-item-body {
+	margin-bottom: 25px;
+	font-size: szrem(19);
+	font-family: $CenturyOld-Regular;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 140%;
+	letter-spacing: 0.741176px;
+	color: $cgrey6;
+}
+
+.podcast-item-podcast-player {
+	max-width: 470px;
+	max-height: 90px;
+}

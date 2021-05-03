@@ -26,21 +26,33 @@ third_party_settings:
           layout_class: {  }
     regions:
       ds_content:
+        - comment_author_display_custom
+        - comment_post_date
         - field_comment_body
         - comment_display_custom
     fields:
-      comment_display_custom:
-        plugin_id: comment_display_custom
-        weight: 1
+      comment_author_display_custom:
+        plugin_id: comment_author_display_custom
+        weight: 0
         label: hidden
         formatter: default
+      comment_display_custom:
+        plugin_id: comment_display_custom
+        weight: 3
+        label: hidden
+        formatter: default
+      comment_post_date:
+        plugin_id: comment_post_date
+        weight: 1
+        label: hidden
+        formatter: ds_post_date_event_date
 id: comment.comments_content.default
 targetEntityType: comment
 bundle: comments_content
 mode: default
 content:
   field_comment_body:
-    weight: 0
+    weight: 2
     label: hidden
     settings: {  }
     third_party_settings: {  }
