@@ -14,6 +14,10 @@ use Drupal\Core\Url;
  * Contains al_dia_news_general.module.
  */
 
+function al_dia_news_general_page_attachments(&$variables) {
+  $variables['#attached']['library'][] = 'al_dia_news_general/custom_css';
+}
+
 /**
  * Implements hook_help().
  */
