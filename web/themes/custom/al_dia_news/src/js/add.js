@@ -89,24 +89,6 @@ const add_ = () => {
       father_li.appendChild(e);
     }
   });
-
-  /////// js para añadir la cantidad de comentarios de respuesta
-  Array.from(document.querySelectorAll(".container-show-hide span")).map(
-    function(e) {
-      var father_answer = document.querySelectorAll(
-        "section > .comment + .indented > div:not(.indented)"
-      );
-      if (!!e && !!father_answer) {
-        e.innerHTML = father_answer.length;
-        e.parentElement.addEventListener("click", () => {
-          e.parentElement.parentElement.classList.toggle("active");
-          Array.from(father_answer.parentElement).map(function(e) {
-            e.classList.toggle("dis-block");
-          });
-        });
-      }
-    }
-  );
 };
 
 export default add_;
