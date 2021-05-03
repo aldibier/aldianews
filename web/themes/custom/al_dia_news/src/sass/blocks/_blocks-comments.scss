@@ -112,6 +112,10 @@ section .comment:not(section .indented .comment) {
       display: flex;
       align-items: center;
       justify-content: flex-end;
+      flex-wrap: wrap;
+      li:last-child {
+        width: 100%;
+      }
     }
   }
 }
@@ -179,7 +183,7 @@ section > .comment:nth-of-type(1) {
   }
 }
 .al-dia-news-reply-comments {
-  a {
+  input[value="REPLY"] {
     color: $corange;
     text-transform: uppercase;
     border-bottom: 0px;
@@ -196,15 +200,7 @@ section > .comment:nth-of-type(1) {
     margin: 0px;
     min-height: auto;
   }
-  .form-wrapper {
-    position: relative;
-    min-height: 190px;
-  }
   textarea {
-    position: absolute;
-    top: 20px;
-    left: 0px;
-    width: 100%;
     background: #ffffff;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
