@@ -98,6 +98,10 @@ const add_ = () => {
       );
       if (!!e && !!father_answer) {
         e.innerHTML = father_answer.length;
+        e.parentElement.addEventListener("click", () => {
+          e.parentElement.classList.toggle("active");
+          father_answer.parentElement.classList.toggle("dis-block");
+        });
       }
     }
   );

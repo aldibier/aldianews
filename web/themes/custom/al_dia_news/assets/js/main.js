@@ -1283,6 +1283,10 @@ var add_ = function add_() {
 
     if (!!e && !!father_answer) {
       e.innerHTML = father_answer.length;
+      e.parentElement.addEventListener("click", function () {
+        e.parentElement.classList.toggle("active");
+        father_answer.parentElement.classList.toggle("dis-block");
+      });
     }
   });
 };
