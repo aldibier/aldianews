@@ -1276,6 +1276,14 @@ var add_ = function add_() {
     if (!!e && !!father_li) {
       father_li.appendChild(e);
     }
+  }); /////// js para añadir la cantidad de comentarios de respuesta y desplegable
+
+  Array.from(document.querySelectorAll(".container-show-hide span")).map(function (e) {
+    var father_answer = document.querySelectorAll("section > .comment + .indented > div:not(.indented)");
+
+    if (!!e && !!father_answer) {
+      e.innerHTML = father_answer.length;
+    }
   });
 };
 
@@ -1677,14 +1685,13 @@ var dropdown_ = function dropdown_() {
 
 
   Array.from(document.querySelectorAll(".container-show-hide span")).map(function (e) {
-    var father_answer = document.querySelectorAll("section > .comment + .indented > div:not(.indented)");
+    var container_answer = document.querySelectorAll("section .indented");
 
-    if (!!e && !!father_answer) {
-      e.innerHTML = father_answer.length;
+    if (!!e && !!container_answer) {
       e.parentElement.addEventListener("click", function () {
         e.parentElement.parentElement.classList.toggle("active");
-        Array.from(father_answer).map(function (e) {
-          e.parentElement.classList.toggle("dis-block");
+        Array.from(container_answer).map(function (e) {
+          e.classList.toggle("dis-block");
         });
       });
     }

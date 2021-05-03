@@ -14,15 +14,12 @@ const dropdown_ = () => {
   /////// js para añadir la cantidad de comentarios de respuesta y desplegable
   Array.from(document.querySelectorAll(".container-show-hide span")).map(
     function(e) {
-      var father_answer = document.querySelectorAll(
-        "section > .comment + .indented > div:not(.indented)"
-      );
-      if (!!e && !!father_answer) {
-        e.innerHTML = father_answer.length;
+      var container_answer = document.querySelectorAll("section .indented");
+      if (!!e && !!container_answer) {
         e.parentElement.addEventListener("click", () => {
           e.parentElement.parentElement.classList.toggle("active");
-          Array.from(father_answer).map(function(e) {
-            e.parentElement.classList.toggle("dis-block");
+          Array.from(container_answer).map(function(e) {
+            e.classList.toggle("dis-block");
           });
         });
       }

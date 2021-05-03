@@ -89,6 +89,17 @@ const add_ = () => {
       father_li.appendChild(e);
     }
   });
+  /////// js para añadir la cantidad de comentarios de respuesta y desplegable
+  Array.from(document.querySelectorAll(".container-show-hide span")).map(
+    function(e) {
+      var father_answer = document.querySelectorAll(
+        "section > .comment + .indented > div:not(.indented)"
+      );
+      if (!!e && !!father_answer) {
+        e.innerHTML = father_answer.length;
+      }
+    }
+  );
 };
 
 export default add_;
