@@ -117,6 +117,23 @@ section .comment:not(section .indented .comment) {
         width: 100%;
       }
     }
+    input[value="REPLY"] {
+      color: $corange !important;
+      text-transform: uppercase;
+      border-bottom: 0px;
+      font-style: normal;
+      font-size: $px20;
+      line-height: 28px;
+      font-weight: 600;
+      font-family: $PrNovacond-reg;
+      text-transform: uppercase;
+      color: $cblack3;
+      background: transparent;
+      width: max-content;
+      padding: 0px;
+      margin: 0px;
+      min-height: auto;
+    }
   }
 }
 .comment.new span:nth-child(1) {
@@ -126,8 +143,9 @@ section .comment:not(section .indented .comment) {
   margin: -25px 0 0;
   width: 100%;
 
-  .comment {
-    margin: 0;
+  .comment,
+  .indented {
+    margin: 0 !important;
   }
 
   .comment-show,
@@ -166,6 +184,20 @@ section > .comment:nth-of-type(1) {
 }
 .container-show-hide {
   text-transform: uppercase;
+  position: relative;
+  padding-right: 50px;
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    background: transparent url("../img/arrow-bottom.png") center center
+      no-repeat;
+    background-size: contain;
+    width: 17.06px;
+    height: 10px;
+    right: 20px;
+    top: 5px;
+  }
   li {
     color: #7e7e7e !important;
     font-style: normal;
@@ -184,21 +216,7 @@ section > .comment:nth-of-type(1) {
 }
 .al-dia-news-reply-comments {
   input[value="REPLY"] {
-    color: $corange;
-    text-transform: uppercase;
-    border-bottom: 0px;
-    font-style: normal;
-    font-size: $px20;
-    line-height: 28px;
-    font-weight: 600;
-    font-family: $PrNovacond-reg;
-    text-transform: uppercase;
-    color: $cblack3;
-    background: transparent;
-    width: max-content;
-    padding: 0px;
-    margin: 0px;
-    min-height: auto;
+    display: none;
   }
   textarea {
     background: #ffffff;
