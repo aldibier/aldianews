@@ -142,7 +142,7 @@
 } */
 
 .block-field-blocknodenewsfield-video {
-  + .block-field-blocknodenewsfield-image {
+  + .block-field-blocknodenewsfield-image  {
     display: none;
   }
 }
@@ -724,7 +724,7 @@ div[data-embed-button="related_content"] {
 }
 
 .path-comment {
-  article.comment:nth-child(1)::before {
+  section > .comment:nth-of-type(1)::before {
     display: none;
   }
 
@@ -925,7 +925,7 @@ div#selectionSharerPopover {
     height: 320px;
     margin: 0 auto;
   }
-  .video-embed-field-responsive-video:after{
+  .video-embed-field-responsive-video:after {
     padding-bottom: 320px;
   }
   @media (max-width: $tablet) {
@@ -936,7 +936,7 @@ div#selectionSharerPopover {
       width: 245px;
       height: 153px;
     }
-    .video-embed-field-responsive-video:after{
+    .video-embed-field-responsive-video:after {
       padding-bottom: 180px;
     }
   }
