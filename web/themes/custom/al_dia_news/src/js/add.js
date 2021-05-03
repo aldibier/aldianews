@@ -101,15 +101,16 @@ const add_ = () => {
   //   }
   // );
 
-  Array.from(document.querySelectorAll("section > .comment")).map(function(e) {
-    if (!!e && e.nextElementSibling.classList.contains("indented")) {
-      var father_answer = e.nextElementSibling.querySelectorAll(
-        "div:not(.indented)"
-      );
-      e.querySelector(".container-show-hide span").innerHTML =
-        father_answer.length;
-    }
-  });
+  // Array.from(document.querySelectorAll("section > .comment")).map(function(e) {
+  //   if (!!e && e.nextElementSibling.classList.contains("indented")) {
+  //     var father_answer = e.nextElementSibling.children;
+  //       if (!father_answer.classList.contains("indented")) {
+  //         e.querySelector(".container-show-hide span").innerHTML =
+  //       father_answer.length;
+  //       }
+
+  //   }
+  // });
 };
 
 export default add_;
