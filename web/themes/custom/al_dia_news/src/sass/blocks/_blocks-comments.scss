@@ -144,7 +144,19 @@ section .comment:not(section .indented .comment) {
   }
 }
 section .indented .comment {
-  border-bottom: 1px solid $cgrey4;
+  position: relative;
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin: 0 auto;
+    width: 80%;
+    height: 1px;
+    background: #b1b1b1;
+  }
 }
 section > .comment:nth-of-type(1) {
   position: relative;

@@ -90,16 +90,26 @@ const add_ = () => {
     }
   });
   /////// js para añadir la cantidad de comentarios de respuesta y desplegable
-  Array.from(document.querySelectorAll(".container-show-hide span")).map(
-    function(e) {
-      var father_answer = document.querySelectorAll(
-        "section > .comment + .indented > div:not(.indented)"
+  // Array.from(document.querySelectorAll(".container-show-hide span")).map(
+  //   function(e) {
+  //     var father_answer = document.querySelectorAll(
+  //       "section > .comment + .indented > div:not(.indented)"
+  //     );
+  //     if (!!e && !!father_answer) {
+  //       e.innerHTML = father_answer.length;
+  //     }
+  //   }
+  // );
+
+  Array.from(document.querySelectorAll("section > .comment")).map(function(e) {
+    if (!!e && e.nextElementSibling.classList.contains("indented")) {
+      var father_answer = e.nextElementSibling.querySelectorAll(
+        "div:not(.indented)"
       );
-      if (!!e && !!father_answer) {
-        e.innerHTML = father_answer.length;
-      }
+      e.querySelector(".container-show-hide span").innerHTML =
+        father_answer.length;
     }
-  );
+  });
 };
 
 export default add_;
