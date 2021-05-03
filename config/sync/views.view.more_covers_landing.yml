@@ -45,7 +45,7 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Apply
+          submit_button: SEARCH
           reset_button: false
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
@@ -602,6 +602,91 @@ display:
           expose:
             operator_limit_selection: false
             operator_list: {  }
+        field_start_date_value:
+          id: field_start_date_value
+          table: node__field_start_date
+          field: field_start_date_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value:
+            min: ''
+            max: ''
+            value: ''
+            type: date
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_start_date_value_op
+            label: 'start date (field_start_date)'
+            description: null
+            use_operator: false
+            operator: field_start_date_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_start_date_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            placeholder: null
+            min_placeholder: null
+            max_placeholder: null
+          is_grouped: true
+          group_info:
+            label: 'Sort by'
+            description: ''
+            identifier: field_start_date_value
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items:
+              1:
+                title: '2021'
+                operator: '='
+                value:
+                  type: date
+                  value: '2021'
+                  min: ''
+                  max: ''
+              2:
+                title: '2020'
+                operator: '='
+                value:
+                  type: date
+                  value: '2020'
+                  min: ''
+                  max: ''
+              3:
+                title: '2019'
+                operator: '='
+                value:
+                  type: date
+                  value: '2019'
+                  min: ''
+                  max: ''
+              4:
+                title: '2018'
+                operator: '='
+                value:
+                  type: date
+                  value: '2018'
+                  min: ''
+                  max: ''
+              5:
+                title: '2017'
+                operator: '='
+                value:
+                  type: date
+                  value: '2017'
+                  min: ''
+                  max: ''
+          plugin_id: datetime
       sorts:
         created:
           id: created
@@ -645,6 +730,7 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions
@@ -667,6 +753,7 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions
