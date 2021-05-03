@@ -1268,6 +1268,22 @@ var add_ = function add_() {
         e.closest(".views-row").classList.add("slider-more");
       }
     }
+  }); ////// js para añadir el boton de respuesta en la lista
+
+  Array.from(document.querySelectorAll(".al-dia-news-reply-comments input[value=REPLY]")).map(function (e) {
+    var father_li = e.closest("ul").querySelector(".container-reply");
+
+    if (!!e && !!father_li) {
+      father_li.appendChild(e);
+    }
+  }); /////// js para añadir la cantidad de comentarios de respuesta y desplegable
+
+  Array.from(document.querySelectorAll(".container-show-hide span")).map(function (e) {
+    var father_answer = document.querySelectorAll("section > .comment + .indented > div:not(.indented)");
+
+    if (!!e && !!father_answer) {
+      e.innerHTML = father_answer.length;
+    }
   });
 };
 
@@ -1665,7 +1681,21 @@ var dropdown_ = function dropdown_() {
       blocks_search.classList.toggle("open");
       arrow.classList.toggle("rote");
     });
-  }
+  } /////// js para añadir la cantidad de comentarios de respuesta y desplegable
+
+
+  Array.from(document.querySelectorAll(".container-show-hide span")).map(function (e) {
+    var container_answer = document.querySelectorAll("section .indented");
+
+    if (!!e && !!container_answer) {
+      e.parentElement.addEventListener("click", function () {
+        e.parentElement.parentElement.classList.toggle("active");
+        Array.from(container_answer).map(function (e) {
+          e.classList.toggle("dis-block");
+        });
+      });
+    }
+  });
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (dropdown_);
