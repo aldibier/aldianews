@@ -25,7 +25,7 @@
     }
   }
 }
-.comment {
+section .comment:not(section .indented .comment) {
   position: relative;
   background: #fbfbfb;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.17);
@@ -92,7 +92,7 @@
     width: 100%;
   }
 
-  .links {
+  .item-list {
     margin: 0 0 0 auto;
     display: flex !important;
     font-style: normal;
@@ -133,10 +133,10 @@
     text-align: right;
   }
 }
-article.comment {
+section .indented .comment {
   border-bottom: 1px solid $cgrey4;
 }
-section > article.comment:nth-child(1) {
+section > .comment:nth-of-type(1) {
   position: relative;
   border-bottom: 0px solid transparent;
 
@@ -154,45 +154,69 @@ section > article.comment:nth-child(1) {
     letter-spacing: 0.2px;
   }
 }
-.comment-show {
-  display: flex !important;
-  flex-direction: row-reverse;
+.container-show-hide {
+  // display: flex !important;
+  // flex-direction: row-reverse;
   text-transform: uppercase;
-  span:nth-child(1) {
-    position: relative;
-    display: flex;
-    &::after {
-      content: "ANSWERS";
-      display: block;
-      position: relative;
-      top: 0px;
-      right: -5px;
-      font-style: normal;
-      font-size: $px20;
-      line-height: 28px;
-      font-weight: 600;
-      font-family: $PrNovacond-reg;
-      color: #7e7e7e;
-    }
-  }
-  span {
+  // span:nth-child(1) {
+  //   position: relative;
+  //   display: flex;
+  //   &::after {
+  //     content: "ANSWERS";
+  //     display: block;
+  //     position: relative;
+  //     top: 0px;
+  //     right: -5px;
+  //     font-style: normal;
+  //     font-size: $px20;
+  //     line-height: 28px;
+  //     font-weight: 600;
+  //     font-family: $PrNovacond-reg;
+  //     color: #7e7e7e;
+  //   }
+  // }
+  li {
     color: #7e7e7e !important;
+    font-style: normal;
+    font-size: $px20;
+    line-height: 28px;
+    font-weight: 600;
+    font-family: $PrNovacond-reg;
+    text-transform: uppercase;
+    color: $cblack3;
+    cursor: pointer;
+    position: relative;
+  }
+  li:last-child {
+    display: none;
   }
 }
-.comment-translations {
-  display: none !important;
-}
-.comment-show {
-  color: $cgrey6 !important;
-  position: relative;
-}
-.show-hide {
-  margin: 0 5px;
-}
+// .comment-translations {
+//   display: none !important;
+// }
+// .comment-show {
+//   color: $cgrey6 !important;
+//   position: relative;
+// }
+// .show-hide {
+//   margin: 0 5px;
+// }
 .comment-reply a {
-  color: $corange !important;
+  color: $corange;
   text-transform: uppercase;
   border-bottom: 0px;
+  font-style: normal;
+  font-size: $px20;
+  line-height: 28px;
+  font-weight: 600;
+  font-family: $PrNovacond-reg;
+  text-transform: uppercase;
+  color: $cblack3;
+  background: transparent;
+  width: max-content;
+  padding: 0px;
+  margin: 0px;
+  min-height: auto;
 }
 .comment-forbidden {
   text-transform: lowercase;
