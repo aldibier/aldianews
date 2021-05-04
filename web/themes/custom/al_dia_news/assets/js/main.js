@@ -1278,26 +1278,7 @@ var add_ = function add_() {
         e.classList.add("category");
       }
     });
-  }, 1000); /////// js para añadir la cantidad de comentarios de respuesta y desplegable
-  // Array.from(document.querySelectorAll(".container-show-hide span")).map(
-  //   function(e) {
-  //     var father_answer = document.querySelectorAll(
-  //       "section > .comment + .indented > div:not(.indented)"
-  //     );
-  //     if (!!e && !!father_answer) {
-  //       e.innerHTML = father_answer.length;
-  //     }
-  //   }
-  // );
-  // Array.from(document.querySelectorAll("section > .comment")).map(function(e) {
-  //   if (!!e && e.nextElementSibling.classList.contains("indented")) {
-  //     var father_answer = e.nextElementSibling.children;
-  //       if (!father_answer.classList.contains("indented")) {
-  //         e.querySelector(".container-show-hide span").innerHTML =
-  //       father_answer.length;
-  //       }
-  //   }
-  // });
+  }, 1000);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (add_);
@@ -1313,6 +1294,18 @@ var add_ = function add_() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 var app = function app($, Drupal) {
   var $window = $(window);
   var $videoWrap = $(".page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video");
@@ -1465,6 +1458,22 @@ var app = function app($, Drupal) {
       $("#block-exposedformsearch-results-al-dia-solrpage-1-2").addClass("open");
       $(".layout-main-wrapper.layout-container").addClass("color-mod");
     });
+  }); /////// js para añadir la cantidad de comentarios de respuesta y desplegable
+
+  Array.from(document.querySelectorAll("section .comment")).map(function (e) {
+    if (!e.nextElementSibling) return;
+
+    if (!!e.nextElementSibling.classList.contains("indented")) {
+      var count_children = _toConsumableArray(e.nextElementSibling.children).filter(function (ev) {
+        if (ev.classList.contains("comment")) {
+          return ev;
+        }
+      });
+
+      e.querySelector(".container-show-hide span").innerHTML = count_children.length;
+    } else {
+      e.classList.add("no-answer");
+    }
   });
 };
 
@@ -1697,15 +1706,13 @@ var dropdown_ = function dropdown_() {
   } /////// js para añadir la cantidad de comentarios de respuesta y desplegable
 
 
-  Array.from(document.querySelectorAll(".container-show-hide span")).map(function (e) {
-    var container_answer = document.querySelectorAll("section .indented");
+  Array.from(document.querySelectorAll("section .comment")).map(function (e) {
+    if (!e.nextElementSibling) return;
 
-    if (!!e && !!container_answer) {
-      e.parentElement.addEventListener("click", function () {
-        e.parentElement.parentElement.classList.toggle("active");
-        Array.from(container_answer).map(function (e) {
-          e.classList.toggle("dis-block");
-        });
+    if (!!e.nextElementSibling.classList.contains("indented")) {
+      e.querySelector(".container-show-hide").addEventListener("click", function () {
+        e.querySelector(".container-show-hide").classList.toggle("active");
+        e.nextElementSibling.classList.toggle("dis-block");
       });
     }
   });
@@ -1954,10 +1961,10 @@ var modal_ = function modal_() {
     var triggerVideo = document.querySelector(".block-views-blockabout-al-dia-live-block-1 .about-al-dia-live-container-video");
     var buttonCloseVideo = document.querySelector(".close-video");
     var video = document.querySelector(".modal-video");
-    var iframe = document.querySelector('.about-al-dia-live-container-video iframe'); //reset src iframe
+    var iframe = document.querySelector(".about-al-dia-live-container-video iframe"); //reset src iframe
 
-    if (iframe.src.indexOf('?') > 0) {
-      var srcEdit = iframe.src.split('?');
+    if (iframe.src.indexOf("?") > 0) {
+      var srcEdit = iframe.src.split("?");
       iframe.src = "".concat(srcEdit[0], "?start=0&rel=0");
     }
 
@@ -2083,8 +2090,9 @@ var modify_ = function modify_() {
     var itemLista1 = lista1[i];
     var itemLista2 = lista2[i];
     itemLista1.parentElement.addEventListener("click", function () {
-      one();
-      two();
+      console.log("click");
+      Object(_js_functions_js__WEBPACK_IMPORTED_MODULE_0__["one"])();
+      Object(_js_functions_js__WEBPACK_IMPORTED_MODULE_0__["two"])();
       var allIframes = document.querySelectorAll(".view-id-carousel_videos_landing.view-display-id-page_1  iframe");
       Object(_js_functions_js__WEBPACK_IMPORTED_MODULE_0__["resetAlliframes"])(allIframes);
 

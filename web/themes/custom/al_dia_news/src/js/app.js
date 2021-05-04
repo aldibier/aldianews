@@ -8,7 +8,12 @@ const app = ($, Drupal) => {
   );
   var videoHeight = $video.outerHeight();
 
-  if (!!document.querySelector(".page-node-type-news") && !!$video && !!$videoWrap && !!videoHeight) {
+  if (
+    !!document.querySelector(".page-node-type-news") &&
+    !!$video &&
+    !!$videoWrap &&
+    !!videoHeight
+  ) {
     $window.on("scroll", function() {
       var windowScrollTop = $window.scrollTop();
       var videoBottom = videoHeight + $videoWrap.offset().top;
@@ -232,6 +237,22 @@ const app = ($, Drupal) => {
       $(".layout-main-wrapper.layout-container").addClass("color-mod");
     });
   });
-}
+
+  /////// js para añadir la cantidad de comentarios de respuesta y desplegable
+  Array.from(document.querySelectorAll("section .comment")).map(function(e) {
+    if (!e.nextElementSibling) return;
+    if (!!e.nextElementSibling.classList.contains("indented")) {
+      var count_children = [...e.nextElementSibling.children].filter(ev => {
+        if (ev.classList.contains("comment")) {
+          return ev;
+        }
+      });
+      e.querySelector(".container-show-hide span").innerHTML =
+        count_children.length;
+    } else {
+      e.classList.add("no-answer");
+    }
+  });
+};
 
 export default app;
