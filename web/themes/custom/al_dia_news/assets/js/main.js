@@ -1223,14 +1223,8 @@ var add_ = function add_() {
       var txt = eventTime.innerText;
       eventTime.innerText = "".concat(txt.substring(0, 7), ".").concat(txt.charAt(7), ".");
     });
-  } ///// js para select de categorias, subcategorias y subsubcategorias
+  } //// publicidad horizontal cada 6 en more covers
 
-
-  Array.from(document.querySelectorAll("#views-exposed-form-search-results-al-dia-solr-page-1 .form-item-field-category li label")).map(function (e) {
-    if (e != null && !e.innerHTML.includes("-")) {
-      e.classList.add("category");
-    }
-  }); //// publicidad horizontal cada 6 en more covers
 
   Array.from(document.querySelectorAll(".block-fixed-block-contenthorizontal-advertising")).map(function (e) {
     if (e != null) {
@@ -1276,7 +1270,15 @@ var add_ = function add_() {
     if (!!e && !!father_li) {
       father_li.appendChild(e);
     }
-  }); /////// js para añadir la cantidad de comentarios de respuesta y desplegable
+  }); ///// js para select de categorias, subcategorias y subsubcategorias
+
+  setTimeout(function () {
+    Array.from(document.querySelectorAll("#views-exposed-form-search-results-al-dia-solr-page-1 .form-item-field-category li label")).map(function (e) {
+      if (e != null && !e.innerHTML.includes("-")) {
+        e.classList.add("category");
+      }
+    });
+  }, 1000); /////// js para añadir la cantidad de comentarios de respuesta y desplegable
   // Array.from(document.querySelectorAll(".container-show-hide span")).map(
   //   function(e) {
   //     var father_answer = document.querySelectorAll(
@@ -1801,7 +1803,7 @@ __webpack_require__.r(__webpack_exports__);
 
 (function ($, Drupal) {
   window.onload = function () {
-    //init 
+    //init
     Object(_js_modify_js__WEBPACK_IMPORTED_MODULE_4__["default"])();
     Object(_js_add_js__WEBPACK_IMPORTED_MODULE_5__["default"])();
     Object(_js_delete_js__WEBPACK_IMPORTED_MODULE_6__["default"])();
