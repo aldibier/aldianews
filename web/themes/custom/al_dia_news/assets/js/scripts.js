@@ -1206,49 +1206,426 @@ module.exports = function (css) {
 
 /***/ }),
 
-/***/ "./src/js/add.js":
-/*!***********************!*\
-  !*** ./src/js/add.js ***!
-  \***********************/
+/***/ "./src/js/main.js":
+/*!************************!*\
+  !*** ./src/js/main.js ***!
+  \************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-var add_ = function add_() {
-  /* add dots date events time */
-  if (!!document.querySelector(".card-event-date-hour")) {
-    var allEventsTime = document.querySelectorAll(".card-event-date-hour");
-    allEventsTime.forEach(function (eventTime) {
-      var txt = eventTime.innerText;
-      eventTime.innerText = "".concat(txt.substring(0, 7), ".").concat(txt.charAt(7), ".");
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+var initMain = function initMain($, Drupal) {
+  window.onload = function () {
+    //// js remove element home
+    Array.from(document.querySelectorAll(".block-fixed-block-contentvertical-advertising-mobile")).map(function (e) {
+      if (e.children.children != null) {
+        e.closest(".mobile-less").parentElement.parentElement.classList.add("life-advertising");
+      } else {
+        e.closest(".views-row").classList.add("mobile-free");
+      }
     });
-  } //// publicidad horizontal cada 6 en more covers
+    Array.from(document.querySelectorAll(".mobile-free .mobile-plus .card-more:nth-child(1)")).map(function (e) {
+      if (e != null) {
+        e.remove();
+      }
+    });
+    Array.from(document.querySelectorAll(".mobile-free .mobile-plus .card-more:nth-child(2)")).map(function (evt) {
+      if (evt != null) {
+        evt.remove();
+      }
+    }); ///// js para caption en imagenes news
+
+    if (!!document.querySelector(".page-node-type-news .block-field-blocknodenewsbody img")) {
+      var images = document.querySelectorAll(".page-node-type-news .block-field-blocknodenewsbody img");
+      images.forEach(function (img) {
+        var caption = img.dataset.caption;
+        img.insertAdjacentHTML("afterend", "<p class=\"image-caption\">".concat(caption, "</p>"));
+      });
+    } ///// js para publicidad en bloques de categorias de noticias
 
 
-  Array.from(document.querySelectorAll(".block-fixed-block-contenthorizontal-advertising")).map(function (e) {
-    if (e != null) {
-      Array.from(document.querySelectorAll(".view-more-covers-landing  .view-content .views-row:nth-child(7n)")).map(function (evt) {
-        if (evt != null && !evt.nextElementSibling.classList.contains("block-fixed-block-contenthorizontal-advertising")) {
-          evt.parentElement.insertBefore(e, evt);
+    if (!!document.querySelector(".block-views-blockhigh-impact-news-home-block-1")) {
+      //hidden last news home
+      var lastNewsHome = document.querySelector(".block-block-grouplatest-categories-tending-block");
+      lastNewsHome.classList.add("not-show");
+    } else {
+      //hidden high impact news home
+      var impactNewsHome = document.querySelector(".block-block-grouphigh-impact-and-most-visited-news-home");
+
+      if (impactNewsHome != null) {
+        impactNewsHome.classList.add("not-show");
+      }
+    } // block trending se inserta en noticia de impacto
+
+
+    var blockTrending = document.querySelector(".block-block-grouphigh-impact-and-most-visited-news-home .block-fixed-block-contentbloque-dummy-noticias-home");
+
+    if (!!blockTrending) {
+      var blockTwoFeaturedNews = document.querySelector(".view-high-impact-news-home .view-display-id-block_2");
+
+      if (blockTwoFeaturedNews != null) {
+        blockTwoFeaturedNews.insertAdjacentElement("beforeend", blockTrending);
+      }
+    } // blockquote para selection-sharer
+
+
+    var allBlockquote = document.querySelectorAll('blockquote:not([class*="twitter"])');
+
+    if (!!allBlockquote && allBlockquote.length) {
+      allBlockquote.forEach(function (blockquote) {
+        if (blockquote.firstElementChild.tagName === "P") {
+          var text = blockquote.firstElementChild.textContent;
+          blockquote.textContent = text;
+        }
+      });
+    } //text summary para selection-sharer
+
+
+    var containerSummary = document.querySelector(".content-news-internal-first .views-element-container");
+
+    if (!!containerSummary) {
+      var summary = containerSummary.querySelector(".summary-news");
+      containerSummary.insertAdjacentElement("beforebegin", summary);
+    } //hidden header-category header-category
+
+
+    if (!!document.querySelector('.path-taxonomy')) {
+      var headerCategory = document.querySelector('.header-category');
+      var categoryFirstBlock = document.querySelector('.category-first-block');
+      if (headerCategory.childElementCount === 0) headerCategory.classList.add('empty');
+      if (categoryFirstBlock.childElementCount === 0) categoryFirstBlock.classList.add('empty');
+    } // js video en interna
+
+
+    var video_interna = document.querySelector(".block-field-blocknodenewsfield-video");
+    var contenido_interna = document.querySelector(".content-news-internal-first");
+
+    if (video_interna != null && contenido_interna != null) {
+      contenido_interna.classList.add("video-present");
+    } //add dots date events time
+
+
+    if (!!document.querySelector(".card-event-date-hour")) {
+      var allEventsTime = document.querySelectorAll(".card-event-date-hour");
+      allEventsTime.forEach(function (eventTime) {
+        var txt = eventTime.innerText;
+        eventTime.innerText = "".concat(txt.substring(0, 7), ".").concat(txt.charAt(7), ".");
+      });
+    } //// js ajuste ancla en employed
+
+
+    Array.from(document.querySelectorAll(".menu--i-am-an-employer-menu li a")).map(function (e) {
+      e.addEventListener("click", function () {
+        setTimeout(function () {
+          var scroll_y = window.scrollY;
+          window.scrollTo(0, scroll_y - 173);
+        }, 20);
+      });
+    }); //// js validador de publicidad en landing jobs
+
+    var block_ads = document.querySelector(".block-block-groupgroup-career-news-jobs .block-fixed-block-contentbig-vertical-advertising");
+    var view_career = document.querySelector(".block-views-blockcareer-news-block-1");
+
+    if (block_ads === null && view_career != null) {
+      view_career.classList.add("view-complete");
+    } //// js para slider de video en landing de video
+
+
+    function one() {
+      Array.from(document.querySelectorAll(".block-views-blockcarousel-videos-landing-block-2")).map(function (e) {
+        var p = e.querySelector(".select-video");
+        var c = e.querySelector(".video-present");
+
+        if (p != null && c != null) {
+          p.classList.remove("select-video");
+          c.classList.remove("video-present");
         }
       });
     }
-  }); ///// js para modos de visualizacion de guest event
 
-  Array.from(document.querySelectorAll(".view-block-guest .views-field-field-style div")).map(function (e) {
-    if (e != null) {
-      if (e.innerText == "one") {
-        e.closest(".views-row").classList.add("mode-one");
-      } else if (e.innerText == "two") {
-        e.closest(".views-row").classList.add("mode-two");
-      } else if (e.innerText == "three") {
-        e.closest(".views-row").classList.add("mode-three");
-      } else if (e.innerText == "more") {
-        e.closest(".views-row").classList.add("mode-more");
+    function two() {
+      Array.from(document.querySelectorAll(".view-id-carousel_videos_landing.view-display-id-page_1")).map(function (ev) {
+        var a = ev.querySelector(".show-video");
+        var b = ev.querySelector(".video-present");
+
+        if (a != null && b != null) {
+          a.classList.remove("show-video");
+          b.classList.remove("video-present");
+        }
+      });
+    }
+
+    var lista1 = document.querySelectorAll(".block-views-blockcarousel-videos-landing-block-2  .views-row.slick-slide:not(.slick-cloned) .views-field-nid");
+    var lista2 = document.querySelectorAll(".view-id-carousel_videos_landing.view-display-id-page_1 .views-field-nid");
+
+    var _loop = function _loop(i) {
+      var itemLista1 = lista1[i];
+      var itemLista2 = lista2[i]; // console.log(itemLista1, itemLista2)
+
+      itemLista1.parentElement.addEventListener("click", function () {
+        one();
+        two();
+        var allIframes = document.querySelectorAll(".view-id-carousel_videos_landing.view-display-id-page_1  iframe");
+
+        var resetAlliframes = function resetAlliframes() {
+          allIframes.forEach(function (iframe) {
+            iframe.classList.add("change-src");
+            iframe.src = iframe.src;
+            setTimeout(function () {
+              return iframe.classList.remove("change-src");
+            }, 800);
+          });
+        };
+
+        resetAlliframes();
+
+        if (itemLista1.children.innerHTML === itemLista2.children.innerHTML) {
+          itemLista1.parentElement.parentElement.classList.add("select-video");
+          itemLista2.parentElement.parentElement.classList.add("show-video");
+          itemLista1.parentElement.classList.add("video-present");
+          itemLista2.parentElement.classList.add("video-present");
+        }
+      });
+    };
+
+    for (var i = 0; i < lista1.length; i++) {
+      _loop(i);
+    } /// js boton back
+
+
+    Array.from(document.querySelectorAll(".cbutton-back")).map(function (e) {
+      if (e != null) {
+        e.addEventListener("click", function () {
+          window.history.back();
+        });
+      }
+    }); /// js login and register
+
+    Array.from(document.querySelectorAll(".comment-forbidden a")).map(function (e) {
+      if (e != null) {
+        e.removeAttribute("href");
+      }
+    });
+    Array.from(document.querySelectorAll(".comment-forbidden a:nth-child(1)")).map(function (e) {
+      if (e != null) {
+        var button_login = document.querySelector('.Login-Register-popup-link.Login-Register-popup-link a[href*="login"]');
+        e.addEventListener("click", function () {
+          button_login.click();
+        });
+      }
+    });
+    Array.from(document.querySelectorAll(".comment-forbidden a:nth-child(2)")).map(function (e) {
+      if (e != null) {
+        var button_regis = document.querySelector('.Login-Register-popup-link.Login-Register-popup-link a[href*="register"]');
+        e.addEventListener("click", function () {
+          button_regis.click();
+        });
+      }
+    }); //// js modal landing videos
+
+    if (!!document.querySelector(".path-videos")) {
+      var allCardVideos = document.querySelectorAll(".card-one-column");
+      var allIframes = document.querySelectorAll(".card-one-column iframe");
+
+      var resetAlliframes = function resetAlliframes() {
+        allIframes.forEach(function (iframe) {
+          iframe.classList.add("change-src");
+          iframe.src = iframe.src;
+          setTimeout(function () {
+            return iframe.classList.remove("change-src");
+          }, 800);
+        });
+      };
+
+      allCardVideos.forEach(function (cardVideo) {
+        return cardVideo.addEventListener("click", function (event) {
+          if (event.target.nodeName == "A") return;
+          node = event.currentTarget.parentNode.firstElementChild;
+
+          while (node) {
+            if (node !== event.currentTarget && node.nodeType === Node.ELEMENT_NODE) {
+              if (event.target.closest(".modal-video")) return;
+              node.querySelector(".modal-video").classList.remove("show");
+              resetAlliframes();
+            } else {
+              if (event.target.closest(".wrapper-popup")) return;
+              node.querySelector(".modal-video").classList.toggle("show");
+              resetAlliframes();
+            }
+
+            node = node.nextElementSibling;
+          }
+        });
+      });
+      document.body.addEventListener("click", function (event) {
+        var contentActive = event.target.closest(".card-one-column") || false;
+
+        if (!contentActive) {
+          document.querySelector(".modal-video.show").classList.remove("show");
+          resetAlliframes();
+        }
+
+        if (event.target.classList.contains("close")) {
+          document.querySelector(".modal-video.show").classList.remove("show");
+          resetAlliframes();
+        }
+      });
+    } //// js para controlar pop-up advertising
+
+
+    if (!!document.querySelector(".path-advertising")) {
+      var allButtonsApply = document.querySelectorAll(".button-apply");
+      var allButtonsClose = document.querySelectorAll(".close-modal");
+
+      var showModal = function showModal(event) {
+        var parent = event.path.find(function (elementPath) {
+          return elementPath.classList.contains("advertising-card");
+        });
+        var form = parent.querySelector(".modal-form");
+        form.classList.add("show");
+      };
+
+      var hideModal = function hideModal(event) {
+        var form = event.path.find(function (elementPath) {
+          return elementPath.classList.contains("modal-form");
+        });
+        form.classList.remove("show");
+      };
+
+      allButtonsApply.forEach(function (buttonApply) {
+        return buttonApply.addEventListener("click", showModal);
+      });
+      allButtonsClose.forEach(function (buttonClose) {
+        return buttonClose.addEventListener("click", hideModal);
+      });
+    }
+
+    if (!!document.querySelector(".path-about-al-dia-live")) {
+      //// js pop-up about al dia live
+      var buttonApply = document.querySelector(".path-about-al-dia-live .button-apply");
+      var buttonClose = document.querySelector(".close-modal");
+      var modalForm = document.querySelector(".modal-form");
+      if (!document.body.contains(buttonApply)) return;
+      buttonApply.addEventListener("click", function () {
+        return modalForm.classList.add("show");
+      });
+      buttonClose.addEventListener("click", function () {
+        return modalForm.classList.remove("show");
+      }); //// js pop-up about al dia live
+
+      var triggerVideo = document.querySelector(".block-views-blockabout-al-dia-live-block-1 .about-al-dia-live-container-video");
+      var buttonCloseVideo = document.querySelector(".close-video");
+      var video = document.querySelector(".modal-video");
+      var iframe = document.querySelector('.about-al-dia-live-container-video iframe'); //reset src iframe
+
+      if (iframe.src.indexOf('?') > 0) {
+        var srcEdit = iframe.src.split('?');
+        iframe.src = "".concat(srcEdit[0], "?start=0&rel=0");
+      }
+
+      triggerVideo.addEventListener("click", function () {
+        video.classList.add("show");
+      });
+      buttonCloseVideo.addEventListener("click", function (event) {
+        event.stopPropagation();
+        video.classList.remove("show");
+        iframe.src = iframe.src;
+      });
+    } //// js desplegable buscador y close modal
+
+
+    var arrow = document.querySelector(".path-search-results .arrow");
+    var blocks_search = document.querySelector("#block-exposedformsearch-results-al-dia-solrpage-1");
+
+    if (arrow != null && blocks_search != null) {
+      arrow.addEventListener("click", function () {
+        blocks_search.classList.toggle("open");
+        arrow.classList.toggle("rote");
+      });
+    }
+
+    var close = document.querySelector('#block-exposedformsearch-results-al-dia-solrpage-1-2  button[name="close"]');
+    close.addEventListener("click", function () {
+      if (close != null && close.parentElement.classList.contains("open")) {
+        close.parentElement.classList.remove("open");
+      }
+    }); // js bloque login en comentarios
+
+    var comments = document.querySelector(".block-field-blocknodenewsfield-comments .comment");
+    var block_login_c = document.querySelector("#block-blockcommentanonymous");
+
+    if (comments != null && block_login_c != null) {
+      block_login_c.style.display = "none";
+    } // bloque vacio en home
+
+
+    var width_b = window.innerWidth;
+
+    if (width_b <= 768) {
+      Array.from(document.querySelectorAll(".view-more-category")).map(function (e) {
+        if (e !== null && e.children.length === 2) {
+          e.closest(".views-field.views-field-view-2").style.display = "none";
+          e.closest(".mobile-free").style.border = "0px";
+        }
+      });
+    } ///// js para select de categorias, subcategorias y subsubcategorias
+
+
+    Array.from(document.querySelectorAll("#views-exposed-form-search-results-al-dia-solr-page-1 .form-item-field-category li label")).map(function (e) {
+      if (e != null && !e.innerHTML.includes("-")) {
+        e.classList.add("category");
+      }
+    }); //// publicidad horizontal cada 6 en more covers
+
+    Array.from(document.querySelectorAll(".block-fixed-block-contenthorizontal-advertising")).map(function (e) {
+      if (e != null) {
+        Array.from(document.querySelectorAll(".view-more-covers-landing  .view-content .views-row:nth-child(7n)")).map(function (evt) {
+          if (evt != null && !evt.nextElementSibling.classList.contains("block-fixed-block-contenthorizontal-advertising")) {
+            evt.parentElement.insertBefore(e, evt);
+          }
+        });
+      }
+    }); ///// js para modos de visualizacion de guest event
+
+    Array.from(document.querySelectorAll(".view-block-guest .views-field-field-style div")).map(function (e) {
+      if (e != null) {
+        if (e.innerText == "one") {
+          e.closest(".views-row").classList.add("mode-one");
+        } else if (e.innerText == "two") {
+          e.closest(".views-row").classList.add("mode-two");
+        } else if (e.innerText == "three") {
+          e.closest(".views-row").classList.add("mode-three");
+        } else if (e.innerText == "more") {
+          e.closest(".views-row").classList.add("mode-more");
+        }
+      }
+    }); ///// js indentificar de primer modo de vista en guest event
+
+    var adversiting = document.querySelector(".three-content-event-advertising");
+    var first_element = document.querySelector(".view-block-guest  .views-row:nth-child(1) .views-field-field-style > div");
+
+    if (adversiting != null && first_element != null) {
+      if (first_element.innerText == "one") {
+        adversiting.classList.add("maxim");
+      } else {
+        adversiting.classList.add("dis-none");
       }
     }
-  }); ///// js para modos de visualizacion de slider event
+  }; ///// js para modos de visualizacion de slider event
+
 
   Array.from(document.querySelectorAll(".view-slider-internal-event .views-field-field-slider-styl div")).map(function (e) {
     if (e != null) {
@@ -1270,49 +1647,113 @@ var add_ = function add_() {
     if (!!e && !!father_li) {
       father_li.appendChild(e);
     }
-  }); ///// js para select de categorias, subcategorias y subsubcategorias
+  }); /////// js para añadir la cantidad de comentarios de respuesta 
 
-  setTimeout(function () {
-    Array.from(document.querySelectorAll("#views-exposed-form-search-results-al-dia-solr-page-1 .form-item-field-category li label")).map(function (e) {
-      if (e != null && !e.innerHTML.includes("-")) {
-        e.classList.add("category");
-      }
-    });
-  }, 1000);
+  Array.from(document.querySelectorAll("section .comment")).map(function (e) {
+    if (!e.nextElementSibling) return;
+
+    if (!!e.nextElementSibling.classList.contains("indented")) {
+      var count_children = _toConsumableArray(e.nextElementSibling.children).filter(function (ev) {
+        if (ev.classList.contains("comment")) {
+          return ev;
+        }
+      });
+
+      e.querySelector(".container-show-hide span").innerHTML = count_children.length;
+    } else {
+      e.classList.add("no-answer");
+    }
+  }); /////// js para añadir la cantidad de comentarios de desplegable
+
+  Array.from(document.querySelectorAll("section .comment")).map(function (e) {
+    if (!e.nextElementSibling) return;
+
+    if (!!e.nextElementSibling.classList.contains("indented")) {
+      e.querySelector(".container-show-hide").addEventListener("click", function () {
+        e.querySelector(".container-show-hide").classList.toggle("active");
+        e.nextElementSibling.classList.toggle("dis-block");
+      });
+    }
+  });
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (add_);
+/* harmony default export */ __webpack_exports__["default"] = (initMain);
 
 /***/ }),
 
-/***/ "./src/js/app.js":
-/*!***********************!*\
-  !*** ./src/js/app.js ***!
-  \***********************/
+/***/ "./src/js/modules/replaceToken.js":
+/*!****************************************!*\
+  !*** ./src/js/modules/replaceToken.js ***!
+  \****************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+/**
+ * Reemplazar palabra clave o token por algún valor dado
+ *
+ * @param {String} regexToken Palabra o token como bandera para buscar y reemplazar
+ * @param {String} value Texto o html para reemplazar el token
+ * @param {Element} elements Colección de elementos HTML especificos en los que debera buscar el token
+ */
+var replaceToken = function replaceToken(regexToken, value) {
+  var elements = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : [];
+  var search = new RegExp("".concat(regexToken), 'gim');
 
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+  if (elements.length) {
+    Array.from(elements).map(function (element) {
+      if (element instanceof Element) {
+        element.innerHTML = element.innerHTML.replace(search, value);
+      }
+    });
+  }
+};
 
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+/* harmony default export */ __webpack_exports__["default"] = (replaceToken);
 
-function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+/***/ }),
 
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+/***/ "./src/js/scripts.js":
+/*!***************************!*\
+  !*** ./src/js/scripts.js ***!
+  \***************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _assets_libraries_selection_sharer_selection_sharer_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../assets/libraries/selection-sharer/selection-sharer.css */ "./assets/libraries/selection-sharer/selection-sharer.css");
+/* harmony import */ var _assets_libraries_selection_sharer_selection_sharer_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_assets_libraries_selection_sharer_selection_sharer_css__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _assets_libraries_selection_sharer_selection_sharer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../assets/libraries/selection-sharer/selection-sharer.js */ "./assets/libraries/selection-sharer/selection-sharer.js");
+/* harmony import */ var _assets_libraries_selection_sharer_selection_sharer_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_assets_libraries_selection_sharer_selection_sharer_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _scroll_magic__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./scroll-magic */ "./src/js/scroll-magic.js");
+/* harmony import */ var _main_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./main.js */ "./src/js/main.js");
+/* harmony import */ var _slick_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./slick.js */ "./src/js/slick.js");
+/* harmony import */ var _modules_replaceToken__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/replaceToken */ "./src/js/modules/replaceToken.js");
 
-var app = function app($, Drupal) {
+
+
+
+
+
+
+(function ($, Drupal) {
+  // Selection share
+  var sharer = new _assets_libraries_selection_sharer_selection_sharer_js__WEBPACK_IMPORTED_MODULE_1___default.a();
+  sharer.setElements("p,a,h1,h2,h3,blockquote,em,strong"); // Replace key word by another value
+
+  var headingTags = document.querySelectorAll("h1, h2, h3");
+  var paragraphTags = document.querySelectorAll("p");
+  var aldiaLogoStructure = "<span class=\"aldia-logo-in-text\" title=\"AL D\xCDA\">\n                                <img alt=\"AL D\xCDA\" src=\"".concat(drupalSettings.path.baseUrl, "themes/custom/al_dia_news/assets/img/aldia.svg\">\n                              </span>");
+  Object(_modules_replaceToken__WEBPACK_IMPORTED_MODULE_5__["default"])("AL DÍA", aldiaLogoStructure, headingTags);
+  Object(_modules_replaceToken__WEBPACK_IMPORTED_MODULE_5__["default"])("{aldia}", aldiaLogoStructure, paragraphTags);
   var $window = $(window);
   var $videoWrap = $(".page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video");
   var $video = $(".page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video .content");
   var videoHeight = $video.outerHeight();
 
-  if (!!document.querySelector(".page-node-type-news") && !!$video && !!$videoWrap && !!videoHeight) {
+  if (!!document.querySelector(".page-node-type-news") && !!$video) {
     $window.on("scroll", function () {
       var windowScrollTop = $window.scrollTop();
       var videoBottom = videoHeight + $videoWrap.offset().top;
@@ -1377,7 +1818,12 @@ var app = function app($, Drupal) {
     $(".region-secondary-menu #block-al-dia-news-main-menu a").each(function () {
       var text = $(this).html();
       $(this).html(text.replace(/AL/g, "<br>AL"));
-    }); //------------ scroll jobs --------------//
+    }); //--------- initialization --------------------//
+
+    if (window.matchMedia("(min-width: 992px)").matches) {
+      Object(_scroll_magic__WEBPACK_IMPORTED_MODULE_2__["default"])($, Drupal);
+    } //------------ scroll jobs --------------//
+
 
     var containermenu = document.querySelector("#block-system-menu-block-i-am-an-employer-menu");
     var menu = document.querySelector("#block-system-menu-block-i-am-an-employer-menu .menu");
@@ -1458,39 +1904,9 @@ var app = function app($, Drupal) {
       $("#block-exposedformsearch-results-al-dia-solrpage-1-2").addClass("open");
       $(".layout-main-wrapper.layout-container").addClass("color-mod");
     });
-  }); /////// js para añadir la cantidad de comentarios de respuesta y desplegable
-
-  Array.from(document.querySelectorAll("section .comment")).map(function (e) {
-    if (!e.nextElementSibling) return;
-
-    if (!!e.nextElementSibling.classList.contains("indented")) {
-      var count_children = _toConsumableArray(e.nextElementSibling.children).filter(function (ev) {
-        if (ev.classList.contains("comment")) {
-          return ev;
-        }
-      });
-
-      e.querySelector(".container-show-hide span").innerHTML = count_children.length;
-    } else {
-      e.classList.add("no-answer");
-    }
+    Object(_main_js__WEBPACK_IMPORTED_MODULE_3__["default"])();
+    Object(_slick_js__WEBPACK_IMPORTED_MODULE_4__["default"])($, Drupal);
   });
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (app);
-
-/***/ }),
-
-/***/ "./src/js/behaviors.js":
-/*!*****************************!*\
-  !*** ./src/js/behaviors.js ***!
-  \*****************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-var behaviors = function behaviors($, Drupal) {
   Drupal.behaviors.form_checkbox = {
     attach: function attach(context, settings) {
       $(document).ready(function () {
@@ -1589,561 +2005,7 @@ var behaviors = function behaviors($, Drupal) {
       });
     }
   };
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (behaviors);
-
-/***/ }),
-
-/***/ "./src/js/delete.js":
-/*!**************************!*\
-  !*** ./src/js/delete.js ***!
-  \**************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-var delete_ = function delete_() {
-  Array.from(document.querySelectorAll(".mobile-free .mobile-plus .card-more:nth-child(1)")).map(function (e) {
-    if (e != null) {
-      e.remove();
-    }
-  });
-  Array.from(document.querySelectorAll(".mobile-free .mobile-plus .card-more:nth-child(2)")).map(function (evt) {
-    if (evt != null) {
-      evt.remove();
-    }
-  });
-  /* js for advertising in news category blocks */
-
-  if (!!document.querySelector(".block-views-blockhigh-impact-news-home-block-1")) {
-    /* hidden last news home */
-    var lastNewsHome = document.querySelector(".block-block-grouplatest-categories-tending-block");
-    lastNewsHome.classList.add("not-show");
-  } else {
-    /* hidden high impact news home */
-    var impactNewsHome = document.querySelector(".block-block-grouphigh-impact-and-most-visited-news-home");
-
-    if (impactNewsHome != null) {
-      impactNewsHome.classList.add("not-show");
-    }
-  }
-  /* hidden header-category header-category */
-
-
-  if (!!document.querySelector('.path-taxonomy')) {
-    var headerCategory = document.querySelector('.header-category');
-    var categoryFirstBlock = document.querySelector('.category-first-block');
-    if (headerCategory.childElementCount === 0) headerCategory.classList.add('empty');
-    if (categoryFirstBlock.childElementCount === 0) categoryFirstBlock.classList.add('empty');
-  } /// js login and register
-
-
-  Array.from(document.querySelectorAll(".comment-forbidden a")).map(function (e) {
-    if (e != null) {
-      e.removeAttribute("href");
-    }
-  }); // js bloque login en comentarios
-
-  var comments = document.querySelector(".block-field-blocknodenewsfield-comments .comment");
-  var block_login_c = document.querySelector("#block-blockcommentanonymous");
-
-  if (comments != null && block_login_c != null) {
-    block_login_c.style.display = "none";
-  } // bloque vacio en home
-
-
-  var width_b = window.innerWidth;
-
-  if (width_b <= 768) {
-    Array.from(document.querySelectorAll(".view-more-category")).map(function (e) {
-      var home = document.querySelector('.path-frontpage');
-
-      if (!!e && !!home && e.children.length === 2) {
-        e.closest(".views-field.views-field-view-2").style.display = "none";
-        e.closest(".mobile-free").style.border = "0px";
-      }
-    });
-  } ///// js indentificar de primer modo de vista en guest event
-
-
-  var adversiting = document.querySelector(".three-content-event-advertising");
-  var first_element = document.querySelector(".view-block-guest  .views-row:nth-child(1) .views-field-field-style > div");
-
-  if (adversiting != null && first_element != null) {
-    if (first_element.innerText == "one") {
-      adversiting.classList.add("maxim");
-    } else {
-      adversiting.classList.add("dis-none");
-    }
-  }
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (delete_);
-
-/***/ }),
-
-/***/ "./src/js/dropdown.js":
-/*!****************************!*\
-  !*** ./src/js/dropdown.js ***!
-  \****************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-var dropdown_ = function dropdown_() {
-  //// js desplegable buscador y close modal
-  var arrow = document.querySelector(".path-search-results .arrow");
-  var blocks_search = document.querySelector("#block-exposedformsearch-results-al-dia-solrpage-1");
-
-  if (arrow != null && blocks_search != null) {
-    arrow.addEventListener("click", function () {
-      blocks_search.classList.toggle("open");
-      arrow.classList.toggle("rote");
-    });
-  } /////// js para añadir la cantidad de comentarios de respuesta y desplegable
-
-
-  Array.from(document.querySelectorAll("section .comment")).map(function (e) {
-    if (!e.nextElementSibling) return;
-
-    if (!!e.nextElementSibling.classList.contains("indented")) {
-      e.querySelector(".container-show-hide").addEventListener("click", function () {
-        e.querySelector(".container-show-hide").classList.toggle("active");
-        e.nextElementSibling.classList.toggle("dis-block");
-      });
-    }
-  });
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (dropdown_);
-
-/***/ }),
-
-/***/ "./src/js/functions.js":
-/*!*****************************!*\
-  !*** ./src/js/functions.js ***!
-  \*****************************/
-/*! exports provided: one, two, resetAlliframes */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "one", function() { return one; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "two", function() { return two; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "resetAlliframes", function() { return resetAlliframes; });
-var one = function one() {
-  Array.from(document.querySelectorAll(".block-views-blockcarousel-videos-landing-block-2")).map(function (e) {
-    var p = e.querySelector(".select-video");
-    var c = e.querySelector(".video-present");
-
-    if (p != null && c != null) {
-      p.classList.remove("select-video");
-      c.classList.remove("video-present");
-    }
-  });
-};
-
-var two = function two() {
-  Array.from(document.querySelectorAll(".view-id-carousel_videos_landing.view-display-id-page_1")).map(function (ev) {
-    var a = ev.querySelector(".show-video");
-    var b = ev.querySelector(".video-present");
-
-    if (a != null && b != null) {
-      a.classList.remove("show-video");
-      b.classList.remove("video-present");
-    }
-  });
-};
-
-var resetAlliframes = function resetAlliframes(iframes) {
-  iframes.forEach(function (iframe) {
-    iframe.classList.add("change-src");
-    iframe.src = iframe.src;
-    setTimeout(function () {
-      return iframe.classList.remove("change-src");
-    }, 800);
-  });
-};
-
-
-
-/***/ }),
-
-/***/ "./src/js/main.js":
-/*!************************!*\
-  !*** ./src/js/main.js ***!
-  \************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _assets_libraries_selection_sharer_selection_sharer_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../assets/libraries/selection-sharer/selection-sharer.css */ "./assets/libraries/selection-sharer/selection-sharer.css");
-/* harmony import */ var _assets_libraries_selection_sharer_selection_sharer_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_assets_libraries_selection_sharer_selection_sharer_css__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _assets_libraries_selection_sharer_selection_sharer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../assets/libraries/selection-sharer/selection-sharer.js */ "./assets/libraries/selection-sharer/selection-sharer.js");
-/* harmony import */ var _assets_libraries_selection_sharer_selection_sharer_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_assets_libraries_selection_sharer_selection_sharer_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _modules_replaceToken__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/replaceToken */ "./src/js/modules/replaceToken.js");
-/* harmony import */ var _scroll_magic__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./scroll-magic */ "./src/js/scroll-magic.js");
-/* harmony import */ var _js_modify_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../js/modify.js */ "./src/js/modify.js");
-/* harmony import */ var _js_add_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../js/add.js */ "./src/js/add.js");
-/* harmony import */ var _js_delete_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../js/delete.js */ "./src/js/delete.js");
-/* harmony import */ var _js_modals_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../js/modals.js */ "./src/js/modals.js");
-/* harmony import */ var _slick_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./slick.js */ "./src/js/slick.js");
-/* harmony import */ var _app_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./app.js */ "./src/js/app.js");
-/* harmony import */ var _behaviors_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./behaviors.js */ "./src/js/behaviors.js");
-/* harmony import */ var _dropdown_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./dropdown.js */ "./src/js/dropdown.js");
-
-
-
-
-
-
-
-
-
-
-
-
-
-(function ($, Drupal) {
-  window.onload = function () {
-    //init
-    Object(_js_modify_js__WEBPACK_IMPORTED_MODULE_4__["default"])();
-    Object(_js_add_js__WEBPACK_IMPORTED_MODULE_5__["default"])();
-    Object(_js_delete_js__WEBPACK_IMPORTED_MODULE_6__["default"])();
-    Object(_js_modals_js__WEBPACK_IMPORTED_MODULE_7__["default"])();
-    Object(_dropdown_js__WEBPACK_IMPORTED_MODULE_11__["default"])();
-    Object(_slick_js__WEBPACK_IMPORTED_MODULE_8__["default"])($, Drupal);
-    Object(_app_js__WEBPACK_IMPORTED_MODULE_9__["default"])($, Drupal);
-    Object(_behaviors_js__WEBPACK_IMPORTED_MODULE_10__["default"])($, Drupal); // Scroll magic
-
-    if (window.matchMedia("(min-width: 992px)").matches) {
-      Object(_scroll_magic__WEBPACK_IMPORTED_MODULE_3__["default"])($, Drupal);
-    } // Selection share
-
-
-    var sharer = new _assets_libraries_selection_sharer_selection_sharer_js__WEBPACK_IMPORTED_MODULE_1___default.a();
-    sharer.setElements("p,a,h1,h2,h3,blockquote,em,strong"); // Replace key word by another value
-
-    var headingTags = document.querySelectorAll("h1, h2, h3");
-    var paragraphTags = document.querySelectorAll("p");
-    var aldiaLogoStructure = "<span class=\"aldia-logo-in-text\" title=\"AL D\xCDA\">\n                                 <img alt=\"AL D\xCDA\" src=\"".concat(drupalSettings.path.baseUrl, "themes/custom/al_dia_news/assets/img/aldia.svg\">\n                               </span>");
-    Object(_modules_replaceToken__WEBPACK_IMPORTED_MODULE_2__["default"])("AL DÍA", aldiaLogoStructure, headingTags);
-    Object(_modules_replaceToken__WEBPACK_IMPORTED_MODULE_2__["default"])("{aldia}", aldiaLogoStructure, paragraphTags); // Regresar comentarios
-
-    Array.from(document.querySelectorAll(".cbutton-back")).map(function (e) {
-      if (e != null) {
-        e.addEventListener("click", function () {
-          window.history.back();
-        });
-      }
-    }); //Click para modal en comentarios
-
-    Array.from(document.querySelectorAll(".comment-forbidden a:nth-child(1)")).map(function (e) {
-      if (e != null) {
-        var button_login = document.querySelector('.Login-Register-popup-link.Login-Register-popup-link a[href*="login"]');
-        e.addEventListener("click", function () {
-          button_login.click();
-        });
-      }
-    }); //Click para modal en comentarios
-
-    Array.from(document.querySelectorAll(".comment-forbidden a:nth-child(2)")).map(function (e) {
-      if (e != null) {
-        var button_regis = document.querySelector('.Login-Register-popup-link.Login-Register-popup-link a[href*="register"]');
-        e.addEventListener("click", function () {
-          button_regis.click();
-        });
-      }
-    });
-  };
 })(jQuery, Drupal);
-
-/***/ }),
-
-/***/ "./src/js/modals.js":
-/*!**************************!*\
-  !*** ./src/js/modals.js ***!
-  \**************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _js_functions_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../js/functions.js */ "./src/js/functions.js");
-
-
-var modal_ = function modal_() {
-  /* js modal landing videos */
-  if (!!document.querySelector(".path-videos")) {
-    var allCardVideos = document.querySelectorAll(".card-one-column");
-    var allIframes = document.querySelectorAll(".card-one-column iframe");
-    allCardVideos.forEach(function (cardVideo) {
-      return cardVideo.addEventListener("click", function (event) {
-        if (event.target.nodeName == "A") return;
-        var node = event.currentTarget.parentNode.firstElementChild;
-
-        while (node) {
-          if (node !== event.currentTarget && node.nodeType === Node.ELEMENT_NODE) {
-            if (event.target.closest(".modal-video")) return;
-            node.querySelector(".modal-video").classList.remove("show");
-            Object(_js_functions_js__WEBPACK_IMPORTED_MODULE_0__["resetAlliframes"])(allIframes);
-          } else {
-            if (event.target.closest(".wrapper-popup")) return;
-            node.querySelector(".modal-video").classList.toggle("show");
-            Object(_js_functions_js__WEBPACK_IMPORTED_MODULE_0__["resetAlliframes"])(allIframes);
-          }
-
-          node = node.nextElementSibling;
-        }
-      });
-    });
-    document.body.addEventListener("click", function (event) {
-      var contentActive = event.target.closest(".card-one-column") || false;
-      var closeButton = event.target.classList.contains("close-video") || false;
-      if (!document.querySelector(".modal-video.show")) return;
-
-      if (!contentActive || closeButton) {
-        document.querySelector(".modal-video.show").classList.remove("show");
-        Object(_js_functions_js__WEBPACK_IMPORTED_MODULE_0__["resetAlliframes"])(allIframes);
-      }
-    });
-  }
-  /* js to control pop-up advertising */
-
-
-  if (!!document.querySelector(".path-advertising")) {
-    var allButtonsApply = document.querySelectorAll(".button-apply");
-    var allButtonsClose = document.querySelectorAll(".close-modal");
-
-    var showModal = function showModal(event) {
-      var parent = event.path.find(function (elementPath) {
-        return elementPath.classList.contains("advertising-card");
-      });
-      var form = parent.querySelector(".modal-form");
-      form.classList.add("show");
-    };
-
-    var hideModal = function hideModal(event) {
-      var form = event.path.find(function (elementPath) {
-        return elementPath.classList.contains("modal-form");
-      });
-      form.classList.remove("show");
-    };
-
-    allButtonsApply.forEach(function (buttonApply) {
-      return buttonApply.addEventListener("click", showModal);
-    });
-    allButtonsClose.forEach(function (buttonClose) {
-      return buttonClose.addEventListener("click", hideModal);
-    });
-  }
-  /* js pop-up about al dia live */
-
-
-  if (!!document.querySelector(".path-about-al-dia-live")) {
-    /* modal form */
-    var buttonApply = document.querySelector(".path-about-al-dia-live .button-apply");
-    var buttonClose = document.querySelector(".close-modal");
-    var modalForm = document.querySelector(".modal-form");
-    if (!document.body.contains(buttonApply)) return;
-    buttonApply.addEventListener("click", function () {
-      return modalForm.classList.add("show");
-    });
-    buttonClose.addEventListener("click", function () {
-      return modalForm.classList.remove("show");
-    });
-    /* modal video */
-
-    var triggerVideo = document.querySelector(".block-views-blockabout-al-dia-live-block-1 .about-al-dia-live-container-video");
-    var buttonCloseVideo = document.querySelector(".close-video");
-    var video = document.querySelector(".modal-video");
-    var iframe = document.querySelector(".about-al-dia-live-container-video iframe"); //reset src iframe
-
-    if (iframe.src.indexOf("?") > 0) {
-      var srcEdit = iframe.src.split("?");
-      iframe.src = "".concat(srcEdit[0], "?start=0&rel=0");
-    }
-
-    triggerVideo.addEventListener("click", function () {
-      video.classList.add("show");
-    });
-    buttonCloseVideo.addEventListener("click", function (event) {
-      event.stopPropagation();
-      video.classList.remove("show");
-      iframe.src = iframe.src;
-    });
-  } //// js desplegable buscador y close modal
-
-
-  var close = document.querySelector('#block-exposedformsearch-results-al-dia-solrpage-1-2  button[name="close"]');
-  close.addEventListener("click", function () {
-    if (close != null && close.parentElement.classList.contains("open")) {
-      close.parentElement.classList.remove("open");
-    }
-  });
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (modal_);
-
-/***/ }),
-
-/***/ "./src/js/modify.js":
-/*!**************************!*\
-  !*** ./src/js/modify.js ***!
-  \**************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _js_functions_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../js/functions.js */ "./src/js/functions.js");
-
-
-var modify_ = function modify_() {
-  /* modify elements home */
-  Array.from(document.querySelectorAll(".block-fixed-block-contentvertical-advertising-mobile")).map(function (e) {
-    if (e.children.children != null) {
-      e.closest(".mobile-less").parentElement.parentElement.classList.add("life-advertising");
-    } else {
-      e.closest(".views-row").classList.add("mobile-free");
-    }
-  });
-  /* for caption in images news */
-
-  if (!!document.querySelector(".page-node-type-news .block-field-blocknodenewsbody img")) {
-    var images = document.querySelectorAll(".page-node-type-news .block-field-blocknodenewsbody img");
-    images.forEach(function (img) {
-      var caption = img.dataset.caption;
-      img.insertAdjacentHTML("afterend", "<p class=\"image-caption\">".concat(caption, "</p>"));
-    });
-  }
-  /* block trending is inserted in impact news */
-
-
-  var blockTrending = document.querySelector(".block-block-grouphigh-impact-and-most-visited-news-home .block-fixed-block-contentbloque-dummy-noticias-home");
-
-  if (!!blockTrending) {
-    var blockTwoFeaturedNews = document.querySelector(".view-high-impact-news-home .view-display-id-block_2");
-
-    if (blockTwoFeaturedNews != null) {
-      blockTwoFeaturedNews.insertAdjacentElement("beforeend", blockTrending);
-    }
-  }
-  /* blockquote for selection-sharer */
-
-
-  var allBlockquote = document.querySelectorAll('blockquote:not([class*="twitter"])');
-
-  if (!!allBlockquote && allBlockquote.length) {
-    allBlockquote.forEach(function (blockquote) {
-      if (blockquote.firstElementChild.tagName === "P") {
-        var text = blockquote.firstElementChild.textContent;
-        blockquote.textContent = text;
-      }
-    });
-  }
-  /* text summary for selection-sharer */
-
-
-  var containerSummary = document.querySelector(".content-news-internal-first .views-element-container");
-
-  if (!!containerSummary) {
-    var summary = containerSummary.querySelector(".summary-news");
-    containerSummary.insertAdjacentElement("beforebegin", summary);
-  }
-  /* js video in internal */
-
-
-  var video_interna = document.querySelector(".block-field-blocknodenewsfield-video");
-  var contenido_interna = document.querySelector(".content-news-internal-first");
-
-  if (video_interna != null && contenido_interna != null) {
-    contenido_interna.classList.add("video-present");
-  } //// js ajuste ancla en employed
-
-
-  Array.from(document.querySelectorAll(".menu--i-am-an-employer-menu li a")).map(function (e) {
-    e.addEventListener("click", function () {
-      setTimeout(function () {
-        var scroll_y = window.scrollY;
-        window.scrollTo(0, scroll_y - 173);
-      }, 20);
-    });
-  }); //// js validador de publicidad en landing jobs
-
-  var block_ads = document.querySelector(".block-block-groupgroup-career-news-jobs .block-fixed-block-contentbig-vertical-advertising");
-  var view_career = document.querySelector(".block-views-blockcareer-news-block-1");
-
-  if (block_ads === null && view_career != null) {
-    view_career.classList.add("view-complete");
-  } //// js para slider de video en landing de video
-
-
-  var lista1 = document.querySelectorAll(".block-views-blockcarousel-videos-landing-block-2  .views-row.slick-slide:not(.slick-cloned) .views-field-nid");
-  var lista2 = document.querySelectorAll(".view-id-carousel_videos_landing.view-display-id-page_1 .views-field-nid");
-
-  var _loop = function _loop(i) {
-    var itemLista1 = lista1[i];
-    var itemLista2 = lista2[i];
-    itemLista1.parentElement.addEventListener("click", function () {
-      console.log("click");
-      Object(_js_functions_js__WEBPACK_IMPORTED_MODULE_0__["one"])();
-      Object(_js_functions_js__WEBPACK_IMPORTED_MODULE_0__["two"])();
-      var allIframes = document.querySelectorAll(".view-id-carousel_videos_landing.view-display-id-page_1  iframe");
-      Object(_js_functions_js__WEBPACK_IMPORTED_MODULE_0__["resetAlliframes"])(allIframes);
-
-      if (itemLista1.children.innerHTML === itemLista2.children.innerHTML) {
-        itemLista1.parentElement.parentElement.classList.add("select-video");
-        itemLista2.parentElement.parentElement.classList.add("show-video");
-        itemLista1.parentElement.classList.add("video-present");
-        itemLista2.parentElement.classList.add("video-present");
-      }
-    });
-  };
-
-  for (var i = 0; i < lista1.length; i++) {
-    _loop(i);
-  }
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (modify_);
-
-/***/ }),
-
-/***/ "./src/js/modules/replaceToken.js":
-/*!****************************************!*\
-  !*** ./src/js/modules/replaceToken.js ***!
-  \****************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/**
- * Reemplazar palabra clave o token por algún valor dado
- *
- * @param {String} regexToken Palabra o token como bandera para buscar y reemplazar
- * @param {String} value Texto o html para reemplazar el token
- * @param {Element} elements Colección de elementos HTML especificos en los que debera buscar el token
- */
-var replaceToken = function replaceToken(regexToken, value) {
-  var elements = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : [];
-  var search = new RegExp("".concat(regexToken), 'gim');
-
-  if (elements.length) {
-    Array.from(elements).map(function (element) {
-      if (element instanceof Element) {
-        element.innerHTML = element.innerHTML.replace(search, value);
-      }
-    });
-  }
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (replaceToken);
 
 /***/ }),
 
@@ -2438,13 +2300,13 @@ var initSlick = function initSlick($, Drupal) {
 /***/ }),
 
 /***/ 0:
-/*!*****************************************************!*\
-  !*** multi ./src/js/main.js ./src/sass/styles.scss ***!
-  \*****************************************************/
+/*!********************************************************!*\
+  !*** multi ./src/js/scripts.js ./src/sass/styles.scss ***!
+  \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/js/main.js */"./src/js/main.js");
+__webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
 module.exports = __webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
 
 

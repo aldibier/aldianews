@@ -1,4 +1,4 @@
-let mix = require('laravel-mix');
+let mix = require("laravel-mix");
 
 /*
  |--------------------------------------------------------------------------
@@ -17,19 +17,19 @@ let mix = require('laravel-mix');
  |--------------------------------------------------------------------------
  */
 mix
-  .setPublicPath('assets')
+  .setPublicPath("assets")
   .disableNotifications()
   .options({
     processCssUrls: false,
     postCss: [
-      require('postcss-assets'),
-      require('postcss-zindex'),
-      require('postcss-svg'),
-      require('postcss-svgo'),
-      require('postcss-clean')({
-        inliner: true,
-      }),
-    ],
+      require("postcss-assets"),
+      require("postcss-zindex"),
+      require("postcss-svg"),
+      require("postcss-svgo"),
+      require("postcss-clean")({
+        inliner: true
+      })
+    ]
   });
 
 /*
@@ -37,14 +37,14 @@ mix
  | SASS
  |--------------------------------------------------------------------------
  */
-mix.sass('src/sass/styles.scss', 'css');
+mix.sass("src/sass/styles.scss", "css");
 
 /*
  |--------------------------------------------------------------------------
  | JS
  |--------------------------------------------------------------------------
  */
-mix.js('src/js/main.js', 'js');
+mix.js("src/js/scripts.js", "js");
 
 // Full API
 // mix.js(src, output);
