@@ -1,0 +1,36 @@
+uuid: 6d18209b-cb65-495b-b2e6-97fcf45fc161
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_year
+field_name: field_year
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '2021'
+      label: '2021'
+    -
+      value: '2020'
+      label: '2020'
+    -
+      value: '2019'
+      label: '2019'
+    -
+      value: '2018'
+      label: '2018'
+    -
+      value: '2017'
+      label: '2017'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

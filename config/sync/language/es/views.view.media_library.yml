@@ -1,0 +1,78 @@
+display:
+  default:
+    display_title: Master
+    display_options:
+      exposed_form:
+        options:
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Items per page'
+            items_per_page_options_all_label: '- All -'
+            offset_label: Offset
+      fields:
+        media_bulk_form:
+          action_title: Action
+      filters:
+        status:
+          group_info:
+            label: Publicado
+            group_items:
+              1:
+                title: Publicado
+              2:
+                title: 'Sin publicar'
+        name:
+          expose:
+            label: Name
+        bundle:
+          expose:
+            label: 'Tipos multimedia'
+          group_info:
+            label: 'Tipos multimedia'
+        langcode:
+          expose:
+            label: Language
+      title: Multimedia
+  page:
+    display_title: Página
+    display_options:
+      fields:
+        media_bulk_form:
+          action_title: Action
+        edit_media:
+          text: Editar
+        delete_media:
+          text: Eliminar
+  widget:
+    display_title: Control
+    display_options:
+      filters:
+        name:
+          expose:
+            label: Name
+      arguments:
+        bundle:
+          exception:
+            title: All
+  widget_table:
+    display_options:
+      fields:
+        thumbnail__target_id:
+          label: Miniatura
+        name:
+          label: Name
+        uid:
+          label: Autor
+      filters:
+        name:
+          expose:
+            label: Name
+      arguments:
+        bundle:
+          exception:
+            title: All

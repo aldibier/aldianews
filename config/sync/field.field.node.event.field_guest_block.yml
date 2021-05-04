@@ -12,7 +12,7 @@ id: node.event.field_guest_block
 field_name: field_guest_block
 entity_type: node
 bundle: event
-label: 'Guest block'
+label: 'Block''s Title'
 description: ''
 required: false
 translatable: false
@@ -31,6 +31,9 @@ settings:
       advertising_options:
         weight: 12
         enabled: false
+      contact:
+        weight: 16
+        enabled: false
       features_items:
         weight: 13
         enabled: false
@@ -48,6 +51,12 @@ settings:
         enabled: false
       main_features:
         weight: 18
+        enabled: false
+      platforms:
+        weight: 23
+        enabled: false
+      sliders_in_internal_events:
+        weight: 24
         enabled: false
       social_media:
         weight: 19

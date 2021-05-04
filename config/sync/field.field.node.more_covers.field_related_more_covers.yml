@@ -12,7 +12,7 @@ id: node.more_covers.field_related_more_covers
 field_name: field_related_more_covers
 entity_type: node
 bundle: more_covers
-label: 'related more covers'
+label: 'Related more covers'
 description: ''
 required: false
 translatable: false
@@ -31,17 +31,32 @@ settings:
       advertising_options:
         weight: 10
         enabled: false
+      contact:
+        weight: 16
+        enabled: false
       features_items:
         weight: 11
         enabled: false
       features_more_covers:
         enabled: true
         weight: 12
+      guest:
+        weight: 19
+        enabled: false
+      gust_block:
+        weight: 20
+        enabled: false
       i_am_an_employer_sections:
         weight: 13
         enabled: false
       main_features:
         weight: 14
+        enabled: false
+      platforms:
+        weight: 23
+        enabled: false
+      sliders_in_internal_events:
+        weight: 24
         enabled: false
       social_media:
         weight: 15
