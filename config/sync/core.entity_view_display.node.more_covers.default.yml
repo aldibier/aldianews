@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.more_covers.field_end_date
     - field.field.node.more_covers.field_related_more_covers
     - field.field.node.more_covers.field_start_date
+    - field.field.node.more_covers.field_year
     - fixed_block_content.fixed_block_content._small_vertical_advertising
     - fixed_block_content.fixed_block_content.big_vertical_advertising
     - node.type.more_covers
@@ -19,6 +20,7 @@ dependencies:
     - fixed_block_content
     - image
     - layout_builder
+    - options
     - user
 third_party_settings:
   field_group:
@@ -203,6 +205,21 @@ third_party_settings:
                 view_mode: view_mode
             additional: {  }
             weight: -9
+          0f01dba0-2e77-4043-a11e-ae106248ab01:
+            uuid: 0f01dba0-2e77-4043-a11e-ae106248ab01
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:more_covers:field_year'
+              formatter:
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+                type: list_default
+            additional: {  }
+            weight: 1
         third_party_settings: {  }
 id: node.more_covers.default
 targetEntityType: node
@@ -244,6 +261,13 @@ content:
       date_format: ' F jS'
     third_party_settings: {  }
     type: datetime_custom
+    region: content
+  field_year:
+    weight: 5
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
     region: content
   links:
     weight: 0
