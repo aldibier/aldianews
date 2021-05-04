@@ -1223,14 +1223,8 @@ var add_ = function add_() {
       var txt = eventTime.innerText;
       eventTime.innerText = "".concat(txt.substring(0, 7), ".").concat(txt.charAt(7), ".");
     });
-  } ///// js para select de categorias, subcategorias y subsubcategorias
+  } //// publicidad horizontal cada 6 en more covers
 
-
-  Array.from(document.querySelectorAll("#views-exposed-form-search-results-al-dia-solr-page-1 .form-item-field-category li label")).map(function (e) {
-    if (e != null && !e.innerHTML.includes("-")) {
-      e.classList.add("category");
-    }
-  }); //// publicidad horizontal cada 6 en more covers
 
   Array.from(document.querySelectorAll(".block-fixed-block-contenthorizontal-advertising")).map(function (e) {
     if (e != null) {
@@ -1276,24 +1270,15 @@ var add_ = function add_() {
     if (!!e && !!father_li) {
       father_li.appendChild(e);
     }
-  }); /////// js para añadir la cantidad de comentarios de respuesta y desplegable
-  // Array.from(document.querySelectorAll(".container-show-hide span")).map(
-  //   function(e) {
-  //     var father_answer = document.querySelectorAll(
-  //       "section > .comment + .indented > div:not(.indented)"
-  //     );
-  //     if (!!e && !!father_answer) {
-  //       e.innerHTML = father_answer.length;
-  //     }
-  //   }
-  // );
+  }); ///// js para select de categorias, subcategorias y subsubcategorias
 
-  Array.from(document.querySelectorAll("section > .comment")).map(function (e) {
-    if (!!e && e.nextElementSibling.classList.contains("indented")) {
-      var father_answer = e.nextElementSibling.querySelectorAll("div:not(.indented)");
-      e.querySelector(".container-show-hide span").innerHTML = father_answer.length;
-    }
-  });
+  setTimeout(function () {
+    Array.from(document.querySelectorAll("#views-exposed-form-search-results-al-dia-solr-page-1 .form-item-field-category li label")).map(function (e) {
+      if (e != null && !e.innerHTML.includes("-")) {
+        e.classList.add("category");
+      }
+    });
+  }, 1000);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (add_);
@@ -1309,6 +1294,18 @@ var add_ = function add_() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 var app = function app($, Drupal) {
   var $window = $(window);
   var $videoWrap = $(".page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video");
@@ -1461,6 +1458,22 @@ var app = function app($, Drupal) {
       $("#block-exposedformsearch-results-al-dia-solrpage-1-2").addClass("open");
       $(".layout-main-wrapper.layout-container").addClass("color-mod");
     });
+  }); /////// js para añadir la cantidad de comentarios de respuesta y desplegable
+
+  Array.from(document.querySelectorAll("section .comment")).map(function (e) {
+    if (!e.nextElementSibling) return;
+
+    if (!!e.nextElementSibling.classList.contains("indented")) {
+      var count_children = _toConsumableArray(e.nextElementSibling.children).filter(function (ev) {
+        if (ev.classList.contains("comment")) {
+          return ev;
+        }
+      });
+
+      e.querySelector(".container-show-hide span").innerHTML = count_children.length;
+    } else {
+      e.classList.add("no-answer");
+    }
   });
 };
 
@@ -1693,15 +1706,13 @@ var dropdown_ = function dropdown_() {
   } /////// js para añadir la cantidad de comentarios de respuesta y desplegable
 
 
-  Array.from(document.querySelectorAll(".container-show-hide span")).map(function (e) {
-    var container_answer = document.querySelectorAll("section .indented");
+  Array.from(document.querySelectorAll("section .comment")).map(function (e) {
+    if (!e.nextElementSibling) return;
 
-    if (!!e && !!container_answer) {
-      e.parentElement.addEventListener("click", function () {
-        e.parentElement.parentElement.classList.toggle("active");
-        Array.from(container_answer).map(function (e) {
-          e.classList.toggle("dis-block");
-        });
+    if (!!e.nextElementSibling.classList.contains("indented")) {
+      e.querySelector(".container-show-hide").addEventListener("click", function () {
+        e.querySelector(".container-show-hide").classList.toggle("active");
+        e.nextElementSibling.classList.toggle("dis-block");
       });
     }
   });
@@ -1799,7 +1810,7 @@ __webpack_require__.r(__webpack_exports__);
 
 (function ($, Drupal) {
   window.onload = function () {
-    //init 
+    //init
     Object(_js_modify_js__WEBPACK_IMPORTED_MODULE_4__["default"])();
     Object(_js_add_js__WEBPACK_IMPORTED_MODULE_5__["default"])();
     Object(_js_delete_js__WEBPACK_IMPORTED_MODULE_6__["default"])();
@@ -1950,10 +1961,10 @@ var modal_ = function modal_() {
     var triggerVideo = document.querySelector(".block-views-blockabout-al-dia-live-block-1 .about-al-dia-live-container-video");
     var buttonCloseVideo = document.querySelector(".close-video");
     var video = document.querySelector(".modal-video");
-    var iframe = document.querySelector('.about-al-dia-live-container-video iframe'); //reset src iframe
+    var iframe = document.querySelector(".about-al-dia-live-container-video iframe"); //reset src iframe
 
-    if (iframe.src.indexOf('?') > 0) {
-      var srcEdit = iframe.src.split('?');
+    if (iframe.src.indexOf("?") > 0) {
+      var srcEdit = iframe.src.split("?");
       iframe.src = "".concat(srcEdit[0], "?start=0&rel=0");
     }
 
@@ -2079,8 +2090,9 @@ var modify_ = function modify_() {
     var itemLista1 = lista1[i];
     var itemLista2 = lista2[i];
     itemLista1.parentElement.addEventListener("click", function () {
-      one();
-      two();
+      console.log("click");
+      Object(_js_functions_js__WEBPACK_IMPORTED_MODULE_0__["one"])();
+      Object(_js_functions_js__WEBPACK_IMPORTED_MODULE_0__["two"])();
       var allIframes = document.querySelectorAll(".view-id-carousel_videos_landing.view-display-id-page_1  iframe");
       Object(_js_functions_js__WEBPACK_IMPORTED_MODULE_0__["resetAlliframes"])(allIframes);
 
@@ -2432,8 +2444,8 @@ var initSlick = function initSlick($, Drupal) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/usuario/Desktop/Proyectos/AlDiaNews/4ld14-n3ws/web/themes/custom/al_dia_news/src/js/main.js */"./src/js/main.js");
-module.exports = __webpack_require__(/*! /Users/usuario/Desktop/Proyectos/AlDiaNews/4ld14-n3ws/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
+__webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/js/main.js */"./src/js/main.js");
+module.exports = __webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
 
 
 /***/ })

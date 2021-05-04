@@ -8,9 +8,11 @@ dependencies:
     - field.storage.node.field_start_date
     - node.type.more_covers
   module:
+    - better_exposed_filters
     - datetime
     - image
     - node
+    - options
     - user
     - views_infinite_scroll
 id: more_covers_landing
@@ -43,7 +45,7 @@ display:
           query_comment: ''
           query_tags: {  }
       exposed_form:
-        type: basic
+        type: bef
         options:
           submit_button: SEARCH
           reset_button: false
@@ -52,6 +54,23 @@ display:
           expose_sort_order: true
           sort_asc_label: Asc
           sort_desc_label: Desc
+          text_input_required: 'Select any filter and click on Apply to see results'
+          text_input_required_format: null
+          bef:
+            general:
+              autosubmit: false
+              autosubmit_exclude_textfield: false
+              autosubmit_textfield_delay: 500
+              autosubmit_hide: false
+              input_required: false
+              allow_secondary: false
+              secondary_label: 'Advanced options'
+              secondary_open: false
+            sort:
+              plugin_id: default
+            filter:
+              field_start_date_value:
+                plugin_id: default
       pager:
         type: infinite_scroll
         options:
@@ -576,6 +595,134 @@ display:
           empty_zero: false
           hide_alter_empty: false
           plugin_id: custom
+        field_end_date_3:
+          id: field_end_date_3
+          table: node__field_end_date
+          field: field_end_date
+          relationship: none
+          group_type: group
+          admin_label: 'Fecha fin año'
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: datetime_custom
+          settings:
+            timezone_override: ''
+            date_format: 'Y'
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_start_date_2:
+          id: field_start_date_2
+          table: node__field_start_date
+          field: field_start_date
+          relationship: none
+          group_type: group
+          admin_label: 'Fecha inicio año'
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: datetime_custom
+          settings:
+            timezone_override: ''
+            date_format: 'Y'
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
       filters:
         status:
           value: '1'
@@ -602,91 +749,49 @@ display:
           expose:
             operator_limit_selection: false
             operator_list: {  }
-        field_start_date_value:
-          id: field_start_date_value
-          table: node__field_start_date
-          field: field_start_date_value
+        field_year_value:
+          id: field_year_value
+          table: node__field_year
+          field: field_year_value
           relationship: none
           group_type: group
           admin_label: ''
-          operator: '='
-          value:
-            min: ''
-            max: ''
-            value: ''
-            type: date
+          operator: or
+          value: {  }
           group: 1
           exposed: true
           expose:
-            operator_id: field_start_date_value_op
-            label: 'start date (field_start_date)'
-            description: null
+            operator_id: field_year_value_op
+            label: 'Filter by year'
+            description: ''
             use_operator: false
-            operator: field_start_date_value_op
+            operator: field_year_value_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: field_start_date_value
+            identifier: field_year_value
             required: false
             remember: false
             multiple: false
             remember_roles:
               authenticated: authenticated
-            placeholder: null
-            min_placeholder: null
-            max_placeholder: null
-          is_grouped: true
+              anonymous: '0'
+              administrator: '0'
+              editor: '0'
+            reduce: false
+          is_grouped: false
           group_info:
-            label: 'Sort by'
+            label: ''
             description: ''
-            identifier: field_start_date_value
+            identifier: ''
             optional: true
             widget: select
             multiple: false
             remember: false
             default_group: All
             default_group_multiple: {  }
-            group_items:
-              1:
-                title: '2021'
-                operator: '='
-                value:
-                  type: date
-                  value: '2021'
-                  min: ''
-                  max: ''
-              2:
-                title: '2020'
-                operator: '='
-                value:
-                  type: date
-                  value: '2020'
-                  min: ''
-                  max: ''
-              3:
-                title: '2019'
-                operator: '='
-                value:
-                  type: date
-                  value: '2019'
-                  min: ''
-                  max: ''
-              4:
-                title: '2018'
-                operator: '='
-                value:
-                  type: date
-                  value: '2018'
-                  min: ''
-                  max: ''
-              5:
-                title: '2017'
-                operator: '='
-                value:
-                  type: date
-                  value: '2017'
-                  min: ''
-                  max: ''
-          plugin_id: datetime
+            group_items: {  }
+          reduce_duplicates: false
+          plugin_id: list_field
       sorts:
         created:
           id: created
