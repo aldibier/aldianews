@@ -9,17 +9,6 @@ const add_ = () => {
     });
   }
 
-  ///// js para select de categorias, subcategorias y subsubcategorias
-  Array.from(
-    document.querySelectorAll(
-      "#views-exposed-form-search-results-al-dia-solr-page-1 .form-item-field-category li label"
-    )
-  ).map(function(e) {
-    if (e != null && !e.innerHTML.includes("-")) {
-      e.classList.add("category");
-    }
-  });
-
   //// publicidad horizontal cada 6 en more covers
   Array.from(
     document.querySelectorAll(
@@ -89,6 +78,20 @@ const add_ = () => {
       father_li.appendChild(e);
     }
   });
+
+  ///// js para select de categorias, subcategorias y subsubcategorias
+  setTimeout(function() {
+    Array.from(
+      document.querySelectorAll(
+        "#views-exposed-form-search-results-al-dia-solr-page-1 .form-item-field-category li label"
+      )
+    ).map(function(e) {
+      if (e != null && !e.innerHTML.includes("-")) {
+        e.classList.add("category");
+      }
+    });
+  }, 1000);
+
   /////// js para añadir la cantidad de comentarios de respuesta y desplegable
   // Array.from(document.querySelectorAll(".container-show-hide span")).map(
   //   function(e) {
