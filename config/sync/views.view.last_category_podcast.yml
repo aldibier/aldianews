@@ -1334,7 +1334,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"podcast-category-block\">\r\n   <div class=\"last-category-podcast\">\r\n     <div class=\"podcast-category-image\">{{ field_category_image }}</div>\r\n     <div class=\"podcast-category-name\">{{ name }}</div>\r\n     <div class=\"podcast-category-description\">{{ description__value }}</div>\r\n   </div>\r\n   <div class=\"al-dia-podcast-image\">{{ view_3 }}</div>\r\n   <div class=\"al-dia-podcast-social-media\">{{ view_1 }}</div>\r\n</div>"
+            text: "<div class=\"podcast-category-block\">\r\n    <div class=\"podcast-category-image\">{{ field_category_image }}</div>\r\n   <div class=\"podcast-category-content\">\r\n       <div class=\"podcast-category-name\">{{ name }}</div>\r\n       <div class=\"podcast-category-description\">{{ description__value }}</div>\r\n   </div>\r\n   <div class=\"al-dia-podcast-image\">{{ view_3 }}</div>\r\n   <div class=\"al-dia-podcast-social-media\">{{ view_1 }}</div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
