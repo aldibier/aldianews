@@ -83,7 +83,7 @@ class Comments extends DsFieldBase {
           ],
 
         'data-dialog-type' => 'modal',
-        'data-dialog-options' => Json::encode(['width' => 550]),
+        'data-dialog-options' => Json::encode(['dialogClass' => 'popup-delete-comment'],['width' => 550]),
       ],
       ];
       $items[] = [
@@ -94,11 +94,11 @@ class Comments extends DsFieldBase {
         ]),
         '#attributes' => [
           'class' => [
-          'use-ajax',
-          'edit-comment',
-        ],
-        'data-dialog-type' => 'modal',
-        'data-dialog-options' => Json::encode(['width' => 550]),
+            'use-ajax',
+            'edit-comment',
+          ],
+          'data-dialog-type' => 'modal',
+          'data-dialog-options' => Json::encode(['dialogClass' => 'popup-edit-comment'],['width' => 550]),
         ],
       ];
       // $items[] = [
