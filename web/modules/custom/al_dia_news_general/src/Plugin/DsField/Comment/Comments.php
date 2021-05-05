@@ -99,7 +99,6 @@ class Comments extends DsFieldBase {
           ],
           'data-dialog-type' => 'modal',
           'data-dialog-options' => Json::encode(['dialogClass' => 'popup-edit-comment'],['width' => 550]),
-          'data-dialog-calss' => 'modal-comment',
         ],
       ];
       // $items[] = [
