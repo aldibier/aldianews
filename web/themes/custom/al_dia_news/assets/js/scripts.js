@@ -1674,7 +1674,17 @@ var initMain = function initMain($, Drupal) {
         e.nextElementSibling.classList.toggle("dis-block");
       });
     }
-  });
+  }); /// js para dropdown podcast
+
+  if (!!document.querySelector('.path-podcast')) {
+    console.log('podcast!');
+    var containerContainer = document.querySelector('.category-list');
+    var buttonCategories = document.querySelector('.category-button-mobile');
+    buttonCategories.addEventListener('click', function () {
+      containerContainer.classList.toggle('open');
+      buttonCategories.classList.toggle('up');
+    });
+  }
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (initMain);
@@ -1768,6 +1778,29 @@ __webpack_require__.r(__webpack_exports__);
 
       $('.stuck button[name="close"]').click(function () {
         $video.addClass("disnone");
+      });
+    });
+  }
+
+  var $containerVideo = $(".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video");
+  var $videoThoughtLeaders = $(".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video .content");
+  var videoThoughtLeadersHeigth = $videoThoughtLeaders.outerHeight();
+
+  if (!!document.querySelector(".page-node-type-thought-leaders") && !!$videoThoughtLeaders) {
+    $window.on("scroll", function () {
+      var windowScrollTop = $window.scrollTop();
+      var videoBottom = videoThoughtLeadersHeigth + $containerVideo.offset().top;
+
+      if (windowScrollTop > videoBottom) {
+        $containerVideo.height(videoThoughtLeadersHeigth);
+        $videoThoughtLeaders.addClass("stuck");
+      } else {
+        $containerVideo.height("auto");
+        $videoThoughtLeaders.removeClass("stuck");
+      }
+
+      $('.stuck button[name="close"]').click(function () {
+        $videoThoughtLeaders.addClass("disnone");
       });
     });
   }

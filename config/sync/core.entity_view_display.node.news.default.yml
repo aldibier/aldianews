@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.news.field_high_impact_news
     - field.field.node.news.field_image
     - field.field.node.news.field_my_content_has_a_main_vide
+    - field.field.node.news.field_news
     - field.field.node.news.field_podcast_player
     - field.field.node.news.field_postcast_categories
     - field.field.node.news.field_short_title
@@ -397,6 +398,22 @@ third_party_settings:
                 type: comment_default
             additional: {  }
             weight: 9
+          58a8b8d1-cddc-4f45-ba99-f5922c59772d:
+            uuid: 58a8b8d1-cddc-4f45-ba99-f5922c59772d
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:news:field_news'
+              formatter:
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+                type: entity_reference_label
+            additional: {  }
+            weight: 10
         third_party_settings: {  }
 id: node.news.default
 targetEntityType: node
@@ -476,6 +493,14 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     type: boolean
+    region: content
+  field_news:
+    weight: 16
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
     region: content
   field_podcast_player:
     weight: 14

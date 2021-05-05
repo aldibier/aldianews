@@ -79,21 +79,40 @@ class Comments extends DsFieldBase {
         '#attributes' => [
           'class' => [
             'delete-comment',
+            'use-ajax',
           ],
-        ],
+
+        'data-dialog-type' => 'modal',
+        'data-dialog-options' => Json::encode(['dialogClass' => 'popup-delete-comment'],['width' => 550]),
+      ],
       ];
       $items[] = [
         '#type' => 'link',
-        '#title' => $this->t('Edit'),
+        '#title' => $this->t('EDIT'),
         '#url' => Url::fromRoute('entity.comment.edit_form', [
           'comment' => $entity->id(),
         ]),
         '#attributes' => [
           'class' => [
+            'use-ajax',
             'edit-comment',
           ],
+          'data-dialog-type' => 'modal',
+          'data-dialog-options' => Json::encode(['dialogClass' => 'popup-edit-comment'],['width' => 550]),
         ],
       ];
+      // $items[] = [
+      //   '#type' => 'link',
+      //   '#title' => $this->t('Edit'),
+      //   '#url' => Url::fromRoute('entity.comment.edit_form', [
+      //     'comment' => $entity->id(),
+      //   ]),
+      //   '#attributes' => [
+      //     'class' => [
+      //       'edit-comment',
+      //     ],
+      //   ],
+      // ];
       $items[] = [
         '#markup' => '<div class="container-reply"></div>',
       ];

@@ -385,3 +385,71 @@
     }
   }
 }
+
+
+// ------- filtro landing --------////
+#views-exposed-form-more-covers-landing-page-1{
+  .edit-field-year-value{
+    color: #333333;
+    font-weight: normal;
+    font-family: $PrNovacond-reg;
+  }
+  .SumoSelect{
+    width: 230px;
+    height: 50px;
+  }
+  .form--inline.clearfix{
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+  }
+  .form-type-select{
+    margin: 40px 20px 20px 0px;
+  }
+  #edit-actions{
+    margin-bottom: 25px;
+  }
+  .CaptionCont.SelectBox{
+    padding-left: 18px;
+  }
+  .SumoSelect .optWrapper>.options>li label{
+    min-height: 45px;
+    color: #333333;
+    font-weight: normal;
+  }
+  .SumoSelect.open > .optWrapper{
+    top: 44px;
+  }
+  .SumoSelect > .optWrapper > .options{
+    max-height: 275px;
+  }
+}
+@media (max-width: $tablet) {
+  #views-exposed-form-more-covers-landing-page-1{
+    .SumoSelect{
+      width: 100%;
+      height: 30px;
+    }
+    .form-type-select{
+      margin: 20px auto 15px;
+      width:100%;
+    }
+    .CaptionCont.SelectBox{
+      padding-left: 15px;
+    }
+    #edit-actions{
+      margin-bottom: 30px;
+      max-width: 100px;
+    }
+    .SumoSelect .optWrapper>.options>li label{
+      min-height: 40px;
+    }
+    .SumoSelect.open > .optWrapper{
+      top: 35px;
+      z-index: 1;
+    }
+    .SumoSelect > .optWrapper > .options{
+      max-height: 245px;
+    }
+  }
+}

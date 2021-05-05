@@ -7,10 +7,12 @@ dependencies:
     - field.storage.node.field_category
     - field.storage.node.field_podcast_player
     - field.storage.taxonomy_term.field_category_image
+    - responsive_image.styles.podcast_category_responsive
     - taxonomy.vocabulary.podcast_category
   module:
     - image
     - node
+    - responsive_image
     - taxonomy
     - text
     - user
@@ -316,6 +318,7 @@ display:
         footer: false
         style: false
         row: false
+        header: false
       pager:
         type: some
         options:
@@ -323,55 +326,6 @@ display:
           offset: 0
       relationships: {  }
       fields:
-        nothing:
-          id: nothing
-          table: views
-          field: nothing
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: true
-          alter:
-            alter_text: true
-            text: '<label class="category-text-mobile">DISCOVER MORE PODCASTS</label>'
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: false
-          plugin_id: custom
         field_category_image:
           id: field_category_image
           table: taxonomy_term__field_category_image
@@ -421,9 +375,9 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: image
+          type: responsive_image
           settings:
-            image_style: ''
+            responsive_image_style: podcast_category_responsive
             image_link: content
           group_column: ''
           group_columns: {  }
@@ -514,11 +468,7 @@ display:
       style:
         type: html_list
         options:
-          grouping:
-            -
-              field: nothing
-              rendered: false
-              rendered_strip: true
+          grouping: {  }
           row_class: podcast-category
           default_row_class: false
           type: ul
@@ -527,6 +477,20 @@ display:
       row:
         type: fields
         options: {  }
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content:
+            value: "<label class=\"category-text-mobile\">DISCOVER MORE PODCASTS</label>\r\n<button class=\"category-button-mobile\"></button>"
+            format: full_html
+          plugin_id: text
     cache_metadata:
       max-age: -1
       contexts:
@@ -1370,7 +1334,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"podcast-category-block\">\r\n   <div class=\"last-category-podcast\">\r\n     <div class=\"podcast-category-image\">{{ field_category_image }}</div>\r\n     <div class=\"podcast-category-name\">{{ name }}</div>\r\n     <div class=\"podcast-category-description\">{{ description__value }}</div>\r\n   </div>\r\n   <div class=\"al-dia-podcast-image\">{{ view_3 }}</div>\r\n   <div class=\"al-dia-podcast-social-media\">{{ view_1 }}</div>\r\n</div>"
+            text: "<div class=\"podcast-category-block\">\r\n    <div class=\"podcast-category-image\">{{ field_category_image }}</div>\r\n   <div class=\"podcast-category-content\">\r\n       <div class=\"podcast-category-name\">{{ name }}</div>\r\n       <div class=\"podcast-category-description\">{{ description__value }}</div>\r\n   </div>\r\n   <div class=\"al-dia-podcast-image\">{{ view_3 }}</div>\r\n   <div class=\"al-dia-podcast-social-media\">{{ view_1 }}</div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
