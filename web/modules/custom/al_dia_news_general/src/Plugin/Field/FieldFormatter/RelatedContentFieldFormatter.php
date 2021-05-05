@@ -121,7 +121,7 @@ class RelatedContentFieldFormatter extends FormatterBase {
       $view = \Drupal\views\Views::getView($view_id);
       $view->setDisplay($view_display);
       $view->setArguments([$nodeId, $tags_list]);
-      dsm($tags_list);
+      //dsm($tags_list);
 
       $title = $view->getTitle();
       // Render.

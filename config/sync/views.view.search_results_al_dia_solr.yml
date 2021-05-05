@@ -897,7 +897,7 @@ display:
     display_options:
       display_extenders:
         ajax_history:
-          enable_history: false
+          enable_history: true
       path: search-results
       filters:
         search_api_fulltext:
@@ -1138,6 +1138,7 @@ display:
         sorts: false
         empty: false
         footer: false
+        cache: false
       filter_groups:
         operator: AND
         groups:
@@ -1749,6 +1750,9 @@ display:
           search_api_spellcheck_collate: false
           plugin_id: search_api_spellcheck_suggestions
       footer: {  }
+      cache:
+        type: none
+        options: {  }
     cache_metadata:
       max-age: -1
       contexts:

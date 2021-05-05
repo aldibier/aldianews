@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.thought_leaders.field_image
     - field.field.node.thought_leaders.field_short_title
     - field.field.node.thought_leaders.field_tags
+    - field.field.node.thought_leaders.field_video
     - node.type.thought_leaders
     - views.view.more_in_this_section_thought_leaders
     - views.view.thought_leaders_content_authors
@@ -22,6 +23,7 @@ dependencies:
     - layout_builder
     - text
     - user
+    - video_embed_field
     - views
 third_party_settings:
   layout_builder:
@@ -52,7 +54,7 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: 0
+            weight: -9
           c36ad680-9cac-42a0-a39d-64441d55a0e9:
             uuid: c36ad680-9cac-42a0-a39d-64441d55a0e9
             region: one_advertising
@@ -71,7 +73,7 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: 1
+            weight: -8
           29e9e374-e998-4f7c-947a-cd5b229b9864:
             uuid: 29e9e374-e998-4f7c-947a-cd5b229b9864
             region: one_content
@@ -219,6 +221,49 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: -7
+          f82c07a4-0172-4762-8b0c-3076503813f1:
+            uuid: f82c07a4-0172-4762-8b0c-3076503813f1
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:thought_leaders:field_video'
+              formatter:
+                label: above
+                settings:
+                  responsive: true
+                  width: 854
+                  height: 480
+                  autoplay: true
+                third_party_settings: {  }
+                type: video_embed_field_video
+            additional: {  }
+            weight: 1
+          48f92ab2-837c-446a-8060-88f96515ea54:
+            uuid: 48f92ab2-837c-446a-8060-88f96515ea54
+            region: one_advertising
+            configuration:
+              id: 'field_block:node:thought_leaders:field_video'
+              label: Video
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: video_embed_field_video
+                settings:
+                  autoplay: true
+                  responsive: true
+                  width: 854
+                  height: 480
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: -10
         third_party_settings: {  }
 id: node.thought_leaders.default
 targetEntityType: node
@@ -281,6 +326,17 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
+  field_video:
+    weight: 108
+    label: above
+    settings:
+      responsive: true
+      width: 854
+      height: 480
+      autoplay: true
+    third_party_settings: {  }
+    type: video_embed_field_video
     region: content
   links:
     weight: 100

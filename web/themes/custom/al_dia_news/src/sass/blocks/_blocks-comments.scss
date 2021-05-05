@@ -1,7 +1,7 @@
 .field--type-comment {
   display: flex;
   flex-wrap: wrap;
-
+  margin-bottom: 40px;
   .comment-form__title {
     order: -2;
     width: 100%;
@@ -19,6 +19,7 @@
     }
 
     @media (max-width: $tablet) {
+      margin: 0px auto 50px;
       .form-textarea {
         min-height: 80px;
       }
@@ -29,7 +30,7 @@ section .comment:not(section .indented .comment) {
   position: relative;
   background: #fbfbfb;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.17);
-  margin: 0 auto 40px;
+  margin: 40px auto 0px;
 
   .comment__meta {
     position: absolute;
@@ -115,6 +116,36 @@ section .comment:not(section .indented .comment) {
       min-height: auto;
       border: 0px;
       border-radius: 0px;
+      &:focus {
+        outline: 0px;
+      }
+    }
+  }
+  @media (max-width: $tablet) {
+    margin: 20px auto 0px;
+    .field--name-field-comment-body {
+      font-size: $px18;
+      line-height: 20px;
+    }
+    .item-list {
+      font-size: $px16;
+      line-height: 22px;
+      margin-top: 20px;
+      ul {
+        justify-content: flex-start;
+      }
+      li {
+        padding: 0.2em 1.5em 0 0;
+      }
+      li:nth-child(4) {
+        margin-left: auto;
+      }
+      li:last-child {
+        padding: 0.2em 0em 0px 0px;
+      }
+      input[value="REPLY"] {
+        font-size: $px16;
+      }
     }
   }
 }
@@ -142,6 +173,12 @@ section .comment:not(section .indented .comment) {
   .comment__content {
     text-align: right;
   }
+  @media (max-width: $tablet) {
+    margin: -5px 0 0;
+  }
+}
+.container-reply .ajax-progress {
+  display: none !important;
 }
 section .indented .comment {
   position: relative;
@@ -153,9 +190,14 @@ section .indented .comment {
     left: 0px;
     right: 0px;
     margin: 0 auto;
-    width: 80%;
+    width: 95%;
     height: 1px;
     background: #b1b1b1;
+  }
+  @media (max-width: $tablet) {
+    &::before {
+      width: 91%;
+    }
   }
 }
 section > .comment:nth-of-type(1) {
@@ -166,7 +208,7 @@ section > .comment:nth-of-type(1) {
     content: "COMMENTS";
     display: block;
     position: absolute;
-    top: -40px;
+    top: -30px;
     left: 0px;
     font-style: normal;
     font-size: $px19;
@@ -175,11 +217,27 @@ section > .comment:nth-of-type(1) {
     color: $cblack;
     letter-spacing: 0.2px;
   }
+  @media (max-width: $tablet) {
+    &::before {
+      font-size: $px12;
+      line-height: 15px;
+    }
+  }
 }
 .container-show-hide {
   text-transform: uppercase;
   position: relative;
   padding-right: 40px !important;
+  display: flex;
+  color: #7e7e7e !important;
+  font-style: normal;
+  font-size: $px20;
+  line-height: 28px;
+  font-weight: 600;
+  font-family: $PrNovacond-reg;
+  text-transform: uppercase;
+  color: $cblack3;
+  cursor: pointer;
   &::before {
     content: "";
     display: block;
@@ -189,35 +247,42 @@ section > .comment:nth-of-type(1) {
     background-size: contain;
     width: 17.06px;
     height: 10px;
-    right: 20px;
-    top: 13px;
+    right: 10px;
+    top: 10px;
   }
-  li {
-    color: #7e7e7e !important;
-    font-style: normal;
-    font-size: $px20;
-    line-height: 28px;
-    font-weight: 600;
-    font-family: $PrNovacond-reg;
-    text-transform: uppercase;
-    color: $cblack3;
-    cursor: pointer;
-    position: relative;
+  span {
+    margin: 0 5px;
   }
-  li:last-child {
+  .hide {
     display: none;
   }
   &.active {
-    li:first-child {
+    .show {
       display: none;
     }
-    li:last-child {
+    .hide {
       display: block;
     }
     &::before {
       transform: rotate(180deg);
     }
   }
+  @media (max-width: $tablet) {
+    padding-right: 20px !important;
+    font-size: $px16;
+    line-height: 22px;
+    &::before {
+      width: 15px;
+      right: 0px;
+      top: 6px;
+    }
+    span {
+      margin: 0 3px;
+    }
+  }
+}
+.no-answer .container-show-hide {
+  display: none;
 }
 .al-dia-news-reply-comments {
   input[value="REPLY"] {
@@ -240,6 +305,17 @@ section > .comment:nth-of-type(1) {
     padding: 0 24px;
     max-width: 165px;
     margin-left: 0px;
+  }
+  @media (max-width: $tablet) {
+    textarea {
+      min-height: 150px;
+    }
+    input[value="POST ANSWER"] {
+      height: 30px;
+      font-size: $px12;
+      padding: 0 20px;
+      max-width: 110px;
+    }
   }
 }
 .comment-forbidden {
@@ -272,6 +348,13 @@ section > .comment:nth-of-type(1) {
     display: flex;
     align-items: center;
     justify-content: center;
+    @media (max-width: $tablet) {
+      margin-top: 20px;
+      height: 30px;
+      font-size: $px12;
+      padding: 0 20px;
+      max-width: 110px;
+    }
   }
   #edit-cancel {
     background: #5c6165;
@@ -296,4 +379,8 @@ section > .comment:nth-of-type(1) {
     text-transform: uppercase;
     cursor: pointer;
   }
+}
+
+.indented > div:last-child .container-show-hide {
+  display: none;
 }
