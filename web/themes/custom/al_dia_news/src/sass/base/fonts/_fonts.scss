@@ -301,13 +301,12 @@ $fonts: "../fonts/";
 //---- ProximaNova Cond-Regular ----//
 @font-face {
   font-family: "ProximaNovaCond-Regular";
-
-  src: url("#{$fonts}/proxima-nova/ProximaNovaCond-Regular.woff") format("woff"),
-    url("#{$fonts}/proxima-nova/ProximaNovaCond-Regular.woff2") format("woff2"),
-    url("#{$fonts}/proxima-nova/ProximaNovaCond-Regular.ttf") format("truetype"),
-    url("#{$fonts}/proxima-nova/ProximaNovaCond-Regular.eot?#iefix")
-      format("embedded-opentype");
   src: url("#{$fonts}/proxima-nova/ProximaNovaCond-Regular.eot");
+  src: url("#{$fonts}/proxima-nova/ProximaNovaCond-Regular.eot?#iefix")
+      format("embedded-opentype"),
+      url("#{$fonts}/proxima-nova/ProximaNovaCond-Regular.ttf") format("truetype"),
+      url("#{$fonts}/proxima-nova/ProximaNovaCond-Regular.woff") format("woff"),
+      url("#{$fonts}/proxima-nova/ProximaNovaCond-Regular.woff2") format("woff2");
   font-weight: normal;
   font-style: swap;
 }
