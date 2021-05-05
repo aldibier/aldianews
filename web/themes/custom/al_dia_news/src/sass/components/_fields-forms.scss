@@ -95,15 +95,20 @@ form {
   .SumoSelect > .optWrapper > .options{
     &::-webkit-scrollbar{
       background: transparent;
+      max-width: 6px;
     }
     &::-webkit-scrollbar-thumb{
-      width: 6px;
+      max-width: 6px;
       max-height: 75px;
       background: #C4C4C4;
       border-radius: 8px;
     }
+    &::-webkit-scrollbar-track{
+      max-width: 6px;
+      background: transparent;
+    }
     &::-webkit-scrollbar-button{
-      background: green;
+      display: none;
     }
   }
   .SumoSelect .optWrapper > .options > li {
