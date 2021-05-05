@@ -19,6 +19,22 @@
         .field--label-hidden {
             all: initial;
         }
+
+        .field--name-field-caption {
+            font-style: normal;
+            font-weight: normal;
+            font-size: szrem(14);
+            line-height: 17px;
+            color: $cgrey3;
+            margin: 15px 0px 12px;
+            font-family: $PrNovacond-reg;
+
+            @media screen and (max-width: $tablet) {
+                font-size: szrem(11);
+                line-height: 13px;
+                margin: 5px 0px 12px;
+            }
+        }
     }
 
     .block-field-blocknodethought-leadersfield-video {
