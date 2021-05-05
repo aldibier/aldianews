@@ -93,19 +93,17 @@ form {
     }
   }
   .SumoSelect > .optWrapper > .options{
-    &::-webkit-scrollbar{
-      background: transparent;
-      max-width: 6px;
-    }
     &::-webkit-scrollbar-thumb{
       max-width: 6px;
       max-height: 75px;
       background: #C4C4C4;
       border-radius: 8px;
     }
-    &::-webkit-scrollbar-track{
-      max-width: 6px;
-      background: transparent;
+    &::-webkit-scrollbar-track,
+    &::-webkit-scrollbar{
+      max-width: 12px;
+      background: #ededed;
+      text-align: center;
     }
     &::-webkit-scrollbar-button{
       display: none;
