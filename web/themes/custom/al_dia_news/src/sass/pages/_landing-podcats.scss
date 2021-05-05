@@ -14,11 +14,24 @@
 		font-weight: normal;
 		line-height: 50px;
 		color: $corange;
+
+		@media screen and (max-width: $tablet) {
+			max-height: 30px;
+			margin: 0 0 20px;
+			padding-bottom: 8px;
+			border-width: 1px;
+			font-size: szrem(20);
+			line-height: 24px;
+		}
     }
 
 	.views-field-view-2 {
 		.block-fixed-block-contenthorizontal-advertising {
 			margin-bottom: 90px;
+
+			@media screen and (max-width: $tablet) {
+				margin-bottom: 50px;
+			}
 		}
 	}
 }
@@ -26,24 +39,48 @@
 .podcast-category-block {
 	margin-bottom: 75px;
 	display: grid;
-	grid-template-columns: minmax(auto,840px) 1fr;
+	grid-template-columns: minmax(auto,840px) 400px;
 	grid-template-rows: 490px auto;
-	grid-template-areas: 'last-category podcast-image'
-						 'last-category social-media';
+	grid-template-areas: 'category-image podcast-image'
+						 'category-content social-media';
 	grid-gap: 20px 40px;
-}
 
-.last-category-podcast {
-	grid-area: last-category;
+	@media screen and (max-width: $broken) {
+		grid-template-columns: minmax(180px,2fr) minmax(85px,1fr);
+		grid-template-rows: auto;
+		grid-auto-rows: auto;
+		grid-template-areas: 'category-image podcast-image'
+						 	 'category-content category-content'
+							 'social-media social-media';
+		gap: 30px;
+	}
+
+	@media screen and (max-width: $tablet) {
+		margin-bottom: 45px;
+		gap: 0 20px;
+	}
 }
 
 .podcast-category-image {
+	grid-area: category-image;
 	margin-bottom: 30px;
 	line-height: 0;
+
+	@media screen and (max-width: $tablet) {
+		margin-bottom: 15px;
+	}
 
 	img {
 		max-width: 100%;
 		max-height: 480px;
+	}
+}
+
+.podcast-category-content {
+	grid-area: category-content;
+
+	@media screen and (max-width: $tablet) {
+		margin-bottom: 15px;
 	}
 }
 
@@ -57,8 +94,13 @@
 		font-weight: bold;
 		text-transform: uppercase;
 		text-decoration: none;
+		line-height: 35px;
 		letter-spacing: 0.741176px;
 		color: $cgrey6;
+
+		@media screen and (max-width: $tablet) {
+			font-size: szrem(18);
+		}
 	}
 }
 
@@ -72,17 +114,34 @@
 		line-height: 140%;
 		letter-spacing: 0.741176px;
 		color: $cgrey6;
+
+		@media screen and (max-width: $tablet) {
+			font-size: szrem(15);
+		}
 	}
 }
 
 .al-dia-podcast-image {
 	grid-area: podcast-image;
+
+	@media screen and (max-width: $tablet) {
+		margin-bottom: 15px;
+	}
 }
 
 .al-dia-podcast-social-media {
 	padding-top: 45px;
 	border-top: 2px solid $cgrey4;
 	grid-area: social-media;
+
+	@media screen and (max-width: $broken) {
+		padding-top: 30px;
+	}
+
+	@media screen and (max-width: $tablet) {
+		padding-top: 25px;
+		border-width: 1px;
+	}
 
 	ul {
 		display: flex;
@@ -99,9 +158,21 @@
 	.views-field-field-icon-platform {
 		margin-bottom: 15px;
 
+		@media screen and (max-width: $tablet) {
+			margin-bottom: 10px;
+		}
+
 		a {
 			display: block;
 			line-height: 0;
+		}
+
+		img {
+			@media screen and (max-width: $tablet) {
+				width: 30px;
+				height: auto;
+				image-rendering: -webkit-optimize-contrast;
+			}
 		}
 	}
 
@@ -120,7 +191,32 @@
 	margin-bottom: 90px;
 
 	h3 {
+		margin: 0 0 45px;
 		display: none;
+		font-size: szrem(18);
+		font-family: $Mod-bold;
+		font-style: normal;
+		font-weight: bold;
+		text-align: center;
+		text-transform: uppercase;
+		letter-spacing: 0.741176px;
+		color: $corange;
+
+		&::after {
+			content: '';
+			width: auto;
+			height: 20px;
+			margin-top: 5px;
+			display: block;
+			background-image: icon('arrow-down');
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+
+		@media screen and (max-width: $tablet) {
+			display: block;
+		}
 	}
 
 	ul {
