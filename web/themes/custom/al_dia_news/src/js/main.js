@@ -554,9 +554,7 @@ const initMain = ($, Drupal) => {
     }
   });
   
-  
-
-/////// js para añadir la cantidad de comentarios de desplegable
+  /////// js para añadir la cantidad de comentarios de desplegable
   Array.from(document.querySelectorAll("section .comment")).map(function(e) {
     if (!e.nextElementSibling) return;
     if (!!e.nextElementSibling.classList.contains("indented")) {
@@ -566,6 +564,16 @@ const initMain = ($, Drupal) => {
       });
     }
   });
+
+  /// js para dropdown podcast
+  if(document.querySelector('.path-podcast')){
+    const containerContainer = document.querySelector('.category-list h3 + ul');
+    const buttonCategories = document.querySelector('.category-list h3');
+    buttonCategories.addEventListener('click',()=>{
+        console.log(buttonCategories);
+    })
+  } 
+
 };
 
 export default initMain;

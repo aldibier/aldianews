@@ -554,7 +554,15 @@ var initMain = function initMain($, Drupal) {
         e.nextElementSibling.classList.toggle("dis-block");
       });
     }
-  });
+  }); /// js para dropdown podcast
+
+  if (document.querySelector('.path-podcast')) {
+    var containerContainer = document.querySelector('.category-list h3 + ul');
+    var buttonCategories = document.querySelector('.category-list h3');
+    buttonCategories.addEventListener('click', function () {
+      console.log(buttonCategories);
+    });
+  }
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (initMain);
