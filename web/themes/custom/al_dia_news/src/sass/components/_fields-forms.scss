@@ -92,6 +92,25 @@ form {
       padding: 0px;
     }
   }
+  .SumoSelect > .optWrapper > .options{
+    &::-webkit-scrollbar{
+      background: transparent;
+      max-width: 6px;
+    }
+    &::-webkit-scrollbar-thumb{
+      max-width: 6px;
+      max-height: 75px;
+      background: #C4C4C4;
+      border-radius: 8px;
+    }
+    &::-webkit-scrollbar-track{
+      max-width: 6px;
+      background: transparent;
+    }
+    &::-webkit-scrollbar-button{
+      display: none;
+    }
+  }
   .SumoSelect .optWrapper > .options > li {
     background: #ededed;
     color: $cblack3;
@@ -141,7 +160,14 @@ form {
     // padding-left: 15px;
     font-size: $px20;
   }
+  .SumoSelect:focus > .CaptionCont, 
+  .SumoSelect:hover > .CaptionCont, 
+  .SumoSelect.open > .CaptionCont{
+    box-shadow: 0 0 2px transparent;
+    border-color: transparent;
+  }
 
+  
   select::-ms-expand {
     display: none; /*Evita que se muestre la flecha por defecto en versiones de IE*/
   }

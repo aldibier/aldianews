@@ -1,0 +1,44 @@
+uuid: c1882051-53bf-4cb0-9192-8167fa66534a
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.crop_podcast_130_x_130
+    - image.style.crop_podcast_180_x_180
+  theme:
+    - al_dia_news
+id: podcast_category_responsive
+label: 'Podcast category RESPONSIVE'
+image_style_mappings:
+  -
+    breakpoint_id: al_dia_news.extra_x2_large
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: crop_podcast_180_x_180
+  -
+    breakpoint_id: al_dia_news.extra_large
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: crop_podcast_180_x_180
+  -
+    breakpoint_id: al_dia_news.large
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: crop_podcast_180_x_180
+  -
+    breakpoint_id: al_dia_news.medium
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: crop_podcast_180_x_180
+  -
+    breakpoint_id: al_dia_news.small
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: crop_podcast_130_x_130
+  -
+    breakpoint_id: al_dia_news.extra_small
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: crop_podcast_130_x_130
+breakpoint_group: 'Al dia news'
+fallback_image_style: '_original image_'
