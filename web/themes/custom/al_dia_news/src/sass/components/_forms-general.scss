@@ -182,7 +182,44 @@ button[name="close"],
     padding-bottom: 98px;
   }
 
-  #edit-actions .webform-button--submit  {
+  .form-item-address-city,
+  .form-item-address-state-province {
+    display: none;
+  }
+
+  .form-item-address-city.show,
+  .form-item-address-state-province.show {
+    display: block;
+  }
+
+  .form-item-address-city,
+  .form-item-address-state-province,
+  .form-item-address-country {
+    width: 50%;
+    margin: 0px 0px 25px;
+  }
+
+  .form-item-company,
+  .form-item-address-state-province {
+    padding-left: 15px;
+  }
+
+  .webform-address--wrapper {
+    width: 100%;
+    max-width: 100%;
+
+    .fieldset-wrapper {
+      margin: 0 0 25px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+	.CaptionCont {
+		margin-top: 5px;
+	}
+  }
+
+  #edit-actions .webform-button--submit {
     width: 150px;
     height: 40px;
     margin: 50px 0 0;
@@ -192,10 +229,12 @@ button[name="close"],
 //-------------- contact employer -------------//
 .contact-form-father {
   max-height: 945px;
+
   .field-content {
     height: 70%;
   }
 }
+
 .contact-form {
   max-height: 945px;
   overflow: hidden;
@@ -205,9 +244,11 @@ button[name="close"],
 }
 
 @media (max-width: $tablet) {
+
   //-------------form style general------------//
   .form-general {
     top: 125px;
+
     form {
       height: 90%;
     }
@@ -248,7 +289,7 @@ button[name="close"],
       padding-bottom: 39px;
     }
 
-    #edit-actions .webform-button--submit  {
+    #edit-actions .webform-button--submit {
       width: 110px;
       height: 30px;
       margin: 20px 0 0;
@@ -260,7 +301,7 @@ button[name="close"],
       }
     }
 
-    textarea  {
+    textarea {
       max-width: 100%;
       min-height: 200px;
     }
@@ -273,6 +314,7 @@ button[name="close"],
       margin: 0 auto;
     }
   }
+
   .contact-form {
     padding: 32px 20px 27px;
   }
