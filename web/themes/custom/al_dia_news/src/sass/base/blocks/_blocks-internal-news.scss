@@ -19,7 +19,7 @@
 
 .summary-news {
   font-size: szrem(24);
-  font-family: $PrNovacond-reg;
+  font-family: $PrNovacond-Sbold;
   font-style: normal;
   font-weight: 600;
   line-height: 140%;
@@ -388,7 +388,7 @@ blockquote {
 
   blockquote,
   blockquote > p {
-    font-family: $CenturyOld-Regular;
+    font-family: $PrNovacond-reg;
     font-style: normal;
     font-size: szrem(28);
     line-height: 140%;
@@ -408,7 +408,7 @@ blockquote {
     font-weight: normal;
     font-size: $px19;
     line-height: 140%;
-    font-family: $CenturyOld-Regular;
+    font-family: $PrNovacond-reg;
     color: $cgrey6;
   }
 
@@ -421,7 +421,7 @@ blockquote {
   }
 
   strong {
-    font-family: $CenturyOld-Regular;
+    font-family: $PrNovacond-Sbold;
     font-weight: bold;
     font-style: normal;
     font-size: 1.4rem;
@@ -733,7 +733,42 @@ div[data-embed-button="related_content"] {
   }
 }
 
-.path-comment {
+.path-node {
+  .ui-dialog-titlebar{
+    max-width: 900px;
+    padding: 0 20px;
+    margin: 0 auto;
+    border: 0px solid #dddddd;
+    background: transparent;
+  }
+  .ui-icon-closethick{
+    background: gray;
+  }
+  .ui-dialog-content{
+    max-width: 900px;
+    padding: 0 20px;
+    margin: 0 auto;
+  }
+  details.js-form-wrapper.form-wrapper{
+    display: none;
+  }
+  
+  .ui-dialog-buttonpane{
+    margin-top: 0px;
+    border: 0px;
+    padding: 0px;
+    max-width: 900px;
+    padding: 0 20px;
+    margin: 0 auto;
+    button{
+      height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0px !important;
+    max-width: 165px;
+    }
+  }
   section > .comment:nth-of-type(1)::before {
     display: none;
   }

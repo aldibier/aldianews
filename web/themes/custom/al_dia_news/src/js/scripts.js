@@ -47,21 +47,7 @@ import replaceToken from "./modules/replaceToken";
   }
 
   jQuery(document).ready(function() {
-    //// sumo select
-
-    Array.from(document.querySelectorAll(".region-content select")).map(
-      function(e) {
-        if (e != null) {
-          e.classList.add("testselect1");
-          console.log("1");
-          $(".testselect1").SumoSelect({
-            forceCustomRendering: true,
-            floatWidth: 300
-          });
-        }
-      }
-    );
-    ////////
+    
 
     if (
       $(".page-node-type-news .video-embed-field-responsive-video iframe")
@@ -265,6 +251,22 @@ import replaceToken from "./modules/replaceToken";
   Drupal.behaviors.form_checkbox = {
     attach: function(context, settings) {
       $(document).ready(function() {
+        //// sumo select
+
+        Array.from(document.querySelectorAll(".region-content select")).map(
+          function(e) {
+            if (e != null) {
+              e.classList.add("testselect1");
+              console.log("1");
+              $(".testselect1").SumoSelect({
+                forceCustomRendering: true,
+                floatWidth: 300
+              });
+            }
+          }
+        );
+
+
         // Relacionando clase de selector al nombre de este archivo
         var currentClass = "js-form-fake-checkbox";
 
