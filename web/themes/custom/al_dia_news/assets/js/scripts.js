@@ -1252,6 +1252,7 @@ var initMain = function initMain($, Drupal) {
       var images = document.querySelectorAll(".page-node-type-news .block-field-blocknodenewsbody img");
       images.forEach(function (img) {
         var caption = img.dataset.caption;
+        if (typeof caption === 'undefined') return;
         img.insertAdjacentHTML("afterend", "<p class=\"image-caption\">".concat(caption, "</p>"));
       });
     } ///// js para publicidad en bloques de categorias de noticias
@@ -1623,6 +1624,62 @@ var initMain = function initMain($, Drupal) {
       } else {
         adversiting.classList.add("dis-none");
       }
+    } //js para form sponsorship 
+
+
+    var addStateAndCity = function addStateAndCity(state, city) {
+      var labelState = state.querySelector('label');
+      var labelCity = city.querySelector('label');
+      var selectState = state.querySelector('select');
+      var inputCity = city.querySelector('input');
+      state.classList.add('show');
+      city.classList.add('show');
+      labelState.classList.add('js-form-required', 'form-required');
+      selectState.classList.add('required');
+      selectState.setAttribute('required', 'required');
+      selectState.setAttribute('aria-required', 'true');
+      labelCity.classList.add('js-form-required', 'form-required');
+      inputCity.classList.add('required');
+      inputCity.setAttribute('required', 'required');
+      inputCity.setAttribute('aria-required', 'true');
+    };
+
+    var removeStateAndCity = function removeStateAndCity(state, city) {
+      console.log('remove!');
+      var labelState = state.querySelector('label');
+      var labelCity = city.querySelector('label');
+      var selectState = state.querySelector('select');
+      var inputCity = city.querySelector('input');
+      if (!state.classList.contains('show') || !city.classList.contains('show')) return;
+      state.classList.remove('show');
+      city.classList.remove('show');
+      labelState.classList.remove('js-form-required', 'form-required');
+      selectState.classList.remove('required');
+      selectState.removeAttribute('required');
+      selectState.removeAttribute('aria-required');
+      labelCity.classList.remove('js-form-required', 'form-required');
+      inputCity.classList.remove('required');
+      inputCity.removeAttribute('required');
+      inputCity.removeAttribute('aria-required');
+    };
+
+    if (!!document.querySelector('.webform-submission-sponsorship-form')) {
+      var selectCountry = document.getElementById('edit-address-country-select');
+      var fieldState = document.querySelector('.form-item-address-state-province');
+      var fieldCity = document.querySelector('.form-item-address-city');
+      var selectParent = selectCountry.parentElement;
+      var countriesItems = selectParent.querySelectorAll('.opt');
+      countriesItems.forEach(function (item) {
+        return item.addEventListener('click', function (event) {
+          console.log(event.target.innerText);
+
+          if (event.target.innerText.toLowerCase() === 'united states') {
+            addStateAndCity(fieldState, fieldCity);
+          } else {
+            removeStateAndCity(fieldState, fieldCity);
+          }
+        });
+      });
     }
   }; ///// js para modos de visualizacion de slider event
 
@@ -1674,7 +1731,16 @@ var initMain = function initMain($, Drupal) {
         e.nextElementSibling.classList.toggle("dis-block");
       });
     }
-  });
+  }); /// js para dropdown podcast
+
+  if (!!document.querySelector('.path-podcast')) {
+    var containerContainer = document.querySelector('.category-list');
+    var buttonCategories = document.querySelector('.category-button-mobile');
+    buttonCategories.addEventListener('click', function () {
+      containerContainer.classList.toggle('open');
+      buttonCategories.classList.toggle('up');
+    });
+  }
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (initMain);
@@ -1768,6 +1834,29 @@ __webpack_require__.r(__webpack_exports__);
 
       $('.stuck button[name="close"]').click(function () {
         $video.addClass("disnone");
+      });
+    });
+  }
+
+  var $containerVideo = $(".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video");
+  var $videoThoughtLeaders = $(".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video .content");
+  var videoThoughtLeadersHeigth = $videoThoughtLeaders.outerHeight();
+
+  if (!!document.querySelector(".page-node-type-thought-leaders") && !!$videoThoughtLeaders) {
+    $window.on("scroll", function () {
+      var windowScrollTop = $window.scrollTop();
+      var videoBottom = videoThoughtLeadersHeigth + $containerVideo.offset().top;
+
+      if (windowScrollTop > videoBottom) {
+        $containerVideo.height(videoThoughtLeadersHeigth);
+        $videoThoughtLeaders.addClass("stuck");
+      } else {
+        $containerVideo.height("auto");
+        $videoThoughtLeaders.removeClass("stuck");
+      }
+
+      $('.stuck button[name="close"]').click(function () {
+        $videoThoughtLeaders.addClass("disnone");
       });
     });
   }
@@ -2305,8 +2394,8 @@ var initSlick = function initSlick($, Drupal) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\valer\Desktop\4ld14-n3ws\web\themes\custom\al_dia_news\src\js\scripts.js */"./src/js/scripts.js");
-module.exports = __webpack_require__(/*! C:\Users\valer\Desktop\4ld14-n3ws\web\themes\custom\al_dia_news\src\sass\styles.scss */"./src/sass/styles.scss");
+__webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
+module.exports = __webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
 
 
 /***/ })

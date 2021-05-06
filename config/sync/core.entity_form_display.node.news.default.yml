@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.news.field_high_impact_news
     - field.field.node.news.field_image
     - field.field.node.news.field_my_content_has_a_main_vide
+    - field.field.node.news.field_news
     - field.field.node.news.field_podcast_player
     - field.field.node.news.field_postcast_categories
     - field.field.node.news.field_short_title
@@ -35,7 +36,7 @@ third_party_settings:
         - field_video
         - field_my_content_has_a_main_vide
       parent_name: ''
-      weight: 5
+      weight: 4
       format_type: fieldset
       region: content
       format_settings:
@@ -59,6 +60,21 @@ third_party_settings:
         classes: ''
         open: false
       label: 'Only for Podcast'
+    group_high_impact:
+      children:
+        - field_high_impact_news
+        - field_news
+      parent_name: ''
+      weight: 10
+      format_type: details
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+        open: false
+      label: 'High impact'
 id: node.news.default
 targetEntityType: node
 bundle: news
@@ -66,7 +82,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 7
+    weight: 6
     settings:
       rows: 9
       placeholder: ''
@@ -81,7 +97,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_author:
-    weight: 8
+    weight: 7
     settings:
       match_operator: CONTAINS
       match_limit: 10
@@ -91,7 +107,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_caption:
-    weight: 6
+    weight: 5
     settings:
       size: 60
       placeholder: ''
@@ -99,7 +115,7 @@ content:
     type: string_textfield
     region: content
   field_category:
-    weight: 10
+    weight: 9
     settings: {  }
     third_party_settings: {  }
     type: options_select
@@ -132,6 +148,16 @@ content:
     third_party_settings: {  }
     type: boolean_checkbox
     region: content
+  field_news:
+    weight: 12
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   field_podcast_player:
     weight: 26
     settings:
@@ -155,7 +181,7 @@ content:
     type: string_textfield
     region: content
   field_tags:
-    weight: 9
+    weight: 8
     settings:
       match_operator: CONTAINS
       match_limit: 10
@@ -165,7 +191,7 @@ content:
     type: entity_reference_autocomplete_tags
     region: content
   field_test:
-    weight: 27
+    weight: 20
     settings: {  }
     third_party_settings: {  }
     type: comment_default
