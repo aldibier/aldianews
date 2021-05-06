@@ -408,9 +408,15 @@
   }
   #edit-actions{
     margin-bottom: 25px;
+    input{
+    min-height: 50px;
+    }
   }
   .CaptionCont.SelectBox{
     padding-left: 18px;
+  }
+  .SumoSelect>.CaptionCont{
+    min-height: 50px;
   }
   .SumoSelect .optWrapper>.options>li label{
     min-height: 45px;
@@ -450,6 +456,10 @@
     }
     .SumoSelect > .optWrapper > .options{
       max-height: 245px;
+    }
+    .SumoSelect>.CaptionCont>span,{
+      line-height: 18px;
+      font-weight: 500;
     }
   }
 }
