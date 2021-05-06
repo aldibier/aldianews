@@ -557,11 +557,16 @@ const initMain = ($, Drupal) => {
 		}
 
 		if (!!document.querySelector('.webform-submission-sponsorship-form')) {
-			const selectCountry = document.getElementById('edit-address-country-select');
+			const selectCountry = document.getElementById('edit-address-country');
+			const filedCountry = document.querySelector('.form-item-address-country');
 			const fieldState = document.querySelector('.form-item-address-state-province');
 			const fieldCity = document.querySelector('.form-item-address-city');
 			const selectParent = selectCountry.parentElement;
 			const countriesItems = selectParent.querySelectorAll('.opt');
+
+			//reorder fields
+			filedCountry.insertAdjacentElement('afterend',fieldState);
+			fieldState.insertAdjacentElement('afterend',fieldCity);
 
 			countriesItems.forEach(item => item.addEventListener('click',(event)=>{
 				console.log(event.target.innerText);
