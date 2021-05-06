@@ -8,6 +8,25 @@
       margin: 0 auto;
     }
   }
+
+  .block-field-blocknodenewsfield-podcast-player {
+    width: 100%;
+    max-width: 840px;
+    margin-bottom: 40px;
+
+    .content {
+      margin: 0;
+    }
+
+    @media screen and (max-width: $tablet) {
+      min-width: 288px;
+      margin-bottom: 30px;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
 }
 
 //------ summary -----------//
