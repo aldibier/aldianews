@@ -1252,6 +1252,7 @@ var initMain = function initMain($, Drupal) {
       var images = document.querySelectorAll(".page-node-type-news .block-field-blocknodenewsbody img");
       images.forEach(function (img) {
         var caption = img.dataset.caption;
+        if (typeof caption === 'undefined') return;
         img.insertAdjacentHTML("afterend", "<p class=\"image-caption\">".concat(caption, "</p>"));
       });
     } ///// js para publicidad en bloques de categorias de noticias
@@ -1623,6 +1624,62 @@ var initMain = function initMain($, Drupal) {
       } else {
         adversiting.classList.add("dis-none");
       }
+    } //js para form sponsorship 
+
+
+    var addStateAndCity = function addStateAndCity(state, city) {
+      var labelState = state.querySelector('label');
+      var labelCity = city.querySelector('label');
+      var selectState = state.querySelector('select');
+      var inputCity = city.querySelector('input');
+      state.classList.add('show');
+      city.classList.add('show');
+      labelState.classList.add('js-form-required', 'form-required');
+      selectState.classList.add('required');
+      selectState.setAttribute('required', 'required');
+      selectState.setAttribute('aria-required', 'true');
+      labelCity.classList.add('js-form-required', 'form-required');
+      inputCity.classList.add('required');
+      inputCity.setAttribute('required', 'required');
+      inputCity.setAttribute('aria-required', 'true');
+    };
+
+    var removeStateAndCity = function removeStateAndCity(state, city) {
+      console.log('remove!');
+      var labelState = state.querySelector('label');
+      var labelCity = city.querySelector('label');
+      var selectState = state.querySelector('select');
+      var inputCity = city.querySelector('input');
+      if (!state.classList.contains('show') || !city.classList.contains('show')) return;
+      state.classList.remove('show');
+      city.classList.remove('show');
+      labelState.classList.remove('js-form-required', 'form-required');
+      selectState.classList.remove('required');
+      selectState.removeAttribute('required');
+      selectState.removeAttribute('aria-required');
+      labelCity.classList.remove('js-form-required', 'form-required');
+      inputCity.classList.remove('required');
+      inputCity.removeAttribute('required');
+      inputCity.removeAttribute('aria-required');
+    };
+
+    if (!!document.querySelector('.webform-submission-sponsorship-form')) {
+      var selectCountry = document.getElementById('edit-address-country-select');
+      var fieldState = document.querySelector('.form-item-address-state-province');
+      var fieldCity = document.querySelector('.form-item-address-city');
+      var selectParent = selectCountry.parentElement;
+      var countriesItems = selectParent.querySelectorAll('.opt');
+      countriesItems.forEach(function (item) {
+        return item.addEventListener('click', function (event) {
+          console.log(event.target.innerText);
+
+          if (event.target.innerText.toLowerCase() === 'united states') {
+            addStateAndCity(fieldState, fieldCity);
+          } else {
+            removeStateAndCity(fieldState, fieldCity);
+          }
+        });
+      });
     }
   }; ///// js para modos de visualizacion de slider event
 
@@ -1677,7 +1734,6 @@ var initMain = function initMain($, Drupal) {
   }); /// js para dropdown podcast
 
   if (!!document.querySelector('.path-podcast')) {
-    console.log('podcast!');
     var containerContainer = document.querySelector('.category-list');
     var buttonCategories = document.querySelector('.category-button-mobile');
     buttonCategories.addEventListener('click', function () {
