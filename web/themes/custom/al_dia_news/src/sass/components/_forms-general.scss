@@ -178,6 +178,10 @@ button[name="close"],
   max-height: 890px;
   padding: 100px 75px 98px;
 
+  .SumoSelect.open>.optWrapper {
+    top: 45px;
+  }
+
   form {
     padding-bottom: 98px;
   }
@@ -204,6 +208,19 @@ button[name="close"],
     padding-left: 15px;
   }
 
+  .form-item-address-state-province,
+  .form-item-address-country {
+    &:focus-within {
+      .CaptionCont {
+        outline: -webkit-focus-ring-color auto 1px;
+      }
+    }
+  }
+
+  .form-item-address-city {
+    margin-bottom: 0;
+  }
+
   .webform-address--wrapper {
     width: 100%;
     max-width: 100%;
@@ -214,9 +231,9 @@ button[name="close"],
       flex-wrap: wrap;
     }
 
-	.CaptionCont {
-		margin-top: 5px;
-	}
+    .CaptionCont {
+      margin-top: 5px;
+    }
   }
 
   #edit-actions .webform-button--submit {
@@ -289,10 +306,37 @@ button[name="close"],
       padding-bottom: 39px;
     }
 
+    .webform-address--wrapper {
+      .fieldset-wrapper {
+        margin: 0;
+      }
+    }
+
+    .form-item-company,
+    .form-item-address-state-province {
+      padding-left: 0;
+    }
+
+    .form-item-address-country,
+    .form-item-address-city,
+    .form-item-address-state-province {
+      width: 100%;
+    }
+
+	.form-item-address-city,
+    .form-item-budget,
+    .form-item-event-i-m-interested-in {
+      margin: 0 0 25px;
+    }
+
     #edit-actions .webform-button--submit {
       width: 110px;
       height: 30px;
       margin: 20px 0 0;
+    }
+
+    .SumoSelect.open>.optWrapper {
+      top: 35px;
     }
 
     fieldset {
@@ -317,5 +361,13 @@ button[name="close"],
 
   .contact-form {
     padding: 32px 20px 27px;
+  }
+}
+
+.SumoSelect {
+  &:focus-within {
+    .CaptionCont {
+      outline: -webkit-focus-ring-color auto 1px;
+    }
   }
 }
