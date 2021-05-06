@@ -407,10 +407,13 @@
     margin: 40px 20px 20px 0px;
   }
   #edit-actions{
-    margin-bottom: 25px;
+    margin-bottom: 15px;
     input{
     min-height: 50px;
     }
+  }
+  .SumoSelect:focus-within .CaptionCont{
+    outline: 0px;
   }
   .CaptionCont.SelectBox{
     padding-left: 18px;
@@ -424,10 +427,11 @@
     font-weight: normal;
   }
   .SumoSelect.open > .optWrapper{
-    top: 44px;
+    top: 50px;
   }
   .SumoSelect > .optWrapper > .options{
     max-height: 275px;
+    border-right: 12px solid #ededed;
   }
 }
 @media (max-width: $tablet) {
