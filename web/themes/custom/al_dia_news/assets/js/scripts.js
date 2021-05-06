@@ -1664,11 +1664,15 @@ var initMain = function initMain($, Drupal) {
     };
 
     if (!!document.querySelector('.webform-submission-sponsorship-form')) {
-      var selectCountry = document.getElementById('edit-address-country-select');
+      var selectCountry = document.getElementById('edit-address-country');
+      var filedCountry = document.querySelector('.form-item-address-country');
       var fieldState = document.querySelector('.form-item-address-state-province');
       var fieldCity = document.querySelector('.form-item-address-city');
       var selectParent = selectCountry.parentElement;
-      var countriesItems = selectParent.querySelectorAll('.opt');
+      var countriesItems = selectParent.querySelectorAll('.opt'); //reorder fields
+
+      filedCountry.insertAdjacentElement('afterend', fieldState);
+      fieldState.insertAdjacentElement('afterend', fieldCity);
       countriesItems.forEach(function (item) {
         return item.addEventListener('click', function (event) {
           console.log(event.target.innerText);
