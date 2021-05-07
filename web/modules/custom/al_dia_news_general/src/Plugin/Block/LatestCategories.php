@@ -179,32 +179,37 @@ class LatestCategories extends BlockBase implements ContainerFactoryPluginInterf
     
     $res = views_get_view_result("high_impact_news_home", "block_1");
     //Defino variable para pasar argumentos en la línea 192
-    $args = FALSE; 
+
     if($res) {
       foreach ($res as $re) {
-        $nids[] = $re->nid; 
+        $nids[] = $re->nid;
+        $nid_block2 = $re->nid;
         $entity = $re->_entity;
-        $tags = $entity->field_tags->getValue();
-        if ($tags) {
-          $args = [$tags[0]["target_id"]];
+        $news = $entity->field_news->getValue();
+        if ($news) {
+          foreach ($news as $new) {
+            $nids[] = $new["target_id"];
+          }
         }
       }
+      //ksm($nids); 
+
     }
-    if ($args) {
-      $view = Views::getView('high_impact_news_home'); //Selecciono vista que depende de un filtro contextual
-      if (is_object($view)) {
-        $view->setArguments($args);
-        $view->setDisplay('block_2');
-        $view->preExecute();
-        $view->execute();
-        //Paso argumentos a la vista
-        $content = $view->buildRenderable('block_2', $args); 
-        foreach ($content["#view"]->result as $ids) {
-          //Almacenos los id de la vista en el mismo arrat de nids, no se borran los datos anteriores, se sigue almacenando
-          $nids[] = $ids->nid;
-        }
-      }
-    }
+    // if ($nid_block2) {
+    //   $view = Views::getView('high_impact_news_home'); //Selecciono vista que depende de un filtro contextual
+    //   if (is_object($view)) {
+    //     $view->setArguments([$nid_block2]);
+    //     $view->setDisplay('block_2');
+    //     $view->preExecute();
+    //     $view->execute();
+    //     //Paso argumentos a la vista
+    //     $content = $view->buildRenderable('block_2', [$nid_block2]); 
+    //     foreach ($content["#view"]->result as $ids) {
+    //       //Almacenos los id de la vista en el mismo arrat de nids, no se borran los datos anteriores, se sigue almacenando
+    //       $nids[] = $ids->nid;
+    //     }
+    //   }
+    // }
     //Defino vatiable nids_home, la cual tiene los valores almacenados en el array nids
     //Esta variable se usa en el .module, para excluir estos id de las vistas de categorias del home
     $this->tempStore->set("nids_home", $nids);

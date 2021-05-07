@@ -293,7 +293,7 @@ const initMain = ($, Drupal) => {
 				cardVideo.addEventListener("click", event => {
 					if (event.target.nodeName == "A") return;
 
-					node = event.currentTarget.parentNode.firstElementChild;
+					let node = event.currentTarget.parentNode.firstElementChild;
 
 					while (node) {
 						if (
@@ -321,7 +321,7 @@ const initMain = ($, Drupal) => {
 					resetAlliframes();
 				}
 
-				if (event.target.classList.contains("close")) {
+				if (event.target.classList.contains("close-video")) {
 					document.querySelector(".modal-video.show").classList.remove("show");
 					resetAlliframes();
 				}
