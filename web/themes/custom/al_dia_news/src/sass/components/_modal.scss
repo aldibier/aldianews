@@ -50,11 +50,37 @@
 }
 
 .modal-video-landing {
+  max-width: 1440px;
   max-height: 695px;
-  padding: 100px 10% 98px;
+  margin: 0 auto;
+  padding: 108px 290px 97px;
+
+  @media screen and (min-width: $broken) and (max-height: 900px) {
+    padding: 90px 200px;
+
+    .close-video {
+      top: 80px;
+    }
+  }
 
   @media screen and (max-width: $broken) {
-    padding: 67.5px 15px;
+    padding: 67.5px 120px;
+  }
+
+  @media screen and (max-width: $tablet) {
+    padding: 77px 15px 78px;
+  }
+
+  .close-video {
+    position: absolute;
+    top: 50px;
+    right: 5%;
+
+    @media screen and (max-width: $tablet) {
+      width: 10px;
+      height: 10px;
+      right: 15px;
+    }
   }
 }
 
@@ -84,6 +110,7 @@
     @media screen and (max-width: $tablet) {
       width: 10px;
       height: 10px;
+      right: 15px;
     }
   }
 }
