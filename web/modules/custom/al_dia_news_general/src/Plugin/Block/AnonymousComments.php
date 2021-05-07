@@ -8,8 +8,6 @@ use Drupal\Component\Serialization\Json;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Form\FormState;
-use Drupal\Core\Database\Connection;
-use Drupal\Core\Form\FormBuilder;
 use Drupal\Core\Block\BlockBase;
 
 /**
@@ -23,28 +21,15 @@ use Drupal\Core\Block\BlockBase;
 
 class AnonymousComments extends  BlockBase implements ContainerFactoryPluginInterface {
 
-  /**
-   * Consulta a la base de datos.
-   *
-   * @var \Drupal\Core\Database\Connection
-   */
-  protected $dataBase;
 
-  /**
-   * The form builder.
-   *
-   * @var \Drupal\Core\Form\FormBuilder
-   */
-  protected $formBuilder;
 
 /**
    * {@inheritdoc}
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, Connection $data_base, FormBuilder $form_builder
+  public function __construct(array $configuration, $plugin_id, $plugin_definition
   ) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->dataBase = $data_base;
-    $this->formBuilder = $form_builder;
   }
 
   /**
@@ -54,9 +39,7 @@ class AnonymousComments extends  BlockBase implements ContainerFactoryPluginInte
     return new static(
       $configuration,
       $plugin_id,
-      $plugin_definition,
-      $container->get('database'),
-      $container->get('form_builder')
+      $plugin_definition
     );
   }
 
@@ -66,42 +49,45 @@ class AnonymousComments extends  BlockBase implements ContainerFactoryPluginInte
   public function build() {
     $user = \Drupal::currentUser();
     $items = [];
-      $items[] = [
+    $items[] = [
+        '#theme' => 'anonymous_comment_form',
+    ];
+    $items[] = [
         '#markup' => '<p class="text-anonymous-comment">We don’t want to miss what you have to say. Please,</p>',
-      ];
-      $items[] = [
+    ];
+    $items[] = [
         '#type' => 'link',
         '#title' => $this->t('LOG IN'),
         '#url' => Url::fromRoute('user.login'),
         '#attributes' => [
-          'class' => [
+            'class' => [
             'use-ajax',
             'login-anonymous-comment',
-          ],
-          'data-dialog-type' => 'modal',
-          'data-dialog-options' => Json::encode(['dialogClass' => 'popup-login'],['width' => 550]),
+            ],
+            'data-dialog-type' => 'modal',
+            'data-dialog-options' => Json::encode(['dialogClass' => 'popup-login'],['width' => 550]),
         ],
-      ];
-      $items[] = [
+    ];
+    $items[] = [
         '#markup' => '<span class="text-anonymous-comment">or</span>',
-      ];
-      $items[] = [
+    ];
+    $items[] = [
         '#type' => 'link',
         '#title' => $this->t('REGISTER'),
         '#url' => Url::fromRoute('user.register'),
         '#attributes' => [
-          'class' => [
+            'class' => [
             'use-ajax',
             'register-anonymous-comment',
-          ],
-          'data-dialog-type' => 'modal',
-          'data-dialog-options' => Json::encode(['dialogClass' => 'register-popup'],['width' => 550]),
+            ],
+            'data-dialog-type' => 'modal',
+            'data-dialog-options' => Json::encode(['dialogClass' => 'register-popup'],['width' => 550]),
         ],
-      ];
-      $items[] = [
+    ];
+    $items[] = [
         '#markup' => '<span class="text-anonymous-comment">to comment</span>',
 
-      ];
+    ];
 
     
       //$form['comment_form'] = $this->entityFormBuilder->getForm($comment);
@@ -114,7 +100,6 @@ class AnonymousComments extends  BlockBase implements ContainerFactoryPluginInte
           'block-comments-anonymous',
         ],
       ],
-
     ];
   }
   
