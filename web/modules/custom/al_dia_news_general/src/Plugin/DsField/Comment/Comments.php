@@ -68,54 +68,101 @@ class Comments extends DsFieldBase {
     $entity = $this->entity();
     $user = \Drupal::currentUser();
     $items = [];
-    // Check for permission.
-    if ($user->hasPermission('administer comments')) {
-      $items[] = [
-        '#type' => 'link',
-        '#title' => $this->t('Delete'),
-        '#url' => Url::fromRoute('entity.comment.delete_form', [
-          'comment' => $entity->id(),
-        ]),
-        '#attributes' => [
-          'class' => [
-            'delete-comment',
-            'use-ajax',
-          ],
+    if ($user->isAuthenticated()) {
+        // Check for permission.
+      if ($user->hasPermission('administer comments')) {
+        $items[] = [
+          '#type' => 'link',
+          '#title' => $this->t('Delete'),
+          '#url' => Url::fromRoute('entity.comment.delete_form', [
+            'comment' => $entity->id(),
+          ]),
+          '#attributes' => [
+            'class' => [
+              'delete-comment',
+              'use-ajax',
+            ],
 
-        'data-dialog-type' => 'modal',
-        'data-dialog-options' => Json::encode(['dialogClass' => 'popup-delete-comment'],['width' => 550]),
-      ],
-      ];
+          'data-dialog-type' => 'modal',
+          'data-dialog-options' => Json::encode(['dialogClass' => 'popup-delete-comment'],['width' => 550]),
+        ],
+        ];
+        $items[] = [
+          '#type' => 'link',
+          '#title' => $this->t('EDIT'),
+          '#url' => Url::fromRoute('entity.comment.edit_form', [
+            'comment' => $entity->id(),
+          ]),
+          '#attributes' => [
+            'class' => [
+              'use-ajax',
+              'edit-comment',
+            ],
+            'data-dialog-type' => 'modal',
+            'data-dialog-options' => Json::encode(['dialogClass' => 'popup-edit-comment'],['width' => 550]),
+          ],
+        ];
+        // $items[] = [
+        //   '#type' => 'link',
+        //   '#title' => $this->t('Edit'),
+        //   '#url' => Url::fromRoute('entity.comment.edit_form', [
+        //     'comment' => $entity->id(),
+        //   ]),
+        //   '#attributes' => [
+        //     'class' => [
+        //       'edit-comment',
+        //     ],
+        //   ],
+        // ];
+        $items[] = [
+          '#markup' => '<div class="container-reply"></div>',
+        ];
+        $items[] = [
+          '#markup' => '<div class="container-show-hide"><div class="show">SEE </div><div class="hide">HIDE </div><span></span> ANSWERS</div>',
+          '#attributes' => [
+            'class' => [
+              'show-hide-comment',
+            ],
+          ],
+        ];
+      }
+    }else {
       $items[] = [
         '#type' => 'link',
-        '#title' => $this->t('EDIT'),
-        '#url' => Url::fromRoute('entity.comment.edit_form', [
-          'comment' => $entity->id(),
-        ]),
+        '#title' => $this->t('LOG IN'),
+        '#url' => Url::fromRoute('user.login'),
         '#attributes' => [
           'class' => [
             'use-ajax',
-            'edit-comment',
+            'login-anonymous-comment',
           ],
           'data-dialog-type' => 'modal',
-          'data-dialog-options' => Json::encode(['dialogClass' => 'popup-edit-comment'],['width' => 550]),
+          'data-dialog-options' => Json::encode(['dialogClass' => 'popup-login'],['width' => 550]),
         ],
       ];
-      // $items[] = [
-      //   '#type' => 'link',
-      //   '#title' => $this->t('Edit'),
-      //   '#url' => Url::fromRoute('entity.comment.edit_form', [
-      //     'comment' => $entity->id(),
-      //   ]),
-      //   '#attributes' => [
-      //     'class' => [
-      //       'edit-comment',
-      //     ],
-      //   ],
-      // ];
+
       $items[] = [
-        '#markup' => '<div class="container-reply"></div>',
+        '#markup' => '<span class="text-anonymous-comment">or</span>',
       ];
+
+      $items[] = [
+        '#type' => 'link',
+        '#title' => $this->t('REGISTER'),
+        '#url' => Url::fromRoute('user.register'),
+        '#attributes' => [
+          'class' => [
+            'use-ajax',
+            'register-anonymous-comment',
+          ],
+          'data-dialog-type' => 'modal',
+          'data-dialog-options' => Json::encode(['dialogClass' => 'register-popup'],['width' => 550]),
+        ],
+      ];
+
+      $items[] = [
+        '#markup' => '<span class="text-anonymous-comment">to comment</span>',
+      ];
+      
       $items[] = [
         '#markup' => '<div class="container-show-hide"><div class="show">SEE </div><div class="hide">HIDE </div><span></span> ANSWERS</div>',
         '#attributes' => [
@@ -125,6 +172,7 @@ class Comments extends DsFieldBase {
         ],
       ];
     }
+    
 
     $query = $this->dataBase->select('comment_field_data', 'c');
     $query->addField("c", "cid");
