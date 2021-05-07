@@ -775,10 +775,6 @@ div[data-embed-button="related_content"] {
   .ui-widget.ui-corner-all .form-item{
     margin: 30px 0 20px;
   }
-  .ui-dialog .button, .ui-dialog .button:not(:focus){
-    border: 0px !important;
-
-  }
   .ui-dialog-buttonpane{
     margin-top: 0px;
     border: 0px;
@@ -796,58 +792,69 @@ div[data-embed-button="related_content"] {
       background: #e21 !important;
     }
   }
-  section > .comment:nth-of-type(1)::before {
-    display: none;
-  }
-
-  .comment {
-    box-shadow: 0 -3px 4px rgba(0, 0, 0, 17%);
-    border-bottom: 0px solid #b1b1b1;
-  }
-
-  .comment-form .form-item {
-    overflow: initial;
-  }
-
-  .cbutton-back {
-    display: flex !important;
-  }
-
-  .comment-delete,
-  .comment-edit,
-  .comment-show {
-    display: none;
-  }
-
-  #comment-form {
-    margin: -25px 0 0;
-    background: #fbfbfb;
-    padding: 30px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.17);
-
-    @media (max-width: $tablet) {
-      padding: 15px;
-    }
-
-    // label[for="edit-field-comment-body-0-value"] {
-    //   display: block;
-    // }
-    textarea {
-      background: #ffffff;
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  @media (max-width: $tablet) {
+    .ui-dialog .ui-dialog-titlebar-close .ui-icon-closethick{
+      width: 60%;
+      height: 60%;
     }
   }
+  // section > .comment:nth-of-type(1)::before {
+  //   display: none;
+  // }
+
+  // .comment {
+  //   box-shadow: 0 -3px 4px rgba(0, 0, 0, 17%);
+  //   border-bottom: 0px solid #b1b1b1;
+  // }
+
+  // .comment-form .form-item {
+  //   overflow: initial;
+  // }
+
+  // .cbutton-back {
+  //   display: flex !important;
+  // }
+
+  // .comment-delete,
+  // .comment-edit,
+  // .comment-show {
+  //   display: none;
+  // }
+
+  // #comment-form {
+  //   margin: -25px 0 0;
+  //   background: #fbfbfb;
+  //   padding: 30px;
+  //   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.17);
+
+  //   @media (max-width: $tablet) {
+  //     padding: 15px;
+  //   }
+
+  //   // label[for="edit-field-comment-body-0-value"] {
+  //   //   display: block;
+  //   // }
+  //   textarea {
+  //     background: #ffffff;
+  //     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  //   }
+  // }
 }
 
 .popup-delete-comment{
   .ui-dialog-title{
     font-size: $px25;
     padding-top: 20px;
+    white-space: break-spaces;
+    text-align: center;
   }
   .ui-dialog-buttonpane{
     max-width: 500px !important;
+
+  }
+  .ui-dialog-buttonset {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around !important;
   }
 }
 .comment {
