@@ -1,7 +1,4 @@
-.path-podcast {
-
-}
-
+.view-podcast-category-internals,
 .view-last-category-podcast {
     h1 {
 		max-height: 58px;
@@ -24,7 +21,11 @@
 			line-height: 24px;
 		}
     }
+}
 
+
+.view-last-category-podcast,
+.view-podcast-category-internals {
 	.views-field-view-2 {
 		.block-fixed-block-contenthorizontal-advertising {
 			margin-bottom: 90px;
@@ -262,9 +263,12 @@
 		grid-column-gap: 40px;
 		overflow: hidden;
 
+		@media screen and (max-width: $large-min) {
+			grid-template-rows: auto;
+		}
+
 		@media screen and (max-width: $broken) {
 			grid-template-columns: repeat(3,1fr);
-			grid-template-rows: auto;
 			grid-gap: 40px;
 		}
 
