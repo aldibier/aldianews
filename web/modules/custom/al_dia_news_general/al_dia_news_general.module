@@ -46,7 +46,7 @@ function al_dia_news_general_form_alter(&$form, $form_state, $form_id) {
   // ksm($route_name);
   // $route_parameters = $url_object->getrouteParameters();
   switch ($form_id) {
-   case  "comment_comments_content_form":
+    case  "comment_comments_content_form":
     // Alteración del botón submit de comentarios.
       $form['actions']['submit']['#value'] = t('POST COMMENT');
       $myUrl = "My";
@@ -67,6 +67,9 @@ function al_dia_news_general_form_alter(&$form, $form_state, $form_id) {
     break;
     case "node_news_form":
       $form['field_podcast_player']['widget'][0]['#format'] = "podcast";
+    break;
+    case "comment_comments_content_delete_form":
+      $form['#title'] = t("ARE YOU SURE YOU WANT TO DELETE THE COMMENT?");
     break;
 
   }
