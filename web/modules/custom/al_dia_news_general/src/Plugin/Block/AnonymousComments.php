@@ -29,7 +29,6 @@ class AnonymousComments extends  BlockBase implements ContainerFactoryPluginInte
   public function __construct(array $configuration, $plugin_id, $plugin_definition
   ) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
-    $this->dataBase = $data_base;
   }
 
   /**
