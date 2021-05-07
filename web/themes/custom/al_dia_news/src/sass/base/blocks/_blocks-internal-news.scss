@@ -749,13 +749,13 @@ div[data-embed-button="related_content"] {
 
 .popup-edit-comment,
 .popup-delete-comment {
-  max-width: 1000px;
+  max-width: 1000px !important;
   margin: 0 auto;
   right: 0px;
   *{
     max-width: 900px !important;
   }
-  .ui-dialog-titlebar{
+  .ui-dialog-titlebar{ 
     padding: 0 20px;
     margin: 0 auto; 
     border: 0px solid #dddddd;
@@ -775,22 +775,22 @@ div[data-embed-button="related_content"] {
   .ui-widget.ui-corner-all .form-item{
     margin: 30px 0 20px;
   }
+  .ui-dialog .button, .ui-dialog .button:not(:focus){
+    border: 0px !important;
+
+  }
   .ui-dialog-buttonpane{
     margin-top: 0px;
     border: 0px;
     padding: 0px;
     padding: 0 20px;
     margin: 0 auto 20px !important;
-    .button:not(:focus)
-    button{
-      border: 0px !important;
-    }
     button{
       height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: 165px;
+    max-width: 165px !important;
     }
     .button--primary:not(:focus):hover{
       background: #e21 !important;
@@ -839,6 +839,17 @@ div[data-embed-button="related_content"] {
   }
 }
 
+.popup-delete-comment{
+  .ui-dialog-title{
+    font-size: $px25;
+    padding-top: 20px;
+  }
+  .ui-dialog-buttonpane{
+    max-width: 500px !important;
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
 .comment {
   width: 100%;
   padding: 25px;
