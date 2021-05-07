@@ -638,9 +638,12 @@ const initMain = ($, Drupal) => {
 	});
 
 	/// js para dropdown podcast
-	if (!!document.querySelector('.path-podcast')) {
+	if (!!document.querySelector('.path-podcast') || !!document.querySelector('.path-taxonomy')) {
 		const containerContainer = document.querySelector('.category-list');
 		const buttonCategories = document.querySelector('.category-button-mobile');
+
+		if(!containerContainer) return;
+
 		buttonCategories.addEventListener('click', () => {
 			containerContainer.classList.toggle('open');
 			buttonCategories.classList.toggle('up');

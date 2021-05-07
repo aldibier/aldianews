@@ -131,3 +131,67 @@
     }
   }
 }
+
+
+.stuck {
+  position: fixed;
+  top: 82px;
+  right: 0px;
+  left: 0px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 40px 0px;
+  height: 400px;
+  transform: translateY(100%);
+  animation: fade-in-up 0.75s ease forwards;
+  z-index: 1;
+  background: rgb(0 0 0 / 80%);
+
+  button[name="close"] {
+    z-index: 9;
+    right: 13px;
+    background: url(/themes/custom/al_dia_news/assets/img/closew.png) center center no-repeat;
+    background-size: contain;
+
+    @media (min-width: 1380px) and (max-width: 1830px) {
+      right: 28%;
+    }
+
+    @media (min-width: 1830px) {
+      right: 33%;
+    }
+  }
+
+  &.disnone {
+    display: none;
+  }
+
+  iframe {
+    width: 560px;
+    height: 320px;
+    margin: 0 auto;
+  }
+
+  .video-embed-field-responsive-video:after {
+    padding-bottom: 320px;
+  }
+
+  @media (max-width: $broken) {
+    top: 150px;
+  }
+
+  @media (max-width: $tablet) {
+    height: 200px;
+    padding: 20px 0;
+    top: 99px;
+
+    iframe {
+      width: 245px;
+      height: 153px !important;
+    }
+
+    .video-embed-field-responsive-video:after {
+      padding-bottom: 180px;
+    }
+  }
+}
