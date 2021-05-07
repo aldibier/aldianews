@@ -747,85 +747,116 @@ div[data-embed-button="related_content"] {
   }
 }
 
-.popup-edit-comment {
-  .ui-dialog-titlebar{
-    max-width: 900px;
+.popup-edit-comment,
+.popup-delete-comment {
+  max-width: 1000px !important;
+  margin: 0 auto;
+  right: 0px;
+  *{
+    max-width: 900px !important;
+  }
+  .ui-dialog-titlebar{ 
     padding: 0 20px;
     margin: 0 auto; 
     border: 0px solid #dddddd;
     background: transparent;
   }
   .ui-icon-closethick{
-    background: gray;
+    background: gray !important;
+    top: 10px !important;
   }
   .ui-dialog-content{
-    max-width: 900px;
     padding: 0 20px;
     margin: 0 auto;
   }
   details.js-form-wrapper.form-wrapper{
     display: none;
   }
-  
+  .ui-widget.ui-corner-all .form-item{
+    margin: 30px 0 20px;
+  }
   .ui-dialog-buttonpane{
     margin-top: 0px;
     border: 0px;
     padding: 0px;
-    max-width: 900px;
     padding: 0 20px;
-    margin: 0 auto;
+    margin: 0 auto 20px !important;
     button{
       height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 0px !important;
-    max-width: 165px;
+    max-width: 165px !important;
+    }
+    .button--primary:not(:focus):hover{
+      background: #e21 !important;
     }
   }
-  section > .comment:nth-of-type(1)::before {
-    display: none;
-  }
-
-  .comment {
-    box-shadow: 0 -3px 4px rgba(0, 0, 0, 17%);
-    border-bottom: 0px solid #b1b1b1;
-  }
-
-  .comment-form .form-item {
-    overflow: initial;
-  }
-
-  .cbutton-back {
-    display: flex !important;
-  }
-
-  .comment-delete,
-  .comment-edit,
-  .comment-show {
-    display: none;
-  }
-
-  #comment-form {
-    margin: -25px 0 0;
-    background: #fbfbfb;
-    padding: 30px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.17);
-
-    @media (max-width: $tablet) {
-      padding: 15px;
-    }
-
-    // label[for="edit-field-comment-body-0-value"] {
-    //   display: block;
-    // }
-    textarea {
-      background: #ffffff;
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  @media (max-width: $tablet) {
+    .ui-dialog .ui-dialog-titlebar-close .ui-icon-closethick{
+      width: 60%;
+      height: 60%;
     }
   }
+  // section > .comment:nth-of-type(1)::before {
+  //   display: none;
+  // }
+
+  // .comment {
+  //   box-shadow: 0 -3px 4px rgba(0, 0, 0, 17%);
+  //   border-bottom: 0px solid #b1b1b1;
+  // }
+
+  // .comment-form .form-item {
+  //   overflow: initial;
+  // }
+
+  // .cbutton-back {
+  //   display: flex !important;
+  // }
+
+  // .comment-delete,
+  // .comment-edit,
+  // .comment-show {
+  //   display: none;
+  // }
+
+  // #comment-form {
+  //   margin: -25px 0 0;
+  //   background: #fbfbfb;
+  //   padding: 30px;
+  //   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.17);
+
+  //   @media (max-width: $tablet) {
+  //     padding: 15px;
+  //   }
+
+  //   // label[for="edit-field-comment-body-0-value"] {
+  //   //   display: block;
+  //   // }
+  //   textarea {
+  //     background: #ffffff;
+  //     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  //   }
+  // }
 }
 
+.popup-delete-comment{
+  .ui-dialog-title{
+    font-size: $px25;
+    padding-top: 20px;
+    white-space: break-spaces;
+    text-align: center;
+  }
+  .ui-dialog-buttonpane{
+    max-width: 500px !important;
+
+  }
+  .ui-dialog-buttonset {
+    display: flex;
+    justify-content: space-around !important;
+  }
+}
 .comment {
   width: 100%;
   padding: 25px;

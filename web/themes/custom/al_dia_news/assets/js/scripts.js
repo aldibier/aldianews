@@ -1454,7 +1454,7 @@ var initMain = function initMain($, Drupal) {
       allCardVideos.forEach(function (cardVideo) {
         return cardVideo.addEventListener("click", function (event) {
           if (event.target.nodeName == "A") return;
-          node = event.currentTarget.parentNode.firstElementChild;
+          var node = event.currentTarget.parentNode.firstElementChild;
 
           while (node) {
             if (node !== event.currentTarget && node.nodeType === Node.ELEMENT_NODE) {
@@ -1479,7 +1479,7 @@ var initMain = function initMain($, Drupal) {
           resetAlliframes();
         }
 
-        if (event.target.classList.contains("close")) {
+        if (event.target.classList.contains("close-video")) {
           document.querySelector(".modal-video.show").classList.remove("show");
           resetAlliframes();
         }
