@@ -1684,22 +1684,7 @@ var initMain = function initMain($, Drupal) {
           }
         });
       });
-    } ///// js para tag new
-
-
-    Array.from(document.querySelectorAll(".block-field-blocknodenewsfield-type-of-content")).map(function (evt) {
-      if (evt != null) {
-        var shape = evt.querySelector(".field--name-field-type-of-content");
-
-        if (shape != null) {
-          if (shape.innerText == "Podcast") {
-            shape.classList.add("logo-podcast");
-          } else if (shape.innerText == "Article") {
-            shape.classList.add("logo-none");
-          }
-        }
-      }
-    });
+    }
   }; ///// js para modos de visualizacion de slider event
 
 
@@ -2007,7 +1992,21 @@ __webpack_require__.r(__webpack_exports__);
   Drupal.behaviors.form_checkbox = {
     attach: function attach(context, settings) {
       $(document).ready(function () {
-        //// sumo select
+        ///// js para tag new
+        Array.from(document.querySelectorAll(".block-field-blocknodenewsfield-type-of-content")).map(function (evt) {
+          if (evt != null) {
+            var shape = evt.querySelector(".field--name-field-type-of-content");
+
+            if (shape != null) {
+              if (shape.innerText == "Podcast") {
+                shape.classList.add("logo-podcast");
+              } else if (shape.innerText == "Article") {
+                shape.classList.add("logo-none");
+              }
+            }
+          }
+        }); //// sumo select
+
         Array.from(document.querySelectorAll(".region-content select")).map(function (e) {
           if (e != null) {
             e.classList.add("testselect1");
