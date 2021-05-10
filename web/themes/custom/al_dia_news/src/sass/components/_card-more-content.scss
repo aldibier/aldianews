@@ -39,10 +39,11 @@
   .last-content-category-childs {
     position: relative;
 
-    .block-field-blocknodenewsfield-my-content-has-a-main-vide {
+    .block-field-blocknodenewsfield-my-content-has-a-main-vide,
+    .block-field-blocknodenewsfield-type-of-content {
       font-size: 0;
     }
-
+    .block-field-blocknodenewsfield-type-of-content .field--name-field-type-of-content,
     .field--name-field-my-content-has-a-main-vide {
       @include player-icon(
         $desktop-size: 50px,
@@ -50,7 +51,13 @@
         $mobile-size: 30px
       );
 
-      &:empty {
+      &.logo-podcast{
+        @include microphone-icon($desktop-size: 70px,
+        $tablet-size: 70px,
+        $mobile-size: 30px);
+      }
+      &:empty,
+      &.logo-none {
         display: none;
       }
     }
