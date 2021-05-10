@@ -158,6 +158,34 @@
 }
 
 
+//---------- Microphone -------------------------//
+
+@mixin microphone-icon($desktop-size: 100px, $tablet-size:50px, $mobile-size:25px) {
+  width: $desktop-size;
+  height: $desktop-size;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  // background-image: icon('player');
+  background: green;
+  background-size: contain;
+  pointer-events: none;
+
+  @media screen and (max-width:$broken) {
+    width: $tablet-size;
+    height: $tablet-size;
+  }
+
+  @media screen and (max-width:$tablet) {
+    width: $mobile-size;
+    height: $mobile-size;
+  }
+}
+
+
 //---------- Buttons -------------------------//
 
 @mixin button($btnWidth:250px,$btnHeight:55px,$btnBackground:$corange,$btnColor:$cwhite) {

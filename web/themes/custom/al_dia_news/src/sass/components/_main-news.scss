@@ -47,20 +47,27 @@
     position: relative;
   }
 
+  .block-field-blocknodenewsfield-type-of-content,
   .block-field-blocknodenewsfield-my-content-has-a-main-vide,
   .views-field-field-my-content-has-a-main-vide {
     font-size: 0;
 
     .field--name-field-my-content-has-a-main-vide,
-    .field-content   {
+    .field-content,
+    .field--name-field-type-of-content   {
       @include player-icon(
         $desktop-size: 80px,
         $tablet-size: 80px,
         $mobile-size: 50px
       );
       z-index: 10;
-
-      &:empty {
+      &.podcast{
+        @include microphone-icon($desktop-size: 70px,
+        $tablet-size: 70px,
+        $mobile-size: 30px);
+      }
+      &:empty,
+      &.none {
         display: none;
       }
     }

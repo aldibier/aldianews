@@ -45,17 +45,25 @@
   }
 
   //css temporal
+  .block-field-blocknodenewsfield-type-of-content,
   .views-field-field-my-content-has-a-main-vide,
   .block-field-blocknodenewsfield-my-content-has-a-main-vide {
     font-size: 0;
 
     .field-content,
-    .field--name-field-my-content-has-a-main-vide {
+    .field--name-field-my-content-has-a-main-vide,
+    .field--name-field-type-of-content {
       @include player-icon($desktop-size: 70px,
         $tablet-size: 70px,
         $mobile-size: 30px);
 
-      &:empty {
+      &.podcast{
+        @include microphone-icon($desktop-size: 70px,
+        $tablet-size: 70px,
+        $mobile-size: 30px);
+      }
+      &:empty,
+      &.none {
         display: none;
       }
     }

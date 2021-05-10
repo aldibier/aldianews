@@ -1745,7 +1745,29 @@ var initMain = function initMain($, Drupal) {
       containerContainer.classList.toggle('open');
       buttonCategories.classList.toggle('up');
     });
-  }
+  } ///// js para tag new
+
+
+  Array.from(document.querySelectorAll(".block-field-blocknodenewsfield-type-of-content")).map(function (evt) {
+    if (evt != null) {
+      var shape = evt.querySelector(".field--name-field-type-of-content");
+
+      if (shape != null) {
+        if (shape.innerText == "Podcast") {
+          shape.classList.add("logo-podcast");
+        } else if (shape.innerText == "Article") {
+          shape.classList.add("logo-none");
+        } //   if (shape.innerText == "Video") {
+        // 	shape.classList.add("logo-video");
+        //   } else if (shape.innerText == "Podcast") {
+        // 	shape.classList.add("logo-podcast");
+        //   } else if (shape.innerText == "Article") {
+        // 	shape.classList.add("logo-none");
+        //   }
+
+      }
+    }
+  });
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (initMain);
