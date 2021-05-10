@@ -16,6 +16,14 @@
     min-width: initial;
     margin: 20px 0px 0px;
     position: initial;
+    &.view-more-in-this-section-news{
+      width: auto;
+      max-width: none;
+      .card-more-news .short-title-date h3{
+        margin: 0px;
+      }
+    }
+    
   }
 
   //------ more content news ------------//
@@ -268,7 +276,7 @@
 
     .field--name-created {
       font-size: $px16;
-      font-family: $PrNovacond-reg;
+      font-family: $PrNovacond-light;
       font-style: normal;
       font-weight: normal;
       line-height: 19px;
