@@ -578,37 +578,6 @@ const initMain = ($, Drupal) => {
 			}));
 		}
 
-<<<<<<< HEAD
-		//js para comment anonymous
-		if (!!document.querySelector('.block-comments-anonymous')) {
-			const blockAnonymus = document.querySelector('.block-comments-anonymous');
-			const allTextMessage = document.querySelectorAll('.text-anonymous-comment');
-			const loginLink = document.querySelector('.login-anonymous-comment');
-			const registerLink = document.querySelector('.register-anonymous-comment');
-
-			const container = document.createElement('div');
-			const message = document.createElement('div')
-
-			container.classList.add('message-comments-container');
-			message.classList.add('message-comments-links');
-
-			message.appendChild(loginLink)
-			message.appendChild(allTextMessage[1])
-			message.appendChild(registerLink);
-			message.appendChild(allTextMessage[2])
-
-			container.appendChild(allTextMessage[0]);
-			container.appendChild(message)
-
-			blockAnonymus.querySelector('.content').insertAdjacentElement('afterend', container);
-
-			blockAnonymus.addEventListener('click', () => {
-				blockAnonymus.classList.add('show');
-			}, { once: true })
-		}
-=======
-
->>>>>>> b8797958c4c524b06bc72bc8b66560a741e45d3b
 	};
 
 	///// js para modos de visualizacion de slider event
