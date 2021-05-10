@@ -57,13 +57,13 @@
         $tablet-size: 70px,
         $mobile-size: 30px);
 
-      &.podcast{
+      &.logo-podcast{
         @include microphone-icon($desktop-size: 70px,
         $tablet-size: 70px,
         $mobile-size: 30px);
       }
       &:empty,
-      &.none {
+      &.logo-none {
         display: none;
       }
     }
