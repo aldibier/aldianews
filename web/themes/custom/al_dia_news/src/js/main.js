@@ -578,6 +578,7 @@ const initMain = ($, Drupal) => {
 			}));
 		}
 
+<<<<<<< HEAD
 		//js para comment anonymous
 		if (!!document.querySelector('.block-comments-anonymous')) {
 			const blockAnonymus = document.querySelector('.block-comments-anonymous');
@@ -605,6 +606,9 @@ const initMain = ($, Drupal) => {
 				blockAnonymus.classList.add('show');
 			}, { once: true })
 		}
+=======
+
+>>>>>>> b8797958c4c524b06bc72bc8b66560a741e45d3b
 	};
 
 	///// js para modos de visualizacion de slider event
@@ -676,6 +680,8 @@ const initMain = ($, Drupal) => {
 			buttonCategories.classList.toggle('up');
 		})
 	}
+
+	
 };
 
 export default initMain;

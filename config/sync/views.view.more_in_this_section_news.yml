@@ -4,16 +4,15 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_image
-    - field.storage.node.field_my_content_has_a_main_vide
     - field.storage.node.field_short_title
-    - field.storage.node.field_video
+    - field.storage.node.field_type_of_content
     - node.type.news
     - responsive_image.styles.more_content_responsive
   module:
     - node
     - responsive_image
     - user
-    - video_embed_field
+    - views_fieldsets
 id: more_in_this_section_news
 label: 'MORE IN THIS SECTION'
 module: views
@@ -62,7 +61,7 @@ display:
         type: default
         options:
           grouping: {  }
-          row_class: 'card-more card-more-news'
+          row_class: 'card-more card-more-news  card-more-category'
           default_row_class: true
       row:
         type: fields
@@ -120,15 +119,15 @@ display:
           absolute: false
           entity_type: node
           plugin_id: entity_link
-        field_my_content_has_a_main_vide:
-          id: field_my_content_has_a_main_vide
-          table: node__field_my_content_has_a_main_vide
-          field: field_my_content_has_a_main_vide
+        fieldset_1:
+          id: fieldset_1
+          table: views
+          field: fieldset
           relationship: none
           group_type: group
           admin_label: ''
           label: ''
-          exclude: true
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -160,7 +159,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: false
+          element_label_colon: true
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -168,13 +167,127 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: value
-          type: boolean
+          fields:
+            - fieldset
+            - field_short_title
+            - created
+            - nothing
+          wrapper: div
+          legend: ''
+          classes: container-content
+          collapsible: 1
+          collapsed: 0
+          plugin_id: fieldset
+        fieldset:
+          id: fieldset
+          table: views
+          field: fieldset
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          fields:
+            - field_type_of_content
+            - field_image
+          wrapper: div
+          legend: ''
+          classes: 'related-content  one-content-subcategory-four'
+          collapsible: 1
+          collapsed: 0
+          plugin_id: fieldset
+        field_type_of_content:
+          id: field_type_of_content
+          table: node__field_type_of_content
+          field: field_type_of_content
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: field--name-field-type-of-content
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: block-field-blocknodenewsfield-type-of-content
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
           settings:
-            format: default
-            format_custom_true: ''
-            format_custom_false: ''
-          group_column: value
+            link: false
+          group_column: target_id
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -193,7 +306,7 @@ display:
           group_type: group
           admin_label: ''
           label: ''
-          exclude: true
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -239,70 +352,6 @@ display:
             responsive_image_style: more_content_responsive
             image_link: content
           group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
-        field_video:
-          id: field_video
-          table: node__field_video
-          field: field_video
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: false
-          empty: ''
-          hide_empty: true
-          empty_zero: true
-          hide_alter_empty: true
-          click_sort_column: value
-          type: video_embed_field_thumbnail
-          settings:
-            image_style: ''
-            link_image_to: content
-          group_column: value
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -454,7 +503,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"related-content\">\r\n {% if (( field_my_content_has_a_main_vide )) == \"On\" %}\r\n    {{ field_image }} \r\n     <span class=\"player-news\"></span>\r\n {% else %}\r\n    {{ field_image }} \r\n {% endif %}\r\n <div class=\"short-title-date\">\r\n    <h3>{{ field_short_title }}</h3>\r\n    <span class=\"date-more-content\">{{ created }}</span>\r\n </div>\r\n</div>"
+            text: "<div class=\"short-title-date\">\r\n   <h3 class=\"card-title-more\">{{ field_short_title }}</h3>\r\n   <span class=\"date-more-content\">{{ created }}</span>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -619,7 +668,7 @@ display:
           entity_field: nid
           plugin_id: node_nid
       display_extenders: {  }
-      css_class: 'view-more view-more-news'
+      css_class: 'view-more view-more-news  card-more'
     cache_metadata:
       max-age: -1
       contexts:
@@ -630,16 +679,16 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.field_image'
-        - 'config:field.storage.node.field_my_content_has_a_main_vide'
         - 'config:field.storage.node.field_short_title'
-        - 'config:field.storage.node.field_video'
+        - 'config:field.storage.node.field_type_of_content'
   block_1:
     display_plugin: block
     id: block_1
     display_title: Block
     position: 1
     display_options:
-      display_extenders: {  }
+      display_extenders:
+        ajax_history: {  }
     cache_metadata:
       max-age: -1
       contexts:
@@ -650,6 +699,5 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.field_image'
-        - 'config:field.storage.node.field_my_content_has_a_main_vide'
         - 'config:field.storage.node.field_short_title'
-        - 'config:field.storage.node.field_video'
+        - 'config:field.storage.node.field_type_of_content'

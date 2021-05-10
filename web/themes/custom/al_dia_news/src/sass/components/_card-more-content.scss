@@ -16,6 +16,14 @@
     min-width: initial;
     margin: 20px 0px 0px;
     position: initial;
+    &.view-more-in-this-section-news{
+      width: auto;
+      max-width: none;
+      .card-more-news .short-title-date h3{
+        margin: 0px;
+      }
+    }
+    
   }
 
   //------ more content news ------------//
@@ -39,18 +47,26 @@
   .last-content-category-childs {
     position: relative;
 
-    .block-field-blocknodenewsfield-my-content-has-a-main-vide {
+    .block-field-blocknodenewsfield-my-content-has-a-main-vide,
+    .block-field-blocknodenewsfield-type-of-content {
       font-size: 0;
     }
-
+    .block-field-blocknodenewsfield-type-of-content .field--name-field-type-of-content,
     .field--name-field-my-content-has-a-main-vide {
+      z-index: 10;
       @include player-icon(
         $desktop-size: 50px,
         $tablet-size: 50px,
         $mobile-size: 30px
       );
 
-      &:empty {
+      &.logo-podcast{
+        @include microphone-icon($desktop-size: 50px,
+        $tablet-size: 50px,
+        $mobile-size: 30px);
+      }
+      &:empty,
+      &.logo-none {
         display: none;
       }
     }
@@ -260,7 +276,7 @@
 
     .field--name-created {
       font-size: $px16;
-      font-family: $PrNovacond-reg;
+      font-family: $PrNovacond-light;
       font-style: normal;
       font-weight: normal;
       line-height: 19px;

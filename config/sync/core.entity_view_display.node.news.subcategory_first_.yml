@@ -58,7 +58,7 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: -9
+            weight: -8
           ebc75a3f-3ce1-49fa-8599-0879fa71cd97:
             uuid: ebc75a3f-3ce1-49fa-8599-0879fa71cd97
             region: two_content
@@ -118,22 +118,22 @@ third_party_settings:
                 view_mode: view_mode
             additional: {  }
             weight: 3
-          4dbd23b2-6014-45f8-a052-7d9d53431a0a:
-            uuid: 4dbd23b2-6014-45f8-a052-7d9d53431a0a
+          61bb2691-841a-41de-b928-cc31d10bab71:
+            uuid: 61bb2691-841a-41de-b928-cc31d10bab71
             region: one_content
             configuration:
-              id: 'field_block:node:news:field_my_content_has_a_main_vide'
-              label: 'My content has a main video'
+              id: 'field_block:node:news:field_type_of_content'
+              label: 'Type of content'
               provider: layout_builder
               label_display: '0'
               formatter:
                 label: hidden
-                type: boolean
+                type: entity_reference_label
                 settings:
-                  format: default
-                  format_custom_true: ''
-                  format_custom_false: ''
-                third_party_settings: {  }
+                  link: false
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
               context_mapping:
                 entity: layout_builder.entity
                 view_mode: view_mode

@@ -278,6 +278,24 @@ import replaceToken from "./modules/replaceToken";
   Drupal.behaviors.form_checkbox = {
     attach: function(context, settings) {
       $(document).ready(function() {
+        ///// js para tag new
+
+        Array.from(document.querySelectorAll(".block-field-blocknodenewsfield-type-of-content")).map(
+          function(evt) {
+          if (evt != null) {
+        
+            var shape = evt.querySelector(".field--name-field-type-of-content");
+            if (shape != null) {
+            if (shape.innerText == "Podcast") {
+              shape.classList.add("logo-podcast");
+            } else if (shape.innerText == "Article") {
+              shape.classList.add("logo-none");
+            }
+            }
+          }
+          }
+        );
+
         //// sumo select
 
         Array.from(document.querySelectorAll(".region-content select")).map(
