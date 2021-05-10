@@ -52,10 +52,11 @@ third_party_settings:
           layout_class: {  }
     regions:
       ds_content:
-        - field_image
+        - group_container
+        - field_type_of_content
         - group_container_icon
-        - field_my_content_has_a_main_vide
         - group_featured_news_wrapper
+        - field_image
         - field_short_title
         - body
   field_group:
@@ -80,14 +81,12 @@ third_party_settings:
       label: 'Last News Home Wrapper'
     group_container_icon:
       children:
-        - field_my_content_has_a_main_vide
-      parent_name: ''
-      weight: 1
+        - field_type_of_content
+      parent_name: group_container
+      weight: 2
       format_type: html_element
       region: ds_content
       format_settings:
-        id: ''
-        classes: icon-player
         element: div
         show_label: false
         label_element: h3
@@ -95,7 +94,28 @@ third_party_settings:
         attributes: ''
         effect: none
         speed: fast
+        id: ''
+        classes: block-field-blocknodenewsfield-type-of-content
       label: 'Container icon'
+    group_container:
+      children:
+        - group_container_icon
+        - field_image
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      region: ds_content
+      format_settings:
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: main-news
+      label: Container
 id: node.news.first_category_home
 targetEntityType: node
 bundle: news
@@ -112,7 +132,7 @@ content:
       field_formatter_class:
         class: last-news-home-body
   field_image:
-    weight: 0
+    weight: 3
     label: hidden
     settings:
       image_style: ''
@@ -126,16 +146,6 @@ content:
         data_uri: false
     type: image
     region: ds_content
-  field_my_content_has_a_main_vide:
-    weight: 2
-    label: hidden
-    settings:
-      format: custom
-      format_custom_true: 'on'
-      format_custom_false: ''
-    third_party_settings: {  }
-    type: boolean
-    region: ds_content
   field_short_title:
     weight: 4
     label: hidden
@@ -146,6 +156,16 @@ content:
         class: last-news-home-title
     type: string
     region: ds_content
+  field_type_of_content:
+    type: entity_reference_label
+    weight: 0
+    region: ds_content
+    label: hidden
+    settings:
+      link: false
+    third_party_settings:
+      field_formatter_class:
+        class: ''
 hidden:
   addtoany: true
   field_author: true
@@ -153,12 +173,12 @@ hidden:
   field_category: true
   field_comments: true
   field_high_impact_news: true
+  field_my_content_has_a_main_vide: true
   field_news: true
   field_podcast_player: true
   field_postcast_categories: true
   field_tags: true
   field_test: true
-  field_type_of_content: true
   field_video: true
   langcode: true
   links: true
