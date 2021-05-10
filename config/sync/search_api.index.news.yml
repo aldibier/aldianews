@@ -10,6 +10,7 @@ dependencies:
     - field.storage.node.field_category
     - field.storage.node.field_image
     - field.storage.node.field_short_title
+    - field.storage.node.field_type_of_content
     - search_api.server.al_dia_news_solr
 third_party_settings:
   search_api_solr:
@@ -107,6 +108,14 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_short_title
+  field_type_of_content:
+    label: 'Type of content'
+    datasource_id: 'entity:node'
+    property_path: field_type_of_content
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_type_of_content
   langcode:
     label: Language
     datasource_id: 'entity:node'
