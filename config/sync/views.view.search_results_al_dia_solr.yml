@@ -875,6 +875,199 @@ display:
       arguments: {  }
       defaults:
         arguments: false
+        header: false
+        filters: false
+        filter_groups: false
+      header:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content: "<div class=\"red-text-no-results\">We’re sorry. We could not find results for your search.<div>\r\n<div class=\"black-text-no-results\">Explore our latest content</div>"
+          plugin_id: text_custom
+      filters:
+        search_api_fulltext:
+          id: search_api_fulltext
+          table: search_api_index_news
+          field: search_api_fulltext
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: search_api_fulltext_op
+            label: Keywords
+            description: ''
+            use_operator: false
+            operator: search_api_fulltext_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: token
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              editor: '0'
+            placeholder: ''
+            expose_fields: false
+            searched_fields_id: search_api_fulltext_searched_fields
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          parse_mode: terms
+          min_length: null
+          fields:
+            - field_short_title
+          plugin_id: search_api_fulltext
+        field_category:
+          id: field_category
+          table: search_api_index_news
+          field: field_category
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_category_op
+            label: Category
+            description: null
+            use_operator: false
+            operator: field_category_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_category
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: true
+          group_info:
+            label: Category
+            description: ''
+            identifier: field_category
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items:
+              1:
+                title: LEADERSHIP
+                operator: or
+                value:
+                  135: '135'
+                  136: '136'
+                  137: '137'
+                  138: '138'
+                  139: '139'
+                  140: '140'
+                  141: '141'
+                  142: '142'
+                  143: '143'
+                  144: '144'
+                  145: '145'
+                  146: '146'
+                  147: '147'
+                  148: '148'
+              2:
+                title: CULTURE
+                operator: or
+                value:
+                  131: '131'
+                  132: '132'
+                  133: '133'
+                  134: '134'
+              3:
+                title: POLITICS
+                operator: or
+                value:
+                  5: '5'
+                  6: '6'
+                  7: '7'
+                  149: '149'
+                  150: '150'
+                  151: '151'
+                  152: '152'
+                  153: '153'
+                  154: '154'
+                  155: '155'
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: categories
+          hierarchy: true
+          error_message: true
+          plugin_id: search_api_term
+        search_api_language:
+          id: search_api_language
+          table: search_api_index_news
+          field: search_api_language
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value:
+            '***LANGUAGE_language_interface***': '***LANGUAGE_language_interface***'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: search_api_language
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
     cache_metadata:
       max-age: -1
       contexts:
@@ -1774,6 +1967,17 @@ display:
           search_api_spellcheck_hide_on_result: 1
           search_api_spellcheck_collate: false
           plugin_id: search_api_spellcheck_suggestions
+        view:
+          id: view
+          table: views
+          field: view
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          view_to_insert: 'search_results_al_dia_solr:block_2'
+          inherit_arguments: false
+          plugin_id: view
       footer: {  }
       cache:
         type: none
