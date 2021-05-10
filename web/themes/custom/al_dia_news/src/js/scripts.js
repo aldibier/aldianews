@@ -28,7 +28,7 @@ import replaceToken from "./modules/replaceToken";
   );
   var videoHeight = $video.outerHeight();
 
-  if (!!document.querySelector(".page-node-type-news") && !!$video) {
+  if (!!document.querySelector(".page-node-type-news") && $video.length != 0) {
     $window.on("scroll", function () {
       var windowScrollTop = $window.scrollTop();
       var videoBottom = videoHeight + $videoWrap.offset().top;

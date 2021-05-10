@@ -513,44 +513,44 @@ const initMain = ($, Drupal) => {
 
 		//js para form sponsorship 
 
-		const addStateAndCity = (state,city) => {
+		const addStateAndCity = (state, city) => {
 			let labelState = state.querySelector('label');
 			let labelCity = city.querySelector('label');
 			let selectState = state.querySelector('select');
 			let inputCity = city.querySelector('input');
-			
+
 			state.classList.add('show');
 			city.classList.add('show');
 
-			labelState.classList.add('js-form-required','form-required');
+			labelState.classList.add('js-form-required', 'form-required');
 			selectState.classList.add('required');
-			selectState.setAttribute('required','required')
-			selectState.setAttribute('aria-required','true');
+			selectState.setAttribute('required', 'required')
+			selectState.setAttribute('aria-required', 'true');
 
-			labelCity.classList.add('js-form-required','form-required')
+			labelCity.classList.add('js-form-required', 'form-required')
 			inputCity.classList.add('required');
-			inputCity.setAttribute('required','required')
-			inputCity.setAttribute('aria-required','true');
+			inputCity.setAttribute('required', 'required')
+			inputCity.setAttribute('aria-required', 'true');
 		}
 
-		const removeStateAndCity = (state,city) => {
+		const removeStateAndCity = (state, city) => {
 			console.log('remove!');
 			let labelState = state.querySelector('label');
 			let labelCity = city.querySelector('label');
 			let selectState = state.querySelector('select');
 			let inputCity = city.querySelector('input');
 
-			if(!state.classList.contains('show') || !city.classList.contains('show')) return;
+			if (!state.classList.contains('show') || !city.classList.contains('show')) return;
 
 			state.classList.remove('show');
 			city.classList.remove('show');
 
-			labelState.classList.remove('js-form-required','form-required');
+			labelState.classList.remove('js-form-required', 'form-required');
 			selectState.classList.remove('required');
 			selectState.removeAttribute('required');
 			selectState.removeAttribute('aria-required');
 
-			labelCity.classList.remove('js-form-required','form-required');
+			labelCity.classList.remove('js-form-required', 'form-required');
 			inputCity.classList.remove('required');
 			inputCity.removeAttribute('required');
 			inputCity.removeAttribute('aria-required');
@@ -565,19 +565,46 @@ const initMain = ($, Drupal) => {
 			const countriesItems = selectParent.querySelectorAll('.opt');
 
 			//reorder fields
-			filedCountry.insertAdjacentElement('afterend',fieldState);
-			fieldState.insertAdjacentElement('afterend',fieldCity);
+			filedCountry.insertAdjacentElement('afterend', fieldState);
+			fieldState.insertAdjacentElement('afterend', fieldCity);
 
-			countriesItems.forEach(item => item.addEventListener('click',(event)=>{
+			countriesItems.forEach(item => item.addEventListener('click', (event) => {
 				console.log(event.target.innerText);
-				if(event.target.innerText.toLowerCase() === 'united states'){
-					addStateAndCity(fieldState,fieldCity);
-				}else {
-					removeStateAndCity(fieldState,fieldCity);
+				if (event.target.innerText.toLowerCase() === 'united states') {
+					addStateAndCity(fieldState, fieldCity);
+				} else {
+					removeStateAndCity(fieldState, fieldCity);
 				}
 			}));
 		}
 
+		//js para comment anonymous
+		if (!!document.querySelector('.block-comments-anonymous')) {
+			const blockAnonymus = document.querySelector('.block-comments-anonymous');
+			const allTextMessage = document.querySelectorAll('.text-anonymous-comment');
+			const loginLink = document.querySelector('.login-anonymous-comment');
+			const registerLink = document.querySelector('.register-anonymous-comment');
+
+			const container = document.createElement('div');
+			const message = document.createElement('div')
+
+			container.classList.add('message-comments-container');
+			message.classList.add('message-comments-links');
+
+			message.appendChild(loginLink)
+			message.appendChild(allTextMessage[1])
+			message.appendChild(registerLink);
+			message.appendChild(allTextMessage[2])
+
+			container.appendChild(allTextMessage[0]);
+			container.appendChild(message)
+
+			blockAnonymus.querySelector('.content').insertAdjacentElement('afterend', container);
+
+			blockAnonymus.addEventListener('click', () => {
+				blockAnonymus.classList.add('show');
+			}, { once: true })
+		}
 	};
 
 	///// js para modos de visualizacion de slider event
@@ -642,7 +669,7 @@ const initMain = ($, Drupal) => {
 		const containerContainer = document.querySelector('.category-list');
 		const buttonCategories = document.querySelector('.category-button-mobile');
 
-		if(!containerContainer) return;
+		if (!containerContainer) return;
 
 		buttonCategories.addEventListener('click', () => {
 			containerContainer.classList.toggle('open');
