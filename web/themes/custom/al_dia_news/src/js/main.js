@@ -578,6 +578,33 @@ const initMain = ($, Drupal) => {
 			}));
 		}
 
+		//js para comment anonymous
+		if (!!document.querySelector('.block-comments-anonymous')) {
+			var blockAnonymus = document.querySelector('.block-comments-anonymous');
+			var allTextMessage = document.querySelectorAll('.text-anonymous-comment');
+			var loginLink = document.querySelector('.login-anonymous-comment');
+			var registerLink = document.querySelector('.register-anonymous-comment');
+			var container = document.createElement('div');
+			var message = document.createElement('div');
+
+			container.classList.add('message-comments-container');
+			message.classList.add('message-comments-links');
+
+			message.appendChild(loginLink);
+			message.appendChild(allTextMessage[1]);
+			message.appendChild(registerLink);
+			message.appendChild(allTextMessage[2]);
+			container.appendChild(allTextMessage[0]);
+			container.appendChild(message);
+
+			blockAnonymus.querySelector('.content').insertAdjacentElement('afterend', container);
+			
+			blockAnonymus.addEventListener('click', function () {
+				blockAnonymus.classList.add('show');
+			}, {
+				once: true
+			});
+		}
 	};
 
 	///// js para modos de visualizacion de slider event
@@ -650,7 +677,7 @@ const initMain = ($, Drupal) => {
 		})
 	}
 
-	
+
 };
 
 export default initMain;
