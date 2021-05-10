@@ -10,6 +10,7 @@ dependencies:
     - responsive_image.styles.next_two_image_responsive
     - search_api.index.news
     - taxonomy.vocabulary.categories
+    - taxonomy.vocabulary.type_of_content
   module:
     - better_exposed_filters
     - responsive_image
@@ -1075,36 +1076,37 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           plugin_id: search_api_language
-        field_my_content_has_a_main_vide:
-          id: field_my_content_has_a_main_vide
+        field_type_of_content:
+          id: field_type_of_content
           table: search_api_index_news
-          field: field_my_content_has_a_main_vide
+          field: field_type_of_content
           relationship: none
           group_type: group
           admin_label: ''
-          operator: '='
-          value: ''
+          operator: or
+          value: {  }
           group: 1
           exposed: true
           expose:
-            operator_id: ''
-            label: 'My content has a main video'
+            operator_id: field_type_of_content_op
+            label: 'Type of content'
             description: null
             use_operator: false
-            operator: field_my_content_has_a_main_vide_op
+            operator: field_type_of_content_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: field_my_content_has_a_main_vide
-            required: true
+            identifier: field_type_of_content
+            required: false
             remember: false
             multiple: false
             remember_roles:
               authenticated: authenticated
+            reduce: false
           is_grouped: true
           group_info:
             label: 'Type of content'
             description: ''
-            identifier: field_my_content_has_a_main_vide
+            identifier: field_type_of_content
             optional: true
             widget: select
             multiple: false
@@ -1114,17 +1116,26 @@ display:
             group_items:
               1:
                 title: Articles
-                operator: '='
-                value: '0'
+                operator: or
+                value:
+                  161: '161'
               2:
                 title: 'Only articles with video'
-                operator: '='
-                value: '1'
+                operator: or
+                value:
+                  162: '162'
               3:
-                title: ''
-                operator: '='
-                value: ''
-          plugin_id: search_api_boolean
+                title: Podcasts
+                operator: or
+                value:
+                  163: '163'
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: type_of_content
+          hierarchy: true
+          error_message: true
+          plugin_id: search_api_term
       defaults:
         filters: false
         filter_groups: false
