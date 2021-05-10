@@ -9,7 +9,6 @@ dependencies:
   config:
     - field.storage.node.field_category
     - field.storage.node.field_image
-    - field.storage.node.field_my_content_has_a_main_vide
     - field.storage.node.field_short_title
     - search_api.server.al_dia_news_solr
 third_party_settings:
@@ -100,14 +99,6 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_image
-  field_my_content_has_a_main_vide:
-    label: 'My content has a main video'
-    datasource_id: 'entity:node'
-    property_path: field_my_content_has_a_main_vide
-    type: boolean
-    dependencies:
-      config:
-        - field.storage.node.field_my_content_has_a_main_vide
   field_short_title:
     label: 'Short title'
     datasource_id: 'entity:node'
@@ -120,6 +111,14 @@ field_settings:
     label: Language
     datasource_id: 'entity:node'
     property_path: langcode
+    type: string
+    dependencies:
+      module:
+        - node
+  type:
+    label: 'Content type'
+    datasource_id: 'entity:node'
+    property_path: type
     type: string
     dependencies:
       module:
