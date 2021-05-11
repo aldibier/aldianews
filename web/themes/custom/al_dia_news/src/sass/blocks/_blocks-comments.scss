@@ -2,6 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 40px;
+
   .comment-form__title {
     order: -2;
     width: 100%;
@@ -20,12 +21,14 @@
 
     @media (max-width: $tablet) {
       margin: 0px auto 50px;
+
       .form-textarea {
         min-height: 80px;
       }
     }
   }
 }
+
 section .comment:not(section .indented .comment) {
   position: relative;
   background: #fbfbfb;
@@ -83,21 +86,25 @@ section .comment:not(section .indented .comment) {
     font-family: $PrNovacond-reg;
     text-transform: uppercase;
     color: $cblack3;
+
     a {
       border-bottom: 0px;
       color: $cblack3;
       cursor: pointer;
     }
+
     ul {
       width: 100%;
       display: flex;
       align-items: center;
       justify-content: flex-end;
       flex-wrap: wrap;
+
       li:last-child {
         width: 100%;
       }
     }
+
     input[value="REPLY"] {
       color: $corange !important;
       text-transform: uppercase;
@@ -116,46 +123,58 @@ section .comment:not(section .indented .comment) {
       min-height: auto;
       border: 0px;
       border-radius: 0px;
+
       &:focus {
         outline: 0px;
       }
     }
   }
+
   @media (max-width: $tablet) {
     margin: 20px auto 0px;
+
     .field--name-field-comment-body {
       font-size: $px18;
       line-height: 20px;
     }
+
     .item-list {
       font-size: $px16;
       line-height: 22px;
       margin-top: 20px;
+
       ul {
         justify-content: flex-start;
       }
+
       li {
         padding: 0.2em 1.5em 0 0;
       }
+
       li:nth-child(4) {
         margin-left: auto;
       }
+
       li:last-child {
         padding: 0.2em 0em 0px 0px;
       }
+
       input[value="REPLY"] {
         font-size: $px16;
       }
     }
   }
 }
+
 .comment.new span:nth-child(1) {
   display: none;
 }
+
 .indented {
   margin: -40px 0 0;
   width: 100%;
   display: none;
+
   .comment,
   .indented {
     margin: 0 !important;
@@ -173,15 +192,19 @@ section .comment:not(section .indented .comment) {
   .comment__content {
     text-align: right;
   }
+
   @media (max-width: $tablet) {
     margin: -5px 0 0;
   }
 }
+
 .container-reply .ajax-progress {
   display: none !important;
 }
+
 section .indented .comment {
   position: relative;
+
   &::before {
     content: "";
     display: block;
@@ -194,13 +217,15 @@ section .indented .comment {
     height: 1px;
     background: #b1b1b1;
   }
+
   @media (max-width: $tablet) {
     &::before {
       width: 91%;
     }
   }
 }
-section > .comment:nth-of-type(1) {
+
+section>.comment:nth-of-type(1) {
   position: relative;
   border-bottom: 0px solid transparent;
 
@@ -217,6 +242,7 @@ section > .comment:nth-of-type(1) {
     color: $cblack;
     letter-spacing: 0.2px;
   }
+
   @media (max-width: $tablet) {
     &::before {
       font-size: $px12;
@@ -224,6 +250,7 @@ section > .comment:nth-of-type(1) {
     }
   }
 }
+
 .container-show-hide {
   text-transform: uppercase;
   position: relative;
@@ -238,60 +265,72 @@ section > .comment:nth-of-type(1) {
   text-transform: uppercase;
   color: $cblack3;
   cursor: pointer;
+
   &::before {
     content: "";
     display: block;
     position: absolute;
-    background: transparent url("../img/arrow-bottom.png") center center
-      no-repeat;
+    background: transparent url("../img/arrow-bottom.png") center center no-repeat;
     background-size: contain;
     width: 17.06px;
     height: 10px;
     right: 10px;
     top: 10px;
   }
+
   span {
     margin: 0 5px;
   }
+
   .hide {
     display: none;
   }
+
   &.active {
     .show {
       display: none;
     }
+
     .hide {
       display: block;
     }
+
     &::before {
       transform: rotate(180deg);
     }
   }
+
   @media (max-width: $tablet) {
     padding-right: 20px !important;
     font-size: $px16;
     line-height: 22px;
+
     &::before {
       width: 15px;
       right: 0px;
       top: 6px;
     }
+
     span {
       margin: 0 3px;
     }
   }
 }
+
 .no-answer .container-show-hide {
   display: none;
 }
+
 .al-dia-news-reply-comments {
   input[value="REPLY"] {
     display: none;
   }
+
   textarea {
     background: #ffffff;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
+
   input[value="POST ANSWER"] {
     background: $corange;
     border: none;
@@ -306,10 +345,12 @@ section > .comment:nth-of-type(1) {
     max-width: 165px;
     margin-left: 0px;
   }
+
   @media (max-width: $tablet) {
     textarea {
       min-height: 150px;
     }
+
     input[value="POST ANSWER"] {
       height: 30px;
       font-size: $px12;
@@ -318,13 +359,16 @@ section > .comment:nth-of-type(1) {
     }
   }
 }
+
 .comment-forbidden {
   text-transform: lowercase;
+
   a {
     text-transform: uppercase;
     color: $corange !important;
   }
 }
+
 .comment-comments-content-delete-form {
   padding: 30px;
   text-align: center;
@@ -333,6 +377,7 @@ section > .comment:nth-of-type(1) {
   line-height: 24px;
   font-family: $PrNovacond-bold;
   color: $cblack;
+
   #edit-submit,
   #edit-cancel {
     background: $corange;
@@ -348,6 +393,7 @@ section > .comment:nth-of-type(1) {
     display: flex;
     align-items: center;
     justify-content: center;
+
     @media (max-width: $tablet) {
       margin-top: 20px;
       height: 30px;
@@ -356,9 +402,11 @@ section > .comment:nth-of-type(1) {
       max-width: 110px;
     }
   }
+
   #edit-cancel {
     background: #5c6165;
   }
+
   .form-actions {
     display: flex;
     align-items: center;
@@ -373,6 +421,7 @@ section > .comment:nth-of-type(1) {
   font-weight: 600;
   font-family: $PrNovacond-reg;
   color: $cblack3;
+
   a {
     border-bottom: 0px;
     color: $cblack3;
@@ -381,6 +430,176 @@ section > .comment:nth-of-type(1) {
   }
 }
 
-.indented > div:last-child .container-show-hide {
+.indented>div:last-child .container-show-hide {
   display: none;
 }
+
+.block-comments-anonymous {
+  margin-right: 440px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+
+  &.show {
+    cursor: initial;
+
+    .message-comments-container{
+      visibility: visible;
+      pointer-events: initial;
+    }
+  }
+
+  @media screen and(max-width: $broken) {
+    max-width: 100%;
+    margin-right: 0;
+  }
+
+  .content {
+    width: 100%;
+  }
+
+  ul {
+    text-align: center;
+  }
+
+  li:first-child {
+    display: block;
+    padding: 0;
+
+    .text-anonymous-comment {
+      margin-bottom: 10px;
+    }
+  }
+
+  li:not(:first-child) {
+    display: none;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .fake-form {
+    pointer-events: none;
+    user-select: none;
+    line-height: 0;
+
+    .fake-form-title {
+      margin: 0 0 20px;
+      font-size: szrem(19);
+      font-family: $PrNovacond-bold;
+      font-style: normal;
+      font-weight: bold;
+      line-height: 127.8%;
+      text-align: left;
+      letter-spacing: 0.2px;
+      color: $cblack;
+
+      @media screen and(max-width: $tablet) {
+        margin: 0 0 10px;
+        font-size: szrem(14);
+      }
+    }
+
+    .form {
+      .fake-form-textarea {
+        width: 100%;
+        max-width: 100%;
+        height: 180px;
+        margin: 0 0 20px;
+        padding: 0;
+        resize: none;
+
+        @media screen and(max-width: $tablet) {
+          height: 125px;
+          min-height: 125px;
+        }
+      }
+
+      .fake-form-submit {
+        @include button($btnWidth:165px, $btnHeight:40px, $btnBackground:$corange, $btnColor:$cwhite);
+        margin: 0;
+        padding: 0;
+        display: block;
+        font-size: szrem(18);
+
+        @media screen and(max-width: $tablet) {
+          width: 110px;
+          height: 30px;
+          font-size: szrem(12);
+          line-height: 30px;
+        }
+      }
+    }
+  }
+
+  .text-anonymous-comment {
+    font-size: szrem(19);
+    font-family: $PrNovacond-reg;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 127.8%;
+    letter-spacing: 0.2px;
+    color: $cwhite;
+
+    @media screen and(max-width: $tablet) {
+      font-size: szrem(16);
+      line-height: 19px;
+      text-align: center;
+    } 
+  }
+
+  .login-anonymous-comment,
+  .register-anonymous-comment {
+    font-size: szrem(19);
+    font-family: $PrNovacond-bold;
+    font-style: normal;
+    line-height: 127.8%;
+    text-transform: uppercase;
+    letter-spacing: 0.2px;
+    color: $corange;
+
+    @media screen and(max-width: $tablet) {
+      font-size: szrem(17);
+      line-height: 19px;
+      text-align: center;
+    } 
+  }
+
+  .message-comments-container {
+    width: 100%; 
+    height: 180px;
+    position: absolute;
+    top: calc(0% + 55px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: $cblack3;
+    visibility: hidden;
+    pointer-events: none;
+  
+    @media screen and(max-width: $tablet) {
+      height: 125px;
+      padding: 0 20px;
+      top: calc(0% + 38px);
+    }
+
+    p {
+      &.text-anonymous-comment {
+        margin-bottom: 10px;
+
+        @media screen and(max-width: $tablet) {
+          margin-bottom: 15px;
+        }
+      }
+    }
+  
+    a,
+    span {
+      margin-right: 5px;
+    }
+  }  
+}
+

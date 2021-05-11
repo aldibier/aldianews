@@ -57,7 +57,15 @@ class RelatedContentFieldFormatter extends FormatterBase {
 
     foreach ($items as $delta => $item) {
       $entity = $item->getEntity();
-      $elements[$delta] = ['#markup' => $this->addRelatedContent($item->value, $entity) ];
+
+      $elements[$delta] = [
+        '#type' => 'processed_text',
+        '#text' => $this->addRelatedContent($item->value, $entity),
+        '#format' => $item->format,
+        '#langcode' => $item
+          ->getLangcode(),
+      ];
+
     }
 
     return $elements;
