@@ -5,7 +5,6 @@ dependencies:
   config:
     - block_content.type.only_video
     - field.field.block_content.only_video.field_url_video
-    - field.field.block_content.only_video.field_youtube_link
   module:
     - video_embed_field
 id: block_content.only_video.default
@@ -14,8 +13,8 @@ bundle: only_video
 mode: default
 content:
   field_url_video:
-    weight: 1
-    label: above
+    weight: 0
+    label: hidden
     settings:
       responsive: true
       width: 854
@@ -23,14 +22,6 @@ content:
       autoplay: true
     third_party_settings: {  }
     type: video_embed_field_video
-    region: content
-  field_youtube_link:
-    weight: 2
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
     region: content
 hidden:
   langcode: true

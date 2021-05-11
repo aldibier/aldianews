@@ -5,7 +5,6 @@ dependencies:
   config:
     - block_content.type.only_video
     - field.field.block_content.only_video.field_url_video
-    - field.field.block_content.only_video.field_youtube_link
   module:
     - video_embed_field
 id: block_content.only_video.default
@@ -18,14 +17,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: video_embed_field_textfield
-    region: content
-  field_youtube_link:
-    weight: 28
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
     region: content
   info:
     type: string_textfield
