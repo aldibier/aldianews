@@ -8,7 +8,9 @@
       margin: 0 auto;
     }
   }
-
+  .block-field-blocknodenewsbody p {
+    font-family: $PrNovacond-light;
+  }
   .block-field-blocknodenewsfield-podcast-player {
     width: 100%;
     max-width: 840px;
@@ -107,7 +109,7 @@
     line-height: 140%;
     font-family: $PrNovacond-reg;
 
-    >.content {
+    > .content {
       padding: 0;
     }
   }
@@ -153,7 +155,7 @@
 }
 
 .block-field-blocknodenewsfield-video {
-  +.block-field-blocknodenewsfield-image {
+  + .block-field-blocknodenewsfield-image {
     display: none;
   }
 }
@@ -263,13 +265,13 @@
     font-family: $PrNovacond-bold;
   }
 
-  .addtoany_list.a2a_kit_size_32 a>span {
+  .addtoany_list.a2a_kit_size_32 a > span {
     padding: 4px;
     border-radius: 100%;
     background: $cgrey !important;
   }
 
-  >.content {
+  > .content {
     margin: 10px auto 25px 0;
   }
 
@@ -305,9 +307,14 @@ blockquote {
 
   &:before,
   &:after {
-    color: $corange;
-    font-size: $px130;
+    // color: $corange;
+    // font-size: $px130;
     position: absolute;
+    background: transparent url("../../assets/img/svg/comillas.svg") center
+      center no-repeat;
+    background-size: contain;
+    width: 48.38px;
+    height: 34.84px;
   }
 
   &:before {
@@ -318,6 +325,7 @@ blockquote {
   &:after {
     right: 13px;
     top: 74px;
+    transform: rotate(180deg);
   }
 
   p {
@@ -372,11 +380,11 @@ blockquote {
     width: 100%;
   }
 
-  >* {
+  > * {
     padding: 0;
   }
 
-  >figcaption {
+  > figcaption {
     padding: 15px 0;
     border: none;
     text-align: left;
@@ -480,7 +488,6 @@ blockquote {
   }
 
   @media (max-width: $tablet) {
-
     h1,
     h2,
     h3,
@@ -536,7 +543,7 @@ div[data-embed-button="related_content"] {
     text-decoration: none;
     color: $cblack;
     border: none;
-    font-family: $PrNovacond-bold;
+    font-family: $PrNovacond-Sbold;
 
     a:hover {
       text-decoration: none;
@@ -659,7 +666,6 @@ div[data-embed-button="related_content"] {
 //--------------coments
 .block-field-blocknodenewsfield-comments,
 #comment-form {
-
   h2.comment-form__title,
   label {
     font-style: normal;
@@ -752,64 +758,61 @@ div[data-embed-button="related_content"] {
   max-width: 1000px !important;
   margin: 0 auto;
   right: 0px;
-  *{
+  * {
     max-width: 900px !important;
   }
-  .ui-dialog-titlebar{ 
+  .ui-dialog-titlebar {
     padding: 0 20px;
-    margin: 0 auto; 
+    margin: 0 auto;
     border: 0px solid #dddddd;
     background: transparent;
   }
-  .ui-icon-closethick{
+  .ui-icon-closethick {
     background: gray !important;
     top: 10px !important;
     @media (max-width: $tablet) {
-        width: 60% !important;
-        height: 60% !important;
-      }
+      width: 60% !important;
+      height: 60% !important;
+    }
   }
-  .ui-dialog-content{
+  .ui-dialog-content {
     padding: 0 20px;
     margin: 0 auto;
   }
-  details.js-form-wrapper.form-wrapper{
+  details.js-form-wrapper.form-wrapper {
     display: none;
   }
-  .ui-widget.ui-corner-all .form-item{
+  .ui-widget.ui-corner-all .form-item {
     margin: 30px 0 20px;
   }
-  .ui-dialog-buttonpane{
+  .ui-dialog-buttonpane {
     margin-top: 0px;
     border: 0px;
     padding: 0px;
     padding: 0 20px;
     margin: 0 auto 20px !important;
-    button{
+    button {
       height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 165px !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 165px !important;
     }
-    .button--primary:not(:focus):hover{
+    .button--primary:not(:focus):hover {
       background: #e21 !important;
     }
   }
- 
-
 }
 
-.popup-delete-comment{
-  .ui-dialog-title{
+.popup-delete-comment {
+  .ui-dialog-title {
     font-size: $px25 !important;
     padding-top: 20px;
     white-space: break-spaces;
     text-align: center;
   }
-  .ui-dialog-buttonpane{
+  .ui-dialog-buttonpane {
     max-width: 500px !important;
-
   }
   .ui-dialog-buttonset {
     display: flex;
@@ -969,12 +972,19 @@ div#selectionSharerPopover {
   }
 }
 
-.page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video .content iframe {
+.page-node-type-news
+  .content-news-internal-first
+  .block-field-blocknodenewsfield-video
+  .content
+  iframe {
   max-width: 100%;
   max-height: 100%;
 }
 
-.user-logged-in.page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video .content.stuck {
+.user-logged-in.page-node-type-news
+  .content-news-internal-first
+  .block-field-blocknodenewsfield-video
+  .content.stuck {
   top: 125px;
 
   @media (max-width: $tablet) {

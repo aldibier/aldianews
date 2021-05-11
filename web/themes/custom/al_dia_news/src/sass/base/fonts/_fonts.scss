@@ -304,9 +304,9 @@ $fonts: "../fonts/";
   src: url("#{$fonts}/proxima-nova/ProximaNovaCond-Regular.eot");
   src: url("#{$fonts}/proxima-nova/ProximaNovaCond-Regular.eot?#iefix")
       format("embedded-opentype"),
-      url("#{$fonts}/proxima-nova/ProximaNovaCond-Regular.ttf") format("truetype"),
-      url("#{$fonts}/proxima-nova/ProximaNovaCond-Regular.woff") format("woff"),
-      url("#{$fonts}/proxima-nova/ProximaNovaCond-Regular.woff2") format("woff2");
+    url("#{$fonts}/proxima-nova/ProximaNovaCond-Regular.ttf") format("truetype"),
+    url("#{$fonts}/proxima-nova/ProximaNovaCond-Regular.woff") format("woff"),
+    url("#{$fonts}/proxima-nova/ProximaNovaCond-Regular.woff2") format("woff2");
   font-weight: normal;
   font-style: swap;
 }
@@ -338,7 +338,6 @@ $fonts: "../fonts/";
   font-style: swap;
 }
 
-
 //---- ProximaNova Cond-XBold ----//
 @font-face {
   font-family: "ProximaNovaCond-XBold";
@@ -347,14 +346,23 @@ $fonts: "../fonts/";
   font-style: swap;
 }
 
+//---- ProximaNova Thin ----//
+@font-face {
+  font-family: "ProximaNova-Thin";
+  src: url("#{$fonts}/proxima-nova/Proxima-Nova-Thin.otf");
+  font-weight: bold;
+  font-style: swap;
+}
+
 //---- ProximaNova Bold ----//
 @font-face {
-  font-family: 'ProximaNova-Bold';
-  src: url('#{$fonts}/proxima-nova/ProximaNova-Bold.eot');
-  src: url('#{$fonts}/proxima-nova/ProximaNova-Bold.eot?#iefix') format('embedded-opentype'),
-       url('#{$fonts}/proxima-nova/ProximaNova-Bold.ttf') format('truetype'),
-       url('#{$fonts}/proxima-nova/ProximaNova-Bold.woff') format('woff'),
-       url('#{$fonts}/proxima-nova/ProximaNova-Bold.woff2') format('woff2');
+  font-family: "ProximaNova-Bold";
+  src: url("#{$fonts}/proxima-nova/ProximaNova-Bold.eot");
+  src: url("#{$fonts}/proxima-nova/ProximaNova-Bold.eot?#iefix")
+      format("embedded-opentype"),
+    url("#{$fonts}/proxima-nova/ProximaNova-Bold.ttf") format("truetype"),
+    url("#{$fonts}/proxima-nova/ProximaNova-Bold.woff") format("woff"),
+    url("#{$fonts}/proxima-nova/ProximaNova-Bold.woff2") format("woff2");
   font-weight: bold;
   font-style: normal;
   font-style: swap;
