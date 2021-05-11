@@ -1,3 +1,19 @@
+global:
+  version: VERSION
+  js:
+    assets/js/scripts.js: {}
+    assets/libraries/YTPlayer/YTPlayer.js: {}
+    #assets/libraries/browserclass.js: {}
+  css:
+    theme:
+      assets/css/styles.css: {}
+  dependencies:
+    - al_dia_news/lazysizes
+    - al_dia_news/slick
+    - al_dia_news/sumoselect
+    - al_dia_news/scrollmagic
+    - core/jquery
+
 scrollmagic:
   version: 2.0.7
   js:
@@ -12,18 +28,6 @@ slick:
     theme:
       assets/libraries/slick/css/slick.css: {}
 
-global:
-  version: VERSION
-  js:
-    assets/js/scripts.js: {}
-    assets/libraries/YTPlayer/YTPlayer.js: {}
-    assets/libraries/browserclass.js: {}
-  css:
-    theme:
-      assets/css/styles.css: {}
-  dependencies:
-    - core/jquery
-
 sumoselect:
   version: 3.0.2
   js:
@@ -31,3 +35,8 @@ sumoselect:
   css:
     theme:
       assets/libraries/sumoselect/uncompressed/sumoselect.css: {}
+
+lazysizes:
+  version: 5.3.2
+  js:
+    assets/libraries/lazy-sizes/lazysizes.min.js: {}
