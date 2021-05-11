@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6819652eefe08ce09d0867f414e14dc7",
+    "content-hash": "dba773dca32a8e5fb6ff6b0f87562d16",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -5828,6 +5828,66 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/menu_item_extras",
                 "issues": "https://www.drupal.org/project/issues/menu_item_extras"
+            }
+        },
+        {
+            "name": "drupal/nopremium",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/nopremium.git",
+                "reference": "8.x-1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/nopremium-8.x-1.0.zip",
+                "reference": "8.x-1.0",
+                "shasum": "b05b0c3e96222283e9663f0652e6cb4fbb6a442c"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "require-dev": {
+                "drupal/search_api": "^1.0",
+                "drupal/token": "^1.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.0",
+                    "datestamp": "1604918670",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Heshan Wanigasooriya",
+                    "homepage": "https://github.com/heshanlk",
+                    "email": "heshan@heidisoft.com",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "anrikun",
+                    "homepage": "https://www.drupal.org/user/410199"
+                },
+                {
+                    "name": "heshanlk",
+                    "homepage": "https://www.drupal.org/user/199102"
+                }
+            ],
+            "description": "Shows only the teasers of premium contents to unprivileged users.",
+            "homepage": "https://www.drupal.org/project/nopremium",
+            "support": {
+                "source": "http://cgit.drupalcode.org/nopremium",
+                "issues": "http://drupal.org/project/nopremium",
+                "irc": "irc://irc.freenode.org/drupal-support"
             }
         },
         {
