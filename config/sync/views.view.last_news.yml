@@ -13,8 +13,8 @@ dependencies:
     - responsive_image.styles.next_two_image_responsive
   module:
     - image
+    - lazy
     - node
-    - responsive_image
     - taxonomy
     - text
     - user
@@ -835,7 +835,7 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: image
+          type: lazy_image
           settings:
             image_style: ''
             image_link: content
@@ -1688,7 +1688,7 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: responsive_image
+          type: lazy_responsive_image
           settings:
             responsive_image_style: next_two_image_responsive
             image_link: content
@@ -2814,7 +2814,7 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: responsive_image
+          type: lazy_responsive_image
           settings:
             responsive_image_style: next_two_image_responsive
             image_link: content

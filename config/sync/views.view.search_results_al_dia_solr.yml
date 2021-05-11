@@ -1916,7 +1916,19 @@ display:
           hide_alter_empty: false
           plugin_id: custom
       use_ajax: true
-      header: {  }
+      header:
+        search_api_spellcheck_did_you_mean:
+          id: search_api_spellcheck_did_you_mean
+          table: views
+          field: search_api_spellcheck_did_you_mean
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          search_api_spellcheck_count: 1
+          search_api_spellcheck_hide_on_result: 0
+          search_api_spellcheck_collate: true
+          plugin_id: search_api_spellcheck_did_you_mean
       sorts:
         created:
           id: created
@@ -1943,30 +1955,6 @@ display:
             label: Relevance
           plugin_id: search_api
       empty:
-        search_api_spellcheck_did_you_mean:
-          id: search_api_spellcheck_did_you_mean
-          table: views
-          field: search_api_spellcheck_did_you_mean
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: true
-          search_api_spellcheck_count: 1
-          search_api_spellcheck_hide_on_result: 1
-          search_api_spellcheck_collate: true
-          plugin_id: search_api_spellcheck_did_you_mean
-        search_api_spellcheck_suggetions:
-          id: search_api_spellcheck_suggetions
-          table: views
-          field: search_api_spellcheck_suggetions
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: true
-          search_api_spellcheck_count: '7'
-          search_api_spellcheck_hide_on_result: 1
-          search_api_spellcheck_collate: false
-          plugin_id: search_api_spellcheck_suggestions
         view:
           id: view
           table: views

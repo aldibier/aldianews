@@ -1,0 +1,19 @@
+uuid: b5d18f12-977e-4537-83e0-6de3a7260445
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.only_video
+    - field.storage.block_content.field_youtube_link
+id: block_content.only_video.field_youtube_link
+field_name: field_youtube_link
+entity_type: block_content
+bundle: only_video
+label: 'YouTube Link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
