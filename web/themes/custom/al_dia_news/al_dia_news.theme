@@ -14,3 +14,12 @@ function al_dia_news_preprocess_views_view(&$vars) {
     $vars['get_token'] = $_GET['token'];
   }
 }
+
+function al_dia_news_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  if ($form_id == 'user_login_form' ) {
+    $form['forgot'] = [
+    '#type' => 'item',
+    '#title' => t('Forgot your password?'),
+    ];
+  }
+} 
