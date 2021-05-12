@@ -36,7 +36,7 @@ body.open-menu {
     .region-header {
       max-height: 46px;
     }
-    .region-header div#block-loginformpopup {
+    .region-header div#block-menuuseritem {
       display: block !important;
       position: absolute;
       top: 15px;
@@ -79,7 +79,7 @@ body.open-menu {
 }
 
 @media (max-width: $tablet) {
-  body .region-header div#block-loginformpopup {
+  body .region-header div#block-menuuseritem {
     width: 30px;
     height: 30px;
     margin: 0;
@@ -753,7 +753,7 @@ body.open-menu {
     }
   }
 
-  #block-loginformpopup {
+  #block-menuuseritem {
     order: 8;
     display: block;
     margin: auto 15px auto 0;
@@ -786,7 +786,7 @@ body.open-menu {
       display: none;
     }
 
-    #block-loginformpopup {
+    #block-menuuseritem {
       display: none;
     }
 
@@ -905,7 +905,7 @@ body.open-menu {
 
 .user-logged-in {
   .region-header {
-    #block-loginformpopup {
+    #block-menuuseritem {
       width: 75px;
       height: 60px;
       display: block;

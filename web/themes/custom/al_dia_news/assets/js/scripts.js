@@ -1912,7 +1912,7 @@ __webpack_require__.r(__webpack_exports__);
       $("body").removeClass("open-menu");
     }); //--------puopup-- login-----------//
 
-    $(".user-logged-in #block-loginformpopup").click(function () {
+    $(".user-logged-in #block-menuuseritem").click(function () {
       if ($(this).hasClass("open")) {
         $(this).removeClass("open");
         $(".user-logged-in #block-al-dia-news-account-menu").removeClass("open");
@@ -2437,8 +2437,8 @@ var initSlick = function initSlick($, Drupal) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/usuario/Desktop/Proyectos/AlDiaNews/4ld14-n3ws/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
-module.exports = __webpack_require__(/*! /Users/usuario/Desktop/Proyectos/AlDiaNews/4ld14-n3ws/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
+__webpack_require__(/*! C:\Users\valer\Desktop\4ld14-n3ws\web\themes\custom\al_dia_news\src\js\scripts.js */"./src/js/scripts.js");
+module.exports = __webpack_require__(/*! C:\Users\valer\Desktop\4ld14-n3ws\web\themes\custom\al_dia_news\src\sass\styles.scss */"./src/sass/styles.scss");
 
 
 /***/ })
