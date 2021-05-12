@@ -683,5 +683,5 @@ const initMain = ($, Drupal) => {
 	if(!!menu_movil && !!menu_author_movil && width_menu_movil <= 768){menu_movil.prepend(menu_author_movil );}
 
 };
-
+ 
 export default initMain;

@@ -335,16 +335,17 @@ blockquote {
     background-size: contain;
     width: 48.38px;
     height: 34.84px;
+    content: "";
   }
 
   &:before {
     left: 0;
-    top: 45px;
+    top: 0px;
   }
 
   &:after {
-    right: 13px;
-    top: 74px;
+    right: 0px;
+    top: 0px;
     transform: rotate(180deg);
   }
 
