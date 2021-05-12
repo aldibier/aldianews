@@ -676,8 +676,12 @@ const initMain = ($, Drupal) => {
 			buttonCategories.classList.toggle('up');
 		})
 	}
-
+	// js autor menu header movil
+	var menu_movil = document.querySelector("#block-menuuseritem-2");
+	var menu_author_movil = document.querySelector("#block-menuuseritem-2 .item-list ul li:first-child");
+	var width_menu_movil = window.innerWidth;
+	if(!!menu_movil && !!menu_author_movil && width_menu_movil <= 768){menu_movil.prepend(menu_author_movil );}
 
 };
-
+ 
 export default initMain;

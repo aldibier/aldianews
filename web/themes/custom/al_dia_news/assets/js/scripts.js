@@ -1769,6 +1769,15 @@ var initMain = function initMain($, Drupal) {
       containerContainer.classList.toggle('open');
       buttonCategories.classList.toggle('up');
     });
+  } // js autor menu header movil
+
+
+  var menu_movil = document.querySelector("#block-menuuseritem-2");
+  var menu_author_movil = document.querySelector("#block-menuuseritem-2 .item-list ul li:first-child");
+  var width_menu_movil = window.innerWidth;
+
+  if (!!menu_movil && !!menu_author_movil && width_menu_movil <= 768) {
+    menu_movil.prepend(menu_author_movil);
   }
 };
 
@@ -1919,6 +1928,18 @@ __webpack_require__.r(__webpack_exports__);
       } else {
         $(".user-logged-in #block-menuuseritem .item-list").addClass("open");
         $(this).addClass("open");
+      }
+    }); //--------puopup-- login - movil -----------//
+
+    $(".user-logged-in #block-menuuseritem-2").click(function () {
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        if ($(this).hasClass("open")) {
+          $(this).removeClass("open");
+          $(".user-logged-in #block-menuuseritem-2 .item-list").removeClass("open");
+        } else {
+          $(".user-logged-in #block-menuuseritem-2 .item-list").addClass("open");
+          $(this).addClass("open");
+        }
       }
     });
     $(".region-secondary-menu #block-al-dia-news-main-menu a").each(function () {

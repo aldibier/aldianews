@@ -1,0 +1,29 @@
+uuid: 287d6655-1fc1-4970-b9a8-561fdda2e98c
+langcode: en
+status: true
+dependencies:
+  module:
+    - context
+    - login_popup
+  theme:
+    - al_dia_news
+id: loginformpopup_2
+theme: al_dia_news
+region: secondary_menu
+weight: -33
+provider: null
+plugin: login_form_popup
+settings:
+  id: login_form_popup
+  label: 'Login Form Popup'
+  provider: login_popup
+  label_display: '0'
+visibility:
+  request_path_exclusion:
+    id: request_path_exclusion
+    pages: ''
+    negate: null
+  view_inclusion:
+    id: view_inclusion
+    negate: null
+    view_inclusion: {  }
