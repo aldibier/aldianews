@@ -36,7 +36,7 @@ body.open-menu {
     .region-header {
       max-height: 46px;
     }
-    .region-header div#block-loginformpopup {
+    .region-header div#block-menuuseritem {
       display: block !important;
       position: absolute;
       top: 15px;
@@ -49,7 +49,21 @@ body.open-menu {
       font-size: 12px;
       line-height: 25px;
       margin: 0 0 0 -22px;
-
+      .item-list{
+        display: none;
+        position: relative;
+        top: -1px;
+        right: 6px;
+        float: right;
+        clear: both;
+        margin: 0;
+        padding: 0.25em 0;
+        text-align: left;
+        white-space: nowrap;
+        border: 1px solid #ccc;
+        border-radius: 4px 0 4px 4px;
+        background-color: #fff;
+      }
       a {
         width: 100%;
         height: 100%;
@@ -79,7 +93,7 @@ body.open-menu {
 }
 
 @media (max-width: $tablet) {
-  body .region-header div#block-loginformpopup {
+  body .region-header div#block-menuuseritem {
     width: 30px;
     height: 30px;
     margin: 0;
@@ -398,16 +412,13 @@ body.open-menu {
 }
 
 //-------------------popup
-#block-al-dia-news-account-menu {
+#block-menuuseritem .item-list{
   display: none;
 }
 
-#block-al-dia-news-account-menu {
-  display: none;
-}
 
 .user-logged-in.open-menu {
-  #block-al-dia-news-account-menu.open {
+  #block-menuuseritem .item-list.open {
     bottom: -150px;
 
     @media (max-width: $tablet) {
@@ -419,7 +430,7 @@ body.open-menu {
 }
 
 .user-logged-in {
-  #block-al-dia-news-account-menu.open {
+  #block-menuuseritem .item-list.open {
     display: block;
     height: initial;
     opacity: 1;
@@ -432,11 +443,9 @@ body.open-menu {
     bottom: -166px;
     box-shadow: 2px 4px 15px -2px rgba(0, 0, 0, 0.71);
 
-    .menu {
       flex-wrap: wrap;
       margin: 0;
       padding: 0 15px;
-    }
 
     li {
       width: 100%;
@@ -753,7 +762,7 @@ body.open-menu {
     }
   }
 
-  #block-loginformpopup {
+  #block-menuuseritem {
     order: 8;
     display: block;
     margin: auto 15px auto 0;
@@ -786,7 +795,7 @@ body.open-menu {
       display: none;
     }
 
-    #block-loginformpopup {
+    #block-menuuseritem {
       display: none;
     }
 
@@ -905,7 +914,7 @@ body.open-menu {
 
 .user-logged-in {
   .region-header {
-    #block-loginformpopup {
+    #block-menuuseritem {
       width: 75px;
       height: 60px;
       display: block;
