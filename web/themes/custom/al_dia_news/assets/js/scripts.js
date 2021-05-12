@@ -1559,11 +1559,15 @@ var initMain = function initMain($, Drupal) {
     }
 
     var close = document.querySelector('#block-exposedformsearch-results-al-dia-solrpage-1-2  button[name="close"]');
-    close.addEventListener("click", function () {
-      if (close != null && close.parentElement.classList.contains("open")) {
-        close.parentElement.classList.remove("open");
-      }
-    }); // js bloque login en comentarios
+
+    if (!!close) {
+      close.addEventListener("click", function () {
+        if (close != null && close.parentElement.classList.contains("open")) {
+          close.parentElement.classList.remove("open");
+        }
+      });
+    } // js bloque login en comentarios
+
 
     var comments = document.querySelector(".block-field-blocknodenewsfield-comments .comment");
     var block_login_c = document.querySelector("#block-blockcommentanonymous");
@@ -2000,6 +2004,15 @@ __webpack_require__.r(__webpack_exports__);
     $('.modal-apply-webform  button[name="close"]').click(function () {
       if ($(".style-jobs .modal-apply-webform").hasClass("open")) {
         $(".style-jobs .modal-apply-webform").removeClass("open");
+      }
+    }); //// modal watch live
+
+    $(".watch-live-button").click(function () {
+      $(".watch-live-video").addClass("open");
+    });
+    $('.watch-live-video button[name="close"]').click(function () {
+      if ($(".watch-live-video ").hasClass("open")) {
+        $(".watch-live-video ").removeClass("open");
       }
     }); ///// modal nominate interna eventos
 
@@ -2458,8 +2471,8 @@ var initSlick = function initSlick($, Drupal) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/usuario/Desktop/Proyectos/AlDiaNews/4ld14-n3ws/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
-module.exports = __webpack_require__(/*! /Users/usuario/Desktop/Proyectos/AlDiaNews/4ld14-n3ws/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
+__webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
+module.exports = __webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
 
 
 /***/ })
