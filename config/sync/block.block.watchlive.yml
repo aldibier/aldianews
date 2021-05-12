@@ -1,0 +1,37 @@
+uuid: 9154ba13-1997-4c9f-9c9b-316c79cbe951
+langcode: en
+status: true
+dependencies:
+  config:
+    - fixed_block_content.fixed_block_content.watch_live
+  module:
+    - context
+    - fixed_block_content
+    - system
+  theme:
+    - al_dia_news
+id: watchlive
+theme: al_dia_news
+region: breadcrumb
+weight: -29
+provider: null
+plugin: 'fixed_block_content:watch_live'
+settings:
+  id: 'fixed_block_content:watch_live'
+  label: 'WATCH LIVE'
+  provider: fixed_block_content
+  label_display: '0'
+  view_mode: ''
+visibility:
+  request_path_exclusion:
+    id: request_path_exclusion
+    pages: ''
+    negate: null
+  view_inclusion:
+    id: view_inclusion
+    negate: null
+    view_inclusion: {  }
+  request_path:
+    id: request_path
+    pages: /node
+    negate: true

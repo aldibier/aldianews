@@ -12,7 +12,7 @@ id: register
 title: REGISTER
 description: 'Upcoming event register.'
 category: ''
-elements: "first_name:\n  '#type': textfield\n  '#title': 'First name'\n  '#required': true\nlast_name:\n  '#type': textfield\n  '#title': 'Last name'\n  '#required': true\ncontainer:\n  '#type': container\n  email:\n    '#type': email\n    '#title': Email\n    '#required': true\n  company:\n    '#type': textfield\n    '#title': Company\n    '#required': true\naddress:\n  '#type': webform_address\n  '#title': Address\n  '#address__access': false\n  '#address_2__access': false\n  '#postal_code__access': false\n  '#country__access': false"
+elements: "markup:\n  '#type': webform_markup\n  '#markup': '<div class=\"views-label views-label-field-webform\">REGISTER</div>'\nfirst_name:\n  '#type': textfield\n  '#title': 'First name'\n  '#required': true\nlast_name:\n  '#type': textfield\n  '#title': 'Last name'\n  '#required': true\ncontainer:\n  '#type': container\n  email:\n    '#type': email\n    '#title': Email\n    '#required': true\n  company:\n    '#type': textfield\n    '#title': Company\n    '#required': true\naddress:\n  '#type': webform_address\n  '#title': Address\n  '#address__access': false\n  '#address_2__access': false\n  '#postal_code__access': false\n  '#country__access': false\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#submit__label': REGISTER"
 css: ''
 javascript: ''
 settings:
@@ -191,5 +191,42 @@ access:
     roles: {  }
     users: {  }
     permissions: {  }
-handlers: {  }
+handlers:
+  email:
+    id: email
+    label: Email
+    notes: ''
+    handler_id: email
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      states:
+        - completed
+      to_mail: _default
+      to_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      from_mail: mjbuitrago@seedem.co
+      from_options: {  }
+      from_name: _default
+      subject: _default
+      body: _default
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: false
+      debug: false
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      theme_name: ''
+      parameters: {  }
 variants: {  }
