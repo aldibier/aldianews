@@ -76,12 +76,11 @@ function al_dia_news_general_form_alter(&$form, $form_state, $form_id) {
       $path_args = explode('/', $current_path);
       if (isset($path_args[1]) && isset($path_args[2]) && $path_args[1] == 'node' && is_numeric($path_args[2])){
         $form['actions']['submit_cancel'] = [
-          '#type' => 'submit',
+          '#type' => 'reset',
+          '#value' => t('I’LL DO IT LATER'),
           '#weight' => 99,
-          '#limit_validation_errors' => [],
-          '#markup' => '<div class="cbutton-back">I’LL DO IT LATER </div>',
+          '#url' => '/',
         ];
-
       }
     break;
   }
