@@ -23,6 +23,8 @@ dependencies:
     - node.type.news
   module:
     - ds
+    - field_formatter_class
+    - field_group
     - image
     - layout_builder
     - text
@@ -50,52 +52,160 @@ third_party_settings:
           layout_class: {  }
     regions:
       ds_content:
+        - group_one_content
         - field_video
+        - group_two_content
         - field_image
-        - field_caption
-        - field_author
+        - group_container_right
         - addtoany
-        - body
+        - field_caption
         - premium_message
+        - 'dynamic_block_field:node-more_in_this_section'
+        - node_title
         - premium_content_display_custom
+        - 'dynamic_block_field:node-summary'
+        - 'dynamic_block_field:node-author_view'
+        - group_share_this_content
+        - field_podcast_player
+        - body
     fields:
       premium_content_display_custom:
         plugin_id: premium_content_display_custom
-        weight: 7
-        label: inline
+        weight: 4
+        label: hidden
         formatter: default
+      'dynamic_block_field:node-author_view':
+        plugin_id: 'dynamic_block_field:node-author_view'
+        weight: 17
+        label: hidden
+        formatter: default
+      'dynamic_block_field:node-more_in_this_section':
+        plugin_id: 'dynamic_block_field:node-more_in_this_section'
+        weight: 3
+        label: hidden
+        formatter: default
+      'dynamic_block_field:node-summary':
+        plugin_id: 'dynamic_block_field:node-summary'
+        weight: 4
+        label: hidden
+        formatter: default
+      node_title:
+        plugin_id: node_title
+        weight: 3
+        label: hidden
+        formatter: default
+        settings:
+          wrapper: h1
+          class: main-title
+          link: false
+  field_group:
+    group_one_content:
+      children:
+        - field_video
+        - field_image
+        - field_caption
+        - node_title
+        - 'dynamic_block_field:node-summary'
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      region: ds_content
+      format_settings:
+        id: ''
+        classes: content-news-internal-first
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'One Content'
+    group_two_content:
+      children:
+        - 'dynamic_block_field:node-author_view'
+        - group_share_this_content
+        - field_podcast_player
+        - body
+      parent_name: ''
+      weight: 1
+      format_type: html_element
+      region: ds_content
+      format_settings:
+        id: ''
+        classes: content-news-internal-left
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Two Content'
+    group_container_right:
+      children:
+        - 'dynamic_block_field:node-more_in_this_section'
+      parent_name: ''
+      weight: 2
+      format_type: html_element
+      region: ds_content
+      format_settings:
+        id: ''
+        classes: container-right
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Container right'
+    group_share_this_content:
+      children:
+        - addtoany
+      parent_name: group_two_content
+      weight: 18
+      format_type: html_element
+      region: ds_content
+      format_settings:
+        id: ''
+        classes: 'block block-extra-field-blocknodenewsaddtoany block-layout-builder'
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Share this content'
 id: node.news.premium
 targetEntityType: node
 bundle: news
 mode: premium
 content:
   addtoany:
-    weight: 4
+    weight: 2
     region: ds_content
     settings: {  }
     third_party_settings: {  }
   body:
     label: hidden
-    type: text_summary_or_trimmed
-    weight: 5
+    type: text_trimmed
+    weight: 20
     settings:
       trim_length: 600
-    third_party_settings: {  }
-    region: ds_content
-  field_author:
-    weight: 3
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
+    third_party_settings:
+      field_formatter_class:
+        class: 'block block-layout-builder block-field-blocknodenewsbody'
     region: ds_content
   field_caption:
     weight: 2
     label: hidden
     settings:
       link_to_entity: false
-    third_party_settings: {  }
+    third_party_settings:
+      field_formatter_class:
+        class: 'block block-layout-builder block-field-blocknodenewsfield-caption'
     type: string
     region: ds_content
   field_image:
@@ -107,31 +217,36 @@ content:
     third_party_settings: {  }
     type: image
     region: ds_content
+  field_podcast_player:
+    type: text_default
+    weight: 19
+    region: ds_content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
   field_video:
-    type: video_embed_field_lazyload
+    type: video_embed_field_video
     weight: 0
     region: ds_content
     label: above
     settings:
-      image_style: ''
-      link_image_to: ''
       responsive: true
       width: 854
       height: 480
       autoplay: true
     third_party_settings: {  }
   premium_message:
-    weight: 6
+    weight: 3
     region: ds_content
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_author: true
   field_category: true
   field_comments: true
   field_high_impact_news: true
   field_my_content_has_a_main_vide: true
   field_news: true
-  field_podcast_player: true
   field_postcast_categories: true
   field_short_title: true
   field_tags: true
