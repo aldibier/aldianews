@@ -886,7 +886,6 @@ display:
         style: false
         row: false
         fields: false
-        css_class: false
       header:
         area_text_custom:
           id: area_text_custom
@@ -1133,12 +1132,12 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: ''
-          element_class: ''
+          element_type: div
+          element_class: card-image
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
-          element_wrapper_type: ''
+          element_wrapper_type: '0'
           element_wrapper_class: ''
           element_default_classes: false
           empty: ''
@@ -1303,7 +1302,7 @@ display:
           click_sort_column: value
           type: string
           settings:
-            link_to_entity: false
+            link_to_entity: true
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -1408,7 +1407,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"card-content\">\r\n   <div class=\"card-name-category\"><h2>{{ field_category }}<h2></div>\r\n   <div class=\"card-title\"><h3>{{ field_short_title }}</h3></div>\r\n   <div class=\"card-date\">{{ created_1 }}</div>\r\n</div>"
+            text: "<div class=\"card-content\">\r\n   <div class=\"card-name-category\">{{ field_category }}</div>\r\n   <div class=\"card-title\">{{ field_short_title }}</div>\r\n   <div class=\"card-date\">{{ created_1 }}</div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -1446,7 +1445,6 @@ display:
           empty_zero: false
           hide_alter_empty: false
           plugin_id: custom
-      css_class: ''
     cache_metadata:
       max-age: -1
       contexts:
@@ -1745,7 +1743,7 @@ display:
           views_infinite_scroll:
             button_text: 'Load More'
             automatically_load_content: true
-      exposed_block: true
+      exposed_block: false
       exposed_form:
         type: bef
         options:
