@@ -63,7 +63,6 @@ third_party_settings:
         - 'dynamic_block_field:node-more_in_this_section'
         - node_title
         - premium_content_display_custom
-        - 'dynamic_block_field:node-summary'
         - 'dynamic_block_field:node-author_view'
         - group_share_this_content
         - field_podcast_player
@@ -84,11 +83,6 @@ third_party_settings:
         weight: 3
         label: hidden
         formatter: default
-      'dynamic_block_field:node-summary':
-        plugin_id: 'dynamic_block_field:node-summary'
-        weight: 4
-        label: hidden
-        formatter: default
       node_title:
         plugin_id: node_title
         weight: 3
@@ -105,7 +99,6 @@ third_party_settings:
         - field_image
         - field_caption
         - node_title
-        - 'dynamic_block_field:node-summary'
       parent_name: ''
       weight: 0
       format_type: html_element
@@ -228,7 +221,7 @@ content:
     type: video_embed_field_video
     weight: 0
     region: ds_content
-    label: above
+    label: hidden
     settings:
       responsive: true
       width: 854
