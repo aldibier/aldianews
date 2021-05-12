@@ -1,0 +1,28 @@
+uuid: cbb0ecea-8809-49f8-a617-1403b736a060
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.only_video
+    - field.field.block_content.only_video.field_url_video
+  module:
+    - video_embed_field
+id: block_content.only_video.default
+targetEntityType: block_content
+bundle: only_video
+mode: default
+content:
+  field_url_video:
+    weight: 0
+    label: hidden
+    settings:
+      responsive: true
+      width: 854
+      height: 480
+      autoplay: true
+    third_party_settings: {  }
+    type: video_embed_field_video
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

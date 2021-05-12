@@ -1,0 +1,29 @@
+uuid: ada9c9e9-ba3c-4888-a8f1-c9fcad8e1335
+langcode: en
+status: true
+dependencies:
+  module:
+    - al_dia_news_general
+    - context
+  theme:
+    - al_dia_news
+id: menuuseritem
+theme: al_dia_news
+region: header
+weight: -25
+provider: null
+plugin: menu_user_item
+settings:
+  id: menu_user_item
+  label: 'Menu User Item'
+  provider: al_dia_news_general
+  label_display: visible
+visibility:
+  request_path_exclusion:
+    id: request_path_exclusion
+    pages: ''
+    negate: null
+  view_inclusion:
+    id: view_inclusion
+    negate: null
+    view_inclusion: {  }

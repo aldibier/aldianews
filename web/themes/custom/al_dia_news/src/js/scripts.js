@@ -5,7 +5,7 @@ import initMain from "./main.js";
 import initSlick from "./slick.js";
 import replaceToken from "./modules/replaceToken";
 
-(function ($, Drupal) {
+(function($, Drupal) {
   // Selection share
   const sharer = new SelectionSharer();
   sharer.setElements("p,a,h1,h2,h3,blockquote,em,strong");
@@ -29,7 +29,7 @@ import replaceToken from "./modules/replaceToken";
   var videoHeight = $video.outerHeight();
 
   if (!!document.querySelector(".page-node-type-news") && $video.length != 0) {
-    $window.on("scroll", function () {
+    $window.on("scroll", function() {
       var windowScrollTop = $window.scrollTop();
       var videoBottom = videoHeight + $videoWrap.offset().top;
 
@@ -40,7 +40,7 @@ import replaceToken from "./modules/replaceToken";
         $videoWrap.height("auto");
         $video.removeClass("stuck");
       }
-      $('.stuck button[name="close"]').click(function () {
+      $('.stuck button[name="close"]').click(function() {
         $video.addClass("disnone");
       });
     });
@@ -55,27 +55,29 @@ import replaceToken from "./modules/replaceToken";
 
   var videoThoughtLeadersHeigth = $videoThoughtLeaders.outerHeight();
 
-  if (!!document.querySelector(".page-node-type-thought-leaders") && !!$videoThoughtLeaders) {
-    $window.on("scroll", function () {
+  if (
+    !!document.querySelector(".page-node-type-thought-leaders") &&
+    !!$videoThoughtLeaders
+  ) {
+    $window.on("scroll", function() {
       var windowScrollTop = $window.scrollTop();
-      var videoBottom =  videoThoughtLeadersHeigth  + $containerVideo.offset().top;
+      var videoBottom =
+        videoThoughtLeadersHeigth + $containerVideo.offset().top;
 
       if (windowScrollTop > videoBottom) {
-        $containerVideo.height(videoThoughtLeadersHeigth );
+        $containerVideo.height(videoThoughtLeadersHeigth);
         $videoThoughtLeaders.addClass("stuck");
       } else {
         $containerVideo.height("auto");
         $videoThoughtLeaders.removeClass("stuck");
       }
-      $('.stuck button[name="close"]').click(function () {
+      $('.stuck button[name="close"]').click(function() {
         $videoThoughtLeaders.addClass("disnone");
       });
     });
   }
 
-  jQuery(document).ready(function () {
-  
-
+  jQuery(document).ready(function() {
     if (
       $(".page-node-type-news .video-embed-field-responsive-video iframe")
         .length
@@ -91,7 +93,7 @@ import replaceToken from "./modules/replaceToken";
     }
 
     //--------- menu--------------------//
-    $(".region-header #block-blockheader").click(function () {
+    $(".region-header #block-blockheader").click(function() {
       if ($(".region-secondary-menu").hasClass("open-menu")) {
         $(".region-secondary-menu").removeClass("open-menu");
         $("body").removeClass("open-menu");
@@ -101,25 +103,40 @@ import replaceToken from "./modules/replaceToken";
       }
     });
 
-    $("#block-blockpreheader").click(function () {
+    $("#block-blockpreheader").click(function() {
       $(".region-secondary-menu").removeClass("open-menu");
       $("body").removeClass("open-menu");
     });
 
     //--------puopup-- login-----------//
-    $(".user-logged-in #block-loginformpopup").click(function () {
+    $(".user-logged-in #block-menuuseritem").click(function() {
       if ($(this).hasClass("open")) {
         $(this).removeClass("open");
-        $(".user-logged-in #block-al-dia-news-account-menu").removeClass(
-          "open"
-        );
+        $(".user-logged-in #block-menuuseritem .item-list").removeClass("open");
       } else {
-        $(".user-logged-in #block-al-dia-news-account-menu").addClass("open");
+        $(".user-logged-in #block-menuuseritem .item-list").addClass("open");
         $(this).addClass("open");
       }
     });
 
-    $(".region-secondary-menu #block-al-dia-news-main-menu a").each(function () {
+    //--------puopup-- login - movil -----------//
+    $(".user-logged-in #block-menuuseritem-2").click(function() {
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        if ($(this).hasClass("open")) {
+          $(this).removeClass("open");
+          $(".user-logged-in #block-menuuseritem-2 .item-list").removeClass(
+            "open"
+          );
+        } else {
+          $(".user-logged-in #block-menuuseritem-2 .item-list").addClass(
+            "open"
+          );
+          $(this).addClass("open");
+        }
+      }
+    });
+
+    $(".region-secondary-menu #block-al-dia-news-main-menu a").each(function() {
       var text = $(this).html();
       $(this).html(text.replace(/AL/g, "<br>AL"));
     });
@@ -157,13 +174,13 @@ import replaceToken from "./modules/replaceToken";
 
     $(
       '#block-fixed-block-content-horizontal-advertising-close  button[name="close"]'
-    ).click(function () {
+    ).click(function() {
       $("#block-fixed-block-content-horizontal-advertising-close").addClass(
         "dis-none"
       );
     });
 
-    $(".page-node-type-al-dia-vacancy .button-apply").click(function () {
+    $(".page-node-type-al-dia-vacancy .button-apply").click(function() {
       if (
         $(".page-node-type-al-dia-vacancy .block-webform-block").hasClass(
           "open"
@@ -179,7 +196,7 @@ import replaceToken from "./modules/replaceToken";
       }
     });
 
-    $("#edit-close-window").click(function () {
+    $("#edit-close-window").click(function() {
       if (
         $(".page-node-type-al-dia-vacancy .block-webform-block").hasClass(
           "open"
@@ -195,28 +212,28 @@ import replaceToken from "./modules/replaceToken";
       }
     });
 
-    $('.views-field-field-webform  button[name="close"]').click(function () {
+    $('.views-field-field-webform  button[name="close"]').click(function() {
       if ($(".path-employer .views-field-field-webform").hasClass("open")) {
         $(".path-employer .views-field-field-webform").removeClass("open");
       }
     });
 
-    $(".style-jobs .button-apply").click(function () {
+    $(".style-jobs .button-apply").click(function() {
       $(".style-jobs .modal-apply-webform").addClass("open");
     });
 
-    $('.modal-apply-webform  button[name="close"]').click(function () {
+    $('.modal-apply-webform  button[name="close"]').click(function() {
       if ($(".style-jobs .modal-apply-webform").hasClass("open")) {
         $(".style-jobs .modal-apply-webform").removeClass("open");
       }
     });
 
     ///// modal nominate interna eventos
-    $(".banner-events a#nominee").click(function () {
+    $(".banner-events a#nominee").click(function() {
       $(".modal-open .modal-apply-webform").addClass("open");
     });
 
-    $('.modal-apply-webform  button[name="close"]').click(function () {
+    $('.modal-apply-webform  button[name="close"]').click(function() {
       if ($(".modal-open .modal-apply-webform").hasClass("open")) {
         $(".modal-open .modal-apply-webform").removeClass("open");
       }
@@ -224,7 +241,7 @@ import replaceToken from "./modules/replaceToken";
 
     ///// modal employer
 
-    $(".path-employer .button-apply").click(function () {
+    $(".path-employer .button-apply").click(function() {
       if (
         $(this)
           .parents(".views-row")
@@ -243,7 +260,7 @@ import replaceToken from "./modules/replaceToken";
       }
     });
 
-    $(".path-employer form button").click(function () {
+    $(".path-employer form button").click(function() {
       if (
         $(this)
           .parents(".views-row")
@@ -264,7 +281,7 @@ import replaceToken from "./modules/replaceToken";
 
     /// modal header buscador
 
-    $(".block-search input").click(function () {
+    $(".block-search input").click(function() {
       $("#block-exposedformsearch-results-al-dia-solrpage-1-2").addClass(
         "open"
       );
@@ -280,21 +297,22 @@ import replaceToken from "./modules/replaceToken";
       $(document).ready(function() {
         ///// js para tag new
 
-        Array.from(document.querySelectorAll(".block-field-blocknodenewsfield-type-of-content")).map(
-          function(evt) {
+        Array.from(
+          document.querySelectorAll(
+            ".block-field-blocknodenewsfield-type-of-content"
+          )
+        ).map(function(evt) {
           if (evt != null) {
-        
             var shape = evt.querySelector(".field--name-field-type-of-content");
             if (shape != null) {
-            if (shape.innerText == "Podcast") {
-              shape.classList.add("logo-podcast");
-            } else if (shape.innerText == "Article") {
-              shape.classList.add("logo-none");
-            }
+              if (shape.innerText == "Podcast") {
+                shape.classList.add("logo-podcast");
+              } else if (shape.innerText == "Article") {
+                shape.classList.add("logo-none");
+              }
             }
           }
-          }
-        );
+        });
 
         //// sumo select
 
@@ -311,7 +329,6 @@ import replaceToken from "./modules/replaceToken";
           }
         );
 
-
         // Relacionando clase de selector al nombre de este archivo
         var currentClass = "js-form-fake-checkbox";
 
@@ -321,7 +338,7 @@ import replaceToken from "./modules/replaceToken";
             $('<div class="fake-checkbox" />').insertAfter(".form-checkbox");
           }
 
-          $(".form-checkbox").each(function () {
+          $(".form-checkbox").each(function() {
             var context = $(this);
             if (context.prop("checked") == true) {
               context.addClass("active-check");
@@ -332,7 +349,7 @@ import replaceToken from "./modules/replaceToken";
         // Pone clase activa cuando el radio está seleccionado
         $("." + currentClass, context)
           .once("js-form-fake-checkbox")
-          .click(function () {
+          .click(function() {
             var context = $(this);
             context.toggleClass("active-check");
           });
@@ -357,7 +374,7 @@ import replaceToken from "./modules/replaceToken";
         //// elipsis para archivos
         Array.from(
           document.querySelectorAll("#edit-container .js-form-type-checkbox a")
-        ).map(function (e) {
+        ).map(function(e) {
           if (e != null) {
             if (e.innerText.length > 25) {
               var newt = e.innerText.substring(0, 25) + "...";

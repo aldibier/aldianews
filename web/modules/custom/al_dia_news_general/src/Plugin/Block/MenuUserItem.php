@@ -57,18 +57,50 @@ class MenuUserItem extends  BlockBase implements ContainerFactoryPluginInterface
   public function build() {
     $items = [];
     if ($this->currentUser->isAuthenticated()) {
-      	//ksm($this->currentUser->getAccountName());
-        // $entity = $this->entity();
-        // //$uid= $entity->getOwnerId();
-        // $uid= $entity->uid->entity;
+      //$user_name = $this->currentUser->getAccountName();
+      $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
+      $r_period = $user->field_full_name->value;
+      //ksm($r_period);
         $items[] = [
-            '#markup' => "adentro",
+            '#markup' => $r_period,
             '#attributes' => [
                 'class' => [
                     'author-comment',
                 ],
             ],
         ];
+        $items[] = [
+          '#markup' => '<a>Account information</a>',
+          '#attributes' => [
+              'class' => [
+                  'account-comment',
+              ],
+          ],
+      ];
+        $items[] = [
+          '#type' => 'link',
+          '#title' => $this->t('Change password'),
+          '#url' => Url::fromRoute('user.pass'),
+          '#attributes' => [
+              'class' => [
+              'use-ajax',
+              'user-pass',
+              ],
+              'data-dialog-type' => 'modal',
+              'data-dialog-options' => Json::encode(['dialogClass' => 'popup-login'],['width' => 550]),
+          ],
+      ];
+        $items[] = [
+          '#type' => 'link',
+          '#title' => $this->t('Log out'),
+          '#url' => Url::fromRoute('user.logout'),
+          '#attributes' => [
+              'class' => [
+              'log-out',
+              ],
+          ],
+      ];
+      
     }else{
         $items[] = [
             '#type' => 'link',
@@ -77,7 +109,7 @@ class MenuUserItem extends  BlockBase implements ContainerFactoryPluginInterface
             '#attributes' => [
                 'class' => [
                 'use-ajax',
-                'login-anonymous-comment',
+                'log-in',
                 ],
                 'data-dialog-type' => 'modal',
                 'data-dialog-options' => Json::encode(['dialogClass' => 'popup-login'],['width' => 550]),

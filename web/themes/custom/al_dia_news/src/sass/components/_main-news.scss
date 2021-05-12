@@ -55,12 +55,13 @@
     .field--name-field-my-content-has-a-main-vide,
     .field-content,
     .field--name-field-type-of-content   {
+      font-size: 0px;
+      z-index: 10;
       @include player-icon(
         $desktop-size: 80px,
         $tablet-size: 80px,
         $mobile-size: 50px
       );
-      z-index: 10;
       &.logo-podcast{
         @include microphone-icon($desktop-size: 80px,
         $tablet-size: 80px,
