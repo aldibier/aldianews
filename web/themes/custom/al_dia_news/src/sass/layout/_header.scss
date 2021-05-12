@@ -33,45 +33,39 @@ body.open-menu {
     }
   }
   @media (max-width: $tablet) {
+    position: relative;
     .region-header {
       max-height: 46px;
     }
-    .region-header div#block-menuuseritem {
+    .region-secondary-menu div#block-menuuseritem-2 {
       display: block !important;
       position: absolute;
       top: 15px;
       left: 50%;
       width: 100px;
       height: 24px;
-      box-shadow: 0px 2px 4px rgba(0, 0, 0, 2.5);
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
       background: $cwhite;
       text-align: center;
-      font-size: 12px;
-      line-height: 25px;
       margin: 0 0 0 -22px;
-      .item-list{
-        display: none;
-        position: relative;
-        top: -1px;
-        right: 6px;
-        float: right;
-        clear: both;
-        margin: 0;
-        padding: 0.25em 0;
-        text-align: left;
-        white-space: nowrap;
-        border: 1px solid #ccc;
-        border-radius: 4px 0 4px 4px;
-        background-color: #fff;
+
+      .item-list ul li {
+        padding-top: 0px;
+        display: flex;
       }
       a {
         width: 100%;
         height: 100%;
         display: block;
+        font-size: 12px;
+        line-height: 25px;
+        color: $corange;
+        letter-spacing: 0.741176px;
+        font-family: $PrNovacond-bold;
       }
     }
 
-    #block-subscribeblockheader {
+    .region-secondary-menu #block-subscribeblockheader-2 {
       display: block !important;
       position: absolute;
       top: 15px;
@@ -82,18 +76,82 @@ body.open-menu {
       height: 25px;
       align-items: center;
       text-align: center;
-      letter-spacing: 0.741176px;
-      color: $cwhite;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 12px;
-      line-height: 25px;
+      a {
+        letter-spacing: 0.741176px;
+        color: $cwhite;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 25px;
+      }
+    }
+    &.user-logged-in .region-secondary-menu div#block-menuuseritem-2 {
+      padding-bottom: 15px;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+      padding-left: 15px;
+      overflow: initial;
+      &.open {
+        height: 35px;
+      }
+      > li {
+        list-style: none;
+        text-align: center;
+        letter-spacing: 0.741176px;
+        text-transform: uppercase;
+        font-size: 12px;
+        line-height: 25px;
+        color: $corange;
+        letter-spacing: 0.741176px;
+        font-family: $PrNovacond-bold;
+        background: url(../img/userm.png) left center no-repeat transparent;
+      }
+      .item-list {
+        display: none;
+      }
+      .item-list.open {
+        display: block !important;
+        height: auto;
+        min-height: 185px;
+        opacity: 1;
+        z-index: 33;
+        position: absolute;
+        right: 0px;
+        left: -103px;
+        width: 250px;
+        background: rgb(255, 255, 255);
+        bottom: -190px;
+        box-shadow: rgb(0 0 0 / 17%) 1px 5px 8px -2px;
+        flex-wrap: wrap;
+        margin: 0px;
+        padding: 20px;
+        a {
+          font-style: normal;
+          font-weight: 300;
+          font-size: 15px;
+          line-height: 18px;
+          padding: 0px;
+          width: 100%;
+          font-family: $PrNovacond-light;
+          color: $cblack2;
+          padding-bottom: 15px;
+          min-width: 140px;
+          border-bottom: 1px solid #b1b1b1;
+          margin-bottom: 15px;
+        }
+        .user-pass {
+          font-family: $PrNovacond-bold;
+        }
+        .log-out {
+          font-size: 18px;
+          line-height: 22px;
+        }
+      }
     }
   }
 }
 
 @media (max-width: $tablet) {
-  body .region-header div#block-menuuseritem {
+  body .region-secondary-menu div#block-menuuseritem {
     width: 30px;
     height: 30px;
     margin: 0;
@@ -171,6 +229,12 @@ body.open-menu {
     margin: 0 -100% 0 0;
   }
 
+  div#block-menuuseritem-2,
+  #block-subscribeblockheader-2,
+  #block-loginformpopup-2,
+  #block-al-dia-news-account-menu {
+    display: none;
+  }
   #block-al-dia-news-main-menu {
     width: 100%;
     z-index: 2;
@@ -300,6 +364,10 @@ body.open-menu {
         max-width: max-content;
       }
     }
+    div#block-menuuseritem-2,
+    #block-subscribeblockheader-2 {
+      display: block !important;
+    }
   }
 
   @media (max-width: $mobile-mid) {
@@ -360,7 +428,7 @@ body.open-menu {
 
     #block-al-dia-news-main-menu {
       a {
-        padding: 8px 0 8px;
+        padding: 5px 0 5px;
         font-size: 12px;
         line-height: 18px;
       }
@@ -412,13 +480,54 @@ body.open-menu {
 }
 
 //-------------------popup
-#block-menuuseritem .item-list{
-  display: none;
+
+#block-menuuseritem {
+  .item-list {
+    display: none;
+    position: relative;
+    top: 60px;
+    margin: 0;
+    padding: 25px 25px 5px;
+    text-align: left;
+    white-space: nowrap;
+    background-color: #fff;
+    a {
+      font-weight: 300;
+      font-size: 20px;
+      line-height: 24px;
+      padding: 0;
+      width: 100%;
+      font-family: $PrNovacond-reg;
+
+      &:hover {
+        text-decoration: none;
+        font-family: $PrNovacond-Sbold;
+      }
+    }
+    li {
+      margin-bottom: 20px;
+    }
+    li:first-child {
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 25px;
+      padding: 0;
+      width: 100%;
+      text-transform: uppercase;
+      font-family: $PrNovacond-Xbold;
+      letter-spacing: 0.741176px;
+      color: $cblack3;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #b1b1b1;
+    }
+    .user-pass {
+      font-family: $PrNovacond-Sbold;
+    }
+  }
 }
 
-
 .user-logged-in.open-menu {
-  #block-menuuseritem .item-list.open {
+  #block-menuuseritem-2 .item-list.open {
     bottom: -150px;
 
     @media (max-width: $tablet) {
@@ -432,40 +541,24 @@ body.open-menu {
 .user-logged-in {
   #block-menuuseritem .item-list.open {
     display: block;
-    height: initial;
+    height: auto;
+    min-height: 220px;
     opacity: 1;
     z-index: 33;
     position: absolute;
-    right: 1px;
-    width: 100%;
-    max-width: 290px;
+    right: 0px;
+    width: 290px;
     background: $cwhite;
     bottom: -166px;
-    box-shadow: 2px 4px 15px -2px rgba(0, 0, 0, 0.71);
-
-      flex-wrap: wrap;
-      margin: 0;
-      padding: 0 15px;
+    box-shadow: rgb(0 0 0 / 17%) 1px 5px 8px -2px;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 25px;
 
     li {
       width: 100%;
-      margin: 9px 0;
+      margin: 0px 0 20px;
       text-align: left;
-    }
-
-    a {
-      font-style: normal;
-      font-weight: 300;
-      font-size: 20px;
-      line-height: 24px;
-      padding: 0;
-      width: 100%;
-      font-family: $PrNovacond-reg;
-
-      &:hover {
-        text-decoration: none;
-        font-family: $PrNovacond-Sbold;
-      }
     }
 
     @media (max-width: $tablet) {
@@ -762,21 +855,29 @@ body.open-menu {
     }
   }
 
-  #block-menuuseritem {
+  #block-menuuseritem,
+  #block-loginformpopup {
     order: 8;
     display: block;
     margin: auto 15px auto 0;
-
     a {
       font-style: normal;
-      font-weight: bold;
-      font-size: 16px;
-      line-height: 25px;
-      color: $corange;
-      font-family: $PrNovacond-Sbold;
-      text-transform: uppercase;
-      letter-spacing: 0.741176px;
+      font-weight: 300;
+      font-size: 20px;
+      line-height: 24px;
+      padding: 0;
+      width: 100%;
+      font-family: $PrNovacond-light;
+      color: $cblack2;
     }
+  }
+  #block-loginformpopup a {
+    font-size: 16px;
+    line-height: 25px;
+    font-family: $PrNovacond-Xbold;
+    color: $corange;
+    text-transform: uppercase;
+    letter-spacing: 0.741176px;
   }
 
   @media (max-width: $broken2) {
@@ -791,12 +892,10 @@ body.open-menu {
   }
 
   @media (max-width: $tablet) {
-    #block-subscribeblockheader {
-      display: none;
-    }
-
-    #block-menuuseritem {
-      display: none;
+    #block-menuuseritem,
+    #block-subscribeblockheader,
+    #block-loginformpopup {
+      display: none !important;
     }
 
     &:after {

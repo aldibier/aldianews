@@ -68,6 +68,14 @@ class MenuUserItem extends  BlockBase implements ContainerFactoryPluginInterface
             ],
         ];
         $items[] = [
+          '#markup' => '<a>Account information</a>',
+          '#attributes' => [
+              'class' => [
+                  'account-comment',
+              ],
+          ],
+      ];
+        $items[] = [
           '#type' => 'link',
           '#title' => $this->t('Change password'),
           '#url' => Url::fromRoute('user.pass'),
