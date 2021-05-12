@@ -413,11 +413,14 @@ const initMain = ($, Drupal) => {
 		var close = document.querySelector(
 			'#block-exposedformsearch-results-al-dia-solrpage-1-2  button[name="close"]'
 		);
-		close.addEventListener("click", () => {
-			if (close != null && close.parentElement.classList.contains("open")) {
-				close.parentElement.classList.remove("open");
-			}
-		});
+		
+		if(!!close){
+			close.addEventListener("click", () => {
+				if (close != null && close.parentElement.classList.contains("open")) {
+					close.parentElement.classList.remove("open");
+				}
+			});
+		}
 
 		// js bloque login en comentarios
 		var comments = document.querySelector(

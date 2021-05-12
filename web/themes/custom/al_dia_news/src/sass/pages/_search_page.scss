@@ -276,14 +276,57 @@
     display: none;
   }
   .no-result-search {
-    padding: 0 20px;
     display: flex;
     grid-gap: 5px;
     font-size: $px18;
     font-family: $ModernoFB-Regular;
+
+    .search-results--text {
+      display: none;
+    }
   }
   #page {
     overflow: initial;
+  }
+}
+
+.view-search-results-al-dia-solr {
+
+  .view-header {  
+    margin-bottom: 50px;
+
+    @media screen and (max-width: $tablet) {
+      margin-bottom: 25px;
+    }
+  }
+
+  .red-text-no-results {
+    margin-bottom: 15px;
+    font-size: szrem(24);
+    font-family: $PrNovacond-light;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 140%;
+    color: $corange;
+
+    @media screen and (max-width: $tablet) {
+      margin-bottom: 10px;
+      font-size: szrem(15);
+    }
+  }
+
+  .black-text-no-results {
+    font-size: szrem(30);
+    font-family: $PrNovacond-bold;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 112.8%;
+    color: $cgrey6;
+
+    @media screen and (max-width: $tablet) {
+      font-size: szrem(22);
+      line-height: 140%;
+    }
   }
 }
 

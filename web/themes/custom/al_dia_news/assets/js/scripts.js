@@ -1559,11 +1559,15 @@ var initMain = function initMain($, Drupal) {
     }
 
     var close = document.querySelector('#block-exposedformsearch-results-al-dia-solrpage-1-2  button[name="close"]');
-    close.addEventListener("click", function () {
-      if (close != null && close.parentElement.classList.contains("open")) {
-        close.parentElement.classList.remove("open");
-      }
-    }); // js bloque login en comentarios
+
+    if (!!close) {
+      close.addEventListener("click", function () {
+        if (close != null && close.parentElement.classList.contains("open")) {
+          close.parentElement.classList.remove("open");
+        }
+      });
+    } // js bloque login en comentarios
+
 
     var comments = document.querySelector(".block-field-blocknodenewsfield-comments .comment");
     var block_login_c = document.querySelector("#block-blockcommentanonymous");
