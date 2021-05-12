@@ -16,6 +16,12 @@
     min-width: initial;
     margin: 20px 0px 0px;
     position: initial;
+
+    &:nth-child(1),
+    &:nth-child(2) {
+      margin-top: 0;
+    }
+
     &.view-more-in-this-section-news{
       width: auto;
       max-width: none;
@@ -109,7 +115,7 @@
       a {
         border: none;
         font-size: $px24;
-        font-family: $PrNovacond-Sbold;
+        font-family: $PrNovacond-bold;
         font-style: normal;
         font-weight: bold;
         text-transform: uppercase;
@@ -124,15 +130,15 @@
       }
 
       .date-more-content {
-        font-size: $px16;
-        font-family: $PrNovacond-reg;
+        font-size: szrem(16);
+        font-family: $PrNovacond-light;
         font-style: normal;
         font-weight: normal;
-        line-height: 20px;
+        line-height: 19px;
         color: $cgrey3;
 
         @media (max-width: $tablet) {
-          font-size: 10px;
+          font-size: szrem(10);
           line-height: 12px;
         }
       }
@@ -366,8 +372,17 @@
   .related-content {
     display: flex;
 
-    @media (max-width: $tablet) {
+    a {
+      display: block;
+      line-height: 0;
+    }
+
+    @media screen and (max-width: $tablet) {
       flex-direction: column;
+    }
+
+    @media screen and (max-width: $tablet - 1) {
+      width: max-content;
     }
 
     .short-title-date {
