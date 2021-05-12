@@ -37,20 +37,20 @@
     'block-' ~ plugin_id|clean_class,
   ]
 %}
-<div{{ attributes.addClass(classes) }}>
-  {{ title_prefix }}
-  {% if label %}
-    <h2{{ title_attributes }}>{{ label }}</h2>
-  {% endif %}
-  {{ title_suffix }}
-    <button class="watch-live-button" name="watch-live" type="button">WATCH LIVE</button>
-    <div class="watch-live-video">
-        {% block content %}
-            <div{{ content_attributes.addClass('video-watch') }}>
-                <button class="close-modal" name="close" type="button">X</button>
-                {{ content }}
-            </div>
-        {% endblock %}
-    </div>
+<div{{attributes.addClass(classes)}}>
+	{{ title_prefix }}
+	{% if label %}
+		<h2{{title_attributes}}>{{ label }}</h2>
+	{% endif %}
+	{{ title_suffix }}
+	<button class="watch-live-button" name="watch-live" type="button">WATCH LIVE</button>
+	<div class="watch-live-video stuck">
+		{% block content %}
+			<div{{content_attributes.addClass('video-watch')}}>
+				<button class="close-modal" name="close" type="button">X</button>
+				<div class="text-watch-live">LIVE STREAMING</div>
+				{{ content }}
+			</div>
+		{% endblock %}
+	</div>
 </div>
-
