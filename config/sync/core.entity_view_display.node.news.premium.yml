@@ -23,6 +23,7 @@ dependencies:
     - node.type.news
   module:
     - ds
+    - field_group
     - image
     - layout_builder
     - text
@@ -50,45 +51,112 @@ third_party_settings:
           layout_class: {  }
     regions:
       ds_content:
+        - group_one_content
+        - 'dynamic_block_field:node-author_view'
         - field_video
         - field_image
-        - field_caption
-        - field_author
+        - group_two_content
+        - group_container_right
         - addtoany
+        - field_caption
+        - field_podcast_player
+        - 'dynamic_block_field:node-more_in_this_section'
         - body
         - premium_message
         - premium_content_display_custom
     fields:
       premium_content_display_custom:
         plugin_id: premium_content_display_custom
-        weight: 7
+        weight: 5
         label: inline
         formatter: default
+      'dynamic_block_field:node-author_view':
+        plugin_id: 'dynamic_block_field:node-author_view'
+        weight: 0
+        label: hidden
+        formatter: default
+      'dynamic_block_field:node-more_in_this_section':
+        plugin_id: 'dynamic_block_field:node-more_in_this_section'
+        weight: 3
+        label: hidden
+        formatter: default
+  field_group:
+    group_one_content:
+      children:
+        - field_video
+        - field_image
+        - field_caption
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      region: ds_content
+      format_settings:
+        id: ''
+        classes: content-news-internal-first
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'One Content'
+    group_two_content:
+      children:
+        - 'dynamic_block_field:node-author_view'
+        - addtoany
+        - field_podcast_player
+        - body
+      parent_name: ''
+      weight: 1
+      format_type: html_element
+      region: ds_content
+      format_settings:
+        id: ''
+        classes: content-news-internal-left
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Two Content'
+    group_container_right:
+      children:
+        - 'dynamic_block_field:node-more_in_this_section'
+      parent_name: ''
+      weight: 2
+      format_type: html_element
+      region: ds_content
+      format_settings:
+        id: ''
+        classes: container-right
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Container right'
 id: node.news.premium
 targetEntityType: node
 bundle: news
 mode: premium
 content:
   addtoany:
-    weight: 4
+    weight: 2
     region: ds_content
     settings: {  }
     third_party_settings: {  }
   body:
     label: hidden
-    type: text_summary_or_trimmed
-    weight: 5
+    type: text_trimmed
+    weight: 4
     settings:
       trim_length: 600
     third_party_settings: {  }
-    region: ds_content
-  field_author:
-    weight: 3
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
     region: ds_content
   field_caption:
     weight: 2
@@ -107,6 +175,13 @@ content:
     third_party_settings: {  }
     type: image
     region: ds_content
+  field_podcast_player:
+    type: text_default
+    weight: 3
+    region: ds_content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
   field_video:
     type: video_embed_field_lazyload
     weight: 0
@@ -121,17 +196,17 @@ content:
       autoplay: true
     third_party_settings: {  }
   premium_message:
-    weight: 6
+    weight: 4
     region: ds_content
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_author: true
   field_category: true
   field_comments: true
   field_high_impact_news: true
   field_my_content_has_a_main_vide: true
   field_news: true
-  field_podcast_player: true
   field_postcast_categories: true
   field_short_title: true
   field_tags: true
