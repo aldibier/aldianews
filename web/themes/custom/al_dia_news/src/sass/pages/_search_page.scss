@@ -333,6 +333,10 @@
 .sapi-did-you-mean {
   margin-bottom: 50px;
 
+  @media screen and (max-width: $tablet) {
+    margin-bottom: 20px;
+  }
+
   &+span {
     display: none;
   }
@@ -345,12 +349,21 @@
     font-weight: normal;
     line-height: 140%;
     color: $cblack0;
+
+    @media screen and (max-width: $tablet) {
+      margin-bottom: 5px;
+      font-size: szrem(16);
+    }
   }
 
   .original-token-i {
     font-family: $PrNovacond-reg;
     font-style: italic;
     font-weight: bold;
+
+    @media screen and (max-width: $tablet) {
+      font-weight: normal;
+    }
   }
 
   .showing-token {
@@ -359,10 +372,17 @@
     font-style: normal;
     font-weight: bold;
     line-height: 112.8%;
+
+    @media screen and (max-width: $tablet) {
+      font-size: szrem(18);
+      line-height: 140%;
+    }
   }
 
   .token-it {
-    font-family: $PrNovacond-bold;
+    font-family: $PrNovacond-reg;
+    font-style: italic;
+    font-weight: normal;
   }
 }
 
