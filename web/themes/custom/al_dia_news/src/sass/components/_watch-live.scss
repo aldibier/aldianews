@@ -183,6 +183,10 @@
   }
   #block-block-group-high-impact-and-most-visited-news-home .content{
     display: flex;
+    align-items: flex-end;
+    #block-rightcolumnhome{
+      margin-bottom: 40px;
+    }
   }
   @media (max-width: $tablet) {
   .watch-live-button{
@@ -203,6 +207,9 @@
   }
   #block-block-group-high-impact-and-most-visited-news-home .content{
     flex-wrap: wrap;
+    #block-rightcolumnhome{
+      margin-bottom: 0px;
+    }
   }
   .view-high-impact-news-home{
     max-width: none;
