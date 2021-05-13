@@ -413,8 +413,8 @@ const initMain = ($, Drupal) => {
 		var close = document.querySelector(
 			'#block-exposedformsearch-results-al-dia-solrpage-1-2  button[name="close"]'
 		);
-		
-		if(!!close){
+
+		if (!!close) {
 			close.addEventListener("click", () => {
 				if (close != null && close.parentElement.classList.contains("open")) {
 					close.parentElement.classList.remove("open");
@@ -517,13 +517,13 @@ const initMain = ($, Drupal) => {
 		//js para form sponsorship 
 
 		const addStateAndCity = (state, city) => {
-			let sumoSelect = state.querySelector('.SumoSelect');	
+			let sumoSelect = state.querySelector('.SumoSelect');
 			let labelState = state.querySelector('label');
 			let labelCity = city.querySelector('label');
 			let selectState = state.querySelector('select');
 			let inputCity = city.querySelector('input');
 
-			sumoSelect.setAttribute('tabindex','0');
+			sumoSelect.setAttribute('tabindex', '0');
 			state.classList.remove('disabled');
 			city.classList.remove('disabled');
 
@@ -541,7 +541,7 @@ const initMain = ($, Drupal) => {
 		}
 
 		const removeStateAndCity = (state, city) => {
-			let sumoSelect = state.querySelector('.SumoSelect');	
+			let sumoSelect = state.querySelector('.SumoSelect');
 			let labelState = state.querySelector('label');
 			let labelCity = city.querySelector('label');
 			let selectState = state.querySelector('select');
@@ -549,7 +549,7 @@ const initMain = ($, Drupal) => {
 
 			if (state.classList.contains('disabled') || city.classList.contains('disabled')) return;
 
-			sumoSelect.setAttribute('tabindex','-1');
+			sumoSelect.setAttribute('tabindex', '-1');
 			state.classList.add('disabled');
 			city.classList.add('disabled');
 
@@ -557,13 +557,13 @@ const initMain = ($, Drupal) => {
 			selectState.classList.remove('required');
 			selectState.removeAttribute('required');
 			selectState.removeAttribute('aria-required');
-			selectState.setAttribute('disabled','disabled');
+			selectState.setAttribute('disabled', 'disabled');
 
 			labelCity.classList.remove('js-form-required', 'form-required');
 			inputCity.classList.remove('required');
 			inputCity.removeAttribute('required');
 			inputCity.removeAttribute('aria-required');
-			inputCity.setAttribute('disabled','disabled')
+			inputCity.setAttribute('disabled', 'disabled')
 		}
 
 		if (!!document.querySelector('.webform-submission-sponsorship-form')) {
@@ -610,12 +610,29 @@ const initMain = ($, Drupal) => {
 			container.appendChild(message);
 
 			blockAnonymus.querySelector('.content').insertAdjacentElement('afterend', container);
-			
+
 			blockAnonymus.addEventListener('click', function () {
 				blockAnonymus.classList.add('show');
 			}, {
 				once: true
 			});
+		}
+
+		//js para omitir video fixed (watch live)
+		if (!!document.querySelector('.page-node-type-news') || !!document.querySelector('.page-node-type-thought-leaders')) {
+			const watchLive = document.querySelector('.watch-live');
+			const videoNews = document.querySelector('.block-field-blocknodenewsfield-video');
+			const videoThoughtLeaders = document.querySelector('.block-field-blocknodethought-leadersfield-video');
+
+			if (!!watchLive && !!videoNews) {
+				const content = videoNews.querySelector('.content');
+				content.classList.add('disnone');
+			}
+
+			if (!!watchLive && !!videoThoughtLeaders) {
+				const content = videoThoughtLeaders.querySelector('.content');
+				content.classList.add('disnone');
+			}
 		}
 	};
 
@@ -692,8 +709,8 @@ const initMain = ($, Drupal) => {
 	var menu_movil = document.querySelector("#block-menuuseritem-2");
 	var menu_author_movil = document.querySelector("#block-menuuseritem-2 .item-list ul li:first-child");
 	var width_menu_movil = window.innerWidth;
-	if(!!menu_movil && !!menu_author_movil && width_menu_movil <= 768){menu_movil.prepend(menu_author_movil );}
+	if (!!menu_movil && !!menu_author_movil && width_menu_movil <= 768) { menu_movil.prepend(menu_author_movil); }
 
 };
- 
+
 export default initMain;
