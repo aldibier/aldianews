@@ -186,17 +186,33 @@ button[name="close"],
     padding-bottom: 98px;
   }
 
-  .form-item-address-city,
-  .form-item-address-state-province {
-    display: none;
+  .form-item-address-city.disabled,
+  .form-item-address-state-province.disabled {
+
+    &:focus-within {
+      .CaptionCont {
+        outline: none;
+      }
+    }
+
+    >label {
+      user-select: none;
+      pointer-events: none;
+      color: $cgrey6;
+      opacity: .3;
+    }
+
+    .CaptionCont,
+    #edit-address-city{
+      opacity: .5;
+    }
   }
 
-  .form-item-address-city.show,
-  .form-item-address-state-province.show {
-    display: block;
+  .form-item-address-city {
+    width: 100%;
   }
 
-  .form-item-address-city,
+
   .form-item-address-state-province,
   .form-item-address-country {
     width: 50%;
@@ -323,7 +339,7 @@ button[name="close"],
       width: 100%;
     }
 
-	.form-item-address-city,
+    .form-item-address-city,
     .form-item-budget,
     .form-item-event-i-m-interested-in {
       margin: 0 0 25px;
