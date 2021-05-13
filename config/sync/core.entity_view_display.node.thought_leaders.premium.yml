@@ -1,0 +1,294 @@
+uuid: 6ed65ae0-5117-4fae-8632-33d986b6e91c
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.premium
+    - field.field.node.thought_leaders.body
+    - field.field.node.thought_leaders.field_author_thought_leaders
+    - field.field.node.thought_leaders.field_caption
+    - field.field.node.thought_leaders.field_comments
+    - field.field.node.thought_leaders.field_image
+    - field.field.node.thought_leaders.field_short_title
+    - field.field.node.thought_leaders.field_tags
+    - field.field.node.thought_leaders.field_video
+    - node.type.thought_leaders
+  module:
+    - ds
+    - field_formatter_class
+    - field_group
+    - image
+    - layout_builder
+    - lazy
+    - text
+    - user
+    - video_embed_field
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+  field_group:
+    group_node_content:
+      children:
+        - group_container_content
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      region: ds_content
+      format_settings:
+        id: ''
+        classes: node__content
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Node content'
+    group_container_content:
+      children:
+        - group_e_content
+        - group_container_right
+        - group_two_content
+      parent_name: group_node_content
+      weight: 0
+      format_type: html_element
+      region: ds_content
+      format_settings:
+        id: ''
+        classes: container-content
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Container content'
+    group_e_content:
+      children:
+        - group_video
+        - field_image
+        - field_caption
+        - node_title
+      parent_name: group_container_content
+      weight: 10
+      format_type: html_element
+      region: ds_content
+      format_settings:
+        id: ''
+        classes: content-news-internal-first
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'One Content'
+    group_video:
+      children:
+        - field_video
+      parent_name: group_e_content
+      weight: 1
+      format_type: html_element
+      region: ds_content
+      format_settings:
+        id: ''
+        classes: 'block block-layout-builder block-field-blocknodethought-leadersfield-video'
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Video
+    group_two_content:
+      children:
+        - 'dynamic_block_field:node-thought_leaders_authors'
+        - group_share_this_content
+        - body
+        - premium_message
+        - premium_content_display_custom
+      parent_name: group_container_content
+      weight: 12
+      format_type: html_element
+      region: ds_content
+      format_settings:
+        id: ''
+        classes: content-news-internal-left
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Two content'
+    group_share_this_content:
+      children:
+        - addtoany
+      parent_name: group_two_content
+      weight: 13
+      format_type: html_element
+      region: ds_content
+      format_settings:
+        id: ''
+        classes: 'block block-extra-field-blocknodenewsaddtoany block-layout-builder'
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Share this content'
+    group_container_right:
+      children:
+        - 'dynamic_block_field:node-more_in_this_section_thought_lea'
+      parent_name: group_container_content
+      weight: 11
+      format_type: html_element
+      region: ds_content
+      format_settings:
+        id: ''
+        classes: container-right
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Container Right'
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - group_node_content
+        - group_container_content
+        - group_video
+        - field_video
+        - 'dynamic_block_field:node-more_in_this_section_thought_lea'
+        - field_image
+        - addtoany
+        - field_caption
+        - node_title
+        - group_e_content
+        - group_container_right
+        - 'dynamic_block_field:node-thought_leaders_authors'
+        - group_two_content
+        - group_share_this_content
+        - body
+        - premium_message
+        - premium_content_display_custom
+    fields:
+      premium_content_display_custom:
+        plugin_id: premium_content_display_custom
+        weight: 16
+        label: hidden
+        formatter: default
+      'dynamic_block_field:node-more_in_this_section_thought_lea':
+        plugin_id: 'dynamic_block_field:node-more_in_this_section_thought_lea'
+        weight: 2
+        label: hidden
+        formatter: default
+      'dynamic_block_field:node-thought_leaders_authors':
+        plugin_id: 'dynamic_block_field:node-thought_leaders_authors'
+        weight: 12
+        label: hidden
+        formatter: default
+      node_title:
+        plugin_id: node_title
+        weight: 5
+        label: hidden
+        formatter: default
+        settings:
+          wrapper: h1
+          class: main-title
+          link: false
+id: node.thought_leaders.premium
+targetEntityType: node
+bundle: thought_leaders
+mode: premium
+content:
+  addtoany:
+    weight: 3
+    region: ds_content
+    settings: {  }
+    third_party_settings: {  }
+  body:
+    type: text_trimmed
+    weight: 14
+    region: ds_content
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+  field_caption:
+    weight: 4
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings:
+      field_formatter_class:
+        class: 'block block-field-blocknodenewsfield-caption block-layout-builder block-field-blocknodethought-leadersfield-caption'
+    type: string
+    region: ds_content
+  field_image:
+    weight: 3
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings:
+      field_formatter_class:
+        class: 'block block-layout-builder block-field-blocknodethought-leadersfield-image'
+      lazy:
+        placeholder_style: ''
+        lazy_image: '0'
+        data_uri: false
+    type: image
+    region: ds_content
+  field_video:
+    weight: 2
+    label: hidden
+    settings:
+      autoplay: true
+      responsive: true
+      width: 854
+      height: 480
+    third_party_settings:
+      field_formatter_class:
+        class: content
+    type: video_embed_field_video
+    region: ds_content
+  premium_message:
+    weight: 15
+    region: ds_content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_author_thought_leaders: true
+  field_comments: true
+  field_short_title: true
+  field_tags: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

@@ -154,17 +154,20 @@
     display: none;
   }
   .block-fixed-block-contentwatch-live,
-  .block-views-blockhigh-impact-news-home-block-1{
+  #block-rightcolumnhome{
     width: 100%;
     max-width: 330px;
     margin-top: 10px;
     padding: 0px;
   }
-  .block-views-blockhigh-impact-news-home-block-1{
+  #block-rightcolumnhome .content{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
+    .content{
+      width: 100%;
+    }
   }
   .view-high-impact-news-home{
     max-width: 880px;
@@ -186,10 +189,14 @@
       display: none;
   }
   .watch-live-mobile{
-    display: block;
+    margin: 0 auto 10px;
+    font-size: 1rem;
+    max-width: 290px;
+    height: 30px;
+    display: flex;
   }
   .block-fixed-block-contentwatch-live,
-  .block-views-blockhigh-impact-news-home-block-1{
+  #block-rightcolumnhome .content{
     max-width: none;
     margin-top: 0px;
     padding: 0px 15px;
@@ -199,6 +206,10 @@
   }
   .view-high-impact-news-home{
     max-width: none;
+    .featured-news{
+      width: 100%;
+      max-width: none;
+    }
   }
   }
 } 
