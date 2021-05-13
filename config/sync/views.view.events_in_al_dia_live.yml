@@ -10,6 +10,7 @@ dependencies:
     - responsive_image.styles.next_two_image_responsive
   module:
     - datetime
+    - lazy
     - node
     - other_view_filter
     - responsive_image
@@ -980,7 +981,7 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: responsive_image
+          type: lazy_responsive_image
           settings:
             responsive_image_style: next_two_image_responsive
             image_link: content
