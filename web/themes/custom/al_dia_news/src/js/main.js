@@ -76,18 +76,18 @@ const initMain = ($, Drupal) => {
 		}
 
 		// block trending se inserta en noticia de impacto
-		const blockTrending = document.querySelector(
-			".block-block-grouphigh-impact-and-most-visited-news-home .block-fixed-block-contentbloque-dummy-noticias-home"
-		);
+		// const blockTrending = document.querySelector(
+		// 	".block-block-grouphigh-impact-and-most-visited-news-home .block-fixed-block-contentbloque-dummy-noticias-home"
+		// );
 
-		if (!!blockTrending) {
-			const blockTwoFeaturedNews = document.querySelector(
-				".view-high-impact-news-home .view-display-id-block_2"
-			);
-			if (blockTwoFeaturedNews != null) {
-				blockTwoFeaturedNews.insertAdjacentElement("beforeend", blockTrending);
-			}
-		}
+		// if (!!blockTrending) {
+		// 	const blockTwoFeaturedNews = document.querySelector(
+		// 		".view-high-impact-news-home .view-display-id-block_2"
+		// 	);
+		// 	if (blockTwoFeaturedNews != null) {
+		// 		blockTwoFeaturedNews.insertAdjacentElement("beforeend", blockTrending);
+		// 	}
+		// }
 
 		// blockquote para selection-sharer
 		const allBlockquote = document.querySelectorAll(
