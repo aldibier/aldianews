@@ -1272,14 +1272,14 @@ var initMain = function initMain($, Drupal) {
     } // block trending se inserta en noticia de impacto
 
 
-    var blockTrending = document.querySelector(".block-block-grouphigh-impact-and-most-visited-news-home .block-fixed-block-contentbloque-dummy-noticias-home");
+    // var blockTrending = document.querySelector(".block-block-grouphigh-impact-and-most-visited-news-home .block-fixed-block-contentbloque-dummy-noticias-home");
 
-    if (!!blockTrending) {
-      var blockTwoFeaturedNews = document.querySelector(".view-high-impact-news-home .view-display-id-block_2");
+    // if (!!blockTrending) {
+    //   var blockTwoFeaturedNews = document.querySelector(".view-high-impact-news-home .view-display-id-block_2");
 
-      if (blockTwoFeaturedNews != null) {
-        blockTwoFeaturedNews.insertAdjacentElement("beforeend", blockTrending);
-      }
+    //   if (blockTwoFeaturedNews != null) {
+    //     blockTwoFeaturedNews.insertAdjacentElement("beforeend", blockTrending);
+    //   }
     } // blockquote para selection-sharer
 
 
