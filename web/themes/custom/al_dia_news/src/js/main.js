@@ -618,22 +618,22 @@ const initMain = ($, Drupal) => {
 			});
 		}
 
-		//js para omitir video fixed (watch live)
-		if (!!document.querySelector('.page-node-type-news') || !!document.querySelector('.page-node-type-thought-leaders')) {
-			const watchLive = document.querySelector('.watch-live');
-			const videoNews = document.querySelector('.block-field-blocknodenewsfield-video');
-			const videoThoughtLeaders = document.querySelector('.block-field-blocknodethought-leadersfield-video');
+		// //js para omitir video fixed (watch live)
+		// if (!!document.querySelector('.page-node-type-news') || !!document.querySelector('.page-node-type-thought-leaders')) {
+		// 	const watchLive = document.querySelector('.watch-live');
+		// 	const videoNews = document.querySelector('.block-field-blocknodenewsfield-video');
+		// 	const videoThoughtLeaders = document.querySelector('.block-field-blocknodethought-leadersfield-video');
 
-			if (!!watchLive && !!videoNews) {
-				const content = videoNews.querySelector('.content');
-				content.classList.add('disnone');
-			}
+		// 	if (!!watchLive && !!videoNews) {
+		// 		const content = videoNews.querySelector('.content');
+		// 		content.classList.add('disnone');
+		// 	}
 
-			if (!!watchLive && !!videoThoughtLeaders) {
-				const content = videoThoughtLeaders.querySelector('.content');
-				content.classList.add('disnone');
-			}
-		}
+		// 	if (!!watchLive && !!videoThoughtLeaders) {
+		// 		const content = videoThoughtLeaders.querySelector('.content');
+		// 		content.classList.add('disnone');
+		// 	}
+		// }
 	};
 
 	///// js para modos de visualizacion de slider event
