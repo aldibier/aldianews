@@ -11,7 +11,6 @@ dependencies:
   module:
     - field_formatter_class
     - field_group
-    - image
     - lazy
 third_party_settings:
   field_group:
@@ -54,8 +53,8 @@ content:
     weight: 0
     label: hidden
     settings:
-      image_style: ''
       image_link: ''
+      image_style: ''
     third_party_settings:
       field_formatter_class:
         class: event-guest-photo
@@ -63,7 +62,7 @@ content:
         placeholder_style: ''
         lazy_image: '0'
         data_uri: false
-    type: image
+    type: lazy_image
     region: content
   field_guest_s_position:
     weight: 3

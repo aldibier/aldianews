@@ -87,21 +87,18 @@
 
   //------ title more in this section ------------//
   >h2 {
-    margin: 0 20px;
     @include title-section-line($px28, $Mod-light, $cblack3);
+    margin: 0 20px 45px;
+    line-height: 34px;
 
     @media (max-width: $broken) {
-      margin: 0;
+      margin: 0 0 25px;
     }
   }
 
   //------ related content ------------//
   >.content {
-    margin-top: 25px;
-
-    @media (max-width: $tablet) {
-      margin-top: 25px;
-    }
+    margin-top: 0;
   }
 
   .view-content {
@@ -150,19 +147,15 @@
 
 .block-views-blockmore-in-this-section-news-block-1 {
   .views-row {
-    margin-bottom: 30px;
-    padding-bottom: 30px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
   }
 
   @media screen and (max-width:$broken) {
     .view-more {
       padding: 0;
     }
-
-    .views-row {
-      margin-bottom: 20px;
-    }
-
+    
     .view-more-authors {
       .views-row {
         &:nth-child(2n + 1) {

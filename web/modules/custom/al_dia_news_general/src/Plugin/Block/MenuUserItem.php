@@ -57,16 +57,26 @@ class MenuUserItem extends  BlockBase implements ContainerFactoryPluginInterface
   public function build() {
     $items = [];
     if ($this->currentUser->isAuthenticated()) {
-        $user_name = $this->currentUser->getAccountName();
-
+      //$user_name = $this->currentUser->getAccountName();
+      $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
+      $r_period = $user->field_first_name->value;
+      //ksm($r_period);
         $items[] = [
-            '#markup' => $user_name,
+            '#markup' => $r_period,
             '#attributes' => [
                 'class' => [
                     'author-comment',
                 ],
             ],
         ];
+        $items[] = [
+          '#markup' => '<a>Account information</a>',
+          '#attributes' => [
+              'class' => [
+                  'account-comment',
+              ],
+          ],
+      ];
         $items[] = [
           '#type' => 'link',
           '#title' => $this->t('Change password'),

@@ -3,11 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.user.user.field_full_name
+    - field.field.user.user.field_first_name
+    - field.field.user.user.field_last_name
     - field.field.user.user.user_picture
-    - image.style.thumbnail
   module:
-    - image
     - path
     - user
 _core:
@@ -18,16 +17,24 @@ bundle: user
 mode: default
 content:
   account:
-    weight: 0
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }
   contact:
-    weight: 4
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_full_name:
+  field_first_name:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_last_name:
     weight: 1
     settings:
       size: 60
@@ -35,29 +42,18 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
-  language:
-    weight: 3
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   path:
     type: path
-    weight: 6
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  timezone:
     weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
-  user_picture:
-    type: image_image
-    settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
-    third_party_settings: {  }
-    weight: 2
+  timezone:
+    weight: 4
     region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   langcode: true
+  language: true
+  user_picture: true

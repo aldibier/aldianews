@@ -1559,11 +1559,15 @@ var initMain = function initMain($, Drupal) {
     }
 
     var close = document.querySelector('#block-exposedformsearch-results-al-dia-solrpage-1-2  button[name="close"]');
-    close.addEventListener("click", function () {
-      if (close != null && close.parentElement.classList.contains("open")) {
-        close.parentElement.classList.remove("open");
-      }
-    }); // js bloque login en comentarios
+
+    if (!!close) {
+      close.addEventListener("click", function () {
+        if (close != null && close.parentElement.classList.contains("open")) {
+          close.parentElement.classList.remove("open");
+        }
+      });
+    } // js bloque login en comentarios
+
 
     var comments = document.querySelector(".block-field-blocknodenewsfield-comments .comment");
     var block_login_c = document.querySelector("#block-blockcommentanonymous");
@@ -1769,6 +1773,15 @@ var initMain = function initMain($, Drupal) {
       containerContainer.classList.toggle('open');
       buttonCategories.classList.toggle('up');
     });
+  } // js autor menu header movil
+
+
+  var menu_movil = document.querySelector("#block-menuuseritem-2");
+  var menu_author_movil = document.querySelector("#block-menuuseritem-2 .item-list ul li:first-child");
+  var width_menu_movil = window.innerWidth;
+
+  if (!!menu_movil && !!menu_author_movil && width_menu_movil <= 768) {
+    menu_movil.prepend(menu_author_movil);
   }
 };
 
@@ -1920,6 +1933,18 @@ __webpack_require__.r(__webpack_exports__);
         $(".user-logged-in #block-menuuseritem .item-list").addClass("open");
         $(this).addClass("open");
       }
+    }); //--------puopup-- login - movil -----------//
+
+    $(".user-logged-in #block-menuuseritem-2").click(function () {
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        if ($(this).hasClass("open")) {
+          $(this).removeClass("open");
+          $(".user-logged-in #block-menuuseritem-2 .item-list").removeClass("open");
+        } else {
+          $(".user-logged-in #block-menuuseritem-2 .item-list").addClass("open");
+          $(this).addClass("open");
+        }
+      }
     });
     $(".region-secondary-menu #block-al-dia-news-main-menu a").each(function () {
       var text = $(this).html();
@@ -1979,6 +2004,15 @@ __webpack_require__.r(__webpack_exports__);
     $('.modal-apply-webform  button[name="close"]').click(function () {
       if ($(".style-jobs .modal-apply-webform").hasClass("open")) {
         $(".style-jobs .modal-apply-webform").removeClass("open");
+      }
+    }); //// modal watch live
+
+    $(".watch-live-button").click(function () {
+      $(".watch-live-video").addClass("open");
+    });
+    $('.watch-live-video button[name="close"]').click(function () {
+      if ($(".watch-live-video ").hasClass("open")) {
+        $(".watch-live-video ").removeClass("open");
       }
     }); ///// modal nominate interna eventos
 
@@ -2437,8 +2471,8 @@ var initSlick = function initSlick($, Drupal) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\valer\Desktop\4ld14-n3ws\web\themes\custom\al_dia_news\src\js\scripts.js */"./src/js/scripts.js");
-module.exports = __webpack_require__(/*! C:\Users\valer\Desktop\4ld14-n3ws\web\themes\custom\al_dia_news\src\sass\styles.scss */"./src/sass/styles.scss");
+__webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
+module.exports = __webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
 
 
 /***/ })

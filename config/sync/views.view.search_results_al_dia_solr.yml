@@ -886,6 +886,7 @@ display:
         style: false
         row: false
         fields: false
+        css_class: false
       header:
         area_text_custom:
           id: area_text_custom
@@ -1132,12 +1133,12 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: ''
-          element_class: ''
+          element_type: div
+          element_class: card-image
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
-          element_wrapper_type: ''
+          element_wrapper_type: '0'
           element_wrapper_class: ''
           element_default_classes: false
           empty: ''
@@ -1302,7 +1303,7 @@ display:
           click_sort_column: value
           type: string
           settings:
-            link_to_entity: false
+            link_to_entity: true
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -1445,6 +1446,7 @@ display:
           empty_zero: false
           hide_alter_empty: false
           plugin_id: custom
+      css_class: ''
     cache_metadata:
       max-age: -1
       contexts:
