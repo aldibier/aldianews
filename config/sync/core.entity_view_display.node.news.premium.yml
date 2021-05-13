@@ -55,16 +55,15 @@ third_party_settings:
       ds_content:
         - group_node_content
         - group_video
-        - group_button
         - group_one_content
-        - group_container_content
         - field_image
-        - field_caption
-        - group_container_right
+        - group_container_content
         - addtoany
-        - node_title
-        - 'dynamic_block_field:node-more_in_this_section'
+        - group_container_right
+        - field_caption
         - group_two_content
+        - 'dynamic_block_field:node-more_in_this_section'
+        - node_title
         - 'dynamic_block_field:node-author_view'
         - group_share_this_content
         - field_podcast_player
@@ -224,8 +223,6 @@ third_party_settings:
       format_type: html_element
       region: ds_content
       format_settings:
-        id: ''
-        classes: 'block block-layout-builder block-field-blocknodenewsfield-video field field--name-field-video field--type-video-embed-field fiel'
         element: div
         show_label: false
         label_element: h3
@@ -233,6 +230,8 @@ third_party_settings:
         attributes: ''
         effect: none
         speed: fast
+        id: ''
+        classes: 'block block-layout-builder block-field-blocknodenewsfield-video'
       label: Video
 id: node.news.premium
 targetEntityType: node
