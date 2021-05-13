@@ -160,7 +160,7 @@
     margin-top: 10px;
     padding: 0px;
   }
-  #block-rightcolumnhome{
+  #block-rightcolumnhome .content{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -196,7 +196,7 @@
     display: flex;
   }
   .block-fixed-block-contentwatch-live,
-  #block-rightcolumnhome{
+  #block-rightcolumnhome .content{
     max-width: none;
     margin-top: 0px;
     padding: 0px 15px;
@@ -206,6 +206,10 @@
   }
   .view-high-impact-news-home{
     max-width: none;
+    .featured-news{
+      width: 100%;
+      max-width: none;
+    }
   }
   }
 } 
