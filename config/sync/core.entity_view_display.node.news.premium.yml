@@ -54,10 +54,11 @@ third_party_settings:
     regions:
       ds_content:
         - group_node_content
-        - field_video
+        - group_video
+        - group_button
         - group_one_content
-        - field_image
         - group_container_content
+        - field_image
         - field_caption
         - group_container_right
         - addtoany
@@ -70,6 +71,7 @@ third_party_settings:
         - body
         - premium_message
         - premium_content_display_custom
+        - field_video
     fields:
       premium_content_display_custom:
         plugin_id: premium_content_display_custom
@@ -98,7 +100,7 @@ third_party_settings:
   field_group:
     group_one_content:
       children:
-        - field_video
+        - group_video
         - field_image
         - field_caption
         - node_title
@@ -214,6 +216,24 @@ third_party_settings:
         effect: none
         speed: fast
       label: 'Node content'
+    group_video:
+      children:
+        - field_video
+      parent_name: group_one_content
+      weight: 0
+      format_type: html_element
+      region: ds_content
+      format_settings:
+        id: ''
+        classes: 'block block-layout-builder block-field-blocknodenewsfield-video field field--name-field-video field--type-video-embed-field fiel'
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Video
 id: node.news.premium
 targetEntityType: node
 bundle: news
@@ -268,7 +288,7 @@ content:
     third_party_settings: {  }
   field_video:
     type: video_embed_field_video
-    weight: 0
+    weight: 26
     region: ds_content
     label: hidden
     settings:
@@ -278,7 +298,7 @@ content:
       height: 480
     third_party_settings:
       field_formatter_class:
-        class: 'block block-layout-builder block-field-blocknodenewsfield-video'
+        class: content
   premium_message:
     weight: 21
     region: ds_content
