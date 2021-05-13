@@ -330,6 +330,62 @@
   }
 }
 
+.sapi-did-you-mean {
+  margin-bottom: 50px;
+
+  @media screen and (max-width: $tablet) {
+    margin-bottom: 20px;
+  }
+
+  &+span {
+    display: none;
+  }
+
+  .did-you-mean-prefix {
+    margin-bottom: 15px;
+    font-size: szrem(24);
+    font-family: $PrNovacond-light;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 140%;
+    color: $cblack0;
+
+    @media screen and (max-width: $tablet) {
+      margin-bottom: 5px;
+      font-size: szrem(16);
+    }
+  }
+
+  .original-token-i {
+    font-family: $PrNovacond-reg;
+    font-style: italic;
+    font-weight: bold;
+
+    @media screen and (max-width: $tablet) {
+      font-weight: normal;
+    }
+  }
+
+  .showing-token {
+    font-size: szrem(30);
+    font-family: $PrNovacond-bold;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 112.8%;
+
+    @media screen and (max-width: $tablet) {
+      font-size: szrem(18);
+      line-height: 140%;
+    }
+  }
+
+  .token-it {
+    font-family: $PrNovacond-reg;
+    font-style: italic;
+    font-weight: normal;
+  }
+}
+
 @media (max-width: $desktop) {
   #block-exposedformsearch-results-al-dia-solrpage-1 {
     .form--inline {
