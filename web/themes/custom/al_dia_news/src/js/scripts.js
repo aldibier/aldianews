@@ -237,7 +237,19 @@ import replaceToken from "./modules/replaceToken";
       if ($(".watch-live-video ").hasClass("open")) {
         $(".watch-live-video ").removeClass("open");
       }
+      if (!!document.querySelector('.page-node-type-news') || !!document.querySelector('.page-node-type-thought-leaders')) {
+      
+        $window.on("scroll", function () {
+          const videoNews = document.querySelector('.block-field-blocknodenewsfield-video .content.stuck');
+          const videoThoughtLeaders = document.querySelector('.block-field-blocknodethought-leadersfield-video .content.stuck ');
+          if (!!videoNews) {content.classList.add('disnone');}
+          if (videoThoughtLeaders) {content.classList.add('disnone');}
+        });
+       
+      }
     });
+
+		
 
     ///// modal nominate interna eventos
     $(".banner-events a#nominee").click(function () {
