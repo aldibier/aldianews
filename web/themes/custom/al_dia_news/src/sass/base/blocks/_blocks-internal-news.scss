@@ -316,7 +316,7 @@
 //------- blockquote
 
 blockquote {
-  padding: 0 70px;
+  padding: 0 70px !important;
   position: relative;
   margin: 45px auto 35px 0;
   border: none;
@@ -360,7 +360,7 @@ blockquote {
   @media (max-width: $tablet) {
     display: flex;
     align-items: center;
-    padding: 0;
+    padding: 0 !important;
 
     p {
       padding: 10px;
