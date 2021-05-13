@@ -7,6 +7,8 @@ use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\node\NodeInterface;
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Url;
+use Drupal\Component\Serialization\Json;
+
 
 
 /**
@@ -76,6 +78,21 @@ function al_dia_news_general_form_alter(&$form, $form_state, $form_id) {
 
     //   }
     // break;
+    case "user_login_form":
+      $form['forgot'] = [
+        '#type' => 'link',
+        '#title' => t('Forgot your password?'),
+        '#url' => Url::fromRoute('user.pass'),
+        '#attributes' => [
+          'class' => [
+            'use-ajax',
+            'user-forgot-pass',
+          ],
+          'data-dialog-type' => 'modal',
+          'data-dialog-options' => Json::encode(['dialogClass' => 'popup-login'],['width' => 550]),
+        ],
+      ];
+    break;
   }
 
 

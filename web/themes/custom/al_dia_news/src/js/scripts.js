@@ -228,6 +228,17 @@ import replaceToken from "./modules/replaceToken";
       }
     });
 
+    //// modal watch live
+    $(".watch-live-button").click(function() {
+      $(".watch-live-video").addClass("open");
+    });
+
+    $('.watch-live-video button[name="close"]').click(function() {
+      if ($(".watch-live-video ").hasClass("open")) {
+        $(".watch-live-video ").removeClass("open");
+      }
+    });
+
     ///// modal nominate interna eventos
     $(".banner-events a#nominee").click(function() {
       $(".modal-open .modal-apply-webform").addClass("open");
