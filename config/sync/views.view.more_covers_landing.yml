@@ -10,7 +10,7 @@ dependencies:
   module:
     - better_exposed_filters
     - datetime
-    - image
+    - lazy
     - node
     - options
     - user
@@ -146,7 +146,7 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: image
+          type: lazy_image
           settings:
             image_style: ''
             image_link: content
