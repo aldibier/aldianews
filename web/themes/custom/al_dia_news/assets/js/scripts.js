@@ -1719,6 +1719,24 @@ var initMain = function initMain($, Drupal) {
       }, {
         once: true
       });
+    } //js para omitir video fixed (watch live)
+
+
+    if (!!document.querySelector('.page-node-type-news') || !!document.querySelector('.page-node-type-thought-leaders')) {
+      var watchLive = document.querySelector('.watch-live');
+      var videoNews = document.querySelector('.block-field-blocknodenewsfield-video');
+      var videoThoughtLeaders = document.querySelector('.block-field-blocknodethought-leadersfield-video');
+
+      if (!!watchLive && !!videoNews) {
+        var content = videoNews.querySelector('.content');
+        content.classList.add('disnone');
+      }
+
+      if (!!watchLive && !!videoThoughtLeaders) {
+        var _content = videoThoughtLeaders.querySelector('.content');
+
+        _content.classList.add('disnone');
+      }
     }
   }; ///// js para modos de visualizacion de slider event
 
@@ -1911,10 +1929,16 @@ __webpack_require__.r(__webpack_exports__);
   }
 
   jQuery(document).ready(function () {
-    if ($(".page-node-type-news .video-embed-field-responsive-video iframe").length) {
-      var url = $(".page-node-type-news .video-embed-field-responsive-video iframe")[0].src += "&mute=1";
+    if ($(".page-node-type-news .block-field-blocknodenewsfield-video iframe").length) {
+      var url = $(".page-node-type-news .block-field-blocknodenewsfield-video iframe")[0].src += "&mute=1";
       var video = url.replace("autoplay=0", "autoplay=1");
-      $(".page-node-type-news .video-embed-field-responsive-video iframe").attr("src", video);
+      $(".page-node-type-news .block-field-blocknodenewsfield-video iframe").attr("src", video);
+    }
+
+    if ($(".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video iframe").length) {
+      var url = $(".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video iframe")[0].src += "&mute=1";
+      var video = url.replace("autoplay=0", "autoplay=1");
+      $(".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video iframe").attr("src", video);
     } //--------- menu--------------------//
 
 
@@ -2075,7 +2099,6 @@ __webpack_require__.r(__webpack_exports__);
         Array.from(document.querySelectorAll(".region-content select")).map(function (e) {
           if (e != null) {
             e.classList.add("testselect1");
-            console.log("1");
             $(".testselect1").SumoSelect({
               forceCustomRendering: true,
               floatWidth: 300
