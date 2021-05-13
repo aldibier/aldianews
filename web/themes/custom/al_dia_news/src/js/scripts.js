@@ -331,7 +331,6 @@ import replaceToken from "./modules/replaceToken";
           function (e) {
             if (e != null) {
               e.classList.add("testselect1");
-              console.log("1");
               $(".testselect1").SumoSelect({
                 forceCustomRendering: true,
                 floatWidth: 300

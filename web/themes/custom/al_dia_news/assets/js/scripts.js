@@ -2099,7 +2099,6 @@ __webpack_require__.r(__webpack_exports__);
         Array.from(document.querySelectorAll(".region-content select")).map(function (e) {
           if (e != null) {
             e.classList.add("testselect1");
-            console.log("1");
             $(".testselect1").SumoSelect({
               forceCustomRendering: true,
               floatWidth: 300
