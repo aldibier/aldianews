@@ -1,26 +1,25 @@
-uuid: b0b5d976-ac47-4f8d-96f4-91bbf6922bdd
+uuid: 43babda7-3e18-4d4c-9ee0-e135f97429ac
 langcode: en
 status: true
 dependencies:
   config:
-    - fixed_block_content.fixed_block_content.watch_live
+    - blockgroup.block_group_content.right_column_home
   module:
+    - blockgroup
     - context
-    - fixed_block_content
   theme:
     - al_dia_news
-id: watchlive_3
+id: rightcolumnhome_2
 theme: al_dia_news
 region: latest_categories_tending_block
-weight: -34
+weight: 0
 provider: null
-plugin: 'fixed_block_content:watch_live'
+plugin: 'block_group:right_column_home'
 settings:
-  id: 'fixed_block_content:watch_live'
-  label: 'WATCH LIVE'
-  provider: fixed_block_content
+  id: 'block_group:right_column_home'
+  label: 'Right column home'
+  provider: blockgroup
   label_display: '0'
-  view_mode: ''
 visibility:
   request_path_exclusion:
     id: request_path_exclusion
