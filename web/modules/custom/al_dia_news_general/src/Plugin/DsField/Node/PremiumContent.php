@@ -90,7 +90,9 @@ class PremiumContent extends DsFieldBase {
     $build['form'] = $this->entityFormBuilder->getForm($account, 'register');
 
     $build['form']['account']['mail']['#description'] = t('');
-    kint($build['form']['account']);
+    $build['form']['actions']['submit']['#value'] = t('REGISTER FOR FREE');
+
+    //kint($build['form']['account']);
     // $entity = $this->entity();
     // $uid= $entity->getOwnerId();
     // $uid= $entity->uid->entity;

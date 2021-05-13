@@ -59,7 +59,7 @@ class MenuUserItem extends  BlockBase implements ContainerFactoryPluginInterface
     if ($this->currentUser->isAuthenticated()) {
       //$user_name = $this->currentUser->getAccountName();
       $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
-      $r_period = $user->field_full_name->value;
+      $r_period = $user->field_first_name->value;
       //ksm($r_period);
         $items[] = [
             '#markup' => $r_period,

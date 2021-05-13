@@ -1,0 +1,31 @@
+uuid: 27861168-9aeb-4af7-8517-b6b1b8290a33
+langcode: en
+status: true
+dependencies:
+  config:
+    - blockgroup.block_group_content.right_column_home
+  module:
+    - blockgroup
+    - context
+  theme:
+    - al_dia_news
+id: rightcolumnhome
+theme: al_dia_news
+region: high_impact_and_most_visited_news_home
+weight: 0
+provider: null
+plugin: 'block_group:right_column_home'
+settings:
+  id: 'block_group:right_column_home'
+  label: 'Right column home'
+  provider: blockgroup
+  label_display: '0'
+visibility:
+  request_path_exclusion:
+    id: request_path_exclusion
+    pages: ''
+    negate: null
+  view_inclusion:
+    id: view_inclusion
+    negate: null
+    view_inclusion: {  }

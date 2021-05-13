@@ -361,7 +361,7 @@ const initMain = ($, Drupal) => {
 			const buttonApply = document.querySelector(
 				".path-about-al-dia-live .button-apply"
 			);
-			const buttonClose = document.querySelector(".close-modal");
+			const buttonClose = document.querySelector(".webform-about-al-dia-live .close-modal");
 			const modalForm = document.querySelector(".modal-form");
 
 			if (!document.body.contains(buttonApply)) return;
@@ -413,11 +413,14 @@ const initMain = ($, Drupal) => {
 		var close = document.querySelector(
 			'#block-exposedformsearch-results-al-dia-solrpage-1-2  button[name="close"]'
 		);
-		close.addEventListener("click", () => {
-			if (close != null && close.parentElement.classList.contains("open")) {
-				close.parentElement.classList.remove("open");
-			}
-		});
+
+		if (!!close) {
+			close.addEventListener("click", () => {
+				if (close != null && close.parentElement.classList.contains("open")) {
+					close.parentElement.classList.remove("open");
+				}
+			});
+		}
 
 		// js bloque login en comentarios
 		var comments = document.querySelector(
@@ -514,46 +517,53 @@ const initMain = ($, Drupal) => {
 		//js para form sponsorship 
 
 		const addStateAndCity = (state, city) => {
+			let sumoSelect = state.querySelector('.SumoSelect');
 			let labelState = state.querySelector('label');
 			let labelCity = city.querySelector('label');
 			let selectState = state.querySelector('select');
 			let inputCity = city.querySelector('input');
 
-			state.classList.add('show');
-			city.classList.add('show');
+			sumoSelect.setAttribute('tabindex', '0');
+			state.classList.remove('disabled');
+			city.classList.remove('disabled');
 
 			labelState.classList.add('js-form-required', 'form-required');
 			selectState.classList.add('required');
 			selectState.setAttribute('required', 'required')
 			selectState.setAttribute('aria-required', 'true');
+			selectState.removeAttribute('disabled')
 
 			labelCity.classList.add('js-form-required', 'form-required')
 			inputCity.classList.add('required');
 			inputCity.setAttribute('required', 'required')
 			inputCity.setAttribute('aria-required', 'true');
+			inputCity.removeAttribute('disabled');
 		}
 
 		const removeStateAndCity = (state, city) => {
-			console.log('remove!');
+			let sumoSelect = state.querySelector('.SumoSelect');
 			let labelState = state.querySelector('label');
 			let labelCity = city.querySelector('label');
 			let selectState = state.querySelector('select');
 			let inputCity = city.querySelector('input');
 
-			if (!state.classList.contains('show') || !city.classList.contains('show')) return;
+			if (state.classList.contains('disabled') || city.classList.contains('disabled')) return;
 
-			state.classList.remove('show');
-			city.classList.remove('show');
+			sumoSelect.setAttribute('tabindex', '-1');
+			state.classList.add('disabled');
+			city.classList.add('disabled');
 
 			labelState.classList.remove('js-form-required', 'form-required');
 			selectState.classList.remove('required');
 			selectState.removeAttribute('required');
 			selectState.removeAttribute('aria-required');
+			selectState.setAttribute('disabled', 'disabled');
 
 			labelCity.classList.remove('js-form-required', 'form-required');
 			inputCity.classList.remove('required');
 			inputCity.removeAttribute('required');
 			inputCity.removeAttribute('aria-required');
+			inputCity.setAttribute('disabled', 'disabled')
 		}
 
 		if (!!document.querySelector('.webform-submission-sponsorship-form')) {
@@ -564,12 +574,14 @@ const initMain = ($, Drupal) => {
 			const selectParent = selectCountry.parentElement;
 			const countriesItems = selectParent.querySelectorAll('.opt');
 
+			//disabled at startup
+			removeStateAndCity(fieldState, fieldCity);
+
 			//reorder fields
 			filedCountry.insertAdjacentElement('afterend', fieldState);
 			fieldState.insertAdjacentElement('afterend', fieldCity);
 
 			countriesItems.forEach(item => item.addEventListener('click', (event) => {
-				console.log(event.target.innerText);
 				if (event.target.innerText.toLowerCase() === 'united states') {
 					addStateAndCity(fieldState, fieldCity);
 				} else {
@@ -598,13 +610,30 @@ const initMain = ($, Drupal) => {
 			container.appendChild(message);
 
 			blockAnonymus.querySelector('.content').insertAdjacentElement('afterend', container);
-			
+
 			blockAnonymus.addEventListener('click', function () {
 				blockAnonymus.classList.add('show');
 			}, {
 				once: true
 			});
 		}
+
+		// //js para omitir video fixed (watch live)
+		// if (!!document.querySelector('.page-node-type-news') || !!document.querySelector('.page-node-type-thought-leaders')) {
+		// 	const watchLive = document.querySelector('.watch-live');
+		// 	const videoNews = document.querySelector('.block-field-blocknodenewsfield-video');
+		// 	const videoThoughtLeaders = document.querySelector('.block-field-blocknodethought-leadersfield-video');
+
+		// 	if (!!watchLive && !!videoNews) {
+		// 		const content = videoNews.querySelector('.content');
+		// 		content.classList.add('disnone');
+		// 	}
+
+		// 	if (!!watchLive && !!videoThoughtLeaders) {
+		// 		const content = videoThoughtLeaders.querySelector('.content');
+		// 		content.classList.add('disnone');
+		// 	}
+		// }
 	};
 
 	///// js para modos de visualizacion de slider event
@@ -680,7 +709,7 @@ const initMain = ($, Drupal) => {
 	var menu_movil = document.querySelector("#block-menuuseritem-2");
 	var menu_author_movil = document.querySelector("#block-menuuseritem-2 .item-list ul li:first-child");
 	var width_menu_movil = window.innerWidth;
-	if(!!menu_movil && !!menu_author_movil && width_menu_movil <= 768){menu_movil.prepend(menu_author_movil );}
+	if (!!menu_movil && !!menu_author_movil && width_menu_movil <= 768) { menu_movil.prepend(menu_author_movil); }
 
 };
 

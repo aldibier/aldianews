@@ -1,0 +1,207 @@
+.watch-live {
+  position: relative;
+  margin-top: 25px;
+  @media (max-width: $tablet) {
+    margin-top: 0px;
+  padding: 0 15px;
+  }
+}
+.watch-live-button {
+  max-width: 190px;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: $PrNovacond-Sbold;
+  font-size: $px18;
+  line-height: 25px;
+  letter-spacing: 0.741176px;
+  color: $cwhite;
+  background: $cblack2;
+  margin-left: auto;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    display: block;
+    position: relative;
+    width: 10px;
+    height: 10px;
+    background: $corange;
+    border-radius: 35px;
+    animation: infinite flickering 2.5s;
+    margin-right: 10px;
+  }
+  @media (max-width: $tablet) {
+    margin: 0 auto 30px;
+    font-size: $px16;
+    max-width: 290px;
+    height: 30px;
+    &::before {
+      margin-right: 20px;
+    }
+  }
+
+  //--------animation---------//
+  @keyframes flickering {
+    0% {
+      background: rgb(238 34 17 / 36%);
+    }
+    25% {
+      background: $corange;
+    }
+    50% {
+      background: rgb(238 34 17 / 36%);
+    }
+    75% {
+      background: $corange;
+    }
+    100% {
+      background: rgb(238 34 17 / 36%);
+    }
+  }
+}
+.user-logged-in .watch-live-video {
+  top: 125px;
+}
+.watch-live-video {
+  display: none;
+  height: 820px;
+  padding: 70px 0px;
+  &.open {
+    display: block;
+  }
+  iframe {
+    width: 1200px;
+    height: 675px;
+  }
+  .video-embed-field-responsive-video::after {
+    display: none;
+  }
+  .video-watch {
+    position: relative;
+    max-width: 1220px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .text-watch-live {
+    display: none;
+  }
+  button[name="close"] {
+    right: -20px !important;
+    top: -35px;
+  }
+  @media (max-width: 1300px) {
+    height: 620px;
+    iframe {
+      width: 900px;
+      height: 475px;
+    }
+    button[name="close"] {
+      right: 20px !important;
+    }
+  }
+  @media (max-width: $tablet) {
+    height: 480px;
+    padding: 45px 15px 75px;
+    iframe {
+      width: 100%;
+      height: auto !important;
+      min-height: 365px;
+      min-height: 365px;
+    }
+    button[name="close"] {
+      top: -37px;
+      right: 15px !important;
+    }
+    .text-watch-live {
+      display: block;
+      display: flex;
+      font-family: $Mod-Sbold;
+      font-style: normal;
+      font-size: 16px;
+      line-height: 19px;
+      color: $cwhite;
+      margin-bottom: 15px;
+      &::before {
+        content: "";
+        display: block;
+        position: relative;
+        width: 15px;
+        height: 10px;
+        background: transparent url("../img/cam.png") center center no-repeat;
+        background-size: contain;
+        margin-right: 10px;
+        bottom: -3px;
+      }
+    }
+  }
+  @media (max-width: $mobile-mid) {
+    height: 320px;
+    iframe {
+      min-height: 165px;
+    }
+  }
+}
+
+
+
+//------- watch live HOME---------//
+
+.path-frontpage{
+  .watch-live-mobile{
+    display: none;
+  }
+  .block-fixed-block-contentwatch-live,
+  #block-rightcolumnhome{
+    width: 100%;
+    max-width: 330px;
+    margin-top: 10px;
+    padding: 0px;
+  }
+  #block-rightcolumnhome{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    .content{
+      width: 100%;
+    }
+  }
+  .view-high-impact-news-home{
+    max-width: 880px;
+    .featured-news{
+      width: 93.5vw;
+      max-width: 1280px;
+    }
+  }
+  .watch-live-button{
+    max-width: 330px;
+    margin: 0px auto 25px;
+
+  }
+  #block-block-group-high-impact-and-most-visited-news-home .content{
+    display: flex;
+  }
+  @media (max-width: $tablet) {
+  .watch-live-button{
+      display: none;
+  }
+  .watch-live-mobile{
+    display: block;
+  }
+  .block-fixed-block-contentwatch-live,
+  #block-rightcolumnhome{
+    max-width: none;
+    margin-top: 0px;
+    padding: 0px 15px;
+  }
+  #block-block-group-high-impact-and-most-visited-news-home .content{
+    flex-wrap: wrap;
+  }
+  .view-high-impact-news-home{
+    max-width: none;
+  }
+  }
+} 

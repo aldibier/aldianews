@@ -316,7 +316,7 @@
 //------- blockquote
 
 blockquote {
-  padding: 0 70px;
+  padding: 0 70px !important;
   position: relative;
   margin: 45px auto 35px 0;
   border: none;
@@ -330,21 +330,22 @@ blockquote {
     // color: $corange;
     // font-size: $px130;
     position: absolute;
-    background: transparent url("../../assets/img/svg/comillas.svg") center
+    background: transparent url("../../assets/img/comillas.png") center
       center no-repeat;
     background-size: contain;
     width: 48.38px;
     height: 34.84px;
+    content: "";
   }
-
+ 
   &:before {
     left: 0;
-    top: 45px;
+    top: 0px;
   }
 
   &:after {
-    right: 13px;
-    top: 74px;
+    right: 0px;
+    top: 0px;
     transform: rotate(180deg);
   }
 
@@ -359,7 +360,7 @@ blockquote {
   @media (max-width: $tablet) {
     display: flex;
     align-items: center;
-    padding: 0;
+    padding: 0 !important;
 
     p {
       padding: 10px;
