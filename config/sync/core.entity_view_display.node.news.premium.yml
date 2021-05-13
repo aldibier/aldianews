@@ -27,6 +27,7 @@ dependencies:
     - field_group
     - image
     - layout_builder
+    - lazy
     - text
     - user
     - video_embed_field
@@ -207,7 +208,13 @@ content:
     settings:
       image_style: ''
       image_link: ''
-    third_party_settings: {  }
+    third_party_settings:
+      field_formatter_class:
+        class: 'block block-layout-builder block-field-blocknodenewsfield-image'
+      lazy:
+        placeholder_style: ''
+        lazy_image: '0'
+        data_uri: false
     type: image
     region: ds_content
   field_podcast_player:
@@ -223,11 +230,13 @@ content:
     region: ds_content
     label: hidden
     settings:
+      autoplay: true
       responsive: true
       width: 854
       height: 480
-      autoplay: true
-    third_party_settings: {  }
+    third_party_settings:
+      field_formatter_class:
+        class: 'block block-layout-builder block-field-blocknodenewsfield-video'
   premium_message:
     weight: 3
     region: ds_content
