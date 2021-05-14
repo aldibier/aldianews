@@ -345,7 +345,8 @@ blockquote {
 
   &:after {
     right: 0px;
-    top: 0px;
+    bottom: 0px;
+    top: auto;
     transform: rotate(180deg);
   }
 
@@ -803,6 +804,19 @@ div[data-embed-button="related_content"] {
       color: $cblack3;
       &::placeholder {
         text-transform: capitalize;
+        font-size: $px20;
+        line-height: 28px;
+      }
+    }
+    @media (max-width: $tablet) {
+      margin: 20px 0;
+      textarea {
+        font-size: $px18;
+        line-height: 20px;
+        &::placeholder {
+          font-size: $px18;
+          line-height: 20px;
+        }
       }
     }
   }
@@ -827,8 +841,9 @@ div[data-embed-button="related_content"] {
   .ui-dialog-buttonpane {
     border: 0px !important;
     padding: 0 20px;
-    margin: 0 auto 20px !important;
+    margin: 0 auto 30px 0 !important;
     max-width: 400px !important;
+    background: transparent !important;
     button {
       height: 50px;
       display: flex;
@@ -838,8 +853,13 @@ div[data-embed-button="related_content"] {
       font-family: $PrNovacond-Sbold;
       margin: 0px;
       letter-spacing: 0.741176px;
-      box-shadow: 0px 0px 0px;
+      box-shadow: 0px 0px 0px !important;
       text-transform: uppercase;
+      @media (max-width: $tablet) {
+        max-width: 120px !important;
+        height: 30px;
+        font-size: $px12;
+      }
     }
     .button--primary:not(:focus):hover {
       background: #e21 !important;
@@ -857,12 +877,20 @@ div[data-embed-button="related_content"] {
 
 .popup-delete-comment {
   max-width: 604px !important;
+  * {
+    max-width: 480px !important;
+  }
+
   .ui-dialog-title {
     font-size: $px25 !important;
     padding-top: 20px;
     white-space: break-spaces;
     text-align: center;
+    @media (max-width: $tablet) {
+      font-size: $px18 !important;
+    }
   }
+
   .confirmation {
     margin: 40px auto 20px;
     padding: 0px;
@@ -870,8 +898,23 @@ div[data-embed-button="related_content"] {
     font-size: $px22;
     line-height: 27px;
     color: $cblack;
+    @media (max-width: $tablet) {
+      margin: 20px auto;
+      font-size: $px15;
+      line-height: 18px;
+    }
+  }
+  .ui-dialog-buttonpane {
+    margin: 0 auto 20px !important;
+  }
+  .ui-dialog-titlebar {
+    padding: 30px 20px 0 !important;
+    @media (max-width: $tablet) {
+      padding: 10px 20px 0 !important;
+    }
   }
 }
+
 .comment {
   width: 100%;
   padding: 25px;
