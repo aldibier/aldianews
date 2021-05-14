@@ -87,7 +87,7 @@ section .comment:not(section .indented .comment) {
     text-transform: uppercase;
     color: $cblack3;
 
-    a {
+    a:not(.login-anonymous-comment):not(.register-anonymous-comment) {
       border-bottom: 0px;
       color: $cblack3;
       cursor: pointer;
@@ -200,6 +200,16 @@ section .comment:not(section .indented .comment) {
 
 .container-reply .ajax-progress {
   display: none !important;
+}
+
+section {
+  > .comment:last-child {
+    &:not(.comment + .indented){
+      .container-show-hide {
+        display: none;
+      }
+    }
+  }
 }
 
 section .indented .comment {
@@ -434,8 +444,44 @@ section>.comment:nth-of-type(1) {
   display: none;
 }
 
+.login-anonymous-comment,
+.register-anonymous-comment {
+  font-size: szrem(19);
+  font-family: $PrNovacond-bold;
+  font-style: normal;
+  line-height: 127.8%;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+  color: $corange;
+
+  @media screen and(max-width: $tablet) {
+    font-size: szrem(17);
+    line-height: 19px;
+    text-align: center;
+  } 
+}
+
+.text-anonymous-comment {
+  font-size: szrem(19);
+  font-family: $PrNovacond-reg;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 127.8%;
+  text-transform: lowercase;
+  letter-spacing: 0.2px;
+  color: $cgrey6;
+
+  @media screen and(max-width: $tablet) {
+    font-size: szrem(16);
+    line-height: 19px;
+    text-align: center;
+  } 
+}
+
 .block-comments-anonymous {
-  margin-right: 440px;
+  //margin-right: 440px;
+  max-width: 840px;
+  margin-bottom: 70px;
   position: relative;
   display: flex;
   justify-content: center;
@@ -535,36 +581,7 @@ section>.comment:nth-of-type(1) {
   }
 
   .text-anonymous-comment {
-    font-size: szrem(19);
-    font-family: $PrNovacond-reg;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 127.8%;
-    letter-spacing: 0.2px;
     color: $cwhite;
-
-    @media screen and(max-width: $tablet) {
-      font-size: szrem(16);
-      line-height: 19px;
-      text-align: center;
-    } 
-  }
-
-  .login-anonymous-comment,
-  .register-anonymous-comment {
-    font-size: szrem(19);
-    font-family: $PrNovacond-bold;
-    font-style: normal;
-    line-height: 127.8%;
-    text-transform: uppercase;
-    letter-spacing: 0.2px;
-    color: $corange;
-
-    @media screen and(max-width: $tablet) {
-      font-size: szrem(17);
-      line-height: 19px;
-      text-align: center;
-    } 
   }
 
   .message-comments-container {

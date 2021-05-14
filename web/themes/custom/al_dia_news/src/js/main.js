@@ -592,12 +592,19 @@ const initMain = ($, Drupal) => {
 
 		//js para comment anonymous
 		if (!!document.querySelector('.block-comments-anonymous')) {
-			var blockAnonymus = document.querySelector('.block-comments-anonymous');
-			var allTextMessage = document.querySelectorAll('.text-anonymous-comment');
-			var loginLink = document.querySelector('.login-anonymous-comment');
-			var registerLink = document.querySelector('.register-anonymous-comment');
-			var container = document.createElement('div');
-			var message = document.createElement('div');
+			const blockCommnets = document.querySelector('.block-field-blocknodenewsfield-comments');
+			const blockAnonymus = document.querySelector('.block-comments-anonymous');
+			const allTextMessage = blockAnonymus.querySelectorAll('.text-anonymous-comment');
+			const loginLink = blockAnonymus.querySelector('.login-anonymous-comment');
+			const registerLink = blockAnonymus.querySelector('.register-anonymous-comment');
+
+			if(!!blockCommnets){
+				const content = blockCommnets.querySelector('.content');
+				content.insertAdjacentElement('afterbegin',blockAnonymus);
+			}
+
+			const container = document.createElement('div');
+			const message = document.createElement('div');
 
 			container.classList.add('message-comments-container');
 			message.classList.add('message-comments-links');
