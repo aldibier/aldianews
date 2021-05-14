@@ -1688,10 +1688,17 @@ var initMain = function initMain($, Drupal) {
 
 
     if (!!document.querySelector('.block-comments-anonymous')) {
+      var blockCommnets = document.querySelector('.block-field-blocknodenewsfield-comments');
       var blockAnonymus = document.querySelector('.block-comments-anonymous');
-      var allTextMessage = document.querySelectorAll('.text-anonymous-comment');
-      var loginLink = document.querySelector('.login-anonymous-comment');
-      var registerLink = document.querySelector('.register-anonymous-comment');
+      var allTextMessage = blockAnonymus.querySelectorAll('.text-anonymous-comment');
+      var loginLink = blockAnonymus.querySelector('.login-anonymous-comment');
+      var registerLink = blockAnonymus.querySelector('.register-anonymous-comment');
+
+      if (!!blockCommnets) {
+        var content = blockCommnets.querySelector('.content');
+        content.insertAdjacentElement('afterbegin', blockAnonymus);
+      }
+
       var container = document.createElement('div');
       var message = document.createElement('div');
       container.classList.add('message-comments-container');
@@ -2522,8 +2529,8 @@ var initSlick = function initSlick($, Drupal) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\valer\Desktop\4ld14-n3ws\web\themes\custom\al_dia_news\src\js\scripts.js */"./src/js/scripts.js");
-module.exports = __webpack_require__(/*! C:\Users\valer\Desktop\4ld14-n3ws\web\themes\custom\al_dia_news\src\sass\styles.scss */"./src/sass/styles.scss");
+__webpack_require__(/*! /Users/usuario/Desktop/Proyectos/AlDiaNews/4ld14-n3ws/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
+module.exports = __webpack_require__(/*! /Users/usuario/Desktop/Proyectos/AlDiaNews/4ld14-n3ws/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
 
 
 /***/ })
