@@ -243,8 +243,17 @@ import replaceToken from "./modules/replaceToken";
         var watchLive = document.querySelector('.watch-live-video.open');
         const videoNews = document.querySelector('.block-field-blocknodenewsfield-video .content.stuck');
         const videoThoughtLeaders = document.querySelector('.block-field-blocknodethought-leadersfield-video .content.stuck ');
-        (!!watchLive && !!videoNews) ? videoNews.classList.add('disnone') : videoNews.classList.remove('disnone');
-        (!!watchLive && !!videoThoughtLeaders) ? videoThoughtLeaders.classList.add('disnone') : videoThoughtLeaders.classList.remove('disnone');
+        if (!!watchLive && !!videoNews) { 
+          videoNews.classList.add('none') 
+        } else { 
+          if (videoNews.classList.contains("none")) { videoNews.classList.remove('none');}
+        };
+
+        if (!!watchLive && !!videoThoughtLeaders) { 
+          videoThoughtLeaders.classList.add('none') 
+        } else { 
+          if (videoThoughtLeaders.classList.contains("none")) {videoThoughtLeaders.classList.remove('none');}
+        };
       });
     }
 

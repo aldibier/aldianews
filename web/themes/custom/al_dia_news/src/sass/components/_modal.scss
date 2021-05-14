@@ -180,7 +180,7 @@
     background: url(/themes/custom/al_dia_news/assets/img/closew.png) center center no-repeat;
     background-size: contain;
 
-    @media (min-width: 1380px) and (max-width: 1830px) {
+    @media (min-width: 1280px) and (max-width: 1830px) {
       right: 28%;
     }
 
@@ -190,7 +190,7 @@
   }
 
   &.disnone {
-    display: none;
+    display: none !important;
   }
 
   iframe {
@@ -221,4 +221,9 @@
       padding-bottom: 180px;
     }
   }
+}
+
+.ui-widget-overlay{
+  opacity: .5;
+    background: #333333;
 }

@@ -1794,11 +1794,11 @@ var initMain = function initMain($, Drupal) {
     premium.closest("body").classList.add("page-premium");
   }
 
-  var video_prmium = document.querySelector(".block-field-blocknodenewsfield-video.premium .close-modal");
-  var content_prmium = document.querySelector(".block-field-blocknodenewsfield-video.premium .content");
+  var video_premium = document.querySelector(".block-field-blocknodenewsfield-video.premium .close-modal");
+  var content_premium = document.querySelector(".block-field-blocknodenewsfield-video.premium .content");
 
-  if (!!video_prmium && !!content_prmium) {
-    content_prmium.prepend(video_prmium);
+  if (!!video_premium && !!content_premium) {
+    content_premium.prepend(video_premium);
   }
 };
 
@@ -2044,8 +2044,26 @@ __webpack_require__.r(__webpack_exports__);
         var watchLive = document.querySelector('.watch-live-video.open');
         var videoNews = document.querySelector('.block-field-blocknodenewsfield-video .content.stuck');
         var videoThoughtLeaders = document.querySelector('.block-field-blocknodethought-leadersfield-video .content.stuck ');
-        !!watchLive && !!videoNews ? videoNews.classList.add('disnone') : videoNews.classList.remove('disnone');
-        !!watchLive && !!videoThoughtLeaders ? videoThoughtLeaders.classList.add('disnone') : videoThoughtLeaders.classList.remove('disnone');
+
+        if (!!watchLive && !!videoNews) {
+          videoNews.classList.add('none');
+        } else {
+          if (videoNews.classList.contains("none")) {
+            videoNews.classList.remove('none');
+          }
+        }
+
+        ;
+
+        if (!!watchLive && !!videoThoughtLeaders) {
+          videoThoughtLeaders.classList.add('none');
+        } else {
+          if (videoThoughtLeaders.classList.contains("none")) {
+            videoThoughtLeaders.classList.remove('none');
+          }
+        }
+
+        ;
       });
     } ///// modal nominate interna eventos
 
