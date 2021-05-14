@@ -243,8 +243,8 @@ import replaceToken from "./modules/replaceToken";
         var watchLive = document.querySelector('.watch-live-video.open');
         const videoNews = document.querySelector('.block-field-blocknodenewsfield-video .content.stuck');
         const videoThoughtLeaders = document.querySelector('.block-field-blocknodethought-leadersfield-video .content.stuck ');
-        if (!!watchLive && !!videoNews) {videoNews.classList.add('disnone');}
-        if (!!watchLive && !!videoThoughtLeaders) {videoThoughtLeaders.classList.add('disnone');}
+        (!!watchLive && !!videoNews) ? videoNews.classList.add('disnone') : videoNews.classList.remove('disnone');
+        (!!watchLive && !!videoThoughtLeaders) ? videoThoughtLeaders.classList.add('disnone') : videoThoughtLeaders.classList.remove('disnone');
       });
     }
 
