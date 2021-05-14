@@ -844,7 +844,8 @@ div[data-embed-button="related_content"] {
     margin: 0 auto 30px 0 !important;
     max-width: 400px !important;
     background: transparent !important;
-    button {
+    button,
+    a {
       height: 50px;
       display: flex;
       align-items: center;
@@ -868,7 +869,8 @@ div[data-embed-button="related_content"] {
       display: flex;
       justify-content: space-around !important;
       flex-direction: row-reverse;
-      button:last-child {
+      button:last-child,
+      a:last-child {
         background: $bgrey;
       }
     }
