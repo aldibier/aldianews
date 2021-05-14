@@ -1785,6 +1785,20 @@ var initMain = function initMain($, Drupal) {
 
   if (watch_live_iframe == null) {
     watch_live_iframe.closest(".watch-live").classList.add("watch-dis-none");
+  } // js para pagina premium, boton e video y comentarios
+
+
+  var premium = document.querySelector(".node--view-mode-premium");
+
+  if (!!premium) {
+    premium.closest("body").classList.add("page-premium");
+  }
+
+  var video_prmium = document.querySelector(".block-field-blocknodenewsfield-video.premium .close-modal");
+  var content_prmium = document.querySelector(".block-field-blocknodenewsfield-video.premium .content");
+
+  if (!!video_prmium && !!content_prmium) {
+    content_prmium.prepend(video_prmium);
   }
 };
 
