@@ -53,7 +53,6 @@
     label_display == 'visually_hidden' ? 'visually-hidden',
   ]
 %}
-
 {% if label_hidden %}
   {% if multiple %}
     <div{{ attributes.addClass(classes, 'field__items') }}>
@@ -64,6 +63,7 @@
   {% else %}
     {% for item in items %}
       <div{{ attributes.addClass(classes, 'field__item') }}>{{ item.content }}</div>
+      <a href="/" class="button-home-reg">I’LL DO IT LATER</a>
     {% endfor %}
   {% endif %}
 {% else %}
@@ -74,11 +74,10 @@
     {% endif %}
     {% for item in items %}
       <div{{ item.attributes.addClass('field__item') }}>{{ item.content }}</div>
+
     {% endfor %}
     {% if multiple %}
       </div>
     {% endif %}
-    <a href="/" class="button">I’LL DO IT LATER</a>
-
   </div>
 {% endif %}

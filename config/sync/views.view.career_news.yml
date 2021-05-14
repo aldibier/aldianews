@@ -12,9 +12,9 @@ dependencies:
   content:
     - 'taxonomy_term:categories:398a2ad3-7348-410b-ac51-2a8040866974'
   module:
+    - lazy
     - node
     - other_view_filter
-    - responsive_image
     - taxonomy
     - user
 id: career_news
@@ -119,7 +119,7 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: responsive_image
+          type: lazy_responsive_image
           settings:
             responsive_image_style: next_two_image_responsive
             image_link: content
