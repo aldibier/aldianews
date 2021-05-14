@@ -3,6 +3,10 @@
   flex-wrap: wrap;
   margin-bottom: 40px;
 
+  &:empty {
+    display: none;
+  }
+
   .comment-form__title {
     order: -2;
     width: 100%;
@@ -501,6 +505,10 @@ section>.comment:nth-of-type(1) {
   @media screen and(max-width: $broken) {
     max-width: 100%;
     margin-right: 0;
+  }
+
+  @media screen and(max-width: $tablet) {
+    margin-bottom: 40px;
   }
 
   .content {
