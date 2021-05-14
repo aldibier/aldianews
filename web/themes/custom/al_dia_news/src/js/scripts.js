@@ -5,7 +5,7 @@ import initMain from "./main.js";
 import initSlick from "./slick.js";
 import replaceToken from "./modules/replaceToken";
 
-(function ($, Drupal) {
+(function($, Drupal) {
   // Selection share
   const sharer = new SelectionSharer();
   sharer.setElements("p,a,h1,h2,h3,blockquote,em,strong");
@@ -29,7 +29,7 @@ import replaceToken from "./modules/replaceToken";
   var videoHeight = $video.outerHeight();
 
   if (!!document.querySelector(".page-node-type-news") && $video.length != 0) {
-    $window.on("scroll", function () {
+    $window.on("scroll", function() {
       var windowScrollTop = $window.scrollTop();
       var videoBottom = videoHeight + $videoWrap.offset().top;
 
@@ -40,7 +40,7 @@ import replaceToken from "./modules/replaceToken";
         $videoWrap.height("auto");
         $video.removeClass("stuck");
       }
-      $('.stuck button[name="close"]').click(function () {
+      $('.stuck button[name="close"]').click(function() {
         $video.addClass("disnone");
       });
     });
@@ -59,7 +59,7 @@ import replaceToken from "./modules/replaceToken";
     !!document.querySelector(".page-node-type-thought-leaders") &&
     !!$videoThoughtLeaders
   ) {
-    $window.on("scroll", function () {
+    $window.on("scroll", function() {
       var windowScrollTop = $window.scrollTop();
       var videoBottom =
         videoThoughtLeadersHeigth + $containerVideo.offset().top;
@@ -71,29 +71,44 @@ import replaceToken from "./modules/replaceToken";
         $containerVideo.height("auto");
         $videoThoughtLeaders.removeClass("stuck");
       }
-      $('.stuck button[name="close"]').click(function () {
+      $('.stuck button[name="close"]').click(function() {
         $videoThoughtLeaders.addClass("disnone");
       });
     });
   }
 
-  jQuery(document).ready(function () {
-    if ($(".page-node-type-news .block-field-blocknodenewsfield-video iframe").length) {
-      var url = ($(".page-node-type-news .block-field-blocknodenewsfield-video iframe")[0].src += "&mute=1");
+  jQuery(document).ready(function() {
+    if (
+      $(".page-node-type-news .block-field-blocknodenewsfield-video iframe")
+        .length
+    ) {
+      var url = ($(
+        ".page-node-type-news .block-field-blocknodenewsfield-video iframe"
+      )[0].src += "&mute=1");
       var video = url.replace("autoplay=0", "autoplay=1");
 
-      $(".page-node-type-news .block-field-blocknodenewsfield-video iframe").attr("src",video);
+      $(
+        ".page-node-type-news .block-field-blocknodenewsfield-video iframe"
+      ).attr("src", video);
     }
 
-    if ($(".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video iframe").length) {
-      var url = ($(".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video iframe")[0].src += "&mute=1");
+    if (
+      $(
+        ".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video iframe"
+      ).length
+    ) {
+      var url = ($(
+        ".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video iframe"
+      )[0].src += "&mute=1");
       var video = url.replace("autoplay=0", "autoplay=1");
 
-      $(".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video iframe").attr("src",video);
+      $(
+        ".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video iframe"
+      ).attr("src", video);
     }
 
     //--------- menu--------------------//
-    $(".region-header #block-blockheader").click(function () {
+    $(".region-header #block-blockheader").click(function() {
       if ($(".region-secondary-menu").hasClass("open-menu")) {
         $(".region-secondary-menu").removeClass("open-menu");
         $("body").removeClass("open-menu");
@@ -103,13 +118,13 @@ import replaceToken from "./modules/replaceToken";
       }
     });
 
-    $("#block-blockpreheader").click(function () {
+    $("#block-blockpreheader").click(function() {
       $(".region-secondary-menu").removeClass("open-menu");
       $("body").removeClass("open-menu");
     });
 
     //--------puopup-- login-----------//
-    $(".user-logged-in #block-menuuseritem").click(function () {
+    $(".user-logged-in #block-menuuseritem").click(function() {
       if ($(this).hasClass("open")) {
         $(this).removeClass("open");
         $(".user-logged-in #block-menuuseritem .item-list").removeClass("open");
@@ -120,7 +135,7 @@ import replaceToken from "./modules/replaceToken";
     });
 
     //--------puopup-- login - movil -----------//
-    $(".user-logged-in #block-menuuseritem-2").click(function () {
+    $(".user-logged-in #block-menuuseritem-2").click(function() {
       if (window.matchMedia("(max-width: 768px)").matches) {
         if ($(this).hasClass("open")) {
           $(this).removeClass("open");
@@ -136,7 +151,7 @@ import replaceToken from "./modules/replaceToken";
       }
     });
 
-    $(".region-secondary-menu #block-al-dia-news-main-menu a").each(function () {
+    $(".region-secondary-menu #block-al-dia-news-main-menu a").each(function() {
       var text = $(this).html();
       $(this).html(text.replace(/AL/g, "<br>AL"));
     });
@@ -174,13 +189,13 @@ import replaceToken from "./modules/replaceToken";
 
     $(
       '#block-fixed-block-content-horizontal-advertising-close  button[name="close"]'
-    ).click(function () {
+    ).click(function() {
       $("#block-fixed-block-content-horizontal-advertising-close").addClass(
         "dis-none"
       );
     });
 
-    $(".page-node-type-al-dia-vacancy .button-apply").click(function () {
+    $(".page-node-type-al-dia-vacancy .button-apply").click(function() {
       if (
         $(".page-node-type-al-dia-vacancy .block-webform-block").hasClass(
           "open"
@@ -196,7 +211,7 @@ import replaceToken from "./modules/replaceToken";
       }
     });
 
-    $("#edit-close-window").click(function () {
+    $("#edit-close-window").click(function() {
       if (
         $(".page-node-type-al-dia-vacancy .block-webform-block").hasClass(
           "open"
@@ -212,50 +227,72 @@ import replaceToken from "./modules/replaceToken";
       }
     });
 
-    $('.views-field-field-webform  button[name="close"]').click(function () {
+    $('.views-field-field-webform  button[name="close"]').click(function() {
       if ($(".path-employer .views-field-field-webform").hasClass("open")) {
         $(".path-employer .views-field-field-webform").removeClass("open");
       }
     });
 
-    $(".style-jobs .button-apply").click(function () {
+    $(".style-jobs .button-apply").click(function() {
       $(".style-jobs .modal-apply-webform").addClass("open");
     });
 
-    $('.modal-apply-webform  button[name="close"]').click(function () {
+    $('.modal-apply-webform  button[name="close"]').click(function() {
       if ($(".style-jobs .modal-apply-webform").hasClass("open")) {
         $(".style-jobs .modal-apply-webform").removeClass("open");
       }
     });
 
     //// modal watch live
-    $(".watch-live-button").click(function () {
+    $(".watch-live-button").click(function() {
       $(".watch-live-video").addClass("open");
     });
 
-    $('.watch-live-video button[name="close"]').click(function () {
+    $('.watch-live-video button[name="close"]').click(function() {
       if ($(".watch-live-video ").hasClass("open")) {
         $(".watch-live-video ").removeClass("open");
       }
     });
-    if (!!document.querySelector('.page-node-type-news') || !!document.querySelector('.page-node-type-thought-leaders')) {
-      $(window).on("scroll", function () {
-        var watchLive = document.querySelector('.watch-live-video.open');
-        const videoNews = document.querySelector('.block-field-blocknodenewsfield-video .content.stuck');
-        const videoThoughtLeaders = document.querySelector('.block-field-blocknodethought-leadersfield-video .content.stuck ');
-        (!!watchLive && !!videoNews) ? videoNews.classList.add('disnone') : videoNews.classList.remove('disnone');
-        (!!watchLive && !!videoThoughtLeaders) ? videoThoughtLeaders.classList.add('disnone') : videoThoughtLeaders.classList.remove('disnone');
+    if (
+      !!document.querySelector(".page-node-type-news") ||
+      !!document.querySelector(".page-node-type-thought-leaders")
+    ) {
+      $(window).on("scroll", function() {
+        var watchLive = document.querySelector(".watch-live-video.open");
+        var watchLive_button = document.querySelector(
+          ".watch-live-video .close-modal"
+        );
+        const videoNews = document.querySelector(
+          ".block-field-blocknodenewsfield-video .content.stuck"
+        );
+        const videoThoughtLeaders = document.querySelector(
+          ".block-field-blocknodethought-leadersfield-video .content.stuck "
+        );
+        if (!!watchLive && !!videoNews && !!watchLive_button) {
+          videoNews.classList.add("dis-none");
+          watchLive_button.click(function() {
+            if (videoNews.hasClass("open")) {
+              videoNews.removeClass("open");
+            }
+          });
+        }
+        if (!!watchLive && !!videoThoughtLeaders && !!watchLive_button) {
+          videoThoughtLeaders.classList.add("dis-none");
+          watchLive_button.click(function() {
+            if (videoThoughtLeaders.hasClass("open")) {
+              videoThoughtLeaders.removeClass("open");
+            }
+          });
+        }
       });
     }
 
-		
-
     ///// modal nominate interna eventos
-    $(".banner-events a#nominee").click(function () {
+    $(".banner-events a#nominee").click(function() {
       $(".modal-open .modal-apply-webform").addClass("open");
     });
 
-    $('.modal-apply-webform  button[name="close"]').click(function () {
+    $('.modal-apply-webform  button[name="close"]').click(function() {
       if ($(".modal-open .modal-apply-webform").hasClass("open")) {
         $(".modal-open .modal-apply-webform").removeClass("open");
       }
@@ -263,7 +300,7 @@ import replaceToken from "./modules/replaceToken";
 
     ///// modal employer
 
-    $(".path-employer .button-apply").click(function () {
+    $(".path-employer .button-apply").click(function() {
       if (
         $(this)
           .parents(".views-row")
@@ -282,7 +319,7 @@ import replaceToken from "./modules/replaceToken";
       }
     });
 
-    $(".path-employer form button").click(function () {
+    $(".path-employer form button").click(function() {
       if (
         $(this)
           .parents(".views-row")
@@ -303,7 +340,7 @@ import replaceToken from "./modules/replaceToken";
 
     /// modal header buscador
 
-    $(".block-search input").click(function () {
+    $(".block-search input").click(function() {
       $("#block-exposedformsearch-results-al-dia-solrpage-1-2").addClass(
         "open"
       );
@@ -315,15 +352,15 @@ import replaceToken from "./modules/replaceToken";
   });
 
   Drupal.behaviors.form_checkbox = {
-    attach: function (context, settings) {
-      $(document).ready(function () {
+    attach: function(context, settings) {
+      $(document).ready(function() {
         ///// js para tag new
 
         Array.from(
           document.querySelectorAll(
             ".block-field-blocknodenewsfield-type-of-content"
           )
-        ).map(function (evt) {
+        ).map(function(evt) {
           if (evt != null) {
             var shape = evt.querySelector(".field--name-field-type-of-content");
             if (shape != null) {
@@ -339,7 +376,7 @@ import replaceToken from "./modules/replaceToken";
         //// sumo select
 
         Array.from(document.querySelectorAll(".region-content select")).map(
-          function (e) {
+          function(e) {
             if (e != null) {
               e.classList.add("testselect1");
               $(".testselect1").SumoSelect({
@@ -359,7 +396,7 @@ import replaceToken from "./modules/replaceToken";
             $('<div class="fake-checkbox" />').insertAfter(".form-checkbox");
           }
 
-          $(".form-checkbox").each(function () {
+          $(".form-checkbox").each(function() {
             var context = $(this);
             if (context.prop("checked") == true) {
               context.addClass("active-check");
@@ -370,7 +407,7 @@ import replaceToken from "./modules/replaceToken";
         // Pone clase activa cuando el radio está seleccionado
         $("." + currentClass, context)
           .once("js-form-fake-checkbox")
-          .click(function () {
+          .click(function() {
             var context = $(this);
             context.toggleClass("active-check");
           });
@@ -395,7 +432,7 @@ import replaceToken from "./modules/replaceToken";
         //// elipsis para archivos
         Array.from(
           document.querySelectorAll("#edit-container .js-form-type-checkbox a")
-        ).map(function (e) {
+        ).map(function(e) {
           if (e != null) {
             if (e.innerText.length > 25) {
               var newt = e.innerText.substring(0, 25) + "...";

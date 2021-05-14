@@ -160,7 +160,7 @@ class Comments extends DsFieldBase {
       ];
 
       $items[] = [
-        '#markup' => '<span class="text-anonymous-comment">to comment</span>',
+        '#markup' => '<span class="text-anonymous-comment">to reply</span>',
       ];
       
       $items[] = [

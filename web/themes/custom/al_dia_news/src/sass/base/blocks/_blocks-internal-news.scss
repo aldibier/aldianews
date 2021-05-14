@@ -330,14 +330,14 @@ blockquote {
     // color: $corange;
     // font-size: $px130;
     position: absolute;
-    background: transparent url("../../assets/img/comillas.png") center
-      center no-repeat;
+    background: transparent url("../../assets/img/comillas.png") center center
+      no-repeat;
     background-size: contain;
     width: 48.38px;
     height: 34.84px;
     content: "";
   }
- 
+
   &:before {
     left: 0;
     top: 0px;
@@ -776,17 +776,35 @@ div[data-embed-button="related_content"] {
 
 .popup-edit-comment,
 .popup-delete-comment {
-  max-width: 1000px !important;
+  max-width: 960px !important;
   margin: 0 auto;
   right: 0px;
+  border-radius: 0px !important;
   * {
-    max-width: 900px !important;
+    max-width: 875px !important;
+  }
+  .ui-dialog-titlebar-close {
+    display: none;
   }
   .ui-dialog-titlebar {
     padding: 0 20px;
     margin: 0 auto;
     border: 0px solid #dddddd;
     background: transparent;
+  }
+  .form-type-textarea {
+    margin: 40px 0 20px;
+    textarea {
+      padding: 25px;
+      min-height: 182px;
+      font-family: $PrNovacond-reg;
+      font-size: $px20;
+      line-height: 28px;
+      color: $cblack3;
+      &::placeholder {
+        text-transform: capitalize;
+      }
+    }
   }
   .ui-icon-closethick {
     background: gray !important;
@@ -807,37 +825,51 @@ div[data-embed-button="related_content"] {
     margin: 30px 0 20px;
   }
   .ui-dialog-buttonpane {
-    margin-top: 0px;
-    border: 0px;
-    padding: 0px;
+    border: 0px !important;
     padding: 0 20px;
     margin: 0 auto 20px !important;
+    max-width: 400px !important;
     button {
       height: 50px;
       display: flex;
       align-items: center;
       justify-content: center;
       max-width: 165px !important;
+      font-family: $PrNovacond-Sbold;
+      margin: 0px;
+      letter-spacing: 0.741176px;
+      box-shadow: 0px 0px 0px;
+      text-transform: uppercase;
     }
     .button--primary:not(:focus):hover {
       background: #e21 !important;
+    }
+    .ui-dialog-buttonset {
+      display: flex;
+      justify-content: space-around !important;
+      flex-direction: row-reverse;
+      button:last-child {
+        background: $bgrey;
+      }
     }
   }
 }
 
 .popup-delete-comment {
+  max-width: 604px !important;
   .ui-dialog-title {
     font-size: $px25 !important;
     padding-top: 20px;
     white-space: break-spaces;
     text-align: center;
   }
-  .ui-dialog-buttonpane {
-    max-width: 500px !important;
-  }
-  .ui-dialog-buttonset {
-    display: flex;
-    justify-content: space-around !important;
+  .confirmation {
+    margin: 40px auto 20px;
+    padding: 0px;
+    font-family: $PrNovacond-Sbold;
+    font-size: $px22;
+    line-height: 27px;
+    color: $cblack;
   }
 }
 .comment {

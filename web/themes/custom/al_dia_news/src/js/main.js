@@ -222,13 +222,13 @@ const initMain = ($, Drupal) => {
 		}
 
 		/// js boton back
-		Array.from(document.querySelectorAll(".cbutton-back")).map(function (e) {
-			if (e != null) {
-				e.addEventListener("click", () => {
-					window.history.back();
-				});
-			}
-		});
+		// Array.from(document.querySelectorAll(".cbutton-back")).map(function (e) {
+		// 	if (e != null) {
+		// 		e.addEventListener("click", () => {
+		// 			window.history.back();
+		// 		});
+		// 	}
+		// });
 
 		/// js login and register
 		Array.from(document.querySelectorAll(".comment-forbidden a")).map(function (
@@ -699,9 +699,9 @@ const initMain = ($, Drupal) => {
 	var premium = document.querySelector(".node--view-mode-premium");
 	if(!!premium){premium.closest("body").classList.add("page-premium");}
 
-	var video_prmium = document.querySelector(".block-field-blocknodenewsfield-video.premium .close-modal");
-	var content_prmium = document.querySelector(".block-field-blocknodenewsfield-video.premium .content");
-	if(!!video_prmium && !!content_prmium){content_prmium.prepend(video_prmium);}
+	var video_premium = document.querySelector(".block-field-blocknodenewsfield-video.premium .close-modal");
+	var content_premium = document.querySelector(".block-field-blocknodenewsfield-video.premium .content");
+	if(!!video_premium && !!content_premium){content_premium.prepend(video_premium);}
 };
 
 export default initMain;
