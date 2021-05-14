@@ -159,6 +159,70 @@
   }
 }
 
+.account-modal--login {
+  max-height: 70%;
+  min-height: 450px;
+  overflow: auto;
+
+  .user-forgot-pass {
+      font-size: szrem(22);
+      font-family: $PrNovacond-light;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 27px;
+      letter-spacing: 0.025em;
+      color: $corange;
+
+      @media (max-width: $tablet) {
+          font-size: szrem(15);
+          line-height: 18px;
+      }
+  }
+}
+
+.account-modal--register {
+  max-height: 70%;
+  min-height: 450px;
+  overflow: auto;
+
+  .form-item-pass {
+    position: relative;
+  }
+
+  .password-parent {
+    &:focus-within ~ .password-suggestions {
+      visibility: visible;
+      pointer-events: all;
+    }
+  }
+
+  .password-suggestions {
+    width: 100%;
+    margin: 0;
+    padding: 15px;
+    position: absolute;
+    bottom: calc(0% + 335px);
+    left:0;
+    background-color: $corange;
+    color: $cwhite;
+    border-radius: 5px;
+    visibility: hidden;
+    pointer-events: none;
+
+    &::after {
+      content: '';
+      height: 0;
+      width: 0;
+      position: absolute;
+      bottom: calc(0% - 35px);
+      right: 40px;
+      display: block;
+      border-color: $corange transparent  transparent transparent;
+      border-width: 20px;
+      border-style: solid;
+    }
+  }
+}
 
 .stuck {
   position: fixed;
@@ -180,7 +244,7 @@
     background: url(/themes/custom/al_dia_news/assets/img/closew.png) center center no-repeat;
     background-size: contain;
 
-    @media (min-width: 1380px) and (max-width: 1830px) {
+    @media (min-width: 1280px) and (max-width: 1830px) {
       right: 28%;
     }
 
@@ -190,7 +254,7 @@
   }
 
   &.disnone {
-    display: none;
+    display: none !important;
   }
 
   iframe {
@@ -221,4 +285,9 @@
       padding-bottom: 180px;
     }
   }
+}
+
+.ui-widget-overlay{
+  opacity: .5;
+    background: #333333;
 }
