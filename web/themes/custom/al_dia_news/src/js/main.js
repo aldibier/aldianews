@@ -222,13 +222,13 @@ const initMain = ($, Drupal) => {
 		}
 
 		/// js boton back
-		Array.from(document.querySelectorAll(".cbutton-back")).map(function (e) {
-			if (e != null) {
-				e.addEventListener("click", () => {
-					window.history.back();
-				});
-			}
-		});
+		// Array.from(document.querySelectorAll(".cbutton-back")).map(function (e) {
+		// 	if (e != null) {
+		// 		e.addEventListener("click", () => {
+		// 			window.history.back();
+		// 		});
+		// 	}
+		// });
 
 		/// js login and register
 		Array.from(document.querySelectorAll(".comment-forbidden a")).map(function (
