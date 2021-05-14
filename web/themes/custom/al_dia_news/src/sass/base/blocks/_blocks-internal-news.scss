@@ -841,9 +841,9 @@ div[data-embed-button="related_content"] {
   .ui-dialog-buttonpane {
     border: 0px !important;
     padding: 0 20px;
-    margin: 0 auto 20px 0 !important;
+    margin: 0 auto 30px 0 !important;
     max-width: 400px !important;
-    background: transparent;
+    background: transparent !important;
     button {
       height: 50px;
       display: flex;
@@ -890,6 +890,7 @@ div[data-embed-button="related_content"] {
       font-size: $px18 !important;
     }
   }
+
   .confirmation {
     margin: 40px auto 20px;
     padding: 0px;
@@ -902,6 +903,9 @@ div[data-embed-button="related_content"] {
       font-size: $px15;
       line-height: 18px;
     }
+  }
+  .ui-dialog-buttonpane {
+    margin: 0 auto 20px !important;
   }
   .ui-dialog-titlebar {
     padding: 30px 20px 0 !important;

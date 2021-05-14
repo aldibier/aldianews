@@ -257,34 +257,39 @@ import replaceToken from "./modules/replaceToken";
       !!document.querySelector(".page-node-type-news") ||
       !!document.querySelector(".page-node-type-thought-leaders")
     ) {
+      var watchLive = document.querySelector(".watch-live-video.open");
+      var watchLive_button = document.querySelector(
+        ".watch-live-video .close-modal"
+      );
+      var videoNews = document.querySelector(
+        ".block-field-blocknodenewsfield-video .content.stuck"
+      );
+      var videoThoughtLeaders = document.querySelector(
+        ".block-field-blocknodethought-leadersfield-video .content.stuck "
+      );
+
       $(window).on("scroll", function() {
-        var watchLive = document.querySelector(".watch-live-video.open");
-        var watchLive_button = document.querySelector(
-          ".watch-live-video .close-modal"
-        );
-        const videoNews = document.querySelector(
-          ".block-field-blocknodenewsfield-video .content.stuck"
-        );
-        const videoThoughtLeaders = document.querySelector(
-          ".block-field-blocknodethought-leadersfield-video .content.stuck "
-        );
-        if (!!watchLive && !!videoNews && !!watchLive_button) {
+        if (!!watchLive && !!videoNews) {
           videoNews.classList.add("dis-none");
-          watchLive_button.click(function() {
-            if (videoNews.hasClass("dis-none")) {
-              videoNews.removeClass("dis-none");
-            }
-          });
         }
-        if (!!watchLive && !!videoThoughtLeaders && !!watchLive_button) {
+        if (!!watchLive && !!videoThoughtLeaders) {
           videoThoughtLeaders.classList.add("dis-none");
-          watchLive_button.click(function() {
-            if (videoThoughtLeaders.hasClass("dis-none")) {
-              videoThoughtLeaders.removeClass("dis-none");
-            }
-          });
         }
       });
+      if (!!videoNews && !!watchLive_button) {
+        watchLive_button.click(function() {
+          if (videoNews.hasClass("dis-none")) {
+            videoNews.removeClass("dis-none");
+          }
+        });
+      }
+      if (!!videoThoughtLeaders && !!watchLive_button) {
+        watchLive_button.click(function() {
+          if (videoThoughtLeaders.hasClass("dis-none")) {
+            videoThoughtLeaders.removeClass("dis-none");
+          }
+        });
+      }
     }
 
     ///// modal nominate interna eventos
