@@ -49,16 +49,22 @@ function al_dia_news_general_form_alter(&$form, $form_state, $form_id) {
   // $route_parameters = $url_object->getrouteParameters();
   switch ($form_id) {
     case  "comment_comments_content_form":
+      ksm($form);
+
     // Alteración del botón submit de comentarios.
       $form['actions']['submit']['#value'] = t('POST COMMENT');
       $myUrl = "My";
-      $form['actions']['submit_cancel'] = [
-        // '#type' => 'submit',
-        // '#value' => t('BACK'),
-        // '#weight' => 99,
-        // '#limit_validation_errors' => [],
-        '#markup' => '<div class="cbutton-back">BACK</div>',
-      ];
+      // $form['actions']['cancel'] = [
+      //   '#type' => 'link',
+      //   '#title' => t('Cancel'),
+      //   '#attributes' => [ 
+      //       'main-links__link', 
+      //       'main-links__link--test-drive', 
+      //     ], 
+      //   '#weight' => 99,
+      //   '#limit_validation_errors' => [],
+      //   '#markup' => '<div class="cbutton-back">BACK</div>',
+      // ];
       $form['#title'] = t("EDIT COMMENT");
       $form['field_comment_body']['widget'][0]['value']['#title_display'] = "hidden";
     break;
