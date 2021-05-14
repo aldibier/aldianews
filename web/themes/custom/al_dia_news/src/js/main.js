@@ -579,12 +579,19 @@ const initMain = ($, Drupal) => {
 
 		//js para comment anonymous
 		if (!!document.querySelector('.block-comments-anonymous')) {
-			var blockAnonymus = document.querySelector('.block-comments-anonymous');
-			var allTextMessage = document.querySelectorAll('.text-anonymous-comment');
-			var loginLink = document.querySelector('.login-anonymous-comment');
-			var registerLink = document.querySelector('.register-anonymous-comment');
-			var container = document.createElement('div');
-			var message = document.createElement('div');
+			const blockCommnets = document.querySelector('.block-field-blocknodenewsfield-comments');
+			const blockAnonymus = document.querySelector('.block-comments-anonymous');
+			const allTextMessage = blockAnonymus.querySelectorAll('.text-anonymous-comment');
+			const loginLink = blockAnonymus.querySelector('.login-anonymous-comment');
+			const registerLink = blockAnonymus.querySelector('.register-anonymous-comment');
+
+			if(!!blockCommnets){
+				const content = blockCommnets.querySelector('.content');
+				content.insertAdjacentElement('afterbegin',blockAnonymus);
+			}
+
+			const container = document.createElement('div');
+			const message = document.createElement('div');
 
 			container.classList.add('message-comments-container');
 			message.classList.add('message-comments-links');
@@ -687,6 +694,14 @@ const initMain = ($, Drupal) => {
 	// validador watchlive
 	var watch_live_iframe = document.querySelector(".watch-live-video iframe");
 	if(watch_live_iframe == null){watch_live_iframe.closest(".watch-live").classList.add("watch-dis-none");}
+
+	// js para pagina premium, boton e video y comentarios
+	var premium = document.querySelector(".node--view-mode-premium");
+	if(!!premium){premium.closest("body").classList.add("page-premium");}
+
+	var video_prmium = document.querySelector(".block-field-blocknodenewsfield-video.premium .close-modal");
+	var content_prmium = document.querySelector(".block-field-blocknodenewsfield-video.premium .content");
+	if(!!video_prmium && !!content_prmium){content_prmium.prepend(video_prmium);}
 };
 
 export default initMain;
