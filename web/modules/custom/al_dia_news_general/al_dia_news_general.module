@@ -57,7 +57,6 @@ function al_dia_news_general_form_alter(&$form, $form_state, $form_id) {
         '#value' => t('BACK'),
         '#weight' => 99,
         '#limit_validation_errors' => [],
-        '#markup' => '<div class="cbutton-back">BACK</div>',
       ];
       $form['#title'] = t("EDIT COMMENT");
       $form['field_comment_body']['widget'][0]['value']['#title_display'] = "hidden";
