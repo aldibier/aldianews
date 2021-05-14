@@ -2056,8 +2056,8 @@ __webpack_require__.r(__webpack_exports__);
         if (!!watchLive && !!videoNews && !!watchLive_button) {
           videoNews.classList.add("dis-none");
           watchLive_button.click(function () {
-            if (videoNews.hasClass("open")) {
-              videoNews.removeClass("open");
+            if (videoNews.hasClass("dis-none")) {
+              videoNews.removeClass("dis-none");
             }
           });
         }
@@ -2065,8 +2065,8 @@ __webpack_require__.r(__webpack_exports__);
         if (!!watchLive && !!videoThoughtLeaders && !!watchLive_button) {
           videoThoughtLeaders.classList.add("dis-none");
           watchLive_button.click(function () {
-            if (videoThoughtLeaders.hasClass("open")) {
-              videoThoughtLeaders.removeClass("open");
+            if (videoThoughtLeaders.hasClass("dis-none")) {
+              videoThoughtLeaders.removeClass("dis-none");
             }
           });
         }
