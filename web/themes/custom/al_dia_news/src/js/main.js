@@ -75,19 +75,6 @@ const initMain = ($, Drupal) => {
 			}
 		}
 
-		// block trending se inserta en noticia de impacto
-		// const blockTrending = document.querySelector(
-		// 	".block-block-grouphigh-impact-and-most-visited-news-home .block-fixed-block-contentbloque-dummy-noticias-home"
-		// );
-
-		// if (!!blockTrending) {
-		// 	const blockTwoFeaturedNews = document.querySelector(
-		// 		".view-high-impact-news-home .view-display-id-block_2"
-		// 	);
-		// 	if (blockTwoFeaturedNews != null) {
-		// 		blockTwoFeaturedNews.insertAdjacentElement("beforeend", blockTrending);
-		// 	}
-		// }
 
 		// blockquote para selection-sharer
 		const allBlockquote = document.querySelectorAll(
@@ -625,22 +612,8 @@ const initMain = ($, Drupal) => {
 			});
 		}
 
-		// //js para omitir video fixed (watch live)
-		// if (!!document.querySelector('.page-node-type-news') || !!document.querySelector('.page-node-type-thought-leaders')) {
-		// 	const watchLive = document.querySelector('.watch-live');
-		// 	const videoNews = document.querySelector('.block-field-blocknodenewsfield-video');
-		// 	const videoThoughtLeaders = document.querySelector('.block-field-blocknodethought-leadersfield-video');
-
-		// 	if (!!watchLive && !!videoNews) {
-		// 		const content = videoNews.querySelector('.content');
-		// 		content.classList.add('disnone');
-		// 	}
-
-		// 	if (!!watchLive && !!videoThoughtLeaders) {
-		// 		const content = videoThoughtLeaders.querySelector('.content');
-		// 		content.classList.add('disnone');
-		// 	}
-		// }
+		
+		
 	};
 
 	///// js para modos de visualizacion de slider event
@@ -718,6 +691,17 @@ const initMain = ($, Drupal) => {
 	var width_menu_movil = window.innerWidth;
 	if (!!menu_movil && !!menu_author_movil && width_menu_movil <= 768) { menu_movil.prepend(menu_author_movil); }
 
+	// validador watchlive
+	var watch_live_iframe = document.querySelector(".watch-live-video iframe");
+	if(watch_live_iframe == null){watch_live_iframe.closest(".watch-live").classList.add("watch-dis-none");}
+
+	// js para pagina premium, boton e video y comentarios
+	var premium = document.querySelector(".node--view-mode-premium");
+	if(!!premium){premium.closest("body").classList.add("page-premium");}
+
+	var video_prmium = document.querySelector(".block-field-blocknodenewsfield-video.premium .close-modal");
+	var content_prmium = document.querySelector(".block-field-blocknodenewsfield-video.premium .content");
+	if(!!video_prmium && !!content_prmium){content_prmium.prepend(video_prmium);}
 };
 
 export default initMain;

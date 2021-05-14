@@ -146,7 +146,6 @@
 }
 
 
-
 //------- watch live HOME---------//
 
 .path-frontpage{
@@ -185,7 +184,13 @@
     display: flex;
     align-items: flex-end;
     #block-rightcolumnhome{
-      margin-bottom: 40px;
+      position: relative;
+      top: 57px;
+    }
+    #block-rightcolumnhome,
+    .watch-live-button,
+    .block-fixed-block-contentwatch-live{
+      max-width: 400px;
     }
   }
   @media (max-width: $tablet) {
@@ -208,7 +213,7 @@
   #block-block-group-high-impact-and-most-visited-news-home .content{
     flex-wrap: wrap;
     #block-rightcolumnhome{
-      margin-bottom: 0px;
+      top: 0px;
     }
   }
   .view-high-impact-news-home{
@@ -216,7 +221,12 @@
     .featured-news{
       width: 100%;
       max-width: none;
+      margin: 0px auto;
     }
   }
   }
 } 
+.watch-dis-none{
+  display: none;
+  top: 0px;
+}
