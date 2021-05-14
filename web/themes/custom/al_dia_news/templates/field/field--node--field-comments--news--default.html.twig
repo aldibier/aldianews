@@ -40,19 +40,16 @@
     label_display == 'visually_hidden' ? 'visually-hidden',
   ]
 %}
-{% if comments|length == 0 %}
-	<section{{attributes.addClass(classes)}}></section>
-{% else %}
-	<section{{attributes.addClass(classes)}}>
-		{% if comments and not label_hidden %}
-			{{ title_prefix }}
-			<h2{{title_attributes.addClass(title_classes)}}>{{ label }}</h2>
-			{{ title_suffix }}
-		{% endif %}
-		{{ comments }}
-		{% if comment_form %}
-			<h2 class="title comment-form__title">{{ 'LEAVE A COMMENT'|t }}</h2>
-			{{ comment_form }}
-		{% endif %}
-	</section>
-{% endif %}
+
+<section{{attributes.addClass(classes)}}>
+	{% if comments and not label_hidden %}
+		{{ title_prefix }}
+		<h2{{title_attributes.addClass(title_classes)}}>{{ label }}</h2>
+		{{ title_suffix }}
+	{% endif %}
+	{{ comments }}
+	{% if comment_form %}
+		<h2 class="title comment-form__title">{{ 'LEAVE A COMMENT'|t }}</h2>
+		{{ comment_form }}
+	{% endif %}
+</section>
