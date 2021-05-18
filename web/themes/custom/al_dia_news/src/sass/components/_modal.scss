@@ -254,13 +254,21 @@
     margin: 0;
     padding: 15px;
     position: absolute;
-    bottom: calc(0% + 335px);
+    bottom: calc(0% + 360px);
     left: 0;
     background-color: $corange;
     color: $cwhite;
     border-radius: 5px;
     visibility: hidden;
     pointer-events: none;
+
+    @media (max-width: $tablet) {
+      bottom: calc(0% + 275px);
+    }
+
+    @media (max-width: $mobile-min + 5) {
+      bottom: calc(0% + 315px);
+    }
 
     &::after {
       content: "";
@@ -299,7 +307,7 @@
     background-size: contain;
 
     @media (min-width: 1280px) and (max-width: 1830px) {
-      right: 28%;
+      right: 27%;
     }
 
     @media (min-width: 1830px) {

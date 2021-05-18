@@ -1688,17 +1688,10 @@ var initMain = function initMain($, Drupal) {
 
 
     if (!!document.querySelector('.block-comments-anonymous')) {
-      var blockCommnets = document.querySelector('.block-field-blocknodenewsfield-comments');
       var blockAnonymus = document.querySelector('.block-comments-anonymous');
       var allTextMessage = blockAnonymus.querySelectorAll('.text-anonymous-comment');
       var loginLink = blockAnonymus.querySelector('.login-anonymous-comment');
       var registerLink = blockAnonymus.querySelector('.register-anonymous-comment');
-
-      if (!!blockCommnets) {
-        var content = blockCommnets.querySelector('.content');
-        content.insertAdjacentElement('afterbegin', blockAnonymus);
-      }
-
       var container = document.createElement('div');
       var message = document.createElement('div');
       container.classList.add('message-comments-container');
@@ -2117,9 +2110,17 @@ __webpack_require__.r(__webpack_exports__);
   Drupal.behaviors.form_checkbox = {
     attach: function attach(context, settings) {
       $(document).ready(function () {
+<<<<<<< HEAD
         /// js para cancel del modal comentarios
         $(".cancel-modal").click(function () {
           window.location.reload();
+=======
+        /// cancel en comentarios
+        Array.from(document.querySelectorAll(".cancel-button-edit")).map(function (e) {
+          if (!!e) {
+            location.reload();
+          }
+>>>>>>> ad6e6bdf286d2808160e515ce0cc20594ae29c13
         }); ///// js para tag new
 
         Array.from(document.querySelectorAll(".block-field-blocknodenewsfield-type-of-content")).map(function (evt) {
@@ -2541,8 +2542,8 @@ var initSlick = function initSlick($, Drupal) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
-module.exports = __webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
+__webpack_require__(/*! C:\Users\valer\Desktop\4ld14-n3ws\web\themes\custom\al_dia_news\src\js\scripts.js */"./src/js/scripts.js");
+module.exports = __webpack_require__(/*! C:\Users\valer\Desktop\4ld14-n3ws\web\themes\custom\al_dia_news\src\sass\styles.scss */"./src/sass/styles.scss");
 
 
 /***/ })

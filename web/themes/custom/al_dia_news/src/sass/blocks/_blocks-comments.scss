@@ -24,7 +24,8 @@
     }
 
     @media (max-width: $tablet) {
-      margin: 0px auto 50px;
+      //margin: 0px auto 50px;
+      margin: 0;
 
       .form-textarea {
         min-height: 80px;
@@ -488,15 +489,31 @@ section>.comment:nth-of-type(1) {
 }
 
 .block-comments-anonymous {
-  //margin-right: 440px;
-  max-width: 840px;
-  margin-bottom: 70px;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  cursor: pointer;
+  display: none;
+
+  .block-field-blocknodenewsfield-comments & {
+    max-width: 840px;
+    margin-bottom: 70px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+
+    @media screen and(max-width: $broken) {
+      max-width: 100%;
+      margin-right: 0;
+    }
+  
+    @media screen and(max-width: $tablet) {
+      margin-bottom: 40px;
+    }
+
+    .contetn {
+      margin: 0;
+    }
+  }
 
   &.show {
     cursor: initial;
@@ -505,15 +522,6 @@ section>.comment:nth-of-type(1) {
       visibility: visible;
       pointer-events: initial;
     }
-  }
-
-  @media screen and(max-width: $broken) {
-    max-width: 100%;
-    margin-right: 0;
-  }
-
-  @media screen and(max-width: $tablet) {
-    margin-bottom: 40px;
   }
 
   .content {
@@ -566,6 +574,7 @@ section>.comment:nth-of-type(1) {
         width: 100%;
         max-width: 100%;
         height: 180px;
+        min-height: 180px;
         margin: 0 0 20px;
         padding: 0;
         resize: none;
@@ -601,7 +610,7 @@ section>.comment:nth-of-type(1) {
     width: 100%; 
     height: 180px;
     position: absolute;
-    top: calc(0% + 55px);
+    top: calc(0% + 45px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -613,7 +622,7 @@ section>.comment:nth-of-type(1) {
     @media screen and(max-width: $tablet) {
       height: 125px;
       padding: 0 20px;
-      top: calc(0% + 38px);
+      top: calc(0% + 26px);
     }
 
     p {
@@ -631,6 +640,10 @@ section>.comment:nth-of-type(1) {
       margin-right: 5px;
     }
   }  
+}
+
+.block-field-blocknodenewsfield-comments .block-comments-anonymous {
+  display: block;
 }
 
 .page-premium .block-anonymous-comments{

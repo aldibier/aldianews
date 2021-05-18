@@ -314,6 +314,22 @@
       }
     }
   }
+  .card-one-column .card-date,
+  .main-news-date,
+  .card-more-category .field--name-created{
+  font-size: $px12;
+    p{
+    font-size: $px12;
+    }
+  }
+
+  .card-more-news .short-title-date a{
+    font-size: $px18;
+  }
+  .category-view-more a{
+    font-size: $px12;
+  }
+
 }
 
 @media (max-width: $tablet) {
@@ -507,7 +523,7 @@
     font-style: normal;
     font-weight: bold;
     font-size: $px20;
-    line-height: 24px;
+    line-height: 108%;
     text-align: center;
     color: $cwhite;
     margin-bottom: 20px;
@@ -515,7 +531,7 @@
 
   .views-field-title {
     margin-bottom: 10px;
-
+    margin-top: 20px;
     * {
       font-family: $PrNovacond-Sbold;
       font-style: normal;

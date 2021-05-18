@@ -180,6 +180,92 @@ form {
     border: 0px;
   }
 
+  ///-- PAsword --///
+  #edit-account{
+    width: 100%;
+  }
+  #edit-pass{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  #edit-pass--description,
+  .password-confirm-message{
+    display: none;
+  }
+  .password-strength__title{
+    font-family:$PrNovacond-reg;
+    font-style: normal;
+    font-size: $px18;
+    line-height: 22px;
+    letter-spacing: 0.025em;
+    color: $cgrey6;
+  }
+  .password-strength{
+    width: 100%;
+    .password-strength__meter{
+      height: 3px;
+    margin: 0px 0px 10px;
+    }
+  }
+  .password-suggestions{
+    // position: absolute;
+    max-width: 260px;
+    min-height: 135px;
+    padding: 17px;
+    background: #E7E8EA;
+    border-radius: 8px;
+    z-index: 9;
+    *{
+      font-family:$PrNovacond-Sbold;
+      font-style: normal;
+      font-weight: 500;
+      font-size: $px16;
+      line-height: 19px;
+      letter-spacing: 0.025em;
+      color: $cgrey6;
+    }
+    ul{
+      margin-top: 25px;
+      position: relative;
+      &::before{
+        content: "";
+        display: block;
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-right: 25px solid transparent;
+        border-top: 25px solid transparent;
+        border-left: 25px solid transparent;
+        border-bottom: 25px solid $cgrey6;
+        top: -103px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  ////--captcha---/////
+  #captcha{
+    border: 0px;
+    margin: 10px 0 30px;
+    width: 100%;
+    summary,
+    .details-description{
+      display: none;
+    }
+    .details-wrapper{
+      padding: 0px;
+    }
+    .g-recaptcha > div,
+     iframe{
+        width: 370px !important;
+        height: 95px !important;
+     }
+  }
+
   @media (max-width: $tablet) {
     button[name="close"] {
       width: 15px;
@@ -238,6 +324,38 @@ form {
     }
     .SumoSelect {
       width: 100%;
+    }
+    ///-- PAsword --///
+    .password-strength__title{
+      font-size: $px12;
+      line-height: 16px;
+    }
+    .password-strength{
+      margin: 0px 0px 5px;
+    }
+    .password-suggestions{
+      // position: absolute;
+      max-width: 260px;
+      min-height: 135px;
+      padding: 10px;
+      *{
+        font-size: $px12;
+        line-height: 16px;
+      }
+      ul{
+        margin-top: 10px;
+      }
+    }
+
+    ////--captcha---/////
+    #captcha{
+      margin: 20px 0;
+     .g-recaptcha,
+     iframe{
+        width: 214px;
+        height: 65px;
+        margin: 0 auto;
+     }
     }
   }
 }

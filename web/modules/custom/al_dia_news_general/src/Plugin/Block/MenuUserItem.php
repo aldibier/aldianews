@@ -10,7 +10,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Form\FormState;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Session\AccountProxyInterface;
-
+use Drupal\Core\Link;
 
 /**
  * Class MenuUserItem.
@@ -61,26 +61,48 @@ class MenuUserItem extends  BlockBase implements ContainerFactoryPluginInterface
       $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
       $r_period = $user->field_first_name->value;
       //ksm($r_period);
-        $items[] = [
-            '#markup' => $r_period,
-            '#attributes' => [
-                'class' => [
-                    'author-comment',
-                ],
-            ],
-        ];
-        $items[] = [
-          '#markup' => '<a>Account information</a>',
+
+      // $changePass = Url::fromRoute('change_pwd_page.change_password_form', [ 
+      //   'user' => $user, 
+      // ]); 
+      // $link = $link = Link::fromTextAndUrl('Change password', $changePass);
+
+      $items[] = [
+          '#markup' => $r_period,
           '#attributes' => [
               'class' => [
-                  'account-comment',
+                  'author-comment',
               ],
           ],
       ];
+      $items[] = [
+        '#markup' => '<a>Account information</a>',
+        '#attributes' => [
+            'class' => [
+                'account-comment',
+            ],
+        ],
+      ];
+      // $items[] = [
+      //   $changePass = Url::fromRoute('change_pwd_page.change_password_form', [ 
+      //     'user' => $user, 
+      //   ], [ 
+      //     'attributes' => [ 
+      //       'class' => [ 
+      //         'main-links__link', 
+      //         'main-links__link--test-drive', 
+      //       ], 
+      //       'data-dialog-type' => 'modal',
+      //       'data-dialog-options' => Json::encode(['dialogClass' => 'popup-login'],['width' => 550]),
+      //     ], 
+      //   ]),
+      // ];
         $items[] = [
           '#type' => 'link',
           '#title' => $this->t('Change password'),
-          '#url' => Url::fromRoute('user.pass'),
+          '#url' => Url::fromRoute('change_pwd_page.change_password_form', [ 
+            'user' => $user->id(), 
+          ]),
           '#attributes' => [
               'class' => [
               'use-ajax',
@@ -90,31 +112,31 @@ class MenuUserItem extends  BlockBase implements ContainerFactoryPluginInterface
               'data-dialog-options' => Json::encode(['dialogClass' => 'popup-login'],['width' => 550]),
           ],
       ];
-        $items[] = [
-          '#type' => 'link',
-          '#title' => $this->t('Log out'),
-          '#url' => Url::fromRoute('user.logout'),
-          '#attributes' => [
-              'class' => [
-              'log-out',
-              ],
-          ],
+      $items[] = [
+        '#type' => 'link',
+        '#title' => $this->t('Log out'),
+        '#url' => Url::fromRoute('user.logout'),
+        '#attributes' => [
+            'class' => [
+            'log-out',
+            ],
+        ],
       ];
       
     }else{
-        $items[] = [
-            '#type' => 'link',
-            '#title' => $this->t('LOG IN'),
-            '#url' => Url::fromRoute('user.login'),
-            '#attributes' => [
-                'class' => [
-                'use-ajax',
-                'log-in',
-                ],
-                'data-dialog-type' => 'modal',
-                'data-dialog-options' => Json::encode(['dialogClass' => 'popup-login'],['width' => 550]),
-            ],
-        ];
+      $items[] = [
+        '#type' => 'link',
+        '#title' => $this->t('LOG IN'),
+        '#url' => Url::fromRoute('user.login'),
+        '#attributes' => [
+          'class' => [
+            'use-ajax',
+            'log-in',
+          ],
+          'data-dialog-type' => 'modal',
+          'data-dialog-options' => Json::encode(['dialogClass' => 'popup-login'],['width' => 550]),
+        ],
+      ];
     }
     
     return [
