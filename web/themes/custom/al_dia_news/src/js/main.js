@@ -1,11 +1,5 @@
 const initMain = ($, Drupal) => {
 	window.onload = function () {
-		// js autor menu header movil
-		var menu_movil = document.querySelector("#block-menuuseritem-2");
-		var menu_author_movil = document.querySelector("#block-menuuseritem-2 .item-list ul li:first-child");
-		var width_menu_movil = window.innerWidth;
-		if (!!menu_movil && !!menu_author_movil && width_menu_movil <= 768) { menu_movil.prepend(menu_author_movil); }
-
 		//// js remove element home
 		Array.from(
 			document.querySelectorAll(
@@ -697,6 +691,24 @@ const initMain = ($, Drupal) => {
 	var video_premium = document.querySelector(".block-field-blocknodenewsfield-video.premium .close-modal");
 	var content_premium = document.querySelector(".block-field-blocknodenewsfield-video.premium .content");
 	if(!!video_premium && !!content_premium){content_premium.prepend(video_premium);}
+
+	// Js password strength color
+
+	var inputPassword = document.querySelector(".form-item-pass-pass1 input");
+
+	if (inputPassword) {
+	inputPassword.addEventListener("keyup", function() {
+		var LineKeyStrength = document.querySelector(
+		".password-strength__indicator"
+		);
+		var TextKeyStrength = document.querySelector(".password-strength__text");
+
+		var colorLineKeyStrength = window
+		.getComputedStyle(LineKeyStrength)
+		.getPropertyValue("background-color");
+		TextKeyStrength.style.color = colorLineKeyStrength;
+	});
+	}
 };
 
 export default initMain;

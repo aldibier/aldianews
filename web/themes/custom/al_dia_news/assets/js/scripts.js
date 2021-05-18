@@ -1229,16 +1229,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 var initMain = function initMain($, Drupal) {
   window.onload = function () {
-    // js autor menu header movil
-    var menu_movil = document.querySelector("#block-menuuseritem-2");
-    var menu_author_movil = document.querySelector("#block-menuuseritem-2 .item-list ul li:first-child");
-    var width_menu_movil = window.innerWidth;
-
-    if (!!menu_movil && !!menu_author_movil && width_menu_movil <= 768) {
-      menu_movil.prepend(menu_author_movil);
-    } //// js remove element home
-
-
+    //// js remove element home
     Array.from(document.querySelectorAll(".block-fixed-block-contentvertical-advertising-mobile")).map(function (e) {
       if (e.children.children != null) {
         e.closest(".mobile-less").parentElement.parentElement.classList.add("life-advertising");
@@ -1799,6 +1790,18 @@ var initMain = function initMain($, Drupal) {
 
   if (!!video_premium && !!content_premium) {
     content_premium.prepend(video_premium);
+  } // Js password strength color
+
+
+  var inputPassword = document.querySelector(".form-item-pass-pass1 input");
+
+  if (inputPassword) {
+    inputPassword.addEventListener("keyup", function () {
+      var LineKeyStrength = document.querySelector(".password-strength__indicator");
+      var TextKeyStrength = document.querySelector(".password-strength__text");
+      var colorLineKeyStrength = window.getComputedStyle(LineKeyStrength).getPropertyValue("background-color");
+      TextKeyStrength.style.color = colorLineKeyStrength;
+    });
   }
 };
 
@@ -2110,10 +2113,6 @@ __webpack_require__.r(__webpack_exports__);
   Drupal.behaviors.form_checkbox = {
     attach: function attach(context, settings) {
       $(document).ready(function () {
-        // /// js para cancel del modal comentarios
-        // $(".cancel-modal").click(function() {
-        //   window.location.reload();
-        // });
         ///// js para tag new
         Array.from(document.querySelectorAll(".block-field-blocknodenewsfield-type-of-content")).map(function (evt) {
           if (evt != null) {
@@ -2534,8 +2533,8 @@ var initSlick = function initSlick($, Drupal) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/usuario/Desktop/Proyectos/AlDiaNews/4ld14-n3ws/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
-module.exports = __webpack_require__(/*! /Users/usuario/Desktop/Proyectos/AlDiaNews/4ld14-n3ws/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
+__webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
+module.exports = __webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
 
 
 /***/ })
