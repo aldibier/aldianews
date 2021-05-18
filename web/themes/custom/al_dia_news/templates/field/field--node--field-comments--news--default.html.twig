@@ -40,7 +40,8 @@
     label_display == 'visually_hidden' ? 'visually-hidden',
   ]
 %}
-{% if comments|length == 0 %}
+
+{% if (comments is empty) and (logged_in == '0') %}
 	<section{{attributes.addClass(classes)}}></section>
 {% else %}
 	<section{{attributes.addClass(classes)}}>

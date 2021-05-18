@@ -187,7 +187,13 @@
     align-items: flex-end;
     #block-rightcolumnhome {
       position: relative;
-      top: 57px;
+      top: 72px;
+
+    }
+    .watch-live-button::before{
+      width: 20px;
+      height: 20px;
+      margin-right: 15px;
     }
     #block-rightcolumnhome,
     .watch-live-button,
@@ -203,7 +209,7 @@
       margin: 0 auto 10px;
       font-size: 1rem;
       max-width: 290px;
-      height: 30px;
+      min-height: 30px;
       display: flex;
     }
     .block-fixed-block-contentwatch-live,
@@ -217,6 +223,10 @@
       #block-rightcolumnhome {
         top: 0px;
       }
+      .watch-live-button::before{
+          width: 15px;
+          height: 5px;
+        }
     }
     .view-high-impact-news-home {
       max-width: none;
