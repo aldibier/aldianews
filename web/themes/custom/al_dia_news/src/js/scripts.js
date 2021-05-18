@@ -360,10 +360,13 @@ import replaceToken from "./modules/replaceToken";
     attach: function(context, settings) {
       $(document).ready(function() {
         /// cancel en comentarios
-        Array.from(document.querySelectorAll(".cancel-button-edit")).map(function(e) {
-          if (!!e) {location.reload();}
-        });
-
+        Array.from(document.querySelectorAll(".cancel-button-edit")).map(
+          function(e) {
+            if (!!e) {
+              location.reload();
+            }
+          }
+        );
 
         ///// js para tag new
 
