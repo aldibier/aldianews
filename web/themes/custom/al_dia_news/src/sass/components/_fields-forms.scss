@@ -190,7 +190,8 @@ form {
     flex-wrap: wrap;
     position: relative;
   }
-  #edit-pass--description{
+  #edit-pass--description,
+  .password-confirm-message{
     display: none;
   }
   .password-strength__title{
@@ -203,9 +204,9 @@ form {
   }
   .password-strength{
     width: 100%;
-    margin: 0px 0px 10px;
     .password-strength__meter{
       height: 3px;
+    margin: 0px 0px 10px;
     }
   }
   .password-suggestions{
@@ -260,8 +261,8 @@ form {
     }
     .g-recaptcha > div,
      iframe{
-        width: 370px;
-        height: 95px;
+        width: 370px !important;
+        height: 95px !important;
      }
   }
 
