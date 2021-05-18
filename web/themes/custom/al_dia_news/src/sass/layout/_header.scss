@@ -91,8 +91,8 @@ body.open-menu {
       box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
       padding-left: 15px;
       overflow: initial;
-      background: url(../img/userm.png) left center no-repeat transparent;
-      min-width: 30px;
+      background: url(../img/userm.png) center center no-repeat transparent;
+      min-width: 35px;
       &.open {
         height: 35px;
       }
@@ -106,6 +106,24 @@ body.open-menu {
         color: $corange;
         letter-spacing: 0.741176px;
         font-family: $PrNovacond-bold;
+      }
+      li:first-child {
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 25px;
+        padding: 0;
+        width: 100%;
+        text-transform: uppercase;
+        font-family: $PrNovacond-bold;
+        letter-spacing: 0.741176px;
+        color: #333;
+        padding-bottom: 5px;
+        border-bottom: 1px solid #b1b1b1;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+      li:last-child{
+        margin-bottom: 0px;
       }
       .item-list {
         display: none;
@@ -121,7 +139,7 @@ body.open-menu {
         left: -103px;
         width: 250px;
         background: rgb(255, 255, 255);
-        bottom: -190px;
+        bottom: -229px;
         box-shadow: rgb(0 0 0 / 17%) 1px 5px 8px -2px;
         flex-wrap: wrap;
         margin: 0px;
