@@ -24,7 +24,7 @@
     }
   }
   .register-for-reading,
-  .register-premium {
+  .text-form-premium {
     margin: 40px auto 60px;
     font-family: $PrNovacond-Sbold;
     font-style: normal;
@@ -33,7 +33,7 @@
     line-height: 33px;
     color: $cblack3;
   }
-  .register-premium {
+  .text-form-premium {
     margin: 0px auto;
   }
   form {
@@ -102,6 +102,16 @@
         max-width: 130px;
         min-height: 30px;
         font-size: $px12;
+      }
+      .form-actions {
+        margin: 30px auto 50px;
+        max-width: 280px;
+        justify-content: space-between;
+        width: 100%;
+        input {
+          margin-right: 0px;
+          padding-top: 8px;
+        }
       }
     }
     .field--name-field-first-name,

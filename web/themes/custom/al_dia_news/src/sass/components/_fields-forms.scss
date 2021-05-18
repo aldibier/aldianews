@@ -246,7 +246,7 @@ form {
         border-top: 25px solid transparent;
         border-left: 25px solid transparent;
         border-bottom: 25px solid #e7e8ea;
-        top: -122px;
+        top: -177px;
         left: 0;
         right: 0;
         margin: 0 auto;
@@ -256,7 +256,7 @@ form {
   #edit-pass-pass1 {
     margin-top: 5px;
     min-height: 37px;
-    &:focus{
+    &:focus {
       outline: 0px;
     }
   }
@@ -346,28 +346,44 @@ form {
     }
     .password-strength {
       margin: 0px 0px 5px;
+      .password-strength__meter {
+        margin: 0 0 0px;
+      }
+    }
+    .form-type-password {
+      margin: 0 auto 0px;
     }
     .password-suggestions {
-      // position: absolute;
       max-width: 260px;
       min-height: 135px;
       padding: 10px;
+      top: 50px;
+      left: 10px;
+      font-size: $px15;
+      line-height: 18px;
       * {
         font-size: $px12;
         line-height: 16px;
       }
       ul {
         margin-top: 10px;
+        &::before {
+          top: -102px;
+        }
       }
+    }
+    #edit-pass-pass1 {
+      min-height: 30px;
     }
 
     ////--captcha---/////
     #captcha {
       margin: 20px 0;
       .g-recaptcha,
+      .g-recaptcha > div,
       iframe {
-        width: 214px;
-        height: 65px;
+        width: 214px !important;
+        height: 65px !important;
         margin: 0 auto;
       }
     }
