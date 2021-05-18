@@ -359,6 +359,12 @@ import replaceToken from "./modules/replaceToken";
   Drupal.behaviors.form_checkbox = {
     attach: function(context, settings) {
       $(document).ready(function() {
+        /// cancel en comentarios
+        Array.from(document.querySelectorAll(".cancel-button-edit")).map(function(e) {
+          if (!!e) {location.reload();}
+        });
+
+
         ///// js para tag new
 
         Array.from(

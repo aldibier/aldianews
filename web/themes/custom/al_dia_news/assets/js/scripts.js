@@ -2106,7 +2106,13 @@ __webpack_require__.r(__webpack_exports__);
   Drupal.behaviors.form_checkbox = {
     attach: function attach(context, settings) {
       $(document).ready(function () {
-        ///// js para tag new
+        /// cancel en comentarios
+        Array.from(document.querySelectorAll(".cancel-button-edit")).map(function (e) {
+          if (!!e) {
+            location.reload();
+          }
+        }); ///// js para tag new
+
         Array.from(document.querySelectorAll(".block-field-blocknodenewsfield-type-of-content")).map(function (evt) {
           if (evt != null) {
             var shape = evt.querySelector(".field--name-field-type-of-content");
