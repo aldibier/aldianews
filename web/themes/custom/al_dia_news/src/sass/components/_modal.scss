@@ -214,6 +214,14 @@
   form .form-item label,
   form label {
     font-family: $PrNovacond-Sbold;
+    line-height: 27px;
+
+    @media (max-width: $tablet) {
+      margin: 0;
+      padding: 0;
+      max-height: 30px;
+      line-height: 18px;
+    }
   }
 
   .user-forgot-pass {
@@ -228,6 +236,15 @@
     @media (max-width: $tablet) {
       font-size: szrem(15);
       line-height: 18px;
+    }
+  }
+
+  .ui-dialog-buttonpane button {
+    padding: 0;
+    margin: 0;
+
+    @media (max-width: $tablet) {
+      max-height: 30px;
     }
   }
 }
