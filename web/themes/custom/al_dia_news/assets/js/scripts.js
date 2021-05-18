@@ -1688,17 +1688,10 @@ var initMain = function initMain($, Drupal) {
 
 
     if (!!document.querySelector('.block-comments-anonymous')) {
-      var blockCommnets = document.querySelector('.block-field-blocknodenewsfield-comments');
       var blockAnonymus = document.querySelector('.block-comments-anonymous');
       var allTextMessage = blockAnonymus.querySelectorAll('.text-anonymous-comment');
       var loginLink = blockAnonymus.querySelector('.login-anonymous-comment');
       var registerLink = blockAnonymus.querySelector('.register-anonymous-comment');
-
-      if (!!blockCommnets) {
-        var content = blockCommnets.querySelector('.content');
-        content.insertAdjacentElement('afterbegin', blockAnonymus);
-      }
-
       var container = document.createElement('div');
       var message = document.createElement('div');
       container.classList.add('message-comments-container');
@@ -1776,15 +1769,6 @@ var initMain = function initMain($, Drupal) {
       containerContainer.classList.toggle('open');
       buttonCategories.classList.toggle('up');
     });
-  } // js autor menu header movil
-
-
-  var menu_movil = document.querySelector("#block-menuuseritem-2");
-  var menu_author_movil = document.querySelector("#block-menuuseritem-2 .item-list ul li:first-child");
-  var width_menu_movil = window.innerWidth;
-
-  if (!!menu_movil && !!menu_author_movil && width_menu_movil <= 768) {
-    menu_movil.prepend(menu_author_movil);
   } // validador watchlive
 
 
@@ -1806,6 +1790,18 @@ var initMain = function initMain($, Drupal) {
 
   if (!!video_premium && !!content_premium) {
     content_premium.prepend(video_premium);
+  } // Js password strength color
+
+
+  var inputPassword = document.querySelector(".form-item-pass-pass1 input");
+
+  if (inputPassword) {
+    inputPassword.addEventListener("keyup", function () {
+      var LineKeyStrength = document.querySelector(".password-strength__indicator");
+      var TextKeyStrength = document.querySelector(".password-strength__text");
+      var colorLineKeyStrength = window.getComputedStyle(LineKeyStrength).getPropertyValue("background-color");
+      TextKeyStrength.style.color = colorLineKeyStrength;
+    });
   }
 };
 
@@ -2044,35 +2040,44 @@ __webpack_require__.r(__webpack_exports__);
       if ($(".watch-live-video ").hasClass("open")) {
         $(".watch-live-video ").removeClass("open");
       }
-    });
-
-    if (!!document.querySelector(".page-node-type-news") || !!document.querySelector(".page-node-type-thought-leaders")) {
-      $(window).on("scroll", function () {
-        var watchLive = document.querySelector(".watch-live-video.open");
-        var watchLive_button = document.querySelector(".watch-live-video .close-modal");
-        var videoNews = document.querySelector(".block-field-blocknodenewsfield-video .content.stuck");
-        var videoThoughtLeaders = document.querySelector(".block-field-blocknodethought-leadersfield-video .content.stuck ");
-
-        if (!!watchLive && !!videoNews && !!watchLive_button) {
-          videoNews.classList.add("dis-none");
-          watchLive_button.click(function () {
-            if (videoNews.hasClass("dis-none")) {
-              videoNews.removeClass("dis-none");
-            }
-          });
-        }
-
-        if (!!watchLive && !!videoThoughtLeaders && !!watchLive_button) {
-          videoThoughtLeaders.classList.add("dis-none");
-          watchLive_button.click(function () {
-            if (videoThoughtLeaders.hasClass("dis-none")) {
-              videoThoughtLeaders.removeClass("dis-none");
-            }
-          });
-        }
-      });
-    } ///// modal nominate interna eventos
-
+    }); // if (
+    //   !!document.querySelector(".page-node-type-news") ||
+    //   !!document.querySelector(".page-node-type-thought-leaders")
+    // ) {
+    //   var watchLive = document.querySelector(".watch-live-video.open");
+    //   var watchLive_button = document.querySelector(
+    //     ".watch-live-video .close-modal"
+    //   );
+    //   var videoNews = document.querySelector(
+    //     ".block-field-blocknodenewsfield-video .content.stuck"
+    //   );
+    //   var videoThoughtLeaders = document.querySelector(
+    //     ".block-field-blocknodethought-leadersfield-video .content.stuck "
+    //   );
+    //   $(window).on("scroll", function() {
+    //     if (!!watchLive && !!videoNews) {
+    //       videoNews.classList.add("dis-none");
+    //     }
+    //     if (!!watchLive && !!videoThoughtLeaders) {
+    //       videoThoughtLeaders.classList.add("dis-none");
+    //     }
+    //   });
+    //   if (!!videoNews && !!watchLive_button) {
+    //     watchLive_button.click(function() {
+    //       if (videoNews.hasClass("dis-none")) {
+    //         videoNews.removeClass("dis-none");
+    //       }
+    //     });
+    //   }
+    //   if (!!videoThoughtLeaders && !!watchLive_button) {
+    //     watchLive_button.click(function() {
+    //       if (videoThoughtLeaders.hasClass("dis-none")) {
+    //         videoThoughtLeaders.removeClass("dis-none");
+    //       }
+    //     });
+    //   }
+    // }
+    ///// modal nominate interna eventos
 
     $(".banner-events a#nominee").click(function () {
       $(".modal-open .modal-apply-webform").addClass("open");

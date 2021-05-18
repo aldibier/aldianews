@@ -40,6 +40,7 @@ import replaceToken from "./modules/replaceToken";
         $videoWrap.height("auto");
         $video.removeClass("stuck");
       }
+
       $('.stuck button[name="close"]').click(function() {
         $video.addClass("disnone");
       });
@@ -253,39 +254,44 @@ import replaceToken from "./modules/replaceToken";
         $(".watch-live-video ").removeClass("open");
       }
     });
-    if (
-      !!document.querySelector(".page-node-type-news") ||
-      !!document.querySelector(".page-node-type-thought-leaders")
-    ) {
-      $(window).on("scroll", function() {
-        var watchLive = document.querySelector(".watch-live-video.open");
-        var watchLive_button = document.querySelector(
-          ".watch-live-video .close-modal"
-        );
-        const videoNews = document.querySelector(
-          ".block-field-blocknodenewsfield-video .content.stuck"
-        );
-        const videoThoughtLeaders = document.querySelector(
-          ".block-field-blocknodethought-leadersfield-video .content.stuck "
-        );
-        if (!!watchLive && !!videoNews && !!watchLive_button) {
-          videoNews.classList.add("dis-none");
-          watchLive_button.click(function() {
-            if (videoNews.hasClass("dis-none")) {
-              videoNews.removeClass("dis-none");
-            }
-          });
-        }
-        if (!!watchLive && !!videoThoughtLeaders && !!watchLive_button) {
-          videoThoughtLeaders.classList.add("dis-none");
-          watchLive_button.click(function() {
-            if (videoThoughtLeaders.hasClass("dis-none")) {
-              videoThoughtLeaders.removeClass("dis-none");
-            }
-          });
-        }
-      });
-    }
+    // if (
+    //   !!document.querySelector(".page-node-type-news") ||
+    //   !!document.querySelector(".page-node-type-thought-leaders")
+    // ) {
+    //   var watchLive = document.querySelector(".watch-live-video.open");
+    //   var watchLive_button = document.querySelector(
+    //     ".watch-live-video .close-modal"
+    //   );
+    //   var videoNews = document.querySelector(
+    //     ".block-field-blocknodenewsfield-video .content.stuck"
+    //   );
+    //   var videoThoughtLeaders = document.querySelector(
+    //     ".block-field-blocknodethought-leadersfield-video .content.stuck "
+    //   );
+
+    //   $(window).on("scroll", function() {
+    //     if (!!watchLive && !!videoNews) {
+    //       videoNews.classList.add("dis-none");
+    //     }
+    //     if (!!watchLive && !!videoThoughtLeaders) {
+    //       videoThoughtLeaders.classList.add("dis-none");
+    //     }
+    //   });
+    //   if (!!videoNews && !!watchLive_button) {
+    //     watchLive_button.click(function() {
+    //       if (videoNews.hasClass("dis-none")) {
+    //         videoNews.removeClass("dis-none");
+    //       }
+    //     });
+    //   }
+    //   if (!!videoThoughtLeaders && !!watchLive_button) {
+    //     watchLive_button.click(function() {
+    //       if (videoThoughtLeaders.hasClass("dis-none")) {
+    //         videoThoughtLeaders.removeClass("dis-none");
+    //       }
+    //     });
+    //   }
+    // }
 
     ///// modal nominate interna eventos
     $(".banner-events a#nominee").click(function() {

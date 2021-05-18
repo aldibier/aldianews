@@ -18,19 +18,9 @@ function al_dia_news_preprocess_views_view(&$vars) {
 }
 
 // function al_dia_news_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
-//   if ($form_id == 'user_login_form' ) {
-//     $form['forgot'] = [
-//     '#type' => 'item',
-//     '#title' => t('Forgot your password?'),
-//     '#url' => Url::fromRoute('user.pass'),
-//           '#attributes' => [
-//               'class' => [
-//               'use-ajax',
-//               'user-pass',
-//               ],
-//               'data-dialog-type' => 'modal',
-//               'data-dialog-options' => Json::encode(['dialogClass' => 'popup-login'],['width' => 550]),
-//           ],
+//   if ($form_id == 'comment_comments_content_form' ) {
+//     $form['actions']['preview'] = [
+//       '#markup' => '<div class="cbutton-back">BACK</div>',
 //     ];
 //   }
 // } 
