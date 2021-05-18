@@ -37,19 +37,18 @@
   ]
 %}
 
-<div{{ attributes.addClass(classes) }}>
-  {{ title_prefix }}
-  {% if label %}
-    <h2{{ title_attributes }}>{{ label }}</h2>
-  {% endif %}
-  {{ title_suffix }}
- {#  {% if logged_in == '0' %} #}
-   {# {{ drupal_entity('block', 'anonymouscomments') }} #}
-   {{ drupal_block('anonymouscomments') }}
-{#   {% endif %} #}
-  {% block content %}
-    <div{{ content_attributes.addClass('content') }}>
-      {{ content }}
-    </div>
-  {% endblock %}
+<div{{attributes.addClass(classes)}}>
+	{{ title_prefix }}
+	{% if label %}
+		<h2{{title_attributes}}>{{ label }}</h2>
+	{% endif %}
+	{{ title_suffix }}
+	{% if logged_in == '0' %}
+		{{ drupal_entity('block', 'anonymouscomments') }}
+	{% endif %}
+	{% block content %}
+		<div{{content_attributes.addClass('content')}}>
+			{{ content }}
+		</div>
+	{% endblock %}
 </div>
