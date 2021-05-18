@@ -360,10 +360,10 @@ import replaceToken from "./modules/replaceToken";
   Drupal.behaviors.form_checkbox = {
     attach: function(context, settings) {
       $(document).ready(function() {
-        /// js para cancel del modal comentarios
-        $(".cancel-modal").click(function() {
-          window.location.reload();
-        });
+        // /// js para cancel del modal comentarios
+        // $(".cancel-modal").click(function() {
+        //   window.location.reload();
+        // });
 
         ///// js para tag new
 
