@@ -66,6 +66,7 @@ function al_dia_news_general_form_alter(&$form, $form_state, $form_id) {
       
     // Alteración del botón submit de comentarios.
       $form['actions']['submit']['#value'] = t('POST COMMENT');
+      $form['actions']['preview']['#access'] = false;
       $form['#title'] = t("EDIT COMMENT");
       $form['field_comment_body']['widget'][0]['value']['#title_display'] = "hidden";
     break;
@@ -76,7 +77,11 @@ function al_dia_news_general_form_alter(&$form, $form_state, $form_id) {
       $form['field_podcast_player']['widget'][0]['#format'] = "podcast";
     break;
     case "comment_comments_content_delete_form":
-      $form['#title'] = t("ARE YOU SURE YOU WANT TO DELETE THE COMMENT?");
+      $form['#title'] = t("DELETE COMMENT");
+      $form['description']['#markup'] = '<div>Any replies to this comment will be lost. This action cannot be undone.</div> <div>Are you sure you want to delete this comment?</div>';
+      
+
+        
     break;
     // case "user_register_form":
     //   $current_path = \Drupal::service('path.current')->getPath();
