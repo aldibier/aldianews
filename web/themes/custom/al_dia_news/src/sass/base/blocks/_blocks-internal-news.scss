@@ -888,9 +888,15 @@ div[data-embed-button="related_content"] {
     font-size: $px25 !important;
     padding-top: 20px;
     white-space: break-spaces;
-    text-align: center;
+    text-align: left;
     @media (max-width: $tablet) {
       font-size: $px18 !important;
+    }
+  }
+  .text-comment{
+    margin-top: 40px;
+    @media (max-width: $tablet) {
+      margin-top: 30px;
     }
   }
 
@@ -914,6 +920,26 @@ div[data-embed-button="related_content"] {
     padding: 30px 20px 0 !important;
     @media (max-width: $tablet) {
       padding: 10px 20px 0 !important;
+    }
+  }
+}
+
+.popup-edit-comment{
+  .ui-dialog .ui-widget-content.ui-dialog-buttonpane{
+    margin: 0 auto 30px!important;
+    max-width: 875px!important;
+  }
+  .ui-dialog-buttonpane .ui-dialog-buttonset{
+    max-width: 350px !important;
+    float: left;
+    justify-content: space-between !important;
+    flex-direction: row;
+    button:last-child{
+      background: #e21;
+      padding: 0px;
+    }
+    button:first-child{
+      background: #5c6165;
     }
   }
 }
