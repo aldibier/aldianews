@@ -24,6 +24,8 @@ dependencies:
     - views.view.header_of_the_event_internal
     - views.view.slider_internal_event
     - webform.webform.nominate
+    - webform.webform.register
+    - webform.webform.sponsorship_upcoming_event
   module:
     - addtoany
     - al_dia_layouts
@@ -417,6 +419,34 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: -7
+          3656e728-bd30-4007-a809-4d8181d705b6:
+            uuid: 3656e728-bd30-4007-a809-4d8181d705b6
+            region: advertising_content
+            configuration:
+              id: webform_block
+              label: Webform
+              provider: webform
+              label_display: '0'
+              webform_id: register
+              default_data: ''
+              redirect: false
+              context_mapping: {  }
+            additional: {  }
+            weight: -8
+          a3846f41-6669-4470-9195-fadff7011b18:
+            uuid: a3846f41-6669-4470-9195-fadff7011b18
+            region: advertising_content
+            configuration:
+              id: webform_block
+              label: Webform
+              provider: webform
+              label_display: '0'
+              webform_id: sponsorship_upcoming_event
+              default_data: ''
+              redirect: false
+              context_mapping: {  }
+            additional: {  }
+            weight: -7
         third_party_settings: {  }
 id: node.event.default
 targetEntityType: node
@@ -532,4 +562,5 @@ content:
 hidden:
   addtoany: true
   langcode: true
+  premium_message: true
   search_api_excerpt: true
