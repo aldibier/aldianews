@@ -1773,9 +1773,10 @@ var initMain = function initMain($, Drupal) {
 
 
   var watch_live_iframe = document.querySelector(".watch-live-video iframe");
+  var watch_live_content = document.querySelector(".watch-live");
 
-  if (watch_live_iframe == null) {
-    watch_live_iframe.closest(".watch-live").classList.add("watch-dis-none");
+  if (watch_live_iframe == null && !!watch_live_content) {
+    watch_live_content.classList.add("watch-dis-none");
   } // js para pagina premium, boton e video y comentarios
 
 
@@ -1894,7 +1895,7 @@ __webpack_require__.r(__webpack_exports__);
         $video.removeClass("stuck");
       }
 
-      $('.stuck button[name="close"]').click(function () {
+      $('.block-field-blocknodenewsfield-video .stuck button[name="close"]').click(function () {
         $video.addClass("disnone");
       });
     });
@@ -1917,7 +1918,7 @@ __webpack_require__.r(__webpack_exports__);
         $videoThoughtLeaders.removeClass("stuck");
       }
 
-      $('.stuck button[name="close"]').click(function () {
+      $('.block-field-blocknodenewsfield-video .stuck button[name="close"]').click(function () {
         $videoThoughtLeaders.addClass("disnone");
       });
     });
@@ -2048,10 +2049,12 @@ __webpack_require__.r(__webpack_exports__);
       var watchLive_close = document.querySelector(".watch-live-video .close-modal");
 
       if (!!watchLive_close && !!watchLive_button && !!$videoNews) {
-        watchLive_button.click(function () {
+        $(watchLive_button).click(function () {
+          debugger;
+          console.log("3");
           $videoNews.addClass("dis-none-obligate");
         });
-        watchLive_close.click(function () {
+        $(watchLive_close).click(function () {
           if ($videoNews.hasClass("dis-none-obligate")) {
             $videoNews.removeClass("dis-none-obligate");
           }

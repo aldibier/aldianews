@@ -682,7 +682,8 @@ const initMain = ($, Drupal) => {
 	
 	// validador watchlive
 	var watch_live_iframe = document.querySelector(".watch-live-video iframe");
-	if(watch_live_iframe == null){watch_live_iframe.closest(".watch-live").classList.add("watch-dis-none");}
+	var watch_live_content = document.querySelector(".watch-live");
+	if(watch_live_iframe == null && !!watch_live_content){watch_live_content.classList.add("watch-dis-none");}
 
 	// js para pagina premium, boton e video y comentarios
 	var premium = document.querySelector(".node--view-mode-premium");
