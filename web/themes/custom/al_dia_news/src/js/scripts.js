@@ -273,8 +273,6 @@ import replaceToken from "./modules/replaceToken";
 
       if (!!watchLive_close && !!watchLive_button && !!$videoNews) {
         $(watchLive_button).click(function() {
-          debugger;
-          console.log("3");
           $videoNews.addClass("dis-none-obligate");
         });
         $(watchLive_close).click(function() {
