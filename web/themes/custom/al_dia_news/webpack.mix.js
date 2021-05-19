@@ -1,4 +1,5 @@
 let mix = require("laravel-mix");
+require('laravel-mix-imgmin');
 
 /*
  |--------------------------------------------------------------------------
@@ -45,6 +46,19 @@ mix.sass("src/sass/styles.scss", "css");
  |--------------------------------------------------------------------------
  */
 mix.js("src/js/scripts.js", "js");
+
+/*
+ |--------------------------------------------------------------------------
+ | IMAGE OPTIMIZATION
+ |--------------------------------------------------------------------------
+ */
+ mix.imgmin({
+  input: 'src/img/',
+  publicPath: 'assets',
+  output: 'img',
+  tinyPngKey: null,
+  debug: false
+});
 
 // Full API
 // mix.js(src, output);
