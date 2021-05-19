@@ -2041,19 +2041,22 @@ __webpack_require__.r(__webpack_exports__);
         $(".watch-live-video ").removeClass("open");
       }
     });
-    var $videoNews = $(".page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video .content");
-    var watchLive_button = document.querySelector(".watch-live-button");
-    var watchLive_close = document.querySelector(".watch-live-video .close-modal");
 
-    if (!!watchLive_close && !!watchLive_button && !!$videoNews) {
-      watchLive_button.click(function () {
-        $videoNews.addClass("dis-none-obligate");
-      });
-      watchLive_close.click(function () {
-        if ($videoNews.hasClass("dis-none-obligate")) {
-          $videoNews.removeClass("dis-none-obligate");
-        }
-      });
+    if (!!document.querySelector(".page-node-type-news") || !!document.querySelector(".page-node-type-thought-leaders")) {
+      var $videoNews = $(".content-news-internal-first .block-field-blocknodenewsfield-video .content");
+      var watchLive_button = document.querySelector(".watch-live-button");
+      var watchLive_close = document.querySelector(".watch-live-video .close-modal");
+
+      if (!!watchLive_close && !!watchLive_button && !!$videoNews) {
+        watchLive_button.click(function () {
+          $videoNews.addClass("dis-none-obligate");
+        });
+        watchLive_close.click(function () {
+          if ($videoNews.hasClass("dis-none-obligate")) {
+            $videoNews.removeClass("dis-none-obligate");
+          }
+        });
+      }
     } ///// modal nominate interna eventos
 
 
