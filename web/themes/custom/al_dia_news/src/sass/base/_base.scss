@@ -48,7 +48,7 @@ a {
     padding: 110px 0 0;
   }
 }
-.contextual{
+.contextual {
   z-index: 5;
 }
 
@@ -288,12 +288,12 @@ body.toolbar-tray-open.user-logged-in {
   font-weight: bold;
   font-size: $px76;
   line-height: 112.8%;
-  color: $cblack; 
+  color: $cblack;
   font-family: $Mod-bold;
   margin: 60px 0 20px;
 
   @media screen and(max-width: $tablet) {
-    font-size: 30px; 
+    font-size: 30px;
     line-height: 112.8%;
     margin: 30px 0 10px;
   }
@@ -303,6 +303,9 @@ body.toolbar-tray-open.user-logged-in {
 //---------------------Clases generales----------------------//
 .dis-none {
   display: none;
+}
+.dis-none-obligate {
+  display: none !important;
 }
 .dis-block {
   display: block;
