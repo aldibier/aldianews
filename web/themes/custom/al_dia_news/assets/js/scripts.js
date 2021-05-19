@@ -2082,6 +2082,12 @@ __webpack_require__.r(__webpack_exports__);
     $(".banner-events a#nominee").click(function () {
       $(".modal-open .modal-apply-webform").addClass("open");
     });
+    $(".banner-events a#register-here").click(function () {
+      $(".form-register-events").parents(".modal-apply-webform").addClass("open");
+    });
+    $(".banner-events a#sponsorship").click(function () {
+      $(".form-sponsorship-events").parents(".modal-apply-webform").addClass("open");
+    });
     $('.modal-apply-webform  button[name="close"]').click(function () {
       if ($(".modal-open .modal-apply-webform").hasClass("open")) {
         $(".modal-open .modal-apply-webform").removeClass("open");
@@ -2533,8 +2539,8 @@ var initSlick = function initSlick($, Drupal) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
-module.exports = __webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
+__webpack_require__(/*! C:\Users\valer\Desktop\4ld14-n3ws\web\themes\custom\al_dia_news\src\js\scripts.js */"./src/js/scripts.js");
+module.exports = __webpack_require__(/*! C:\Users\valer\Desktop\4ld14-n3ws\web\themes\custom\al_dia_news\src\sass\styles.scss */"./src/sass/styles.scss");
 
 
 /***/ })

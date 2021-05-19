@@ -298,6 +298,14 @@ import replaceToken from "./modules/replaceToken";
       $(".modal-open .modal-apply-webform").addClass("open");
     });
 
+    $(".banner-events a#register-here").click(function() {
+      $(".form-register-events").parents(".modal-apply-webform").addClass("open");
+    });
+
+    $(".banner-events a#sponsorship").click(function() {
+      $(".form-sponsorship-events").parents(".modal-apply-webform").addClass("open");
+    });
+
     $('.modal-apply-webform  button[name="close"]').click(function() {
       if ($(".modal-open .modal-apply-webform").hasClass("open")) {
         $(".modal-open .modal-apply-webform").removeClass("open");
