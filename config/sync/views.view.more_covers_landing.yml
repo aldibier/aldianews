@@ -7,12 +7,13 @@ dependencies:
     - field.storage.node.field_end_date
     - field.storage.node.field_start_date
     - node.type.more_covers
+    - taxonomy.vocabulary.years_of_covers
   module:
     - better_exposed_filters
     - datetime
     - lazy
     - node
-    - options
+    - taxonomy
     - user
     - views_infinite_scroll
 id: more_covers_landing
@@ -749,10 +750,10 @@ display:
           expose:
             operator_limit_selection: false
             operator_list: {  }
-        field_year_value:
-          id: field_year_value
-          table: node__field_year
-          field: field_year_value
+        field_year_covers_target_id:
+          id: field_year_covers_target_id
+          table: node__field_year_covers
+          field: field_year_covers_target_id
           relationship: none
           group_type: group
           admin_label: ''
@@ -761,14 +762,14 @@ display:
           group: 1
           exposed: true
           expose:
-            operator_id: field_year_value_op
+            operator_id: field_year_covers_target_id_op
             label: 'Filter by year'
             description: ''
             use_operator: false
-            operator: field_year_value_op
+            operator: field_year_covers_target_id_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: field_year_value
+            identifier: field_year_covers_target_id
             required: false
             remember: false
             multiple: false
@@ -778,6 +779,12 @@ display:
               administrator: '0'
               editor: '0'
             reduce: false
+            chosen_override: 0
+            disable_search: 0
+            search_contains: 0
+            placeholder_text_multiple: 'Choose some options'
+            placeholder_text_single: 'Choose an option'
+            no_results_text: 'No results match'
           is_grouped: false
           group_info:
             label: ''
@@ -791,7 +798,12 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: false
-          plugin_id: list_field
+          type: select
+          limit: true
+          vid: years_of_covers
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
       sorts:
         created:
           id: created
@@ -837,6 +849,7 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
@@ -860,6 +873,7 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
