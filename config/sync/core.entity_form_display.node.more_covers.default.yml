@@ -8,7 +8,7 @@ dependencies:
     - field.field.node.more_covers.field_end_date
     - field.field.node.more_covers.field_related_more_covers
     - field.field.node.more_covers.field_start_date
-    - field.field.node.more_covers.field_year
+    - field.field.node.more_covers.field_year_covers
     - image.style.thumbnail
     - node.type.more_covers
   module:
@@ -22,7 +22,7 @@ third_party_settings:
   field_group:
     group_date:
       children:
-        - field_year
+        - field_year_covers
         - field_start_date
         - field_end_date
       parent_name: ''
@@ -65,7 +65,7 @@ content:
     type: image_image
     region: content
   field_end_date:
-    weight: 5
+    weight: 28
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
@@ -83,13 +83,13 @@ content:
     third_party_settings: {  }
     region: content
   field_start_date:
-    weight: 4
+    weight: 27
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
     region: content
-  field_year:
-    weight: 3
+  field_year_covers:
+    weight: 26
     settings: {  }
     third_party_settings: {  }
     type: options_select
@@ -106,6 +106,13 @@ content:
     weight: 12
     region: content
     settings: {  }
+    third_party_settings: {  }
+  premium:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 16
+    region: content
     third_party_settings: {  }
   promote:
     type: boolean_checkbox

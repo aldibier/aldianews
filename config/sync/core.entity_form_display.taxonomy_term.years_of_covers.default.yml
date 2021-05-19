@@ -1,0 +1,30 @@
+uuid: e544c6e4-6747-4404-862b-a15f51b44c1f
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.years_of_covers
+id: taxonomy_term.years_of_covers.default
+targetEntityType: taxonomy_term
+bundle: years_of_covers
+mode: default
+content:
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 1
+    region: content
+    third_party_settings: {  }
+hidden:
+  description: true
+  langcode: true
+  path: true

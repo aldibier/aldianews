@@ -1,0 +1,20 @@
+uuid: 30f0174b-d0ba-42b7-9166-71890ee1ffae
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_year_covers
+field_name: field_year_covers
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
