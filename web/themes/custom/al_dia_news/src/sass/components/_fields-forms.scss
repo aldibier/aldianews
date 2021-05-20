@@ -35,7 +35,7 @@ form {
       font-size: $px18;
       text-transform: uppercase;
       line-height: 25px;
-      font-family: $PrNovacond-reg;
+      font-family: $PrNovacond-bold;
       color: $cwhite;
       border-radius: 0px;
     }
@@ -46,7 +46,7 @@ form {
     font-weight: 600;
     font-size: $px20;
     line-height: 24px;
-    font-family: $PrNovacond-reg;
+    font-family: $PrNovacond-bold;
     color: $cblack;
   }
   input {
@@ -686,6 +686,7 @@ form {
     }
     input[value="Upload"] {
       min-width: 120px;
+      max-width: 120px;
       max-height: 30px;
       font-size: $px14;
     }
@@ -696,6 +697,7 @@ form {
       height: 30px;
       left: 134px;
       min-width: 120px;
+      max-width: 120px;
       font-size: 14px;
     }
   }
