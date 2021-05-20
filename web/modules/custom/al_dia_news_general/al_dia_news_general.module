@@ -85,7 +85,6 @@ function al_dia_news_general_form_alter(&$form, $form_state, $form_id) {
         
     break;
     case "user_register_form":
-      ksm($form);
       $form['#title'] = t("REGISTER");
       $form['actions']['submit']['#value'] = t("REGISTER");
       $current_path = \Drupal::service('path.current')->getPath();

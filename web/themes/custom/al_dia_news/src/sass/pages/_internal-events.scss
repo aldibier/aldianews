@@ -521,7 +521,7 @@
   margin-bottom: 100px !important;
 }
 
-//------------------ Formulario modal nominate ------------//
+//------------------ Formulario modal nominate, register y sponsorchip ------------//
 
 .webform-submission-nominate-form {
   justify-content: space-between;
@@ -564,6 +564,85 @@
   }
   .form-item-last-name {
     padding-left: 0px;
+  }
+}
+.webform-submission-register-form{
+  #edit-container--2{
+    width: 50%;
+  } 
+  .form-type-email,
+  .form-item-company,
+  .form-actions,
+  .form-item-address-city {
+    width: 100%;
+  }
+  #edit-address--wrapper{
+    max-width: none;
+    width: 50%;
+    padding-left: 15px;
+    .fieldset-wrapper{
+      margin: 0px;
+    }
+  }
+  .SumoSelect .optWrapper>.options>li label{
+    min-height: 45px;
+  }
+  .SumoSelect.open > .optWrapper{
+    top: 44px;
+  }
+}
+.webform-submission-sponsorship-upcoming-event-form{
+  .SumoSelect .optWrapper>.options>li label{
+    min-height: 45px;
+  }
+  .SumoSelect.open > .optWrapper{
+    top: 44px;
+  }
+  .form-item-company{
+    padding-left: 15px;
+  }
+  #edit-address--2--wrapper{
+    width: 100%;
+    max-width: none;
+    .fieldset-wrapper{
+      margin: 0px;
+      display: flex;
+    flex-wrap: wrap;
+    }
+  }
+  .form-item-address-state-province,
+  .form-item-address-country,
+  .form-item-budget{
+    width: 50%;
+    padding-left: 15px;
+    margin: 0px 0px 25px;
+    .CaptionCont{
+      margin-top: 5px;
+    }
+  }
+  .form-item-address-country{
+    padding-left: 0px;
+    // order: 1;
+  }
+  // .form-item-address-city{
+  //   order: 3;
+  // }
+  // .form-item-address-state-province{
+  //   order: 2;
+  // }
+  // .form-item-budget{
+  //   order: 4;
+  // }
+  .form-item-message{
+    max-width: none;
+    margin-bottom: 60px;
+    textarea{
+      width: 100% !important;
+      max-width: none;
+    }
+  }
+  .form-actions{
+    width: 100%;
   }
 }
 
@@ -936,6 +1015,36 @@
     }
     textarea {
       min-height: 200px;
+    }
+  }
+  .webform-submission-register-form{
+    #edit-container--2{
+      width: 100%;
+    } 
+    #edit-address--wrapper{
+      width: 100%;
+      padding-left: 0px;
+      .fieldset-wrapper{
+        margin: 0px 0px 20px;
+      }
+    }
+  }
+  .webform-submission-sponsorship-upcoming-event-form{
+    .form-item-company{
+      padding-left: 0px;
+      width: 100%;
+    }
+    .form-item-address-state-province,
+    .form-item-address-country,
+    .form-item-budget{
+      width: 100%;
+      padding-left: 0px;
+    }
+    .form-item-message{
+      margin-bottom: 30px;
+      textarea{
+        min-height: 200px;
+      }
     }
   }
 }

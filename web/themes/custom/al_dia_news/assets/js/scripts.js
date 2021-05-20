@@ -1664,7 +1664,7 @@ var initMain = function initMain($, Drupal) {
     };
 
     if (!!document.querySelector('.webform-submission-sponsorship-form')) {
-      var selectCountry = document.getElementById('edit-address-country');
+      var selectCountry = document.querySelector('select[name="address[country]"]');
       var filedCountry = document.querySelector('.form-item-address-country');
       var fieldState = document.querySelector('.form-item-address-state-province');
       var fieldCity = document.querySelector('.form-item-address-city');
@@ -1803,6 +1803,14 @@ var initMain = function initMain($, Drupal) {
       var colorLineKeyStrength = window.getComputedStyle(LineKeyStrength).getPropertyValue("background-color");
       TextKeyStrength.style.color = colorLineKeyStrength;
     });
+  } //// js para sponsorchip budget
+
+
+  var budget = document.querySelector(".webform-submission-sponsorship-upcoming-event-form .form-item-budget");
+  var container_country = document.querySelector(".webform-submission-sponsorship-upcoming-event-form #edit-address--2--wrapper .fieldset-wrapper");
+
+  if (!!budget && !!container_country) {
+    container_country.appendChild(budget);
   }
 };
 

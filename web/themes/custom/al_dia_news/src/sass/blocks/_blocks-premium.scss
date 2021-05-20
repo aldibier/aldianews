@@ -41,9 +41,11 @@
     justify-content: space-between;
     label {
       color: $cblack3;
+      font-family: $PrNovacond-bold;
     }
     .form-submit {
-      max-width: 180px;
+      min-width: 180px;
+      font-family: $PrNovacond-bold;
     }
     .form-actions {
       display: flex;
@@ -57,8 +59,7 @@
     width: 100%;
   }
   .button-home-reg {
-    max-width: 180px;
-    width: 100%;
+    min-width: 180px;
     min-height: 40px;
     background: $bgrey;
     margin-top: 0;
@@ -66,7 +67,7 @@
     font-size: 1.125rem;
     text-transform: uppercase;
     line-height: 25px;
-    font-family: $PrNovacond-reg;
+    font-family: $PrNovacond-bold;
     color: $cwhite;
     padding: 0.25em 1.063em;
     cursor: pointer;
@@ -94,12 +95,16 @@
       font-size: $px18;
       line-height: 25px;
     }
+    .text-form-premium{
+      font-size: $px18;
+      line-height: 25px;
+    }
     form {
       .form-item {
         margin: 0 auto 15px;
       }
       .form-submit {
-        max-width: 130px;
+        min-width: 130px;
         min-height: 30px;
         font-size: $px12;
       }
@@ -121,7 +126,7 @@
       max-width: none;
     }
     .button-home-reg {
-      max-width: 130px;
+      min-width: 130px;
       min-height: 30px;
       font-size: $px12;
     }
