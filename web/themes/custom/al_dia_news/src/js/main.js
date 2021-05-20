@@ -554,7 +554,7 @@ const initMain = ($, Drupal) => {
 		}
 
 		if (!!document.querySelector('.webform-submission-sponsorship-form')) {
-			const selectCountry = document.getElementById('edit-address-country');
+			const selectCountry = document.querySelector('select[name="address[country]"]');
 			const filedCountry = document.querySelector('.form-item-address-country');
 			const fieldState = document.querySelector('.form-item-address-state-province');
 			const fieldCity = document.querySelector('.form-item-address-city');
@@ -682,7 +682,8 @@ const initMain = ($, Drupal) => {
 	
 	// validador watchlive
 	var watch_live_iframe = document.querySelector(".watch-live-video iframe");
-	if(watch_live_iframe == null){watch_live_iframe.closest(".watch-live").classList.add("watch-dis-none");}
+	var watch_live_content = document.querySelector(".watch-live");
+	if(watch_live_iframe == null && !!watch_live_content){watch_live_content.classList.add("watch-dis-none");}
 
 	// js para pagina premium, boton e video y comentarios
 	var premium = document.querySelector(".node--view-mode-premium");
@@ -708,6 +709,14 @@ const initMain = ($, Drupal) => {
 		.getPropertyValue("background-color");
 		TextKeyStrength.style.color = colorLineKeyStrength;
 	});
+	}
+
+	//// js para sponsorchip budget
+	var budget = document.querySelector(".webform-submission-sponsorship-upcoming-event-form .form-item-budget");
+	var container_country = document.querySelector(".webform-submission-sponsorship-upcoming-event-form #edit-address--2--wrapper .fieldset-wrapper");
+
+	if(!!budget && !!container_country){
+		container_country.appendChild(budget);
 	}
 };
 

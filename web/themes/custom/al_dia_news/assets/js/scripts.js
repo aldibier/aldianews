@@ -1664,7 +1664,7 @@ var initMain = function initMain($, Drupal) {
     };
 
     if (!!document.querySelector('.webform-submission-sponsorship-form')) {
-      var selectCountry = document.getElementById('edit-address-country');
+      var selectCountry = document.querySelector('select[name="address[country]"]');
       var filedCountry = document.querySelector('.form-item-address-country');
       var fieldState = document.querySelector('.form-item-address-state-province');
       var fieldCity = document.querySelector('.form-item-address-city');
@@ -1773,9 +1773,10 @@ var initMain = function initMain($, Drupal) {
 
 
   var watch_live_iframe = document.querySelector(".watch-live-video iframe");
+  var watch_live_content = document.querySelector(".watch-live");
 
-  if (watch_live_iframe == null) {
-    watch_live_iframe.closest(".watch-live").classList.add("watch-dis-none");
+  if (watch_live_iframe == null && !!watch_live_content) {
+    watch_live_content.classList.add("watch-dis-none");
   } // js para pagina premium, boton e video y comentarios
 
 
@@ -1802,6 +1803,14 @@ var initMain = function initMain($, Drupal) {
       var colorLineKeyStrength = window.getComputedStyle(LineKeyStrength).getPropertyValue("background-color");
       TextKeyStrength.style.color = colorLineKeyStrength;
     });
+  } //// js para sponsorchip budget
+
+
+  var budget = document.querySelector(".webform-submission-sponsorship-upcoming-event-form .form-item-budget");
+  var container_country = document.querySelector(".webform-submission-sponsorship-upcoming-event-form #edit-address--2--wrapper .fieldset-wrapper");
+
+  if (!!budget && !!container_country) {
+    container_country.appendChild(budget);
   }
 };
 
@@ -1894,7 +1903,7 @@ __webpack_require__.r(__webpack_exports__);
         $video.removeClass("stuck");
       }
 
-      $('.stuck button[name="close"]').click(function () {
+      $('.block-field-blocknodenewsfield-video .stuck button[name="close"]').click(function () {
         $video.addClass("disnone");
       });
     });
@@ -1917,7 +1926,7 @@ __webpack_require__.r(__webpack_exports__);
         $videoThoughtLeaders.removeClass("stuck");
       }
 
-      $('.stuck button[name="close"]').click(function () {
+      $('.block-field-blocknodenewsfield-video .stuck button[name="close"]').click(function () {
         $videoThoughtLeaders.addClass("disnone");
       });
     });
@@ -2048,10 +2057,10 @@ __webpack_require__.r(__webpack_exports__);
       var watchLive_close = document.querySelector(".watch-live-video .close-modal");
 
       if (!!watchLive_close && !!watchLive_button && !!$videoNews) {
-        watchLive_button.click(function () {
+        $(watchLive_button).click(function () {
           $videoNews.addClass("dis-none-obligate");
         });
-        watchLive_close.click(function () {
+        $(watchLive_close).click(function () {
           if ($videoNews.hasClass("dis-none-obligate")) {
             $videoNews.removeClass("dis-none-obligate");
           }
