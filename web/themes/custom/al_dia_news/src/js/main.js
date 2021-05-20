@@ -563,7 +563,7 @@ const initMain = ($, Drupal) => {
 			//disabled at startup
 			removeStateAndCity(fieldState, fieldCity);
 
-			//reorder fields
+			//reorder fields 
 				
 			filedCountry.insertAdjacentElement('afterend', fieldState);
 			fieldState.insertAdjacentElement('afterend', fieldCity);

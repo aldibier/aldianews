@@ -1671,7 +1671,7 @@ var initMain = function initMain($, Drupal) {
       var selectParent = selectCountry.parentElement;
       var countriesItems = selectParent.querySelectorAll('.opt'); //disabled at startup
 
-      removeStateAndCity(fieldState, fieldCity); //reorder fields
+      removeStateAndCity(fieldState, fieldCity); //reorder fields 
 
       filedCountry.insertAdjacentElement('afterend', fieldState);
       fieldState.insertAdjacentElement('afterend', fieldCity);
