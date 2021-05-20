@@ -229,6 +229,20 @@
       margin: 0 0 20px;
     }
   }
+
+  &.ui-corner-all .ui-dialog-buttonpane {
+    margin: 0 auto 30px;
+  }
+
+  .captcha {
+    margin-bottom: 40px;
+  }
+
+  .g-recaptcha {
+    > div {
+      margin: 0 auto;
+    }
+  }
 }
 
 .account-modal--login {
@@ -238,6 +252,9 @@
   overscroll-behavior: contain;
 
   .user-forgot-pass {
+    width: max-content;
+    margin-bottom: 25px;
+    display: block;
     font-size: szrem(22);
     font-family: $PrNovacond-light;
     font-style: normal;
@@ -311,6 +328,24 @@
       border-color: $corange transparent transparent transparent;
       border-width: 20px;
       border-style: solid;
+    }
+  }
+}
+
+.account-modal--password {
+  .user-pass {
+    > p {
+      font-size: szrem(16);
+      font-style: normal;
+      font-weight: normal;
+      line-height: 24px;
+      color: $cgrey6;
+
+      @media (max-width: $tablet) {
+        font-size: szrem(12);
+        line-height: 20px;
+        text-align: center;
+      }
     }
   }
 }
