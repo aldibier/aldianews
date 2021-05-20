@@ -1,0 +1,15 @@
+diff --git a/src/Controller/RegistrationController.php b/src/Controller/RegistrationController.php
+--- RegistrationController.php	2020-06-20 23:24:49.000000000 -0500
++++ RegistrationController.php	2021-05-20 15:00:30.000000000 -0500
+@@ -170,9 +170,9 @@
+           user_login_finalize($account);
+ 
+           // Display default welcome message.
+-          $this->messenger->addMessage($this->t('You have just used your one-time login link. Your account is now active and you are authenticated.'));
++          $this->messenger->addMessage($this->t('<div class="pop-up-wellcome-aldia"><h1>WELCOME TO THE BEST OF THE AMERICAN LATINO EXPERIENCE.</h1><p>Congratulations, you just have confirmed your account. Start enjoying our exclusive web content from Latinx minds to the world.</p><button class="aldia-home-close">START EXPLORING</button></div>'));
+           // Redirect to user.
+-          $route_name = 'entity.user.canonical';
++          $route_name = '<front>';
+           $route_options = ['user' => $account->id()];
+         }
+         // Something else is wrong, redirect to the password
