@@ -72,6 +72,7 @@ section .comment:not(section .indented .comment) {
   }
 
   .field--name-field-comment-body {
+    margin-bottom: 15px;
     font-style: normal;
     font-weight: normal;
     font-size: $px20;
@@ -81,56 +82,58 @@ section .comment:not(section .indented .comment) {
     width: 100%;
   }
 
-  .item-list {
-    margin: 0 0 0 auto;
-    display: flex !important;
-    font-style: normal;
-    font-size: $px20;
-    line-height: 28px;
-    font-weight: 600;
-    font-family: $PrNovacond-reg;
-    text-transform: uppercase;
-    color: $cblack3;
-
-    a:not(.login-anonymous-comment):not(.register-anonymous-comment) {
-      border-bottom: 0px;
-      color: $cblack3;
-      cursor: pointer;
-    }
-
-    ul {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      flex-wrap: wrap;
-
-      li:last-child {
-        width: 100%;
-      }
-    }
-
-    input[value="REPLY"] {
-      color: $corange !important;
-      text-transform: uppercase;
-      border-bottom: 0px;
+  .field--name-comment-display-custom,
+  .anonymus.field--name-comment-display-custom {
+    .item-list {
+      margin: 0 0 0 auto;
+      display: flex !important;
       font-style: normal;
       font-size: $px20;
       line-height: 28px;
       font-weight: 600;
       font-family: $PrNovacond-reg;
-      text-transform: uppercase;
       color: $cblack3;
-      background: transparent;
-      width: max-content;
-      padding: 0px;
-      margin: 0px;
-      min-height: auto;
-      border: 0px;
-      border-radius: 0px;
 
-      &:focus {
-        outline: 0px;
+      a:not(.login-anonymous-comment):not(.register-anonymous-comment) {
+        border-bottom: 0px;
+        color: $cblack3;
+        cursor: pointer;
+      }
+
+      ul {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+
+        li:last-child {
+          width: 100%;
+        }
+      }
+
+      input[value="REPLY"] {
+        color: $corange !important;
+        text-transform: uppercase;
+        border-bottom: 0px;
+        font-style: normal;
+        font-size: $px20;
+        line-height: 28px;
+        font-weight: 600;
+        font-family: $PrNovacond-reg;
+        text-transform: uppercase;
+        color: $cblack3;
+        background: transparent;
+        width: max-content;
+        padding: 0px;
+        margin: 0px;
+        min-height: auto;
+        border: 0px;
+        border-radius: 0px;
+
+        &:focus {
+          outline: 0px;
+        }
       }
     }
   }
@@ -143,29 +146,52 @@ section .comment:not(section .indented .comment) {
       line-height: 20px;
     }
 
-    .item-list {
-      font-size: $px16;
-      line-height: 22px;
-      margin-top: 20px;
+    .field--name-field-comment-body {
+      margin-bottom: 20px;
+    }
 
-      ul {
-        justify-content: flex-start;
+    .field--name-comment-display-custom {
+      .item-list {
+        font-size: szrem(16);
+        line-height: 22px;
       }
+    }
 
-      li {
-        padding: 0.2em 1.5em 0 0;
+    .field--name-comment-display-custom:not(.anonymus.field--name-comment-display-custom) {
+      .item-list {
+
+        ul {
+          justify-content: flex-start;
+        }
+
+        li {
+          padding: 0.2em 1.5em 0 0;
+        }
+
+        li:nth-child(4) {
+          margin-left: auto;
+        }
+
+        li:last-child {
+          padding: 0.2em 0em 0px 0px;
+        }
+
+        input[value="REPLY"] {
+          font-size: $px16;
+        }
       }
+    }
 
-      li:nth-child(4) {
-        margin-left: auto;
-      }
+    .anonymus.field--name-comment-display-custom {
+      .item-list {
 
-      li:last-child {
-        padding: 0.2em 0em 0px 0px;
-      }
+        ul {
+          justify-content: flex-start;
+        }
 
-      input[value="REPLY"] {
-        font-size: $px16;
+        li:nth-child(5) {
+          margin-left: auto;
+        }
       }
     }
   }
@@ -176,7 +202,7 @@ section .comment:not(section .indented .comment) {
 }
 
 .indented {
-  margin: -40px 0 0;
+  margin: 0;// -40px 0 0
   width: 100%;
   display: none;
 
@@ -208,8 +234,8 @@ section .comment:not(section .indented .comment) {
 }
 
 section {
-  > .comment:last-child {
-    &:not(.comment + .indented){
+  >.comment:last-child {
+    &:not(.comment + .indented) {
       .container-show-hide {
         display: none;
       }
@@ -217,14 +243,14 @@ section {
   }
 }
 
-section .indented .comment {
+section .indented .comment:not(:first-child,:only-child,:last-child) {
   position: relative;
 
   &::before {
     content: "";
     display: block;
     position: absolute;
-    bottom: 0px;
+    top: 0px;
     left: 0px;
     right: 0px;
     margin: 0 auto;
@@ -267,6 +293,7 @@ section>.comment:nth-of-type(1) {
 }
 
 .container-show-hide {
+  margin-left: 30px;
   text-transform: uppercase;
   position: relative;
   padding-right: 40px !important;
@@ -451,8 +478,9 @@ section>.comment:nth-of-type(1) {
 
 .login-anonymous-comment,
 .register-anonymous-comment {
+  margin-right: 5px;
   font-size: szrem(19);
-  font-family: $PrNovacond-bold;
+  font-family: $PrNovacond-Sbold;
   font-style: normal;
   line-height: 127.8%;
   text-transform: uppercase;
@@ -460,7 +488,7 @@ section>.comment:nth-of-type(1) {
   color: $corange;
 
   &:hover,
-  &:focus{
+  &:focus {
     color: $corange;
   }
 
@@ -468,16 +496,32 @@ section>.comment:nth-of-type(1) {
     font-size: szrem(17);
     line-height: 19px;
     text-align: center;
-  } 
+  }
+}
+
+.login-anonymous-comment {
+  margin-right: 10px;
+}
+
+.register-anonymous-comment {
+  margin-right: 5px;
+}
+
+.anonymus.field--name-comment-display-custom {
+  ul {
+    li {
+      padding: 0;
+    }
+  }
 }
 
 .text-anonymous-comment {
+  margin-right: 5px;
   font-size: szrem(19);
-  font-family: $PrNovacond-reg;
+  font-family: $PrNovacond-Sbold;
   font-style: normal;
   font-weight: normal;
   line-height: 127.8%;
-  text-transform: lowercase;
   letter-spacing: 0.2px;
   color: $cgrey6;
 
@@ -485,7 +529,7 @@ section>.comment:nth-of-type(1) {
     font-size: szrem(16);
     line-height: 19px;
     text-align: center;
-  } 
+  }
 }
 
 .block-comments-anonymous {
@@ -505,7 +549,7 @@ section>.comment:nth-of-type(1) {
       max-width: 100%;
       margin-right: 0;
     }
-  
+
     @media screen and(max-width: $tablet) {
       margin-bottom: 40px;
     }
@@ -518,7 +562,7 @@ section>.comment:nth-of-type(1) {
   &.show {
     cursor: initial;
 
-    .message-comments-container{
+    .message-comments-container {
       visibility: visible;
       pointer-events: initial;
     }
@@ -607,7 +651,7 @@ section>.comment:nth-of-type(1) {
   }
 
   .message-comments-container {
-    width: 100%; 
+    width: 100%;
     height: 180px;
     position: absolute;
     top: calc(0% + 45px);
@@ -618,7 +662,7 @@ section>.comment:nth-of-type(1) {
     background-color: $cblack3;
     visibility: hidden;
     pointer-events: none;
-  
+
     @media screen and(max-width: $tablet) {
       height: 125px;
       padding: 0 20px;
@@ -626,7 +670,7 @@ section>.comment:nth-of-type(1) {
     }
 
     p {
-      &.text-anonymous-comment {
+      &.text-anonymous-comment {
         margin-bottom: 10px;
 
         @media screen and(max-width: $tablet) {
@@ -634,18 +678,18 @@ section>.comment:nth-of-type(1) {
         }
       }
     }
-  
+
     a,
     span {
       margin-right: 5px;
     }
-  }  
+  }
 }
 
 .block-field-blocknodenewsfield-comments .block-comments-anonymous {
   display: block;
 }
 
-.page-premium .block-anonymous-comments{
+.page-premium .block-anonymous-comments {
   display: none;
 }

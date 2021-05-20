@@ -205,12 +205,8 @@
   }
 }
 
-.account-modal--login {
-  max-height: 70%;
-  min-height: 450px;
-  overflow: auto;
-  overscroll-behavior: contain;
-
+.account-modal--login,
+.account-modal--register {
   form .form-item label,
   form label {
     font-family: $PrNovacond-Sbold;
@@ -223,6 +219,23 @@
       line-height: 18px;
     }
   }
+
+  &.ui-corner-all .ui-dialog-titlebar {
+    margin-bottom: 40px;
+  }
+
+  &.ui-corner-all .form-item  {
+    @media (max-width: $tablet) {
+      margin: 0 0 20px;
+    }
+  }
+}
+
+.account-modal--login {
+  max-height: 70%;
+  min-height: 450px;
+  overflow: auto;
+  overscroll-behavior: contain;
 
   .user-forgot-pass {
     font-size: szrem(22);
