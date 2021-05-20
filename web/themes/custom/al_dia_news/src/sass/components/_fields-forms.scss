@@ -180,6 +180,29 @@ form {
     border: 0px;
   }
 
+  //// disable
+
+  .form-item-address-city.disabled,
+  .form-item-address-state-province.disabled {
+    &:focus-within {
+      .CaptionCont {
+        outline: none;
+      }
+    }
+
+    > label {
+      user-select: none;
+      pointer-events: none;
+      color: $cgrey6;
+      opacity: 0.3;
+    }
+
+    .CaptionCont,
+    #edit-address-city {
+      opacity: 0.5;
+    }
+  }
+
   ///-- PAsword --///
   #edit-account {
     width: 100%;
@@ -210,24 +233,27 @@ form {
     }
   }
   .password-suggestions {
+    //tooltip
     position: absolute;
     top: 60px;
     left: 210px;
     max-width: 260px;
+    width: 100%;
     min-height: 135px;
     padding: 17px;
     background: #e7e8ea;
     border-radius: 8px;
     z-index: 9;
-    * {
-      font-family: $PrNovacond-Sbold;
-      font-style: normal;
-      font-weight: 500;
-      font-size: $px16;
-      line-height: 19px;
-      letter-spacing: 0.025em;
-      color: $cgrey6;
-    }
+    margin: 0;
+    visibility: hidden;
+    pointer-events: none;
+    font-family: $PrNovacond-Sbold;
+    font-style: normal;
+    font-weight: 500;
+    font-size: $px16;
+    line-height: 19px;
+    letter-spacing: 0.025em;
+    color: $cgrey6;
     ul {
       margin-top: 15px;
       position: relative;
@@ -242,11 +268,10 @@ form {
         position: absolute;
         width: 0;
         height: 0;
-        border-right: 25px solid transparent;
-        border-top: 25px solid transparent;
-        border-left: 25px solid transparent;
-        border-bottom: 25px solid #e7e8ea;
-        top: -122px;
+        border-color: transparent transparent #e7e8ea transparent;
+        border-width: 25px;
+        border-style: solid;
+        top: -117px;
         left: 0;
         right: 0;
         margin: 0 auto;
@@ -258,6 +283,14 @@ form {
     min-height: 37px;
     &:focus {
       outline: 0px;
+    }
+  }
+
+  .password-parent {
+    &:focus-within ~ .password-suggestions,
+    &:focus ~ .password-suggestions {
+      visibility: visible;
+      pointer-events: all;
     }
   }
 
@@ -273,7 +306,6 @@ form {
     .details-wrapper {
       padding: 0px;
     }
-    
   }
 
   @media (max-width: $tablet) {
