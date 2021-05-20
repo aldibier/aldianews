@@ -584,8 +584,20 @@
       margin: 0px;
     }
   }
+  .SumoSelect .optWrapper>.options>li label{
+    min-height: 45px;
+  }
+  .SumoSelect.open > .optWrapper{
+    top: 44px;
+  }
 }
 .webform-submission-sponsorship-upcoming-event-form{
+  .SumoSelect .optWrapper>.options>li label{
+    min-height: 45px;
+  }
+  .SumoSelect.open > .optWrapper{
+    top: 44px;
+  }
   .form-item-company{
     padding-left: 15px;
   }
@@ -615,7 +627,7 @@
     max-width: none;
     margin-bottom: 60px;
     textarea{
-      width: 100%;
+      width: 100% !important;
       max-width: none;
     }
   }
@@ -1021,7 +1033,7 @@
     .form-item-message{
       margin-bottom: 30px;
       textarea{
-        // min
+        min-height: 200px;
       }
     }
   }
