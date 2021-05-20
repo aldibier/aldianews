@@ -51,7 +51,7 @@
 
 //---- reset styles  ----//
 .ui-widget.ui-corner-all {
-  .ui-dialog-titlebar-close  {
+  .ui-dialog-titlebar-close {
     width: 20px !important;
     height: 20px;
     padding: 0;
@@ -59,7 +59,7 @@
   }
 }
 
-.ui-widget.ui-corner-all .ui-dialog-buttonpane { 
+.ui-widget.ui-corner-all .ui-dialog-buttonpane {
   .form-submit {
     font-family: $PrNovacond-Sbold;
     letter-spacing: 0.741176px;
@@ -220,11 +220,11 @@
     }
   }
 
-  &.ui-corner-all .ui-dialog-titlebar {
+  &.ui-corner-all .ui-dialog-titlebar  {
     margin-bottom: 40px;
   }
 
-  &.ui-corner-all .form-item  {
+  &.ui-corner-all .form-item {
     @media (max-width: $tablet) {
       margin: 0 0 20px;
     }
@@ -272,45 +272,14 @@
     position: relative;
   }
 
-  .password-parent {
-    &:focus-within ~ .password-suggestions {
-      visibility: visible;
-      pointer-events: all;
-    }
-  }
-
   .password-suggestions  {
-    width: 100%;
-    margin: 0;
-    padding: 15px;
-    position: absolute;
-    bottom: calc(0% + 360px);
+    // bottom: calc(0% + 360px);
     left: 0;
-    background-color: $corange;
-    color: $cwhite;
-    border-radius: 5px;
-    visibility: hidden;
-    pointer-events: none;
-
     @media (max-width: $tablet) {
-      bottom: calc(0% + 275px);
+      // bottom: calc(0% + 275px);
     }
-
     @media (max-width: $mobile-min + 5) {
-      bottom: calc(0% + 315px);
-    }
-
-    &::after {
-      content: "";
-      height: 0;
-      width: 0;
-      position: absolute;
-      bottom: calc(0% - 35px);
-      right: 40px;
-      display: block;
-      border-color: $corange transparent transparent transparent;
-      border-width: 20px;
-      border-style: solid;
+      // bottom: calc(0% + 315px);
     }
   }
 }
