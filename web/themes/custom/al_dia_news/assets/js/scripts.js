@@ -1664,7 +1664,7 @@ var initMain = function initMain($, Drupal) {
     };
 
     if (!!document.querySelector('.webform-submission-sponsorship-form')) {
-      var selectCountry = document.getElementById('edit-address-country');
+      var selectCountry = document.querySelector('select[name="address[country]"]');
       var filedCountry = document.querySelector('.form-item-address-country');
       var fieldState = document.querySelector('.form-item-address-state-province');
       var fieldCity = document.querySelector('.form-item-address-city');

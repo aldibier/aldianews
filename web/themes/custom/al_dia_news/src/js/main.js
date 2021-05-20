@@ -554,7 +554,7 @@ const initMain = ($, Drupal) => {
 		}
 
 		if (!!document.querySelector('.webform-submission-sponsorship-form')) {
-			const selectCountry = document.getElementById('edit-address-country');
+			const selectCountry = document.querySelector('select[name="address[country]"]');
 			const filedCountry = document.querySelector('.form-item-address-country');
 			const fieldState = document.querySelector('.form-item-address-state-province');
 			const fieldCity = document.querySelector('.form-item-address-city');
