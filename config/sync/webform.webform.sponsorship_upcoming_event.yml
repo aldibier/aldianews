@@ -14,7 +14,47 @@ id: sponsorship_upcoming_event
 title: SPONSORSHIP
 description: 'Upcoming event Sponsorship'
 category: ''
-elements: "markup:\n  '#type': webform_markup\n  '#markup': '<div class=\"views-label views-label-field-webform\">SPONSORSHIP</div>'\nfirst_name:\n  '#type': textfield\n  '#title': 'First name'\n  '#required': true\nlast_name:\n  '#type': textfield\n  '#title': 'Last name'\n  '#required': true\nemail:\n  '#type': email\n  '#title': Email\n  '#required': true\naddress:\n  '#type': webform_address\n  '#title': Address\n  '#address__access': false\n  '#address_2__access': false\n  '#postal_code__access': false\n  '#country__required': true\ncompany:\n  '#type': textfield\n  '#title': Company\n  '#required': true\nbudget:\n  '#type': select\n  '#title': Budget\n  '#options':\n    '$1,000-$5,000': '$1,000-$5,000'\n    '$5,000-$10,000': '$5,000-$10,000'\n    '$10,000-$15,000': '$10,000-$15,000'\n    '$15,000-$25,000': '$15,000-$25,000'\n    \"$25,000\\_+\": \"$25,000\\_+\"\n  '#required': true\nmessage:\n  '#type': textarea\n  '#title': Message\n  '#required': true"
+elements: |
+  markup:
+    '#type': webform_markup
+    '#markup': '<div class="views-label views-label-field-webform">SPONSORSHIP</div>'
+  first_name:
+    '#type': textfield
+    '#title': 'First name'
+    '#required': true
+  last_name:
+    '#type': textfield
+    '#title': 'Last name'
+    '#required': true
+  email:
+    '#type': email
+    '#title': Email
+    '#required': true
+  company:
+    '#type': textfield
+    '#title': Company
+    '#required': true
+  address:
+    '#type': webform_address
+    '#title': Address
+    '#address__access': false
+    '#address_2__access': false
+    '#postal_code__access': false
+    '#country__required': true
+  budget:
+    '#type': select
+    '#title': Budget
+    '#options':
+      '$1,000-$5,000': '$1,000-$5,000'
+      '$5,000-$10,000': '$5,000-$10,000'
+      '$10,000-$15,000': '$10,000-$15,000'
+      '$15,000-$25,000': '$15,000-$25,000'
+      "$25,000\_+": "$25,000\_+"
+    '#required': true
+  message:
+    '#type': textarea
+    '#title': Message
+    '#required': true
 css: ''
 javascript: ''
 settings:
@@ -215,7 +255,15 @@ handlers:
       from_options: {  }
       from_name: _default
       subject: _default
-      body: "**Important: Please do not reply to the e-mail mjbuitrago@seedem.co, reply to the e-mail registered in the body of the message.\r\n\r\n<p>Posted on: {{ webform_token('[webform_submission:created]', webform_submission, [], options) }}</p>\r\n<p>Sending by: {{ \r\nwebform_token('[webform_submission:user]', webform_submission, [], options) }}</p>\r\n<p>Contenido:</p>\r\n{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}\r\n"
+      body: |
+        **Important: Please do not reply to the e-mail mjbuitrago@seedem.co, reply to the e-mail registered in the body of the message.
+        
+        <p>Posted on: {{ webform_token('[webform_submission:created]', webform_submission, [], options) }}</p>
+        <p>Sending by: {{ 
+        webform_token('[webform_submission:user]', webform_submission, [], options) }}</p>
+        <p>Contenido:</p>
+        {{ webform_token('[webform_submission:values]', webform_submission, [], options) }}
+        
       excluded_elements: {  }
       ignore_access: 0
       exclude_empty: true
