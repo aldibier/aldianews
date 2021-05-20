@@ -178,7 +178,7 @@ button[name="close"],
   max-height: 890px;
   padding: 100px 75px 98px;
 
-  .SumoSelect.open>.optWrapper {
+  .SumoSelect.open > .optWrapper {
     top: 45px;
   }
 
@@ -186,32 +186,9 @@ button[name="close"],
     padding-bottom: 98px;
   }
 
-  .form-item-address-city.disabled,
-  .form-item-address-state-province.disabled {
-
-    &:focus-within {
-      .CaptionCont {
-        outline: none;
-      }
-    }
-
-    >label {
-      user-select: none;
-      pointer-events: none;
-      color: $cgrey6;
-      opacity: .3;
-    }
-
-    .CaptionCont,
-    #edit-address-city{
-      opacity: .5;
-    }
-  }
-
   .form-item-address-city {
     width: 100%;
   }
-
 
   .form-item-address-state-province,
   .form-item-address-country {
@@ -277,7 +254,6 @@ button[name="close"],
 }
 
 @media (max-width: $tablet) {
-
   //-------------form style general------------//
   .form-general {
     top: 125px;
@@ -351,7 +327,7 @@ button[name="close"],
       margin: 20px 0 0;
     }
 
-    .SumoSelect.open>.optWrapper {
+    .SumoSelect.open > .optWrapper {
       top: 35px;
     }
 
