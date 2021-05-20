@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "38761a0d862c8d4fd3093b06892c79ef",
+    "content-hash": "e7074a54dc1800fe7a5b4b85c74ff933",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -7551,6 +7551,51 @@
             }
         },
         {
+            "name": "drupal/user_email_verification",
+            "version": "dev-1.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/user_email_verification.git",
+                "reference": "b19d5dc36171d6a2a9fc5fd24a5c11d89bfab5e3"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.x-dev",
+                    "datestamp": "1592398788",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Antonnavi",
+                    "homepage": "https://www.drupal.org/user/875410"
+                },
+                {
+                    "name": "skek",
+                    "homepage": "https://www.drupal.org/user/417078"
+                }
+            ],
+            "description": "Verify the user Email. If the Email of the user is not verified the system will block the user.",
+            "homepage": "https://www.drupal.org/project/user_email_verification",
+            "support": {
+                "source": "https://git.drupalcode.org/project/user_email_verification"
+            }
+        },
+        {
             "name": "drupal/video_embed_field",
             "version": "2.4.0",
             "source": {
@@ -12751,6 +12796,7 @@
         "drupal/search_api_spellcheck": 10,
         "drupal/shs": 15,
         "drupal/term_csv_export_import": 15,
+        "drupal/user_email_verification": 20,
         "drupal/views_block_area": 10,
         "drupal/views_field_view": 10,
         "drupal/views_fieldsets": 20
