@@ -1664,10 +1664,10 @@ var initMain = function initMain($, Drupal) {
     };
 
     if (!!document.querySelector('.webform-submission-sponsorship-form')) {
-      var selectCountry = document.querySelector('select[name="address[country]"]');
-      var filedCountry = document.querySelector('.form-item-address-country');
-      var fieldState = document.querySelector('.form-item-address-state-province');
-      var fieldCity = document.querySelector('.form-item-address-city');
+      var selectCountry = document.querySelector('.webform-submission-sponsorship-form select[name="address[country]"]');
+      var filedCountry = document.querySelector('.webform-submission-sponsorship-form .form-item-address-country');
+      var fieldState = document.querySelector('.webform-submission-sponsorship-form .form-item-address-state-province');
+      var fieldCity = document.querySelector('.webform-submission-sponsorship-form .form-item-address-city');
       var selectParent = selectCountry.parentElement;
       var countriesItems = selectParent.querySelectorAll('.opt'); //disabled at startup
 
@@ -2529,8 +2529,8 @@ var initSlick = function initSlick($, Drupal) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\valer\Desktop\4ld14-n3ws\web\themes\custom\al_dia_news\src\js\scripts.js */"./src/js/scripts.js");
-module.exports = __webpack_require__(/*! C:\Users\valer\Desktop\4ld14-n3ws\web\themes\custom\al_dia_news\src\sass\styles.scss */"./src/sass/styles.scss");
+__webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
+module.exports = __webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
 
 
 /***/ })

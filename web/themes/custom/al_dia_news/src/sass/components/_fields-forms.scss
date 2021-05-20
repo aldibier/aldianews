@@ -180,6 +180,29 @@ form {
     border: 0px;
   }
 
+  //// disable
+
+  .form-item-address-city.disabled,
+  .form-item-address-state-province.disabled {
+    &:focus-within {
+      .CaptionCont {
+        outline: none;
+      }
+    }
+
+    > label {
+      user-select: none;
+      pointer-events: none;
+      color: $cgrey6;
+      opacity: 0.3;
+    }
+
+    .CaptionCont,
+    #edit-address-city {
+      opacity: 0.5;
+    }
+  }
+
   ///-- PAsword --///
   #edit-account {
     width: 100%;
@@ -273,7 +296,6 @@ form {
     .details-wrapper {
       padding: 0px;
     }
-    
   }
 
   @media (max-width: $tablet) {
