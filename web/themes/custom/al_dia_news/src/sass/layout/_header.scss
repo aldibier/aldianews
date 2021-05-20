@@ -739,7 +739,7 @@ body.open-menu {
 
   #block-magnifierheader {
     order: 4;
-    margin: auto 0 auto 16px;
+    margin: auto 0 auto 35px;
     @media (max-width: $tablet) {
       order: 6;
     }
@@ -792,12 +792,13 @@ body.open-menu {
     }
 
     .links {
-      width: 64px;
+      width: 45px;
       height: 67px;
       display: flex;
       flex-wrap: wrap;
       padding: 0;
       position: relative;
+      padding-left: 10px;
     }
 
     li {
@@ -832,7 +833,7 @@ body.open-menu {
     order: 6;
     position: relative;
     min-width: 100px;
-    margin-right: 20px;
+    margin-right: 11px;
     .field--name-field-image,
     .views-field-field-cover-page {
       position: absolute;
@@ -876,7 +877,7 @@ body.open-menu {
     @media (min-width: $desktop) {
       // padding-right: 15px;
       padding-right: 0px;
-      margin-right: 29px;
+      margin-right: 20px;
     }
   }
 
