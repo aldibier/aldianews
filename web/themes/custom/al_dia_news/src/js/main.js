@@ -718,6 +718,14 @@ const initMain = ($, Drupal) => {
 	if(!!budget && !!container_country){
 		container_country.appendChild(budget);
 	}
+
+	//// js fondo modal 
+	var modal_welcome = document.querySelector(".pop-up-wellcome-aldia ");
+	var background_body = document.querySelector("body");
+
+	if(!!modal_welcome && !!background_body){
+		background_body.classList.add("background-modal");
+	}
 };
 
 export default initMain;
