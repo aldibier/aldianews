@@ -80,6 +80,7 @@ section .comment:not(section .indented .comment) {
     color: $cblack3;
     font-family: $PrNovacond-reg;
     width: 100%;
+    text-align: right;
   }
 
   .field--name-comment-display-custom,
@@ -98,6 +99,7 @@ section .comment:not(section .indented .comment) {
         border-bottom: 0px;
         color: $cblack3;
         cursor: pointer;
+        text-transform: uppercase;
       }
 
       ul {
@@ -159,7 +161,6 @@ section .comment:not(section .indented .comment) {
 
     .field--name-comment-display-custom:not(.anonymus.field--name-comment-display-custom) {
       .item-list {
-
         ul {
           justify-content: flex-start;
         }
@@ -184,7 +185,6 @@ section .comment:not(section .indented .comment) {
 
     .anonymus.field--name-comment-display-custom {
       .item-list {
-
         ul {
           justify-content: flex-start;
         }
@@ -202,7 +202,7 @@ section .comment:not(section .indented .comment) {
 }
 
 .indented {
-  margin: 0;// -40px 0 0
+  margin: 0; // -40px 0 0
   width: 100%;
   display: none;
 
@@ -234,7 +234,7 @@ section .comment:not(section .indented .comment) {
 }
 
 section {
-  >.comment:last-child {
+  > .comment:last-child {
     &:not(.comment + .indented) {
       .container-show-hide {
         display: none;
@@ -243,7 +243,7 @@ section {
   }
 }
 
-section .indented .comment:not(:first-child,:only-child,:last-child) {
+section .indented .comment:not(:first-child, :only-child, :last-child) {
   position: relative;
 
   &::before {
@@ -266,7 +266,7 @@ section .indented .comment:not(:first-child,:only-child,:last-child) {
   }
 }
 
-section>.comment:nth-of-type(1) {
+section > .comment:nth-of-type(1) {
   position: relative;
   border-bottom: 0px solid transparent;
 
@@ -312,7 +312,8 @@ section>.comment:nth-of-type(1) {
     content: "";
     display: block;
     position: absolute;
-    background: transparent url("../img/arrow-bottom.png") center center no-repeat;
+    background: transparent url("../img/arrow-bottom.png") center center
+      no-repeat;
     background-size: contain;
     width: 17.06px;
     height: 10px;
@@ -472,7 +473,7 @@ section>.comment:nth-of-type(1) {
   }
 }
 
-.indented>div:last-child .container-show-hide {
+.indented > div:last-child .container-show-hide {
   display: none;
 }
 
@@ -630,7 +631,12 @@ section>.comment:nth-of-type(1) {
       }
 
       .fake-form-submit {
-        @include button($btnWidth:165px, $btnHeight:40px, $btnBackground:$corange, $btnColor:$cwhite);
+        @include button(
+          $btnWidth: 165px,
+          $btnHeight: 40px,
+          $btnBackground: $corange,
+          $btnColor: $cwhite
+        );
         margin: 0;
         padding: 0;
         display: block;

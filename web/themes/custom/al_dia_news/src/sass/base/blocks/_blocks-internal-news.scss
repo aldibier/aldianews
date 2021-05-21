@@ -40,8 +40,8 @@
     }
   }
 }
-.node--type-news .block-field-blocknodenewsbody p{
- font-family: $CenturyOld-Regular !important;
+.node--type-news .block-field-blocknodenewsbody p {
+  font-family: $CenturyOld-Regular !important;
 }
 
 //------ summary -----------//
@@ -705,6 +705,7 @@ div[data-embed-button="related_content"] {
     background: #f2f2f2;
     border: none;
     min-height: 182px;
+    max-width: 835px;
   }
 
   label[for="edit-field-comment-body-0-value"] {
@@ -713,7 +714,7 @@ div[data-embed-button="related_content"] {
 
   .form-actions {
     display: flex;
-
+    margin-top: 30px;
     input.button--primary,
     .cbutton-back {
       background: $corange;
@@ -759,6 +760,7 @@ div[data-embed-button="related_content"] {
     }
 
     .form-actions {
+      margin-top: 10px;
       input.button--primary {
         height: 30px;
         font-size: 12px;
@@ -805,6 +807,8 @@ div[data-embed-button="related_content"] {
       font-size: $px20;
       line-height: 28px;
       color: $cblack3;
+      min-width: 835px;
+      padding-bottom: 0px;
       &::placeholder {
         text-transform: capitalize;
         font-size: $px20;
@@ -814,6 +818,8 @@ div[data-embed-button="related_content"] {
     @media (max-width: $tablet) {
       margin: 20px 0;
       textarea {
+        min-width: 250px;
+        min-height: 260px;
         font-size: $px18;
         line-height: 20px;
         &::placeholder {
@@ -854,15 +860,15 @@ div[data-embed-button="related_content"] {
       align-items: center;
       justify-content: center;
       max-width: 165px !important;
-      font-family: $PrNovacond-Sbold;
+      font-family: $PrNovacond-Sbold !important;
       margin: 0px;
       letter-spacing: 0.741176px;
       box-shadow: 0px 0px 0px !important;
       text-transform: uppercase;
       @media (max-width: $tablet) {
         max-width: 120px !important;
-        height: 30px;
-        font-size: $px12;
+        height: 30px !important;
+        font-size: $px12 !important;
       }
     }
     .cancel-button-edit {
@@ -882,7 +888,7 @@ div[data-embed-button="related_content"] {
     }
   }
 }
- 
+
 .popup-delete-comment {
   max-width: 604px !important;
   * {
@@ -890,7 +896,7 @@ div[data-embed-button="related_content"] {
   }
 
   .ui-dialog-title {
-    font-size: $px25 !important;
+    font-size: $px34 !important;
     padding-top: 20px;
     white-space: break-spaces;
     text-align: left;
@@ -898,7 +904,7 @@ div[data-embed-button="related_content"] {
       font-size: $px18 !important;
     }
   }
-  .text-comment{
+  .text-comment {
     margin-top: 40px;
     @media (max-width: $tablet) {
       margin-top: 30px;
@@ -919,7 +925,7 @@ div[data-embed-button="related_content"] {
     }
   }
   .ui-dialog-buttonpane {
-    margin: 0 auto 20px !important;
+    margin: 0 auto 40px !important;
   }
   .ui-dialog-titlebar {
     padding: 30px 20px 0 !important;
@@ -929,27 +935,30 @@ div[data-embed-button="related_content"] {
   }
 }
 
-.popup-edit-comment{
-  .ui-dialog-buttonpane{
+.popup-edit-comment {
+  .ui-dialog-titlebar {
+    padding: 35px 20px 0 !important;
+  }
+  .ui-dialog-buttonpane {
     margin: 0 auto 30px !important;
     max-width: 875px !important;
   }
-  .ui-dialog-buttonpane .ui-dialog-buttonset{
+  .ui-dialog-buttonpane .ui-dialog-buttonset {
     max-width: 350px !important;
     float: left;
     justify-content: space-between !important;
     flex-direction: row;
-    button:last-child{
+    button:last-child {
       background: #e21;
       padding: 0px;
     }
-    button:first-child{
+    button:first-child {
       background: #5c6165;
     }
   }
 }
 
-.comment-form .cancel-button-edit{
+.comment-form .cancel-button-edit {
   display: none;
 }
 .comment {
@@ -965,6 +974,7 @@ div[data-embed-button="related_content"] {
     color: $cblack0;
     border: none;
     text-transform: capitalize;
+    text-align: right;
   }
 
   .field--name-comment-post-date {
@@ -975,6 +985,7 @@ div[data-embed-button="related_content"] {
     font-family: $PrNovacond-reg;
     color: $cgrey3;
     margin-bottom: 20px;
+    text-align: right;
   }
 
   @media (max-width: $tablet) {
