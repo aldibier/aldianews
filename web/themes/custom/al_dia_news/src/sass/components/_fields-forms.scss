@@ -6,6 +6,16 @@ form {
     padding: 0px;
     margin: 0;
   }
+
+  .form-item, .form-actions {
+    margin-top: initial;
+    margin-bottom: initial;
+  }
+
+  .form-item {
+    margin: 0 0 25px;
+  }
+
   button[name="close"] {
     position: absolute;
     top: 50px;
@@ -44,9 +54,10 @@ form {
   .form-item label {
     font-style: normal;
     font-weight: 600;
-    font-size: $px20;
-    line-height: 24px;
-    font-family: $PrNovacond-bold;
+    font-size: szrem(18);
+    line-height: 22px;
+    font-family: $PrNovacond-Sbold;
+    letter-spacing: 0.025em;
     color: $cblack;
   }
   input {
@@ -294,10 +305,10 @@ form {
     }
   }
 
-  ////--captcha---/////
+  ////--captcha---/////  
   #captcha {
     border: 0px;
-    margin: 10px 0 30px;
+    margin: 10px 0 40px;
     width: 100%;
     summary,
     .details-description {
@@ -305,6 +316,13 @@ form {
     }
     .details-wrapper {
       padding: 0px;
+    }
+
+    .g-recaptcha,
+    .g-recaptcha > div,
+    iframe {
+      width: 100%;
+      text-align: center;
     }
   }
 
@@ -404,15 +422,33 @@ form {
       min-height: 30px;
     }
 
-    ////--captcha---/////
     #captcha {
       margin: 20px 0;
-      .g-recaptcha,
-      .g-recaptcha > div,
+    }
+
+    .g-recaptcha {
+      > div {
+        > div {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+
+    #captcha .g-recaptcha,#captcha .g-recaptcha>div,#captcha iframe {
+      width: initial !important;
+    }  
+
+    .description {
+      margin-bottom: 20px;
+    }
+  }
+
+  @media (max-width:$mobile-mid) {
+    .g-recaptcha {
       iframe {
-        width: 214px !important;
-        // height: 65px !important;
-        margin: 0 auto;
+        transform: scale(.8);
       }
     }
   }
