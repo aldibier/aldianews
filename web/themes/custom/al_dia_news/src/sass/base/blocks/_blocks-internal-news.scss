@@ -792,6 +792,15 @@ div[data-embed-button="related_content"] {
   .ui-dialog-titlebar-close {
     display: none;
   }
+  .ui-dialog-title {
+    font-size: $px34 !important;
+    padding-top: 20px;
+    white-space: break-spaces;
+    text-align: left;
+    @media (max-width: $tablet) {
+      font-size: $px18 !important;
+    }
+  }
   .ui-dialog-titlebar {
     padding: 0 20px;
     margin: 0 auto;
@@ -895,15 +904,6 @@ div[data-embed-button="related_content"] {
     max-width: 480px !important;
   }
 
-  .ui-dialog-title {
-    font-size: $px34 !important;
-    padding-top: 20px;
-    white-space: break-spaces;
-    text-align: left;
-    @media (max-width: $tablet) {
-      font-size: $px18 !important;
-    }
-  }
   .text-comment {
     margin-top: 40px;
     @media (max-width: $tablet) {
@@ -912,7 +912,7 @@ div[data-embed-button="related_content"] {
   }
 
   .confirmation {
-    margin: 40px auto 20px;
+    margin: 0px auto 40px;
     padding: 0px;
     font-family: $PrNovacond-Sbold;
     font-size: $px22;
@@ -925,10 +925,10 @@ div[data-embed-button="related_content"] {
     }
   }
   .ui-dialog-buttonpane {
-    margin: 0 auto 40px !important;
+    margin: 0 auto 27px !important;
   }
   .ui-dialog-titlebar {
-    padding: 30px 20px 0 !important;
+    padding: 50px 20px 0 !important;
     @media (max-width: $tablet) {
       padding: 10px 20px 0 !important;
     }
@@ -936,6 +936,9 @@ div[data-embed-button="related_content"] {
 }
 
 .popup-edit-comment {
+  .ui-dialog-title {
+    margin: 10px 0 6px;
+  }
   .ui-dialog-titlebar {
     padding: 35px 20px 0 !important;
   }
