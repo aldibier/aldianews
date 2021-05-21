@@ -1975,8 +1975,10 @@ __webpack_require__.r(__webpack_exports__);
         if ($(this).hasClass("open")) {
           $(this).removeClass("open");
           $(".user-logged-in #block-menuuseritem-2 .item-list").removeClass("open");
+          $(".region-secondary-menu .item-list").removeClass("open-user");
         } else {
           $(".user-logged-in #block-menuuseritem-2 .item-list").addClass("open");
+          $(".region-secondary-menu .item-list").addClass("open-user");
           $(this).addClass("open");
         }
       }
