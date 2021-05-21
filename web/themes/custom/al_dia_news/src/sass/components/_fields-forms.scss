@@ -50,8 +50,9 @@ form {
       border-radius: 0px;
     }
   }
-  label,
-  .form-item label {
+
+  label:not(li > label),
+  .form-item label:not(li > label){
     font-style: normal;
     font-weight: 600;
     font-size: szrem(18);
