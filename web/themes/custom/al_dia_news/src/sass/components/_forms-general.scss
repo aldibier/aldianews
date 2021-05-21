@@ -26,16 +26,18 @@
 }
 
 //-------------form title------------//
-.views-label.views-label-field-webform {
+.views-label.views-label-field-webform,
+.ui-dialog .ui-dialog-title {
   width: 100%;
-  margin-bottom: 25px;
+  margin: 0 0 40px;
   padding: 0 0 10px;
   border-bottom: 1px solid $red1;
   display: block;
-  font-size: szrem(34);
+  font-size: szrem(28);
   font-family: $Mod-Sbold;
   font-weight: 600;
-  line-height: 41px;
+  line-height: 34px;
+  text-transform: uppercase;
   color: $red1;
 }
 
