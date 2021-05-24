@@ -2119,7 +2119,15 @@ __webpack_require__.r(__webpack_exports__);
   Drupal.behaviors.form_checkbox = {
     attach: function attach(context, settings) {
       $(document).ready(function () {
-        ///// js para tag new
+        //js para recargar
+        Array.from(document.querySelectorAll(".button-preload")).map(function (e) {
+          if (e != null) {
+            e.addEventListener("click", function () {
+              location.reload();
+            });
+          }
+        }); ///// js para tag new
+
         Array.from(document.querySelectorAll(".block-field-blocknodenewsfield-type-of-content")).map(function (evt) {
           if (evt != null) {
             var shape = evt.querySelector(".field--name-field-type-of-content");

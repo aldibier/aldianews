@@ -464,13 +464,8 @@
 }
 
 .webform-confirmation-modal {
-  max-width: 535px;
+  max-width: 535px !important;
   min-height: 260px;
-  left: 0px;
-  top: 280px;
-  background: #ffffff;
-  width: 100%;
-  height: auto;
   z-index: 120;
   right: 0px;
   margin: 0 auto;
@@ -478,26 +473,34 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 40px;
+  border-radius: 0px !important;
+  .ui-dialog-titlebar {
+    padding: 0px 40px 0px;
+  }
   .ui-dialog-title {
-    margin: 0 0 20px;
-    font-family: $Mod-bold;
-    font-size: $px24;
-    line-height: 120%;
-    color: $cgrey6;
+    margin: 0 0 20px !important;
+    font-family: $Mod-bold !important;
+    font-size: $px24 !important;
+    line-height: 120% !important;
+    color: $cgrey6 !important;
+    border-bottom: 0px !important;
+    padding-bottom: 0px !important;
+    white-space: pre-wrap !important;
   }
   .ui-dialog-titlebar-close {
     display: none;
   }
   .ui-widget-content {
-    font-family: $PrNovacond-reg;
-    font-style: normal;
-    font-size: $px16;
-    line-height: 134%;
-    color: $cgrey6;
-    margin: 0 0 25px;
+    font-family: $PrNovacond-reg !important;
+    font-style: normal !important;
+    font-size: $px16 !important;
+    line-height: 134% !important;
+    color: $cgrey6 !important;
+    width: 100% !important;
+    padding: 0 40px 0px !important;
   }
-  .ui-widget-content a {
+  .button-preload {
+    display: flex;
     max-width: 190px;
     width: 100%;
     min-height: 35px;
@@ -510,6 +513,11 @@
     letter-spacing: 0.741176px;
     color: $cwhite;
     border: 0px;
+    margin: 45px auto 0;
+    cursor: pointer;
+    &:hover {
+      color: $cwhite;
+    }
   }
   @media (max-width: $tablet) {
     max-width: none;
@@ -527,7 +535,7 @@
       line-height: 140%;
       margin: 0 0 20px;
     }
-    .ui-widget-content a {
+    .button-preload {
       max-width: 210px;
       min-height: 30px;
       font-size: $px14;
