@@ -598,11 +598,18 @@
   .js-form-type-select {
     max-width: 340px;
   }
+  .form-item-last-name,
+  .form-item-company,
+  .form-item-address-state-province,
+  .form-item-budget {
+    max-width: 355px;
+  }
   .SumoSelect .optWrapper > .options > li label {
     min-height: 45px;
+    color: #000000;
   }
   .SumoSelect.open > .optWrapper {
-    top: 44px;
+    top: 39px;
   }
   .form-item-company {
     padding-left: 15px;
@@ -1048,7 +1055,7 @@
         min-height: 200px;
       }
     }
-    form .form-actions .button {
+    .form-actions .button {
       max-width: 110px;
     }
   }
