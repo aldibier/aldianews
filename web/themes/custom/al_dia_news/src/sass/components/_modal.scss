@@ -121,7 +121,7 @@
       min-height: 35px;
       margin: 0;
       padding: 0;
-      background: #EFEFEF;
+      background: #efefef;
       border: none;
       width: 100%;
 
@@ -257,7 +257,6 @@
 
 .modal-open {
   .block-content-form {
-
     .views-field-field-webform,
     .modal-apply-webform {
       display: none;
@@ -306,7 +305,6 @@
 
 .account-modal--login,
 .account-modal--register {
-
   form .form-item label,
   form label {
     @media (max-width: $tablet) {
@@ -325,7 +323,7 @@
   }
 
   .g-recaptcha {
-    >div {
+    > div {
       margin: 0 auto;
     }
   }
@@ -394,7 +392,7 @@
 
 .account-modal--password {
   .user-pass {
-    >p {
+    > p {
       font-size: szrem(16);
       font-family: $CenturyOld-Regular;
       font-style: normal;
@@ -428,7 +426,8 @@
   button[name="close"] {
     z-index: 9;
     right: 13px;
-    background: url(/themes/custom/al_dia_news/assets/img/closew.png) center center no-repeat;
+    background: url(/themes/custom/al_dia_news/assets/img/closew.png) center
+      center no-repeat;
     background-size: contain;
 
     @media (min-width: 1280px) and (max-width: 1830px) {
@@ -556,13 +555,8 @@
 }
 
 .webform-confirmation-modal {
-  max-width: 535px;
+  max-width: 535px !important;
   min-height: 260px;
-  left: 0px;
-  top: 280px;
-  background: #ffffff;
-  width: 100%;
-  height: auto;
   z-index: 120;
   right: 0px;
   margin: 0 auto;
@@ -570,26 +564,34 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 40px;
+  border-radius: 0px !important;
+  .ui-dialog-titlebar {
+    padding: 0px 40px 0px !important;
+  }
   .ui-dialog-title {
-    margin: 0 0 20px;
-    font-family: $Mod-bold;
-    font-size: $px24;
-    line-height: 120%;
-    color: $cgrey6;
+    margin: 0 0 20px !important;
+    font-family: $Mod-bold !important;
+    font-size: $px24 !important;
+    line-height: 120% !important;
+    color: $cgrey6 !important;
+    border-bottom: 0px !important;
+    padding-bottom: 0px !important;
+    white-space: pre-wrap !important;
   }
   .ui-dialog-titlebar-close {
     display: none;
   }
   .ui-widget-content {
-    font-family: $PrNovacond-reg;
-    font-style: normal;
-    font-size: $px16;
-    line-height: 134%;
-    color: $cgrey6;
-    margin: 0 0 25px;
+    font-family: $PrNovacond-reg !important;
+    font-style: normal !important;
+    font-size: $px16 !important;
+    line-height: 134% !important;
+    color: $cgrey6 !important;
+    width: 100% !important;
+    padding: 0 40px 0px !important;
   }
-  .ui-widget-content a {
+  .button-preload {
+    display: flex;
     max-width: 190px;
     width: 100%;
     min-height: 35px;
@@ -602,6 +604,11 @@
     letter-spacing: 0.741176px;
     color: $cwhite;
     border: 0px;
+    margin: 45px auto 0;
+    cursor: pointer;
+    &:hover {
+      color: $cwhite;
+    }
   }
   @media (max-width: $tablet) {
     max-width: none;
@@ -619,7 +626,7 @@
       line-height: 140%;
       margin: 0 0 20px;
     }
-    .ui-widget-content a {
+    .button-preload {
       max-width: 210px;
       min-height: 30px;
       font-size: $px14;
