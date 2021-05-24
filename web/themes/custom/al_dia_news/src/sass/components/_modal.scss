@@ -437,7 +437,7 @@
     letter-spacing: 0.741176px;
     color: $cwhite;
     border: 0px;
-  } 
+  }
   @media (max-width: $tablet) {
     max-width: none;
     min-height: auto;
@@ -455,6 +455,79 @@
       margin: 0 0 20px;
     }
     button {
+      max-width: 210px;
+      min-height: 30px;
+      font-size: $px14;
+      line-height: 16px;
+    }
+  }
+}
+
+.webform-confirmation-modal {
+  max-width: 535px;
+  min-height: 260px;
+  left: 0px;
+  top: 280px;
+  background: #ffffff;
+  width: 100%;
+  height: auto;
+  z-index: 120;
+  right: 0px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  .ui-dialog-title {
+    margin: 0 0 20px;
+    font-family: $Mod-bold;
+    font-size: $px24;
+    line-height: 120%;
+    color: $cgrey6;
+  }
+  .ui-dialog-titlebar-close {
+    display: none;
+  }
+  .ui-widget-content {
+    font-family: $PrNovacond-reg;
+    font-style: normal;
+    font-size: $px16;
+    line-height: 134%;
+    color: $cgrey6;
+    margin: 0 0 25px;
+  }
+  .ui-widget-content a {
+    max-width: 190px;
+    width: 100%;
+    min-height: 35px;
+    background: $corange;
+    font-family: $PrNovacond-bold;
+    font-size: $px16;
+    line-height: 25px;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.741176px;
+    color: $cwhite;
+    border: 0px;
+  }
+  @media (max-width: $tablet) {
+    max-width: none;
+    min-height: auto;
+    left: 0px;
+    top: 85px;
+    height: 70%;
+    padding: 40px 15px;
+    .ui-dialog-title {
+      font-size: $px20;
+      line-height: 27px;
+    }
+    .ui-widget-content {
+      font-size: $px15;
+      line-height: 140%;
+      margin: 0 0 20px;
+    }
+    .ui-widget-content a {
       max-width: 210px;
       min-height: 30px;
       font-size: $px14;
