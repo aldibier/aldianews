@@ -41,7 +41,7 @@
     justify-content: space-between;
     label {
       color: $cblack3;
-      font-family: $PrNovacond-bold;
+      font-family: $PrNovacond-Sbold;
     }
     .form-submit {
       min-width: 180px;
@@ -49,6 +49,9 @@
     }
     .form-actions {
       display: flex;
+      justify-content: space-between;
+      max-width: 385px;
+      width: 100%;
     }
   }
   .field--name-field-first-name,
@@ -95,7 +98,7 @@
       font-size: $px18;
       line-height: 25px;
     }
-    .text-form-premium{
+    .text-form-premium {
       font-size: $px18;
       line-height: 25px;
     }
