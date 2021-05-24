@@ -39,7 +39,7 @@
   z-index: 10;
 }
 
-.close-video  {
+.close-video {
   width: 20px;
   height: 20px;
   margin-left: auto;
@@ -63,20 +63,102 @@
   z-index: 100;
 }
 
-//---- reset styles  ----//
+.account-modal--password {
+  height: 420px !important;
+}
+
 .ui-widget.ui-corner-all {
+  width: 100% !important;
+  max-width: 535px;
+  border: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+
   .ui-dialog-titlebar-close {
     width: 20px !important;
     height: 20px;
-    padding: 0;
+    position: absolute;
+    top: 31px;
+    right: 28px;
     transform: none;
-  }
-}
 
-.ui-widget.ui-corner-all .ui-dialog-buttonpane {
-  .form-submit {
-    font-family: $PrNovacond-Sbold;
-    letter-spacing: 0.741176px;
+    @media screen and (max-width: $tablet) {
+      top: 25px;
+      right: 15px;
+    }
+  }
+
+  .ui-dialog-titlebar {
+    margin: 0 auto;
+    padding: 46px 48px 0;
+    border: none;
+    background: #fff;
+
+    @media screen and (max-width: $tablet) {
+      padding: 34px 20px 0;
+    }
+  }
+
+  .ui-dialog-content {
+    margin: 0 auto;
+    padding: 0 48px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: szrem(22);
+    margin: 0 auto;
+    line-height: 27px;
+    font-family: $PrNovacond-reg;
+    max-height: max-content !important;
+
+    @media screen and (max-width: $tablet) {
+      padding: 0 20px;
+      font-size: 15px;
+      line-height: 18px;
+    }
+
+    input {
+      height: 35px;
+      min-height: 35px;
+      margin: 0;
+      padding: 0;
+      background: #EFEFEF;
+      border: none;
+      width: 100%;
+
+      @media screen and (max-width: $tablet) {
+        height: 30px;
+        min-height: 30px;
+      }
+    }
+  }
+
+  .ui-dialog-buttonpane {
+    background: none;
+    border: none;
+    max-width: 440px;
+    margin: 20px auto 50px;
+    padding: 0;
+
+    .ui-dialog-buttonset {
+      width: 100%;
+    }
+
+    .form-submit {
+      font-family: $PrNovacond-Sbold;
+      letter-spacing: 0.741176px;
+    }
+
+    button {
+      background: $corange;
+      width: 100%;
+      height: 40px;
+      border-radius: 0;
+      color: $cwhite;
+      font-weight: bold;
+      font-size: $px18;
+      line-height: 25px;
+      font-family: $PrNovacond-reg;
+    }
   }
 }
 
@@ -95,8 +177,6 @@
 
 .ui-button {
   .ui-icon-closethick {
-    width: 20px;
-    height: 20px;
     background-image: icon("close-black");
     background-size: contain;
     background-position: center;
@@ -118,7 +198,7 @@
   @media screen and (min-width: $broken) and (max-height: 900px) {
     padding: 90px 200px;
 
-    .close-video  {
+    .close-video {
       top: 80px;
     }
   }
@@ -153,7 +233,7 @@
   @media screen and (min-width: $broken) and (max-height: 900px) {
     padding: 90px 200px;
 
-    .close-video  {
+    .close-video {
       top: 80px;
     }
   }
@@ -177,6 +257,7 @@
 
 .modal-open {
   .block-content-form {
+
     .views-field-field-webform,
     .modal-apply-webform {
       display: none;
@@ -195,15 +276,19 @@
       bottom: 0;
       margin: auto;
       padding: 0 15px;
+
       .field-content {
         height: 70%;
       }
+
       .contact-form-father {
         height: 100%;
       }
+
       .form-general form {
         overflow-x: hidden;
       }
+
       &:after {
         position: fixed;
         z-index: 1;
@@ -221,6 +306,7 @@
 
 .account-modal--login,
 .account-modal--register {
+
   form .form-item label,
   form label {
     @media (max-width: $tablet) {
@@ -230,16 +316,16 @@
     }
   }
 
-  &.ui-corner-all .ui-dialog-buttonpane  {
+  &.ui-corner-all .ui-dialog-buttonpane {
     margin: 0 auto 30px;
   }
 
-  .captcha  {
+  .captcha {
     margin-bottom: 40px;
   }
 
   .g-recaptcha {
-    > div {
+    >div {
       margin: 0 auto;
     }
   }
@@ -291,11 +377,11 @@
     }
   }
 
-  .form-item-pass  {
+  .form-item-pass {
     position: relative;
   }
 
-  .password-suggestions  {
+  .password-suggestions {
     top: 95px;
     left: initial;
     right: 0;
@@ -308,8 +394,9 @@
 
 .account-modal--password {
   .user-pass {
-    > p {
+    >p {
       font-size: szrem(16);
+      font-family: $CenturyOld-Regular;
       font-style: normal;
       font-weight: normal;
       line-height: 24px;
@@ -341,8 +428,7 @@
   button[name="close"] {
     z-index: 9;
     right: 13px;
-    background: url(/themes/custom/al_dia_news/assets/img/closew.png) center
-      center no-repeat;
+    background: url(/themes/custom/al_dia_news/assets/img/closew.png) center center no-repeat;
     background-size: contain;
 
     @media (min-width: 1280px) and (max-width: 1830px) {
@@ -409,6 +495,7 @@
   align-items: center;
   justify-content: center;
   padding: 40px;
+
   h1 {
     margin: 0 0 20px;
     font-family: $Mod-bold;
@@ -416,6 +503,7 @@
     line-height: 120%;
     color: $cgrey6;
   }
+
   p {
     font-family: $PrNovacond-reg;
     font-style: normal;
@@ -424,6 +512,7 @@
     color: $cgrey6;
     margin: 0 0 25px;
   }
+
   button {
     max-width: 190px;
     width: 100%;
@@ -437,7 +526,8 @@
     letter-spacing: 0.741176px;
     color: $cwhite;
     border: 0px;
-  } 
+  }
+
   @media (max-width: $tablet) {
     max-width: none;
     min-height: auto;
@@ -445,15 +535,18 @@
     top: 85px;
     height: 70%;
     padding: 40px 15px;
+
     h1 {
       font-size: $px20;
       line-height: 27px;
     }
+
     p {
       font-size: $px15;
       line-height: 140%;
       margin: 0 0 20px;
     }
+
     button {
       max-width: 210px;
       min-height: 30px;
