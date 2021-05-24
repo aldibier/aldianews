@@ -131,8 +131,9 @@ function al_dia_news_general_form_alter(&$form, $form_state, $form_id) {
     case "user_pass":
       $form['mail']['#markup'] = t("Password reset instructions will be sent to your registered email address. You must log out to use the password reset link in the email.");
       $form['actions']['cancel'] = [
-        '#markup' => '<a href="/" class="button-home-reg ">CANCEL</a>',
+        '#markup' => '<a class="button-preload">CANCEL</a>',
       ];
+
     break;
   }
 
