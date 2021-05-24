@@ -592,6 +592,14 @@
   }
 }
 .webform-submission-sponsorship-upcoming-event-form{
+  form{
+    justify-content: space-between;
+  }
+  .form-type-textfield,
+    .form-type-email,
+    .js-form-type-select {
+      max-width: 340px;
+    }
   .SumoSelect .optWrapper>.options>li label{
     min-height: 45px;
   }
@@ -608,6 +616,7 @@
       margin: 0px;
       display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     }
   }
   .form-item-address-state-province,
@@ -622,17 +631,7 @@
   }
   .form-item-address-country{
     padding-left: 0px;
-    // order: 1;
   }
-  // .form-item-address-city{
-  //   order: 3;
-  // }
-  // .form-item-address-state-province{
-  //   order: 2;
-  // }
-  // .form-item-budget{
-  //   order: 4;
-  // }
   .form-item-message{
     max-width: none;
     margin-bottom: 60px;
@@ -1030,6 +1029,11 @@
     }
   }
   .webform-submission-sponsorship-upcoming-event-form{
+    .form-type-textfield,
+    .form-type-email,
+    .js-form-type-select {
+      max-width: none;
+    }
     .form-item-company{
       padding-left: 0px;
       width: 100%;
@@ -1045,6 +1049,9 @@
       textarea{
         min-height: 200px;
       }
+    }
+    form .form-actions .button{
+      max-width: 110px;
     }
   }
 }
