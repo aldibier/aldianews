@@ -42,7 +42,7 @@ form {
       background: $red1;
       margin-top: 0px;
       font-weight: 300;
-      font-size: $px18;
+      font-size: $px16;
       text-transform: uppercase;
       line-height: 25px;
       font-family: $PrNovacond-bold;
@@ -56,15 +56,15 @@ form {
     margin-bottom: 15px;
     font-style: normal;
     font-weight: 600;
-    font-size: szrem(18);
-    line-height: 22px;
+    font-size: szrem(20);
+    line-height: 24px;
     font-family: $PrNovacond-Sbold;
     letter-spacing: 0.025em;
     color: $cblack;
   }
   input {
     width: 100%;
-    min-height: 40px;
+    min-height: 35px;
     margin-top: 5px;
     background: $cgrey8;
   }
@@ -84,7 +84,7 @@ form {
   .SumoSelect > .CaptionCont {
     padding: 0px;
     width: 100%;
-    min-height: 40px;
+    min-height: 35px;
     background: $cgrey8;
     margin-top: 5px;
     border: 0px;
@@ -135,8 +135,8 @@ form {
     background: #ededed;
     color: $cblack3;
     font-weight: 300;
-    font-size: $px20;
-    line-height: 24px;
+    font-size: $px16;
+    line-height: 19px;
     font-family: $PrNovacond-light;
     display: flex;
     align-items: center;
@@ -150,6 +150,9 @@ form {
       display: flex;
       align-items: center;
       text-transform: capitalize;
+      font-size: $px16;
+    line-height: 19px;
+    font-family: $PrNovacond-light;
       &::nth-child(1) {
         border-top: 0px;
       }
@@ -366,7 +369,7 @@ form {
       background-size: 11px;
     }
     .SumoSelect .optWrapper > .options > li label {
-      min-height: 40px;
+      min-height: 35px;
     }
     select,
     .SumoSelect > .CaptionCont {
