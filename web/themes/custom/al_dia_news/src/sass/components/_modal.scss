@@ -1,3 +1,4 @@
+//------ general styles ------//
 .modal-form {
   width: 100%;
   height: 100%;
@@ -37,34 +38,6 @@
   background-color: rgba(0, 0, 0, 80%);
   transform: translateY(-50%);
   z-index: 10;
-}
-
-.close-video {
-  width: 20px;
-  height: 20px;
-  margin-left: auto;
-  display: block;
-  background-image: icon("close");
-  background-size: contain;
-  cursor: pointer;
-}
-
-.background-modal::before {
-  content: "";
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: $cgrey6;
-  opacity: 0.5;
-  z-index: 100;
-}
-
-.account-modal--password {
-  height: 420px !important;
 }
 
 .ui-widget.ui-corner-all {
@@ -162,6 +135,34 @@
   }
 }
 
+.background-modal::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: $cgrey6;
+  opacity: 0.5;
+  z-index: 100;
+}
+
+.close-video {
+  width: 20px;
+  height: 20px;
+  margin-left: auto;
+  display: block;
+  background-image: icon("close");
+  background-size: contain;
+  cursor: pointer;
+}
+
+.ui-widget-overlay {
+  background: rgb(51 51 51 / 50%) !important;
+}
+
 .button.form-submit {
   text-transform: uppercase;
 
@@ -189,6 +190,71 @@
   }
 }
 
+.stuck {
+  position: fixed;
+  top: 82px;
+  right: 0px;
+  left: 0px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 40px 0px;
+  height: 400px;
+  transform: translateY(100%);
+  animation: fade-in-up 0.75s ease forwards;
+  z-index: 12;
+  background: rgb(0 0 0 / 80%);
+
+  button[name="close"] {
+    z-index: 9;
+    right: 13px;
+    background: url(/themes/custom/al_dia_news/assets/img/closew.png) center
+      center no-repeat;
+    background-size: contain;
+
+    @media (min-width: 1280px) and (max-width: 1830px) {
+      right: 27%;
+    }
+
+    @media (min-width: 1830px) {
+      right: 33%;
+    }
+  }
+
+  &.disnone {
+    display: none !important;
+  }
+
+  iframe {
+    width: 560px;
+    height: 320px;
+    margin: 0 auto;
+  }
+
+  .video-embed-field-responsive-video:after {
+    padding-bottom: 320px;
+  }
+
+  @media (max-width: $broken) {
+    top: 150px;
+  }
+
+  @media (max-width: $tablet) {
+    height: 200px;
+    padding: 20px 0;
+    top: 99px;
+
+    iframe {
+      width: 245px;
+      height: 153px !important;
+    }
+
+    .video-embed-field-responsive-video:after {
+      padding-bottom: 180px;
+    }
+  }
+}
+
+//------ specific styles ------//
 .modal-video-landing {
   max-width: 1440px;
   max-height: 695px;
@@ -391,6 +457,8 @@
 }
 
 .account-modal--password {
+  height: 420px !important;
+
   .user-pass {
     > p {
       font-size: szrem(16);
@@ -407,74 +475,6 @@
       }
     }
   }
-}
-
-.stuck {
-  position: fixed;
-  top: 82px;
-  right: 0px;
-  left: 0px;
-  margin: 0 auto;
-  width: 100%;
-  padding: 40px 0px;
-  height: 400px;
-  transform: translateY(100%);
-  animation: fade-in-up 0.75s ease forwards;
-  z-index: 12;
-  background: rgb(0 0 0 / 80%);
-
-  button[name="close"] {
-    z-index: 9;
-    right: 13px;
-    background: url(/themes/custom/al_dia_news/assets/img/closew.png) center
-      center no-repeat;
-    background-size: contain;
-
-    @media (min-width: 1280px) and (max-width: 1830px) {
-      right: 27%;
-    }
-
-    @media (min-width: 1830px) {
-      right: 33%;
-    }
-  }
-
-  &.disnone {
-    display: none !important;
-  }
-
-  iframe {
-    width: 560px;
-    height: 320px;
-    margin: 0 auto;
-  }
-
-  .video-embed-field-responsive-video:after {
-    padding-bottom: 320px;
-  }
-
-  @media (max-width: $broken) {
-    top: 150px;
-  }
-
-  @media (max-width: $tablet) {
-    height: 200px;
-    padding: 20px 0;
-    top: 99px;
-
-    iframe {
-      width: 245px;
-      height: 153px !important;
-    }
-
-    .video-embed-field-responsive-video:after {
-      padding-bottom: 180px;
-    }
-  }
-}
-
-.ui-widget-overlay {
-  background: rgb(51 51 51 / 50%) !important;
 }
 
 .pop-up-wellcome-aldia {
