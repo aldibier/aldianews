@@ -636,3 +636,9 @@
     }
   }
 }
+
+@media (max-width: 48em) {
+  .ui-dialog:not(.ui-dialog-off-canvas) {
+    min-width: auto !important;
+  }
+}
