@@ -57,8 +57,8 @@ form {
     margin-bottom: 15px;
     font-style: normal;
     font-weight: 600;
-    font-size: szrem(20);
-    line-height: 24px;
+    font-size: szrem(18);
+    line-height: 22px;
     font-family: $PrNovacond-Sbold;
     letter-spacing: 0.025em;
     color: $cblack;
@@ -133,16 +133,12 @@ form {
     }
   }
   .SumoSelect .optWrapper > .options > li {
-    background: #ededed;
-    color: $cblack3;
-    font-weight: 300;
-    font-size: $px16;
-    line-height: 19px;
-    font-family: $PrNovacond-light;
+    margin-bottom: 0;
+    border: 0;
     display: flex;
     align-items: center;
-    border: 0px;
-    margin-bottom: 0px;
+    background: #ededed;
+  
     label {
       width: 100%;
       min-height: 53px;
@@ -150,17 +146,22 @@ form {
       border-top: 0.5px solid #b1b1b1;
       display: flex;
       align-items: center;
-      text-transform: capitalize;
-      font-size: $px16;
+      font-size: szrem(16);
+      font-family: $PrNovacond-reg;
+      font-weight: normal;
       line-height: 19px;
-      font-family: $PrNovacond-light;
+      text-transform: capitalize;
+      color: $cblack3;
+
       &::nth-child(1) {
         border-top: 0px;
       }
     }
+
     &.opt.selected {
       display: none;
     }
+
     &.opt {
       padding: 0 13px;
       border-bottom: 0px;
