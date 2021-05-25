@@ -299,9 +299,9 @@ form {
     position: absolute;
     top: 60px;
     left: 210px;
-    max-width: 260px;
+    max-width: 230px;
     width: 100%;
-    min-height: 135px;
+    min-height: 110px;
     padding: 17px;
     background: #e7e8ea;
     border-radius: 8px;
@@ -312,17 +312,18 @@ form {
     font-family: $PrNovacond-Sbold;
     font-style: normal;
     font-weight: 500;
-    font-size: $px16;
-    line-height: 19px;
+    font-size: $px14;
+    line-height: 10px 17px;
     letter-spacing: 0.025em;
     color: $cgrey6;
+    letter-spacing: 0.025em;
     ul {
-      margin-top: 15px;
+      margin-top: 25px;
       position: relative;
       padding-left: 7px;
 
       li {
-        font-family: $PrNovacond-reg;
+        font-family: $PrNovacond-Sbold;
       }
       &::before {
         content: "";
@@ -331,9 +332,9 @@ form {
         width: 0;
         height: 0;
         border-color: transparent transparent #e7e8ea transparent;
-        border-width: 25px;
+        border-width: 20px 15px 20px;
         border-style: solid;
-        top: -117px;
+        top: -102px;
         left: 0;
         right: 0;
         margin: 0 auto;
