@@ -7,7 +7,8 @@ form {
     margin: 0;
   }
 
-  .form-item, .form-actions {
+  .form-item,
+  .form-actions {
     margin-top: initial;
     margin-bottom: initial;
   }
@@ -52,11 +53,12 @@ form {
   }
 
   label:not(li > label),
-  .form-item label:not(li > label){
+  .form-item label:not(li > label) {
+    margin-bottom: 15px;
     font-style: normal;
     font-weight: 600;
-    font-size: szrem(20);
-    line-height: 24px;
+    font-size: szrem(18);
+    line-height: 22px;
     font-family: $PrNovacond-Sbold;
     letter-spacing: 0.025em;
     color: $cblack;
@@ -131,16 +133,12 @@ form {
     }
   }
   .SumoSelect .optWrapper > .options > li {
-    background: #ededed;
-    color: $cblack3;
-    font-weight: 300;
-    font-size: $px16;
-    line-height: 19px;
-    font-family: $PrNovacond-light;
+    margin-bottom: 0;
+    border: 0;
     display: flex;
     align-items: center;
-    border: 0px;
-    margin-bottom: 0px;
+    background: #ededed;
+  
     label {
       width: 100%;
       min-height: 53px;
@@ -148,17 +146,22 @@ form {
       border-top: 0.5px solid #b1b1b1;
       display: flex;
       align-items: center;
+      font-size: szrem(16);
+      font-family: $PrNovacond-reg;
+      font-weight: normal;
+      line-height: 19px;
       text-transform: capitalize;
-      font-size: $px16;
-    line-height: 19px;
-    font-family: $PrNovacond-light;
+      color: $cblack3;
+
       &::nth-child(1) {
         border-top: 0px;
       }
     }
+
     &.opt.selected {
       display: none;
     }
+
     &.opt {
       padding: 0 13px;
       border-bottom: 0px;
@@ -315,7 +318,7 @@ form {
     }
   }
 
-  ////--captcha---/////  
+  ////--captcha---/////
   #captcha {
     border: 0px;
     margin: 10px 0 40px;
@@ -388,7 +391,7 @@ form {
       .button {
         min-width: 100px;
         font-size: 14px;
-        line-height: 16px;
+        line-height: 25px;
         min-height: 30px;
       }
     }
@@ -446,19 +449,21 @@ form {
       }
     }
 
-    #captcha .g-recaptcha,#captcha .g-recaptcha>div,#captcha iframe {
+    #captcha .g-recaptcha,
+    #captcha .g-recaptcha > div,
+    #captcha iframe {
       width: initial !important;
-    }  
+    }
 
     .description {
       margin-bottom: 20px;
     }
   }
 
-  @media (max-width:$mobile-mid) {
+  @media (max-width: $mobile-mid) {
     .g-recaptcha {
       iframe {
-        transform: scale(.8);
+        transform: scale(0.8);
       }
     }
   }

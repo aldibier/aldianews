@@ -39,7 +39,7 @@
   z-index: 10;
 }
 
-.close-video  {
+.close-video {
   width: 20px;
   height: 20px;
   margin-left: auto;
@@ -63,20 +63,102 @@
   z-index: 100;
 }
 
-//---- reset styles  ----//
+.account-modal--password {
+  height: 420px !important;
+}
+
 .ui-widget.ui-corner-all {
+  width: 100% !important;
+  max-width: 535px;
+  border: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+
   .ui-dialog-titlebar-close {
     width: 20px !important;
     height: 20px;
-    padding: 0;
+    position: absolute;
+    top: 31px;
+    right: 28px;
     transform: none;
-  }
-}
 
-.ui-widget.ui-corner-all .ui-dialog-buttonpane {
-  .form-submit {
-    font-family: $PrNovacond-Sbold;
-    letter-spacing: 0.741176px;
+    @media screen and (max-width: $tablet) {
+      top: 25px;
+      right: 15px;
+    }
+  }
+
+  .ui-dialog-titlebar {
+    margin: 0 auto;
+    padding: 46px 48px 0;
+    border: none;
+    background: #fff;
+
+    @media screen and (max-width: $tablet) {
+      padding: 34px 20px 0;
+    }
+  }
+
+  .ui-dialog-content {
+    margin: 0 auto;
+    padding: 0 48px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: szrem(22);
+    margin: 0 auto;
+    line-height: 27px;
+    font-family: $PrNovacond-reg;
+    max-height: max-content !important;
+
+    @media screen and (max-width: $tablet) {
+      padding: 0 20px;
+      font-size: 15px;
+      line-height: 18px;
+    }
+
+    input {
+      height: 35px;
+      min-height: 35px;
+      margin: 0;
+      padding: 0;
+      background: #efefef;
+      border: none;
+      width: 100%;
+
+      @media screen and (max-width: $tablet) {
+        height: 30px;
+        min-height: 30px;
+      }
+    }
+  }
+
+  .ui-dialog-buttonpane {
+    background: none;
+    border: none;
+    max-width: 440px;
+    margin: 20px auto 50px;
+    padding: 0;
+
+    .ui-dialog-buttonset {
+      width: 100%;
+    }
+
+    .form-submit {
+      font-family: $PrNovacond-Sbold;
+      letter-spacing: 0.741176px;
+    }
+
+    button {
+      background: $corange;
+      width: 100%;
+      height: 40px;
+      border-radius: 0;
+      color: $cwhite;
+      font-weight: bold;
+      font-size: $px18;
+      line-height: 25px;
+      font-family: $PrNovacond-reg;
+    }
   }
 }
 
@@ -95,8 +177,6 @@
 
 .ui-button {
   .ui-icon-closethick {
-    width: 20px;
-    height: 20px;
     background-image: icon("close-black");
     background-size: contain;
     background-position: center;
@@ -118,7 +198,7 @@
   @media screen and (min-width: $broken) and (max-height: 900px) {
     padding: 90px 200px;
 
-    .close-video  {
+    .close-video {
       top: 80px;
     }
   }
@@ -153,7 +233,7 @@
   @media screen and (min-width: $broken) and (max-height: 900px) {
     padding: 90px 200px;
 
-    .close-video  {
+    .close-video {
       top: 80px;
     }
   }
@@ -195,15 +275,19 @@
       bottom: 0;
       margin: auto;
       padding: 0 15px;
+
       .field-content {
         height: 70%;
       }
+
       .contact-form-father {
         height: 100%;
       }
+
       .form-general form {
         overflow-x: hidden;
       }
+
       &:after {
         position: fixed;
         z-index: 1;
@@ -230,11 +314,11 @@
     }
   }
 
-  &.ui-corner-all .ui-dialog-buttonpane  {
+  &.ui-corner-all .ui-dialog-buttonpane {
     margin: 0 auto 30px;
   }
 
-  .captcha  {
+  .captcha {
     margin-bottom: 40px;
   }
 
@@ -291,11 +375,11 @@
     }
   }
 
-  .form-item-pass  {
+  .form-item-pass {
     position: relative;
   }
 
-  .password-suggestions  {
+  .password-suggestions {
     top: 95px;
     left: initial;
     right: 0;
@@ -310,6 +394,7 @@
   .user-pass {
     > p {
       font-size: szrem(16);
+      font-family: $CenturyOld-Regular;
       font-style: normal;
       font-weight: normal;
       line-height: 24px;
@@ -409,6 +494,7 @@
   align-items: center;
   justify-content: center;
   padding: 40px;
+
   h1 {
     margin: 0 0 20px;
     font-family: $Mod-bold;
@@ -416,6 +502,7 @@
     line-height: 120%;
     color: $cgrey6;
   }
+
   p {
     font-family: $PrNovacond-reg;
     font-style: normal;
@@ -424,6 +511,7 @@
     color: $cgrey6;
     margin: 0 0 25px;
   }
+
   button {
     max-width: 190px;
     width: 100%;
@@ -437,7 +525,7 @@
     letter-spacing: 0.741176px;
     color: $cwhite;
     border: 0px;
-  } 
+  }
   @media (max-width: $tablet) {
     max-width: none;
     min-height: auto;
@@ -445,16 +533,100 @@
     top: 85px;
     height: 70%;
     padding: 40px 15px;
+
     h1 {
       font-size: $px20;
       line-height: 27px;
     }
+
     p {
       font-size: $px15;
       line-height: 140%;
       margin: 0 0 20px;
     }
+
     button {
+      max-width: 210px;
+      min-height: 30px;
+      font-size: $px14;
+      line-height: 16px;
+    }
+  }
+}
+
+.webform-confirmation-modal {
+  max-width: 535px !important;
+  min-height: 260px;
+  z-index: 120;
+  right: 0px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0px !important;
+  .ui-dialog-titlebar {
+    padding: 0px 40px 0px !important;
+  }
+  .ui-dialog-title {
+    margin: 0 0 20px !important;
+    font-family: $Mod-bold !important;
+    font-size: $px24 !important;
+    line-height: 120% !important;
+    color: $cgrey6 !important;
+    border-bottom: 0px !important;
+    padding-bottom: 0px !important;
+    white-space: pre-wrap !important;
+  }
+  .ui-dialog-titlebar-close {
+    display: none;
+  }
+  .ui-widget-content {
+    font-family: $PrNovacond-reg !important;
+    font-style: normal !important;
+    font-size: $px16 !important;
+    line-height: 134% !important;
+    color: $cgrey6 !important;
+    width: 100% !important;
+    padding: 0 40px 0px !important;
+  }
+  .button-preload {
+    display: flex;
+    max-width: 190px;
+    width: 100%;
+    min-height: 35px;
+    background: $corange;
+    font-family: $PrNovacond-bold;
+    font-size: $px16;
+    line-height: 25px;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.741176px;
+    color: $cwhite;
+    border: 0px;
+    margin: 45px auto 0;
+    cursor: pointer;
+    &:hover {
+      color: $cwhite;
+    }
+  }
+  @media (max-width: $tablet) {
+    max-width: none;
+    min-height: auto;
+    left: 0px;
+    top: 85px;
+    height: 70%;
+    padding: 40px 15px;
+    .ui-dialog-title {
+      font-size: $px20;
+      line-height: 27px;
+    }
+    .ui-widget-content {
+      font-size: $px15;
+      line-height: 140%;
+      margin: 0 0 20px;
+    }
+    .button-preload {
       max-width: 210px;
       min-height: 30px;
       font-size: $px14;
