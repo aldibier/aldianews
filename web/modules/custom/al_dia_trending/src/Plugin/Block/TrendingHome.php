@@ -14,7 +14,7 @@ use Drupal\Core\Block\BlockBase;
  * Class TrendingBlock.
  *
  * @Block(
- *   id = "anonymous_comments",
+ *   id = "trending_block",
  *   admin_label = @Translation("Trending Block"),
  * )
  */

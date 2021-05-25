@@ -1,0 +1,33 @@
+uuid: aa40e159-d637-427f-9640-cf50d98b49e2
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.trending_home
+  module:
+    - context
+    - views
+  theme:
+    - al_dia_news
+id: views_block__trending_home_block_1
+theme: al_dia_news
+region: right_column_home
+weight: 0
+provider: null
+plugin: 'views_block:trending_home-block_1'
+settings:
+  id: 'views_block:trending_home-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path_exclusion:
+    id: request_path_exclusion
+    pages: ''
+    negate: null
+  view_inclusion:
+    id: view_inclusion
+    negate: null
+    view_inclusion: {  }
