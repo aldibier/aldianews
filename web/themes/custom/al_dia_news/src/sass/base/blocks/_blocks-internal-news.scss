@@ -795,7 +795,9 @@ div[data-embed-button="related_content"] {
     display: none;
   }
   .ui-dialog-title {
-    font-size: $px34 !important;
+    font-size: $px28 !important;
+    line-height: 34px;
+    color: #EE2211 !important;
     padding-top: 20px;
     white-space: break-spaces;
     text-align: left;
@@ -876,6 +878,7 @@ div[data-embed-button="related_content"] {
       letter-spacing: 0.741176px;
       box-shadow: 0px 0px 0px !important;
       text-transform: uppercase;
+      overflow: hidden;
       @media (max-width: $tablet) {
         max-width: 120px !important;
         height: 30px !important;
@@ -895,36 +898,37 @@ div[data-embed-button="related_content"] {
       button:last-child,
       a:last-child {
         background: $bgrey;
+        line-height: 12px;
       }
     }
   }
 }
 
 .popup-delete-comment {
-  max-width: 604px !important;
+  max-width: 535px !important;
   * {
     max-width: 480px !important;
   }
 
   .text-comment {
-    margin-top: 40px;
-    @media (max-width: $tablet) {
-      margin-top: 30px;
-    }
+    margin-top: 20px;
   }
 
   .confirmation {
-    margin: 0px auto 40px;
+    margin: 0px auto 20px;
     padding: 0px;
     font-family: $PrNovacond-Sbold;
-    font-size: $px22;
-    line-height: 27px;
+    font-size: $px18; 
+    line-height: 24px;
     color: $cblack;
     @media (max-width: $tablet) {
       margin: 20px auto;
       font-size: $px15;
       line-height: 18px;
     }
+  }
+  .ui-dialog-title{ 
+    margin: 0 0 34px !important;
   }
   .ui-dialog-buttonpane {
     margin: 0 auto 27px !important;
