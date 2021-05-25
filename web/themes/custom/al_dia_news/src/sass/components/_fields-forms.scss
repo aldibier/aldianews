@@ -385,8 +385,12 @@ form {
       top: 20px;
       right: 20px;
     }
-    label,
-    .form-item label {
+
+    label:not(li > label),
+    .form-item label:not(li > label) {
+      max-height: 30px;
+      margin: 0 0 15px;
+      padding: 0;
       font-size: 15px;
       line-height: 18px;
     }
@@ -491,10 +495,6 @@ form {
     #captcha .g-recaptcha > div,
     #captcha iframe {
       width: initial !important;
-    }
-
-    .description {
-      margin-bottom: 20px;
     }
   }
 

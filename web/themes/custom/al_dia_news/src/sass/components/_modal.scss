@@ -42,7 +42,6 @@
 
 .ui-widget.ui-corner-all:not(button) {
   width: 100% !important;
-  max-width: 535px;
   border: none;
   overflow: hidden auto;
   overscroll-behavior: contain;
@@ -63,7 +62,7 @@
 
   .ui-dialog-titlebar {
     margin: 0 auto;
-    padding: 46px 48px 0;
+    padding: 46px 48px 0 47px;
     border: none;
     background: #fff;
 
@@ -74,7 +73,7 @@
 
   .ui-dialog-content {
     margin: 0 auto;
-    padding: 0 48px;
+    padding: 0 48px 0 47px;
     font-style: normal;
     font-weight: 600;
     font-size: szrem(22);
@@ -258,6 +257,13 @@
 }
 
 //------ specific styles ------//
+.ui-widget.account-modal--login,
+.ui-widget.account-modal--password,
+.ui-widget.account-modal--register {
+  max-width: 535px;
+}
+
+
 .modal-video-landing {
   max-width: 1440px;
   max-height: 695px;
@@ -374,15 +380,6 @@
 
 .account-modal--login,
 .account-modal--register {
-  form .form-item label,
-  form label {
-    @media (max-width: $tablet) {
-      margin: 0;
-      padding: 0;
-      max-height: 30px;
-    }
-  }
-
   &.ui-corner-all .ui-dialog-buttonpane {
     margin: 0 auto 30px;
   }
