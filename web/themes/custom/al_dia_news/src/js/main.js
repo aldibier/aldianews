@@ -605,9 +605,6 @@ const initMain = ($, Drupal) => {
 				once: true
 			});
 		}
-
-		
-		
 	};
 
 	///// js para modos de visualizacion de slider event

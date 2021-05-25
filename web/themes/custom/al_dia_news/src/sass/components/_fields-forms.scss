@@ -227,6 +227,44 @@ form {
     }
   }
 
+  .dont-have-account {
+    margin: 0 0 15px;
+    font-size: szrem(18);
+    font-family: $PrNovacond-Sbold;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0.025em;
+    color: $cblack;
+  }
+
+  .button-preload {
+    display: flex;
+    width: 100%;
+    min-height: 35px;
+    font-family: $PrNovacond-bold;
+    font-size: szrem(19);
+    line-height: 25px;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.741176px;
+    border: 0px;
+    cursor: pointer;
+  }
+
+  .user-register-login {
+    @include button($btnWidth:100%,$btnHeight:40px,$btnBackground:$bgrey2,$btnColor:$cwhite);
+    max-width: 440px;
+    margin: 0 auto;
+    font-size: szrem(18);
+
+    @media screen and (max-width: $tablet) {
+      max-height: 30px;
+      font-size: szrem(14);
+      line-height: 30px;
+    }
+  }
+
   ///-- PAsword --///
   #edit-account {
     width: 100%;
