@@ -933,19 +933,22 @@ div[data-embed-button="related_content"] {
   }
   .ui-dialog-title {
     margin: 0 0 34px !important;
-    @media (max-width: $tablet) {
-      margin: 28px 0 0px !important;
-    }
   }
   .ui-dialog-buttonpane {
     margin: 0 auto 27px !important;
-    @media (max-width: $tablet) {
-      padding: 0 !important;
-    }
   }
   .ui-dialog-titlebar {
     padding: 50px 20px 0 !important;
-    @media (max-width: $tablet) {
+  }
+  @media (max-width: $tablet) {
+    max-width: 290px !important;
+    .ui-dialog-title {
+      margin: 28px 0 0px !important;
+    }
+    .ui-dialog-buttonpane {
+      padding: 0 !important;
+    }
+    .ui-dialog-titlebar {
       padding: 10px 20px 0 !important;
     }
   }
