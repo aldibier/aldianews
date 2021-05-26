@@ -63,9 +63,7 @@
   z-index: 100;
 }
 
-.account-modal--password {
-  height: 420px !important;
-}
+
 
 .ui-widget.ui-corner-all {
   width: 100% !important;
@@ -346,19 +344,74 @@
     line-height: 27px;
     letter-spacing: 0.025em;
     color: $corange;
-
-    @media (max-width: $tablet) {
-      font-size: szrem(15);
-      line-height: 18px;
-    }
   }
-
-  .ui-dialog-buttonpane button {
-    padding: 0;
-    margin: 0;
-
-    @media (max-width: $tablet) {
-      max-height: 30px;
+  .form-actions{
+    padding-bottom: 30px !important;
+    margin-bottom: 25px !important;
+    border-bottom: 1px solid #B1B1B1;
+    .button{
+      display: block !important;
+      height: auto;
+      min-height: 40px !important;
+      max-width: none;
+      font-size: $px18;
+      letter-spacing: 0.741176px;
+      background: $corange !important;
+    }
+  } 
+  .dont-have-account{
+    margin-bottom: 15px;
+    font-family: $PrNova-bold;
+    font-size: $px18;
+    line-height: 22px;
+    letter-spacing: 0.025em;
+    color: $cblack;
+  }
+  .user-register-login{
+    height: auto;
+      min-height: 40px;
+      max-width: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: $PrNova-bold;
+    font-size: $px18;
+    line-height: 25px;
+    letter-spacing: 0.74px;
+    color: $cwhite;
+    background: #777777;
+    margin-bottom: 65px;
+  }
+  .ui-dialog-buttonpane {
+    display: none;
+    
+  }
+  @media (max-width: $tablet) {
+    max-width: 290px !important;
+    margin: 0 auto;
+    right: 0px;
+    .user-forgot-pass {
+        font-size: szrem(15);
+        line-height: 18px;
+    }
+    .form-actions{
+      padding-bottom: 15px !important;
+      margin-bottom: 15px !important;
+      .button{
+        min-height: 30px !important;
+        font-size: $px14;
+        line-height: 16px;
+      }
+    } 
+    .dont-have-account{
+      font-size: $px12;
+      line-height: 14px;
+    }
+    .user-register-login{
+        min-height: 30px;
+        font-size: $px14;
+        line-height: 16px;
+      margin-bottom: 35px;
     }
   }
 }
@@ -393,6 +446,7 @@
 }
 
 .account-modal--password {
+  height: 420px !important;
   .user-pass {
     > p {
       font-size: szrem(16);
@@ -401,11 +455,66 @@
       font-weight: normal;
       line-height: 24px;
       color: $cgrey6;
-
-      @media (max-width: $tablet) {
-        font-size: szrem(12);
-        line-height: 20px;
-        text-align: center;
+    }
+  }
+  .ui-dialog-buttonpane{
+    display: none;
+  }
+  .form-actions {
+    display: flex; 
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    .button{
+      display: block !important;
+      height: auto;
+      min-height: 40px !important;
+      max-width: 165px;
+      font-size: $px18;
+      letter-spacing: 0.741176px;
+      background: $corange !important;
+    }
+    .user-register-login{
+      height: auto;
+      min-height: 40px;
+      max-width: 165px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: $PrNova-bold;
+      font-size: $px18;
+      line-height: 25px;
+      letter-spacing: 0.74px;
+      color: $cwhite;
+      background: #777777;
+      margin-right: 30px;
+      width: 100%;
+    }
+  }
+  @media (max-width: $tablet){
+    max-width: 290px !important;
+    margin: 0 auto;
+    right: 0px;
+    .user-pass {
+      > p {
+          font-size: szrem(12);
+          line-height: 20px;
+          text-align: center;
+          margin-bottom: 25px;
+      }
+    }
+    .form-actions {
+      .button{
+        min-height: 30px !important;
+        max-width: 115px;
+        font-size: $px12;
+        line-height: 16px;
+      }
+      .user-register-login{
+        min-height: 30px;
+        max-width: 115px;
+        font-size: $px12;
+        line-height: 16px;
+        margin-right: 20px;
       }
     }
   }
