@@ -36,19 +36,21 @@ form {
     padding-top: 0px;
     margin: 0px;
 
-    .button {
-      max-width: 150px;
-      width: 100%;
-      min-height: 40px;
-      background: $red1;
-      margin-top: 0px;
-      font-weight: 300;
-      font-size: $px16;
-      text-transform: uppercase;
-      line-height: 25px;
-      font-family: $PrNovacond-bold;
-      color: $cwhite;
-      border-radius: 0px;
+    .form-submit {
+      @include button($btnWidth:100%,$btnHeight:40px,$btnBackground:$corange,$btnColor:$cwhite);
+      display: block !important;
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 0;
+      font-size: szrem(18);
+      background-image: none;
+      border-radius: 0;
+    
+      @media screen and (max-width: $tablet) {
+        max-height: 30px;
+        font-size: szrem(14);
+        line-height: 30px;
+      }
     }
   }
 
@@ -250,19 +252,6 @@ form {
     letter-spacing: 0.741176px;
     border: 0px;
     cursor: pointer;
-  }
-
-  .user-register-login {
-    @include button($btnWidth:100%,$btnHeight:40px,$btnBackground:$bgrey2,$btnColor:$cwhite);
-    max-width: 440px;
-    margin: 0 auto;
-    font-size: szrem(18);
-
-    @media screen and (max-width: $tablet) {
-      max-height: 30px;
-      font-size: szrem(14);
-      line-height: 30px;
-    }
   }
 
   ///-- PAsword --///
@@ -505,6 +494,21 @@ form {
         transform: scale(0.8);
       }
     }
+  }
+}
+
+a.user-register-login,
+.user-register-login {
+  @include button($btnWidth:100%,$btnHeight:40px,$btnBackground:$bgrey2,$btnColor:$cwhite);
+  max-width: 440px;
+  margin: 0 auto;
+  font-size: szrem(18);
+  border-bottom-style: none !important;
+
+  @media screen and (max-width: $tablet) {
+    max-height: 30px;
+    font-size: szrem(14);
+    line-height: 30px;
   }
 }
 
