@@ -1,0 +1,241 @@
+diff --git a/google_analytics_counter.info.yml b/google_analytics_counter.info.yml
+index c6fa03c..de083d8 100755
+--- a/google_analytics_counter.info.yml
++++ b/google_analytics_counter.info.yml
+@@ -2,5 +2,6 @@ name: 'Google Analytics Counter'
+ type: module
+ description: 'Lightweight page view counter drawing on data collected by Google Analytics.'
+ core: 8.x
++core_version_requirement: ^8 || ^9
+ package: Statistics
+ configure: google_analytics_counter.admin_settings_form
+diff --git a/google_analytics_counter.install b/google_analytics_counter.install
+index 66f0a37..0a8a666 100755
+--- a/google_analytics_counter.install
++++ b/google_analytics_counter.install
+@@ -237,7 +237,7 @@ function google_analytics_counter_update_8009() {
+   $config_factory = \Drupal::configFactory();
+ 
+   // Get the content types.
+-  $content_types = \Drupal::service('entity.manager')
++  $content_types = \Drupal::service('entity_type.manager')
+     ->getStorage('node_type')
+     ->loadMultiple();
+ 
+diff --git a/google_analytics_counter.services.yml b/google_analytics_counter.services.yml
+index f50c534..6ff8355 100755
+--- a/google_analytics_counter.services.yml
++++ b/google_analytics_counter.services.yml
+@@ -4,7 +4,7 @@ services:
+ 
+   google_analytics_counter.app_manager:
+     class: \Drupal\google_analytics_counter\GoogleAnalyticsCounterAppManager
+-    arguments: ['@config.factory', '@database', '@state', '@path.alias_manager', '@path.matcher', '@language_manager', '@logger.channel.google_analytics_counter', '@messenger', '@google_analytics_counter.auth_manager']
++    arguments: ['@config.factory', '@database', '@state', '@path_alias.manager', '@path.matcher', '@language_manager', '@logger.channel.google_analytics_counter', '@messenger', '@google_analytics_counter.auth_manager']
+ 
+   google_analytics_counter.auth_manager:
+     class: \Drupal\google_analytics_counter\GoogleAnalyticsCounterAuthManager
+diff --git a/src/Form/GoogleAnalyticsCounterAuthForm.php b/src/Form/GoogleAnalyticsCounterAuthForm.php
+index 18ba309..51cef06 100755
+--- a/src/Form/GoogleAnalyticsCounterAuthForm.php
++++ b/src/Form/GoogleAnalyticsCounterAuthForm.php
+@@ -179,7 +179,7 @@ class GoogleAnalyticsCounterAuthForm extends ConfigFormBase {
+     ];
+ 
+     $current_path = \Drupal::service('path.current')->getPath();
+-    $uri = \Drupal::service('path.alias_manager')->getAliasByPath($current_path);
++    $uri = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
+     $description = $this->t('The path that users are redirected to after they have authenticated with Google.<br /> Default: <strong>@default_uri</strong>', ['@default_uri' => $base_url . $uri]);
+     $form['redirect_uri'] = [
+       '#type' => 'textfield',
+diff --git a/src/Form/GoogleAnalyticsCounterConfigureTypesForm.php b/src/Form/GoogleAnalyticsCounterConfigureTypesForm.php
+index 99fc252..c5c52bd 100644
+--- a/src/Form/GoogleAnalyticsCounterConfigureTypesForm.php
++++ b/src/Form/GoogleAnalyticsCounterConfigureTypesForm.php
+@@ -108,7 +108,7 @@ class GoogleAnalyticsCounterConfigureTypesForm extends ConfigFormBase {
+       '#description' => $this->t('Check the content types to add the custom Google Analytics Counter field to.'),
+       '#open' => TRUE,
+     ];
+-    $content_types = \Drupal::service('entity.manager')->getStorage('node_type')->loadMultiple();
++    $content_types = \Drupal::service('entity_type.manager')->getStorage('node_type')->loadMultiple();
+     foreach ($content_types as $machine_name => $content_type) {
+       $form['gac_content_types']["gac_type_$machine_name"] = [
+         '#type' => 'checkbox',
+@@ -152,7 +152,7 @@ class GoogleAnalyticsCounterConfigureTypesForm extends ConfigFormBase {
+       }
+ 
+       // Get the NodeTypeInterface $type from gac_type_{content_type}.
+-      $type = \Drupal::service('entity.manager')
++      $type = \Drupal::service('entity_type.manager')
+         ->getStorage('node_type')
+         ->load(substr($key, 9));
+ 
+diff --git a/src/GoogleAnalyticsCounterAppManager.php b/src/GoogleAnalyticsCounterAppManager.php
+index 2616ed3..027c987 100755
+--- a/src/GoogleAnalyticsCounterAppManager.php
++++ b/src/GoogleAnalyticsCounterAppManager.php
+@@ -7,7 +7,7 @@ use Drupal\Core\Config\ConfigFactoryInterface;
+ use Drupal\Core\Database\Connection;
+ use Drupal\Core\Language\LanguageManagerInterface;
+ use Drupal\Core\Messenger\MessengerInterface;
+-use Drupal\Core\Path\AliasManagerInterface;
++use Drupal\path_alias\AliasManagerInterface;
+ use Drupal\Core\Path\PathMatcherInterface;
+ use Drupal\Core\State\StateInterface;
+ use Drupal\Core\StringTranslation\StringTranslationTrait;
+@@ -51,7 +51,7 @@ class GoogleAnalyticsCounterAppManager implements GoogleAnalyticsCounterAppManag
+   /**
+    * The path alias manager.
+    *
+-   * @var \Drupal\Core\Path\AliasManagerInterface
++   * @var \Drupal\path_alias\AliasManagerInterface
+    */
+   protected $aliasManager;
+ 
+@@ -107,7 +107,7 @@ class GoogleAnalyticsCounterAppManager implements GoogleAnalyticsCounterAppManag
+    *   A database connection.
+    * @param \Drupal\Core\State\StateInterface $state
+    *   The state of the drupal site.
+-   * @param \Drupal\Core\Path\AliasManagerInterface $alias_manager
++   * @param \Drupal\path_alias\AliasManagerInterface $alias_manager
+    *   The path alias manager to find aliased resources.
+    * @param \Drupal\Core\Path\PathMatcherInterface $path_matcher
+    *   The path matcher.
+diff --git a/src/GoogleAnalyticsCounterCustomFieldGenerator.php b/src/GoogleAnalyticsCounterCustomFieldGenerator.php
+index ce34604..15f6ee9 100644
+--- a/src/GoogleAnalyticsCounterCustomFieldGenerator.php
++++ b/src/GoogleAnalyticsCounterCustomFieldGenerator.php
+@@ -5,6 +5,7 @@ namespace Drupal\google_analytics_counter;
+ use Drupal\Core\Config\ConfigFactoryInterface;
+ use Drupal\Core\Config\FileStorage;
+ use Drupal\Core\Database\Connection;
++use Drupal\Core\Entity\EntityDisplayRepositoryInterface;
+ use Drupal\Core\Messenger\MessengerInterface;
+ use Drupal\field\Entity\FieldConfig;
+ use Drupal\field\Entity\FieldStorageConfig;
+@@ -51,6 +52,13 @@ class GoogleAnalyticsCounterCustomFieldGenerator implements GoogleAnalyticsCount
+    */
+   protected $messenger;
+ 
++  /**
++   * The Entity display instance.
++   *
++   * @var \Drupal\Core\Entity\EntityDisplayRepositoryInterface
++   */
++  protected $entity_display_repository;
++
+   /**
+    * Drupal\google_analytics_counter\GoogleAnalyticsCounterCustomFieldGeneratorInterface.
+    *
+@@ -69,12 +77,18 @@ class GoogleAnalyticsCounterCustomFieldGenerator implements GoogleAnalyticsCount
+    *   A logger instance.
+    * @param \Drupal\Core\Messenger\MessengerInterface $messenger
+    *   The messenger service.
++   * @param \Drupal\Core\Enity\EntityDisplayRepositoryInterface $entity_display_repository
++   *   The Enity display instance.
+    */
+-  public function __construct(ConfigFactoryInterface $config_factory, Connection $connection, LoggerInterface $logger, MessengerInterface $messenger) {
++  public function __construct(ConfigFactoryInterface $config_factory,
++                              Connection $connection, LoggerInterface
++                              $logger, MessengerInterface $messenger,
++                              EntityDisplayRepositoryInterface $entity_display_repository) {
+     $this->config = $config_factory->get('google_analytics_counter.settings');
+     $this->connection = $connection;
+     $this->logger = $logger;
+     $this->messenger = $messenger;
++    $this->entity_display_repository = $entity_display_repository;
+   }
+ 
+   /****************************************************************************/
+@@ -149,7 +163,7 @@ class GoogleAnalyticsCounterCustomFieldGenerator implements GoogleAnalyticsCount
+       $field->save();
+ 
+       // Assign widget settings for the 'default' form mode.
+-      entity_get_form_display('node', $type->id(), 'default')
++      $this->entity_display_repository->getFormDisplay('node', $type->id(), 'default')
+         ->setComponent('google_analytics_counter', array(
+           'type' => 'int',
+           '#maxlength' => 255,
+@@ -159,7 +173,7 @@ class GoogleAnalyticsCounterCustomFieldGenerator implements GoogleAnalyticsCount
+         ->save();
+ 
+       // Assign display settings for the 'default' and 'teaser' view modes.
+-      entity_get_display('node', $type->id(), 'default')
++      $this->entity_display_repository->getViewDisplay('node', $type->id(), 'default')
+         ->setComponent('google_analytics_counter', array(
+           'label' => 'hidden',
+           'type' => 'int',
+@@ -168,9 +182,9 @@ class GoogleAnalyticsCounterCustomFieldGenerator implements GoogleAnalyticsCount
+ 
+       // The teaser view mode is created by the Standard profile and therefore
+       // might not exist.
+-      $view_modes = \Drupal::entityManager()->getViewModes('node');
++      $view_modes = $this->entity_display_repository->getViewModes('node');
+       if (isset($view_modes['teaser'])) {
+-        entity_get_display('node', $type->id(), 'teaser')
++        $this->entity_display_repository->getViewDisplay('node', $type->id(), 'teaser')
+           ->setComponent('google_analytics_counter', array(
+             'label' => 'hidden',
+             'type' => 'textfield',
+@@ -238,7 +252,7 @@ class GoogleAnalyticsCounterCustomFieldGenerator implements GoogleAnalyticsCount
+    */
+   public function gacChangeConfigToNull() {
+     $config_factory = \Drupal::configFactory();
+-    $content_types = \Drupal::service('entity.manager')
++    $content_types = \Drupal::service('entity_type.manager')
+       ->getStorage('node_type')
+       ->loadMultiple();
+ 
+diff --git a/src/GoogleAnalyticsCounterHelper.php b/src/GoogleAnalyticsCounterHelper.php
+index 93993d4..7647c3c 100644
+--- a/src/GoogleAnalyticsCounterHelper.php
++++ b/src/GoogleAnalyticsCounterHelper.php
+@@ -36,7 +36,7 @@ class GoogleAnalyticsCounterHelper {
+    */
+   public static function gacSaveTypeConfig() {
+     $config_factory = \Drupal::configFactory();
+-    $content_types = \Drupal::service('entity.manager')
++    $content_types = \Drupal::service('entity_type.manager')
+       ->getStorage('node_type')
+       ->loadMultiple();
+ 
+diff --git a/src/Plugin/Filter/GoogleAnalyticsCounterFilter.php b/src/Plugin/Filter/GoogleAnalyticsCounterFilter.php
+index eb7736d..032c6f1 100755
+--- a/src/Plugin/Filter/GoogleAnalyticsCounterFilter.php
++++ b/src/Plugin/Filter/GoogleAnalyticsCounterFilter.php
+@@ -2,7 +2,7 @@
+ 
+ namespace Drupal\google_analytics_counter\Plugin\Filter;
+ 
+-use Drupal\Core\Path\AliasManagerInterface;
++use Drupal\path_alias\AliasManagerInterface;
+ use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+ use Drupal\Core\Path\CurrentPathStack;
+ use Drupal\Core\State\StateInterface;
+@@ -33,7 +33,7 @@ class GoogleAnalyticsCounterFilter extends FilterBase implements ContainerFactor
+   /**
+    * An alias manager for looking up the system path and path alias.
+    *
+-   * @var \Drupal\Core\Path\AliasManagerInterface
++   * @var \Drupal\path_alias\AliasManagerInterface
+    */
+   protected $aliasManager;
+ 
+@@ -62,7 +62,7 @@ class GoogleAnalyticsCounterFilter extends FilterBase implements ContainerFactor
+    *   The plugin implementation definition.
+    * @param \Drupal\Core\Path\CurrentPathStack $current_path
+    *   The current path.
+-   * @param \Drupal\Core\Path\AliasManagerInterface $alias_manager
++   * @param \Drupal\path_alias\AliasManagerInterface $alias_manager
+    *   An alias manager for looking up the system path.
+    * @param \Drupal\Core\State\StateInterface $state
+    *   The state of the drupal site.
+@@ -86,7 +86,7 @@ class GoogleAnalyticsCounterFilter extends FilterBase implements ContainerFactor
+       $plugin_id,
+       $plugin_definition,
+       $container->get('path.current'),
+-      $container->get('path.alias_manager'),
++      $container->get('path_alias.manager'),
+       $container->get('state'),
+       $container->get('google_analytics_counter.app_manager')
+     );

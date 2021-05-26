@@ -707,7 +707,7 @@ div[data-embed-button="related_content"] {
     min-height: 182px;
     max-width: 835px;
     padding: 20px 20px 0;
-    color: #6c6c6c;
+    color: #6c6c6c !important;
   }
 
   label[for="edit-field-comment-body-0-value"] {
@@ -788,6 +788,9 @@ div[data-embed-button="related_content"] {
   margin: 0 auto;
   right: 0px;
   border-radius: 0px !important;
+  @media (max-width: $tablet) {
+    max-width: 290px !important;
+  }
   * {
     max-width: 875px !important;
   }
@@ -797,12 +800,13 @@ div[data-embed-button="related_content"] {
   .ui-dialog-title {
     font-size: $px28 !important;
     line-height: 34px;
-    color: #EE2211 !important;
+    color: #ee2211 !important;
     padding-top: 20px;
     white-space: break-spaces;
     text-align: left;
     @media (max-width: $tablet) {
       font-size: $px18 !important;
+      margin: 0px 0px 10px !important;
     }
   }
   .ui-dialog-titlebar {
@@ -918,7 +922,7 @@ div[data-embed-button="related_content"] {
     margin: 0px auto 20px;
     padding: 0px;
     font-family: $PrNovacond-Sbold;
-    font-size: $px18; 
+    font-size: $px18;
     line-height: 24px;
     color: $cblack;
     @media (max-width: $tablet) {
@@ -927,7 +931,7 @@ div[data-embed-button="related_content"] {
       line-height: 18px;
     }
   }
-  .ui-dialog-title{ 
+  .ui-dialog-title {
     margin: 0 0 34px !important;
   }
   .ui-dialog-buttonpane {
@@ -935,7 +939,16 @@ div[data-embed-button="related_content"] {
   }
   .ui-dialog-titlebar {
     padding: 50px 20px 0 !important;
-    @media (max-width: $tablet) {
+  }
+  @media (max-width: $tablet) {
+    max-width: 290px !important;
+    .ui-dialog-title {
+      margin: 28px 0 0px !important;
+    }
+    .ui-dialog-buttonpane {
+      padding: 0 !important;
+    }
+    .ui-dialog-titlebar {
       padding: 10px 20px 0 !important;
     }
   }
