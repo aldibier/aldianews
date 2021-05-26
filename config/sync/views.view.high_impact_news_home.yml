@@ -445,7 +445,12 @@ display:
             label: ''
           granularity: second
       title: 'High-impact news Home'
-      header: {  }
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          plugin_id: text
       footer: {  }
       empty: {  }
       relationships: {  }
@@ -1082,6 +1087,7 @@ display:
         fields: false
         filters: false
         filter_groups: false
+        header: false
       filters:
         status:
           value: '1'
@@ -1193,6 +1199,20 @@ display:
         groups:
           1: AND
       block_hide_empty: true
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content:
+            value: '<h2 class="breaking_news">BREAKING NEWS</h2>'
+            format: full_html
+          plugin_id: text
     cache_metadata:
       max-age: -1
       contexts:
