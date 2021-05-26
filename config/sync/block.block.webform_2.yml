@@ -1,0 +1,43 @@
+uuid: e8d64308-baac-44f6-bf2e-60061d666d99
+langcode: en
+status: true
+dependencies:
+  config:
+    - webform.webform.newsletters
+  module:
+    - context
+    - ctools
+    - webform
+  theme:
+    - al_dia_news
+id: webform_2
+theme: al_dia_news
+region: content
+weight: -20
+provider: null
+plugin: webform_block
+settings:
+  id: webform_block
+  label: Webform
+  provider: webform
+  label_display: '0'
+  webform_id: newsletters
+  default_data: ''
+  redirect: false
+visibility:
+  request_path_exclusion:
+    id: request_path_exclusion
+    pages: ''
+    negate: null
+  view_inclusion:
+    id: view_inclusion
+    negate: null
+    view_inclusion: {  }
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      news: news
+      thought_leaders: thought_leaders
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
