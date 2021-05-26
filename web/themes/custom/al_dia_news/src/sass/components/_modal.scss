@@ -380,10 +380,10 @@
   }
 
   .password-suggestions {
-    top: 82px;
+    top: 79px;
     left: initial;
     right: -25px;
-    ul::before{
+    ul::before {
       left: -35px;
     }
     @media (max-width: $tablet) {
@@ -634,5 +634,11 @@
       font-size: $px14;
       line-height: 16px;
     }
+  }
+}
+
+@media (max-width: 48em) {
+  .ui-dialog:not(.ui-dialog-off-canvas) {
+    min-width: auto !important;
   }
 }
