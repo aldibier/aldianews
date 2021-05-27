@@ -12,21 +12,21 @@ dependencies:
 id: watchlive_2
 theme: al_dia_news
 region: right_column_home
-weight: -35
+weight: -36
 provider: null
-plugin: 'fixed_block_content:watch_live'
+plugin: "fixed_block_content:watch_live"
 settings:
-  id: 'fixed_block_content:watch_live'
-  label: 'WATCH LIVE'
+  id: "fixed_block_content:watch_live"
+  label: "WATCH LIVE"
   provider: fixed_block_content
-  label_display: '0'
-  view_mode: ''
+  label_display: "0"
+  view_mode: ""
 visibility:
   request_path_exclusion:
     id: request_path_exclusion
-    pages: ''
+    pages: ""
     negate: null
   view_inclusion:
     id: view_inclusion
     negate: null
-    view_inclusion: {  }
+    view_inclusion: {}
