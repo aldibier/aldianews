@@ -80,7 +80,6 @@ section .comment:not(section .indented .comment) {
     color: $cblack3;
     font-family: $PrNovacond-reg;
     width: 100%;
-    text-align: right;
   }
 
   .field--name-comment-display-custom,
@@ -140,6 +139,15 @@ section .comment:not(section .indented .comment) {
     }
   }
 
+  .field--name-comment-display-custom:not(.anonymus.field--name-comment-display-custom) {
+    .item-list {
+      li {
+        margin-left: 25px;
+        padding: 0;
+      }  
+    }
+  }
+
   @media (max-width: $tablet) {
     margin: 20px auto 0px;
 
@@ -163,10 +171,6 @@ section .comment:not(section .indented .comment) {
       .item-list {
         ul {
           justify-content: flex-start;
-        }
-
-        li {
-          padding: 0.2em 1.5em 0 0;
         }
 
         li:nth-child(4) {
@@ -194,6 +198,40 @@ section .comment:not(section .indented .comment) {
         }
       }
     }
+  }
+}
+
+.indented {
+  .comment {
+    .field--name-comment-author-display-custom,
+    .comment .field--name-comment-author-display-custom,
+    .field--name-comment-post-date {
+      text-align: right;
+    }
+  }
+
+  .field--name-field-comment-body {
+    text-align: left;
+    
+    &::first-line {
+      text-align: right;
+    }
+  }
+}
+
+$space-level: 125px;
+
+//--first level comment--// 
+.indented:not(.indented > .indented )  {
+  > .comment {
+    padding-left: $space-level;
+  }
+}
+
+//--second level comment--// 
+.indented:not(.idented) > .indented {
+  > .comment {
+    padding-left: $space-level + 100px;
   }
 }
 
@@ -297,7 +335,6 @@ section > .comment:nth-of-type(1) {
 }
 
 .container-show-hide {
-  margin-left: 30px;
   text-transform: uppercase;
   position: relative;
   padding-right: 40px !important;
