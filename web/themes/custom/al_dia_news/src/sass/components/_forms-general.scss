@@ -73,6 +73,61 @@ button[name="close"],
   cursor: pointer;
 }
 
+//-------------form login ------------//
+.user-login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-pass {
+  > p {
+    font-size: szrem(16);
+    font-family: $CenturyOld-Regular;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 24px;
+    color: $cgrey6;
+
+    @media (max-width: $tablet) {
+      font-size: szrem(12);
+      line-height: 20px;
+      text-align: center;
+    }
+  }
+
+  .form-actions {
+    display: flex;
+
+    .user-register-login {
+      max-width: 165px;
+      min-width: 100px;
+      margin: 0 30px 0 0;
+      order: 1;
+
+      @media (max-width: $tablet) {
+        max-width: max-content;
+        margin: 0 20px 0 0;
+      }
+    }
+  
+    .form-submit {
+      max-width: 165px;
+      min-width: 100px;
+      margin: 0;
+      order: 2;
+
+      @media (max-width: $tablet) {
+        max-width: max-content;
+      }
+    }
+  }
+
+  .button-preload {
+    background-color: $bgrey2;
+    color: white;
+  }
+}
+
 //-------------form advertising ------------//
 .webform-advertising,
 .webform-about-al-dia-live,
