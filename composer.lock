@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2cd89a7dceddbaf312fb0e5f11a754ef",
+    "content-hash": "1c7abe777b399ac090c6f16fa5bb4372",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3992,6 +3992,72 @@
             }
         },
         {
+            "name": "drupal/datalayer",
+            "version": "1.0.0-beta2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/datalayer.git",
+                "reference": "8.x-1.0-beta2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/datalayer-8.x-1.0-beta2.zip",
+                "reference": "8.x-1.0-beta2",
+                "shasum": "53723500a8cf6f7e0a1dcc877e769d1bddebf3c6"
+            },
+            "require": {
+                "drupal/core": "^8.0 || ^9.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.0-beta2",
+                    "datestamp": "1579986781",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Josh Lind",
+                    "homepage": "https://www.drupal.org/u/doublejosh",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "bighappyface",
+                    "homepage": "https://www.drupal.org/user/2513682"
+                },
+                {
+                    "name": "blake.thompson",
+                    "homepage": "https://www.drupal.org/user/1803642"
+                },
+                {
+                    "name": "doublejosh",
+                    "homepage": "https://www.drupal.org/user/199720"
+                },
+                {
+                    "name": "josephdpurcell",
+                    "homepage": "https://www.drupal.org/user/2944035"
+                }
+            ],
+            "description": "Output page meta data for client-side availability.",
+            "homepage": "https://www.drupal.org/project/datalayer",
+            "keywords": [
+                "Data Layer",
+                "Drupal"
+            ],
+            "support": {
+                "source": "https://git.drupalcode.org/project/datalayer",
+                "issues": "https://www.drupal.org/project/issues/datalayer"
+            }
+        },
+        {
             "name": "drupal/devel",
             "version": "4.1.1",
             "source": {
@@ -4881,6 +4947,67 @@
             }
         },
         {
+            "name": "drupal/gamw",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/gamw.git",
+                "reference": "8.x-1.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/gamw-8.x-1.1.zip",
+                "reference": "8.x-1.1",
+                "shasum": "29b8447cbaa7e80624a774db5e14006d965c5ab3"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.1",
+                    "datestamp": "1599219608",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "EliasPapa",
+                    "homepage": "https://www.drupal.org/user/3573042"
+                },
+                {
+                    "name": "Mikechr",
+                    "homepage": "https://www.drupal.org/user/3528837"
+                }
+            ],
+            "description": "Allows addition of ads in Drupal 8 through Google Ad Manager.",
+            "homepage": "https://www.drupal.org/project/gamw",
+            "keywords": [
+                "ad",
+                "ads",
+                "advertisements",
+                "click",
+                "dfp",
+                "double",
+                "drupal",
+                "google",
+                "manager",
+                "publishers"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/gamw",
+                "issues": "https://www.drupal.org/project/issues/gamw"
+            }
+        },
+        {
             "name": "drupal/gin",
             "version": "3.0.0-alpha33",
             "source": {
@@ -5763,6 +5890,71 @@
             "homepage": "https://www.drupal.org/project/jsonapi_hypermedia",
             "support": {
                 "source": "https://git.drupalcode.org/project/jsonapi_hypermedia"
+            }
+        },
+        {
+            "name": "drupal/key",
+            "version": "1.14.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/key.git",
+                "reference": "8.x-1.14"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/key-8.x-1.14.zip",
+                "reference": "8.x-1.14",
+                "shasum": "097cec8e86b1c164727ca62521a06c36459754f1"
+            },
+            "require": {
+                "drupal/core": "^8.7.7 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.14",
+                    "datestamp": "1591765429",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "drush": {
+                    "services": {
+                        "drush.services.yml": "^9"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Cellar Door",
+                    "homepage": "https://www.drupal.org/user/658076"
+                },
+                {
+                    "name": "crashtest_",
+                    "homepage": "https://www.drupal.org/user/261457"
+                },
+                {
+                    "name": "nerdstein",
+                    "homepage": "https://www.drupal.org/user/1557710"
+                },
+                {
+                    "name": "rlhawk",
+                    "homepage": "https://www.drupal.org/user/352283"
+                }
+            ],
+            "description": "Provides the ability to manage site-wide keys",
+            "homepage": "http://drupal.org/project/key",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/key",
+                "issues": "http://drupal.org/project/key"
             }
         },
         {
@@ -7002,6 +7194,53 @@
             }
         },
         {
+            "name": "drupal/sendgrid_api",
+            "version": "1.0.0-alpha4",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/sendgrid_api.git",
+                "reference": "1.0.0-alpha4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/sendgrid_api-1.0.0-alpha4.zip",
+                "reference": "1.0.0-alpha4",
+                "shasum": "e55e45fd02487e48c7313f216d324ef3b5eb67d2"
+            },
+            "require": {
+                "drupal/core": ">=8.8 || >= 9.0",
+                "drupal/key": "^1.14",
+                "php": ">=7.3.0",
+                "sendgrid/sendgrid": "^7.6"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.0-alpha4",
+                    "datestamp": "1594032855",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Alpha releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "dpi",
+                    "homepage": "https://www.drupal.org/user/81431"
+                }
+            ],
+            "description": "Provides configuration and dependencies for connecting to SendGrid API.",
+            "homepage": "https://www.drupal.org/project/sendgrid_api",
+            "support": {
+                "source": "https://git.drupalcode.org/project/sendgrid_api"
+            }
+        },
+        {
             "name": "drupal/shs",
             "version": "1.0.0-alpha5",
             "source": {
@@ -8157,6 +8396,52 @@
                 "issues": "https://www.drupal.org/project/issues/webform?version=8.x",
                 "docs": "https://www.drupal.org/docs/8/modules/webform",
                 "forum": "https://drupal.stackexchange.com/questions/tagged/webform"
+            }
+        },
+        {
+            "name": "drupal/webform_sendgrid",
+            "version": "1.0.0-alpha4",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/webform_sendgrid.git",
+                "reference": "1.0.0-alpha4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/webform_sendgrid-1.0.0-alpha4.zip",
+                "reference": "1.0.0-alpha4",
+                "shasum": "1b68f587b31cb0f5c6f34a1287e53c44fdcbf433"
+            },
+            "require": {
+                "drupal/core": ">=8.8 || >= 9.0",
+                "drupal/sendgrid_api": "^1",
+                "php": ">=7.3.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.0-alpha4",
+                    "datestamp": "1594704206",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Alpha releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "dpi",
+                    "homepage": "https://www.drupal.org/user/81431"
+                }
+            ],
+            "description": "Provides a handler for sending submission data to SendGrid.",
+            "homepage": "https://www.drupal.org/project/webform_sendgrid",
+            "support": {
+                "source": "https://git.drupalcode.org/project/webform_sendgrid"
             }
         },
         {
@@ -10179,6 +10464,135 @@
             "time": "2019-03-08T08:55:37+00:00"
         },
         {
+            "name": "sendgrid/php-http-client",
+            "version": "3.14.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sendgrid/php-http-client.git",
+                "reference": "7880d5aecc53856802130ba83af1dfcf942e9767"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sendgrid/php-http-client/zipball/7880d5aecc53856802130ba83af1dfcf942e9767",
+                "reference": "7880d5aecc53856802130ba83af1dfcf942e9767",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "php": ">=5.6"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.16",
+                "phpunit/phpunit": "^5.7 || ^6.5",
+                "sebastian/version": "^1.0.6",
+                "squizlabs/php_codesniffer": "~2.0"
+            },
+            "suggest": {
+                "composer/ca-bundle": "Including this library will ensure that a valid CA bundle is available for secure connections"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "SendGrid\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matt Bernier",
+                    "email": "mbernier@twilio.com"
+                },
+                {
+                    "name": "Elmer Thomas",
+                    "email": "ethomas@twilio.com"
+                }
+            ],
+            "description": "HTTP REST client, simplified for PHP",
+            "homepage": "http://github.com/sendgrid/php-http-client",
+            "keywords": [
+                "api",
+                "fluent",
+                "http",
+                "rest",
+                "sendgrid"
+            ],
+            "support": {
+                "issues": "https://github.com/sendgrid/php-http-client/issues",
+                "source": "https://github.com/sendgrid/php-http-client/tree/3.14.0"
+            },
+            "time": "2021-03-24T20:45:06+00:00"
+        },
+        {
+            "name": "sendgrid/sendgrid",
+            "version": "7.9.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sendgrid/sendgrid-php.git",
+                "reference": "ab0023a6233f39e408b5eb8c4299f20790f5f5a7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sendgrid/sendgrid-php/zipball/ab0023a6233f39e408b5eb8c4299f20790f5f5a7",
+                "reference": "ab0023a6233f39e408b5eb8c4299f20790f5f5a7",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "ext-openssl": "*",
+                "php": ">=5.6",
+                "sendgrid/php-http-client": "~3.10",
+                "starkbank/ecdsa": "0.*"
+            },
+            "replace": {
+                "sendgrid/sendgrid-php": "*"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7.9 || ^6.4.3",
+                "squizlabs/php_codesniffer": "3.*",
+                "swaggest/json-diff": "^3.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "SendGrid\\Contacts\\": "lib/contacts/",
+                    "SendGrid\\EventWebhook\\": "lib/eventwebhook/",
+                    "SendGrid\\Helper\\": "lib/helper/",
+                    "SendGrid\\Mail\\": "lib/mail/",
+                    "SendGrid\\Stats\\": "lib/stats/"
+                },
+                "classmap": [
+                    "lib/BaseSendGridClientInterface.php",
+                    "lib/SendGrid.php",
+                    "lib/TwilioEmail.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "This library allows you to quickly and easily send emails through Twilio SendGrid using PHP.",
+            "homepage": "http://github.com/sendgrid/sendgrid-php",
+            "keywords": [
+                "email",
+                "grid",
+                "send",
+                "sendgrid",
+                "twilio sendgrid"
+            ],
+            "support": {
+                "issues": "https://github.com/sendgrid/sendgrid-php/issues",
+                "source": "https://github.com/sendgrid/sendgrid-php/tree/7.9.2"
+            },
+            "time": "2021-01-27T20:19:06+00:00"
+        },
+        {
             "name": "solarium/solarium",
             "version": "6.1.1",
             "source": {
@@ -10286,6 +10700,49 @@
                 "stack"
             ],
             "time": "2020-01-30T12:17:27+00:00"
+        },
+        {
+            "name": "starkbank/ecdsa",
+            "version": "0.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/starkbank/ecdsa-php.git",
+                "reference": "9369d35ed9019321adb4eb9fd3be21357d527c74"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/starkbank/ecdsa-php/zipball/9369d35ed9019321adb4eb9fd3be21357d527c74",
+                "reference": "9369d35ed9019321adb4eb9fd3be21357d527c74",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/ellipticcurve.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "StarkBank",
+                    "email": "developers@starkbank.com",
+                    "homepage": "https://starkbank.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "fast openSSL-compatible implementation of the Elliptic Curve Digital Signature Algorithm (ECDSA)",
+            "homepage": "https://github.com/starkbank/ecdsa-php",
+            "support": {
+                "issues": "https://github.com/starkbank/ecdsa-php/issues",
+                "source": "https://github.com/starkbank/ecdsa-php/tree/v0.0.4"
+            },
+            "time": "2020-05-15T15:46:20+00:00"
         },
         {
             "name": "stecman/symfony-console-completion",
@@ -12837,6 +13294,7 @@
         "drupal/computed_field": 20,
         "drupal/context": 10,
         "drupal/country_state_field": 20,
+        "drupal/datalayer": 10,
         "drupal/gin": 15,
         "drupal/gin_lb": 10,
         "drupal/gin_toolbar": 10,
@@ -12848,16 +13306,18 @@
         "drupal/pathologic": 15,
         "drupal/react_comments": 10,
         "drupal/search_api_spellcheck": 10,
+        "drupal/sendgrid_api": 15,
         "drupal/shs": 15,
         "drupal/term_csv_export_import": 15,
         "drupal/user_registrationpassword": 15,
         "drupal/views_block_area": 10,
         "drupal/views_field_view": 10,
-        "drupal/views_fieldsets": 20
+        "drupal/views_fieldsets": 20,
+        "drupal/webform_sendgrid": 15
     },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "1.1.0"
+    "plugin-api-version": "2.0.0"
 }

@@ -1,22 +1,22 @@
-uuid: aa40e159-d637-427f-9640-cf50d98b49e2
+uuid: 4e830e6a-f436-46a0-a7f4-f455afe2c71a
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.trending_home
+    - views.view.trending_google_home
   module:
     - context
     - views
   theme:
     - al_dia_news
-id: views_block__trending_home_block_1
+id: views_block__trending_google_home_block_1
 theme: al_dia_news
 region: right_column_home
 weight: 0
 provider: null
-plugin: 'views_block:trending_home-block_1'
+plugin: 'views_block:trending_google_home-block_1'
 settings:
-  id: 'views_block:trending_home-block_1'
+  id: 'views_block:trending_google_home-block_1'
   label: ''
   provider: views
   label_display: '0'
