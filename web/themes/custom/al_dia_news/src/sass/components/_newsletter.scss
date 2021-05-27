@@ -9,9 +9,23 @@
   right: 0px;
   margin: 0 auto;
   padding: 20px;
+  .container {
+    width: 100%;
+    max-width: 1230px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .close-modal {
+    top: 0px;
+    right: 15px;
+  }
   @media (max-width: $tablet) {
     background: #e7e8ea;
-    padding: 30px 20px 10px;
+    padding: 30px 18px 10px;
+    .close-modal {
+      top: -20px;
+      right: 0px;
+    }
   }
 }
 .webform-submission-newsletters-form {
@@ -24,13 +38,7 @@
   justify-content: space-between;
   padding: 30px 40px;
   flex-wrap: wrap;
-  .container {
-    position: relative;
-  }
-  .close-modal {
-    top: 20px;
-    right: -25px;
-  }
+
   .form-item-markup {
     margin: 0px;
     font-family: $PrNovacond-Sbold;
@@ -58,11 +66,14 @@
       padding-left: 20px;
     }
   }
-  .form-submit {
+  .form-actions {
     max-width: 180px;
+    width: 100%;
+  }
+  .form-submit {
     min-height: 39.6px;
-    background: #5c6165;
-    font-size: $px16;
+    background-color: #5c6165 !important;
+    font-size: $px16 !important;
     line-height: 25px;
   }
   @media (max-width: $tablet) {
@@ -71,6 +82,7 @@
     .form-item-markup {
       font-size: $px16;
       height: 20px;
+      margin: 0 auto 20px;
     }
     .form-item-email {
       max-width: 155px;
@@ -79,9 +91,12 @@
         padding-left: 15px;
       }
     }
-    .form-submit {
+    .form-actions {
       max-width: 105px;
-      font-size: $px14;
+    }
+    .form-submit {
+      font-size: $px14 !important;
+      min-height: 40px;
     }
   }
 }
