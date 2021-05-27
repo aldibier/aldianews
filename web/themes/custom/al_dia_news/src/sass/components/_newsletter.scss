@@ -1,0 +1,49 @@
+.newsletter {
+  background: #f2f2f2;
+  box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.08);
+  position: fixed;
+  bottom: 0px;
+  z-index: 9;
+  width: 100%;
+  left: 0px;
+  right: 0px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.webform-submission-newsletters-form {
+  max-width: 1125px;
+  width: 100%;
+  max-height: 100px;
+  margin: 0 auto;
+  border: 2px solid #797979;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 40px;
+  .form-item-markup {
+    margin: 0px;
+    font-family: $PrNovacond-Sbold;
+    font-size: $px20;
+    line-height: 25px;
+    letter-spacing: 0.741176px;
+    color: #3a3a3c;
+  }
+  .form-item-email {
+    label {
+      display: none;
+    }
+    input {
+      max-width: 510px;
+      width: 100%;
+      min-height: 39.6px;
+      background: $cwhite;
+    }
+    .form-submit {
+      max-width: 180px;
+      min-height: 39.6px;
+      background: #5c6165;
+      font-size: $px16;
+      line-height: 25px;
+    }
+  }
+}
