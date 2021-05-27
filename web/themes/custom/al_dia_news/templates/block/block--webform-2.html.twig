@@ -44,7 +44,9 @@
 	{% endif %}
 	{{ title_suffix }}
 	{% block content %}
-		<button class="close-modal" name="close" type="button">X</button>
-		{{ content }}
+		<div{{content_attributes.addClass('container')}}>
+			<button class="close-modal" name="close" type="button">X</button>
+			{{ content }}
+		</div>
 	{% endblock %}
 </div>

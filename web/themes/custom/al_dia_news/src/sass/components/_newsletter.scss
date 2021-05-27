@@ -9,6 +9,10 @@
   right: 0px;
   margin: 0 auto;
   padding: 20px;
+  @media (max-width: $tablet) {
+    background: #e7e8ea;
+    padding: 30px 20px 10px;
+  }
 }
 .webform-submission-newsletters-form {
   max-width: 1125px;
@@ -17,9 +21,16 @@
   margin: 0 auto;
   border: 2px solid #797979;
   display: flex;
-  align-items: center;
   justify-content: space-between;
   padding: 30px 40px;
+  flex-wrap: wrap;
+  .container {
+    position: relative;
+  }
+  .close-modal {
+    top: 20px;
+    right: -25px;
+  }
   .form-item-markup {
     margin: 0px;
     font-family: $PrNovacond-Sbold;
@@ -27,8 +38,14 @@
     line-height: 25px;
     letter-spacing: 0.741176px;
     color: #3a3a3c;
+    height: 39px;
+    display: flex;
+    align-items: center;
   }
   .form-item-email {
+    margin: 0px;
+    max-width: 510px;
+    width: 100%;
     label {
       display: none;
     }
@@ -37,13 +54,34 @@
       width: 100%;
       min-height: 39.6px;
       background: $cwhite;
+      margin: 0px;
+      padding-left: 20px;
+    }
+  }
+  .form-submit {
+    max-width: 180px;
+    min-height: 39.6px;
+    background: #5c6165;
+    font-size: $px16;
+    line-height: 25px;
+  }
+  @media (max-width: $tablet) {
+    max-height: 120px;
+    padding: 20px 10px;
+    .form-item-markup {
+      font-size: $px16;
+      height: 20px;
+    }
+    .form-item-email {
+      max-width: 155px;
+      input {
+        max-width: 155px;
+        padding-left: 15px;
+      }
     }
     .form-submit {
-      max-width: 180px;
-      min-height: 39.6px;
-      background: #5c6165;
-      font-size: $px16;
-      line-height: 25px;
+      max-width: 105px;
+      font-size: $px14;
     }
   }
 }
