@@ -1,0 +1,34 @@
+uuid: 5fa7edd1-c9a4-49dd-a192-670039a24a9d
+langcode: es
+status: true
+dependencies:
+  config:
+    - webform.webform.newsletters
+  module:
+    - context
+    - webform
+  theme:
+    - al_dia_news
+id: webform_3
+theme: al_dia_news
+region: right_column_home
+weight: -35
+provider: null
+plugin: webform_block
+settings:
+  id: webform_block
+  label: Webform
+  provider: webform
+  label_display: "0"
+  webform_id: newsletters
+  default_data: ""
+  redirect: false
+visibility:
+  view_inclusion:
+    id: view_inclusion
+    negate: null
+    view_inclusion: {}
+  request_path_exclusion:
+    id: request_path_exclusion
+    pages: ""
+    negate: null
