@@ -1229,7 +1229,24 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 var initMain = function initMain($, Drupal) {
   window.onload = function () {
-    //// js remove element home
+    /// js scroll newsletter
+    var container = document.querySelector('body');
+    var elemento = document.getElementById('block-webform-2');
+
+    container.onscroll = function () {
+      var heightBody = container.scrollHeight - 499;
+      var scroll = window.scrollY + window.innerHeight;
+
+      if (scroll >= heightBody) {
+        elemento.classList.add('fix');
+      } else {
+        if (elemento.classList.contains('fix')) {
+          elemento.classList.remove('fix');
+        }
+      }
+    }; //// js remove element home
+
+
     Array.from(document.querySelectorAll(".block-fixed-block-contentvertical-advertising-mobile")).map(function (e) {
       if (e.children.children != null) {
         e.closest(".mobile-less").parentElement.parentElement.classList.add("life-advertising");
@@ -1692,17 +1709,24 @@ var initMain = function initMain($, Drupal) {
       var allTextMessage = blockAnonymus.querySelectorAll('.text-anonymous-comment');
       var loginLink = blockAnonymus.querySelector('.login-anonymous-comment');
       var registerLink = blockAnonymus.querySelector('.register-anonymous-comment');
-      var container = document.createElement('div');
+
+      var _container = document.createElement('div');
+
       var message = document.createElement('div');
-      container.classList.add('message-comments-container');
+
+      _container.classList.add('message-comments-container');
+
       message.classList.add('message-comments-links');
       message.appendChild(loginLink);
       message.appendChild(allTextMessage[1]);
       message.appendChild(registerLink);
       message.appendChild(allTextMessage[2]);
-      container.appendChild(allTextMessage[0]);
-      container.appendChild(message);
-      blockAnonymus.querySelector('.content').insertAdjacentElement('afterend', container);
+
+      _container.appendChild(allTextMessage[0]);
+
+      _container.appendChild(message);
+
+      blockAnonymus.querySelector('.content').insertAdjacentElement('afterend', _container);
       blockAnonymus.addEventListener('click', function () {
         blockAnonymus.classList.add('show');
       }, {
@@ -2021,6 +2045,9 @@ __webpack_require__.r(__webpack_exports__);
       }).addTo(controller2); //.addIndicators();
     }
 
+    $('.newsletter  button[name="close"]').click(function () {
+      $(".newsletter").addClass("dis-none");
+    });
     $('#block-fixed-block-content-horizontal-advertising-close  button[name="close"]').click(function () {
       $("#block-fixed-block-content-horizontal-advertising-close").addClass("dis-none");
     });
@@ -2547,8 +2574,8 @@ var initSlick = function initSlick($, Drupal) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/usuario/Desktop/Proyectos/AlDiaNews/4ld14-n3ws/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
-module.exports = __webpack_require__(/*! /Users/usuario/Desktop/Proyectos/AlDiaNews/4ld14-n3ws/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
+__webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
+module.exports = __webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
 
 
 /***/ })

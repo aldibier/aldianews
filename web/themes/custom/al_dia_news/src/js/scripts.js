@@ -194,6 +194,10 @@ import replaceToken from "./modules/replaceToken";
       //.addIndicators();
     }
 
+    $('.newsletter  button[name="close"]').click(function() {
+      $(".newsletter").addClass("dis-none");
+    });
+
     $(
       '#block-fixed-block-content-horizontal-advertising-close  button[name="close"]'
     ).click(function() {
