@@ -1,5 +1,22 @@
 const initMain = ($, Drupal) => {
 	window.onload = function () {
+		/// js scroll newsletter
+		var container = document.querySelector('body');
+		var elemento = document.getElementById('block-webform-2');
+
+		container.onscroll = function () {
+		var heightBody = container.scrollHeight - 499;
+		var scroll = window.scrollY + window.innerHeight;
+
+		if(scroll >= heightBody) {
+			elemento.classList.add('fix');
+		} else {
+			if(elemento.classList.contains('fix')) {
+				elemento.classList.remove('fix');
+			}
+		}
+		}
+
 		//// js remove element home
 		Array.from(
 			document.querySelectorAll(
