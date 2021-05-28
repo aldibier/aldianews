@@ -9,8 +9,8 @@
     width: 100%;
     left: 0px;
     right: 0px;
-    margin: 0 auto;
-    padding: 20px;
+    margin: 0 auto !important;
+    padding: 19px 20px !important;
     .container {
       width: 100%;
       max-width: 1230px;
@@ -20,6 +20,11 @@
     .close-modal {
       top: 0px;
       right: 15px;
+    }
+    &.fix {
+      position: absolute;
+      top: -122px;
+      bottom: auto;
     }
     @media (max-width: $tablet) {
       background: #e7e8ea;
