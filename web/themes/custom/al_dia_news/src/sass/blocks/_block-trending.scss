@@ -1,13 +1,16 @@
 .block-views-blocktrending-google-home-block-1 {
   .view-header {
+    margin-bottom: 20px;
     overflow: hidden;
 
     h3 {
       margin: 0 auto;
       position: relative;
+      text-align: center;
       
       span {
         padding: 0 20px;
+        position: relative;
         font-size: szrem(34);
         font-family: $Mod-Sbold;
         font-style: normal;
@@ -16,6 +19,7 @@
         text-align: center;
         background-color: $cwhite;
         color: $corange;
+        z-index: 1;
       }
 
       &::before {
@@ -27,6 +31,86 @@
         top: calc(50% - 2.5px);
         background-color: $corange;
       }
+    }
+  }
+
+  .view-content {
+    position: relative;
+  }
+
+  .slick-arrow {
+    width: 15px;
+    height: 15px;
+    border: none;
+    position: absolute;
+    bottom: calc(0% - 20px);
+    background-color: transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+    font-size: 0;
+    transform: translateY(100%);  
+    cursor: pointer;
+  } 
+
+  .slick-prev {
+    left: calc(50% - 25px);
+    background-image: url('../../assets/img/arrow-left.svg');
+  }
+
+  .slick-next {
+    left: calc(50% + 25px);
+    background-image: url('../../assets/img/arrow-right.svg');
+  }
+
+  .slick-slide {
+    > div:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  .views-row {
+    height: 80px;
+    padding: 20px 35px;
+    display: flex !important;
+    background-color: $cwhite;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.22);
+    transition: all .3s;
+
+    &:hover,
+    &:focus-within {
+      background-color: $cblack2;
+
+      .views-field-field-short-title  {
+        a {
+          color: white;
+        }
+      }
+    }
+  }
+
+  .views-field-counter {
+    width: 40px;
+    margin-right: 10px;
+    font-size: szrem(44);
+    font-family: $Mod-Sbold;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 53px;
+    color: $corange;
+  }
+
+  .views-field-field-short-title {
+    align-self: center;
+
+    a {
+      font-size: szrem(18);
+      font-family: $PrNovacond-Sbold;
+      font-style: normal;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: $cgrey3;
+      transition: all .3s;
     }
   }
 }
