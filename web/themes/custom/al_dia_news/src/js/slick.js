@@ -20,7 +20,7 @@ const initSlick = ($, Drupal) => {
         }
       ]
     };
-
+    
     //slide edit resize
     if (window.matchMedia("(max-width: 768px)").matches) {
       setTimeout(function() {
@@ -36,6 +36,20 @@ const initSlick = ($, Drupal) => {
       }
     });
   });
+
+
+  /// Slider para thought leaders
+  $('.block-views-blocktrending-google-home-block-1 .view-content').slick({
+    infinite: false,
+    rows: 5,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    mobileFirst: true,
+    autoplay: false,
+    dots: false,
+    arrows: true,
+  })
+
   // slide landing jobs
   $(
     ".block-views-blockcarousel-jobs-landing-block-1 .brands-carousel-wrapper .view-content"
