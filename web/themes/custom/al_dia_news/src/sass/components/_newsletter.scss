@@ -1,110 +1,177 @@
-.newsletter {
-  background: #f2f2f2;
-  box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.08);
-  position: fixed;
-  bottom: 0px;
-  z-index: 9;
-  width: 100%;
-  left: 0px;
-  right: 0px;
-  margin: 0 auto !important;
-  padding: 20px;
-  &.fix {
-    position: absolute;
-    top: -122px;
-    bottom: auto;
-  }
-  .container {
+//----Newsletter internal --//
+.page-node-type-news {
+  .newsletter {
+    background: #f2f2f2;
+    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.08);
+    position: fixed;
+    bottom: 0px;
+    z-index: 9;
     width: 100%;
-    max-width: 1230px;
-    margin: 0 auto;
-    position: relative;
-  }
-  .close-modal {
-    top: 0px;
-    right: 15px;
-  }
-  @media (max-width: $tablet) {
-    background: #e7e8ea;
-    padding: 30px 18px 10px;
-    .close-modal {
-      top: -20px;
-      right: 0px;
-    }
-  }
-}
-.webform-submission-newsletters-form {
-  max-width: 1125px;
-  width: 100%;
-  max-height: 100px;
-  margin: 0 auto;
-  border: 2px solid #797979;
-  display: flex;
-  justify-content: space-between;
-  padding: 30px 40px;
-  flex-wrap: wrap;
-
-  .form-item-markup {
-    margin: 0px;
-    font-family: $PrNovacond-Sbold;
-    font-size: $px20;
-    line-height: 25px;
-    letter-spacing: 0.741176px;
-    color: #3a3a3c;
-    height: 39px;
-    display: flex;
-    align-items: center;
-  }
-  .form-item-email {
-    margin: 0px;
-    max-width: 510px;
-    width: 100%;
-    label {
-      display: none;
-    }
-    input {
-      max-width: 510px;
+    left: 0px;
+    right: 0px;
+    margin: 0 auto !important;
+    padding: 19px 20px !important;
+    .container {
       width: 100%;
-      min-height: 39.6px;
-      background: $cwhite;
-      margin: 0px;
-      padding-left: 20px;
+      max-width: 1230px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .close-modal {
+      top: 0px;
+      right: 15px;
+    }
+    &.fix {
+      position: absolute;
+      top: -122px;
+      bottom: auto;
+    }
+    @media (max-width: $tablet) {
+      background: #e7e8ea;
+      padding: 30px 18px 10px;
+      .close-modal {
+        top: -20px;
+        right: 0px;
+      }
     }
   }
-  .form-actions {
-    max-width: 180px;
+
+  .webform-submission-newsletters-form {
+    max-width: 1125px;
     width: 100%;
-  }
-  .form-submit {
-    min-height: 39.6px;
-    background-color: #5c6165 !important;
-    font-size: $px16 !important;
-    line-height: 25px;
-  }
-  @media (max-width: $tablet) {
-    max-height: 120px;
-    padding: 20px 10px;
+    max-height: 100px;
+    margin: 0 auto;
+    border: 2px solid #797979;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 40px;
+    flex-wrap: wrap;
+  
     .form-item-markup {
-      font-size: $px16;
-      height: 20px;
-      margin: 0 auto 20px;
+      margin: 0px;
+      font-family: $PrNovacond-Sbold;
+      font-size: $px20;
+      line-height: 25px;
+      letter-spacing: 0.741176px;
+      color: #3a3a3c;
+      height: 39px;
+      display: flex;
+      align-items: center;
     }
     .form-item-email {
-      max-width: 155px;
+      margin: 0px;
+      max-width: 510px;
+      width: 100%;
+      label {
+        display: none;
+      }
       input {
-        max-width: 155px;
-        padding-left: 15px;
+        max-width: 510px;
+        width: 100%;
+        min-height: 39.6px;
+        background: $cwhite;
+        margin: 0px;
+        padding-left: 20px;
       }
     }
     .form-actions {
-      max-width: 105px;
+      max-width: 180px;
+      width: 100%;
     }
     .form-submit {
-      font-size: $px14 !important;
-      min-height: 40px !important;
+      min-height: 39.6px;
+      background-color: #5c6165 !important;
+      font-size: $px16 !important;
+      line-height: 25px;
+    }
+    @media (max-width: $tablet) {
+      max-height: 120px;
+      padding: 20px 10px;
+      .form-item-markup {
+        font-size: $px16;
+        height: 20px;
+        margin: 0 auto 20px;
+      }
+      .form-item-email {
+        max-width: 155px;
+        input {
+          max-width: 155px;
+          padding-left: 15px;
+        }
+      }
+      .form-actions {
+        max-width: 105px;
+      }
+      .form-submit {
+        font-size: $px14 !important;
+        min-height: 40px;
+      }
     }
   }
 }
-.region-footer-first {
-  position: initial;
+
+//----Newsletter home --//
+.path-frontpage {
+  .newsletter { 
+    margin-bottom: 35px;
+    padding: 10px 12px;
+    background-color: $bgrey3;
+
+    .close-modal {
+      display: none;
+    }
+  }
+
+  .webform-submission-newsletters-form {
+    padding: 20px 22px 20px 12px;
+    border: 1px solid #797979;
+
+    .form-item-markup {
+      font-size: szrem(16);
+      font-style: normal;
+      font-weight: bold;
+      font-family: $PrNovacond-Sbold;
+      text-align: center;
+      letter-spacing: 0.741176px;
+      color: $cgrey5;
+    }
+
+    .form-item-email {
+      max-width: 235px;
+      margin: 0;
+      float: left;
+      
+      label {
+        display: none;
+      }
+
+      input {
+        margin: 0;
+        padding: 8px 15px;
+        background-color: $cwhite;
+      }
+    }
+
+    #edit-actions {
+      width: 105px;
+      display: inline-block;
+
+      input {
+        margin: 0;
+        padding: 0;
+        font-size: szrem(14);
+        background-color: $cgrey3;
+      }
+    }
+
+    .form-submit {
+      /* font-size: $px14 !important;
+      min-height: 40px !important; */
+    }
+  }
 }
+
+.region-footer-first {
+  position: initial !important;
+}
+  

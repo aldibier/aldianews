@@ -46,9 +46,7 @@
     <div class="view-content">
       {{ rows }}
     </div>
-    <div>
-        {{ drupal_entity('block', 'rightcolumnhome') }}
-    </div>
+    {{ drupal_entity('block', 'rightcolumnhome') }}
   {% elseif empty %}
     <div class="view-empty">
       {{ empty }}
