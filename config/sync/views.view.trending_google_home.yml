@@ -237,7 +237,7 @@ display:
           group_type: group
           admin_label: ''
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -403,7 +403,7 @@ display:
           admin_label: ''
           empty: false
           tokenize: false
-          content: '<h3 class="trending-block">Trending</h3>'
+          content: '<h3 class="trending-block"><span>Trending</span></h3>'
           plugin_id: text_custom
       footer: {  }
       empty: {  }

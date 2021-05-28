@@ -180,7 +180,7 @@ display:
           group_type: group
           admin_label: ''
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -221,7 +221,7 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: summary
-          type: text_summary_or_trimmed
+          type: text_trimmed
           settings:
             trim_length: 20
           group_column: value
@@ -288,7 +288,7 @@ display:
           admin_label: ''
           empty: false
           tokenize: false
-          content: '<h3 class="trending-block">Trending</h3>'
+          content: '<h3 class="trending-block"><span>Trending</span></h3>'
           plugin_id: text_custom
       footer: {  }
       empty: {  }
