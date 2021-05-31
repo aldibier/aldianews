@@ -84,6 +84,20 @@ function al_dia_news_general_form_alter(&$form, $form_state, $form_id) {
     case "user_register_form":
       $form['#title'] = t("REGISTER");
       $form['actions']['submit']['#value'] = t("REGISTER");
+      $form['cancel'] = [
+        '#type' => 'link',
+        '#title' => t('BACK'),
+        '#weight' => 100000,
+        '#url' => Url::fromRoute('user.login'),
+        '#attributes' => [
+          'class' => [
+            'use-ajax',
+            'user-login',
+          ],
+          'data-dialog-type' => 'modal',
+          'data-dialog-options' => Json::encode(['dialogClass' => 'popup-login'],['width' => 550]),
+        ],
+      ];
       $current_path = \Drupal::service('path.current')->getPath();
       $path_args = explode('/', $current_path);
       if (isset($path_args[1]) && isset($path_args[2]) && $path_args[1] == 'node' && is_numeric($path_args[2])){
