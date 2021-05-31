@@ -15,6 +15,8 @@ display:
           tags:
             previous: '‹ anterior'
             next: 'siguiente ›'
+            first: '« primero'
+            last: 'último »'
           expose:
             items_per_page_label: 'Items per page'
             items_per_page_options_all_label: '- All -'
@@ -24,10 +26,21 @@ display:
           action_title: Action
         subject:
           label: Subject
+          separator: ', '
+        uid:
+          separator: ', '
         name:
           label: Autor
+          separator: ', '
+        entity_id:
+          separator: ', '
+        changed:
+          label: Actualizado
+          separator: ', '
         operations:
           label: Operations
+        name_1:
+          separator: ', '
       filters:
         subject:
           expose:
@@ -54,7 +67,18 @@ display:
           action_title: Action
         subject:
           label: Subject
+          separator: ', '
+        uid:
+          separator: ', '
         name:
           label: Autor
+          separator: ', '
+        entity_id:
+          separator: ', '
+        changed:
+          label: Actualizado
+          separator: ', '
         operations:
           label: Operations
+        name_1:
+          separator: ', '

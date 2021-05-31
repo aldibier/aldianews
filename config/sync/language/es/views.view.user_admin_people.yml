@@ -11,6 +11,11 @@ display:
           sort_desc_label: Desc
       pager:
         options:
+          tags:
+            previous: '‹ Anterior'
+            next: 'Siguiente >'
+            first: '« Primero'
+            last: 'Último »'
           expose:
             items_per_page_label: 'Items per page'
             items_per_page_options_all_label: '- All -'
@@ -26,6 +31,8 @@ display:
           label: Roles
         operations:
           label: Operations
+        mail:
+          separator: ', '
       filters:
         status:
           group_info:

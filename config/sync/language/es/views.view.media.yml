@@ -16,20 +16,34 @@ display:
             items_per_page_label: 'Items per page'
             items_per_page_options_all_label: '- All -'
             offset_label: Offset
+          tags:
+            previous: '‹ Anterior'
+            next: 'Siguiente >'
+            first: '« Primero'
+            last: 'Último »'
       fields:
         media_bulk_form:
           action_title: Action
         thumbnail__target_id:
           label: Miniatura
+          separator: ', '
+        name:
+          separator: ', '
         bundle:
           label: Type
+          separator: ', '
         uid:
           label: Autor
+          separator: ', '
         status:
           label: Status
           settings:
             format_custom_true: Publicado
             format_custom_false: 'Sin publicar'
+          separator: ', '
+        changed:
+          label: Actualizado
+          separator: ', '
         operations:
           label: Operations
       filters:
