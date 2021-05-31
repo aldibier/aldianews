@@ -117,6 +117,10 @@
     padding: 10px 12px;
     background-color: $bgrey3;
 
+    @media screen and(max-width: $tablet) {
+      display: none;
+    }
+
     .close-modal {
       display: none;
     }
@@ -150,6 +154,11 @@
         padding: 8px 15px;
         background-color: $cwhite;
       }
+
+      @media screen and(max-width: $broken) {
+        width: 100%;
+        max-width: 90%;
+      }
     }
 
     #edit-actions {
@@ -162,11 +171,10 @@
         font-size: szrem(14);
         background-color: $cgrey3;
       }
-    }
 
-    .form-submit {
-      /* font-size: $px14 !important;
-      min-height: 40px !important; */
+      @media screen and(max-width: $broken) {
+        width: 10%;
+      }
     }
   }
 }

@@ -3,6 +3,10 @@
     margin-bottom: 20px;
     overflow: hidden;
 
+    @media screen and (max-width: $tablet) {
+      margin-bottom: 15px;
+    }
+
     h3 {
       margin: 0 auto;
       position: relative;
@@ -20,6 +24,12 @@
         background-color: $cwhite;
         color: $corange;
         z-index: 1;
+
+        @media screen and (max-width: $tablet) {
+          padding: 0 5px;
+          font-size: szrem(30);
+          line-height: 36px;
+        }
       }
 
       &::before {
@@ -63,8 +73,14 @@
   }
 
   .slick-slide {
-    > div:not(:last-child) {
-      margin-bottom: 20px;
+    > div {
+      &:not(:last-child){
+        margin-bottom: 20px;
+
+        @media screen and (max-width:$tablet) {
+          margin-bottom: 5px;
+        }
+      }
     }
   }
 
@@ -75,6 +91,11 @@
     background-color: $cwhite;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.22);
     transition: all .3s;
+
+    @media screen and(max-width:$tablet) {
+      height: 45px;
+      padding: 5px 20px;
+    }
 
     &:hover,
     &:focus-within {
@@ -97,6 +118,13 @@
     font-weight: 600;
     line-height: 53px;
     color: $corange;
+
+    @media screen and(max-width:$tablet) {
+      min-width: 25px;
+      margin-right: 30px;
+      font-size: szrem(30);
+      line-height: 36px;
+    }
   }
 
   .views-field-field-short-title {
@@ -111,6 +139,11 @@
       text-decoration: none;
       color: $cgrey3;
       transition: all .3s;
+
+      @media screen and(max-width:$tablet) {
+        font-size: szrem(15);
+        line-height: 18px;
+      }
     }
   }
 }
