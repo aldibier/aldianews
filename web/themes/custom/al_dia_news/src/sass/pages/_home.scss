@@ -161,14 +161,22 @@
   .block-al-dia-news-general {
     margin-right: 40px;
     width: 100%;
-    max-width: 910px;
+    max-width: 950px;
     @media (max-width: $broken) {
       margin-right: 0;
     }
   }
 
-  #block-bloquedummynoticiashome-2 {
-    min-width: 330px;
+  .block-block-groupright-column-home {
+    width: 330px;
+
+    @media (max-width: $broken) {
+      width: 100%;
+    }
+  }
+
+  .watch-live {
+    margin-top: 0;
   }
 }
 
@@ -177,6 +185,10 @@
 
   @media (max-width: $broken) {
     margin-bottom: 47px;
+  }
+
+  @media (max-width: $tablet) {
+    margin-bottom: 30px;
   }
 
   > .node--type-news {
@@ -210,6 +222,12 @@
         border-right: 0;
       }
     }
+  }
+}
+
+.block-views-blocktrending-google-home-block-1 {
+  @media (max-width: $tablet) {
+    margin-bottom: 65px;
   }
 }
 

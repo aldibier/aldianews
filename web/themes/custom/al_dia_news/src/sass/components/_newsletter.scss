@@ -177,6 +177,23 @@
       }
     }
   }
+
+  .wrapper-news-trending {
+    .form-item-email {
+      max-width: 155px;
+
+      @media screen and(max-width: $broken) {
+        width: 100%;
+        max-width: 90%;
+      }
+    }
+
+    #edit-actions {
+      @media screen and(max-width: $broken) {
+        width: 10%;
+      }
+    }
+  }
 }
 
 .region-footer-first {
