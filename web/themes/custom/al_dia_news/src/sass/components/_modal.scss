@@ -440,6 +440,9 @@
     }
   }
 
+  .form-actions .form-submit{
+    display: block !important;
+  }
   .form-item-pass {
     position: relative;
   }
@@ -523,26 +526,25 @@
     border: 0px;
   }
   @media (max-width: $tablet) {
-    max-width: none;
-    min-height: auto;
-    left: 0px;
+    max-width: 290px;
+    min-height: 270px;
     top: 85px;
-    height: 70%;
-    padding: 40px 15px;
+    padding: 30px 25px;
 
     h1 {
-      font-size: $px20;
-      line-height: 27px;
+      font-size: $px16;
+      line-height: 19px;
+      margin: 0 0 15px;
     }
 
     p {
       font-size: $px15;
-      line-height: 140%;
-      margin: 0 0 20px;
+      line-height: 19px;
+      margin: 0 0 25px;
     }
 
     button {
-      max-width: 210px;
+      max-width: 240px;
       min-height: 30px;
       font-size: $px14;
       line-height: 16px;
@@ -607,23 +609,22 @@
     }
   }
   @media (max-width: $tablet) {
-    max-width: none;
-    min-height: auto;
-    left: 0px;
+    max-width: 290px !important;
+    min-height: 270px;
     top: 85px;
-    height: 70%;
-    padding: 40px 15px;
+    padding: 30px 25px;
     .ui-dialog-title {
-      font-size: $px20;
-      line-height: 27px;
+      font-size: $px16 !important;
+      line-height: 19px !important;
+      margin: 0 0 15px !important;
     }
     .ui-widget-content {
-      font-size: $px15;
-      line-height: 140%;
-      margin: 0 0 20px;
+      font-size: $px15 !important;
+      line-height: 19px !important;
+      margin: 0 0 25px !important;
     }
     .button-preload {
-      max-width: 210px;
+      max-width: 240px;
       min-height: 30px;
       font-size: $px14;
       line-height: 16px;
