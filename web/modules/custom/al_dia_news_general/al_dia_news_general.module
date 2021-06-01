@@ -84,7 +84,7 @@ function al_dia_news_general_form_alter(&$form, $form_state, $form_id) {
     case "user_register_form":
       $form['#title'] = t("REGISTER");
       $form['actions']['submit']['#value'] = t("REGISTER");
-      $form['cancel'] = [
+      $form['actions']['cancel'] = [
         '#type' => 'link',
         '#title' => t('BACK'),
         '#weight' => 100000,
