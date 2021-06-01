@@ -4,6 +4,12 @@
     display: none;
   }
 
+  > .content {
+    .block-block-groupright-column-home:only-child {
+      display: none;
+    }
+  }
+
   fieldset {
     all: initial;
     display: block;
@@ -124,12 +130,6 @@
           margin: -15px 0;
         }
       }
-    }
-  }
-
-  .block-fixed-block-contentbloque-dummy-noticias-home {
-    .content {
-      margin: 0;
     }
   }
 }
