@@ -1,16 +1,17 @@
-uuid: e8f7a012-9c66-438f-9c93-4479f3063442
+uuid: 472e442e-72ad-404f-8dc7-960af877e4aa
 langcode: en
 status: true
 dependencies:
   module:
     - commerce_product
-id: commerce_product.field_weight
-field_name: field_weight
+id: commerce_product.field_value
+field_name: field_value
 entity_type: commerce_product
-type: integer
+type: string
 settings:
-  unsigned: false
-  size: normal
+  max_length: 3
+  is_ascii: false
+  case_sensitive: false
 module: core
 locked: false
 cardinality: 1

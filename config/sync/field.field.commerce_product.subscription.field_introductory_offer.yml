@@ -1,17 +1,17 @@
-uuid: 2777f8bf-6802-42df-894d-0839ac071b3a
+uuid: 384f7036-98f0-4913-9b40-474618940f8a
 langcode: en
 status: true
 dependencies:
   config:
-    - commerce_product.commerce_product_type.default
+    - commerce_product.commerce_product_type.subscription
     - field.storage.commerce_product.field_introductory_offer
-id: commerce_product.default.field_introductory_offer
+id: commerce_product.subscription.field_introductory_offer
 field_name: field_introductory_offer
 entity_type: commerce_product
-bundle: default
+bundle: subscription
 label: 'Introductory offer'
-description: "Example: 12 weeks for only $12°°\r\n\r\n"
-required: false
+description: 'Example: 12 weeks for only $12°°'
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
