@@ -1,0 +1,42 @@
+uuid: c972a5bd-a6e5-454a-b4a8-c4d4ba62bd8c
+langcode: en
+status: true
+dependencies:
+  config:
+    - webform.webform.boletines
+  module:
+    - context
+    - language
+    - webform
+  theme:
+    - al_dia_news
+id: webform_5
+theme: al_dia_news
+region: right_column_home
+weight: -35
+provider: null
+plugin: webform_block
+settings:
+  id: webform_block
+  label: Webform
+  provider: webform
+  label_display: "0"
+  webform_id: boletines
+  default_data: ""
+  redirect: false
+visibility:
+  view_inclusion:
+    id: view_inclusion
+    negate: null
+    view_inclusion: {}
+  request_path_exclusion:
+    id: request_path_exclusion
+    pages: ""
+    negate: null
+  language:
+    id: language
+    langcodes:
+      es: es
+    negate: false
+    context_mapping:
+      language: "@language.current_language_context:language_interface"
