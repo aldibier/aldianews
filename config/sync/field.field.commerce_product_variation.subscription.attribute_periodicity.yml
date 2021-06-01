@@ -1,0 +1,24 @@
+uuid: a0423ca4-7cf9-46a3-8ab8-dd4f59ba14fe
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_attribute.periodicity
+    - commerce_product.commerce_product_variation_type.subscription
+    - field.storage.commerce_product_variation.attribute_periodicity
+id: commerce_product_variation.subscription.attribute_periodicity
+field_name: attribute_periodicity
+entity_type: commerce_product_variation
+bundle: subscription
+label: Periodicity
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:commerce_product_attribute_value'
+  handler_settings:
+    target_bundles:
+      - periodicity
+field_type: entity_reference
