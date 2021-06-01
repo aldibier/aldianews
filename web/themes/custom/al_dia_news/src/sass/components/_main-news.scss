@@ -36,11 +36,13 @@
       #0b0b0b 77.63%
     );
     width: 100%;
-    padding: 8rem 0 2.5rem;
+    padding: 8rem 0 55px;
 
     @media screen and(max-width:$broken) {
       padding: 8rem 0 25px;
     }
+  }
+  .two-content-category {
   }
 
   .one-content-category {
@@ -54,7 +56,7 @@
 
     .field--name-field-my-content-has-a-main-vide,
     .field-content,
-    .field--name-field-type-of-content   {
+    .field--name-field-type-of-content {
       font-size: 0px;
       z-index: 10;
       @include player-icon(
@@ -62,10 +64,12 @@
         $tablet-size: 80px,
         $mobile-size: 50px
       );
-      &.logo-podcast{
-        @include microphone-icon($desktop-size: 80px,
-        $tablet-size: 80px,
-        $mobile-size: 30px);
+      &.logo-podcast {
+        @include microphone-icon(
+          $desktop-size: 80px,
+          $tablet-size: 80px,
+          $mobile-size: 30px
+        );
       }
       &:empty,
       &.logo-none {
@@ -103,7 +107,7 @@
     width: 100%;
     max-width: 730px;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0 10px;
 
     @media screen and(max-width:$tablet) {
       padding: 0 20px;
@@ -187,7 +191,7 @@
   }
 }
 
-.main-news-body.field--type-text-with-summary{
+.main-news-body.field--type-text-with-summary {
   position: relative;
   top: -8px;
 }
