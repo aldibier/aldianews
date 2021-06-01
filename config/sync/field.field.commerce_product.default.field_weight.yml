@@ -1,0 +1,23 @@
+uuid: 5a654644-10d8-4c5e-be70-477dff6c5ebe
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.default
+    - field.storage.commerce_product.field_weight
+id: commerce_product.default.field_weight
+field_name: field_weight
+entity_type: commerce_product
+bundle: default
+label: Weight
+description: '<b>Enter the value of the order in which you want this product to be displayed, the order is ascending, i.e. if you enter the number 1 then this product will be displayed first.</b>'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

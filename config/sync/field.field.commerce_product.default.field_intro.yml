@@ -1,0 +1,19 @@
+uuid: 3a4ea883-cd91-4aaa-bc9f-463982f671a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.default
+    - field.storage.commerce_product.field_intro
+id: commerce_product.default.field_intro
+field_name: field_intro
+entity_type: commerce_product
+bundle: default
+label: 'Introductory offer'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
