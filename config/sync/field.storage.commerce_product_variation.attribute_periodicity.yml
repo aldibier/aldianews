@@ -1,0 +1,19 @@
+uuid: 4e5bdf79-daef-4d4d-bd90-2bc850cac408
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+id: commerce_product_variation.attribute_periodicity
+field_name: attribute_periodicity
+entity_type: commerce_product_variation
+type: entity_reference
+settings:
+  target_type: commerce_product_attribute_value
+module: core
+locked: false
+cardinality: 1
+translatable: false
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

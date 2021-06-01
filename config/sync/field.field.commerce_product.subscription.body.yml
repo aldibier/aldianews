@@ -1,0 +1,23 @@
+uuid: ab219395-2d16-403e-870e-fd3e9049888a
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.subscription
+    - field.storage.commerce_product.body
+  module:
+    - text
+id: commerce_product.subscription.body
+field_name: body
+entity_type: commerce_product
+bundle: subscription
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: null
+settings:
+  display_summary: false
+  required_summary: false
+field_type: text_with_summary

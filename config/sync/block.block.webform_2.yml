@@ -20,24 +20,24 @@ settings:
   id: webform_block
   label: Webform
   provider: webform
-  label_display: "0"
+  label_display: '0'
   webform_id: newsletters
-  default_data: ""
+  default_data: ''
   redirect: false
 visibility:
   request_path_exclusion:
     id: request_path_exclusion
-    pages: ""
+    pages: ''
     negate: null
   view_inclusion:
     id: view_inclusion
     negate: null
-    view_inclusion: {}
-  "entity_bundle:node":
-    id: "entity_bundle:node"
+    view_inclusion: {  }
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
     bundles:
       news: news
       thought_leaders: thought_leaders
     negate: false
     context_mapping:
-      node: "@node.node_route_context:node"
+      node: '@node.node_route_context:node'
