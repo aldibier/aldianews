@@ -1236,14 +1236,13 @@ var initMain = function initMain($, Drupal) {
     container.onscroll = function () {
       var heightBody = container.scrollHeight - 499;
       var scroll = window.scrollY + window.innerHeight;
-
-      if (scroll >= heightBody) {
-        elemento.classList.add('fix');
+      /* if(scroll >= heightBody) {
+      	elemento.classList.add('fix');
       } else {
-        if (elemento.classList.contains('fix')) {
-          elemento.classList.remove('fix');
-        }
-      }
+      	if(elemento.classList.contains('fix')) {
+      		elemento.classList.remove('fix');
+      	}
+      } */
     }; //// js remove element home
 
 
@@ -1272,20 +1271,6 @@ var initMain = function initMain($, Drupal) {
         if (typeof caption === 'undefined') return;
         img.insertAdjacentHTML("afterend", "<p class=\"image-caption\">".concat(caption, "</p>"));
       });
-    } ///// js para publicidad en bloques de categorias de noticias
-
-
-    if (!!document.querySelector(".block-views-blockhigh-impact-news-home-block-1")) {
-      //hidden last news home
-      var lastNewsHome = document.querySelector(".block-block-grouplatest-categories-tending-block");
-      lastNewsHome.classList.add("not-show");
-    } else {
-      //hidden high impact news home
-      var impactNewsHome = document.querySelector(".block-block-grouphigh-impact-and-most-visited-news-home");
-
-      if (impactNewsHome != null) {
-        impactNewsHome.classList.add("not-show");
-      }
     } // blockquote para selection-sharer
 
 
@@ -2585,8 +2570,8 @@ var initSlick = function initSlick($, Drupal) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\valer\Desktop\4ld14-n3ws\web\themes\custom\al_dia_news\src\js\scripts.js */"./src/js/scripts.js");
-module.exports = __webpack_require__(/*! C:\Users\valer\Desktop\4ld14-n3ws\web\themes\custom\al_dia_news\src\sass\styles.scss */"./src/sass/styles.scss");
+__webpack_require__(/*! /Users/usuario/Desktop/Proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
+module.exports = __webpack_require__(/*! /Users/usuario/Desktop/Proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
 
 
 /***/ })

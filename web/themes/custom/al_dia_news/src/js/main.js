@@ -8,13 +8,13 @@ const initMain = ($, Drupal) => {
 		var heightBody = container.scrollHeight - 499;
 		var scroll = window.scrollY + window.innerHeight;
 
-		if(scroll >= heightBody) {
+		/* if(scroll >= heightBody) {
 			elemento.classList.add('fix');
 		} else {
 			if(elemento.classList.contains('fix')) {
 				elemento.classList.remove('fix');
 			}
-		}
+		} */
 		}
 
 		//// js remove element home
@@ -70,28 +70,6 @@ const initMain = ($, Drupal) => {
 				);
 			});
 		}
-
-		///// js para publicidad en bloques de categorias de noticias
-		if (
-			!!document.querySelector(
-				".block-views-blockhigh-impact-news-home-block-1"
-			)
-		) {
-			//hidden last news home
-			const lastNewsHome = document.querySelector(
-				".block-block-grouplatest-categories-tending-block"
-			);
-			lastNewsHome.classList.add("not-show");
-		} else {
-			//hidden high impact news home
-			const impactNewsHome = document.querySelector(
-				".block-block-grouphigh-impact-and-most-visited-news-home"
-			);
-			if (impactNewsHome != null) {
-				impactNewsHome.classList.add("not-show");
-			}
-		}
-
 
 		// blockquote para selection-sharer
 		const allBlockquote = document.querySelectorAll(
