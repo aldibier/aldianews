@@ -24,6 +24,10 @@
                     "type": "zip"
                 }
             }
+        },
+        {
+          "type": "composer",
+          "url": "https://asset-packagist.org"
         }
     ],
     "require": {
@@ -121,6 +125,7 @@
         "drupal/webform": "^6.0",
         "drupal/webform_sendgrid": "^1.0@alpha",
         "drush/drush": "^10",
+        "npm-asset/intl-tel-input": "^17.0",
         "oomphinc/composer-installers-extender": "^2.0"
     },
     "conflict": {
@@ -137,12 +142,18 @@
                 "web-root": "web/"
             }
         },
+        "installer-types": [
+            "npm-asset",
+            "bower-asset"
+        ],
         "installer-paths": {
             "web/core": [
                 "type:drupal-core"
             ],
             "web/libraries/{$name}": [
-                "type:drupal-library"
+                "type:drupal-library".
+                "type:npm-asset",
+                "type:bower-asset"
             ],
             "web/modules/contrib/{$name}": [
                 "type:drupal-module"
