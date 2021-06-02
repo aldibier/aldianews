@@ -161,6 +161,10 @@
       @media screen and(max-width: $broken) {
         width: 100%;
         max-width: 90%;
+
+        &:lang(es){
+          width: 85%;
+        }
       }
     }
 
@@ -172,11 +176,15 @@
         margin: 0;
         padding: 0;
         font-size: szrem(14);
-        background-color: $cgrey3;
+        background-color: $cgrey3;        
       }
 
       @media screen and(max-width: $broken) {
         width: 10%;
+
+        &:lang(es){
+          width: 15%;
+        }
       }
     }
   }
