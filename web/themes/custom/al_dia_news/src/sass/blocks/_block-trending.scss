@@ -62,14 +62,12 @@
     cursor: pointer;
   } 
 
-  .slick-prev {
-    left: calc(50% - 25px);
-    background-image: url('../../assets/img/arrow-left.svg');
-  }
-
-  .slick-next {
-    left: calc(50% + 25px);
-    background-image: url('../../assets/img/arrow-right.svg');
+  .slick-list {
+    @media screen and(min-width:$broken) {
+      &:hover {
+        height: 540px;
+      }
+    }
   }
 
   .slick-slide {
@@ -84,26 +82,42 @@
     }
   }
 
+  .slick-prev {
+    left: calc(50% - 25px);
+    background-image: url('../../assets/img/arrow-left.svg');
+  }
+
+  .slick-next {
+    left: calc(50% + 25px);
+    background-image: url('../../assets/img/arrow-right.svg');
+  }
+
   .views-row {
     height: 80px;
     padding: 20px 35px;
-    display: flex !important;
+    display: grid !important;
+    grid-template: 40px 1fr / 40px auto;
+    gap: 20px 10px;
     background-color: $cwhite;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.22);
-    transition: all .3s;
+    overflow: hidden;
+    transition: all .5s linear;
 
     @media screen and(max-width:$tablet) {
       height: 45px;
       padding: 5px 20px;
     }
 
-    &:hover,
-    &:focus-within {
-      background-color: $cblack2;
-
-      .views-field-field-short-title  {
-        a {
-          color: white;
+    @media screen and(min-width:$broken) {
+      &:hover,
+      &:focus-within {
+        height: 140px;
+        background-color: $cblack2;
+  
+        .views-field-field-short-title  {
+          a {
+            color: white;
+          }
         }
       }
     }
@@ -146,4 +160,15 @@
       }
     }
   }
+
+  .views-field-body {
+    grid-column: 2;
+    font-size: szrem(15);
+    font-family: $CenturyOld-Regular;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 122%;
+    color: $cwhite;
+  }
+ 
 }

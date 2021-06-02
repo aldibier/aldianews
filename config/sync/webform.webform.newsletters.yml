@@ -23,6 +23,8 @@ elements: |
     '#title': Email
     '#placeholder': 'Enter email'
     '#required': true
+    '#unique': true
+    '#unique_error': 'This email has already been added.'
   actions:
     '#type': webform_actions
     '#title': 'Submit button(s)'

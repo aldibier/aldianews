@@ -1,7 +1,13 @@
 //------------ Bloque noticia destacada ---------------//
 .block-block-grouphigh-impact-and-most-visited-news-home {
-  &.not-show {
+  + .wrapper-news-trending {
     display: none;
+  }
+
+  > .content {
+    .block-block-groupright-column-home:only-child {
+      display: none;
+    }
   }
 
   fieldset {
@@ -39,6 +45,7 @@
 
     .block-block-groupright-column-home {
       width: 420px;
+      min-width: 420px;
 
       @media (max-width: $broken) {
         width: 100%;
@@ -126,12 +133,6 @@
       }
     }
   }
-
-  .block-fixed-block-contentbloque-dummy-noticias-home {
-    .content {
-      margin: 0;
-    }
-  }
 }
 
 .block-views-blockhigh-impact-news-home-block-1 {
@@ -141,12 +142,6 @@
 }
 
 //------------ Ultimas noticias ---------------//
-.block-block-grouplatest-categories-tending-block {
-  &.not-show {
-    display: none;
-  }
-}
-
 .wrapper-news-trending {
   margin-bottom: 80px;
 
@@ -169,6 +164,7 @@
 
   .block-block-groupright-column-home {
     width: 330px;
+    min-width: 330px;
 
     @media (max-width: $broken) {
       width: 100%;

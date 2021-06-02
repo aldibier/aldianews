@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.news.field_comments
     - field.field.node.news.field_high_impact_news
     - field.field.node.news.field_image
+    - field.field.node.news.field_internal_image
     - field.field.node.news.field_my_content_has_a_main_vide
     - field.field.node.news.field_news
     - field.field.node.news.field_podcast_player
@@ -434,6 +435,23 @@ third_party_settings:
                 view_mode: view_mode
             additional: {  }
             weight: -8
+          aac17531-72e1-4d80-919e-3679424293cc:
+            uuid: aac17531-72e1-4d80-919e-3679424293cc
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:news:field_internal_image'
+              formatter:
+                label: above
+                settings:
+                  image_style: ''
+                  image_link: ''
+                third_party_settings: {  }
+                type: image
+            additional: {  }
+            weight: 11
         third_party_settings: {  }
 id: node.news.default
 targetEntityType: node
@@ -498,6 +516,15 @@ content:
   field_image:
     weight: 1
     label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_internal_image:
+    weight: 17
+    label: above
     settings:
       image_style: ''
       image_link: ''

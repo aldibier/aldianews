@@ -1,0 +1,24 @@
+uuid: 7b8bcd5a-efd9-4384-9473-c7e961b7adaf
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_cart
+    - commerce_checkout
+third_party_settings:
+  commerce_cart:
+    cart_form_view: commerce_cart_form
+    cart_block_view: commerce_cart_block
+    cart_expiration: {  }
+  commerce_checkout:
+    checkout_flow: paypal_checkout
+label: Subscription
+id: subscription
+workflow: order_default
+numberPattern: null
+refresh_mode: customer
+refresh_frequency: 300
+sendReceipt: false
+receiptBcc: ''
+traits: {  }
+locked: false

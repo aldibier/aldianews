@@ -1,0 +1,15 @@
+uuid: 1c9b467e-eb1e-468d-96df-dc25d3cc0ed5
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_tax
+third_party_settings:
+  commerce_tax:
+    taxable_type: physical_goods
+label: Subscription
+id: subscription
+purchasableEntityType: commerce_product_variation
+orderType: subscription
+traits: {  }
+locked: false

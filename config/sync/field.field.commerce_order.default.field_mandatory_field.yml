@@ -1,0 +1,25 @@
+uuid: 8695837c-e5ed-4b01-bb1c-51bab694ea60
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_order.commerce_order_type.default
+    - field.storage.commerce_order.field_mandatory_field
+  module:
+    - markup
+id: commerce_order.default.field_mandatory_field
+field_name: field_mandatory_field
+entity_type: commerce_order
+bundle: default
+label: 'Mandatory field'
+description: ''
+required: false
+translatable: false
+default_value:
+  - {  }
+default_value_callback: ''
+settings:
+  markup:
+    value: "<div class=\"red-text\">*MANDATORY FIELD</div>\r\n"
+    format: full_html
+field_type: markup

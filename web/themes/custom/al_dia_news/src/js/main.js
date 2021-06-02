@@ -8,13 +8,13 @@ const initMain = ($, Drupal) => {
 		var heightBody = container.scrollHeight - 499;
 		var scroll = window.scrollY + window.innerHeight;
 
-		if(scroll >= heightBody) {
+		/* if(scroll >= heightBody) {
 			elemento.classList.add('fix');
 		} else {
 			if(elemento.classList.contains('fix')) {
 				elemento.classList.remove('fix');
 			}
-		}
+		} */
 		}
 
 		//// js remove element home
@@ -70,28 +70,6 @@ const initMain = ($, Drupal) => {
 				);
 			});
 		}
-
-		///// js para publicidad en bloques de categorias de noticias
-		if (
-			!!document.querySelector(
-				".block-views-blockhigh-impact-news-home-block-1"
-			)
-		) {
-			//hidden last news home
-			const lastNewsHome = document.querySelector(
-				".block-block-grouplatest-categories-tending-block"
-			);
-			lastNewsHome.classList.add("not-show");
-		} else {
-			//hidden high impact news home
-			const impactNewsHome = document.querySelector(
-				".block-block-grouphigh-impact-and-most-visited-news-home"
-			);
-			if (impactNewsHome != null) {
-				impactNewsHome.classList.add("not-show");
-			}
-		}
-
 
 		// blockquote para selection-sharer
 		const allBlockquote = document.querySelectorAll(
@@ -242,6 +220,7 @@ const initMain = ($, Drupal) => {
 		Array.from(document.querySelectorAll(".button-back")).map(function (e) {
 			if (e != null) {
 				e.addEventListener("click", () => {
+					e.click();
 					window.history.back();
 				});
 			}
@@ -598,8 +577,7 @@ const initMain = ($, Drupal) => {
 		if (!!document.querySelector('.block-comments-anonymous')) {
 			const blockAnonymus = document.querySelector('.block-comments-anonymous');
 			const allTextMessage = blockAnonymus.querySelectorAll('.text-anonymous-comment');
-			const loginLink = blockAnonymus.querySelector('.login-anonymous-comment');
-			const registerLink = blockAnonymus.querySelector('.register-anonymous-comment');
+			const actions = blockAnonymus.querySelector('.login-anonymous-comment');
 
 			const container = document.createElement('div');
 			const message = document.createElement('div');
@@ -607,10 +585,9 @@ const initMain = ($, Drupal) => {
 			container.classList.add('message-comments-container');
 			message.classList.add('message-comments-links');
 
-			message.appendChild(loginLink);
-			message.appendChild(allTextMessage[1]);
-			message.appendChild(registerLink);
-			message.appendChild(allTextMessage[2]);
+			message.appendChild(actions);
+			message.appendChild(allTextMessage[1])
+			
 			container.appendChild(allTextMessage[0]);
 			container.appendChild(message);
 

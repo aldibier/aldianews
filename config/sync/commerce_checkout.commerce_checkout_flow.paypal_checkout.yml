@@ -1,0 +1,60 @@
+uuid: 64622492-7be0-4f4a-8164-e9e62288d668
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_checkout_order_fields
+    - commerce_paypal
+    - commerce_promotion
+    - email_registration
+_core:
+  default_config_hash: lNJaUt8IZZTPVkYvR4MvoYxYJCbPx10KeynMhXpYV24
+id: paypal_checkout
+label: 'PayPal Checkout'
+plugin: paypal_checkout
+configuration:
+  display_checkout_progress: true
+  display_checkout_progress_breadcrumb_links: 0
+  panes:
+    review:
+      step: review
+      weight: '1'
+    paypal_checkout_payment_process:
+      capture: true
+      step: payment
+      weight: '2'
+    completion_message:
+      message:
+        value: "Your order number is [commerce_order:order_number].\r\nYou can view your order on your account page when logged in."
+        format: plain_text
+      step: complete
+      weight: '3'
+    order_summary:
+      view: ''
+      step: _sidebar
+      weight: '4'
+    completion_register:
+      step: _disabled
+      weight: '6'
+    login:
+      allow_guest_checkout: true
+      allow_registration: false
+      step: _disabled
+      weight: '7'
+    'order_fields:checkout':
+      wrapper_element: container
+      display_label: 'Order fields'
+      step: order_information
+      weight: '0'
+    coupon_redemption:
+      allow_multiple: false
+      step: _sidebar
+      weight: '5'
+    email_registration_login:
+      allow_guest_checkout: true
+      allow_registration: false
+      step: _disabled
+      weight: '8'
+    email_registration_completion_registration:
+      step: _disabled
+      weight: '9'

@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.news.field_comments
     - field.field.node.news.field_high_impact_news
     - field.field.node.news.field_image
+    - field.field.node.news.field_internal_image
     - field.field.node.news.field_my_content_has_a_main_vide
     - field.field.node.news.field_news
     - field.field.node.news.field_podcast_player
@@ -32,6 +33,7 @@ third_party_settings:
   field_group:
     group_image_or_video:
       children:
+        - field_internal_image
         - field_image
         - field_video
         - field_my_content_has_a_main_vide
@@ -134,7 +136,15 @@ content:
     type: boolean_checkbox
     region: content
   field_image:
-    weight: 3
+    weight: 28
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_internal_image:
+    weight: 27
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
@@ -142,7 +152,7 @@ content:
     type: image_image
     region: content
   field_my_content_has_a_main_vide:
-    weight: 5
+    weight: 30
     settings:
       display_label: true
     third_party_settings: {  }
@@ -203,7 +213,7 @@ content:
     type: options_select
     region: content
   field_video:
-    weight: 4
+    weight: 29
     settings: {  }
     third_party_settings: {  }
     type: video_embed_field_textfield
@@ -213,6 +223,13 @@ content:
     weight: 16
     region: content
     settings: {  }
+    third_party_settings: {  }
+  premium:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 16
+    region: content
     third_party_settings: {  }
   promote:
     type: boolean_checkbox

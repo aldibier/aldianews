@@ -24,6 +24,10 @@
                     "type": "zip"
                 }
             }
+        },
+        {
+          "type": "composer",
+          "url": "https://asset-packagist.org"
         }
     ],
     "require": {
@@ -43,6 +47,10 @@
         "drupal/colorbutton": "^1.2",
         "drupal/comment_reply_count": "^1.2",
         "drupal/commerce": "^2.24",
+        "drupal/commerce_cart_redirection": "^3.0",
+        "drupal/commerce_checkout_order_fields": "^1.1",
+        "drupal/commerce_paypal": "^1.0@RC",
+        "drupal/commerce_product_limits": "^1.0",
         "drupal/computed_field": "3.x-dev@dev",
         "drupal/config_ignore": "^2.3",
         "drupal/console": "~1.0",
@@ -80,6 +88,7 @@
         "drupal/link_attributes": "^1.11",
         "drupal/login_popup": "^2.0",
         "drupal/mailsystem": "^4.3",
+        "drupal/markup": "^1.0@beta",
         "drupal/menu_item_extras": "^2.14",
         "drupal/mimemail": "^1.0@alpha",
         "drupal/nopremium": "^1.0",
@@ -87,6 +96,7 @@
         "drupal/paragraphs": "^1.12",
         "drupal/pathauto": "^1.8",
         "drupal/pathologic": "^1.0@alpha",
+        "drupal/phone_international": "^3.1",
         "drupal/react_comments": "1.0-beta2",
         "drupal/recaptcha": "^3.0",
         "drupal/recaptcha_v3": "^1.4",
@@ -115,7 +125,9 @@
         "drupal/views_infinite_scroll": "^1.7",
         "drupal/webform": "^6.0",
         "drupal/webform_sendgrid": "^1.0@alpha",
-        "drush/drush": "^10"
+        "drush/drush": "^10",
+        "npm-asset/intl-tel-input": "^17.0",
+        "oomphinc/composer-installers-extender": "^2.0"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -131,12 +143,18 @@
                 "web-root": "web/"
             }
         },
+        "installer-types": [
+            "npm-asset",
+            "bower-asset"
+        ],
         "installer-paths": {
             "web/core": [
                 "type:drupal-core"
             ],
             "web/libraries/{$name}": [
-                "type:drupal-library"
+                "type:drupal-library",
+                "type:npm-asset",
+                "type:bower-asset"
             ],
             "web/modules/contrib/{$name}": [
                 "type:drupal-module"
@@ -172,6 +190,10 @@
             },
             "drupal/user_registrationpassword": {
                 "Clases para mensaje Bienvenida en pop up ": "patch/RegistrationController.patch"
+            },
+            "drupal/commerce": {
+              "add variation price to the Product variation title widget": "https://www.drupal.org/files/issues/2020-09-22/2930046-13.patch",
+              "Precio aparece al lado del label del atributo":"patch/ProductVariationAttributesWidget.patch"
             }
         },
         "drupal-core-project-message": {
