@@ -576,8 +576,7 @@ const initMain = ($, Drupal) => {
 		if (!!document.querySelector('.block-comments-anonymous')) {
 			const blockAnonymus = document.querySelector('.block-comments-anonymous');
 			const allTextMessage = blockAnonymus.querySelectorAll('.text-anonymous-comment');
-			const loginLink = blockAnonymus.querySelector('.login-anonymous-comment');
-			const registerLink = blockAnonymus.querySelector('.register-anonymous-comment');
+			const actions = blockAnonymus.querySelector('.login-anonymous-comment');
 
 			const container = document.createElement('div');
 			const message = document.createElement('div');
@@ -585,10 +584,9 @@ const initMain = ($, Drupal) => {
 			container.classList.add('message-comments-container');
 			message.classList.add('message-comments-links');
 
-			message.appendChild(loginLink);
-			message.appendChild(allTextMessage[1]);
-			message.appendChild(registerLink);
-			message.appendChild(allTextMessage[2]);
+			message.appendChild(actions);
+			message.appendChild(allTextMessage[1])
+			
 			container.appendChild(allTextMessage[0]);
 			container.appendChild(message);
 
