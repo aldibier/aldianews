@@ -8,9 +8,12 @@ dependencies:
     - field.field.commerce_order.default.field_email_address
     - field.field.commerce_order.default.field_first_name
     - field.field.commerce_order.default.field_last_name
+    - field.field.commerce_order.default.field_mandatory_field
     - field.field.commerce_order.default.field_phone_number
+    - field.field.commerce_order.default.field_terms_and_privacy
   module:
     - address
+    - markup
     - phone_international
 _core:
   default_config_hash: 7hXqpb7yxuHJYNjyPmN_vQll6jq_fl7N09Tj-PFcESU
@@ -49,6 +52,12 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
+  field_mandatory_field:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: markup
+    region: content
   field_phone_number:
     weight: 3
     settings:
@@ -59,6 +68,12 @@ content:
         - PT
     third_party_settings: {  }
     type: phone_international_widget
+    region: content
+  field_terms_and_privacy:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: markup
     region: content
 hidden:
   adjustments: true

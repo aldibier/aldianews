@@ -9,7 +9,9 @@ dependencies:
     - field.field.commerce_order.default.field_email_address
     - field.field.commerce_order.default.field_first_name
     - field.field.commerce_order.default.field_last_name
+    - field.field.commerce_order.default.field_mandatory_field
     - field.field.commerce_order.default.field_phone_number
+    - field.field.commerce_order.default.field_terms_and_privacy
   module:
     - commerce_order
     - entity_reference_revisions
@@ -93,7 +95,9 @@ hidden:
   field_email_address: true
   field_first_name: true
   field_last_name: true
+  field_mandatory_field: true
   field_phone_number: true
+  field_terms_and_privacy: true
   ip_address: true
   search_api_excerpt: true
   store_id: true

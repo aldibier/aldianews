@@ -8,11 +8,14 @@ dependencies:
     - field.field.commerce_order.default.field_email_address
     - field.field.commerce_order.default.field_first_name
     - field.field.commerce_order.default.field_last_name
+    - field.field.commerce_order.default.field_mandatory_field
     - field.field.commerce_order.default.field_phone_number
+    - field.field.commerce_order.default.field_terms_and_privacy
   module:
     - address
     - commerce_order
     - commerce_price
+    - markup
     - phone_international
     - state_machine
     - user
@@ -82,12 +85,26 @@ content:
     third_party_settings: {  }
     type: string
     region: content
+  field_mandatory_field:
+    weight: 15
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: markup
+    region: content
   field_phone_number:
     weight: 10
     label: above
     settings: {  }
     third_party_settings: {  }
     type: phone_international_formatter
+    region: content
+  field_terms_and_privacy:
+    weight: 16
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: markup
     region: content
   ip_address:
     label: inline
