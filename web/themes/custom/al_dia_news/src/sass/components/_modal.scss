@@ -442,7 +442,7 @@
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
-    margin-bottom: 50px;
+    margin-bottom: 50px !important;
     .form-submit {
       display: block !important;
       max-width: 165px;
@@ -463,7 +463,7 @@
       width: 100%;
     }
     @media (max-width: $tablet) {
-      margin-bottom: 30px;
+      margin-bottom: 30px !important;
       .form-submit {
         max-width: 100px;
         font-size: $px14;
