@@ -1401,6 +1401,7 @@ var initMain = function initMain($, Drupal) {
     Array.from(document.querySelectorAll(".button-back")).map(function (e) {
       if (e != null) {
         e.addEventListener("click", function () {
+          e.click();
           window.history.back();
         });
       }
