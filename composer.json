@@ -46,6 +46,7 @@
         "drupal/commerce_cart_redirection": "^3.0",
         "drupal/commerce_checkout_order_fields": "^1.1",
         "drupal/commerce_paypal": "^1.0@RC",
+        "drupal/commerce_product_limits": "^1.0",
         "drupal/computed_field": "3.x-dev@dev",
         "drupal/config_ignore": "^2.3",
         "drupal/console": "~1.0",
@@ -175,6 +176,9 @@
             },
             "drupal/user_registrationpassword": {
                 "Clases para mensaje Bienvenida en pop up ": "patch/RegistrationController.patch"
+            },
+            "drupal/commerce": {
+              "add variation price to the Product variation title widget": "https://www.drupal.org/files/issues/2020-09-22/2930046-13.patch"
             }
         },
         "drupal-core-project-message": {

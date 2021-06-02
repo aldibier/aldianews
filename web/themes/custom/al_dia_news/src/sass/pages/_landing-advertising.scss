@@ -87,7 +87,7 @@
       height: 100%;
       display: block;
       content: "";
-      background-color: rgba(34, 33, 35, 0.4);
+      background-color: rgb(34 33 35 / 70%);
     }
 
     img {
@@ -434,7 +434,7 @@
   height: 480px;
   margin-bottom: 60px;
   display: grid;
-  grid-template-columns: minmax(250px, 510px) minmax(250px, 770px);
+  // grid-template-columns: minmax(250px, 510px) minmax(250px, 770px);
   grid-template-rows: repeat(2, 240px);
   grid-template-areas:
     "social-media email-blast"

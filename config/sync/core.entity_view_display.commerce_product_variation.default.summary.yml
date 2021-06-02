@@ -5,6 +5,7 @@ dependencies:
   config:
     - commerce_product.commerce_product_variation_type.default
     - core.entity_view_mode.commerce_product_variation.summary
+    - field.field.commerce_product_variation.default.attribute_periodicity
   enforced:
     module:
       - commerce_checkout
@@ -43,6 +44,7 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  attribute_periodicity: true
   langcode: true
   price: true
   search_api_excerpt: true
