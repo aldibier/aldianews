@@ -34,7 +34,7 @@
   }
 }
 
-section .comment:not(section .indented .comment) {
+section .comment {
   position: relative;
   background: #fbfbfb;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.17);
@@ -139,11 +139,86 @@ section .comment:not(section .indented .comment) {
     }
   }
 
+  .container-show-hide {
+    text-transform: uppercase;
+    position: relative;
+    padding-right: 40px !important;
+    display: flex;
+    color: #7e7e7e !important;
+    font-style: normal;
+    font-size: $px20;
+    line-height: 28px;
+    font-weight: 600;
+    font-family: $PrNovacond-reg;
+    text-transform: uppercase;
+    color: $cblack3;
+    cursor: pointer;
+  
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      background: transparent url("../img/arrow-bottom.png") center center
+        no-repeat;
+      background-size: contain;
+      width: 17.06px;
+      height: 10px;
+      right: 10px;
+      top: 10px;
+    }
+  
+    span {
+      margin: 0 5px;
+    }
+  
+    .hide {
+      display: none;
+    }
+  
+    &.active {
+      .show {
+        display: none;
+      }
+  
+      .hide {
+        display: block;
+      }
+  
+      &::before {
+        transform: rotate(180deg);
+      }
+    }
+  
+    @media (max-width: $tablet) {
+      padding-right: 20px !important;
+      font-size: $px16;
+      line-height: 22px;
+  
+      &::before {
+        width: 15px;
+        right: 0px;
+        top: 6px;
+      }
+  
+      span {
+        margin: 0 3px;
+      }
+    }
+  }
+
   .field--name-comment-display-custom:not(.anonymus.field--name-comment-display-custom) {
     .item-list {
       li {
         margin-left: 25px;
         padding: 0;
+        
+        &:first-child {
+          margin-left: 0;
+        }
+
+        @media (max-width: $tablet) {
+          margin-left: 20px;
+        }
       }  
     }
   }
@@ -201,12 +276,38 @@ section .comment:not(section .indented .comment) {
   }
 }
 
-.indented {
+section .indented {
+  width: 100%;
+  margin: 0;
+  display: none;
+
   .comment {
+    margin: 0;
     .field--name-comment-author-display-custom,
     .comment .field--name-comment-author-display-custom,
     .field--name-comment-post-date {
       text-align: right;
+    }
+
+    .field--name-comment-display-custom .item-list,
+    .field--name-comment-display-custom .item-list input[value="REPLY"] {
+      font-size: szrem(16);
+    }
+
+    .field--name-comment-display-custom:not(.anonymus.field--name-comment-display-custom) .item-list {
+      @media screen and(max-width:$tablet) {
+        ul {
+          justify-content: flex-end;
+        }
+
+        li:nth-child(4) {
+          margin-left: 20px;
+        }
+      }
+    }
+
+    .container-show-hide { 
+      font-size: szrem(16);
     }
   }
 
@@ -222,16 +323,36 @@ section .comment:not(section .indented .comment) {
 $space-level: 125px;
 
 //--first level comment--// 
-.indented:not(.indented > .indented )  {
+section .indented:not(.indented > .indented )  {
   > .comment {
     padding-left: $space-level;
+
+    @media screen and(max-width:$tablet) {
+      $space-level: 30px;
+      padding-left: $space-level;
+    }
   }
 }
 
 //--second level comment--// 
-.indented:not(.idented) > .indented {
+section .indented:not(.idented) > .indented {
   > .comment {
     padding-left: $space-level + 100px;
+
+    @media screen and(max-width:$tablet) {
+      $space-level: 30px;
+      padding-left: $space-level + $space-level; 
+    }
+
+    .field--name-comment-author-display-custom {
+      font-size: szrem(20);
+    }
+
+    .field--name-comment-display-custom:not(.anonymus.field--name-comment-display-custom){
+      .item-list li:nth-child(3) {
+        display: none;
+      }
+    } 
   }
 }
 
@@ -240,28 +361,6 @@ $space-level: 125px;
 }
 
 .indented {
-  margin: 0; // -40px 0 0
-  width: 100%;
-  display: none;
-
-  .comment,
-  .indented {
-    margin: 0 !important;
-  }
-
-  .comment-show,
-  .comment-reply {
-    display: none;
-  }
-
-  .comment__meta {
-    text-align: right;
-  }
-
-  .comment__content {
-    text-align: right;
-  }
-
   @media (max-width: $tablet) {
     margin: -5px 0 0;
   }
@@ -330,73 +429,6 @@ section > .comment:nth-of-type(1) {
     &::before {
       font-size: $px12;
       line-height: 15px;
-    }
-  }
-}
-
-.container-show-hide {
-  text-transform: uppercase;
-  position: relative;
-  padding-right: 40px !important;
-  display: flex;
-  color: #7e7e7e !important;
-  font-style: normal;
-  font-size: $px20;
-  line-height: 28px;
-  font-weight: 600;
-  font-family: $PrNovacond-reg;
-  text-transform: uppercase;
-  color: $cblack3;
-  cursor: pointer;
-
-  &::before {
-    content: "";
-    display: block;
-    position: absolute;
-    background: transparent url("../img/arrow-bottom.png") center center
-      no-repeat;
-    background-size: contain;
-    width: 17.06px;
-    height: 10px;
-    right: 10px;
-    top: 10px;
-  }
-
-  span {
-    margin: 0 5px;
-  }
-
-  .hide {
-    display: none;
-  }
-
-  &.active {
-    .show {
-      display: none;
-    }
-
-    .hide {
-      display: block;
-    }
-
-    &::before {
-      transform: rotate(180deg);
-    }
-  }
-
-  @media (max-width: $tablet) {
-    padding-right: 20px !important;
-    font-size: $px16;
-    line-height: 22px;
-
-    &::before {
-      width: 15px;
-      right: 0px;
-      top: 6px;
-    }
-
-    span {
-      margin: 0 3px;
     }
   }
 }
