@@ -220,6 +220,7 @@ const initMain = ($, Drupal) => {
 		Array.from(document.querySelectorAll(".button-back")).map(function (e) {
 			if (e != null) {
 				e.addEventListener("click", () => {
+					e.click();
 					window.history.back();
 				});
 			}
