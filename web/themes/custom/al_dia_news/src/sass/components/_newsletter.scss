@@ -128,6 +128,20 @@
     }
   }
 
+  .wrapper-news-trending {
+    .webform-submission-newsletters-form {
+      @media screen and(min-width:$broken) {
+        .form-item-email {
+          input:lang(en) {
+            &::placeholder {
+              text-align: center;
+            }
+          } 
+        }
+      }
+    }
+  }
+
   .webform-submission-newsletters-form,
   .webform-submission-boletines-form {
     padding: 20px 22px 20px 12px;
@@ -156,6 +170,17 @@
         margin: 0;
         padding: 8px 15px;
         background-color: $cwhite;
+
+        &::placeholder {
+          font-size: szrem(16);
+          font-family: $PrNovacond-light;
+          font-style: normal;
+          font-weight: normal;
+          line-height: 25px;
+          letter-spacing: 0.741176px;
+          color: $cblack0;
+          opacity: 0.4;
+        }
       }
 
       @media screen and(max-width: $broken) {
