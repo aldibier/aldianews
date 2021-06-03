@@ -1,4 +1,4 @@
-uuid: 08102b0f-3dcf-4fb7-b978-74a383e0c5b7
+uuid: 0a425cab-d670-4019-8a52-bbd09c5177b7
 langcode: en
 status: true
 dependencies:
@@ -7,17 +7,23 @@ dependencies:
 id: paypal
 label: PayPal
 weight: null
-plugin: paypal_express_checkout
+plugin: paypal_checkout
 configuration:
-  api_username: sb-pz8rs6353025_api1.business.example.com
-  api_password: J7BSCDXRL6QXCQJT
-  shipping_prompt: shipping_skip
-  signature: AeIEIW9QWbVm4q.FRWwaYYnOWayBANzz0oL2c29xv4gB7zhY7FQqan9-
-  solution_type: Mark
+  payment_solution: smart_payment_buttons
+  client_id: AekR7JMyyq5TsAJDOd-3SnEqeJ12wLP14D83abakJoWd505bYUfgAQdpqCLS7XI8iZB9PuBMyrihyh86
+  secret: EK1m0ZdQEkzUQRLR_IwcndVCLVMY93X4zSRCgimCkWbfj8oejsjMAszj281AyOh6c4tvYPCTN76oB3G0
+  intent: capture
+  disable_funding: {  }
+  disable_card: {  }
+  shipping_preference: get_from_file
+  update_billing_profile: true
+  update_shipping_profile: true
+  style: {  }
+  enable_on_cart: true
+  collect_billing_information: false
   display_label: PayPal
   mode: test
   payment_method_types:
-    - credit_card
-  collect_billing_information: true
+    - paypal_checkout
 conditions: {  }
 conditionOperator: AND

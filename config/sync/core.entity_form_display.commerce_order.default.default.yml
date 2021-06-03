@@ -4,9 +4,17 @@ status: true
 dependencies:
   config:
     - commerce_order.commerce_order_type.default
+    - field.field.commerce_order.default.field_address
+    - field.field.commerce_order.default.field_email_address
+    - field.field.commerce_order.default.field_first_name
+    - field.field.commerce_order.default.field_last_name
+    - field.field.commerce_order.default.field_mandatory_field
+    - field.field.commerce_order.default.field_phone_number
+    - field.field.commerce_order.default.field_terms_and_privacy
   module:
-    - commerce_order
-    - inline_entity_form
+    - address
+    - markup
+    - phone_international
 _core:
   default_config_hash: 7hXqpb7yxuHJYNjyPmN_vQll6jq_fl7N09Tj-PFcESU
 id: commerce_order.default.default
@@ -14,35 +22,67 @@ targetEntityType: commerce_order
 bundle: default
 mode: default
 content:
-  adjustments:
-    type: commerce_adjustment_default
+  field_address:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: address_default
+    region: content
+  field_email_address:
     weight: 2
-    settings: {  }
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
+    type: email_default
     region: content
-  billing_profile:
-    type: commerce_billing_profile
+  field_first_name:
     weight: 0
-    settings: {  }
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
+    type: string_textfield
     region: content
-  order_items:
-    type: inline_entity_form_complex
+  field_last_name:
     weight: 1
     settings:
-      override_labels: true
-      label_singular: 'order item'
-      label_plural: 'order items'
-      allow_new: true
-      match_operator: CONTAINS
-      allow_existing: false
-      form_mode: default
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_mandatory_field:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: markup
+    region: content
+  field_phone_number:
+    weight: 3
+    settings:
+      initial_country: PT
+      geolocation: false
+      exclude_countries: {  }
+      preferred_countries:
+        - PT
+    third_party_settings: {  }
+    type: phone_international_widget
+    region: content
+  field_terms_and_privacy:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: markup
     region: content
 hidden:
+  adjustments: true
+  billing_profile: true
+  cart: true
   created: true
   ip_address: true
   mail: true
+  order_items: true
   order_number: true
   state: true
   store_id: true

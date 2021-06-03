@@ -1,6 +1,6 @@
 uuid: 94510283-3727-423c-bcab-c348051eba4d
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - fixed_block_content.fixed_block_content.big_vertical_advertising
@@ -14,19 +14,19 @@ theme: al_dia_news
 region: advertising_blocks_in_job_landing_pages
 weight: 0
 provider: null
-plugin: "fixed_block_content:big_vertical_advertising"
+plugin: 'fixed_block_content:big_vertical_advertising'
 settings:
-  id: "fixed_block_content:big_vertical_advertising"
-  label: "Big vertical advertising"
+  id: 'fixed_block_content:big_vertical_advertising'
+  label: 'Big vertical advertising'
   provider: fixed_block_content
-  label_display: "0"
-  view_mode: ""
+  label_display: '0'
+  view_mode: ''
 visibility:
   request_path_exclusion:
     id: request_path_exclusion
-    pages: ""
+    pages: ''
     negate: null
   view_inclusion:
     id: view_inclusion
     negate: null
-    view_inclusion: {}
+    view_inclusion: {  }
