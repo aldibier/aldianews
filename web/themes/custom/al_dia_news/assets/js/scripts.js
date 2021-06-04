@@ -1948,8 +1948,10 @@ __webpack_require__.r(__webpack_exports__);
   }
 
   jQuery(document).ready(function () {
-    /// close newsletter
-    $('.newsletter  button[name="close"]').click(function () {
+    console.log('load!'); /// close newsletter
+
+    $('.newsletter .close-modal').click(function () {
+      console.log('click!');
       $(".newsletter").addClass("dis-none");
     }); /////
 
