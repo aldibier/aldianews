@@ -178,15 +178,6 @@ function al_dia_news_general_form_alter(&$form, $form_state, $form_id) {
         ],
       ];
     break;
-    case "views_exposed_form":
-      if ($form['#id'] == 'views-exposed-form-search-results-al-dia-solr-page-1') {
-        $form['sort_bef_combine']['#options']['created_ASC'] = 'Oldest';
-        $form['sort_bef_combine']['#options']['search_api_relevance_ASC'] = 'Oldest';
-        $form['sort_bef_combine']['#options']['created_DESC'] = 'Newest';
-        $form['sort_bef_combine']['#options']['search_api_relevance_DESC'] = 'Relevance';
-        $form['sort_bef_combine']['#default_value'] = 'Newest';
-      }
-    break;
   }
   if (strpos($form_id, 'commerce_order_item_add_to_cart_form_commerce_product_') !== FALSE) {
     $product = $form_state->get('product');
@@ -224,9 +215,9 @@ function al_dia_news_form_views_exposed_form_alter(&$form, &$form_state) {
   if($form["#id"] == 'views-exposed-form-search-results-al-dia-solr-page-1') {
     $form['field_category']['#options']['All'] = 'Select';
     $form['field_type_of_content']['#options']['All'] = 'Select';
-    $form['sort_bef_combine']['#options']['created_ASC'] = 'OLDEST';
-    $form['sort_bef_combine']['#options']['created_DESC'] = 'NEWEST';
-    $form['sort_bef_combine']['#options']['search_api_relevance_DESC'] = 'RELEVANCE';
+    $form['sort_bef_combine']['#options']['created_ASC'] = 'Oldest';
+    $form['sort_bef_combine']['#options']['created_DESC'] = 'Newest';
+    $form['sort_bef_combine']['#options']['search_api_relevance_DESC'] = 'Relevance';
   };
   if($form["#id"] == 'views-exposed-form-more-covers-landing-page-1') {
     $form['field_year_covers_target_id']['#options']['All'] = 'All';

@@ -1754,8 +1754,8 @@ display:
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
           expose_sort_order: true
-          sort_asc_label: OLDEST
-          sort_desc_label: NEWEST
+          sort_asc_label: Oldest
+          sort_desc_label: Newest
           text_input_required: 'Select any filter and click on Apply to see results'
           text_input_required_format: full_html
           bef:
@@ -1788,6 +1788,14 @@ display:
                   collapsible: false
                   is_secondary: false
               field_category:
+                plugin_id: default
+                advanced:
+                  sort_options: false
+                  rewrite:
+                    filter_rewrite_values: ''
+                  collapsible: false
+                  is_secondary: false
+              field_type_of_content:
                 plugin_id: default
                 advanced:
                   sort_options: false
