@@ -49,7 +49,7 @@
     flex-wrap: wrap;
 
     .form-item-markup {
-      margin: 0px;
+      margin: 0 0 21px;
       font-family: $PrNovacond-Sbold;
       font-size: $px20;
       line-height: 25px;
@@ -116,7 +116,7 @@
 .path-frontpage  {
   .newsletter {
     margin-bottom: 35px;
-    padding: 10px 12px;
+    padding: 9px 11px;
     background-color: $bgrey3;
 
     @media screen and(max-width: $tablet) {
@@ -144,14 +144,17 @@
 
   .webform-submission-newsletters-form,
   .webform-submission-boletines-form {
-    padding: 20px 22px 20px 12px;
+    padding: 20px 23px 19px 13px;
     border: 1px solid #797979;
 
     .form-item-markup {
+      min-height: 20px;
+      margin-bottom: 21px;
       font-size: szrem(16);
       font-style: normal;
       font-weight: bold;
       font-family: $PrNovacond-Sbold;
+      line-height: 1;
       text-align: center;
       letter-spacing: 0.741176px;
       color: $cgrey5;
@@ -193,6 +196,7 @@
       }
     }
 
+    div[id*='edit-actions'],
     #edit-actions {
       width: 105px;
       display: inline-block;
@@ -215,6 +219,14 @@
   }
 
   .wrapper-news-trending {
+    .newsletter {
+      padding: 9px;
+    }
+    
+    .webform-submission-newsletters-form {
+      padding: 20px 25px 19px 25px;
+    }
+
     .form-item-email {
       max-width: 155px;
 
