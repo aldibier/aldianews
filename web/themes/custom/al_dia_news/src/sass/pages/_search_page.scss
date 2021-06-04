@@ -101,7 +101,7 @@
     font-weight: normal;
     font-size: $px38;
     line-height: 46px;
-    font-family: $ModernoFB-Regular;
+    font-family: $Mod-light;
     color: $cblack3;
     width: 100%;
     padding-bottom: 10px;
@@ -128,6 +128,11 @@
     align-items: flex-end;
     justify-content: space-between;
     width: 100%;
+    @media (min-width: $desktop){
+      width: 100.5%;
+      position: relative;
+      left: -10px;
+    }
   }
   button[name="close"] {
     display: none;

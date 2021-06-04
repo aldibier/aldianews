@@ -731,6 +731,7 @@ div[data-embed-button="related_content"] {
       font-family: $PrNovacond-bold;
       padding: 0 24px;
       max-width: 165px;
+      margin: 0px;
     }
 
     .cbutton-back {
@@ -871,19 +872,23 @@ div[data-embed-button="related_content"] {
     margin: 0 auto 30px 0 !important;
     max-width: 400px !important;
     background: transparent !important;
+    display: block !important;
     button,
     a {
-      height: 50px;
+      height: 40px;
       display: flex;
       align-items: center;
       justify-content: center;
       max-width: 165px !important;
       font-family: $PrNovacond-Sbold !important;
+      font-size: 18px;
+      line-height: 25px;
       margin: 0px;
       letter-spacing: 0.741176px;
       box-shadow: 0px 0px 0px !important;
       text-transform: uppercase;
       overflow: hidden;
+      background: #5C6165 !important;
       @media (max-width: $tablet) {
         max-width: 120px !important;
         height: 30px !important;
@@ -893,6 +898,7 @@ div[data-embed-button="related_content"] {
     .cancel-button-edit {
       display: flex !important;
     }
+    .button--primary,
     .button--primary:not(:focus):hover {
       background: #e21 !important;
     }
@@ -985,7 +991,7 @@ div[data-embed-button="related_content"] {
 }
 
 .comment-form .cancel-button-edit {
-  display: none;
+  display: none !important;
 }
 .comment {
   width: 100%;
