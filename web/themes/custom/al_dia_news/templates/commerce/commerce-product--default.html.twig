@@ -27,8 +27,9 @@
   <div class="weekly-information">
     <span>{{ product.field_symbol }}{{ product.field_weekly_value }}/{{ product.field_text }}</span>
   </div>
-
-  {{ product.field_intro }}
+  <div class="intro-offer-subscribe">
+    <span>{{ product.field_intro }}{{ product.field_price_companion }}</span>
+  </div>
   {{ product.body }}
   {{ product.variation_price }}
   {{ product.variations }}

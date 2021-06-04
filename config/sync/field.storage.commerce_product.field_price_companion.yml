@@ -1,0 +1,21 @@
+uuid: 26a81d22-05ec-4dda-954f-e3d5df4d233b
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+id: commerce_product.field_price_companion
+field_name: field_price_companion
+entity_type: commerce_product
+type: string
+settings:
+  max_length: 3
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

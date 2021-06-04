@@ -7,6 +7,7 @@ dependencies:
     - field.field.commerce_product.default.body
     - field.field.commerce_product.default.field_image
     - field.field.commerce_product.default.field_intro
+    - field.field.commerce_product.default.field_price_companion
     - field.field.commerce_product.default.field_symbol
     - field.field.commerce_product.default.field_text
     - field.field.commerce_product.default.field_weekly_value
@@ -40,7 +41,15 @@ content:
     region: content
   field_intro:
     weight: 3
-    label: above
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_price_companion:
+    weight: 9
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
