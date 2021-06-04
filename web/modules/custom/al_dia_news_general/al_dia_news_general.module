@@ -40,6 +40,7 @@ function al_dia_news_general_help($route_name, RouteMatchInterface $route_match)
  * Implements hook_form_alter()
  */
 function al_dia_news_general_form_alter(&$form, $form_state, $form_id) {
+  ksm($form_id);
   // //Saber el path
   // $current_path = \Drupal::service('path.current')->getPath();
   // $url_object = \Drupal::service('path.validator')->getUrlIfValid($current_path);
@@ -165,7 +166,14 @@ function al_dia_news_general_form_alter(&$form, $form_state, $form_id) {
 
     break;
   }
-
+  if (strpos($form_id, 'commerce_order_item_add_to_cart_form_commerce_product_') !== FALSE) {
+    $product = $form_state->get('product');
+    switch ($product->bundle()) {
+      case 'default':
+        $form['actions']['submit']['#value'] = t('SUBSCRIBE & SAVE');
+      break;
+    }
+  }
 
 
 }
