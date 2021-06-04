@@ -140,9 +140,10 @@ section .comment {
   }
 
   .container-show-hide {
+    margin-left: 25px;
     text-transform: uppercase;
     position: relative;
-    padding-right: 40px !important;
+    padding-right: 30px !important;
     display: flex;
     color: #7e7e7e !important;
     font-style: normal;
@@ -163,7 +164,7 @@ section .comment {
       background-size: contain;
       width: 17.06px;
       height: 10px;
-      right: 10px;
+      right: 1px;
       top: 10px;
     }
   
@@ -193,7 +194,7 @@ section .comment {
       padding-right: 20px !important;
       font-size: $px16;
       line-height: 22px;
-  
+      margin-left: 20px;
       &::before {
         width: 15px;
         right: 0px;
@@ -220,6 +221,13 @@ section .comment {
           margin-left: 20px;
         }
       }  
+      li:nth-child(4){
+        margin-left: 0px;
+      }
+      li:last-child{
+        margin-left: 0px;
+        margin-top: 20px;
+      }
     }
   }
 

@@ -286,13 +286,9 @@
 		padding: 0;
 		display: grid;
 		grid-template-columns: repeat(6, minmax(90px, 180px));
-		grid-template-rows: 255px;
+		grid-template-rows: auto;
 		grid-column-gap: 40px;
 		overflow: hidden;
-
-		@media screen and (max-width: $large-min) {
-			grid-template-rows: auto;
-		}
 
 		@media screen and (max-width: $broken) {
 			grid-template-columns: repeat(3,1fr);

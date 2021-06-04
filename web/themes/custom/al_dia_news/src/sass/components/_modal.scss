@@ -105,7 +105,7 @@
   }
 
   .ui-dialog-buttonpane {
-    display: none !important;
+    display: none;
     background: none;
     border: none;
     max-width: 440px;
@@ -379,6 +379,9 @@
       margin: 0 auto;
     }
   }
+  .ui-dialog-buttonpane {
+    display: none !important;
+  }
 }
 
 .account-modal--login {
@@ -517,7 +520,7 @@
     display: block !important;
   }
   .ui-dialog-buttonset {
-    display: none;
+    display: none !important;
   }
 }
 
