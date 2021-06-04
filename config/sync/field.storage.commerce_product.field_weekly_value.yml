@@ -1,0 +1,20 @@
+uuid: a54e3591-da1a-412a-ac70-228c8b7632e4
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+id: commerce_product.field_weekly_value
+field_name: field_weekly_value
+entity_type: commerce_product
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

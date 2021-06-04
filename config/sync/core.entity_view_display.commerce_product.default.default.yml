@@ -7,7 +7,9 @@ dependencies:
     - field.field.commerce_product.default.body
     - field.field.commerce_product.default.field_image
     - field.field.commerce_product.default.field_intro
-    - field.field.commerce_product.default.field_wee
+    - field.field.commerce_product.default.field_symbol
+    - field.field.commerce_product.default.field_text
+    - field.field.commerce_product.default.field_weekly_value
     - field.field.commerce_product.default.field_weight
   module:
     - commerce_product
@@ -44,13 +46,30 @@ content:
     third_party_settings: {  }
     type: string
     region: content
-  field_wee:
-    weight: 2
+  field_symbol:
+    weight: 6
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_text:
+    weight: 8
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_weekly_value:
+    weight: 7
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
     region: content
   title:
     label: hidden

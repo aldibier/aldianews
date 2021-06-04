@@ -24,7 +24,10 @@
   {#- product|without('variation_attributes') -#}
   {{ product.title }}
   {{ product.field_image }}
-  {{ product.field_wee }}
+  <div class="weekly-information">
+    <span>{{ product.field_symbol }}{{ product.field_weekly_value }}/{{ product.field_text }}</span>
+  </div>
+
   {{ product.field_intro }}
   {{ product.body }}
   {{ product.variation_price }}
