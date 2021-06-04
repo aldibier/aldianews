@@ -17,6 +17,15 @@ const initMain = ($, Drupal) => {
 		} */
 		}
 
+		 /// close 
+		if(!!document.querySelector('.newsletter .close-modal')){
+			const newsletter = document.querySelector('.newsletter');
+			const closeNewsletter = document.querySelector('.newsletter .close-modal');
+			closeNewsletter.addEventListener('click',()=>{
+				newsletter.classList.add('dis-none')
+			},{once: true})
+		}
+
 		//// js remove element home
 		Array.from(
 			document.querySelectorAll(

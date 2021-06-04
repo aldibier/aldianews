@@ -83,13 +83,6 @@ import replaceToken from "./modules/replaceToken";
   }
 
   jQuery(document).ready(function() {
-    console.log('load!');
-    /// close newsletter
-    $('.newsletter .close-modal').click(function() {
-      console.log('click!');
-      $(".newsletter").addClass("dis-none");
-    });
-
     /////
     if (
       $(".page-node-type-news .block-field-blocknodenewsfield-video iframe")
