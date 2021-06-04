@@ -83,15 +83,7 @@ import replaceToken from "./modules/replaceToken";
   }
 
   jQuery(document).ready(function() {
-
-    /// close newsletter
-    $('.newsletter  button[name="close"]').click(function() {
-      $(".newsletter").addClass("dis-none");
-    });
-
     /////
-
-    
     if (
       $(".page-node-type-news .block-field-blocknodenewsfield-video iframe")
         .length
