@@ -19,7 +19,7 @@
  * @ingroup themeable
  */
 #}
-{{ kint( product|keys ) }}
+{# kint( product|keys ) #}
 <article{{ attributes }}>
   {#- product|without('variation_attributes') -#}
   {{ product.title }}
@@ -31,7 +31,6 @@
     <span>{{ product.field_intro }}{{ product.field_price_companion }}</span>
   </div>
   {{ product.body }}
-  {{ product.variation_price }}
   {{ product.variations }}
 
 </article>

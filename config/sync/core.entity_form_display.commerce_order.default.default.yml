@@ -61,11 +61,11 @@ content:
   field_phone_number:
     weight: 3
     settings:
-      initial_country: PT
+      initial_country: US
+      preferred_countries:
+        - US
       geolocation: false
       exclude_countries: {  }
-      preferred_countries:
-        - PT
     third_party_settings: {  }
     type: phone_international_widget
     region: content
