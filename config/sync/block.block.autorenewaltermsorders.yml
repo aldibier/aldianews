@@ -6,6 +6,7 @@ dependencies:
     - fixed_block_content.fixed_block_content.auto_renewal_terms_orders
   module:
     - context
+    - ctools
     - fixed_block_content
     - system
   theme:
@@ -20,7 +21,7 @@ settings:
   id: 'fixed_block_content:auto_renewal_terms_orders'
   label: 'Auto-Renewal terms Orders'
   provider: fixed_block_content
-  label_display: visible
+  label_display: '0'
   view_mode: ''
 visibility:
   request_path_exclusion:
@@ -35,3 +36,10 @@ visibility:
     id: request_path
     pages: '/checkout/*/order_information'
     negate: false
+  'entity_bundle:commerce_product_variation':
+    id: 'entity_bundle:commerce_product_variation'
+    bundles:
+      default: default
+    negate: false
+    context_mapping:
+      commerce_product_variation: '@commerce_product.product_variation_route_context:commerce_product_variation'
