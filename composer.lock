@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b59a1affedefba4196de84e744ea453e",
+    "content-hash": "aad0eec0d8c0568b9d2f03a8c1f00815",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2970,7 +2970,9 @@
                 },
                 "patches_applied": {
                     "add variation price to the Product variation title widget": "https://www.drupal.org/files/issues/2020-09-22/2930046-13.patch",
-                    "Precio aparece al lado del label del atributo": "patch/ProductVariationAttributesWidget.patch"
+                    "Precio aparece al lado del label del atributo": "patch/ProductVariationAttributesWidget.patch",
+                    "Permitir que los tipos de pedidos no tengan carritos": "https://www.drupal.org/files/issues/2020-10-05/2810723-130.patch",
+                    "Elimino condición que cambia nombre del botón de add to cart": "patch/CheckoutModule.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -7663,6 +7665,56 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/pathologic"
             }
+        },
+        {
+            "name": "drupal/paypal_subscriptions",
+            "version": "dev-1.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/paypal_subscriptions.git",
+                "reference": "c2cc9325210646df562da327f735ed25e97b9951"
+            },
+            "require": {
+                "drupal/commerce_paypal": "^1.0@beta",
+                "drupal/core": "^8.0 || ^9.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0+2-dev",
+                    "datestamp": "1602862605",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "George Bonnici-Carter (GeorgeBC)",
+                    "homepage": "https://www.drupal.org/u/georgebc",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Iicho Vuchkov (vuil)",
+                    "homepage": "https://www.drupal.org/u/vuil",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "This module allows the user to create a recurring payment gateway through the express checkout method in PayPal.",
+            "homepage": "https://www.drupal.org/project/paypal_subscriptions",
+            "support": {
+                "source": "https://git.drupalcode.org/project/paypal_subscriptions",
+                "issues": "https://www.drupal.org/project/paypal_subscriptions"
+            },
+            "time": "2020-10-16T15:41:51+00:00"
         },
         {
             "name": "drupal/phone_international",
@@ -14852,6 +14904,7 @@
         "drupal/mimemail": 15,
         "drupal/other_view_filter": 20,
         "drupal/pathologic": 15,
+        "drupal/paypal_subscriptions": 20,
         "drupal/react_comments": 10,
         "drupal/search_api_spellcheck": 10,
         "drupal/sendgrid_api": 15,
