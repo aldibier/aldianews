@@ -85,7 +85,7 @@
 }
 
 //----------------- Publicidad con close ----------------------------------//
-#block-fixed-block-content-horizontal-advertising-close {
+.block-fixed-block-content-horizontal-advertising-close {
   margin: 100px auto;
   position: relative;
   button[name="close"] {
@@ -112,4 +112,8 @@
       right: 20px;
     }
   }
+}
+#block-gamw:not(.block-fixed-block-content-horizontal-advertising-close)
+  button[name="close"] {
+  display: none;
 }

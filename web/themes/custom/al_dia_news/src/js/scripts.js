@@ -198,9 +198,9 @@ import replaceToken from "./modules/replaceToken";
   
 
     $(
-      '#block-fixed-block-content-horizontal-advertising-close  button[name="close"]'
+      '.block-fixed-block-content-horizontal-advertising-close  button[name="close"]'
     ).click(function() {
-      $("#block-fixed-block-content-horizontal-advertising-close").addClass(
+      $(".block-fixed-block-content-horizontal-advertising-close").addClass(
         "dis-none"
       );
     });
