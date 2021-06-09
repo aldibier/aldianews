@@ -3,11 +3,15 @@ langcode: en
 status: true
 dependencies:
   module:
+    - block_class
     - context
     - gamw
     - system
   theme:
     - al_dia_news
+third_party_settings:
+  block_class:
+    classes: 'section1310 block-fixed-block-content-horizontal-advertising-close'
 id: gamwadvertisement
 theme: al_dia_news
 region: content
