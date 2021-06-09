@@ -28,7 +28,7 @@
     }
     @media (max-width: $tablet) {
       background: #e7e8ea;
-      padding: 30px 18px 10px;
+      padding: 30px 20px 10px !important;
       .close-modal {
         top: -20px;
         right: 0px;
@@ -95,7 +95,7 @@
         margin: 0 auto 20px;
       }
       .form-item-email {
-        max-width: 155px;
+        max-width: 149px;
         input {
           max-width: 149px;
           padding-left: 15px;
@@ -136,7 +136,7 @@
             &::placeholder {
               text-align: center;
             }
-          } 
+          }
         }
       }
     }
@@ -190,13 +190,13 @@
         width: 100%;
         max-width: 90%;
 
-        &:lang(es){
+        &:lang(es) {
           width: 85%;
         }
       }
     }
 
-    div[id*='edit-actions'],
+    div[id*="edit-actions"],
     #edit-actions {
       width: 105px;
       display: inline-block;
@@ -205,13 +205,13 @@
         margin: 0;
         padding: 0;
         font-size: szrem(14);
-        background-color: $cgrey3;        
+        background-color: $cgrey3;
       }
 
       @media screen and(max-width: $broken) {
         width: 10%;
 
-        &:lang(es){
+        &:lang(es) {
           width: 15%;
         }
       }
@@ -222,8 +222,8 @@
     .newsletter {
       padding: 9px;
     }
-    
-    .webform-submission-newsletters-form {
+
+    .webform-submission-newsletters-form  {
       padding: 20px 25px 19px 25px;
     }
 

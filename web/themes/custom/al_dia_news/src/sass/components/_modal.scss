@@ -510,8 +510,10 @@
 
 .account-modal--password {
   height: 420px !important;
-  .ui-dialog-titlebar {
-    padding: 63px 48px 0 47px;
+  @media (min-width: $desktop) {
+    .ui-dialog-titlebar {
+      padding: 63px 48px 0 47px !important;
+    }
   }
   @media (max-width: $tablet) {
     height: auto !important;

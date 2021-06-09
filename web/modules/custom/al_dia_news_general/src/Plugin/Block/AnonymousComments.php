@@ -56,7 +56,7 @@ class AnonymousComments extends  BlockBase implements ContainerFactoryPluginInte
     ];
     $items[] = [
         '#type' => 'link',
-        '#title' => $this->t('LOG IN OR REGISTER'),
+        '#title' => $this->t('LOG IN'),
         '#url' => Url::fromRoute('user.login'),
         '#attributes' => [
             'class' => [
@@ -68,7 +68,24 @@ class AnonymousComments extends  BlockBase implements ContainerFactoryPluginInte
         ],
     ];
     $items[] = [
-        '#markup' => t('<span class="text-anonymous-comment">to comment.</span>'),
+        '#markup' => $this->t('<span class="text-anonymous-comment">or</span>'),
+    ];
+    $items[] = [
+        '#type' => 'link',
+        '#title' => $this->t('REGISTER'),
+        '#url' => Url::fromRoute('user.register'),
+        '#attributes' => [
+            'class' => [
+            'use-ajax',
+            'login-anonymous-comment',
+            ],
+            'data-dialog-type' => 'modal',
+            'data-dialog-options' => Json::encode(['dialogClass' => 'popup-login'],['width' => 550]),
+        ],
+    ];
+
+    $items[] = [
+        '#markup' => $this->t('<span class="text-anonymous-comment">to comment.</span>'),
     ];
 
       //$form['comment_form'] = $this->entityFormBuilder->getForm($comment);
