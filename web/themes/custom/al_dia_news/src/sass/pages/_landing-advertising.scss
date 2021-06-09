@@ -20,17 +20,13 @@
   max-height: 710px;
   overflow: hidden;
   .views-row{
-    max-width: 1315px;
+    max-width: 1310px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 15px;
   }
 
   @media (max-width: $broken) {
     padding: 63px 0;
-
-    .views-row{
-      padding: 15px;
-    }
   }
 
   @media (max-width: $tablet) {
@@ -112,7 +108,7 @@
     ul {
       margin: 0;
       padding: 0;
-      display: flex;
+      display: grid;
       grid-template-columns: repeat(3, minmax(auto, 380px));
       grid-auto-rows: minmax(105px, auto);
       justify-content: center;
@@ -139,18 +135,12 @@
         height: 100%;
         position: absolute;
         top: 0;
-        right: calc(0% - 39px);
+        right: calc(0% - 35px);
         background-color: $cgrey4;
 
         @media (max-width: $broken) {
           right: calc(0% - 9px);
         }
-      }
-    }
-    li:nth-child(2){
-      margin: 0 -1px 0 10px;
-      @media (max-width: $tablet) {
-        margin: 0px;
       }
     }
 
@@ -195,6 +185,7 @@
     }
 
     .field--name-field-description {
+      flex: 1 1 100%;
       font-size: szrem(18);
       font-family: $PrNovacond-light;
       font-style: normal;
@@ -222,9 +213,9 @@
   }
 
   h3 {
-    max-width: 1315px;
+    max-width: 1310px;
     margin: 50px auto;
-    padding: 0 20px;
+    padding: 0 15px;
     font-size: szrem(52);
     font-family: $Mod-Sbold;
     font-style: normal;
@@ -232,10 +223,6 @@
     line-height: 62px;
     text-transform: uppercase;
     color: $cblack3;
-
-    @media (max-width: $broken) {
-      padding: 0 15px;
-    }
 
     @media (max-width: $tablet) {
       margin: 25px auto;
@@ -294,9 +281,9 @@
     }
 
     > .views-field {
-      max-width: 1315px;
+      max-width: 1310px;
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 0 15px;
 
       @media (max-width: $large-min) {
         padding: 0;
@@ -430,9 +417,9 @@
   }
 }
 .block-block-groupadvertising-webform{
-  max-width: 1315px;
+  max-width: 1310px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 15px;
 }
  
 .title-footer {
