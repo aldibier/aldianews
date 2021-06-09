@@ -1,0 +1,37 @@
+uuid: 88648d80-4817-4b48-899a-919ebebfe4b5
+langcode: en
+status: true
+dependencies:
+  module:
+    - context
+    - gamw
+    - system
+  theme:
+    - al_dia_news
+id: gamwadvertisement
+theme: al_dia_news
+region: content
+weight: -39
+provider: null
+plugin: gamw
+settings:
+  id: gamw
+  label: 'Horizontal advertising close'
+  provider: gamw
+  label_display: '0'
+  ad_unit: home-post-header
+  attributes_wrapper:
+    - ''
+visibility:
+  request_path_exclusion:
+    id: request_path_exclusion
+    pages: ''
+    negate: null
+  view_inclusion:
+    id: view_inclusion
+    negate: null
+    view_inclusion: {  }
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
