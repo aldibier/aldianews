@@ -500,7 +500,7 @@
       top: 65px;
     }
   }
-  @media (max-width: $tablet){
+  @media (max-width: $tablet) {
     max-width: 290px !important;
     left: 0px !important;
     right: 0px;
@@ -510,7 +510,9 @@
 
 .account-modal--password {
   height: 420px !important;
-
+  .ui-dialog-titlebar {
+    padding: 63px 48px 0 47px;
+  }
   @media (max-width: $tablet) {
     height: auto !important;
     max-height: 70%;
