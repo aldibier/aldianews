@@ -1,26 +1,26 @@
-uuid: 7907276a-68da-4093-867a-e1ec028c9409
+uuid: ace2f65b-1404-41d4-9c32-49cbc119f2e1
 langcode: en
 status: true
 dependencies:
-  config:
-    - fixed_block_content.fixed_block_content.medium_advertising
   module:
     - context
-    - fixed_block_content
+    - gamw
   theme:
     - al_dia_news
-id: mediumadvertising
+id: gamwadvertisement_2
 theme: al_dia_news
 region: current_edition_advertising_home
 weight: 0
 provider: null
-plugin: 'fixed_block_content:medium_advertising'
+plugin: gamw
 settings:
-  id: 'fixed_block_content:medium_advertising'
-  label: 'Medium advertising'
-  provider: fixed_block_content
-  label_display: '0'
-  view_mode: ''
+  id: gamw
+  label: 'Home - Print edition'
+  provider: gamw
+  label_display: visible
+  ad_unit: home-print-edition
+  attributes_wrapper:
+    - ''
 visibility:
   request_path_exclusion:
     id: request_path_exclusion
