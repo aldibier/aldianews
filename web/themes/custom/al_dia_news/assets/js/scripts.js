@@ -1705,6 +1705,7 @@ var initMain = function initMain($, Drupal) {
       var blockAnonymus = document.querySelector('.block-comments-anonymous');
       var allTextMessage = blockAnonymus.querySelectorAll('.text-anonymous-comment');
       var login = blockAnonymus.querySelector('.login-anonymous-comment');
+      var register = blockAnonymus.querySelector('.register-anonymous-comment');
 
       var _container = document.createElement('div');
 
@@ -1715,6 +1716,7 @@ var initMain = function initMain($, Drupal) {
       message.classList.add('message-comments-links');
       message.appendChild(login);
       message.appendChild(allTextMessage[1]);
+      message.appendChild(register);
       message.appendChild(allTextMessage[2]);
 
       _container.appendChild(allTextMessage[0]);
