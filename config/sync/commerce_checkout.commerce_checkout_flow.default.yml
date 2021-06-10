@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   module:
+    - al_dia_rechpack
     - commerce_checkout_order_fields
     - commerce_payment
     - commerce_paypal
@@ -29,45 +30,48 @@ configuration:
     payment_information:
       step: order_information
       weight: 2
-    review:
+    order_summary:
+      view: checkout_order_summary_subscription
       step: review
       weight: 4
+    review:
+      step: review
+      weight: 5
     payment_process:
       capture: true
       step: payment
-      weight: 5
+      weight: 6
     completion_message:
       message:
         value: "Your order number is [commerce_order:order_number].\r\nYou can view your order on your account page when logged in."
         format: plain_text
       step: complete
-      weight: 6
+      weight: 7
       capture: true
     paypal_checkout_payment_process:
       capture: true
       step: complete
-      weight: 7
+      weight: 8
     completion_register:
       step: complete
-      weight: 8
-    order_summary:
-      view: checkout_order_summary_subscription
-      step: review
-      weight: 3
+      weight: 9
     coupon_redemption:
       allow_multiple: false
       step: _disabled
-      weight: 9
+      weight: 10
+    rechpack_order_review_title:
+      step: review
+      weight: 3
     login:
       allow_guest_checkout: true
       allow_registration: false
       step: _disabled
-      weight: 10
+      weight: 11
     email_registration_login:
       allow_guest_checkout: true
       allow_registration: false
       step: _disabled
-      weight: 11
+      weight: 12
     email_registration_completion_registration:
       step: _disabled
-      weight: 12
+      weight: 13
