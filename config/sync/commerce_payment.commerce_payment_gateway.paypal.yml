@@ -5,7 +5,7 @@ dependencies:
   module:
     - commerce_paypal
 id: paypal
-label: 'PayPal Annual'
+label: PayPal
 weight: null
 plugin: paypal_checkout
 configuration:
@@ -25,11 +25,5 @@ configuration:
   mode: test
   payment_method_types:
     - paypal_checkout
-conditions:
-  -
-    plugin: 'order_purchased_entity:commerce_product_variation'
-    configuration:
-      entities:
-        7: 743b902c-af4d-40ff-b3cf-156f3fc26556
-        9: c91d5921-2e17-4062-9635-ad4f079f0a5c
+conditions: {  }
 conditionOperator: AND
