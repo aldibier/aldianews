@@ -19,6 +19,7 @@ dependencies:
   module:
     - al_dia_layouts
     - comment
+    - gamw
     - image
     - layout_builder
     - text
@@ -264,6 +265,22 @@ third_party_settings:
                 view_mode: view_mode
             additional: {  }
             weight: -10
+          9dd599d2-b461-4268-945b-b5c3637b09d4:
+            uuid: 9dd599d2-b461-4268-945b-b5c3637b09d4
+            region: two_advertising
+            configuration:
+              id: gamw
+              label: 'Internal news / thought banner prefooter'
+              provider: gamw
+              label_display: '0'
+              ad_unit: internal-news-thought-banner-prefooter
+              attributes_wrapper:
+                0: ''
+                add: 'Add another targeting attribute'
+                remove: 'Remove last targeting attribute'
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
         third_party_settings: {  }
 id: node.thought_leaders.default
 targetEntityType: node

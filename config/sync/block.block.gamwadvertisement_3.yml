@@ -1,0 +1,45 @@
+uuid: f3936655-d0c4-4e02-a151-6b8edc932e34
+langcode: en
+status: true
+dependencies:
+  module:
+    - context
+    - gamw
+    - node
+    - system
+  theme:
+    - al_dia_news
+id: gamwadvertisement_3
+theme: al_dia_news
+region: header
+weight: 0
+provider: null
+plugin: gamw
+settings:
+  id: gamw
+  label: 'Pre footer -  Bottom banner '
+  provider: gamw
+  label_display: '0'
+  ad_unit: pre-footer-bottom-banner
+  attributes_wrapper:
+    - ''
+visibility:
+  request_path_exclusion:
+    id: request_path_exclusion
+    pages: ''
+    negate: null
+  view_inclusion:
+    id: view_inclusion
+    negate: null
+    view_inclusion: {  }
+  node_type:
+    id: node_type
+    bundles:
+      event: event
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+  request_path:
+    id: request_path
+    pages: "/jobs\r\n/about-al-dia-live\r\n/podcast\r\n/contact-us"
+    negate: false
