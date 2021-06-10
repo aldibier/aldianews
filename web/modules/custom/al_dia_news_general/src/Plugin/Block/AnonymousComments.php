@@ -77,7 +77,7 @@ class AnonymousComments extends  BlockBase implements ContainerFactoryPluginInte
         '#attributes' => [
             'class' => [
             'use-ajax',
-            'login-anonymous-comment',
+            'register-anonymous-comment',
             ],
             'data-dialog-type' => 'modal',
             'data-dialog-options' => Json::encode(['dialogClass' => 'popup-login'],['width' => 550]),
