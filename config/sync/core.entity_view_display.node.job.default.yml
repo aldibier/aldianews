@@ -14,13 +14,13 @@ dependencies:
     - field.field.node.job.field_type_of_working_day
     - fixed_block_content.fixed_block_content._small_vertical_advertising
     - fixed_block_content.fixed_block_content.big_vertical_advertising
-    - fixed_block_content.fixed_block_content.horizontal_advertising
     - node.type.job
     - views.view.internal_links_to_job_postings
   module:
     - al_dia_layouts
     - datetime
     - fixed_block_content
+    - gamw
     - layout_builder
     - link
     - text
@@ -36,18 +36,6 @@ third_party_settings:
         layout_settings:
           label: 'Job Posting intern'
         components:
-          e989da50-45e4-4280-b07f-5e6075060e61:
-            uuid: e989da50-45e4-4280-b07f-5e6075060e61
-            region: horizontal_advertising
-            configuration:
-              id: 'fixed_block_content:horizontal_advertising'
-              label: 'Horizontal advertising'
-              provider: fixed_block_content
-              label_display: '0'
-              view_mode: ''
-              context_mapping: {  }
-            additional: {  }
-            weight: 0
           a557bc77-58de-46eb-b016-3c48deb647e7:
             uuid: a557bc77-58de-46eb-b016-3c48deb647e7
             region: one_content_title
@@ -213,6 +201,19 @@ third_party_settings:
                 entity: layout_builder.entity
             additional: {  }
             weight: -10
+          25402d1b-772e-414e-8590-10778f9e41e4:
+            uuid: 25402d1b-772e-414e-8590-10778f9e41e4
+            region: horizontal_advertising
+            configuration:
+              id: gamw
+              label: 'Header - top - banner (Internal jobs)'
+              provider: gamw
+              label_display: visible
+              ad_unit: header-top-banner
+              attributes_wrapper: null
+              context_mapping: {  }
+            additional: {  }
+            weight: 1
         third_party_settings: {  }
 id: node.job.default
 targetEntityType: node
@@ -302,4 +303,5 @@ content:
 hidden:
   addtoany: true
   langcode: true
+  premium_message: true
   search_api_excerpt: true

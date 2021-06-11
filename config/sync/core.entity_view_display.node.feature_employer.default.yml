@@ -10,7 +10,6 @@ dependencies:
     - field.field.node.feature_employer.field_social_media
     - fixed_block_content.fixed_block_content._small_vertical_advertising
     - fixed_block_content.fixed_block_content.big_vertical_advertising
-    - fixed_block_content.fixed_block_content.horizontal_advertising
     - node.type.feature_employer
     - views.view.feature_employed_information
     - views.view.jobs_in_this_company
@@ -18,6 +17,7 @@ dependencies:
     - al_dia_layouts
     - entity_reference_revisions
     - fixed_block_content
+    - gamw
     - image
     - layout_builder
     - text
@@ -33,18 +33,6 @@ third_party_settings:
         layout_settings:
           label: 'Feature Employed intern'
         components:
-          38516cc4-c482-4b43-bc7e-1a94fcb652ab:
-            uuid: 38516cc4-c482-4b43-bc7e-1a94fcb652ab
-            region: horizontal_advertising
-            configuration:
-              id: 'fixed_block_content:horizontal_advertising'
-              label: 'Horizontal advertising'
-              provider: fixed_block_content
-              label_display: '0'
-              view_mode: ''
-              context_mapping: {  }
-            additional: {  }
-            weight: 0
           62d846a2-132c-419a-927d-6f451b22ff5c:
             uuid: 62d846a2-132c-419a-927d-6f451b22ff5c
             region: one_content_employer_information
@@ -196,6 +184,19 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: 0
+          8a6f2ab5-12ec-4148-9c4f-1d7c74f5948a:
+            uuid: 8a6f2ab5-12ec-4148-9c4f-1d7c74f5948a
+            region: horizontal_advertising
+            configuration:
+              id: gamw
+              label: 'Header - Top banner (Feature employer)'
+              provider: gamw
+              label_display: visible
+              ad_unit: header-top-banner
+              attributes_wrapper: null
+              context_mapping: {  }
+            additional: {  }
+            weight: 1
         third_party_settings: {  }
 id: node.feature_employer.default
 targetEntityType: node
@@ -252,4 +253,5 @@ content:
 hidden:
   addtoany: true
   langcode: true
+  premium_message: true
   search_api_excerpt: true

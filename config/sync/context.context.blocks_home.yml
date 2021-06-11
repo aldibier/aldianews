@@ -28,7 +28,7 @@ reactions:
         views_label: ''
         items_per_page: none
         region: content
-        weight: '-1'
+        weight: '0'
         context_mapping: {  }
         custom_id: views_block_leadership_mix_block_1
         theme: al_dia_news
@@ -44,7 +44,7 @@ reactions:
         views_label: ''
         items_per_page: none
         region: content
-        weight: '1'
+        weight: '2'
         context_mapping: {  }
         custom_id: views_block_culture_mix_block_1
         theme: al_dia_news
@@ -60,7 +60,7 @@ reactions:
         views_label: ''
         items_per_page: none
         region: content
-        weight: '2'
+        weight: '3'
         context_mapping: {  }
         custom_id: views_block_politics_mix_block_1
         theme: al_dia_news
@@ -76,7 +76,7 @@ reactions:
         views_label: ''
         items_per_page: none
         region: content
-        weight: '0'
+        weight: '1'
         context_mapping: {  }
         custom_id: views_block_thought_leaders_home_block_4
         theme: al_dia_news
@@ -104,7 +104,7 @@ reactions:
         provider: blockgroup
         label_display: '0'
         region: content
-        weight: '3'
+        weight: '4'
         context_mapping: {  }
         custom_id: block_group_current_edition_advertising_home
         theme: al_dia_news
@@ -137,7 +137,7 @@ reactions:
           add: 'Add another targeting attribute'
           remove: 'Remove last targeting attribute'
         region: content
-        weight: '4'
+        weight: '5'
         context_mapping: {  }
         custom_id: gamw
         theme: al_dia_news
@@ -145,6 +145,38 @@ reactions:
         unique: 0
         context_id: blocks_home
         uuid: e958ed85-f271-4dea-8db2-f85f5f388154
+      e7bc5a2d-24b5-441f-895c-598d04c30ba7:
+        id: gamw
+        label: 'Home - post - header'
+        provider: gamw
+        label_display: visible
+        ad_unit: home-post-header
+        attributes_wrapper: null
+        region: content
+        weight: '-4'
+        context_mapping: {  }
+        custom_id: gamw
+        theme: al_dia_news
+        css_class: 'section1310 block-fixed-block-content-horizontal-advertising-close'
+        unique: 0
+        context_id: blocks_home
+        uuid: e7bc5a2d-24b5-441f-895c-598d04c30ba7
+      3744b2c9-eda9-4b0f-8135-a5e7942490dd:
+        id: gamw
+        label: 'Home - post - main - headline'
+        provider: gamw
+        label_display: visible
+        ad_unit: Home-post-main-headline
+        attributes_wrapper: null
+        region: content
+        weight: '-1'
+        context_mapping: {  }
+        custom_id: gamw
+        theme: al_dia_news
+        css_class: ''
+        unique: 0
+        context_id: blocks_home
+        uuid: 3744b2c9-eda9-4b0f-8135-a5e7942490dd
     id: blocks
     saved: false
     uuid: 4fc7f4cb-182d-41eb-9a90-4caf42ab57f8

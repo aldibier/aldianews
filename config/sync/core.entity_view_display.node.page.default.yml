@@ -6,7 +6,6 @@ dependencies:
     - field.field.node.page.body
     - fixed_block_content.fixed_block_content._small_vertical_advertising
     - fixed_block_content.fixed_block_content.big_vertical_advertising
-    - fixed_block_content.fixed_block_content.horizontal_advertising
     - node.type.page
   module:
     - al_dia_layouts
@@ -24,18 +23,6 @@ third_party_settings:
         layout_settings:
           label: 'Basic Page General'
         components:
-          89310b4e-6923-48b7-abee-f5e596a7ea67:
-            uuid: 89310b4e-6923-48b7-abee-f5e596a7ea67
-            region: horizontal_advertising
-            configuration:
-              id: 'fixed_block_content:horizontal_advertising'
-              label: 'Horizontal advertising'
-              provider: fixed_block_content
-              label_display: '0'
-              view_mode: ''
-              context_mapping: {  }
-            additional: {  }
-            weight: 0
           8021a08b-8d26-410f-be0d-01a1ecc7f45f:
             uuid: 8021a08b-8d26-410f-be0d-01a1ecc7f45f
             region: one_vertical_advertising
@@ -194,4 +181,5 @@ content:
     third_party_settings: {  }
 hidden:
   langcode: true
+  premium_message: true
   search_api_excerpt: true

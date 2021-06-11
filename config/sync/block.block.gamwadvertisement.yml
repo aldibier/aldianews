@@ -1,4 +1,4 @@
-uuid: 88648d80-4817-4b48-899a-919ebebfe4b5
+uuid: 3f93067b-da50-4525-b6ba-0dbc08b86f46
 langcode: en
 status: true
 dependencies:
@@ -11,21 +11,20 @@ dependencies:
     - al_dia_news
 third_party_settings:
   block_class:
-    classes: 'section1310 block-fixed-block-content-horizontal-advertising-close'
+    classes: banner-horizontal
 id: gamwadvertisement
 theme: al_dia_news
 region: content
-weight: -39
+weight: -38
 provider: null
 plugin: gamw
 settings:
   id: gamw
-  label: 'Horizontal advertising close'
+  label: 'Header - top - banner (Terms of service)'
   provider: gamw
   label_display: '0'
-  ad_unit: home-post-header
-  attributes_wrapper:
-    - ''
+  ad_unit: header-top-banner
+  attributes_wrapper: null
 visibility:
   request_path_exclusion:
     id: request_path_exclusion
@@ -37,5 +36,5 @@ visibility:
     view_inclusion: {  }
   request_path:
     id: request_path
-    pages: '<front>'
+    pages: /terms-of-service
     negate: false
