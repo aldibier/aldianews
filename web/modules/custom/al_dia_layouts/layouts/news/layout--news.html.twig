@@ -11,34 +11,34 @@
  */
 #}
 {% if content %}
-  <div class="container-content">
+	<div class="container-content">
 
-    {% if content.one_advertising %}
-        <div {{ region_attributes.one_advertising.addClass('content-advertising') }}>
-          {{ content.one_advertising }} 
-        </div>
-    {% endif %}
-      {% if content.one_content %}
-        <div {{ region_attributes.one_content.addClass('content-news-internal-first') }}>
-          {{ content.one_content }} 
-        </div>
-    {% endif %}
-      {% if content.one_more %}
-        <div {{ region_attributes.one_more.addClass('container-right') }}>
-          {{ content.one_more }} 
-        </div>
-    {% endif %}
-      {% if content.two_content %}
-        <div {{ region_attributes.two_content.addClass('content-news-internal-left') }}>
-          {{ content.two_content }} 
-        </div>
-    {% endif %}
-    
-    {% if content.two_advertising %}
-      <div {{ region_attributes.two_advertising.addClass('content-advertising') }}>
-          {{ content.two_advertising }}
-      </div>
-    {% endif %}
+		{% if content.one_advertising %}
+			<div {{ region_attributes.one_advertising.addClass('content-advertising') }}>
+				{{ content.one_advertising }}
+			</div>
+		{% endif %}
+		{% if content.one_content %}
+			<div {{ region_attributes.one_content.addClass('content-news-internal-first') }}>
+				{{ content.one_content }}
+			</div>
+		{% endif %}
+		{% if content.one_more %}
+			<div {{ region_attributes.one_more.addClass('container-right') }}>
+				{{ content.one_more }}
+			</div>
+		{% endif %}
+		{% if content.two_content %}
+			<div {{ region_attributes.two_content.addClass('content-news-internal-left') }}>
+				{{ content.two_content }}
+			</div>
+		{% endif %}
 
-  </div>
+		{% if content.two_advertising %}
+			<div {{ region_attributes.two_advertising.addClass('content-advertising banner-horizontal') }}>
+				{{ content.two_advertising }}
+			</div>
+		{% endif %}
+
+	</div>
 {% endif %}

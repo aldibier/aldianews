@@ -74,7 +74,7 @@ form {
     min-height: 35px;
     margin-top: 5px;
     background: $cgrey8;
-    padding-left: 10px;
+    padding-left: 10px !important;
   }
 
   input[class*="form"],
@@ -284,10 +284,18 @@ form {
   .password-strength {
     width: 100%;
     .password-strength__meter {
-      hheight: 6px;
+      height: 6px;
       margin: 0 0 0px;
       position: relative;
       top: -8px;
+    }
+  }
+  .password-strength__indicator{
+    &.is-good{
+      background-color: #77b259;
+    }
+    &.is-fair{
+      background-color: #e8e608;
     }
   }
   .password-suggestions {
