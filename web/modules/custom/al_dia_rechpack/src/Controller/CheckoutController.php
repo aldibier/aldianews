@@ -122,6 +122,7 @@ class CheckoutController extends ControllerBase {
         $checkout_flow_plugin = $checkout_flow->getPlugin();
         $step_id = $checkout_flow_plugin->getNextStepId($step_id);
         $order->set('checkout_step', $step_id);
+        $this->logger->notice($step_id);
       }
       $order->save();
       $redirect_url = Url::fromRoute('commerce_checkout.form', [
