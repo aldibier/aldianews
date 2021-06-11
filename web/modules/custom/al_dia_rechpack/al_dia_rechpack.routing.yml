@@ -1,4 +1,4 @@
-al_dia_rechpack.checkout.approve:
+commerce_paypal.checkout.approve:
   path: '/commerce-paypal/checkout-approve/{commerce_payment_gateway}/{commerce_order}'
   defaults:
     _controller: '\Drupal\al_dia_rechpack\Controller\CheckoutController::onApprove'
