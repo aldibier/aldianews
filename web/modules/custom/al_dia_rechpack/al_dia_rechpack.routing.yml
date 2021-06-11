@@ -1,0 +1,13 @@
+al_dia_rechpack.checkout.approve:
+  path: '/commerce-paypal/checkout-approve/{commerce_payment_gateway}/{commerce_order}'
+  defaults:
+    _controller: '\Drupal\al_dia_rechpack\Controller\CheckoutController::onApprove'
+  requirements:
+    _entity_access: 'commerce_order.update'
+    _module_dependencies: commerce_checkout
+  options:
+    parameters:
+      commerce_payment_gateway:
+        type: entity:commerce_payment_gateway
+      commerce_order:
+        type: entity:commerce_order
