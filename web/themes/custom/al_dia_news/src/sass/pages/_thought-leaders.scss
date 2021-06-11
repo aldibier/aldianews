@@ -15,7 +15,8 @@
   }
   .content-advertising {
     width: 100%;
-    display: block;
+    display: flex;
+    flex-direction: column;
 
     .field--label-hidden  {
       all: initial;
@@ -35,6 +36,10 @@
         line-height: 13px;
         margin: 5px 0px 12px;
       }
+    }
+
+    >.block-gamw {
+      order: -1;
     }
   }
 
