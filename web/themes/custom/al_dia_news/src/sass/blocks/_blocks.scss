@@ -86,8 +86,10 @@
 
 //----------------- Publicidad con close ----------------------------------//
 .block-fixed-block-content-horizontal-advertising-close {
-  margin: 100px auto;
+  margin: 70px auto !important;
   position: relative;
+  max-height: 340px;
+  overflow: hidden;
   button[name="close"] {
     position: absolute;
     top: 20px;
@@ -101,7 +103,7 @@
     cursor: pointer;
   }
   @media (max-width: $tablet) {
-    margin: 0px auto 20px;
+    margin: 0px auto 20px !important;
 
     button[name="close"] {
       width: 10px;
@@ -116,4 +118,22 @@
 .block-gamw:not(.block-fixed-block-content-horizontal-advertising-close)
   button[name="close"] {
   display: none;
+}
+
+//----------------- clases generales para publicidad ----------------------------------//
+
+.banner-horizontal {
+  margin: 80px auto;
+  max-width: 1280px;
+  max-height: 149px;
+  overflow: hidden;
+  @media (max-width: $tablet) {
+    margin: 30px auto;
+    max-height: 100px;
+  }
+}
+.block-print-edition {
+  max-width: 400px;
+  max-height: 615px;
+  overflow: hidden;
 }
