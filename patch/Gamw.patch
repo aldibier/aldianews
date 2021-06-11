@@ -1,0 +1,92 @@
+diff --git a/src/Plugin/Block/Gamw.php b/src/Plugin/Block/Gamw.php
+--- Gamw.php	2020-09-04 06:19:49.000000000 -0500
++++ Gamw.php	2021-06-11 11:38:17.000000000 -0500
+@@ -68,14 +68,16 @@
+       }
+     }
+ 
+-    $targeting_attributes = [];
+-    foreach ($this->configuration['attributes_wrapper'] as $value) {
++    /* $targeting_attributes = []; */
++    
++    /* foreach ($this->configuration['attributes_wrapper'] as $value) {
+       if ($value) {
+         $split_value = explode(':', $value);
+         $targeting_attributes[$split_value[0]] = $split_value[1];
+       }
+-    }
+-    $targeting_attributes['site'] = $site_name;
++    } */
++
++    /* $targeting_attributes['site'] = $site_name; */
+ 
+     $uuid = $this->uuidDi->generate();
+ 
+@@ -91,7 +93,7 @@
+       'sizes' => $ad_sizes_split,
+       'dev_mode' => $dev_mode,
+       'collapsed' => $collapsed,
+-      'targeting_attributes' => $targeting_attributes,
++      //'targeting_attributes' => $targeting_attributes,
+       'gamw_id' => $gamw_id,
+     ];
+ 
+@@ -124,19 +126,19 @@
+       '#required' => TRUE,
+     ];
+ 
+-    $form['attributes_wrapper'] = [
++    /* $form['attributes_wrapper'] = [
+       '#type' => 'container',
+       '#tree' => TRUE,
+       '#attributes' => ['id' => 'key-attribute-wrapper'],
+-    ];
++    ]; */
+ 
+-    $num_attributes = $form_state->get('num_attributes');
+-    if (!$num_attributes) {
++    /* $num_attributes = $form_state->get('num_attributes'); */
++    /* if (!$num_attributes) {
+       $num_attributes = count($this->configuration['attributes_wrapper']) ? count($this->configuration['attributes_wrapper']) : 1;
+       $form_state->set('num_attributes', $num_attributes);
+-    }
++    } */
+ 
+-    for ($i = 0; $i < $num_attributes; $i++) {
++    /* for ($i = 0; $i < $num_attributes; $i++) {
+       if (!isset($form['attributes_wrapper'][$i])) {
+         $form['attributes_wrapper'][$i] = [
+           '#type'  => 'textfield',
+@@ -145,9 +147,9 @@
+           '#description' => $this->t('Add an extra targeting attribute in the format <strong>key:value</strong>.<br />The <strong>value</strong> can be multiple comma-separated string values.'),
+         ];
+       }
+-    }
++    } */
+ 
+-    $form['attributes_wrapper']['add'] = [
++    /* $form['attributes_wrapper']['add'] = [
+       '#type' => 'submit',
+       '#value' => $this->t('Add another targeting attribute'),
+       '#submit' => [
+@@ -157,9 +159,9 @@
+         'callback' => [$this, 'returnAttributesAjax'],
+         'wrapper' => 'key-attribute-wrapper',
+       ],
+-    ];
++    ]; */
+ 
+-    $form['attributes_wrapper']['remove'] = [
++    /* $form['attributes_wrapper']['remove'] = [
+       '#type' => 'submit',
+       '#value' => $this->t('Remove last targeting attribute'),
+       '#submit' => [
+@@ -169,7 +171,7 @@
+         'callback' => [$this, 'returnAttributesAjax'],
+         'wrapper' => 'key-attribute-wrapper',
+       ],
+-    ];
++    ]; */
+ 
+     return $form;
+   }
