@@ -8,11 +8,11 @@ dependencies:
     - fixed_block_content.fixed_block_content._small_vertical_advertising
     - fixed_block_content.fixed_block_content.big_vertical_advertising
     - fixed_block_content.fixed_block_content.header_page_about_us
-    - fixed_block_content.fixed_block_content.horizontal_advertising
     - node.type.page
   module:
     - al_dia_layouts
     - fixed_block_content
+    - gamw
     - layout_builder
     - text
     - user
@@ -26,18 +26,6 @@ third_party_settings:
         layout_settings:
           label: 'Basic page with block image'
         components:
-          0a9c4872-1927-402c-9bf2-9a8a439e17bd:
-            uuid: 0a9c4872-1927-402c-9bf2-9a8a439e17bd
-            region: horizontal_advertising
-            configuration:
-              id: 'fixed_block_content:horizontal_advertising'
-              label: 'Horizontal advertising'
-              provider: fixed_block_content
-              label_display: '0'
-              view_mode: ''
-              context_mapping: {  }
-            additional: {  }
-            weight: 0
           9daf15e4-e360-4fab-a226-3a189a91a893:
             uuid: 9daf15e4-e360-4fab-a226-3a189a91a893
             region: two_content
@@ -92,6 +80,19 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: 0
+          7966874a-823a-4211-95e2-3b5092d77035:
+            uuid: 7966874a-823a-4211-95e2-3b5092d77035
+            region: horizontal_advertising
+            configuration:
+              id: gamw
+              label: 'first block bottom banner'
+              provider: gamw
+              label_display: '0'
+              ad_unit: first-block-bottom-banner
+              attributes_wrapper: null
+              context_mapping: {  }
+            additional: {  }
+            weight: 1
         third_party_settings: {  }
 _core:
   default_config_hash: g1S3_GLaxq4l3I9RIca5Mlz02MxI2KmOquZpHw59akM
@@ -119,4 +120,5 @@ content:
     third_party_settings: {  }
 hidden:
   langcode: true
+  premium_message: true
   search_api_excerpt: true

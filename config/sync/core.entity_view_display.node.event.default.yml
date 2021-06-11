@@ -17,7 +17,6 @@ dependencies:
     - field.field.node.event.field_venue_of_the_event
     - fixed_block_content.fixed_block_content._small_vertical_advertising
     - fixed_block_content.fixed_block_content.big_vertical_advertising
-    - fixed_block_content.fixed_block_content.horizontal_advertising
     - node.type.event
     - views.view.block_guest
     - views.view.contact_event
@@ -32,6 +31,7 @@ dependencies:
     - datetime
     - entity_reference_revisions
     - fixed_block_content
+    - gamw
     - image
     - layout_builder
     - text
@@ -283,18 +283,6 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: 0
-          3a4614c7-b005-4c70-9fed-a806174ff7cc:
-            uuid: 3a4614c7-b005-4c70-9fed-a806174ff7cc
-            region: six_content
-            configuration:
-              id: 'fixed_block_content:horizontal_advertising'
-              label: 'Horizontal advertising'
-              provider: fixed_block_content
-              label_display: '0'
-              view_mode: ''
-              context_mapping: {  }
-            additional: {  }
-            weight: 1
           a0f690c3-4eb5-494d-a5cc-aa2435716ef0:
             uuid: a0f690c3-4eb5-494d-a5cc-aa2435716ef0
             region: content
@@ -322,18 +310,6 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: -8
-          87a2a6f9-fd9f-4b3b-a4ee-b41a1702ad85:
-            uuid: 87a2a6f9-fd9f-4b3b-a4ee-b41a1702ad85
-            region: advertising_content
-            configuration:
-              id: 'fixed_block_content:horizontal_advertising'
-              label: 'Horizontal advertising'
-              provider: fixed_block_content
-              label_display: '0'
-              view_mode: ''
-              context_mapping: {  }
-            additional: {  }
-            weight: -9
           e5c6ad6a-9b12-4248-966a-f26849e2571f:
             uuid: e5c6ad6a-9b12-4248-966a-f26849e2571f
             region: advertising_content
@@ -447,6 +423,35 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: -7
+          5e5c6d7f-cf59-4be2-8bdc-47e7296fe11f:
+            uuid: 5e5c6d7f-cf59-4be2-8bdc-47e7296fe11f
+            region: six_content
+            configuration:
+              id: gamw
+              label: 'Pre footer -  Bottom banner event'
+              provider: gamw
+              label_display: '0'
+              ad_unit: pre-footer-bottom-banner
+              attributes_wrapper:
+                0: ''
+                add: 'Add another targeting attribute'
+                remove: 'Remove last targeting attribute'
+              context_mapping: {  }
+            additional: {  }
+            weight: 1
+          f8f23b61-8beb-4be3-a67e-fd70884305fd:
+            uuid: f8f23b61-8beb-4be3-a67e-fd70884305fd
+            region: advertising_content
+            configuration:
+              id: gamw
+              label: 'first block bottom banner'
+              provider: gamw
+              label_display: '0'
+              ad_unit: first-block-bottom-banner
+              attributes_wrapper: null
+              context_mapping: {  }
+            additional: {  }
+            weight: -6
         third_party_settings: {  }
 id: node.event.default
 targetEntityType: node

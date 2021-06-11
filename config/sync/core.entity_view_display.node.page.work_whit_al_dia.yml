@@ -8,12 +8,12 @@ dependencies:
     - fixed_block_content.fixed_block_content._small_vertical_advertising
     - fixed_block_content.fixed_block_content.big_vertical_advertising
     - fixed_block_content.fixed_block_content.header_work_with_al_dia
-    - fixed_block_content.fixed_block_content.horizontal_advertising
     - node.type.page
     - system.menu.work-with-al-dia-menu
   module:
     - al_dia_layouts
     - fixed_block_content
+    - gamw
     - layout_builder
     - system
     - text
@@ -28,18 +28,6 @@ third_party_settings:
         layout_settings:
           label: 'Basic Page work with Al Día'
         components:
-          f65bede5-1455-4b61-9e3a-4ad7945a0af9:
-            uuid: f65bede5-1455-4b61-9e3a-4ad7945a0af9
-            region: horizontal_advertising
-            configuration:
-              id: 'fixed_block_content:horizontal_advertising'
-              label: 'Horizontal advertising'
-              provider: fixed_block_content
-              label_display: '0'
-              view_mode: ''
-              context_mapping: {  }
-            additional: {  }
-            weight: 0
           50f2e0ea-c3a4-448e-86ba-6c775ea3616a:
             uuid: 50f2e0ea-c3a4-448e-86ba-6c775ea3616a
             region: one_vertical_advertising
@@ -127,6 +115,19 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: 1
+          c0a1c819-1a35-4445-8874-dfb6b2364539:
+            uuid: c0a1c819-1a35-4445-8874-dfb6b2364539
+            region: horizontal_advertising
+            configuration:
+              id: gamw
+              label: 'first block bottom banner work with al dia'
+              provider: gamw
+              label_display: '0'
+              ad_unit: first-block-bottom-banner
+              attributes_wrapper: null
+              context_mapping: {  }
+            additional: {  }
+            weight: 1
         third_party_settings: {  }
 _core:
   default_config_hash: g1S3_GLaxq4l3I9RIca5Mlz02MxI2KmOquZpHw59akM
@@ -154,4 +155,5 @@ content:
     third_party_settings: {  }
 hidden:
   langcode: true
+  premium_message: true
   search_api_excerpt: true

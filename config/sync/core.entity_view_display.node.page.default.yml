@@ -10,6 +10,7 @@ dependencies:
   module:
     - al_dia_layouts
     - fixed_block_content
+    - gamw
     - layout_builder
     - text
     - user
@@ -154,6 +155,19 @@ third_party_settings:
               id: 'extra_field_block:node:page:links'
             additional: {  }
             weight: 5
+          a1c988cd-8b7d-4a0a-9eef-e58ca01e1776:
+            uuid: a1c988cd-8b7d-4a0a-9eef-e58ca01e1776
+            region: horizontal_advertising
+            configuration:
+              id: gamw
+              label: 'first block bottom banner'
+              provider: gamw
+              label_display: '0'
+              ad_unit: first-block-bottom-banner
+              attributes_wrapper: null
+              context_mapping: {  }
+            additional: {  }
+            weight: 1
         third_party_settings: {  }
 _core:
   default_config_hash: g1S3_GLaxq4l3I9RIca5Mlz02MxI2KmOquZpHw59akM
