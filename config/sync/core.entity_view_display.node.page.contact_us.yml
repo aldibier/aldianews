@@ -6,11 +6,11 @@ dependencies:
     - core.entity_view_mode.node.contact_us
     - field.field.node.page.body
     - fixed_block_content.fixed_block_content._small_vertical_advertising
-    - fixed_block_content.fixed_block_content.horizontal_advertising
     - node.type.page
   module:
     - al_dia_layouts
     - fixed_block_content
+    - gamw
     - layout_builder
     - text
     - user
@@ -73,18 +73,19 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: 0
-          dea00832-8915-4d01-b439-59957582aceb:
-            uuid: dea00832-8915-4d01-b439-59957582aceb
+          c89f7f06-6fad-408a-ac2e-43f5eba81376:
+            uuid: c89f7f06-6fad-408a-ac2e-43f5eba81376
             region: horizontal_advertising
             configuration:
-              id: 'fixed_block_content:horizontal_advertising'
-              label: 'Horizontal advertising'
-              provider: fixed_block_content
+              id: gamw
+              label: 'Pre footer -  Bottom banner '
+              provider: gamw
               label_display: '0'
-              view_mode: ''
+              ad_unit: pre-footer-bottom-banner
+              attributes_wrapper: null
               context_mapping: {  }
             additional: {  }
-            weight: 0
+            weight: 1
         third_party_settings: {  }
 _core:
   default_config_hash: g1S3_GLaxq4l3I9RIca5Mlz02MxI2KmOquZpHw59akM
@@ -112,4 +113,5 @@ content:
     third_party_settings: {  }
 hidden:
   langcode: true
+  premium_message: true
   search_api_excerpt: true

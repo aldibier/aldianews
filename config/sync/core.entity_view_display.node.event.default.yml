@@ -17,7 +17,6 @@ dependencies:
     - field.field.node.event.field_venue_of_the_event
     - fixed_block_content.fixed_block_content._small_vertical_advertising
     - fixed_block_content.fixed_block_content.big_vertical_advertising
-    - fixed_block_content.fixed_block_content.horizontal_advertising
     - node.type.event
     - views.view.block_guest
     - views.view.contact_event
@@ -311,18 +310,6 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: -8
-          87a2a6f9-fd9f-4b3b-a4ee-b41a1702ad85:
-            uuid: 87a2a6f9-fd9f-4b3b-a4ee-b41a1702ad85
-            region: advertising_content
-            configuration:
-              id: 'fixed_block_content:horizontal_advertising'
-              label: 'Horizontal advertising'
-              provider: fixed_block_content
-              label_display: '0'
-              view_mode: ''
-              context_mapping: {  }
-            additional: {  }
-            weight: -9
           e5c6ad6a-9b12-4248-966a-f26849e2571f:
             uuid: e5c6ad6a-9b12-4248-966a-f26849e2571f
             region: advertising_content
@@ -452,6 +439,19 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: 1
+          f8f23b61-8beb-4be3-a67e-fd70884305fd:
+            uuid: f8f23b61-8beb-4be3-a67e-fd70884305fd
+            region: advertising_content
+            configuration:
+              id: gamw
+              label: 'first block bottom banner'
+              provider: gamw
+              label_display: '0'
+              ad_unit: first-block-bottom-banner
+              attributes_wrapper: null
+              context_mapping: {  }
+            additional: {  }
+            weight: -6
         third_party_settings: {  }
 id: node.event.default
 targetEntityType: node

@@ -8,12 +8,12 @@ dependencies:
     - field.field.node.al_dia_vacancy.field_picture
     - fixed_block_content.fixed_block_content._small_vertical_advertising
     - fixed_block_content.fixed_block_content.big_vertical_advertising
-    - fixed_block_content.fixed_block_content.horizontal_advertising
     - node.type.al_dia_vacancy
     - webform.webform.apply_to_this_job
   module:
     - al_dia_layouts
     - fixed_block_content
+    - gamw
     - image
     - layout_builder
     - text
@@ -53,18 +53,6 @@ third_party_settings:
               context_mapping:
                 entity: layout_builder.entity
                 view_mode: view_mode
-            additional: {  }
-            weight: 0
-          ec0d15cb-0928-4bae-8568-8557051af23d:
-            uuid: ec0d15cb-0928-4bae-8568-8557051af23d
-            region: horizontal_advertising
-            configuration:
-              id: 'fixed_block_content:horizontal_advertising'
-              label: 'Horizontal advertising'
-              provider: fixed_block_content
-              label_display: '0'
-              view_mode: ''
-              context_mapping: {  }
             additional: {  }
             weight: 0
           623d18b1-5938-437e-8bc2-18b723636f92:
@@ -142,6 +130,19 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: 1
+          f63bd07e-8c24-4081-b0cb-8673ad0b2873:
+            uuid: f63bd07e-8c24-4081-b0cb-8673ad0b2873
+            region: horizontal_advertising
+            configuration:
+              id: gamw
+              label: 'first block bottom banner work with al dia interna'
+              provider: gamw
+              label_display: '0'
+              ad_unit: first-block-bottom-banner
+              attributes_wrapper: null
+              context_mapping: {  }
+            additional: {  }
+            weight: 1
         third_party_settings: {  }
 id: node.al_dia_vacancy.default
 targetEntityType: node
@@ -179,4 +180,5 @@ content:
 hidden:
   addtoany: true
   langcode: true
+  premium_message: true
   search_api_excerpt: true
