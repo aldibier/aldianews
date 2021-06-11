@@ -111,21 +111,6 @@ reactions:
         unique: 0
         context_id: about_al_dia_live
         uuid: a12bd9a1-547b-4c3b-a65f-ff475abd1a17
-      5262c94b-aa11-454f-8987-4775b3cf7068:
-        id: 'fixed_block_content:horizontal_advertising'
-        label: 'Horizontal advertising'
-        provider: fixed_block_content
-        label_display: '0'
-        region: content
-        weight: '4'
-        view_mode: ''
-        context_mapping: {  }
-        custom_id: fixed_block_content_horizontal_advertising
-        theme: al_dia_news
-        css_class: ''
-        unique: 0
-        context_id: about_al_dia_live
-        uuid: 5262c94b-aa11-454f-8987-4775b3cf7068
       7612dc51-baf2-4b9e-b2ad-0e5f38a9674c:
         id: 'block_group:testimonial_and_advertising_vertical'
         label: 'Testimonial and advertising vertical'
@@ -157,6 +142,25 @@ reactions:
         unique: 0
         context_id: about_al_dia_live
         uuid: 334663ca-bcc3-4ba0-b076-4882289ca36b
+      06dd3f14-5da4-45dd-8d5a-35c379564603:
+        id: gamw
+        label: 'Pre footer -  Bottom banner al dia live'
+        provider: gamw
+        label_display: visible
+        ad_unit: pre-footer-bottom-banner
+        attributes_wrapper:
+          0: ''
+          add: 'Add another targeting attribute'
+          remove: 'Remove last targeting attribute'
+        region: content
+        weight: '4'
+        context_mapping: {  }
+        custom_id: gamw
+        theme: al_dia_news
+        css_class: banner-horizontal
+        unique: 0
+        context_id: about_al_dia_live
+        uuid: 06dd3f14-5da4-45dd-8d5a-35c379564603
     id: blocks
     saved: false
     uuid: e8523adf-eacb-45ff-bd80-ac4e8c76b9db

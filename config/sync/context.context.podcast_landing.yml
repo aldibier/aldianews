@@ -26,7 +26,7 @@ reactions:
         provider: system
         label_display: '0'
         region: content
-        weight: '-1'
+        weight: '0'
         context_mapping: {  }
         custom_id: system_main_block
         theme: al_dia_news
@@ -42,7 +42,7 @@ reactions:
         views_label: ''
         items_per_page: none
         region: content
-        weight: '-2'
+        weight: '-1'
         context_mapping: {  }
         custom_id: views_block_last_category_podcast_block_2
         theme: al_dia_news
@@ -50,6 +50,25 @@ reactions:
         unique: 0
         context_id: podcast_landing
         uuid: 1381eeb2-fc14-4787-a37d-76e4a53a3291
+      ef29cf1c-cfba-4585-bc8a-536c62521466:
+        id: gamw
+        label: 'Pre footer -  Bottom banner podcast'
+        provider: gamw
+        label_display: visible
+        ad_unit: pre-footer-bottom-banner
+        attributes_wrapper:
+          0: ''
+          add: 'Add another targeting attribute'
+          remove: 'Remove last targeting attribute'
+        region: content
+        weight: '0'
+        context_mapping: {  }
+        custom_id: gamw
+        theme: al_dia_news
+        css_class: banner-horizontal
+        unique: 0
+        context_id: podcast_landing
+        uuid: ef29cf1c-cfba-4585-bc8a-536c62521466
     id: blocks
     saved: false
     uuid: 1384a8cd-1b7c-4583-a77d-066dda2b7928

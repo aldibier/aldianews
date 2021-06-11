@@ -32,6 +32,7 @@ dependencies:
     - datetime
     - entity_reference_revisions
     - fixed_block_content
+    - gamw
     - image
     - layout_builder
     - text
@@ -283,18 +284,6 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: 0
-          3a4614c7-b005-4c70-9fed-a806174ff7cc:
-            uuid: 3a4614c7-b005-4c70-9fed-a806174ff7cc
-            region: six_content
-            configuration:
-              id: 'fixed_block_content:horizontal_advertising'
-              label: 'Horizontal advertising'
-              provider: fixed_block_content
-              label_display: '0'
-              view_mode: ''
-              context_mapping: {  }
-            additional: {  }
-            weight: 1
           a0f690c3-4eb5-494d-a5cc-aa2435716ef0:
             uuid: a0f690c3-4eb5-494d-a5cc-aa2435716ef0
             region: content
@@ -447,6 +436,22 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: -7
+          5e5c6d7f-cf59-4be2-8bdc-47e7296fe11f:
+            uuid: 5e5c6d7f-cf59-4be2-8bdc-47e7296fe11f
+            region: six_content
+            configuration:
+              id: gamw
+              label: 'Pre footer -  Bottom banner event'
+              provider: gamw
+              label_display: '0'
+              ad_unit: pre-footer-bottom-banner
+              attributes_wrapper:
+                0: ''
+                add: 'Add another targeting attribute'
+                remove: 'Remove last targeting attribute'
+              context_mapping: {  }
+            additional: {  }
+            weight: 1
         third_party_settings: {  }
 id: node.event.default
 targetEntityType: node

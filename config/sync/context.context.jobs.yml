@@ -174,21 +174,6 @@ reactions:
         unique: 0
         context_id: jobs
         uuid: 548c8f86-490a-4a8c-b866-fa8d3f5fc788
-      44cff8dd-1bf0-4d1a-851c-6b6c0281ca07:
-        id: 'fixed_block_content:horizontal_advertising'
-        label: 'Horizontal advertising'
-        provider: fixed_block_content
-        label_display: '0'
-        region: content
-        weight: '6'
-        view_mode: ''
-        context_mapping: {  }
-        custom_id: fixed_block_content_horizontal_advertising
-        theme: al_dia_news
-        css_class: ''
-        unique: 0
-        context_id: jobs
-        uuid: 44cff8dd-1bf0-4d1a-851c-6b6c0281ca07
       b5f8ed38-df7c-48c6-a219-170002e9021e:
         id: 'fixed_block_content:horizontal_advertising'
         label: 'Horizontal advertising'
@@ -204,6 +189,25 @@ reactions:
         unique: 0
         context_id: jobs
         uuid: b5f8ed38-df7c-48c6-a219-170002e9021e
+      7465aca0-fd1e-4cf3-aef4-f93ac101465b:
+        id: gamw
+        label: 'Pre footer -  Bottom banner jobs'
+        provider: gamw
+        label_display: visible
+        ad_unit: pre-footer-bottom-banner
+        attributes_wrapper:
+          0: ''
+          add: 'Add another targeting attribute'
+          remove: 'Remove last targeting attribute'
+        region: content
+        weight: '6'
+        context_mapping: {  }
+        custom_id: gamw
+        theme: al_dia_news
+        css_class: banner-horizontal
+        unique: 0
+        context_id: jobs
+        uuid: 7465aca0-fd1e-4cf3-aef4-f93ac101465b
     id: blocks
     saved: false
     uuid: 3de707dd-4aed-4ae9-aa63-7a6bde34edc5
