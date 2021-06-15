@@ -47,13 +47,14 @@
 	margin-bottom: 75px;
 	display: grid;
 	grid-template-columns: minmax(auto,840px) 400px;
-	grid-template-rows: auto;
+	grid-template-rows: 480px auto;
 	grid-template-areas: 'category-image podcast-image'
 						 'category-content social-media';
-	grid-gap: 20px 40px;
+	grid-gap: 25px 40px;
 
 	@media screen and (max-width: $broken) {
 		grid-template-columns: minmax(180px,2fr) minmax(85px,1fr);
+		grid-template-rows: auto;
 		grid-template-areas: 'category-image podcast-image'
 						 	 'category-content category-content'
 							 'social-media social-media';

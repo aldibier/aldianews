@@ -333,8 +333,9 @@ $space-level: 125px;
 //--first level comment--// 
 section .indented:not(.indented > .indented )  {
   > .comment {
+    .field--name-field-comment-body{
     padding-left: $space-level;
-
+  }
     @media screen and(max-width:$tablet) {
       $space-level: 30px;
       padding-left: $space-level;
@@ -345,8 +346,9 @@ section .indented:not(.indented > .indented )  {
 //--second level comment--// 
 section .indented:not(.idented) > .indented {
   > .comment {
+    .field--name-field-comment-body{
     padding-left: $space-level + 100px;
-
+  }
     @media screen and(max-width:$tablet) {
       $space-level: 30px;
       padding-left: $space-level + $space-level; 

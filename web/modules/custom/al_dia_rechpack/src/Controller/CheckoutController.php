@@ -98,7 +98,7 @@ class CheckoutController extends ControllerBase {
    *   A response.
    */
   public function onApprove(RouteMatchInterface $route_match, Request $request) {
-    $this->logger->notice('Maria');
+    //$this->logger->notice($request->request->all());
     /** @var \Drupal\commerce_order\Entity\OrderInterface $order */
     $order = $route_match->getParameter('commerce_order');
     /** @var \Drupal\commerce_payment\Entity\PaymentGatewayInterface $payment_gateway */
