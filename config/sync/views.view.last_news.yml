@@ -18,6 +18,7 @@ dependencies:
     - taxonomy
     - text
     - user
+    - views_block_area
     - views_fieldsets
     - views_infinite_scroll
 id: last_news
@@ -474,7 +475,12 @@ display:
             label: ''
           granularity: second
       title: 'Last News'
-      header: {  }
+      header:
+        views_block_area:
+          id: views_block_area
+          table: views
+          field: views_block_area
+          plugin_id: views_block_area
       footer: {  }
       empty: {  }
       relationships:
@@ -2584,6 +2590,7 @@ display:
         - 'config:core.entity_view_display.node.news.first_category_home'
         - 'config:core.entity_view_display.node.news.full'
         - 'config:core.entity_view_display.node.news.news'
+        - 'config:core.entity_view_display.node.news.premium'
         - 'config:core.entity_view_display.node.news.subcategory_first_'
         - 'config:core.entity_view_display.node.news.subcategory_more'
         - 'config:core.entity_view_display.node.news.subcategory_next_4'
@@ -2598,6 +2605,7 @@ display:
         - 'config:core.entity_view_display.node.page.title_in_h2'
         - 'config:core.entity_view_display.node.page.work_whit_al_dia'
         - 'config:core.entity_view_display.node.thought_leaders.default'
+        - 'config:core.entity_view_display.node.thought_leaders.premium'
         - 'config:core.entity_view_display.node.thought_leaders.teaser'
         - 'config:core.entity_view_display.node.webform.default'
         - 'config:core.entity_view_display.node.webform.teaser'
@@ -2692,10 +2700,7 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          fields:
-            - field_type_of_content
-            - field_image
-            - field_my_content_has_a_main_vide
+          fields: {  }
           wrapper: div
           legend: ''
           classes: container-wrapper
@@ -3114,6 +3119,16 @@ display:
           entity_field: parent
           plugin_id: taxonomy
       header:
+        views_block_area:
+          id: views_block_area
+          table: views
+          field: views_block_area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          block_id: 'block_group:gamw_first_block_bottom_banner'
+          plugin_id: views_block_area
         area:
           id: area
           table: views
@@ -3320,7 +3335,8 @@ display:
     display_title: Enlace
     position: 5
     display_options:
-      display_extenders: {  }
+      display_extenders:
+        ajax_history: {  }
       display_description: ''
       fields:
         field_category:
@@ -3554,6 +3570,7 @@ display:
       defaults:
         fields: false
         arguments: false
+        header: false
       arguments:
         tid:
           id: tid
@@ -3596,6 +3613,17 @@ display:
           entity_type: taxonomy_term
           entity_field: tid
           plugin_id: taxonomy
+      header:
+        views_block_area:
+          id: views_block_area
+          table: views
+          field: views_block_area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          block_id: 'block_group:gamw_first_block_bottom_banner'
+          plugin_id: views_block_area
     cache_metadata:
       max-age: -1
       contexts:
