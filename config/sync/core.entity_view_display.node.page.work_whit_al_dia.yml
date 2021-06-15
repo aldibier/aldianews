@@ -5,8 +5,6 @@ dependencies:
   config:
     - core.entity_view_mode.node.work_whit_al_dia
     - field.field.node.page.body
-    - fixed_block_content.fixed_block_content._small_vertical_advertising
-    - fixed_block_content.fixed_block_content.big_vertical_advertising
     - fixed_block_content.fixed_block_content.header_work_with_al_dia
     - node.type.page
     - system.menu.work-with-al-dia-menu
@@ -28,30 +26,6 @@ third_party_settings:
         layout_settings:
           label: 'Basic Page work with Al Día'
         components:
-          50f2e0ea-c3a4-448e-86ba-6c775ea3616a:
-            uuid: 50f2e0ea-c3a4-448e-86ba-6c775ea3616a
-            region: one_vertical_advertising
-            configuration:
-              id: 'fixed_block_content:_small_vertical_advertising'
-              label: ' Small vertical advertising'
-              provider: fixed_block_content
-              label_display: '0'
-              view_mode: ''
-              context_mapping: {  }
-            additional: {  }
-            weight: 0
-          60cbf499-d450-4d6d-89c9-84fac87661ec:
-            uuid: 60cbf499-d450-4d6d-89c9-84fac87661ec
-            region: two_vertical_advertising
-            configuration:
-              id: 'fixed_block_content:big_vertical_advertising'
-              label: 'Big vertical advertising'
-              provider: fixed_block_content
-              label_display: '0'
-              view_mode: ''
-              context_mapping: {  }
-            additional: {  }
-            weight: 0
           d148f858-949c-4b0f-8876-5dca255d7ac1:
             uuid: d148f858-949c-4b0f-8876-5dca255d7ac1
             region: two_content
@@ -125,6 +99,38 @@ third_party_settings:
               label_display: '0'
               ad_unit: first-block-bottom-banner
               attributes_wrapper: null
+              context_mapping: {  }
+            additional: {  }
+            weight: 1
+          ee035ddd-ee19-47c3-84fe-13d7599507de:
+            uuid: ee035ddd-ee19-47c3-84fe-13d7599507de
+            region: one_vertical_advertising
+            configuration:
+              id: gamw
+              label: 'Fixed Internal - Side Section top block'
+              provider: gamw
+              label_display: '0'
+              ad_unit: fixed-internal-side-section-top-block
+              attributes_wrapper:
+                0: ''
+                add: 'Add another targeting attribute'
+                remove: 'Remove last targeting attribute'
+              context_mapping: {  }
+            additional: {  }
+            weight: 1
+          24ddf387-f0e4-4f7a-8d94-722ea1529865:
+            uuid: 24ddf387-f0e4-4f7a-8d94-722ea1529865
+            region: two_vertical_advertising
+            configuration:
+              id: gamw
+              label: 'Fixed Internal - Side Section bottom skyscraper'
+              provider: gamw
+              label_display: '0'
+              ad_unit: fixed-internal-side-section-bottom-skyscraper
+              attributes_wrapper:
+                0: ''
+                add: 'Add another targeting attribute'
+                remove: 'Remove last targeting attribute'
               context_mapping: {  }
             additional: {  }
             weight: 1

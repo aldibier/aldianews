@@ -5,8 +5,6 @@ dependencies:
   config:
     - core.entity_view_mode.node.basic_page_about_us
     - field.field.node.page.body
-    - fixed_block_content.fixed_block_content._small_vertical_advertising
-    - fixed_block_content.fixed_block_content.big_vertical_advertising
     - fixed_block_content.fixed_block_content.header_page_about_us
     - node.type.page
   module:
@@ -56,30 +54,6 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: 1
-          ca90331c-75ea-4da1-9260-1adafd48f64d:
-            uuid: ca90331c-75ea-4da1-9260-1adafd48f64d
-            region: one_vertical_advertising
-            configuration:
-              id: 'fixed_block_content:_small_vertical_advertising'
-              label: ' Small vertical advertising'
-              provider: fixed_block_content
-              label_display: '0'
-              view_mode: ''
-              context_mapping: {  }
-            additional: {  }
-            weight: 1
-          ee8a2af1-9760-4faf-b9cc-59756f9ae3ed:
-            uuid: ee8a2af1-9760-4faf-b9cc-59756f9ae3ed
-            region: two_vertical_advertising
-            configuration:
-              id: 'fixed_block_content:big_vertical_advertising'
-              label: 'Big vertical advertising'
-              provider: fixed_block_content
-              label_display: '0'
-              view_mode: ''
-              context_mapping: {  }
-            additional: {  }
-            weight: 0
           7966874a-823a-4211-95e2-3b5092d77035:
             uuid: 7966874a-823a-4211-95e2-3b5092d77035
             region: horizontal_advertising
@@ -90,6 +64,38 @@ third_party_settings:
               label_display: '0'
               ad_unit: first-block-bottom-banner
               attributes_wrapper: null
+              context_mapping: {  }
+            additional: {  }
+            weight: 1
+          46624775-cd3c-4796-aec5-ce80c8018551:
+            uuid: 46624775-cd3c-4796-aec5-ce80c8018551
+            region: one_vertical_advertising
+            configuration:
+              id: gamw
+              label: 'Fixed Internal - Side Section top block'
+              provider: gamw
+              label_display: '0'
+              ad_unit: fixed-internal-side-section-top-block
+              attributes_wrapper:
+                0: ''
+                add: 'Add another targeting attribute'
+                remove: 'Remove last targeting attribute'
+              context_mapping: {  }
+            additional: {  }
+            weight: 2
+          551ad8c7-623a-4533-a935-2ce111fcefc3:
+            uuid: 551ad8c7-623a-4533-a935-2ce111fcefc3
+            region: two_vertical_advertising
+            configuration:
+              id: gamw
+              label: 'Fixed Internal - Side Section bottom skyscraper'
+              provider: gamw
+              label_display: '0'
+              ad_unit: fixed-internal-side-section-bottom-skyscraper
+              attributes_wrapper:
+                0: ''
+                add: 'Add another targeting attribute'
+                remove: 'Remove last targeting attribute'
               context_mapping: {  }
             additional: {  }
             weight: 1
