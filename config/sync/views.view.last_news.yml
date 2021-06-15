@@ -3659,13 +3659,13 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: div
-          element_class: dis-none
+          element_type: ''
+          element_class: ''
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
+          element_wrapper_type: div
+          element_wrapper_class: dis-none
           element_default_classes: true
           empty: ''
           hide_empty: false
@@ -3690,6 +3690,7 @@ display:
       defaults:
         fields: false
         header: false
+        arguments: false
       header:
         views_block_area:
           id: views_block_area
@@ -3701,12 +3702,12 @@ display:
           empty: false
           block_id: 'block_group:gamw_first_block_bottom_banner'
           plugin_id: views_block_area
+      arguments: {  }
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - url
         - 'user.node_grants:view'
         - user.permissions
       tags:
