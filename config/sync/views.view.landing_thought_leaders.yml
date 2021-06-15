@@ -567,11 +567,6 @@ display:
           id: views_block_area
           table: views
           field: views_block_area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: false
-          block_id: 'block_group:gamw_first_block_bottom_banner'
           plugin_id: views_block_area
       footer: {  }
       empty: {  }
@@ -1003,7 +998,8 @@ display:
     display_title: 'More content landing'
     position: 3
     display_options:
-      display_extenders: {  }
+      display_extenders:
+        ajax_history: {  }
       display_description: ''
       pager:
         type: infinite_scroll
@@ -1029,6 +1025,7 @@ display:
       defaults:
         pager: false
         fields: false
+        header: false
       fields:
         name:
           id: name
@@ -1403,6 +1400,17 @@ display:
           empty_zero: false
           hide_alter_empty: false
           plugin_id: custom
+      header:
+        views_block_area:
+          id: views_block_area
+          table: views
+          field: views_block_area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          block_id: 'block_group:gamw_first_block_bottom_banner'
+          plugin_id: views_block_area
     cache_metadata:
       max-age: -1
       contexts:

@@ -132,7 +132,14 @@ reactions:
         provider: gamw
         label_display: '0'
         ad_unit: home-banner-prefooter
-        attributes_wrapper: null
+        attributes_wrapper:
+          0: ''
+          1: ''
+          2: ''
+          3: ''
+          4: ''
+          add: 'Add another targeting attribute'
+          remove: 'Remove last targeting attribute'
         region: content
         weight: '5'
         context_mapping: {  }
@@ -146,7 +153,7 @@ reactions:
         id: gamw
         label: 'Home - post - header'
         provider: gamw
-        label_display: '0'
+        label_display: visible
         ad_unit: home-post-header
         attributes_wrapper:
           0: ''
@@ -165,10 +172,12 @@ reactions:
         id: gamw
         label: 'Home - post - main - headline'
         provider: gamw
-        label_display: '0'
+        label_display: visible
         ad_unit: Home-post-main-headline
         attributes_wrapper:
           0: ''
+          1: ''
+          2: ''
           add: 'Add another targeting attribute'
           remove: 'Remove last targeting attribute'
         region: content
@@ -176,7 +185,7 @@ reactions:
         context_mapping: {  }
         custom_id: gamw
         theme: al_dia_news
-        css_class: ''
+        css_class: banner-horizontal
         unique: 1
         context_id: blocks_home
         uuid: 3744b2c9-eda9-4b0f-8135-a5e7942490dd

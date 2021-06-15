@@ -1,0 +1,145 @@
+// ---------------- clase para layout laterales izquierdo contenido ---------//
+.block-content-left {
+  width: 100%;
+  max-width: 815px;
+  margin-right: 58px;
+}
+
+// ----------------- tamaños generales de publicidad -----------------------//
+.block-fixed-block-contentbig-vertical-advertising {
+  max-width: 400px;
+  max-height: 790px;
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+.block-fixed-block-contenthorizontal-advertising {
+  max-width: 1280px;
+  max-height: 150px;
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+.block-content-small-vertical-advertising {
+  max-width: 400px;
+  max-height: 375px;
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+.block-fixed-block-contentsquare-advertising-mobile {
+  max-width: 200px;
+  max-height: 200px;
+  overflow: hidden;
+  margin: 30px auto;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+.block-fixed-block-contentvertical-advertising-mobile {
+  margin: 10px auto;
+  max-width: 210px;
+  max-height: 575px;
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.block-fixed-block-contentsquare-advertising-mobile,
+.block-fixed-block-contentvertical-advertising-mobile {
+  display: none;
+}
+
+@media (max-width: $desktop) {
+  .block-content-left {
+    max-width: 555px;
+    margin-right: 28px;
+  }
+}
+
+@media (max-width: $tablet) {
+  .block-content-left {
+    max-width: none;
+    margin-right: 0px;
+  }
+  .block-fixed-block-contentsquare-advertising-mobile,
+  .block-fixed-block-contentvertical-advertising-mobile {
+    display: block;
+  }
+}
+@media (max-width: 400px) {
+  .block-fixed-block-contentvertical-advertising-mobile {
+    max-width: 120px;
+    max-height: 320px;
+    overflow: hidden;
+  }
+}
+
+//----------------- Publicidad con close ----------------------------------//
+.block-fixed-block-content-horizontal-advertising-close {
+  margin: 70px auto 40px !important;
+  position: relative;
+  max-height: 340px;
+  overflow: hidden;
+  button[name="close"] {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    width: 20px;
+    height: 20px;
+    display: block;
+    font-size: 0;
+    background: url("../img/close-white.png") center center no-repeat;
+    border: none;
+    cursor: pointer;
+  }
+  @media (max-width: $tablet) {
+    margin: 0px auto 0px !important;
+
+    button[name="close"] {
+      width: 10px;
+      height: 10px;
+      background: url("../img/close-black.png") center center no-repeat;
+      background-size: contain;
+      top: 10px;
+      right: 20px;
+    }
+  }
+}
+.block-gamw:not(.block-gamw.block-fixed-block-content-horizontal-advertising-close)
+  button[name="close"] {
+  display: none;
+}
+
+//----------------- clases generales para publicidad ----------------------------------//
+
+.banner-horizontal {
+  margin: 80px auto;
+  max-width: 1280px;
+  max-height: 149px;
+  overflow: hidden;
+  @media (max-width: $tablet) {
+    margin: 30px auto;
+    max-height: 100px;
+  }
+  &.bot-bottom {
+    margin-bottom: 0px;
+  }
+  &.null-margin {
+    margin: 0 auto;
+  }
+}
+.block-print-edition {
+  max-width: 400px;
+  max-height: 615px;
+  overflow: hidden;
+}

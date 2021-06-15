@@ -3119,16 +3119,6 @@ display:
           entity_field: parent
           plugin_id: taxonomy
       header:
-        views_block_area:
-          id: views_block_area
-          table: views
-          field: views_block_area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: false
-          block_id: 'block_group:gamw_first_block_bottom_banner'
-          plugin_id: views_block_area
         area:
           id: area
           table: views
@@ -3613,6 +3603,93 @@ display:
           entity_type: taxonomy_term
           entity_field: tid
           plugin_id: taxonomy
+      header: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.field_category'
+  block_6:
+    display_plugin: block
+    id: block_6
+    display_title: 'Block 6'
+    position: 6
+    display_options:
+      display_extenders:
+        ajax_history: {  }
+      fields:
+        field_image:
+          id: field_image
+          table: node__field_image
+          field: field_image
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: div
+          element_class: dis-none
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: image
+          settings:
+            image_style: ''
+            image_link: content
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+      defaults:
+        fields: false
+        header: false
       header:
         views_block_area:
           id: views_block_area
@@ -3633,4 +3710,4 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_category'
+        - 'config:field.storage.node.field_image'
