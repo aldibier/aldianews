@@ -1,83 +1,83 @@
-
 .path-taxonomy {
-    .one-content-taxonomy-category,
-    .two-more-content-taxonomy-category,
-    .category-first-block {
-        //display: none;
+  .one-content-taxonomy-category,
+  .two-more-content-taxonomy-category,
+  .category-first-block {
+    //display: none;
+  }
+
+  //------ reset margin ------------//
+  .node__content,
+  .block .content,
+  .node {
+    margin: 0;
+  }
+
+  .header-category {
+    &.empty {
+      display: none;
     }
+  }
 
-    //------ reset margin ------------//
-    .node__content,
-    .block .content,
-    .node {
-        margin: 0;
+  .category-first-block {
+    &.empty {
+      display: none;
     }
-
-    .header-category{
-       &.empty {
-           display: none;
-       }
-    }
-
-    .category-first-block {
-        &.empty {
-            display: none;
-        }
-    }
-}
-
-
-.subcategory-taxonomy {
-    display: flex;
-    flex-wrap: wrap;
-    position: relative;
-
-    .block-views-blocksubcategory-only-for-children-block-1 {
-        width: 100%;
-        margin: 0 auto 20px;
-
-        >h2 {
-            display: none;
-        }
-
-        .view-content {
-            width: calc(100% - 430px);
-        }
-
-        @media(max-width:$broken) {
-            .view-content {
-                width: 100%;
-            }
-        }
-    }
-
-    .block-views-blocksubcategory-only-for-children-block-2 {
-        position: absolute;
-        width: 100%;
-        max-width: 430px;
-        padding: 0 0 0 20px;
-        right: 0;
-        top: 73px;
-        border-left: 1px solid $cgrey4;
-
-        @media(max-width:$broken) {
-            position: relative;
-            top: 0;
-            max-width: 100%;
-            border: none;
-            margin: 0;
-        }
-    }
+  }
 }
 
 .subcategory-taxonomy {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
 
-    .block-views-blocksubcategory-only-for-children-block-3 {
-        width: 100%;
-        margin: 20px auto 0;
+  .block-views-blocksubcategory-only-for-children-block-1 {
+    width: 100%;
+    margin: 0 auto 20px;
 
-        @media (max-width:$tablet){
-            margin: 0 auto;
-        }
+    > h2 {
+      display: none;
     }
+
+    .view-content {
+      width: calc(100% - 430px);
+    }
+
+    @media (max-width: $broken) {
+      .view-content {
+        width: 100%;
+      }
+    }
+  }
+
+  .block-views-blocksubcategory-only-for-children-block-2 {
+    position: absolute;
+    width: 100%;
+    max-width: 430px;
+    padding: 0 0 0 20px;
+    right: 0;
+    top: 73px;
+    border-left: 1px solid $cgrey4;
+
+    @media (max-width: $broken) {
+      position: relative;
+      top: 0;
+      max-width: 100%;
+      border: none;
+      margin: 0;
+    }
+  }
+}
+
+.subcategory-taxonomy {
+  .block-views-blocksubcategory-only-for-children-block-3 {
+    width: 100%;
+    margin: 0px auto 0;
+
+    @media (max-width: $tablet) {
+      margin: 0 auto;
+    }
+  }
+  .banner-horizontal {
+    margin: 0px auto 80px;
+  }
 }

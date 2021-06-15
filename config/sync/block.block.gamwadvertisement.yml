@@ -1,4 +1,4 @@
-uuid: 3f93067b-da50-4525-b6ba-0dbc08b86f46
+uuid: 394154b9-6a30-46cc-9ef0-d1d39289ce94
 langcode: en
 status: true
 dependencies:
@@ -6,7 +6,6 @@ dependencies:
     - block_class
     - context
     - gamw
-    - system
   theme:
     - al_dia_news
 third_party_settings:
@@ -14,17 +13,18 @@ third_party_settings:
     classes: banner-horizontal
 id: gamwadvertisement
 theme: al_dia_news
-region: content
-weight: -38
+region: al_dia_live_banner_last_block_top
+weight: 0
 provider: null
 plugin: gamw
 settings:
   id: gamw
-  label: 'Header - top - banner (Terms of service)'
+  label: 'Al dia live - banner - last block top'
   provider: gamw
   label_display: '0'
-  ad_unit: header-top-banner
-  attributes_wrapper: null
+  ad_unit: al-dia-live-banner-last-block-top
+  attributes_wrapper:
+    - ''
 visibility:
   request_path_exclusion:
     id: request_path_exclusion
@@ -34,7 +34,3 @@ visibility:
     id: view_inclusion
     negate: null
     view_inclusion: {  }
-  request_path:
-    id: request_path
-    pages: /terms-of-service
-    negate: false
