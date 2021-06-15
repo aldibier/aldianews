@@ -1,0 +1,35 @@
+uuid: cb7df741-8a5c-47e3-a286-04ea80c8e9fd
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - context
+    - gamw
+  theme:
+    - al_dia_news
+third_party_settings:
+  block_class:
+    classes: banner-horizontal
+id: gamwadvertisement_3
+theme: al_dia_news
+region: gamw_first_block_bottom_banner
+weight: 0
+provider: null
+plugin: gamw
+settings:
+  id: gamw
+  label: 'first block bottom banner'
+  provider: gamw
+  label_display: '0'
+  ad_unit: first-block-bottom-banner
+  attributes_wrapper: null
+visibility:
+  request_path_exclusion:
+    id: request_path_exclusion
+    pages: ''
+    negate: null
+  view_inclusion:
+    id: view_inclusion
+    negate: null
+    view_inclusion: {  }

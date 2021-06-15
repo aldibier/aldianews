@@ -178,10 +178,14 @@ reactions:
         id: gamw
         label: 'Pre footer -  Bottom banner jobs'
         provider: gamw
-        label_display: visible
+        label_display: '0'
         ad_unit: pre-footer-bottom-banner
         attributes_wrapper:
           0: ''
+          1: ''
+          2: ''
+          3: ''
+          4: ''
           add: 'Add another targeting attribute'
           remove: 'Remove last targeting attribute'
         region: content
@@ -190,7 +194,7 @@ reactions:
         custom_id: gamw
         theme: al_dia_news
         css_class: banner-horizontal
-        unique: 0
+        unique: 1
         context_id: jobs
         uuid: 7465aca0-fd1e-4cf3-aef4-f93ac101465b
       e6415fac-1bdb-410f-bc72-06da52b89828:
@@ -199,7 +203,10 @@ reactions:
         provider: gamw
         label_display: '0'
         ad_unit: first-block-bottom-banner
-        attributes_wrapper: null
+        attributes_wrapper:
+          0: ''
+          add: 'Add another targeting attribute'
+          remove: 'Remove last targeting attribute'
         region: content
         weight: '-4'
         context_mapping: {  }
