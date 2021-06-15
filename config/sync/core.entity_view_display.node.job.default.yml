@@ -12,14 +12,11 @@ dependencies:
     - field.field.node.job.field_sector
     - field.field.node.job.field_sponsored_profile
     - field.field.node.job.field_type_of_working_day
-    - fixed_block_content.fixed_block_content._small_vertical_advertising
-    - fixed_block_content.fixed_block_content.big_vertical_advertising
     - node.type.job
     - views.view.internal_links_to_job_postings
   module:
     - al_dia_layouts
     - datetime
-    - fixed_block_content
     - gamw
     - layout_builder
     - link
@@ -93,30 +90,6 @@ third_party_settings:
                 view_mode: view_mode
             additional: {  }
             weight: 1
-          e65cb328-9551-4b41-81c5-e6377f3779ba:
-            uuid: e65cb328-9551-4b41-81c5-e6377f3779ba
-            region: one_vertical_advertising
-            configuration:
-              id: 'fixed_block_content:_small_vertical_advertising'
-              label: ' Small vertical advertising'
-              provider: fixed_block_content
-              label_display: '0'
-              view_mode: ''
-              context_mapping: {  }
-            additional: {  }
-            weight: 0
-          d9d04a09-99b7-42dd-b491-be74031420df:
-            uuid: d9d04a09-99b7-42dd-b491-be74031420df
-            region: two_vertical_advertising
-            configuration:
-              id: 'fixed_block_content:big_vertical_advertising'
-              label: 'Big vertical advertising'
-              provider: fixed_block_content
-              label_display: '0'
-              view_mode: ''
-              context_mapping: {  }
-            additional: {  }
-            weight: 0
           9755fae9-7f86-4e54-9d8c-93a0f1a01c7e:
             uuid: 9755fae9-7f86-4e54-9d8c-93a0f1a01c7e
             region: content
@@ -211,6 +184,38 @@ third_party_settings:
               label_display: visible
               ad_unit: header-top-banner
               attributes_wrapper: null
+              context_mapping: {  }
+            additional: {  }
+            weight: 1
+          361a0c86-22e3-4df4-91ca-4af628ed716e:
+            uuid: 361a0c86-22e3-4df4-91ca-4af628ed716e
+            region: one_vertical_advertising
+            configuration:
+              id: gamw
+              label: 'Fixed Internal - Side Section top block'
+              provider: gamw
+              label_display: '0'
+              ad_unit: fixed-internal-side-section-top-block
+              attributes_wrapper:
+                0: ''
+                add: 'Add another targeting attribute'
+                remove: 'Remove last targeting attribute'
+              context_mapping: {  }
+            additional: {  }
+            weight: 1
+          06c729d0-effd-4a85-923f-46a01551a4a1:
+            uuid: 06c729d0-effd-4a85-923f-46a01551a4a1
+            region: two_vertical_advertising
+            configuration:
+              id: gamw
+              label: 'Fixed Internal - Side Section bottom skyscraper'
+              provider: gamw
+              label_display: '0'
+              ad_unit: fixed-internal-side-section-bottom-skyscraper
+              attributes_wrapper:
+                0: ''
+                add: 'Add another targeting attribute'
+                remove: 'Remove last targeting attribute'
               context_mapping: {  }
             additional: {  }
             weight: 1

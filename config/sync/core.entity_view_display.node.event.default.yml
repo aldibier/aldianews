@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - blockgroup.block_group_content.fixed_blocks_adversiting
     - field.field.node.event.body
     - field.field.node.event.field_contact_block
     - field.field.node.event.field_date_of_event
@@ -16,7 +17,6 @@ dependencies:
     - field.field.node.event.field_slider_block
     - field.field.node.event.field_venue_of_the_event
     - fixed_block_content.fixed_block_content._small_vertical_advertising
-    - fixed_block_content.fixed_block_content.big_vertical_advertising
     - node.type.event
     - views.view.block_guest
     - views.view.contact_event
@@ -28,6 +28,7 @@ dependencies:
   module:
     - addtoany
     - al_dia_layouts
+    - blockgroup
     - datetime
     - entity_reference_revisions
     - fixed_block_content
@@ -111,18 +112,6 @@ third_party_settings:
                 view_mode: view_mode
             additional: {  }
             weight: -7
-          c89b37a8-a7e1-49c9-bec1-d01ba7875573:
-            uuid: c89b37a8-a7e1-49c9-bec1-d01ba7875573
-            region: one_second
-            configuration:
-              id: 'fixed_block_content:_small_vertical_advertising'
-              label: ' Small vertical advertising'
-              provider: fixed_block_content
-              label_display: '0'
-              view_mode: ''
-              context_mapping: {  }
-            additional: {  }
-            weight: 0
           58c7b2bf-9921-4e54-8fd4-aa58c2838b4d:
             uuid: 58c7b2bf-9921-4e54-8fd4-aa58c2838b4d
             region: one_first
@@ -298,18 +287,6 @@ third_party_settings:
                 type: basic_string
             additional: {  }
             weight: 4
-          86205167-8156-4c24-a53b-888d426f49d7:
-            uuid: 86205167-8156-4c24-a53b-888d426f49d7
-            region: three_content_second
-            configuration:
-              id: 'fixed_block_content:big_vertical_advertising'
-              label: 'Big vertical advertising'
-              provider: fixed_block_content
-              label_display: '0'
-              view_mode: ''
-              context_mapping: {  }
-            additional: {  }
-            weight: -8
           e5c6ad6a-9b12-4248-966a-f26849e2571f:
             uuid: e5c6ad6a-9b12-4248-966a-f26849e2571f
             region: advertising_content
@@ -449,6 +426,33 @@ third_party_settings:
               label_display: '0'
               ad_unit: first-block-bottom-banner
               attributes_wrapper: null
+              context_mapping: {  }
+            additional: {  }
+            weight: -6
+          8549f987-6392-4a9a-8b04-60f042a00c06:
+            uuid: 8549f987-6392-4a9a-8b04-60f042a00c06
+            region: one_second
+            configuration:
+              id: 'block_group:fixed_blocks_adversiting'
+              label: 'GAMW - fixed block adversiting'
+              provider: blockgroup
+              label_display: '0'
+              context_mapping: {  }
+            additional: {  }
+            weight: 1
+          fc196575-32d8-4668-9b5a-842acaf6a64a:
+            uuid: fc196575-32d8-4668-9b5a-842acaf6a64a
+            region: three_content_second
+            configuration:
+              id: gamw
+              label: 'Internal events - side section - view mode'
+              provider: gamw
+              label_display: '0'
+              ad_unit: internal-event-skyscraper-side-section-view-mode
+              attributes_wrapper:
+                0: ''
+                add: 'Add another targeting attribute'
+                remove: 'Remove last targeting attribute'
               context_mapping: {  }
             additional: {  }
             weight: -6

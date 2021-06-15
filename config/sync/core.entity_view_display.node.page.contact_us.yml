@@ -5,11 +5,9 @@ dependencies:
   config:
     - core.entity_view_mode.node.contact_us
     - field.field.node.page.body
-    - fixed_block_content.fixed_block_content._small_vertical_advertising
     - node.type.page
   module:
     - al_dia_layouts
-    - fixed_block_content
     - gamw
     - layout_builder
     - text
@@ -61,18 +59,6 @@ third_party_settings:
                 view_mode: view_mode
             additional: {  }
             weight: 0
-          3373c39f-aa6b-43d6-99ce-4e16b38a72b5:
-            uuid: 3373c39f-aa6b-43d6-99ce-4e16b38a72b5
-            region: one_vertical_advertising
-            configuration:
-              id: 'fixed_block_content:_small_vertical_advertising'
-              label: ' Small vertical advertising'
-              provider: fixed_block_content
-              label_display: '0'
-              view_mode: ''
-              context_mapping: {  }
-            additional: {  }
-            weight: 0
           c89f7f06-6fad-408a-ac2e-43f5eba81376:
             uuid: c89f7f06-6fad-408a-ac2e-43f5eba81376
             region: horizontal_advertising
@@ -83,6 +69,22 @@ third_party_settings:
               label_display: '0'
               ad_unit: pre-footer-bottom-banner
               attributes_wrapper: null
+              context_mapping: {  }
+            additional: {  }
+            weight: 1
+          e7a755d5-d0e8-4aec-9d04-ea4fa9374635:
+            uuid: e7a755d5-d0e8-4aec-9d04-ea4fa9374635
+            region: one_vertical_advertising
+            configuration:
+              id: gamw
+              label: 'Fixed Internal - Side Section top block'
+              provider: gamw
+              label_display: '0'
+              ad_unit: fixed-internal-side-section-top-block
+              attributes_wrapper:
+                0: ''
+                add: 'Add another targeting attribute'
+                remove: 'Remove last targeting attribute'
               context_mapping: {  }
             additional: {  }
             weight: 1

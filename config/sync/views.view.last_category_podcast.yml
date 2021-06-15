@@ -979,7 +979,17 @@ display:
           group_type: group
           admin_label: ''
           empty: false
-          block_id: 'fixed_block_content:big_vertical_advertising'
+          block_id: 'block_group:gamw_fixed_skyscraper_adversiting'
+          plugin_id: views_block_area
+        views_block_area_1:
+          id: views_block_area_1
+          table: views
+          field: views_block_area
+          relationship: none
+          group_type: group
+          admin_label: 'publicidad bloque'
+          empty: false
+          block_id: 'block_group:fixed_blocks_adversiting'
           plugin_id: views_block_area
       use_ajax: true
       css_class: podcast-content-list
@@ -992,17 +1002,7 @@ display:
       row:
         type: fields
         options: {  }
-      footer:
-        views_block_area:
-          id: views_block_area
-          table: views
-          field: views_block_area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: false
-          block_id: 'fixed_block_content:_small_vertical_advertising'
-          plugin_id: views_block_area
+      footer: {  }
     cache_metadata:
       max-age: -1
       contexts:

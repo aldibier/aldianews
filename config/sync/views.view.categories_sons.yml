@@ -9,7 +9,6 @@ dependencies:
     - node
     - taxonomy
     - user
-    - views_block_area
     - views_field_view
 id: categories_sons
 label: 'Categories sons'
@@ -81,6 +80,58 @@ display:
       row:
         type: fields
       fields:
+        view_4:
+          id: view_4
+          table: views
+          field: view
+          relationship: none
+          group_type: group
+          admin_label: publicidad
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          view: last_news
+          display: block_6
+          arguments: ''
+          plugin_id: view
         name:
           id: name
           table: taxonomy_term_field_data
@@ -537,17 +588,7 @@ display:
           entity_field: weight
           plugin_id: standard
       title: 'Categories sons'
-      header:
-        views_block_area:
-          id: views_block_area
-          table: views
-          field: views_block_area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: false
-          block_id: 'block_group:gamw_first_block_bottom_banner'
-          plugin_id: views_block_area
+      header: {  }
       footer: {  }
       empty: {  }
       relationships:

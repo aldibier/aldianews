@@ -1,0 +1,32 @@
+uuid: d85548d2-43b6-4f25-8bb5-e4b12b24ae72
+langcode: en
+status: true
+dependencies:
+  module:
+    - context
+    - gamw
+  theme:
+    - al_dia_news
+id: gamwadvertisement_8
+theme: al_dia_news
+region: testimonial_and_advertising_vertical
+weight: 0
+provider: null
+plugin: gamw
+settings:
+  id: gamw
+  label: 'Testimonials - Side section block'
+  provider: gamw
+  label_display: '0'
+  ad_unit: about-al-dia-live-landing-block-side-section
+  attributes_wrapper:
+    - ''
+visibility:
+  request_path_exclusion:
+    id: request_path_exclusion
+    pages: ''
+    negate: null
+  view_inclusion:
+    id: view_inclusion
+    negate: null
+    view_inclusion: {  }

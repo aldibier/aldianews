@@ -8,15 +8,12 @@ dependencies:
     - field.field.node.feature_employer.field_image
     - field.field.node.feature_employer.field_main_features
     - field.field.node.feature_employer.field_social_media
-    - fixed_block_content.fixed_block_content._small_vertical_advertising
-    - fixed_block_content.fixed_block_content.big_vertical_advertising
     - node.type.feature_employer
     - views.view.feature_employed_information
     - views.view.jobs_in_this_company
   module:
     - al_dia_layouts
     - entity_reference_revisions
-    - fixed_block_content
     - gamw
     - image
     - layout_builder
@@ -105,30 +102,6 @@ third_party_settings:
                 view_mode: view_mode
             additional: {  }
             weight: 1
-          5f30b0de-045e-449b-9d4e-ba604d782244:
-            uuid: 5f30b0de-045e-449b-9d4e-ba604d782244
-            region: one_vertical_advertising
-            configuration:
-              id: 'fixed_block_content:_small_vertical_advertising'
-              label: ' Small vertical advertising'
-              provider: fixed_block_content
-              label_display: '0'
-              view_mode: ''
-              context_mapping: {  }
-            additional: {  }
-            weight: 0
-          fdd06c1c-b4ac-4012-bdd9-55f711324c4a:
-            uuid: fdd06c1c-b4ac-4012-bdd9-55f711324c4a
-            region: two_vertical_advertising
-            configuration:
-              id: 'fixed_block_content:big_vertical_advertising'
-              label: 'Big vertical advertising'
-              provider: fixed_block_content
-              label_display: '0'
-              view_mode: ''
-              context_mapping: {  }
-            additional: {  }
-            weight: 0
           8f5778a5-9ea6-43c7-bec4-68800cb9abee:
             uuid: 8f5778a5-9ea6-43c7-bec4-68800cb9abee
             region: employer_information_information
@@ -191,9 +164,44 @@ third_party_settings:
               id: gamw
               label: 'Header - Top banner (Feature employer)'
               provider: gamw
-              label_display: visible
+              label_display: '0'
               ad_unit: header-top-banner
-              attributes_wrapper: null
+              attributes_wrapper:
+                0: ''
+                add: 'Add another targeting attribute'
+                remove: 'Remove last targeting attribute'
+              context_mapping: {  }
+            additional: {  }
+            weight: 1
+          6790d5f9-3635-45f6-80a8-1d1e0d791e16:
+            uuid: 6790d5f9-3635-45f6-80a8-1d1e0d791e16
+            region: one_vertical_advertising
+            configuration:
+              id: gamw
+              label: 'Fixed Internal - Side Section top block'
+              provider: gamw
+              label_display: '0'
+              ad_unit: fixed-internal-side-section-top-block
+              attributes_wrapper:
+                0: ''
+                add: 'Add another targeting attribute'
+                remove: 'Remove last targeting attribute'
+              context_mapping: {  }
+            additional: {  }
+            weight: 1
+          076e66cb-d6f6-416d-a8aa-04b9d44a577c:
+            uuid: 076e66cb-d6f6-416d-a8aa-04b9d44a577c
+            region: two_vertical_advertising
+            configuration:
+              id: gamw
+              label: 'Fixed Internal - Side Section bottom skyscraper'
+              provider: gamw
+              label_display: '0'
+              ad_unit: fixed-internal-side-section-bottom-skyscraper
+              attributes_wrapper:
+                0: ''
+                add: 'Add another targeting attribute'
+                remove: 'Remove last targeting attribute'
               context_mapping: {  }
             additional: {  }
             weight: 1

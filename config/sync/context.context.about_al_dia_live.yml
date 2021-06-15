@@ -131,10 +131,14 @@ reactions:
         id: gamw
         label: 'Pre footer -  Bottom banner al dia live'
         provider: gamw
-        label_display: visible
+        label_display: '0'
         ad_unit: pre-footer-bottom-banner
         attributes_wrapper:
           0: ''
+          1: ''
+          2: ''
+          3: ''
+          4: ''
           add: 'Add another targeting attribute'
           remove: 'Remove last targeting attribute'
         region: content
@@ -143,7 +147,7 @@ reactions:
         custom_id: gamw
         theme: al_dia_news
         css_class: banner-horizontal
-        unique: 0
+        unique: 1
         context_id: about_al_dia_live
         uuid: 06dd3f14-5da4-45dd-8d5a-35c379564603
       cdc3b66e-6ea3-4845-8903-e847f400ef41:
@@ -152,14 +156,17 @@ reactions:
         provider: gamw
         label_display: '0'
         ad_unit: first-block-bottom-banner
-        attributes_wrapper: null
+        attributes_wrapper:
+          0: ''
+          add: 'Add another targeting attribute'
+          remove: 'Remove last targeting attribute'
         region: content
         weight: '-3'
         context_mapping: {  }
         custom_id: gamw
         theme: al_dia_news
         css_class: banner-horizontal
-        unique: 0
+        unique: 1
         context_id: about_al_dia_live
         uuid: cdc3b66e-6ea3-4845-8903-e847f400ef41
     id: blocks
