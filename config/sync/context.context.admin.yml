@@ -1,0 +1,28 @@
+uuid: 7b9efba5-1a54-4b01-95be-5a6c865dae37
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+name: admin
+label: admin
+group: null
+description: ''
+requireAllConditions: true
+disabled: false
+conditions:
+  user_role:
+    id: user_role
+    roles:
+      administrator: administrator
+      editor: editor
+    negate: false
+    uuid: 6cebbfc7-27fa-40b4-a76c-845cfb18e623
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+reactions:
+  body_class:
+    id: body_class
+    body_class: admin-menu
+    saved: false
+weight: 0
