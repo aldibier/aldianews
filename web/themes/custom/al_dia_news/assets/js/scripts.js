@@ -1221,7 +1221,7 @@ function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread n
 
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
-function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
 
 function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
 
@@ -1729,6 +1729,31 @@ var initMain = function initMain($, Drupal) {
       }, {
         once: true
       });
+    } //--------puopup-- login-----------//
+    // $(".user-logged-in #block-menuuseritem").click(function() {
+    // 	if ($(this).hasClass("open")) {
+    // 	  $(this).removeClass("open");
+    // 	  $(".user-logged-in #block-menuuseritem .item-list").removeClass("open");
+    // 	} else {
+    // 	  $(".user-logged-in #block-menuuseritem .item-list").addClass("open");
+    // 	  $(this).addClass("open");
+    // 	}
+    //   });
+
+
+    var icon_menu = document.querySelector(".user-logged-in #block-menuuseritem");
+    var list_menu = document.querySelector(".user-logged-in #block-menuuseritem .item-list");
+
+    if (!!icon_menu && !!list_menu) {
+      icon_menu.addEventListener('click', function () {
+        if (icon_menu.classList.contains("open")) {
+          icon_menu.classList.remove("open");
+          list_menu.classList.remove("open");
+        } else {
+          list_menu.classList.add("open");
+          icon_menu.classList.add("open");
+        }
+      });
     }
   }; ///// js para modos de visualizacion de slider event
 
@@ -1988,16 +2013,6 @@ __webpack_require__.r(__webpack_exports__);
     $("#block-blockpreheader").click(function () {
       $(".region-secondary-menu").removeClass("open-menu");
       $("body").removeClass("open-menu");
-    }); //--------puopup-- login-----------//
-
-    $(".user-logged-in #block-menuuseritem").click(function () {
-      if ($(this).hasClass("open")) {
-        $(this).removeClass("open");
-        $(".user-logged-in #block-menuuseritem .item-list").removeClass("open");
-      } else {
-        $(".user-logged-in #block-menuuseritem .item-list").addClass("open");
-        $(this).addClass("open");
-      }
     }); //--------puopup-- login - movil -----------//
 
     $(".user-logged-in #block-menuuseritem-2").click(function () {
@@ -2350,7 +2365,7 @@ var initScrollMagic = function initScrollMagic($, Drupal) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
@@ -2580,8 +2595,8 @@ var initSlick = function initSlick($, Drupal) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/usuario/Desktop/Proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
-module.exports = __webpack_require__(/*! /Users/usuario/Desktop/Proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
+__webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
+module.exports = __webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
 
 
 /***/ })
