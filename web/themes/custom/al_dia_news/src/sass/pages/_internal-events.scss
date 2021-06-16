@@ -535,7 +535,7 @@
 
 .webform-submission-nominate-form {
   justify-content: space-between;
-  height: 100%;
+  height: 100% !important;
   #edit-fieldset {
     width: 100%;
     display: flex;
@@ -582,6 +582,7 @@
   }
 }
 .webform-submission-register-form {
+  height: 100% !important;
   #edit-container--2 {
     width: 50%;
   }
@@ -611,6 +612,7 @@
 }
 .webform-submission-sponsorship-upcoming-event-form {
   justify-content: space-between;
+  height: 100% !important;
   .form-type-textfield,
   .form-type-email,
   .js-form-type-select {
