@@ -368,6 +368,8 @@ import replaceToken from "./modules/replaceToken";
 
   Drupal.behaviors.form_checkbox = {
     attach: function(context, settings) {
+      debugger;
+      console.log(context);
       //js para recargar
       Array.from(document.querySelectorAll(".button-preload")).map(function(e){
         console.log(e);
