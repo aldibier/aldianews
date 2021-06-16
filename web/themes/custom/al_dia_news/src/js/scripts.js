@@ -357,16 +357,18 @@ import replaceToken from "./modules/replaceToken";
 
   Drupal.behaviors.form_checkbox = {
     attach: function(context, settings) {
+      //js para recargar
+      Array.from(document.querySelectorAll(".button-preload")).map(function(e){
+        console.log(e);
+        if (e != null) {
+          e.addEventListener("click", () => {
+            debugger;
+            location.reload();
+          });
+        }
+      });
+      
       $(function() {
-        //js para recargar
-        Array.from(document.querySelectorAll(".button-preload")).map(function(e){
-          if (e != null) {
-            e.addEventListener("click", () => {
-              location.reload();
-            });
-          }
-        });
-
         ///// js para tag new
 
         Array.from(
