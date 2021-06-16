@@ -3,10 +3,14 @@ langcode: en
 status: true
 dependencies:
   module:
+    - block_class
     - context
     - gamw
   theme:
     - al_dia_news
+third_party_settings:
+  block_class:
+    classes: block-fixed-block-contentbig-vertical-advertising
 id: gamwadvertisement_10
 theme: al_dia_news
 region: group_career_news_jobs
