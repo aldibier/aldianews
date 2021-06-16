@@ -1729,6 +1729,31 @@ var initMain = function initMain($, Drupal) {
       }, {
         once: true
       });
+    } //--------puopup-- login-----------//
+    // $(".user-logged-in #block-menuuseritem").click(function() {
+    // 	if ($(this).hasClass("open")) {
+    // 	  $(this).removeClass("open");
+    // 	  $(".user-logged-in #block-menuuseritem .item-list").removeClass("open");
+    // 	} else {
+    // 	  $(".user-logged-in #block-menuuseritem .item-list").addClass("open");
+    // 	  $(this).addClass("open");
+    // 	}
+    //   });
+
+
+    var icon_menu = document.querySelector(".user-logged-in #block-menuuseritem");
+    var list_menu = document.querySelector(".user-logged-in #block-menuuseritem .item-list");
+
+    if (!!icon_menu && !!list_menu) {
+      icon_menu.addEventListener('click', function () {
+        if (icon_menu.classList.contains("open")) {
+          icon_menu.classList.remove("open");
+          list_menu.classList.remove("open");
+        } else {
+          list_menu.classList.add("open");
+          icon_menu.classList.add("open");
+        }
+      });
     }
   }; ///// js para modos de visualizacion de slider event
 
@@ -1839,6 +1864,14 @@ var initMain = function initMain($, Drupal) {
   var background_body = document.querySelector("body");
 
   if (!!modal_welcome && !!background_body) {
+    var btn = modal_welcome.querySelector('.aldia-home-close');
+    var btnPreload = modal_welcome.querySelector('.button-preload');
+    if (!!btn) btn.addEventListener('click', function () {
+      return location.reload();
+    });
+    if (!!btnPreload) btnPreload.addEventListener('click', function () {
+      return location.reload();
+    });
     background_body.classList.add("background-modal");
   }
 };
@@ -1988,16 +2021,6 @@ __webpack_require__.r(__webpack_exports__);
     $("#block-blockpreheader").click(function () {
       $(".region-secondary-menu").removeClass("open-menu");
       $("body").removeClass("open-menu");
-    }); //--------puopup-- login-----------//
-
-    $(".user-logged-in #block-menuuseritem").click(function () {
-      if ($(this).hasClass("open")) {
-        $(this).removeClass("open");
-        $(".user-logged-in #block-menuuseritem .item-list").removeClass("open");
-      } else {
-        $(".user-logged-in #block-menuuseritem .item-list").addClass("open");
-        $(this).addClass("open");
-      }
     }); //--------puopup-- login - movil -----------//
 
     $(".user-logged-in #block-menuuseritem-2").click(function () {
@@ -2140,7 +2163,7 @@ __webpack_require__.r(__webpack_exports__);
   });
   Drupal.behaviors.form_checkbox = {
     attach: function attach(context, settings) {
-      $(document).ready(function () {
+      $(function () {
         //js para recargar
         Array.from(document.querySelectorAll(".button-preload")).map(function (e) {
           if (e != null) {

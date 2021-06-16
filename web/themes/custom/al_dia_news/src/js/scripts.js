@@ -129,17 +129,6 @@ import replaceToken from "./modules/replaceToken";
       $("body").removeClass("open-menu");
     });
 
-    //--------puopup-- login-----------//
-    $(".user-logged-in #block-menuuseritem").click(function() {
-      if ($(this).hasClass("open")) {
-        $(this).removeClass("open");
-        $(".user-logged-in #block-menuuseritem .item-list").removeClass("open");
-      } else {
-        $(".user-logged-in #block-menuuseritem .item-list").addClass("open");
-        $(this).addClass("open");
-      }
-    });
-
     //--------puopup-- login - movil -----------//
     $(".user-logged-in #block-menuuseritem-2").click(function() {
       if (window.matchMedia("(max-width: 768px)").matches) {
@@ -368,20 +357,17 @@ import replaceToken from "./modules/replaceToken";
 
   Drupal.behaviors.form_checkbox = {
     attach: function(context, settings) {
-      $(document).ready(function() {
+      $(function() {
         //js para recargar
-        Array.from(document.querySelectorAll(".button-preload")).map(function(
-          e
-        ) {
+        Array.from(document.querySelectorAll(".button-preload")).map(function(e){
           if (e != null) {
             e.addEventListener("click", () => {
               location.reload();
             });
           }
         });
-
+        
         ///// js para tag new
-
         Array.from(
           document.querySelectorAll(
             ".block-field-blocknodenewsfield-type-of-content"

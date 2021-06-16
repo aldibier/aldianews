@@ -535,6 +535,7 @@
 
 .webform-submission-nominate-form {
   justify-content: space-between;
+  height: 100%;
   #edit-fieldset {
     width: 100%;
     display: flex;
@@ -575,6 +576,10 @@
   .form-item-last-name {
     padding-left: 0px;
   }
+  .form-type-textfield,
+  .js-form-type-tel {
+    width: 49%;
+  }
 }
 .webform-submission-register-form {
   #edit-container--2 {
@@ -599,6 +604,9 @@
   }
   .SumoSelect.open > .optWrapper {
     top: 44px;
+  }
+  .form-actions {
+    max-width: 150px;
   }
 }
 .webform-submission-sponsorship-upcoming-event-form {
