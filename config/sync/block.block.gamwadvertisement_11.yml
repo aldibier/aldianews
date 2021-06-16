@@ -1,0 +1,32 @@
+uuid: a36d3730-6660-4406-9c58-9643ca2081b8
+langcode: en
+status: true
+dependencies:
+  module:
+    - context
+    - gamw
+  theme:
+    - al_dia_news
+id: gamwadvertisement_11
+theme: al_dia_news
+region: category_block_side_section_bottom
+weight: 0
+provider: null
+plugin: gamw
+settings:
+  id: gamw
+  label: 'Category - block - side section bottom'
+  provider: gamw
+  label_display: '0'
+  ad_unit: category-block-side-section-bottom
+  attributes_wrapper:
+    - ''
+visibility:
+  request_path_exclusion:
+    id: request_path_exclusion
+    pages: ''
+    negate: null
+  view_inclusion:
+    id: view_inclusion
+    negate: null
+    view_inclusion: {  }
