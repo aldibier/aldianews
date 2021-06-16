@@ -752,6 +752,12 @@ const initMain = ($, Drupal) => {
 	var background_body = document.querySelector("body");
 
 	if(!!modal_welcome && !!background_body){
+		let btn = modal_welcome.querySelector('.aldia-home-close');
+		let btnPreload = modal_welcome.querySelector('.button-preload');
+
+		if(!! btn) btn.addEventListener('click',()=>location.reload());
+		if(!! btnPreload) btnPreload.addEventListener('click',()=>location.reload());
+
 		background_body.classList.add("background-modal");
 	}
 };
