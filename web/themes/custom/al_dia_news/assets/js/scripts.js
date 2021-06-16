@@ -2140,7 +2140,7 @@ __webpack_require__.r(__webpack_exports__);
   });
   Drupal.behaviors.form_checkbox = {
     attach: function attach(context, settings) {
-      $(document).ready(function () {
+      $(function () {
         //js para recargar
         Array.from(document.querySelectorAll(".button-preload")).map(function (e) {
           if (e != null) {
