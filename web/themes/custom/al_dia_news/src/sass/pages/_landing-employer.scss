@@ -223,10 +223,10 @@
       font-family: $PrNovacond-Sbold;
       color: $cwhite;
       background: $corange;
-      width: max-content; 
+      width: max-content;
       cursor: pointer;
       letter-spacing: 0.74px;
-      text-transform: uppercase; 
+      text-transform: uppercase;
     }
 
     .title-employer {
@@ -257,7 +257,7 @@
 
     ul {
       list-style: none;
-      padding: 0 0 0 25px;
+      // padding: 0 0 0 25px;
       margin: 0 0 25px;
     }
 
@@ -281,6 +281,7 @@
         position: absolute;
         left: -25px;
         top: 10px;
+        display: none;
       }
     }
 
@@ -470,6 +471,11 @@
     .field--name-field-image {
     top: -13px;
   }
+}
+
+.webform-submission-contact-us-form .form-actions {
+  width: 100%;
+  max-width: 150px;
 }
 
 @media (max-width: $tablet-min) {
