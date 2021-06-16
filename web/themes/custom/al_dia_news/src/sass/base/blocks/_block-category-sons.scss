@@ -43,7 +43,7 @@
 
     > .views-row {
       display: grid;
-      grid-template-columns: 1fr auto;
+      grid-template-columns: minmax(auto,860px) auto;
       grid-template-rows: repeat(2, auto) 1fr;
       grid-template-areas:
         "head head"
@@ -164,6 +164,10 @@
       @media screen and (max-width: $broken) {
         margin-bottom: 20px;
       }
+    }
+
+    .views-field-view-4 {
+      grid-column: 2 span;
     }
   }
 
