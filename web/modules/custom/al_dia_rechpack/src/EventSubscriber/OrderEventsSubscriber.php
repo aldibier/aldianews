@@ -110,56 +110,60 @@ class OrderEventsSubscriber implements EventSubscriberInterface {
                 if (!isset($decode->access_token)) {
                     throw new \Exception('Falta Token', 101);
                 }
-                // $params = [
-                //     'headers' => [
-                //         'Authorization' => 'Bearer ' . $token,
-                //         'Content-Type' => 'application/x-www-form-urlencoded',
-                //     ],
-                //     'body' => json_encode([
-                //         'product_id' => $sku[0]['value'],
-                //         'name' => 'Monthly Plan',
-                //         'description' => 'Monthly plan',
-                //         'billing_cycles' => [
-                //             [
-                //                 'frequency' => [
-                //                     'interval_unit' => 'MONTH',
-                //                     'interval_count' => 1,
-                //                 ],
-                //                 'tenure_type' => 'TRIAL',
-                //                 'sequence' => 1,
-                //                 'total_cycles' => 1,
-                //             ],
-                //             [
-                //                 'frequency' => [
-                //                     'interval_unit' => 'MONTH',
-                //                     'interval_count' => 1,
-                //                 ],
-                //                 'tenure_type' => 'REGULAR',
-                //                 'sequence' => 2,
-                //                 'total_cycles' => 12,
-                //                 'pricing_scheme' => [
-                //                     'fixed_price' => [
-                //                         'value' => '12',
-                //                         'currency_code' => 'USD',
-                //                     ],
-                //                 ],
-                //             ],
-                //         ],
-                //         'payment_preferences' => [
-                //             'auto_bill_outstanding' => true,
-                //             'setup_fee' => [
-                //                 'value' => '10',
-                //                 'currency_code' => 'USD',
-                //             ],
-                //             'setup_fee_failure_action' => 'CONTINUE',
-                //             'payment_failure_threshold' => 3,
-                //         ],
-                //         'taxes' => [
-                //             'percentage' => '0',
-                //             'inclusive' => false,
-                //         ],
-                //     ]),
-                // ];
+                $params = [
+                    'headers' => [
+                        'Authorization' => 'Bearer ' . $token,
+                        'Content-Type' => 'application/json',
+                        'Accept' => 'application/json',
+                        'PayPal-Request-Id' => 'PLAN-16062021-003',
+                        'Prefer' => 'return=representation',
+
+                    ],
+                    'body' => json_encode([
+                        'product_id' => $sku[0]['value'],
+                        'name' => 'Monthly Plan',
+                        'description' => 'Monthly plan',
+                        'billing_cycles' => [
+                            [
+                                'frequency' => [
+                                    'interval_unit' => 'MONTH',
+                                    'interval_count' => 1,
+                                ],
+                                'tenure_type' => 'TRIAL',
+                                'sequence' => 1,
+                                'total_cycles' => 1,
+                            ],
+                            [
+                                'frequency' => [
+                                    'interval_unit' => 'MONTH',
+                                    'interval_count' => 1,
+                                ],
+                                'tenure_type' => 'REGULAR',
+                                'sequence' => 2,
+                                'total_cycles' => 12,
+                                'pricing_scheme' => [
+                                    'fixed_price' => [
+                                        'value' => '12',
+                                        'currency_code' => 'USD',
+                                    ],
+                                ],
+                            ],
+                        ],
+                        'payment_preferences' => [
+                            'auto_bill_outstanding' => true,
+                            'setup_fee' => [
+                                'value' => '10',
+                                'currency_code' => 'USD',
+                            ],
+                            'setup_fee_failure_action' => 'CONTINUE',
+                            'payment_failure_threshold' => 3,
+                        ],
+                        'taxes' => [
+                            'percentage' => '0',
+                            'inclusive' => false,
+                        ],
+                    ]),
+                ];
                 $plan = $this->client->post('https://api-m.sandbox.paypal.com/v1/billing/plans', $params);
                 $string = (string) $plan->getBody();
                 $decode = json_decode($string);
