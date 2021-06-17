@@ -9,6 +9,7 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Psr\Log\LoggerInterface;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use GuzzleHttp\Client;
+use Drupal\Core\Datetime\DateFormatter;
 
 /**
  * OrderEventsSubscriber.
@@ -44,6 +45,12 @@ class OrderEventsSubscriber implements EventSubscriberInterface {
   protected $client;
 
   /**
+   * Variable date formater.
+   * @var \Drupal\Core\Datetime\DateFormatter
+   */
+  protected $dateFormat;
+
+  /**
    * Constructs a new LocaleTranslation object.
    *
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
@@ -55,11 +62,12 @@ class OrderEventsSubscriber implements EventSubscriberInterface {
    * @param \GuzzleHttp\Client $client
    *   The client.
    */
-  public function __construct(EntityTypeManagerInterface $entity_type_manager, LoggerInterface $logger, ConfigFactoryInterface $config_factory, Client $client) {
+  public function __construct(EntityTypeManagerInterface $entity_type_manager, LoggerInterface $logger, ConfigFactoryInterface $config_factory, Client $client, DateFormatter $dateFormat) {
     $this->entityTypeManager = $entity_type_manager;
     $this->logger = $logger;
     $this->configFactory = $config_factory->get('commerce_payment.commerce_payment_gateway.paypal');
     $this->client = $client;
+    $this->dateFormat = $dateFormat;
   }
 
   /**
@@ -79,11 +87,15 @@ class OrderEventsSubscriber implements EventSubscriberInterface {
   public function onOrderPaid(OrderEvent $event) {
     $config = $this->configFactory->get('configuration');
     $order = $event->getOrder();
+    $date = $this->dateFormat->format(time(), 'custom', 'dmY');
+    $plan_id = 'PLAN-' . $date . '-' . $order->id();
+    $month = $this->dateFormat->format(strtotime("+1 month"), 'custom', 'Y-m-d\TH:i:s\Z');
+    $email = $order->field_email_address->value;
+    $first_name = $order->field_first_name->value;
+    $last_name = $order->field_last_name->value;
     foreach ($order->getItems() as $order_item) {
-
       $product_variation = $order_item->getPurchasedEntity();
       $periodicity = $product_variation->attribute_periodicity->entity;
-      $this->logger->notice(print_r($email));
       if ($periodicity->getName() == 'Monthly' && $order_item->bundle() == 'default') {
         $sku = $product_variation->sku->getValue();
         $this->logger->notice(print_r($sku[0]['value'], 1));
@@ -101,17 +113,18 @@ class OrderEventsSubscriber implements EventSubscriberInterface {
           $token = $this->client->post('https://api-m.sandbox.paypal.com/v1/oauth2/token', $params);
           $string = (string) $token->getBody();
           $decode = json_decode($string);
-          $this->logger->notice(print_r($decode, 1));
+          //$this->logger->notice(print_r($decode, 1));
           // Si no existe el access token saca al catch.
           if (!isset($decode->access_token)) {
             throw new \Exception('Falta Token', 101);
           }
+
           // Creación de Plan.
           $params = [
             'headers' => [
               'Accept' => 'application/json',
               'Authorization' => 'Bearer ' . $decode->access_token,
-              'PayPal-Request-Id' => 'PLAN-16062021-003',
+              'PayPal-Request-Id' => $plan_id,
               'Prefer' => 'return=representation',
               'Content-Type' => 'application/json',
             ],
@@ -163,13 +176,50 @@ class OrderEventsSubscriber implements EventSubscriberInterface {
           $plan = $this->client->post('https://api-m.sandbox.paypal.com/v1/billing/plans', $params);
           $string1 = (string) $plan->getBody();
           $decode1 = json_decode($string1);
-          $this->logger->notice(print_r($decode1, 1));
+          $this->logger->notice(print_r($month, 1));
           // Si no existe el id saca al catch.
           if (!isset($decode1->id)) {
             throw new \Exception('Falta Id', 901);
           }
 
           // Crear Suscripción
+          $params = [
+            'headers' => [
+              'Accept' => 'application/json',
+              'Authorization' => 'Bearer ' . $decode->access_token,
+              'PayPal-Request-Id' => 'SUBSCRIPTION-' . $date . '-' . $order->id(),
+              'Prefer' => 'return=representation',
+              'Content-Type' => 'application/json',
+            ],
+            'body' => json_encode([
+              'plan_id' => $decode1->id,
+              'start_time' => $month,
+              'subscriber' => [
+                'name' => [
+                  'given_name' => $first_name,
+                  'surname' => $last_name,
+                ],
+                'email_address' => $email,
+              ],
+              'application_context' => [
+                'brand_name' => 'example',
+                'locale' => 'en-US',
+                'shipping_preference' => 'SET_PROVIDED_ADDRESS',
+                'user_action' => 'SUBSCRIBE_NOW',
+                'payment_method' => [
+                  'payer_selected' => 'PAYPAL',
+                  'payee_preferred' => 'IMMEDIATE_PAYMENT_REQUIRED',
+                ],
+                'return_url' => 'https://example.com/returnUrl',
+                'cancel_url' => 'https://example.com/cancelUrl',
+              ],
+            ]),
+          ];
+          $subscription = $this->client->post('https://api-m.sandbox.paypal.com/v1/billing/subscriptions', $params);
+          $string2 = (string) $subscription->getBody();
+          $decode2 = json_decode($string2);
+          $this->logger->notice(print_r($decode2, 1));
+
         }
         catch (\Exception $th) {
           // Throw $th;.
