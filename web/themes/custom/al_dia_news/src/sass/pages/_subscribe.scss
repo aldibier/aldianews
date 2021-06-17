@@ -56,6 +56,9 @@
   .field--type-phone-international {
     max-width: 290px;
   }
+  .field--type-phone-international{
+    padding-left: 50px !important;
+  }
   .field--type-address {
     width: 100%;
     summary {
@@ -91,7 +94,7 @@
     }
   }
   .form-item label {
-    font-size: $px24;
+    font-size: $px20;
     line-height: 24px;
   }
   form input {
@@ -109,7 +112,6 @@
   .field--name-field-terms-and-privacy p {
     font-family: $PrNovacond-reg;
     font-style: normal;
-    font-weight: normal;
     font-size: $px15;
     line-height: 18px;
     color: $cgrey6;
@@ -117,14 +119,20 @@
     a {
       font-family: $PrNovacond-Sbold;
       text-decoration: underline;
+    color: $cgrey6;
+    font-size: $px15;
+    line-height: 18px;
     }
   }
   .form-actions {
     display: flex;
     flex-direction: row-reverse;
     margin-bottom: 50px;
+    max-width: 360px;
+    justify-content: space-between;
     input {
       max-width: 165px;
+      margin: 0px;
     }
     a {
       max-width: 165px;
@@ -137,9 +145,25 @@
       line-height: 25px;
       display: flex;
       align-items: center;
-      text-align: center;
+      justify-content: center;
       letter-spacing: 0.741176px;
       color: $cwhite;
     }
   }
+  .layout-region-checkout-footer{
+    max-width: 660px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+}
+
+.contact-payment-subscribe{
+  font-family: $Mod-bold;
+font-style: normal;
+font-size: $px30;
+line-height: 36px;
+color: $cgrey6;
+border-bottom: 1px solid #B1B1B1;
+padding-bottom: 15px;
+margin-bottom: 20px;
 }

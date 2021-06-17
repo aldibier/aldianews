@@ -31,6 +31,11 @@
 
   .pautas {
     height: max-content;
+    min-height: 1205px;
+
+    @media (max-width: $broken) {
+      min-height: initial;
+    }
 
     @media (min-width: $tablet) {
       width: initial !important;
@@ -67,14 +72,16 @@
   }
 }
 .content-left-pages {
-  max-width: 880px;
-  padding: 0 40px 100px 0;
   width: calc(100% - 400px);
+  max-width: 880px;
+  margin-bottom: 100px;
+  padding: 0 40px 0 0;
 
   @media screen and (max-width: $broken) {
     max-width: 100%;
     width: 100%;
-    padding: 0 0 20px;
+    margin-bottom: 20px;
+    padding: 0;
   }
 
   .block-extra-field-blocknodenewsaddtoany {

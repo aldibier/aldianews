@@ -14,13 +14,14 @@ const initScrollMagic = ($, Drupal) => {
         //------------ not sticky --------------//
         if (rigthPages.offsetHeight === pautas.offsetHeight) return;
 
-        const scene1 = new ScrollMagic.Scene({ triggerElement: rigthPages, duration: getDurationScene1 })
-            .addTo(controller)
+        const scene1 = new ScrollMagic.Scene({ triggerElement: pautas,triggerHook:1,duration: getDurationScene1})
+            .addTo(new ScrollMagic.Controller())
             .offset(pautas.offsetHeight + 20)
-            .setPin(pautas, { pushFollowers: false });
+            .setPin(pautas, { pushFollowers: false })
+            .addIndicators({ name: "1" });
 
         function getDurationScene1() {
-            return rigthPages.offsetHeight - pautas.offsetHeight;
+            return rigthPages.offsetHeight - pautas.offsetHeight - 20;
         }
 
         //window.addEventListener("resize", () => resizeActivation(pautas, scene1));
