@@ -1,0 +1,8 @@
+# General settings form
+al_dia_rechpack.services_form.settings:
+  path: '/admin/commerce/config/services-form'
+  defaults:
+    _form: '\Drupal\al_dia_rechpack\Form\ServicesForm'
+    _title: 'Services Settings'
+  requirements:
+    _permission: 'administer site configuration'

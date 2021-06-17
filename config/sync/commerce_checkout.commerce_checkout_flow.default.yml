@@ -27,54 +27,57 @@ configuration:
       double_entry: true
       step: order_information
       weight: 1
-    payment_information:
-      step: order_information
-      weight: 2
     rechpack_order_review_title:
-      step: _sidebar
-      weight: 9
+      step: review
+      weight: 3
+    rechpack_order_review_description:
+      step: review
+      weight: 4
     order_summary:
       view: checkout_order_summary_subscription
       step: review
-      weight: 3
+      weight: 5
     review:
       step: review
-      weight: 4
+      weight: 6
     payment_process:
       capture: true
       step: payment
-      weight: 5
+      weight: 7
     completion_message:
       message:
         value: "Your order number is [commerce_order:order_number].\r\nYou can view your order on your account page when logged in."
         format: plain_text
       step: complete
-      weight: 6
+      weight: 8
       capture: true
     paypal_checkout_payment_process:
       capture: true
       step: complete
-      weight: 7
+      weight: 9
     completion_register:
       step: complete
-      weight: 8
-    rechpack_order_review_description:
-      step: _sidebar
       weight: 10
+    payment_information:
+      step: order_information
+      weight: 2
     coupon_redemption:
       allow_multiple: false
       step: _disabled
       weight: 11
+    rechpack_order_review_auto_renewal:
+      step: _disabled
+      weight: 12
     login:
       allow_guest_checkout: true
       allow_registration: false
       step: _disabled
-      weight: 12
+      weight: 13
     email_registration_login:
       allow_guest_checkout: true
       allow_registration: false
       step: _disabled
-      weight: 13
+      weight: 14
     email_registration_completion_registration:
       step: _disabled
-      weight: 14
+      weight: 15
