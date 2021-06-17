@@ -298,7 +298,7 @@ class OrderEventsSubscriber implements EventSubscriberInterface {
               'grant_type' => 'client_credentials',
             ],
           ];
-          $hateoas = $this->client->post('https://api-m.sandbox.paypal.com/v1/billing/subscriptions', $params);
+          $hateoas = $this->client->post('https://www.paypal.com/webapps/billing/subscriptions', $params);
           $string2 = (string) $hateoas->getBody();
           $decode2 = json_decode($string2);
           $this->logger->notice(print_r($decode2, 1));

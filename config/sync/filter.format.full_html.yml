@@ -52,15 +52,15 @@ filters:
         image: image
         remote_video: remote_video
       allowed_view_modes: {  }
-  video_embed_wysiwyg:
-    id: video_embed_wysiwyg
-    provider: video_embed_wysiwyg
-    status: true
-    weight: 0
-    settings: {  }
   filter_ckeditor_media_embed:
     id: filter_ckeditor_media_embed
     provider: ckeditor_media_embed
+    status: true
+    weight: 0
+    settings: {  }
+  video_embed_wysiwyg:
+    id: video_embed_wysiwyg
+    provider: video_embed_wysiwyg
     status: true
     weight: 0
     settings: {  }
