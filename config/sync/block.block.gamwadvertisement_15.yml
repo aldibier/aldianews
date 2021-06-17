@@ -1,0 +1,36 @@
+uuid: 3657d772-a464-404b-8b8c-5cc72fb8c492
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - context
+    - gamw
+  theme:
+    - al_dia_news
+third_party_settings:
+  block_class:
+    classes: banner-horizontal
+id: gamwadvertisement_15
+theme: al_dia_news
+region: gamw_infinite_scroll_banner_
+weight: 0
+provider: null
+plugin: gamw
+settings:
+  id: gamw
+  label: 'Infinite scroll - Banner'
+  provider: gamw
+  label_display: '0'
+  ad_unit: infinite-scroll-banner
+  attributes_wrapper:
+    - ''
+visibility:
+  request_path_exclusion:
+    id: request_path_exclusion
+    pages: ''
+    negate: null
+  view_inclusion:
+    id: view_inclusion
+    negate: null
+    view_inclusion: {  }
