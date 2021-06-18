@@ -16,6 +16,7 @@ dependencies:
     - field.field.node.news.field_news
     - field.field.node.news.field_podcast_player
     - field.field.node.news.field_postcast_categories
+    - field.field.node.news.field_short_description
     - field.field.node.news.field_short_title
     - field.field.node.news.field_tags
     - field.field.node.news.field_test
@@ -482,6 +483,21 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: -4
+          e5298e8e-2b46-48e1-a7f7-31bee856f4ac:
+            uuid: e5298e8e-2b46-48e1-a7f7-31bee856f4ac
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:news:field_short_description'
+              formatter:
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+                type: basic_string
+            additional: {  }
+            weight: 12
         third_party_settings: {  }
 id: node.news.default
 targetEntityType: node
@@ -593,6 +609,13 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
+  field_short_description:
+    weight: 18
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
     region: content
   field_short_title:
     weight: 0

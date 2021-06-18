@@ -13,6 +13,7 @@ use Drupal\Core\Datetime\DateFormatter;
 use Drupal\Core\Session\AccountProxy;
 use Drupal\Core\Mail\MailManagerInterface;
 use Drupal\Core\Render\RendererInterface;
+use Symfony\Component\HttpFoundation\RequestStack;
 
 
 /**
@@ -76,6 +77,14 @@ class OrderEventsSubscriber implements EventSubscriberInterface {
   protected $renderer;
 
   /**
+   * Request.
+   *
+   * @var \Symfony\Component\HttpFoundation\RequestStack
+   */
+  protected $request;
+
+
+  /**
    * Constructs a new LocaleTranslation object.
    *
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
@@ -87,7 +96,7 @@ class OrderEventsSubscriber implements EventSubscriberInterface {
    * @param \GuzzleHttp\Client $client
    *   The client.
    */
-  public function __construct(EntityTypeManagerInterface $entity_type_manager, LoggerInterface $logger, ConfigFactoryInterface $config_factory, Client $client, DateFormatter $dateFormat, AccountProxy $account_proxy, MailManagerInterface $mail_manager, RendererInterface $renderer) {
+  public function __construct(EntityTypeManagerInterface $entity_type_manager, LoggerInterface $logger, ConfigFactoryInterface $config_factory, Client $client, DateFormatter $dateFormat, AccountProxy $account_proxy, MailManagerInterface $mail_manager, RendererInterface $renderer, RequestStack $request) {
     $this->entityTypeManager = $entity_type_manager;
     $this->logger = $logger;
     $this->configFactory = $config_factory->get('commerce_payment.commerce_payment_gateway.paypal');
@@ -96,6 +105,7 @@ class OrderEventsSubscriber implements EventSubscriberInterface {
     $this->accountProxy = $account_proxy;
     $this->mailManager = $mail_manager;
     $this->renderer = $renderer;
+    $this->request = $request;
   }
 
   /**
@@ -227,7 +237,7 @@ class OrderEventsSubscriber implements EventSubscriberInterface {
           if (!isset($decode1->id)) {
             throw new \Exception('Falta Id', 901);
           }
-
+          $domain = $this->request->getCurrentRequest()->getHost();
           // SERVICIO PARA CREAR LA SUSCRIPCIÓN
           $params = [
             'headers' => [
@@ -256,8 +266,8 @@ class OrderEventsSubscriber implements EventSubscriberInterface {
                   'payer_selected' => 'PAYPAL',
                   'payee_preferred' => 'IMMEDIATE_PAYMENT_REQUIRED',
                 ],
-                'return_url' => 'https://example.com/returnUrl',
-                'cancel_url' => 'https://example.com/cancelUrl',
+                'return_url' => 'http://'. $domain. '.com/commerce/paypal/return-url',
+                'cancel_url' => 'http://'. $domain. '.com/commerce/paypal/cancel-url',
               ],
             ]),
           ];

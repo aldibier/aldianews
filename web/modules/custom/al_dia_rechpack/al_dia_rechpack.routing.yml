@@ -6,3 +6,21 @@ al_dia_rechpack.services_form.settings:
     _title: 'Services Settings'
   requirements:
     _permission: 'administer site configuration'
+
+# Página Finalización de suscripción
+al_dia_rechpack.return_url:
+  path: '/commerce/paypal/return-url'
+  defaults:
+    _controller: '\Drupal\al_dia_rechpack\Controller\ReturnPayPal::url'
+    _title: 'Return Url'
+  requirements:
+    _permission: 'access content'
+
+# Página Cancelar suscripción
+al_dia_rechpack.cancel_url:
+  path: '/commerce/paypal/cancel-url'
+  defaults:
+    _controller: '\Drupal\al_dia_rechpack\Controller\ReturnPayPal::cancel'
+    _title: 'Cancel Url'
+  requirements:
+    _permission: 'access content'

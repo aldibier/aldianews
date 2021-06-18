@@ -18,52 +18,52 @@ configuration:
   display_checkout_progress: true
   display_checkout_progress_breadcrumb_links: true
   panes:
+    rechpack_order_review_your_order:
+      step: _disabled
+      weight: 11
     'order_fields:checkout':
       wrapper_element: container
       display_label: 'Order fields'
       step: order_information
-      weight: 1
+      weight: 0
     contact_information:
       double_entry: true
       step: order_information
-      weight: 2
+      weight: 1
     payment_information:
       step: order_information
-      weight: 3
+      weight: 2
     rechpack_order_review_title:
       step: review
-      weight: 4
+      weight: 3
     rechpack_order_review_description:
       step: review
-      weight: 5
+      weight: 4
     order_summary:
       view: checkout_order_summary_subscription
       step: review
-      weight: 6
+      weight: 5
     review:
       step: review
-      weight: 7
+      weight: 6
     payment_process:
       capture: true
       step: payment
-      weight: 8
+      weight: 7
     completion_message:
       message:
         value: "Your order number is [commerce_order:order_number].\r\nYou can view your order on your account page when logged in."
         format: plain_text
       step: complete
-      weight: 9
+      weight: 8
       capture: true
     paypal_checkout_payment_process:
       capture: true
       step: complete
-      weight: 10
-    rechpack_order_review_your_order:
-      step: order_information
-      weight: 0
+      weight: 9
     completion_register:
       step: complete
-      weight: 11
+      weight: 10
     coupon_redemption:
       allow_multiple: false
       step: _disabled

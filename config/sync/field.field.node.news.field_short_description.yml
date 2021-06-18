@@ -1,0 +1,19 @@
+uuid: c735b047-c722-49b3-9597-f4200a9e5641
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_short_description
+    - node.type.news
+id: node.news.field_short_description
+field_name: field_short_description
+entity_type: node
+bundle: news
+label: 'Short Description'
+description: 'This description will be displayed in the home page, and in the landing pages of the respective category.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long
