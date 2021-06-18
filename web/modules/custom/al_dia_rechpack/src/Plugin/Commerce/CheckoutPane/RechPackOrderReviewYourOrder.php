@@ -21,10 +21,19 @@ class RechPackOrderReviewYourOrder extends CheckoutPaneBase {
    */
   public function buildPaneForm(array $pane_form, FormStateInterface $form_state, array &$complete_form) {
     $order = $this->order;
-    $title = $order->getTitle();
     $items = $order->getItems();
+    foreach ($items as $item) {
+      $variation = $item->getPurchasedEntity();
+      if ($variation) {
+        $product = $variation->getProduct();
+        if ($product) {
+          $name = $product->getTitle();
+        }
+      }
+    }
+
     $pane_form['title'] = [
-      '#markup' => $title,
+      '#markup' => 'YOUR ORDER: '. $name,
     ];
     return $pane_form;
   }

@@ -1,0 +1,34 @@
+uuid: 4f3c87e4-027d-47f0-b130-497ecace37a7
+langcode: en
+status: true
+dependencies:
+  module:
+    - al_dia_rechpack
+    - context
+    - system
+  theme:
+    - al_dia_news
+id: orderproductname
+theme: al_dia_news
+region: content
+weight: -36
+provider: null
+plugin: order_product_name
+settings:
+  id: order_product_name
+  label: 'Order product Name'
+  provider: al_dia_rechpack
+  label_display: '0'
+visibility:
+  request_path_exclusion:
+    id: request_path_exclusion
+    pages: ''
+    negate: null
+  view_inclusion:
+    id: view_inclusion
+    negate: null
+    view_inclusion: {  }
+  request_path:
+    id: request_path
+    pages: "/checkout/*/order_information\r\n/checkout/*/review"
+    negate: false

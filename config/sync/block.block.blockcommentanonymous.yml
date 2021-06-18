@@ -14,7 +14,7 @@ dependencies:
 id: blockcommentanonymous
 theme: al_dia_news
 region: content
-weight: -24
+weight: -29
 provider: null
 plugin: 'fixed_block_content:block_comment_anonymous'
 settings:
@@ -32,10 +32,6 @@ visibility:
     id: view_inclusion
     negate: null
     view_inclusion: {  }
-  request_path:
-    id: request_path
-    pages: '/node/*'
-    negate: false
   user_role:
     id: user_role
     roles:
@@ -43,3 +39,7 @@ visibility:
     negate: false
     context_mapping:
       user: '@user.current_user_context:current_user'
+  request_path:
+    id: request_path
+    pages: '/node/*'
+    negate: false
