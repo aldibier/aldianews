@@ -23,11 +23,11 @@ bundle: default
 mode: default
 content:
   field_address:
+    type: address_default
     weight: 4
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: address_default
-    region: content
   field_email_address:
     weight: 2
     settings:
@@ -53,7 +53,7 @@ content:
     type: string_textfield
     region: content
   field_mandatory_field:
-    weight: 6
+    weight: 5
     settings: {  }
     third_party_settings: {  }
     type: markup
@@ -70,7 +70,7 @@ content:
     type: phone_international_widget
     region: content
   field_terms_and_privacy:
-    weight: 7
+    weight: 6
     settings: {  }
     third_party_settings: {  }
     type: markup

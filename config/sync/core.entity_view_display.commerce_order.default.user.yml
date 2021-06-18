@@ -25,7 +25,7 @@ mode: user
 content:
   billing_profile:
     type: entity_reference_revisions_entity_view
-    weight: 0
+    weight: 1
     label: above
     settings:
       view_mode: default
@@ -35,7 +35,7 @@ content:
   completed:
     label: inline
     type: timestamp
-    weight: 2
+    weight: 3
     settings:
       date_format: short
       custom_date_format: ''
@@ -45,13 +45,13 @@ content:
   mail:
     label: inline
     type: basic_string
-    weight: 1
+    weight: 2
     settings: {  }
     third_party_settings: {  }
     region: content
   order_items:
     type: commerce_order_item_table
-    weight: 5
+    weight: 6
     settings: {  }
     third_party_settings: {  }
     label: hidden
@@ -67,7 +67,7 @@ content:
   placed:
     label: inline
     type: timestamp
-    weight: 3
+    weight: 4
     settings:
       date_format: short
       custom_date_format: ''
@@ -76,14 +76,14 @@ content:
     region: content
   state:
     type: list_default
-    weight: 4
+    weight: 5
     label: inline
     settings: {  }
     third_party_settings: {  }
     region: content
   total_price:
     type: commerce_order_total_summary
-    weight: 6
+    weight: 7
     settings: {  }
     third_party_settings: {  }
     label: hidden

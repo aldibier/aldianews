@@ -1,0 +1,33 @@
+<?php
+/**
+ * Implements hoock_theme().
+ */
+function al_dia_rechpack_theme($existing, $type, $theme, $path) {
+
+    return [
+      'active_subscruption_mail' => [
+        'variables' => [
+          'url' => NULL,
+        ],
+      ],
+    ];
+}
+
+/**
+ * Implements hook_mail().
+ */
+function al_dia_rechpack_mail($key, &$message, $params){
+    $options = [
+      'langcode' => $message['langcode'],
+    ];
+    switch ($key) {
+      case 'active_subscription':
+        $message['headers']['Content-Type'] = 'text/html; charset=UTF-8; format=flowed';
+        $message['from'] = [\Drupal::config('system.site')->get('mail')];
+        $message['subject'] = t('@title', ['@title' => $params['title']], $options);
+        $message['body'][] = $params['message'];
+      break;
+  }
+
+}
+  

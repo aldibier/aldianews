@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.user.user.commerce_remote_id
     - field.field.user.user.field_first_name
+    - field.field.user.user.field_id_subscription
     - field.field.user.user.field_last_name
     - field.field.user.user.user_picture
     - image.style.thumbnail
@@ -20,6 +21,14 @@ mode: default
 content:
   field_first_name:
     weight: 7
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_id_subscription:
+    weight: 9
     label: above
     settings:
       link_to_entity: false

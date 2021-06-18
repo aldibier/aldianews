@@ -1,0 +1,20 @@
+uuid: 350f4d6a-86da-43da-a7bb-726967b2991f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_id_subscription
+  module:
+    - user
+id: user.user.field_id_subscription
+field_name: field_id_subscription
+entity_type: user
+bundle: user
+label: 'Id subscription'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
