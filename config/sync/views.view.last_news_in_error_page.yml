@@ -16,7 +16,6 @@ dependencies:
     - views_block_area
     - views_fieldsets
     - views_infinite_scroll
-    - views_row_insert
 id: last_news_in_error_page
 label: 'Last news in error page'
 module: views
@@ -78,21 +77,11 @@ display:
             button_text: 'Load More'
             automatically_load_content: true
       style:
-        type: row_insert
+        type: default
         options:
-          use_plugin: true
-          data_mode: vri_block
-          block_name: 'block_group:gamw_infinite_scroll_banner_'
-          custom_row_data: ''
-          rows_number: 9
-          row_header: false
-          row_footer: false
-          row_limit_flag: false
-          row_limit: 0
-          class_name: banner-horizontal-scroll
+          grouping: {  }
           row_class: card-one-column
-          default_rows: false
-          strip_rows: false
+          default_row_class: true
       row:
         type: fields
       fields:
@@ -209,7 +198,9 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          fields: {  }
+          fields:
+            - field_type_of_content
+            - field_image
           wrapper: div
           legend: ''
           classes: container-wrapper
