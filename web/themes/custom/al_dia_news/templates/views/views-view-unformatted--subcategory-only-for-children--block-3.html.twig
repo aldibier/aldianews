@@ -1,0 +1,59 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ *
+ * @ingroup themeable
+ */
+#}
+{% if title %}
+	<h3>{{ title }}</h3>
+{% endif %}
+
+{% for row in rows %}
+
+	{%
+		set row_classes = [
+		default_row_class ? 'views-row',
+		]
+	%}
+
+	{# banner #}
+	{% if loop.index == 9 %}
+		<div class="banner-scroll ban">{{ drupal_entity('block', 'gamwadvertisement_15') }}</div>
+	{% endif %}
+	{% if loop.index == 18 %}
+		<div class="banner-scroll ban2">{{ drupal_entity('block', 'gamwadvertisement_18') }}</div>
+	{% endif %}
+	{% if loop.index == 27 %}
+		<div class="banner-scroll ban3">{{ drupal_entity('block', 'gamwadvertisement_19') }}</div>
+	{% endif %}
+
+	{# block #}
+	{% if loop.index  == 15 %}
+		<div class="banner-scroll bloc">{{ drupal_entity('block', 'gamwadvertisement_16') }}</div>
+	{% endif %}
+
+	{# skyscraper #}
+	{% if loop.index  == 24 %}
+		<div class="banner-scroll skys1">{{ drupal_entity('block', 'gamwadvertisement_17') }}</div>
+	{% endif %}
+	{% if loop.index  == 29 %}
+		<div class="banner-scroll skys2">{{ drupal_entity('block', 'gamwadvertisement_20') }}</div>
+	{% endif %}
+
+	<div{{row.attributes.addClass(row_classes)}}>
+		{{- row.content -}}
+	</div>
+{% endfor %}

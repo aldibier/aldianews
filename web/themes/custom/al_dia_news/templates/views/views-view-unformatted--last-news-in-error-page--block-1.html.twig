@@ -24,13 +24,33 @@
 {% for row in rows %}
 
 	{%
-    set row_classes = [
-    default_row_class ? 'views-row',
-    ]
-  %}
+		set row_classes = [
+		default_row_class ? 'views-row',
+		]
+	%}
 
-	{% if loop.index % 9 == 0 %}
+	{# banner #}
+	{% if loop.index == 10 %}
 		<div class="banner-scroll">{{ drupal_entity('block', 'gamwadvertisement_15') }}</div>
+	{% endif %}
+	{% if loop.index == 19 %}
+		<div class="banner-scroll ban2">{{ drupal_entity('block', 'gamwadvertisement_18') }}</div>
+	{% endif %}
+	{% if loop.index == 28 %}
+		<div class="banner-scroll ban3">{{ drupal_entity('block', 'gamwadvertisement_19') }}</div>
+	{% endif %}
+
+	{# block #}
+	{% if loop.index  == 15 %}
+		<div class="block-scroll">{{ drupal_entity('block', 'gamwadvertisement_16') }}</div>
+	{% endif %}
+
+	{# skyscraper #}
+	{% if loop.index  == 24 %}
+		<div class="skys-scroll">{{ drupal_entity('block', 'gamwadvertisement_17') }}</div>
+	{% endif %}
+	{% if loop.index  == 29 %}
+		<div class="skys-scroll skys2">{{ drupal_entity('block', 'gamwadvertisement_20') }}</div>
 	{% endif %}
 
 	<div{{row.attributes.addClass(row_classes)}}>

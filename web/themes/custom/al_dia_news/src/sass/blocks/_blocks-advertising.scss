@@ -199,7 +199,7 @@
 }
 
 //----------------- about us ----------------------------------//
-.node--view-mode-basic-page-about-us {
+.node--view-mode-basic-page-about-us  {
   .horizontal-advertising-general-horizontal {
     margin-bottom: 90px;
 
@@ -216,9 +216,37 @@
     }
   }
 
-  [data-ad-unit="about-us-banner-prefooter-mobile"]{
+  [data-ad-unit="about-us-banner-prefooter-mobile"] {
     @media screen and (min-width: $tablet) {
       display: none;
     }
+  }
+}
+
+///---------- estilos para publicidad en infinit scroll ---------//
+.banner-scroll {
+  grid-column: 1 / 4;
+}
+
+.block-scroll {
+  max-width: 400px;
+  max-height: 375px;
+  overflow: hidden;
+  margin: 35px auto;
+  @media (max-width: $tablet) {
+    max-width: 200px;
+    max-height: 200px;
+    margin: 20px auto;
+  }
+}
+.skys-scroll {
+  max-width: 400px;
+  max-height: 790px;
+  overflow: hidden;
+  margin: 35px auto;
+  @media (max-width: $tablet) {
+    max-width: 120px;
+    max-height: 320px;
+    margin: 20px auto;
   }
 }
