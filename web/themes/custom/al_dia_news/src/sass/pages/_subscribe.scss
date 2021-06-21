@@ -333,6 +333,7 @@
 
     .views-row {
       display: flex;
+      flex-wrap: wrap;
     }
 
     .views-field-total-price__number {
@@ -360,6 +361,13 @@
         font-family: $PrNovacond-reg;
         color: #333333;
       }
+    }
+
+    .views-field-nothing {
+      width: 100%;
+      padding: 15px 0;
+      border-bottom: 1px solid #333333;
+      margin-bottom: 40px;
     }
   }
 
@@ -389,5 +397,6 @@
       font-family: $PrNovacond-reg;
       text-transform: uppercase;
     }
+
   }
 }
