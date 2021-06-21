@@ -244,6 +244,9 @@
   max-height: 790px;
   overflow: hidden;
   margin: 35px auto;
+  grid-column: 3;
+  grid-row: span 2;
+  z-index: 2;
   @media (max-width: $tablet) {
     max-width: 120px;
     max-height: 320px;
