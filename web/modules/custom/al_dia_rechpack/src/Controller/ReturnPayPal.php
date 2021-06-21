@@ -106,14 +106,14 @@ class ReturnPayPal extends ControllerBase {
         '#email' => $email_user,
       ];
       $theme_message = $this->renderer->renderPlain($theme);
-      $stylesheet = file_get_contents(drupal_get_path('module', 'al_dia_rechpack') . '/dist/css/remail.css');
+      //$stylesheet = file_get_contents(drupal_get_path('module', 'al_dia_rechpack') . '/dist/css/remail.css');
       $params['message'] = $theme_message;
       $params['title'] = 'Thank you for Subscribe at Al Día News';
-      $params['css'] = $stylesheet;
+      //$params['css'] = $stylesheet;
       $this->mailManager->mail($module, $key, $to, "es", $params, NULL, TRUE);
     }
     return [
-      '#theme' => 'return_paypal_active',
+      '#theme' => 'return_paypal_active_mail',
       '#email' => $email_user,
     ];
 
