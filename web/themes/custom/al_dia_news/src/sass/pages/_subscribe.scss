@@ -56,9 +56,19 @@
   .field--type-phone-international {
     max-width: 290px;
   }
+
   .field--type-phone-international{
-    padding-left: 50px !important;
+   width: 100%;
+
+    .iti--allow-dropdown {
+      width: 100%;
+    }
+
+    input {
+      padding-left: 47px !important;
+    }
   }
+
   .field--type-address {
     width: 100%;
     summary {
@@ -159,11 +169,18 @@
 
 .contact-payment-subscribe{
   font-family: $Mod-bold;
-font-style: normal;
-font-size: $px30;
-line-height: 36px;
-color: $cgrey6;
-border-bottom: 1px solid #B1B1B1;
-padding-bottom: 15px;
-margin-bottom: 20px;
+  font-style: normal;
+  font-size: $px30;
+  line-height: 36px;
+  color: $cgrey6;
+  border-bottom: 1px solid #B1B1B1;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+  max-width: 620px;
+  display: block;
+  margin: 20px auto;
+}
+
+.block-commerce-checkout-progress {
+
 }
