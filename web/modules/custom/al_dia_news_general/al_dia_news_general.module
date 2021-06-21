@@ -8,6 +8,7 @@ use Drupal\node\NodeInterface;
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Url;
 use Drupal\Component\Serialization\Json;
+use Drupal\Core\Path\CurrentPathStack;
 
 
 
@@ -190,7 +191,8 @@ function al_dia_news_general_form_alter(&$form, $form_state, $form_id) {
   $checkout_forms = [
     'commerce_checkout_flow_multistep_default',
   ];
-  if (in_array($form_id, $checkout_forms)) {
+  if (in_array($form_id, $checkout_forms) && $form['#step_id'] != 'review') {
+    //ksm($form['#step_id']);
     $form['#prefix'] = t('<span class="contact-payment-subscribe">Contact information.</span>');
 
   }
