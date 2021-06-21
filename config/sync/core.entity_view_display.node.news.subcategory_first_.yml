@@ -79,26 +79,7 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: 1
-          e6f776f5-ddda-4ec7-88bc-77a55fdee292:
-            uuid: e6f776f5-ddda-4ec7-88bc-77a55fdee292
-            region: two_content
-            configuration:
-              id: 'field_block:node:news:body'
-              label: Body
-              provider: layout_builder
-              label_display: '0'
-              formatter:
-                label: hidden
-                type: text_summary_or_trimmed
-                settings:
-                  trim_length: 170
-                third_party_settings: {  }
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-            additional: {  }
-            weight: 2
+            weight: -10
           ebeffecd-de49-4389-ae99-2a834ea97594:
             uuid: ebeffecd-de49-4389-ae99-2a834ea97594
             region: two_content
@@ -119,7 +100,7 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: 3
+            weight: -7
           61bb2691-841a-41de-b928-cc31d10bab71:
             uuid: 61bb2691-841a-41de-b928-cc31d10bab71
             region: one_content
@@ -141,6 +122,26 @@ third_party_settings:
                 view_mode: view_mode
             additional: {  }
             weight: -10
+          d0c7e2dc-de9d-4f22-934a-ba7765d5ac12:
+            uuid: d0c7e2dc-de9d-4f22-934a-ba7765d5ac12
+            region: two_content
+            configuration:
+              id: 'field_block:node:news:field_short_description'
+              label: 'Short Description'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: basic_string
+                settings: {  }
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: -9
         third_party_settings: {  }
 id: node.news.subcategory_first_
 targetEntityType: node
