@@ -139,7 +139,10 @@
     flex-direction: row-reverse;
     margin-bottom: 50px;
     max-width: 360px;
-    justify-content: space-between;
+    justify-content: flex-end;
+    max-width: 620px;
+    margin: 0 auto;
+
     input {
       max-width: 165px;
       margin: 0px;
@@ -158,6 +161,7 @@
       justify-content: center;
       letter-spacing: 0.741176px;
       color: $cwhite;
+      margin: 0 30px 0 0;
     }
   }
   .layout-region-checkout-footer{
@@ -181,6 +185,91 @@
   margin: 20px auto;
 }
 
+.block-simple-blockauto-renewal-terms-orders-simple-block {
+  max-width: 620px;
+  margin: 57px auto 20px;
+
+  p {
+    font-weight: 600px;
+    font-family: $PrNovacond-reg;
+    font-size: $px15;
+    color: #B1B1B1;
+    ;
+  }
+}
+
 .block-commerce-checkout-progress {
 
+  .checkout-progress {
+    display: flex;
+    max-width: 620px;
+    margin: 0 auto;
+    position: relative;
+    padding: 0;
+  }
+
+  .checkout-progress--step {
+    font-size: 0;
+    width: 0;
+    font-size: 0;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 24px;
+    
+    a {
+      font-size: 0;
+      width: 33%;
+      font-size: 0;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 24px;
+    }
+
+    &.checkout-progress--step__previous,
+    &.checkout-progress--step__current {
+      
+      &:before {
+        background: #ED1C24;
+      }
+    }
+
+    &.checkout-progress--step__current {
+      font-size: $px20;
+      width: 100%;
+      padding: 0;
+      text-align: center;
+    }
+
+    &:before {
+      width: 30.33%;
+      height: 5px;
+      position: absolute;
+      top: -15px;
+      background: #C4C4C4;
+      display: block;
+      content: '';
+    }
+
+    &:last-child {
+
+      &::before {
+        right: 0;
+      }
+    }
+
+    &:nth-child(2) {
+
+      &::before {
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+      }
+    }
+
+    &:first-child {
+      &::before {
+        left: 0;
+      }
+    }
+  }
 }
