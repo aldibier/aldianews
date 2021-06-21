@@ -33,10 +33,10 @@
 	{% if loop.index == 10 %}
 		<div class="banner-scroll">{{ drupal_entity('block', 'gamwadvertisement_15') }}</div>
 	{% endif %}
-	{% if loop.index == 20 %}
+	{% if loop.index == 17 %}
 		<div class="banner-scroll ban2">{{ drupal_entity('block', 'gamwadvertisement_18') }}</div>
 	{% endif %}
-	{% if loop.index == 30 %}
+	{% if loop.index == 23 %}
 		<div class="banner-scroll ban3">{{ drupal_entity('block', 'gamwadvertisement_19') }}</div>
 	{% endif %}
 
@@ -55,5 +55,6 @@
 
 	<div{{row.attributes.addClass(row_classes)}}>
 		{{- row.content -}}
+		<span>{{ loop.index }}</span>
 	</div>
 {% endfor %}
