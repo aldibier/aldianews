@@ -1,0 +1,36 @@
+uuid: 344cdf08-3015-4dc6-836e-e39e8b9df63e
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - context
+    - gamw
+  theme:
+    - al_dia_news
+third_party_settings:
+  block_class:
+    classes: banner-horizontal
+id: gamwadvertisement_24
+theme: al_dia_news
+region: category_banner_top_one
+weight: 0
+provider: null
+plugin: gamw
+settings:
+  id: gamw
+  label: 'Category banner top one'
+  provider: gamw
+  label_display: '0'
+  ad_unit: category-banner-top-one
+  attributes_wrapper:
+    - ''
+visibility:
+  request_path_exclusion:
+    id: request_path_exclusion
+    pages: ''
+    negate: null
+  view_inclusion:
+    id: view_inclusion
+    negate: null
+    view_inclusion: {  }
