@@ -24,9 +24,7 @@ function al_dia_news_preprocess_views_view_unformatted(&$vars) {
   $ua = strtolower($_SERVER['HTTP_USER_AGENT']);
   $isMob = is_numeric(strpos($ua, "mobile"));
 
-  ksm($isMob);
-
-  $vars['rows']['is_mobile'][] = $isMob;
+  $vars['rows']['is_mobile'][] = $isMob;  
 }
 
 // function al_dia_news_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
