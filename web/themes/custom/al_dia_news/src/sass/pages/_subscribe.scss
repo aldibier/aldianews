@@ -139,7 +139,10 @@
     flex-direction: row-reverse;
     margin-bottom: 50px;
     max-width: 360px;
-    justify-content: space-between;
+    justify-content: flex-end;
+    max-width: 620px;
+    margin: 0 auto;
+
     input {
       max-width: 165px;
       margin: 0px;
@@ -158,6 +161,7 @@
       justify-content: center;
       letter-spacing: 0.741176px;
       color: $cwhite;
+      margin: 0 30px 0 0;
     }
   }
   .layout-region-checkout-footer{
@@ -181,6 +185,218 @@
   margin: 20px auto;
 }
 
+.block-simple-blockauto-renewal-terms-orders-simple-block {
+  max-width: 620px;
+  margin: 57px auto 20px;
+
+  p {
+    font-weight: 600px;
+    font-family: $PrNovacond-reg;
+    font-size: $px15;
+    color: #B1B1B1;
+    ;
+  }
+}
+
 .block-commerce-checkout-progress {
 
+  .checkout-progress {
+    display: flex;
+    max-width: 620px;
+    margin: 0 auto;
+    position: relative;
+    padding: 0;
+  }
+
+  .checkout-progress--step {
+    font-size: 0;
+    width: 0;
+    font-size: 0;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 24px;
+    
+    a {
+      font-size: 0;
+      width: 33%;
+      font-size: 0;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 24px;
+    }
+
+    &.checkout-progress--step__previous,
+    &.checkout-progress--step__current {
+      
+      &:before {
+        background: #ED1C24;
+      }
+    }
+
+    &.checkout-progress--step__current {
+      font-size: $px20;
+      width: 100%;
+      padding: 0;
+      text-align: center;
+    }
+
+    &:before {
+      width: 30.33%;
+      height: 5px;
+      position: absolute;
+      top: -15px;
+      background: #C4C4C4;
+      display: block;
+      content: '';
+    }
+
+    &:last-child {
+
+      &::before {
+        right: 0;
+      }
+    }
+
+    &:nth-child(2) {
+
+      &::before {
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+      }
+    }
+
+    &:first-child {
+      &::before {
+        left: 0;
+      }
+    }
+  }
+}
+
+.block-order-product-name {
+  max-width: 620px;
+  margin: 0 auto 70px;
+
+  .content {
+    font-family: $PrNovacond-Sbold;
+    font-style: normal;
+    font-weight: bold;
+    font-size: $px26;
+    line-height: 32px;
+    text-transform: uppercase;
+    color: #ED1C24;
+  }
+
+  .your-order-subscribe {
+    color: #333333;
+  }
+}
+
+.commerce-checkout-flow{
+  .checkout-pane-payment-information {
+    display: none;
+  }
+
+  h1 {
+    font-family: $Mod-bold;
+    font-style: normal;
+    font-size: $px30;
+    line-height: 36px;
+    color: $cgrey6;
+    border-bottom: 1px solid #B1B1B1;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    max-width: 620px;
+    display: block;
+    margin: 20px auto;
+  }
+
+  .checkout-pane-rechpack-order-review-description {
+    margin: 0 auto;
+    max-width: 620px;
+
+    p {
+      font-family: $PrNovacond-reg;
+      font-style: normal;
+      font-weight: 600;
+      font-size: $px20;
+      line-height: 24px;
+    }
+  }
+
+  .checkout-pane-order-summary {
+    max-width: 620px;
+    margin: 0 auto -10px;
+    background: #F2F2F2;
+    padding: 20px 30px;
+
+    .views-row {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .views-field-total-price__number {
+      margin: 0 0 0 auto;
+
+      span {
+        font-style: normal;
+        font-weight: bold;
+        font-size: $px25;
+        line-height: 30px;
+        text-align: right;
+        font-family: $PrNovacond-Sbold;
+        color: #ED1C24;
+      }
+    }
+
+    .views-field-title-1 {
+      span {
+        font-style: normal;
+        font-weight: bold;
+        font-size: $px26;
+        line-height: 32px;
+        text-align: right;
+        text-transform: uppercase;
+        font-family: $PrNovacond-reg;
+        color: #333333;
+      }
+    }
+
+    .views-field-nothing {
+      width: 100%;
+      padding: 15px 0;
+      border-bottom: 1px solid #333333;
+      margin-bottom: 40px;
+    }
+  }
+
+  .checkout-pane-review {
+    max-width: 620px;
+    margin: 0 auto;
+    padding: 0 30px 40px;
+    background: #F2F2F2;
+
+    legend {
+      display: none;
+    }
+
+    .fieldset-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .field--name-field-first-name,
+    .field--name-field-last-name {
+      margin: 0 5px 0 0;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 26px;
+      line-height: 32px;
+      color: #767676;
+      font-family: $PrNovacond-reg;
+      text-transform: uppercase;
+    }
+
+  }
 }
