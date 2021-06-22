@@ -336,7 +336,7 @@ class OrderEventsSubscriber implements EventSubscriberInterface {
     $theme_message = $this->renderer->renderPlain($theme);
     $stylesheet = file_get_contents(drupal_get_path('module', 'al_dia_rechpack') . '/dist/css/email.css');
     $params['message'] = $theme_message;
-    $params['title'] = 'Active your Subscription at Al Día News';
+    $params['title'] = 'Al Día News - Subscription';
     $params['css'] = $stylesheet;
     $this->mailManager->mail($module, $key, $to, "es", $params, NULL, TRUE);
     
