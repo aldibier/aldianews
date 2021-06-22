@@ -49,7 +49,9 @@
         "head head"
         "area-1 area-3"
         "area-2 area-3";
-
+      .banner-scroll{
+        grid-column: span 2;
+      }
       @media (max-width: $broken) {
         display: flex;
         flex-direction: column;
