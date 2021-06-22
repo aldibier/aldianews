@@ -15,6 +15,11 @@ function al_dia_rechpack_theme($existing, $type, $theme, $path) {
           'email' => NULL,
         ],
       ],
+      'active_subscruption_mail_no_services' => [
+        'variables' => [
+          'url' => NULL,
+        ],
+      ],
     ];
 }
 
@@ -33,6 +38,12 @@ function al_dia_rechpack_mail($key, &$message, $params){
         $message['body'][] = $params['message'];
       break;
       case 'return_paypal_active':
+        $message['headers']['Content-Type'] = 'text/html; charset=UTF-8; format=flowed';
+        $message['from'] = [\Drupal::config('system.site')->get('mail')];
+        $message['subject'] = t('@title', ['@title' => $params['title']], $options);
+        $message['body'][] = $params['message'];
+      break;
+      case 'active_subscription_no_services':
         $message['headers']['Content-Type'] = 'text/html; charset=UTF-8; format=flowed';
         $message['from'] = [\Drupal::config('system.site')->get('mail')];
         $message['subject'] = t('@title', ['@title' => $params['title']], $options);
