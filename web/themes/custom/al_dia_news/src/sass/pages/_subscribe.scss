@@ -82,17 +82,8 @@
     }
     .js-form-item-order-fieldscheckout-field-address-0-address-address-line2 {
       position: relative;
-      &::before {
-        content: "Apt, Floor, Unit (Optional)";
-        display: block;
-        position: absolute;
-        font-family: $PrNovacond-Sbold;
-        font-style: normal;
-        font-size: $px20;
-        line-height: 24px;
-        color: $cgrey6;
-      }
     }
+    
     .address-container-inline {
       display: flex;
       flex-wrap: wrap;
@@ -100,6 +91,7 @@
       .form-item {
         max-width: 290px;
         width: 100%;
+        margin: 0;
       }
     }
   }
