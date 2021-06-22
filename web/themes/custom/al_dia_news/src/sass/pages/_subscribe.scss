@@ -398,5 +398,48 @@
       text-transform: uppercase;
     }
 
+    .field--name-field-email-address {
+      margin: 20px 0 15px;
+    }
+
+    .field--name-field-email-address,
+    .field--type-phone-international {
+      padding: 0 0 0 25px;
+      font-style: normal;
+      font-weight: normal;
+      font-size: $px22;
+      line-height: 27px;
+      letter-spacing: 0.025em;
+      font-family: $PrNovacond-reg;
+      position: relative;
+      color: #767676;
+      width: 100%;
+      margin: 0 0 15px;
+      
+      a {
+        font-style: normal;
+        font-weight: normal;
+        font-size: $px22;
+        line-height: 27px;
+        letter-spacing: 0.025em;
+        font-family: $PrNovacond-reg;
+        color: #767676;
+      }
+
+      &:after {
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto auto auto 0;
+        background: #767676;
+        display: block;
+        content: '';
+        border-radius: 100%;
+
+      }
+    }
   }
 }
