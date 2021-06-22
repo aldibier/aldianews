@@ -28,7 +28,7 @@ reactions:
         views_label: ''
         items_per_page: none
         region: content
-        weight: '-2'
+        weight: '-3'
         context_mapping: {  }
         custom_id: views_block_carousel_videos_landing_block_1
         theme: al_dia_news
@@ -42,7 +42,7 @@ reactions:
         provider: system
         label_display: '0'
         region: content
-        weight: '-1'
+        weight: '-2'
         context_mapping: {  }
         custom_id: system_main_block
         theme: al_dia_news
@@ -58,7 +58,7 @@ reactions:
         views_label: ''
         items_per_page: none
         region: content
-        weight: '0'
+        weight: '-1'
         context_mapping: {  }
         custom_id: views_block_carousel_videos_landing_block_2
         theme: al_dia_news
@@ -66,21 +66,6 @@ reactions:
         unique: 0
         context_id: videos_landing
         uuid: fcadc401-7c42-4b29-958a-bd165b3a224b
-      96fa0d5c-71aa-43d7-aca9-5b1eaaca162d:
-        id: 'fixed_block_content:horizontal_advertising'
-        label: 'Horizontal advertising'
-        provider: fixed_block_content
-        label_display: '0'
-        region: content
-        weight: '1'
-        view_mode: ''
-        context_mapping: {  }
-        custom_id: fixed_block_content_horizontal_advertising
-        theme: al_dia_news
-        css_class: ''
-        unique: 0
-        context_id: videos_landing
-        uuid: 96fa0d5c-71aa-43d7-aca9-5b1eaaca162d
       5d715c39-4072-49d4-b3d7-0a8b966434b7:
         id: 'views_block:more_videos_in_landing-block_1'
         label: ''
@@ -113,6 +98,25 @@ reactions:
         unique: 0
         context_id: videos_landing
         uuid: 78cf10eb-68f0-4ff4-94ff-4705d0540ccd
+      6a68ae3b-3842-4f96-8568-b22594e48570:
+        id: gamw
+        label: 'GAMW Advertisement'
+        provider: gamw
+        label_display: '0'
+        ad_unit: first-block-bottom-banner
+        attributes_wrapper:
+          0: ''
+          add: 'Add another targeting attribute'
+          remove: 'Remove last targeting attribute'
+        region: content
+        weight: '1'
+        context_mapping: {  }
+        custom_id: gamw
+        theme: al_dia_news
+        css_class: banner-horizontal
+        unique: 0
+        context_id: videos_landing
+        uuid: 6a68ae3b-3842-4f96-8568-b22594e48570
     id: blocks
     saved: false
     uuid: 090e6277-acec-42ea-aeb2-8992d0353bd5
