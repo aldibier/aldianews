@@ -262,11 +262,24 @@
   }
 
   .views-infinite-scroll-content-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-
+    // display: flex;
+    // flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: minmax(250px, 420px) minmax(250px, 440px) minmax(
+        250px,
+        420px
+      );
+    grid-gap: 0 40px;
+    overflow: hidden;
+    grid-auto-flow: dense;
+    @media (max-width: $broken) {
+      all: initial;
+      display: flex;
+      flex-wrap: wrap;
+      position: relative;
+    }
     .views-row {
-      width: 33.33%;
+      // width: 33.33%;
       max-width: 440px;
       padding: 0 15px;
       margin: 40px 0;

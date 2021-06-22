@@ -82,17 +82,8 @@
     }
     .js-form-item-order-fieldscheckout-field-address-0-address-address-line2 {
       position: relative;
-      &::before {
-        content: "Apt, Floor, Unit (Optional)";
-        display: block;
-        position: absolute;
-        font-family: $PrNovacond-Sbold;
-        font-style: normal;
-        font-size: $px20;
-        line-height: 24px;
-        color: $cgrey6;
-      }
     }
+
     .address-container-inline {
       display: flex;
       flex-wrap: wrap;
@@ -100,6 +91,7 @@
       .form-item {
         max-width: 290px;
         width: 100%;
+        margin: 0;
       }
     }
   }
@@ -211,6 +203,17 @@
     #edit-actions input {
       font-size: 16px;
     }
+  }
+}
+
+#edit-completion-message {
+  background: #F2F2F2;
+  padding: 20px;
+
+  p {
+    font-size: $px16;
+    line-height: 18px;
+    color: #767676;
   }
 }
 
@@ -604,6 +607,10 @@
     overflow: hidden;
     height: 58px;
     padding: 0 0 0 200px;
+
+    @media (max-width: 331px) {  
+      height: 37px;
+    }
   }
 
   .link--previous {
