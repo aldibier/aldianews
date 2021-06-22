@@ -48,7 +48,7 @@
     flex-wrap: wrap;
     max-width: 660px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0;
     justify-content: space-between;
   }
   .field--type-string,
@@ -294,6 +294,9 @@
 }
 
 .commerce-checkout-flow{
+  max-width: 620px;
+  margin: 0 auto;
+
   .checkout-pane-payment-information {
     display: none;
   }
@@ -388,7 +391,7 @@
 
     .field--name-field-first-name,
     .field--name-field-last-name {
-      margin: 0 5px 0 0;
+      margin: 0 5px 20px 0;
       font-style: normal;
       font-weight: normal;
       font-size: 26px;
@@ -441,5 +444,94 @@
 
       }
     }
+
+    .field--type-address {
+      padding: 30px 20px 0 37px;
+      margin: 25px 0 0 0;
+      position: relative;
+      border-top: 1px solid #B1B1B1;
+
+      &::after {
+        position: absolute;
+        display: block;
+        content: '';
+        width: 18.75px;
+        height: 25px;
+        left: 0;
+        top: 33px;
+        background: url(../img/local.svg) no-repeat center center;
+        background-size: contain;
+      }
+
+      p {        
+        font-size: $px22;
+        line-height: 27px;
+        letter-spacing: 0.025em;
+        display: flex;
+        color: #767676;
+        flex-wrap: wrap;
+        max-width: 372px;
+      }
+
+      .address-line1 {
+        margin: 0 5px 0 0;
+      }
+
+      .address-line1,
+      .address-line2 {
+        font-family: $PrNovacond-reg;
+        font-style: normal;
+        font-weight: normal;
+      }
+
+      .locality {
+        margin: 0 5px 0 0;
+      }
+
+      .locality,
+      .country {
+        font-style: normal;
+        font-weight: 600;
+        font-family: $PrNovacond-Sbold;
+      }
+    }
+  }
+
+  #edit-review-contact-information,
+  #edit-review-payment-information {
+    display: none;
+  }
+
+
+  .paypal-buttons {
+    height: 52px;
+    overflow: hidden;
+    max-width: 425px;
+  }
+
+  .paypal-buttons-container {
+    max-width: 620px;
+    margin: 50px 0 0 auto;
+    display: flex;
+    overflow: hidden;
+    height: 58px;
+    padding: 0 0 0 200px;
+  }
+
+  .link--previous {
+    width: 165px;
+    height: 40px;
+    background: #5C6165;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: normal;
+    font-weight: bold;
+    color: #fff;
+    font-size: $px18;
+    line-height: 25px;
+    font-family: $PrNovacond-Sbold;
+    margin: -52px 0 0;
   }
 }
+

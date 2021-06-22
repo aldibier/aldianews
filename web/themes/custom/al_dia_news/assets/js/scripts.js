@@ -1860,7 +1860,7 @@ var initMain = function initMain($, Drupal) {
   } //// js fondo modal 
 
 
-  var modal_welcome = document.querySelector(".pop-up-wellcome-aldia ");
+  var modal_welcome = document.querySelector(".pop-up-wellcome-aldia");
   var background_body = document.querySelector("body");
 
   if (!!modal_welcome && !!background_body) {
