@@ -604,6 +604,10 @@
     overflow: hidden;
     height: 58px;
     padding: 0 0 0 200px;
+
+    @media (max-width: 331px) {  
+      height: 37px;
+    }
   }
 
   .link--previous {
