@@ -7,6 +7,9 @@ use Drupal\Core\Url;
  * Theme functions.
  */
 
+function al_dia_news_preprocess_node(&$vars) {
+}
+
  /**
  * Implements hook_preprocess_views_view()
  */
@@ -15,6 +18,15 @@ function al_dia_news_preprocess_views_view(&$vars) {
   {
     $vars['get_token'] = $_GET['token'];
   }
+}
+
+function al_dia_news_preprocess_views_view_unformatted(&$vars) {
+  $ua = strtolower($_SERVER['HTTP_USER_AGENT']);
+  $isMob = is_numeric(strpos($ua, "mobile"));
+
+  ksm($isMob);
+
+  $vars['rows']['is_mobile'][] = $isMob;
 }
 
 // function al_dia_news_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {

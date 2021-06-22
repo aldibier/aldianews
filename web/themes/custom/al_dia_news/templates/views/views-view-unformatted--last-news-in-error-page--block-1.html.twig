@@ -17,9 +17,14 @@
  * @ingroup themeable
  */
 #}
+
+
+
 {% if title %}
 	<h3>{{ title }}</h3>
 {% endif %}
+
+<span>{{ kint(rows.is_mobile) }}</span>
 
 {% for row in rows %}
 
