@@ -53,6 +53,17 @@ class ServicesForm extends ConfigFormBase {
   public function buildForm(array $form, FormStateInterface $form_state) {
     $config = $this->config('al_dia_rechpack.services_form');
 
+    $description = $this->t('Active Subscription');
+    $form['active_subscription'] = [
+      '#type' => 'checkbox',
+      '#required' => FALSE,
+      '#title' => $description,
+      '#default_value' => NULL,
+      '#attributes' => [
+        'class' => ['active-subscription-check'],
+      ],
+    ];
+
     $description = $this->t('Trial Months');
     $form['services_trial_months'] = [
       '#type' => 'textfield',
