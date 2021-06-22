@@ -169,6 +169,49 @@
     margin: 0 auto;
     padding: 0 20px;
   }
+
+  @media (max-width: $tablet-min) { 
+    .form-item label {
+      font-size: 15px;
+      line-height: 18px;
+      margin: 0 0 10px;
+    }
+
+    .field--type-string,
+    .field--type-email,
+    .field--type-phone-international {
+      max-width: 100%;
+      width: 100%;
+    }
+
+    input[class*=form], 
+    textarea[class*=form] {
+      font-size: 15px;
+      line-height: 18px;
+    }
+
+    .red-text {
+      font-size: 12px;
+      line-height: 15px;
+    }
+
+    .field--name-field-terms-and-privacy p {
+      font-size: 15px;
+      line-height: 18px;
+    }
+
+    .form-actions  {
+      a {
+        min-height: 30px;
+        font-size: 16px;
+        line-height: 25px;
+      }
+    }
+
+    #edit-actions input {
+      font-size: 16px;
+    }
+  }
 }
 
 .contact-payment-subscribe{
@@ -183,6 +226,12 @@
   max-width: 620px;
   display: block;
   margin: 20px auto;
+
+  @media (max-width: $tablet-min) {
+    font-size: 20px;
+    line-height: 24px;  
+    padding: 0 0 5px;
+  }
 }
 
 .block-simple-blockauto-renewal-terms-orders-simple-block {
@@ -194,7 +243,14 @@
     font-family: $PrNovacond-reg;
     font-size: $px15;
     color: #B1B1B1;
-    ;
+    
+  }
+
+  @media (max-width: $tablet-min) {
+    p {
+      font-size: 15px;
+      line-height: 18px;
+    }
   }
 }
 
@@ -272,6 +328,21 @@
       }
     }
   }
+
+  @media (max-width: $tablet-min) {
+
+    .checkout-progress--step {
+
+      &.checkout-progress--step__current{
+        font-size: 12px;
+        line-height: 15px;
+      }
+
+      &::before {
+        height: 2px;
+      }
+    }
+  }
 }
 
 .block-order-product-name {
@@ -290,6 +361,15 @@
 
   .your-order-subscribe {
     color: #333333;
+  }
+
+  @media (max-width: $tablet-min) {
+    margin: 0 auto 35px;
+
+    .content {
+      font-size: 15px;
+      line-height: 18px;
+    }
   }
 }
 
@@ -371,6 +451,14 @@
       padding: 15px 0;
       border-bottom: 1px solid #333333;
       margin-bottom: 40px;
+      
+      span {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 19px;
+        line-height: 23px;
+        font-family: $PrNovacond-Sbold;
+      }
     }
   }
 
@@ -532,6 +620,104 @@
     line-height: 25px;
     font-family: $PrNovacond-Sbold;
     margin: -52px 0 0;
+  }
+
+  @media (max-width: $tablet-min) {  
+
+    h1 {
+      font-size: 20px;
+      line-height: 24px;
+      padding: 0 0 10px;
+    }
+
+    .checkout-pane-rechpack-order-review-description {
+      p {
+        font-size: 15px;
+        line-height: 18px;
+      }
+    }
+
+    .checkout-pane-order-summary .views-field-title-1 span,
+    .checkout-pane-order-summary .views-field-total-price__number span {
+      font-size: 18px;
+      line-height: 22px;
+    }
+
+    .checkout-pane-order-summary {
+      padding: 16px 20px;
+
+      .views-field-nothing {
+        margin-bottom: 22px;
+      }
+    }
+
+    .checkout-pane-review {
+      padding: 0 20px 22px;
+    }
+
+    .checkout-pane-review {
+
+      .field--name-field-first-name,
+      .field--name-field-last-name{
+        font-size: 15px;
+        line-height: 18px;
+        margin: 0 5px 10px 0;
+      }
+
+      .field--name-field-email-address,
+      .field--type-phone-international {
+        font-size: 14px;
+        line-height: 17px;
+        padding: 0 0 0 10px;
+        margin: 0 0 10px;
+
+        a{
+          font-size: 14px;
+          line-height: 17px;  
+        }
+
+        &:after {
+          width: 5px;
+          height: 5px;
+        }
+      }
+
+      .field--type-address {
+        padding: 10px 0 0 20px;
+        margin: 10px 0 0;
+        max-width: 261px;
+
+        P {
+          font-size: 14px;
+          line-height: 17px;
+        }
+
+        &:after{
+          width: 11.25px;
+          height: 15px;
+          top: -5px;
+          bottom: 0;
+          margin: auto auto auto 0;
+        }
+      }
+    }
+
+    .form-item {
+      margin: 0;
+    }
+
+    .paypal-buttons-container {
+      padding: 0;
+      margin: 20px auto 0;
+    }
+
+    .link--previous {
+      margin: 10px auto 0;
+      width: 100%;
+      height: 30px;
+      font-size: 16px;
+      line-height: 25px;
+    }
   }
 }
 
