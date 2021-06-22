@@ -358,6 +358,16 @@ import replaceToken from "./modules/replaceToken";
   Drupal.behaviors.form_checkbox = {
     attach: function(context, settings) {
       $(function() {
+        //js para eliminar publicidad vacia
+        Array.from(document.querySelectorAll(".block-gamw")).map(function(e){
+          if (e != null) {
+            var iframe_gamw = e.querySelector("iframe");
+            if (iframe_gamw == null) {
+              e.classList.add("dis-none");
+            }
+          }
+        });
+        
         //js para recargar
         Array.from(document.querySelectorAll(".button-preload")).map(function(e){
           if (e != null) {
