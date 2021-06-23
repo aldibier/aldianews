@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "95e508a0db043cd919ad271af6e6c0ba",
+    "content-hash": "084dd44d959e1b8e987966d231f142b8",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2111,6 +2111,9 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "Muestra label del campo se Street 2 y cambio el label": "patch/Address.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -3727,7 +3730,8 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/commerce_license",
                 "issues": "https://www.drupal.org/project/issues/commerce_license"
-            }
+            },
+            "time": "2021-05-20T11:52:38+00:00"
         },
         {
             "name": "drupal/commerce_number_pattern",
@@ -6428,6 +6432,9 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "Corrige atributos para error en contexto": "patch/Gamw.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -9990,6 +9997,54 @@
             }
         },
         {
+            "name": "drupal/text_summary_options",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/text_summary_options.git",
+                "reference": "8.x-1.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/text_summary_options-8.x-1.2.zip",
+                "reference": "8.x-1.2",
+                "shasum": "89ae7f8debf52f6bb36bebe71735b6a133771f87"
+            },
+            "require": {
+                "drupal/core": "^8.7.7 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.2",
+                    "datestamp": "1586853998",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "kim.pepper",
+                    "homepage": "https://www.drupal.org/user/370574"
+                },
+                {
+                    "name": "rcodina",
+                    "homepage": "https://www.drupal.org/user/2635031"
+                }
+            ],
+            "description": "Provide additional options for Long text with summary widget",
+            "homepage": "https://www.drupal.org/project/text_summary_options",
+            "support": {
+                "source": "https://git.drupalcode.org/project/text_summary_options"
+            }
+        },
+        {
             "name": "drupal/token",
             "version": "1.9.0",
             "source": {
@@ -12268,12 +12323,6 @@
                 "issues": "https://github.com/serbanghita/Mobile-Detect/issues",
                 "source": "https://github.com/serbanghita/Mobile-Detect/tree/2.8.37"
             },
-            "funding": [
-                {
-                    "url": "https://github.com/serbanghita",
-                    "type": "github"
-                }
-            ],
             "time": "2021-02-19T21:22:57+00:00"
         },
         {
@@ -13560,16 +13609,6 @@
                 "issues": "https://github.com/swiftmailer/swiftmailer/issues",
                 "source": "https://github.com/swiftmailer/swiftmailer/tree/v6.2.7"
             },
-            "funding": [
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/swiftmailer/swiftmailer",
-                    "type": "tidelift"
-                }
-            ],
             "time": "2021-03-09T12:30:35+00:00"
         },
         {
@@ -14894,20 +14933,6 @@
                 "portable",
                 "shim"
             ],
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
             "time": "2021-05-27T09:17:38+00:00"
         },
         {
@@ -14969,20 +14994,6 @@
                 "polyfill",
                 "portable",
                 "shim"
-            ],
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
             ],
             "time": "2021-02-19T12:13:01+00:00"
         },
@@ -16061,6 +16072,5 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
-    "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "platform-dev": []
 }
