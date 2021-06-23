@@ -743,6 +743,7 @@
     width: 33.33%;
     max-width: 400px;
     margin: 0 auto;
+    transition: all .25s linear;
 
     .field--name-title {
       font-style: normal;
@@ -753,6 +754,8 @@
       text-transform: uppercase;
       font-family: $PrNovacond-bold;
       color: #ED1C24;
+      padding: 5px;
+      transition: all .25s linear;
     }
 
     img {
@@ -767,8 +770,6 @@
     .weekly-information {
       font-style: normal;
       font-weight: 600;
-      // font-size: $px50;
-      // line-height: 35px;
       font-size: $px34;
       line-height: 35px;
       font-family: $PrNovacond-reg;
@@ -776,18 +777,18 @@
       text-align: center;
       letter-spacing: -3px;
       color: #ED1C24;
+      transition: all .25s linear;
 
       .field--name-field-weekly-value {
         font-style: normal;
         font-weight: 600;
-        // font-size: $px50;
-        // line-height: 35px;
         font-size: $px34;
         line-height: 35px;
         font-family: $PrNovacond-bold;
         margin: 15px auto 0;
         text-align: center;
         letter-spacing: -3px;
+        transition: all .25s linear;
       }
 
       .field--name-field-text,
@@ -800,6 +801,146 @@
         margin: 15px auto 0;
         text-align: center;
         letter-spacing: normal;
+      }
+    }
+
+    .intro-offer-subscribe {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 22px;
+      letter-spacing: 0.04em;
+      color: #333333;
+      font-family: $Modcond-bold;
+      text-align: center;
+
+      .field--name-field-price-companion {
+        font-size: 10px;
+        line-height: 12px;
+      }
+    }
+
+    .text-formatted {
+      padding: 30px 0 0;
+      max-width: 265px;
+      margin: 70px auto 0;
+      border-top: 1px solid #B1B1B1;
+
+      p{
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 19px;
+        text-align: center;
+        font-family: $PrNovacond-reg;
+        color: #767676;
+      }
+    }
+
+    #edit-purchased-entity-0-attributes,
+    .field--widget-commerce-product-variation-attributes {
+
+      .form-type-radio {
+        width: 50%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        >div {
+          display: none;
+        }
+      }
+
+      legend {
+        display: none;
+      }
+      .form-radios {
+        display: flex;
+      }
+
+      .form-radio {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        opacity: 0;
+      }
+
+      .option {
+        position: relative;
+        padding: 0 0 0 30px;
+      }
+
+      .option::before {
+        display: block;
+        position: absolute;
+        content: '';
+        border-radius: 100%;
+        height: 15px;
+        width: 15px;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        border: 3px solid #000;
+        transition: all .25s linear;
+      }
+
+      input[type=radio]:checked ~ .option::after{
+        display: block;
+        position: absolute;
+        content: '';
+        border-radius: 100%;
+        height: 11px;
+        width: 11px;
+        top: 0.5px;
+        bottom: 0;
+        left: 5px;
+        margin: auto;
+        background: #000;
+        transition: all .25s linear;
+      }
+    }
+
+    .button {
+      max-width: 170px;
+      margin: 0 auto;
+      display: block;
+    }
+
+    &:hover {
+      background: #F2F2F2;
+      transition: all .25s linear;
+
+      #edit-purchased-entity-0-attributes,
+      .field--widget-commerce-product-variation-attributes{
+        input[type=radio]:checked ~ .option::after{
+          background:#ED1C24;
+          transition: all .25s linear;
+        }
+
+        .option::before {
+          border: 3px solid #ED1C24;
+          transition: all .25s linear;
+        }
+      }
+
+      .field--name-title {
+        color: #fff;
+        background: #ED1C24;
+        transition: all .25s linear;
+      }
+
+      .weekly-information {
+        font-size: $px50;
+        line-height: 35px;
+        transition: all .25s linear;
+
+        .field--name-field-weekly-value {
+          font-size: $px50;
+          line-height: 35px;
+          transition: all .25s linear;
+        }
       }
     }
   }
