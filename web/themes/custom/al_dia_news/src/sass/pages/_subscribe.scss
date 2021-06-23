@@ -1011,7 +1011,7 @@
   }
 
   .block-fixed-block-contentadditional-subscription-informat {
-    padding: 20px 33px 20px;
+    padding: 10px 33px;
 
     p {
       font-style: normal;
@@ -1021,5 +1021,32 @@
       font-family: $PrNovacond-reg;
       color: #000000;
     }
+  }
+
+  .block-fixed-block-contentbutton-request-call-back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    p,
+    .content {
+      margin: 0;
+    }
+  }
+
+  button {
+    width: 195px;
+    height: 40px;
+    background: #EE2211;
+    border-radius: 0;
+    border: none;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 25px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
