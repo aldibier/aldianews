@@ -813,10 +813,28 @@
       color: #333333;
       font-family: $Modcond-bold;
       text-align: center;
+      position: relative;
+
+      >span {
+        width: max-content;
+        margin: 0 auto;
+        display: block;
+      }
+
+      .field--type-string {
+        max-width: max-content;
+        margin: 0 auto;
+        position: relative;
+      }
 
       .field--name-field-price-companion {
         font-size: 10px;
         line-height: 12px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        margin: 0 auto 9px auto;
+        right: -180px;
       }
     }
 
@@ -943,5 +961,11 @@
         }
       }
     }
+  }
+}
+
+.block-block-groupsubscribe-footer-information {
+  .content {
+    display: flex;
   }
 }
