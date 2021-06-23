@@ -754,5 +754,53 @@
       font-family: $PrNovacond-bold;
       color: #ED1C24;
     }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    .field--name-field-image {
+      margin: 30px auto 0;
+    }
+
+    .weekly-information {
+      font-style: normal;
+      font-weight: 600;
+      // font-size: $px50;
+      // line-height: 35px;
+      font-size: $px34;
+      line-height: 35px;
+      font-family: $PrNovacond-reg;
+      margin: 15px auto 0;
+      text-align: center;
+      letter-spacing: -3px;
+      color: #ED1C24;
+
+      .field--name-field-weekly-value {
+        font-style: normal;
+        font-weight: 600;
+        // font-size: $px50;
+        // line-height: 35px;
+        font-size: $px34;
+        line-height: 35px;
+        font-family: $PrNovacond-bold;
+        margin: 15px auto 0;
+        text-align: center;
+        letter-spacing: -3px;
+      }
+
+      .field--name-field-text,
+      .field--name-field-symbol {
+        font-style: normal;
+        font-weight: 600;
+        font-size: $px34;
+        line-height: 35px;
+        font-family: $PrNovacond-reg;
+        margin: 15px auto 0;
+        text-align: center;
+        letter-spacing: normal;
+      }
+    }
   }
 }
