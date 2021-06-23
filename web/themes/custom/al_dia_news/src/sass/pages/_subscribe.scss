@@ -981,8 +981,9 @@
       display: block;
       content: '';
       left: 0;
-      top: 0;
-      background: #ED1C24;
+      top: 12px;
+      background: url(../img/check-rojo.svg) no-repeat center center;
+      background-size: contain;
     }
 
     p:first-child{
@@ -993,6 +994,7 @@
       text-transform: uppercase;
       margin: 0;
       font-family: $PrNovacond-bold;
+      max-width: 100%;
     }
 
     p {
@@ -1002,6 +1004,7 @@
       line-height: 18px;
       font-family: $PrNovacond-reg;
       margin: 0;
+      max-width: 355px;
     }
   }
 }
