@@ -1172,13 +1172,29 @@ div#selectionSharerPopover {
   max-height: 100%;
 }
 
-.user-logged-in.page-node-type-news
+.admin-menu.page-node-type-news
   .content-news-internal-first
   .block-field-blocknodenewsfield-video
   .content.stuck {
-  top: 125px;
+  top: 124px;
+
+  @media (max-width: $broken) {
+    top: 179px;
+  }
 
   @media (max-width: $tablet) {
-    top: 138px;
+    top: 117px;
+  }
+}
+
+.page-node-type-news  .block-field-blocknodenewsfield-video {
+  > .content.stuck {
+    @media (max-width: $broken) {
+      top: 140px;
+    }
+
+    @media (max-width: $tablet) {
+      top: 78px;
+    }
   }
 }
