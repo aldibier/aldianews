@@ -482,7 +482,17 @@ display:
           table: views
           field: views_block_area
           plugin_id: views_block_area
-      footer: {  }
+        views_block_area_1:
+          id: views_block_area_1
+          table: views
+          field: views_block_area
+          plugin_id: views_block_area
+      footer:
+        views_block_area:
+          id: views_block_area
+          table: views
+          field: views_block_area
+          plugin_id: views_block_area
       empty: {  }
       relationships:
         field_category:
@@ -2143,7 +2153,8 @@ display:
     display_title: 'Next 6'
     position: 3
     display_options:
-      display_extenders: {  }
+      display_extenders:
+        ajax_history: {  }
       display_description: ''
       pager:
         type: some
@@ -2160,6 +2171,8 @@ display:
         filters: false
         filter_groups: false
         cache: false
+        header: false
+        footer: false
       arguments:
         tid:
           id: tid
@@ -2621,6 +2634,43 @@ display:
       cache:
         type: none
         options: {  }
+      header:
+        views_block_area_1:
+          id: views_block_area_1
+          table: views
+          field: views_block_area
+          relationship: none
+          group_type: group
+          admin_label: publicidad
+          empty: false
+          block_id: 'block_group:gamw_block_side_section_top_views'
+          plugin_id: views_block_area
+        views_block_area:
+          id: views_block_area
+          table: views
+          field: views_block_area
+          plugin_id: views_block_area
+      footer:
+        views_block_area:
+          id: views_block_area
+          table: views
+          field: views_block_area
+          relationship: none
+          group_type: group
+          admin_label: 'publicidad skyscraper'
+          empty: false
+          block_id: 'block_group:gamw_skyscraper_side_section_top_views'
+          plugin_id: views_block_area
+        views_block_area_1:
+          id: views_block_area_1
+          table: views
+          field: views_block_area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          block_id: 'block_group:gamw_block_side_section_bottom_views'
+          plugin_id: views_block_area
     cache_metadata:
       max-age: -1
       contexts:

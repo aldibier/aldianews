@@ -31,7 +31,7 @@
 
 	{# banner #}
 	{% if loop.index == 6 %}
-		<div class="banner-scroll ban">{{ drupal_entity('block', 'gamwadvertisement_15') }}</div>
+		<div class="banner-scroll">{{ drupal_entity('block', 'gamwadvertisement_15') }}</div>
 	{% endif %}
 	{% if loop.index == 12 %}
 		<div class="banner-scroll ban2">{{ drupal_entity('block', 'gamwadvertisement_18') }}</div>
@@ -39,15 +39,15 @@
 
 	{# block #}
 	{% if loop.index  == 5 %}
-		<div class="banner-scroll bloc">{{ drupal_entity('block', 'gamwadvertisement_16') }}</div>
+		<div class="block-scroll">{{ drupal_entity('block', 'gamwadvertisement_16') }}</div>
 	{% endif %}
 	{% if loop.index  == 12 %}
-		<div class="banner-scroll bloc">{{ drupal_entity('block', 'gamwadvertisement_21') }}</div>
+		<div class="block-scroll bloc2">{{ drupal_entity('block', 'gamwadvertisement_21') }}</div>
 	{% endif %}
 
 	{# skyscraper #}
 	{% if loop.index  == 9 %}
-		<div class="banner-scroll skys1">{{ drupal_entity('block', 'gamwadvertisement_17') }}</div>
+		<div class="skys-scroll">{{ drupal_entity('block', 'gamwadvertisement_17') }}</div>
 	{% endif %}
 
 	<div{{row.attributes.addClass(row_classes)}}>

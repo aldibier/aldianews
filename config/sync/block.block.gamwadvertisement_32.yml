@@ -1,0 +1,36 @@
+uuid: 019b62a4-b8e5-43c7-9c26-5d5976556f4b
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - context
+    - gamw
+  theme:
+    - al_dia_news
+third_party_settings:
+  block_class:
+    classes: block-fixed-block-contentbig-vertical-advertising
+id: gamwadvertisement_32
+theme: al_dia_news
+region: gamw_home_side_category_leadership_bottom
+weight: 0
+provider: null
+plugin: gamw
+settings:
+  id: gamw
+  label: 'Home - side category Leadership bottom '
+  provider: gamw
+  label_display: '0'
+  ad_unit: home-sidecategoryleadershipbottom
+  attributes_wrapper:
+    - ''
+visibility:
+  request_path_exclusion:
+    id: request_path_exclusion
+    pages: ''
+    negate: null
+  view_inclusion:
+    id: view_inclusion
+    negate: null
+    view_inclusion: {  }
