@@ -968,4 +968,40 @@
   .content {
     display: flex;
   }
+
+  .block-fixed-block-contentunsubscribe-information {
+    max-width: 425px;
+    padding: 0 20px 0 50px;
+    position: relative;
+
+    &::before {
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      display: block;
+      content: '';
+      left: 0;
+      top: 0;
+      background: #ED1C24;
+    }
+
+    p:first-child{
+      font-style: normal;
+      font-weight: bold;
+      font-size: $px20;
+      line-height: 24px;
+      text-transform: uppercase;
+      margin: 0;
+      font-family: $PrNovacond-bold;
+    }
+
+    p {
+      font-style: normal;
+      font-weight: normal;
+      font-size: $px15;
+      line-height: 18px;
+      font-family: $PrNovacond-reg;
+      margin: 0;
+    }
+  }
 }
