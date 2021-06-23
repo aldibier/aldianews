@@ -1,0 +1,7 @@
+al_dia_news_general.modal:
+  path: 'modal'
+  defaults:
+    _title: 'Modal'
+    _controller: '\Drupal\al_dia_news_general\Controller\CustomModalController::modal'
+  requirements:
+    _permission: 'access content'
