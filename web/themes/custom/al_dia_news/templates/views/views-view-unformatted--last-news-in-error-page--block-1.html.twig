@@ -19,7 +19,6 @@
 #}
 
 
-
 {% if title %}
 	<h3>{{ title }}</h3>
 {% endif %}
@@ -60,6 +59,7 @@
 
 	<div{{row.attributes.addClass(row_classes)}}>
 		{{- row.content -}}
-		{# <span>{{ loop.index }}</span> #}
 	</div>
+
+
 {% endfor %}
