@@ -16,7 +16,7 @@ const initMain = ($, Drupal) => {
 			}
 		} */
 		}
-
+		
 		 /// close 
 		if(!!document.querySelector('.newsletter .close-modal')){
 			const newsletter = document.querySelector('.newsletter');
