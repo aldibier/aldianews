@@ -363,7 +363,7 @@ import replaceToken from "./modules/replaceToken";
           if (e != null) {
             var iframe_gamw = e.querySelector("iframe");
             if (iframe_gamw == null) {
-              e.classList.add("dis-none");
+              /* e.classList.add("dis-none"); */
             }
           }
         });
