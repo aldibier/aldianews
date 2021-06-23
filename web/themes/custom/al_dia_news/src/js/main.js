@@ -17,6 +17,20 @@ const initMain = ($, Drupal) => {
 		} */
 		}
 
+		const videoInternal = document.querySelector('.block-field-blocknodenewsfield-video');
+		const canvansElement = document.querySelector('.dialog-off-canvas-main-canvas');
+
+		if(!!videoInternal){
+
+			const resizeObserver = new ResizeObserver(entries => {
+				for (let entry of entries) {
+					console.log(entry);
+				}
+			});
+
+			resizeObserver.observe(canvansElement);
+		}
+
 		 /// close 
 		if(!!document.querySelector('.newsletter .close-modal')){
 			const newsletter = document.querySelector('.newsletter');
