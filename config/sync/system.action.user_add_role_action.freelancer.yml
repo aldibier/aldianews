@@ -1,0 +1,14 @@
+uuid: 77dc9907-5f01-4dfb-9ff1-59cf9147a587
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.freelancer
+  module:
+    - user
+id: user_add_role_action.freelancer
+label: 'Add the Freelancer role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: freelancer
