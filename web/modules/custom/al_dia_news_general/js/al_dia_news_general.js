@@ -7,11 +7,11 @@
   Drupal.behaviors.aldia_news_advertising = {
     attach: function (context) {
 
-      $('.view-id-leadership_sons .view-header .block-fixed-block-content-small-vertical-advertising').once("leadership-small-news-advertising").each(function () {
+      $('.view-id-leadership_sons.view-display-id-block_3 .view-header .block-fixed-block-content-small-vertical-advertising').once("leadership-small-news-advertising").each(function () {
         setTimeout(function () {
           // doing async stuff
-          if ($('.view-id-leadership_sons .view-header .block-fixed-block-content-small-vertical-advertising').find('.content > div > div').html().length >= 1) {
-            $('.view-id-leadership_sons .view-content .card-more-category').each(function (index, value) {
+          if ($('.view-id-leadership_sons.view-display-id-block_3 .view-header .block-fixed-block-content-small-vertical-advertising').find('.content > div > div').html().length >= 1) {
+            $('.view-id-leadership_sons.view-display-id-block_3 .view-content .card-more-category').each(function (index, value) {
               if (index >= 6) {
                 $(value).hide();
               }
@@ -20,11 +20,37 @@
         }, 1500);
       });
 
-      $('.view-id-leadership_sons .view-footer .block-fixed-block-contentbig-vertical-advertising').once("leadership-big-news-advertising").each(function () {
+      $('.view-id-leadership_sons.view-display-id-block_3 .view-footer .block-fixed-block-contentbig-vertical-advertising').once("leadership-big-news-advertising").each(function () {
         setTimeout(function () {
           // doing async stuff
-          if ($('.view-id-leadership_sons .view-footer .block-fixed-block-contentbig-vertical-advertising').find('.content > div > div').html().length >= 1) {
-            $('.view-id-leadership_sons .view-content .card-more-category').each(function (index, value) {
+          if ($('.view-id-leadership_sons.view-display-id-block_3 .view-footer .block-fixed-block-contentbig-vertical-advertising').find('.content > div > div').html().length >= 1) {
+            $('.view-id-leadership_sons.view-display-id-block_3 .view-content .card-more-category').each(function (index, value) {
+              if (index >= 3) {
+                $(value).hide();
+              }
+            });
+          }
+        }, 1500);
+      });
+
+      $('.view-id-politics_sons.view-display-id-block_3 .view-header .block-fixed-block-content-small-vertical-advertising').once("politics-small-news-advertising").each(function () {
+        setTimeout(function () {
+          // doing async stuff
+          if ($('.view-id-politics_sons.view-display-id-block_3 .view-header .block-fixed-block-content-small-vertical-advertising').find('.content > div > div').html().length >= 1) {
+            $('.view-id-politics_sons.view-display-id-block_3 .view-content .card-more-category').each(function (index, value) {
+              if (index >= 6) {
+                $(value).hide();
+              }
+            });
+          }
+        }, 1500);
+      });
+
+      $('.view-id-politics_sons.view-display-id-block_3 .view-footer .block-fixed-block-contentbig-vertical-advertising').once("politics-big-news-advertising").each(function () {
+        setTimeout(function () {
+          // doing async stuff
+          if ($('.view-id-politics_sons.view-display-id-block_3 .view-footer .block-fixed-block-contentbig-vertical-advertising').find('.content > div > div').html().length >= 1) {
+            $('.view-id-politics_sons.view-display-id-block_3 .view-content .card-more-category').each(function (index, value) {
               if (index >= 3) {
                 $(value).hide();
               }
