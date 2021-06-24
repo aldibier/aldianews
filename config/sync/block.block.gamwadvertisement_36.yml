@@ -1,4 +1,4 @@
-uuid: ee2795a4-ae92-4ab1-8901-e3b158a63740
+uuid: b4d86582-2204-43bc-9bd4-ce8d4b6e23de
 langcode: en
 status: true
 dependencies:
@@ -10,21 +10,20 @@ dependencies:
     - al_dia_news
 third_party_settings:
   block_class:
-    classes: block-fixed-block-contentsquare-advertising-mobile
-id: gamwadvertisement_12
+    classes: banner-horizontal
+id: gamwadvertisement_36
 theme: al_dia_news
-region: home_category_culture_bottom_mobile
-weight: 0
+region: gamw_infinite_scroll_banner_
+weight: -53
 provider: null
 plugin: gamw
 settings:
   id: gamw
-  label: 'Home -  Category Culture bottom mobile'
+  label: 'Infinite scroll - Last Banner'
   provider: gamw
   label_display: '0'
-  ad_unit: home-category-culture-bottom-mobile
-  attributes_wrapper:
-    - ''
+  ad_unit: infinite-scroll-third-banner
+  attributes_wrapper: null
 visibility:
   request_path_exclusion:
     id: request_path_exclusion

@@ -92,6 +92,12 @@
       }
     }
   }
+
+  div {
+    &:empty {
+      display: none;
+    }
+  }
 }
 
 .news-galery {
