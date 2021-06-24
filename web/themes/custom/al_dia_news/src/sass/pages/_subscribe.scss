@@ -39,6 +39,7 @@
     margin: 0px auto 40px;
   }
 
+
   @media (max-width: $tablet-min) {   
     .field--name-field-section-title {
       font-size: 21px;
@@ -59,6 +60,39 @@
     h3 {
       font-size: 16px;
       line-height: 19px;
+    }
+  }
+}
+
+.commerce-checkout-flow-multistep-default {
+  .form-actions {
+    span.user-login {
+      width: 165px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 30px 0 0;
+      background: #5C6165;
+      color: #fff;
+      font-size: 18px;
+      line-height: 25px;
+      font-style: normal;
+      font-weight: bold;
+      font-family: $PrNovacond-bold;
+      cursor: pointer;
+    }
+  }
+
+  @media (max-width: $tablet-min) {  
+    .form-actions {
+      span.user-login {
+        width: 136.71px;
+        height: 30px;
+        font-size: 16px;
+        line-height: 25px;
+        margin: 0 16px 0 0;
+      }
     }
   }
 }
@@ -1199,4 +1233,114 @@
     }
   }
 
+}
+
+.block-fixed-block-contentpop-up-cancel-form-subscribe {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  z-index: 3;
+  top: 0;
+  left: 0;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 20px 20px;
+  display: none;
+
+  &.open {
+    display: flex;
+  }
+
+  .text-formatted {
+    text-align: center;
+  }
+
+  .content {
+    max-width: 620px;
+    min-height: 250px;
+    background: #fff;
+    padding: 40px 15px;
+  }
+
+  p{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 30px;
+    text-align: center;
+    font-family: $PrNovacond-reg;
+    display: inline-block;
+    margin: 0;
+  }
+
+  h2 {
+    display: inline-block;
+  }
+
+  button[name="yes-back"] {
+    margin: 0 20px 0 0;
+    background: #5C6165;
+  }
+
+  button[name="no-stay"]{
+    background: #ED1C24;
+  }
+
+  .aldia-logo-in-text{
+    height: 25px;
+    width: 83px;
+
+    img {
+      height: 100%;
+      width: auto;
+    }
+  }
+
+  button[name="yes-back"],
+  button[name="no-stay"]{
+    max-width: 165px;
+    margin-top: 30px;
+    height: 40px;
+    width: 165px;
+    cursor: pointer;
+    border: none;
+    font-size: 18px;
+    line-height: 25px;
+    font-style: normal;
+    font-weight: bold;
+    font-family: $PrNovacond-bold;
+    color: #fff;
+  }
+
+  @media (max-width: $tablet) {
+    padding: 100px 0 20px; 
+
+    .content {
+      min-height: 230px;
+      max-width: 400px;
+    }
+
+    p {
+      font-size: 17px;
+      line-height: 21px;
+    }
+
+    .aldia-logo-in-text{
+      width: 50px;
+      height: 15px;
+    }
+
+    button[name="yes-back"] {
+      margin: 25px 10px 0 0;
+    }
+
+    button[name="yes-back"],
+    button[name="no-stay"]{
+      width: 136.71px;
+      height: 30px;
+      font-size: 16px;
+      line-height: 25px;
+    }
+  }
 }
