@@ -84,10 +84,10 @@ class MenuUserItem extends  BlockBase implements ContainerFactoryPluginInterface
         '#attributes' => [
             'class' => [
             'use-ajax',
-            'user-pass',
+            'user-edit',
             ],
             'data-dialog-type' => 'modal',
-            'data-dialog-options' => Json::encode(['dialogClass' => 'popup-login'],['width' => 550]),
+            'data-dialog-options' => Json::encode(['dialogClass' => 'popup-account-information'],['width' => 550]),
         ],
       ];
       // $items[] = [

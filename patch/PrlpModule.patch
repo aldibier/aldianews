@@ -1,0 +1,12 @@
+diff --git a/prlp.module b/prlp.module
+--- prlp.module	2021-06-24 16:10:48.000000000 -0500
++++ prlp.module	2021-06-24 14:57:24.000000000 -0500
+@@ -16,7 +16,7 @@
+   $config = \Drupal::config('prlp.settings');
+   $form['pass'] = array(
+     '#type' => 'password_confirm',
+-    '#title' => t('Set New Password'),
++    '#title' => t('Reset password'),
+     '#description' => t('Please set a new password so that you can login next time.'),
+     '#weight' => -1,
+     '#required' => $config->get('password_required'),
