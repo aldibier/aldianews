@@ -106,7 +106,7 @@ class CustomModalController extends ControllerBase {
             'user-pass',
             ],
             'data-dialog-type' => 'modal',
-            'data-dialog-options' => Json::encode(['dialogClass' => 'popup-login'],['width' => 550]),
+            'data-dialog-options' => Json::encode(['dialogClass' => 'popup-edit-user'],['width' => 550]),
         ],
       ];
       $items[] = [
@@ -121,7 +121,7 @@ class CustomModalController extends ControllerBase {
             'user-pass',
             ],
             'data-dialog-type' => 'modal',
-            'data-dialog-options' => Json::encode(['dialogClass' => 'popup-login'],['width' => 550]),
+            'data-dialog-options' => Json::encode(['dialogClass' => 'popup-cancel-account'],['width' => 550]),
         ],
       ];
     }else{

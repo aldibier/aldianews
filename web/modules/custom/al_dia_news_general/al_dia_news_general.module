@@ -185,6 +185,9 @@ function al_dia_news_general_form_alter(&$form, $form_state, $form_id) {
       $form['help']['#markup'] = "";
       $form['actions']['submit']['#value'] = t('CHANGE PASSWORD AND LOG IN');
     break;
+    case "user_form":
+      $form['#title'] = "EDIT";
+    break;
   }
   if (strpos($form_id, 'commerce_order_item_add_to_cart_form_commerce_product_') !== FALSE) {
     $product = $form_state->get('product');
