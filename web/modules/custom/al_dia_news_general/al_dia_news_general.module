@@ -147,7 +147,6 @@ function al_dia_news_general_form_alter(&$form, $form_state, $form_id) {
     case "change_pwd_form":
       $form['#title'] = t("CHANGE PASSWORD");
       $form['#submit'][] = 'custom_password_reset';
-      ksm($form);
     break;
     case "user_pass":
       $form['#title'] = t("RESTORE PASSWORD");
@@ -180,6 +179,11 @@ function al_dia_news_general_form_alter(&$form, $form_state, $form_id) {
           ],
         ],
       ];
+    break;
+    case "user_pass_reset":
+      $form['message']['#markup'] = t('<p>Hello,</p><p>Please remember that this is a one-time link to set a new password and log in and it will expire in the next 24 hours. If you don’t have access to this link later, request a new one by entering to the “Forgot your password?” in the log in section.</p>');
+      $form['help']['#markup'] = "";
+      $form['actions']['submit']['#value'] = t('CHANGE PASSWORD AND LOG IN');
     break;
   }
   if (strpos($form_id, 'commerce_order_item_add_to_cart_form_commerce_product_') !== FALSE) {
