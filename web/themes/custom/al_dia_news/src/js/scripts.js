@@ -351,6 +351,22 @@ import replaceToken from "./modules/replaceToken";
       $(".layout-main-wrapper.layout-container").addClass("color-mod");
     });
 
+    //modal subscribe
+
+    $('.block-fixed-block-contentpop-up-cancel-form-subscribe button[name=no-stay]').click(function() {
+      if ($(".block-fixed-block-contentpop-up-cancel-form-subscribe").hasClass("open")) {
+        $(".block-fixed-block-contentpop-up-cancel-form-subscribe").removeClass("open");
+      }
+    });
+
+    $('.commerce-checkout-flow-multistep-default .form-actions span.user-login').click(function() {
+      if ($(".block-fixed-block-contentpop-up-cancel-form-subscribe").hasClass("open")) {
+        $(".block-fixed-block-contentpop-up-cancel-form-subscribe").removeClass("open");
+      }else {
+        $(".block-fixed-block-contentpop-up-cancel-form-subscribe").addClass("open");
+      }
+    });
+
     initMain();
     initSlick($, Drupal);
   });
