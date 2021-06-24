@@ -1001,6 +1001,13 @@
       .weekly-information {
         font-size: 28px;
         line-height: 35px;
+
+        .field--name-field-weekly-value, 
+        .field--name-field-text,
+        .field--name-field-symbol {
+          font-size: 28px;
+          line-height: 35px;
+        }
       }
 
       .intro-offer-subscribe {
@@ -1031,6 +1038,16 @@
           height: 10px;
           width: 10px;
         }
+      }
+
+      &:hover {
+        .weekly-information {
+          font-size: 45px;
+          
+          .field--name-field-weekly-value {
+            font-size: 45px;
+          }
+        } 
       }
     }
   }
