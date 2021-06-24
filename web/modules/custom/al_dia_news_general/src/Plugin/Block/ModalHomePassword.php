@@ -55,7 +55,9 @@ class ModalHomePassword extends BlockBase implements ContainerFactoryPluginInter
   public function build() {
     $modal =  $this->requestStack->getParentRequest()->get('modal') ?? FALSE;
     if ($modal) {
-        $link_url = Url::fromRoute('al_dia_news_general.modal');
+        $link_url = Url::fromRoute('al_dia_news_general.modal', [
+          'type' => 'home',
+        ]);
         $link_url->setOptions([
           'attributes' => [
             'class' => ['use-ajax', 'button', 'button--small'],
