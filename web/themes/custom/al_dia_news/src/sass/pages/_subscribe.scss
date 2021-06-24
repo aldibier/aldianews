@@ -51,7 +51,7 @@
       font-size: 17px;
       line-height: 20px;
 
-      img {
+      .aldia-logo-in-text  img {
         height: 16px;
       }
     }
@@ -989,44 +989,42 @@
     @media (max-width: $tablet) {
       width: 100%;
 
-      .views-row {
-        .field--name-title {
-          font-size: 22px;
-          line-height: 27px;
-        }
-        
-        .field--name-field-image {
-          margin: 25px auto 0;
-        }
+      .field--name-title {
+        font-size: 22px;
+        line-height: 27px;
+      }
+      
+      .field--name-field-image {
+        margin: 25px auto 0;
+      }
 
-        .weekly-information {
-          font-size: 28px;
-          line-height: 35px;
+      .weekly-information {
+        font-size: 28px;
+        line-height: 35px;
+      }
+
+      .intro-offer-subscribe {
+        font-size: 17px;
+        line-height: 20px;
+      }
+
+      .text-formatted {
+        margin: 35px auto 0;
+        padding: 25px 0 0;
+
+        p {
+          margin: 0 0 25px;
+          font-size: 14px;
+          line-height: 17px;
         }
+      }
 
-        .intro-offer-subscribe {
-          font-size: 17px;
-          line-height: 20px;
-        }
-
-        .text-formatted {
-          margin: 35px auto 0;
-          padding: 25px 0 0;
-
-          p {
-            margin: 0 0 25px;
-            font-size: 14px;
-            line-height: 17px;
-          }
-        }
-
-        #edit-purchased-entity-0-attributes,
-        .field--widget-commerce-product-variation-attributes {
-          input[type=radio]:checked ~ .option::after {
-            left: 4px;
-            height: 8px;
-            width: 8px;
-          }
+      #edit-purchased-entity-0-attributes,
+      .field--widget-commerce-product-variation-attributes {
+        input[type=radio]:checked ~ .option::after {
+          left: 4px;
+          height: 8px;
+          width: 8px;
         }
 
         .option::before  {
@@ -1039,7 +1037,7 @@
 }
 
 .block-block-groupsubscribe-footer-information {
-  margin-top: 50px;
+  margin: 30px auto 50px;
   padding: 50px 0 0;
   border-top: 1px solid #B1B1B1;
 
@@ -1132,6 +1130,50 @@
 
   @media (max-width: $tablet) {
 
+    padding: 25px 0 0;
+    margin: 35px auto 0;
+
+    .content {
+      flex-wrap: wrap;
+    }
+
+    .block-fixed-block-contentunsubscribe-information {
+      width: 50%;
+      padding: 0 17px 0 25px;
+
+      &:before {
+        width: 15px;
+        height: 15px;
+      }
+
+      p:first-child {
+        font-size: 11px;
+        line-height: 13px;
+      }
+
+      p {
+        font-size: 9px;
+        line-height: 11px;
+      }
+    }
+
+    .block-fixed-block-contentadditional-subscription-informat {
+      width: 50%;
+      padding: 0 0 0 20px;
+      
+      p {
+        font-size: 9px;
+        line-height: 11px;
+      }
+    }
+
+    button {
+      width: 140px;
+      height: 25px;
+      font-size: 11px;
+      line-height: 25px;
+      margin: 12px auto 0 0;
+    }
   }
 
 }
