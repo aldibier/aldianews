@@ -2157,6 +2157,19 @@ __webpack_require__.r(__webpack_exports__);
     $(".block-search input").click(function () {
       $("#block-exposedformsearch-results-al-dia-solrpage-1-2").addClass("open");
       $(".layout-main-wrapper.layout-container").addClass("color-mod");
+    }); //modal subscribe
+
+    $('.block-fixed-block-contentpop-up-cancel-form-subscribe button[name=no-stay]').click(function () {
+      if ($(".block-fixed-block-contentpop-up-cancel-form-subscribe").hasClass("open")) {
+        $(".block-fixed-block-contentpop-up-cancel-form-subscribe").removeClass("open");
+      }
+    });
+    $('.commerce-checkout-flow-multistep-default .form-actions span.user-login').click(function () {
+      if ($(".block-fixed-block-contentpop-up-cancel-form-subscribe").hasClass("open")) {
+        $(".block-fixed-block-contentpop-up-cancel-form-subscribe").removeClass("open");
+      } else {
+        $(".block-fixed-block-contentpop-up-cancel-form-subscribe").addClass("open");
+      }
     });
     Object(_main_js__WEBPACK_IMPORTED_MODULE_3__["default"])();
     Object(_slick_js__WEBPACK_IMPORTED_MODULE_4__["default"])($, Drupal);
