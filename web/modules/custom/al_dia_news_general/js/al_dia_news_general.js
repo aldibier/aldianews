@@ -62,13 +62,6 @@
         }, 2000);
       });
 
-      $('.view-id-politics_sons.view-display-id-block_3 .view-footer .block-fixed-block-contentbig-vertical-advertising').once("politics-big-news-advertising").each(function () {
-        setTimeout(function () {
-          // doing async stuff
-
-        }, 2000);
-      });
-
       $('.view-id-more_in_this_section_news.view-display-id-block_1 .view-footer .settings-tray-editable').once("aldia-big-news-advertising").each(function () {
         setTimeout(function () {
           // doing async stuff
