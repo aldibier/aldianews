@@ -1,0 +1,31 @@
+uuid: 985ca2fe-80ba-44ca-b179-7a19b83dda6b
+langcode: en
+status: true
+dependencies:
+  module:
+    - context
+    - gamw
+  theme:
+    - al_dia_news
+id: gamwadvertisement_12
+theme: al_dia_news
+region: block_group_gamw_skyscraper_side_section_bottom_views
+weight: 0
+provider: null
+plugin: gamw
+settings:
+  id: gamw
+  label: 'Fixed Internal - Side Section bottom skyscraper'
+  provider: gamw
+  label_display: '0'
+  ad_unit: internal-side-section-bottom-skyscraper
+  attributes_wrapper: null
+visibility:
+  request_path_exclusion:
+    id: request_path_exclusion
+    pages: ''
+    negate: null
+  view_inclusion:
+    id: view_inclusion
+    negate: null
+    view_inclusion: {  }
