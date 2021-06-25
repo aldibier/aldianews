@@ -70,12 +70,12 @@ class CustomModalController extends ControllerBase {
   }
   public function home() {
     return [
-      '#markup' => '<p>Keep exploring the best content of the Latino multicultural experience.</p><button name="close-modal">OK</button>'
+      '#markup' => $this->t('<p class="pop-up-home-reset">Keep exploring the best content of the Latino multicultural experience.</p><p class="close-button-modal">OK</p>'),
     ];
   }
   public function cancel() {
     return [
-      '#markup' => '<p>You can continue enjoying the best of the American Latino experience through our standart content on the website.</p><button name="close-modal">OK</button>'
+      '#markup' => '<p class="pop-up-home-cancel-account">You can continue enjoying the best of the American Latino experience through our standart content on the website.</p><p class="close-button-modal">OK</p>'
     ];
   }
   public function userInformation() {
