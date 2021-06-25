@@ -55,27 +55,28 @@ class ModalHomePassword extends BlockBase implements ContainerFactoryPluginInter
   public function build() {
     $modal =  $this->requestStack->getParentRequest()->get('modal') ?? FALSE;
     if ($modal) {
-        $link_url = Url::fromRoute('al_dia_news_general.modal', [
-          'type' => 'home',
-        ]);
-        $link_url->setOptions([
-          'attributes' => [
-            'class' => ['use-ajax', 'button', 'button--small'],
-            'data-dialog-type' => 'modal',
-            'data-dialog-options' => Json::encode(['width' => 400]),
-          ]
-        ]);
-        return [
-            '#type' => 'markup',
-            '#markup' => Link::fromTextAndUrl(t('Open modal'), $link_url)->toString(),
-            '#attached' => ['library' => ['core/drupal.dialog.ajax']],
-            '#cache' => ["max-age" => 0]
-        ];
+      $type = $modal == 1 ? 'home' : ($modal == 'cancel' ? 'cancel' : FALSE);
+      $link_url = Url::fromRoute('al_dia_news_general.modal', [
+        'type' => $type,
+      ]);
+      $link_url->setOptions([
+        'attributes' => [
+          'class' => ['use-ajax', 'button', 'button--small'],
+          'data-dialog-type' => 'modal',
+          'data-dialog-options' => Json::encode(['width' => 400]),
+        ]
+      ]);
+      return [
+          '#type' => 'markup',
+          '#markup' => Link::fromTextAndUrl(t('Open modal'), $link_url)->toString(),
+          '#attached' => ['library' => ['core/drupal.dialog.ajax']],
+          '#cache' => ["max-age" => 0]
+      ];
     }
     else {
-        return [
-            '#cache' => ["max-age" => 0]
-        ];
+      return [
+          '#cache' => ["max-age" => 0]
+      ];
     } 
 
   }

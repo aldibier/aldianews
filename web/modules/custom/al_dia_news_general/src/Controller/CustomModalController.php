@@ -59,6 +59,10 @@ class CustomModalController extends ControllerBase {
       $output = $this->home();
       $title = $this->t('YOU JUST HAVE RESET YOUR PASSWORD SUCCESSFULLY');
     }
+    elseif ($type == 'cancel') {
+      $output = $this->cancel();
+      $title = $this->t('YOU HAVE CANCELED YOUR ACCOUNT');
+    }
     $response = new AjaxResponse();
     $response->addCommand(new OpenModalDialogCommand($title, $output, $options));
 
@@ -67,6 +71,11 @@ class CustomModalController extends ControllerBase {
   public function home() {
     return [
       '#markup' => '<p>Keep exploring the best content of the Latino multicultural experience.</p><button name="close-modal">OK</button>'
+    ];
+  }
+  public function cancel() {
+    return [
+      '#markup' => '<p>You can continue enjoying the best of the American Latino experience through our standart content on the website.</p><button name="close-modal">OK</button>'
     ];
   }
   public function userInformation() {

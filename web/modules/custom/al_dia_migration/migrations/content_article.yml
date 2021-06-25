@@ -1,0 +1,234 @@
+id: content_article
+label: article
+migration_group: content
+
+source:
+ plugin: d7_node
+ node_type: article
+ key: migrate
+
+process:
+  title: title
+
+  body/value:
+    plugin: extract
+    source: body
+    default: ''
+    index: 
+      - 0
+      - value
+
+  body/summary:
+    plugin: callback
+    callable: strip_tags
+    source: body/0/summary
+    
+  body/format:
+    plugin: default_value
+    default_value: full_html
+
+  field_type_of_content:
+    plugin: default_value
+    default_value: 161
+
+  field_tags:
+    plugin: migration_lookup
+    migration: taxonomy_tags
+    source: field_author_tags
+
+  field_image:
+    plugin: sub_process
+    source: field_image
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: files
+        source: fid
+        no_stub: true
+      alt: alt
+  
+  field_caption:
+    -
+      plugin: callback
+      callable: strip_tags
+      source: field_media_caption/0/value
+    -
+      plugin: leadcaption
+
+  field_short_title:
+    plugin: lead
+    source: title
+    
+  #field_category:
+  #  plugin: static_map
+  #  source: field_topics/0/tid
+  #  map:
+  #    2: 4
+  #    13579: 159
+  #    1: 131
+  #    210: 5
+
+  field_author:
+    -
+      plugin: skip_on_value
+      method: row
+      equals: true
+      source: field_author/0/tid
+      value: 
+        - 21577
+        - 22496
+        - 21578
+        - 22059
+        - 22048      
+    -
+      plugin: skip_on_empty
+      method: process 
+    -
+      plugin: static_map
+      map:
+        5308: 12
+        277: 13
+        353: 14
+        11950: 15
+        17673: 16
+        8835:	17
+        9896:	18
+        18223: 19
+        245: 20
+        17879: 21
+        10279: 22
+        15614: 23
+        1930: 24
+        346: 25
+        17824: 26
+        18811: 27
+        15603: 28
+        20042: 29
+        18447: 30
+        1746: 31
+        10301: 32
+        912: 33
+        18448: 34
+        17128: 35
+        358: 36
+        8259: 37
+        11749: 38
+        16222: 39
+        359: 40
+        14898: 41
+        858: 42
+        1116: 43
+        20020: 44
+        17775: 45
+        20163: 46
+        12481: 47
+        12480: 48
+        10231: 49
+        18501: 50
+        9719: 51
+        15644: 52
+        17718: 53
+        394: 54
+        4442: 55
+        10476: 56
+        17127: 57
+        19431: 58
+        13577: 59
+        1922: 60
+        17938: 61
+        17769: 62
+        984: 63
+        17815: 64
+        20041: 65
+        19509: 66
+        12635: 67
+        14195: 68
+        17940: 69
+        17392: 70
+        10271: 71
+        17843: 72
+        10780: 73
+        4227: 74
+        18698: 75
+        17939: 76
+        17816: 77
+        18271: 78
+        20019: 79
+        8052: 80
+        17770: 81
+        18449: 82
+        17951: 83
+        9900: 84
+        10163: 85
+        18390: 86
+        8288: 87
+        17672: 88
+        20315: 89
+        17793: 90
+        10164: 91
+        7494: 92
+        13180: 93
+        18101: 94
+        4700: 95
+        12479: 96
+        9901: 97
+        335: 98
+        2454: 99
+        17771: 100
+        17989: 101
+        1169: 102
+        18357: 103
+        1280: 104
+        18020: 105
+        264: 106
+        18235: 107
+        10245: 108
+        248: 109
+        17772: 110
+
+  field_video:
+    plugin: extract
+    source: field_video
+    default: ''
+    index:
+      - 0
+      - video_url
+
+  field_internal_image:
+    plugin: sub_process
+    source: field_banner_image
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: files
+        source: fid
+        no_stub: true
+      alt: alt
+
+  field_short_description: 
+    plugin: leadshortdescription
+    source: body/0/summary
+
+  langcode:
+    plugin: default_value
+    source: language
+    default_value: und
+  
+  uid:
+    plugin: ignore_rol
+    migration: users
+    source: node_uid
+
+  created: created
+  status: status
+  changed: changed
+
+destination:
+  plugin: entity:node
+  default_bundle: news
+
+migration_dependencies:
+  required: 
+    - taxonomy_tags
+    - files
+    - users

@@ -255,3 +255,83 @@
     margin: 20px auto;
   }
 }
+
+///---------- estilos para publicidad con close en mobile ---------//
+
+.block-fixed-block-content-horizontal-advertising-close {
+  @media (max-width: $tablet) {
+      padding: 0 !important;
+      margin-bottom: 12px !important;
+  }
+}
+
+#block-gamwadvertisement-2 {
+  @media (max-width: $tablet) {
+    height: 100px;
+  }
+}
+
+#block-gamwadvertisement-15--3 {
+  
+  @media (max-width: $mobile) {
+    padding: 0 !important;
+    width: 113% !important;
+    margin-left: -15px !important;
+  }
+
+  @media (min-width: 321px) {
+      display: block;
+      width: unset;
+      text-align: center;
+      margin: 0 !important;
+      width: auto !important;
+  }
+
+  @media (min-width: $tablet-max) {
+    width: unset;
+    margin: 0;
+  }
+}
+
+#block-gamwadvertisement-3 {
+  @extend #block-gamwadvertisement-15--3;
+}
+
+#block-gamw--2 {
+  @extend #block-gamwadvertisement-15--3;
+}
+
+.node--type-thought-leaders, .node--type-event {
+  .block-gamw {
+    @extend #block-gamwadvertisement-15--3;
+  }
+}
+
+// div[data-ad-unit*="pre-footer-bottom-banner"] {
+//   @extend #block-gamwadvertisement-15--3;
+
+//   @media (max-width: $mobile) {
+//     margin-left: 0px !important;
+//   }
+// }
+
+div[data-ad-unit*="first-block-bottom-banner"], div[data-ad-unit*="pre-footer-bottom-banner"] {
+  @extend #block-gamwadvertisement-15--3;
+
+  @media (max-width: $mobile) {
+    margin-left: 0px !important;
+  }
+}
+
+.node--view-mode-basic-page-about-us {
+  .block-gamw {
+    @media (max-width: $mobile) {
+      margin-left: -15px !important;
+    }
+    
+  }
+}
+
+div[data-ad-unit*="Home-post-main-headline"] {
+  margin-left: 0px !important;
+}

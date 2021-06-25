@@ -1,0 +1,48 @@
+id: users
+label: User Migration
+
+migration_group: d7
+
+source:
+  plugin: d7_user
+  key: migrate
+
+process:
+  name: name
+  field_first_name: field_full_name
+  mail: mail
+  roles:
+    plugin: static_map
+    source: roles    
+    map:        
+      2: authenticated
+      3: administrator
+      4: site_administrator
+      5: editor
+      6: writer
+      7: sales
+      8: contributor
+      9: publisher
+      10: events
+      12: columnist
+      14: freelancer
+      
+  status: status  
+  access: access
+  created: created
+  changed: changed
+  timezone: timezone
+  login: login
+  init: init
+  pass: pass
+  
+destination:
+  plugin: entity:user
+
+migration_dependencies:
+  required: { }
+
+dependencies:
+  enforced:
+    module:
+    - example_migrate[/php]

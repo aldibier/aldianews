@@ -366,6 +366,11 @@ import replaceToken from "./modules/replaceToken";
         $(".block-fixed-block-contentpop-up-cancel-form-subscribe").addClass("open");
       }
     });
+    
+    $( document ).ready(function() {
+      $( "#block-modalhomepassword a.button" ).click();
+    });
+    
 
     initMain();
     initSlick($, Drupal);
