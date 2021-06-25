@@ -1,0 +1,98 @@
+id: content_print_edition
+label: print_edition
+migration_group: content
+
+source:
+  plugin: print_edition
+  key: migrate
+
+process:
+  title: title
+
+  body/value:
+    plugin: extract
+    source: body
+    default: ''
+    index: 
+      - 0
+      - value
+  body/format: 
+    plugin: default_value
+    default_value: full_html
+
+  field_cover_page:
+    plugin: sub_process
+    source: field_image
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: files
+        source: fid
+        no_stub: true
+      alt: alt
+
+  field_start_date:
+    plugin: sub_process
+    source: field_circulation_date
+    process:
+      value:
+        plugin: format_date
+        source: value
+        from_format: 'Y-m-d H:i:s'
+        to_format: 'Y-m-d\TH:i:s'
+        from_timezone: 'America/New_York'
+        to_timezone: 'UTC'
+
+  field_end_date:
+    plugin: sub_process
+    source: field_circulation_date
+    process:
+      value:
+        plugin: format_date
+        source: value2
+        from_format: 'Y-m-d H:i:s'
+        to_format: 'Y-m-d\TH:i:s'
+        from_timezone: 'America/New_York'
+        to_timezone: 'UTC'
+
+
+  field_related_more_covers:
+    plugin: sub_process
+    source: prepare_multiple_paragraphs
+    process:
+      target_id: target_id
+      target_revision_id: target_revision_id
+    #-  
+    #  plugin: skip_on_empty  
+    #  method: process  
+    #  source: field_featured_articles  
+    #-  
+    #  plugin: migration_lookup  
+    #  migration: paragraph  
+    #  no_stub: true  
+    #-  
+    #  plugin: sub_process 
+    #  process:  
+    #    target_id: '0'  
+    #    target_revision_id: '1'  
+    
+
+  uid:
+    plugin: migration_lookup
+    migration: users
+    source: uid
+
+  created: created
+  status: status
+  changed: changed
+
+destination:
+  plugin: entity:node
+  default_bundle: more_covers
+
+migration_dependencies:
+  required: 
+    - taxonomy_tags
+    - files
+    - users
+    - paragraph

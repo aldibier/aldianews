@@ -1,0 +1,21 @@
+id: paragraph
+label: 'Paragraph'
+migration_group: content
+
+source:
+  plugin: need_paragraph
+  key: migrate
+  field_name_name: field_featured_articles
+
+process:
+  field_card_title_related_covers: 
+    plugin: lead_title_paragraph
+    source: title
+  field_image_related_covers: field_image/0/fid
+  field_taxonomy_term_related_cove: 
+    plugin: default_value
+    default_value: "159"
+
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+  default_bundle: features_more_covers

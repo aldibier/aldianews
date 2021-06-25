@@ -1,0 +1,15 @@
+id: taxonomy_tags
+label: tags
+migration_group: taxonomy
+
+source:
+ plugin: d7_taxonomy_term
+ bundle: tags
+ key: migrate
+
+process:
+  name: name
+
+destination:
+  plugin: entity:taxonomy_term
+  default_bundle: tags

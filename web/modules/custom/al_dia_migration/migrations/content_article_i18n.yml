@@ -1,0 +1,93 @@
+id: content_article_i18n
+label: article_i18n
+migration_group: content
+
+source:
+  plugin: d7_node
+  node_type: article
+  translations: true
+  key: migrate
+
+process:  
+  nid:
+    plugin: migration_lookup
+    source: tnid
+    migration: content_article
+  langcode: language
+
+  title: title
+
+  body/value:
+    plugin: extract
+    source: body
+    default: ''
+    index: 
+      - 0
+      - value
+
+  body/summary:
+    plugin: callback
+    callable: strip_tags
+    source: body/0/summary
+    
+  body/format:
+    plugin: default_value
+    default_value: full_html
+
+  field_type_of_content:
+    plugin: default_value
+    default_value: 161
+
+  field_tags:
+    plugin: migration_lookup
+    migration: taxonomy_tags
+    source: field_author_tags
+
+  field_image/0/target_id: 
+    plugin: image_relation
+    source: field_image
+
+  field_image/0/alt: field_image/0/alt
+
+  field_caption:
+    -
+      plugin: callback
+      callable: strip_tags
+      source: field_media_caption/0/value
+    -
+      plugin: leadcaption
+  
+  field_short_title:
+    plugin: lead
+    source: title
+
+  field_video:
+    plugin: extract
+    source: field_video
+    default: ''
+    index:
+      - 0
+      - video_url
+
+  field_internal_image/0/target_id: 
+    plugin: image_relation
+    source: field_banner_image
+  
+  field_internal_image/0/alt: field_banner_image/0/alt
+
+  field_short_description: 
+    plugin: leadshortdescription
+    source: body/0/summary
+
+  uid:
+    plugin: ignore_rol
+    migration: users
+    source: node_uid
+  
+  created: created
+  status: status
+  changed: changed
+
+destination:
+  plugin: 'entity:node'
+  translations: true

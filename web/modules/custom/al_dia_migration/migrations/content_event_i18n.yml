@@ -1,0 +1,76 @@
+id: content_event_i18n
+label: event_i18n
+migration_group: content
+
+source:
+  plugin: d7_node
+  node_type: event
+  translations: true
+  key: migrate
+
+process: 
+
+  content_translation_source: source_langcode
+
+  nid:
+    plugin: migration_lookup
+    source: tnid
+    migration: content_event
+  langcode: language
+
+  title: title
+
+  body/value:
+    plugin: concat
+    source:
+      - body/0/value
+      - field_register_link/0/url
+    delimiter: ' '
+    
+  body/format: 
+    plugin: default_value
+    default_value: full_html
+
+  field_image/0/target_id: 
+    plugin: image_relation
+    source: field_image
+  
+  field_date_of_event:
+    plugin: sub_process
+    source: field_start_date
+    process:
+      value:
+        plugin: format_date
+        source: value
+        from_format: 'Y-m-d H:i:s'
+        to_format: 'Y-m-d\TH:i:s'
+
+  field_venue_of_the_event:
+    plugin: concat
+    source: 
+      - field_location/0/country
+      - field_location/0/locality
+      - field_location/0/thoroughfare
+    delimiter: ', '
+    
+  uid:
+    -
+      plugin: skip_on_empty
+      method: process       
+    -
+      plugin: migration_lookup
+      migration: users
+      source: node_uid
+  
+  created: created
+  status: status
+  changed: changed
+
+destination:
+  plugin: 'entity:node'
+  translations: true
+
+
+migration_dependencies:
+  required: 
+    - content_event
