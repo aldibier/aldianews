@@ -1,30 +1,25 @@
-uuid: 9b0f2c43-8f02-4dc2-a011-8273b7b98178
+uuid: 985ca2fe-80ba-44ca-b179-7a19b83dda6b
 langcode: en
 status: true
 dependencies:
   module:
-    - block_class
     - context
     - gamw
   theme:
     - al_dia_news
-third_party_settings:
-  block_class:
-    classes: block-fixed-block-contentsquare-advertising-mobile
-id: gamwadvertisement_13
+id: gamwadvertisement_12
 theme: al_dia_news
-region: home_category_leadership_bottom_mobile
+region: block_group_gamw_skyscraper_side_section_bottom_views
 weight: 0
 provider: null
 plugin: gamw
 settings:
   id: gamw
-  label: 'Home -  Category Leadership bottom mobile'
+  label: 'Fixed Internal - Side Section bottom skyscraper'
   provider: gamw
   label_display: '0'
-  ad_unit: home-category-leadership-bottom-mobile
-  attributes_wrapper:
-    - ''
+  ad_unit: internal-side-section-bottom-skyscraper
+  attributes_wrapper: null
 visibility:
   request_path_exclusion:
     id: request_path_exclusion
