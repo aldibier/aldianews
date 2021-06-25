@@ -188,6 +188,9 @@ function al_dia_news_general_form_alter(&$form, $form_state, $form_id) {
     case "user_form":
       $form['#title'] = "EDIT";
     break;
+    case "user_cancel_form":
+      $form['actions']['submit']['#submit'][] = 'custom_cancel_account';
+    break;
   }
   if (strpos($form_id, 'commerce_order_item_add_to_cart_form_commerce_product_') !== FALSE) {
     $product = $form_state->get('product');
@@ -212,6 +215,9 @@ function al_dia_news_general_form_alter(&$form, $form_state, $form_id) {
 
 function custom_password_reset(&$form, &$form_state) {
   $form_state->setRedirect('<front>', ['modal'=>TRUE]);
+}
+function custom_cancel_account(&$form, &$form_state) {
+  $form_state->setRedirect('<front>');
 }
   /**
  * @return \Drupal\Core\Ajax\AjaxResponse
