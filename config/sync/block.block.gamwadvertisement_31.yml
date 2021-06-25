@@ -1,0 +1,36 @@
+uuid: 428ce78c-39a1-4661-9682-d3a9a3baae91
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - context
+    - gamw
+  theme:
+    - al_dia_news
+third_party_settings:
+  block_class:
+    classes: block-fixed-block-content-small-vertical-advertising
+id: gamwadvertisement_31
+theme: al_dia_news
+region: gamw_home_side_category_culture_top
+weight: 0
+provider: null
+plugin: gamw
+settings:
+  id: gamw
+  label: 'Home - side category Culture top '
+  provider: gamw
+  label_display: '0'
+  ad_unit: Home-side-category-culture-top
+  attributes_wrapper:
+    - ''
+visibility:
+  request_path_exclusion:
+    id: request_path_exclusion
+    pages: ''
+    negate: null
+  view_inclusion:
+    id: view_inclusion
+    negate: null
+    view_inclusion: {  }

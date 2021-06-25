@@ -1348,12 +1348,13 @@ display:
     display_title: More
     position: 3
     display_options:
-      display_extenders: {  }
+      display_extenders:
+        ajax_history: {  }
       display_description: ''
       pager:
         type: infinite_scroll
         options:
-          items_per_page: 9
+          items_per_page: 37
           offset: 5
           id: 0
           total_pages: null

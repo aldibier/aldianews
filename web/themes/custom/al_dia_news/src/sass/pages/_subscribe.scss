@@ -38,6 +38,63 @@
     max-width: 560px;
     margin: 0px auto 40px;
   }
+
+
+  @media (max-width: $tablet-min) {   
+    .field--name-field-section-title {
+      font-size: 21px;
+      line-height: 24px;
+      padding: 0 0 10px;
+      margin: 0 0 20px;
+    }
+
+    h2 {
+      font-size: 17px;
+      line-height: 20px;
+
+      .aldia-logo-in-text  img {
+        height: 16px;
+      }
+    }
+
+    h3 {
+      font-size: 16px;
+      line-height: 19px;
+    }
+  }
+}
+
+.commerce-checkout-flow-multistep-default {
+  .form-actions {
+    span.user-login {
+      width: 165px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 30px 0 0;
+      background: #5C6165;
+      color: #fff;
+      font-size: 18px;
+      line-height: 25px;
+      font-style: normal;
+      font-weight: bold;
+      font-family: $PrNovacond-bold;
+      cursor: pointer;
+    }
+  }
+
+  @media (max-width: $tablet-min) {  
+    .form-actions {
+      span.user-login {
+        width: 136.71px;
+        height: 30px;
+        font-size: 16px;
+        line-height: 25px;
+        margin: 0 16px 0 0;
+      }
+    }
+  }
 }
 
 ///----------- order information ---------///
@@ -48,7 +105,7 @@
     flex-wrap: wrap;
     max-width: 660px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0;
     justify-content: space-between;
   }
   .field--type-string,
@@ -56,9 +113,19 @@
   .field--type-phone-international {
     max-width: 290px;
   }
+
   .field--type-phone-international{
-    padding-left: 50px !important;
+   width: 100%;
+
+    .iti--allow-dropdown {
+      width: 100%;
+    }
+
+    input {
+      padding-left: 47px !important;
+    }
   }
+
   .field--type-address {
     width: 100%;
     summary {
@@ -72,17 +139,8 @@
     }
     .js-form-item-order-fieldscheckout-field-address-0-address-address-line2 {
       position: relative;
-      &::before {
-        content: "Apt, Floor, Unit (Optional)";
-        display: block;
-        position: absolute;
-        font-family: $PrNovacond-Sbold;
-        font-style: normal;
-        font-size: $px20;
-        line-height: 24px;
-        color: $cgrey6;
-      }
     }
+
     .address-container-inline {
       display: flex;
       flex-wrap: wrap;
@@ -90,6 +148,7 @@
       .form-item {
         max-width: 290px;
         width: 100%;
+        margin: 0;
       }
     }
   }
@@ -129,7 +188,10 @@
     flex-direction: row-reverse;
     margin-bottom: 50px;
     max-width: 360px;
-    justify-content: space-between;
+    justify-content: flex-end;
+    max-width: 620px;
+    margin: 0 auto;
+
     input {
       max-width: 165px;
       margin: 0px;
@@ -148,6 +210,7 @@
       justify-content: center;
       letter-spacing: 0.741176px;
       color: $cwhite;
+      margin: 0 30px 0 0;
     }
   }
   .layout-region-checkout-footer{
@@ -155,15 +218,1129 @@
     margin: 0 auto;
     padding: 0 20px;
   }
+
+  @media (max-width: $tablet-min) { 
+    .form-item label {
+      font-size: 15px;
+      line-height: 18px;
+      margin: 0 0 10px;
+    }
+
+    .field--type-string,
+    .field--type-email,
+    .field--type-phone-international {
+      max-width: 100%;
+      width: 100%;
+    }
+
+    input[class*=form], 
+    textarea[class*=form] {
+      font-size: 15px;
+      line-height: 18px;
+    }
+
+    .red-text {
+      font-size: 12px;
+      line-height: 15px;
+    }
+
+    .field--name-field-terms-and-privacy p {
+      font-size: 15px;
+      line-height: 18px;
+    }
+
+    .form-actions  {
+      a {
+        min-height: 30px;
+        font-size: 16px;
+        line-height: 25px;
+      }
+    }
+
+    #edit-actions input {
+      font-size: 16px;
+    }
+  }
+}
+
+#edit-completion-message {
+  background: #F2F2F2;
+  padding: 20px;
+
+  p {
+    font-size: $px16;
+    line-height: 18px;
+    color: #767676;
+  }
 }
 
 .contact-payment-subscribe{
   font-family: $Mod-bold;
-font-style: normal;
-font-size: $px30;
-line-height: 36px;
-color: $cgrey6;
-border-bottom: 1px solid #B1B1B1;
-padding-bottom: 15px;
-margin-bottom: 20px;
+  font-style: normal;
+  font-size: $px30;
+  line-height: 36px;
+  color: $cgrey6;
+  border-bottom: 1px solid #B1B1B1;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+  max-width: 620px;
+  display: block;
+  margin: 20px auto;
+
+  @media (max-width: $tablet-min) {
+    font-size: 20px;
+    line-height: 24px;  
+    padding: 0 0 5px;
+  }
+}
+
+.block-simple-blockauto-renewal-terms-orders-simple-block {
+  max-width: 620px;
+  margin: 57px auto 20px;
+
+  p {
+    font-weight: 600px;
+    font-family: $PrNovacond-reg;
+    font-size: $px15;
+    color: #B1B1B1;
+    
+  }
+
+  @media (max-width: $tablet-min) {
+    p {
+      font-size: 15px;
+      line-height: 18px;
+    }
+  }
+}
+
+.block-commerce-checkout-progress {
+
+  .checkout-progress {
+    display: flex;
+    max-width: 620px;
+    margin: 0 auto;
+    position: relative;
+    padding: 0;
+  }
+
+  .checkout-progress--step {
+    font-size: 0;
+    width: 0;
+    font-size: 0;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 24px;
+    
+    a {
+      font-size: 0;
+      width: 33%;
+      font-size: 0;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 24px;
+    }
+
+    &.checkout-progress--step__previous,
+    &.checkout-progress--step__current {
+      
+      &:before {
+        background: #ED1C24;
+      }
+    }
+
+    &.checkout-progress--step__current {
+      font-size: $px20;
+      width: 100%;
+      padding: 0;
+      text-align: center;
+    }
+
+    &:before {
+      width: 30.33%;
+      height: 5px;
+      position: absolute;
+      top: -15px;
+      background: #C4C4C4;
+      display: block;
+      content: '';
+    }
+
+    &:last-child {
+
+      &::before {
+        right: 0;
+      }
+    }
+
+    &:nth-child(2) {
+
+      &::before {
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+      }
+    }
+
+    &:first-child {
+      &::before {
+        left: 0;
+      }
+    }
+  }
+
+  @media (max-width: $tablet-min) {
+
+    .checkout-progress--step {
+
+      &.checkout-progress--step__current{
+        font-size: 12px;
+        line-height: 15px;
+      }
+
+      &::before {
+        height: 2px;
+      }
+    }
+  }
+}
+
+.block-order-product-name {
+  max-width: 620px;
+  margin: 0 auto 70px;
+
+  .content {
+    font-family: $PrNovacond-Sbold;
+    font-style: normal;
+    font-weight: bold;
+    font-size: $px26;
+    line-height: 32px;
+    text-transform: uppercase;
+    color: #ED1C24;
+  }
+
+  .your-order-subscribe {
+    color: #333333;
+  }
+
+  @media (max-width: $tablet-min) {
+    margin: 0 auto 35px;
+
+    .content {
+      font-size: 15px;
+      line-height: 18px;
+    }
+  }
+}
+
+.commerce-checkout-flow{
+  max-width: 620px;
+  margin: 0 auto;
+
+  .checkout-pane-payment-information {
+    display: none;
+  }
+
+  h1 {
+    font-family: $Mod-bold;
+    font-style: normal;
+    font-size: $px30;
+    line-height: 36px;
+    color: $cgrey6;
+    border-bottom: 1px solid #B1B1B1;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    max-width: 620px;
+    display: block;
+    margin: 20px auto;
+  }
+
+  .checkout-pane-rechpack-order-review-description {
+    margin: 0 auto;
+    max-width: 620px;
+
+    p {
+      font-family: $PrNovacond-reg;
+      font-style: normal;
+      font-weight: 600;
+      font-size: $px20;
+      line-height: 24px;
+    }
+  }
+
+  .checkout-pane-order-summary {
+    max-width: 620px;
+    margin: 0 auto -10px;
+    background: #F2F2F2;
+    padding: 20px 30px;
+
+    .views-row {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .views-field-total-price__number {
+      margin: 0 0 0 auto;
+
+      span {
+        font-style: normal;
+        font-weight: bold;
+        font-size: $px25;
+        line-height: 30px;
+        text-align: right;
+        font-family: $PrNovacond-Sbold;
+        color: #ED1C24;
+      }
+    }
+
+    .views-field-title-1 {
+      span {
+        font-style: normal;
+        font-weight: bold;
+        font-size: $px26;
+        line-height: 32px;
+        text-align: right;
+        text-transform: uppercase;
+        font-family: $PrNovacond-reg;
+        color: #333333;
+      }
+    }
+
+    .views-field-nothing {
+      width: 100%;
+      padding: 15px 0;
+      border-bottom: 1px solid #333333;
+      margin-bottom: 40px;
+      
+      span {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 19px;
+        line-height: 23px;
+        font-family: $PrNovacond-Sbold;
+      }
+    }
+  }
+
+  .checkout-pane-review {
+    max-width: 620px;
+    margin: 0 auto;
+    padding: 0 30px 40px;
+    background: #F2F2F2;
+
+    legend {
+      display: none;
+    }
+
+    .fieldset-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .field--name-field-first-name,
+    .field--name-field-last-name {
+      margin: 0 5px 20px 0;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 26px;
+      line-height: 32px;
+      color: #767676;
+      font-family: $PrNovacond-reg;
+      text-transform: uppercase;
+    }
+
+    .field--name-field-email-address {
+      margin: 20px 0 15px;
+    }
+
+    .field--name-field-email-address,
+    .field--type-phone-international {
+      padding: 0 0 0 25px;
+      font-style: normal;
+      font-weight: normal;
+      font-size: $px22;
+      line-height: 27px;
+      letter-spacing: 0.025em;
+      font-family: $PrNovacond-reg;
+      position: relative;
+      color: #767676;
+      width: 100%;
+      margin: 0 0 15px;
+      
+      a {
+        font-style: normal;
+        font-weight: normal;
+        font-size: $px22;
+        line-height: 27px;
+        letter-spacing: 0.025em;
+        font-family: $PrNovacond-reg;
+        color: #767676;
+      }
+
+      &:after {
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto auto auto 0;
+        background: #767676;
+        display: block;
+        content: '';
+        border-radius: 100%;
+
+      }
+    }
+
+    .field--type-address {
+      padding: 30px 20px 0 37px;
+      margin: 25px 0 0 0;
+      position: relative;
+      border-top: 1px solid #B1B1B1;
+
+      &::after {
+        position: absolute;
+        display: block;
+        content: '';
+        width: 18.75px;
+        height: 25px;
+        left: 0;
+        top: 33px;
+        background: url(../img/local.svg) no-repeat center center;
+        background-size: contain;
+      }
+
+      p {        
+        font-size: $px22;
+        line-height: 27px;
+        letter-spacing: 0.025em;
+        display: flex;
+        color: #767676;
+        flex-wrap: wrap;
+        max-width: 372px;
+      }
+
+      .address-line1 {
+        margin: 0 5px 0 0;
+      }
+
+      .address-line1,
+      .address-line2 {
+        font-family: $PrNovacond-reg;
+        font-style: normal;
+        font-weight: normal;
+      }
+
+      .locality {
+        margin: 0 5px 0 0;
+      }
+
+      .locality,
+      .country {
+        font-style: normal;
+        font-weight: 600;
+        font-family: $PrNovacond-Sbold;
+      }
+    }
+  }
+
+  #edit-review-contact-information,
+  #edit-review-payment-information {
+    display: none;
+  }
+
+
+  .paypal-buttons {
+    height: 52px;
+    overflow: hidden;
+    max-width: 425px;
+  }
+
+  .paypal-buttons-container {
+    max-width: 620px;
+    margin: 50px 0 0 auto;
+    display: flex;
+    overflow: hidden;
+    height: 58px;
+    padding: 0 0 0 200px;
+
+    @media (max-width: 331px) {  
+      height: 37px;
+    }
+  }
+
+  .link--previous {
+    width: 165px;
+    height: 40px;
+    background: #5C6165;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: normal;
+    font-weight: bold;
+    color: #fff;
+    font-size: $px18;
+    line-height: 25px;
+    font-family: $PrNovacond-Sbold;
+    margin: -52px 0 0;
+  }
+
+  @media (max-width: $tablet-min) {  
+
+    h1 {
+      font-size: 20px;
+      line-height: 24px;
+      padding: 0 0 10px;
+    }
+
+    .checkout-pane-rechpack-order-review-description {
+      p {
+        font-size: 15px;
+        line-height: 18px;
+      }
+    }
+
+    .checkout-pane-order-summary .views-field-title-1 span,
+    .checkout-pane-order-summary .views-field-total-price__number span {
+      font-size: 18px;
+      line-height: 22px;
+    }
+
+    .checkout-pane-order-summary {
+      padding: 16px 20px;
+
+      .views-field-nothing {
+        margin-bottom: 22px;
+      }
+    }
+
+    .checkout-pane-review {
+      padding: 0 20px 22px;
+    }
+
+    .checkout-pane-review {
+
+      .field--name-field-first-name,
+      .field--name-field-last-name{
+        font-size: 15px;
+        line-height: 18px;
+        margin: 0 5px 10px 0;
+      }
+
+      .field--name-field-email-address,
+      .field--type-phone-international {
+        font-size: 14px;
+        line-height: 17px;
+        padding: 0 0 0 10px;
+        margin: 0 0 10px;
+
+        a{
+          font-size: 14px;
+          line-height: 17px;  
+        }
+
+        &:after {
+          width: 5px;
+          height: 5px;
+        }
+      }
+
+      .field--type-address {
+        padding: 10px 0 0 20px;
+        margin: 10px 0 0;
+        max-width: 261px;
+
+        P {
+          font-size: 14px;
+          line-height: 17px;
+        }
+
+        &:after{
+          width: 11.25px;
+          height: 15px;
+          top: -5px;
+          bottom: 0;
+          margin: auto auto auto 0;
+        }
+      }
+    }
+
+    .form-item {
+      margin: 0;
+    }
+
+    .paypal-buttons-container {
+      padding: 0;
+      margin: 20px auto 0;
+    }
+
+    .link--previous {
+      margin: 10px auto 0;
+      width: 100%;
+      height: 30px;
+      font-size: 16px;
+      line-height: 25px;
+    }
+  }
+}
+
+
+
+//-----------------landing subscribe-----------------//
+
+.view-subscribe {
+
+  .view-content {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .views-row {
+    width: 33.33%;
+    max-width: 400px;
+    margin: 0 auto;
+    transition: all .25s linear;
+
+    .field--name-title {
+      font-style: normal;
+      font-weight: bold;
+      font-size: $px26;
+      line-height: 32px;
+      text-align: center;
+      text-transform: uppercase;
+      font-family: $PrNovacond-bold;
+      color: #ED1C24;
+      padding: 5px;
+      transition: all .25s linear;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    .field--name-field-image {
+      margin: 30px auto 0;
+    }
+
+    .weekly-information {
+      font-style: normal;
+      font-weight: 600;
+      font-size: $px34;
+      line-height: 35px;
+      font-family: $PrNovacond-reg;
+      margin: 15px auto 0;
+      text-align: center;
+      letter-spacing: -3px;
+      color: #ED1C24;
+      transition: all .25s linear;
+
+      .field--name-field-weekly-value {
+        font-style: normal;
+        font-weight: 600;
+        font-size: $px34;
+        line-height: 35px;
+        font-family: $PrNovacond-bold;
+        margin: 15px auto 0;
+        text-align: center;
+        letter-spacing: -3px;
+        transition: all .25s linear;
+      }
+
+      .field--name-field-text,
+      .field--name-field-symbol {
+        font-style: normal;
+        font-weight: 600;
+        font-size: $px34;
+        line-height: 35px;
+        font-family: $PrNovacond-reg;
+        margin: 15px auto 0;
+        text-align: center;
+        letter-spacing: normal;
+      }
+    }
+
+    .intro-offer-subscribe {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 22px;
+      letter-spacing: 0.04em;
+      color: #333333;
+      font-family: $Modcond-bold;
+      text-align: center;
+      position: relative;
+
+      >span {
+        width: max-content;
+        margin: 0 auto;
+        display: block;
+      }
+
+      .field--type-string {
+        max-width: max-content;
+        margin: 0 auto;
+        position: relative;
+      }
+
+      .field--name-field-price-companion {
+        font-size: 10px;
+        line-height: 12px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        margin: 0 auto 9px auto;
+        right: -180px;
+      }
+    }
+
+    .text-formatted {
+      padding: 30px 0 0;
+      max-width: 265px;
+      margin: 70px auto 0;
+      border-top: 1px solid #B1B1B1;
+
+      p{
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 19px;
+        text-align: center;
+        font-family: $PrNovacond-reg;
+        color: #767676;
+      }
+    }
+
+    #edit-purchased-entity-0-attributes,
+    .field--widget-commerce-product-variation-attributes {
+
+      .form-type-radio {
+        width: 50%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        >div {
+          display: none;
+        }
+      }
+
+      legend {
+        display: none;
+      }
+      .form-radios {
+        display: flex;
+        padding: 0 10px;
+      }
+
+      .form-radio {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        opacity: 0;
+      }
+
+      .option {
+        position: relative;
+        padding: 0 0 0 30px;
+      }
+
+      .option::before {
+        display: block;
+        position: absolute;
+        content: '';
+        border-radius: 100%;
+        height: 15px;
+        width: 15px;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        border: 3px solid #000;
+        transition: all .25s linear;
+      }
+
+      input[type=radio]:checked ~ .option::after{
+        display: block;
+        position: absolute;
+        content: '';
+        border-radius: 100%;
+        height: 11px;
+        width: 11px;
+        top: 0.5px;
+        bottom: 0;
+        left: 5px;
+        margin: auto;
+        background: #000;
+        transition: all .25s linear;
+      }
+    }
+
+    .button {
+      max-width: 170px;
+      margin: 0 auto;
+      display: block;
+    }
+
+    &:hover {
+      background: #F2F2F2;
+      transition: all .25s linear;
+
+      #edit-purchased-entity-0-attributes,
+      .field--widget-commerce-product-variation-attributes{
+        input[type=radio]:checked ~ .option::after{
+          background:#ED1C24;
+          transition: all .25s linear;
+        }
+
+        .option::before {
+          border: 3px solid #ED1C24;
+          transition: all .25s linear;
+        }
+      }
+
+      .field--name-title {
+        color: #fff;
+        background: #ED1C24;
+        transition: all .25s linear;
+      }
+
+      .weekly-information {
+        font-size: $px50;
+        line-height: 35px;
+        transition: all .25s linear;
+
+        .field--name-field-weekly-value {
+          font-size: $px50;
+          line-height: 35px;
+          transition: all .25s linear;
+        }
+      }
+    }
+
+    @media (max-width: $tablet) {
+      width: 100%;
+
+      .field--name-title {
+        font-size: 22px;
+        line-height: 27px;
+      }
+      
+      .field--name-field-image {
+        margin: 25px auto 0;
+      }
+
+      .weekly-information {
+        font-size: 28px;
+        line-height: 35px;
+
+        .field--name-field-weekly-value, 
+        .field--name-field-text,
+        .field--name-field-symbol {
+          font-size: 28px;
+          line-height: 35px;
+        }
+      }
+
+      .intro-offer-subscribe {
+        font-size: 17px;
+        line-height: 20px;
+      }
+
+      .text-formatted {
+        margin: 35px auto 0;
+        padding: 25px 0 0;
+
+        p {
+          margin: 0 0 25px;
+          font-size: 14px;
+          line-height: 17px;
+        }
+      }
+
+      #edit-purchased-entity-0-attributes,
+      .field--widget-commerce-product-variation-attributes {
+        input[type=radio]:checked ~ .option::after {
+          left: 4px;
+          height: 8px;
+          width: 8px;
+        }
+
+        .option::before  {
+          height: 10px;
+          width: 10px;
+        }
+      }
+
+      .button {
+        max-width: 150px;
+        height: 30px;
+        margin: 0 auto;
+      }
+
+      &:hover {
+        .weekly-information {
+          font-size: 40px;
+
+          .field--name-field-weekly-value {
+            font-size: 40px;
+          }
+        } 
+      }
+    }
+  }
+}
+
+.block-block-groupsubscribe-footer-information {
+  margin: 30px auto 50px;
+  padding: 50px 0 0;
+  border-top: 1px solid #B1B1B1;
+
+  .content {
+    display: flex;
+  }
+
+  .block-fixed-block-contentunsubscribe-information {
+    max-width: 425px;
+    padding: 0 20px 0 50px;
+    position: relative;
+
+    &::before {
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      display: block;
+      content: '';
+      left: 0;
+      top: 12px;
+      background: url(../img/check-rojo.svg) no-repeat center center;
+      background-size: contain;
+    }
+
+    p:first-child{
+      font-style: normal;
+      font-weight: bold;
+      font-size: $px20;
+      line-height: 24px;
+      text-transform: uppercase;
+      margin: 0;
+      font-family: $PrNovacond-bold;
+      max-width: 100%;
+      color: #333333;
+    }
+
+    p {
+      font-style: normal;
+      font-weight: normal;
+      font-size: $px15;
+      line-height: 18px;
+      font-family: $PrNovacond-reg;
+      margin: 0;
+      max-width: 355px;
+      color: #333333;
+    }
+  }
+
+  .block-fixed-block-contentadditional-subscription-informat {
+    padding: 10px 33px;
+    border-left: 1px solid #B1B1B1;
+
+    p {
+      font-style: normal;
+      font-weight: 600;
+      font-size: $px18;
+      line-height: 140%;
+      font-family: $PrNovacond-reg;
+      color: #000000;
+    }
+  }
+
+  .block-fixed-block-contentbutton-request-call-back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    p,
+    .content {
+      margin: 0;
+    }
+  }
+
+  button {
+    width: 195px;
+    height: 40px;
+    background: #EE2211;
+    border-radius: 0;
+    border: none;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 25px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: $PrNovacond-bold;
+  }
+
+  @media (max-width: $tablet) {
+
+    padding: 25px 0 0;
+    margin: 35px auto 0;
+
+    .content {
+      flex-wrap: wrap;
+    }
+
+    .block-fixed-block-contentunsubscribe-information {
+      width: 50%;
+      padding: 0 17px 0 25px;
+
+      &:before {
+        width: 15px;
+        height: 15px;
+      }
+
+      p:first-child {
+        font-size: 11px;
+        line-height: 13px;
+      }
+
+      p {
+        font-size: 9px;
+        line-height: 11px;
+      }
+    }
+
+    .block-fixed-block-contentadditional-subscription-informat {
+      width: 50%;
+      padding: 0 0 0 20px;
+      
+      p {
+        font-size: 9px;
+        line-height: 11px;
+      }
+    }
+
+    button {
+      width: 140px;
+      height: 25px;
+      font-size: 11px;
+      line-height: 25px;
+      margin: 12px auto 0 0;
+    }
+  }
+
+}
+
+.block-fixed-block-contentpop-up-cancel-form-subscribe {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  z-index: 3;
+  top: 0;
+  left: 0;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 20px 20px;
+  display: none;
+
+  &.open {
+    display: flex;
+  }
+
+  .text-formatted {
+    text-align: center;
+  }
+
+  .content {
+    max-width: 620px;
+    min-height: 250px;
+    background: #fff;
+    padding: 40px 15px;
+  }
+
+  p{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 30px;
+    text-align: center;
+    font-family: $PrNovacond-reg;
+    display: inline-block;
+    margin: 0;
+  }
+
+  h2 {
+    display: inline-block;
+  }
+
+  button[name="yes-back"] {
+    margin: 0 20px 0 0;
+    background: #5C6165;
+  }
+
+  button[name="no-stay"]{
+    background: #ED1C24;
+  }
+
+  .aldia-logo-in-text{
+    height: 25px;
+    width: 83px;
+
+    img {
+      height: 100%;
+      width: auto;
+    }
+  }
+
+  button[name="yes-back"],
+  button[name="no-stay"]{
+    max-width: 165px;
+    margin-top: 30px;
+    height: 40px;
+    width: 165px;
+    cursor: pointer;
+    border: none;
+    font-size: 18px;
+    line-height: 25px;
+    font-style: normal;
+    font-weight: bold;
+    font-family: $PrNovacond-bold;
+    color: #fff;
+  }
+
+  @media (max-width: $tablet) {
+    padding: 100px 0 20px; 
+
+    .content {
+      min-height: 230px;
+      max-width: 400px;
+    }
+
+    p {
+      font-size: 17px;
+      line-height: 21px;
+    }
+
+    .aldia-logo-in-text{
+      width: 50px;
+      height: 15px;
+    }
+
+    button[name="yes-back"] {
+      margin: 25px 10px 0 0;
+    }
+
+    button[name="yes-back"],
+    button[name="no-stay"]{
+      width: 136.71px;
+      height: 30px;
+      font-size: 16px;
+      line-height: 25px;
+    }
+  }
 }

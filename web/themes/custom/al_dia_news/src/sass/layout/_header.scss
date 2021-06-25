@@ -143,7 +143,7 @@ body.open-menu {
         width: 250px;
         background: rgb(255, 255, 255);
         bottom: -214px;
-        box-shadow: rgb(0 0 0 / 17%) 1px 5px 8px -2px;
+        box-shadow: rgba(0,0,0,17%) 1px 5px 8px -2px;
         flex-wrap: wrap;
         margin: 0px;
         padding: 20px;
@@ -585,7 +585,7 @@ body.open-menu {
     width: 290px;
     background: $cwhite;
     bottom: -166px;
-    box-shadow: rgb(0 0 0 / 17%) 1px 5px 8px -2px;
+    box-shadow: rgba(0, 0, 0, 17%) 1px 5px 8px -2px;
     flex-wrap: wrap;
     margin: 0;
     padding: 25px;
@@ -918,14 +918,16 @@ body.open-menu {
     letter-spacing: 0.741176px;
   }
 
-  @media (max-width: $broken2) {
+  @media (max-width: $broken) {
     #block-sitedescription {
-      order: 7;
+      width: 100%;
+      margin: auto;
       position: absolute;
+      left: 0;
       bottom: -46px;
       background: #000;
-      width: 100%;
       text-align: center;
+      order: 7;
     }
   }
 
@@ -1038,8 +1040,7 @@ body.open-menu {
     }
 
     #block-sitedescription {
-      bottom: -36px;
-      margin: auto auto auto -15px;
+      bottom: -29px;
       padding: 7px 0 0;
       p {
         font-size: 11px;

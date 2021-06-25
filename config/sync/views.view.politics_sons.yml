@@ -8,6 +8,7 @@ dependencies:
     - field.storage.node.field_category
     - field.storage.node.field_image
     - field.storage.node.field_my_content_has_a_main_vide
+    - field.storage.node.field_short_description
     - field.storage.node.field_short_title
     - field.storage.node.field_type_of_content
     - image.style.card_one_column_desktop
@@ -21,18 +22,25 @@ dependencies:
     - 'taxonomy_term:categories:1867ed5e-0304-40ee-80d6-42a3cf4676bb'
     - 'taxonomy_term:categories:289b2ec5-5021-47dd-bd88-06b7f4ad9d7c'
     - 'taxonomy_term:categories:35e711a0-e9d4-45fe-8147-997d1394844b'
+    - 'taxonomy_term:categories:3ab51e1b-7299-4242-976b-5b8c2e6a21d0'
     - 'taxonomy_term:categories:3d19b461-771e-41d1-8330-df316faf8b47'
+    - 'taxonomy_term:categories:44f3b062-e330-4f5e-91b0-1cfd0039456e'
     - 'taxonomy_term:categories:4969e35d-adab-4b7f-bda6-4e9a7f60aae9'
     - 'taxonomy_term:categories:49a8a0eb-c50c-4500-9077-8226a3833e5b'
-    - 'taxonomy_term:categories:91a72607-f5ae-488c-83bf-10956697c5e1'
+    - 'taxonomy_term:categories:57d63386-f0f4-4e22-aef7-c4828f93790c'
+    - 'taxonomy_term:categories:626a661f-10c8-4692-8d34-9dd7df07c043'
+    - 'taxonomy_term:categories:7636b70c-911c-4fbc-bc08-ab29c975c297'
+    - 'taxonomy_term:categories:8427b6b3-d468-4151-9ade-3706a669d2d2'
     - 'taxonomy_term:categories:aec049fa-a86a-42fb-8dc9-173f58881fde'
     - 'taxonomy_term:categories:baa0a831-19ba-45bf-ba8a-be44d13892bd'
     - 'taxonomy_term:categories:c51d8cc3-4350-4d6c-8668-9a89f7a0d2f0'
-    - 'taxonomy_term:categories:ce75d793-8c04-42c0-bcdb-abf0fa29cd0e'
     - 'taxonomy_term:categories:cf1eec84-47c1-4745-b3fe-62d661529eaf'
     - 'taxonomy_term:categories:eee54e65-ed4e-4b29-891e-229a2f2a4f1c'
+    - 'taxonomy_term:categories:f20ef667-e56f-4996-8bf4-24fe58ed0f9b'
     - 'taxonomy_term:categories:fc9a2fed-71d1-442c-8f5a-a24f095e7020'
     - 'taxonomy_term:categories:fd49a7f8-2d48-4a3e-b99f-a7fb82320620'
+    - 'taxonomy_term:podcast_category:82308538-0aeb-4114-b715-4d9f59f77f0c'
+    - 'taxonomy_term:type_of_content:0ed30cce-25a3-4b0b-a3b6-ddb42361fa4b'
   module:
     - image
     - node
@@ -1277,7 +1285,6 @@ display:
           fields:
             - field_type_of_content
             - field_image
-            - field_my_content_has_a_main_vide
           wrapper: div
           legend: ''
           classes: one-content-category
@@ -1537,6 +1544,68 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
+        field_short_description:
+          id: field_short_description
+          table: node__field_short_description
+          field: field_short_description
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: basic_string
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
         created:
           id: created
           table: node_field_data
@@ -1733,7 +1802,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"main-news-content\">\r\n <div class=\"main-news-category\"><h2>{{ field_category }}</h2></div>\r\n   <div class=\"main-news-title\">{{ field_short_title }}</div>\r\n   <div class=\"main-news-body\">{{ body }}</div>\r\n   <div class=\"main-news-date\">{{ created }}</div>\r\n</div>"
+            text: "<div class=\"main-news-content\">\r\n <div class=\"main-news-category\"><h2>{{ field_category }}</h2></div>\r\n   <div class=\"main-news-title\">{{ field_short_title }}</div>\r\n   <div class=\"main-news-body\">{{ field_short_description }}</div>\r\n   <div class=\"main-news-date\">{{ created }}</div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -1784,6 +1853,7 @@ display:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_category'
         - 'config:field.storage.node.field_image'
+        - 'config:field.storage.node.field_short_description'
         - 'config:field.storage.node.field_short_title'
         - 'config:field.storage.node.field_type_of_content'
   block_2:
@@ -3063,7 +3133,7 @@ display:
           group_type: group
           admin_label: ''
           empty: false
-          block_id: 'fixed_block_content:_small_vertical_advertising'
+          block_id: 'block_group:gamw_home_side_category_politics_top'
           plugin_id: views_block_area
       footer:
         views_block_area:
@@ -3074,17 +3144,7 @@ display:
           group_type: group
           admin_label: ''
           empty: false
-          block_id: 'fixed_block_content:big_vertical_advertising'
-          plugin_id: views_block_area
-        views_block_area_1:
-          id: views_block_area_1
-          table: views
-          field: views_block_area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: false
-          block_id: 'fixed_block_content:square_advertising_mobile'
+          block_id: 'block_group:gamw_'
           plugin_id: views_block_area
       block_hide_empty: true
     cache_metadata:
@@ -3119,6 +3179,7 @@ display:
         - 'config:core.entity_view_display.node.news.first_category_home'
         - 'config:core.entity_view_display.node.news.full'
         - 'config:core.entity_view_display.node.news.news'
+        - 'config:core.entity_view_display.node.news.premium'
         - 'config:core.entity_view_display.node.news.subcategory_first_'
         - 'config:core.entity_view_display.node.news.subcategory_more'
         - 'config:core.entity_view_display.node.news.subcategory_next_4'
@@ -3133,6 +3194,7 @@ display:
         - 'config:core.entity_view_display.node.page.title_in_h2'
         - 'config:core.entity_view_display.node.page.work_whit_al_dia'
         - 'config:core.entity_view_display.node.thought_leaders.default'
+        - 'config:core.entity_view_display.node.thought_leaders.premium'
         - 'config:core.entity_view_display.node.thought_leaders.teaser'
         - 'config:core.entity_view_display.node.webform.default'
         - 'config:core.entity_view_display.node.webform.teaser'

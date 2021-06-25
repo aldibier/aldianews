@@ -16,7 +16,7 @@ const initMain = ($, Drupal) => {
 			}
 		} */
 		}
-
+		
 		 /// close 
 		if(!!document.querySelector('.newsletter .close-modal')){
 			const newsletter = document.querySelector('.newsletter');
@@ -748,15 +748,15 @@ const initMain = ($, Drupal) => {
 	}
 
 	//// js fondo modal 
-	var modal_welcome = document.querySelector(".pop-up-wellcome-aldia ");
+	var modal_welcome = document.querySelector(".pop-up-wellcome-aldia");
 	var background_body = document.querySelector("body");
 
 	if(!!modal_welcome && !!background_body){
 		let btn = modal_welcome.querySelector('.aldia-home-close');
 		let btnPreload = modal_welcome.querySelector('.button-preload');
 
-		if(!! btn) btn.addEventListener('click',()=>location.reload());
-		if(!! btnPreload) btnPreload.addEventListener('click',()=>location.reload());
+		if(!!btn) btn.addEventListener('click',()=>location.reload());
+		if(!!btnPreload) btnPreload.addEventListener('click',()=>location.reload());
 
 		background_body.classList.add("background-modal");
 	}

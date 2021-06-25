@@ -1,0 +1,32 @@
+uuid: 55103957-6882-4cea-bd43-24998fe0c14e
+langcode: en
+status: true
+dependencies:
+  module:
+    - context
+    - gamw
+  theme:
+    - al_dia_news
+id: gamwadvertisement_21
+theme: al_dia_news
+region: gamw_infinite_scroll_banner_
+weight: 0
+provider: null
+plugin: gamw
+settings:
+  id: gamw
+  label: 'Infinite scroll - Block -2'
+  provider: gamw
+  label_display: '0'
+  ad_unit: infinite-scroll-second-block
+  attributes_wrapper:
+    - ''
+visibility:
+  request_path_exclusion:
+    id: request_path_exclusion
+    pages: ''
+    negate: null
+  view_inclusion:
+    id: view_inclusion
+    negate: null
+    view_inclusion: {  }

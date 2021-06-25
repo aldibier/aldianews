@@ -52,12 +52,24 @@ class ServicesForm extends ConfigFormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     $config = $this->config('al_dia_rechpack.services_form');
+    $default_values = $config->get('services_config');
+    ksm($default_values);
+    $description = $this->t('Active Subscription');
+    $form['active_subscription'] = [
+      '#type' => 'checkbox',
+      '#required' => FALSE,
+      '#title' => $description,
+      '#default_value' => $default_values['active_subscription'] ?? 0,
+      '#attributes' => [
+        'class' => ['active-subscription-check'],
+      ],
+    ];
 
     $description = $this->t('Trial Months');
     $form['services_trial_months'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Number of trial months'),
-      '#default_value' => $config->get('services_trial_months'),
+      '#default_value' => $default_values['services_trial_months'] ?? FALSE,
       '#description' => $description,
     ];
 
@@ -65,18 +77,18 @@ class ServicesForm extends ConfigFormBase {
     $form['services_return_url'] = [
       '#type' => 'textarea',
       '#title' => $this->t('Subscription return url'),
-      '#default_value' => $config->get('services_return_url'),
+      '#default_value' => $default_values['services_return_url'] ?? FALSE,
       '#description' => $description,
     ];
     $description = $this->t('Unsubscribe Url');
     $form['services_unsubscribe_url'] = [
       '#type' => 'textarea',
       '#title' => $this->t('Unsubscribe Url'),
-      '#default_value' => $config->get('services_unsubscribe_url'),
+      '#default_value' => $default_values['services_unsubscribe_url'] ?? FALSE,
       '#description' => $description,
     ];
 
-
+    //ksm($form);
     return parent::buildForm($form, $form_state);
   }
 
@@ -86,7 +98,7 @@ class ServicesForm extends ConfigFormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $config = $this->config('al_dia_rechpack.services_form');
     $form_state->cleanValues();
-    $config->setData($form_state->getValues());
+    $config->set('services_config', $form_state->getValues());
     $config->save();
     parent::submitForm($form, $form_state);
   }

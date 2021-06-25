@@ -351,6 +351,22 @@ import replaceToken from "./modules/replaceToken";
       $(".layout-main-wrapper.layout-container").addClass("color-mod");
     });
 
+    //modal subscribe
+
+    $('.block-fixed-block-contentpop-up-cancel-form-subscribe button[name=no-stay]').click(function() {
+      if ($(".block-fixed-block-contentpop-up-cancel-form-subscribe").hasClass("open")) {
+        $(".block-fixed-block-contentpop-up-cancel-form-subscribe").removeClass("open");
+      }
+    });
+
+    $('.commerce-checkout-flow-multistep-default .form-actions span.user-login').click(function() {
+      if ($(".block-fixed-block-contentpop-up-cancel-form-subscribe").hasClass("open")) {
+        $(".block-fixed-block-contentpop-up-cancel-form-subscribe").removeClass("open");
+      }else {
+        $(".block-fixed-block-contentpop-up-cancel-form-subscribe").addClass("open");
+      }
+    });
+
     initMain();
     initSlick($, Drupal);
   });
@@ -358,6 +374,16 @@ import replaceToken from "./modules/replaceToken";
   Drupal.behaviors.form_checkbox = {
     attach: function(context, settings) {
       $(function() {
+        //js para eliminar publicidad vacia
+        Array.from(document.querySelectorAll(".block-gamw")).map(function(e){
+          if (e != null) {
+            var iframe_gamw = e.querySelector("iframe");
+            if (iframe_gamw == null) {
+              /* e.classList.add("dis-none"); */
+            }
+          }
+        });
+        
         //js para recargar
         Array.from(document.querySelectorAll(".button-preload")).map(function(e){
           if (e != null) {

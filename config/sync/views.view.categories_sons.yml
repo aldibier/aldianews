@@ -9,6 +9,7 @@ dependencies:
     - node
     - taxonomy
     - user
+    - views_block_area
     - views_field_view
 id: categories_sons
 label: 'Categories sons'
@@ -428,7 +429,7 @@ display:
           group_type: group
           admin_label: publicidad
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -588,7 +589,17 @@ display:
           entity_field: weight
           plugin_id: standard
       title: 'Categories sons'
-      header: {  }
+      header:
+        views_block_area:
+          id: views_block_area
+          table: views
+          field: views_block_area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          block_id: 'block_group:category_banner_top_one'
+          plugin_id: views_block_area
       footer: {  }
       empty: {  }
       relationships:

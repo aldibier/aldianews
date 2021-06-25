@@ -11,7 +11,7 @@
       margin: 0 auto;
       position: relative;
       text-align: center;
-      
+
       span {
         padding: 0 20px;
         position: relative;
@@ -33,7 +33,7 @@
       }
 
       &::before {
-        content: '';
+        content: "";
         width: 100vw;
         height: 5px;
         position: absolute;
@@ -48,7 +48,7 @@
     position: relative;
   }
 
-  .slick-arrow {
+  .slick-arrow  {
     width: 20px;
     height: 12px;
     border: none;
@@ -59,9 +59,9 @@
     background-repeat: no-repeat;
     background-position: center;
     font-size: 0;
-    transform: translateY(100%);  
+    transform: translateY(100%);
     cursor: pointer;
-  } 
+  }
 
   .slick-list {
     @media screen and(min-width:$broken) {
@@ -71,12 +71,12 @@
     }
   }
 
-  .slick-slide {
+  .slick-slide  {
     > div {
-      &:not(:last-child){
+      &:not(:last-child) {
         margin-bottom: 20px;
 
-        @media screen and (max-width:$tablet) {
+        @media screen and (max-width: $tablet) {
           margin-bottom: 5px;
         }
       }
@@ -85,12 +85,12 @@
 
   .slick-prev {
     left: calc(50% - 25px);
-    background-image: url('../../assets/img/arrow-left.svg');
+    background-image: url("../../assets/img/arrow-left.svg");
   }
 
   .slick-next {
     left: calc(50% + 25px);
-    background-image: url('../../assets/img/arrow-right.svg');
+    background-image: url("../../assets/img/arrow-right.svg");
   }
 
   .views-row {
@@ -102,7 +102,7 @@
     background-color: $cwhite;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.22);
     overflow: hidden;
-    transition: all .5s linear;
+    transition: all 0.5s linear;
 
     @media screen and(max-width:$tablet) {
       height: 45px;
@@ -114,8 +114,8 @@
       &:focus-within {
         height: 140px;
         background-color: $cblack2;
-  
-        .views-field-field-short-title  {
+
+        .views-field-field-short-title {
           a {
             color: white;
           }
@@ -153,7 +153,7 @@
       text-transform: uppercase;
       text-decoration: none;
       color: $cgrey3;
-      transition: all .3s;
+      transition: all 0.3s;
 
       @media screen and(max-width:$tablet) {
         font-size: szrem(15);
@@ -162,7 +162,7 @@
     }
   }
 
-  .views-field-body {
+  .views-field-field-short-description {
     grid-column: 2;
     font-size: szrem(15);
     font-family: $CenturyOld-Regular;
@@ -171,5 +171,4 @@
     line-height: 122%;
     color: $cwhite;
   }
- 
 }
