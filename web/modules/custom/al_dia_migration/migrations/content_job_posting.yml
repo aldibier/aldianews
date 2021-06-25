@@ -1,0 +1,237 @@
+id: content_job_posting
+label: job_posting
+migration_group: content
+
+source:
+ plugin: d7_node
+ node_type: job_posting
+ key: migrate
+
+process:
+  title: title
+
+  field_requirements/value:
+    plugin: extract
+    source: body
+    default: ''
+    index: 
+      - 0
+      - value
+  field_requirements/format: 
+    plugin: default_value
+    default_value: full_html
+
+  body/value:
+    plugin: extract
+    source: body
+    default: ''
+    index: 
+      - 0
+      - summary
+
+  body/format: 
+    plugin: default_value
+    default_value: full_html
+
+  field_link_to_apply_for_the_job:
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: extract
+      source: field_link_to_apply
+      defaul: ''
+      index:
+        - 0
+        - url
+
+  field_place: 
+    plugin: concat    
+    source: 
+      - field_job_location/0/country
+      - field_job_location/0/locality
+      #- field_job_location/0/thoroughfare
+    delimiter: ', '
+  
+  field_company_name:
+    -
+      plugin: skip_on_value
+      method: row
+      equals: true
+      source: field_job_posting_company_name/0/tid
+      value: 
+        - 22031
+        - 20719
+        - 22744
+        - 21890
+        - 20797
+        - 21205
+        - 21056
+        - 20558
+        - 21006
+        - 22257
+        - 21956
+        - 21190
+        - 22747
+        - 22741
+        - 21431
+        - 20674
+        - 21310
+        - 22604
+        - 22376
+        - 20667
+        - 20932
+        - 21112
+        - 22437
+        - 22653
+        - 22279
+        - 22705       
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: static_map      
+      map:
+        19332:	65
+        16662:	66
+        18397:	67
+        19756:	68
+        17675:	69
+        18999:	70
+        17652:	71
+        17916:	72
+        18983:	73
+        17294:	74
+        17313:	75
+        16898:	76
+        16929:	77
+        19106:	78
+        17430:	79
+        18412:	80
+        17700:	81
+        19908:	82
+        18404:	83
+        19909:	84
+        17072:	85
+        19597:	86
+        19621:	87
+        16660:	88
+        16833:	89
+        18233:	90
+        19608:	91
+        18322:	92
+        20269:	93
+        20026:	94
+        16890:	95
+        17983:	96
+        20473:	97
+        16767:	98
+        16768:	99
+        18658:	100
+        18440:	101
+        18597:	102
+        19024:	103
+        20479:	104
+        19007:	105
+        18624:	106
+        19574:	107
+        19575:	108
+        19886:	109
+        17738:	110
+        18806:	111
+        17433:	112
+        19033:	113
+        18622:	114
+        16743:	115
+        19359:	116
+        17803:	117
+
+  field_sector:
+    - 
+      plugin: skip_on_value
+      method: row
+      equals: true
+      source: field_job_category/0/tid
+      value: 
+        - 21952
+        - 22375
+        - 21111
+        - 20716
+        - 22652
+        - 20675
+        - 20673
+        - 21204
+        - 21309
+        - 19105
+        - 20718
+        - 21055
+        - 20931
+        - 22032        
+    -
+      plugin: skip_on_empty
+      method: process 
+    -
+      plugin: static_map      
+      map:
+        19023: 22
+        20472: 23
+        18982: 24
+        17802: 25
+        18917: 26
+        16897: 27
+        16661: 28
+        18234: 29
+        17737: 30
+        19755: 31
+        18232: 32
+        16650: 33
+        19607: 34
+        18621: 35
+        17915: 36
+        18403: 37
+        19625: 38
+        19032: 39
+        19333: 40
+        19596: 41
+        19573: 42
+        16742: 43
+        17699: 44
+        18657: 45
+        18321: 46
+        17071: 47
+        18998: 48
+        16427: 49
+        22742: 50
+        17432: 51
+        19331: 52
+        17074: 53
+        20025: 54
+        17312: 55
+        17674: 56
+        18411: 57
+        18439: 58
+        18623: 59
+        18413: 60
+        16420: 61
+        20478: 62
+        16766: 63
+        16889: 64
+      
+  uid:
+    plugin: migration_lookup
+    migration: users
+    source: node_uid
+
+  created: created
+  status: status
+  changed: changed
+
+destination:
+  plugin: entity:node
+  default_bundle: job
+
+migration_dependencies:
+  required: 
+    - taxonomy_tags
+    - files
+    - users

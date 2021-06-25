@@ -21,6 +21,8 @@
 	<h3>{{ title }}</h3>
 {% endif %}
 
+<span>Loop</span>
+
 {% for row in rows %}
 
 	{%
@@ -30,8 +32,8 @@
 	%}
 
 	<div{{row.attributes.addClass(row_classes)}}>
-		<div class="banner-scroll">{{ drupal_entity('block', 'gamwadvertisement_15') }}</div>
 		{{- row.content -}}
-		<div class="banner-scroll">{{ drupal_entity('block', 'gamwadvertisement_25') }}</div>
 	</div>
+
+	<div class="banner-scroll">{{ drupal_entity('block', 'gamwadvertisement_15') }}</div>
 {% endfor %}

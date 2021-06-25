@@ -99,6 +99,9 @@
         "drupal/maxlength": "^1.0@RC",
         "drupal/menu_item_extras": "^2.14",
         "drupal/metatag": "^1.16",
+        "drupal/migrate_devel": "2.x-dev@dev",
+        "drupal/migrate_plus": "^5.1",
+        "drupal/migrate_tools": "5.x-dev@dev",
         "drupal/mimemail": "^1.0@alpha",
         "drupal/mobile_detect_twig_extensions": "^1.5",
         "drupal/nopremium": "^1.0",
@@ -146,7 +149,7 @@
         "drupal/views_row_insert": "^2.0",
         "drupal/webform": "^6.0",
         "drupal/webform_sendgrid": "^1.0@alpha",
-        "drush/drush": "^10",
+        "drush/drush": "10.4.3",
         "npm-asset/intl-tel-input": "^17.0",
         "oomphinc/composer-installers-extender": "^2.0"
     },
@@ -221,8 +224,14 @@
             "drupal/gamw": {
                 "Corrige atributos para error en contexto": "patch/Gamw.patch"
             },
-            "drupal/address" :{
+            "drupal/address": {
                 "Muestra label del campo se Street 2 y cambio el label": "patch/Address.patch"
+            },
+            "drupal/change_pwd_page": {
+                "Comento líneas en el route subscriber": "patch/RouteSubcriber.patch"
+            },
+            "drupal/prlp": {
+                "Cambio título del formulario en el .module": "patch/PrlpModule.patch"
             }
         },
         "drupal-core-project-message": {

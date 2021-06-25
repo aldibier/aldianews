@@ -225,7 +225,7 @@
 
 ///---------- estilos para publicidad en infinit scroll ---------//
 .banner-scroll {
-  grid-column: 1 / 4;
+  grid-column: span 3;
   width: 100%;
 }
 
@@ -234,6 +234,7 @@
   max-height: 375px;
   overflow: hidden;
   margin: 35px auto;
+  grid-column: 3;
   @media (max-width: $tablet) {
     max-width: 200px;
     max-height: 200px;

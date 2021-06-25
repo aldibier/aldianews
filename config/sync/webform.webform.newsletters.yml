@@ -14,6 +14,7 @@ id: newsletters
 title: Newsletters
 description: 'Newsletter form for sendgrid'
 category: ''
+<<<<<<< HEAD
 elements: |
   markup:
     '#type': webform_markup
@@ -29,6 +30,9 @@ elements: |
     '#type': webform_actions
     '#title': 'Submit button(s)'
     '#submit__label': 'SIGN UP'
+=======
+elements: "markup:\n  '#type': webform_markup\n  '#markup': 'Sign up for our Daily Newsletter.'\nemail:\n  '#type': email\n  '#title': Email\n  '#placeholder': 'Enter email'\n  '#required': true\n  '#unique': true\n  '#unique_error': 'This email has already been added.'\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#submit__label': 'SIGN UP'\n"
+>>>>>>> 0d318b5852748695495abb889eca22cf21f0ca70
 css: ''
 javascript: ''
 settings:
@@ -128,6 +132,7 @@ settings:
   draft_loaded_message: ''
   draft_pending_single_message: ''
   draft_pending_multiple_message: ''
+<<<<<<< HEAD
   confirmation_type: none
   confirmation_title: ''
   confirmation_message: ''
@@ -135,6 +140,17 @@ settings:
   confirmation_attributes: {  }
   confirmation_back: true
   confirmation_back_label: ''
+=======
+  confirmation_type: inline
+  confirmation_title: ''
+  confirmation_message: 'Thank you! Your subscription request to our Newsletter has been submitted successfully.'
+  confirmation_url: ''
+  confirmation_attributes:
+    class:
+      - newsletter-confirm
+  confirmation_back: true
+  confirmation_back_label: 'ENTER ANOTHER EMAIL'
+>>>>>>> 0d318b5852748695495abb889eca22cf21f0ca70
   confirmation_back_attributes: {  }
   confirmation_exclude_query: false
   confirmation_exclude_token: false
