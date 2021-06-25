@@ -1,0 +1,77 @@
+id: content_event
+label: event
+migration_group: content
+
+source:
+ plugin: d7_node
+ node_type: event
+ key: migrate
+
+process:
+  title: title
+  
+  body/value:
+    plugin: concat
+    source:
+      - body/0/value
+      - field_register_link/0/url
+    delimiter: ' '
+    
+  body/format: 
+    plugin: default_value
+    default_value: full_html
+
+  field_image:
+    plugin: sub_process
+    source: field_image
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: files
+        source: fid
+        no_stub: true
+      alt: alt        
+      
+
+  field_date_of_event:
+    plugin: sub_process
+    source: field_start_date
+    process:
+      value:
+        plugin: format_date
+        source: value
+        from_format: 'Y-m-d H:i:s'
+        to_format: 'Y-m-d\TH:i:s'
+  
+  field_venue_of_the_event:
+    plugin: concat
+    source: 
+      - field_location/0/country
+      - field_location/0/locality
+      - field_location/0/thoroughfare
+    delimiter: ', '
+
+  langcode:
+    plugin: default_value
+    source: language
+    default_value: und
+
+  uid:
+    plugin: ignore_rol
+    migration: users    
+    source: node_uid
+   
+    
+  created: created
+  status: status
+  changed: changed
+
+destination:
+  plugin: entity:node
+  default_bundle: event
+
+migration_dependencies:
+  required: 
+    - taxonomy_tags
+    - files
+    - users
