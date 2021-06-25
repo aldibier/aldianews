@@ -2170,10 +2170,10 @@ __webpack_require__.r(__webpack_exports__);
       } else {
         $(".block-fixed-block-contentpop-up-cancel-form-subscribe").addClass("open");
       }
-    });
-    $(document).ready(function () {
-      $("#block-modalhomepassword a.button").click();
-    });
+    }); // $( document ).ready(function() {
+    //   $( "#block-modalhomepassword a.button" ).click();
+    // });
+
     Object(_main_js__WEBPACK_IMPORTED_MODULE_3__["default"])();
     Object(_slick_js__WEBPACK_IMPORTED_MODULE_4__["default"])($, Drupal);
   });

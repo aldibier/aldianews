@@ -367,9 +367,9 @@ import replaceToken from "./modules/replaceToken";
       }
     });
     
-    $( document ).ready(function() {
-      $( "#block-modalhomepassword a.button" ).click();
-    });
+    // $( document ).ready(function() {
+    //   $( "#block-modalhomepassword a.button" ).click();
+    // });
     
 
     initMain();
