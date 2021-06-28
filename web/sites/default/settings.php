@@ -715,6 +715,19 @@ $settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.yml';
  * will allow the site to run off of all variants of example.com and
  * example.org, with all subdomains included.
  */
+if (getenv('LANDO') === 'ON') {
+  $settings['trusted_host_patterns'][] = '^'.getenv('LANDO_APP_NAME').'\.lndo\.site$';
+}else{
+  $settings['trusted_host_patterns'][] = '^'.getenv('DRUPAL_TRUSTED_HOST').'$';
+}
+
+$settings['trusted_host_patterns'][] = [
+  '^dev-4ld14-n3ws.us.seedcloud\.co$',
+  '^qa-4ld14-n3ws.us.seedcloud\.co$',
+  '^master-4ld14-n3ws.us.seedcloud\.co$',
+  '^aldianews\.com$',
+  '^www\.aldianews\.com$'
+];
 
 /**
  * The default list of directories that will be ignored by Drupal's file API.
