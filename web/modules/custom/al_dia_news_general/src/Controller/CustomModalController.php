@@ -58,10 +58,18 @@ class CustomModalController extends ControllerBase {
     elseif ($type == 'home') {
       $output = $this->home();
       $title = $this->t('YOU JUST HAVE RESET YOUR PASSWORD SUCCESSFULLY');
+      $options = [
+        'dialogClass' => 'popup-class-restore-pwd',
+        'width' => '50%',
+      ];
     }
     elseif ($type == 'cancel') {
       $output = $this->cancel();
       $title = $this->t('YOU HAVE CANCELED YOUR ACCOUNT');
+      $options = [
+        'dialogClass' => 'popup-class-cancel-account',
+        'width' => '50%',
+      ];
     }
     $response = new AjaxResponse();
     $response->addCommand(new OpenModalDialogCommand($title, $output, $options));
@@ -91,7 +99,7 @@ class CustomModalController extends ControllerBase {
           '#markup' => $r_period. $last_name,
           '#attributes' => [
               'class' => [
-                  'author-comment',
+                  'info-user-popup',
               ],
           ],
       ];
@@ -99,7 +107,7 @@ class CustomModalController extends ControllerBase {
         '#markup' => $email_user,
         '#attributes' => [
             'class' => [
-                'account-comment',
+                'email-user-popup',
             ],
         ],
       ];
@@ -115,7 +123,7 @@ class CustomModalController extends ControllerBase {
             'user-pass',
             ],
             'data-dialog-type' => 'modal',
-            'data-dialog-options' => Json::encode(['dialogClass' => 'popup-edit-user'],['width' => 550]),
+            'data-dialog-options' => Json::encode(['dialogClass' => 'edit-info-user'],['width' => 550]),
         ],
       ];
       $items[] = [
