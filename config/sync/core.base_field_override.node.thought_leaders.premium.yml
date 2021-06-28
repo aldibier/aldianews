@@ -1,0 +1,22 @@
+uuid: 35cd6d4b-7612-4c96-9ceb-10d35ff2dd0c
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.thought_leaders
+id: node.thought_leaders.premium
+field_name: premium
+entity_type: node
+bundle: thought_leaders
+label: 'Premium content'
+description: 'Shows only the teasers of premium contents to unprivileged users.'
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

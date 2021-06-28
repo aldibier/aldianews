@@ -1,0 +1,22 @@
+uuid: 6ed12ff5-a88c-4e2a-ac6e-e743a683294d
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.news
+id: node.news.premium
+field_name: premium
+entity_type: node
+bundle: news
+label: 'Premium content'
+description: 'Shows only the teasers of premium contents to unprivileged users.'
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

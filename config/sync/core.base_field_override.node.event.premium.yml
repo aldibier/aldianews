@@ -1,0 +1,22 @@
+uuid: d76a4047-a866-42e6-9fda-712b8792078f
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.event
+id: node.event.premium
+field_name: premium
+entity_type: node
+bundle: event
+label: 'Premium content'
+description: 'Shows only the teasers of premium contents to unprivileged users.'
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
