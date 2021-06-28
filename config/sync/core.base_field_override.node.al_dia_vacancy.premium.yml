@@ -1,0 +1,22 @@
+uuid: 4148e534-10dc-405b-bdde-864f01b5bbde
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.al_dia_vacancy
+id: node.al_dia_vacancy.premium
+field_name: premium
+entity_type: node
+bundle: al_dia_vacancy
+label: 'Premium content'
+description: 'Shows only the teasers of premium contents to unprivileged users.'
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

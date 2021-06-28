@@ -1,0 +1,22 @@
+uuid: d7f33961-57e0-49dd-8b06-6d3d1cf1187c
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: thought_leaders
+label: 'Thought Leaders'
+type: 'canonical_entities:node'
+pattern: '/thought-leaders/[node:title]'
+selection_criteria:
+  1aefaffd-f4de-4255-8125-a875e16ecbbf:
+    id: node_type
+    bundles:
+      thought_leaders: thought_leaders
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 1aefaffd-f4de-4255-8125-a875e16ecbbf
+selection_logic: and
+weight: -5
+relationships: {  }

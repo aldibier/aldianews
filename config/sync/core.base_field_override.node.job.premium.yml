@@ -1,0 +1,22 @@
+uuid: 16cdd1f2-fe75-4d3e-9906-4814ec685733
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.job
+id: node.job.premium
+field_name: premium
+entity_type: node
+bundle: job
+label: 'Premium content'
+description: 'Shows only the teasers of premium contents to unprivileged users.'
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

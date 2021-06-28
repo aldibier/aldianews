@@ -1,0 +1,22 @@
+uuid: 351b880b-a87b-45b1-ac12-3a98b702e621
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.feature_employer
+id: node.feature_employer.premium
+field_name: premium
+entity_type: node
+bundle: feature_employer
+label: 'Premium content'
+description: 'Shows only the teasers of premium contents to unprivileged users.'
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
