@@ -6,11 +6,13 @@ dependencies:
     - field.storage.node.field_cover_page
     - field.storage.node.field_end_date
     - field.storage.node.field_start_date
+    - lazy.settings
     - node.type.more_covers
     - taxonomy.vocabulary.years_of_covers
   module:
     - better_exposed_filters
     - datetime
+    - image
     - lazy
     - node
     - taxonomy
@@ -93,6 +95,7 @@ display:
           views_infinite_scroll:
             button_text: 'Load More'
             automatically_load_content: true
+            initially_load_all_pages: false
       style:
         type: default
       row:

@@ -29,8 +29,21 @@
 		]
 	%}
 
-	{# banner #}
-	{% if loop.index == 10 %}
+	{## block ##}
+	{% if loop.index  == 15 %}
+		<div class="block-scroll">{{ drupal_entity('block', 'gamwadvertisement_16') }}</div>
+	{% endif %}
+
+	{## skyscraper ##}
+	{% if loop.index  == 22 %}
+		<div class="skys-scroll">{{ drupal_entity('block', 'gamwadvertisement_17') }}</div>
+	{% endif %}
+	{% if loop.index  == 24 %}
+		<div class="skys-scroll skys2">{{ drupal_entity('block', 'gamwadvertisement_20') }}</div>
+	{% endif %}
+
+	{## banner ##}
+	{% if loop.index == 9 %}
 		<div class="banner-scroll">{{ drupal_entity('block', 'gamwadvertisement_15') }}</div>
 	{% endif %}
 	{% if loop.index == 17 %}
@@ -39,18 +52,8 @@
 	{% if loop.index == 23 %}
 		<div class="banner-scroll ban3">{{ drupal_entity('block', 'gamwadvertisement_19') }}</div>
 	{% endif %}
-
-	{# block #}
-	{% if loop.index  == 15 %}
-		<div class="block-scroll">{{ drupal_entity('block', 'gamwadvertisement_16') }}</div>
-	{% endif %}
-
-	{# skyscraper #}
-	{% if loop.index  == 22 %}
-		<div class="skys-scroll">{{ drupal_entity('block', 'gamwadvertisement_17') }}</div>
-	{% endif %}
-	{% if loop.index  == 24 %}
-		<div class="skys-scroll skys2">{{ drupal_entity('block', 'gamwadvertisement_20') }}</div>
+	{% if loop.index == 31 %}
+		<div class="banner-scroll last-banner">{{ drupal_entity('block', 'gamwadvertisement_36') }}</div>
 	{% endif %}
 
 	<div{{row.attributes.addClass(row_classes)}}>
