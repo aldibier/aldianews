@@ -91,3 +91,10 @@ process:
 destination:
   plugin: 'entity:node'
   translations: true
+
+migration_dependencies:
+  required: 
+    - taxonomy_tags
+    - files
+    - users
+    - content_article

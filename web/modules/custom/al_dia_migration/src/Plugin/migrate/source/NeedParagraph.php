@@ -36,9 +36,7 @@ class NeedParagraph extends FieldableEntity {
                 'entity_id',  
                 $this->configuration['field_name_name'] . '_target_id',  
             ]);  
-            //$query->condition('n.nid', $this->configuration['field_name_name']); 
         } 
-        dump($query);
         return $query;
     }
 
@@ -51,8 +49,7 @@ class NeedParagraph extends FieldableEntity {
             $row->setSourceProperty('revision_id', $row->getSourceProperty($this->configuration['field_name_name'] . '_revision_id'));  
         } 
         
-        foreach (array_keys($this->getFields('node', 'article')) as $field) { 
-            dump($field);
+        foreach (array_keys($this->getFields('node', 'article')) as $field) {            
             $entity_id = $row->getSourceProperty($this->configuration['field_name_name'] . '_target_id');  
             $revision_id = $row->getSourceProperty('revision_id');  
             $row->setSourceProperty($field, $this->getFieldValues('node', $field, $entity_id, $revision_id)); 
