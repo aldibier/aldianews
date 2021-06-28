@@ -12,7 +12,38 @@ id: request_a_call_back
 title: 'REQUEST A CALL BACK'
 description: 'This form is part of the <strong>Subscription</strong> landing page, it receives requests from users to learn more about the plans.'
 category: ''
-elements: "first_name:\n  '#type': textfield\n  '#title': 'First name'\n  '#required': true\nlast_name:\n  '#type': textfield\n  '#title': 'Last name'\n  '#required': true\ncompany:\n  '#type': textfield\n  '#title': Company\n  '#required': true\njob_title:\n  '#type': textfield\n  '#title': 'Job title'\n  '#required': true\nemail_address:\n  '#type': email\n  '#title': 'Email address'\n  '#required': true\nphone_number_:\n  '#type': tel\n  '#title': 'Phone number*'\n  '#required': true\noptional_message:\n  '#type': textarea\n  '#title': 'Optional message'\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#submit__label': 'REQUEST A CALL BACK'"
+elements: |-
+  first_name:
+    '#type': textfield
+    '#title': 'First name'
+    '#required': true
+  last_name:
+    '#type': textfield
+    '#title': 'Last name'
+    '#required': true
+  company:
+    '#type': textfield
+    '#title': Company
+    '#required': true
+  job_title:
+    '#type': textfield
+    '#title': 'Job title'
+    '#required': true
+  email_address:
+    '#type': email
+    '#title': 'Email address'
+    '#required': true
+  phone_number_:
+    '#type': tel
+    '#title': 'Phone number*'
+    '#required': true
+  optional_message:
+    '#type': textarea
+    '#title': 'Optional message'
+  actions:
+    '#type': webform_actions
+    '#title': 'Submit button(s)'
+    '#submit__label': 'REQUEST A CALL BACK'
 css: ''
 javascript: ''
 settings:

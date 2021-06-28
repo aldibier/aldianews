@@ -6,7 +6,14 @@ dependencies:
     - block_content.type.carousel_of_images
     - field.storage.block_content.field_image_carousel
   module:
+    - content_translation
     - image
+third_party_settings:
+  content_translation:
+    translation_sync:
+      alt: alt
+      title: title
+      file: '0'
 id: block_content.carousel_of_images.field_image_carousel
 field_name: field_image_carousel
 entity_type: block_content
@@ -14,7 +21,7 @@ bundle: carousel_of_images
 label: 'Image carousel'
 description: 'For a proper display of the carousel, add at least six images.'
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

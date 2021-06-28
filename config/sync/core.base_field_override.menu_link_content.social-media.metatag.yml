@@ -1,0 +1,18 @@
+uuid: c6269231-7c67-4a31-82ea-ea5472758f70
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.social-media
+id: menu_link_content.social-media.metatag
+field_name: metatag
+entity_type: menu_link_content
+bundle: social-media
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

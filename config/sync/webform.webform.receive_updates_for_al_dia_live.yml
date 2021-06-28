@@ -12,7 +12,40 @@ id: receive_updates_for_al_dia_live
 title: 'RECEIVE UPDATES FOR AL DÍA LIVE'
 description: 'This form is displayed on the AL D&Iacute;A LIVE landing page.'
 category: ''
-elements: "processed_text:\n  '#type': processed_text\n  '#text': |\n    <p>RECEIVE UPDATES FOR&nbsp;<img alt=\"Logo live\" src=\"/themes/custom/al_dia_news/assets/img/al-dia-live-logo.png\" /></p>\n    \n  '#format': full_html\nfirst_name:\n  '#type': textfield\n  '#title': 'First name'\n  '#required': true\nlast_name:\n  '#type': textfield\n  '#title': 'Last name'\n  '#required': true\nemail:\n  '#type': email\n  '#title': Email\n  '#required': true\nevent_i_m_interested_in:\n  '#type': webform_entity_select\n  '#title': 'Event I’m interested in'\n  '#required': true\n  '#target_type': node\n  '#selection_handler': views\n  '#selection_settings':\n    view:\n      view_name: event_list_in_webform_sponsorship\n      display_name: entity_reference_1\n      arguments: {  }\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#submit__label': SUBMIT"
+elements: |-
+  processed_text:
+    '#type': processed_text
+    '#text': |
+      <p>RECEIVE UPDATES FOR&nbsp;<img alt="Logo live" src="/themes/custom/al_dia_news/assets/img/al-dia-live-logo.png" /></p>
+      
+    '#format': full_html
+  first_name:
+    '#type': textfield
+    '#title': 'First name'
+    '#required': true
+  last_name:
+    '#type': textfield
+    '#title': 'Last name'
+    '#required': true
+  email:
+    '#type': email
+    '#title': Email
+    '#required': true
+  event_i_m_interested_in:
+    '#type': webform_entity_select
+    '#title': 'Event I’m interested in'
+    '#required': true
+    '#target_type': node
+    '#selection_handler': views
+    '#selection_settings':
+      view:
+        view_name: event_list_in_webform_sponsorship
+        display_name: entity_reference_1
+        arguments: {  }
+  actions:
+    '#type': webform_actions
+    '#title': 'Submit button(s)'
+    '#submit__label': SUBMIT
 css: ''
 javascript: ''
 settings:

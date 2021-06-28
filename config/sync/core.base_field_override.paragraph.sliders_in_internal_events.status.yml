@@ -1,0 +1,22 @@
+uuid: b3ce65b0-88e8-4806-8921-6b514aa9e0ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.sliders_in_internal_events
+id: paragraph.sliders_in_internal_events.status
+field_name: status
+entity_type: paragraph
+bundle: sliders_in_internal_events
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

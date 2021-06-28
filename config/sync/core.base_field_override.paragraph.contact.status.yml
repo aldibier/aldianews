@@ -1,0 +1,22 @@
+uuid: bed2a0c1-2b72-401a-86f8-66ea270a557e
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.contact
+id: paragraph.contact.status
+field_name: status
+entity_type: paragraph
+bundle: contact
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,18 @@
+uuid: cf7c9922-7777-46cc-9969-59d0ca264ad8
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.only_video
+id: block_content.only_video.metatag
+field_name: metatag
+entity_type: block_content
+bundle: only_video
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

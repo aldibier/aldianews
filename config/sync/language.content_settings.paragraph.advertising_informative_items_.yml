@@ -1,0 +1,18 @@
+uuid: 5e0e2d7e-5c6d-47a1-a2ee-7b70165ee121
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.advertising_informative_items_
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: paragraph.advertising_informative_items_
+target_entity_type_id: paragraph
+target_bundle: advertising_informative_items_
+default_langcode: site_default
+language_alterable: false

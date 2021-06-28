@@ -1,0 +1,22 @@
+uuid: 871a0581-8806-4677-ad27-b9c1032726e2
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.advertising_option
+id: block_content.advertising_option.status
+field_name: status
+entity_type: block_content
+bundle: advertising_option
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

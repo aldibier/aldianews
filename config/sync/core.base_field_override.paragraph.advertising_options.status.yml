@@ -1,0 +1,22 @@
+uuid: 358cd022-e1f0-4158-85b6-2baecade56eb
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.advertising_options
+id: paragraph.advertising_options.status
+field_name: status
+entity_type: paragraph
+bundle: advertising_options
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

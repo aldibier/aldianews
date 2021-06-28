@@ -1,0 +1,18 @@
+uuid: bf295e5f-0f67-4383-963e-44e68e25f526
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.statistics_and_testimonials
+id: block_content.statistics_and_testimonials.metatag
+field_name: metatag
+entity_type: block_content
+bundle: statistics_and_testimonials
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map
