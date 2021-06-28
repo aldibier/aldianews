@@ -1,0 +1,22 @@
+uuid: 1d703adc-1c41-41b5-91cf-c24ff4373937
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: feature_employer
+label: 'Feature employer'
+type: 'canonical_entities:node'
+pattern: 'jobs/[node:title]'
+selection_criteria:
+  b4a170dd-2718-4c1e-82b1-318982e6b62f:
+    id: node_type
+    bundles:
+      feature_employer: feature_employer
+    negate: false
+    context_mapping:
+      node: node
+    uuid: b4a170dd-2718-4c1e-82b1-318982e6b62f
+selection_logic: and
+weight: -5
+relationships: {  }

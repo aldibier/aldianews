@@ -6,7 +6,14 @@ dependencies:
     - field.storage.paragraph.field_photo
     - paragraphs.paragraphs_type.testimonies
   module:
+    - content_translation
     - image
+third_party_settings:
+  content_translation:
+    translation_sync:
+      alt: alt
+      title: title
+      file: '0'
 id: paragraph.testimonies.field_photo
 field_name: field_photo
 entity_type: paragraph
@@ -14,7 +21,7 @@ bundle: testimonies
 label: Photo
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

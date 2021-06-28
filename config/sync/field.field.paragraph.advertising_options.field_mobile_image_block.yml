@@ -6,7 +6,14 @@ dependencies:
     - field.storage.paragraph.field_mobile_image_block
     - paragraphs.paragraphs_type.advertising_options
   module:
+    - content_translation
     - image
+third_party_settings:
+  content_translation:
+    translation_sync:
+      alt: alt
+      title: title
+      file: '0'
 id: paragraph.advertising_options.field_mobile_image_block
 field_name: field_mobile_image_block
 entity_type: paragraph
@@ -14,7 +21,7 @@ bundle: advertising_options
 label: 'Mobile Image block'
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
