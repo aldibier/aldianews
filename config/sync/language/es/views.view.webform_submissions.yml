@@ -23,10 +23,15 @@ display:
       fields:
         sid:
           label: Nº
+          separator: ', '
+        in_draft:
+          separator: ', '
         created:
           label: Creado
+          separator: ', '
         remote_addr:
           label: 'Direccion(es) IP'
+          separator: ', '
         view_webform_submission:
           label: Operations
       arguments:
@@ -40,14 +45,23 @@ display:
           action_title: Action
         sid:
           label: Nº
+          separator: ', '
+        in_draft:
+          separator: ', '
+        sticky:
+          separator: ', '
         locked:
           label: Bloqueado
+          separator: ', '
         created:
           label: Creado
+          separator: ', '
         completed:
           label: Completed
+          separator: ', '
         remote_addr:
           label: 'Direccion(es) IP'
+          separator: ', '
         operations:
           label: Operations
       filters:
@@ -61,14 +75,23 @@ display:
           action_title: Action
         sid:
           label: Nº
+          separator: ', '
+        in_draft:
+          separator: ', '
+        sticky:
+          separator: ', '
         locked:
           label: Bloqueado
+          separator: ', '
         created:
           label: Creado
+          separator: ', '
         completed:
           label: Completed
+          separator: ', '
         remote_addr:
           label: 'Direccion(es) IP'
+          separator: ', '
         view_webform_submission:
           label: Operations
         edit_webform_submission:
@@ -82,14 +105,23 @@ display:
       fields:
         sid:
           label: Nº
+          separator: ', '
+        in_draft:
+          separator: ', '
+        sticky:
+          separator: ', '
         locked:
           label: Bloqueado
+          separator: ', '
         created:
           label: Creado
+          separator: ', '
         completed:
           label: Completed
+          separator: ', '
         remote_addr:
           label: 'Direccion(es) IP'
+          separator: ', '
         view_webform_submission:
           label: Operations
       filters:
