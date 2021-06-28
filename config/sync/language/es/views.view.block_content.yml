@@ -1,6 +1,6 @@
 display:
   default:
-    display_title: Master
+    display_title: Default
     display_options:
       exposed_form:
         options:
@@ -21,8 +21,10 @@ display:
       fields:
         info:
           label: 'Descripción del bloque'
+          separator: ', '
         type:
           label: 'Tipo de bloque'
+          separator: ', '
         changed:
           label: Actualizado
         operations:

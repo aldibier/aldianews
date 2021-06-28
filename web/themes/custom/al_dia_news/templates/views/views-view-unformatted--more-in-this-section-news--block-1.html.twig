@@ -31,9 +31,11 @@
 
 	{# banner #}
 	{% if loop.index  == 4 %}
-		<div class="block-scroll">{{ drupal_entity('block', 'gamwadvertisement_13') }}</div>
+		<div class="block-content-small-vertical-advertising margin">{{ drupal_entity('block', 'gamwadvertisement_13') }}</div>
 	{% endif %}
 	<div{{row.attributes.addClass(row_classes)}}>
 		{{- row.content -}}
 	</div>
 {% endfor %}
+
+<div class="block-fixed-block-contentbig-vertical-advertising margin-top">{{ drupal_entity('block', 'gamwadvertisement_12') }}</div>
