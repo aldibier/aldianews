@@ -715,6 +715,14 @@ $settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.yml';
  * will allow the site to run off of all variants of example.com and
  * example.org, with all subdomains included.
  */
+  $settings['trusted_host_patterns'] = [
+    '^'.getenv('DRUPAL_TRUSTED_HOST').'$',
+    '^dev-4ld14-n3ws.us.seedcloud\.co$',
+    '^qa-4ld14-n3ws.us.seedcloud\.co$',
+    '^master-4ld14-n3ws.us.seedcloud\.co$',
+    '^aldianews\.com$',
+    '^www\.aldianews\.com$'
+  ];
 
 /**
  * The default list of directories that will be ignored by Drupal's file API.
