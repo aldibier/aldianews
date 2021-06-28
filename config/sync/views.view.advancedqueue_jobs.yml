@@ -280,7 +280,10 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "{{ state }}\n\n{{ num_retries }}"
+            text: |-
+              {{ state }}
+
+              {{ num_retries }}
             make_link: false
             path: ''
             absolute: false
@@ -480,7 +483,10 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "{{ processed }}\n\n{{ message }}"
+            text: |-
+              {{ processed }}
+
+              {{ message }}
             make_link: false
             path: ''
             absolute: false
