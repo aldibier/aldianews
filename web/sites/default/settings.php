@@ -721,13 +721,12 @@ if (getenv('LANDO') === 'ON') {
   $settings['trusted_host_patterns'][] = '^'.getenv('DRUPAL_TRUSTED_HOST').'$';
 }
 
-$settings['trusted_host_patterns'][] = [
-  '^dev-4ld14-n3ws.us.seedcloud\.co$',
-  '^qa-4ld14-n3ws.us.seedcloud\.co$',
-  '^master-4ld14-n3ws.us.seedcloud\.co$',
-  '^aldianews\.com$',
-  '^www\.aldianews\.com$'
-];
+$settings['trusted_host_patterns'][] = '^dev-4ld14-n3ws.us.seedcloud\.co$';
+$settings['trusted_host_patterns'][] = '^qa-4ld14-n3ws.us.seedcloud\.co$';
+$settings['trusted_host_patterns'][] = '^master-4ld14-n3ws.us.seedcloud\.co$';
+$settings['trusted_host_patterns'][] = '^aldianews\.com$';
+$settings['trusted_host_patterns'][] = '^www\.aldianews\.com$';
+
 
 /**
  * The default list of directories that will be ignored by Drupal's file API.
