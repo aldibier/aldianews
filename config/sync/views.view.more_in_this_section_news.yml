@@ -12,7 +12,6 @@ dependencies:
     - node
     - responsive_image
     - user
-    - views_block_area
     - views_fieldsets
 id: more_in_this_section_news
 label: 'MORE IN THIS SECTION'
@@ -628,17 +627,7 @@ display:
           granularity: second
       title: 'MORE IN THIS SECTION'
       header: {  }
-      footer:
-        views_block_area:
-          id: views_block_area
-          table: views
-          field: views_block_area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: false
-          block_id: 'block_group:block_group_gamw_skyscraper_side_section_bottom_views'
-          plugin_id: views_block_area
+      footer: {  }
       empty: {  }
       relationships: {  }
       arguments:
