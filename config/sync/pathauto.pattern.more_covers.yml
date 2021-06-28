@@ -1,0 +1,22 @@
+uuid: c4724db8-674c-4f8d-aca5-be72ba9e6031
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: more_covers
+label: 'More covers'
+type: 'canonical_entities:node'
+pattern: '/more-covers/[node:title]'
+selection_criteria:
+  76f488b1-2df5-4f79-8e78-fb74c20d4846:
+    id: node_type
+    bundles:
+      more_covers: more_covers
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 76f488b1-2df5-4f79-8e78-fb74c20d4846
+selection_logic: and
+weight: -5
+relationships: {  }
