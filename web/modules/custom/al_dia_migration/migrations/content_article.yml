@@ -19,8 +19,7 @@ process:
       - value
 
   body/summary:
-    plugin: callback
-    callable: strip_tags
+    plugin: leadsummary
     source: body/0/summary
     
   body/format:
@@ -91,7 +90,7 @@ process:
         218: 197
         475: 133
         209: 131
-        210: 134
+        212: 134
         208: 133
         10320: 134
         15877: 160
