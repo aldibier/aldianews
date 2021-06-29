@@ -1,7 +1,24 @@
+diff --git a/search_api_spellcheck.module b/search_api_spellcheck.module
+index 78295e2..86e3e40 100644
+--- a/search_api_spellcheck.module
++++ b/search_api_spellcheck.module
+@@ -7,8 +7,9 @@ function search_api_spellcheck_theme() {
+   $themes = [
+     'search_api_spellcheck_did_you_mean' => [
+       'variables' => [
+-        'label' => NULL,
+-        'link' => NULL,
++        'original_token' => NULL,
++        'token' => NULL,
++        'url_redirect' => NULL,
+       ],
+     ],
+     'search_api_spellcheck_suggestions' => [
 diff --git a/src/Plugin/views/area/DidYouMeanSpellCheck.php b/src/Plugin/views/area/DidYouMeanSpellCheck.php
---- DidYouMeanSpellCheck.php	2020-11-15 05:34:20.000000000 -0500
-+++ DidYouMeanSpellCheck.php	2021-05-11 10:45:05.000000000 -0500
-@@ -9,6 +9,7 @@
+index 42ef994..9382d1d 100644
+--- a/src/Plugin/views/area/DidYouMeanSpellCheck.php
++++ b/src/Plugin/views/area/DidYouMeanSpellCheck.php
+@@ -9,6 +9,7 @@ use Drupal\search_api\Plugin\views\filter\SearchApiFulltext;
  use Drupal\search_api\Plugin\views\query\SearchApiQuery;
  use Drupal\search_api\Query\ResultSetInterface;
  use Drupal\views\Plugin\views\area\AreaPluginBase;
@@ -9,23 +26,26 @@ diff --git a/src/Plugin/views/area/DidYouMeanSpellCheck.php b/src/Plugin/views/a
  
  /**
   * Provides an area for messages.
-@@ -112,14 +113,22 @@
+@@ -112,14 +113,28 @@ class DidYouMeanSpellCheck extends AreaPluginBase {
  
          // Don't offer the identical search keys as "Did you mean".
          if ($new_keys !== $keys) {
--          return [
--            '#theme' => 'search_api_spellcheck_did_you_mean',
++
++          $url = $this->redirectToSuggestion($new_keys, $filter_field_key, $keys);
++
+           return [
+             '#theme' => 'search_api_spellcheck_did_you_mean',
 -            '#label' => $this->getSuggestionLabel(),
 -            '#link' => $this->getSuggestionLink($new_keys, $filter_field_key),
--          ];
-+          $this->redirectToSuggestion($new_keys, $filter_field_key, $keys);
++            '#url_redirect' => $url,
+           ];
          }
        }
 +
      }
 +
 +      $params = $this->getCurrentQuery();
-+      //\Drupal::logger('search_api_spellcheck')->notice('holaaa');
++
 +      if(isset($params['original_token'])){
 +        return [
 +          '#theme' => 'search_api_spellcheck_did_you_mean',
@@ -37,25 +57,24 @@ diff --git a/src/Plugin/views/area/DidYouMeanSpellCheck.php b/src/Plugin/views/a
      return [];
    }
  
-@@ -165,10 +174,13 @@
+@@ -165,10 +180,13 @@ class DidYouMeanSpellCheck extends AreaPluginBase {
     * @return \Drupal\Core\StringTranslation\TranslatableMarkup
     *   The suggestion label translated.
     */
 -  protected function getSuggestionLabel() {
 -    return $this->t('Did you mean:');
 -  }
--
 +  // protected function getSuggestionLabel($original_token) {
 +  //   return $this->t('We’re sorry. We could not find results for "@original_token"', ['@original_token' => $original_token]);
 +  // }
-+
+ 
 +  // protected function getSuggestionLabelResults($token) {
 +  //   return $this->t('Showing results for "@token"', ['@token' => $token]);
 +  // }
    /**
     * Gets the suggestion link.
     *
-@@ -188,4 +200,52 @@
+@@ -188,4 +206,50 @@ class DidYouMeanSpellCheck extends AreaPluginBase {
  
      return Link::fromTextAndUrl($new_keys, $url);
    }
@@ -103,33 +122,25 @@ diff --git a/src/Plugin/views/area/DidYouMeanSpellCheck.php b/src/Plugin/views/a
 +          );
 +      }
 +
-+      // Redirect to sugestion
-+      $redirect = new RedirectResponse($url->toString());
-+      $redirect->send();
++      return $url->toString();
 +  }
  }
-
-diff --git a/search_api_spellcheck.module b/search_api_spellcheck.module
---- search_api_spellcheck.module	2020-11-15 05:34:20.000000000 -0500
-+++ search_api_spellcheck.module	2021-05-11 10:45:18.000000000 -0500
-@@ -7,8 +7,8 @@
-   $themes = [
-     'search_api_spellcheck_did_you_mean' => [
-       'variables' => [
--        'label' => NULL,
--        'link' => NULL,
-+        'original_token' => NULL,
-+        'token' => NULL,
-       ],
-     ],
-     'search_api_spellcheck_suggestions' => [
-
 diff --git a/templates/search-api-spellcheck-did-you-mean.html.twig b/templates/search-api-spellcheck-did-you-mean.html.twig
---- search-api-spellcheck-did-you-mean.html.twig	2020-11-15 05:34:20.000000000 -0500
-+++ search-api-spellcheck-did-you-mean.html.twig	2021-05-11 11:22:49.000000000 -0500
-@@ -13,8 +13,7 @@
+index 42b474e..5155ac5 100644
+--- a/templates/search-api-spellcheck-did-you-mean.html.twig
++++ b/templates/search-api-spellcheck-did-you-mean.html.twig
+@@ -12,9 +12,17 @@
+  */
  #}
  
++{% if url_redirect %}
++
++<script type="text/javascript">
++	window.location.replace('{{ url_redirect | escape('js') }}');
++</script
++
++{% else %}
++
  <div class="sapi-did-you-mean">
 -  <span class="did-you-mean-prefix">{{ label }} </span>
 -  {{ link }}
@@ -138,4 +149,5 @@ diff --git a/templates/search-api-spellcheck-did-you-mean.html.twig b/templates/
 +  <div class="showing-token">{{ 'Showing results for '|t }}<span class="token-it">"{{ token }}"</span></div>
  </div>
  
-
++{% endif %}
+\ No newline at end of file
