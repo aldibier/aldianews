@@ -1,8 +1,8 @@
 diff --git a/search_api_spellcheck.module b/search_api_spellcheck.module
-index 78295e2..86e3e40 100644
+index 78295e2..5880e69 100644
 --- a/search_api_spellcheck.module
 +++ b/search_api_spellcheck.module
-@@ -7,8 +7,9 @@ function search_api_spellcheck_theme() {
+@@ -7,8 +7,10 @@ function search_api_spellcheck_theme() {
    $themes = [
      'search_api_spellcheck_did_you_mean' => [
        'variables' => [
@@ -11,11 +11,12 @@ index 78295e2..86e3e40 100644
 +        'original_token' => NULL,
 +        'token' => NULL,
 +        'url_redirect' => NULL,
++        'empty' => NULL,
        ],
      ],
      'search_api_spellcheck_suggestions' => [
 diff --git a/src/Plugin/views/area/DidYouMeanSpellCheck.php b/src/Plugin/views/area/DidYouMeanSpellCheck.php
-index 42ef994..9382d1d 100644
+index 42ef994..91dcb36 100644
 --- a/src/Plugin/views/area/DidYouMeanSpellCheck.php
 +++ b/src/Plugin/views/area/DidYouMeanSpellCheck.php
 @@ -9,6 +9,7 @@ use Drupal\search_api\Plugin\views\filter\SearchApiFulltext;
@@ -26,7 +27,7 @@ index 42ef994..9382d1d 100644
  
  /**
   * Provides an area for messages.
-@@ -112,14 +113,28 @@ class DidYouMeanSpellCheck extends AreaPluginBase {
+@@ -112,15 +113,35 @@ class DidYouMeanSpellCheck extends AreaPluginBase {
  
          // Don't offer the identical search keys as "Did you mean".
          if ($new_keys !== $keys) {
@@ -43,8 +44,11 @@ index 42ef994..9382d1d 100644
        }
 +
      }
+-    return [];
 +
 +      $params = $this->getCurrentQuery();
++      \Drupal::logger('my_module')->notice('original: '.$params['original_token'] .
++        ' - token: '.$params['token'] .' - keys: '. json_encode($keys));
 +
 +      if(isset($params['original_token'])){
 +        return [
@@ -54,10 +58,15 @@ index 42ef994..9382d1d 100644
 +        ];
 +      }
 +
-     return [];
++
++    return [
++      '#theme' => 'search_api_spellcheck_did_you_mean',
++    ];
++
    }
  
-@@ -165,10 +180,13 @@ class DidYouMeanSpellCheck extends AreaPluginBase {
+   /**
+@@ -165,10 +186,13 @@ class DidYouMeanSpellCheck extends AreaPluginBase {
     * @return \Drupal\Core\StringTranslation\TranslatableMarkup
     *   The suggestion label translated.
     */
@@ -74,7 +83,7 @@ index 42ef994..9382d1d 100644
    /**
     * Gets the suggestion link.
     *
-@@ -188,4 +206,50 @@ class DidYouMeanSpellCheck extends AreaPluginBase {
+@@ -188,4 +212,51 @@ class DidYouMeanSpellCheck extends AreaPluginBase {
  
      return Link::fromTextAndUrl($new_keys, $url);
    }
@@ -112,6 +121,7 @@ index 42ef994..9382d1d 100644
 +      } else {
 +          $view_url = $this->view->getUrl();
 +          $view_route = $view_url->getRouteName();
++          $params = $this->getCurrentQuery();
 +          // attach a param with original search
 +          $suggested_params = [
 +              'original_token' => $keys
@@ -126,20 +136,27 @@ index 42ef994..9382d1d 100644
 +  }
  }
 diff --git a/templates/search-api-spellcheck-did-you-mean.html.twig b/templates/search-api-spellcheck-did-you-mean.html.twig
-index 42b474e..5155ac5 100644
+index 42b474e..2ffdd17 100644
 --- a/templates/search-api-spellcheck-did-you-mean.html.twig
 +++ b/templates/search-api-spellcheck-did-you-mean.html.twig
-@@ -12,9 +12,17 @@
+@@ -12,9 +12,24 @@
   */
  #}
  
++<script type="text/javascript">
++  var elem = document.getElementById("dym-wrapper");
++  elem.remove();
++</script>
++
 +{% if url_redirect %}
 +
 +<script type="text/javascript">
 +	window.location.replace('{{ url_redirect | escape('js') }}');
 +</script
 +
-+{% else %}
++{% elseif original_token %}
++
++<div id="dym-wrapper">
 +
  <div class="sapi-did-you-mean">
 -  <span class="did-you-mean-prefix">{{ label }} </span>
@@ -150,4 +167,3 @@ index 42b474e..5155ac5 100644
  </div>
  
 +{% endif %}
-\ No newline at end of file
