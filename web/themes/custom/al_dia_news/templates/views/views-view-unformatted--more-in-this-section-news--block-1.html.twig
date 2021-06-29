@@ -17,6 +17,7 @@
  * @ingroup themeable
  */
 #}
+
 {% if title %}
 	<h3>{{ title }}</h3>
 {% endif %}
@@ -38,12 +39,11 @@
 	{% endif %}
 	{% if rows.device[0] == 'mobile' %}
 		{% if loop.index  == 2 %}
-			<div class="margin">{{ drupal_entity('block', 'gamwadvertisement_12') }}</div>
+			<div class="skyscraper-mobile">{{ drupal_entity('block', 'gamwadvertisement_12') }}</div>
 		{% endif %}
 	{% endif %}
 	<div{{row.attributes.addClass(row_classes)}}>
 		{{- row.content -}}
-		<span>{{rows.device[0]}}</span>
 	</div>
 {% endfor %}
 
