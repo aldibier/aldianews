@@ -68,11 +68,6 @@ process:
       equals: true
       source: field_topics/0/tid
       value: 
-        - 395
-        - 1127
-        - 813
-        - 8066
-        - 191
         - 17391
     -
       plugin: skip_on_empty
@@ -144,22 +139,17 @@ process:
         3924: 7
         6481: 204
         7: 134
+        395: 206
+        1127: 206
+        813: 206
+        8066: 206
+        191: 206
 
-  field_author:
-    -
-      plugin: skip_on_value
-      method: row
-      equals: true
-      source: field_author/0/tid
-      value: 
-        - 21577
-        - 22496
-        - 21578
-        - 22059
-        - 22048      
+  field_author:    
     -
       plugin: skip_on_empty
       method: process 
+      source: field_author/0/tid
     -
       plugin: static_map
       map:
@@ -262,6 +252,11 @@ process:
         10245: 108
         248: 109
         17772: 110
+        21577: 111
+        22496: 112
+        21578: 113
+        22059: 114
+        22048: 115
 
   field_video:
     plugin: extract
