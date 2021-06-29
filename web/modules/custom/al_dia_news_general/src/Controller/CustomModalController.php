@@ -54,6 +54,10 @@ class CustomModalController extends ControllerBase {
     if ($type == 'user') {
       $output = $this->userInformation();
       $title = $this->t('ACCOUNT INFORMATION');
+      $options = [
+        'dialogClass' => 'popup-class-user-information',
+        'width' => '50%',
+      ];
     }
     elseif ($type == 'home') {
       $output = $this->home();
