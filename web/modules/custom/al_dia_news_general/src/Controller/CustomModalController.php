@@ -99,7 +99,16 @@ class CustomModalController extends ControllerBase {
       $last_name = $user->field_last_name->value;      
       $email_user = $user->getEmail();
 
-      $items[] = [
+      $items['info'] = [
+        '#type' => 'container',
+        '#weight' => 100000,
+        '#attributes' => [
+          'class' => [
+              'name-user-info',
+          ],
+        ],
+      ];
+      $items['info'][] = [
           '#markup' => $r_period. $last_name,
           '#attributes' => [
               'class' => [
@@ -107,15 +116,25 @@ class CustomModalController extends ControllerBase {
               ],
           ],
       ];
-      $items[] = [
-        '#markup' => $email_user,
+      $items['container'] = [
+        '#type' => 'container',
+        '#weight' => 100000,
         '#attributes' => [
-            'class' => [
-                'email-user-popup',
-            ],
+          'class' => [
+              'container-email-edit',
+          ],
         ],
       ];
-      $items[] = [
+      $items['container'][] = [
+        '#markup' => $email_user,
+        '#attributes' => [
+          'class' => [
+              'email-user-popup',
+              'email-info'
+          ],
+        ],
+      ];
+      $items['container'][] = [
         '#type' => 'link',
         '#title' => $this->t('Edit'),
         '#url' => Url::fromRoute('entity.user.edit_form', [ 
@@ -139,7 +158,7 @@ class CustomModalController extends ControllerBase {
         '#attributes' => [
             'class' => [
             'use-ajax',
-            'user-pass',
+            'cancel-account-modal',
             ],
             'data-dialog-type' => 'modal',
             'data-dialog-options' => Json::encode(['dialogClass' => 'popup-cancel-account'],['width' => 550]),
