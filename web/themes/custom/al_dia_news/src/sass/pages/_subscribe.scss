@@ -1,5 +1,5 @@
 .block-fixed-block-contentheader-landing-subscribe {
-  .field--name-field-section-title {
+  .field--name-field-section-title  h1{
     font-family: $PrNovacond-bold;
     font-style: normal;
     font-size: $px50;
@@ -41,7 +41,7 @@
 
 
   @media (max-width: $tablet-min) {   
-    .field--name-field-section-title {
+    .field--name-field-section-title  h1{
       font-size: 21px;
       line-height: 24px;
       padding: 0 0 10px;
@@ -442,7 +442,7 @@
   }
 
   h1 {
-    font-family: $Mod-bold;
+    font-family: $ModernoFB-Regular;
     font-style: normal;
     font-size: $px30;
     line-height: 36px;
@@ -546,7 +546,6 @@
       line-height: 32px;
       color: #767676;
       font-family: $PrNovacond-reg;
-      text-transform: uppercase;
     }
 
     .field--name-field-email-address {
@@ -684,6 +683,7 @@
     line-height: 25px;
     font-family: $PrNovacond-Sbold;
     margin: -52px 0 0;
+    text-transform: uppercase;
   }
 
   @media (max-width: $tablet-min) {  
@@ -699,6 +699,11 @@
         font-size: 15px;
         line-height: 18px;
       }
+    }
+
+    .checkout-pane-order-summary .views-field-nothing span {
+      font-size: 12px;
+      line-height: 15px;
     }
 
     .checkout-pane-order-summary .views-field-title-1 span,
