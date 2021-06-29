@@ -41,9 +41,9 @@ function is_mobile() {
 function al_dia_news_preprocess_views_view_unformatted(&$vars) {
 
   if (is_mobile()) {
-    $vars['rows']['is_mobile'][] =  'Is a mobile device';
+    $vars['rows']['device'][] = 'mobile';
   } else {
-    $vars['rows']['is_mobile'][] =  'Not a mobile device.';
+    $vars['rows']['device'][] = 'desktop';
   }
 }
 

@@ -44,7 +44,8 @@
 
   .view-more-category {
     .slick-slider {
-      margin-bottom: 55px;
+      padding-bottom: 55px;
+      overflow: hidden;
     }
 
     .slick-list {
@@ -66,7 +67,7 @@
       height: 15px;
       border: none;
       position: absolute;
-      bottom: calc(0% - 21px);
+      bottom: calc(0% + 21px);
       background-color: transparent;
       background-size: contain;
       background-repeat: no-repeat;
