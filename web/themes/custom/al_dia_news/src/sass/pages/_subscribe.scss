@@ -683,6 +683,7 @@
     line-height: 25px;
     font-family: $PrNovacond-Sbold;
     margin: -52px 0 0;
+    text-transform: uppercase;
   }
 
   @media (max-width: $tablet-min) {  
@@ -698,6 +699,11 @@
         font-size: 15px;
         line-height: 18px;
       }
+    }
+
+    .checkout-pane-order-summary .views-field-nothing span {
+      font-size: 12px;
+      line-height: 15px;
     }
 
     .checkout-pane-order-summary .views-field-title-1 span,
