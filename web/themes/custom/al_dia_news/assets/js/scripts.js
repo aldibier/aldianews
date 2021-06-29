@@ -1256,24 +1256,39 @@ var initMain = function initMain($, Drupal) {
       });
     } //// js remove element home
 
+    /* Array.from(
+    	document.querySelectorAll(
+    		".block-fixed-block-contentvertical-advertising-mobile"
+    	)
+    ).map(function (e) {
+    	if (e.children.children != null) {
+    		e.closest(".mobile-less").parentElement.parentElement.classList.add(
+    			"life-advertising"
+    		);
+    	} else {
+    		e.closest(".views-row").classList.add("mobile-free");
+    	}
+    });
+    Array.from(
+    	document.querySelectorAll(
+    		".mobile-free .mobile-plus .card-more:nth-child(1)"
+    	)
+    ).map(function (e) {
+    	if (e != null) {
+    		e.remove();
+    	}
+    });
+    Array.from(
+    	document.querySelectorAll(
+    		".mobile-free .mobile-plus .card-more:nth-child(2)"
+    	)
+    ).map(function (evt) {
+    	if (evt != null) {
+    		evt.remove();
+    	}
+    }); */
+    ///// js para caption en imagenes news
 
-    Array.from(document.querySelectorAll(".block-fixed-block-contentvertical-advertising-mobile")).map(function (e) {
-      if (e.children.children != null) {
-        e.closest(".mobile-less").parentElement.parentElement.classList.add("life-advertising");
-      } else {
-        e.closest(".views-row").classList.add("mobile-free");
-      }
-    });
-    Array.from(document.querySelectorAll(".mobile-free .mobile-plus .card-more:nth-child(1)")).map(function (e) {
-      if (e != null) {
-        e.remove();
-      }
-    });
-    Array.from(document.querySelectorAll(".mobile-free .mobile-plus .card-more:nth-child(2)")).map(function (evt) {
-      if (evt != null) {
-        evt.remove();
-      }
-    }); ///// js para caption en imagenes news
 
     if (!!document.querySelector(".page-node-type-news .block-field-blocknodenewsbody img")) {
       var images = document.querySelectorAll(".page-node-type-news .block-field-blocknodenewsbody img");
@@ -2410,10 +2425,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 var initSlick = function initSlick($, Drupal) {
   jQuery(document).ready(function () {
-    var categoriesMore = document.querySelectorAll(".view-categories-sons .view-more-category .view-content");
+    var categoriesMore = document.querySelectorAll(".view-categories-sons .view-more-category .view-content .view-items");
     var settings = {
       infinite: false,
-      rows: 3,
+      rows: 4,
       slidesToShow: 1,
       slidesToScroll: 1,
       mobileFirst: true,
@@ -2429,7 +2444,7 @@ var initSlick = function initSlick($, Drupal) {
     if (window.matchMedia("(max-width: 768px)").matches) {
       setTimeout(function () {
         categoriesMore.forEach(function (element) {
-          return $(element).slick(settings);
+          if (!!element && element != null) $(element).slick(settings);
         });
       }, 2000);
     }
@@ -2438,7 +2453,7 @@ var initSlick = function initSlick($, Drupal) {
       if (window.matchMedia("(max-width: 768px)").matches) {
         setTimeout(function () {
           categoriesMore.forEach(function (element) {
-            return $(element).slick(settings);
+            if (!!element && element != null) $(element).slick(settings);
           });
         }, 2000);
       }
@@ -2632,8 +2647,8 @@ var initSlick = function initSlick($, Drupal) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/andresmartinez/sites/News/code/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
-module.exports = __webpack_require__(/*! /Users/andresmartinez/sites/News/code/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
+__webpack_require__(/*! /Users/usuario/Desktop/Proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
+module.exports = __webpack_require__(/*! /Users/usuario/Desktop/Proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
 
 
 /***/ })

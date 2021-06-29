@@ -27,7 +27,7 @@ const initMain = ($, Drupal) => {
 		}
 
 		//// js remove element home
-		Array.from(
+		/* Array.from(
 			document.querySelectorAll(
 				".block-fixed-block-contentvertical-advertising-mobile"
 			)
@@ -57,7 +57,7 @@ const initMain = ($, Drupal) => {
 			if (evt != null) {
 				evt.remove();
 			}
-		});
+		}); */
 
 		///// js para caption en imagenes news
 		if (
