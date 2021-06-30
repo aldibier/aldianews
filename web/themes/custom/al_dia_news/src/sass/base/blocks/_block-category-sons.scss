@@ -88,10 +88,8 @@
       grid-area: area-2;
 
       .view-content {
-        width: max-content;
-        margin-right: 20px;
         display: grid;
-        grid-template-columns: minmax(250px, 400px) minmax(250px, 400px);
+        grid-template-columns: minmax(200px, 400px) minmax(200px, 400px);
         gap: 0px 40px;
         position: relative;
         overflow: hidden;
@@ -101,8 +99,7 @@
         margin: 0;
 
         .view-content {
-          display: flex;
-          flex-wrap: wrap;
+          grid-template-columns: repeat(2,1fr)
         }
       }
     }
@@ -182,20 +179,15 @@
   //next two
   .card-one-column {
     @media screen and (max-width: $broken) {
-      width: 50%;
-      max-width: 50%;
+      /* width: 50%;
+      max-width: 50%; */
       margin: 20px 0 0 0;
       position: initial;
       border: none;
       border-bottom: 1px solid $cgrey4;
 
       &:nth-child(1) {
-        padding: 0px 5px 20px 0px;
         border-right: none;
-      }
-
-      &:nth-child(2) {
-        padding: 0px 0px 20px 5px;
       }
     }
   }

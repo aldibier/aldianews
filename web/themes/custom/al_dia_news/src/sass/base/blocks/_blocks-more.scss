@@ -103,8 +103,6 @@
 
   .view-content {
     @media (max-width: $broken) {
-      // display: flex;
-      // flex-wrap: wrap;
       display: grid;
       grid-template-columns: repeat(2, 50%);
       grid-auto-flow: dense;
@@ -112,6 +110,10 @@
       .skyscraper-mobile {
         grid-row: span 2;
         margin: 0px 0 0 19px;
+      }
+
+      >.margin-bottom {
+        display: none;
       }
     }
   }
