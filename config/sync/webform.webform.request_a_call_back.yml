@@ -51,6 +51,11 @@ elements: |-
   optional_message:
     '#type': textarea
     '#title': 'Optional message'
+  button_go_back:
+    '#type': processed_text
+    '#text': |
+      <p><input class="back-button-requestcall" onclick="location.href='/subscribe';" type="button" value="GO BACK" /></p>
+    '#format': full_html
   actions:
     '#type': webform_actions
     '#title': 'Submit button(s)'
