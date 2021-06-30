@@ -122,7 +122,7 @@
     @media (max-width: $broken) {
       border: none;
 
-      &:nth-child(2n + 1) { 
+      &:nth-child(2n + 1) {
         // padding: 0px 5px 0px 0px;
       }
 
@@ -152,6 +152,15 @@
       margin-bottom: 0;
       padding-bottom: 0;
       border: 0;
+    }
+  }
+}
+
+.view-categories-sons .views-field-view-2 {
+  .view-content {
+    @media (max-width: $broken) {
+      display: flex;
+      flex-wrap: wrap;
     }
   }
 }
