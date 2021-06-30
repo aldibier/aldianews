@@ -20,9 +20,11 @@
 {% if title %}
 	<h3>{{ title }}</h3>
 {% endif %}
-
-<div class="margin-bottom">{{ drupal_entity('block', 'gamwadvertisement_29') }}</div>
-
+{% if rows.device[0] == 'desktop' %}
+	{% if rows.block_type[0] == 'block_top' %}
+		<div class="margin-bottom">{{ drupal_entity('block', 'gamwadvertisement_29') }}</div>
+	{% endif %}
+{% endif %}
 {% for row in rows %}
 
 	{%
@@ -31,11 +33,24 @@
 		]
 	%}
 
-
+	{% if rows.device[0] == 'mobile' %}
+		{% if loop.index  == 2 %}
+			<div class="skyscraper-mobile">{{ drupal_entity('block', 'gamwadvertisement_35') }}</div>
+		{% endif %}
+	{% endif %}
 	<div{{row.attributes.addClass(row_classes)}}>
 		{{- row.content -}}
 	</div>
 {% endfor %}
+{% if rows.device[0] == 'desktop' %}
+	{% if rows.block_type[0] == 'advertising' %}
+		<div class="margin-top">{{ drupal_entity('block', 'gamwadvertisement_35') }}</div>
+	{% endif %}
+	{% if rows.block_type[0] == 'block_bottom' %}
+		<div class="margin">{{ drupal_entity('block', 'gamwadvertisement_28') }}</div>
+	{% endif %}
+{% endif %}
 
-<div class="margin-top">{{ drupal_entity('block', 'gamwadvertisement_35') }}</div>
-<div class="margin">{{ drupal_entity('block', 'gamwadvertisement_28') }}</div>
+{% if rows.device[0] == 'mobile' %}
+	<div class="block-fixed-block-contentsquare-advertising-mobile">{{ drupal_entity('block', 'gamwadvertisement_28') }}</div>
+{% endif %}

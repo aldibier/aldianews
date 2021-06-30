@@ -1,5 +1,8 @@
 .screen-margin {
   max-width: $page-width;
+  @media screen and (max-width: $broken) {
+    max-width: 100%;
+  }
 }
 
 article[about="/terms-of-service"] {
