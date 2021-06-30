@@ -877,6 +877,16 @@
       text-align: center;
       position: relative;
 
+      .field__label {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 24px;
+        text-align: center;
+        text-transform: uppercase;
+        font-family: $PrNovacond-bold;
+      }
+
       >span {
         width: max-content;
         margin: 0 auto;
@@ -1052,6 +1062,11 @@
       .intro-offer-subscribe {
         font-size: 17px;
         line-height: 20px;
+
+        .field__label { 
+          font-size: 18px;
+          line-height: 22px;
+        }
       }
 
       .text-formatted {
