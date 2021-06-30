@@ -86,6 +86,39 @@
       font-size: $px16 !important;
       line-height: 25px;
     }
+    .webform-confirmation {
+      width: 100%;
+      display: flex;
+
+      .webform-confirmation__message {
+        font-style: normal;
+        font-weight: bold;
+        font-size: $px20;
+        line-height: 25px;
+        font-family: $PrNovacond-bold;
+        color: #3A3A3C;
+        margin: 10px 0 0;
+      }
+
+      .webform-confirmation__back {
+        display: block;
+        margin: 0 0 0 auto;
+        a {
+          min-width: 240px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 40px;
+          background: #5C6165;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 16px;
+          line-height: 25px;
+          color: #fff;
+        }
+      }
+    }
+
     @media (max-width: $tablet) {
       max-height: 120px;
       padding: 20px 10px;
@@ -107,6 +140,25 @@
       .form-submit {
         font-size: $px14 !important;
         min-height: 40px;
+      }
+      .webform-confirmation {
+        flex-wrap: wrap;
+        .webform-confirmation__message {
+          font-size: 14px;
+          line-height: 20px;
+          margin: 0;
+        }
+        .webform-confirmation__back {
+          margin: 5px auto;
+
+          a {
+            font-size: 14px;
+            line-height: 25px;
+            min-width: auto;
+            width: 100%;
+            padding: 0 10px;
+          }
+        }
       }
     }
   }
@@ -214,6 +266,40 @@
         &:lang(es) {
           width: 15%;
         }
+      }
+    }
+
+    .webform-confirmation {
+      min-height: 20px;
+      margin-bottom: 21px;
+      font-size: szrem(16);
+      font-style: normal;
+      font-weight: bold;
+      font-family: $PrNovacond-Sbold;
+      line-height: 1;
+      text-align: center;
+      letter-spacing: 0.741176px;
+      color: $cgrey5;
+    }
+
+    .webform-confirmation__back {
+      margin: 0;
+      a {
+        max-width: 240px;
+        padding: 0 10px;
+        width: 100%;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        background: #5C6165;
+        color: #fff;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 25px;
+        font-family: $PrNovacond-bold;
       }
     }
   }
