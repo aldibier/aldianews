@@ -73,10 +73,15 @@
     max-height: 200px;
     overflow: hidden;
     margin: 30px auto;
+    grid-column: span 2;
     img {
       width: 100%;
       height: auto;
     }
+  }
+  .skyscraper-mobile {
+    grid-row: span 2;
+    margin: 0px 0 0 19px;
   }
 }
 @media (max-width: 400px) {
@@ -258,9 +263,10 @@
   @media (max-width: $broken) {
     max-width: 120px;
     max-height: 320px;
-    margin: 20px auto;
+    // margin: 20px auto;
     grid-column: 2;
     grid-row: span 2;
+    margin: 0px 0 0 19px;
   }
 }
 
