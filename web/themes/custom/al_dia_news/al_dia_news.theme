@@ -40,10 +40,40 @@ function is_mobile() {
 
 function al_dia_news_preprocess_views_view_unformatted(&$vars) {
 
+  $view = $vars['view'];
+  $id = $view->id();
+  $display = $view->getDisplay();
+
   if (is_mobile()) {
     $vars['rows']['device'][] = 'mobile';
   } else {
     $vars['rows']['device'][] = 'desktop';
+  }
+
+  /// landing categoria
+
+  if($id == 'last_news'){
+
+    if($display->display['id'] === 'block_3'){
+      static $control;
+
+      if(empty($control)) $control = 0;
+
+      switch($control){
+        case 0:
+          $vars['rows']['block_type'][] = 'block_top';
+          $control = 1;
+        break;
+        case 1:
+          $vars['rows']['block_type'][] = 'advertising';
+          $control = 2;
+        break;
+        case 2:
+          $vars['rows']['block_type'][] = 'block_bottom';
+          $control = 0;
+        break;
+      }
+    }
   }
 }
 

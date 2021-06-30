@@ -380,14 +380,16 @@ import replaceToken from "./modules/replaceToken";
     attach: function(context, settings) {
       $(function() {
         //js para eliminar publicidad vacia
+        setTimeout(() => {
         Array.from(document.querySelectorAll(".block-gamw")).map(function(e){
           if (e != null) {
             var iframe_gamw = e.querySelector("iframe");
             if (iframe_gamw == null) {
-              /* e.classList.add("dis-none"); */
+              e.classList.add("dis-none");
             }
           }
         });
+      }, 3000);
         
         //js para recargar
         Array.from(document.querySelectorAll(".button-preload")).map(function(e){
