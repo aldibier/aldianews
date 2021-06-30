@@ -184,8 +184,6 @@ import replaceToken from "./modules/replaceToken";
       //.addIndicators();
     }
 
-  
-
     $(
       '.block-fixed-block-content-horizontal-advertising-close  button[name="close"]'
     ).click(function() {
@@ -353,24 +351,41 @@ import replaceToken from "./modules/replaceToken";
 
     //modal subscribe
 
-    $('.block-fixed-block-contentpop-up-cancel-form-subscribe button[name=no-stay]').click(function() {
-      if ($(".block-fixed-block-contentpop-up-cancel-form-subscribe").hasClass("open")) {
-        $(".block-fixed-block-contentpop-up-cancel-form-subscribe").removeClass("open");
+    $(
+      ".block-fixed-block-contentpop-up-cancel-form-subscribe button[name=no-stay]"
+    ).click(function() {
+      if (
+        $(".block-fixed-block-contentpop-up-cancel-form-subscribe").hasClass(
+          "open"
+        )
+      ) {
+        $(".block-fixed-block-contentpop-up-cancel-form-subscribe").removeClass(
+          "open"
+        );
       }
     });
 
-    $('.commerce-checkout-flow-multistep-default .form-actions span.user-login').click(function() {
-      if ($(".block-fixed-block-contentpop-up-cancel-form-subscribe").hasClass("open")) {
-        $(".block-fixed-block-contentpop-up-cancel-form-subscribe").removeClass("open");
-      }else {
-        $(".block-fixed-block-contentpop-up-cancel-form-subscribe").addClass("open");
+    $(
+      ".commerce-checkout-flow-multistep-default .form-actions span.user-login"
+    ).click(function() {
+      if (
+        $(".block-fixed-block-contentpop-up-cancel-form-subscribe").hasClass(
+          "open"
+        )
+      ) {
+        $(".block-fixed-block-contentpop-up-cancel-form-subscribe").removeClass(
+          "open"
+        );
+      } else {
+        $(".block-fixed-block-contentpop-up-cancel-form-subscribe").addClass(
+          "open"
+        );
       }
     });
-    
-    $( document ).ready(function() {
-      $( "#block-modalhomepassword a.button" ).click();
+
+    $(document).ready(function() {
+      $("#block-modalhomepassword a.button").click();
     });
-    
 
     initMain();
     initSlick($, Drupal);
@@ -381,25 +396,28 @@ import replaceToken from "./modules/replaceToken";
       $(function() {
         //js para eliminar publicidad vacia
         setTimeout(() => {
-        Array.from(document.querySelectorAll(".block-gamw")).map(function(e){
-          if (e != null) {
-            var iframe_gamw = e.querySelector("iframe");
-            if (iframe_gamw == null) {
-              e.classList.add("dis-none");
+          Array.from(document.querySelectorAll(".block-gamw")).map(function(e) {
+            if (e != null) {
+              var iframe_gamw = e.querySelector("iframe");
+              if (iframe_gamw == null) {
+                e.classList.add("dis-none");
+                e.closest(".ads").classList.add("dis-none");
+              }
             }
-          }
-        });
-      }, 3000);
-        
+          });
+        }, 3000);
+
         //js para recargar
-        Array.from(document.querySelectorAll(".button-preload")).map(function(e){
+        Array.from(document.querySelectorAll(".button-preload")).map(function(
+          e
+        ) {
           if (e != null) {
             e.addEventListener("click", () => {
               location.reload();
             });
           }
         });
-        
+
         ///// js para tag new
         Array.from(
           document.querySelectorAll(
