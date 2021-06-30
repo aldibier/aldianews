@@ -1,12 +1,7 @@
 uuid: 7e0a5a5a-13f8-4f5e-baf4-7b1e82638aee
 langcode: en
 status: open
-dependencies:
-  module:
-    - honeypot
-third_party_settings:
-  honeypot:
-    honeypot: true
+dependencies: {  }
 open: null
 close: null
 weight: 0
@@ -68,8 +63,8 @@ settings:
   ajax_progress_type: ''
   ajax_effect: ''
   ajax_speed: null
-  page: true
-  page_submit_path: /subscribe/request-a-call-back
+  page: false
+  page_submit_path: ''
   page_confirm_path: ''
   page_theme_name: ''
   form_title: source_entity_webform
