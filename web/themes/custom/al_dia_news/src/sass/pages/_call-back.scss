@@ -58,4 +58,55 @@
             text-transform: uppercase;
         }
     }
+
+    @media screen and (max-width:$tablet) {
+
+        #edit-markup,
+        #edit-markup-01 {
+            padding: 0;
+            font-size: 15px;
+            line-height: 18px;
+        }
+
+        #edit-markup {
+            margin: 0 auto;
+        }
+
+        h1 {
+            padding: 0 0 5px;
+            margin: 15px auto;
+        }
+        
+        .form-item {
+            width: 100%;
+            padding: 0;
+        }
+
+        .form-type-textarea {
+            min-height: 120px;
+        }
+
+        #edit-button-go-back {
+            width: 100%;
+            padding: 0;
+            height: 30px;
+
+            input {
+                width: 100%;
+                padding: 0;
+                height: 30px;
+                font-size: 16px;
+            }
+
+            .webform-actions {
+                width: 100%;
+                padding: 0;
+                height: 30px;
+
+                input {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
 }
