@@ -108,6 +108,7 @@
           grid-gap: 0 10px;
           overflow: hidden;
           grid-auto-flow: dense;
+          width: 100%;
         }
       }
     }
@@ -187,20 +188,20 @@
   //next two
   .card-one-column {
     @media screen and (max-width: $broken) {
-      width: 50%;
-      max-width: 50%;
+      width: 100%;
+      max-width: 100%;
       margin: 20px 0 0 0;
       position: initial;
       border: none;
       border-bottom: 1px solid $cgrey4;
 
       &:nth-child(1) {
-        padding: 0px 5px 20px 0px;
+        // padding: 0px 5px 20px 0px;
         border-right: none;
       }
 
       &:nth-child(2) {
-        padding: 0px 0px 20px 5px;
+        // padding: 0px 0px 20px 5px;
       }
     }
   }
