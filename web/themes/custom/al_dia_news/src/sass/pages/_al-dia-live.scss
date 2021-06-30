@@ -807,6 +807,12 @@
   .block-webform {
     width: 100%;
     order: 1;
+    display: flex;
+
+    #edit-processed-text.form-item {
+      width: 100%;
+      max-width: 100%;
+    }
 
     #edit-processed-text  p{
       font-style: normal;
