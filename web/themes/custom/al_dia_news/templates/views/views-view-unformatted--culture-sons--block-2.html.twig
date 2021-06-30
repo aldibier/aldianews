@@ -18,20 +18,20 @@
  */
 #}
 {% if title %}
-  <h3>{{ title }}</h3>
+	<h3>{{ title }}</h3>
 {% endif %}
 
 {% if rows.device[0] == 'mobile' %}
-	<div class="margin-bottom">{{ drupal_entity('block', 'gamwadvertisement_31') }}</div>
+	<div class="skyscraper-mobile">{{ drupal_entity('block', 'gamwadvertisement_31') }}</div>
 {% endif %}
 
 {% for row in rows %}
-{%
+	{%
     set row_classes = [
     default_row_class ? 'views-row',
     ]
 %}
-    <div{{row.attributes.addClass(row_classes)}}>
-			{{- row.content -}}
-    </div>
+	<div{{row.attributes.addClass(row_classes)}}>
+		{{- row.content -}}
+	</div>
 {% endfor %}
