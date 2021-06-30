@@ -2196,15 +2196,17 @@ __webpack_require__.r(__webpack_exports__);
     attach: function attach(context, settings) {
       $(function () {
         //js para eliminar publicidad vacia
-        Array.from(document.querySelectorAll(".block-gamw")).map(function (e) {
-          if (e != null) {
-            var iframe_gamw = e.querySelector("iframe");
+        setTimeout(function () {
+          Array.from(document.querySelectorAll(".block-gamw")).map(function (e) {
+            if (e != null) {
+              var iframe_gamw = e.querySelector("iframe");
 
-            if (iframe_gamw == null) {
-              /* e.classList.add("dis-none"); */
+              if (iframe_gamw == null) {
+                e.classList.add("dis-none");
+              }
             }
-          }
-        }); //js para recargar
+          });
+        }, 3000); //js para recargar
 
         Array.from(document.querySelectorAll(".button-preload")).map(function (e) {
           if (e != null) {
