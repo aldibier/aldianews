@@ -22,9 +22,6 @@
 	<h3>{{ title }}</h3>
 {% endif %}
 
-{% if rows.device[0] == 'mobile' %}
-	<div class="skyscraper-mobile">{{ drupal_entity('block', 'gamwadvertisement_33') }}</div>
-{% endif %}
 
 {% for row in rows %}
 	{%
@@ -32,7 +29,11 @@
     default_row_class ? 'card-one-column views-row',
     ]
 %}
-
+	{% if rows.device[0] == 'mobile' %}
+		{% if loop.index == 2 %}
+			<div class="skyscraper-mobile ads">{{ drupal_entity('block', 'gamwadvertisement_33') }}</div>
+		{% endif %}
+	{% endif %}
 	<div{{row.attributes.addClass(row_classes)}}>
 		{{- row.content -}}
 	</div>

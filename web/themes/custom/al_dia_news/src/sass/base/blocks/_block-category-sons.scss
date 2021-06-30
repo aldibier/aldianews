@@ -43,13 +43,13 @@
 
     > .views-row {
       display: grid;
-      grid-template-columns: minmax(auto, 860px) minmax(420px,1fr);
+      grid-template-columns: minmax(auto, 860px) minmax(420px, 1fr);
       grid-template-rows: repeat(2, auto) 1fr;
       grid-template-areas:
         "head head"
         "area-1 area-3"
         "area-2 area-3";
-      .banner-scroll{
+      .banner-scroll {
         grid-column: span 2;
       }
       @media (max-width: $broken) {
@@ -99,7 +99,14 @@
         margin: 0;
 
         .view-content {
-          grid-template-columns: repeat(2,1fr)
+          // display: flex;
+          // flex-wrap: wrap;
+          display: grid;
+          grid-template-columns: repeat(2, 50%);
+          grid-gap: 0 10px;
+          overflow: hidden;
+          grid-auto-flow: dense;
+          width: 100%;
         }
       }
     }
@@ -179,15 +186,20 @@
   //next two
   .card-one-column {
     @media screen and (max-width: $broken) {
-      /* width: 50%;
-      max-width: 50%; */
+      width: 100%;
+      max-width: 100%;
       margin: 20px 0 0 0;
       position: initial;
       border: none;
       border-bottom: 1px solid $cgrey4;
 
       &:nth-child(1) {
+        // padding: 0px 5px 20px 0px;
         border-right: none;
+      }
+
+      &:nth-child(2) {
+        // padding: 0px 0px 20px 5px;
       }
     }
   }
