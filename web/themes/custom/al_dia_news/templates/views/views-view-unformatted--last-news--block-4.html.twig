@@ -32,7 +32,7 @@
 		set row_classes = [
 		default_row_class ? 'views-row',
 		]
-	%}
+		%}
 
 		{## block ##}
 		{% if loop.index  == 15 %}
@@ -65,7 +65,7 @@
 			{{- row.content -}}
 		</div>
 	{% endfor %}
-{% endfor %}
+{% endif %}
 
 {% if rows.device[0] == 'mobile' %}
 	{% for row in rows %}
