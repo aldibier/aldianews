@@ -141,6 +141,25 @@
         font-size: $px14 !important;
         min-height: 40px;
       }
+      .webform-confirmation {
+        flex-wrap: wrap;
+        .webform-confirmation__message {
+          font-size: 14px;
+          line-height: 20px;
+          margin: 0;
+        }
+        .webform-confirmation__back {
+          margin: 5px auto;
+
+          a {
+            font-size: 14px;
+            line-height: 25px;
+            min-width: auto;
+            width: 100%;
+            padding: 0 10px;
+          }
+        }
+      }
     }
   }
 }
