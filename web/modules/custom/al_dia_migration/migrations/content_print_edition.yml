@@ -55,27 +55,12 @@ process:
         from_timezone: 'America/New_York'
         to_timezone: 'UTC'
 
-
   field_related_more_covers:
     plugin: sub_process
     source: prepare_multiple_paragraphs
     process:
       target_id: target_id
-      target_revision_id: target_revision_id
-    #-  
-    #  plugin: skip_on_empty  
-    #  method: process  
-    #  source: field_featured_articles  
-    #-  
-    #  plugin: migration_lookup  
-    #  migration: paragraph  
-    #  no_stub: true  
-    #-  
-    #  plugin: sub_process 
-    #  process:  
-    #    target_id: '0'  
-    #    target_revision_id: '1'  
-    
+      target_revision_id: target_revision_id 
 
   uid:
     plugin: migration_lookup

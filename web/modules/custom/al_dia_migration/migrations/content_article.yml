@@ -60,15 +60,9 @@ process:
     
   field_category:
     -
-      plugin: skip_on_value
-      method: row
-      equals: true
-      source: field_topics/0/tid
-      value: 
-        - 17391
-    -
       plugin: skip_on_empty
       method: process 
+      source: field_topics/0/tid
     -
       plugin: static_map      
       map:
@@ -105,15 +99,10 @@ process:
         15519: 137
         14519: 137
         15879: 187
-        #17391: -
+        17391: 7
         16777: 134
         16526: 123
         19030: 123
-        #395: -
-        #1127: -
-        #813: -
-        #8066: -
-        #191: -
         211: 134
         1501: 204
         510: 201
