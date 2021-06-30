@@ -58,8 +58,8 @@
       }
 
       @media screen and (max-width: $broken) {
-        width: 50%;
-        max-width: 50%;
+        width: 100%;
+        max-width: 100%;
         margin: 20px 0px;
         position: initial;
         border: none;
@@ -69,11 +69,11 @@
         }
 
         &:nth-child(2n + 1) {
-          padding: 0px 5px 0px 0px;
+          // padding: 0px 5px 0px 0px;
         }
 
         &:nth-child(2n + 2) {
-          padding: 0px 0px 0px 5px;
+          // padding: 0px 0px 0px 5px;
         }
 
         &:nth-child(2n + 3) {
@@ -112,10 +112,15 @@
       overflow: hidden;
       grid-auto-flow: dense;
       @media screen and (max-width: $broken) {
-        all: initial;
-        display: flex;
-        flex-wrap: wrap;
-        position: relative;
+        // all: initial;
+        // display: flex;
+        // flex-wrap: wrap;
+        // position: relative;
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        grid-gap: 0 10px;
+        overflow: hidden;
+        grid-auto-flow: dense;
       }
     }
   }

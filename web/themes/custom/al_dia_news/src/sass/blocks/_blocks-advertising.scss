@@ -229,6 +229,9 @@
 .banner-scroll {
   grid-column: span 3;
   width: 100%;
+  @media (max-width: $broken) {
+    grid-column: span 2;
+  }
 }
 
 .block-scroll {
@@ -237,10 +240,11 @@
   overflow: hidden;
   margin: 35px auto;
   grid-column: 3;
-  @media (max-width: $tablet) {
+  @media (max-width: $broken) {
     max-width: 200px;
     max-height: 200px;
     margin: 20px auto;
+    grid-column: span 2;
   }
 }
 .skys-scroll {
@@ -251,10 +255,12 @@
   grid-column: 3;
   grid-row: span 2;
   z-index: 2;
-  @media (max-width: $tablet) {
+  @media (max-width: $broken) {
     max-width: 120px;
     max-height: 320px;
     margin: 20px auto;
+    grid-column: 2;
+    grid-row: span 2;
   }
 }
 
