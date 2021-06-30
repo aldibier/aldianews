@@ -41,30 +41,6 @@ function is_mobile() {
 function al_dia_news_preprocess_views_view_unformatted(&$vars) {
   $view = $vars['view'];
   $id = $view->id();
-
-  if($id == 'categories_sons'){
-    /* static $control;
-
-    if(empty($control)) $control = 0; */
-
-    /* switch($control){
-      case 0:
-        $vars['rows']['block_type'][] = 'block_top';
-        $control = 1;
-      break;
-      case 1:
-        $vars['rows']['block_type'][] = 'advertising';
-        $control = 2;
-      break;
-      case 2:
-        $vars['rows']['block_type'][] = 'block_bottom';
-        $control = 0;
-      break;
-    } */
-  }
-
-  $view = $vars['view'];
-  $id = $view->id();
   $display = $view->getDisplay();
 
   if (is_mobile()) {

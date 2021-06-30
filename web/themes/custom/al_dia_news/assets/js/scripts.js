@@ -2207,7 +2207,7 @@ __webpack_require__.r(__webpack_exports__);
               }
             }
           });
-        }, 3000); //js para recargar
+        }, 4000); //js para recargar
 
         Array.from(document.querySelectorAll(".button-preload")).map(function (e) {
           if (e != null) {

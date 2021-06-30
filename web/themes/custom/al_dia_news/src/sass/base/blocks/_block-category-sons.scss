@@ -43,13 +43,13 @@
 
     > .views-row {
       display: grid;
-      grid-template-columns: minmax(auto, 860px) minmax(420px,1fr);
+      grid-template-columns: minmax(auto, 860px) minmax(420px, 1fr);
       grid-template-rows: repeat(2, auto) 1fr;
       grid-template-areas:
         "head head"
         "area-1 area-3"
         "area-2 area-3";
-      .banner-scroll{
+      .banner-scroll {
         grid-column: span 2;
       }
       @media (max-width: $broken) {
@@ -101,8 +101,13 @@
         margin: 0;
 
         .view-content {
-          display: flex;
-          flex-wrap: wrap;
+          // display: flex;
+          // flex-wrap: wrap;
+          display: grid;
+          grid-template-columns: repeat(2, 50%);
+          grid-gap: 0 10px;
+          overflow: hidden;
+          grid-auto-flow: dense;
         }
       }
     }
