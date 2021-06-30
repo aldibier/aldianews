@@ -865,6 +865,10 @@
 
     @media screen and (max-width: $tablet) {
 
+      form {
+        margin: 0 0 40px;
+      }
+
       #edit-processed-text p{
         font-size: 16px;
         line-height: 19px;
@@ -890,7 +894,8 @@
       }
 
       .form-actions {
-  
+        padding: 0 15px;
+
         input {
           width: 110px !important;
           height: 30px;
