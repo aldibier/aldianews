@@ -1,7 +1,12 @@
 uuid: 7e0a5a5a-13f8-4f5e-baf4-7b1e82638aee
 langcode: en
 status: open
-dependencies: {  }
+dependencies:
+  module:
+    - honeypot
+third_party_settings:
+  honeypot:
+    honeypot: true
 open: null
 close: null
 weight: 0
@@ -13,6 +18,12 @@ title: 'REQUEST A CALL BACK'
 description: 'This form is part of the <strong>Subscription</strong> landing page, it receives requests from users to learn more about the plans.'
 category: ''
 elements: |-
+  markup:
+    '#type': webform_markup
+    '#markup': '<h1>Request a Call back</h1>'
+  markup_01:
+    '#type': webform_markup
+    '#markup': 'This will send a high priority email to our team. We will contact you back as soon as we can during normal working hours.'
   first_name:
     '#type': textfield
     '#title': 'First name'
@@ -40,6 +51,11 @@ elements: |-
   optional_message:
     '#type': textarea
     '#title': 'Optional message'
+  button_go_back:
+    '#type': processed_text
+    '#text': |
+      <p><input class="back-button-requestcall" onclick="location.href='/subscribe';" type="button" value="GO BACK" /></p>
+    '#format': full_html
   actions:
     '#type': webform_actions
     '#title': 'Submit button(s)'
@@ -52,11 +68,11 @@ settings:
   ajax_progress_type: ''
   ajax_effect: ''
   ajax_speed: null
-  page: true
+  page: false
   page_submit_path: ''
   page_confirm_path: ''
   page_theme_name: ''
-  form_title: both
+  form_title: source_entity_webform
   form_submit_once: false
   form_exception_message: ''
   form_open_message: ''
@@ -88,7 +104,7 @@ settings:
   share: false
   share_node: false
   share_theme_name: ''
-  share_title: true
+  share_title: false
   share_page_body_attributes: {  }
   submission_label: ''
   submission_log: false
@@ -120,12 +136,12 @@ settings:
   wizard_keyboard: true
   wizard_start_label: ''
   wizard_preview_link: false
-  wizard_confirmation: true
+  wizard_confirmation: false
   wizard_confirmation_label: ''
   wizard_track: ''
   wizard_prev_button_label: ''
   wizard_next_button_label: ''
-  wizard_toggle: false
+  wizard_toggle: true
   wizard_toggle_show_label: ''
   wizard_toggle_hide_label: ''
   preview: 0
