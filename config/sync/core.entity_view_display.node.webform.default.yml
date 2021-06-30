@@ -8,6 +8,7 @@ dependencies:
     - node.type.webform
   module:
     - field_formatter_class
+    - text
     - user
     - webform
 _core:
@@ -17,8 +18,20 @@ targetEntityType: node
 bundle: webform
 mode: default
 content:
-  webform:
+  body:
+    type: text_default
+    weight: 1
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  links:
     weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  webform:
+    weight: 2
     label: hidden
     settings:
       source_entity: true
@@ -29,8 +42,6 @@ content:
     region: content
 hidden:
   addtoany: true
-  body: true
   langcode: true
-  links: true
   premium_message: true
   search_api_excerpt: true
