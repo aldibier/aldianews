@@ -1,7 +1,7 @@
 const initSlick = ($, Drupal) => {
   jQuery(document).ready(function() {
     let categoriesMore = document.querySelectorAll(
-      ".view-categories-sons .view-more-category .view-content .view-items"
+      ".view-categories-sons .view-more-category .view-content"
     );
 
     const settings = {

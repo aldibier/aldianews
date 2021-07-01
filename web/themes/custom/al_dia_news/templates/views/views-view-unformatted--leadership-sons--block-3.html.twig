@@ -21,22 +21,13 @@
 	<h3>{{ title }}</h3>
 {% endif %}
 
-{% if rows.device[0] == 'desktop' %}
-	<div class="margin-bottom ads">{{ drupal_entity('block', 'gamwadvertisement_33') }}</div>
-{% endif %}
-
-<div class="view-items">
-	{% for row in rows %}
-		{%
+{% for row in rows %}
+	{%
 		set row_classes = [
 		default_row_class ? 'views-row',
 		]%}
 
-
-		<div{{row.attributes.addClass(row_classes)}}>
-			{{- row.content -}}
-		</div>
-	{% endfor %}
-</div>
-
-<div class="margin-top ads">{{ drupal_entity('block', 'gamwadvertisement_32') }}</div>
+	<div{{row.attributes.addClass(row_classes)}}>
+		{{- row.content -}}
+	</div>
+{% endfor %}
