@@ -47,7 +47,7 @@
         }
 
         textarea.form-textarea {
-            min-width: 620px;
+            min-height: 160px;
         }
     }
 
@@ -102,6 +102,19 @@
         .form-item {
             width: 100%;
             padding: 0;
+
+            label {
+                font-size: 15px;
+                line-height: 18px;
+            }
+    
+            input[class*=form] {
+                height: 30px;
+            }
+    
+            textarea.form-textarea {
+                min-height: 120px;
+            }
         }
 
         .form-type-textarea {
