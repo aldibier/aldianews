@@ -319,7 +319,7 @@
   .checkout-progress {
     display: flex;
     max-width: 620px;
-    margin: 0 auto;
+    margin: 0 auto 48px;
     position: relative;
     padding: 0;
   }
@@ -390,6 +390,10 @@
   }
 
   @media (max-width: $tablet-min) {
+
+    .checkout-progress  {
+      margin: 0 auto 30px;
+    }
 
     .checkout-progress--step {
 
