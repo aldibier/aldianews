@@ -124,11 +124,11 @@
     }
 
     @media (max-width: $tablet) {
-      margin: 15px 0;
+      margin: 20px 0;
 
       &:nth-child(3) {
         &::before {
-          margin: -15px 0;
+          margin: -20px 0;
         }
       }
     }
@@ -301,6 +301,10 @@
           top: 0;
           right: calc(0% - 20px);
           background-color: $cgrey4;
+
+          @media screen and (max-width: $broken) {
+            display: none;
+          }
         }
       }
     }
@@ -318,7 +322,7 @@
 
       .block-fixed-block-content-small-vertical-advertising {
         padding-bottom: 40px;
-        border-bottom: 1px solid #b1b1b1;
+        //border-bottom: 1px solid #b1b1b1;
         margin-bottom: 25px;
       }
     }
@@ -330,11 +334,10 @@
 
     @media (max-width: 1250px) {
       .card-one-column:nth-child(3)::before {
-        display: none;
+        //display: none;
       }
 
       .card-one-column {
-        border-right: 0px !important;
         padding-left: 0px;
         padding-right: 0px;
       }
@@ -343,7 +346,31 @@
         max-width: none;
       }
     }
+
+    @media (max-width: $broken) {
+      .card-one-column {
+        margin: 35px 0;
+      }
+    }
+
+    @media (max-width: $tablet) {
+      .card-one-column {
+        margin: 20px 0;
+
+        &:nth-child(3) {
+          &::before {
+            margin: -20px 0;
+          }
+        }
+      }
+
+      .card-more-category .field--name-field-short-title a {
+        font-size: szrem(14);
+        line-height: 19px;
+      }
+    }
   }
+
   .card-one-column .card-date,
   .main-news-date,
   .card-more-category .field--name-created{
@@ -435,26 +462,9 @@
           margin-bottom: 0px;
         }
 
-        .card-title a {
-          /* font-size: 14px;
-          line-height: 17px; */
-        }
-
         &:nth-child(3),
         &:nth-child(4) {
-          margin-top: 0px;
           padding: 0px;
-        }
-
-        &:nth-last-child(2)::before {
-          content: "";
-          display: block;
-          position: absolute;
-          top: 187px;
-          left: 0px;
-          width: 100%;
-          height: 1px;
-          background: #b1b1b1;
         }
       }
     }
@@ -598,9 +608,11 @@
   }
 
   .block-views-blockhome-current-edition--block-1 {
+    min-width: 55%;
     margin-right: 40px;
 
     @media screen and (max-width: $broken) {
+      min-width: initial;
       margin-right: 0;
       padding: 0 40px;
     }
