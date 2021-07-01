@@ -1,7 +1,7 @@
 //------ related content card ------------//
 .card-more {
   //reset style
-  .node__content {
+  .node__content  {
     margin: 0;
   }
 
@@ -46,11 +46,12 @@
     margin-right: 15px;
 
     @media (max-width: $broken) {
-      margin: 0 0 15px 0;
+      // margin: 0 0 15px 0;
+      margin-right: 0px;
     }
 
     @media (max-width: $tablet) {
-      margin: 0 10px 0 0;
+      // margin: 0 10px 0 0;
     }
   }
 
