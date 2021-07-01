@@ -2,7 +2,7 @@
  * @file
  */
 
-(function($) {
+/* (function($) {
   Drupal.behaviors.aldia_news_advertising = {
     attach: function(context) {
       var width_publi = window.innerWidth;
@@ -279,4 +279,4 @@
       }
     }
   };
-})(jQuery);
+})(jQuery); */
