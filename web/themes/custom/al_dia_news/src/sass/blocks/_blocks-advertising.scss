@@ -148,8 +148,13 @@
 }
 .block-print-edition {
   max-width: 400px;
+  min-width: 400px;
   max-height: 615px;
   overflow: hidden;
+
+  @media screen and (max-width: $broken) {
+    display: none;
+  }
 }
 
 //----------------- general header top banner ----------------------------------//
