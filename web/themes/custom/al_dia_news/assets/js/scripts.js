@@ -2428,7 +2428,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 var initSlick = function initSlick($, Drupal) {
   jQuery(document).ready(function () {
-    var categoriesMore = document.querySelectorAll(".view-categories-sons .view-more-category .view-content .view-items");
+    var categoriesMore = document.querySelectorAll(".view-categories-sons .view-more-category .view-content");
     var settings = {
       infinite: false,
       rows: 4,
