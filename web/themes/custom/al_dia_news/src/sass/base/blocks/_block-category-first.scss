@@ -120,7 +120,7 @@
     "area-1 area-2"
     "area-1 area-2";
   overflow: hidden;
-
+  margin-bottom: 90px;
   @media screen and(max-width:$broken) {
     max-height: initial;
     grid-template-columns: 1fr;
@@ -129,6 +129,7 @@
       "area-2";
     grid-gap: 0;
     overflow: initial;
+    margin-bottom: 30px;
   }
 
   @media screen and(max-width:$broken) {
@@ -171,8 +172,6 @@
 }
 
 .first-block-subcategory-taxonomy {
-  margin-bottom: 90px;
-
   @media screen and(max-width:$desktop) {
     margin-bottom: 30px;
     padding: 0 15px;
