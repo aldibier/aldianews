@@ -688,6 +688,11 @@
 
   @media (max-width: $tablet-min) {  
 
+    .layout-checkout-form {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
     h1 {
       font-size: 20px;
       line-height: 24px;
@@ -778,6 +783,8 @@
     .paypal-buttons-container {
       padding: 0;
       margin: 20px auto 0;
+      width: 100%;
+      order: 2;
     }
 
     .link--previous {
@@ -786,6 +793,7 @@
       height: 30px;
       font-size: 16px;
       line-height: 25px;
+      order: 1;
     }
   }
 }
