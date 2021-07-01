@@ -430,8 +430,8 @@ const initMain = ($, Drupal) => {
 				e
 			) {
 				if (e !== null && e.children.length === 2) {
-					e.closest(".views-field.views-field-view-2").style.display = "none";
-					e.closest(".mobile-free").style.border = "0px";
+					/* e.closest(".views-field.views-field-view-2").style.display = "none";
+					e.closest(".mobile-free").style.border = "0px"; */
 				}
 			});
 		}

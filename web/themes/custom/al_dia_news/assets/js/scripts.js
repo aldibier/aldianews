@@ -1600,8 +1600,8 @@ var initMain = function initMain($, Drupal) {
     if (width_b <= 768) {
       Array.from(document.querySelectorAll(".view-more-category")).map(function (e) {
         if (e !== null && e.children.length === 2) {
-          e.closest(".views-field.views-field-view-2").style.display = "none";
-          e.closest(".mobile-free").style.border = "0px";
+          /* e.closest(".views-field.views-field-view-2").style.display = "none";
+          e.closest(".mobile-free").style.border = "0px"; */
         }
       });
     } ///// js para select de categorias, subcategorias y subsubcategorias
