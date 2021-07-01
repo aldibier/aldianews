@@ -2,12 +2,12 @@
  * @file
  */
 
-/* (function($) {
+(function($) {
   Drupal.behaviors.aldia_news_advertising = {
     attach: function(context) {
       var width_publi = window.innerWidth;
       if (width_publi >= 768) {
-        //------ vista leadership
+        // ------ vista leadership
         $(
           ".view-id-leadership_sons.view-display-id-block_3 .view-content .block-fixed-block-content-small-vertical-advertising"
         )
@@ -55,7 +55,7 @@
             }, 3000);
           });
 
-        //------ vista politics
+        // ------ vista politics
         $(
           ".view-id-politics_sons.view-display-id-block_3 .view-content .block-fixed-block-content-small-vertical-advertising"
         )
@@ -103,7 +103,7 @@
             }, 3000);
           });
 
-        //------ vista culture
+        // ------ vista culture
         $(
           ".view-id-culture_sons.view-display-id-block_3 .view-content .block-fixed-block-content-small-vertical-advertising"
         )
@@ -151,7 +151,7 @@
             }, 3000);
           });
 
-        //------ vista more in this section
+        // ------ vista more in this section
         $(
           ".view-id-more_in_this_section_news.view-display-id-block_1 .view-content .settings-tray-editable"
         )
@@ -177,7 +177,7 @@
             }, 3000);
           });
 
-        //------ vista last news
+        // ------ vista last news
         $(
           ".view-id-last_news.view-display-id-block_3 .view-content .block-fixed-block-content-small-vertical-advertising"
         )
@@ -279,4 +279,4 @@
       }
     }
   };
-})(jQuery); */
+})(jQuery);
