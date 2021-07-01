@@ -6,6 +6,7 @@ import initSlick from "./slick.js";
 import replaceToken from "./modules/replaceToken";
 
 (function($, Drupal) {
+
   // Selection share
   const sharer = new SelectionSharer();
   sharer.setElements("p,a,h1,h2,h3,blockquote,em,strong");
@@ -82,11 +83,6 @@ import replaceToken from "./modules/replaceToken";
     });
   }
 
-
-  $(document).ready(function() {
-    $('div.popup-class-restore-pwd.ui-widget.ui-corner-all:not(button) .close-button-modal').html( '<a href="/">OK</a>');
-    $('.popup-class-cancel-account.ui-widget.ui-corner-all:not(button) .close-button-modal').html( '<a href="/">GO TO OUR LATEST CONTENT</a>');
-  });
 
   jQuery(document).ready(function() {
     /////
@@ -391,6 +387,8 @@ import replaceToken from "./modules/replaceToken";
 
     $(document).ready(function() {
       $("#block-modalhomepassword a.button").click();
+      $('div.popup-class-restore-pwd.ui-widget.ui-corner-all:not(button) .close-button-modal').html( '<a href="/">OK</a>');
+      $('.popup-class-cancel-account.ui-widget.ui-corner-all:not(button) .close-button-modal').html( '<a href="/">GO TO OUR LATEST CONTENT</a>');
     });
     
     initMain();
