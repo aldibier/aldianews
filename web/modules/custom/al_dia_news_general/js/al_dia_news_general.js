@@ -219,7 +219,7 @@
 
               if (
                 $(
-                  ".view-id-last_news.view-display-id-block_3 .view-content  .block-fixed-block-contentbig-vertical-advertising.block2"
+                  ".view-id-last_news.view-display-id-block_3 .view-content .block2 .block-fixed-block-content-small-vertical-advertising"
                 )
                   .find(".content > div > div")
                   .html().length >= 1
