@@ -28,7 +28,7 @@
     padding: 0px 0 0 20px;
 
     @media (max-width: $broken) {
-      padding: 0;
+      padding: 0 !important;
     }
   }
 
@@ -53,7 +53,6 @@
     }
 
     .slick-slide {
-
       > div {
         height: auto;
         margin: 0;
@@ -104,7 +103,7 @@
   .view-content {
     @media (max-width: $broken) {
       display: grid;
-      grid-template-columns: repeat(2,1fr);
+      grid-template-columns: repeat(2, 50%);
       grid-auto-flow: dense;
       grid-gap: 0px 10px;
       .skyscraper-mobile {
@@ -112,7 +111,7 @@
         margin: 0px 0 0 19px;
       }
 
-      >.margin-bottom {
+      > .margin-bottom {
         display: none;
       }
     }

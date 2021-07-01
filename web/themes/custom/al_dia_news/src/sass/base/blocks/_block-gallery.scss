@@ -64,6 +64,14 @@
         position: initial;
         border: none;
 
+        &:nth-child(odd) {
+          padding-left: 15px;
+        }
+
+        &:nth-child(even) {
+          padding-right: 15px;
+        }
+
         &:nth-child(-n + 2) {
           margin-top: 0;
         }
