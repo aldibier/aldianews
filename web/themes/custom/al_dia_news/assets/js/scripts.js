@@ -1953,11 +1953,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 (function ($, Drupal) {
-  $(document).ready(function () {
-    $('div.popup-class-restore-pwd.ui-widget.ui-corner-all:not(button) .close-button-modal').html('<a href="/">OK</a>');
-    $('.popup-class-cancel-account.ui-widget.ui-corner-all:not(button) .close-button-modal').html('<a href="/">GO TO OUR LATEST CONTENT</a>');
-  }); // Selection share
-
+  // Selection share
   var sharer = new _assets_libraries_selection_sharer_selection_sharer_js__WEBPACK_IMPORTED_MODULE_1___default.a();
   sharer.setElements("p,a,h1,h2,h3,blockquote,em,strong"); // Replace key word by another value
 
@@ -2192,6 +2188,8 @@ __webpack_require__.r(__webpack_exports__);
     });
     $(document).ready(function () {
       $("#block-modalhomepassword a.button").click();
+      $('div.popup-class-restore-pwd.ui-widget.ui-corner-all:not(button) .close-button-modal').html('<a href="/">OK</a>');
+      $('.popup-class-cancel-account.ui-widget.ui-corner-all:not(button) .close-button-modal').html('<a href="/">GO TO OUR LATEST CONTENT</a>');
     });
     Object(_main_js__WEBPACK_IMPORTED_MODULE_3__["default"])();
     Object(_slick_js__WEBPACK_IMPORTED_MODULE_4__["default"])($, Drupal);
