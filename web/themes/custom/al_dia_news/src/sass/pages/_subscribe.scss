@@ -319,7 +319,7 @@
   .checkout-progress {
     display: flex;
     max-width: 620px;
-    margin: 0 auto;
+    margin: 0 auto 48px;
     position: relative;
     padding: 0;
   }
@@ -390,6 +390,10 @@
   }
 
   @media (max-width: $tablet-min) {
+
+    .checkout-progress  {
+      margin: 0 auto 30px;
+    }
 
     .checkout-progress--step {
 
@@ -688,6 +692,11 @@
 
   @media (max-width: $tablet-min) {  
 
+    .layout-checkout-form {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
     h1 {
       font-size: 20px;
       line-height: 24px;
@@ -717,6 +726,7 @@
 
       .views-field-nothing {
         margin-bottom: 22px;
+        line-height: 15px;
       }
     }
 
@@ -778,6 +788,8 @@
     .paypal-buttons-container {
       padding: 0;
       margin: 20px auto 0;
+      width: 100%;
+      order: 2;
     }
 
     .link--previous {
@@ -786,6 +798,7 @@
       height: 30px;
       font-size: 16px;
       line-height: 25px;
+      order: 1;
     }
   }
 }

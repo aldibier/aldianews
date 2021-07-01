@@ -583,6 +583,16 @@
 }
 .webform-submission-register-form {
   height: 100% !important;
+  .views-label.views-label-field-webform {
+    font-size: $px35;
+  }
+  label {
+    font-size: $px20 !important;
+  }
+  input {
+    max-width: 405px;
+    min-height: 40px;
+  }
   #edit-container--2 {
     width: 50%;
   }
@@ -609,6 +619,10 @@
   .form-actions {
     max-width: 150px;
   }
+}
+.form-register-events .contact-form {
+  max-width: 990px;
+  padding: 80px 75px 50px;
 }
 .webform-submission-sponsorship-upcoming-event-form {
   justify-content: space-between;
