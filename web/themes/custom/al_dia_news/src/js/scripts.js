@@ -405,7 +405,7 @@ import replaceToken from "./modules/replaceToken";
               }
             }
           });
-        }, 4000);
+        }, 4500);
 
         //js para recargar
         Array.from(document.querySelectorAll(".button-preload")).map(function(
