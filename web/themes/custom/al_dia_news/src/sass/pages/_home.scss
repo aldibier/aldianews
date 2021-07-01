@@ -18,9 +18,14 @@
 
   .view-high-impact-news-home.view-display-id-block_2 {
     display: flex;
+    margin-bottom: 80px;
 
     @media (max-width: $broken) {
       flex-direction: column;
+    }
+
+    @media (max-width: $tablet) {
+      margin-bottom: 0;
     }
 
     > .view-content {
@@ -50,6 +55,11 @@
       @media (max-width: $broken) {
         width: 100%;
         margin-bottom: 30px;
+      }
+
+      @media (max-width: $tablet) {
+        min-width: initial;
+        margin-bottom: 0;
       }
 
       >.content {
@@ -132,6 +142,23 @@
         }
       }
     }
+  }
+}
+
+.block-views-blockleadership-mix-block-1,
+.block-views-blockculture-mix-block-1 {
+  margin-bottom: 70px;
+
+  @media (max-width: $tablet) {
+    margin-bottom: 0;
+  }
+}
+
+.block-views-blockpolitics-mix-block-1 {
+  margin-bottom: 120px;
+
+  @media (max-width: $tablet) {
+    margin-bottom: 0;
   }
 }
 
@@ -477,10 +504,9 @@
 }
 
 //-------------------------------------  THOUGHT LEADERS ----------------------------//
-
 .block-views-blockthought-leaders-home-block-4 {
   background: #f1f1f1;
-  margin: 70px auto;
+  margin: 0 auto 100px;
   padding-top: 30px;
   padding-bottom: 50px;
 

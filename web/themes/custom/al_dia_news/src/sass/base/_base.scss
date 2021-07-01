@@ -2,6 +2,14 @@
   padding: 0;
 }
 
+.block .content {
+  margin-top: 0 !important;
+}
+
+h1, .heading-a {
+  margin: 0;
+}
+
 .field--type-image img,
 .field--name-user-picture img {
   margin: 0;
@@ -160,11 +168,12 @@ body.toolbar-tray-open.user-logged-in {
     display: none;
   } */
 }
+
 .mobile-free .mobile-plus {
-  .card-more:nth-child(1),
+  /* .card-more:nth-child(1),
   .card-more:nth-child(2) {
     display: block;
-  }
+  } */
 }
 
 @media (max-width: 768px) {

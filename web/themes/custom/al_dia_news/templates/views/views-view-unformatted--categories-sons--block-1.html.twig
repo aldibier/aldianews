@@ -31,7 +31,8 @@
 
 	<div{{row.attributes.addClass(row_classes)}}>
 		{{- row.content -}}
+		<div class="banner-scroll ads">{{ drupal_entity('block', 'gamwadvertisement_15') }}</div>
 	</div>
 
-	<div class="banner-scroll ads">{{ drupal_entity('block', 'gamwadvertisement_15') }}</div>
+
 {% endfor %}

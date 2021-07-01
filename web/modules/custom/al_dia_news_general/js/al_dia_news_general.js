@@ -7,7 +7,7 @@
     attach: function(context) {
       var width_publi = window.innerWidth;
       if (width_publi >= 768) {
-        //------ vista leadership
+        // ------ vista leadership
         $(
           ".view-id-leadership_sons.view-display-id-block_3 .view-content .block-fixed-block-content-small-vertical-advertising"
         )
@@ -55,7 +55,7 @@
             }, 3000);
           });
 
-        //------ vista politics
+        // ------ vista politics
         $(
           ".view-id-politics_sons.view-display-id-block_3 .view-content .block-fixed-block-content-small-vertical-advertising"
         )
@@ -103,7 +103,7 @@
             }, 3000);
           });
 
-        //------ vista culture
+        // ------ vista culture
         $(
           ".view-id-culture_sons.view-display-id-block_3 .view-content .block-fixed-block-content-small-vertical-advertising"
         )
@@ -151,7 +151,7 @@
             }, 3000);
           });
 
-        //------ vista more in this section
+        // ------ vista more in this section
         $(
           ".view-id-more_in_this_section_news.view-display-id-block_1 .view-content .settings-tray-editable"
         )
@@ -177,16 +177,13 @@
             }, 3000);
           });
 
-        //------ vista last news
+        // ------ vista last news
         $(
           ".view-id-last_news.view-display-id-block_3 .view-content .block-fixed-block-content-small-vertical-advertising"
         )
           .once("last-news-small-news-advertising")
           .each(function() {
             setTimeout(function() {
-              var last_news = 0;
-              var last_news2 = 0;
-              var last_news3 = 0;
               // doing async stuff
               if (
                 $(
@@ -195,24 +192,11 @@
                   .find(".content > div > div")
                   .html().length >= 1
               ) {
-                last_news = 1;
                 $(
                   ".view-id-last_news.view-display-id-block_3 .view-content .card-more-category"
                 ).each(function(index, value) {
-                  if (last_news2) {
+                  if (index >= 3) {
                     $(value).hide();
-                    $(
-                      ".view-id-last_news.view-display-id-block_3 .view-content  .block-fixed-block-contentbig-vertical-advertising"
-                    ).hide();
-                  } else if (last_news3) {
-                    $(value).hide();
-                    $(
-                      ".view-id-last_news.view-display-id-block_3 .view-content  .block-fixed-block-contentbig-vertical-advertising.block2"
-                    ).hide();
-                  } else {
-                    if (index >= 3) {
-                      $(value).hide();
-                    }
                   }
                 });
               }
@@ -224,24 +208,11 @@
                   .find(".content > div > div")
                   .html().length >= 1
               ) {
-                last_news2 = 1;
                 $(
                   ".view-id-last_news.view-display-id-block_3 .view-content .card-more-category"
                 ).each(function(index, value) {
-                  if (last_news) {
+                  if (index >= 0) {
                     $(value).hide();
-                    $(
-                      ".view-id-last_news.view-display-id-block_3 .view-content .block-fixed-block-content-small-vertical-advertising"
-                    ).hide();
-                  } else if (last_news3) {
-                    $(value).hide();
-                    $(
-                      ".view-id-last_news.view-display-id-block_3 .view-content  .block-fixed-block-contentbig-vertical-advertising.block2"
-                    ).hide();
-                  } else {
-                    if (index >= 0) {
-                      $(value).hide();
-                    }
                   }
                 });
               }
@@ -253,24 +224,11 @@
                   .find(".content > div > div")
                   .html().length >= 1
               ) {
-                last_news3 = 1;
                 $(
                   ".view-id-last_news.view-display-id-block_3 .view-content .card-more-category"
                 ).each(function(index, value) {
-                  if (last_news2) {
+                  if (index >= 3) {
                     $(value).hide();
-                    $(
-                      ".view-id-last_news.view-display-id-block_3 .view-content  .block-fixed-block-contentbig-vertical-advertising"
-                    ).hide();
-                  } else if (last_news2) {
-                    $(value).hide();
-                    $(
-                      ".view-id-last_news.view-display-id-block_3 .view-content .block-fixed-block-content-small-vertical-advertising"
-                    ).hide();
-                  } else {
-                    if (index >= 3) {
-                      $(value).hide();
-                    }
                   }
                 });
               }
