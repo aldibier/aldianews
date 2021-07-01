@@ -22,7 +22,7 @@ process:
       plugin: concat
       delimiter: /
       source:
-        - constants/source_base_path
+        #- constants/source_base_path
         - filepath
     -
       plugin: urlencode

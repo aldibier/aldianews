@@ -44,8 +44,8 @@ process:
         source: value
         from_format: 'Y-m-d H:i:s'
         to_format: 'Y-m-d\TH:i:s'
-        from_timezone: 'America/New_York'
-        to_timezone: 'UTC'
+        #from_timezone: 'America/New_York'
+        #to_timezone: 'UTC'
 
   field_venue_of_the_event:
     plugin: concat

@@ -82,11 +82,11 @@ class NeedParagraph extends FieldableEntity {
         return [
             'nid' => [
                 'type' => 'integer',
-                #'alias' => 'ffa',
+                //'alias' => 'ffa',
             ],
             'entity_id' => [
                 'type' => 'integer',
-                #'alias' => 'ffa',
+                //'alias' => 'ffa',
             ],
         ];
     }
