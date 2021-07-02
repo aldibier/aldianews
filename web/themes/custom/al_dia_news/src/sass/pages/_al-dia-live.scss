@@ -841,7 +841,8 @@
       color: #ED1C24;
 
       img {
-        height: 40px;
+        width: 175px;
+        height: 41.18px;
         margin: 10px 0 -5px;
       }
 
@@ -863,7 +864,33 @@
       }
     }
 
+    .form-item label, 
+    form label {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 24px;
+    }
+
+    input[class*=form],
+    .SumoSelect>.CaptionCont, 
+    select{
+      height: 40px;
+    }
+
     @media screen and (max-width: $tablet) {
+
+      input[class*=form],
+      .SumoSelect>.CaptionCont, 
+      select{
+        height: 30px;
+      }
+
+      .form-item label, 
+      form label {
+        font-size: 15px;
+        line-height: 18px;
+      }
 
       form {
         margin: 15px 0 40px;
@@ -876,6 +903,7 @@
         
 
         img {
+          width: 70px;
           height: 17.65px;
           margin: 0 0 -2px 5px;
         }
