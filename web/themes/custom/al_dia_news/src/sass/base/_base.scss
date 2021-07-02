@@ -6,7 +6,8 @@
   margin-top: 0 !important;
 }
 
-h1, .heading-a {
+h1,
+.heading-a {
   margin: 0;
 }
 
@@ -88,6 +89,12 @@ body.toolbar-tray-open.user-logged-in {
   overflow: hidden;
 }
 
+.non-desktop {
+  display: none;
+  @media (max-width: $broken) {
+    display: block;
+  }
+}
 .layout-container {
   max-width: 1440px;
 
