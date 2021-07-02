@@ -150,6 +150,7 @@
     margin: 0 -15px 30px;
     display: flex;
     justify-content: center;
+    overflow-x: initial;
   }
   &.bot-bottom {
     margin-bottom: 0px;
@@ -253,13 +254,6 @@
   width: 100%;
   @media (max-width: $tablet) {
     grid-column: span 2;
-    max-height: 100px;
-    margin: 20px -15px 30px;
-    display: flex;
-    justify-content: center;
-    .banner-horizontal {
-      margin: 0 auto;
-    }
   }
 }
 
