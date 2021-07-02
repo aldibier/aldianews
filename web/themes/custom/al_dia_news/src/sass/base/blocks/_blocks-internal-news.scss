@@ -44,6 +44,14 @@
   font-family: $CenturyOld-Regular !important;
 }
 
+.node--type-news,
+.node--type-thought-leaders {
+  margin-bottom: 80px;
+  @media screen and (max-width: $broken) {
+    margin-bottom: 35px;
+  }
+}
+
 //------ summary -----------//
 .view--summary-news-intern {
   .view-content:empty {
@@ -173,7 +181,8 @@
 }
 
 .block-field-blocknodenewsfield-video {
-  + .block-field-blocknodenewsfield-image {
+  + .block-field-blocknodenewsfield-image,
+  button[name="close"] {
     display: none;
   }
 }
@@ -433,7 +442,7 @@ blockquote {
     max-width: 100%;
   }
   a {
-    color: #ed1c24; 
+    color: #ed1c24;
   }
 
   blockquote,
@@ -1187,7 +1196,7 @@ div#selectionSharerPopover {
   }
 }
 
-.page-node-type-news  .block-field-blocknodenewsfield-video {
+.page-node-type-news .block-field-blocknodenewsfield-video {
   > .content.stuck {
     @media (max-width: $broken) {
       top: 140px;
