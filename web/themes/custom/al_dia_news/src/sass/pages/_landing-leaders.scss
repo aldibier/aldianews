@@ -17,6 +17,13 @@
     }
   }
 
+  .view-id-landing_thought_leaders {
+    margin-bottom: 80px;
+    @media (max-width: $broken) {
+      margin-bottom: 30px;
+    }
+  }
+
   //-------------titulo de la categoria------------//
 
   .catergory-logo {
@@ -193,7 +200,7 @@
     padding: 0 0 0 20px;
     border-left: 1px solid $cgrey4;
     height: 520px;
-
+    width: 100%;
     .content {
       margin: 0;
     }
@@ -272,6 +279,9 @@
     grid-gap: 0 40px;
     overflow: hidden;
     grid-auto-flow: dense;
+    .banner-scroll {
+      margin-top: 80px;
+    }
     @media (max-width: $broken) {
       // all: initial;
       // display: flex;
@@ -283,6 +293,9 @@
       grid-gap: 0 10px;
       overflow: hidden;
       grid-auto-flow: dense;
+      .banner-scroll {
+        margin-top: 30px;
+      }
     }
     .views-row {
       // width: 33.33%;
@@ -335,6 +348,16 @@
       &:nth-child(3n + 3) {
         padding: 0 0 0 15px;
         position: relative;
+      }
+      &:nth-child(9)::after {
+        display: block;
+      }
+    }
+
+    .banner-scroll ~ .views-row {
+      &:after {
+        left: auto;
+        right: 0px;
       }
     }
 
@@ -631,6 +654,8 @@
 
       .information-node-more-content {
         margin: 0;
+        display: flex;
+        flex-direction: column;
       }
     }
 

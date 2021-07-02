@@ -147,7 +147,7 @@
   overflow: hidden;
   @media (max-width: $tablet) {
     max-height: 100px;
-    margin: 0 auto 30px;
+    margin: 0 -15px 30px;
     display: flex;
     justify-content: center;
   }
@@ -251,8 +251,15 @@
 .banner-scroll {
   grid-column: span 3;
   width: 100%;
-  @media (max-width: $broken) {
+  @media (max-width: $tablet) {
     grid-column: span 2;
+    max-height: 100px;
+    margin: 20px -15px 30px;
+    display: flex;
+    justify-content: center;
+    .banner-horizontal {
+      margin: 0 auto;
+    }
   }
 }
 
