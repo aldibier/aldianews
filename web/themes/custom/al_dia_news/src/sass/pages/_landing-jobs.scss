@@ -89,7 +89,10 @@
       );
     gap: 0px 40px;
     overflow: hidden;
-
+    grid-auto-flow: dense;
+    div:empty {
+      display: none;
+    }
     .views-row {
       //width: 33.33%;
       margin: 40px 0;
@@ -155,7 +158,9 @@
     .views-infinite-scroll-content-wrapper {
       display: flex;
       flex-wrap: wrap;
-
+      .ads {
+        margin-top: 20px;
+      }
       .views-row {
         width: 100%;
         margin: 25px 0 0;

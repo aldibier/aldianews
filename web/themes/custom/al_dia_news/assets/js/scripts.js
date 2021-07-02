@@ -1221,7 +1221,7 @@ function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread n
 
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
-function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
 
 function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
 
@@ -1238,7 +1238,7 @@ var initMain = function initMain($, Drupal) {
       var scroll = window.scrollY + window.innerHeight;
       /* if(scroll >= heightBody) {
       	elemento.classList.add('fix');
-      } else {
+      } else { 
       	if(elemento.classList.contains('fix')) {
       		elemento.classList.remove('fix');
       	}
@@ -1384,43 +1384,6 @@ var initMain = function initMain($, Drupal) {
           b.classList.remove("video-present");
         }
       });
-    }
-
-    var lista1 = document.querySelectorAll(".block-views-blockcarousel-videos-landing-block-2  .views-row.slick-slide:not(.slick-cloned) .views-field-nid");
-    var lista2 = document.querySelectorAll(".view-id-carousel_videos_landing.view-display-id-page_1 .views-field-nid");
-
-    var _loop = function _loop(i) {
-      var itemLista1 = lista1[i];
-      var itemLista2 = lista2[i]; // console.log(itemLista1, itemLista2)
-
-      itemLista1.parentElement.addEventListener("click", function () {
-        one();
-        two();
-        var allIframes = document.querySelectorAll(".view-id-carousel_videos_landing.view-display-id-page_1  iframe");
-
-        var resetAlliframes = function resetAlliframes() {
-          allIframes.forEach(function (iframe) {
-            iframe.classList.add("change-src");
-            iframe.src = iframe.src;
-            setTimeout(function () {
-              return iframe.classList.remove("change-src");
-            }, 800);
-          });
-        };
-
-        resetAlliframes();
-
-        if (itemLista1.children.innerHTML === itemLista2.children.innerHTML) {
-          itemLista1.parentElement.parentElement.classList.add("select-video");
-          itemLista2.parentElement.parentElement.classList.add("show-video");
-          itemLista1.parentElement.classList.add("video-present");
-          itemLista2.parentElement.classList.add("video-present");
-        }
-      });
-    };
-
-    for (var i = 0; i < lista1.length; i++) {
-      _loop(i);
     } /// js boton back
 
 
@@ -2207,7 +2170,45 @@ __webpack_require__.r(__webpack_exports__);
               }
             }
           });
-        }, 4500); //js para recargar
+        }, 6000); // js para modal de videos
+
+        var lista1 = document.querySelectorAll(".block-views-blockcarousel-videos-landing-block-2  .views-row.slick-slide:not(.slick-cloned) .views-field-nid");
+        var lista2 = document.querySelectorAll(".view-id-carousel_videos_landing.view-display-id-page_1 .views-field-nid");
+
+        var _loop = function _loop(i) {
+          var itemLista1 = lista1[i];
+          var itemLista2 = lista2[i]; // console.log(itemLista1, itemLista2)
+
+          itemLista1.parentElement.addEventListener("click", function () {
+            one();
+            two();
+            var allIframes = document.querySelectorAll(".view-id-carousel_videos_landing.view-display-id-page_1  iframe");
+
+            var resetAlliframes = function resetAlliframes() {
+              allIframes.forEach(function (iframe) {
+                iframe.classList.add("change-src");
+                iframe.src = iframe.src;
+                setTimeout(function () {
+                  return iframe.classList.remove("change-src");
+                }, 800);
+              });
+            };
+
+            resetAlliframes();
+
+            if (itemLista1.children.innerHTML === itemLista2.children.innerHTML) {
+              itemLista1.parentElement.parentElement.classList.add("select-video");
+              itemLista2.parentElement.parentElement.classList.add("show-video");
+              itemLista1.parentElement.classList.add("video-present");
+              itemLista2.parentElement.classList.add("video-present");
+            }
+          });
+        };
+
+        for (var i = 0; i < lista1.length; i++) {
+          _loop(i);
+        } //js para recargar
+
 
         Array.from(document.querySelectorAll(".button-preload")).map(function (e) {
           if (e != null) {
@@ -2423,7 +2424,7 @@ var initScrollMagic = function initScrollMagic($, Drupal) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
@@ -2653,8 +2654,8 @@ var initSlick = function initSlick($, Drupal) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/usuario/Desktop/Proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
-module.exports = __webpack_require__(/*! /Users/usuario/Desktop/Proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
+__webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
+module.exports = __webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
 
 
 /***/ })
