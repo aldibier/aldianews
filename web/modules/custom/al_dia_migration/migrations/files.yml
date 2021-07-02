@@ -22,13 +22,13 @@ process:
       plugin: concat
       delimiter: /
       source:
-        #- constants/source_base_path
+        - constants/source_base_path
         - filepath
     -
       plugin: urlencode
   uri:
-    plugin: default_value
-    #plugin: file_copy
+    #plugin: default_value
+    plugin: file_copy
     source:
       - '@source_full_path'
       - uri
