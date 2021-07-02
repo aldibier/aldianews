@@ -10,7 +10,7 @@ const initMain = ($, Drupal) => {
 
 		/* if(scroll >= heightBody) {
 			elemento.classList.add('fix');
-		} else {
+		} else { 
 			if(elemento.classList.contains('fix')) {
 				elemento.classList.remove('fix');
 			}

@@ -1238,7 +1238,7 @@ var initMain = function initMain($, Drupal) {
       var scroll = window.scrollY + window.innerHeight;
       /* if(scroll >= heightBody) {
       	elemento.classList.add('fix');
-      } else {
+      } else { 
       	if(elemento.classList.contains('fix')) {
       		elemento.classList.remove('fix');
       	}
