@@ -49,14 +49,17 @@
         "head head"
         "area-1 area-3"
         "area-2 area-3";
-      margin-bottom: 80px;
+
       .banner-scroll {
         grid-column: span 2;
+        margin-top: 80px;
       }
       @media (max-width: $broken) {
         display: flex;
         flex-direction: column;
-        margin-bottom: 30px;
+        .banner-scroll {
+          margin-top: 30px;
+        }
       }
     }
 
