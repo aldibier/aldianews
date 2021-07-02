@@ -14,14 +14,10 @@
   <div class="container-content">
 
     {% if content.header_category %}
-        <div {{ region_attributes.header_category.addClass('header-category ') }}>
-          {{ content.header_category }} 
-        </div>
+        <div {{ region_attributes.header_category.addClass('header-category') }}>{{ content.header_category }}</div>
     {% endif %}
     {% if content.one_content_first %}
-        <div {{ region_attributes.one_content_first.addClass('category-first-block screen-margin') }}>
-          {{ content.one_content_first }} 
-        </div>
+        <div {{ region_attributes.one_content_first.addClass('category-first-block screen-margin') }}>{{ content.one_content_first }}</div>
     {% endif %}
     {% if content.one_content %}
         <div {{ region_attributes.one_content.addClass('one-content-taxonomy-category screen-margin') }}>

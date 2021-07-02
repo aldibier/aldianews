@@ -716,13 +716,14 @@ section > .comment:nth-of-type(1) {
 
       .fake-form-submit {
         @include button(
-          $btnWidth: 165px,
+          $btnWidth: max-content,
           $btnHeight: 40px,
           $btnBackground: $corange,
           $btnColor: $cwhite
         );
+        min-width: 165px;
         margin: 0;
-        padding: 0;
+        padding: 0 10px;
         display: block;
         font-size: szrem(18);
 
