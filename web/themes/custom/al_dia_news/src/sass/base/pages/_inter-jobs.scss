@@ -25,10 +25,10 @@
     margin: 0 auto 90px;
     max-width: 1280px;
     max-height: 149px;
-    overflow: hidden;
+    overflow: initial;
     @media (max-width: $tablet) {
       max-height: 100px;
-      // margin: 0 -15px 30px;
+      margin: 0 auto 30px;
       display: flex;
       justify-content: center;
       overflow-x: initial;
@@ -50,7 +50,7 @@
       margin-bottom: 40px;
     }
     .two-vertical-advertising {
-      margin-bottom: 50px;
+      padding-bottom: 50px;
     }
     @media (max-width: $tablet) {
       .one-vertical-advertising {
@@ -268,9 +268,11 @@
   }
 }
 .page-node-type-job div.block-extra-field-blocknodenewsaddtoany {
-  margin-bottom: 30px;
-  .addtoany_list.a2a_kit_size_32 a {
-    height: 30px;
+  @media screen and (max-width: $broken) {
+    margin-bottom: 30px;
+    .addtoany_list.a2a_kit_size_32 a {
+      height: 30px;
+    }
   }
 }
 .page-node-type-page .banner-horizontal {
