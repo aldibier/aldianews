@@ -12,14 +12,9 @@
     margin: 0;
   }
 
-  .header-category {
-    &.empty {
-      display: none;
-    }
-  }
-
+  .header-category,
   .category-first-block {
-    &.empty {
+    &:empty {
       display: none;
     }
   }
