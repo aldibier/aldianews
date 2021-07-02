@@ -314,8 +314,7 @@
         display: block;
       }
 
-      &:nth-child(4),
-      &:nth-child(7) {
+      &:nth-child(3n + 1) {
         padding: 0 15px 0 0;
 
         &:after {
@@ -350,27 +349,15 @@
         padding: 0 0 0 15px;
         position: relative;
       }
+      &:nth-child(9)::after {
+        display: block;
+      }
     }
 
     .banner-scroll ~ .views-row {
-      &:nth-child(3n + 1) {
-        padding: 0 15px 0 0;
-
-        &:after {
-          display: none;
-        }
-
-        &:before {
-          content: "";
-          display: block;
-          width: 100%;
-          position: absolute;
-          left: 0;
-          right: 0;
-          height: 1px;
-          background: $cgrey4;
-          margin: -35px auto 0;
-        }
+      &:after {
+        left: auto;
+        right: 0px;
       }
     }
 
