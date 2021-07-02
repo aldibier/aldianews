@@ -79,5 +79,8 @@
   }
   .banner-horizontal {
     margin: 0px auto 80px;
+    @media (max-width: $broken) {
+      margin: 0px auto 30px;
+    }
   }
 }
