@@ -104,15 +104,6 @@ const initMain = ($, Drupal) => {
 			containerSummary.insertAdjacentElement("beforebegin", summary);
 		}
 
-		//hidden header-category header-category
-		if (!!document.querySelector('.path-taxonomy')) {
-			const headerCategory = document.querySelector('.header-category');
-			const categoryFirstBlock = document.querySelector('.category-first-block');
-
-			if (headerCategory.childElementCount === 0) headerCategory.classList.add('empty');
-			if (categoryFirstBlock.childElementCount === 0) categoryFirstBlock.classList.add('empty');
-		}
-
 		// js video en interna
 		var video_interna = document.querySelector(
 			".block-field-blocknodenewsfield-video"

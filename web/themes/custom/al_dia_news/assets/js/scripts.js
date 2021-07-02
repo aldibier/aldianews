@@ -1317,14 +1317,6 @@ var initMain = function initMain($, Drupal) {
     if (!!containerSummary) {
       var summary = containerSummary.querySelector(".summary-news");
       containerSummary.insertAdjacentElement("beforebegin", summary);
-    } //hidden header-category header-category
-
-
-    if (!!document.querySelector('.path-taxonomy')) {
-      var headerCategory = document.querySelector('.header-category');
-      var categoryFirstBlock = document.querySelector('.category-first-block');
-      if (headerCategory.childElementCount === 0) headerCategory.classList.add('empty');
-      if (categoryFirstBlock.childElementCount === 0) categoryFirstBlock.classList.add('empty');
     } // js video en interna
 
 
