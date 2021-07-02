@@ -200,7 +200,7 @@
     padding: 0 0 0 20px;
     border-left: 1px solid $cgrey4;
     height: 520px;
-
+    width: 100%;
     .content {
       margin: 0;
     }
@@ -279,6 +279,9 @@
     grid-gap: 0 40px;
     overflow: hidden;
     grid-auto-flow: dense;
+    .banner-scroll {
+      margin-top: 80px;
+    }
     @media (max-width: $broken) {
       // all: initial;
       // display: flex;
@@ -290,6 +293,9 @@
       grid-gap: 0 10px;
       overflow: hidden;
       grid-auto-flow: dense;
+      .banner-scroll {
+        margin-top: 30px;
+      }
     }
     .views-row {
       // width: 33.33%;
@@ -308,7 +314,8 @@
         display: block;
       }
 
-      &:nth-child(3n + 1) {
+      &:nth-child(4),
+      &:nth-child(7) {
         padding: 0 15px 0 0;
 
         &:after {
@@ -342,6 +349,28 @@
       &:nth-child(3n + 3) {
         padding: 0 0 0 15px;
         position: relative;
+      }
+    }
+
+    .banner-scroll ~ .views-row {
+      &:nth-child(3n + 1) {
+        padding: 0 15px 0 0;
+
+        &:after {
+          display: none;
+        }
+
+        &:before {
+          content: "";
+          display: block;
+          width: 100%;
+          position: absolute;
+          left: 0;
+          right: 0;
+          height: 1px;
+          background: $cgrey4;
+          margin: -35px auto 0;
+        }
       }
     }
 
@@ -638,6 +667,8 @@
 
       .information-node-more-content {
         margin: 0;
+        display: flex;
+        flex-direction: column;
       }
     }
 
