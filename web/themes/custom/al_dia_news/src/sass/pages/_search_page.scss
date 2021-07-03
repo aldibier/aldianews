@@ -128,13 +128,13 @@
     align-items: flex-end;
     justify-content: space-between;
     width: 100%;
-    @media (min-width: $desktop){
+    @media (min-width: $desktop) {
       width: 100.5%;
       position: relative;
       left: -10px;
     }
   }
-  form .SumoSelect .optWrapper>.options>li label{
+  form .SumoSelect .optWrapper > .options > li label {
     text-transform: initial;
   }
   button[name="close"] {
@@ -299,8 +299,7 @@
 }
 
 .view-search-results-al-dia-solr {
-
-  .view-header {  
+  .view-header {
     margin-bottom: 50px;
 
     @media screen and (max-width: $tablet) {
@@ -345,11 +344,11 @@
     margin-bottom: 20px;
   }
 
-  &+span {
+  & + span {
     display: none;
   }
 
-  .did-you-mean-prefix {
+  .did-you-mean-prefix  {
     margin-bottom: 15px;
     font-size: szrem(24);
     font-family: $PrNovacond-light;
@@ -374,7 +373,7 @@
     }
   }
 
-  .showing-token {
+  .showing-token  {
     font-size: szrem(30);
     font-family: $PrNovacond-bold;
     font-style: normal;
@@ -387,7 +386,7 @@
     }
   }
 
-  .token-it {
+  .token-it  {
     font-family: $PrNovacond-reg;
     font-style: italic;
     font-weight: normal;
@@ -493,6 +492,8 @@
       font-size: $px15;
       line-height: 18px;
       padding-bottom: 5px;
+      margin-bottom: 0px;
+      font-family: $PrNovacond-Sbold;
     }
     .SumoSelect {
       width: 100%;

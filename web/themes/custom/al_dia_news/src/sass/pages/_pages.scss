@@ -69,6 +69,7 @@ p .aldia-logo-in-text img {
 
 .path-node:not(.page-node-type-feature-employer),
 .path-node:not(.page-node-type-job),
+.path-node:not(.page-premium),
 .page-node-type-al-dia-vacancy {
   #main-wrapper {
     max-width: none;
@@ -89,5 +90,19 @@ p .aldia-logo-in-text img {
         width: 100%;
       }
     }
+  }
+}
+
+.page-premium {
+  #main-wrapper {
+    max-width: 1440px;
+    #main {
+      max-width: 1310px;
+      padding: 0 15px;
+    }
+  }
+
+  .block-anonymous-comments {
+    display: none;
   }
 }
