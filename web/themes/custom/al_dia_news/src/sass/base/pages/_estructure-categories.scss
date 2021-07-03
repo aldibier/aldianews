@@ -1,10 +1,4 @@
 .path-taxonomy {
-  .one-content-taxonomy-category,
-  .two-more-content-taxonomy-category,
-  .category-first-block {
-    //display: none;
-  }
-
   //------ reset margin ------------//
   .node__content,
   .block .content,
@@ -17,6 +11,10 @@
     &:empty {
       display: none;
     }
+  }
+
+  .header-category {
+    margin-bottom: 50px;
   }
 }
 

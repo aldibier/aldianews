@@ -93,7 +93,7 @@
   .field--name-category-home {
     margin-bottom: 10px;
 
-    @media screen and (max-width: $broken) {
+    @media screen and (max-width: $tablet) {
       margin-bottom: 5px;
     }
 
@@ -147,7 +147,7 @@
         text-overflow: ellipsis;
         overflow: hidden;
         display: block;
-        margin: 10px auto 5px;
+        margin: 0 0 5px 0;
       }
     }
   }
@@ -177,8 +177,6 @@
     }
 
     @media screen and (max-width: $broken) {
-      margin-bottom: 5px;
-
       a {
         font-size: szrem(24);
         line-height: 19px;
@@ -186,6 +184,8 @@
     }
 
     @media screen and (max-width: $tablet) {
+      margin-bottom: 5px;
+
       a {
         font-size: 14px;
         line-height: 17px;

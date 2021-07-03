@@ -2384,12 +2384,19 @@ var initScrollMagic = function initScrollMagic($, Drupal) {
 
     //------------ not sticky --------------//
     if (containerRigth.offsetHeight === noticias.offsetHeight) return;
-    var scene2 = new ScrollMagic.Scene({
-      triggerElement: containerRigth,
-      duration: getDurationScene2
-    }).addTo(controller).offset(noticias.offsetHeight + 20).setPin(noticias, {
-      pushFollowers: false
-    });
+    /* const scene2 = new ScrollMagic.Scene({ triggerElement: containerRigth, duration: getDurationScene2 })
+        .addTo(controller)
+        .offset(noticias.offsetHeight + 20)
+        .setPin(noticias, { pushFollowers: false })  */
+
+    setTimeout(function () {
+      var scene2 = new ScrollMagic.Scene({
+        triggerElement: containerRigth,
+        duration: getDurationScene2
+      }).addTo(controller).offset(noticias.offsetHeight + 20).setPin(noticias, {
+        pushFollowers: false
+      });
+    }, 6000);
   }
 
   function resizeActivation(element, scene) {
