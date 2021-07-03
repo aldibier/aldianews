@@ -50,6 +50,14 @@
   @media screen and (max-width: $broken) {
     margin-bottom: 35px;
   } */
+
+  iframe[title*="Twitter"] {
+    height: 815px;
+    margin: 0 auto;
+    display: flex;
+    max-width: 450px;
+    width: 100%;
+  }
 }
 
 //------ summary -----------//
@@ -213,7 +221,7 @@
   }
 
   .by-author-information {
-    width: 26px;
+    width: 30px;
     height: 64px;
     margin: auto 0 auto 15px;
     padding: 0 0 29px;
@@ -305,7 +313,7 @@
   }
 
   @media (max-width: $tablet) {
-    margin-bottom: 40px;
+    margin-bottom: 25px;
 
     h2 {
       margin-bottom: 10px;
@@ -323,6 +331,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  max-width: 450px !important;
 }
 
 //------- blockquote

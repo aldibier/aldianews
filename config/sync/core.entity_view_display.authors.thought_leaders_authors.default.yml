@@ -6,8 +6,11 @@ dependencies:
     - content_authors.authors_type.thought_leaders_authors
     - field.field.authors.thought_leaders_authors.field_authors_photo
     - field.field.authors.thought_leaders_authors.field_job_title_or_profession_co
+    - image.style.photo_autor
   module:
+    - field_formatter_class
     - image
+    - lazy
     - user
 id: authors.thought_leaders_authors.default
 targetEntityType: authors
@@ -18,9 +21,15 @@ content:
     weight: 1
     label: above
     settings:
-      image_style: ''
+      image_style: photo_autor
       image_link: ''
-    third_party_settings: {  }
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+      lazy:
+        placeholder_style: ''
+        lazy_image: '0'
+        data_uri: false
     type: image
     region: content
   field_job_title_or_profession_co:

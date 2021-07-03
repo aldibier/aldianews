@@ -14,8 +14,9 @@
       @media screen and (min-width: $tablet) {
         padding: 40px 85px 100px;
         min-height: 470px;
-        margin: 0 -80px 70px;
+        margin: 0 auto 70px;
         position: relative;
+        width: 100%;
       }
     }
 
@@ -460,7 +461,10 @@
     }
   }
 
-  @media (max-width: $tablet) {
+  @media (max-width: $broken) {
+    .horizontal-advertising-general-horizontal {
+      margin-top: 30px;
+    }
     .block-field-blocknodeal-dia-vacancybody {
       .button-apply {
         min-width: 131.82px;

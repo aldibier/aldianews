@@ -1,5 +1,4 @@
 .card-one-column {
-
   h2,
   h3 {
     margin: 0;
@@ -53,16 +52,20 @@
     .field-content,
     .field--name-field-my-content-has-a-main-vide,
     .field--name-field-type-of-content {
-      z-index: 10;
+      z-index: 8;
       font-size: 0px;
-      @include player-icon($desktop-size: 70px,
+      @include player-icon(
+        $desktop-size: 70px,
         $tablet-size: 70px,
-        $mobile-size: 30px);
+        $mobile-size: 30px
+      );
 
-      &.logo-podcast{
-        @include microphone-icon($desktop-size: 70px,
-        $tablet-size: 70px,
-        $mobile-size: 30px);
+      &.logo-podcast {
+        @include microphone-icon(
+          $desktop-size: 70px,
+          $tablet-size: 70px,
+          $mobile-size: 30px
+        );
       }
       &:empty,
       &.logo-none {
@@ -76,9 +79,11 @@
     font-size: 0;
 
     .field--name-field-my-content-has-a-main-vide:not(:empty) {
-      @include player-icon($desktop-size: 70px,
+      @include player-icon(
+        $desktop-size: 70px,
         $tablet-size: 70px,
-        $mobile-size: 30px);
+        $mobile-size: 30px
+      );
     }
   }
 
