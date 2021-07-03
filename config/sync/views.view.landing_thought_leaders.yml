@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.authors.field_authors_photo
     - field.storage.authors.field_job_title_or_profession_co
+    - image.style.photo_autor
     - node.type.thought_leaders
   module:
     - content_authors
@@ -1214,7 +1215,7 @@ display:
           click_sort_column: target_id
           type: image
           settings:
-            image_style: ''
+            image_style: photo_autor
             image_link: ''
           group_column: ''
           group_columns: {  }
