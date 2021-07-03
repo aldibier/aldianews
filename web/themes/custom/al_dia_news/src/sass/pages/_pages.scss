@@ -66,3 +66,17 @@ p .aldia-logo-in-text img {
     width: 58px !important;
   }
 }
+
+.path-node:not(.page-node-type-feature-employer),
+.path-node:not(.page-node-type-job),
+.page-node-type-al-dia-vacancy {
+  #main-wrapper {
+    max-width: none;
+    #main {
+      max-width: none;
+      .container-content {
+        justify-content: center;
+      }
+    }
+  }
+}

@@ -2,7 +2,11 @@
   .content {
     margin: 0;
   }
-
+  .two-content-general-work {
+    @media screen and (max-width: $broken) {
+      padding: 0 20px;
+    }
+  }
   .block-fixed-block-contentheader-work-with-al-dia {
     min-width: 75px;
     margin-right: 15px;
@@ -171,14 +175,15 @@
   }
 
   .horizontal-advertising-general-horizontal {
-    /* margin-bottom: 50px; */
+    margin: 30px auto 80px;
 
     @media screen and (min-width: $broken) {
-      /* margin-bottom: 90px; */
+      margin: 20px auto 50px;
     }
   }
 
   .two-content-general-work {
+    max-width: 840px;
     .field--name-title h2 {
       margin-top: 0;
       margin-bottom: 20px;

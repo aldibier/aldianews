@@ -19,13 +19,18 @@
   #main {
     margin: 0 auto;
   }
+  .two-content-general {
+    padding: 0 15px;
+  }
 
   .horizontal-advertising-general-horizontal {
     width: 100%;
     margin: 0 auto 90px;
-    max-width: 1280px;
+    // max-width: 1280px;
+    max-width: none;
     max-height: 149px;
     overflow: initial;
+    text-align: center;
     @media (max-width: $tablet) {
       max-height: 100px;
       margin: 0 auto 30px;
@@ -48,20 +53,26 @@
     }
     .one-vertical-advertising {
       margin-bottom: 40px;
+      max-width: 440px;
     }
     .two-vertical-advertising {
+      padding-bottom: 50px;
+      max-width: 440px;
       padding-bottom: 50px;
     }
     @media (max-width: $tablet) {
       .one-vertical-advertising {
         width: 100%;
-        margin: 0 auto;
+        margin: 0 auto 20px;
         padding: 0 45px;
         max-width: 500px;
       }
 
       .two-vertical-advertising {
         display: none;
+      }
+      .two-content-general {
+        padding: 0 15px;
       }
     }
 
@@ -276,7 +287,10 @@
   }
 }
 .page-node-type-page .banner-horizontal {
-  margin: 30px auto;
+  margin: 30px auto 80px;
+  @media screen and (max-width: $broken) {
+    margin: 30px auto;
+  }
 }
 
 .content-right-pages {
