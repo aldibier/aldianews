@@ -84,6 +84,32 @@
         }
       }
 
+      &:nth-child(8)::before {
+        position: absolute;
+        right: calc(0px + -10%);
+        top: 0;
+        width: 1px;
+        height: 100%;
+        background: $cgrey4;
+        content: "";
+        display: block;
+      }
+
+      &:nth-child(20) {
+        &:after,
+        &:before {
+          display: none;
+        }
+      }
+
+      &:nth-child(9)::after {
+        display: block;
+      }
+      &:nth-child(23)::after {
+        left: 0px;
+        right: auto;
+      }
+
       @media screen and (max-width: $broken) {
         width: 100%;
         max-width: 100%;
@@ -126,6 +152,7 @@
     }
     .skys-scroll {
       position: relative;
+      overflow: initial;
       &::before {
         position: absolute;
         left: -40px;
