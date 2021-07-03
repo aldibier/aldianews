@@ -334,7 +334,19 @@
         }
       }
 
-      &:first-child {
+      &:nth-child(8)::before {
+        position: absolute;
+        right: calc(0px + -10%);
+        top: 0;
+        width: 1px;
+        height: 100%;
+        background: $cgrey4;
+        content: "";
+        display: block;
+      }
+
+      &:first-child,
+      &:nth-child(20) {
         &:after,
         &:before {
           display: none;
@@ -352,12 +364,34 @@
       &:nth-child(9)::after {
         display: block;
       }
+      &:nth-child(23)::after {
+        left: 0px;
+        right: auto;
+      }
     }
 
     .banner-scroll ~ .views-row {
       &:after {
         left: auto;
         right: 0px;
+      }
+    }
+    .skys-scroll {
+      position: relative;
+      overflow: initial;
+      &::before {
+        position: absolute;
+        left: -40px;
+        top: 0;
+        width: 40px;
+        height: 100%;
+        background: $cwhite;
+        content: "";
+        display: block;
+        @media (max-width: $broken) {
+          left: -15px;
+          width: 15px;
+        }
       }
     }
 
