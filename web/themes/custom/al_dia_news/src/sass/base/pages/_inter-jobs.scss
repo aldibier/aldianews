@@ -19,15 +19,11 @@
   #main {
     margin: 0 auto;
   }
-  .two-content-general {
-    padding: 0 15px;
-  }
 
   .horizontal-advertising-general-horizontal {
     width: 100%;
     margin: 0 auto 90px;
-    // max-width: 1280px;
-    max-width: none;
+    max-width: 1280px;
     max-height: 149px;
     overflow: initial;
     text-align: center;
@@ -53,11 +49,9 @@
     }
     .one-vertical-advertising {
       margin-bottom: 40px;
-      max-width: 440px;
     }
     .two-vertical-advertising {
       padding-bottom: 50px;
-      max-width: 440px;
       padding-bottom: 50px;
     }
     @media (max-width: $tablet) {
@@ -70,9 +64,6 @@
 
       .two-vertical-advertising {
         display: none;
-      }
-      .two-content-general {
-        padding: 0 15px;
       }
     }
 
