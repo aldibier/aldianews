@@ -42,7 +42,7 @@
 
         &:nth-child(8)::before {
           position: absolute;
-          right: 0;
+          right: calc(0px + -10%);
           top: 0;
           width: 1px;
           height: 100%;
@@ -60,6 +60,10 @@
 
         &:nth-child(9)::after {
           display: block;
+        }
+        &:nth-child(23)::after {
+          left: 0px;
+          right: auto;
         }
       }
 
@@ -115,8 +119,7 @@
       }
     }
     .banner-scroll ~ .views-row {
-      &:after,
-      &:nth-child(23) {
+      &:after {
         left: auto;
         right: 0px;
       }
@@ -125,13 +128,17 @@
       position: relative;
       &::before {
         position: absolute;
-        left: 0;
+        left: -40px;
         top: 0;
-        width: 10px;
+        width: 40px;
         height: 100%;
         background: $cwhite;
         content: "";
         display: block;
+        @media (max-width: $broken) {
+          left: -15px;
+          width: 15px;
+        }
       }
     }
   }
@@ -160,7 +167,7 @@
         // flex-wrap: wrap;
         // position: relative;
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 50%);
         grid-gap: 0 10px;
         overflow: initial;
         grid-auto-flow: dense;

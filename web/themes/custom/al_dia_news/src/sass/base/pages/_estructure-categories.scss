@@ -4,8 +4,11 @@
   .category-first-block {
     //display: none;
   }
-  .news-galery .view-content > div:not(.no-result-search) {
-    padding: 0 15px;
+  @media screen and (max-width: $broken) {
+    .news-galery .view-content > div:not(.no-result-search) {
+      padding: 0 15px;
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
   //------ reset margin ------------//
   .node__content,

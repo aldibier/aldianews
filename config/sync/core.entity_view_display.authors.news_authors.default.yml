@@ -5,8 +5,11 @@ dependencies:
   config:
     - content_authors.authors_type.news_authors
     - field.field.authors.news_authors.field_authors_photo
+    - image.style.photo_autor
   module:
+    - field_formatter_class
     - image
+    - lazy
     - user
 id: authors.news_authors.default
 targetEntityType: authors
@@ -17,9 +20,15 @@ content:
     weight: 1
     label: above
     settings:
-      image_style: ''
+      image_style: photo_autor
       image_link: ''
-    third_party_settings: {  }
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+      lazy:
+        placeholder_style: ''
+        lazy_image: '0'
+        data_uri: false
     type: image
     region: content
   name:
@@ -39,3 +48,4 @@ content:
     third_party_settings: {  }
 hidden:
   langcode: true
+  search_api_excerpt: true
