@@ -22,12 +22,12 @@
 				{{ content.menu }}
 			</div>
 		{% endif %}
-		<div class="content-page-node">
 			{% if content.horizontal_advertising %}
 				<div {{ region_attributes.horizontal_advertising.addClass('horizontal-advertising-general-horizontal banner-horizontal') }}>
 					{{ content.horizontal_advertising }}
 				</div>
 			{% endif %}
+		<div class="content-page-node">
 			{% if content.two_content %}
 				<div {{ region_attributes.two_content.addClass('two-content-general-work') }}>
 					{{ content.two_content }}
