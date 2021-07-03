@@ -1,0 +1,56 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ *
+ * @ingroup themeable
+ */
+#}
+{% if title %}
+	<h3>{{ title }}</h3>
+{% endif %}
+{% if device  == 'desktop' %}
+	{% if rows.block_type[0] == 'block_top' %}
+		<div class="margin-bottom ads">{{ drupal_entity('block', 'gamwadvertisement_29') }}</div>
+	{% endif %}
+{% endif %}
+{% for row in rows %}
+
+	{%
+		set row_classes = [
+		default_row_class ? 'views-row',
+		]
+	%}
+
+	{% if device  == 'mobile' %}
+		{% if loop.index  == 2 %}
+			<div class="skyscraper-mobile ads">{{ drupal_entity('block', 'gamwadvertisement_35') }}</div>
+		{% endif %}
+	{% endif %}
+	<div{{row.attributes.addClass(row_classes)}}>
+		{{- row.content -}}
+	</div>
+{% endfor %}
+{% if device  == 'desktop' %}
+	{% if rows.block_type[0] == 'advertising' %}
+		<div class="margin-top ads">{{ drupal_entity('block', 'gamwadvertisement_35') }}</div>
+	{% endif %}
+	{% if rows.block_type[0] == 'block_bottom' %}
+		<div class="margin ads block2">{{ drupal_entity('block', 'gamwadvertisement_28') }}</div>
+	{% endif %}
+{% endif %}
+
+{% if device  == 'mobile' %}
+	<div class="block-fixed-block-contentsquare-advertising-mobile ads">{{ drupal_entity('block', 'gamwadvertisement_28') }}</div>
+{% endif %}

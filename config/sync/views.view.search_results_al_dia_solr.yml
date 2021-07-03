@@ -1727,7 +1727,7 @@ display:
       pager:
         type: infinite_scroll
         options:
-          items_per_page: 37
+          items_per_page: 31
           offset: 0
           id: 1
           total_pages: null
@@ -1745,6 +1745,7 @@ display:
           views_infinite_scroll:
             button_text: 'Load More'
             automatically_load_content: true
+            initially_load_all_pages: false
       exposed_block: true
       exposed_form:
         type: bef

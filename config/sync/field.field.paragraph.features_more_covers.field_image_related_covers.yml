@@ -6,7 +6,14 @@ dependencies:
     - field.storage.paragraph.field_image_related_covers
     - paragraphs.paragraphs_type.features_more_covers
   module:
+    - content_translation
     - image
+third_party_settings:
+  content_translation:
+    translation_sync:
+      alt: alt
+      title: title
+      file: '0'
 id: paragraph.features_more_covers.field_image_related_covers
 field_name: field_image_related_covers
 entity_type: paragraph
@@ -14,7 +21,7 @@ bundle: features_more_covers
 label: 'image related covers'
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

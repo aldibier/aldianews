@@ -20,37 +20,71 @@
 {% if title %}
 	<h3>{{ title }}</h3>
 {% endif %}
+{% if device  == 'desktop' %}
+	{% for row in rows %}
 
-{% for row in rows %}
-
-	{%
+		{%
 		set row_classes = [
 		default_row_class ? 'views-row',
 		]
 	%}
 
-	{# banner #}
-	{% if loop.index == 6 %}
-		<div class="banner-scroll">{{ drupal_entity('block', 'gamwadvertisement_15') }}</div>
-	{% endif %}
-	{% if loop.index == 12 %}
-		<div class="banner-scroll ban2">{{ drupal_entity('block', 'gamwadvertisement_18') }}</div>
-	{% endif %}
+		{## block ##}
+		{% if loop.index  == 6 %}
+			<div class="block-scroll ads">{{ drupal_entity('block', 'gamwadvertisement_16') }}</div>
+		{% endif %}
+		{% if loop.index  == 11 %}
+			<div class="block-scroll ads">{{ drupal_entity('block', 'gamwadvertisement_16') }}</div>
+		{% endif %}
 
-	{# block #}
-	{% if loop.index  == 5 %}
-		<div class="block-scroll">{{ drupal_entity('block', 'gamwadvertisement_16') }}</div>
-	{% endif %}
-	{% if loop.index  == 12 %}
-		<div class="block-scroll bloc2">{{ drupal_entity('block', 'gamwadvertisement_21') }}</div>
-	{% endif %}
+		{## skyscraper ##}
+		{% if loop.index  == 8 %}
+			<div class="skys-scroll ads">{{ drupal_entity('block', 'gamwadvertisement_17') }}</div>
+		{% endif %}
 
-	{# skyscraper #}
-	{% if loop.index  == 9 %}
-		<div class="skys-scroll">{{ drupal_entity('block', 'gamwadvertisement_17') }}</div>
-	{% endif %}
+		{## banner ##}
+		{% if loop.index == 6 %}
+			<div class="banner-scroll ads">{{ drupal_entity('block', 'gamwadvertisement_15') }}</div>
+		{% endif %}
+		{% if loop.index == 9 %}
+			<div class="banner-scroll ban2 ads">{{ drupal_entity('block', 'gamwadvertisement_18') }}</div>
+		{% endif %}
+		{% if loop.index == 14 %}
+			<div class="banner-scroll ban3 ads">{{ drupal_entity('block', 'gamwadvertisement_19') }}</div>
+		{% endif %}
 
-	<div{{row.attributes.addClass(row_classes)}}>
-		{{- row.content -}}
-	</div>
-{% endfor %}
+		<div{{row.attributes.addClass(row_classes)}}>
+			{{- row.content -}}
+		</div>
+	{% endfor %}
+{% endif %}
+
+{% if device == 'mobile' %}
+	{% for row in rows %}
+
+		{%
+		set row_classes = [
+		default_row_class ? 'views-row',
+		]
+	%}
+
+		{## block ##}
+		{% if loop.index  == 6 %}
+			<div class="block-scroll ads">{{ drupal_entity('block', 'gamwadvertisement_16') }}</div>
+		{% endif %}
+
+		{## banner ##}
+		{% if loop.index == 6 %}
+			<div class="banner-scroll ads">{{ drupal_entity('block', 'gamwadvertisement_15') }}</div>
+		{% endif %}
+		{% if loop.index == 11 %}
+			<div class="banner-scroll ban2 ads">{{ drupal_entity('block', 'gamwadvertisement_18') }}</div>
+		{% endif %}
+		{% if loop.index == 16 %}
+			<div class="banner-scroll ban3 ads">{{ drupal_entity('block', 'gamwadvertisement_19') }}</div>
+		{% endif %}
+		<div{{row.attributes.addClass(row_classes)}}>
+			{{- row.content -}}
+		</div>
+	{% endfor %}
+{% endif %}

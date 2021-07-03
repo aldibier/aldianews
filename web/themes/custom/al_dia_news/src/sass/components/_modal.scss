@@ -27,7 +27,7 @@
 }
 
 .modal-video {
-  width: 100vw;
+  width: 100%;
   height: auto;
   min-height: max-content;
   position: fixed;
@@ -38,6 +38,7 @@
   background-color: rgba(0, 0, 0, 80%);
   transform: translateY(-50%);
   z-index: 10;
+  max-width: none !important;
 }
 
 .ui-widget.ui-corner-all:not(button) {
@@ -147,7 +148,7 @@
 }
 
 .ui-widget-overlay {
-  background: rgba(51,51,51,50%) !important;
+  background: rgba(51, 51, 51, 50%) !important;
 }
 
 .button.form-submit {
@@ -179,6 +180,10 @@
   }
 }
 
+.video-present {
+  width: 100%;
+}
+
 .stuck {
   position: fixed;
   top: 82px;
@@ -191,7 +196,7 @@
   transform: translateY(100%);
   animation: fade-in-up 0.75s ease forwards;
   z-index: 12;
-  background: rgba(0,0,0,80%);
+  background: rgba(0, 0, 0, 0.8);
 
   button[name="close"] {
     z-index: 9;
@@ -199,7 +204,7 @@
     background: url(/themes/custom/al_dia_news/assets/img/closew.png) center
       center no-repeat;
     background-size: contain;
-
+    display: block;
     @media (min-width: 1280px) and (max-width: 1830px) {
       right: 27%;
     }

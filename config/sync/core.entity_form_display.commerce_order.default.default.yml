@@ -14,6 +14,7 @@ dependencies:
   module:
     - address
     - markup
+    - maxlength
     - phone_international
 _core:
   default_config_hash: 7hXqpb7yxuHJYNjyPmN_vQll6jq_fl7N09Tj-PFcESU
@@ -32,7 +33,7 @@ content:
     weight: 2
     settings:
       size: 60
-      placeholder: ''
+      placeholder: 'Email address'
     third_party_settings: {  }
     type: email_default
     region: content
@@ -40,16 +41,22 @@ content:
     weight: 0
     settings:
       size: 60
-      placeholder: ''
-    third_party_settings: {  }
+      placeholder: 'First name'
+    third_party_settings:
+      maxlength:
+        maxlength_js: null
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
     type: string_textfield
     region: content
   field_last_name:
     weight: 1
     settings:
       size: 60
-      placeholder: ''
-    third_party_settings: {  }
+      placeholder: 'Last name'
+    third_party_settings:
+      maxlength:
+        maxlength_js: null
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
     type: string_textfield
     region: content
   field_mandatory_field:

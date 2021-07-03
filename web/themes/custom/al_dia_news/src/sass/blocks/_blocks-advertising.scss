@@ -10,6 +10,7 @@
   max-width: 400px;
   max-height: 790px;
   overflow: hidden;
+
   img {
     width: 100%;
     height: auto;
@@ -28,6 +29,7 @@
   max-width: 400px;
   max-height: 375px;
   overflow: hidden;
+
   img {
     width: 100%;
     height: auto;
@@ -47,7 +49,7 @@
 
 .block-fixed-block-contentsquare-advertising-mobile,
 .block-fixed-block-contentvertical-advertising-mobile {
-  display: none;
+  /* display: none; */
 }
 
 @media (max-width: $desktop) {
@@ -71,12 +73,23 @@
     max-height: 200px;
     overflow: hidden;
     margin: 30px auto;
+    grid-column: span 2;
     img {
       width: 100%;
       height: auto;
     }
   }
+  .skyscraper-mobile {
+    grid-row: span 2;
+    margin: 0px 0px 0px 19px;
+    margin-left: 0;
+    padding-left: 20px;
+    background-color: $cwhite;
+    text-align: center;
+    z-index: 1;
+  }
 }
+
 @media (max-width: 400px) {
   .block-fixed-block-contentvertical-advertising-mobile {
     max-width: 120px;
@@ -86,11 +99,12 @@
 }
 
 //----------------- Publicidad con close ----------------------------------//
-.block-fixed-block-content-horizontal-advertising-close {
-  margin: 70px auto 40px !important;
+.path-frontpage .block-fixed-block-content-horizontal-advertising-close {
+  margin-bottom: 90px !important;
   position: relative;
   max-height: 340px;
   overflow: hidden;
+
   button[name="close"] {
     position: absolute;
     top: 20px;
@@ -104,7 +118,9 @@
     cursor: pointer;
   }
   @media (max-width: $tablet) {
-    margin: 0px auto 0px !important;
+    margin: 0px auto 20px !important;
+    display: flex;
+    justify-content: center;
 
     button[name="close"] {
       width: 10px;
@@ -116,6 +132,7 @@
     }
   }
 }
+
 .block-gamw:not(.block-gamw.block-fixed-block-content-horizontal-advertising-close)
   button[name="close"] {
   display: none;
@@ -124,13 +141,16 @@
 //----------------- clases generales para publicidad ----------------------------------//
 
 .banner-horizontal {
-  margin: 80px auto;
+  margin: 0 auto 90px;
   max-width: 1280px;
   max-height: 149px;
   overflow: hidden;
   @media (max-width: $tablet) {
-    margin: 30px auto;
     max-height: 100px;
+    margin: 0 -15px 30px;
+    display: flex;
+    justify-content: center;
+    overflow-x: initial;
   }
   &.bot-bottom {
     margin-bottom: 0px;
@@ -141,8 +161,13 @@
 }
 .block-print-edition {
   max-width: 400px;
+  min-width: 400px;
   max-height: 615px;
   overflow: hidden;
+
+  @media screen and (max-width: $broken) {
+    display: none;
+  }
 }
 
 //----------------- general header top banner ----------------------------------//
@@ -179,10 +204,10 @@
 //----------------- podcast landing ----------------------------------//
 .path-podcast {
   .first-block-bottom-banner {
-    margin: 0 auto 90px;
+    // margin: 0 auto 90px;
 
     @media screen and (max-width: $tablet) {
-      margin: 0 auto 50px;
+      // margin: 0 auto 50px;
     }
   }
 }
@@ -227,6 +252,9 @@
 .banner-scroll {
   grid-column: span 3;
   width: 100%;
+  @media (max-width: $tablet) {
+    grid-column: span 2;
+  }
 }
 
 .block-scroll {
@@ -235,10 +263,11 @@
   overflow: hidden;
   margin: 35px auto;
   grid-column: 3;
-  @media (max-width: $tablet) {
+  @media (max-width: $broken) {
     max-width: 200px;
     max-height: 200px;
     margin: 20px auto;
+    grid-column: span 2;
   }
 }
 .skys-scroll {
@@ -249,10 +278,13 @@
   grid-column: 3;
   grid-row: span 2;
   z-index: 2;
-  @media (max-width: $tablet) {
+  @media (max-width: $broken) {
     max-width: 120px;
     max-height: 320px;
-    margin: 20px auto;
+    // margin: 20px auto;
+    grid-column: 2;
+    grid-row: span 2;
+    margin: 0px 0 0 19px;
   }
 }
 
@@ -260,8 +292,8 @@
 
 .block-fixed-block-content-horizontal-advertising-close {
   @media (max-width: $tablet) {
-      padding: 0 !important;
-      margin-bottom: 12px !important;
+    padding: 0 !important;
+    margin-bottom: 12px !important;
   }
 }
 
@@ -272,22 +304,21 @@
 }
 
 #block-gamwadvertisement-15--3 {
-  
   @media (max-width: $mobile) {
     padding: 0 !important;
-    width: 113% !important;
-    margin-left: -15px !important;
+    /* width: 113% !important;
+    margin-left: -15px !important; */
   }
 
-  @media (min-width: 321px) {
-      display: block;
-      width: unset;
-      text-align: center;
-      margin: 0 !important;
-      width: auto !important;
+  @media (min-width: 321px) and (max-width: $desktop) {
+    /* display: block;
+    width: unset;
+    text-align: center;
+    margin: 0;
+    width: auto !important; */
   }
 
-  @media (min-width: $tablet-max) {
+  @media (min-width: $tablet-max) and (max-width: $desktop) {
     width: unset;
     margin: 0;
   }
@@ -301,7 +332,8 @@
   @extend #block-gamwadvertisement-15--3;
 }
 
-.node--type-thought-leaders, .node--type-event {
+.node--type-thought-leaders,
+.node--type-event {
   .block-gamw {
     @extend #block-gamwadvertisement-15--3;
   }
@@ -315,7 +347,8 @@
 //   }
 // }
 
-div[data-ad-unit*="first-block-bottom-banner"], div[data-ad-unit*="pre-footer-bottom-banner"] {
+div[data-ad-unit*="first-block-bottom-banner"],
+div[data-ad-unit*="pre-footer-bottom-banner"] {
   @extend #block-gamwadvertisement-15--3;
 
   @media (max-width: $mobile) {
@@ -328,7 +361,6 @@ div[data-ad-unit*="first-block-bottom-banner"], div[data-ad-unit*="pre-footer-bo
     @media (max-width: $mobile) {
       margin-left: -15px !important;
     }
-    
   }
 }
 

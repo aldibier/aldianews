@@ -1,0 +1,175 @@
+.webform-submission-request-a-call-back-add-form {
+    max-width: 660px;
+    width: 100%;
+    margin: 0 auto;    
+    display: flex;
+
+    h1 {
+        font-style: normal;
+        font-weight: 600;
+        font-size: $px30;
+        line-height: 36px;
+        color: #333333;
+        font-family: $ModernoFB-Regular;
+        padding: 15px 0;
+        border-bottom: 1px solid  #B1B1B1;
+    }
+
+    #edit-markup,
+    #edit-markup-01 {
+        width: 100%;
+        font-style: normal;
+        font-weight: normal;
+        font-size: $px20;
+        line-height: 144%;
+        font-family: $PrNovacond-reg;
+    }
+
+    .form-type-textarea {
+        width: 100%;
+        min-width: 100%;
+        min-height: 160px;
+    }
+
+    .form-item{
+        width: 50%;
+        padding: 0 20px;
+
+        label {
+            font-weight: 600;
+            font-size: $px20;
+            line-height: 24px;
+            font-style: normal;
+        }
+
+        input[class*=form] {
+            height: 40px;
+        }
+
+        textarea.form-textarea {
+            min-height: 160px;
+        }
+    }
+
+    .form-submit {
+        width: 210px;
+        height: 40px;
+    }
+
+    .button--primary {
+        width: 210px;
+        height: 40px;
+    }
+
+    #edit-button-go-back {
+        width: 205px;
+        height: 40px;
+        padding: 0 20px;
+        left: 410px;
+        top: 920px;
+
+        input {
+            background: #5C6165;
+            color: #fff;
+            margin: 0;
+            border: #9932cc00;
+            width: 165px;
+            height: 40px;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 25px;
+            font-family: $PrNovacond-bold;
+            text-transform: uppercase;
+        }
+    }
+
+    @media screen and (max-width:$tablet) {
+
+        .button--primary {
+            width: 100%;
+            height: 30px;
+        }
+
+        #edit-markup,
+        #edit-markup-01 {
+            padding: 0;
+            font-size: 15px;
+            line-height: 18px;
+        }
+
+        #edit-markup {
+            margin: 0 auto;
+        }
+
+        h1 {
+            padding: 0 0 5px;
+            margin: 15px auto;
+            font-size: 20px;
+            line-height: 24px;
+        }
+        
+        .form-item {
+            width: 100%;
+            padding: 0;
+
+            label {
+                font-size: 15px;
+                line-height: 18px;
+            }
+    
+            input[class*=form] {
+                height: 30px;
+            }
+    
+            textarea.form-textarea {
+                min-height: 120px;
+            }
+        }
+
+        .form-type-textarea {
+            min-height: 120px;
+        }
+
+        #edit-button-go-back {
+            width: 100%;
+            padding: 0;
+            height: 30px;
+
+            input {
+                width: 100%;
+                padding: 0;
+                height: 30px;
+                font-size: 16px;
+            }
+
+            .webform-actions {
+                width: 100%;
+                padding: 0;
+                height: 30px;
+
+                input {
+                    font-size: 16px;
+                }
+            }
+        }
+
+        #edit-actions {
+            width: 100%;
+        }
+    }
+}
+
+.webform-confirmation-modal.ui-widget.ui-corner-all:not(button) {
+    .ui-dialog-titlebar-close {
+        background: url('../img/x.svg') no-repeat center center;
+        background-size: contain;
+        top: -44px !important;
+        display: none !important;
+
+        span.ui-icon-closethick {
+            background: none;
+            -webkit-mask-image: none;
+        }
+    }
+}

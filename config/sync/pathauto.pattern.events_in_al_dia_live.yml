@@ -1,0 +1,22 @@
+uuid: 697271f1-4936-4784-be17-81042c3dde81
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: events_in_al_dia_live
+label: 'Events in Al Día Live'
+type: 'canonical_entities:node'
+pattern: 'about-al-dia-live/al-dia-live/[node:title]'
+selection_criteria:
+  b3f97c53-c67f-4716-b233-a5b82d0ee5b2:
+    id: node_type
+    bundles:
+      event: event
+    negate: false
+    context_mapping:
+      node: node
+    uuid: b3f97c53-c67f-4716-b233-a5b82d0ee5b2
+selection_logic: and
+weight: -5
+relationships: {  }

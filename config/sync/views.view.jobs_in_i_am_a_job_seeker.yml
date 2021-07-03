@@ -13,6 +13,7 @@ dependencies:
     - datetime
     - node
     - user
+    - views_block_area
     - views_infinite_scroll
 id: jobs_in_i_am_a_job_seeker
 label: 'Jobs in I AM A JOB SEEKER'
@@ -56,7 +57,7 @@ display:
       pager:
         type: infinite_scroll
         options:
-          items_per_page: 4
+          items_per_page: 14
           offset: 0
           id: 0
           total_pages: null
@@ -74,6 +75,7 @@ display:
           views_infinite_scroll:
             button_text: 'Load More'
             automatically_load_content: true
+            initially_load_all_pages: false
       style:
         type: default
       row:
@@ -595,7 +597,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          operator: '>'
+          operator: '<'
           value:
             min: ''
             max: ''
@@ -648,7 +650,17 @@ display:
           granularity: day
           plugin_id: datetime
       title: 'Job seeker'
-      header: {  }
+      header:
+        views_block_area:
+          id: views_block_area
+          table: views
+          field: views_block_area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          block_id: 'block_group:gamw_first_block_bottom_banner'
+          plugin_id: views_block_area
       footer: {  }
       empty: {  }
       relationships: {  }
@@ -675,7 +687,8 @@ display:
     display_title: Page
     position: 1
     display_options:
-      display_extenders: {  }
+      display_extenders:
+        ajax_history: {  }
       path: jobs/job-seeker
     cache_metadata:
       max-age: -1

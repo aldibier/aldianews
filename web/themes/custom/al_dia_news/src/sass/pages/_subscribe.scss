@@ -1,5 +1,5 @@
 .block-fixed-block-contentheader-landing-subscribe {
-  .field--name-field-section-title {
+  .field--name-field-section-title  h1{
     font-family: $PrNovacond-bold;
     font-style: normal;
     font-size: $px50;
@@ -41,7 +41,7 @@
 
 
   @media (max-width: $tablet-min) {   
-    .field--name-field-section-title {
+    .field--name-field-section-title  h1{
       font-size: 21px;
       line-height: 24px;
       padding: 0 0 10px;
@@ -319,7 +319,7 @@
   .checkout-progress {
     display: flex;
     max-width: 620px;
-    margin: 0 auto;
+    margin: 0 auto 48px;
     position: relative;
     padding: 0;
   }
@@ -391,6 +391,10 @@
 
   @media (max-width: $tablet-min) {
 
+    .checkout-progress  {
+      margin: 0 auto 30px;
+    }
+
     .checkout-progress--step {
 
       &.checkout-progress--step__current{
@@ -441,8 +445,12 @@
     display: none;
   }
 
+  .checkout-pane-rechpack-order-review-title {
+    width: 100%;
+  }
+
   h1 {
-    font-family: $Mod-bold;
+    font-family: $ModernoFB-Regular;
     font-style: normal;
     font-size: $px30;
     line-height: 36px;
@@ -546,7 +554,6 @@
       line-height: 32px;
       color: #767676;
       font-family: $PrNovacond-reg;
-      text-transform: uppercase;
     }
 
     .field--name-field-email-address {
@@ -684,9 +691,15 @@
     line-height: 25px;
     font-family: $PrNovacond-Sbold;
     margin: -52px 0 0;
+    text-transform: uppercase;
   }
 
   @media (max-width: $tablet-min) {  
+
+    .layout-checkout-form {
+      display: flex;
+      flex-wrap: wrap;
+    }
 
     h1 {
       font-size: 20px;
@@ -701,6 +714,11 @@
       }
     }
 
+    .checkout-pane-order-summary .views-field-nothing span {
+      font-size: 12px;
+      line-height: 15px;
+    }
+
     .checkout-pane-order-summary .views-field-title-1 span,
     .checkout-pane-order-summary .views-field-total-price__number span {
       font-size: 18px;
@@ -712,6 +730,7 @@
 
       .views-field-nothing {
         margin-bottom: 22px;
+        line-height: 15px;
       }
     }
 
@@ -773,6 +792,8 @@
     .paypal-buttons-container {
       padding: 0;
       margin: 20px auto 0;
+      width: 100%;
+      order: 2;
     }
 
     .link--previous {
@@ -781,6 +802,7 @@
       height: 30px;
       font-size: 16px;
       line-height: 25px;
+      order: 1;
     }
   }
 }
@@ -872,6 +894,16 @@
       text-align: center;
       position: relative;
 
+      .field__label {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 24px;
+        text-align: center;
+        text-transform: uppercase;
+        font-family: $PrNovacond-bold;
+      }
+
       >span {
         width: max-content;
         margin: 0 auto;
@@ -945,6 +977,12 @@
       .option {
         position: relative;
         padding: 0 0 0 30px;
+        font-style: normal;
+        font-weight: 800;
+        font-size: $px16;
+        line-height: 19px;
+        color: #4C4546;
+        font-family: $PrNovacond-reg;
       }
 
       .option::before {
@@ -982,11 +1020,17 @@
       max-width: 170px;
       margin: 0 auto;
       display: block;
+      margin-right: auto !important;
+      background: #5C6165;
     }
 
     &:hover {
       background: #F2F2F2;
       transition: all .25s linear;
+
+      .button {
+        background-color: #e21;
+      }
 
       #edit-purchased-entity-0-attributes,
       .field--widget-commerce-product-variation-attributes{
@@ -1047,6 +1091,11 @@
       .intro-offer-subscribe {
         font-size: 17px;
         line-height: 20px;
+
+        .field__label { 
+          font-size: 18px;
+          line-height: 22px;
+        }
       }
 
       .text-formatted {
@@ -1072,12 +1121,18 @@
           height: 10px;
           width: 10px;
         }
+
+        .option {
+          font-size: 16px;
+          line-height: 19px;
+        }
       }
 
       .button {
         max-width: 150px;
         height: 30px;
         margin: 0 auto;
+        margin-right: auto !important;
       }
 
       &:hover {
@@ -1183,6 +1238,7 @@
     align-items: center;
     justify-content: center;
     font-family: $PrNovacond-bold;
+    cursor: pointer;
   }
 
   @media (max-width: $tablet) {
@@ -1260,7 +1316,7 @@
     max-width: 620px;
     min-height: 250px;
     background: #fff;
-    padding: 40px 15px;
+    padding: 32px 15px;
   }
 
   p{
@@ -1332,7 +1388,7 @@
     }
 
     button[name="yes-back"] {
-      margin: 25px 10px 0 0;
+      margin: 25px 10px 0 -4px;
     }
 
     button[name="yes-back"],

@@ -12,14 +12,9 @@
     margin: 0;
   }
 
-  .header-category {
-    &.empty {
-      display: none;
-    }
-  }
-
+  .header-category,
   .category-first-block {
-    &.empty {
+    &:empty {
       display: none;
     }
   }
@@ -61,8 +56,8 @@
     @media (max-width: $broken) {
       position: relative;
       top: 0;
-      max-width: 100%;
-      border: none;
+      max-width: 100%; 
+      border: none; 
       margin: 0;
     }
   }
@@ -79,5 +74,8 @@
   }
   .banner-horizontal {
     margin: 0px auto 80px;
+    @media (max-width: $broken) {
+      margin: 0px auto 30px;
+    }
   }
 }

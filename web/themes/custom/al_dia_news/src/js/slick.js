@@ -6,7 +6,7 @@ const initSlick = ($, Drupal) => {
 
     const settings = {
       infinite: false,
-      rows: 3,
+      rows: 4,
       slidesToShow: 1,
       slidesToScroll: 1,
       mobileFirst: true,
@@ -24,14 +24,18 @@ const initSlick = ($, Drupal) => {
     //slide edit resize
     if (window.matchMedia("(max-width: 768px)").matches) {
       setTimeout(function() {
-        categoriesMore.forEach(element => $(element).slick(settings));
+        categoriesMore.forEach(element => {
+          if(!!element && element != null) $(element).slick(settings);
+        });
       }, 2000);
     }
 
     window.addEventListener("resize", () => {
       if (window.matchMedia("(max-width: 768px)").matches) {
         setTimeout(function() {
-          categoriesMore.forEach(element => $(element).slick(settings));
+          categoriesMore.forEach(element => {
+            if(!!element && element != null) $(element).slick(settings)
+          });
         }, 2000);
       }
     });

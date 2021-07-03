@@ -27,8 +27,7 @@
         margin: 0 -15px 15px;
 
         &::after {
-            width: 100%;
-            margin: 15px 0 15px;
+            margin: 15px auto;
         }
     }
 }
@@ -47,7 +46,7 @@
 
         @media screen and (max-width: $tablet) {
             max-width: 100%;
-            max-height: initial;
+            max-height: 500px;
             min-height: 200px;
             object-fit: initial;
         }

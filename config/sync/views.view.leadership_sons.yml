@@ -23,14 +23,14 @@ dependencies:
     - 'taxonomy_term:categories:35e711a0-e9d4-45fe-8147-997d1394844b'
     - 'taxonomy_term:categories:3d19b461-771e-41d1-8330-df316faf8b47'
     - 'taxonomy_term:categories:4969e35d-adab-4b7f-bda6-4e9a7f60aae9'
+    - 'taxonomy_term:categories:91a72607-f5ae-488c-83bf-10956697c5e1'
     - 'taxonomy_term:categories:aec049fa-a86a-42fb-8dc9-173f58881fde'
     - 'taxonomy_term:categories:baa0a831-19ba-45bf-ba8a-be44d13892bd'
     - 'taxonomy_term:categories:c51d8cc3-4350-4d6c-8668-9a89f7a0d2f0'
+    - 'taxonomy_term:categories:ce75d793-8c04-42c0-bcdb-abf0fa29cd0e'
     - 'taxonomy_term:categories:eee54e65-ed4e-4b29-891e-229a2f2a4f1c'
     - 'taxonomy_term:categories:fc9a2fed-71d1-442c-8f5a-a24f095e7020'
     - 'taxonomy_term:categories:fd49a7f8-2d48-4a3e-b99f-a7fb82320620'
-    - 'taxonomy_term:podcast_category:82308538-0aeb-4114-b715-4d9f59f77f0c'
-    - 'taxonomy_term:type_of_content:0ed30cce-25a3-4b0b-a3b6-ddb42361fa4b'
   module:
     - image
     - node
@@ -2889,7 +2889,7 @@ display:
       pager:
         type: some
         options:
-          items_per_page: 14
+          items_per_page: 9
           offset: 5
       style:
         type: default
@@ -3121,28 +3121,8 @@ display:
         operator: AND
         groups:
           1: AND
-      header:
-        views_block_area:
-          id: views_block_area
-          table: views
-          field: views_block_area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: false
-          block_id: 'block_group:gamw_home_side_category_leadership_top'
-          plugin_id: views_block_area
-      footer:
-        views_block_area:
-          id: views_block_area
-          table: views
-          field: views_block_area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: false
-          block_id: 'block_group:gamw_home_side_category_leadership_bottom'
-          plugin_id: views_block_area
+      header: {  }
+      footer: {  }
       block_hide_empty: true
     cache_metadata:
       max-age: -1
@@ -3311,7 +3291,7 @@ display:
           click_sort_column: target_id
           type: entity_reference_label
           settings:
-            link: true
+            link: false
           group_column: target_id
           group_columns: {  }
           group_rows: true

@@ -1,11 +1,10 @@
-uuid: c8370a7a-8713-4cdd-a1d6-dbed428756bd
+uuid: 9b006fb9-acbc-4ed9-9703-7a3d89545024
 langcode: en
 status: true
 dependencies:
   config:
     - webform.webform.request_a_call_back
   module:
-    - context
     - system
     - webform
   theme:
@@ -13,7 +12,7 @@ dependencies:
 id: webform_6
 theme: al_dia_news
 region: content
-weight: -45
+weight: 0
 provider: null
 plugin: webform_block
 settings:
@@ -25,14 +24,6 @@ settings:
   default_data: ''
   redirect: false
 visibility:
-  request_path_exclusion:
-    id: request_path_exclusion
-    pages: ''
-    negate: null
-  view_inclusion:
-    id: view_inclusion
-    negate: null
-    view_inclusion: {  }
   request_path:
     id: request_path
     pages: /request-a-call-back

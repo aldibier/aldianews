@@ -17,6 +17,13 @@
     }
   }
 
+  .view-id-landing_thought_leaders {
+    margin-bottom: 80px;
+    @media (max-width: $broken) {
+      margin-bottom: 30px;
+    }
+  }
+
   //-------------titulo de la categoria------------//
 
   .catergory-logo {
@@ -193,7 +200,7 @@
     padding: 0 0 0 20px;
     border-left: 1px solid $cgrey4;
     height: 520px;
-
+    width: 100%;
     .content {
       margin: 0;
     }
@@ -272,11 +279,23 @@
     grid-gap: 0 40px;
     overflow: hidden;
     grid-auto-flow: dense;
+    .banner-scroll {
+      margin-top: 80px;
+    }
     @media (max-width: $broken) {
-      all: initial;
-      display: flex;
-      flex-wrap: wrap;
+      // all: initial;
+      // display: flex;
+      // flex-wrap: wrap;
+      // position: relative;
       position: relative;
+      display: grid;
+      grid-template-columns: repeat(2, 50%);
+      grid-gap: 0 10px;
+      overflow: hidden;
+      grid-auto-flow: dense;
+      .banner-scroll {
+        margin-top: 30px;
+      }
     }
     .views-row {
       // width: 33.33%;
@@ -329,6 +348,16 @@
       &:nth-child(3n + 3) {
         padding: 0 0 0 15px;
         position: relative;
+      }
+      &:nth-child(9)::after {
+        display: block;
+      }
+    }
+
+    .banner-scroll ~ .views-row {
+      &:after {
+        left: auto;
+        right: 0px;
       }
     }
 
@@ -458,11 +487,11 @@
 
     .views-infinite-scroll-content-wrapper {
       .views-row {
-        width: 50%;
+        width: 100%;
         max-width: 100%;
 
         &:nth-child(2n + 1) {
-          padding: 0 15px 0 0;
+          // padding: 0 15px 0 0;
           position: initial;
 
           &:before {
@@ -489,7 +518,7 @@
         }
 
         &:nth-child(2n + 2) {
-          padding: 0 0 0 15px;
+          // padding: 0 0 0 15px;
           position: relative;
 
           &:before {
@@ -625,6 +654,8 @@
 
       .information-node-more-content {
         margin: 0;
+        display: flex;
+        flex-direction: column;
       }
     }
 

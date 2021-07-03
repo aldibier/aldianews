@@ -1,0 +1,22 @@
+uuid: 13a5f4e6-b494-4682-b063-f1a6911bdd5d
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: basic_page
+label: 'Basic Page'
+type: 'canonical_entities:node'
+pattern: '/[node:title]'
+selection_criteria:
+  aeeb6acd-df65-4d1b-bf51-63b4ea7b2d7d:
+    id: node_type
+    bundles:
+      page: page
+    negate: false
+    context_mapping:
+      node: node
+    uuid: aeeb6acd-df65-4d1b-bf51-63b4ea7b2d7d
+selection_logic: and
+weight: -5
+relationships: {  }

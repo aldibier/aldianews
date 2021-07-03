@@ -17,9 +17,11 @@
  * @ingroup themeable
  */
 #}
+
 {% if title %}
 	<h3>{{ title }}</h3>
 {% endif %}
+
 
 {% for row in rows %}
 
@@ -30,10 +32,21 @@
 	%}
 
 	{# banner #}
-	{% if loop.index  == 4 %}
-		<div class="block-scroll">{{ drupal_entity('block', 'gamwadvertisement_13') }}</div>
+	{% if device == 'desktop' %}
+		{% if loop.index  == 4 %}
+			<div class="margin ads">{{ drupal_entity('block', 'gamwadvertisement_13') }}</div>
+		{% endif %}
+	{% endif %}
+	{% if device == 'mobile' %}
+		{% if loop.index  == 2 %}
+			<div class="skyscraper-mobile ads">{{ drupal_entity('block', 'gamwadvertisement_12') }}</div>
+		{% endif %}
 	{% endif %}
 	<div{{row.attributes.addClass(row_classes)}}>
 		{{- row.content -}}
 	</div>
 {% endfor %}
+
+{% if device == 'desktop' %}
+	<div class="margin-top ads">{{ drupal_entity('block', 'gamwadvertisement_12') }}</div>
+{% endif %}

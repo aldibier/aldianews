@@ -13,6 +13,12 @@ title: 'REQUEST A CALL BACK'
 description: 'This form is part of the <strong>Subscription</strong> landing page, it receives requests from users to learn more about the plans.'
 category: ''
 elements: |-
+  markup:
+    '#type': webform_markup
+    '#markup': '<h1>Request a Call back</h1>'
+  markup_01:
+    '#type': webform_markup
+    '#markup': 'This will send a high priority email to our team. We will contact you back as soon as we can during normal working hours.'
   first_name:
     '#type': textfield
     '#title': 'First name'
@@ -40,6 +46,11 @@ elements: |-
   optional_message:
     '#type': textarea
     '#title': 'Optional message'
+  button_go_back:
+    '#type': processed_text
+    '#text': |
+      <p><input class="back-button-requestcall" onclick="location.href='/subscribe';" type="button" value="GO BACK" /></p>
+    '#format': full_html
   actions:
     '#type': webform_actions
     '#title': 'Submit button(s)'
@@ -52,11 +63,11 @@ settings:
   ajax_progress_type: ''
   ajax_effect: ''
   ajax_speed: null
-  page: true
+  page: false
   page_submit_path: ''
   page_confirm_path: ''
   page_theme_name: ''
-  form_title: both
+  form_title: source_entity_webform
   form_submit_once: false
   form_exception_message: ''
   form_open_message: ''
@@ -88,7 +99,7 @@ settings:
   share: false
   share_node: false
   share_theme_name: ''
-  share_title: true
+  share_title: false
   share_page_body_attributes: {  }
   submission_label: ''
   submission_log: false
@@ -120,12 +131,12 @@ settings:
   wizard_keyboard: true
   wizard_start_label: ''
   wizard_preview_link: false
-  wizard_confirmation: true
+  wizard_confirmation: false
   wizard_confirmation_label: ''
   wizard_track: ''
   wizard_prev_button_label: ''
   wizard_next_button_label: ''
-  wizard_toggle: false
+  wizard_toggle: true
   wizard_toggle_show_label: ''
   wizard_toggle_hide_label: ''
   preview: 0
@@ -145,7 +156,7 @@ settings:
   draft_pending_multiple_message: ''
   confirmation_type: modal
   confirmation_title: 'YOUR INFORMATION HAS BEEN SENT SUCCESSFULLY'
-  confirmation_message: 'We will reply to your request as soon as possible.'
+  confirmation_message: "<p>We will reply to your request as soon as possible.</p>\r\n<a class=\"button-back\">FINISH</a>"
   confirmation_url: ''
   confirmation_attributes: {  }
   confirmation_back: true
@@ -222,5 +233,42 @@ access:
     roles: {  }
     users: {  }
     permissions: {  }
-handlers: {  }
+handlers:
+  email:
+    id: email
+    label: Email
+    notes: ''
+    handler_id: email
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      states:
+        - completed
+      to_mail: _default
+      to_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      from_mail: _default
+      from_options: {  }
+      from_name: _default
+      subject: _default
+      body: _default
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: false
+      debug: false
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      theme_name: ''
+      parameters: {  }
 variants: {  }

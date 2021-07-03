@@ -6,6 +6,7 @@ import initSlick from "./slick.js";
 import replaceToken from "./modules/replaceToken";
 
 (function($, Drupal) {
+
   // Selection share
   const sharer = new SelectionSharer();
   sharer.setElements("p,a,h1,h2,h3,blockquote,em,strong");
@@ -81,6 +82,7 @@ import replaceToken from "./modules/replaceToken";
       });
     });
   }
+
 
   jQuery(document).ready(function() {
     /////
@@ -183,8 +185,6 @@ import replaceToken from "./modules/replaceToken";
         .addTo(controller2);
       //.addIndicators();
     }
-
-  
 
     $(
       '.block-fixed-block-content-horizontal-advertising-close  button[name="close"]'
@@ -353,25 +353,42 @@ import replaceToken from "./modules/replaceToken";
 
     //modal subscribe
 
-    $('.block-fixed-block-contentpop-up-cancel-form-subscribe button[name=no-stay]').click(function() {
-      if ($(".block-fixed-block-contentpop-up-cancel-form-subscribe").hasClass("open")) {
-        $(".block-fixed-block-contentpop-up-cancel-form-subscribe").removeClass("open");
+    $(
+      ".block-fixed-block-contentpop-up-cancel-form-subscribe button[name=no-stay]"
+    ).click(function() {
+      if (
+        $(".block-fixed-block-contentpop-up-cancel-form-subscribe").hasClass(
+          "open"
+        )
+      ) {
+        $(".block-fixed-block-contentpop-up-cancel-form-subscribe").removeClass(
+          "open"
+        );
       }
     });
 
-    $('.commerce-checkout-flow-multistep-default .form-actions span.user-login').click(function() {
-      if ($(".block-fixed-block-contentpop-up-cancel-form-subscribe").hasClass("open")) {
-        $(".block-fixed-block-contentpop-up-cancel-form-subscribe").removeClass("open");
-      }else {
-        $(".block-fixed-block-contentpop-up-cancel-form-subscribe").addClass("open");
+    $(
+      ".commerce-checkout-flow-multistep-default .form-actions span.user-login"
+    ).click(function() {
+      if (
+        $(".block-fixed-block-contentpop-up-cancel-form-subscribe").hasClass(
+          "open"
+        )
+      ) {
+        $(".block-fixed-block-contentpop-up-cancel-form-subscribe").removeClass(
+          "open"
+        );
+      } else {
+        $(".block-fixed-block-contentpop-up-cancel-form-subscribe").addClass(
+          "open"
+        );
       }
     });
-    
-    $( document ).ready(function() {
-      $( "#block-modalhomepassword a.button" ).click();
+
+    $(document).ready(function() {
+      $("#block-modalhomepassword a.button").click();
     });
     
-
     initMain();
     initSlick($, Drupal);
   });
@@ -380,24 +397,67 @@ import replaceToken from "./modules/replaceToken";
     attach: function(context, settings) {
       $(function() {
         //js para eliminar publicidad vacia
-        Array.from(document.querySelectorAll(".block-gamw")).map(function(e){
-          if (e != null) {
-            var iframe_gamw = e.querySelector("iframe");
-            if (iframe_gamw == null) {
-              /* e.classList.add("dis-none"); */
+        setTimeout(() => {
+          Array.from(document.querySelectorAll(".block-gamw")).map(function(e) {
+            if (e != null) {
+              var iframe_gamw = e.querySelector("iframe");
+              if (iframe_gamw == null) {
+                e.classList.add("dis-none");
+                e.closest(".ads").classList.add("dis-none");
+              }
             }
-          }
-        });
-        
+          });
+        }, 6000);
+
+        // js para modal de videos
+
+		var lista1 = document.querySelectorAll(
+			".block-views-blockcarousel-videos-landing-block-2  .views-row.slick-slide:not(.slick-cloned) .views-field-nid"
+		);
+		var lista2 = document.querySelectorAll(
+			".view-id-carousel_videos_landing.view-display-id-page_1 .views-field-nid"
+		);
+
+		for (let i = 0; i < lista1.length; i++) {
+			const itemLista1 = lista1[i];
+			const itemLista2 = lista2[i];
+
+			// console.log(itemLista1, itemLista2)
+			itemLista1.parentElement.addEventListener("click", function () {
+				one();
+				two();
+				const allIframes = document.querySelectorAll(
+					".view-id-carousel_videos_landing.view-display-id-page_1  iframe"
+				);
+
+				const resetAlliframes = () => {
+					allIframes.forEach(iframe => {
+						iframe.classList.add("change-src");
+						iframe.src = iframe.src;
+						setTimeout(() => iframe.classList.remove("change-src"), 800);
+					});
+				};
+				resetAlliframes();
+				if (itemLista1.children.innerHTML === itemLista2.children.innerHTML) {
+					itemLista1.parentElement.parentElement.classList.add("select-video");
+					itemLista2.parentElement.parentElement.classList.add("show-video");
+					itemLista1.parentElement.classList.add("video-present");
+					itemLista2.parentElement.classList.add("video-present");
+				}
+			});
+		}
+
         //js para recargar
-        Array.from(document.querySelectorAll(".button-preload")).map(function(e){
+        Array.from(document.querySelectorAll(".button-preload")).map(function(
+          e
+        ) {
           if (e != null) {
             e.addEventListener("click", () => {
               location.reload();
             });
           }
         });
-        
+
         ///// js para tag new
         Array.from(
           document.querySelectorAll(
@@ -555,6 +615,9 @@ import replaceToken from "./modules/replaceToken";
             }
           });
         }
+        
+        $('div.popup-class-restore-pwd.ui-widget.ui-corner-all:not(button) .close-button-modal').html( '<a href="/">OK</a>');
+        $('.popup-class-cancel-account.ui-widget.ui-corner-all:not(button) .close-button-modal').html( '<a href="/">GO TO OUR LATEST CONTENT</a>');
       });
     }
   };

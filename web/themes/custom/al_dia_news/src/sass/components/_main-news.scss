@@ -41,6 +41,15 @@
     @media screen and(max-width:$broken) {
       padding: 8rem 0 25px;
     }
+
+    .main-news-body.field--name-field-short-description,
+    .main-news-body {
+      font-style: normal;
+      font-weight: normal;
+      font-size: $px19;
+      line-height: 122%;
+      display: block;
+    }
   }
   .two-content-category {
   }
@@ -98,7 +107,6 @@
       @media screen and(max-width:$broken) {
         height: auto;
         min-height: initial;
-        max-height: initial;
       }
     }
   }
@@ -170,6 +178,7 @@
     font-weight: normal;
     line-height: 1.5;
     color: $cwhite;
+    display: none;
 
     @media screen and(max-width:$tablet) {
       display: none;
@@ -194,6 +203,7 @@
 .main-news-body.field--type-text-with-summary {
   position: relative;
   top: -8px;
+  display: block;
 }
 @media screen and (max-width: 768px) {
   .block-fixed-block-contentlocation .main-news-body {

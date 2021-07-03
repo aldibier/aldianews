@@ -10,12 +10,14 @@ dependencies:
     - field.storage.node.field_short_description
     - field.storage.node.field_short_title
     - field.storage.node.field_type_of_content
+    - lazy.settings
     - node.type.news
     - responsive_image.styles.next_two_image_responsive
   module:
     - image
     - lazy
     - node
+    - responsive_image
     - taxonomy
     - text
     - user
@@ -1288,6 +1290,11 @@ display:
           empty_zero: false
           hide_alter_empty: false
           plugin_id: custom
+        field_short_description_1:
+          id: field_short_description_1
+          table: node__field_short_description
+          field: field_short_description
+          plugin_id: field
       header: {  }
       css_class: main-news
       filters:
@@ -2635,42 +2642,12 @@ display:
         type: none
         options: {  }
       header:
-        views_block_area_1:
-          id: views_block_area_1
-          table: views
-          field: views_block_area
-          relationship: none
-          group_type: group
-          admin_label: publicidad
-          empty: false
-          block_id: 'block_group:gamw_block_side_section_top_views'
-          plugin_id: views_block_area
         views_block_area:
           id: views_block_area
           table: views
           field: views_block_area
           plugin_id: views_block_area
-      footer:
-        views_block_area:
-          id: views_block_area
-          table: views
-          field: views_block_area
-          relationship: none
-          group_type: group
-          admin_label: 'publicidad skyscraper'
-          empty: false
-          block_id: 'block_group:gamw_skyscraper_side_section_top_views'
-          plugin_id: views_block_area
-        views_block_area_1:
-          id: views_block_area_1
-          table: views
-          field: views_block_area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: false
-          block_id: 'block_group:gamw_block_side_section_bottom_views'
-          plugin_id: views_block_area
+      footer: {  }
     cache_metadata:
       max-age: -1
       contexts:
@@ -2731,7 +2708,8 @@ display:
     position: 4
     display_options:
       display_extenders:
-        ajax_history: {  }
+        ajax_history:
+          enable_history: false
       display_description: ''
       pager:
         type: infinite_scroll
@@ -2765,6 +2743,7 @@ display:
         filters: false
         filter_groups: false
         cache: false
+        use_ajax: false
       fields:
         fieldset:
           id: fieldset
@@ -2814,7 +2793,9 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          fields: {  }
+          fields:
+            - field_type_of_content
+            - field_image
           wrapper: div
           legend: ''
           classes: container-wrapper
@@ -3419,6 +3400,7 @@ display:
       cache:
         type: none
         options: {  }
+      use_ajax: true
     cache_metadata:
       max-age: -1
       contexts:
