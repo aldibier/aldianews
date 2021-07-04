@@ -220,11 +220,13 @@
     overflow: hidden;
 
     @media screen and (max-width: $broken) {
-      all: initial;
-      margin-bottom: 60px;
-      display: flex;
-      flex-wrap: wrap;
-      position: relative;
+      // all: initial;
+      // margin-bottom: 60px;
+      // display: flex;
+      // flex-wrap: wrap;
+      // position: relative;
+      grid-template-columns: 1fr 1fr;
+    grid-gap: 0 10px;
     }
 
     @media screen and (max-width: $broken) {

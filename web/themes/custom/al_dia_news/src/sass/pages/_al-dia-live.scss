@@ -941,4 +941,22 @@
       }
     }
   }
+
+  .view-events-in-al-dia-live{
+    @media screen and (max-width: $broken){
+
+    .card-event{
+  
+      .card-event-title{
+          min-height: auto;
+        }
+        .card-event-date{
+          font-family: $PrNovacond-Sbold;
+        }
+      }
+    } 
+    .view-content{
+      margin-bottom: 0px;
+    }
+  } 
 }

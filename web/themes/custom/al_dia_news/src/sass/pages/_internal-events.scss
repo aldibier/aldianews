@@ -36,7 +36,7 @@
       position: absolute;
       width: 100%;
       height: 100%;
-      top: 10px;
+      top: 0px;
       left: 0px;
       background: #000000;
       opacity: 0.75;
@@ -128,6 +128,9 @@
 }
 
 .page-node-type-event {
+  .layout-container .width1440{
+    max-width: none;
+  }
   .section-flex {
     display: flex;
     flex-wrap: wrap;
@@ -525,8 +528,10 @@
     max-height: 149px;
     overflow: hidden;
     @media (max-width: $tablet) {
-      margin: 30px auto;
+      margin: 30px -15px;
       max-height: 100px;
+      display: flex;
+      justify-content: center;
     }
   }
 }
@@ -703,6 +708,10 @@
     }
   }
   .page-node-type-event {
+    .block-gamw{
+      display: flex;
+      justify-content: center;
+    }
     h1 .aldia-logo-in-text {
       max-width: 45px;
       img {
@@ -1029,6 +1038,7 @@
       font-size: $px20;
       line-height: 24px;
       margin-bottom: 20px;
+      min-height: auto;
     }
     .phone-contact-event {
       font-size: $px20;
