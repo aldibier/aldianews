@@ -1411,10 +1411,11 @@ var initMain = function initMain($, Drupal) {
     }); //// js modal landing videos
 
     if (!!document.querySelector(".path-videos")) {
-      var allCardVideos = document.querySelectorAll(".card-one-column");
-      var allIframes = document.querySelectorAll(".card-one-column iframe");
+      var containerVideos = document.querySelector('.view-id-more_videos_in_landing.view-display-id-block_1');
 
       var resetAlliframes = function resetAlliframes() {
+        console.log(containerVideos.querySelectorAll('.card-one-column iframe'));
+        var allIframes = containerVideos.querySelectorAll('.card-one-column iframe');
         allIframes.forEach(function (iframe) {
           iframe.classList.add("change-src");
           iframe.src = iframe.src;
@@ -1424,30 +1425,29 @@ var initMain = function initMain($, Drupal) {
         });
       };
 
-      allCardVideos.forEach(function (cardVideo) {
-        return cardVideo.addEventListener("click", function (event) {
-          if (event.target.nodeName == "A") return;
-          var node = event.currentTarget.parentNode.firstElementChild;
+      document.body.addEventListener("click", function (event) {
+        if (event.target.classList.contains('card-one-column')) {
+          var _container = event.target.parentNode;
+          var currentElement = event.target;
+          var node = _container.firstElementChild;
 
           while (node) {
-            if (node !== event.currentTarget && node.nodeType === Node.ELEMENT_NODE) {
+            if (node !== currentElement && node.nodeType === Node.ELEMENT_NODE) {
               if (event.target.closest(".modal-video")) return;
-              node.querySelector(".modal-video").classList.remove("show");
+              if (node.querySelector(".modal-video") != null) node.querySelector(".modal-video").classList.remove("show");
               resetAlliframes();
             } else {
-              if (event.target.closest(".wrapper-popup")) return;
               node.querySelector(".modal-video").classList.toggle("show");
               resetAlliframes();
             }
 
             node = node.nextElementSibling;
           }
-        });
-      });
-      document.body.addEventListener("click", function (event) {
+        }
+
         var contentActive = event.target.closest(".card-one-column") || false;
 
-        if (!contentActive) {
+        if (!contentActive && !!document.querySelector(".modal-video.show")) {
           document.querySelector(".modal-video.show").classList.remove("show");
           resetAlliframes();
         }
@@ -1677,11 +1677,11 @@ var initMain = function initMain($, Drupal) {
       var login = blockAnonymus.querySelector('.login-anonymous-comment');
       var register = blockAnonymus.querySelector('.register-anonymous-comment');
 
-      var _container = document.createElement('div');
+      var _container2 = document.createElement('div');
 
       var message = document.createElement('div');
 
-      _container.classList.add('message-comments-container');
+      _container2.classList.add('message-comments-container');
 
       message.classList.add('message-comments-links');
       message.appendChild(login);
@@ -1689,11 +1689,11 @@ var initMain = function initMain($, Drupal) {
       message.appendChild(register);
       message.appendChild(allTextMessage[2]);
 
-      _container.appendChild(allTextMessage[0]);
+      _container2.appendChild(allTextMessage[0]);
 
-      _container.appendChild(message);
+      _container2.appendChild(message);
 
-      blockAnonymus.querySelector('.content').insertAdjacentElement('afterend', _container);
+      blockAnonymus.querySelector('.content').insertAdjacentElement('afterend', _container2);
       blockAnonymus.addEventListener('click', function () {
         blockAnonymus.classList.add('show');
       }, {

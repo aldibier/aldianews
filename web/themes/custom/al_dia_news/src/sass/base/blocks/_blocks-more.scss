@@ -124,6 +124,10 @@
   .views-row {
     border-bottom: 1px solid $cgrey4;
 
+    &:last-child {
+      border-bottom: none;
+    }
+
     @media (max-width: $broken) {
       width: 100%;
       max-width: none;
@@ -232,6 +236,12 @@
     .views-row {
       margin-bottom: 25px;
       padding-bottom: 25px;
+
+      &:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border: none;
+      }
 
       @media (max-width: $broken) {
         margin-bottom: 20px;

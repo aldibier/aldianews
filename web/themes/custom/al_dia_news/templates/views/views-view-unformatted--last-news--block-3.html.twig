@@ -26,7 +26,6 @@
 	{% endif %}
 {% endif %}
 {% for row in rows %}
-
 	{%
 		set row_classes = [
 		default_row_class ? 'views-row',
@@ -38,9 +37,11 @@
 			<div class="skyscraper-mobile ads">{{ drupal_entity('block', 'gamwadvertisement_35') }}</div>
 		{% endif %}
 	{% endif %}
-	<div{{row.attributes.addClass(row_classes)}}>
+	{% if row.content is not empty %}
+		<div{{row.attributes.addClass(row_classes)}}>
 		{{- row.content -}}
-	</div>
+		</div>
+	{% endif %}
 {% endfor %}
 {% if device  == 'desktop' %}
 	{% if rows.block_type[0] == 'advertising' %}
