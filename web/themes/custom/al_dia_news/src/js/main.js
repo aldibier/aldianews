@@ -139,7 +139,7 @@ const initMain = ($, Drupal) => {
 
 		//// js validador de publicidad en landing jobs
 		var block_ads = document.querySelector(
-			".block-block-groupgroup-career-news-jobs .block-fixed-block-contentbig-vertical-advertising"
+			".block-block-groupgroup-career-news-jobs .block-fixed-block-contentbig-vertical-advertising iframe"
 		);
 		var view_career = document.querySelector(
 			".block-views-blockcareer-news-block-1"
