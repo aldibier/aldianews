@@ -1,9 +1,4 @@
 .path-taxonomy {
-  .one-content-taxonomy-category,
-  .two-more-content-taxonomy-category,
-  .category-first-block {
-    //display: none;
-  }
   @media screen and (max-width: $broken) {
     .news-galery .view-content > div:not(.no-result-search) {
       padding: 0 15px;
@@ -22,6 +17,10 @@
     &:empty {
       display: none;
     }
+  }
+
+  .header-category {
+    margin-bottom: 50px;
   }
 }
 

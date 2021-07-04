@@ -40,20 +40,6 @@
     }
   }
 
-  //------ more content news ------------//
-  .one-content-category-four,
-  .one-content-subcategory-four {
-    margin-right: 15px;
-
-    @media (max-width: $broken) {
-      margin: 0 0 15px 0;
-    }
-
-    @media (max-width: $tablet) {
-      // margin: 0 10px 0 0;
-    }
-  }
-
   .one-content-category-four,
   .one-content-subcategory-four,
   .last-content-category-childs {
@@ -237,7 +223,7 @@
         margin: 0 0 10px;
         line-height: 0;
 
-        @media screen and(max-width:$broken) {
+        @media screen and(max-width:$tablet) {
           margin: 0 0 5px;
         }
       }
@@ -402,6 +388,48 @@
     .short-title-date {
       display: inherit;
       flex-direction: column;
+    }
+  }
+}
+
+.path-frontpage {
+  .one-content-category-four {
+    margin-right: 15px;
+
+    @media screen and (max-width: $broken) {
+      margin: 0 0 15px 0;
+    }
+    
+    @media screen and (max-width: $tablet) {
+      margin: 0 10px 0 0;
+    }
+  }
+}
+
+.path-taxonomy {
+  .one-content-category-four {
+    margin-right: 15px;
+
+    @media screen and (max-width: $broken) {
+      margin: 0 0 15px 0;
+    }
+    
+    @media screen and (max-width: $tablet) {
+      margin: 0 10px 0 0;
+    }
+  }
+}
+
+.path-taxonomy {
+  .one-content-category-four {
+    margin-right: 15px;
+
+    @media screen and (max-width: $broken) {
+      margin: 0 0 15px 0;
+    }
+    
+    @media screen and (max-width: $tablet) {
+      margin: 0 0 10px 0;
     }
   }
 }
