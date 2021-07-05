@@ -26,7 +26,7 @@ reactions:
         provider: system
         label_display: '0'
         region: content
-        weight: '-6'
+        weight: '-2'
         context_mapping: {  }
         custom_id: system_main_block
         theme: al_dia_news
@@ -34,54 +34,6 @@ reactions:
         unique: 0
         context_id: jobs
         uuid: 09e6e220-e224-4b6f-afa5-424ec60fe929
-      bbf14b59-60d8-4bc1-96f7-af0ea68c6291:
-        id: 'views_block:carousel_jobs_landing-block_1'
-        label: ''
-        provider: views
-        label_display: '0'
-        views_label: ''
-        items_per_page: none
-        region: content
-        weight: '1'
-        context_mapping: {  }
-        custom_id: views_block_carousel_jobs_landing_block_1
-        theme: al_dia_news
-        css_class: ''
-        unique: 0
-        context_id: jobs
-        uuid: bbf14b59-60d8-4bc1-96f7-af0ea68c6291
-      1133f6fd-7f2a-41c0-828e-7e4241a86278:
-        id: webform_block
-        label: Webform
-        provider: webform
-        label_display: '0'
-        webform_id: contact_us_jobs_landing
-        default_data: ''
-        redirect: 0
-        region: content
-        weight: '-1'
-        context_mapping: {  }
-        custom_id: webform_block
-        theme: al_dia_news
-        css_class: contact-form-father
-        unique: 1
-        context_id: jobs
-        uuid: 1133f6fd-7f2a-41c0-828e-7e4241a86278
-      4cc8dc12-e672-4f7f-b9c0-c1ed94f2c54f:
-        id: 'fixed_block_content:body_jobs_landing'
-        label: 'Body Jobs landing'
-        provider: fixed_block_content
-        label_display: '0'
-        region: content
-        weight: '-2'
-        view_mode: ''
-        context_mapping: {  }
-        custom_id: fixed_block_content_body_jobs_landing
-        theme: al_dia_news
-        css_class: 'block-content-form  block-content-left'
-        unique: 0
-        context_id: jobs
-        uuid: 4cc8dc12-e672-4f7f-b9c0-c1ed94f2c54f
       1aabac36-2154-4466-b468-65ce8f202ba1:
         id: 'system_menu_block:jobs-landing-menu'
         label: 'Jobs landing menu'
@@ -91,7 +43,7 @@ reactions:
         depth: '0'
         expand_all_items: 0
         region: content
-        weight: '-5'
+        weight: '-1'
         context_mapping: {  }
         custom_id: system_menu_block_jobs_landing_menu
         theme: al_dia_news
@@ -99,66 +51,6 @@ reactions:
         unique: 0
         context_id: jobs
         uuid: 1aabac36-2154-4466-b468-65ce8f202ba1
-      168611d5-0859-4f28-8727-64ccce6d3fa4:
-        id: 'views_block:career_news-block_3'
-        label: ''
-        provider: views
-        label_display: '0'
-        views_label: ''
-        items_per_page: none
-        region: content
-        weight: '4'
-        context_mapping: {  }
-        custom_id: views_block_career_news_block_3
-        theme: al_dia_news
-        css_class: ''
-        unique: 0
-        context_id: jobs
-        uuid: 168611d5-0859-4f28-8727-64ccce6d3fa4
-      9289a888-2b9d-43d0-b316-3b469f4b6a2a:
-        id: 'views_block:career_news-block_4'
-        label: ''
-        provider: views
-        label_display: '0'
-        views_label: ''
-        items_per_page: none
-        region: content
-        weight: '3'
-        context_mapping: {  }
-        custom_id: views_block_career_news_block_4
-        theme: al_dia_news
-        css_class: ''
-        unique: 0
-        context_id: jobs
-        uuid: 9289a888-2b9d-43d0-b316-3b469f4b6a2a
-      e6048cb4-32b2-45b0-909b-29e4c6be8f39:
-        id: 'block_group:advertising_blocks_in_job_landing_pages'
-        label: 'Advertising blocks in job landing pages'
-        provider: blockgroup
-        label_display: '0'
-        region: content
-        weight: '0'
-        context_mapping: {  }
-        custom_id: block_group_advertising_blocks_in_job_landing_pages
-        theme: al_dia_news
-        css_class: ''
-        unique: 0
-        context_id: jobs
-        uuid: e6048cb4-32b2-45b0-909b-29e4c6be8f39
-      548c8f86-490a-4a8c-b866-fa8d3f5fc788:
-        id: 'block_group:group_career_news_jobs'
-        label: 'Group career news jobs'
-        provider: blockgroup
-        label_display: '0'
-        region: content
-        weight: '5'
-        context_mapping: {  }
-        custom_id: block_group_group_career_news_jobs
-        theme: al_dia_news
-        css_class: ''
-        unique: 0
-        context_id: jobs
-        uuid: 548c8f86-490a-4a8c-b866-fa8d3f5fc788
       7465aca0-fd1e-4cf3-aef4-f93ac101465b:
         id: gamw
         label: 'Pre footer -  Bottom banner jobs'
@@ -176,7 +68,7 @@ reactions:
           add: 'Add another targeting attribute'
           remove: 'Remove last targeting attribute'
         region: content
-        weight: '6'
+        weight: '2'
         context_mapping: {  }
         custom_id: gamw
         theme: al_dia_news
@@ -192,7 +84,7 @@ reactions:
         ad_unit: first-block-bottom-banner
         attributes_wrapper: null
         region: content
-        weight: '-4'
+        weight: '0'
         context_mapping: {  }
         custom_id: gamw
         theme: al_dia_news
@@ -200,6 +92,20 @@ reactions:
         unique: 1
         context_id: jobs
         uuid: e6415fac-1bdb-410f-bc72-06da52b89828
+      7ce9a82a-8593-4027-badb-c0e04e7da7f9:
+        id: 'block_group:contenido_jobs'
+        label: 'contenido jobs'
+        provider: blockgroup
+        label_display: '0'
+        region: content
+        weight: '1'
+        context_mapping: {  }
+        custom_id: block_group_contenido_jobs
+        theme: al_dia_news
+        css_class: content-page-jobs
+        unique: 0
+        context_id: jobs
+        uuid: 7ce9a82a-8593-4027-badb-c0e04e7da7f9
     id: blocks
     saved: false
     uuid: 3de707dd-4aed-4ae9-aa63-7a6bde34edc5

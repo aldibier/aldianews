@@ -116,10 +116,18 @@
   }
 
   .view-footer {
-    position: absolute;
-    right: 80px;
-    bottom: 50px;
-    display: flex;
+    max-width: 1310px;
+    padding: 0 15px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    .footer-red{
+      position: absolute;
+      right: 80px;
+      bottom: 50px;
+      display: flex;
+    }
+    
   }
 
   button {
@@ -146,7 +154,7 @@
   }
 
   @media (max-width: 1230px) {
-    .view-footer {
+    .view-footer .footer-red {
       position: relative;
       right: auto;
       bottom: auto;

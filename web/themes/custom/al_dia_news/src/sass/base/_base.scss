@@ -97,7 +97,7 @@ body.toolbar-tray-open.user-logged-in {
 }
 .layout-container {
   max-width: 1440px;
-
+  margin-top: 60px;
   .layout-main {
     max-width: 1310px;
     padding: 0 15px;
@@ -142,6 +142,10 @@ body.toolbar-tray-open.user-logged-in {
   .width1440 {
     max-width: none;
   }
+}
+
+.user-logged-in  .layout-container{
+  margin-top: 0px;
 }
 
 .region-breadcrumb {
