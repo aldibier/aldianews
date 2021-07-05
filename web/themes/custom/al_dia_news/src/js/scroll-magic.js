@@ -33,20 +33,24 @@ const initScrollMagic = ($, Drupal) => {
 
     //------------ scroll internas --------------//
     if (!!containerRigth && !!noticias) {
+        debugger;
         //------------ not sticky --------------//
+        console.log(`Right : ${containerRigth.offsetHeight}`);
+        console.log(`Left : ${noticias.offsetHeight}`);
+        if (containerRigth.offsetHeight < noticias.offsetHeight) return;
         if (containerRigth.offsetHeight === noticias.offsetHeight) return;
 
-        /* const scene2 = new ScrollMagic.Scene({ triggerElement: containerRigth, duration: getDurationScene2 })
+        const scene2 = new ScrollMagic.Scene({ triggerElement: containerRigth, duration: getDurationScene2 })
             .addTo(controller)
             .offset(noticias.offsetHeight + 20)
-            .setPin(noticias, { pushFollowers: false })  */ 
+            .setPin(noticias, { pushFollowers: false })  
 
-        setTimeout(()=>{
+        /* setTimeout(()=>{
             const scene2 = new ScrollMagic.Scene({ triggerElement: containerRigth, duration: getDurationScene2 })
             .addTo(controller)
             .offset(noticias.offsetHeight + 20)
             .setPin(noticias, { pushFollowers: false })    
-        },6000);
+        },6000); */
 
         function getDurationScene2() {
             return containerRigth.offsetHeight - noticias.offsetHeight;
