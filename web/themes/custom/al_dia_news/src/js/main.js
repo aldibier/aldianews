@@ -226,10 +226,12 @@ const initMain = ($, Drupal) => {
 
 		//// js modal landing videos
 		if (!!document.querySelector(".path-videos")) {
-			const allCardVideos = document.querySelectorAll(".card-one-column");
-			const allIframes = document.querySelectorAll(".card-one-column iframe");
+			const containerVideos = document.querySelector('.view-id-more_videos_in_landing.view-display-id-block_1');
 
 			const resetAlliframes = () => {
+				console.log(containerVideos.querySelectorAll('.card-one-column iframe'));
+				let allIframes = containerVideos.querySelectorAll('.card-one-column iframe');
+
 				allIframes.forEach(iframe => {
 					iframe.classList.add("change-src");
 					iframe.src = iframe.src;
@@ -237,34 +239,32 @@ const initMain = ($, Drupal) => {
 				});
 			};
 
-			allCardVideos.forEach(cardVideo =>
-				cardVideo.addEventListener("click", event => {
-					if (event.target.nodeName == "A") return;
+			document.body.addEventListener("click", event => {
 
-					let node = event.currentTarget.parentNode.firstElementChild;
+				if(event.target.classList.contains('card-one-column')){
+					let container = event.target.parentNode;
+					let currentElement = event.target;
+					let node = container.firstElementChild;
 
 					while (node) {
 						if (
-							node !== event.currentTarget &&
+							node !== currentElement &&
 							node.nodeType === Node.ELEMENT_NODE
 						) {
 							if (event.target.closest(".modal-video")) return;
-							node.querySelector(".modal-video").classList.remove("show");
+							if(node.querySelector(".modal-video") != null) node.querySelector(".modal-video").classList.remove("show");
 							resetAlliframes();
 						} else {
-							if (event.target.closest(".wrapper-popup")) return;
 							node.querySelector(".modal-video").classList.toggle("show");
 							resetAlliframes();
 						}
 						node = node.nextElementSibling;
 					}
-				})
-			);
+				}
 
-			document.body.addEventListener("click", event => {
 				const contentActive = event.target.closest(".card-one-column") || false;
 
-				if (!contentActive) {
+				if (!contentActive && !!document.querySelector(".modal-video.show")) {
 					document.querySelector(".modal-video.show").classList.remove("show");
 					resetAlliframes();
 				}

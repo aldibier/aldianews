@@ -28,12 +28,11 @@
 		default_row_class ? 'views-row',
 		]
 	%}
-
+	<div{{row.attributes.addClass(row_classes)}}>
+		{{- row.content -}}
+	</div>
 	{# banner #}
 	{% if loop.index % 9 == 0 %}
 		<div class="banner-scroll ads">{{ drupal_entity('block', 'gamwadvertisement_15') }}</div>
 	{% endif %}
-	<div{{row.attributes.addClass(row_classes)}}>
-		{{- row.content -}}
-	</div>
 {% endfor %}
