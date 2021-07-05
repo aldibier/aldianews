@@ -189,16 +189,11 @@
       overflow: hidden;
       grid-auto-flow: dense;
       @media screen and (max-width: $broken) {
-        // all: initial;
-        // display: flex;
-        // flex-wrap: wrap;
-        // position: relative;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 0 10px;
         overflow: initial;
         grid-auto-flow: dense;
-        // padding: 0 15px;
       }
     }
   }

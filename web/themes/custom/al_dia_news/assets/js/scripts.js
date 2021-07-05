@@ -1411,18 +1411,22 @@ var initMain = function initMain($, Drupal) {
     }); //// js modal landing videos
 
     if (!!document.querySelector(".path-videos")) {
-      var containerVideos = document.querySelector('.view-id-more_videos_in_landing.view-display-id-block_1');
+      var resetIframe = function resetIframe(element) {
+        if (!!element) {
+          var iframe = element.querySelector('iframe');
 
-      var resetAlliframes = function resetAlliframes() {
-        console.log(containerVideos.querySelectorAll('.card-one-column iframe'));
-        var allIframes = containerVideos.querySelectorAll('.card-one-column iframe');
-        allIframes.forEach(function (iframe) {
+          if (iframe.src.indexOf('?') > 0) {
+            var srcEdit = iframe.src.split('?');
+            iframe.src = "".concat(srcEdit[0], "?start=0&rel=0");
+          } else {
+            iframe.src = iframe.src;
+          }
+
           iframe.classList.add("change-src");
-          iframe.src = iframe.src;
           setTimeout(function () {
             return iframe.classList.remove("change-src");
           }, 800);
-        });
+        }
       };
 
       document.body.addEventListener("click", function (event) {
@@ -1432,13 +1436,15 @@ var initMain = function initMain($, Drupal) {
           var node = _container.firstElementChild;
 
           while (node) {
-            if (node !== currentElement && node.nodeType === Node.ELEMENT_NODE) {
-              if (event.target.closest(".modal-video")) return;
-              if (node.querySelector(".modal-video") != null) node.querySelector(".modal-video").classList.remove("show");
-              resetAlliframes();
+            if (node.classList.contains('.banner-scroll')) continue;
+            if (event.target.closest(".modal-video")) return;
+
+            if (node != currentElement && node.nodeType === Node.ELEMENT_NODE) {
+              resetIframe(node);
+              if (node.querySelector(".modal-video")) node.querySelector(".modal-video").classList.remove("show");
             } else {
+              resetIframe(node);
               node.querySelector(".modal-video").classList.toggle("show");
-              resetAlliframes();
             }
 
             node = node.nextElementSibling;
@@ -1448,13 +1454,20 @@ var initMain = function initMain($, Drupal) {
         var contentActive = event.target.closest(".card-one-column") || false;
 
         if (!contentActive && !!document.querySelector(".modal-video.show")) {
+          var currentVideo = document.querySelector(".modal-video.show");
+          var parentVideo = currentVideo.closest('.card-one-column') || false;
           document.querySelector(".modal-video.show").classList.remove("show");
-          resetAlliframes();
+          resetIframe(parentVideo);
         }
 
         if (event.target.classList.contains("close-video")) {
-          document.querySelector(".modal-video.show").classList.remove("show");
-          resetAlliframes();
+          var _currentVideo = document.querySelector(".modal-video.show");
+
+          var _parentVideo = _currentVideo.closest('.card-one-column') || false;
+
+          _currentVideo.classList.remove("show");
+
+          resetIframe(_parentVideo);
         }
       });
     } //// js para controlar pop-up advertising
