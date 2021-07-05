@@ -226,38 +226,44 @@ const initMain = ($, Drupal) => {
 
 		//// js modal landing videos
 		if (!!document.querySelector(".path-videos")) {
-			const containerVideos = document.querySelector('.view-id-more_videos_in_landing.view-display-id-block_1');
 
-			const resetAlliframes = () => {
-				console.log(containerVideos.querySelectorAll('.card-one-column iframe'));
-				let allIframes = containerVideos.querySelectorAll('.card-one-column iframe');
+			const resetIframe = (element) => {
+				if(!!element){
+					let iframe = element.querySelector('iframe');
 
-				allIframes.forEach(iframe => {
+					if (iframe.src.indexOf('?') > 0) {
+						const srcEdit = iframe.src.split('?');
+						iframe.src = `${srcEdit[0]}?start=0&rel=0`;
+					}else {
+						iframe.src = iframe.src;
+					}
+
 					iframe.classList.add("change-src");
-					iframe.src = iframe.src;
 					setTimeout(() => iframe.classList.remove("change-src"), 800);
-				});
+				}
 			};
 
 			document.body.addEventListener("click", event => {
-
 				if(event.target.classList.contains('card-one-column')){
 					let container = event.target.parentNode;
 					let currentElement = event.target;
 					let node = container.firstElementChild;
 
 					while (node) {
+						if(node.classList.contains('.banner-scroll')) continue;
+						if (event.target.closest(".modal-video")) return;
+
 						if (
-							node !== currentElement &&
+							node != currentElement &&
 							node.nodeType === Node.ELEMENT_NODE
 						) {
-							if (event.target.closest(".modal-video")) return;
-							if(node.querySelector(".modal-video") != null) node.querySelector(".modal-video").classList.remove("show");
-							resetAlliframes();
-						} else {
+							resetIframe(node);
+							if(node.querySelector(".modal-video")) node.querySelector(".modal-video").classList.remove("show");
+						}else {
+							resetIframe(node);
 							node.querySelector(".modal-video").classList.toggle("show");
-							resetAlliframes();
 						}
+
 						node = node.nextElementSibling;
 					}
 				}
@@ -265,13 +271,17 @@ const initMain = ($, Drupal) => {
 				const contentActive = event.target.closest(".card-one-column") || false;
 
 				if (!contentActive && !!document.querySelector(".modal-video.show")) {
+					let currentVideo = document.querySelector(".modal-video.show");
+					let parentVideo = currentVideo.closest('.card-one-column') || false;
 					document.querySelector(".modal-video.show").classList.remove("show");
-					resetAlliframes();
+					resetIframe(parentVideo);
 				}
 
 				if (event.target.classList.contains("close-video")) {
-					document.querySelector(".modal-video.show").classList.remove("show");
-					resetAlliframes();
+					let currentVideo = document.querySelector(".modal-video.show");
+					let parentVideo = currentVideo.closest('.card-one-column') || false;
+					currentVideo.classList.remove("show");
+					resetIframe(parentVideo);
 				}
 			});
 		}
