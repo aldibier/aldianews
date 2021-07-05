@@ -1254,40 +1254,7 @@ var initMain = function initMain($, Drupal) {
       }, {
         once: true
       });
-    } //// js remove element home
-
-    /* Array.from(
-    	document.querySelectorAll(
-    		".block-fixed-block-contentvertical-advertising-mobile"
-    	)
-    ).map(function (e) {
-    	if (e.children.children != null) {
-    		e.closest(".mobile-less").parentElement.parentElement.classList.add(
-    			"life-advertising"
-    		);
-    	} else {
-    		e.closest(".views-row").classList.add("mobile-free");
-    	}
-    });
-    Array.from(
-    	document.querySelectorAll(
-    		".mobile-free .mobile-plus .card-more:nth-child(1)"
-    	)
-    ).map(function (e) {
-    	if (e != null) {
-    		e.remove();
-    	}
-    });
-    Array.from(
-    	document.querySelectorAll(
-    		".mobile-free .mobile-plus .card-more:nth-child(2)"
-    	)
-    ).map(function (evt) {
-    	if (evt != null) {
-    		evt.remove();
-    	}
-    }); */
-    ///// js para caption en imagenes news
+    } ///// js para caption en imagenes news
 
 
     if (!!document.querySelector(".page-node-type-news .block-field-blocknodenewsbody img")) {
@@ -2390,26 +2357,29 @@ var initScrollMagic = function initScrollMagic($, Drupal) {
   var noticias = document.querySelector('.block-views-blockmore-in-this-section-news-block-1'); //------------ scroll internas --------------//
 
   if (!!containerRigth && !!noticias) {
+    /* setTimeout(()=>{
+        const scene2 = new ScrollMagic.Scene({ triggerElement: containerRigth, duration: getDurationScene2 })
+        .addTo(controller)
+        .offset(noticias.offsetHeight + 20)
+        .setPin(noticias, { pushFollowers: false })    
+    },6000); */
     var getDurationScene2 = function getDurationScene2() {
       return containerRigth.offsetHeight - noticias.offsetHeight;
     }; //window.addEventListener("resize", () => resizeActivation(noticias, scene2));
 
 
-    //------------ not sticky --------------//
-    if (containerRigth.offsetHeight === noticias.offsetHeight) return;
-    /* const scene2 = new ScrollMagic.Scene({ triggerElement: containerRigth, duration: getDurationScene2 })
-        .addTo(controller)
-        .offset(noticias.offsetHeight + 20)
-        .setPin(noticias, { pushFollowers: false })  */
+    debugger; //------------ not sticky --------------//
 
-    setTimeout(function () {
-      var scene2 = new ScrollMagic.Scene({
-        triggerElement: containerRigth,
-        duration: getDurationScene2
-      }).addTo(controller).offset(noticias.offsetHeight + 20).setPin(noticias, {
-        pushFollowers: false
-      });
-    }, 6000);
+    console.log("Right : ".concat(containerRigth.offsetHeight));
+    console.log("Left : ".concat(noticias.offsetHeight));
+    if (containerRigth.offsetHeight < noticias.offsetHeight) return;
+    if (containerRigth.offsetHeight === noticias.offsetHeight) return;
+    var scene2 = new ScrollMagic.Scene({
+      triggerElement: containerRigth,
+      duration: getDurationScene2
+    }).addTo(controller).offset(noticias.offsetHeight + 20).setPin(noticias, {
+      pushFollowers: false
+    });
   }
 
   function resizeActivation(element, scene) {
