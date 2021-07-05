@@ -370,7 +370,13 @@
       }
     }
   }
+  .views-infinite-scroll-content-wrapper{
+    justify-content: space-around;
+    @media (max-width: $tablet){
+    justify-content: space-between;
 
+    }
+  }
   .view-more-covers-landing {
     .views-row {
       max-width: 140px;

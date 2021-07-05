@@ -476,6 +476,20 @@
     .field--name-field-image {
     top: -13px;
   }
+  .layout-container,
+  .style-jobs{
+    max-width: none;
+  }
+  .content-page-jobs {
+    max-width: 1310px;
+    padding: 0 15px;
+    margin: 0 auto;
+    >content{
+      display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+  }
 }
 
 .webform-submission-contact-us-form .form-actions {
