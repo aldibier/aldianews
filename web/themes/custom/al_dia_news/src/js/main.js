@@ -671,28 +671,18 @@ const initMain = ($, Drupal) => {
 	var inputPassword = document.querySelector(".form-item-pass-pass1 input");
 
 	if (inputPassword) {
-		inputPassword.addEventListener("keyup", function() {
-			var LineKeyStrength = document.querySelector(
-				".password-strength__indicator"
-			);
-			var TextKeyStrength = document.querySelector(".password-strength__text");
-
-			var colorLineKeyStrength = window
-			.getComputedStyle(LineKeyStrength)
-			.getPropertyValue("background-color");
-			TextKeyStrength.style.color = colorLineKeyStrength;
-		});
-	}
-
-	var LineKeyStrength = document.querySelector(
+	inputPassword.addEventListener("keyup", function() {
+		var LineKeyStrength = document.querySelector(
 		".password-strength__indicator"
-	);
-	var TextKeyStrength = document.querySelector(".password-strength__text");
+		);
+		var TextKeyStrength = document.querySelector(".password-strength__text");
 
-	var colorLineKeyStrength = window
-	.getComputedStyle(LineKeyStrength)
-	.getPropertyValue("background-color");
-	TextKeyStrength.style.color = colorLineKeyStrength;
+		var colorLineKeyStrength = window
+		.getComputedStyle(LineKeyStrength)
+		.getPropertyValue("background-color");
+		TextKeyStrength.style.color = colorLineKeyStrength;
+	});
+	}
 
 	//// js para sponsorchip budget
 	var budget = document.querySelector(".webform-submission-sponsorship-upcoming-event-form .form-item-budget");
