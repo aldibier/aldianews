@@ -134,6 +134,15 @@
         input {
           max-width: 149px;
           padding-left: 15px;
+
+          @media (max-width: $tablet) {
+            max-width: 100%;
+            font-size: 1rem;
+          }
+        }
+
+        @media (max-width: $tablet) {
+          max-width: 155px;
         }
       }
       .form-actions {
@@ -168,6 +177,7 @@
   .webform-submission-newsletters-form {
     @media (max-width: $tablet) {
       justify-content: center;
+      border: 1px solid #797979;
 
       div:first-child {
         margin-bottom: 21px;

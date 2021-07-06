@@ -408,10 +408,13 @@ import replaceToken from "./modules/replaceToken";
             if (e != null) {
               var iframe_gamw = e.querySelector("iframe");
               if (iframe_gamw == null) {
-                e.classList.add("dis-none");
-                e.closest(".ads").classList.add("dis-none");
-                e.closest(".ads").parentElement.classList.add("non-adversiting");
-                
+                // e.classList.add("dis-none");
+                var ads = e.closest(".ads");
+                if(!!ads)ads.remove();
+                if(!!ads.parentElement)ads.parentElement.classList.add("non-adversiting");
+              
+                e.remove();
+              
               }
             }
           });
