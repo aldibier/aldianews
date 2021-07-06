@@ -1415,66 +1415,48 @@ var initMain = function initMain($, Drupal) {
     } //// js para slider de video en landing de video
 
 
-    function one() {
-      Array.from(document.querySelectorAll(".block-views-blockcarousel-videos-landing-block-2")).map(function (e) {
-        var p = e.querySelector(".select-video");
-        var c = e.querySelector(".video-present");
+    var itemsCarousel = document.querySelectorAll('.block-views-blockcarousel-videos-landing-block-2 .views-row');
+    var itemsNews = document.querySelectorAll('.view-id-carousel_videos_landing.view-display-id-page_1 .views-row');
+    var allIframes = document.querySelectorAll(".view-id-carousel_videos_landing.view-display-id-page_1  iframe");
 
-        if (p != null && c != null) {
-          p.classList.remove("select-video");
-          c.classList.remove("video-present");
+    var resetAlliframes = function resetAlliframes(iframes) {
+      iframes.forEach(function (iframe) {
+        iframe.classList.add("change-src");
+
+        if (iframe.src.indexOf('?') > 0) {
+          var srcEdit = iframe.src.split('?');
+          iframe.src = "".concat(srcEdit[0], "?start=0&rel=0");
+        } else {
+          iframe.src = iframe.src;
         }
-      });
-    }
 
-    function two() {
-      Array.from(document.querySelectorAll(".view-id-carousel_videos_landing.view-display-id-page_1")).map(function (ev) {
-        var a = ev.querySelector(".show-video");
-        var b = ev.querySelector(".video-present");
-
-        if (a != null && b != null) {
-          a.classList.remove("show-video");
-          b.classList.remove("video-present");
-        }
-      });
-    }
-
-    var lista1 = document.querySelectorAll(".block-views-blockcarousel-videos-landing-block-2  .views-row.slick-slide:not(.slick-cloned) .views-field-nid");
-    var lista2 = document.querySelectorAll(".view-id-carousel_videos_landing.view-display-id-page_1 .views-field-nid");
-
-    var _loop = function _loop(i) {
-      var itemLista1 = lista1[i];
-      var itemLista2 = lista2[i];
-      itemLista1.parentElement.addEventListener("click", function () {
-        one();
-        two();
-        var allIframes = document.querySelectorAll(".view-id-carousel_videos_landing.view-display-id-page_1  iframe");
-
-        var resetAlliframes = function resetAlliframes() {
-          allIframes.forEach(function (iframe) {
-            iframe.classList.add("change-src");
-            iframe.src = iframe.src;
-            setTimeout(function () {
-              return iframe.classList.remove("change-src");
-            }, 800);
-          });
-        };
-
-        resetAlliframes();
-
-        if (itemLista1.children.innerHTML === itemLista2.children.innerHTML) {
-          itemLista1.parentElement.parentElement.classList.add("select-video");
-          itemLista2.parentElement.parentElement.classList.add("show-video");
-          itemLista1.parentElement.classList.add("video-present");
-          itemLista2.parentElement.classList.add("video-present");
-        }
+        iframe.src = iframe.src;
+        setTimeout(function () {
+          return iframe.classList.remove("change-src");
+        }, 800);
       });
     };
 
-    for (var i = 0; i < lista1.length; i++) {
-      _loop(i);
-    } //// js para controlar pop-up advertising
+    var toggleVideo = function toggleVideo(nid, list) {
+      list.forEach(function (item) {
+        var videoNid = item.dataset.nid;
+        if (nid != videoNid) item.classList.remove('active');
+        if (nid == videoNid) item.classList.add('active');
+      });
+    };
 
+    itemsCarousel.forEach(function (item) {
+      item.addEventListener('click', function () {
+        var nid = item.dataset.nid;
+        var hasActive = item.parentElement.querySelector('.active');
+        var activeNid = !!hasActive ? hasActive.dataset.nid : false;
+        if (nid === activeNid) return;
+        if (!!hasActive) hasActive.classList.remove('active');
+        resetAlliframes(allIframes);
+        item.classList.add('active');
+        toggleVideo(nid, itemsNews);
+      });
+    }); //// js para controlar pop-up advertising
 
     if (!!document.querySelector(".path-advertising")) {
       var allButtonsApply = document.querySelectorAll(".button-apply");
