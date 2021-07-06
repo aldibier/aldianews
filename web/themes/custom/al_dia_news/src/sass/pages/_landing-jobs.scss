@@ -1,4 +1,22 @@
 .path-job-seeker {
+  .skys-scroll {
+    position: relative; 
+    overflow: initial;
+    &::before {
+      position: absolute;
+      left: -40px;
+      top: 0;
+      width: 40px;
+      height: 100%;
+      background: $cwhite;
+      content: "";
+      display: block;
+      @media (max-width: $broken) {
+        left: -15px;
+        width: 15px;
+      }
+    }
+  }
   .block-fixed-block-contentheader-i-am-a-job-seeker {
     min-height: 215px;
     margin: 0 -15px 20px;
@@ -221,9 +239,11 @@
 
     .views-field-field-description {
       max-height: 1px;
+      max-width: 1440px;
+      margin: 0 auto;
       .field-content {
         position: relative;
-        left: 120px;
+        left: 85px;
         bottom: 310px;
         line-height: 28px;
         color: $cwhite;
@@ -233,6 +253,10 @@
         max-width: 1200px;
         padding-right: 50px;
         font-family: $PrNovacond-reg;
+        @media (min-width: 1500px){
+          left: 112px;
+
+        }
       }
     }
 
@@ -404,6 +428,10 @@
     line-height: 25px;
     font-family: $PrNovacond-reg;
     color: $corange;
+    margin-top: 10px;
+    @media (max-width: $desktop){
+      font-family: $PrNovacond-Sbold;
+    }
   }
 }
 
@@ -660,6 +688,7 @@
   + .block-fixed-block-contenthorizontal-advertising {
   margin: 0 auto 100px;
 }
+
 @media (max-width: $desktop) {
   .jobs.style-jobs {
     .block-content-left {
@@ -758,6 +787,10 @@
 }
 
 @media (max-width: $tablet) {
+  
+#block-system-menu-block-jobs-landing-menu .menu{
+  padding: 20px 25px 0;
+}
   .jobs.style-jobs {
     h1 {
       bottom: 110px;
@@ -772,6 +805,9 @@
       button[name="close"] {
         top: 20px;
       }
+    }
+    .banner-horizontal {
+      margin: 0 auto 30px;
     }
     .block-banner-page .views-field-field-description .field-content {
       left: 27px;
@@ -843,7 +879,7 @@
   .block-views-blockcareer-news-block-4 {
     width: 21.095%;
     max-width: 115px;
-    top: -15px;
+    top: -8px;
 
     h2 {
       font-size: $px15;

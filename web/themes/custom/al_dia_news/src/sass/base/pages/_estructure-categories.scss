@@ -1,13 +1,10 @@
 .path-taxonomy {
-  .one-content-taxonomy-category,
-  .two-more-content-taxonomy-category,
-  .category-first-block {
-    //display: none;
-  }
   @media screen and (max-width: $broken) {
     .news-galery .view-content > div:not(.no-result-search) {
-      padding: 0 15px;
       grid-template-columns: repeat(2, 1fr);
+    }
+    #block-al-dia-news-breadcrumbs.padd15{
+      padding: 0px;
     }
   }
   //------ reset margin ------------//
@@ -21,6 +18,13 @@
   .category-first-block {
     &:empty {
       display: none;
+    }
+  }
+
+  .header-category {
+    margin-bottom: 50px;
+    @media screen and (max-width: $broken){
+      margin: 15px 0 20px;
     }
   }
 }

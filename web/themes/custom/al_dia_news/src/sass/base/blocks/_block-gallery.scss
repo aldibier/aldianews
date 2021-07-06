@@ -151,7 +151,7 @@
       }
     }
     .skys-scroll {
-      position: relative;
+      position: relative; 
       overflow: initial;
       &::before {
         position: absolute;
@@ -189,16 +189,11 @@
       overflow: hidden;
       grid-auto-flow: dense;
       @media screen and (max-width: $broken) {
-        // all: initial;
-        // display: flex;
-        // flex-wrap: wrap;
-        // position: relative;
         display: grid;
-        grid-template-columns: repeat(2, 50%);
+        grid-template-columns: repeat(2, 1fr);
         grid-gap: 0 10px;
         overflow: initial;
         grid-auto-flow: dense;
-        // padding: 0 15px;
       }
     }
   }
@@ -220,11 +215,13 @@
     overflow: hidden;
 
     @media screen and (max-width: $broken) {
-      all: initial;
-      margin-bottom: 60px;
-      display: flex;
-      flex-wrap: wrap;
-      position: relative;
+      // all: initial;
+      // margin-bottom: 60px;
+      // display: flex;
+      // flex-wrap: wrap;
+      // position: relative;
+      grid-template-columns: 1fr 1fr;
+    grid-gap: 0 10px;
     }
 
     @media screen and (max-width: $broken) {

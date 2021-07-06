@@ -1,0 +1,24 @@
+uuid: 8abfb900-6728-4135-8d00-9e2249386e0d
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.career_news
+  module:
+    - views
+  theme:
+    - al_dia_news
+id: views_block__career_news_block_3
+theme: al_dia_news
+region: contenido_jobs
+weight: -55
+provider: null
+plugin: 'views_block:career_news-block_3'
+settings:
+  id: 'views_block:career_news-block_3'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility: {  }

@@ -1,0 +1,22 @@
+uuid: 70470c18-c0ed-4ef8-bec3-993895ede77a
+langcode: en
+status: true
+dependencies:
+  config:
+    - blockgroup.block_group_content.advertising_blocks_in_job_landing_pages
+  module:
+    - blockgroup
+  theme:
+    - al_dia_news
+id: advertisingblocksinjoblandingpages
+theme: al_dia_news
+region: contenido_jobs
+weight: -58
+provider: null
+plugin: 'block_group:advertising_blocks_in_job_landing_pages'
+settings:
+  id: 'block_group:advertising_blocks_in_job_landing_pages'
+  label: 'Advertising blocks in job landing pages'
+  provider: blockgroup
+  label_display: '0'
+visibility: {  }

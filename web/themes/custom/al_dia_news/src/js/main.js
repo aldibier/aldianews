@@ -26,39 +26,6 @@ const initMain = ($, Drupal) => {
 			},{once: true})
 		}
 
-		//// js remove element home
-		/* Array.from(
-			document.querySelectorAll(
-				".block-fixed-block-contentvertical-advertising-mobile"
-			)
-		).map(function (e) {
-			if (e.children.children != null) {
-				e.closest(".mobile-less").parentElement.parentElement.classList.add(
-					"life-advertising"
-				);
-			} else {
-				e.closest(".views-row").classList.add("mobile-free");
-			}
-		});
-		Array.from(
-			document.querySelectorAll(
-				".mobile-free .mobile-plus .card-more:nth-child(1)"
-			)
-		).map(function (e) {
-			if (e != null) {
-				e.remove();
-			}
-		});
-		Array.from(
-			document.querySelectorAll(
-				".mobile-free .mobile-plus .card-more:nth-child(2)"
-			)
-		).map(function (evt) {
-			if (evt != null) {
-				evt.remove();
-			}
-		}); */
-
 		///// js para caption en imagenes news
 		if (
 			!!document.querySelector(
@@ -139,7 +106,7 @@ const initMain = ($, Drupal) => {
 
 		//// js validador de publicidad en landing jobs
 		var block_ads = document.querySelector(
-			".block-block-groupgroup-career-news-jobs .block-fixed-block-contentbig-vertical-advertising"
+			".block-block-groupgroup-career-news-jobs .block-fixed-block-contentbig-vertical-advertising iframe"
 		);
 		var view_career = document.querySelector(
 			".block-views-blockcareer-news-block-1"
@@ -226,52 +193,62 @@ const initMain = ($, Drupal) => {
 
 		//// js modal landing videos
 		if (!!document.querySelector(".path-videos")) {
-			const allCardVideos = document.querySelectorAll(".card-one-column");
-			const allIframes = document.querySelectorAll(".card-one-column iframe");
 
-			const resetAlliframes = () => {
-				allIframes.forEach(iframe => {
+			const resetIframe = (element) => {
+				if(!!element){
+					let iframe = element.querySelector('iframe');
+
+					if (iframe.src.indexOf('?') > 0) {
+						const srcEdit = iframe.src.split('?');
+						iframe.src = `${srcEdit[0]}?start=0&rel=0`;
+					}else {
+						iframe.src = iframe.src;
+					}
+
 					iframe.classList.add("change-src");
-					iframe.src = iframe.src;
 					setTimeout(() => iframe.classList.remove("change-src"), 800);
-				});
+				}
 			};
 
-			allCardVideos.forEach(cardVideo =>
-				cardVideo.addEventListener("click", event => {
-					if (event.target.nodeName == "A") return;
-
-					let node = event.currentTarget.parentNode.firstElementChild;
+			document.body.addEventListener("click", event => {
+				if(event.target.classList.contains('card-one-column')){
+					let container = event.target.parentNode;
+					let currentElement = event.target;
+					let node = container.firstElementChild;
 
 					while (node) {
+						if(node.classList.contains('.banner-scroll')) continue;
+						if (event.target.closest(".modal-video")) return;
+
 						if (
-							node !== event.currentTarget &&
+							node != currentElement &&
 							node.nodeType === Node.ELEMENT_NODE
 						) {
-							if (event.target.closest(".modal-video")) return;
-							node.querySelector(".modal-video").classList.remove("show");
-							resetAlliframes();
-						} else {
-							if (event.target.closest(".wrapper-popup")) return;
+							resetIframe(node);
+							if(node.querySelector(".modal-video")) node.querySelector(".modal-video").classList.remove("show");
+						}else {
+							resetIframe(node);
 							node.querySelector(".modal-video").classList.toggle("show");
-							resetAlliframes();
 						}
+
 						node = node.nextElementSibling;
 					}
-				})
-			);
+				}
 
-			document.body.addEventListener("click", event => {
 				const contentActive = event.target.closest(".card-one-column") || false;
 
-				if (!contentActive) {
+				if (!contentActive && !!document.querySelector(".modal-video.show")) {
+					let currentVideo = document.querySelector(".modal-video.show");
+					let parentVideo = currentVideo.closest('.card-one-column') || false;
 					document.querySelector(".modal-video.show").classList.remove("show");
-					resetAlliframes();
+					resetIframe(parentVideo);
 				}
 
 				if (event.target.classList.contains("close-video")) {
-					document.querySelector(".modal-video.show").classList.remove("show");
-					resetAlliframes();
+					let currentVideo = document.querySelector(".modal-video.show");
+					let parentVideo = currentVideo.closest('.card-one-column') || false;
+					currentVideo.classList.remove("show");
+					resetIframe(parentVideo);
 				}
 			});
 		}
