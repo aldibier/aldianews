@@ -234,13 +234,13 @@
     display: none;
   }
 
-  .views-row:nth-child(1) {
-    display: flex;
+  .views-row.active {
+    display: flex !important;
   }
 
   .show-video {
     .views-row:nth-child(1) {
-      display: none;
+      //display: none;
     }
 
     .video-present {
@@ -340,9 +340,15 @@
     max-width: 250px;
     display: block;
     min-height: 220px;
+    cursor: pointer;
+
+    > * {
+      pointer-events: none;
+    }
+
   }
 
-  .views-row:nth-child(1) {
+  .views-row.active{
     position: relative;
 
     &::before {
@@ -534,7 +540,9 @@
   //estilos bloques de carrusel videos
   .view-id-carousel_videos_landing {
     .views-row {
-      flex-direction: column;
+      flex-direction: column;   &.active {
+        display: flex !important;
+      }
     }
 
     .views-row:nth-child(1) {
