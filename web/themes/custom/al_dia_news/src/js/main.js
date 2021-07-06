@@ -671,20 +671,9 @@ const initMain = ($, Drupal) => {
 	var inputPassword = document.querySelector(".form-item-pass-pass1 input");
 
 	if (inputPassword) {
-		inputPassword.addEventListener("keyup", function() {
-			var LineKeyStrength = document.querySelector(
-				".password-strength__indicator"
-			);
-			var TextKeyStrength = document.querySelector(".password-strength__text");
-
-			var colorLineKeyStrength = window
-			.getComputedStyle(LineKeyStrength)
-			.getPropertyValue("background-color");
-			TextKeyStrength.style.color = colorLineKeyStrength;
-		});
-		
+	inputPassword.addEventListener("keyup", function() {
 		var LineKeyStrength = document.querySelector(
-			".password-strength__indicator"
+		".password-strength__indicator"
 		);
 		var TextKeyStrength = document.querySelector(".password-strength__text");
 
@@ -692,6 +681,7 @@ const initMain = ($, Drupal) => {
 		.getComputedStyle(LineKeyStrength)
 		.getPropertyValue("background-color");
 		TextKeyStrength.style.color = colorLineKeyStrength;
+	});
 	}
 
 	//// js para sponsorchip budget
