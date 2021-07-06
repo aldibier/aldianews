@@ -371,9 +371,9 @@
     }
   }
   .views-infinite-scroll-content-wrapper{
-    justify-content: space-around;
-    @media (max-width: $tablet){
-    justify-content: space-between;
+    justify-content: space-around !important;
+    @media (max-width: 350px){
+    justify-content: space-between !important;
 
     }
   }
@@ -466,7 +466,7 @@
       padding-left: 15px;
     }
     .form-actions {
-      margin-bottom: 30px;
+      margin-bottom: 10px;
       max-width: 100px;
       input {
         min-height: 30px;

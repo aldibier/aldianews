@@ -208,6 +208,7 @@
       grid-column: 2 span;
     }
   }
+  
 
   //next two
   .card-one-column {
@@ -222,6 +223,11 @@
       &:nth-child(1) {
         border-right: none;
       }
+    }
+  }
+  .view-display-id-block_5 .category-view-more a{
+    @media (max-width: $tablet){
+      margin: -3px 0px -7px;
     }
   }
 }

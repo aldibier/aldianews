@@ -25,7 +25,11 @@
     min-width: initial;
     margin: 20px 0px 0px;
     position: initial;
-
+    &:nth-child(1){
+      border-bottom: 0.5px solid #B1B1B1;
+    padding-bottom: 30px;
+    margin-bottom: 0px;
+    }
     &:nth-child(1),
     &:nth-child(2) {
       margin-top: 0;
@@ -356,6 +360,7 @@
           @media (max-width: $tablet) {
             font-size: 14px;
             line-height: 17px;
+            max-width: 150px;
           }
 
           &::before {
@@ -384,7 +389,12 @@
     }
 
     @media screen and (max-width: $tablet - 1) {
-      width: max-content;
+      // width: max-content;
+      width: 100%;
+      img{
+        width: 100%;
+    max-width: none;
+      }
     }
 
     .short-title-date {
