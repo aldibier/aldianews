@@ -24,6 +24,11 @@
     }
 }
 
+.path-podcast .region-content > #block-gamw{
+	
+    margin: 0 -15px 0px;
+
+}
 
 .view-last-category-podcast,
 .view-podcast-category-internals {
@@ -266,7 +271,7 @@
 	background-color: transparent;
 
 	&.up {
-		background-image: icon('arrow-up');
+		transform: rotate(180deg);
 	}
 
 	@media screen and (max-width: $tablet) {
