@@ -12,6 +12,7 @@ dependencies:
     - field.storage.node.field_type_of_content
     - lazy.settings
     - node.type.news
+    - responsive_image.styles.last_news_home
     - responsive_image.styles.next_two_image_responsive
   module:
     - image
@@ -853,9 +854,9 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: lazy_image
+          type: lazy_responsive_image
           settings:
-            image_style: ''
+            responsive_image_style: last_news_home
             image_link: content
           group_column: ''
           group_columns: {  }

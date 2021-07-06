@@ -1817,10 +1817,6 @@ var initMain = function initMain($, Drupal) {
       var colorLineKeyStrength = window.getComputedStyle(LineKeyStrength).getPropertyValue("background-color");
       TextKeyStrength.style.color = colorLineKeyStrength;
     });
-    var LineKeyStrength = document.querySelector(".password-strength__indicator");
-    var TextKeyStrength = document.querySelector(".password-strength__text");
-    var colorLineKeyStrength = window.getComputedStyle(LineKeyStrength).getPropertyValue("background-color");
-    TextKeyStrength.style.color = colorLineKeyStrength;
   } //// js para sponsorchip budget
 
 
