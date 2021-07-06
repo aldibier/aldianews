@@ -21,7 +21,7 @@
                   ".view-id-leadership_sons.view-display-id-block_3 .block-fixed-block-content-small-vertical-advertising"
                 )
                 .find(".content > div > div")
-                .html().length >= 1
+                .children().length > 0
               ) {
                 leadership = 1;
                 $(
@@ -38,7 +38,7 @@
                   ".view-id-leadership_sons.view-display-id-block_3 .block-fixed-block-contentbig-vertical-advertising"
                 )
                 .find(".content > div > div")
-                .html().length >= 1
+                .children().length > 0
               ) {
                 $(
                   ".view-id-leadership_sons.view-display-id-block_3 .view-content .card-more-category"
@@ -69,7 +69,7 @@
                   ".view-id-politics_sons.view-display-id-block_3 .block-fixed-block-content-small-vertical-advertising"
                 )
                 .find(".content > div > div")
-                .html().length >= 1
+                .children().length > 0
               ) {
                 politics = 1;
                 $(
@@ -86,7 +86,7 @@
                   ".view-id-politics_sons.view-display-id-block_3 .block-fixed-block-contentbig-vertical-advertising"
                 )
                 .find(".content > div > div")
-                .html().length >= 1
+                .children().length > 0
               ) {
                 $(
                   ".view-id-politics_sons.view-display-id-block_3 .view-content .card-more-category"
@@ -117,7 +117,7 @@
                   ".view-id-culture_sons.view-display-id-block_3 .block-fixed-block-content-small-vertical-advertising"
                 )
                 .find(".content > div > div")
-                .html().length >= 1
+                .children().length > 0
               ) {
                 culture = 1;
                 $(
@@ -134,7 +134,7 @@
                   ".view-id-culture_sons.view-display-id-block_3 .block-fixed-block-contentbig-vertical-advertising"
                 )
                 .find(".content > div > div")
-                .html().length >= 1
+                .children().length > 0
               ) {
                 $(
                   ".view-id-culture_sons.view-display-id-block_3 .view-content .card-more-category"
@@ -164,7 +164,7 @@
                   ".view-id-more_in_this_section_news.view-display-id-block_1 .view-content .settings-tray-editable"
                 )
                 .find(".content > div > div")
-                .html().length >= 1
+                .children().length > 0
               ) {
                 $(
                   ".view-id-more_in_this_section_news.view-display-id-block_1 .view-content .card-more-news"
