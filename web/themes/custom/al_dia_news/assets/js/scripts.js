@@ -2157,6 +2157,7 @@ __webpack_require__.r(__webpack_exports__);
               if (iframe_gamw == null) {
                 e.classList.add("dis-none");
                 e.closest(".ads").classList.add("dis-none");
+                e.closest(".ads").parentElement.classList.add("non-adversiting");
               }
             }
           });

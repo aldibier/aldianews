@@ -404,6 +404,8 @@ import replaceToken from "./modules/replaceToken";
               if (iframe_gamw == null) {
                 e.classList.add("dis-none");
                 e.closest(".ads").classList.add("dis-none");
+                e.closest(".ads").parentElement.classList.add("non-adversiting");
+                
               }
             }
           });
