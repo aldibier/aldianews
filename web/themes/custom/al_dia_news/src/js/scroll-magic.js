@@ -33,10 +33,7 @@ const initScrollMagic = ($, Drupal) => {
 
     //------------ scroll internas --------------//
     if (!!containerRigth && !!noticias) {
-        debugger;
         //------------ not sticky --------------//
-        console.log(`Right : ${containerRigth.offsetHeight}`);
-        console.log(`Left : ${noticias.offsetHeight}`);
         if (containerRigth.offsetHeight < noticias.offsetHeight) return;
         if (containerRigth.offsetHeight === noticias.offsetHeight) return;
 

@@ -2368,10 +2368,7 @@ var initScrollMagic = function initScrollMagic($, Drupal) {
     }; //window.addEventListener("resize", () => resizeActivation(noticias, scene2));
 
 
-    debugger; //------------ not sticky --------------//
-
-    console.log("Right : ".concat(containerRigth.offsetHeight));
-    console.log("Left : ".concat(noticias.offsetHeight));
+    //------------ not sticky --------------//
     if (containerRigth.offsetHeight < noticias.offsetHeight) return;
     if (containerRigth.offsetHeight === noticias.offsetHeight) return;
     var scene2 = new ScrollMagic.Scene({
