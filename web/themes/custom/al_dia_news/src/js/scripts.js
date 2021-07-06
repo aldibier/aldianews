@@ -50,6 +50,12 @@ import replaceToken from "./modules/replaceToken";
     });
   }
 
+  $( ".popup-login .js-form-item-pass-pass1 input" ).blur(function() {
+    var background = $( ".popup-login .password-strength__indicator" ).css('background-color');
+    console.log(background);
+    $(".popup-login .password-strength__text").css("color", background);
+  });
+
   var $containerVideo = $(
     ".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video"
   );
