@@ -1318,31 +1318,6 @@ var initMain = function initMain($, Drupal) {
 
     if (block_ads === null && view_career != null) {
       view_career.classList.add("view-complete");
-    } //// js para slider de video en landing de video
-
-
-    function one() {
-      Array.from(document.querySelectorAll(".block-views-blockcarousel-videos-landing-block-2")).map(function (e) {
-        var p = e.querySelector(".select-video");
-        var c = e.querySelector(".video-present");
-
-        if (p != null && c != null) {
-          p.classList.remove("select-video");
-          c.classList.remove("video-present");
-        }
-      });
-    }
-
-    function two() {
-      Array.from(document.querySelectorAll(".view-id-carousel_videos_landing.view-display-id-page_1")).map(function (ev) {
-        var a = ev.querySelector(".show-video");
-        var b = ev.querySelector(".video-present");
-
-        if (a != null && b != null) {
-          a.classList.remove("show-video");
-          b.classList.remove("video-present");
-        }
-      });
     } /// js boton back
 
 
@@ -1437,8 +1412,51 @@ var initMain = function initMain($, Drupal) {
           resetIframe(_parentVideo);
         }
       });
-    } //// js para controlar pop-up advertising
+    } //// js para slider de video en landing de video
 
+
+    var itemsCarousel = document.querySelectorAll('.block-views-blockcarousel-videos-landing-block-2 .views-row');
+    var itemsNews = document.querySelectorAll('.view-id-carousel_videos_landing.view-display-id-page_1 .views-row');
+    var allIframes = document.querySelectorAll(".view-id-carousel_videos_landing.view-display-id-page_1  iframe");
+
+    var resetAlliframes = function resetAlliframes(iframes) {
+      iframes.forEach(function (iframe) {
+        iframe.classList.add("change-src");
+
+        if (iframe.src.indexOf('?') > 0) {
+          var srcEdit = iframe.src.split('?');
+          iframe.src = "".concat(srcEdit[0], "?start=0&rel=0");
+        } else {
+          iframe.src = iframe.src;
+        }
+
+        iframe.src = iframe.src;
+        setTimeout(function () {
+          return iframe.classList.remove("change-src");
+        }, 800);
+      });
+    };
+
+    var toggleVideo = function toggleVideo(nid, list) {
+      list.forEach(function (item) {
+        var videoNid = item.dataset.nid;
+        if (nid != videoNid) item.classList.remove('active');
+        if (nid == videoNid) item.classList.add('active');
+      });
+    };
+
+    itemsCarousel.forEach(function (item) {
+      item.addEventListener('click', function () {
+        var nid = item.dataset.nid;
+        var hasActive = item.parentElement.querySelector('.active');
+        var activeNid = !!hasActive ? hasActive.dataset.nid : false;
+        if (nid === activeNid) return;
+        if (!!hasActive) hasActive.classList.remove('active');
+        resetAlliframes(allIframes);
+        item.classList.add('active');
+        toggleVideo(nid, itemsNews);
+      });
+    }); //// js para controlar pop-up advertising
 
     if (!!document.querySelector(".path-advertising")) {
       var allButtonsApply = document.querySelectorAll(".button-apply");
@@ -2143,45 +2161,7 @@ __webpack_require__.r(__webpack_exports__);
               }
             }
           });
-        }, 6000); // js para modal de videos
-
-        var lista1 = document.querySelectorAll(".block-views-blockcarousel-videos-landing-block-2  .views-row.slick-slide:not(.slick-cloned) .views-field-nid");
-        var lista2 = document.querySelectorAll(".view-id-carousel_videos_landing.view-display-id-page_1 .views-field-nid");
-
-        var _loop = function _loop(i) {
-          var itemLista1 = lista1[i];
-          var itemLista2 = lista2[i]; // console.log(itemLista1, itemLista2)
-
-          itemLista1.parentElement.addEventListener("click", function () {
-            one();
-            two();
-            var allIframes = document.querySelectorAll(".view-id-carousel_videos_landing.view-display-id-page_1  iframe");
-
-            var resetAlliframes = function resetAlliframes() {
-              allIframes.forEach(function (iframe) {
-                iframe.classList.add("change-src");
-                iframe.src = iframe.src;
-                setTimeout(function () {
-                  return iframe.classList.remove("change-src");
-                }, 800);
-              });
-            };
-
-            resetAlliframes();
-
-            if (itemLista1.children.innerHTML === itemLista2.children.innerHTML) {
-              itemLista1.parentElement.parentElement.classList.add("select-video");
-              itemLista2.parentElement.parentElement.classList.add("show-video");
-              itemLista1.parentElement.classList.add("video-present");
-              itemLista2.parentElement.classList.add("video-present");
-            }
-          });
-        };
-
-        for (var i = 0; i < lista1.length; i++) {
-          _loop(i);
-        } //js para recargar
-
+        }, 6000); //js para recargar
 
         Array.from(document.querySelectorAll(".button-preload")).map(function (e) {
           if (e != null) {
@@ -2355,7 +2335,9 @@ var initScrollMagic = function initScrollMagic($, Drupal) {
   }
 
   var containerRigth = document.querySelector('.container-right');
-  var noticias = document.querySelector('.block-views-blockmore-in-this-section-news-block-1'); //------------ scroll internas --------------//
+  var containerLeft = document.querySelector('.content-news-internal-left');
+  var noticias = document.querySelector('.block-views-blockmore-in-this-section-news-block-1');
+  var limitHigh = 1690; //------------ scroll internas --------------//
 
   if (!!containerRigth && !!noticias) {
     /* setTimeout(()=>{
@@ -2370,7 +2352,7 @@ var initScrollMagic = function initScrollMagic($, Drupal) {
 
 
     //------------ not sticky --------------//
-    if (containerRigth.offsetHeight < noticias.offsetHeight) return;
+    if (containerLeft.offsetHeight < limitHigh) return;
     if (containerRigth.offsetHeight === noticias.offsetHeight) return;
     var scene2 = new ScrollMagic.Scene({
       triggerElement: containerRigth,
@@ -2634,8 +2616,8 @@ var initSlick = function initSlick($, Drupal) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\valer\Desktop\4ld14-n3ws\web\themes\custom\al_dia_news\src\js\scripts.js */"./src/js/scripts.js");
-module.exports = __webpack_require__(/*! C:\Users\valer\Desktop\4ld14-n3ws\web\themes\custom\al_dia_news\src\sass\styles.scss */"./src/sass/styles.scss");
+__webpack_require__(/*! /Users/usuario/Desktop/Proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
+module.exports = __webpack_require__(/*! /Users/usuario/Desktop/Proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
 
 
 /***/ })

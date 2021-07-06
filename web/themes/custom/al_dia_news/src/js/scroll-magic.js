@@ -29,12 +29,14 @@ const initScrollMagic = ($, Drupal) => {
 
 
     const containerRigth = document.querySelector('.container-right');
+    const containerLeft = document.querySelector('.content-news-internal-left');
     const noticias = document.querySelector('.block-views-blockmore-in-this-section-news-block-1');
+    const limitHigh = 1690;
 
     //------------ scroll internas --------------//
     if (!!containerRigth && !!noticias) {
         //------------ not sticky --------------//
-        if (containerRigth.offsetHeight < noticias.offsetHeight) return;
+        if (containerLeft.offsetHeight < limitHigh) return;
         if (containerRigth.offsetHeight === noticias.offsetHeight) return;
 
         const scene2 = new ScrollMagic.Scene({ triggerElement: containerRigth, duration: getDurationScene2 })

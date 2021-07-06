@@ -115,39 +115,6 @@ const initMain = ($, Drupal) => {
 			view_career.classList.add("view-complete");
 		}
 
-		//// js para slider de video en landing de video
-
-		function one() {
-			Array.from(
-				document.querySelectorAll(
-					".block-views-blockcarousel-videos-landing-block-2"
-				)
-			).map(function (e) {
-				var p = e.querySelector(".select-video");
-				var c = e.querySelector(".video-present");
-				if (p != null && c != null) {
-					p.classList.remove("select-video");
-					c.classList.remove("video-present");
-				}
-			});
-		}
-
-		function two() {
-			Array.from(
-				document.querySelectorAll(
-					".view-id-carousel_videos_landing.view-display-id-page_1"
-				)
-			).map(function (ev) {
-				var a = ev.querySelector(".show-video");
-				var b = ev.querySelector(".video-present");
-				if (a != null && b != null) {
-					a.classList.remove("show-video");
-					b.classList.remove("video-present");
-				}
-			});
-		}
-
-
 		/// js boton back
 		Array.from(document.querySelectorAll(".button-back")).map(function (e) {
 			if (e != null) {
@@ -253,6 +220,51 @@ const initMain = ($, Drupal) => {
 			});
 		}
 
+		//// js para slider de video en landing de video
+		const itemsCarousel = document.querySelectorAll('.block-views-blockcarousel-videos-landing-block-2 .views-row');
+		const itemsNews = document.querySelectorAll('.view-id-carousel_videos_landing.view-display-id-page_1 .views-row');
+		const allIframes = document.querySelectorAll(".view-id-carousel_videos_landing.view-display-id-page_1  iframe");
+
+		const resetAlliframes = (iframes) => {
+			iframes.forEach(iframe => {
+				iframe.classList.add("change-src");
+
+				if (iframe.src.indexOf('?') > 0) {
+					const srcEdit = iframe.src.split('?');
+					iframe.src = `${srcEdit[0]}?start=0&rel=0`;
+				}else {
+					iframe.src = iframe.src;
+				}
+
+				iframe.src = iframe.src;
+				setTimeout(() => iframe.classList.remove("change-src"), 800);
+			});
+		};
+
+		const toggleVideo = (nid,list) =>{
+			list.forEach(item => {
+				let videoNid = item.dataset.nid;
+				if(nid != videoNid) item.classList.remove('active');
+				if(nid == videoNid) item.classList.add('active');
+			})
+		}
+
+		itemsCarousel.forEach(item => {
+			item.addEventListener('click',()=>{
+				let nid = item.dataset.nid;
+				let hasActive = item.parentElement.querySelector('.active');
+				let activeNid = !!hasActive ? hasActive.dataset.nid : false;
+
+				if(nid === activeNid) return;
+
+				if(!!hasActive) hasActive.classList.remove('active');
+				resetAlliframes(allIframes);
+
+				item.classList.add('active');
+				toggleVideo(nid,itemsNews);
+			})
+		})
+		
 		//// js para controlar pop-up advertising
 		if (!!document.querySelector(".path-advertising")) {
 			const allButtonsApply = document.querySelectorAll(".button-apply");
