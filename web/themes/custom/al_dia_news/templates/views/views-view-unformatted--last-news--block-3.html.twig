@@ -22,7 +22,7 @@
 {% endif %}
 {% if device  == 'desktop' %}
 	{% if rows.block_type[0] == 'block_top' %}
-		<div class="margin-bottom ads">{{ drupal_entity('block', 'gamwadvertisement_29') }}</div>
+		<div class="block-advertising-top">{{ drupal_entity('block', 'gamwadvertisement_29') }}</div>
 	{% endif %}
 {% endif %}
 {% for row in rows %}
@@ -32,26 +32,16 @@
 		]
 	%}
 
-	{% if device  == 'mobile' %}
-		{% if loop.index  == 2 %}
-			<div class="skyscraper-mobile ads">{{ drupal_entity('block', 'gamwadvertisement_35') }}</div>
-		{% endif %}
-	{% endif %}
 	{% if row.content is not empty %}
 		<div{{row.attributes.addClass(row_classes)}}>
-		{{- row.content -}}
+			{{- row.content -}}
 		</div>
 	{% endif %}
 {% endfor %}
-{% if device  == 'desktop' %}
-	{% if rows.block_type[0] == 'advertising' %}
-		<div class="margin-top ads">{{ drupal_entity('block', 'gamwadvertisement_35') }}</div>
-	{% endif %}
-	{% if rows.block_type[0] == 'block_bottom' %}
-		<div class="margin ads block2">{{ drupal_entity('block', 'gamwadvertisement_28') }}</div>
-	{% endif %}
-{% endif %}
 
-{% if device  == 'mobile' %}
-	<div class="block-fixed-block-contentsquare-advertising-mobile ads">{{ drupal_entity('block', 'gamwadvertisement_28') }}</div>
+{% if (rows.block_type[0] == 'advertising_complete') and (device  == 'desktop') %}
+	<div class="block-advertising-complete">{{ drupal_entity('block', 'gamwadvertisement_35') }}</div>
+{% endif %}
+{% if (rows.block_type[0] == 'block_bottom') and (device  == 'desktop') %}
+	<div class="block-advertising-bottom">{{ drupal_entity('block', 'gamwadvertisement_28') }}</div>
 {% endif %}
