@@ -62,13 +62,13 @@
   {% endif %}
 
   {% if rows %}
-    {% if rows.device[0] == 'desktop' %}
+    {% if device  == 'desktop' %}
 	    <div class="margin-bottom ads">{{ drupal_entity('block', 'gamwadvertisement_34') }}</div>
     {% endif %}
     <div class="view-content">
       {{ rows }}
     </div>
-    <div class="margin-top ads">{{ drupal_entity('block', 'gamwadvertisement_27') }}</div>
+    <div class="block-fixed-block-contentsquare-advertising-mobile margin-top ads">{{ drupal_entity('block', 'gamwadvertisement_27') }}</div>
   {% elseif empty %}
     <div class="view-empty">
       {{ empty }}

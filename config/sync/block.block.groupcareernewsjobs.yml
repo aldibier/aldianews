@@ -1,0 +1,22 @@
+uuid: 94bfa57f-687f-4b9b-8169-e295c7737cc8
+langcode: en
+status: true
+dependencies:
+  config:
+    - blockgroup.block_group_content.group_career_news_jobs
+  module:
+    - blockgroup
+  theme:
+    - al_dia_news
+id: groupcareernewsjobs
+theme: al_dia_news
+region: contenido_jobs
+weight: -54
+provider: null
+plugin: 'block_group:group_career_news_jobs'
+settings:
+  id: 'block_group:group_career_news_jobs'
+  label: 'Group career news jobs'
+  provider: blockgroup
+  label_display: '0'
+visibility: {  }

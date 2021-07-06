@@ -39,9 +39,23 @@
     padding: 8rem 0 48px;
 
     @media screen and(max-width:$broken) {
-      padding: 8rem 0 25px;
+      height: 80%;
+      padding: 0 20px 14px;
+      display: flex;
+      align-items: flex-end;
+      flex: 1 1 100%;
     }
   }
+
+  .views-field-field-short-description-1 {
+    font-style: normal;
+    font-weight: normal;
+    font-size: $px19;
+    line-height: 122%;
+    display: block;
+    display: none;
+  }
+
   .two-content-category {
   }
 
@@ -92,10 +106,11 @@
       min-height: 480px;
       max-height: 480px;
       width: 100%;
-      max-width: initial;
+      max-width: 840px;
       object-fit: cover;
 
       @media screen and(max-width:$broken) {
+        max-width: initial;
         height: auto;
         min-height: initial;
       }
@@ -109,7 +124,7 @@
     padding: 0 10px;
 
     @media screen and(max-width:$tablet) {
-      padding: 0 20px;
+      padding: 0;
     }
   }
 

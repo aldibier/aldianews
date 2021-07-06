@@ -34,6 +34,31 @@
     .form-item{
         width: 50%;
         padding: 0 20px;
+
+        label {
+            font-weight: 600;
+            font-size: $px20;
+            line-height: 24px;
+            font-style: normal;
+        }
+
+        input[class*=form] {
+            height: 40px;
+        }
+
+        textarea.form-textarea {
+            min-height: 160px;
+        }
+    }
+
+    .form-submit {
+        width: 210px;
+        height: 40px;
+    }
+
+    .button--primary {
+        width: 210px;
+        height: 40px;
     }
 
     #edit-button-go-back {
@@ -61,6 +86,11 @@
 
     @media screen and (max-width:$tablet) {
 
+        .button--primary {
+            width: 100%;
+            height: 30px;
+        }
+
         #edit-markup,
         #edit-markup-01 {
             padding: 0;
@@ -82,6 +112,19 @@
         .form-item {
             width: 100%;
             padding: 0;
+
+            label {
+                font-size: 15px;
+                line-height: 18px;
+            }
+    
+            input[class*=form] {
+                height: 30px;
+            }
+    
+            textarea.form-textarea {
+                min-height: 120px;
+            }
         }
 
         .form-type-textarea {
@@ -109,6 +152,24 @@
                     font-size: 16px;
                 }
             }
+        }
+
+        #edit-actions {
+            width: 100%;
+        }
+    }
+}
+
+.webform-confirmation-modal.ui-widget.ui-corner-all:not(button) {
+    .ui-dialog-titlebar-close {
+        background: url('../img/x.svg') no-repeat center center;
+        background-size: contain;
+        top: -44px !important;
+        display: none !important;
+
+        span.ui-icon-closethick {
+            background: none;
+            -webkit-mask-image: none;
         }
     }
 }

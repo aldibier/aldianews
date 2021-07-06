@@ -319,7 +319,7 @@
   .checkout-progress {
     display: flex;
     max-width: 620px;
-    margin: 0 auto;
+    margin: 0 auto 48px;
     position: relative;
     padding: 0;
   }
@@ -391,6 +391,10 @@
 
   @media (max-width: $tablet-min) {
 
+    .checkout-progress  {
+      margin: 0 auto 30px;
+    }
+
     .checkout-progress--step {
 
       &.checkout-progress--step__current{
@@ -439,6 +443,10 @@
 
   .checkout-pane-payment-information {
     display: none;
+  }
+
+  .checkout-pane-rechpack-order-review-title {
+    width: 100%;
   }
 
   h1 {
@@ -969,6 +977,12 @@
       .option {
         position: relative;
         padding: 0 0 0 30px;
+        font-style: normal;
+        font-weight: 800;
+        font-size: $px16;
+        line-height: 19px;
+        color: #4C4546;
+        font-family: $PrNovacond-reg;
       }
 
       .option::before {
@@ -1007,11 +1021,16 @@
       margin: 0 auto;
       display: block;
       margin-right: auto !important;
+      background: #5C6165;
     }
 
     &:hover {
       background: #F2F2F2;
       transition: all .25s linear;
+
+      .button {
+        background-color: #e21;
+      }
 
       #edit-purchased-entity-0-attributes,
       .field--widget-commerce-product-variation-attributes{
@@ -1101,6 +1120,11 @@
         .option::before  {
           height: 10px;
           width: 10px;
+        }
+
+        .option {
+          font-size: 16px;
+          line-height: 19px;
         }
       }
 

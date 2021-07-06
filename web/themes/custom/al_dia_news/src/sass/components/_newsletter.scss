@@ -1,5 +1,6 @@
 //----Newsletter internal --//
-.page-node-type-news  {
+.page-node-type-news,
+.page-node-type-thought-leaders  {
   .newsletter {
     background: #f2f2f2;
     box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.08);
@@ -85,6 +86,7 @@
       background-color: #5c6165 !important;
       font-size: $px16 !important;
       line-height: 25px;
+      padding-left: 0 !important;
     }
     .webform-confirmation {
       width: 100%;
@@ -96,7 +98,7 @@
         font-size: $px20;
         line-height: 25px;
         font-family: $PrNovacond-bold;
-        color: #3A3A3C;
+        color: #3a3a3c;
         margin: 10px 0 0;
       }
 
@@ -109,7 +111,7 @@
           align-items: center;
           justify-content: center;
           height: 40px;
-          background: #5C6165;
+          background: #5c6165;
           font-style: normal;
           font-weight: bold;
           font-size: 16px;
@@ -125,7 +127,7 @@
       .form-item-markup {
         font-size: $px16;
         height: 20px;
-        margin: 0 auto 20px;
+        margin: auto;
       }
       .form-item-email {
         max-width: 149px;
@@ -162,16 +164,26 @@
       }
     }
   }
+
+  .webform-submission-newsletters-form {
+    @media (max-width: $tablet) {
+      justify-content: center;
+
+      div:first-child {
+        margin-bottom: 21px;
+      }
+    }
+  }
 }
 
 //----Newsletter home --//
 .path-frontpage  {
   .newsletter {
-    margin-bottom: 35px;
+    margin-bottom: 25px;
     padding: 9px 11px;
     background-color: $bgrey3;
 
-    @media screen and(max-width: $tablet) {
+    @media screen and(max-width: $tablet) { 
       display: none;
     }
 
@@ -191,6 +203,22 @@
           }
         }
       }
+    }
+  }
+
+  .webform-submission-newsletters-form .webform-confirmation {
+    max-width: 280px;
+    margin: 0 auto;
+
+    .webform-confirmation__message {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 20px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      letter-spacing: 0.741176px;
     }
   }
 
@@ -293,7 +321,7 @@
         align-items: center;
         justify-content: center;
         margin: 0 auto;
-        background: #5C6165;
+        background: #5c6165;
         color: #fff;
         font-style: normal;
         font-weight: bold;

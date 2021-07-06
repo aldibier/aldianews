@@ -17,6 +17,13 @@
     }
   }
 
+  .view-id-landing_thought_leaders {
+    margin-bottom: 80px;
+    @media (max-width: $broken) {
+      margin-bottom: 30px;
+    }
+  }
+
   //-------------titulo de la categoria------------//
 
   .catergory-logo {
@@ -193,7 +200,7 @@
     padding: 0 0 0 20px;
     border-left: 1px solid $cgrey4;
     height: 520px;
-
+    width: 100%;
     .content {
       margin: 0;
     }
@@ -272,6 +279,9 @@
     grid-gap: 0 40px;
     overflow: hidden;
     grid-auto-flow: dense;
+    .banner-scroll {
+      margin-top: 80px;
+    }
     @media (max-width: $broken) {
       // all: initial;
       // display: flex;
@@ -283,6 +293,12 @@
       grid-gap: 0 10px;
       overflow: hidden;
       grid-auto-flow: dense;
+      .banner-scroll {
+        margin-top: 30px;
+      }
+      .skys-scroll{
+        grid-row: span 1;
+      }
     }
     .views-row {
       // width: 33.33%;
@@ -319,9 +335,25 @@
           background: $cgrey4;
           margin: -35px auto 0;
         }
+        @media (max-width: $broken) {
+          padding: 0 15px;
+
+        }
       }
 
-      &:first-child {
+      &:nth-child(8)::before {
+        position: absolute;
+        right: calc(0px + -10%);
+        top: 0;
+        width: 1px;
+        height: 100%;
+        background: $cgrey4;
+        content: "";
+        display: block;
+      }
+
+      &:first-child,
+      &:nth-child(20) {
         &:after,
         &:before {
           display: none;
@@ -335,6 +367,38 @@
       &:nth-child(3n + 3) {
         padding: 0 0 0 15px;
         position: relative;
+      }
+      &:nth-child(9)::after {
+        display: block;
+      }
+      &:nth-child(23)::after {
+        left: 0px;
+        right: auto;
+      }
+    }
+
+    .banner-scroll ~ .views-row {
+      &:after {
+        left: auto;
+        right: 0px;
+      }
+    }
+    .skys-scroll {
+      position: relative;
+      overflow: initial;
+      &::before {
+        position: absolute;
+        left: -40px;
+        top: 0;
+        width: 40px;
+        height: 100%;
+        background: $cwhite;
+        content: "";
+        display: block;
+        @media (max-width: $broken) {
+          left: -15px;
+          width: 15px;
+        }
       }
     }
 
@@ -514,17 +578,19 @@
     .category-title {
       padding: 0 0 5px;
       border-bottom: 1px solid $corange;
-
+      margin: 15px 0 auto;
       h1 {
         font-size: 20px;
         line-height: 24px;
         margin: 5px 0 -5px;
+        position: relative;
+        bottom: 4px;
       }
     }
 
     .catergory-logo {
       width: 75px;
-      margin: 0 0 -10px 0;
+      margin: 0 10px -10px 0;
       height: 22px;
     }
 
@@ -631,6 +697,8 @@
 
       .information-node-more-content {
         margin: 0;
+        display: flex;
+        flex-direction: column;
       }
     }
 

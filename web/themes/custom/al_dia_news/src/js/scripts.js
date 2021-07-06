@@ -404,10 +404,12 @@ import replaceToken from "./modules/replaceToken";
               if (iframe_gamw == null) {
                 e.classList.add("dis-none");
                 e.closest(".ads").classList.add("dis-none");
+                e.closest(".ads").parentElement.classList.add("non-adversiting");
+                
               }
             }
           });
-        }, 4500);
+        }, 6000);
 
         //js para recargar
         Array.from(document.querySelectorAll(".button-preload")).map(function(

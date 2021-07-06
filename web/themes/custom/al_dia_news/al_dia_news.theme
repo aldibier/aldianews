@@ -38,9 +38,9 @@ function al_dia_news_preprocess_views_view(&$vars) {
   }
 
   if (is_mobile()) {
-    $vars['rows']['device'][] = 'mobile';
+    $vars['device'] = 'mobile';
   } else {
-    $vars['rows']['device'][] = 'desktop';
+    $vars['device'] = 'desktop';
   }
 }
 
@@ -53,9 +53,9 @@ function al_dia_news_preprocess_views_view_unformatted(&$vars) {
   $display = $view->getDisplay();
 
   if (is_mobile()) {
-    $vars['rows']['device'][] = 'mobile';
+    $vars['device'] = 'mobile';
   } else {
-    $vars['rows']['device'][] = 'desktop';
+    $vars['device'] = 'desktop';
   }
 
   /// landing categoria
@@ -73,7 +73,7 @@ function al_dia_news_preprocess_views_view_unformatted(&$vars) {
           $control = 1;
         break;
         case 1:
-          $vars['rows']['block_type'][] = 'advertising';
+          $vars['rows']['block_type'][] = 'advertising_complete';
           $control = 2;
         break;
         case 2:

@@ -21,7 +21,7 @@
 	<h3>{{ title }}</h3>
 {% endif %}
 
-{% if rows.device[0] == 'desktop' %}
+{% if device == 'desktop' %}
 	{% for row in rows %}
 
 		{%
@@ -63,7 +63,7 @@
 	{% endfor %}
 {% endif %}
 
-{% if rows.device[0] == 'mobile' %}
+{% if device == 'mobile' %}
 	{% for row in rows %}
 
 		{%

@@ -1,17 +1,22 @@
 #block-headerpageaboutus,
 #block-headershareanewstip {
-  margin: 0 -80px 70px;
+  margin: 0 auto 70px;
   display: flex;
   align-items: flex-end;
   position: relative;
   z-index: 1;
-
+  width: 100%;
   @media screen and (max-width: $tablet) {
     height: auto;
     margin: initial;
     margin-bottom: 20px;
   }
 
+  .content {
+    max-width: 1310px;
+    width: 100%;
+    margin: 0 auto;
+  }
   .field--name-field-description {
     max-height: 1px;
     position: absolute;
@@ -78,6 +83,11 @@
   }
 }
 
+.block-field-blocknodepagebody h1 .aldia-logo-in-text {
+  @media screen and (max-width: $tablet) {
+    max-width: 50px;
+  }
+}
 //-------------header about-us-----------------//
 #block-headerpageaboutus {
   min-height: 560px;
@@ -89,7 +99,7 @@
     height: auto;
     min-height: 215px;
     margin: initial;
-    margin: 20px -15px;
+    margin: 20px auto;
     padding: 0 25px 25px;
   }
 
@@ -137,7 +147,7 @@
     height: auto;
     min-height: 215px;
     margin: initial;
-    margin: 0 -15px 20px;
+    margin: 0 auto 20px;
     padding: 0 25px 25px;
   }
 

@@ -40,7 +40,6 @@ dependencies:
     - taxonomy
     - text
     - user
-    - views_block_area
     - views_fieldsets
 id: politics_sons
 label: 'POLITICS SONS'
@@ -2591,17 +2590,7 @@ display:
         operator: AND
         groups:
           1: AND
-      footer:
-        views_block_area:
-          id: views_block_area
-          table: views
-          field: views_block_area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: false
-          block_id: 'fixed_block_content:vertical_advertising_mobile'
-          plugin_id: views_block_area
+      footer: {  }
       cache:
         type: none
         options: {  }

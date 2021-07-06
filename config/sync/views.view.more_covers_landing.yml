@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.field_cover_page
     - field.storage.node.field_end_date
     - field.storage.node.field_start_date
+    - image.style.crop_portadas
     - lazy.settings
     - node.type.more_covers
     - taxonomy.vocabulary.years_of_covers
@@ -152,7 +153,7 @@ display:
           click_sort_column: target_id
           type: lazy_image
           settings:
-            image_style: ''
+            image_style: crop_portadas
             image_link: content
           group_column: ''
           group_columns: {  }

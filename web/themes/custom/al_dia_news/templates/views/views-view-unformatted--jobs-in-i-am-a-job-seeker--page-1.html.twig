@@ -20,7 +20,7 @@
 {% if title %}
 	<h3>{{ title }}</h3>
 {% endif %}
-{% if rows.device[0] == 'desktop' %}
+{% if device  == 'desktop' %}
 	{% for row in rows %}
 
 		{%
@@ -59,7 +59,7 @@
 	{% endfor %}
 {% endif %}
 
-{% if rows.device[0] == 'mobile' %}
+{% if device == 'mobile' %}
 	{% for row in rows %}
 
 		{%
@@ -74,7 +74,7 @@
 		{% endif %}
 
 		{## banner ##}
-		{% if loop.index == 7 %}
+		{% if loop.index == 6 %}
 			<div class="banner-scroll ads">{{ drupal_entity('block', 'gamwadvertisement_15') }}</div>
 		{% endif %}
 		{% if loop.index == 11 %}

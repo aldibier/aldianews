@@ -1,0 +1,27 @@
+uuid: 2f7e1e31-5c9c-49c1-aea0-55cc42d36af2
+langcode: en
+status: true
+dependencies:
+  config:
+    - fixed_block_content.fixed_block_content.body_jobs_landing
+  module:
+    - block_class
+    - fixed_block_content
+  theme:
+    - al_dia_news
+third_party_settings:
+  block_class:
+    classes: 'block-content-form block-content-left'
+id: bodyjobslanding
+theme: al_dia_news
+region: contenido_jobs
+weight: -60
+provider: null
+plugin: 'fixed_block_content:body_jobs_landing'
+settings:
+  id: 'fixed_block_content:body_jobs_landing'
+  label: 'Body Jobs landing'
+  provider: fixed_block_content
+  label_display: '0'
+  view_mode: ''
+visibility: {  }

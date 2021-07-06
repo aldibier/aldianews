@@ -3,25 +3,34 @@
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   align-items: center;
   padding: 40px 15px 25px;
-  margin: 0 -15px 0;
+  margin: 0 auto 0;
   overflow: hidden;
+  width: 100%;
 
   @media screen and (min-width: $tablet) {
     max-height: initial;
     padding: 40px 80px 100px;
     min-height: 710px;
-    margin: 0 -80px 70px;
+    margin: 0 auto 70px;
     align-items: flex-end;
     max-height: 710px;
   }
 
-  @media screen and (min-width: $broken) {
-    grid-template-columns: minmax(200px, 350px) minmax(700px, 930px);
+  .block-image-content {
+    max-width: 1310px;
+    margin: 0 auto;
+    display: grid;
+    max-height: 200px;
+    @media screen and (min-width: $broken) {
+      grid-template-columns: minmax(200px, 350px) minmax(700px, 100%);
+    }
+    @media screen and (max-width: $broken) {
+      grid-template-columns: 1fr 1fr;
+    }
   }
-
   .field--name-field-image-block {
     &::after {
       @include absolute(top 0 left 0);
