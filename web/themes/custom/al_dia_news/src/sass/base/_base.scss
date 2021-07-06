@@ -97,7 +97,6 @@ body.toolbar-tray-open.user-logged-in {
 }
 .layout-container {
   max-width: 1440px;
-  margin-top: 60px;
   .layout-main {
     max-width: 1310px;
     padding: 0 15px;
@@ -121,6 +120,9 @@ body.toolbar-tray-open.user-logged-in {
       padding: 15px 0px;
       .padd15 {
         padding: 0 15px;
+        .breadcrumb{
+          padding: 0px;
+        }
       }
     }
   }
@@ -134,6 +136,12 @@ body.toolbar-tray-open.user-logged-in {
       .padd15 {
         padding: 0 15px;
       }
+    }
+  }
+  #main-wrapper{
+    margin-top: 60px;
+    @media screen and (max-width: $broken) {
+      margin-top: 0px;
     }
   }
 }

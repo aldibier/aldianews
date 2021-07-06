@@ -138,8 +138,11 @@
       height: 10px;
       background: url("../img/close-black.png") center center no-repeat;
       background-size: contain;
-      top: 10px;
-      right: 20px;
+      top: 4px;
+      right: 8%;
+      @media (max-width: 350px){
+        right: 1%;
+      }
     }
   }
 }

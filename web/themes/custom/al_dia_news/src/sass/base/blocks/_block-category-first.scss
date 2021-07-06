@@ -114,6 +114,9 @@
 //-------------block subcategory first -----------------//
 .header-subcategory-taxonomy {
   margin-bottom: 50px;
+  @media (max-width: $desktop) {
+    margin: 15px 0 20px;
+  }
 }
 
 .category-first-block,
@@ -148,7 +151,7 @@
     @media screen and(max-width:$broken) {
       max-width: 100%;
       margin-right: 0;
-      margin-bottom: 70px;
+      margin-bottom: 40px;
     }
 
     > .content {
@@ -180,6 +183,9 @@
 }
 
 .first-block-subcategory-taxonomy {
+  .block-field-blocknodenewsfield-image{
+    margin-right:10px;
+  }
   @media screen and(max-width:$desktop) {
     margin-bottom: 30px;
     .one-content-subcategory-four {

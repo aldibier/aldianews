@@ -422,11 +422,17 @@
   }
   .category-view-more a {
     font-size: $px12;
+    @media (max-width: $broken){
+      margin-top: 6px;
+    }
   }
 }
 
 @media (max-width: $tablet) {
   .path-frontpage {
+    #page{
+      padding: 87px 0 0;
+    }
     .view-categories-sons {
       > .view-content > h3 a {
         line-height: initial;

@@ -296,6 +296,9 @@
       .banner-scroll {
         margin-top: 30px;
       }
+      .skys-scroll{
+        grid-row: span 1;
+      }
     }
     .views-row {
       // width: 33.33%;
@@ -331,6 +334,10 @@
           height: 1px;
           background: $cgrey4;
           margin: -35px auto 0;
+        }
+        @media (max-width: $broken) {
+          padding: 0 15px;
+
         }
       }
 
@@ -571,17 +578,19 @@
     .category-title {
       padding: 0 0 5px;
       border-bottom: 1px solid $corange;
-
+      margin: 15px 0 auto;
       h1 {
         font-size: 20px;
         line-height: 24px;
         margin: 5px 0 -5px;
+        position: relative;
+        bottom: 4px;
       }
     }
 
     .catergory-logo {
       width: 75px;
-      margin: 0 0 -10px 0;
+      margin: 0 10px -10px 0;
       height: 22px;
     }
 
