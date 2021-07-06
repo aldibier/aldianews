@@ -637,6 +637,9 @@
 .form-register-events .contact-form {
   max-width: 990px;
   padding: 80px 75px 50px;
+  @media (max-width: $desktop){
+    padding: 50px 20px;
+  }
 }
 .webform-submission-sponsorship-upcoming-event-form {
   justify-content: space-between;
@@ -1088,9 +1091,7 @@
     #edit-container--2 {
       width: 100%;
     }
-    .contact-form{
-      padding: 50px 20px;
-    }
+  
     .views-label.views-label-field-webform{
       font-size: 20px;
     }
@@ -1114,7 +1115,7 @@
       min-height: 30px;
     }
     .form-actions .button{
-      margin-top: 15px;
+      margin-top: 0px;
     max-width: 110px;
     }
   }
