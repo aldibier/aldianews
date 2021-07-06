@@ -403,18 +403,22 @@
 
 .view-more-in-this-section-news{
   .card-more{
-    margin-bottom: 0px;
+    margin-bottom: 0px !important;
     padding-bottom: 30px;
 
   }
   .card-more:nth-child(1){
     border-bottom: 0.5px solid #B1B1B1;
   }
+  .non-adversiting .card-more:nth-child(1){
+    border-bottom: 0px solid #B1B1B1;
+  }
   .card-title-more{
-    margin-top: 10px;
+    margin-top: 10px !important;
   }
   .views-row{
-    margin: 10px 0;
+    margin: 20px 0;
+    padding-bottom: 20px;
   }
 } 
 .path-frontpage {
