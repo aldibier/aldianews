@@ -22,16 +22,14 @@ dependencies:
     - field.field.node.news.field_test
     - field.field.node.news.field_type_of_content
     - field.field.node.news.field_video
-    - lazy.settings
     - node.type.news
-    - responsive_image.styles.last_news_home
   module:
     - ds
     - field_formatter_class
     - field_group
+    - image
     - layout_builder
     - lazy
-    - responsive_image
     - user
 third_party_settings:
   layout_builder:
@@ -128,8 +126,8 @@ content:
     weight: 3
     label: hidden
     settings:
-      responsive_image_style: last_news_home
       image_link: content
+      image_style: ''
     third_party_settings:
       field_formatter_class:
         class: last-news-home-image
@@ -137,7 +135,7 @@ content:
         placeholder_style: ''
         lazy_image: '1'
         data_uri: false
-    type: lazy_responsive_image
+    type: image
     region: ds_content
   field_short_description:
     type: basic_string
