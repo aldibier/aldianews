@@ -25,11 +25,8 @@
     min-width: initial;
     margin: 20px 0px 0px;
     position: initial;
-    &:nth-child(1){
-      border-bottom: 0.5px solid #B1B1B1;
-    padding-bottom: 30px;
-    margin-bottom: 0px;
-    }
+    margin: 20px auto;
+  
     &:nth-child(1),
     &:nth-child(2) {
       margin-top: 0;
@@ -404,6 +401,22 @@
   }
 }
 
+.view-more-in-this-section-news{
+  .card-more{
+    margin-bottom: 0px;
+    padding-bottom: 30px;
+
+  }
+  .card-more:nth-child(1){
+    border-bottom: 0.5px solid #B1B1B1;
+  }
+  .card-title-more{
+    margin-top: 10px;
+  }
+  .views-row{
+    margin: 10px 0;
+  }
+} 
 .path-frontpage {
   .one-content-category-four {
     margin-right: 15px;
