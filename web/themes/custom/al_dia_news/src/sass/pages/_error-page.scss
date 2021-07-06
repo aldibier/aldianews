@@ -1,11 +1,10 @@
 .node--view-mode-general-errors {
-
   .one-content-general {
     width: 100%;
   }
 
   h1 {
-    margin: 80px 0 25px;
+    margin: 40px 0 25px;
     border-bottom: 1px solid $cblack0;
     font-family: $Mod-light;
     font-size: szrem(80);
@@ -15,7 +14,7 @@
     letter-spacing: 0.025em;
     color: $cgrey6;
 
-    @media screen and (max-width:$tablet) {
+    @media screen and (max-width: $tablet) {
       margin: 30px 0 18.5px;
       border-bottom-width: 2px;
       font-size: 25px;
@@ -34,7 +33,7 @@
       letter-spacing: 0.025em;
       color: $cgrey6;
 
-      @media screen and (max-width:$tablet) {
+      @media screen and (max-width: $tablet) {
         margin: 0 0 30px;
         font-size: 12px;
         line-height: 1;
@@ -52,10 +51,15 @@
     letter-spacing: 0.025em;
     color: $cgrey6;
 
-    @media screen and (max-width:$tablet) {
+    @media screen and (max-width: $tablet) {
       margin-bottom: 40px;
       font-size: 14px;
       line-height: 1.5;
+    }
+  }
+  #block-block-groupgamw-first-block-bottom-banner .banner-horizontal{
+    @media screen and (max-width: $tablet) {
+      margin: 0px auto 30px;
     }
   }
 }

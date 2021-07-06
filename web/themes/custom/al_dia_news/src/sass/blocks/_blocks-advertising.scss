@@ -83,10 +83,21 @@
     grid-row: span 2;
     margin: 0px 0px 0px 19px;
     margin-left: 0;
-    padding-left: 20px;
+    padding-left: 10px;
+    position: relative;
     background-color: $cwhite;
     text-align: center;
     z-index: 1;
+
+    &::before {
+      content: '';
+      width: 25px;
+      height: 100%;
+      display: block;
+      position: absolute;
+      left: calc(0% - 10px);
+      background: $cwhite;
+    }
   }
 }
 
@@ -127,8 +138,22 @@
       height: 10px;
       background: url("../img/close-black.png") center center no-repeat;
       background-size: contain;
-      top: 10px;
-      right: 20px;
+      top: 4px;
+      right: 8%;
+      @media (max-width: 350px){
+        right: 1%;
+      }
+    }
+  }
+}
+
+.path-frontpage .view-categories-sons .views-field-view-2 {
+  .block-fixed-block-content-small-vertical-advertising {
+    margin-bottom: 65px;
+    padding-bottom: 0;
+  
+    @media (max-width: $broken) {
+      display: none;
     }
   }
 }
@@ -173,7 +198,9 @@
 //----------------- general header top banner ----------------------------------//
 [data-ad-unit="header-top-banner"] {
   margin-bottom: 60px;
-
+  > div{
+    text-align: center;
+  }
   @media screen and (max-width: $tablet) {
     margin: 0 auto 30px;
   }
@@ -199,18 +226,9 @@
       margin: 0 auto 40px;
     }
   }
-}
+} 
 
-//----------------- podcast landing ----------------------------------//
-.path-podcast {
-  .first-block-bottom-banner {
-    // margin: 0 auto 90px;
 
-    @media screen and (max-width: $tablet) {
-      // margin: 0 auto 50px;
-    }
-  }
-}
 
 //----------------- internal more covers ----------------------------------//
 .page-node-type-more-covers {
@@ -320,7 +338,7 @@
 
   @media (min-width: $tablet-max) and (max-width: $desktop) {
     width: unset;
-    margin: 0;
+    margin: 0 auto 20px;
   }
 }
 
@@ -366,4 +384,33 @@ div[data-ad-unit*="pre-footer-bottom-banner"] {
 
 div[data-ad-unit*="Home-post-main-headline"] {
   margin-left: 0px !important;
+}
+
+
+//Landing podcast
+.podcast-content-list {
+  .block-block-groupgamw-fixed-skyscraper-adversiting {
+    margin-bottom: 50px;
+
+    @media (max-width: $broken) {
+      display: none;
+    }
+  }
+
+  .block-block-groupfixed-blocks-adversiting {
+    @media (max-width: $broken) {
+      text-align: center;
+    }
+  }
+}
+
+//Landing categories
+.path-taxonomy .block-advertising-top {
+  padding-bottom: 50px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid $cgrey4;
+}
+
+.path-taxonomy .block-advertising-bottom {
+  margin-top: 54px;
 }

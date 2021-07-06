@@ -37,7 +37,6 @@ dependencies:
     - taxonomy
     - text
     - user
-    - views_block_area
     - views_fieldsets
 id: leadership_sons
 label: 'LEADERSHIP SONS'
@@ -2594,17 +2593,7 @@ display:
         operator: AND
         groups:
           1: AND
-      footer:
-        views_block_area:
-          id: views_block_area
-          table: views
-          field: views_block_area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: false
-          block_id: 'fixed_block_content:vertical_advertising_mobile'
-          plugin_id: views_block_area
+      footer: {  }
       block_hide_empty: true
     cache_metadata:
       max-age: -1

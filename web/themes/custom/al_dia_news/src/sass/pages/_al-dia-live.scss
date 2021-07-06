@@ -1,5 +1,8 @@
 .path-about-al-dia-live {
-
+  .layout-container,
+  .layout-container .width1440 {
+    max-width: none;
+  }
   .block-system-main-block,
   .block-views-blockabout-al-dia-live-block-1 {
     width: 100%;
@@ -39,7 +42,11 @@
       align-items: flex-end;
       position: relative;
       z-index: 1;
-
+      .view-content {
+        width: 100%;
+        max-width: 1310px;
+        margin: 0 auto;
+      }
       .about-al-dia-live-title {
         margin: 0;
         padding: 0;
@@ -55,6 +62,7 @@
       @media screen and (max-width: $tablet) {
         height: 215px;
         margin-bottom: 20px;
+        margin-top: 10px;
       }
     }
   }
@@ -366,7 +374,7 @@
           padding-bottom: 44.44%;
         }
 
-        @media screen and (max-width: $tablet){
+        @media screen and (max-width: $tablet) {
           min-height: 165px;
         }
       }
@@ -835,23 +843,22 @@
       max-width: 100%;
     }
 
-    #edit-processed-text  p{
+    #edit-processed-text p {
       font-style: normal;
       font-weight: 600;
       font-size: 35px;
       line-height: 42px;
       font-family: $ModernoFB-Regular;
       padding: 0 0 10px;
-      border-bottom: 1px solid #ED1C24;
+      border-bottom: 1px solid #ed1c24;
       margin: 20px auto 15px;
-      color: #ED1C24;
+      color: #ed1c24;
 
       img {
         width: 175px;
         height: 41.18px;
         margin: 10px 0 -5px;
       }
-
     }
 
     .form-item {
@@ -870,7 +877,7 @@
       }
     }
 
-    .form-item label, 
+    .form-item label,
     form label {
       font-style: normal;
       font-weight: 600;
@@ -878,21 +885,20 @@
       line-height: 24px;
     }
 
-    input[class*=form],
-    .SumoSelect>.CaptionCont, 
-    select{
+    input[class*="form"],
+    .SumoSelect > .CaptionCont,
+    select {
       height: 40px;
     }
 
     @media screen and (max-width: $tablet) {
-
-      input[class*=form],
-      .SumoSelect>.CaptionCont, 
-      select{
+      input[class*="form"],
+      .SumoSelect > .CaptionCont,
+      select {
         height: 30px;
       }
 
-      .form-item label, 
+      .form-item label,
       form label {
         font-size: 15px;
         line-height: 18px;
@@ -902,11 +908,10 @@
         margin: 15px 0 40px;
       }
 
-      #edit-processed-text p{
+      #edit-processed-text p {
         font-size: 16px;
         line-height: 19px;
         padding: 0 0 5px;
-        
 
         img {
           width: 70px;
@@ -936,5 +941,29 @@
         }
       }
     }
+  }
+
+  .view-events-in-al-dia-live{
+    @media screen and (max-width: $broken){
+
+    .card-event{
+  
+      .card-event-title{
+          min-height: auto;
+        }
+        .card-event-date{
+          font-family: $PrNovacond-Sbold;
+        }
+      }
+    } 
+    .view-content{
+      margin-bottom: 0px;
+    }
+  } 
+}
+.view-id-events_in_al_dia_live{
+  margin: 0 auto 0px;
+  .banner-horizontal{
+    margin: 0 -15px 0px;
   }
 }

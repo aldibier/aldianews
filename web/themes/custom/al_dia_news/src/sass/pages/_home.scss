@@ -5,7 +5,7 @@
   }
 
   > .content {
-    .block-block-groupright-column-home:only-child {
+    .block-block-groupright-column-home:only-child  {
       display: none;
     }
   }
@@ -62,7 +62,7 @@
         margin-bottom: 0;
       }
 
-      >.content {
+      > .content {
         margin: 0 0 0 20px;
 
         @media (max-width: $broken) {
@@ -85,7 +85,7 @@
     position: relative;
 
     &::after {
-      content: '';
+      content: "";
       width: 1px;
       height: 100%;
       position: absolute;
@@ -114,11 +114,12 @@
     @media (max-width: $broken) {
       width: 50%;
       max-width: 50%;
+      margin: 35px 0;
 
       &::after {
-        display: none;  
+        display: none;
       }
-      
+
       &:nth-child(2n + 1) {
         margin-right: 0;
         padding-right: 5px;
@@ -130,6 +131,12 @@
         padding-right: 0;
         padding-left: 5px;
         border-right: 0;
+      }
+
+      &:nth-child(3) {
+        &::before {
+          margin: -35px 0;
+        }
       }
     }
 
@@ -154,7 +161,7 @@
   }
 }
 
-.block-views-blockpolitics-mix-block-1 {
+.block-views-blockpolitics-mix-block-1  {
   margin-bottom: 120px;
 
   @media (max-width: $tablet) {
@@ -290,21 +297,18 @@
   }
 
   .view-categories-sons {
-    .views-field-view-3 {
-      display: flex;
-      justify-content: flex-end;
-      position: relative;
-      top: -15px;
-      margin-bottom: 25px;
-    }
-
     .card-one-column {
       margin: 35px 0 25px 0;
       position: relative;
 
       &:nth-child(1),
-      &:nth-child(2){
+      &:nth-child(2) {
         margin-top: 0;
+      }
+
+      &:nth-last-child(1),
+      &:nth-last-child(2){
+        margin-bottom: 0;
       }
 
       &:nth-child(3) {
@@ -319,9 +323,9 @@
         }
       }
 
-      &:nth-child(2n + 1){
+      &:nth-child(2n + 1) {
         &::after {
-          content: '';
+          content: "";
           width: 1px;
           height: 100%;
           position: absolute;
@@ -338,19 +342,19 @@
 
     .views-field-view-2 {
       .views-row:last-child {
-        margin-bottom: 25px;
+        /* margin-bottom: 25px;
         padding-bottom: 25px;
-        border-bottom: 1px solid #b1b1b1;
+        border-bottom: 1px solid #b1b1b1; */
       }
 
       .content {
         margin: 0px;
       }
 
-      .block-fixed-block-content-small-vertical-advertising {
-        padding-bottom: 40px;
-        //border-bottom: 1px solid #b1b1b1;
-        margin-bottom: 25px;
+      .margin-bottom {
+        @media (max-width: $broken) {
+          display: none;
+        }
       }
     }
 
@@ -360,10 +364,6 @@
     }
 
     @media (max-width: 1250px) {
-      .card-one-column:nth-child(3)::before {
-        //display: none;
-      }
-
       .card-one-column {
         padding-left: 0px;
         padding-right: 0px;
@@ -377,6 +377,11 @@
     @media (max-width: $broken) {
       .card-one-column {
         margin: 35px 0;
+
+        &:nth-last-child(1),
+        &:nth-last-child(2){
+          margin-bottom: 35px;
+        }
       }
     }
 
@@ -389,6 +394,11 @@
             margin: -20px 0;
           }
         }
+
+        &:nth-last-child(1),
+        &:nth-last-child(2){
+          margin: 20px 0;
+        }
       }
 
       .card-more-category .field--name-field-short-title a {
@@ -400,24 +410,29 @@
 
   .card-one-column .card-date,
   .main-news-date,
-  .card-more-category .field--name-created{
-  font-size: $px12;
-    p{
+  .card-more-category .field--name-created {
     font-size: $px12;
+    p {
+      font-size: $px12;
     }
   }
 
-  .card-more-news .short-title-date a{
+  .card-more-news .short-title-date a {
     font-size: $px18;
   }
-  .category-view-more a{
+  .category-view-more a {
     font-size: $px12;
+    @media (max-width: $broken){
+      margin-top: 6px;
+    }
   }
-
 }
 
 @media (max-width: $tablet) {
   .path-frontpage {
+    #page{
+      padding: 87px 0 0;
+    }
     .view-categories-sons {
       > .view-content > h3 a {
         line-height: initial;
@@ -425,10 +440,12 @@
 
       > .view-content .views-field-view-2 .view-content {
         margin-top: 0px;
+        padding-bottom: 70px;
       }
 
       .views-field-view-2 {
         border-top: 1px solid #b1b1b1;
+
         .views-row:last-child {
           margin-bottom: 0px;
         }
@@ -479,11 +496,6 @@
         border: 0px;
         position: initial !important;
         padding: 0px !important;
-        .card-image {
-          margin-bottom: 5px;
-          /* max-height: 80px; */
-          overflow: hidden;
-        }
 
         .card-category {
           margin-bottom: 0px;
@@ -670,7 +682,7 @@
 
 @media (max-width: $tablet) {
   .block-views-blockthought-leaders-home-block-4 {
-    margin-bottom: 35px auto 20px;
+    margin-bottom: 20px;
     padding-top: 5px;
     padding-bottom: 2px;
   }

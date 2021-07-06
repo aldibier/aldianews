@@ -12,6 +12,11 @@
     margin-bottom: 20px;
   }
 
+  .content {
+    max-width: 1310px;
+    width: 100%;
+    margin: 0 auto;
+  }
   .field--name-field-description {
     max-height: 1px;
     position: absolute;
@@ -79,9 +84,8 @@
 }
 
 .block-field-blocknodepagebody h1 .aldia-logo-in-text {
-  @media screen and (max-width: $tablet){
+  @media screen and (max-width: $tablet) {
     max-width: 50px;
-
   }
 }
 //-------------header about-us-----------------//

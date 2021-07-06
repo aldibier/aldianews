@@ -1,0 +1,29 @@
+uuid: b51a0b10-6c87-4567-a9b3-7c2850a11743
+langcode: en
+status: true
+dependencies:
+  config:
+    - webform.webform.contact_us_jobs_landing
+  module:
+    - block_class
+    - webform
+  theme:
+    - al_dia_news
+third_party_settings:
+  block_class:
+    classes: contact-form-father
+id: webform_8
+theme: al_dia_news
+region: contenido_jobs
+weight: -59
+provider: null
+plugin: webform_block
+settings:
+  id: webform_block
+  label: Webform
+  provider: webform
+  label_display: '0'
+  webform_id: contact_us_jobs_landing
+  default_data: ''
+  redirect: false
+visibility: {  }

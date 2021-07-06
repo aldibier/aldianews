@@ -39,6 +39,32 @@
             background-color: $cgrey4;
           }
         }
+
+        &:nth-child(8)::before {
+          position: absolute;
+          right: calc(0px + -10%);
+          top: 0;
+          width: 1px;
+          height: 100%;
+          background: $cgrey4;
+          content: "";
+          display: block;
+        }
+
+        &:nth-child(20) {
+          &:after,
+          &:before {
+            display: none;
+          }
+        }
+
+        &:nth-child(9)::after {
+          display: block;
+        }
+        &:nth-child(23)::after {
+          left: 0px;
+          right: auto;
+        }
       }
 
       &:nth-child(3n + 4) {
@@ -56,6 +82,32 @@
             margin: -35px auto;
           }
         }
+      }
+
+      &:nth-child(8)::before {
+        position: absolute;
+        right: calc(0px + -10%);
+        top: 0;
+        width: 1px;
+        height: 100%;
+        background: $cgrey4;
+        content: "";
+        display: block;
+      }
+
+      &:nth-child(20) {
+        &:after,
+        &:before {
+          display: none;
+        }
+      }
+
+      &:nth-child(9)::after {
+        display: block;
+      }
+      &:nth-child(23)::after {
+        left: 0px;
+        right: auto;
       }
 
       @media screen and (max-width: $broken) {
@@ -92,6 +144,30 @@
         }
       }
     }
+    .banner-scroll ~ .views-row {
+      &:after {
+        left: auto;
+        right: 0px;
+      }
+    }
+    .skys-scroll {
+      position: relative; 
+      overflow: initial;
+      &::before {
+        position: absolute;
+        left: -40px;
+        top: 0;
+        width: 40px;
+        height: 100%;
+        background: $cwhite;
+        content: "";
+        display: block;
+        @media (max-width: $broken) {
+          left: -15px;
+          width: 15px;
+        }
+      }
+    }
   }
 
   div {
@@ -113,16 +189,11 @@
       overflow: hidden;
       grid-auto-flow: dense;
       @media screen and (max-width: $broken) {
-        // all: initial;
-        // display: flex;
-        // flex-wrap: wrap;
-        // position: relative;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 0 10px;
         overflow: initial;
         grid-auto-flow: dense;
-        padding: 0 15px;
       }
     }
   }
@@ -144,11 +215,13 @@
     overflow: hidden;
 
     @media screen and (max-width: $broken) {
-      all: initial;
-      margin-bottom: 60px;
-      display: flex;
-      flex-wrap: wrap;
-      position: relative;
+      // all: initial;
+      // margin-bottom: 60px;
+      // display: flex;
+      // flex-wrap: wrap;
+      // position: relative;
+      grid-template-columns: 1fr 1fr;
+    grid-gap: 0 10px;
     }
 
     @media screen and (max-width: $broken) {

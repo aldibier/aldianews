@@ -1,0 +1,26 @@
+uuid: 9d21abdc-fe45-4a18-8dcc-b4808c4797ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - blockgroup.block_group_content.gamw_first_block_bottom_banner
+  module:
+    - block_class
+    - blockgroup
+  theme:
+    - al_dia_news
+third_party_settings:
+  block_class:
+    classes: 'banner-horizontal null-margin first-block-bottom-banner'
+id: gamwfirstblockbottombanner
+theme: al_dia_news
+region: contenido_jobs
+weight: -61
+provider: null
+plugin: 'block_group:gamw_first_block_bottom_banner'
+settings:
+  id: 'block_group:gamw_first_block_bottom_banner'
+  label: 'GAMW - first block -bottom banner'
+  provider: blockgroup
+  label_display: '0'
+visibility: {  }
