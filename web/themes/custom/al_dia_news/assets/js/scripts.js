@@ -2156,10 +2156,10 @@ __webpack_require__.r(__webpack_exports__);
 
               if (iframe_gamw == null) {
                 // e.classList.add("dis-none");
-                e.classList.remove();
                 var ads = e.closest(".ads");
                 if (!!ads) ads.remove();
                 if (!!ads.parentElement) ads.parentElement.classList.add("non-adversiting");
+                e.remove();
               }
             }
           });
