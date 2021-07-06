@@ -110,11 +110,17 @@ third_party_settings:
               label_display: '0'
               formatter:
                 label: hidden
-                type: responsive_image
+                type: lazy_responsive_image
                 settings:
                   responsive_image_style: image_landing_subcategory
                   image_link: content
-                third_party_settings: {  }
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+                  lazy:
+                    lazy_image: '1'
+                    placeholder_style: ''
+                    data_uri: false
               context_mapping:
                 entity: layout_builder.entity
                 view_mode: view_mode
