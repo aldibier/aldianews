@@ -73,7 +73,7 @@ function al_dia_news_preprocess_views_view_unformatted(&$vars) {
           $control = 1;
         break;
         case 1:
-          $vars['rows']['block_type'][] = 'advertising';
+          $vars['rows']['block_type'][] = 'advertising_complete';
           $control = 2;
         break;
         case 2:
