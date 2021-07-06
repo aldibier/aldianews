@@ -1048,6 +1048,10 @@ body.open-menu {
       p {
         font-size: 11px;
         line-height: 13px;
+        @media (max-width: 350px){
+          font-size: 10px;
+          letter-spacing: 0px;
+        }
       }
     }
   }
