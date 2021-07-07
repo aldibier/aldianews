@@ -41,9 +41,9 @@
     .field--name-field-image-block {
       max-width: 265px;
       margin: 0px 15px 0 0;
-      @media (min-width: $desktop){
+      @media (min-width: $desktop) {
         position: relative;
-    top: 9px;
+        top: 9px;
       }
       img {
         margin: -12px 0px;
@@ -566,6 +566,8 @@
         margin: 0 0 0 auto;
         font-size: 14px;
         line-height: 25px;
+        position: relative;
+        bottom: 3px;
       }
     }
 
