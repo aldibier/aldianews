@@ -125,6 +125,8 @@ import replaceToken from "./modules/replaceToken";
       $("body").removeClass("open-menu");
     });
 
+    $('.page-node-type-webform .webform-confirmation-modal .button-back').attr('href','/subscribe/request-a-call-back');
+
     //--------puopup-- login - movil -----------//
     $(".user-logged-in #block-menuuseritem-2").click(function() {
       if (window.matchMedia("(max-width: 768px)").matches) {
