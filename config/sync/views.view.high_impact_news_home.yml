@@ -10,10 +10,13 @@ dependencies:
     - field.storage.node.field_short_title
     - field.storage.node.field_tags
     - field.storage.node.field_type_of_content
+    - lazy.settings
     - node.type.news
+    - responsive_image.styles.high_impact_news
     - responsive_image.styles.next_two_image_responsive
   module:
     - image
+    - lazy
     - node
     - responsive_image
     - taxonomy
@@ -706,10 +709,10 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: image
+          type: lazy_responsive_image
           settings:
-            image_style: ''
-            image_link: ''
+            responsive_image_style: high_impact_news
+            image_link: content
           group_column: ''
           group_columns: {  }
           group_rows: true

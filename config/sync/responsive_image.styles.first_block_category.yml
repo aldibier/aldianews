@@ -1,0 +1,45 @@
+uuid: e4f61d90-7e63-4b69-b755-82312f5e9e7c
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.first_block_category_desktop
+    - image.style.first_block_category_mobile
+    - image.style.first_block_category_tablet
+  theme:
+    - al_dia_news
+id: first_block_category
+label: 'First block category'
+image_style_mappings:
+  -
+    breakpoint_id: al_dia_news.extra_x2_large
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: first_block_category_desktop
+  -
+    breakpoint_id: al_dia_news.extra_large
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: first_block_category_desktop
+  -
+    breakpoint_id: al_dia_news.large
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: first_block_category_tablet
+  -
+    breakpoint_id: al_dia_news.medium
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: first_block_category_tablet
+  -
+    breakpoint_id: al_dia_news.small
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: first_block_category_mobile
+  -
+    breakpoint_id: al_dia_news.extra_small
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: first_block_category_mobile
+breakpoint_group: 'Al dia news'
+fallback_image_style: '_original image_'

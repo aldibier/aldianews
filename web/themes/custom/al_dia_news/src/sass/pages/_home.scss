@@ -295,6 +295,14 @@
       color: $corange;
     }
   }
+  .card-title .aldia-logo-in-text{
+    max-width: 72px;
+    img{height: 22px;}
+    @media (max-width: $broken){
+      max-width: 40px;
+      img{height: 12px;}
+    }
+  }
 
   .view-categories-sons {
     .card-one-column {

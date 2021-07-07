@@ -3,6 +3,7 @@
     width: 100%;
     margin: 0 auto;    
     display: flex;
+    padding: 0 15px;
 
     h1 {
         font-style: normal;
@@ -84,6 +85,11 @@
         }
     }
 
+    .form-actions {
+        max-width: 210px;
+        width: 100%;
+    }
+
     @media screen and (max-width:$tablet) {
 
         .button--primary {
@@ -156,6 +162,7 @@
 
         #edit-actions {
             width: 100%;
+            max-width: 100%;
         }
     }
 }

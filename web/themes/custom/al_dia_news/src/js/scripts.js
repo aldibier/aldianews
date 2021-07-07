@@ -50,8 +50,17 @@ import replaceToken from "./modules/replaceToken";
     });
   }
 
+  $( document ).ajaxComplete(function() {
+    $( ".popup-login .js-form-item-pass-pass1 input" ).blur(function() {
+      var background = $( ".popup-login .password-strength__indicator" ).css('background-color');
+      $(".popup-login .password-strength__text").css("color", background);
+    });
+  });
+
   const containerVideo = document.querySelector('.page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video');
   const videoThoughtLeaders = document.querySelector('.page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video .content');
+
+  var videoThoughtLeadersHeigth = $videoThoughtLeaders.outerHeight();
 
   if (
     !!document.querySelector(".page-node-type-thought-leaders") &&

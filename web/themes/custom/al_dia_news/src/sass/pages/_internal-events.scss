@@ -612,6 +612,10 @@
   .form-item-address-city {
     width: 100%;
   }
+  .SumoSelect>.CaptionCont, form select{
+    min-height: 40px;
+    margin-top: 4px;
+  }
   #edit-address--wrapper {
     max-width: none;
     width: 50%;
@@ -633,6 +637,9 @@
 .form-register-events .contact-form {
   max-width: 990px;
   padding: 80px 75px 50px;
+  @media (max-width: $desktop){
+    padding: 50px 20px;
+  }
 }
 .webform-submission-sponsorship-upcoming-event-form {
   justify-content: space-between;
@@ -692,7 +699,7 @@
   .form-actions {
     width: 100%;
     max-width: 150px;
-  }
+  } 
 }
 
 //------------------ Media Queries ------------//
@@ -1084,12 +1091,32 @@
     #edit-container--2 {
       width: 100%;
     }
+  
+    .views-label.views-label-field-webform{
+      font-size: 20px;
+    }
     #edit-address--wrapper {
       width: 100%;
       padding-left: 0px;
       .fieldset-wrapper {
         margin: 0px 0px 20px;
       }
+    }
+    .form-item{
+      margin: 0 0 20px;
+    }
+    label{
+      font-size: 15px !important;
+    }
+    input{
+      min-height: 30px;
+    }
+    .SumoSelect>.CaptionCont, form select{
+      min-height: 30px;
+    }
+    .form-actions .button{
+      margin-top: 0px;
+    max-width: 110px;
     }
   }
   .webform-submission-sponsorship-upcoming-event-form {

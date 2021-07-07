@@ -1,9 +1,5 @@
 global:
   version: VERSION
-  js:
-    assets/js/scripts.js: {}
-    assets/libraries/YTPlayer/YTPlayer.js: {}
-    #assets/libraries/browserclass.js: {}
   css:
     theme:
       assets/css/styles.css: {}
@@ -13,6 +9,10 @@ global:
     - al_dia_news/sumoselect
     - al_dia_news/scrollmagic
     - core/jquery
+  js:
+    assets/js/scripts.js: {}
+    assets/libraries/YTPlayer/YTPlayer.js: {}
+    #assets/libraries/browserclass.js: {}
 
 scrollmagic:
   version: 2.0.7
