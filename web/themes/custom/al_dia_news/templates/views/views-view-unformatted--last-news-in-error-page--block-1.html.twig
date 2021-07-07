@@ -23,8 +23,6 @@
 	<h3>{{ title }}</h3>
 {% endif %}
 
-{# {{rows.is_mobile[0]}} #}
-
 {% if device == 'desktop' %}
 	{% for row in rows %}
 
@@ -47,6 +45,10 @@
 			<div class="skys-scroll skys2 ads">{{ drupal_entity('block', 'gamwadvertisement_20') }}</div>
 		{% endif %}
 
+		<div{{row.attributes.addClass(row_classes)}}>
+			{{- row.content -}}
+		</div>
+
 		{## banner ##}
 		{% if loop.index == 9 %}
 			<div class="banner-scroll ads">{{ drupal_entity('block', 'gamwadvertisement_15') }}</div>
@@ -60,10 +62,6 @@
 		{% if loop.index == 31 %}
 			<div class="banner-scroll last-banner ads">{{ drupal_entity('block', 'gamwadvertisement_36') }}</div>
 		{% endif %}
-
-		<div{{row.attributes.addClass(row_classes)}}>
-			{{- row.content -}}
-		</div>
 	{% endfor %}
 {% endif %}
 
@@ -102,9 +100,5 @@
 		{% if loop.index == 24 %}
 			<div class="banner-scroll last-banner ads">{{ drupal_entity('block', 'gamwadvertisement_36') }}</div>
 		{% endif %}
-
-		<div{{row.attributes.addClass(row_classes)}}>
-			{{- row.content -}}
-		</div>
 	{% endfor %}
 {% endif %}

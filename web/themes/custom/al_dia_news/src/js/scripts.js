@@ -50,35 +50,33 @@ import replaceToken from "./modules/replaceToken";
     });
   }
 
-  var $containerVideo = $(
-    ".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video"
-  );
-  var $videoThoughtLeaders = $(
-    ".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video .content"
-  );
-
-  var videoThoughtLeadersHeigth = $videoThoughtLeaders.outerHeight();
+  const containerVideo = document.querySelector('.page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video');
+  const videoThoughtLeaders = document.querySelector('.page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video .content');
 
   if (
     !!document.querySelector(".page-node-type-thought-leaders") &&
-    !!$videoThoughtLeaders
+    !!videoThoughtLeaders &&
+    !!containerVideo
   ) {
+
+    const videoThoughtLeadersHeigth = videoThoughtLeaders.outerHeight();
+
     $window.on("scroll", function() {
       var windowScrollTop = $window.scrollTop();
       var videoBottom =
-        videoThoughtLeadersHeigth + $containerVideo.offset().top;
+        videoThoughtLeadersHeigth + containerVideo.offset().top;
 
       if (windowScrollTop > videoBottom) {
-        $containerVideo.height(videoThoughtLeadersHeigth);
-        $videoThoughtLeaders.addClass("stuck");
+        containerVideo.height(videoThoughtLeadersHeigth);
+        videoThoughtLeaders.addClass("stuck");
       } else {
-        $containerVideo.height("auto");
-        $videoThoughtLeaders.removeClass("stuck");
+        containerVideo.height("auto");
+        videoThoughtLeaders.removeClass("stuck");
       }
       $(
         '.block-field-blocknodenewsfield-video .stuck button[name="close"]'
       ).click(function() {
-        $videoThoughtLeaders.addClass("disnone");
+        videoThoughtLeaders.addClass("disnone");
       });
     });
   }
@@ -398,17 +396,28 @@ import replaceToken from "./modules/replaceToken";
       $(function() {
         //js para eliminar publicidad vacia
         setTimeout(() => {
-          Array.from(document.querySelectorAll(".block-gamw")).map(function(e) {
+          
+          Array.from(document.querySelectorAll(".block-gamw")).map(function (e) {
             if (e != null) {
               var iframe_gamw = e.querySelector("iframe");
+
               if (iframe_gamw == null) {
-                e.classList.add("dis-none");
-                e.closest(".ads").classList.add("dis-none");
-                e.closest(".ads").parentElement.classList.add("non-adversiting");
-                
+                var ads = e.closest(".ads");
+
+                if (!!ads){
+                  console.log(ads.parentElement);
+                  if(!!ads.parentElement) ads.parentElement.classList.add("non-adversiting");
+                  ads.remove();
+                } else {
+                  console.log(e.parentElement);
+                  if(!!e.parentElement) e.parentElement.classList.add("non-adversiting");
+                  e.remove();
+                }
+
+
               }
             }
-          });
+          })
         }, 6000);
 
         //js para recargar

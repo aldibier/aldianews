@@ -1939,25 +1939,25 @@ __webpack_require__.r(__webpack_exports__);
     });
   }
 
-  var $containerVideo = $(".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video");
-  var $videoThoughtLeaders = $(".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video .content");
-  var videoThoughtLeadersHeigth = $videoThoughtLeaders.outerHeight();
+  var containerVideo = document.querySelector('.page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video');
+  var videoThoughtLeaders = document.querySelector('.page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video .content');
 
-  if (!!document.querySelector(".page-node-type-thought-leaders") && !!$videoThoughtLeaders) {
+  if (!!document.querySelector(".page-node-type-thought-leaders") && !!videoThoughtLeaders && !!containerVideo) {
+    var videoThoughtLeadersHeigth = videoThoughtLeaders.outerHeight();
     $window.on("scroll", function () {
       var windowScrollTop = $window.scrollTop();
-      var videoBottom = videoThoughtLeadersHeigth + $containerVideo.offset().top;
+      var videoBottom = videoThoughtLeadersHeigth + containerVideo.offset().top;
 
       if (windowScrollTop > videoBottom) {
-        $containerVideo.height(videoThoughtLeadersHeigth);
-        $videoThoughtLeaders.addClass("stuck");
+        containerVideo.height(videoThoughtLeadersHeigth);
+        videoThoughtLeaders.addClass("stuck");
       } else {
-        $containerVideo.height("auto");
-        $videoThoughtLeaders.removeClass("stuck");
+        containerVideo.height("auto");
+        videoThoughtLeaders.removeClass("stuck");
       }
 
       $('.block-field-blocknodenewsfield-video .stuck button[name="close"]').click(function () {
-        $videoThoughtLeaders.addClass("disnone");
+        videoThoughtLeaders.addClass("disnone");
       });
     });
   }
@@ -2155,9 +2155,17 @@ __webpack_require__.r(__webpack_exports__);
               var iframe_gamw = e.querySelector("iframe");
 
               if (iframe_gamw == null) {
-                e.classList.add("dis-none");
-                e.closest(".ads").classList.add("dis-none");
-                e.closest(".ads").parentElement.classList.add("non-adversiting");
+                var ads = e.closest(".ads");
+
+                if (!!ads) {
+                  console.log(ads.parentElement);
+                  if (!!ads.parentElement) ads.parentElement.classList.add("non-adversiting");
+                  ads.remove();
+                } else {
+                  console.log(e.parentElement);
+                  if (!!e.parentElement) e.parentElement.classList.add("non-adversiting");
+                  e.remove();
+                }
               }
             }
           });
