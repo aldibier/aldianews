@@ -125,6 +125,12 @@ import replaceToken from "./modules/replaceToken";
       $("body").removeClass("open-menu");
     });
 
+    $(".page-node-type-webform .webform-confirmation-modal .button-back").click(function() {
+      $(this).parents('.webform-confirmation-modal').css('display','none');
+      $(this).parents('.page-node-type-webform').find('.ui-widget-overlay').css('display','none');
+      $(this).attr('href','#');
+    });
+
     //--------puopup-- login - movil -----------//
     $(".user-logged-in #block-menuuseritem-2").click(function() {
       if (window.matchMedia("(max-width: 768px)").matches) {
