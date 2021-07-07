@@ -47,7 +47,7 @@ import replaceToken from "./modules/replaceToken";
       ).click(function() {
         $video.addClass("disnone");
       });
-    },{passive: true});
+    });
   }
 
   $( document ).ajaxComplete(function() {
@@ -85,7 +85,7 @@ import replaceToken from "./modules/replaceToken";
       ).click(function() {
         videoThoughtLeaders.addClass("disnone");
       });
-    },{passive: true});
+    });
   }
 
 
