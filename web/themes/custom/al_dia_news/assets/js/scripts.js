@@ -1947,18 +1947,15 @@ __webpack_require__.r(__webpack_exports__);
   });
   var containerVideo = document.querySelector('.page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video');
   var videoThoughtLeaders = document.querySelector('.page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video .content');
-  var videoThoughtLeadersHeigth = videoThoughtLeaders.outerHeight();
 
   if (!!document.querySelector(".page-node-type-thought-leaders") && !!videoThoughtLeaders && !!containerVideo) {
-    var _videoThoughtLeadersHeigth = videoThoughtLeaders.outerHeight();
-
+    var videoThoughtLeadersHeigth = videoThoughtLeaders.outerHeight();
     $window.on("scroll", function () {
       var windowScrollTop = $window.scrollTop();
-
-      var videoBottom = _videoThoughtLeadersHeigth + containerVideo.offset().top;
+      var videoBottom = videoThoughtLeadersHeigth + containerVideo.offset().top;
 
       if (windowScrollTop > videoBottom) {
-        containerVideo.height(_videoThoughtLeadersHeigth);
+        containerVideo.height(videoThoughtLeadersHeigth);
         videoThoughtLeaders.addClass("stuck");
       } else {
         containerVideo.height("auto");
