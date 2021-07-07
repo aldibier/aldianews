@@ -26,6 +26,7 @@
 
     @media (max-width: $tablet) {
       margin-bottom: 0;
+      
     }
 
     > .view-content {
@@ -448,7 +449,7 @@
 
       > .view-content .views-field-view-2 .view-content {
         margin-top: 0px;
-        padding-bottom: 70px;
+        padding-bottom: 50px;
       }
 
       .views-field-view-2 {
@@ -533,6 +534,11 @@
   .view-thought-leaders-home {
     max-width: 1280px;
     margin: 0 auto;
+    .category-title{
+      @media (max-width: $broken){
+        margin-top: 20px;
+      }
+    }
   }
 }
 
@@ -699,7 +705,7 @@
     max-width: 130px;
     min-height: 300px !important;
     padding: 17px 12px 13px;
-    margin-top: 30px;
+    margin-top: 20px;
 
     .views-field-field-authors-photo {
       max-width: 80px;
