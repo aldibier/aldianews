@@ -230,6 +230,29 @@
             }, 3000);
           });
       }
+
+
+        //js para eliminar publicidad vacia
+        setTimeout(() => {
+          
+          Array.from(document.querySelectorAll(".block-gamw")).map(function (e) {
+            if (e != null) {
+              var iframe_gamw = e.querySelector("iframe");
+
+              if (iframe_gamw == null) {
+                var ads = e.closest(".ads");
+
+                if (!!ads){
+                  if(!!ads.parentElement) ads.parentElement.classList.add("non-adversiting");
+                  ads.remove();
+                } else {
+                  if(!!e.parentElement) e.parentElement.classList.add("non-adversiting");
+                  e.remove();
+                }
+              }
+            }
+          })
+        }, 6000);
     }
   };
 })(jQuery);
