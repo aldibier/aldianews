@@ -60,7 +60,7 @@ import replaceToken from "./modules/replaceToken";
   const containerVideo = document.querySelector('.page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video');
   const videoThoughtLeaders = document.querySelector('.page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video .content');
 
-  var videoThoughtLeadersHeigth = $videoThoughtLeaders.outerHeight();
+  var videoThoughtLeadersHeigth = videoThoughtLeaders.outerHeight();
 
   if (
     !!document.querySelector(".page-node-type-thought-leaders") &&

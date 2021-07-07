@@ -1947,7 +1947,7 @@ __webpack_require__.r(__webpack_exports__);
   });
   var containerVideo = document.querySelector('.page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video');
   var videoThoughtLeaders = document.querySelector('.page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video .content');
-  var videoThoughtLeadersHeigth = $videoThoughtLeaders.outerHeight();
+  var videoThoughtLeadersHeigth = videoThoughtLeaders.outerHeight();
 
   if (!!document.querySelector(".page-node-type-thought-leaders") && !!videoThoughtLeaders && !!containerVideo) {
     var _videoThoughtLeadersHeigth = videoThoughtLeaders.outerHeight();
