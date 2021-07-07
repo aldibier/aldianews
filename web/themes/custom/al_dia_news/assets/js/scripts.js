@@ -1936,8 +1936,6 @@ __webpack_require__.r(__webpack_exports__);
       $('.block-field-blocknodenewsfield-video .stuck button[name="close"]').click(function () {
         $video.addClass("disnone");
       });
-    }, {
-      passive: true
     });
   }
 
@@ -1967,8 +1965,6 @@ __webpack_require__.r(__webpack_exports__);
       $('.block-field-blocknodenewsfield-video .stuck button[name="close"]').click(function () {
         videoThoughtLeaders.addClass("disnone");
       });
-    }, {
-      passive: true
     });
   }
 
