@@ -9,6 +9,7 @@ dependencies:
     - field.storage.node.field_short_title
     - field.storage.node.field_type_of_content
     - field.storage.node.field_video
+    - lazy.settings
     - node.type.news
     - responsive_image.styles.next_two_image_responsive
     - taxonomy.vocabulary.categories
@@ -910,7 +911,7 @@ display:
         groups:
           1: AND
       use_ajax: true
-      css_class: news-galery
+      css_class: news-gallery
     cache_metadata:
       max-age: -1
       contexts:
@@ -932,7 +933,8 @@ display:
     display_title: Block
     position: 1
     display_options:
-      display_extenders: {  }
+      display_extenders:
+        ajax_history: {  }
       pager:
         type: infinite_scroll
         options:
