@@ -26,6 +26,12 @@
 
     @media (max-width: $tablet) {
       margin-bottom: 0;
+      .featured-news-image a{
+        width: 100%;
+        img{
+          width: 100%;
+        }
+      }
     }
 
     > .view-content {
@@ -533,6 +539,11 @@
   .view-thought-leaders-home {
     max-width: 1280px;
     margin: 0 auto;
+    .category-title{
+      @media (max-width: $broken){
+        margin-top: 20px;
+      }
+    }
   }
 }
 
@@ -699,7 +710,7 @@
     max-width: 130px;
     min-height: 300px !important;
     padding: 17px 12px 13px;
-    margin-top: 30px;
+    margin-top: 20px;
 
     .views-field-field-authors-photo {
       max-width: 80px;
