@@ -414,3 +414,11 @@ div[data-ad-unit*="Home-post-main-headline"] {
 .path-taxonomy .block-advertising-bottom {
   margin-top: 54px;
 }
+
+.hidden-per-advertising {
+  display: none;
+
+  @media (max-width: $broken) {
+    display: initial;
+  }
+}

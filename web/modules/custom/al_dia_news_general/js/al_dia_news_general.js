@@ -28,7 +28,8 @@
                   ".view-id-leadership_sons.view-display-id-block_3 .view-content .card-more-category"
                 ).each(function (index, value) {
                   if (index >= 6) {
-                    $(value).hide();
+                    /* $(value).hide(); */
+                    $(value).addClass("hidden-per-advertising");
                   }
                 });
               }
@@ -44,10 +45,10 @@
                   ".view-id-leadership_sons.view-display-id-block_3 .view-content .card-more-category"
                 ).each(function (index, value) {
                   if (leadership) {
-                    $(value).hide();
+                    $(value).addClass("hidden-per-advertising");
                   } else {
                     if (index >= 3) {
-                      $(value).hide();
+                      $(value).addClass("hidden-per-advertising");
                     }
                   }
                 });
@@ -76,7 +77,7 @@
                   ".view-id-politics_sons.view-display-id-block_3 .view-content .card-more-category"
                 ).each(function (index, value) {
                   if (index >= 6) {
-                    $(value).hide();
+                    $(value).addClass("hidden-per-advertising");
                   }
                 });
               }
@@ -92,10 +93,10 @@
                   ".view-id-politics_sons.view-display-id-block_3 .view-content .card-more-category"
                 ).each(function (index, value) {
                   if (politics) {
-                    $(value).hide();
+                    $(value).addClass("hidden-per-advertising");
                   } else {
                     if (index >= 3) {
-                      $(value).hide();
+                      $(value).addClass("hidden-per-advertising");
                     }
                   }
                 });
@@ -124,7 +125,7 @@
                   ".view-id-culture_sons.view-display-id-block_3 .view-content .card-more-category"
                 ).each(function (index, value) {
                   if (index >= 6) {
-                    $(value).hide();
+                    $(value).addClass("hidden-per-advertising");
                   }
                 });
               }
@@ -140,10 +141,10 @@
                   ".view-id-culture_sons.view-display-id-block_3 .view-content .card-more-category"
                 ).each(function (index, value) {
                   if (culture) {
-                    $(value).hide();
+                    $(value).addClass("hidden-per-advertising");
                   } else {
                     if (index >= 3) {
-                      $(value).hide();
+                      $(value).addClass("hidden-per-advertising");
                     }
                   }
                 });
@@ -170,7 +171,7 @@
                   ".view-id-more_in_this_section_news.view-display-id-block_1 .view-content .card-more-news"
                 ).each(function (index, value) {
                   if (index >= 3) {
-                    $(value).hide();
+                    $(value).addClass("hidden-per-advertising");
                   }
                 });
               }
@@ -195,7 +196,7 @@
                 .find(".card-more-category")
                 .each(function (index, value) {
                   if (index >= 3) {
-                    $(value).hide();
+                    $(value).addClass("hidden-per-advertising");
                   }
                 });
               }
@@ -209,7 +210,7 @@
                 $(viewContent)
                 .find(".card-more-category")
                 .each(function (index, value) {
-                  $(value).hide();
+                  $(value).addClass("hidden-per-advertising");
                 });
               }
 
@@ -222,7 +223,7 @@
                 .find(".card-more-category")
                 .each(function (index, value) {
                   if (index >= 3) {
-                    $(value).hide();
+                    $(value).addClass("hidden-per-advertising");
                   }
                 });
               }

@@ -192,7 +192,7 @@
       .views-row {
         overflow: hidden;
         &:nth-child(2n + 3):before {
-          width: calc(100% - 0px);
+          width: calc(100% - 30px);
         }
       }
     }
@@ -386,6 +386,7 @@
         display: block !important;
         position: absolute;
         left: 0px;
+        right: 0;
         top: 0px;
         height: 100%;
         width: 100%;

@@ -4,13 +4,12 @@ global:
     theme:
       assets/css/styles.css: {}
   dependencies:
-    - al_dia_news/lazysizes
     - al_dia_news/slick
     - al_dia_news/sumoselect
     - al_dia_news/scrollmagic
     - core/jquery
   js:
-    assets/js/scripts.js: {}
+    assets/js/scripts.js: { minified: true, attributes: { defer: true } }
     assets/libraries/YTPlayer/YTPlayer.js: {}
     #assets/libraries/browserclass.js: {}
 
@@ -35,8 +34,3 @@ sumoselect:
   css:
     theme:
       assets/libraries/sumoselect/uncompressed/sumoselect.css: {}
-
-lazysizes:
-  version: 5.3.2
-  js:
-    assets/libraries/lazy-sizes/lazysizes.min.js: {}
