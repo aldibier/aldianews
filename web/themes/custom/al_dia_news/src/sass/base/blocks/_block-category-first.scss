@@ -101,14 +101,33 @@
       }
     }
   }
+  .view-content .views-row:nth-child(2n+3):before{
+    width: calc(100% - 0px) !important;
+  }
 }
 
+
+.path-taxonomy .view-id-categories_sons{
+  @media (max-width: $desktop) {
+    margin-top: 0px;
+  .banner-scroll .content > div {
+    
+     text-align: center;
+    }
+  }
+} 
 //-------------block category first -----------------//
 //-------------block subcategory first -----------------//
+.header-subcategory-taxonomy {
+  margin-bottom: 50px;
+  @media (max-width: $desktop) {
+    margin: 15px 0 20px;
+  }
+}
+
 .category-first-block,
 .first-block-subcategory-taxonomy {
   max-height: 520px;
-  margin-top: 45px;
   display: grid;
   grid-template-columns: 1fr auto;
   grid-auto-rows: auto;
@@ -116,7 +135,7 @@
     "area-1 area-2"
     "area-1 area-2";
   overflow: hidden;
-
+  margin-bottom: 90px;
   @media screen and(max-width:$broken) {
     max-height: initial;
     grid-template-columns: 1fr;
@@ -125,10 +144,7 @@
       "area-2";
     grid-gap: 0;
     overflow: initial;
-  }
-
-  @media screen and(max-width:$broken) {
-    margin-top: 20px;
+    margin-bottom: 30px;
   }
 
   .block-views-blocklast-news-category-sons-block-1,
@@ -141,7 +157,7 @@
     @media screen and(max-width:$broken) {
       max-width: 100%;
       margin-right: 0;
-      margin-bottom: 20px;
+      margin-bottom: 40px;
     }
 
     > .content {
@@ -166,10 +182,29 @@
   }
 }
 
-.first-block-subcategory-taxonomy {
-  margin-bottom: 90px;
+.category-first-block {
+  .block-views-blocklast-news-category-sons-block-2 .views-row {
+    //padding-bottom: 0px;
+  }
+}
 
-  @media screen and(max-width:$tablet) {
+.first-block-subcategory-taxonomy {
+  .block-field-blocknodenewsfield-image{
+    margin-right:10px;
+  }
+  @media screen and(max-width:$desktop) {
     margin-bottom: 30px;
+    .one-content-subcategory-four {
+      margin-right: 0px !important;
+    }
+    .block-field-blocknodenewsfield-image{
+      margin-right:0px;
+    }
+  }
+}
+
+.view-id-last_news.view-display-id-block_4 .view-header h3{
+  @media screen and(max-width:$broken){
+padding: 0px;
   }
 }

@@ -50,35 +50,40 @@ import replaceToken from "./modules/replaceToken";
     });
   }
 
-  var $containerVideo = $(
-    ".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video"
-  );
-  var $videoThoughtLeaders = $(
-    ".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video .content"
-  );
+  $( document ).ajaxComplete(function() {
+    $( ".popup-login .js-form-item-pass-pass1 input" ).blur(function() {
+      var background = $( ".popup-login .password-strength__indicator" ).css('background-color');
+      $(".popup-login .password-strength__text").css("color", background);
+    });
+  });
 
-  var videoThoughtLeadersHeigth = $videoThoughtLeaders.outerHeight();
+  const containerVideo = document.querySelector('.page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video');
+  const videoThoughtLeaders = document.querySelector('.page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video .content');
 
   if (
     !!document.querySelector(".page-node-type-thought-leaders") &&
-    !!$videoThoughtLeaders
+    !!videoThoughtLeaders &&
+    !!containerVideo
   ) {
+
+    const videoThoughtLeadersHeigth = videoThoughtLeaders.outerHeight();
+
     $window.on("scroll", function() {
       var windowScrollTop = $window.scrollTop();
       var videoBottom =
-        videoThoughtLeadersHeigth + $containerVideo.offset().top;
+        videoThoughtLeadersHeigth + containerVideo.offset().top;
 
       if (windowScrollTop > videoBottom) {
-        $containerVideo.height(videoThoughtLeadersHeigth);
-        $videoThoughtLeaders.addClass("stuck");
+        containerVideo.height(videoThoughtLeadersHeigth);
+        videoThoughtLeaders.addClass("stuck");
       } else {
-        $containerVideo.height("auto");
-        $videoThoughtLeaders.removeClass("stuck");
+        containerVideo.height("auto");
+        videoThoughtLeaders.removeClass("stuck");
       }
       $(
         '.block-field-blocknodenewsfield-video .stuck button[name="close"]'
       ).click(function() {
-        $videoThoughtLeaders.addClass("disnone");
+        videoThoughtLeaders.addClass("disnone");
       });
     });
   }
@@ -86,33 +91,22 @@ import replaceToken from "./modules/replaceToken";
 
   jQuery(document).ready(function() {
     /////
-    if (
-      $(".page-node-type-news .block-field-blocknodenewsfield-video iframe")
-        .length
-    ) {
-      var url = ($(
-        ".page-node-type-news .block-field-blocknodenewsfield-video iframe"
-      )[0].src += "&mute=1");
-      var video = url.replace("autoplay=0", "autoplay=1");
-
-      $(
-        ".page-node-type-news .block-field-blocknodenewsfield-video iframe"
-      ).attr("src", video);
+    if ($(".page-node-type-news .block-field-blocknodenewsfield-video iframe").length ) {
+      var url = ($(".page-node-type-news .block-field-blocknodenewsfield-video iframe")[0].src += "&mute=1");
+      var video = url.replace("autoplay=0", "autoplay=1").replace(".com", "-nocookie.com");
+      $(".page-node-type-news .block-field-blocknodenewsfield-video iframe").attr("src", video);
     }
 
-    if (
-      $(
-        ".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video iframe"
-      ).length
-    ) {
-      var url = ($(
-        ".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video iframe"
-      )[0].src += "&mute=1");
-      var video = url.replace("autoplay=0", "autoplay=1");
+    if ($( ".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video iframe" ).length ){
+      var url = ($(".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video iframe")[0].src += "&mute=1");
+      var video = url.replace("autoplay=0", "autoplay=1").replace(".com", "-nocookie.com");
+      $(".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video iframe").attr("src", video);
+    }
 
-      $(
-        ".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video iframe"
-      ).attr("src", video);
+    if ($(".watch-live-video .video-embed-field-provider-youtube iframe").length ){
+      var url = ($(".watch-live-video .video-embed-field-provider-youtube iframe")[0].src += "");
+      var video = url.replace(".com", "-nocookie.com");
+      $(".watch-live-video .video-embed-field-provider-youtube iframe").attr("src", video);
     }
 
     //--------- menu--------------------//
@@ -129,6 +123,12 @@ import replaceToken from "./modules/replaceToken";
     $("#block-blockpreheader").click(function() {
       $(".region-secondary-menu").removeClass("open-menu");
       $("body").removeClass("open-menu");
+    });
+
+    $(".page-node-type-webform .webform-confirmation-modal .button-back").click(function() {
+      $(this).parents('.webform-confirmation-modal').css('display','none');
+      $(this).parents('.page-node-type-webform').find('.ui-widget-overlay').css('display','none');
+      $(this).attr('href','#');
     });
 
     //--------puopup-- login - movil -----------//
@@ -398,16 +398,25 @@ import replaceToken from "./modules/replaceToken";
       $(function() {
         //js para eliminar publicidad vacia
         setTimeout(() => {
-          Array.from(document.querySelectorAll(".block-gamw")).map(function(e) {
+          
+          Array.from(document.querySelectorAll(".block-gamw")).map(function (e) {
             if (e != null) {
               var iframe_gamw = e.querySelector("iframe");
+
               if (iframe_gamw == null) {
-                e.classList.add("dis-none");
-                e.closest(".ads").classList.add("dis-none");
+                var ads = e.closest(".ads");
+
+                if (!!ads){
+                  if(!!ads.parentElement) ads.parentElement.classList.add("non-adversiting");
+                  ads.remove();
+                } else {
+                  if(!!e.parentElement) e.parentElement.classList.add("non-adversiting");
+                  e.remove();
+                }
               }
             }
-          });
-        }, 4500);
+          })
+        }, 6000);
 
         //js para recargar
         Array.from(document.querySelectorAll(".button-preload")).map(function(

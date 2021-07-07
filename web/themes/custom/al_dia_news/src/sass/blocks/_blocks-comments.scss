@@ -154,7 +154,7 @@ section .comment {
     text-transform: uppercase;
     color: $cblack3;
     cursor: pointer;
-  
+
     &::before {
       content: "";
       display: block;
@@ -167,29 +167,29 @@ section .comment {
       right: 1px;
       top: 10px;
     }
-  
+
     span {
       margin: 0 5px;
     }
-  
+
     .hide {
       display: none;
     }
-  
+
     &.active {
       .show {
         display: none;
       }
-  
+
       .hide {
         display: block;
       }
-  
+
       &::before {
         transform: rotate(180deg);
       }
     }
-  
+
     @media (max-width: $tablet) {
       padding-right: 20px !important;
       font-size: $px16;
@@ -200,7 +200,7 @@ section .comment {
         right: 0px;
         top: 6px;
       }
-  
+
       span {
         margin: 0 3px;
       }
@@ -212,19 +212,19 @@ section .comment {
       li {
         margin-left: 25px;
         padding: 0;
-        
-        &:first-child {
+
+        &:first-child  {
           margin-left: 0;
         }
 
         @media (max-width: $tablet) {
           margin-left: 20px;
         }
-      }  
-      li:nth-child(4){
-        margin-left: 0px;
       }
-      li:last-child{
+      li:nth-child(4) {
+        margin-left: 0px !important;
+      }
+      li:last-child {
         margin-left: 0px;
         margin-top: 20px;
       }
@@ -232,7 +232,7 @@ section .comment {
   }
 
   @media (max-width: $tablet) {
-    margin: 20px auto 0px;
+    margin: 50px auto 0px;
 
     .field--name-field-comment-body {
       font-size: $px18;
@@ -293,7 +293,7 @@ section .indented {
     margin: 0;
     .field--name-comment-author-display-custom,
     .comment .field--name-comment-author-display-custom,
-    .field--name-comment-post-date {
+    .field--name-comment-post-date  {
       text-align: right;
     }
 
@@ -302,7 +302,8 @@ section .indented {
       font-size: szrem(16);
     }
 
-    .field--name-comment-display-custom:not(.anonymus.field--name-comment-display-custom) .item-list {
+    .field--name-comment-display-custom:not(.anonymus.field--name-comment-display-custom)
+      .item-list {
       @media screen and(max-width:$tablet) {
         ul {
           justify-content: flex-end;
@@ -314,14 +315,14 @@ section .indented {
       }
     }
 
-    .container-show-hide { 
+    .container-show-hide {
       font-size: szrem(16);
     }
   }
 
   .field--name-field-comment-body {
     text-align: right;
-    
+
     &::first-line {
       text-align: right;
     }
@@ -330,12 +331,12 @@ section .indented {
 
 $space-level: 125px;
 
-//--first level comment--// 
-section .indented:not(.indented > .indented )  {
+//--first level comment--//
+section .indented:not(.indented > .indented) {
   > .comment {
-    .field--name-field-comment-body{
-    padding-left: $space-level;
-  }
+    .field--name-field-comment-body {
+      padding-left: $space-level;
+    }
     @media screen and(max-width:$tablet) {
       $space-level: 30px;
       padding-left: $space-level;
@@ -343,26 +344,26 @@ section .indented:not(.indented > .indented )  {
   }
 }
 
-//--second level comment--// 
+//--second level comment--//
 section .indented:not(.idented) > .indented {
   > .comment {
-    .field--name-field-comment-body{
-    padding-left: $space-level + 100px;
-  }
+    .field--name-field-comment-body {
+      padding-left: $space-level + 100px;
+    }
     @media screen and(max-width:$tablet) {
       $space-level: 30px;
-      padding-left: $space-level + $space-level; 
+      padding-left: $space-level + $space-level;
     }
 
     .field--name-comment-author-display-custom {
       font-size: szrem(20);
     }
 
-    .field--name-comment-display-custom:not(.anonymus.field--name-comment-display-custom){
+    .field--name-comment-display-custom:not(.anonymus.field--name-comment-display-custom) {
       .item-list li:nth-child(3) {
         display: none;
       }
-    } 
+    }
   }
 }
 
@@ -394,7 +395,7 @@ section {
   }
 }
 
-section .indented .comment:not(:first-child,:only-child) {
+section .indented .comment:not(:first-child, :only-child) {
   position: relative;
 
   &::before {
@@ -715,13 +716,14 @@ section > .comment:nth-of-type(1) {
 
       .fake-form-submit {
         @include button(
-          $btnWidth: 165px,
+          $btnWidth: max-content,
           $btnHeight: 40px,
           $btnBackground: $corange,
           $btnColor: $cwhite
         );
+        min-width: 165px;
         margin: 0;
-        padding: 0;
+        padding: 0 10px;
         display: block;
         font-size: szrem(18);
 
@@ -755,7 +757,7 @@ section > .comment:nth-of-type(1) {
     @media screen and(max-width: $tablet) {
       height: 125px;
       padding: 0 20px;
-      top: calc(0% + 26px);
+      top: calc(0% + 28px);
     }
 
     p {
@@ -779,6 +781,16 @@ section > .comment:nth-of-type(1) {
   display: block;
 }
 
-.page-premium .block-anonymous-comments {
-  display: none;
+.page-premium {
+  #main-wrapper {
+    max-width: 1440px !important;
+    #main {
+      max-width: 1310px !important;
+      padding: 0 15px !important;
+    }
+  }
+
+  .block-anonymous-comments {
+    display: none;
+  }
 }

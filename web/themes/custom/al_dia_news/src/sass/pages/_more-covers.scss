@@ -4,6 +4,10 @@
     font-size: $px42;
     line-height: 50px;
     letter-spacing: 1px;
+    margin: 30px 0 10px;
+    @media (max-width: $tablet) {
+    margin: 0px 0 10px;
+    }
   }
 
   .block-field-blocknodemore-coversfield-cover-page {
@@ -50,7 +54,7 @@
 
   .related-content-covers {
     border-top: 3px solid $cblack3;
-    margin: 50px auto 0;
+    margin: 60px auto 0;
 
     // .field__label,
     h2 {
@@ -61,7 +65,7 @@
       color: $cblack3;
       background: white;
       padding: 0 20px 0 0;
-      margin: -20px 0 20px;
+      margin: -20px 0 10px;
       width: max-content;
       text-transform: uppercase;
       font-family: $ModernoFB-Regular;
@@ -271,6 +275,7 @@
       border-top: 0.5px solid #b1b1b1;
       padding-top: 40px;
       margin-top: 0px;
+      justify-content: center;
     }
   }
 }
@@ -311,6 +316,9 @@
 }
 
 .view-more-covers-landing {
+  .views-infinite-scroll-content-wrapper::after{
+    display: none;
+  }
   .view-content {
     margin: 30px auto;
   }
@@ -362,7 +370,13 @@
       }
     }
   }
+  .views-infinite-scroll-content-wrapper{
+    justify-content: space-around !important;
+    @media (max-width: 350px){
+    justify-content: space-between !important;
 
+    }
+  }
   .view-more-covers-landing {
     .views-row {
       max-width: 140px;
@@ -452,7 +466,7 @@
       padding-left: 15px;
     }
     .form-actions {
-      margin-bottom: 30px;
+      margin-bottom: 10px;
       max-width: 100px;
       input {
         min-height: 30px;
@@ -477,5 +491,8 @@
       line-height: 18px;
       font-weight: 500;
     }
+  }
+  .advertising-covers #block-gamwadvertisement-6 .content > div > div{
+text-align: center;
   }
 }

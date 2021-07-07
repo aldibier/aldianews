@@ -209,7 +209,7 @@
 
 //-------------content advertising------------//
 .block-views-blockheader-advertising-landing-block-1 {
-  margin-bottom: 60px;
+  margin-bottom: 70px;
 
   @media (max-width: $tablet) {
     margin-bottom: 36px;
@@ -228,7 +228,7 @@
     color: $cblack3;
 
     @media (max-width: $tablet) {
-      margin: 25px auto;
+      margin: 30px auto 25px;
       font-size: szrem(20);
       line-height: 24px;
     }
@@ -430,6 +430,7 @@
 }
 
 .title-footer {
+  margin-bottom: 50px;
   padding-bottom: 15px;
   border-bottom: 1px solid $cblack3;
   font-size: szrem(52);
@@ -441,16 +442,9 @@
   color: $cblack3;
 
   @media (max-width: $tablet) {
+    margin-bottom: 25px;
     font-size: szrem(20);
     line-height: 24px;
-  }
-}
-
-.block-fixed-block-contentinformation-footer-advertising {
-  padding: 50px 0 0;
-
-  @media (max-width: $broken) {
-    padding: 25px 0 0;
   }
 }
 

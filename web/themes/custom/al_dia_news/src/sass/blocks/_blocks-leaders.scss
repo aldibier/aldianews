@@ -1,9 +1,14 @@
 .page-node-type-thought-leaders {
 
     //------- first block leader
+
+    .content-news-internal-first {
+        width: 100%;
+    }
+
     .content-advertising {
         .block-field-blocknodethought-leadersfield-image {
-            margin: 0 -15px;
+            margin: 0;
 
             @media screen and (min-width: $broken) {
                 margin: 0 -80px;
@@ -38,6 +43,10 @@
 
     .block-views-blockcontent-authors-block-1 {
 
+        // img {
+        //      transform: scale(1); 
+        // }
+
         .name-date {
             max-width: 320px;
             position: relative;
@@ -59,7 +68,7 @@
             font-family: $ModernoFB-Regular;
             position: absolute;
             margin: 0;
-            width: 32px;
+            width: 40px;
             color: $cgrey3;
         }
 
@@ -103,7 +112,7 @@
             }
 
             img {
-                transform: scale(1.6);
+                transform: scale(1.2);
             }
 
             .author-information {

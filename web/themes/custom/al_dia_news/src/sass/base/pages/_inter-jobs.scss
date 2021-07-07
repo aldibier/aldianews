@@ -22,10 +22,17 @@
 
   .horizontal-advertising-general-horizontal {
     width: 100%;
-    /* margin: 0 0 40px; */
-
+    margin: 0 auto 90px;
+    max-width: 1280px;
+    max-height: 149px;
+    overflow: initial;
+    text-align: center;
     @media (max-width: $tablet) {
-      /* margin: 40px 0; */
+      max-height: 100px;
+      margin: 0 auto 30px;
+      display: flex;
+      justify-content: center;
+      overflow-x: initial;
     }
   }
 
@@ -35,6 +42,7 @@
 
     @media (max-width: $broken) {
       min-height: initial;
+      width: 100%;
     }
 
     @media (min-width: $tablet) {
@@ -43,12 +51,17 @@
     .one-vertical-advertising {
       margin-bottom: 40px;
     }
+    .two-vertical-advertising {
+      padding-bottom: 50px;
+      padding-bottom: 50px;
+    }
     @media (max-width: $tablet) {
       .one-vertical-advertising {
         width: 100%;
-        margin: 0 auto;
-        padding: 0 60px;
+        margin: 0 auto 20px;
+        padding: 0 45px;
         max-width: 500px;
+        text-align: center;
       }
 
       .two-vertical-advertising {
@@ -59,6 +72,7 @@
     @media screen and (max-width: $broken) {
       .two-vertical-advertising {
         display: none;
+        margin-bottom: 0px;
       }
     }
   }
@@ -165,6 +179,9 @@
   .three-content-buttons {
     .field-content {
       display: flex;
+      @media (max-width: $tablet){
+        justify-content: center;
+      }
     }
 
     a {
@@ -257,8 +274,19 @@
     font-family: $PrNovacond-light;
   }
 }
+.page-node-type-job div.block-extra-field-blocknodenewsaddtoany {
+  @media screen and (max-width: $broken) {
+    margin-bottom: 30px;
+    .addtoany_list.a2a_kit_size_32 a {
+      height: 30px;
+    }
+  }
+}
 .page-node-type-page .banner-horizontal {
-  margin: 30px auto;
+  margin: 30px auto 80px;
+  @media screen and (max-width: $broken) {
+    margin: 30px auto;
+  }
 }
 
 .content-right-pages {
@@ -270,5 +298,23 @@
     margin: 40px 0;
     max-width: 100%;
     width: 100%;
+  }
+}
+
+article[about="/terms-of-service"] .content-right-pages{
+  @media (max-width: $tablet) {
+ 
+    margin: 10px 0 40px;
+
+  }
+}
+ 
+article[about="/contact-us"] .content-left-pages{
+  margin-bottom: 60px;
+}
+
+article[about="/about-us"] .content-left-pages{
+  @media (max-width: $tablet) {
+    padding: 0 0 0px;
   }
 }

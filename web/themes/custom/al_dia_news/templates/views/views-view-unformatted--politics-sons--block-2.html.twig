@@ -28,7 +28,7 @@
     default_row_class ? 'views-row',
     ]
 %}
-	{% if rows.device[0] == 'mobile' %}
+	{% if device == 'mobile' %}
 		{% if loop.index == 2 %}
 			<div class="skyscraper-mobile ads">{{ drupal_entity('block', 'gamwadvertisement_34') }}</div>
 		{% endif %}

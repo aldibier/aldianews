@@ -49,7 +49,7 @@
 
 .block-fixed-block-contentsquare-advertising-mobile,
 .block-fixed-block-contentvertical-advertising-mobile {
-  display: none;
+  /* display: none; */
 }
 
 @media (max-width: $desktop) {
@@ -81,9 +81,26 @@
   }
   .skyscraper-mobile {
     grid-row: span 2;
-    margin: 0px 0 0 19px;
+    margin: 0px 0px 0px 19px;
+    margin-left: 0;
+    padding-left: 10px;
+    position: relative;
+    background-color: $cwhite;
+    text-align: center;
+    z-index: 1;
+
+    &::before {
+      content: '';
+      width: 25px;
+      height: 100%;
+      display: block;
+      position: absolute;
+      left: calc(0% - 10px);
+      background: $cwhite;
+    }
   }
 }
+
 @media (max-width: 400px) {
   .block-fixed-block-contentvertical-advertising-mobile {
     max-width: 120px;
@@ -93,11 +110,12 @@
 }
 
 //----------------- Publicidad con close ----------------------------------//
-.block-fixed-block-content-horizontal-advertising-close {
-  margin: 70px auto 40px !important;
+.path-frontpage .block-fixed-block-content-horizontal-advertising-close {
+  margin-bottom: 90px !important;
   position: relative;
   max-height: 340px;
   overflow: hidden;
+
   button[name="close"] {
     position: absolute;
     top: 20px;
@@ -111,18 +129,35 @@
     cursor: pointer;
   }
   @media (max-width: $tablet) {
-    margin: 0px auto 0px !important;
+    margin: 0px auto 20px !important;
+    display: flex;
+    justify-content: center;
 
     button[name="close"] {
       width: 10px;
       height: 10px;
       background: url("../img/close-black.png") center center no-repeat;
       background-size: contain;
-      top: 10px;
-      right: 20px;
+      top: 4px;
+      right: 8%;
+      @media (max-width: 350px){
+        right: 1%;
+      }
     }
   }
 }
+
+.path-frontpage .view-categories-sons .views-field-view-2 {
+  .block-fixed-block-content-small-vertical-advertising {
+    margin-bottom: 65px;
+    padding-bottom: 0;
+  
+    @media (max-width: $broken) {
+      display: none;
+    }
+  }
+}
+
 .block-gamw:not(.block-gamw.block-fixed-block-content-horizontal-advertising-close)
   button[name="close"] {
   display: none;
@@ -131,13 +166,16 @@
 //----------------- clases generales para publicidad ----------------------------------//
 
 .banner-horizontal {
-  margin: 80px auto;
+  margin: 0 auto 90px;
   max-width: 1280px;
   max-height: 149px;
   overflow: hidden;
   @media (max-width: $tablet) {
-    margin: 30px auto;
     max-height: 100px;
+    margin: 0 -15px 30px;
+    display: flex;
+    justify-content: center;
+    overflow-x: initial;
   }
   &.bot-bottom {
     margin-bottom: 0px;
@@ -160,7 +198,9 @@
 //----------------- general header top banner ----------------------------------//
 [data-ad-unit="header-top-banner"] {
   margin-bottom: 60px;
-
+  > div{
+    text-align: center;
+  }
   @media screen and (max-width: $tablet) {
     margin: 0 auto 30px;
   }
@@ -186,18 +226,9 @@
       margin: 0 auto 40px;
     }
   }
-}
+} 
 
-//----------------- podcast landing ----------------------------------//
-.path-podcast {
-  .first-block-bottom-banner {
-    margin: 0 auto 90px;
 
-    @media screen and (max-width: $tablet) {
-      margin: 0 auto 50px;
-    }
-  }
-}
 
 //----------------- internal more covers ----------------------------------//
 .page-node-type-more-covers {
@@ -239,7 +270,7 @@
 .banner-scroll {
   grid-column: span 3;
   width: 100%;
-  @media (max-width: $broken) {
+  @media (max-width: $tablet) {
     grid-column: span 2;
   }
 }
@@ -247,7 +278,6 @@
 .block-scroll {
   max-width: 400px;
   max-height: 375px;
-  overflow: hidden;
   margin: 35px auto;
   grid-column: 3;
   @media (max-width: $broken) {
@@ -257,10 +287,10 @@
     grid-column: span 2;
   }
 }
+
 .skys-scroll {
   max-width: 400px;
   max-height: 790px;
-  overflow: hidden;
   margin: 35px auto;
   grid-column: 3;
   grid-row: span 2;
@@ -272,6 +302,39 @@
     grid-column: 2;
     grid-row: span 2;
     margin: 0px 0 0 19px;
+  }
+}
+
+.news-gallery,
+.view-landing-thought-leaders {
+  .views-row.not-show-line {
+    &::before {
+      display: none !important;
+    }
+  }
+}
+
+/* non-adversiting */
+
+.news-gallery .block-scroll,
+.view-landing-thought-leaders .block-scroll,
+.news-gallery .skys-scroll.skys2,
+.view-landing-thought-leaders .skys-scroll.skys2 {
+  $screen-query: 993px;
+  @media screen and (min-width: $screen-query) {
+    position: relative;
+    &:before {
+      display: block;
+      content: "";
+      width: calc(100% + 40px);
+      height: 1px;
+      left: -20px;
+      bottom: 0;
+      background: $cgrey4;
+      position: absolute;
+      right: 0;
+      margin: -35px auto;
+    }
   }
 }
 
@@ -293,21 +356,21 @@
 #block-gamwadvertisement-15--3 {
   @media (max-width: $mobile) {
     padding: 0 !important;
-    width: 113% !important;
-    margin-left: -15px !important;
+    /* width: 113% !important;
+    margin-left: -15px !important; */
   }
 
   @media (min-width: 321px) and (max-width: $desktop) {
-    display: block;
+    /* display: block;
     width: unset;
     text-align: center;
     margin: 0;
-    width: auto !important;
+    width: auto !important; */
   }
 
   @media (min-width: $tablet-max) and (max-width: $desktop) {
     width: unset;
-    margin: 0;
+    margin: 0 auto 20px;
   }
 }
 
@@ -353,4 +416,41 @@ div[data-ad-unit*="pre-footer-bottom-banner"] {
 
 div[data-ad-unit*="Home-post-main-headline"] {
   margin-left: 0px !important;
+}
+
+
+//Landing podcast
+.podcast-content-list {
+  .block-block-groupgamw-fixed-skyscraper-adversiting {
+    margin-bottom: 50px;
+
+    @media (max-width: $broken) {
+      display: none;
+    }
+  }
+
+  .block-block-groupfixed-blocks-adversiting {
+    @media (max-width: $broken) {
+      text-align: center;
+    }
+  }
+}
+
+//Landing categories
+.path-taxonomy .block-advertising-top {
+  padding-bottom: 50px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid $cgrey4;
+}
+
+.path-taxonomy .block-advertising-bottom {
+  margin-top: 54px;
+}
+
+.hidden-per-advertising {
+  display: none;
+
+  @media (max-width: $broken) {
+    display: initial;
+  }
 }

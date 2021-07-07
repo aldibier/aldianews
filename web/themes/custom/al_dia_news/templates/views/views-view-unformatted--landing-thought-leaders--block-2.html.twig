@@ -20,7 +20,10 @@
 {% if title %}
 	<h3>{{ title }}</h3>
 {% endif %}
-{% if rows.device[0] == 'desktop' %}
+{% if device == 'desktop' %}
+
+	{% set index_hide_lines = [7,8,9,15,16,17,23,24,29,30,31] %}
+
 	{% for row in rows %}
 
 		{%
@@ -42,6 +45,16 @@
 			<div class="skys-scroll skys2 ads">{{ drupal_entity('block', 'gamwadvertisement_20') }}</div>
 		{% endif %}
 
+		{% if loop.index in index_hide_lines %}
+			<div class="views-row not-show-line">
+				{{- row.content -}}
+			</div>
+		{% else %}
+			<div{{row.attributes.addClass(row_classes)}}>
+				{{- row.content -}}
+			</div>
+		{% endif %}
+
 		{## banner ##}
 		{% if loop.index == 9 %}
 			<div class="banner-scroll ads">{{ drupal_entity('block', 'gamwadvertisement_15') }}</div>
@@ -56,13 +69,10 @@
 			<div class="banner-scroll last-banner ads">{{ drupal_entity('block', 'gamwadvertisement_36') }}</div>
 		{% endif %}
 
-		<div{{row.attributes.addClass(row_classes)}}>
-			{{- row.content -}}
-		</div>
 	{% endfor %}
 {% endif %}
 
-{% if rows.device[0] == 'mobile' %}
+{% if device == 'mobile' %}
 	{% for row in rows %}
 
 		{%

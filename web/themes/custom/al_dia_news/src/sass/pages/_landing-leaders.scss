@@ -17,6 +17,13 @@
     }
   }
 
+  .view-id-landing_thought_leaders {
+    margin-bottom: 80px;
+    @media (max-width: $broken) {
+      margin-bottom: 30px;
+    }
+  }
+
   //-------------titulo de la categoria------------//
 
   .catergory-logo {
@@ -193,7 +200,7 @@
     padding: 0 0 0 20px;
     border-left: 1px solid $cgrey4;
     height: 520px;
-
+    width: 100%;
     .content {
       margin: 0;
     }
@@ -262,8 +269,6 @@
   }
 
   .views-infinite-scroll-content-wrapper {
-    // display: flex;
-    // flex-wrap: wrap;
     display: grid;
     grid-template-columns: minmax(250px, 420px) minmax(250px, 440px) minmax(
         250px,
@@ -272,72 +277,58 @@
     grid-gap: 0 40px;
     overflow: hidden;
     grid-auto-flow: dense;
+    .banner-scroll {
+      margin-top: 80px;
+    }
+
     @media (max-width: $broken) {
-      // all: initial;
-      // display: flex;
-      // flex-wrap: wrap;
-      // position: relative;
       position: relative;
       display: grid;
       grid-template-columns: repeat(2, 50%);
       grid-gap: 0 10px;
       overflow: hidden;
       grid-auto-flow: dense;
+      .banner-scroll {
+        margin-top: 30px;
+      }
+      .skys-scroll{
+        grid-row: span 1;
+      }
     }
+
     .views-row {
-      // width: 33.33%;
       max-width: 440px;
-      padding: 0 15px;
       margin: 40px 0;
 
-      &:after {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 1px;
-        height: 100%;
-        background: $cgrey4;
-        content: "";
-        display: block;
-      }
+      $screen-query: 993px;
 
-      &:nth-child(3n + 1) {
-        padding: 0 15px 0 0;
-
-        &:after {
-          display: none;
-        }
-
-        &:before {
+      @media screen and (min-width: $screen-query) {
+        position: relative;
+        &::after {
           content: "";
-          display: block;
-          width: 100%;
+          width: 1px;
+          height: 100%;
           position: absolute;
-          left: 0;
-          right: 0;
+          top: 0;
+          right: calc(0% - 20px);
+          background-color: $cgrey4;
+        }
+
+        &::before {
+          display: block;
+          content: "";
+          width: calc(100% + 40px);
           height: 1px;
+          left: -20px;
+          bottom: 0;
           background: $cgrey4;
-          margin: -35px auto 0;
+          position: absolute;
+          right: 0;
+          margin: -40px auto;
         }
-      }
-
-      &:first-child {
-        &:after,
-        &:before {
-          display: none;
-        }
-      }
-
-      &:nth-child(3n + 2) {
-        position: relative;
-      }
-
-      &:nth-child(3n + 3) {
-        padding: 0 0 0 15px;
-        position: relative;
       }
     }
-
+     
     .author-information-more-content,
     .information-node-more-content {
       max-width: 355px;
@@ -383,6 +374,7 @@
     }
 
     .title-node-landing {
+      min-height: 120px;
       font-style: normal;
       font-weight: bold;
       font-size: $px30;
@@ -466,46 +458,10 @@
       .views-row {
         width: 100%;
         max-width: 100%;
+      }
 
-        &:nth-child(2n + 1) {
-          // padding: 0 15px 0 0;
-          position: initial;
-
-          &:before {
-            display: block;
-            position: absolute;
-            width: 100%;
-            height: 1px;
-            top: initial;
-            margin: -30px 0 0;
-            content: "";
-            background: $cgrey4;
-          }
-
-          &:after {
-            display: none;
-          }
-        }
-
-        &:first-child {
-          &:after,
-          &:before {
-            display: none;
-          }
-        }
-
-        &:nth-child(2n + 2) {
-          // padding: 0 0 0 15px;
-          position: relative;
-
-          &:before {
-            left: 0;
-            right: auto;
-            height: 100%;
-            width: 1px;
-            margin: 0;
-          }
-        }
+      .title-node-landing {
+        min-height: initial;
       }
     }
   }
@@ -514,17 +470,19 @@
     .category-title {
       padding: 0 0 5px;
       border-bottom: 1px solid $corange;
-
+      margin: 15px 0 auto;
       h1 {
         font-size: 20px;
         line-height: 24px;
         margin: 5px 0 -5px;
+        position: relative;
+        bottom: 4px;
       }
     }
 
     .catergory-logo {
       width: 75px;
-      margin: 0 0 -10px 0;
+      margin: 0 10px -10px 0;
       height: 22px;
     }
 
@@ -631,6 +589,8 @@
 
       .information-node-more-content {
         margin: 0;
+        display: flex;
+        flex-direction: column;
       }
     }
 
