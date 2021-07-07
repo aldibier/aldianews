@@ -338,6 +338,9 @@
       margin-left: 15px;
     }
   }
+  .non-adversiting .block-content-left{
+    margin: 0 auto;
+  }
 
   .block-views-blockcarousel-jobs-landing-block-1 {
     margin: 75px auto 100px;
@@ -394,6 +397,7 @@
     }
   }
 }
+
 
 // estilos de bloque careers news
 .block-views-blockcareer-news-block-4 {
@@ -786,6 +790,24 @@
   }
 }
 
+@media (max-width: $broken){
+  .path-jobs .layout-container .layout-main {
+    margin: 30px auto 10px;
+    .watch-live-button{
+      margin: 0 auto 20px;
+    }
+    .style-jobs .breadcrumb{
+      margin: 20px auto 10px;
+    }
+    .non-adversiting .content-right-pages{
+      margin: 0px;
+    }
+  }
+}
+
+
+
+
 @media (max-width: $tablet) {
   
 #block-system-menu-block-jobs-landing-menu .menu{
@@ -1167,7 +1189,5 @@
     }
   }
 
-  .path-jobs .layout-container .layout-main {
-    margin: 0 auto 10px;
-  }
+
 }
