@@ -341,19 +341,7 @@
         }
       }
 
-      &:nth-child(8)::before {
-        position: absolute;
-        right: calc(0px + -10%);
-        top: 0;
-        width: 1px;
-        height: 100%;
-        background: $cgrey4;
-        content: "";
-        display: block;
-      }
-
-      &:first-child,
-      &:nth-child(20) {
+      &:first-child{
         &:after,
         &:before {
           display: none;
@@ -368,20 +356,7 @@
         padding: 0 0 0 15px;
         position: relative;
       }
-      &:nth-child(9)::after {
-        display: block;
-      }
-      &:nth-child(23)::after {
-        left: 0px;
-        right: auto;
-      }
-    }
-
-    .banner-scroll ~ .views-row {
-      &:after {
-        left: auto;
-        right: 0px;
-      }
+    
     }
     .skys-scroll {
       position: relative;
