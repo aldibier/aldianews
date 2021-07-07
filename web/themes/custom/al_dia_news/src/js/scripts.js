@@ -93,7 +93,7 @@ import replaceToken from "./modules/replaceToken";
     /////
     if ($(".page-node-type-news .block-field-blocknodenewsfield-video iframe").length ) {
       var url = ($(".page-node-type-news .block-field-blocknodenewsfield-video iframe")[0].src += "&mute=1");
-      var video = url.replace("autoplay=0", "autoplay=1").replace(".com", "-nocookie.com");;
+      var video = url.replace("autoplay=0", "autoplay=1").replace(".com", "-nocookie.com");
       $(".page-node-type-news .block-field-blocknodenewsfield-video iframe").attr("src", video);
     }
 
@@ -103,11 +103,11 @@ import replaceToken from "./modules/replaceToken";
       $(".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video iframe").attr("src", video);
     }
 
-    // if ($(".watch-live-video .video-embed-field-provider-youtube iframe").length ){
-    //   var url = ($(".watch-live-video .video-embed-field-provider-youtube iframe")[0].src += "");
-    //   var video = url.replace(".com", "-nocookie.com");
-    //   $(".watch-live-video .video-embed-field-provider-youtube iframe").attr("src", video);
-    // }
+    if ($(".watch-live-video .video-embed-field-provider-youtube iframe").length ){
+      var url = ($(".watch-live-video .video-embed-field-provider-youtube iframe")[0].src += "");
+      var video = url.replace(".com", "-nocookie.com");
+      $(".watch-live-video .video-embed-field-provider-youtube iframe").attr("src", video);
+    }
 
     //--------- menu--------------------//
     $(".region-header #block-blockheader").click(function() {
