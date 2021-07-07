@@ -47,7 +47,7 @@ import replaceToken from "./modules/replaceToken";
       ).click(function() {
         $video.addClass("disnone");
       });
-    });
+    },{passive: true});
   }
 
   $( document ).ajaxComplete(function() {
@@ -85,7 +85,7 @@ import replaceToken from "./modules/replaceToken";
       ).click(function() {
         videoThoughtLeaders.addClass("disnone");
       });
-    });
+    },{passive: true});
   }
 
 
@@ -412,16 +412,12 @@ import replaceToken from "./modules/replaceToken";
                 var ads = e.closest(".ads");
 
                 if (!!ads){
-                  console.log(ads.parentElement);
                   if(!!ads.parentElement) ads.parentElement.classList.add("non-adversiting");
                   ads.remove();
                 } else {
-                  console.log(e.parentElement);
                   if(!!e.parentElement) e.parentElement.classList.add("non-adversiting");
                   e.remove();
                 }
-
-
               }
             }
           })

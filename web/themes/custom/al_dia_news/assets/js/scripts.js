@@ -1936,6 +1936,8 @@ __webpack_require__.r(__webpack_exports__);
       $('.block-field-blocknodenewsfield-video .stuck button[name="close"]').click(function () {
         $video.addClass("disnone");
       });
+    }, {
+      passive: true
     });
   }
 
@@ -1965,6 +1967,8 @@ __webpack_require__.r(__webpack_exports__);
       $('.block-field-blocknodenewsfield-video .stuck button[name="close"]').click(function () {
         videoThoughtLeaders.addClass("disnone");
       });
+    }, {
+      passive: true
     });
   }
 
@@ -2164,11 +2168,9 @@ __webpack_require__.r(__webpack_exports__);
                 var ads = e.closest(".ads");
 
                 if (!!ads) {
-                  console.log(ads.parentElement);
                   if (!!ads.parentElement) ads.parentElement.classList.add("non-adversiting");
                   ads.remove();
                 } else {
-                  console.log(e.parentElement);
                   if (!!e.parentElement) e.parentElement.classList.add("non-adversiting");
                   e.remove();
                 }
