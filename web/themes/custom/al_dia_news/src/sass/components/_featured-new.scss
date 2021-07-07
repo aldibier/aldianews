@@ -24,7 +24,7 @@
     @media screen and (max-width: $tablet) {
         height: auto;
         min-height: 215px;
-        margin: 0 -15px 15px;
+        margin: 0 auto 15px;
 
         &::after {
             margin: 15px auto;
@@ -44,12 +44,19 @@
         max-width: initial;
         object-fit: cover;
 
-        @media screen and (max-width: $tablet) {
+       
+    }
+    @media screen and (max-width: $tablet) {
+        img{
             max-width: 100%;
             max-height: 480px;
             min-height: 200px;
             object-fit: initial;
+            width: 100%;
         }
+        a{
+            width: 100%;
+          }
     }
 }
 
@@ -66,7 +73,7 @@
 
     @media screen and (max-width: $tablet) {
         height: 80px;
-        bottom: calc(0% + 15px);
+        bottom: calc(0% + 22px);
     }
 }
 

@@ -102,17 +102,20 @@
     }
   }
   .view-content .views-row:nth-child(2n+3):before{
-    width: calc(100% - 0px);
+    width: calc(100% - 0px) !important;
   }
 }
 
-.header-subcategory-taxonomy,
-.header-category,
-.view-id-categories_sons > .view-content {
+
+.path-taxonomy .view-id-categories_sons{
   @media (max-width: $desktop) {
-    //padding: 0 15px;
+    margin-top: 0px;
+  .banner-scroll .content > div {
+    
+     text-align: center;
+    }
   }
-}
+} 
 //-------------block category first -----------------//
 //-------------block subcategory first -----------------//
 .header-subcategory-taxonomy {
@@ -193,6 +196,9 @@
     margin-bottom: 30px;
     .one-content-subcategory-four {
       margin-right: 0px !important;
+    }
+    .block-field-blocknodenewsfield-image{
+      margin-right:0px;
     }
   }
 }
