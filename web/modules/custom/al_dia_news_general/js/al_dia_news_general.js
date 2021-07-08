@@ -184,75 +184,80 @@
           )
           .once("last-news-small-news-advertising")
           .each(function () {
-            var viewContent = $(this); 
+            var viewContent = $(this);
             setTimeout(function () {
               // doing async stuff
               if (
                 $(viewContent)
-                .find(".block-advertising-top .block-fixed-block-content-small-vertical-advertising .content > div > div")
+                .find(
+                  ".block-advertising-top .block-fixed-block-content-small-vertical-advertising .content > div > div"
+                )
                 .children().length > 0
               ) {
                 $(viewContent)
-                .find(".card-more-category")
-                .each(function (index, value) {
-                  if (index >= 3) {
-                    $(value).addClass("hidden-per-advertising");
-                  }
-                });
+                  .find(".card-more-category")
+                  .each(function (index, value) {
+                    if (index >= 3) {
+                      $(value).addClass("hidden-per-advertising");
+                    }
+                  });
               }
 
               if (
                 $(viewContent)
-                .find(".block-advertising-complete .block-fixed-block-contentbig-vertical-advertising .content > div > div")
+                .find(
+                  ".block-advertising-complete .block-fixed-block-contentbig-vertical-advertising .content > div > div"
+                )
                 .children().length > 0
               ) {
-                console.log('block-advertising-complete');
+                console.log("block-advertising-complete");
                 $(viewContent)
-                .find(".card-more-category")
-                .each(function (index, value) {
-                  $(value).addClass("hidden-per-advertising");
-                });
+                  .find(".card-more-category")
+                  .each(function (index, value) {
+                    $(value).addClass("hidden-per-advertising");
+                  });
               }
 
               if (
                 $(viewContent)
-                .find(".block-advertising-bottom .block-fixed-block-content-small-vertical-advertising .content > div > div")
+                .find(
+                  ".block-advertising-bottom .block-fixed-block-content-small-vertical-advertising .content > div > div"
+                )
                 .children().length > 0
               ) {
                 $(viewContent)
-                .find(".card-more-category")
-                .each(function (index, value) {
-                  if (index >= 3) {
-                    $(value).addClass("hidden-per-advertising");
-                  }
-                });
+                  .find(".card-more-category")
+                  .each(function (index, value) {
+                    if (index >= 3) {
+                      $(value).addClass("hidden-per-advertising");
+                    }
+                  });
               }
             }, 3000);
           });
       }
 
+      //js para eliminar publicidad vacia
+      setTimeout(() => {
+        const allBlocksGamw = document.querySelectorAll(".block-gamw");
+        allBlocksGamw.forEach(function (e) {
+          if (e != null) {
+            var iframe_gamw = e.querySelector("iframe");
 
-        //js para eliminar publicidad vacia
-        setTimeout(() => {
-          
-          Array.from(document.querySelectorAll(".block-gamw")).map(function (e) {
-            if (e != null) {
-              var iframe_gamw = e.querySelector("iframe");
+            if (iframe_gamw == null) {
+              var ads = e.closest(".ads");
 
-              if (iframe_gamw == null) {
-                var ads = e.closest(".ads");
-
-                if (!!ads){
-                  if(!!ads.parentElement) ads.parentElement.classList.add("non-adversiting");
-                  ads.remove();
-                } else {
-                  if(!!e.parentElement) e.parentElement.classList.add("non-adversiting");
-                  e.remove();
-                }
+              if (!!ads) {
+                if (!! ads.parentElement) ads.parentElement.classList.add("non-adversiting");
+                ads.remove();
+              } else {
+                if (!!e.parentElement)  e.parentElement.classList.add("non-adversiting");
+                e.remove();
               }
             }
-          })
-        }, 6000);
+          }
+        });
+      }, 6000);
     }
   };
 })(jQuery);

@@ -10,7 +10,7 @@ dependencies:
     - al_dia_news
 third_party_settings:
   block_class:
-    classes: block-fixed-block-contentbig-vertical-advertising
+    classes: 'block-fixed-block-contentbig-vertical-advertising ads'
 id: gamwadvertisement_9
 theme: al_dia_news
 region: advertising_body_in_about_al_dia_live
@@ -29,8 +29,8 @@ visibility:
   request_path_exclusion:
     id: request_path_exclusion
     pages: ''
-    negate: null
+    negate: true
   view_inclusion:
     id: view_inclusion
-    negate: null
+    negate: false
     view_inclusion: {  }
