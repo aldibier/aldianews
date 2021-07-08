@@ -26,6 +26,7 @@
     max-width: 1280px;
     max-height: 149px;
     overflow: initial;
+    text-align: center;
     @media (max-width: $tablet) {
       max-height: 100px;
       margin: 0 auto 30px;
@@ -41,6 +42,7 @@
 
     @media (max-width: $broken) {
       min-height: initial;
+      width: 100%;
     }
 
     @media (min-width: $tablet) {
@@ -51,13 +53,15 @@
     }
     .two-vertical-advertising {
       padding-bottom: 50px;
+      padding-bottom: 50px;
     }
     @media (max-width: $tablet) {
       .one-vertical-advertising {
         width: 100%;
-        margin: 0 auto;
+        margin: 0 auto 20px;
         padding: 0 45px;
         max-width: 500px;
+        text-align: center;
       }
 
       .two-vertical-advertising {
@@ -175,6 +179,9 @@
   .three-content-buttons {
     .field-content {
       display: flex;
+      @media (max-width: $tablet){
+        justify-content: center;
+      }
     }
 
     a {
@@ -276,7 +283,10 @@
   }
 }
 .page-node-type-page .banner-horizontal {
-  margin: 30px auto;
+  margin: 30px auto 80px;
+  @media screen and (max-width: $broken) {
+    margin: 30px auto;
+  }
 }
 
 .content-right-pages {
@@ -288,5 +298,23 @@
     margin: 40px 0;
     max-width: 100%;
     width: 100%;
+  }
+}
+
+article[about="/terms-of-service"] .content-right-pages{
+  @media (max-width: $tablet) {
+ 
+    margin: 10px 0 40px;
+
+  }
+}
+ 
+article[about="/contact-us"] .content-left-pages{
+  margin-bottom: 60px;
+}
+
+article[about="/about-us"] .content-left-pages{
+  @media (max-width: $tablet) {
+    padding: 0 0 0px;
   }
 }

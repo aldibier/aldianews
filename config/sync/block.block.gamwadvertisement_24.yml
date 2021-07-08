@@ -1,6 +1,6 @@
 uuid: 344cdf08-3015-4dc6-836e-e39e8b9df63e
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - block_class
@@ -10,10 +10,10 @@ dependencies:
     - al_dia_news
 third_party_settings:
   block_class:
-    classes: banner-horizontal
+    classes: 'banner-horizontal ads'
 id: gamwadvertisement_24
 theme: al_dia_news
-region: category_banner_top_one
+region: sidebar_first
 weight: 0
 provider: null
 plugin: gamw
@@ -29,8 +29,8 @@ visibility:
   request_path_exclusion:
     id: request_path_exclusion
     pages: ''
-    negate: null
+    negate: true
   view_inclusion:
     id: view_inclusion
-    negate: null
+    negate: false
     view_inclusion: {  }

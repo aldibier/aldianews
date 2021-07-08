@@ -12,7 +12,9 @@ dependencies:
     - field.storage.node.field_short_title
     - field.storage.node.field_type_of_content
     - image.style.card_one_column_desktop
+    - lazy.settings
     - node.type.news
+    - responsive_image.styles.last_news_home
     - taxonomy.vocabulary.categories
   content:
     - 'taxonomy_term:categories:01a8bc97-1ab4-43eb-bd86-b3c9f3e1d0f6'
@@ -33,11 +35,12 @@ dependencies:
     - 'taxonomy_term:categories:fd49a7f8-2d48-4a3e-b99f-a7fb82320620'
   module:
     - image
+    - lazy
     - node
+    - responsive_image
     - taxonomy
     - text
     - user
-    - views_block_area
     - views_fieldsets
 id: leadership_sons
 label: 'LEADERSHIP SONS'
@@ -1396,9 +1399,9 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: image
+          type: lazy_responsive_image
           settings:
-            image_style: ''
+            responsive_image_style: last_news_home
             image_link: content
           group_column: ''
           group_columns: {  }
@@ -2594,17 +2597,7 @@ display:
         operator: AND
         groups:
           1: AND
-      footer:
-        views_block_area:
-          id: views_block_area
-          table: views
-          field: views_block_area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: false
-          block_id: 'fixed_block_content:vertical_advertising_mobile'
-          plugin_id: views_block_area
+      footer: {  }
       block_hide_empty: true
     cache_metadata:
       max-age: -1

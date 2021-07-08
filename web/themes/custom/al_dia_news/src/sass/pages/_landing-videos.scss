@@ -129,6 +129,12 @@
     }
   }
 
+  .view-id-more_videos_in_landing.view-display-id-block_1 {
+    .views-field-fieldset {
+      pointer-events: none;
+    }
+  }
+
   //------ pop-up video ------------//
   .block-views-blockmore-videos-in-landing-block-1 {
     .modal-video {
@@ -179,14 +185,14 @@
   }
 
   @media (max-width: $broken) {
-    .news-galery .view-content {
+    .news-gallery .view-content {
       > div:not(.no-result-search) {
         padding: 0px;
       }
       .views-row {
         overflow: hidden;
         &:nth-child(2n + 3):before {
-          width: calc(100% - 0px);
+          width: 100%;
         }
       }
     }
@@ -228,13 +234,13 @@
     display: none;
   }
 
-  .views-row:nth-child(1) {
-    display: flex;
+  .views-row.active {
+    display: flex !important;
   }
 
   .show-video {
     .views-row:nth-child(1) {
-      display: none;
+      //display: none;
     }
 
     .video-present {
@@ -334,9 +340,15 @@
     max-width: 250px;
     display: block;
     min-height: 220px;
+    cursor: pointer;
+
+    > * {
+      pointer-events: none;
+    }
+
   }
 
-  .views-row:nth-child(1) {
+  .views-row.active{
     position: relative;
 
     &::before {
@@ -374,6 +386,7 @@
         display: block !important;
         position: absolute;
         left: 0px;
+        right: 0;
         top: 0px;
         height: 100%;
         width: 100%;
@@ -528,7 +541,9 @@
   //estilos bloques de carrusel videos
   .view-id-carousel_videos_landing {
     .views-row {
-      flex-direction: column;
+      flex-direction: column;   &.active {
+        display: flex !important;
+      }
     }
 
     .views-row:nth-child(1) {
@@ -640,6 +655,7 @@
     .views-field-field-video {
       max-width: 290px;
       max-height: 165px;
+      margin: 0 auto 25px;
     }
 
     iframe,

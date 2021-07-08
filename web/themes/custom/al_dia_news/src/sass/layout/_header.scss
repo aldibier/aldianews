@@ -14,7 +14,7 @@
 .site-branding__logo {
   max-width: 260px;
   padding-right: 13px;
-  margin-top: 16px;
+  margin-top: 18px;
   @media (max-width: $tablet) {
     max-height: 45px;
     margin-bottom: 0px;
@@ -143,7 +143,7 @@ body.open-menu {
         width: 250px;
         background: rgb(255, 255, 255);
         bottom: -214px;
-        box-shadow: rgba(0,0,0,17%) 1px 5px 8px -2px;
+        box-shadow: rgba(0, 0, 0, 17%) 1px 5px 8px -2px;
         flex-wrap: wrap;
         margin: 0px;
         padding: 20px;
@@ -554,7 +554,7 @@ body.open-menu {
   }
   .item-list.open {
     right: 15px !important;
-    top: 82px;
+    top: 79px;
   }
 }
 
@@ -642,6 +642,7 @@ body.open-menu {
   position: relative;
   @media (min-width: $desktop) {
     max-height: 90px;
+    padding: 12px 15px 0;
   }
   &:after {
     display: block;
@@ -968,7 +969,7 @@ body.open-menu {
     #block-al-dia-news-branding {
       max-width: 180px;
       max-height: 44px;
-      margin: -15px -13px 8px 0px;
+      margin: -14px -13px 8px 0px;
     }
 
     .block-language {
@@ -1047,6 +1048,10 @@ body.open-menu {
       p {
         font-size: 11px;
         line-height: 13px;
+        @media (max-width: 350px) {
+          font-size: 10px;
+          letter-spacing: 0px;
+        }
       }
     }
   }
@@ -1089,4 +1094,9 @@ body.open-menu {
       }
     }
   }
+}
+
+.admin-menu #block-menuuseritem .item-list.open {
+  right: 0px !important;
+  top: 59px;
 }

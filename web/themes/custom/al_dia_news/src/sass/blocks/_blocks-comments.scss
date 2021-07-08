@@ -757,7 +757,7 @@ section > .comment:nth-of-type(1) {
     @media screen and(max-width: $tablet) {
       height: 125px;
       padding: 0 20px;
-      top: calc(0% + 26px);
+      top: calc(0% + 28px);
     }
 
     p {
@@ -781,6 +781,16 @@ section > .comment:nth-of-type(1) {
   display: block;
 }
 
-.page-premium .block-anonymous-comments {
-  display: none;
+.page-premium {
+  #main-wrapper {
+    max-width: 1440px !important;
+    #main {
+      max-width: 1310px !important;
+      padding: 0 15px !important;
+    }
+  }
+
+  .block-anonymous-comments {
+    display: none;
+  }
 }

@@ -43,6 +43,7 @@ form {
         $btnBackground: $corange,
         $btnColor: $cwhite
       );
+      padding: 0 !important;
       max-width: 100%;
       margin: 0 auto;
       padding: 0;
@@ -68,6 +69,7 @@ form {
     font-family: $PrNovacond-Sbold;
     letter-spacing: 0.025em;
     color: $cblack;
+    
   }
   input {
     width: 100%;
@@ -391,7 +393,7 @@ form {
     label:not(li > label),
     .form-item label:not(li > label) {
       max-height: 30px;
-      margin: 0 0 15px;
+      margin: 0 0 5px;
       padding: 0;
       font-size: 15px;
       line-height: 18px;

@@ -14,7 +14,9 @@
 	<div class="container-content">
 		{% if content.block_image %}
 			<div {{ region_attributes.block_image.addClass('block-image-basic-page-work block-hero-image') }}>
-				{{ content.block_image }}
+				<div class="block-image-content">
+					{{ content.block_image }}
+				</div>
 			</div>
 		{% endif %}
 		{% if content.menu %}
@@ -27,22 +29,23 @@
 				{{ content.horizontal_advertising }}
 			</div>
 		{% endif %}
-		{% if content.two_content %}
-			<div {{ region_attributes.two_content.addClass('two-content-general-work') }}>
-				{{ content.two_content }}
-			</div>
-		{% endif %}
-		{% if content.one_vertical_advertising %}
-			<div {{ region_attributes.one_vertical_advertising.addClass('one-vertical-advertising') }}>
-				{{ content.one_vertical_advertising }}
-			</div>
-		{% endif %}
-		{% if content.two_vertical_advertising %}
-			<div {{ region_attributes.two_vertical_advertising.addClass('two-vertical-advertising') }}>
-				{{ content.two_vertical_advertising }}
-			</div>
-		{% endif %}
-
+		<div class="content-page-node">
+			{% if content.two_content %}
+				<div {{ region_attributes.two_content.addClass('two-content-general-work') }}>
+					{{ content.two_content }}
+				</div>
+			{% endif %}
+			{% if content.one_vertical_advertising %}
+				<div {{ region_attributes.one_vertical_advertising.addClass('one-vertical-advertising') }}>
+					{{ content.one_vertical_advertising }}
+				</div>
+			{% endif %}
+			{% if content.two_vertical_advertising %}
+				<div {{ region_attributes.two_vertical_advertising.addClass('two-vertical-advertising') }}>
+					{{ content.two_vertical_advertising }}
+				</div>
+			{% endif %}
+		</div>
 
 	</div>
 {% endif %}

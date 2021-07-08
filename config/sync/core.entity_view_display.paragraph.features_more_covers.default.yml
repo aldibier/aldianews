@@ -6,10 +6,12 @@ dependencies:
     - field.field.paragraph.features_more_covers.field_card_title_related_covers
     - field.field.paragraph.features_more_covers.field_image_related_covers
     - field.field.paragraph.features_more_covers.field_taxonomy_term_related_cove
+    - image.style.card_one_column_desktop
     - paragraphs.paragraphs_type.features_more_covers
   module:
     - field_formatter_class
     - image
+    - lazy
     - text
 id: paragraph.features_more_covers.default
 targetEntityType: paragraph
@@ -29,9 +31,15 @@ content:
     weight: 0
     label: hidden
     settings:
-      image_style: ''
+      image_style: card_one_column_desktop
       image_link: ''
-    third_party_settings: {  }
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+      lazy:
+        placeholder_style: ''
+        lazy_image: '0'
+        data_uri: false
     type: image
     region: content
   field_taxonomy_term_related_cove:

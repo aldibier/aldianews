@@ -21,19 +21,51 @@
 	<h3>{{ title }}</h3>
 {% endif %}
 
-{% for row in rows %}
+{% if device == 'desktop' %}
 
-	{%
+	{% set index_hide_lines = [7,8,9] %}
+
+	{% for row in rows %}
+
+		{%
 		set row_classes = [
 		default_row_class ? 'views-row',
 		]
 	%}
+		{% if loop.index in index_hide_lines %}
+			<div class="card-one-column views-row not-show-line">
+				{{- row.content -}}
+			</div>
+		{% else %}
+			<div{{row.attributes.addClass(row_classes)}}>
+				{{- row.content -}}
+			</div>
+		{% endif %}
+		
+		{# banner #}
+		{% if loop.index % 9 == 0 %}
+			<div class="banner-scroll ads">{{ drupal_entity('block', 'gamwadvertisement_15') }}</div>
+		{% endif %}
 
-	{# banner #}
-	{% if loop.index % 9 == 0 %}
-		<div class="banner-scroll ads">{{ drupal_entity('block', 'gamwadvertisement_15') }}</div>
-	{% endif %}
-	<div{{row.attributes.addClass(row_classes)}}>
-		{{- row.content -}}
-	</div>
-{% endfor %}
+	{% endfor %}
+{% endif %}
+
+{% if device == 'mobile' %}
+	{% for row in rows %}
+
+		{%
+		set row_classes = [
+		default_row_class ? 'views-row',
+		]
+	%}
+		<div{{row.attributes.addClass(row_classes)}}>
+			{{- row.content -}}
+		</div>
+
+		{# banner #}
+		{% if loop.index % 9 == 0 %}
+			<div class="banner-scroll ads">{{ drupal_entity('block', 'gamwadvertisement_15') }}</div>
+		{% endif %}
+
+	{% endfor %}
+{% endif %}

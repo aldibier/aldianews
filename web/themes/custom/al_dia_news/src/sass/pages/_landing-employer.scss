@@ -311,6 +311,8 @@
         display: flex;
         position: relative;
         min-height: 400px;
+        max-width: 1280px;
+        margin: 0 auto;
       }
     }
 
@@ -454,7 +456,6 @@
 .path-employer .layout-container .layout-main {
   margin-bottom: 0px;
 }
-
 .user-logged-in .style-jobs {
   .view-jobs-menu,
   .block-menu-float {
@@ -474,6 +475,24 @@
     #block-views-block-current-edition-header-and-footer-block-1
     .field--name-field-image {
     top: -13px;
+  }
+  .layout-container,
+  .style-jobs{
+    max-width: none;
+  }
+  .content-page-jobs {
+    max-width: 1440px;
+    padding: 0 15px;
+    margin: 0 auto;
+    > .content{
+      display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    @media (max-width: $broken){
+    padding: 0;
+
+    }
   }
 }
 

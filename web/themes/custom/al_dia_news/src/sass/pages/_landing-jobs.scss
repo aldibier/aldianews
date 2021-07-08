@@ -8,9 +8,10 @@
     position: relative;
     max-height: 710px;
     overflow: hidden;
+
     @media screen and (min-width: $tablet) {
       min-height: 470px;
-      margin: 0 -80px 70px;
+      margin: 0 -80px 20px;
       padding: 40px 80px 70px;
       position: relative;
     }
@@ -90,63 +91,50 @@
     gap: 0px 40px;
     overflow: hidden;
     grid-auto-flow: dense;
-    div:empty {
-      display: none;
-    }
+
     .views-row {
-      //width: 33.33%;
       margin: 40px 0;
+      position: relative;
 
-      &:nth-child(3n + 1) {
-        //padding: 0 20px 0 0;
+      &::after {
+        content: "";
+        width: 1px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: calc(0% - 20px);
+        background-color: $cgrey4;
+      }
 
-        &:before {
-          content: "";
-          width: 100%;
-          height: 1px;
-          display: block;
-          position: absolute;
-          left: 0;
-          margin: -40px 0 0;
-          background: $cgrey4;
+      &::before {
+        display: block;
+        content: "";
+        width: calc(100% + 40px);
+        height: 1px;
+        left: -20px;
+        bottom: 0;
+        background: $cgrey4;
+        position: absolute;
+        right: 0;
+        margin: -40px auto;
+      }
+      
+      @media screen and (min-width: $tablet) {
+        &:nth-child(-n + 3){
+          margin-top: 0;
         }
       }
 
-      &:nth-child(3n + 2) {
-        //padding: 0 20px;
-        position: relative;
+      @media screen and (max-width: $tablet) {
 
-        &:after {
-          content: "";
-          width: 1px;
-          height: 100%;
-          display: block;
-          position: absolute;
-          left: calc(0% - 20px);
-          top: 0;
-          background: $cgrey4;
+        &:first-child{
+          margin-top: 0;
         }
-      }
 
-      &:nth-child(3n + 3) {
-        //padding: 0 0 0 20px;
-        position: relative;
-
-        &:after {
-          content: "";
-          width: 1px;
-          height: 100%;
-          display: block;
-          position: absolute;
-          left: calc(0% - 20px);
-          top: 0;
-          background: $cgrey4;
-        }
-      }
-
-      &:first-child {
         &::before {
-          display: none;
+          width: 100%;
+          margin: -20px auto;
+          left: 0;
         }
       }
 
@@ -164,32 +152,8 @@
       }
       .views-row {
         width: 100%;
-        margin: 25px 0 0;
+        margin: 20px 0;
         padding: 0;
-
-        &:nth-child(3n + 1) {
-          padding: 0 0 25px;
-
-          &:before {
-            display: none;
-          }
-        }
-
-        &:nth-child(3n + 2) {
-          padding: 0 0 25px;
-
-          &:after {
-            display: none;
-          }
-        }
-
-        &:nth-child(3n + 3) {
-          padding: 0 0 25px;
-
-          &:after {
-            display: none;
-          }
-        }
       }
     }
   }
@@ -221,9 +185,11 @@
 
     .views-field-field-description {
       max-height: 1px;
+      max-width: 1440px;
+      margin: 0 auto;
       .field-content {
         position: relative;
-        left: 120px;
+        left: 85px;
         bottom: 310px;
         line-height: 28px;
         color: $cwhite;
@@ -233,6 +199,10 @@
         max-width: 1200px;
         padding-right: 50px;
         font-family: $PrNovacond-reg;
+        @media (min-width: 1500px){
+          left: 112px;
+
+        }
       }
     }
 
@@ -314,6 +284,9 @@
       margin-left: 15px;
     }
   }
+  .non-adversiting .block-content-left{
+    margin: 0 auto;
+  }
 
   .block-views-blockcarousel-jobs-landing-block-1 {
     margin: 75px auto 100px;
@@ -371,6 +344,7 @@
   }
 }
 
+
 // estilos de bloque careers news
 .block-views-blockcareer-news-block-4 {
   width: 21.095%;
@@ -404,6 +378,10 @@
     line-height: 25px;
     font-family: $PrNovacond-reg;
     color: $corange;
+    margin-top: 10px;
+    @media (max-width: $desktop){
+      font-family: $PrNovacond-Sbold;
+    }
   }
 }
 
@@ -660,6 +638,7 @@
   + .block-fixed-block-contenthorizontal-advertising {
   margin: 0 auto 100px;
 }
+
 @media (max-width: $desktop) {
   .jobs.style-jobs {
     .block-content-left {
@@ -757,7 +736,29 @@
   }
 }
 
+@media (max-width: $broken){
+  .path-jobs .layout-container .layout-main {
+    margin: 30px auto 10px;
+    .watch-live-button{
+      margin: 0 auto 20px;
+    }
+    .style-jobs .breadcrumb{
+      margin: 20px auto 10px;
+    }
+    .non-adversiting .content-right-pages{
+      margin: 0px;
+    }
+  }
+}
+
+
+
+
 @media (max-width: $tablet) {
+  
+#block-system-menu-block-jobs-landing-menu .menu{
+  padding: 20px 25px 0;
+}
   .jobs.style-jobs {
     h1 {
       bottom: 110px;
@@ -772,6 +773,9 @@
       button[name="close"] {
         top: 20px;
       }
+    }
+    .banner-horizontal {
+      margin: 0 auto 30px;
     }
     .block-banner-page .views-field-field-description .field-content {
       left: 27px;
@@ -843,7 +847,7 @@
   .block-views-blockcareer-news-block-4 {
     width: 21.095%;
     max-width: 115px;
-    top: -15px;
+    top: -8px;
 
     h2 {
       font-size: $px15;
@@ -1129,9 +1133,5 @@
         }
       }
     }
-  }
-
-  .path-jobs .layout-container .layout-main {
-    margin: 0 auto 10px;
   }
 }

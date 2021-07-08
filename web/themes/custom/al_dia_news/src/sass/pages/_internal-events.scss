@@ -11,7 +11,7 @@
     font-size: $px50;
     line-height: 60px;
     text-transform: uppercase;
-    color: $cwhite;
+    color: $cwhite; 
     margin: 0px 0px 25px;
   }
   img {
@@ -20,6 +20,8 @@
   }
   .contextual-region {
     position: initial;
+    max-width: 1310px;
+    margin: 0 auto;
   }
   .block-field-blocknodeeventfield-image {
     > div.content {
@@ -36,7 +38,7 @@
       position: absolute;
       width: 100%;
       height: 100%;
-      top: 10px;
+      top: 0px;
       left: 0px;
       background: #000000;
       opacity: 0.75;
@@ -128,9 +130,12 @@
 }
 
 .page-node-type-event {
+  .layout-container .width1440{
+    max-width: none;
+  }
   .section-flex {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap;  
   }
 
   .breadcrumb {
@@ -204,6 +209,9 @@
     width: 100%;
     .block {
       margin: 0 auto;
+      @media (max-width: $tablet){
+        margin: 0;
+      }
     }
   }
   .maxim {
@@ -525,8 +533,10 @@
     max-height: 149px;
     overflow: hidden;
     @media (max-width: $tablet) {
-      margin: 30px auto;
+      margin: 30px -15px;
       max-height: 100px;
+      display: flex;
+      justify-content: center;
     }
   }
 }
@@ -602,6 +612,10 @@
   .form-item-address-city {
     width: 100%;
   }
+  .SumoSelect>.CaptionCont, form select{
+    min-height: 40px;
+    margin-top: 4px;
+  }
   #edit-address--wrapper {
     max-width: none;
     width: 50%;
@@ -623,6 +637,9 @@
 .form-register-events .contact-form {
   max-width: 990px;
   padding: 80px 75px 50px;
+  @media (max-width: $desktop){
+    padding: 50px 20px;
+  }
 }
 .webform-submission-sponsorship-upcoming-event-form {
   justify-content: space-between;
@@ -682,7 +699,7 @@
   .form-actions {
     width: 100%;
     max-width: 150px;
-  }
+  } 
 }
 
 //------------------ Media Queries ------------//
@@ -703,6 +720,10 @@
     }
   }
   .page-node-type-event {
+    .block-gamw{
+      display: flex;
+      justify-content: center;
+    }
     h1 .aldia-logo-in-text {
       max-width: 45px;
       img {
@@ -910,6 +931,9 @@
       &:last-child {
         max-width: none;
       }
+      &:nth-child(2){
+        border-right:0px;
+      }
     }
     .mode-more {
       .item-list ul li {
@@ -926,8 +950,9 @@
           right: 0;
           margin: -35px 0;
         }
-        &:nth-child(2n) {
-          border-right: 0;
+        &:nth-child(2n),
+        &:nth-child(6) {
+          border-right: 0 !important;
         }
         &:nth-child(3n) {
           border-right: 0.5px solid #b1b1b1;
@@ -981,9 +1006,17 @@
       height: 15px;
     }
     ///---- view modes-----//
-    .slider-one .item img {
-      max-width: 115px;
-    }
+    .slider-one{
+      .slick-list{
+        max-width: none;
+      }
+      .item img {
+        max-width: 115px;
+      }
+      .item {
+        margin-right: 0px;
+      }
+    } 
     .slider-two .item {
       margin-right: 10px;
     }
@@ -1029,6 +1062,7 @@
       font-size: $px20;
       line-height: 24px;
       margin-bottom: 20px;
+      min-height: auto;
     }
     .phone-contact-event {
       font-size: $px20;
@@ -1060,12 +1094,32 @@
     #edit-container--2 {
       width: 100%;
     }
+  
+    .views-label.views-label-field-webform{
+      font-size: 20px;
+    }
     #edit-address--wrapper {
       width: 100%;
       padding-left: 0px;
       .fieldset-wrapper {
         margin: 0px 0px 20px;
       }
+    }
+    .form-item{
+      margin: 0 0 20px;
+    }
+    label{
+      font-size: 15px !important;
+    }
+    input{
+      min-height: 30px;
+    }
+    .SumoSelect>.CaptionCont, form select{
+      min-height: 30px;
+    }
+    .form-actions .button{
+      margin-top: 0px;
+    max-width: 110px;
     }
   }
   .webform-submission-sponsorship-upcoming-event-form {

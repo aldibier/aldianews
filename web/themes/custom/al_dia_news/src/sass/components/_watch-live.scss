@@ -66,8 +66,8 @@
     }
   }
 }
-.user-logged-in .watch-live-video {
-  top: 125px;
+.user-logged-in .watch-live-video.open {
+  top: 120px;
 }
 .watch-live-video {
   display: none;
@@ -75,6 +75,7 @@
   padding: 70px 0px;
   &.open {
     display: block;
+    top: 80px;
   }
   iframe {
     width: 1200px;
@@ -128,7 +129,7 @@
     height: 480px;
     padding: 45px 15px 75px;
     iframe {
-      width: 100%;
+      width: auto;
       height: auto !important;
       min-height: 365px;
       min-height: 365px;
@@ -204,7 +205,7 @@
     }
 
     .watch-live-mobile {
-      margin: 0 auto 10px;
+      margin: 0 auto 20px;
       font-size: 1rem;
       max-width: 290px;
       min-height: 30px;
