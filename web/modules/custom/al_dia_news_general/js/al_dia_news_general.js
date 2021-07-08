@@ -248,9 +248,17 @@
 
               Array.from(ads).map(function(ev) {
                 if (!!ev) {
-                  if (!!ev.parentElement)
-                    ads.parentElement.classList.add("non-adversiting");
-                  ev.remove();
+                  var ads_2 = ev.closest(".ads");
+                  if(!!ads_2){
+                    if (!!ads_2.parentElement)
+                    ads_2.parentElement.classList.add("non-adversiting");
+                    ads_2.remove();
+                  }else{
+                    if (!!ev.parentElement)
+                    ev.parentElement.classList.add("non-adversiting");
+                    ev.remove();
+                  }
+                  
                 } else {
                   if (!!e.parentElement)
                     e.parentElement.classList.add("non-adversiting");
