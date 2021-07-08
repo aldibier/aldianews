@@ -101,7 +101,7 @@ body.toolbar-tray-open.user-logged-in {
   .layout-main {
     max-width: 1310px;
     padding: 0 15px;
-    margin: 0 auto 40px;
+    margin: 0 auto;//0 auto 40px;
     @media screen and (min-width: $broken) {
       margin-top: 60px !important;
     }
@@ -109,6 +109,7 @@ body.toolbar-tray-open.user-logged-in {
       //margin-bottom: 100px;
     }
   }
+  
   .width1440 {
     max-width: 1440px;
     margin: 0 auto 0px;

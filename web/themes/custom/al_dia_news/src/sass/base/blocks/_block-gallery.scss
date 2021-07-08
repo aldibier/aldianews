@@ -84,7 +84,7 @@
 .news-gallery {
   .view-content {
     > div:not(.no-result-search) {
-      margin-bottom: 90px;
+  
       display: grid;
       grid-template-columns: minmax(250px, 420px) minmax(250px, 440px) minmax(
           250px,
@@ -100,7 +100,36 @@
         overflow: initial;
         grid-auto-flow: dense;
       }
+
+      @media screen and (max-width: $broken) {
+        margin-bottom: 40px;
+      }
     }
+  }
+}
+
+.path-search-results .news-gallery,
+.view-last-news-in-error-page .news-gallery {
+  margin-bottom: 120px;
+
+  @media screen and (max-width: $tablet) {
+    margin-bottom: 40px;
+  }
+}
+
+.path-jobs .news-gallery {
+  margin-bottom: 100px;
+
+  @media screen and (max-width: $tablet) {
+    margin-bottom: 40px;
+  }
+}
+
+.path-videos .news-gallery {
+  margin-bottom: 90px;
+
+  @media screen and (max-width: $tablet) {
+    margin-bottom: 40px;
   }
 }
 
