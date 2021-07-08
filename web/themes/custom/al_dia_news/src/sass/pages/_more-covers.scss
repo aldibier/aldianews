@@ -200,11 +200,6 @@
     .block-fixed-block-contentbig-vertical-advertising {
       display: none;
     }
-    .views-infinite-scroll-content-wrapper {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-gap: 10px;
-    }
   }
 
   @media (max-width: $tablet) {
@@ -377,6 +372,11 @@
   }
 
   .view-more-covers-landing {
+    .views-infinite-scroll-content-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 10px;
+    }
     .views-row {
       max-width: none;
       margin-bottom: 40px;
