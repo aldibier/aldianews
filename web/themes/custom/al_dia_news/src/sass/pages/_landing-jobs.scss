@@ -1,22 +1,4 @@
 .path-job-seeker {
-  .skys-scroll {
-    position: relative; 
-    overflow: initial;
-    &::before {
-      position: absolute;
-      left: -40px;
-      top: 0;
-      width: 40px;
-      height: 100%;
-      background: $cwhite;
-      content: "";
-      display: block;
-      @media (max-width: $broken) {
-        left: -15px;
-        width: 15px;
-      }
-    }
-  }
   .block-fixed-block-contentheader-i-am-a-job-seeker {
     min-height: 215px;
     margin: 0 -15px 20px;
@@ -112,59 +94,33 @@
       display: none;
     }
     .views-row {
-      //width: 33.33%;
       margin: 40px 0;
 
-      &:nth-child(3n + 1) {
-        //padding: 0 20px 0 0;
-
-        &:before {
-          content: "";
-          width: 100%;
-          height: 1px;
-          display: block;
-          position: absolute;
-          left: 0;
-          margin: -40px 0 0;
-          background: $cgrey4;
-        }
-      }
-
-      &:nth-child(3n + 2) {
-        //padding: 0 20px;
+      $screen-query: 993px;
+      
+      @media screen and (min-width: $screen-query) {
         position: relative;
-
-        &:after {
+        &::after {
           content: "";
           width: 1px;
           height: 100%;
-          display: block;
           position: absolute;
-          left: calc(0% - 20px);
           top: 0;
-          background: $cgrey4;
+          right: calc(0% - 20px);
+          background-color: $cgrey4;
         }
-      }
 
-      &:nth-child(3n + 3) {
-        //padding: 0 0 0 20px;
-        position: relative;
-
-        &:after {
-          content: "";
-          width: 1px;
-          height: 100%;
-          display: block;
-          position: absolute;
-          left: calc(0% - 20px);
-          top: 0;
-          background: $cgrey4;
-        }
-      }
-
-      &:first-child {
         &::before {
-          display: none;
+          display: block;
+          content: "";
+          width: calc(100% + 40px);
+          height: 1px;
+          left: -20px;
+          bottom: 0;
+          background: $cgrey4;
+          position: absolute;
+          right: 0;
+          margin: -35px auto;
         }
       }
 
@@ -184,30 +140,6 @@
         width: 100%;
         margin: 25px 0 0;
         padding: 0;
-
-        &:nth-child(3n + 1) {
-          padding: 0 0 25px;
-
-          &:before {
-            display: none;
-          }
-        }
-
-        &:nth-child(3n + 2) {
-          padding: 0 0 25px;
-
-          &:after {
-            display: none;
-          }
-        }
-
-        &:nth-child(3n + 3) {
-          padding: 0 0 25px;
-
-          &:after {
-            display: none;
-          }
-        }
       }
     }
   }
@@ -1188,6 +1120,4 @@
       }
     }
   }
-
-
 }

@@ -306,7 +306,8 @@
 }
 
 .news-gallery,
-.view-landing-thought-leaders {
+.view-landing-thought-leaders .views-infinite-scroll-content-wrapper:not(.non-adversiting),
+.view-jobs-in-i-am-a-job-seeker {
   .views-row.not-show-line {
     &::before {
       display: none !important;
@@ -315,6 +316,19 @@
 }
 
 /* non-adversiting */
+.non-adversiting {
+  .ads {
+    display: none !important;
+  }
+}
+
+.view-landing-thought-leaders .views-infinite-scroll-content-wrapper {
+  @media screen and (max-width: $broken) {
+    .ads:not(.ads-mobile) {
+      display: none;
+    }
+  }
+}
 
 .news-gallery .block-scroll,
 .view-landing-thought-leaders .block-scroll,
