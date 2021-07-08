@@ -251,11 +251,13 @@
                 if(!!ads_father){
                   if (!!ads_father.parentElement)
                   ads_father.parentElement.classList.add("non-adversiting");
+                  ads_father.remove();
                 }else{
                   if (!!ads.parentElement)
                   ads.parentElement.classList.add("non-adversiting");
+                  ads.remove();
                 }
-                ads.remove();
+               
               } else {
                 if (!!e.parentElement)
                   e.parentElement.classList.add("non-adversiting-no");
