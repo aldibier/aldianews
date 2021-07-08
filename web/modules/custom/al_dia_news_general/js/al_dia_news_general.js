@@ -239,35 +239,35 @@
 
       //js para eliminar publicidad vacia
       setTimeout(() => {
-        Array.from(document.querySelectorAll(".block-gamw")).map(function(e) {
-          if (e != null) {
-            var iframe_gamw = e.querySelector("iframe");
+        // Array.from(document.querySelectorAll(".block-gamw")).map(function(e) {
+        //   if (e != null) {
+        //     var iframe_gamw = e.querySelector("iframe");
 
-            if (iframe_gamw == null) {
-              var ads = e.closest(".ads");
+        //     if (iframe_gamw == null) {
+        //       var ads = e.closest(".ads");
 
-              Array.from(ads).map(function(ev) {
-                if (!!ev) {
-                  var ads_2 = ev.closest(".ads");
-                  if(!!ads_2){
-                    if (!!ads_2.parentElement)
-                    ads_2.parentElement.classList.add("non-adversiting");
-                    ads_2.remove();
-                  }else{
-                    if (!!ev.parentElement)
-                    ev.parentElement.classList.add("non-adversiting");
-                    ev.remove();
-                  }
+        //       Array.from(ads).map(function(ev) {
+        //         if (!!ev) {
+        //           var ads_2 = ev.closest(".ads");
+        //           if(!!ads_2){
+        //             if (!!ads_2.parentElement)
+        //             ads_2.parentElement.classList.add("non-adversiting");
+        //             ads_2.remove();
+        //           }else{
+        //             if (!!ev.parentElement)
+        //             ev.parentElement.classList.add("non-adversiting");
+        //             ev.remove();
+        //           }
                   
-                } else {
-                  if (!!e.parentElement)
-                    e.parentElement.classList.add("non-adversiting");
-                  e.remove();
-                }
-              });
-            }
-          }
-        });
+        //         } else {
+        //           if (!!e.parentElement)
+        //             e.parentElement.classList.add("non-adversiting");
+        //           e.remove();
+        //         }
+        //       });
+        //     }
+        //   }
+        // });
       }, 6000);
     }
   };
