@@ -3,10 +3,14 @@ langcode: en
 status: true
 dependencies:
   module:
+    - block_class
     - context
     - gamw
   theme:
     - al_dia_news
+third_party_settings:
+  block_class:
+    classes: ads
 id: gamwadvertisement_21
 theme: al_dia_news
 region: gamw_infinite_scroll_banner_
@@ -25,8 +29,8 @@ visibility:
   request_path_exclusion:
     id: request_path_exclusion
     pages: ''
-    negate: null
+    negate: true
   view_inclusion:
     id: view_inclusion
-    negate: null
+    negate: false
     view_inclusion: {  }
