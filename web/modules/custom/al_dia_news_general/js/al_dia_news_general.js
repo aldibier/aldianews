@@ -247,8 +247,14 @@
               var ads = e.closest(".ads");
 
               if (!!ads) {
-                if (!!ads.parentElement)
+                var ads_father = ads.closest(".ads");
+                if(!!ads_father){
+                  if (!!ads_father.parentElement)
+                  ads_father.parentElement.classList.add("non-adversiting");
+                }else{
+                  if (!!ads.parentElement)
                   ads.parentElement.classList.add("non-adversiting");
+                }
                 ads.remove();
               } else {
                 if (!!e.parentElement)
