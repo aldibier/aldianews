@@ -266,7 +266,7 @@
 
 ///---------- estilos para publicidad en infinit scroll ---------//
 .view-landing-thought-leaders .views-infinite-scroll-content-wrapper:not(.non-adversiting) {
-  @media (max-width: $broken) { 
+  @media (min-width: $broken) { 
     .views-row.not-show-line {
       margin-bottom: 0;
     }
@@ -311,7 +311,7 @@
     // margin: 20px auto;
     grid-column: 2;
     grid-row: span 2;
-    margin: 0px 0 0 19px;
+    //margin: 0px 0 0 19px;
   }
 }
 
@@ -319,8 +319,10 @@
 .view-landing-thought-leaders .views-infinite-scroll-content-wrapper:not(.non-adversiting),
 .view-jobs-in-i-am-a-job-seeker .views-infinite-scroll-content-wrapper:not(.non-adversiting) {
   .views-row.not-show-line {
-    &::before {
-      display: none !important;
+    @media screen and (min-width: $broken) {
+      &::before {
+        display: none !important;
+      }
     }
   }
 }
@@ -342,7 +344,7 @@
   }
 
   @media screen and (max-width: $broken) {
-    .ads:not(.ads-mobile) {
+    .ads:not(.ads.ads-mobile) {
       display: none;
     }
   }
