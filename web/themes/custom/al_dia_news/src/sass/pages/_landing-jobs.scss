@@ -118,16 +118,15 @@
         right: 0;
         margin: -40px auto;
       }
-      
+
       @media screen and (min-width: $tablet) {
-        &:nth-child(-n + 3){
+        &:nth-child(-n + 3) {
           margin-top: 0;
         }
       }
 
       @media screen and (max-width: $tablet) {
-
-        &:first-child{
+        &:first-child {
           margin-top: 0;
         }
 
@@ -199,9 +198,8 @@
         max-width: 1200px;
         padding-right: 50px;
         font-family: $PrNovacond-reg;
-        @media (min-width: 1500px){
+        @media (min-width: 1500px) {
           left: 112px;
-
         }
       }
     }
@@ -284,7 +282,7 @@
       margin-left: 15px;
     }
   }
-  .non-adversiting .block-content-left{
+  .non-adversiting .block-content-left {
     margin: 0 auto;
   }
 
@@ -344,7 +342,6 @@
   }
 }
 
-
 // estilos de bloque careers news
 .block-views-blockcareer-news-block-4 {
   width: 21.095%;
@@ -379,7 +376,7 @@
     font-family: $PrNovacond-reg;
     color: $corange;
     margin-top: 10px;
-    @media (max-width: $desktop){
+    @media (max-width: $desktop) {
       font-family: $PrNovacond-Sbold;
     }
   }
@@ -736,29 +733,25 @@
   }
 }
 
-@media (max-width: $broken){
+@media (max-width: $broken) {
   .path-jobs .layout-container .layout-main {
     margin: 30px auto 10px;
-    .watch-live-button{
+    .watch-live-button {
       margin: 0 auto 20px;
     }
-    .style-jobs .breadcrumb{
+    .style-jobs .breadcrumb {
       margin: 20px auto 10px;
     }
-    .non-adversiting .content-right-pages{
+    .non-adversiting .content-right-pages {
       margin: 0px;
     }
   }
 }
 
-
-
-
 @media (max-width: $tablet) {
-  
-#block-system-menu-block-jobs-landing-menu .menu{
-  padding: 20px 25px 0;
-}
+  #block-system-menu-block-jobs-landing-menu .menu {
+    padding: 20px 25px 0;
+  }
   .jobs.style-jobs {
     h1 {
       bottom: 110px;
@@ -811,7 +804,8 @@
       }
 
       .button-apply {
-        margin-top: 25px;
+        margin-top: 10px;
+        margin-bottom: 20px;
       }
     }
 
