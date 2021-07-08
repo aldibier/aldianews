@@ -3,9 +3,13 @@ langcode: en
 status: true
 dependencies:
   module:
+    - block_class
     - gamw
   theme:
     - al_dia_news
+third_party_settings:
+  block_class:
+    classes: ads
 id: gamwadvertisement_14
 theme: al_dia_news
 region: category_banner_section_bottom
@@ -18,5 +22,6 @@ settings:
   provider: gamw
   label_display: '0'
   ad_unit: category-banner-section-bottom
-  attributes_wrapper: null
+  attributes_wrapper:
+    - ''
 visibility: {  }
