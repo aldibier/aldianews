@@ -252,7 +252,7 @@
                 ads.remove();
               } else {
                 if (!!e.parentElement)
-                  e.parentElement.classList.add("non-adversiting");
+                  e.parentElement.classList.add("non-adversiting-no");
                 e.remove();
               }
             }
