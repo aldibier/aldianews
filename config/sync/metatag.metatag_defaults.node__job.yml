@@ -1,0 +1,28 @@
+uuid: 89f2dd91-36d4-44e4-99dd-7d9ba6ad5a90
+langcode: en
+status: true
+dependencies: {  }
+id: node__job
+label: 'Content: Job posting'
+tags:
+  og_description: '[node:summary]'
+  og_site_name: '[site:name]'
+  og_title: '[current-page:title]'
+  og_type: '[node:content-type]'
+  og_url: '[current-page:url]'
+  twitter_cards_description: '[node:body]'
+  twitter_cards_page_url: '[current-page:url]'
+  twitter_cards_site: '@ALDIANews'
+  twitter_cards_title: '[node:field_title]'
+  twitter_cards_type: photo
+  schema_job_posting_date_posted: '[node:created:html_datetime]'
+  schema_job_posting_description: '[node:field_requirements]'
+  schema_job_posting_employment_type: '[node:field_type_of_working_day:entity:name]'
+  schema_job_posting_hiring_organization: 'a:4:{s:5:"@type";s:12:"Organization";s:3:"@id";s:36:"[node:field_company_name:entity:tid]";s:4:"name";s:37:"[node:field_company_name:entity:name]";s:3:"url";s:36:"[node:field_company_name:entity:url]";}'
+  schema_job_posting_identifier: '[node:nid]'
+  schema_job_posting_industry: '[node:field_sector:entity:name]'
+  schema_job_posting_job_location: 'a:2:{s:5:"@type";s:5:"Place";s:4:"name";s:18:"[node:field_place]";}'
+  schema_job_posting_responsibilities: '[node:field_requirements]'
+  schema_job_posting_title: '[node:title]'
+  schema_job_posting_type: JobPosting
+  schema_job_posting_valid_through: '[node:field_expiration_date:date:html_datetime]'
