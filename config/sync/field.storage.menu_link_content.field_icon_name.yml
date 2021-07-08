@@ -1,16 +1,18 @@
-uuid: 7fcd8b95-9844-4ad9-9fe7-9cf32388c78a
+uuid: 7a10099b-f301-46f1-931c-f2437c05a4b2
 langcode: en
 status: true
 dependencies:
   module:
-    - fontawesome
     - menu_link_content
-id: menu_link_content.field_icon
-field_name: field_icon
+id: menu_link_content.field_icon_name
+field_name: field_icon_name
 entity_type: menu_link_content
-type: fontawesome_icon
-settings: {  }
-module: fontawesome
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
 locked: false
 cardinality: 1
 translatable: true

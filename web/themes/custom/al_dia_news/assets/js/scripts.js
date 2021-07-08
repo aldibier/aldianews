@@ -2001,6 +2001,11 @@ __webpack_require__.r(__webpack_exports__);
     $("#block-blockpreheader").click(function () {
       $(".region-secondary-menu").removeClass("open-menu");
       $("body").removeClass("open-menu");
+    });
+    $(".page-node-type-webform .webform-confirmation-modal .button-back").click(function () {
+      $(this).parents('.webform-confirmation-modal').css('display', 'none');
+      $(this).parents('.page-node-type-webform').find('.ui-widget-overlay').css('display', 'none');
+      $(this).attr('href', '#');
     }); //--------puopup-- login - movil -----------//
 
     $(".user-logged-in #block-menuuseritem-2").click(function () {
@@ -2160,27 +2165,7 @@ __webpack_require__.r(__webpack_exports__);
   Drupal.behaviors.form_checkbox = {
     attach: function attach(context, settings) {
       $(function () {
-        //js para eliminar publicidad vacia
-        setTimeout(function () {
-          Array.from(document.querySelectorAll(".block-gamw")).map(function (e) {
-            if (e != null) {
-              var iframe_gamw = e.querySelector("iframe");
-
-              if (iframe_gamw == null) {
-                var ads = e.closest(".ads");
-
-                if (!!ads) {
-                  if (!!ads.parentElement) ads.parentElement.classList.add("non-adversiting");
-                  ads.remove();
-                } else {
-                  if (!!e.parentElement) e.parentElement.classList.add("non-adversiting");
-                  e.remove();
-                }
-              }
-            }
-          });
-        }, 6000); //js para recargar
-
+        //js para recargar
         Array.from(document.querySelectorAll(".button-preload")).map(function (e) {
           if (e != null) {
             e.addEventListener("click", function () {
