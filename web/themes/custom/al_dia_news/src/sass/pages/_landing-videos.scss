@@ -185,14 +185,14 @@
   }
 
   @media (max-width: $broken) {
-    .news-galery .view-content {
+    .news-gallery .view-content {
       > div:not(.no-result-search) {
         padding: 0px;
       }
       .views-row {
         overflow: hidden;
         &:nth-child(2n + 3):before {
-          width: calc(100% - 30px);
+          width: 100%;
         }
       }
     }

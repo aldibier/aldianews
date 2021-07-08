@@ -1,4 +1,4 @@
-.news-galery,
+.news-gallery,
 .events-gallery {
   .view-header {
     h3 {
@@ -16,17 +16,31 @@
     .views-row {
       margin-top: 35px;
       margin-bottom: 35px;
+      position: relative;
 
       $screen-query: 993px;
 
-      &:nth-child(-n + 3) {
-        @media screen and (min-width: $screen-query) {
-          margin-top: 0;
-        }
+      &::before {
+        display: block;
+        content: "";
+        width: calc(100% + 40px);
+        height: 1px;
+        left: -20px;
+        bottom: 0;
+        background: $cgrey4;
+        position: absolute;
+        right: 0;
+        margin: -35px auto;
       }
 
       @media screen and (min-width: $screen-query) {
-        position: relative;
+
+        &:nth-child(-n + 3) {
+          @media screen and (min-width: $screen-query) {
+            margin-top: 0;
+          }
+        }
+
         &::after {
           content: "";
           width: 1px;
@@ -35,23 +49,6 @@
           top: 0;
           right: calc(0% - 20px);
           background-color: $cgrey4;
-        }
-      }
-
-      &:nth-of-type(3n + 2) {
-        @media screen and (min-width: $screen-query) {
-          &:before {
-            /* display: block;
-            content: "";
-            width: calc(100% - 30px);
-            max-width: 1280px;
-            height: 1px;
-            left: 0;
-            background: $cgrey4;
-            position: absolute;
-            right: 0;
-            margin: -35px auto; */
-          }
         }
       }
 
@@ -66,19 +63,12 @@
           margin-top: 0;
         }
 
-        &:nth-child(2n + 3) {
-          &:before {
-            display: block;
-            content: "";
-            width: calc(100% - 30px);
-            height: 1px;
-            left: 0;
-            right: 0;
-            background: $cgrey4;
-            position: absolute;
-            right: 0;
-            margin: -20px auto;
-          }
+        &::before {
+          width: calc(100vw - 30px);
+          height: 1px;
+          left: 0;
+          right: 0;
+          margin: -20px auto;
         }
       }
     }
@@ -91,9 +81,10 @@
   }
 }
 
-.news-galery {
+.news-gallery {
   .view-content {
     > div:not(.no-result-search) {
+      margin-bottom: 90px;
       display: grid;
       grid-template-columns: minmax(250px, 420px) minmax(250px, 440px) minmax(
           250px,

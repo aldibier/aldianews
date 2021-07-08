@@ -47,10 +47,10 @@
   }
 }
 
-.block-fixed-block-contentsquare-advertising-mobile,
-.block-fixed-block-contentvertical-advertising-mobile {
-  /* display: none; */
-}
+// .block-fixed-block-contentsquare-advertising-mobile,
+// .block-fixed-block-contentvertical-advertising-mobile {
+//   /* display: none; */
+// }
 
 @media (max-width: $desktop) {
   .block-content-left {
@@ -90,7 +90,7 @@
     z-index: 1;
 
     &::before {
-      content: '';
+      content: "";
       width: 25px;
       height: 100%;
       display: block;
@@ -140,7 +140,7 @@
       background-size: contain;
       top: 4px;
       right: 8%;
-      @media (max-width: 350px){
+      @media (max-width: 350px) {
         right: 1%;
       }
     }
@@ -151,7 +151,7 @@
   .block-fixed-block-content-small-vertical-advertising {
     margin-bottom: 65px;
     padding-bottom: 0;
-  
+
     @media (max-width: $broken) {
       display: none;
     }
@@ -198,7 +198,7 @@
 //----------------- general header top banner ----------------------------------//
 [data-ad-unit="header-top-banner"] {
   margin-bottom: 60px;
-  > div{
+  > div {
     text-align: center;
   }
   @media screen and (max-width: $tablet) {
@@ -226,9 +226,7 @@
       margin: 0 auto 40px;
     }
   }
-} 
-
-
+}
 
 //----------------- internal more covers ----------------------------------//
 .page-node-type-more-covers {
@@ -267,6 +265,18 @@
 }
 
 ///---------- estilos para publicidad en infinit scroll ---------//
+.view-landing-thought-leaders .views-infinite-scroll-content-wrapper:not(.non-adversiting) {
+  @media (max-width: $broken) { 
+    .views-row.not-show-line {
+      margin-bottom: 0;
+    }
+
+    .banner-scroll {
+      margin: 90px 0;
+    }
+  }
+}
+
 .banner-scroll {
   grid-column: span 3;
   width: 100%;
@@ -278,7 +288,6 @@
 .block-scroll {
   max-width: 400px;
   max-height: 375px;
-  overflow: hidden;
   margin: 35px auto;
   grid-column: 3;
   @media (max-width: $broken) {
@@ -288,10 +297,10 @@
     grid-column: span 2;
   }
 }
+
 .skys-scroll {
   max-width: 400px;
   max-height: 790px;
-  overflow: hidden;
   margin: 35px auto;
   grid-column: 3;
   grid-row: span 2;
@@ -303,6 +312,61 @@
     grid-column: 2;
     grid-row: span 2;
     margin: 0px 0 0 19px;
+  }
+}
+
+.news-gallery .views-infinite-scroll-content-wrapper:not(.non-adversiting),
+.view-landing-thought-leaders .views-infinite-scroll-content-wrapper:not(.non-adversiting),
+.view-jobs-in-i-am-a-job-seeker .views-infinite-scroll-content-wrapper:not(.non-adversiting) {
+  .views-row.not-show-line {
+    &::before {
+      display: none !important;
+    }
+  }
+}
+
+/* non-adversiting */
+.non-adversiting {
+  .ads {
+    display: none !important;
+  }
+}
+
+.view-landing-thought-leaders .views-infinite-scroll-content-wrapper,
+.news-gallery .views-infinite-scroll-content-wrapper {
+
+  @media screen and (min-width: $tablet) {
+    .ads-mobile {
+      display: none !important;
+    }
+  }
+
+  @media screen and (max-width: $broken) {
+    .ads:not(.ads-mobile) {
+      display: none;
+    }
+  }
+}
+
+.news-gallery .block-scroll,
+.view-landing-thought-leaders .block-scroll,
+.news-gallery .skys-scroll.skys2,
+.view-landing-thought-leaders .skys-scroll.skys2 {
+  $screen-query: 993px;
+  @media screen and (min-width: $screen-query) {
+    position: relative;
+    &:before {
+      display: block;
+      content: "";
+      width: calc(100% + 40px);
+      height: 1px;
+      left: -20px;
+      bottom: 0;
+      background: $cgrey4;
+      position: absolute;
+      right: 0;
+      margin: -35px auto;
+    }
   }
 }
 
@@ -385,7 +449,6 @@ div[data-ad-unit*="pre-footer-bottom-banner"] {
 div[data-ad-unit*="Home-post-main-headline"] {
   margin-left: 0px !important;
 }
-
 
 //Landing podcast
 .podcast-content-list {

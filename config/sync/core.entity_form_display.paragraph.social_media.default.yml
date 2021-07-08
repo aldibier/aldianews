@@ -3,22 +3,23 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.social_media.field_icon
+    - field.field.paragraph.social_media.field_icon_name
     - field.field.paragraph.social_media.field_link
     - paragraphs.paragraphs_type.social_media
   module:
-    - fontawesome
     - link
 id: paragraph.social_media.default
 targetEntityType: paragraph
 bundle: social_media
 mode: default
 content:
-  field_icon:
-    weight: 1
-    settings: {  }
+  field_icon_name:
+    weight: 11
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: fontawesome_icon_widget
+    type: string_textfield
     region: content
   field_link:
     weight: 0
@@ -27,6 +28,11 @@ content:
       placeholder_title: ''
     third_party_settings: {  }
     type: link_default
+    region: content
+  translation:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
     region: content
 hidden:
   created: true

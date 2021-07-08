@@ -47,7 +47,7 @@ import replaceToken from "./modules/replaceToken";
       ).click(function() {
         $video.addClass("disnone");
       });
-    },{passive: true});
+    });
   }
 
   $( document ).ajaxComplete(function() {
@@ -85,39 +85,28 @@ import replaceToken from "./modules/replaceToken";
       ).click(function() {
         videoThoughtLeaders.addClass("disnone");
       });
-    },{passive: true});
+    });
   }
 
 
   jQuery(document).ready(function() {
     /////
-    if (
-      $(".page-node-type-news .block-field-blocknodenewsfield-video iframe")
-        .length
-    ) {
-      var url = ($(
-        ".page-node-type-news .block-field-blocknodenewsfield-video iframe"
-      )[0].src += "&mute=1");
-      var video = url.replace("autoplay=0", "autoplay=1");
-
-      $(
-        ".page-node-type-news .block-field-blocknodenewsfield-video iframe"
-      ).attr("src", video);
+    if ($(".page-node-type-news .block-field-blocknodenewsfield-video iframe").length ) {
+      var url = ($(".page-node-type-news .block-field-blocknodenewsfield-video iframe")[0].src += "&mute=1");
+      var video = url.replace("autoplay=0", "autoplay=1").replace(".com", "-nocookie.com");
+      $(".page-node-type-news .block-field-blocknodenewsfield-video iframe").attr("src", video);
     }
 
-    if (
-      $(
-        ".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video iframe"
-      ).length
-    ) {
-      var url = ($(
-        ".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video iframe"
-      )[0].src += "&mute=1");
-      var video = url.replace("autoplay=0", "autoplay=1");
+    if ($( ".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video iframe" ).length ){
+      var url = ($(".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video iframe")[0].src += "&mute=1");
+      var video = url.replace("autoplay=0", "autoplay=1").replace(".com", "-nocookie.com");
+      $(".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video iframe").attr("src", video);
+    }
 
-      $(
-        ".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video iframe"
-      ).attr("src", video);
+    if ($(".watch-live-video .video-embed-field-provider-youtube iframe").length ){
+      var url = ($(".watch-live-video .video-embed-field-provider-youtube iframe")[0].src += "");
+      var video = url.replace(".com", "-nocookie.com");
+      $(".watch-live-video .video-embed-field-provider-youtube iframe").attr("src", video);
     }
 
     //--------- menu--------------------//
@@ -134,6 +123,12 @@ import replaceToken from "./modules/replaceToken";
     $("#block-blockpreheader").click(function() {
       $(".region-secondary-menu").removeClass("open-menu");
       $("body").removeClass("open-menu");
+    });
+
+    $(".page-node-type-webform .webform-confirmation-modal .button-back").click(function() {
+      $(this).parents('.webform-confirmation-modal').css('display','none');
+      $(this).parents('.page-node-type-webform').find('.ui-widget-overlay').css('display','none');
+      $(this).attr('href','#');
     });
 
     //--------puopup-- login - movil -----------//
@@ -401,27 +396,7 @@ import replaceToken from "./modules/replaceToken";
   Drupal.behaviors.form_checkbox = {
     attach: function(context, settings) {
       $(function() {
-        //js para eliminar publicidad vacia
-        setTimeout(() => {
-          
-          Array.from(document.querySelectorAll(".block-gamw")).map(function (e) {
-            if (e != null) {
-              var iframe_gamw = e.querySelector("iframe");
-
-              if (iframe_gamw == null) {
-                var ads = e.closest(".ads");
-
-                if (!!ads){
-                  if(!!ads.parentElement) ads.parentElement.classList.add("non-adversiting");
-                  ads.remove();
-                } else {
-                  if(!!e.parentElement) e.parentElement.classList.add("non-adversiting");
-                  e.remove();
-                }
-              }
-            }
-          })
-        }, 6000);
+     
 
         //js para recargar
         Array.from(document.querySelectorAll(".button-preload")).map(function(

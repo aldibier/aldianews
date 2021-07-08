@@ -4,11 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.advertising_informative_items_.field_description
-    - field.field.paragraph.advertising_informative_items_.field_icon
+    - field.field.paragraph.advertising_informative_items_.field_icon_name
     - field.field.paragraph.advertising_informative_items_.field_text
     - paragraphs.paragraphs_type.advertising_informative_items_
   module:
-    - fontawesome
+    - al_dia_news_general
 id: paragraph.advertising_informative_items_.default
 targetEntityType: paragraph
 bundle: advertising_informative_items_
@@ -22,13 +22,13 @@ content:
     third_party_settings: {  }
     type: string
     region: content
-  field_icon:
+  field_icon_name:
     weight: 0
     label: hidden
     settings:
-      layers: false
+      link_to_entity: false
     third_party_settings: {  }
-    type: fontawesome_icon_formatter
+    type: icon_field_formatter
     region: content
   field_text:
     weight: 1
