@@ -31,7 +31,7 @@ class UrlsRedirect extends UrlAliasBase {
   public function query() {
     
     $query = parent::query();
-    $query->groupBy('ua.source');
+    $query->groupBy('ua.alias');
     $query->condition('ua.source', 'node/%', 'LIKE');
 
     return $query;
