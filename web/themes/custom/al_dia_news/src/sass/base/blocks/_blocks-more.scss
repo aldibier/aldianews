@@ -276,6 +276,9 @@
       > div:nth-child(3) {
       margin: 0px;
     }
+    .view-more-in-this-section-news .card-more:nth-child(1) {
+      border-bottom: 0px;
+    }
     &.page-node-type-feature-employer .content-right-pages,
     &.page-node-type-job .content-right-pages {
       margin: 0px;
@@ -289,7 +292,7 @@
     .podcast-content-list .view-content {
       margin-bottom: 0px;
     }
-    .page-node-type-more-covers .content-right-pages {
+    &.page-node-type-more-covers .content-right-pages {
       padding: 0px;
       border: 0px;
       margin: 0px;
@@ -299,7 +302,7 @@
       margin-bottom: 0px;
     }
     article[about="/terms-of-service"] .content-right-pages,
-    .page-node-type-page .banner-horizontal {
+    &.page-node-type-page .banner-horizontal {
       margin: 0px;
     }
   }
