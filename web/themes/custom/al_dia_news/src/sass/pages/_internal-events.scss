@@ -942,7 +942,9 @@
       .item-list ul li {
         max-width: 140px;
         margin-bottom: 50px;
-        &:nth-child(4n + 4):before {
+        border-right: 0px;
+        &:nth-child(4n + 4):before,
+        &:nth-child(3):before {
           display: block;
           content: "";
           width: 100%;
@@ -957,8 +959,10 @@
         &:nth-child(6) {
           border-right: 0 !important;
         }
-        &:nth-child(3n) {
-          border-right: 0.5px solid #b1b1b1;
+        &:nth-child(2n) {
+          border-left: 0.5px solid #b1b1b1;
+          padding-left: 20px;
+          margin-left: 0px;
         }
       }
       .event-guest-photo {
