@@ -246,23 +246,17 @@
             if (iframe_gamw == null) {
               var ads = e.closest(".ads");
 
-              if (!!ads) {
-                var ads_father = ads.closest(".ads");
-                if(!!ads_father){
-                  if (!!ads_father.parentElement)
-                  ads_father.parentElement.classList.add("non-adversiting");
-                  ads_father.remove();
-                }else{
-                  if (!!ads.parentElement)
-                  ads.parentElement.classList.add("non-adversiting");
-                  ads.remove();
+              Array.from(ads).map(function(ev) {
+                if (!!ev) {
+                  if (!!ev.parentElement)
+                    ads.parentElement.classList.add("non-adversiting");
+                  ev.remove();
+                } else {
+                  if (!!e.parentElement)
+                    e.parentElement.classList.add("non-adversiting");
+                  e.remove();
                 }
-               
-              } else {
-                if (!!e.parentElement)
-                  e.parentElement.classList.add("non-adversiting-no");
-                e.remove();
-              }
+              });
             }
           }
         });
