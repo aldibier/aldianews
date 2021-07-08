@@ -5,14 +5,15 @@ global:
       assets/css/styles.css: {}
       assets/css/icon.css: {}
   js:
-    assets/js/scripts.js: { minified: true, attributes: { defer: true } }
     assets/libraries/YTPlayer/YTPlayer.js: {}
+    assets/js/scripts.js: { minified: true, attributes: { defer: true } }
     #assets/libraries/browserclass.js: {}
   dependencies:
+    - core/jquery
     - al_dia_news/slick
     - al_dia_news/sumoselect
     - al_dia_news/scrollmagic
-    - core/jquery
+  
 
 scrollmagic:
   version: 2.0.7
