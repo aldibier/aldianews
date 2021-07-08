@@ -18,8 +18,10 @@ tags:
   schema_job_posting_date_posted: '[node:created:html_datetime]'
   schema_job_posting_description: '[node:field_requirements]'
   schema_job_posting_employment_type: '[node:field_type_of_working_day:entity:name]'
+  schema_job_posting_hiring_organization: 'a:4:{s:5:"@type";s:12:"Organization";s:3:"@id";s:36:"[node:field_company_name:entity:tid]";s:4:"name";s:37:"[node:field_company_name:entity:name]";s:3:"url";s:36:"[node:field_company_name:entity:url]";}'
   schema_job_posting_identifier: '[node:nid]'
   schema_job_posting_industry: '[node:field_sector:entity:name]'
+  schema_job_posting_job_location: 'a:2:{s:5:"@type";s:5:"Place";s:4:"name";s:18:"[node:field_place]";}'
   schema_job_posting_responsibilities: '[node:field_requirements]'
   schema_job_posting_title: '[node:title]'
   schema_job_posting_type: JobPosting
