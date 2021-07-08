@@ -265,6 +265,18 @@
 }
 
 ///---------- estilos para publicidad en infinit scroll ---------//
+.view-landing-thought-leaders .views-infinite-scroll-content-wrapper:not(.non-adversiting) {
+  @media (max-width: $broken) { 
+    .views-row.not-show-line {
+      margin-bottom: 0;
+    }
+
+    .banner-scroll {
+      margin: 90px 0;
+    }
+  }
+}
+
 .banner-scroll {
   grid-column: span 3;
   width: 100%;
@@ -322,6 +334,13 @@
 
 .view-landing-thought-leaders .views-infinite-scroll-content-wrapper,
 .news-gallery .views-infinite-scroll-content-wrapper {
+
+  @media screen and (min-width: $tablet) {
+    .ads-mobile {
+      display: none !important;
+    }
+  }
+
   @media screen and (max-width: $broken) {
     .ads:not(.ads-mobile) {
       display: none;
