@@ -11,7 +11,7 @@ dependencies:
     - al_dia_news
 third_party_settings:
   block_class:
-    classes: 'banner-horizontal bot-bottom'
+    classes: 'banner-horizontal bot-bottom ads'
 id: gamwadvertisement_4
 theme: al_dia_news
 region: content
@@ -30,10 +30,10 @@ visibility:
   request_path_exclusion:
     id: request_path_exclusion
     pages: ''
-    negate: null
+    negate: true
   view_inclusion:
     id: view_inclusion
-    negate: null
+    negate: false
     view_inclusion: {  }
   node_type:
     id: node_type
