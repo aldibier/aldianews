@@ -943,7 +943,8 @@
         max-width: 140px;
         margin-bottom: 50px;
         border-right: 0px;
-        &:nth-child(4n + 4):before {
+        &:nth-child(4n + 4):before,
+        &:nth-child(3):before {
           display: block;
           content: "";
           width: 100%;
