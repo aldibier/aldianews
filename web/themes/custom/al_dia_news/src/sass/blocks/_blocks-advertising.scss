@@ -303,9 +303,9 @@
   }
 }
 
-.news-gallery,
+.news-gallery .views-infinite-scroll-content-wrapper:not(.non-adversiting),
 .view-landing-thought-leaders .views-infinite-scroll-content-wrapper:not(.non-adversiting),
-.view-jobs-in-i-am-a-job-seeker {
+.view-jobs-in-i-am-a-job-seeker .views-infinite-scroll-content-wrapper:not(.non-adversiting) {
   .views-row.not-show-line {
     &::before {
       display: none !important;
@@ -320,7 +320,8 @@
   }
 }
 
-.view-landing-thought-leaders .views-infinite-scroll-content-wrapper {
+.view-landing-thought-leaders .views-infinite-scroll-content-wrapper,
+.news-gallery .views-infinite-scroll-content-wrapper {
   @media screen and (max-width: $broken) {
     .ads:not(.ads-mobile) {
       display: none;

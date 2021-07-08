@@ -20,6 +20,8 @@
   .job-and-company {
 
     span {
+      min-height: 60px;
+      max-height: 60px;
       font-style: normal;
       font-weight: 600;
       font-size: $px22;
@@ -27,16 +29,16 @@
       line-height: 27px;
       letter-spacing: 0.04em;
       text-transform: uppercase;
-      min-height: 60px;
       display: block;
       padding: 0 0 10px;
       border-bottom: 1px solid;
-      margin: 0 0 5px;
+      margin: 0 0 20px;
       color: $cblack3;
     }
   }
 
   .job-categories {
+    margin-bottom: 25px;
     font-family: $PrNovacond-light;
     font-style: normal;
     font-weight: normal;
@@ -60,7 +62,11 @@
     li {
       position: relative;
       padding: 0 0 0 25px;
-      margin: 15px 0 0;
+      margin: 0 0 15px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
 
       &:after {
         content: '';
@@ -91,7 +97,7 @@
     align-items: center;
     letter-spacing: 0.04em;
     color: $cblack0;
-    margin: 30px 0 25px;
+    margin: 0 0 25px;
     text-transform: uppercase;
   }
 
@@ -100,7 +106,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 10px 0 30px;
+    margin: 0 0 50px;
 
     @media (max-width: $tablet) {
       margin-bottom: 17px;
@@ -212,7 +218,7 @@
   @media(max-width:$tablet) {
 
     padding: 0 0 21px;
-    border-bottom: 0.5px solid $cgrey4;
+    //border-bottom: 0.5px solid $cgrey4;
     margin: 0 0 20px;
     width: 100%;
 
@@ -228,6 +234,8 @@
 
     .job-and-company {
       span {
+        margin-bottom: 8px;
+        padding-bottom: 10px;
         min-height: initial;
         font-size: 14px;
         line-height: 17px;
@@ -235,6 +243,7 @@
     }
 
     .job-categories {
+      margin-bottom: 10px;
       display: flex;
       flex-wrap: wrap;
       font-size: 15px;
@@ -243,6 +252,7 @@
       li {
         width: 50%;
         padding: 0 0 0 15px;
+        margin-bottom: 0;
 
         &:after {
           width: 5px;
@@ -256,7 +266,7 @@
     .place-employer {
       font-size: 15px;
       line-height: 18px;
-      margin: 10px 0;
+      margin: 0 0 10px;
     }
 
     .container-content__date.lightned {
@@ -280,6 +290,7 @@
 
     .button-details {
       a {
+        margin: 0;
         font-size: 12px;
         line-height: 0;
         min-width: 100px;

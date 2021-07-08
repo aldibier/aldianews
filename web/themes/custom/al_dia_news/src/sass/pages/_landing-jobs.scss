@@ -8,9 +8,10 @@
     position: relative;
     max-height: 710px;
     overflow: hidden;
+
     @media screen and (min-width: $tablet) {
       min-height: 470px;
-      margin: 0 -80px 70px;
+      margin: 0 -80px 20px;
       padding: 40px 80px 70px;
       position: relative;
     }
@@ -90,37 +91,50 @@
     gap: 0px 40px;
     overflow: hidden;
     grid-auto-flow: dense;
-    div:empty {
-      display: none;
-    }
+
     .views-row {
       margin: 40px 0;
+      position: relative;
 
-      $screen-query: 993px;
+      &::after {
+        content: "";
+        width: 1px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: calc(0% - 20px);
+        background-color: $cgrey4;
+      }
+
+      &::before {
+        display: block;
+        content: "";
+        width: calc(100% + 40px);
+        height: 1px;
+        left: -20px;
+        bottom: 0;
+        background: $cgrey4;
+        position: absolute;
+        right: 0;
+        margin: -40px auto;
+      }
       
-      @media screen and (min-width: $screen-query) {
-        position: relative;
-        &::after {
-          content: "";
-          width: 1px;
-          height: 100%;
-          position: absolute;
-          top: 0;
-          right: calc(0% - 20px);
-          background-color: $cgrey4;
+      @media screen and (min-width: $tablet) {
+        &:nth-child(-n + 3){
+          margin-top: 0;
+        }
+      }
+
+      @media screen and (max-width: $tablet) {
+
+        &:first-child{
+          margin-top: 0;
         }
 
         &::before {
-          display: block;
-          content: "";
-          width: calc(100% + 40px);
-          height: 1px;
-          left: -20px;
-          bottom: 0;
-          background: $cgrey4;
-          position: absolute;
-          right: 0;
-          margin: -35px auto;
+          width: 100%;
+          margin: -20px auto;
+          left: 0;
         }
       }
 
@@ -138,7 +152,7 @@
       }
       .views-row {
         width: 100%;
-        margin: 25px 0 0;
+        margin: 20px 0;
         padding: 0;
       }
     }
