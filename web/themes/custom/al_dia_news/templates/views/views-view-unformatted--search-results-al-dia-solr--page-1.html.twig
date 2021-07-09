@@ -47,9 +47,9 @@
 		{% endif %}
 
 		{% if loop.index in index_hide_lines %}
-			<span class="card-one-column views-row not-show-line">
+			<div class="card-one-column views-row not-show-line">
 				{{- row.content -}}
-			</span>
+			</div>
 		{% else %}
 			<div{{row.attributes.addClass(row_classes)}}>
 				{{- row.content -}}
