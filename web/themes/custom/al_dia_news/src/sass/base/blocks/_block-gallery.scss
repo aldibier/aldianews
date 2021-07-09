@@ -149,6 +149,14 @@
 
   @media screen and (max-width: $tablet) {
     margin-bottom: 40px;
+
+    .views-row {
+      &:nth-of-type(odd){
+        &::before {
+          margin: -20px auto;
+        }
+      }
+    }   
   }
 }
 
