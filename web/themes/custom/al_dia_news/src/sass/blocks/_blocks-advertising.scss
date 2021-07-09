@@ -277,9 +277,12 @@ body:not(.non-adversiting) .view-landing-thought-leaders .views-infinite-scroll-
   }
 }
 
-body:not(.non-adversiting) .view-more-videos-in-landing .views-infinite-scroll-content-wrapper:not(.non-adversiting) {
-  .banner-horizontal {
-    margin: 90px 0;
+body:not(.non-adversiting) .view-more-videos-in-landing .views-infinite-scroll-content-wrapper,
+body:not(.non-adversiting) .news-gallery .views-infinite-scroll-content-wrapper{
+  @media (min-width: $broken) { 
+    .banner-horizontal {
+      margin: 90px 0;
+    }
   }
 }
 
