@@ -1,0 +1,58 @@
+///------ scroll infinito -----------//
+
+body:not(.non-adversiting) .news-gallery .views-infinite-scroll-content-wrapper,
+body:not(.non-adversiting)
+  .view-landing-thought-leaders
+  .views-infinite-scroll-content-wrapper,
+body:not(.non-adversiting)
+  .view-jobs-in-i-am-a-job-seeker
+  .views-infinite-scroll-content-wrapper {
+  .views-row.not-show-line {
+    @media screen and (min-width: $broken) {
+      &::before {
+        display: none !important;
+      }
+    }
+  }
+}
+
+///------ non adversiting en movil-----------//
+
+@media (max-width: $broken) {
+  .non-adversiting {
+    .block-views-blockmore-in-this-section-news-block-1
+      .view-content
+      > div:nth-child(3) {
+      margin: 0px;
+    }
+    .view-more-in-this-section-news .card-more:nth-child(1) {
+      border-bottom: 0px;
+    }
+    &.page-node-type-feature-employer .content-right-pages,
+    &.page-node-type-job .content-right-pages {
+      margin: 0px;
+    }
+    &.page-node-type-event
+      .section-event-body
+      .body-lateral-section-advertising {
+      margin: 0px;
+    }
+    .podcast-content-list,
+    .podcast-content-list .view-content {
+      margin-bottom: 0px;
+    }
+    &.page-node-type-more-covers .content-right-pages {
+      padding: 0px;
+      border: 0px;
+      margin: 0px;
+    }
+    .node--view-mode-basic-page-about-us
+      .horizontal-advertising-general-horizontal {
+      margin-bottom: 0px;
+    }
+    article[about="/terms-of-service"] .content-right-pages,
+    &.page-node-type-page .banner-horizontal {
+      margin: 0px;
+    }
+  }
+}
