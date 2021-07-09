@@ -173,13 +173,13 @@
       margin-right: 0;
     }
 
-    @media screen and (max-width: $tablet) {      
-      text-align: center;      
+    @media screen and (max-width: $tablet) {
+      text-align: center;
     }
 
     > .content,
     .field--type-text-with-summary {
-      margin-bottom: 90px;
+      margin-bottom: 60px;
 
       @media screen and (max-width: $tablet) {
         margin-bottom: 20px;
@@ -948,25 +948,23 @@
     }
   }
 
-  .view-events-in-al-dia-live{
-    @media screen and (max-width: $broken){
-
-    .card-event{
-  
-      .card-event-title{
+  .view-events-in-al-dia-live {
+    @media screen and (max-width: $broken) {
+      .card-event {
+        .card-event-title {
           min-height: auto;
         }
-        .card-event-date{
+        .card-event-date {
           font-family: $PrNovacond-Sbold;
         }
       }
-    } 
-    .view-content{
-      margin-bottom: 90px;
+    }
+    .view-content {
+      margin-bottom: 70px;
 
-      @media screen and (max-width: $tablet){
+      @media screen and (max-width: $tablet) {
         margin-bottom: 40px;
       }
     }
-  } 
+  }
 }

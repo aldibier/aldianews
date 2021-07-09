@@ -11,7 +11,7 @@
 
     @media screen and (min-width: $tablet) {
       min-height: 470px;
-      margin: 0 -80px 20px;
+      margin: 0 -80px 70px;
       padding: 40px 80px 70px;
       position: relative;
     }
@@ -91,7 +91,11 @@
     gap: 0px 40px;
     overflow: hidden;
     grid-auto-flow: dense;
-
+    @media (min-width: $broken) {
+      .banner-horizontal {
+        margin: 40px 0 50px;
+      }
+    }
     .views-row {
       margin: 40px 0;
       position: relative;

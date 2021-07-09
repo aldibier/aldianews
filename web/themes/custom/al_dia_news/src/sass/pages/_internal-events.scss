@@ -337,6 +337,11 @@
     max-width: 400px;
   }
   .mode-more {
+    .item-list ul::after {
+      display: block;
+      content: "";
+      width: 314px; 
+    }
     .item-list ul li {
       max-width: 300px;
       margin-bottom: 70px;
