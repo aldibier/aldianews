@@ -375,6 +375,23 @@ body:not(.non-adversiting) .news-gallery .views-infinite-scroll-content-wrapper{
         left: -10px;
       }
     }
+
+    .skys-scroll.skys2 {
+      margin-bottom: 0;
+      max-height: initial;
+
+     &::after {
+        content: '';
+        width: calc(100vw - 30px);
+        height: 1px;
+        margin: 0 auto;
+        display: block;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background: $cgrey4;
+      }
+    }
   }
 }
 
