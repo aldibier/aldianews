@@ -265,7 +265,7 @@
 }
 
 ///---------- estilos para publicidad en infinit scroll ---------//
-.view-landing-thought-leaders .views-infinite-scroll-content-wrapper:not(.non-adversiting) {
+body:not(.non-adversiting) .view-landing-thought-leaders .views-infinite-scroll-content-wrapper {
   @media (min-width: $broken) { 
     .views-row.not-show-line {
       margin-bottom: 0;
@@ -274,6 +274,12 @@
     .banner-scroll {
       margin: 90px 0;
     }
+  }
+}
+
+body:not(.non-adversiting) .view-more-videos-in-landing .views-infinite-scroll-content-wrapper:not(.non-adversiting) {
+  .banner-horizontal {
+    margin: 90px 0;
   }
 }
 
@@ -315,9 +321,9 @@
   }
 }
 
-.news-gallery .views-infinite-scroll-content-wrapper:not(.non-adversiting),
-.view-landing-thought-leaders .views-infinite-scroll-content-wrapper:not(.non-adversiting),
-.view-jobs-in-i-am-a-job-seeker .views-infinite-scroll-content-wrapper:not(.non-adversiting) {
+body:not(.non-adversiting) .news-gallery .views-infinite-scroll-content-wrapper,
+body:not(.non-adversiting) .view-landing-thought-leaders .views-infinite-scroll-content-wrapper,
+body:not(.non-adversiting) .view-jobs-in-i-am-a-job-seeker .views-infinite-scroll-content-wrapper {
   .views-row.not-show-line {
     @media screen and (min-width: $broken) {
       &::before {
@@ -328,7 +334,7 @@
 }
 
 /* non-adversiting */
-.non-adversiting {
+body.non-adversiting {
   .ads {
     display: none !important;
   }

@@ -188,9 +188,9 @@
     .news-gallery .view-content {
       > div:not(.no-result-search) {
         padding: 0px;
+        overflow: hidden;
       }
       .views-row {
-        overflow: hidden;
         &:nth-child(2n + 3):before {
           width: 100%;
         }
@@ -204,6 +204,14 @@
       }
       .card-image {
         margin-bottom: 5px;
+      }
+    }
+  }
+
+  @media (max-width: $broken) {
+    .news-gallery .view-content {
+      > div:not(.no-result-search) {
+        overflow: initial;
       }
     }
   }
