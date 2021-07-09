@@ -173,8 +173,8 @@
       margin-right: 0;
     }
 
-    @media screen and (max-width: $tablet) {      
-      text-align: center;      
+    @media screen and (max-width: $tablet) {
+      text-align: center;
     }
 
     > .content,
@@ -948,27 +948,32 @@
     }
   }
 
-  .view-events-in-al-dia-live{
-    @media screen and (max-width: $broken){
-
-    .card-event{
-  
-      .card-event-title{
+  .view-events-in-al-dia-live {
+    @media screen and (max-width: $broken) {
+      .card-event {
+        .card-event-title {
           min-height: auto;
         }
-        .card-event-date{
+        .card-event-date {
           font-family: $PrNovacond-Sbold;
         }
       }
-    } 
-    .view-content{
+    }
+    .view-content {
       margin-bottom: 0px;
     }
-  } 
+  }
 }
-.view-id-events_in_al_dia_live{
+.view-id-events_in_al_dia_live {
   margin: 0 auto 0px;
-  .banner-horizontal{
+  .banner-horizontal {
     margin: 0 -15px 0px;
+  }
+}
+
+#block-block-groupal-dia-live-banner-last-block-top {
+  margin-bottom: 80px;
+  @media screen and (max-width: $broken) {
+    margin-bottom: 30px;
   }
 }
