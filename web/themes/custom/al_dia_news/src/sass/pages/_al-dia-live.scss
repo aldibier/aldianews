@@ -173,12 +173,17 @@
       margin-right: 0;
     }
 
+    @media screen and (max-width: $tablet) {      
+      text-align: center;      
+    }
+
     > .content,
     .field--type-text-with-summary {
       margin-bottom: 90px;
 
       @media screen and (max-width: $tablet) {
         margin-bottom: 20px;
+        text-align: initial;
       }
     }
 
@@ -855,8 +860,8 @@
       color: #ed1c24;
 
       img {
-        width: 175px;
-        height: 41.18px;
+        width: 180px;
+        height: 35px;
         margin: 10px 0 -5px;
       }
     }
@@ -914,7 +919,7 @@
         padding: 0 0 5px;
 
         img {
-          width: 70px;
+          width: 85px;
           height: 17.65px;
           margin: 0 0 -2px 5px;
         }
