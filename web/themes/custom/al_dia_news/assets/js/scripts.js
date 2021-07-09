@@ -2340,7 +2340,7 @@ var initScrollMagic = function initScrollMagic($, Drupal) {
   var containerRigth = document.querySelector('.container-right');
   var containerLeft = document.querySelector('.content-news-internal-left');
   var noticias = document.querySelector('.block-views-blockmore-in-this-section-news-block-1');
-  var limitHigh = 1690; //------------ scroll internas --------------//
+  var limitHigh = 1940; //------------ scroll internas --------------//
 
   if (!!containerRigth && !!noticias) {
     /* setTimeout(()=>{
@@ -2354,7 +2354,8 @@ var initScrollMagic = function initScrollMagic($, Drupal) {
     }; //window.addEventListener("resize", () => resizeActivation(noticias, scene2));
 
 
-    //------------ not sticky --------------//
+    console.log('thought leaders!'); //------------ not sticky --------------//
+
     if (containerLeft.offsetHeight < limitHigh) return;
     if (containerRigth.offsetHeight === noticias.offsetHeight) return;
     var scene2 = new ScrollMagic.Scene({
