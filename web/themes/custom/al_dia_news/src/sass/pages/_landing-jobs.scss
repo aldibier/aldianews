@@ -91,7 +91,11 @@
     gap: 0px 40px;
     overflow: hidden;
     grid-auto-flow: dense;
-
+    @media (min-width: $broken) {
+      .banner-horizontal {
+        margin: 40px 0 50px;
+      }
+    }
     .views-row {
       margin: 40px 0;
       position: relative;
