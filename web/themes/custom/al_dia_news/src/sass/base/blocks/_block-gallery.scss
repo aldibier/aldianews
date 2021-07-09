@@ -81,7 +81,7 @@
             content: '';
             width: calc(100vw - 30px);
             height: 1px;
-            margin: -30px auto;
+            margin: -20px auto;
             display: block;
             position: absolute;
             left: 0;
@@ -148,15 +148,7 @@
   margin-bottom: 90px;
 
   @media screen and (max-width: $tablet) {
-    margin-bottom: 40px;
-
-    .views-row {
-      &:nth-of-type(odd){
-        &::before {
-          margin: -20px auto;
-        }
-      }
-    }   
+    margin-bottom: 40px;  
   }
 }
 
