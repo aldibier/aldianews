@@ -965,6 +965,7 @@
         width: 100%;
         flex-direction: row;
         border-bottom: 1px solid #b1b1b1;
+        margin-bottom: 10px;
         .views-field-nothing {
           max-width: none;
         }
@@ -973,6 +974,9 @@
           max-height: 80px;
           width: 100%;
           margin-right: 20px;
+        }
+        .card-date::before {
+          display: none;
         }
       }
       .views-row:nth-child(3) {
@@ -983,7 +987,8 @@
         border-top: 1px;
         width: 100%;
         flex-direction: row;
-        border-bottom: 1px solid #b1b1b1;
+        margin-bottom: 10px;
+        border-bottom: 0px;
         .views-field-field-image {
           margin-bottom: 0px;
           max-width: 140px;
