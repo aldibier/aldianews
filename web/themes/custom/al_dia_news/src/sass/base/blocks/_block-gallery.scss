@@ -189,3 +189,30 @@
     }
   }
 }
+
+.path-about-al-dia-live{
+  .events-gallery .view-content .views-row{
+    &:nth-last-child(-n+3)::before{
+      width:0;
+    }
+    @media screen and (max-width: $broken){
+      position:relative;
+      &:nth-child(odd)::before{
+        width:calc(100vw - 30px);
+        height: 0.5px;
+        content:'';
+        position: absolute;
+        bottom: 0;
+      }
+      &:nth-child(even)::before{
+        width:calc(100vw - 30px);
+        height: 0px;
+        content:'';
+        position: absolute;
+      }
+      &:nth-last-child(-n+2)::before{
+        width:0;
+      }
+    } 
+  }
+}
