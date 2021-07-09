@@ -325,9 +325,55 @@ body:not(.non-adversiting) .news-gallery .views-infinite-scroll-content-wrapper{
 }
 
 .path-videos .news-gallery .view-content>div:not(.no-result-search) {
-  @media screen and (max-width: $broken) {
-    .banner-scroll .banner-horizontal{
+  @media screen and (max-width: $tablet) {
+    .banner-scroll .banner-horizontal {
       margin: 40px -15px;
+    }
+  }
+}
+
+.path-search-results .news-gallery .view-content>div:not(.no-result-search) {
+  @media screen and (max-width: $tablet) {
+    .banner-scroll .banner-horizontal {
+      margin: 35px -15px;
+    }
+
+    .block-scroll {
+      width: 100%;
+      max-width: 100%;
+      position: relative;
+      text-align: center;
+
+      &::after {
+        content: '';
+        width: calc(100vw - 30px);
+        height: 1px;
+        margin: 0 auto;
+        position: absolute;
+        bottom: calc(0% - 20px);
+        left: 0;
+        right: 0;
+        background: $cgrey4;
+      }
+    }
+
+    .skys-scroll {
+      width: 100%;
+      max-width: 100%;
+      margin-top: 20px;
+      position: relative;
+      background-color: $cwhite;
+      text-align: center;
+      z-index: 1;
+
+      &::before {
+        content: '';
+        width: 30px;
+        position: absolute;
+        background: $cwhite;
+        height: 100%;
+        left: -10px;
+      }
     }
   }
 }
