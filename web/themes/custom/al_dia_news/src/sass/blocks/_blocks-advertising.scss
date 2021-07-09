@@ -271,7 +271,7 @@ body:not(.non-adversiting) .view-landing-thought-leaders .views-infinite-scroll-
       margin-bottom: 0;
     }
 
-    .banner-scroll {
+    .banner-horizontal {
       margin: 90px 0;
     }
   }
@@ -323,8 +323,8 @@ body:not(.non-adversiting) .view-more-videos-in-landing .views-infinite-scroll-c
 
 .path-videos .news-gallery .view-content>div:not(.no-result-search) {
   @media screen and (max-width: $broken) {
-    .banner-scroll {
-      margin: 40px 0;
+    .banner-scroll .banner-horizontal{
+      margin: 40px -15px;
     }
   }
 }
