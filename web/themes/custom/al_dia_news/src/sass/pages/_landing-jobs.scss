@@ -526,19 +526,23 @@
   width: 100%;
 
   .view-content {
+    .views-row:nth-child(1) {
+      max-width: 418px;
+      padding: 0px;
+    }
     .views-row:nth-child(2) {
       border-right: 1px solid $cgrey4;
-      padding-right: 15.4px;
+      max-width: 418px;
+      padding: 0px;
     }
 
     .views-row:nth-child(3) {
-      padding-right: 15.4px;
-      padding-left: 15.4px;
+      padding: 0px;
       border-right: 0px solid $cgrey4;
       border-bottom: 0px;
       margin-bottom: 60px;
       flex-direction: column;
-
+      max-width: 400px;
       &::before {
         display: none;
       }
@@ -547,7 +551,7 @@
         max-width: 400px;
         max-height: 235px;
         overflow: hidden;
-        margin-bottom: 25px;
+        margin: 0 0 25px auto;
       }
 
       .card-title {
@@ -959,22 +963,33 @@
         align-items: center;
         border-top: 1px;
         width: 100%;
+        flex-direction: row;
+        border-bottom: 1px solid #b1b1b1;
         .views-field-nothing {
           max-width: none;
+        }
+        .views-field-field-image {
+          max-width: 140px;
+          max-height: 80px;
+          width: 100%;
+          margin-right: 20px;
         }
       }
       .views-row:nth-child(3) {
         padding-right: 0px;
-        border-right: 0px solid $cgrey4;
         margin-bottom: 20px;
         margin-right: 0px;
         max-width: none;
         border-top: 1px;
         width: 100%;
+        flex-direction: row;
+        border-bottom: 1px solid #b1b1b1;
         .views-field-field-image {
-          max-width: 340px;
-          max-height: 180px;
           margin-bottom: 0px;
+          max-width: 140px;
+          max-height: 80px;
+          width: 100%;
+          margin-right: 20px;
         }
         .views-field-nothing {
           max-width: none;
@@ -991,7 +1006,6 @@
 
       .views-row:nth-child(4) {
         position: relative;
-
         &::before {
           display: none;
         }
@@ -1001,6 +1015,10 @@
         &::before {
           display: none;
         }
+      }
+      .views-row:nth-child(7),
+      .views-row:nth-child(8) {
+        border-bottom: 0px solid $cgrey4;
       }
     }
   }
