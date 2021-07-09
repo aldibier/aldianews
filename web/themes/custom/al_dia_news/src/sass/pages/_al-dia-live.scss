@@ -957,13 +957,11 @@
       }
     } 
     .view-content{
-      margin-bottom: 0px;
+      margin-bottom: 90px;
+
+      @media screen and (max-width: $tablet){
+        margin-bottom: 40px;
+      }
     }
   } 
-}
-.view-id-events_in_al_dia_live{
-  margin: 0 auto 0px;
-  .banner-horizontal{
-    margin: 0 -15px 0px;
-  }
 }
