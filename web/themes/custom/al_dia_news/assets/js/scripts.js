@@ -2550,26 +2550,12 @@ var initSlick = function initSlick($, Drupal) {
 
   var slider_three = _objectSpread(_objectSpread({}, slider_general), {}, {
     slidesToShow: 3,
-    slidesToScroll: 3,
-    responsive: [{
-      breakpoint: 500,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2
-      }
-    }]
+    slidesToScroll: 3
   });
 
   var slider_more = _objectSpread(_objectSpread({}, slider_general), {}, {
     slidesToShow: 4,
-    slidesToScroll: 1,
-    responsive: [{
-      breakpoint: 500,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2
-      }
-    }]
+    slidesToScroll: 1
   });
 
   Array.from(document.querySelectorAll(".view-slider-internal-event .views-row")).map(function (e) {
