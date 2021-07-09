@@ -34,6 +34,13 @@
       margin-top: 30px;
     }
   }
+  
+  .path-videos .block-system-main-block .view-content {
+    @media (max-width: $tablet) {
+      min-height: 450px;
+    }
+  }
+
   .view-display-id-block_2 {
     h3 {
       margin: 90px 0 0;
@@ -188,12 +195,10 @@
     .news-gallery .view-content {
       > div:not(.no-result-search) {
         padding: 0px;
+        overflow: hidden;
       }
       .views-row {
-        overflow: hidden;
-        &:nth-child(2n + 3):before {
-          width: 100%;
-        }
+
       }
     }
 
@@ -204,6 +209,14 @@
       }
       .card-image {
         margin-bottom: 5px;
+      }
+    }
+  }
+
+  @media (max-width: $broken) {
+    .news-gallery .view-content {
+      > div:not(.no-result-search) {
+        overflow: initial;
       }
     }
   }

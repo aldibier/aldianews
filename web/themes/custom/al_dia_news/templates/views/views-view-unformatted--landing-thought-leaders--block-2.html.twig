@@ -20,6 +20,7 @@
 {% if title %}
 	<h3>{{ title }}</h3>
 {% endif %}
+
 {% if device == 'desktop' %}
 
 	{% set index_hide_lines = [7,8,9,15,16,17,23,24,29,30,31] %}
@@ -76,36 +77,36 @@
 	{% for row in rows %}
 
 		{%
-		set row_classes = [
-		default_row_class ? 'views-row',
-		]
-	%}
+			set row_classes = [
+			default_row_class ? 'views-row',
+			]
+		%}
 
 		{## block ##}
 		{% if loop.index  == 10 %}
-			<div class="block-scroll ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_16') }}</div>
+			<span class="block-scroll ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_16') }}</span>
 		{% endif %}
 
 		{## skyscraper ##}
 		{% if loop.index  == 17 %}
-			<div class="skys-scroll ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_17') }}</div>
+			<span class="skys-scroll ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_17') }}</span>
 		{% endif %}
 		{% if loop.index  == 19 %}
-			<div class="skys-scroll skys2 ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_20') }}</div>
+			<span class="skys-scroll skys2 ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_20') }}</span>
 		{% endif %}
 
 		{## banner ##}
 		{% if loop.index == 6 %}
-			<div class="banner-scroll ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_15') }}</div>
+			<span class="banner-scroll ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_15') }}</span>
 		{% endif %}
 		{% if loop.index == 14 %}
-			<div class="banner-scroll ban2 ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_18') }}</div>
+			<span class="banner-scroll ban2 ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_18') }}</span>
 		{% endif %}
 		{% if loop.index == 18 %}
-			<div class="banner-scroll ban3 ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_19') }}</div>
+			<span class="banner-scroll ban3 ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_19') }}</span>
 		{% endif %}
 		{% if loop.index == 24 %}
-			<div class="banner-scroll last-banner ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_36') }}</div>
+			<span class="banner-scroll last-banner ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_36') }}</span>
 		{% endif %}
 
 		<div{{row.attributes.addClass(row_classes)}}>
