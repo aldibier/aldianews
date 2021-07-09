@@ -807,7 +807,7 @@ body.open-menu {
     }
 
     .links {
-      width: 45px;
+      width: 47px;
       height: 67px;
       display: flex;
       flex-wrap: wrap;
@@ -842,7 +842,16 @@ body.open-menu {
       }
     }
   }
-
+  .language-link[hreflang="en"] {
+    &:lang(en) {
+      color: $corange;
+    }
+  }
+  .language-link[hreflang="es"] {
+    &:lang(es) {
+      color: $corange;
+    }
+  }
   #block-lastprintedition,
   #block-views-block-current-edition-header-and-footer-block-1 {
     order: 6;
