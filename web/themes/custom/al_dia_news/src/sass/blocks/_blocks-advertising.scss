@@ -273,8 +273,10 @@
 }
 
 ///---------- estilos para publicidad en infinit scroll ---------//
-body:not(.non-adversiting) .view-landing-thought-leaders .views-infinite-scroll-content-wrapper {
-  @media (min-width: $broken) { 
+body:not(.non-adversiting)
+  .view-landing-thought-leaders
+  .views-infinite-scroll-content-wrapper {
+  @media (min-width: $broken) {
     .views-row.not-show-line {
       margin-bottom: 0;
     }
@@ -285,9 +287,13 @@ body:not(.non-adversiting) .view-landing-thought-leaders .views-infinite-scroll-
   }
 }
 
-body:not(.non-adversiting) .view-more-videos-in-landing .views-infinite-scroll-content-wrapper,
-body:not(.non-adversiting) .news-gallery .views-infinite-scroll-content-wrapper{
-  @media (min-width: $broken) { 
+body:not(.non-adversiting)
+  .view-more-videos-in-landing
+  .views-infinite-scroll-content-wrapper,
+body:not(.non-adversiting)
+  .news-gallery
+  .views-infinite-scroll-content-wrapper {
+  @media (min-width: $broken) {
     .banner-horizontal {
       margin: 90px 0;
     }
@@ -332,7 +338,7 @@ body:not(.non-adversiting) .news-gallery .views-infinite-scroll-content-wrapper{
   }
 }
 
-.path-videos .news-gallery .view-content>div:not(.no-result-search) {
+.path-videos .news-gallery .view-content > div:not(.no-result-search) {
   @media screen and (max-width: $tablet) {
     .banner-scroll .banner-horizontal {
       margin: 40px -15px;
@@ -340,7 +346,7 @@ body:not(.non-adversiting) .news-gallery .views-infinite-scroll-content-wrapper{
   }
 }
 
-.path-search-results .news-gallery .view-content>div:not(.no-result-search) {
+.path-search-results .news-gallery .view-content > div:not(.no-result-search) {
   @media screen and (max-width: $tablet) {
     .banner-scroll .banner-horizontal {
       margin: 35px -15px;
@@ -353,7 +359,7 @@ body:not(.non-adversiting) .news-gallery .views-infinite-scroll-content-wrapper{
       text-align: center;
 
       &::after {
-        content: '';
+        content: "";
         width: calc(100vw - 30px);
         height: 1px;
         margin: 0 auto;
@@ -375,7 +381,7 @@ body:not(.non-adversiting) .news-gallery .views-infinite-scroll-content-wrapper{
       z-index: 1;
 
       &::before {
-        content: '';
+        content: "";
         width: 30px;
         position: absolute;
         background: $cwhite;
@@ -388,8 +394,8 @@ body:not(.non-adversiting) .news-gallery .views-infinite-scroll-content-wrapper{
       margin-bottom: 0;
       max-height: initial;
 
-     &::after {
-        content: '';
+      &::after {
+        content: "";
         width: calc(100vw - 30px);
         height: 1px;
         margin: 0 auto;
@@ -404,8 +410,12 @@ body:not(.non-adversiting) .news-gallery .views-infinite-scroll-content-wrapper{
 }
 
 body:not(.non-adversiting) .news-gallery .views-infinite-scroll-content-wrapper,
-body:not(.non-adversiting) .view-landing-thought-leaders .views-infinite-scroll-content-wrapper,
-body:not(.non-adversiting) .view-jobs-in-i-am-a-job-seeker .views-infinite-scroll-content-wrapper {
+body:not(.non-adversiting)
+  .view-landing-thought-leaders
+  .views-infinite-scroll-content-wrapper,
+body:not(.non-adversiting)
+  .view-jobs-in-i-am-a-job-seeker
+  .views-infinite-scroll-content-wrapper {
   .views-row.not-show-line {
     @media screen and (min-width: $broken) {
       &::before {
@@ -415,16 +425,8 @@ body:not(.non-adversiting) .view-jobs-in-i-am-a-job-seeker .views-infinite-scrol
   }
 }
 
-/* non-adversiting */
-// .non-adversiting {
-//   .ads {
-//     display: none !important;
-//   }
-// }
-
 .view-landing-thought-leaders .views-infinite-scroll-content-wrapper,
 .news-gallery .views-infinite-scroll-content-wrapper {
-
   @media screen and (min-width: $tablet) {
     .ads-mobile {
       display: none !important;
