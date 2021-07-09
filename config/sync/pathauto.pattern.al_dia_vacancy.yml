@@ -1,0 +1,22 @@
+uuid: d29a9fa5-b3c5-456c-a2f8-1838434a459f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: al_dia_vacancy
+label: 'Al Día vacancy'
+type: 'canonical_entities:node'
+pattern: 'work-with-al-dia/[node:title]'
+selection_criteria:
+  e8f7e4f6-98ba-4bb9-91d9-1bbfefbb43fa:
+    id: node_type
+    bundles:
+      al_dia_vacancy: al_dia_vacancy
+    negate: false
+    context_mapping:
+      node: node
+    uuid: e8f7e4f6-98ba-4bb9-91d9-1bbfefbb43fa
+selection_logic: and
+weight: -5
+relationships: {  }

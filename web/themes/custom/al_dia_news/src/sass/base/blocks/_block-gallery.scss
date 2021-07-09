@@ -56,7 +56,6 @@
         width: 100%;
         max-width: 100%;
         margin: 20px 0px;
-        position: initial;
         border: none;
 
         &:nth-child(-n + 2) {
@@ -69,6 +68,27 @@
           left: 0;
           right: 0;
           margin: -20px auto;
+        }
+      }
+
+      @media screen and (max-width: $tablet) {
+        &::before {
+          display: none;
+        }
+
+        &:nth-of-type(odd){
+          &::before {
+            content: '';
+            width: calc(100vw - 30px);
+            height: 1px;
+            margin: -20px auto;
+            display: block;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: $cgrey4;
+          }
         }
       }
     }
@@ -84,7 +104,6 @@
 .news-gallery {
   .view-content {
     > div:not(.no-result-search) {
-      margin-bottom: 90px;
       display: grid;
       grid-template-columns: minmax(250px, 420px) minmax(250px, 440px) minmax(
           250px,
@@ -94,13 +113,42 @@
       overflow: hidden;
       grid-auto-flow: dense;
       @media screen and (max-width: $broken) {
+        margin-bottom: 40px;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 0 10px;
-        overflow: initial;
         grid-auto-flow: dense;
       }
+
+      @media screen and (max-width: $tablet) {
+        overflow: initial;
+      }
     }
+  }
+}
+
+.path-search-results .news-gallery,
+.view-last-news-in-error-page .news-gallery {
+  margin-bottom: 120px;
+
+  @media screen and (max-width: $tablet) {
+    margin-bottom: 40px;
+  }
+}
+
+.path-jobs .news-gallery {
+  margin-bottom: 100px;
+
+  @media screen and (max-width: $tablet) {
+    margin-bottom: 40px;
+  }
+}
+
+.path-videos .news-gallery {
+  margin-bottom: 90px;
+
+  @media screen and (max-width: $tablet) {
+    margin-bottom: 40px;  
   }
 }
 
@@ -139,5 +187,32 @@
         }
       }
     }
+  }
+}
+
+.path-about-al-dia-live{
+  .events-gallery .view-content .views-row{
+    &:nth-last-child(-n+3)::before{
+      width:0;
+    }
+    @media screen and (max-width: $broken){
+      position:relative;
+      &:nth-child(odd)::before{
+        width:calc(100vw - 30px);
+        height: 0.5px;
+        content:'';
+        position: absolute;
+        bottom: 0;
+      }
+      &:nth-child(even)::before{
+        width:calc(100vw - 30px);
+        height: 0px;
+        content:'';
+        position: absolute;
+      }
+      &:nth-last-child(-n+2)::before{
+        width:0;
+      }
+    } 
   }
 }
