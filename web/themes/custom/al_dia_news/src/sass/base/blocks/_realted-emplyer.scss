@@ -1,5 +1,4 @@
 .rows-employer {
-
   h3 {
     font-style: normal;
     font-weight: bold;
@@ -18,7 +17,6 @@
   }
 
   .job-and-company {
-
     span {
       min-height: 60px;
       max-height: 60px;
@@ -64,12 +62,12 @@
       padding: 0 0 0 25px;
       margin: 0 0 15px;
 
-      &:last-child {
+      &:last-child  {
         margin-bottom: 0;
       }
 
       &:after {
-        content: '';
+        content: "";
         width: 10px;
         height: 10px;
         position: absolute;
@@ -99,6 +97,9 @@
     color: $cblack0;
     margin: 0 0 25px;
     text-transform: uppercase;
+    @media (min-width: $broken) {
+      min-height: 48px;
+    }
   }
 
   .container-content__date {
@@ -133,13 +134,13 @@
     display: flex;
 
     &:before {
-      content: '';
+      content: "";
       width: 30px;
       min-width: 30px;
       height: 30px;
       margin: 0 10px 0 0;
       display: block;
-      background: url('../../assets/img/alert.svg') center center no-repeat;
+      background: url("../../assets/img/alert.svg") center center no-repeat;
     }
 
     p {
@@ -167,7 +168,7 @@
     letter-spacing: 0.741176px;
   }
 
-  @media(min-width:$tablet)and(max-width: 1100px) {
+  @media (min-width: $tablet) and(max-width: 1100px) {
     h3 {
       font-size: 20px;
       line-height: 22px;
@@ -215,8 +216,7 @@
     }
   }
 
-  @media(max-width:$tablet) {
-
+  @media (max-width: $tablet) {
     padding: 0 0 21px;
     //border-bottom: 0.5px solid $cgrey4;
     margin: 0 0 20px;

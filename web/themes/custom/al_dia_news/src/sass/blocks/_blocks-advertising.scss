@@ -287,6 +287,14 @@ body:not(.non-adversiting)
   }
 }
 
+body:not(.non-adversiting) .path-jobs .views-infinite-scroll-content-wrapper {
+  @media (min-width: $broken) {
+    .banner-horizontal {
+      margin: 40px 0 50px;
+    }
+  }
+}
+
 body:not(.non-adversiting)
   .view-more-videos-in-landing
   .views-infinite-scroll-content-wrapper,
@@ -295,7 +303,7 @@ body:not(.non-adversiting)
   .views-infinite-scroll-content-wrapper {
   @media (min-width: $broken) {
     .banner-horizontal {
-      margin: 90px 0;
+      margin: 40px 0 50px;
     }
   }
 }

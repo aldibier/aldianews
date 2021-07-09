@@ -842,7 +842,16 @@ body.open-menu {
       }
     }
   }
-
+  .language-link[hreflang="en"] {
+    &:lang(en) {
+      color: $corange;
+    }
+  }
+  .language-link[hreflang="es"] {
+    &:lang(es) {
+      color: $corange;
+    }
+  }
   #block-lastprintedition,
   #block-views-block-current-edition-header-and-footer-block-1 {
     order: 6;
