@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b1ee1cc831850d13f59eb3e2c6b30005",
+    "content-hash": "01605add630808f55440be8bd00d90ea",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -9129,6 +9129,66 @@
             "time": "2020-10-16T15:41:51+00:00"
         },
         {
+            "name": "drupal/perimeter",
+            "version": "2.0.0-rc2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/perimeter.git",
+                "reference": "2.0.0-rc2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/perimeter-2.0.0-rc2.zip",
+                "reference": "2.0.0-rc2",
+                "shasum": "261c7e89f43a603c55701302243d5a04e298d2ce"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.0-rc2",
+                    "datestamp": "1608735036",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "RC releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Anybody",
+                    "homepage": "https://www.drupal.org/user/291091"
+                },
+                {
+                    "name": "CiviFirst John",
+                    "homepage": "https://www.drupal.org/user/3393940"
+                },
+                {
+                    "name": "alayham",
+                    "homepage": "https://www.drupal.org/user/34525"
+                },
+                {
+                    "name": "nord102",
+                    "homepage": "https://www.drupal.org/user/3471419"
+                },
+                {
+                    "name": "thomas.frobieter",
+                    "homepage": "https://www.drupal.org/user/409335"
+                }
+            ],
+            "description": "Immediately ban hackers when they try to scan the site.",
+            "homepage": "https://www.drupal.org/project/perimeter",
+            "support": {
+                "source": "https://git.drupalcode.org/project/perimeter"
+            }
+        },
+        {
             "name": "drupal/phone_international",
             "version": "3.1.0",
             "source": {
@@ -17846,6 +17906,7 @@
         "drupal/password_policy": 10,
         "drupal/pathologic": 15,
         "drupal/paypal_subscriptions": 20,
+        "drupal/perimeter": 5,
         "drupal/react_comments": 10,
         "drupal/search_api_spellcheck": 10,
         "drupal/sendgrid_api": 15,
