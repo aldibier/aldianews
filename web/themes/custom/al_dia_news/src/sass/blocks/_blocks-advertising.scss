@@ -265,13 +265,22 @@
 }
 
 ///---------- estilos para publicidad en infinit scroll ---------//
-.view-landing-thought-leaders .views-infinite-scroll-content-wrapper:not(.non-adversiting) {
+body:not(.non-adversiting) .view-landing-thought-leaders .views-infinite-scroll-content-wrapper {
   @media (min-width: $broken) { 
     .views-row.not-show-line {
       margin-bottom: 0;
     }
 
-    .banner-scroll {
+    .banner-horizontal {
+      margin: 90px 0;
+    }
+  }
+}
+
+body:not(.non-adversiting) .view-more-videos-in-landing .views-infinite-scroll-content-wrapper,
+body:not(.non-adversiting) .news-gallery .views-infinite-scroll-content-wrapper{
+  @media (min-width: $broken) { 
+    .banner-horizontal {
       margin: 90px 0;
     }
   }
@@ -315,9 +324,80 @@
   }
 }
 
-.news-gallery .views-infinite-scroll-content-wrapper:not(.non-adversiting),
-.view-landing-thought-leaders .views-infinite-scroll-content-wrapper:not(.non-adversiting),
-.view-jobs-in-i-am-a-job-seeker .views-infinite-scroll-content-wrapper:not(.non-adversiting) {
+.path-videos .news-gallery .view-content>div:not(.no-result-search) {
+  @media screen and (max-width: $tablet) {
+    .banner-scroll .banner-horizontal {
+      margin: 40px -15px;
+    }
+  }
+}
+
+.path-search-results .news-gallery .view-content>div:not(.no-result-search) {
+  @media screen and (max-width: $tablet) {
+    .banner-scroll .banner-horizontal {
+      margin: 35px -15px;
+    }
+
+    .block-scroll {
+      width: 100%;
+      max-width: 100%;
+      position: relative;
+      text-align: center;
+
+      &::after {
+        content: '';
+        width: calc(100vw - 30px);
+        height: 1px;
+        margin: 0 auto;
+        position: absolute;
+        bottom: calc(0% - 20px);
+        left: 0;
+        right: 0;
+        background: $cgrey4;
+      }
+    }
+
+    .skys-scroll {
+      width: 100%;
+      max-width: 100%;
+      margin-top: 20px;
+      position: relative;
+      background-color: $cwhite;
+      text-align: center;
+      z-index: 1;
+
+      &::before {
+        content: '';
+        width: 30px;
+        position: absolute;
+        background: $cwhite;
+        height: 100%;
+        left: -10px;
+      }
+    }
+
+    .skys-scroll.skys2 {
+      margin-bottom: 0;
+      max-height: initial;
+
+     &::after {
+        content: '';
+        width: calc(100vw - 30px);
+        height: 1px;
+        margin: 0 auto;
+        display: block;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background: $cgrey4;
+      }
+    }
+  }
+}
+
+body:not(.non-adversiting) .news-gallery .views-infinite-scroll-content-wrapper,
+body:not(.non-adversiting) .view-landing-thought-leaders .views-infinite-scroll-content-wrapper,
+body:not(.non-adversiting) .view-jobs-in-i-am-a-job-seeker .views-infinite-scroll-content-wrapper {
   .views-row.not-show-line {
     @media screen and (min-width: $broken) {
       &::before {
@@ -328,11 +408,11 @@
 }
 
 /* non-adversiting */
-.non-adversiting {
-  .ads {
-    display: none !important;
-  }
-}
+// .non-adversiting {
+//   .ads {
+//     display: none !important;
+//   }
+// }
 
 .view-landing-thought-leaders .views-infinite-scroll-content-wrapper,
 .news-gallery .views-infinite-scroll-content-wrapper {
