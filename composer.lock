@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "01605add630808f55440be8bd00d90ea",
+    "content-hash": "158a5d5a60d59ad447bb12919b7706f7",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -5778,6 +5778,50 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/devel_php",
                 "issues": "https://drupal.org/project/issues/devel_php"
+            }
+        },
+        {
+            "name": "drupal/disable_user_1_edit",
+            "version": "1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/disable_user_1_edit.git",
+                "reference": "8.x-1.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/disable_user_1_edit-8.x-1.4.zip",
+                "reference": "8.x-1.4",
+                "shasum": "5b799a9500dfb01018f2e49d8de3f8f22850483c"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.4",
+                    "datestamp": "1591191350",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "eiriksm",
+                    "homepage": "https://www.drupal.org/user/1014468"
+                }
+            ],
+            "description": "Disables editing of user 1, even if users can administer users.",
+            "homepage": "https://www.drupal.org/project/disable_user_1_edit",
+            "support": {
+                "source": "https://git.drupalcode.org/project/disable_user_1_edit"
             }
         },
         {
