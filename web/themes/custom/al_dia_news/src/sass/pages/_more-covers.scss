@@ -10,6 +10,17 @@
     }
   }
 
+  header {
+    h1.selectionShareable {
+      font-size: 1.357em;
+      margin: 0;
+
+      @media (max-width: $tablet) {
+        margin: 0px 0 10px;
+      }
+    }
+  }
+
   .block-field-blocknodemore-coversfield-cover-page {
     img {
       width: 100%;

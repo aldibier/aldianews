@@ -1,65 +1,3 @@
-///------ scroll infinito -----------//
-
-body:not(.non-adversiting) .news-gallery .views-infinite-scroll-content-wrapper,
-body:not(.non-adversiting)
-  .view-landing-thought-leaders
-  .views-infinite-scroll-content-wrapper,
-body:not(.non-adversiting)
-  .view-jobs-in-i-am-a-job-seeker
-  .views-infinite-scroll-content-wrapper {
-  .views-row.not-show-line {
-    @media screen and (min-width: $broken) {
-      &::before {
-        display: none !important;
-      }
-    }
-  }
-}
-
-///---------- estilos para publicidad en infinit scroll ---------//
-body:not(.non-adversiting)
-  .view-landing-thought-leaders
-  .views-infinite-scroll-content-wrapper {
-  @media (min-width: $broken) {
-    .views-row.not-show-line {
-      margin-bottom: 0;
-    }
-
-    .banner-horizontal {
-      margin: 90px 0;
-    }
-  }
-}
-
-body:not(.non-adversiting)
-  .view-more-videos-in-landing
-  .views-infinite-scroll-content-wrapper,
-body:not(.non-adversiting)
-  .news-gallery
-  .views-infinite-scroll-content-wrapper {
-  @media (min-width: $broken) {
-    .banner-horizontal {
-      margin: 40px 0 50px;
-    }
-  }
-}
-
-body:not(.non-adversiting) .news-gallery .views-infinite-scroll-content-wrapper,
-body:not(.non-adversiting)
-  .view-landing-thought-leaders
-  .views-infinite-scroll-content-wrapper,
-body:not(.non-adversiting)
-  .view-jobs-in-i-am-a-job-seeker
-  .views-infinite-scroll-content-wrapper {
-  .views-row.not-show-line {
-    @media screen and (min-width: $broken) {
-      &::before {
-        display: none !important;
-      }
-    }
-  }
-}
-
 ///------ non adversiting en desktop-----------//
 
 .non-adversiting {
@@ -221,5 +159,16 @@ body:not(.non-adversiting)
   .node--view-mode-work-whit-al-dia
     .horizontal-advertising-general-horizontal.non-adversiting {
     margin: 20px 0 0;
+  }
+}
+
+///---------- infinit scroll ---------//
+.news-gallery .views-infinite-scroll-content-wrapper.non-adversiting,
+.view-landing-thought-leaders .views-infinite-scroll-content-wrapper.non-adversiting,
+.view-jobs-in-i-am-a-job-seeker .views-infinite-scroll-content-wrapper.non-adversiting {
+  .banner-scroll,
+  .skys-scroll,
+  .block-scroll {
+    display: none !important;
   }
 }
