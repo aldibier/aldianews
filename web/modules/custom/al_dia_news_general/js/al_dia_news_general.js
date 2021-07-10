@@ -237,27 +237,27 @@
           });
       }
 
-      //js para eliminar publicidad vacia
-      setTimeout(() => {
-        const allBlocksGamw = document.querySelectorAll(".block-gamw");
-        allBlocksGamw.forEach(function(e) {
-          if (e != null) {
-            var iframe_gamw = e.querySelector("iframe");
-            var body_pub = document.querySelector("body");
-            if (iframe_gamw == null && !!body_pub) {
-              var ads = e.closest(".ads");
+      // //js para eliminar publicidad vacia
+      // setTimeout(() => {
+      //   const allBlocksGamw = document.querySelectorAll(".block-gamw");
+      //   allBlocksGamw.forEach(function(e) {
+      //     if (e != null) {
+      //       var iframe_gamw = e.querySelector("iframe");
+      //       var body_pub = document.querySelector("body");
+      //       if (iframe_gamw == null && !!body_pub) {
+      //         var ads = e.closest(".ads");
 
-              if (!!ads) {
-                if (!body_pub.classList.contains("non-adversiting")) body_pub.classList.add("non-adversiting");
-                ads.remove();
-              } else {
-                if (!body_pub.classList.contains("non-adversiting"))  body_pub.classList.add("non-adversiting");
-                e.remove();
-              }
-            }
-          }
-        });
-      }, 6000);
+      //         if (!!ads) {
+      //           if (!body_pub.classList.contains("non-adversiting")) body_pub.classList.add("non-adversiting");
+      //           ads.remove();
+      //         } else {
+      //           if (!body_pub.classList.contains("non-adversiting"))  body_pub.classList.add("non-adversiting");
+      //           e.remove();
+      //         }
+      //       }
+      //     }
+      //   });
+      // }, 6000);
     }
   };
 })(jQuery);
