@@ -237,27 +237,124 @@
           });
       }
 
-      // //js para eliminar publicidad vacia
-      // setTimeout(() => {
-      //   const allBlocksGamw = document.querySelectorAll(".block-gamw");
-      //   allBlocksGamw.forEach(function(e) {
-      //     if (e != null) {
-      //       var iframe_gamw = e.querySelector("iframe");
-      //       var body_pub = document.querySelector("body");
-      //       if (iframe_gamw == null && !!body_pub) {
-      //         var ads = e.closest(".ads");
+      //js para eliminar publicidad vacia
+      setTimeout(() => {
+        const allBlocksGamw = document.querySelectorAll(".block-gamw");
+        allBlocksGamw.forEach(function(e) {
+          if (e != null) {
+            var iframe_gamw = e.querySelector("iframe");
+            if (iframe_gamw == null) {
+              var ads = e.closest(".ads");
 
-      //         if (!!ads) {
-      //           if (!body_pub.classList.contains("non-adversiting")) body_pub.classList.add("non-adversiting");
-      //           ads.remove();
-      //         } else {
-      //           if (!body_pub.classList.contains("non-adversiting"))  body_pub.classList.add("non-adversiting");
-      //           e.remove();
-      //         }
-      //       }
-      //     }
-      //   });
-      // }, 6000);
+              if (!!ads) {
+                if (!!ads.parentElement)
+                  ads.parentElement.classList.add("non-adversiting");
+                ads.remove();
+              } else {
+                if (!!e.parentElement)
+                  e.parentElement.classList.add("non-adversiting");
+                e.remove();
+              }
+            }
+          }
+        });
+
+        //js para agregar padres de publicdad jobs --------------------------------///
+        var block_jobs = document.querySelector(
+          ".block-block-groupadvertising-blocks-in-job-landing-pages .non-adversiting"
+        );
+        var jobs_container = document.querySelector(
+          "#block-block-group-contenido-jobs > .content"
+        );
+
+        if (!!block_jobs && !!jobs_container) {
+          jobs_container.classList.add("non-ads-father");
+        }
+
+        //js para agregar padres de publicdad work with al dia --------------------------------///
+        var block_work = document.querySelector(
+          ".node--view-mode-work-whit-al-dia .content-page-node .non-adversiting"
+        );
+        var work_container = document.querySelector(
+          ".node--view-mode-work-whit-al-dia .content-page-node"
+        );
+
+        if (!!block_work && !!work_container) {
+          work_container.classList.add("non-ads-father");
+        }
+
+        //js para agregar padres de publicidad interna de more covers --------------------------------///
+        var block_cover = document.querySelector(
+          ".node--type-more-covers .pautas .non-adversiting"
+        );
+        var cover_container = document.querySelector(
+          ".node--type-more-covers .content-page-node"
+        );
+
+        if (!!block_cover && !!cover_container) {
+          cover_container.classList.add("non-ads-father");
+        }
+
+        //js para agregar padres de publicidad interna de more covers --------------------------------///
+        var block_employer = document.querySelector(
+          ".node--type-feature-employer .pautas .non-adversiting"
+        );
+        var employer_container = document.querySelector(
+          ".node--type-feature-employer .content-page-node"
+        );
+
+        if (!!block_employer && !!employer_container) {
+          employer_container.classList.add("non-ads-father");
+        }
+
+        //js para agregar padres de publicidad interna de jobs --------------------------------///
+        var block_int_jobs = document.querySelector(
+          ".node--type-job .pautas .non-adversiting"
+        );
+        var int_jobs_container = document.querySelector(
+          ".node--type-job .content-page-node"
+        );
+
+        if (!!block_int_jobs && !!int_jobs_container) {
+          int_jobs_container.classList.add("non-ads-father");
+        }
+
+        //js para agregar padres de publicidad about us --------------------------------///
+        var block_about_us = document.querySelector(
+          ".node--view-mode-basic-page-about-us .pautas .non-adversiting"
+        );
+        var about_us_container = document.querySelector(
+          ".node--view-mode-basic-page-about-us .content-page-node"
+        );
+
+        if (!!block_about_us && !!about_us_container) {
+          about_us_container.classList.add("non-ads-father");
+        }
+
+        //js para agregar padres de publicidad contact us --------------------------------///
+        var block_contact_us = document.querySelector(
+          ".node--view-mode-contact-us .non-adversiting"
+        );
+        var contact_us_container = document.querySelector(
+          ".node--view-mode-contact-us .content-page-node"
+        );
+
+        if (!!block_contact_us && !!contact_us_container) {
+          contact_us_container.classList.add("non-ads-father");
+        }
+
+        //js para agregar padres de publicidad term services --------------------------------///
+        var block_term_services = document.querySelector(
+          'article[about="/terms-of-service"] .non-adversiting'
+        );
+        var term_services_container = document.querySelector(
+          'article[about="/terms-of-service"] .content-page-node'
+        );
+
+        if (!!block_term_services && !!term_services_container) {
+          term_services_container.classList.add("non-ads-father");
+        }
+      }, 6000);
     }
   };
 })(jQuery);

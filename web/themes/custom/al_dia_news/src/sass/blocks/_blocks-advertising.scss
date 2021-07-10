@@ -47,11 +47,6 @@
   }
 }
 
-// .block-fixed-block-contentsquare-advertising-mobile,
-// .block-fixed-block-contentvertical-advertising-mobile {
-//   /* display: none; */
-// }
-
 @media (max-width: $desktop) {
   .block-content-left {
     max-width: 555px;
@@ -163,6 +158,40 @@
   display: none;
 }
 
+///---------- infinit scroll ---------//
+.view-landing-thought-leaders .views-infinite-scroll-content-wrapper:not(.non-adversiting)  {
+  @media (min-width: $broken) {
+    .views-row.not-show-line {
+      margin-bottom: 0;
+    }
+
+    .banner-horizontal {
+      margin: 90px 0;
+    }
+  }
+}
+
+.view-more-videos-in-landing .views-infinite-scroll-content-wrapper:not(.non-adversiting),
+.news-gallery .views-infinite-scroll-content-wrapper:not(.non-adversiting) {
+  @media (min-width: $broken) {
+    .banner-horizontal {
+      margin: 40px 0 50px;
+    }
+  }
+}
+
+.news-gallery .views-infinite-scroll-content-wrapper:not(.non-adversiting),
+.view-landing-thought-leaders .views-infinite-scroll-content-wrapper:not(.non-adversiting),
+.view-jobs-in-i-am-a-job-seeker .views-infinite-scroll-content-wrapper:not(.non-adversiting) {
+  .views-row.not-show-line {
+    @media screen and (min-width: $broken) {
+      &::before {
+        display: none !important;
+      }
+    }
+  }
+}
+
 //----------------- clases generales para publicidad ----------------------------------//
 
 .banner-horizontal {
@@ -272,9 +301,16 @@
 //----------------- more news and more authors   ----------------------------------//
 .view-more-news,
 .view-more-authors {
+
+  @media screen and (min-width: $tablet) {
+    .skyscraper-mobile {
+      display: none;
+    }
+  }
+
   @media screen and (max-width: $tablet) {
     .skyscraper-mobile {
-      margin-bottom: 50px;
+      margin-bottom: 50px !important;
 
       &::before {
         content: "";

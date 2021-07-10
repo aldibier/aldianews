@@ -1,5 +1,3 @@
-
-
 ///------ scroll infinito -----------//
 
 body:not(.non-adversiting) .news-gallery .views-infinite-scroll-content-wrapper,
@@ -17,7 +15,6 @@ body:not(.non-adversiting)
     }
   }
 }
-
 
 ///---------- estilos para publicidad en infinit scroll ---------//
 body:not(.non-adversiting)
@@ -47,7 +44,6 @@ body:not(.non-adversiting)
   }
 }
 
-
 body:not(.non-adversiting) .news-gallery .views-infinite-scroll-content-wrapper,
 body:not(.non-adversiting)
   .view-landing-thought-leaders
@@ -66,78 +62,173 @@ body:not(.non-adversiting)
 
 ///------ non adversiting en desktop-----------//
 
-
-.non-adversiting{
-  &.path-taxonomy .block-advertising-top{
+.non-adversiting {
+  &.block-advertising-top {
     padding-bottom: 0px;
     margin-bottom: 0px;
     border-bottom: 0px solid #b1b1b1;
   }
-  &.page-node-type-job .content-left-pages,
-  &.page-node-type-feature-employer .content-left-pages,
-  &.page-node-type-more-covers .content-left-pages{
+}
+.page-node-type-job,
+.page-node-type-feature-employer,
+.page-node-type-more-covers {
+  .non-adversiting {
+    &.content-left-pages {
+      width: 100%;
+      max-width: none;
+    }
+  }
+}
+.horizontal-advertising-general-horizontal.non-adversiting {
+  margin: 0px;
+}
+
+.non-adversiting .block-views-blockhome-current-edition--block-1 {
+  margin: 0 auto 100px !important;
+}
+
+.path-about-al-dia-live .non-adversiting {
+  .block-fixed-block-contentbody-about-al-dia-live {
     width: 100%;
-    max-width: none; 
+  }
+  .block-views-blockabout-al-dia-live-block-4 {
+    margin: 0 auto;
   }
 }
 
+.non-ads-father {
+  .first-block-bottom-banner,
+  .block-block-groupadvertising-blocks-in-job-landing-pages {
+    margin: 0px;
+  }
+  #block-bodyjobslanding {
+    max-width: 1300px;
+  }
+}
+.node--view-mode-work-whit-al-dia .non-ads-father .two-content-general-work {
+  width: 100%;
+}
+.node--type-feature-employer,
+.node--type-job,
+.node--type-more-covers,
+.node--view-mode-basic-page-about-us,
+.node--view-mode-contact-us,
+article[about="/terms-of-service"] {
+  .non-ads-father .content-left-pages {
+    width: 100%;
+    max-width: none;
+  }
+  .non-ads-father .content-right-pages {
+    margin: 0px;
+  }
+}
+
+.node--type-more-covers .non-ads-father {
+  .content-left-pages {
+    padding: 0px;
+  }
+  .content-right-pages::after {
+    display: none;
+  }
+}
 ///------ non adversiting en movil-----------//
 
 @media (max-width: $broken) {
   .non-adversiting {
-    .block-views-blockmore-in-this-section-news-block-1
-      .view-content
-      > div:nth-child(3) {
+    &.view-content > div:nth-child(3) {
       margin: 0px;
-    } 
-    .view-more-in-this-section-news .card-more:nth-child(1) {
+    }
+    &.view-more-in-this-section-news .card-more:nth-child(1) {
       border-bottom: 0px;
     }
-    &.page-node-type-feature-employer .content-right-pages,
-    &.page-node-type-job .content-right-pages {
+    // &.page-node-type-job
+    // &.page-node-type-feature-employer
+    // &.content-right-pages {
+    //   margin: 0px;
+    // }
+    &.section-event-body .body-lateral-section-advertising {
       margin: 0px;
     }
-    &.page-node-type-event
-      .section-event-body
-      .body-lateral-section-advertising {
-      margin: 0px; 
-    }
-    .podcast-content-list,
-    .podcast-content-list .view-content {
+    &.podcast-content-list,
+    &.podcast-content-list .view-content {
       margin-bottom: 0px;
     }
-    &.page-node-type-more-covers .content-right-pages {
-      padding: 0px;
-      border: 0px;
-      margin: 0px;
-    }
-    .node--view-mode-basic-page-about-us
+    // &.page-node-type-more-covers
+    // &.content-right-pages {
+    //   padding: 0px;
+    //   border: 0px;
+    //   margin: 0px;
+    // }
+    &.node--view-mode-basic-page-about-us
       .horizontal-advertising-general-horizontal {
       margin-bottom: 0px;
     }
-    article[about="/terms-of-service"] .content-right-pages,
-    &.page-node-type-page .banner-horizontal {
+    // article[about="/terms-of-service"]
+    // &.page-node-type-page
+    // &.content-right-pages,
+    &.banner-horizontal {
       margin: 0px;
     }
-    .block-views-blockmore-in-this-section-news-block-1 .view-content .skyscraper-mobile{
+    &.view-content .skyscraper-mobile {
       display: none;
-        margin: 0px;
+      margin: 0px;
     }
-    .view-more-in-this-section-news{ 
-      .views-row:nth-child(3){
+    &.view-more-in-this-section-news {
+      .views-row:nth-child(3) {
         margin: 0px;
       }
-      .card-more:nth-child(1){
+      .card-more:nth-child(1) {
         border-bottom: 0px solid #b1b1b1;
       }
-    }  
-    &.page-node-type-event .section-event-body .body-lateral-section-advertising{
+    }
+    &.section-event-body .body-lateral-section-advertising {
       margin: 0px;
     }
-    &.page-node-type-more-covers .content-right-pages{
+    // &.page-node-type-more-covers
+    &.content-right-pages {
       border-top: 0px;
-    padding-top: 0px;
-    margin: 0;
+      padding-top: 0px;
+      margin: 0;
     }
+  }
+  // .page-node-type-job,
+  // .page-node-type-feature-employer {
+  //   .non-adversiting {
+  //     &.content-right-pages {
+  //       margin: 0px;
+  //     }
+  //   }
+  // }
+  // .page-node-type-more-covers {
+  //   .non-adversiting {
+  //     &.content-right-pages {
+  //       padding: 0px;
+  //       border: 0px;
+  //       margin: 0px;
+  //     }
+  //   }
+  // }
+
+  // article[about="/terms-of-service"],
+  // .page-node-type-page {
+  //   .non-adversiting {
+  //     &.content-right-pages,
+  //     &.banner-horizontal {
+  //       margin: 0px;
+  //     }
+  //   }
+  // }
+  // .page-node-type-more-covers {
+  //   .non-adversiting {
+  //     &.content-right-pages {
+  //       border-top: 0px;
+  //       padding-top: 0px;
+  //       margin: 0;
+  //     }
+  //   }
+  // }
+  .node--view-mode-work-whit-al-dia
+    .horizontal-advertising-general-horizontal.non-adversiting {
+    margin: 20px 0 0;
   }
 }

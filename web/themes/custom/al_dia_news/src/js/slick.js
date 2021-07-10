@@ -162,7 +162,7 @@ const initSlick = ($, Drupal) => {
   const slider_general = {
     infinite: true,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 3500,
     variableWidth: true
   };
 
