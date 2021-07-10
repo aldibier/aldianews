@@ -2345,8 +2345,6 @@ var initScrollMagic = function initScrollMagic($, Drupal) {
       duration: getDurationScene1
     }).addTo(new ScrollMagic.Controller()).offset(pautas.offsetHeight + 20).setPin(pautas, {
       pushFollowers: false
-    }).addIndicators({
-      name: "1"
     });
   }
 
