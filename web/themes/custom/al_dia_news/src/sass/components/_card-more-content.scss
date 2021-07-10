@@ -341,7 +341,8 @@
         color: $corange;
 
         @media (max-width: $tablet) {
-          margin-bottom: 15px;
+          min-height: 25px;
+          margin-bottom: 5px;
           font-size: 14px;
         }
       }
@@ -398,6 +399,10 @@
     .short-title-date {
       display: inherit;
       flex-direction: column;
+
+      @media (max-width: $broken) {
+        flex-basis: 100%;
+      }
     }
   }
 }
