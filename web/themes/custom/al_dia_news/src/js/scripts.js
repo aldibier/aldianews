@@ -104,7 +104,7 @@ import replaceToken from "./modules/replaceToken";
     }
 
     if ($(".watch-live-video .video-embed-field-provider-youtube iframe").length ){
-      var url = ($(".watch-live-video .video-embed-field-provider-youtube iframe")[0].src += "");
+      var url = ($(".watch-live-video .video-embed-field-provider-youtube iframe")[0].src += "&mute=1");
       var video = url.replace("autoplay=0", "autoplay=1");
       $(".watch-live-video .video-embed-field-provider-youtube iframe").attr("src", video);
     }

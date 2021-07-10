@@ -1229,7 +1229,20 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 var initMain = function initMain($, Drupal) {
   window.onload = function () {
-    /// js scroll newsletter
+    // js requeridos en register
+    var city_input = document.querySelector('.webform-submission-register-form #edit-address-city');
+    var city_label = document.querySelector('.webform-submission-register-form label[for="edit-address-city"]');
+    var state_select = document.querySelector('.webform-submission-register-form #edit-address-state-province');
+    var state_label = document.querySelector('.webform-submission-register-form label[for="edit-address-state-province"]');
+
+    if (!!city_input && !!city_label && !!state_select && !!state_label) {
+      city_input.setAttribute("required", "required");
+      city_label.setAttribute("class", "form-required");
+      state_select.setAttribute("required", "required");
+      state_label.setAttribute("class", "form-required");
+    } /// js scroll newsletter
+
+
     var container = document.querySelector('body');
     var elemento = document.getElementById('block-webform-2');
 
@@ -1983,7 +1996,7 @@ __webpack_require__.r(__webpack_exports__);
     }
 
     if ($(".watch-live-video .video-embed-field-provider-youtube iframe").length) {
-      var url = $(".watch-live-video .video-embed-field-provider-youtube iframe")[0].src += "";
+      var url = $(".watch-live-video .video-embed-field-provider-youtube iframe")[0].src += "&mute=1";
       var video = url.replace("autoplay=0", "autoplay=1");
       $(".watch-live-video .video-embed-field-provider-youtube iframe").attr("src", video);
     } //--------- menu--------------------//
@@ -2550,26 +2563,12 @@ var initSlick = function initSlick($, Drupal) {
 
   var slider_three = _objectSpread(_objectSpread({}, slider_general), {}, {
     slidesToShow: 3,
-    slidesToScroll: 3,
-    responsive: [{
-      breakpoint: 500,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2
-      }
-    }]
+    slidesToScroll: 3
   });
 
   var slider_more = _objectSpread(_objectSpread({}, slider_general), {}, {
     slidesToShow: 4,
-    slidesToScroll: 1,
-    responsive: [{
-      breakpoint: 500,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2
-      }
-    }]
+    slidesToScroll: 1
   });
 
   Array.from(document.querySelectorAll(".view-slider-internal-event .views-row")).map(function (e) {

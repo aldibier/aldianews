@@ -1,5 +1,18 @@
 const initMain = ($, Drupal) => {
 	window.onload = function () {
+		// js requeridos en register
+		var city_input = document.querySelector('.webform-submission-register-form #edit-address-city');
+		var city_label = document.querySelector('.webform-submission-register-form label[for="edit-address-city"]');
+		var state_select = document.querySelector('.webform-submission-register-form #edit-address-state-province');
+		var state_label = document.querySelector('.webform-submission-register-form label[for="edit-address-state-province"]');
+
+		if(!!city_input && !!city_label && !!state_select && !!state_label){
+			city_input.setAttribute("required", "required");
+			city_label.setAttribute("class", "form-required");
+			state_select.setAttribute("required", "required");
+			state_label.setAttribute("class", "form-required");
+		}
+
 		/// js scroll newsletter
 		var container = document.querySelector('body');
 		var elemento = document.getElementById('block-webform-2');
