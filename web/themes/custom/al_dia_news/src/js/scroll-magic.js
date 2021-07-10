@@ -18,7 +18,6 @@ const initScrollMagic = ($, Drupal) => {
             .addTo(new ScrollMagic.Controller())
             .offset(pautas.offsetHeight + 20)
             .setPin(pautas, { pushFollowers: false })
-            .addIndicators({ name: "1" });
 
         function getDurationScene1() {
             return rigthPages.offsetHeight - pautas.offsetHeight - 20;
