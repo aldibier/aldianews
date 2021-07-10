@@ -272,6 +272,13 @@
 //----------------- more news and more authors   ----------------------------------//
 .view-more-news,
 .view-more-authors {
+
+  @media screen and (min-width: $tablet) {
+    .skyscraper-mobile {
+      display: none;
+    }
+  }
+
   @media screen and (max-width: $tablet) {
     .skyscraper-mobile {
       margin-bottom: 50px !important;
