@@ -16,6 +16,7 @@
                     $isEdge = isEdge();
                     
                     if(!$isEdge) return;
+                    if(!!navigator.userAgentData.brands) return;
 
                     $(".video-embed-field-provider-youtube iframe").each(function(){
                         let src = $(this).attr('src');
