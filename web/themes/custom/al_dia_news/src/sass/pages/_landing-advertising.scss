@@ -145,6 +145,16 @@
           right: calc(0% - 9px);
         }
       }
+
+      .field--name-field-icon-name {
+        font-size: 40px;
+        color: white;
+
+        @media (max-width: $tablet) {
+          font-size: unset;
+          margin-right: 10px;
+        }
+      }
     }
 
     .paragraph--type--advertising-informative-items- {
@@ -470,6 +480,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    .icon {
+      font-size: 60px;
+      color: #939393;
+      margin-bottom: 30px;
+
+      @media (max-width: $tablet) {
+        margin-bottom: 25px;
+      }
+    }
 
     &:nth-child(1) {
       grid-area: social-media;

@@ -1,3 +1,5 @@
+
+
 ///------ scroll infinito -----------//
 
 body:not(.non-adversiting) .news-gallery .views-infinite-scroll-content-wrapper,
@@ -16,6 +18,69 @@ body:not(.non-adversiting)
   }
 }
 
+
+///---------- estilos para publicidad en infinit scroll ---------//
+body:not(.non-adversiting)
+  .view-landing-thought-leaders
+  .views-infinite-scroll-content-wrapper {
+  @media (min-width: $broken) {
+    .views-row.not-show-line {
+      margin-bottom: 0;
+    }
+
+    .banner-horizontal {
+      margin: 90px 0;
+    }
+  }
+}
+
+body:not(.non-adversiting)
+  .view-more-videos-in-landing
+  .views-infinite-scroll-content-wrapper,
+body:not(.non-adversiting)
+  .news-gallery
+  .views-infinite-scroll-content-wrapper {
+  @media (min-width: $broken) {
+    .banner-horizontal {
+      margin: 40px 0 50px;
+    }
+  }
+}
+
+
+body:not(.non-adversiting) .news-gallery .views-infinite-scroll-content-wrapper,
+body:not(.non-adversiting)
+  .view-landing-thought-leaders
+  .views-infinite-scroll-content-wrapper,
+body:not(.non-adversiting)
+  .view-jobs-in-i-am-a-job-seeker
+  .views-infinite-scroll-content-wrapper {
+  .views-row.not-show-line {
+    @media screen and (min-width: $broken) {
+      &::before {
+        display: none !important;
+      }
+    }
+  }
+}
+
+///------ non adversiting en desktop-----------//
+
+
+.non-adversiting{
+  &.path-taxonomy .block-advertising-top{
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    border-bottom: 0px solid #b1b1b1;
+  }
+  &.page-node-type-job .content-left-pages,
+  &.page-node-type-feature-employer .content-left-pages,
+  &.page-node-type-more-covers .content-left-pages{
+    width: 100%;
+    max-width: none; 
+  }
+}
+
 ///------ non adversiting en movil-----------//
 
 @media (max-width: $broken) {
@@ -24,7 +89,7 @@ body:not(.non-adversiting)
       .view-content
       > div:nth-child(3) {
       margin: 0px;
-    }
+    } 
     .view-more-in-this-section-news .card-more:nth-child(1) {
       border-bottom: 0px;
     }
@@ -35,7 +100,7 @@ body:not(.non-adversiting)
     &.page-node-type-event
       .section-event-body
       .body-lateral-section-advertising {
-      margin: 0px;
+      margin: 0px; 
     }
     .podcast-content-list,
     .podcast-content-list .view-content {
@@ -53,6 +118,26 @@ body:not(.non-adversiting)
     article[about="/terms-of-service"] .content-right-pages,
     &.page-node-type-page .banner-horizontal {
       margin: 0px;
+    }
+    .block-views-blockmore-in-this-section-news-block-1 .view-content .skyscraper-mobile{
+      display: none;
+        margin: 0px;
+    }
+    .view-more-in-this-section-news{ 
+      .views-row:nth-child(3){
+        margin: 0px;
+      }
+      .card-more:nth-child(1){
+        border-bottom: 0px solid #b1b1b1;
+      }
+    }  
+    &.page-node-type-event .section-event-body .body-lateral-section-advertising{
+      margin: 0px;
+    }
+    &.page-node-type-more-covers .content-right-pages{
+      border-top: 0px;
+    padding-top: 0px;
+    margin: 0;
     }
   }
 }
