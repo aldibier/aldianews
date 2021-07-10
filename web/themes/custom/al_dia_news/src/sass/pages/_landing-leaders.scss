@@ -217,7 +217,7 @@
     width: 100%;
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       top: 0;
       left: 0;
@@ -319,11 +319,11 @@
       grid-auto-flow: dense;
       grid-gap: 0 30px;
       overflow: hidden;
-  
+
       .banner-scroll {
         margin-top: 30px;
       }
-      .skys-scroll{
+      .skys-scroll {
         grid-row: span 1;
       }
     }
@@ -332,7 +332,7 @@
       margin-bottom: 30px;
       overflow: initial;
 
-      .block-scroll {
+      .block-scroll  {
         width: 100%;
         max-width: 100%;
         max-height: initial;
@@ -405,7 +405,7 @@
       @media screen and (max-width: $broken) {
         margin: 30px 0;
 
-        &:nth-child(-n + 2){
+        &:nth-child(-n + 2) {
           margin-top: 0;
         }
 
@@ -421,21 +421,20 @@
         }
       }
 
-      @media screen and (max-width: $tablet) { 
-
-        &::before {
+      @media screen and (max-width: $tablet) {
+        &::before  {
           display: none;
         }
 
-        &:nth-of-type(even){
+        &:nth-of-type(even) {
           &::after {
             display: none;
           }
         }
 
-        &:nth-of-type(odd){
+        &:nth-of-type(odd) {
           &::before {
-            content: '';
+            content: "";
             width: calc(100vw - 30px);
             height: 1px;
             margin: -30px auto;
