@@ -8,9 +8,6 @@ dependencies:
     - gamw
   theme:
     - al_dia_news
-third_party_settings:
-  block_class:
-    classes: ads
 id: gamwadvertisement_13
 theme: al_dia_news
 region: gamw_home_side_category_leadership_top
@@ -19,18 +16,18 @@ provider: null
 plugin: gamw
 settings:
   id: gamw
-  label: 'GAMW internal side section top block'
+  label: "GAMW internal side section top block"
   provider: gamw
-  label_display: '0'
+  label_display: "0"
   ad_unit: internal-side-section-top-block
   attributes_wrapper:
-    - ''
+    - ""
 visibility:
   request_path_exclusion:
     id: request_path_exclusion
-    pages: ''
+    pages: ""
     negate: true
   view_inclusion:
     id: view_inclusion
     negate: false
-    view_inclusion: {  }
+    view_inclusion: {}
