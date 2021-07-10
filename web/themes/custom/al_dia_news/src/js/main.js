@@ -458,10 +458,11 @@ const initMain = ($, Drupal) => {
 		);
 		if (adversiting != null && first_element != null) {
 			if (first_element.innerText == "one") {
-				adversiting.classList.add("maxim");
+				if(!!adversiting.parentElement) adversiting.parentElement.classList.add("maxim");
 			} else {
 				adversiting.classList.add("dis-none");
-			}
+			} 
+			
 		}
 
 		//js para form sponsorship 

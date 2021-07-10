@@ -354,7 +354,7 @@
         if (!!block_term_services && !!term_services_container) {
           term_services_container.classList.add("non-ads-father");
         }
-      }, 6000);
+      }, 8000);
     }
   };
 })(jQuery);
