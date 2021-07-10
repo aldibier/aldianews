@@ -267,9 +267,25 @@
 //----------------- internal news ----------------------------------//
 #block-al-dia-news-content + .banner-horizontal {
   margin-bottom: 100px;
+}
 
-  @media screen and (min-width: $tablet) {
-    
+//----------------- more news and more authors   ----------------------------------//
+.view-more-news,
+.view-more-authors {
+  @media screen and (max-width: $tablet) {
+    .skyscraper-mobile {
+      margin-bottom: 50px;
+
+      &::before {
+        content: "";
+        width: 30px;
+        height: 100%;
+        display: block;
+        position: absolute;
+        background: $cwhite;
+        left: calc(0% - 30px);
+      }
+    } 
   }
 }
 
