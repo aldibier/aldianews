@@ -41,6 +41,9 @@
 
     > .block-gamw {
       order: -1;
+      @media screen and (max-width: $tablet) {
+        margin: 0 -15px;
+      }
     }
   }
 
@@ -92,9 +95,6 @@
     .page-node-type-thought-leaders .content-advertising {
       img {
         padding: 0 15px;
-      }
-      > .block-gamw {
-        margin: 0 -15px;
       }
     }
   }
