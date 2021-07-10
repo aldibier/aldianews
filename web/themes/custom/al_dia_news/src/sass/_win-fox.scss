@@ -4,7 +4,9 @@
   }
 }
 
-@-moz-document url-prefix() {
+// @-moz-document url-prefix(),
+// @supports (-moz-user-select: unset ),
+@supports (-moz-appearance: none) {
   .region-header #block-al-dia-news-branding {
     margin: -23px 0 10px -25px;
   }

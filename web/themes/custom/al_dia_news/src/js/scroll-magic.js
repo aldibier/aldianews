@@ -31,7 +31,7 @@ const initScrollMagic = ($, Drupal) => {
     const containerRigth = document.querySelector('.container-right');
     const containerLeft = document.querySelector('.content-news-internal-left');
     const noticias = document.querySelector('.block-views-blockmore-in-this-section-news-block-1');
-    const limitHigh = 1690;
+    const limitHigh = 1940;
 
     //------------ scroll internas --------------//
     if (!!containerRigth && !!noticias) {

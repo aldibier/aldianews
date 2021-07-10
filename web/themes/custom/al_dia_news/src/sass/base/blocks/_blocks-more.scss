@@ -93,7 +93,7 @@
     line-height: 34px;
 
     @media (max-width: $broken) {
-      margin: 0 0 25px;
+      margin: 0 0 20px;
     }
   }
 
@@ -108,6 +108,8 @@
       grid-template-columns: repeat(2, 1fr);
       grid-auto-flow: dense;
       grid-gap: 0px 10px;
+      overflow: hidden;
+
       .skyscraper-mobile {
         grid-row: span 2;
         margin: 0px 0 0 19px;
@@ -134,20 +136,6 @@
       margin: 35px 0;
       padding: 0px;
       border: none;
-
-      &:nth-child(2n + 2) {
-        &:before {
-          display: block;
-          content: "";
-          width: 100%;
-          height: 1px;
-          left: 0;
-          background: $cgrey4;
-          position: absolute;
-          right: 0;
-          margin: -20px 0;
-        }
-      }
     }
 
     &:last-child {
@@ -158,8 +146,14 @@
   }
 }
 
+
+.card-more-author {
+  margin-top: 0;
+  position: relative;
+}
+
 .block-views-blockmore-in-this-section-news-block-1 {
-  .views-row {
+  .views-row{
     margin-bottom: 20px;
     padding-bottom: 20px;
   }
@@ -168,31 +162,60 @@
     .view-more {
       padding: 0;
     }
-
-    .view-more-authors {
+    
+    .view-more-authors { 
       .views-row {
-        &:nth-child(2n + 1) {
-          margin: 20px 0 40px 0;
-          padding: 0 14.5px 0 0;
+        margin: 0 0 40px;
+        padding-bottom: 0;
+        position: relative;
+
+        &:nth-of-type(2n + 1){
           border-right: 1px solid $cgrey4;
         }
-
-        &:nth-child(2n + 2) {
-          margin: 20px 0 40px 0;
-          padding: 0 0 0 14.5px;
+  
+        &:nth-last-child(-n+2){
+          &::before {
+            display: none;
+          }
         }
-
-        &:nth-child(2n + 3)::before {
+  
+        &::before {
           display: block;
           content: "";
-          width: 100%;
+          width: 100vw;
           height: 1px;
-          left: 0px;
-          background: rgb(177, 177, 177);
+          margin: 0;
           position: absolute;
-          right: 0px;
-          margin: -35px 0px;
+          left: 0;
+          right: 0;
+          bottom: calc(0% - 20px);
+          background: $cgrey4;
         }
+      }
+    }
+
+    .views-row:not(.card-more-author) {
+      margin: 0px 0px 40px !important;
+      padding: 0;
+    
+      &:nth-last-child(1),
+      &:nth-last-child(2){
+        &::before {
+          display: none;
+        }
+      }
+
+      &::before {
+        display: block;
+        content: "";
+        width: 100vw;
+        height: 1px;
+        margin: 0px;
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        bottom: calc(0% - 20px);
+        background: $cgrey4;
       }
     }
   }
@@ -201,26 +224,6 @@
     .view-more-authors {
       .views-row {
         min-width: 140px;
-
-        &:nth-child(2n + 1) {
-          padding: 0 9.5px 0 0;
-        }
-
-        &:nth-child(2n + 2) {
-          padding: 0 0 0 9.5px;
-        }
-
-        &:nth-child(2n + 3)::before {
-          display: block;
-          content: "";
-          width: 100%;
-          height: 1px;
-          left: 0px;
-          background: rgb(177, 177, 177);
-          position: absolute;
-          right: 0px;
-          margin: -35px 0px;
-        }
       }
     }
   }

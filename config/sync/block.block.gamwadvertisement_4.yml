@@ -11,7 +11,7 @@ dependencies:
     - al_dia_news
 third_party_settings:
   block_class:
-    classes: 'banner-horizontal bot-bottom ads'
+    classes: 'banner-horizontal ads'
 id: gamwadvertisement_4
 theme: al_dia_news
 region: content
@@ -20,12 +20,11 @@ provider: null
 plugin: gamw
 settings:
   id: gamw
-  label: 'Pre footer -  Bottom banner '
+  label: 'Pre footer - Bottom banner '
   provider: gamw
   label_display: '0'
   ad_unit: pre-footer-bottom-banner
-  attributes_wrapper:
-    - ''
+  attributes_wrapper: null
 visibility:
   request_path_exclusion:
     id: request_path_exclusion
