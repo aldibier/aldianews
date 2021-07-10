@@ -451,7 +451,7 @@ const initMain = ($, Drupal) => {
 
 		///// js indentificar de primer modo de vista en guest event
 		var adversiting = document.querySelector(
-			".three-content-event-advertising"
+			".three-content-event-advertising iframe"
 		);
 		var first_element = document.querySelector(
 			".view-block-guest  .views-row:nth-child(1) .views-field-field-style > div"
