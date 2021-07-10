@@ -86,6 +86,33 @@
     }
   }
 
+  .view-more-subcategory {
+    .views-row.card-more-subcategory {
+      margin: 0;
+      position: relative;
+
+      @media (max-width: $broken) {
+        
+        &:nth-child(-n + 2){
+          margin: 0 0 40px 0px;
+
+          &::before {
+            display: block;
+            content: "";
+            width: 100vw;
+            height: 1px;
+            margin: 0;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: calc(0% - 20px);
+            background: $cgrey4;
+          }
+        }
+      }
+    }
+  }
+
   //------ title more in this section ------------//
   > h2 {
     @include title-section-line($px28, $Mod-light, $cblack3);

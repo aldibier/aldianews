@@ -192,6 +192,16 @@
   }
 }
 
+.path-thought-leaders .views-infinite-scroll-content-wrapper:not(.non-adversiting) {
+  .block-scroll {
+    margin: 0;
+  }
+  
+  .skys-scroll {
+    margin: 0;
+  }
+}
+
 //----------------- clases generales para publicidad ----------------------------------//
 
 .banner-horizontal {
@@ -479,6 +489,23 @@
       position: absolute;
       right: 0;
       margin: -35px auto;
+    }
+  }
+}
+
+.view-landing-thought-leaders {
+  $screen-query: 993px;
+  @media screen and (min-width: $screen-query) {
+    .block-scroll {
+      &:before {
+        margin: -15px auto;
+      }
+    }
+    
+    .skys-scroll.skys2 {
+      &:before {
+        margin: -35px auto;
+      }
     }
   }
 }
