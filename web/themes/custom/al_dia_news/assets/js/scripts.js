@@ -2367,8 +2367,7 @@ var initScrollMagic = function initScrollMagic($, Drupal) {
     }; //window.addEventListener("resize", () => resizeActivation(noticias, scene2));
 
 
-    console.log('thought leaders!'); //------------ not sticky --------------//
-
+    //------------ not sticky --------------//
     if (containerLeft.offsetHeight < limitHigh) return;
     if (containerRigth.offsetHeight === noticias.offsetHeight) return;
     var scene2 = new ScrollMagic.Scene({

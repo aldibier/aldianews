@@ -35,7 +35,6 @@ const initScrollMagic = ($, Drupal) => {
 
     //------------ scroll internas --------------//
     if (!!containerRigth && !!noticias) {
-        console.log('thought leaders!');
         //------------ not sticky --------------//
         if (containerLeft.offsetHeight < limitHigh) return;
         if (containerRigth.offsetHeight === noticias.offsetHeight) return;
