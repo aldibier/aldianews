@@ -341,7 +341,8 @@
         color: $corange;
 
         @media (max-width: $tablet) {
-          margin-bottom: 15px;
+          min-height: 25px;
+          margin-bottom: 5px;
           font-size: 14px;
         }
       }
@@ -398,6 +399,10 @@
     .short-title-date {
       display: inherit;
       flex-direction: column;
+
+      @media (max-width: $broken) {
+        flex-basis: 100%;
+      }
     }
   }
 }
@@ -407,14 +412,7 @@
     margin-bottom: 0px !important;
     padding-bottom: 30px;
   }
-  .card-more:nth-child(1) {
-    border-bottom: 0.5px solid #b1b1b1;
-    margin-top: 0px;
-  }
-  .non-adversiting .card-more:nth-child(1) {
-    border-bottom: 0px solid #b1b1b1;
-    margin-top: 20px;
-  }
+
   .card-title-more {
     margin-top: 10px !important;
   }

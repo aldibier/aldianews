@@ -1221,7 +1221,7 @@ function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread n
 
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
-function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
 
 function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
 
@@ -1229,7 +1229,20 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 var initMain = function initMain($, Drupal) {
   window.onload = function () {
-    /// js scroll newsletter
+    // js requeridos en register
+    var city_input = document.querySelector('.webform-submission-register-form #edit-address-city');
+    var city_label = document.querySelector('.webform-submission-register-form label[for="edit-address-city"]');
+    var state_select = document.querySelector('.webform-submission-register-form #edit-address-state-province');
+    var state_label = document.querySelector('.webform-submission-register-form label[for="edit-address-state-province"]');
+
+    if (!!city_input && !!city_label && !!state_select && !!state_label) {
+      city_input.setAttribute("required", "required");
+      city_label.setAttribute("class", "form-required");
+      state_select.setAttribute("required", "required");
+      state_label.setAttribute("class", "form-required");
+    } /// js scroll newsletter
+
+
     var container = document.querySelector('body');
     var elemento = document.getElementById('block-webform-2');
 
@@ -2340,7 +2353,7 @@ var initScrollMagic = function initScrollMagic($, Drupal) {
   var containerRigth = document.querySelector('.container-right');
   var containerLeft = document.querySelector('.content-news-internal-left');
   var noticias = document.querySelector('.block-views-blockmore-in-this-section-news-block-1');
-  var limitHigh = 1690; //------------ scroll internas --------------//
+  var limitHigh = 1940; //------------ scroll internas --------------//
 
   if (!!containerRigth && !!noticias) {
     /* setTimeout(()=>{
@@ -2354,7 +2367,8 @@ var initScrollMagic = function initScrollMagic($, Drupal) {
     }; //window.addEventListener("resize", () => resizeActivation(noticias, scene2));
 
 
-    //------------ not sticky --------------//
+    console.log('thought leaders!'); //------------ not sticky --------------//
+
     if (containerLeft.offsetHeight < limitHigh) return;
     if (containerRigth.offsetHeight === noticias.offsetHeight) return;
     var scene2 = new ScrollMagic.Scene({
@@ -2389,7 +2403,7 @@ var initScrollMagic = function initScrollMagic($, Drupal) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
@@ -2605,8 +2619,8 @@ var initSlick = function initSlick($, Drupal) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
-module.exports = __webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
+__webpack_require__(/*! /Users/usuario/Desktop/Proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
+module.exports = __webpack_require__(/*! /Users/usuario/Desktop/Proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
 
 
 /***/ })

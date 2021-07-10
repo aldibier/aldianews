@@ -13,7 +13,6 @@ dependencies:
     - node
     - taxonomy
     - user
-    - views_block_area
     - views_field_view
 id: politics_mix
 label: 'POLITICS MIX'
@@ -527,17 +526,7 @@ display:
           plugin_id: standard
       title: 'POLITICS MIX'
       header: {  }
-      footer:
-        views_block_area_1:
-          id: views_block_area_1
-          table: views
-          field: views_block_area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: false
-          block_id: 'block_group:home_category_politics_bottom_mobile'
-          plugin_id: views_block_area
+      footer: {  }
       empty: {  }
       relationships:
         reverse__node__field_category:
