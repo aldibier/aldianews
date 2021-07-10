@@ -3,14 +3,10 @@ langcode: en
 status: true
 dependencies:
   module:
-    - block_class
     - context
     - gamw
   theme:
     - al_dia_news
-third_party_settings:
-  block_class:
-    classes: ads
 id: gamwadvertisement_12
 theme: al_dia_news
 region: gamw_home_side_category_leadership_top
@@ -23,8 +19,7 @@ settings:
   provider: gamw
   label_display: '0'
   ad_unit: internal-side-section-bottom-skyscraper
-  attributes_wrapper:
-    - ''
+  attributes_wrapper: null
 visibility:
   request_path_exclusion:
     id: request_path_exclusion
