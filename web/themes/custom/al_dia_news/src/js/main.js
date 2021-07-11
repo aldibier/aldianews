@@ -465,6 +465,22 @@ const initMain = ($, Drupal) => {
 			
 		}
 
+
+      //js para eliminar publicidad two column events
+	  setTimeout(() => {
+	  	var adversiting_two_col = document.querySelector(
+		".view-id-block_guest .ads-two-col .block-gamw"
+		);
+		var position_two_col = document.querySelector(
+			".view-id-block_guest .mode-two"
+		);
+		if (adversiting_two_col != null && position_two_col != null) {
+			position_two_col.appendChild(adversiting_two_col);
+			adversiting_two_col.classList.add("four-content-event-advertising", "ads");
+		}
+		}, 2500);
+
+
 		//js para form sponsorship 
 
 		const addStateAndCity = (state, city) => {

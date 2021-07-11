@@ -1612,8 +1612,18 @@ var initMain = function initMain($, Drupal) {
       } else {
         adversiting.classList.add("dis-none");
       }
-    } //js para form sponsorship 
+    } //js para eliminar publicidad two column events
 
+
+    setTimeout(function () {
+      var adversiting_two_col = document.querySelector(".view-id-block_guest .ads-two-col .block-gamw");
+      var position_two_col = document.querySelector(".view-id-block_guest .mode-two");
+
+      if (adversiting_two_col != null && position_two_col != null) {
+        position_two_col.appendChild(adversiting_two_col);
+        adversiting_two_col.classList.add("four-content-event-advertising", "ads");
+      }
+    }, 2500); //js para form sponsorship 
 
     var addStateAndCity = function addStateAndCity(state, city) {
       var sumoSelect = state.querySelector('.SumoSelect');
