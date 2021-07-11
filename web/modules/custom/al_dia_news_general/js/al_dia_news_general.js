@@ -5,7 +5,8 @@
 (function($) {
   Drupal.behaviors.aldia_news_advertising = {
     attach: function(context) {
-      jQuery(document).ready(function() {
+      jQuery(document).once("js-advertising").ready(function() {
+        console.log("ejecuta")
       var width_publi = window.innerWidth;
       if (width_publi >= 768) {
         // ------ vista leadership
