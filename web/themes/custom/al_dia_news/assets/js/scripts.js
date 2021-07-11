@@ -1608,7 +1608,7 @@ var initMain = function initMain($, Drupal) {
 
     if (adversiting != null && first_element != null) {
       if (first_element.innerText == "one") {
-        if (!!adversiting.parentElement) adversiting.parentElement.classList.add("maxim");
+        if (!!adversiting.parentElement.parentElement) adversiting.parentElement.parentElement.classList.add("maxim");
       } else {
         adversiting.classList.add("dis-none");
       }
