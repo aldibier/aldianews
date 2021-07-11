@@ -86,9 +86,11 @@
     }
   }
 
-  .view-more-subcategory {
-    .views-row.card-more-subcategory {
-      margin: 0;
+  .view-more-subcategory
+  .view-more-category {
+    .views-row.card-more-subcategory,
+    .view-more.card-more-category {
+      margin-top: 0;
       position: relative;
 
       @media (max-width: $broken) {
