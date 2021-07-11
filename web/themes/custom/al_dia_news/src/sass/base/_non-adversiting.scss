@@ -1,25 +1,5 @@
-///------ scroll infinito -----------//
-
-body:not(.non-adversiting) .news-gallery .views-infinite-scroll-content-wrapper,
-body:not(.non-adversiting)
-  .view-landing-thought-leaders
-  .views-infinite-scroll-content-wrapper,
-body:not(.non-adversiting)
-  .view-jobs-in-i-am-a-job-seeker
-  .views-infinite-scroll-content-wrapper {
-  .views-row.not-show-line {
-    @media screen and (min-width: $broken) {
-      &::before {
-        display: none !important;
-      }
-    }
-  }
-}
-
 ///---------- estilos para publicidad en infinit scroll ---------//
-body:not(.non-adversiting)
-  .view-landing-thought-leaders
-  .views-infinite-scroll-content-wrapper {
+body:not(.non-adversiting) .view-landing-thought-leaders .views-infinite-scroll-content-wrapper {
   @media (min-width: $broken) {
     .views-row.not-show-line {
       margin-bottom: 0;
@@ -31,12 +11,8 @@ body:not(.non-adversiting)
   }
 }
 
-body:not(.non-adversiting)
-  .view-more-videos-in-landing
-  .views-infinite-scroll-content-wrapper,
-body:not(.non-adversiting)
-  .news-gallery
-  .views-infinite-scroll-content-wrapper {
+.view-more-videos-in-landing .views-infinite-scroll-content-wrapper:not(.non-adversiting),
+.news-gallery .views-infinite-scroll-content-wrapper:not(.non-adversiting) {
   @media (min-width: $broken) {
     .banner-horizontal {
       margin: 40px 0 50px;
@@ -44,13 +20,9 @@ body:not(.non-adversiting)
   }
 }
 
-body:not(.non-adversiting) .news-gallery .views-infinite-scroll-content-wrapper,
-body:not(.non-adversiting)
-  .view-landing-thought-leaders
-  .views-infinite-scroll-content-wrapper,
-body:not(.non-adversiting)
-  .view-jobs-in-i-am-a-job-seeker
-  .views-infinite-scroll-content-wrapper {
+.news-gallery .views-infinite-scroll-content-wrapper:not(.non-adversiting),
+.view-landing-thought-leaders .views-infinite-scroll-content-wrapper:not(.non-adversiting),
+.view-jobs-in-i-am-a-job-seeker .views-infinite-scroll-content-wrapper:not(.non-adversiting) {
   .views-row.not-show-line {
     @media screen and (min-width: $broken) {
       &::before {
@@ -69,6 +41,7 @@ body:not(.non-adversiting)
     border-bottom: 0px solid #b1b1b1;
   }
 }
+
 .page-node-type-job,
 .page-node-type-feature-employer,
 .page-node-type-more-covers {
