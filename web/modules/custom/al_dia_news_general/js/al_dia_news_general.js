@@ -345,7 +345,7 @@
 
         //js para agregar padres de publicidad term services --------------------------------///
         var block_term_services = document.querySelector(
-          'article[about="/terms-of-service"] .non-adversiting'
+          'article[about="/terms-of-service"] .pautas .non-adversiting'
         );
         var term_services_container = document.querySelector(
           'article[about="/terms-of-service"] .content-page-node'
@@ -354,7 +354,7 @@
         if (!!block_term_services && !!term_services_container) {
           term_services_container.classList.add("non-ads-father");
         } 
-      }, 8000);
+      }, 4500);
     }
   };
 })(jQuery);
