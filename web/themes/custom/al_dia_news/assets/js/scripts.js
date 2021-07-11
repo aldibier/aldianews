@@ -1615,14 +1615,15 @@ var initMain = function initMain($, Drupal) {
     } //js para eliminar publicidad two column events
 
 
-    var adversiting_two_col = document.querySelector(".view-id-block_guest .ads-two-col .block-gamw");
-    var position_two_col = document.querySelector(".view-id-block_guest .mode-two");
+    setTimeout(function () {
+      var adversiting_two_col = document.querySelector(".view-id-block_guest .ads-two-col .block-gamw");
+      var position_two_col = document.querySelector(".view-id-block_guest .mode-two");
 
-    if (adversiting_two_col != null && position_two_col != null) {
-      position_two_col.appendChild(adversiting_two_col);
-      adversiting_two_col.classList.add("four-content-event-advertising");
-    } //js para form sponsorship 
-
+      if (adversiting_two_col != null && position_two_col != null) {
+        position_two_col.appendChild(adversiting_two_col);
+        adversiting_two_col.classList.add("four-content-event-advertising", "ads");
+      }
+    }, 2500); //js para form sponsorship 
 
     var addStateAndCity = function addStateAndCity(state, city) {
       var sumoSelect = state.querySelector('.SumoSelect');
@@ -2628,8 +2629,8 @@ var initSlick = function initSlick($, Drupal) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/usuario/Desktop/Proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
-module.exports = __webpack_require__(/*! /Users/usuario/Desktop/Proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
+__webpack_require__(/*! C:\Users\valer\Desktop\4ld14-n3ws\web\themes\custom\al_dia_news\src\js\scripts.js */"./src/js/scripts.js");
+module.exports = __webpack_require__(/*! C:\Users\valer\Desktop\4ld14-n3ws\web\themes\custom\al_dia_news\src\sass\styles.scss */"./src/sass/styles.scss");
 
 
 /***/ })
