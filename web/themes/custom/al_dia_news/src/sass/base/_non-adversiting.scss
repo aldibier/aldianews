@@ -11,27 +11,6 @@ body:not(.non-adversiting) .view-landing-thought-leaders .views-infinite-scroll-
   }
 }
 
-.view-more-videos-in-landing .views-infinite-scroll-content-wrapper:not(.non-adversiting),
-.news-gallery .views-infinite-scroll-content-wrapper:not(.non-adversiting) {
-  @media (min-width: $broken) {
-    .banner-horizontal {
-      margin: 40px 0 50px;
-    }
-  }
-}
-
-.news-gallery .views-infinite-scroll-content-wrapper:not(.non-adversiting),
-.view-landing-thought-leaders .views-infinite-scroll-content-wrapper:not(.non-adversiting),
-.view-jobs-in-i-am-a-job-seeker .views-infinite-scroll-content-wrapper:not(.non-adversiting) {
-  .views-row.not-show-line {
-    @media screen and (min-width: $broken) {
-      &::before {
-        display: none !important;
-      }
-    }
-  }
-}
-
 ///------ non adversiting en desktop-----------//
 
 .non-adversiting {
