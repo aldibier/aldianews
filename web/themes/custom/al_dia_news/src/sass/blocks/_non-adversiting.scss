@@ -1,3 +1,65 @@
+///------ scroll infinito -----------//
+
+body:not(.non-adversiting) .news-gallery .views-infinite-scroll-content-wrapper,
+body:not(.non-adversiting)
+  .view-landing-thought-leaders
+  .views-infinite-scroll-content-wrapper,
+body:not(.non-adversiting)
+  .view-jobs-in-i-am-a-job-seeker
+  .views-infinite-scroll-content-wrapper {
+  .views-row.not-show-line {
+    @media screen and (min-width: $broken) {
+      &::before {
+        display: none !important;
+      }
+    }
+  }
+}
+
+///---------- estilos para publicidad en infinit scroll ---------//
+body:not(.non-adversiting)
+  .view-landing-thought-leaders
+  .views-infinite-scroll-content-wrapper {
+  @media (min-width: $broken) {
+    .views-row.not-show-line {
+      margin-bottom: 0;
+    }
+
+    .banner-horizontal {
+      margin: 90px 0;
+    }
+  }
+}
+
+body:not(.non-adversiting)
+  .view-more-videos-in-landing
+  .views-infinite-scroll-content-wrapper,
+body:not(.non-adversiting)
+  .news-gallery
+  .views-infinite-scroll-content-wrapper {
+  @media (min-width: $broken) {
+    .banner-horizontal {
+      margin: 40px 0 50px;
+    }
+  }
+}
+
+body:not(.non-adversiting) .news-gallery .views-infinite-scroll-content-wrapper,
+body:not(.non-adversiting)
+  .view-landing-thought-leaders
+  .views-infinite-scroll-content-wrapper,
+body:not(.non-adversiting)
+  .view-jobs-in-i-am-a-job-seeker
+  .views-infinite-scroll-content-wrapper {
+  .views-row.not-show-line {
+    @media screen and (min-width: $broken) {
+      &::before {
+        display: none !important;
+      }
+    }
+  }
+}
+
 ///------ non adversiting en desktop-----------//
 
 .non-adversiting {
@@ -15,12 +77,15 @@
       width: 100%;
       max-width: none;
     }
-  }
+  } 
 }
 .horizontal-advertising-general-horizontal.non-adversiting {
   margin: 0px;
 }
 
+.non-adversiting .block-views-blockhome-current-edition--block-1 {
+  margin: 0 auto 100px !important;
+}
 
 
 .path-about-al-dia-live .non-adversiting {
@@ -48,7 +113,8 @@
 .node--type-job,
 .node--type-more-covers,
 .node--view-mode-basic-page-about-us,
-.node--view-mode-contact-us {
+.node--view-mode-contact-us,
+article[about="/terms-of-service"] {
   .non-ads-father .content-left-pages {
     width: 100%;
     max-width: none;
@@ -58,21 +124,23 @@
   }
 }
 
+.node--type-more-covers .non-ads-father {
+  .content-left-pages {
+    padding: 0px;
+  } 
+  .content-right-pages::after {
+    display: none;
+  }
+}
 ///------ non adversiting en movil-----------//
 
 @media (max-width: $broken) {
   .non-adversiting {
-    /* &.view-content > div:nth-child(3) {
-      margin: 0px; // validar esta afectando varias secciones
-    } */
+   
     &.view-more-in-this-section-news .card-more:nth-child(1) {
       border-bottom: 0px;
     }
-    // &.page-node-type-job
-    // &.page-node-type-feature-employer
-    &.content-right-pages {
-      margin: 0px;
-    }
+
     &.section-event-body .body-lateral-section-advertising {
       margin: 0px;
     }
@@ -80,19 +148,12 @@
     &.podcast-content-list .view-content {
       margin-bottom: 0px;
     }
-    // &.page-node-type-more-covers
-    &.content-right-pages {
-      padding: 0px;
-      border: 0px;
-      margin: 0px;
-    }
+
     &.node--view-mode-basic-page-about-us
       .horizontal-advertising-general-horizontal {
       margin-bottom: 0px;
     }
-    // article[about="/terms-of-service"]
-    // &.page-node-type-page
-    &.content-right-pages,
+
     &.banner-horizontal {
       margin: 0px;
     }
@@ -111,54 +172,15 @@
     &.section-event-body .body-lateral-section-advertising {
       margin: 0px;
     }
-    // &.page-node-type-more-covers
-    &.content-right-pages {
-      border-top: 0px;
-      padding-top: 0px;
-      margin: 0;
-    }
+   
   }
-  .page-node-type-job,
-  .page-node-type-feature-employer {
-    .non-adversiting {
-      &.content-right-pages {
-        margin: 0px;
-      }
-    }
-  }
-  .page-node-type-more-covers {
-    .non-adversiting {
-      &.content-right-pages {
-        padding: 0px;
-        border: 0px;
-        margin: 0px;
-      }
-    }
-  }
-
-  article[about="/terms-of-service"],
-  .page-node-type-page {
-    .non-adversiting {
-      &.content-right-pages,
-      &.banner-horizontal {
-        margin: 0px;
-      }
-    }
-  }
-  .page-node-type-more-covers {
-    .non-adversiting {
-      &.content-right-pages {
-        border-top: 0px;
-        padding-top: 0px;
-        margin: 0;
-      }
-    }
-  }
+  
   .node--view-mode-work-whit-al-dia
     .horizontal-advertising-general-horizontal.non-adversiting {
     margin: 20px 0 0;
   }
 }
+
 
 ///---------- infinit scroll ---------//
 .news-gallery .views-infinite-scroll-content-wrapper.non-adversiting,

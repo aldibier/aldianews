@@ -5,6 +5,7 @@
 (function($) {
   Drupal.behaviors.aldia_news_advertising = {
     attach: function(context) {
+      jQuery(document).ready(function() {
       var width_publi = window.innerWidth;
       if (width_publi >= 768) {
         // ------ vista leadership
@@ -354,7 +355,8 @@
         if (!!block_term_services && !!term_services_container) {
           term_services_container.classList.add("non-ads-father");
         } 
-      }, 4500);
+      }, 1500);
+    });
     }
   };
 })(jQuery);
