@@ -34,7 +34,7 @@
       margin-top: 30px;
     }
   }
-  
+
   .path-videos .block-system-main-block .view-content {
     @media (max-width: $tablet) {
       min-height: 450px;
@@ -198,7 +198,6 @@
         overflow: hidden;
       }
       .views-row {
-
       }
     }
 
@@ -305,6 +304,7 @@
     margin-bottom: 20px;
     text-decoration: none;
     border-bottom: 0px dotted;
+    text-transform: uppercase;
   }
 
   h2 a {
@@ -358,10 +358,9 @@
     > * {
       pointer-events: none;
     }
-
   }
 
-  .views-row.active{
+  .views-row.active {
     position: relative;
 
     &::before {
@@ -461,6 +460,7 @@
     margin-bottom: 5px;
     text-decoration: none;
     border-bottom: 0px dotted;
+    text-transform: uppercase;
   }
 
   h2 {
@@ -554,7 +554,8 @@
   //estilos bloques de carrusel videos
   .view-id-carousel_videos_landing {
     .views-row {
-      flex-direction: column;   &.active {
+      flex-direction: column;
+      &.active {
         display: flex !important;
       }
     }
