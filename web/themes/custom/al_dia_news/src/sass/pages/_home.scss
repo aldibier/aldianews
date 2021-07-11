@@ -567,8 +567,9 @@
     align-items: center;
 
     &::after {
-      position: relative;
-      max-width: 735px;
+      position: absolute;
+      max-width: 775px;
+      right: 0;
     }
   }
 
@@ -691,9 +692,9 @@
       padding: 0 15px;
     }
 
-    &.view-display-id-block_3 .view-content h2 a::after {
+    /* &.view-display-id-block_3 .view-content h2 a::after {
       display: none;
-    }
+    }  */
   }
 }
 
