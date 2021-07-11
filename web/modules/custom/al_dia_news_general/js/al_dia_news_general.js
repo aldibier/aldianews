@@ -162,13 +162,13 @@
               // doing async stuff
               if (
                 $(
-                  ".view-id-more_in_this_section_news.view-display-id-block_1 .view-content .block-gamw"
+                  ".block-views-blockmore-in-this-section-news-block-1 .view-display-id-block_1 .margin-top .block-gamw"
                 )
                   .find(".content > div > div")
                   .children().length > 0
               ) {
                 $(
-                  ".view-id-more_in_this_section_news.view-display-id-block_1 .view-content .card-more-news"
+                  ".block-views-blockmore-in-this-section-news-block-1 .view-display-id-block_1 .card-more-news"
                 ).each(function(index, value) {
                   if (index >= 3) {
                     $(value).addClass("hidden-per-advertising");
