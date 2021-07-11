@@ -154,7 +154,7 @@
 
         // ------ vista more in this section
         $(
-          ".view-id-more_in_this_section_news.view-display-id-block_1 .view-content .settings-tray-editable"
+          ".block-views-blockmore-in-this-section-news-block-1 .view-display-id-block_1 .view-content"
         )
           .once("aldia-big-news-advertising")
           .each(function() {
@@ -162,7 +162,7 @@
               // doing async stuff
               if (
                 $(
-                  ".view-id-more_in_this_section_news.view-display-id-block_1 .view-content .settings-tray-editable"
+                  ".view-id-more_in_this_section_news.view-display-id-block_1 .view-content .block-gamw"
                 )
                   .find(".content > div > div")
                   .children().length > 0
