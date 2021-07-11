@@ -168,7 +168,7 @@
                   .children().length > 0
               ) {
                 $(
-                  ".block-views-blockmore-in-this-section-news-block-1 .view-display-id-block_1 .card-more-news"
+                  ".block-views-blockmore-in-this-section-news-block-1 .view-display-id-block_1 .card-more"
                 ).each(function(index, value) {
                   if (index >= 3) {
                     $(value).addClass("hidden-per-advertising");
