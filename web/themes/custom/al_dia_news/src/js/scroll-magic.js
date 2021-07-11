@@ -9,10 +9,13 @@ const initScrollMagic = ($, Drupal) => {
     //------------ scroll jobs --------------//
     const rigthPages = document.querySelector('.content-right-pages');
     const pautas = document.querySelector('.pautas');
+    const leftContent = document.querySelector('.page-node-type-feature-employer .content-left-pages');
 
     if (!!rigthPages && !!pautas) {
         //------------ not sticky --------------//
+        let limitHigh = 1940;
         if (rigthPages.offsetHeight === pautas.offsetHeight) return;
+        if (leftContent.offsetHeight < limitHigh) return;
 
         const scene1 = new ScrollMagic.Scene({ triggerElement: pautas,triggerHook:1,duration: getDurationScene1})
             .addTo(new ScrollMagic.Controller())
@@ -30,10 +33,10 @@ const initScrollMagic = ($, Drupal) => {
     const containerRigth = document.querySelector('.container-right');
     const containerLeft = document.querySelector('.content-news-internal-left');
     const noticias = document.querySelector('.block-views-blockmore-in-this-section-news-block-1');
-    const limitHigh = 1940;
 
     //------------ scroll internas --------------//
     if (!!containerRigth && !!noticias) {
+        let limitHigh = 1940;
         //------------ not sticky --------------//
         if (containerLeft.offsetHeight < limitHigh) return;
         if (containerRigth.offsetHeight === noticias.offsetHeight) return;

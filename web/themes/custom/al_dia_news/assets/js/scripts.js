@@ -2330,6 +2330,7 @@ var initScrollMagic = function initScrollMagic($, Drupal) {
 
   var rigthPages = document.querySelector('.content-right-pages');
   var pautas = document.querySelector('.pautas');
+  var leftContent = document.querySelector('.page-node-type-feature-employer .content-left-pages');
 
   if (!!rigthPages && !!pautas) {
     var getDurationScene1 = function getDurationScene1() {
@@ -2338,7 +2339,9 @@ var initScrollMagic = function initScrollMagic($, Drupal) {
 
 
     //------------ not sticky --------------//
+    var limitHigh = 1940;
     if (rigthPages.offsetHeight === pautas.offsetHeight) return;
+    if (leftContent.offsetHeight < limitHigh) return;
     var scene1 = new ScrollMagic.Scene({
       triggerElement: pautas,
       triggerHook: 1,
@@ -2350,8 +2353,7 @@ var initScrollMagic = function initScrollMagic($, Drupal) {
 
   var containerRigth = document.querySelector('.container-right');
   var containerLeft = document.querySelector('.content-news-internal-left');
-  var noticias = document.querySelector('.block-views-blockmore-in-this-section-news-block-1');
-  var limitHigh = 1940; //------------ scroll internas --------------//
+  var noticias = document.querySelector('.block-views-blockmore-in-this-section-news-block-1'); //------------ scroll internas --------------//
 
   if (!!containerRigth && !!noticias) {
     /* setTimeout(()=>{
@@ -2365,8 +2367,9 @@ var initScrollMagic = function initScrollMagic($, Drupal) {
     }; //window.addEventListener("resize", () => resizeActivation(noticias, scene2));
 
 
-    //------------ not sticky --------------//
-    if (containerLeft.offsetHeight < limitHigh) return;
+    var _limitHigh = 1940; //------------ not sticky --------------//
+
+    if (containerLeft.offsetHeight < _limitHigh) return;
     if (containerRigth.offsetHeight === noticias.offsetHeight) return;
     var scene2 = new ScrollMagic.Scene({
       triggerElement: containerRigth,
