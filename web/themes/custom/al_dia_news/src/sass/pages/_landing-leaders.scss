@@ -305,7 +305,6 @@
     margin-bottom: 120px;
     display: grid;
     grid-template-columns: minmax(250px, 400px) minmax(250px, 400px) minmax(250px,400px);
-    grid-auto-rows: minmax(auto,435px);
     grid-auto-flow: dense;
     grid-gap: 0 40px;
     justify-content: center;
@@ -392,14 +391,18 @@
       &::before {
         display: block;
         content: "";
-        width: calc(100% + 85px);
+        width: calc(100% + 40px);
         height: 1px;
-        left: -43px;
+        left: -20px;
         bottom: 0;
         background: $cgrey4;
         position: absolute;
         right: 0;
         margin: -45px auto;
+      }
+
+      @media screen and (min-width: $broken) {
+        height: 345px;
       }
 
       @media screen and (max-width: $broken) {

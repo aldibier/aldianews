@@ -200,6 +200,12 @@
   .skys-scroll {
     margin: 0;
   }
+
+  @media screen and (min-width: $broken) {
+    .block-scroll {
+      transform: translateY(-20px);
+    }
+  }
 }
 
 //----------------- clases generales para publicidad ----------------------------------//
