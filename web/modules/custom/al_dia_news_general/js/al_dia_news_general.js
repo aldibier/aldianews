@@ -5,7 +5,6 @@
 
 
 (function($) {
- debugger;
 
   var timerStart = Date.now();
 
@@ -13,6 +12,8 @@
     attach: function(context) {
 
     $(window).load(function(){
+ debugger;
+
       var total_post_time = Date.now();
       var total_time = total_post_time - timerStart;
       console.log(timerStart, total_post_time, total_time);
