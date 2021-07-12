@@ -306,18 +306,6 @@
 //----------------- thought leaders ----------------------------------//
 .path-thought-leaders .views-infinite-scroll-content-wrapper:not(.non-adversiting) {
 
-  .block-scroll  {
-    width: 100%;
-    max-width: 100%;
-    max-height: initial;
-    margin: 20px auto 0;
-    padding-bottom: 20px;
-    border-bottom: 1px solid $cgrey4;
-    display: block;
-    position: relative;
-    text-align: center;
-  }
-
   .skys-scroll {
     width: 100%;
     max-width: 100%;
@@ -367,6 +355,18 @@
     .block-scroll.ads-mobile {
       margin: 0 0 15px;
     }
+
+    .block-scroll  {
+      width: 100%;
+      max-width: 100%;
+      max-height: initial;
+      margin: 30px auto 15px;
+      padding: 20px 0;
+      border-bottom: 1px solid $cgrey4;
+      display: block;
+      position: relative;
+      text-align: center;
+    }  
   }
 }
 
