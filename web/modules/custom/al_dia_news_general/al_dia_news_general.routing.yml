@@ -5,3 +5,19 @@ al_dia_news_general.modal:
     _controller: '\Drupal\al_dia_news_general\Controller\CustomModalController::modal'
   requirements:
     _permission: 'access content'
+
+al_dia_news_general.events:
+  path: 'node/{node}/sponsorship'
+  defaults:
+    _title: 'Sponsorship'
+    _controller: '\Drupal\al_dia_news_general\Controller\AboutAlDiaWebform::sponsorship'
+  requirements:
+    _permission: 'access content'
+
+al_dia_news_general.register:
+  path: 'node/{node}/register'
+  defaults:
+    _title: 'Register'
+    _controller: '\Drupal\al_dia_news_general\Controller\AboutAlDiaWebform::register'
+  requirements:
+    _permission: 'access content'
