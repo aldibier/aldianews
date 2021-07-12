@@ -249,6 +249,46 @@
   }
 }
 
+.path-job-seeker .views-infinite-scroll-content-wrapper:not(.non-adversiting){
+  @media screen and (max-width: $tablet) {
+    .block-scroll.ads-mobile {
+      width: 100%;
+      max-width: 100%;
+      margin: 0 0 22px;
+      position: relative;
+      text-align: center;
+  
+      &::after {
+        content: "";
+        width: calc(100vw - 30px);
+        height: 1px;
+        margin: 0 auto;
+        position: absolute;
+        bottom: calc(0% - 20px);
+        left: 0;
+        right: 0;
+        background: $cgrey4;
+      }
+    }
+
+    .banner-scroll.ads-mobile {
+      margin: 20px 0 40px;
+      
+      .banner-horizontal {
+        margin: 0px -15px 0;
+      }
+    }
+
+    .banner-scroll.ban2.ads-mobile {
+      margin: 49px 0px 42px;
+      
+      .banner-horizontal {
+        margin: 0px -15px 0;
+      }
+    }
+  }
+}
+
 //----------------- clases generales para publicidad ----------------------------------//
 
 .banner-horizontal {
@@ -261,7 +301,7 @@
     margin: 0 -15px 30px;
     display: flex;
     justify-content: center;
-    overflow-x: initial;
+    overflow: initial;
   }
   &.bot-bottom {
     margin-bottom: 0px;
@@ -405,6 +445,7 @@
   max-height: 375px;
   margin: 35px auto;
   grid-column: 3;
+
   @media (max-width: $broken) {
     max-width: 200px;
     max-height: 200px;
@@ -444,7 +485,7 @@
       margin: 35px -15px;
     }
 
-    .block-scroll {
+    .block-scroll.ads-mobile {
       width: 100%;
       max-width: 100%;
       position: relative;
