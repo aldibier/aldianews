@@ -11,7 +11,7 @@
   Drupal.behaviors.aldia_news_advertising = {
     attach: function(context) {
 
-    $(window).load(function(){
+      $(window).on("load",function(){
  debugger;
 
       var total_post_time = Date.now();
