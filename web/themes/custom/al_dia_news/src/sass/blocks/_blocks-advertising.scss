@@ -160,6 +160,22 @@
 
 ///---------- infinit scroll ---------//
 .view-landing-thought-leaders .views-infinite-scroll-content-wrapper:not(.non-adversiting)  {
+
+  $screen-query: 993px;
+  @media screen and (min-width: $screen-query) {
+    .block-scroll {
+      &:before {
+        margin: -15px auto;
+      }
+    }
+    
+    .skys-scroll.skys2 {
+      &:before {
+        margin: -35px auto;
+      }
+    }
+  }
+
   @media (min-width: $broken) {
     .views-row.not-show-line {
       margin-bottom: 0;
@@ -199,6 +215,48 @@
 
       &::before {
         display: none !important;
+      }
+    }
+  }
+}
+
+
+//----------------- jobs  ----------------------------------//
+.path-job-seeker .views-infinite-scroll-content-wrapper:not(.non-adversiting){
+  @media screen and (max-width: $tablet) {
+    .block-scroll.ads-mobile {
+      width: 100%;
+      max-width: 100%;
+      margin: 0 0 22px;
+      position: relative;
+      text-align: center;
+  
+      &::after {
+        content: "";
+        width: calc(100vw - 30px);
+        height: 1px;
+        margin: 0 auto;
+        position: absolute;
+        bottom: calc(0% - 20px);
+        left: 0;
+        right: 0;
+        background: $cgrey4;
+      }
+    }
+
+    .banner-scroll.ads-mobile {
+      margin: 20px 0 40px;
+      
+      .banner-horizontal {
+        margin: 0px -15px 0;
+      }
+    }
+
+    .banner-scroll.ban2.ads-mobile {
+      margin: 49px 0px 42px;
+      
+      .banner-horizontal {
+        margin: 0px -15px 0;
       }
     }
   }
@@ -245,13 +303,49 @@
   }
 }
 
+//----------------- thought leaders ----------------------------------//
 .path-thought-leaders .views-infinite-scroll-content-wrapper:not(.non-adversiting) {
-  .block-scroll {
-    margin: 0;
+
+  .block-scroll  {
+    width: 100%;
+    max-width: 100%;
+    max-height: initial;
+    margin: 20px auto 0;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $cgrey4;
+    display: block;
+    position: relative;
+    text-align: center;
   }
-  
+
   .skys-scroll {
+    width: 100%;
+    max-width: 100%;
     margin: 0;
+    position: relative;
+    text-align: center;
+
+    &::before {
+      content: "";
+      width: calc(100vw - 30px);
+      height: 1px;
+      margin: -35px auto;
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: 0px;
+      background: $cgrey4;
+    }
+
+    &::after {
+      content: "";
+      width: 1px;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: calc(0% - 16px);
+      background-color: $cgrey4;
+    }
   }
 
   @media screen and (min-width: $broken) {
@@ -259,44 +353,19 @@
       transform: translateY(-20px);
     }
   }
-}
 
-.path-job-seeker .views-infinite-scroll-content-wrapper:not(.non-adversiting){
   @media screen and (max-width: $tablet) {
+
+    .views-row.not-show-line-mobile {
+      margin-bottom: 0;
+
+      &::before {
+        display: none;
+      }
+    }
+
     .block-scroll.ads-mobile {
-      width: 100%;
-      max-width: 100%;
-      margin: 0 0 22px;
-      position: relative;
-      text-align: center;
-  
-      &::after {
-        content: "";
-        width: calc(100vw - 30px);
-        height: 1px;
-        margin: 0 auto;
-        position: absolute;
-        bottom: calc(0% - 20px);
-        left: 0;
-        right: 0;
-        background: $cgrey4;
-      }
-    }
-
-    .banner-scroll.ads-mobile {
-      margin: 20px 0 40px;
-      
-      .banner-horizontal {
-        margin: 0px -15px 0;
-      }
-    }
-
-    .banner-scroll.ban2.ads-mobile {
-      margin: 49px 0px 42px;
-      
-      .banner-horizontal {
-        margin: 0px -15px 0;
-      }
+      margin: 0 0 15px;
     }
   }
 }
@@ -594,24 +663,6 @@
     }
   }
 }
-
-.view-landing-thought-leaders {
-  $screen-query: 993px;
-  @media screen and (min-width: $screen-query) {
-    .block-scroll {
-      &:before {
-        margin: -15px auto;
-      }
-    }
-    
-    .skys-scroll.skys2 {
-      &:before {
-        margin: -35px auto;
-      }
-    }
-  }
-}
-
 ///---------- estilos para publicidad con close en mobile ---------//
 
 .block-fixed-block-content-horizontal-advertising-close {

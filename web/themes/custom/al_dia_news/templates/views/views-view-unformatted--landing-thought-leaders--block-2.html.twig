@@ -74,6 +74,9 @@
 {% endif %}
 
 {% if device == 'mobile' %}
+
+	{% set index_hide_lines = [5,6,11,12] %}
+
 	{% for row in rows %}
 
 		{%
@@ -83,25 +86,35 @@
 		%}
 
 		{## block ##}
-		{% if loop.index  == 6 %}
+		{% if loop.index  == 7 %}
 			<span class="block-scroll ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_16') }}</span>
+		{% endif %}
+		{% if loop.index  == 12 %}
+			<span class="block-scroll ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_21') }}</span>
 		{% endif %}
 
 		{## skyscraper ##}
-		{% if loop.index  == 11 %}
+		{% if loop.index  == 12 %}
 			<span class="skys-scroll ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_17') }}</span>
 		{% endif %}
-		{% if loop.index  == 12 %}
+		{% if loop.index  == 13 %}
 			<span class="skys-scroll skys2 ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_20') }}</span>
 		{% endif %}
 
-		<div{{row.attributes.addClass(row_classes)}}>
-			{{- row.content -}}
-		</div>
+		{% if loop.index in index_hide_lines %}
+			<div class="views-row not-show-line-mobile">
+				{{- row.content -}}
+			</div>
+		{% else %}
+			<div{{row.attributes.addClass(row_classes)}}>
+				{{- row.content -}}
+			</div>
+		{% endif %}
 
 		{## banner ##}
 		{% if loop.index == 16 %}
 			<span class="banner-scroll ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_15') }}</span>
 		{% endif %}
+
 	{% endfor %}
 {% endif %}
