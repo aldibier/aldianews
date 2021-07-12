@@ -252,6 +252,7 @@
       Array.from(
         document.querySelectorAll(".block-gamw")
       ).map(function (element) {
+        debugger
           if (element != null) {
             var iframe_gamw = element.querySelector("iframe");
             if (iframe_gamw == null) {
