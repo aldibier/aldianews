@@ -192,6 +192,18 @@
   }
 }
 
+.news-gallery .views-infinite-scroll-content-wrapper:not(.non-adversiting) {
+  .views-row.not-show-line-mobile {
+    @media screen and (max-width: $tablet) {
+      margin-bottom: 35px;
+      
+      &::before {
+        display: none !important;
+      }
+    }
+  }
+}
+
 .path-jobs .views-infinite-scroll-content-wrapper:not(.non-adversiting) {
   .block-scroll {
     margin: 0;
