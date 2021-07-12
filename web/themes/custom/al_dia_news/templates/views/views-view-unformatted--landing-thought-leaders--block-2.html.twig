@@ -74,6 +74,9 @@
 {% endif %}
 
 {% if device == 'mobile' %}
+
+	{% set index_hide_lines = [5,6,11,12] %}
+
 	{% for row in rows %}
 
 		{%
@@ -83,34 +86,35 @@
 		%}
 
 		{## block ##}
-		{% if loop.index  == 10 %}
+		{% if loop.index  == 7 %}
 			<span class="block-scroll ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_16') }}</span>
+		{% endif %}
+		{% if loop.index  == 12 %}
+			<span class="block-scroll ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_21') }}</span>
 		{% endif %}
 
 		{## skyscraper ##}
-		{% if loop.index  == 17 %}
+		{% if loop.index  == 12 %}
 			<span class="skys-scroll ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_17') }}</span>
 		{% endif %}
-		{% if loop.index  == 19 %}
+		{% if loop.index  == 13 %}
 			<span class="skys-scroll skys2 ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_20') }}</span>
 		{% endif %}
 
-		{## banner ##}
-		{% if loop.index == 6 %}
-			<span class="banner-scroll ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_15') }}</span>
-		{% endif %}
-		{% if loop.index == 14 %}
-			<span class="banner-scroll ban2 ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_18') }}</span>
-		{% endif %}
-		{% if loop.index == 18 %}
-			<span class="banner-scroll ban3 ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_19') }}</span>
-		{% endif %}
-		{% if loop.index == 24 %}
-			<span class="banner-scroll last-banner ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_36') }}</span>
+		{% if loop.index in index_hide_lines %}
+			<div class="views-row not-show-line-mobile">
+				{{- row.content -}}
+			</div>
+		{% else %}
+			<div{{row.attributes.addClass(row_classes)}}>
+				{{- row.content -}}
+			</div>
 		{% endif %}
 
-		<div{{row.attributes.addClass(row_classes)}}>
-			{{- row.content -}}
-		</div>
+		{## banner ##}
+		{% if loop.index == 16 %}
+			<span class="banner-scroll ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_15') }}</span>
+		{% endif %}
+
 	{% endfor %}
 {% endif %}

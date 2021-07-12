@@ -75,6 +75,9 @@
 {% endif %}
 
 {% if device == 'mobile' %}
+
+	{% set index_hide_lines = [5,6,13,14] %}
+
 	{% for row in rows %}
 
 		{%
@@ -96,6 +99,16 @@
 			<span class="skys-scroll skys2 ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_20') }}</span>
 		{% endif %}
 
+		{% if loop.index in index_hide_lines %}
+			<div class="card-one-column views-row not-show-line-mobile">
+				{{- row.content -}}
+			</div>
+		{% else %}
+			<div{{row.attributes.addClass(row_classes)}}>
+				{{- row.content -}}
+			</div>
+		{% endif %}
+
 		{## banner ##}
 		{% if loop.index == 6 %}
 			<span class="banner-scroll ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_15') }}</span>
@@ -110,8 +123,5 @@
 			<span class="banner-scroll last-banner ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_36') }}</span>
 		{% endif %}
 
-		<div{{row.attributes.addClass(row_classes)}}>
-			{{- row.content -}}
-		</div>
 	{% endfor %}
 {% endif %}

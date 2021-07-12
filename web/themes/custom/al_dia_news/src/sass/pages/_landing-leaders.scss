@@ -330,47 +330,6 @@
     @media (max-width: $tablet) {
       margin-bottom: 30px;
       overflow: initial;
-
-      .block-scroll  {
-        width: 100%;
-        max-width: 100%;
-        max-height: initial;
-        margin: 20px auto 0;
-        padding-bottom: 20px;
-        border-bottom: 1px solid $cgrey4;
-        display: block;
-        position: relative;
-        text-align: center;
-      }
-
-      .skys-scroll {
-        width: 100%;
-        max-width: 100%;
-        position: relative;
-        text-align: center;
-
-        &::before {
-          content: "";
-          width: calc(100vw - 30px);
-          height: 1px;
-          margin: -35px auto;
-          display: block;
-          position: absolute;
-          right: 0;
-          bottom: 0px;
-          background: $cgrey4;
-        }
-
-        &::after {
-          content: "";
-          width: 1px;
-          height: 100%;
-          position: absolute;
-          top: 0;
-          left: calc(0% - 16px);
-          background-color: $cgrey4;
-        }
-      }
     }
 
     .views-row {
@@ -406,11 +365,7 @@
       }
 
       @media screen and (max-width: $broken) {
-        margin: 30px 0;
-
-        &:nth-child(-n + 2) {
-          margin-top: 0;
-        }
+        margin: 0 0 60px;
 
         &::after {
           right: calc(0% - 15px);
@@ -710,7 +665,13 @@
 
     .views-infinite-scroll-content-wrapper {
       .views-row {
-        margin: 30px 0;
+
+        &:nth-last-of-type(-n+2){
+          margin-bottom: 0;
+          &::before {
+            display: none !important;
+          }
+        }
 
         .author-information-more-content {
           flex-wrap: wrap;
