@@ -2,7 +2,11 @@
  * @file
  */
 
+
+
 (function($) {
+ debugger;
+
   var timerStart = Date.now();
 
   Drupal.behaviors.aldia_news_advertising = {
@@ -247,7 +251,6 @@
       
       //js para eliminar publicidad vacia
       setTimeout(() => {
-        debugger;
         const allBlocksGamw = document.querySelectorAll(".block-gamw");
         allBlocksGamw.forEach(function(e) {
           if (e != null) {
