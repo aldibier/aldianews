@@ -188,6 +188,22 @@ function al_dia_news_general_form_alter(&$form, $form_state, $form_id) {
     break;
     case "user_form":
       $form['#title'] = "EDIT";
+      $form['actions']['delete']['#access'] = FALSE;
+      $form['actions']['cancel'] = [
+        '#type' => 'link',
+        '#title' => t('BACK'),
+        '#url' => Url::fromRoute('al_dia_news_general.modal', [
+          'type' => 'user',
+        ]),
+        '#attributes' => [
+          'class' => [
+            'use-ajax',
+            'user-register-login',
+          ],
+          'data-dialog-type' => 'modal',
+          'data-dialog-options' => Json::encode(['dialogClass' => 'popup-login'],['width' => 550]),
+        ],
+      ];
     break;
     case "user_cancel_form":
       $form['actions']['submit']['#submit'][] = 'custom_cancel_account';
