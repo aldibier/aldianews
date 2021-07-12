@@ -78,12 +78,6 @@
           display: none;
         }
 
-        &:nth-last-of-type(-n + 2){
-          &::before {
-            display: none;
-          }
-        }
-
         &:nth-of-type(odd){
           &::before {
             content: '';
@@ -96,6 +90,12 @@
             right: 0;
             bottom: 0;
             background: $cgrey4;
+          }
+        }
+
+        &:nth-last-of-type(-n + 2){
+          &::before {
+            display: none !important;
           }
         }
       }

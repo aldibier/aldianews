@@ -196,7 +196,7 @@
   .views-row.not-show-line-mobile {
     @media screen and (max-width: $tablet) {
       margin-bottom: 35px;
-      
+
       &::before {
         display: none !important;
       }
@@ -494,12 +494,15 @@
 .path-search-results .news-gallery .view-content > div:not(.no-result-search) {
   @media screen and (max-width: $tablet) {
     .banner-scroll .banner-horizontal {
-      margin: 35px -15px;
+      margin: 0 -15px 35px;
     }
 
     .block-scroll.ads-mobile {
       width: 100%;
       max-width: 100%;
+      max-height: none;
+      margin: 0 0 30px;
+      padding-bottom: 20px;
       position: relative;
       text-align: center;
 
@@ -509,7 +512,7 @@
         height: 1px;
         margin: 0 auto;
         position: absolute;
-        bottom: calc(0% - 20px);
+        bottom: 0;
         left: 0;
         right: 0;
         background: $cgrey4;
@@ -519,7 +522,7 @@
     .skys-scroll {
       width: 100%;
       max-width: 100%;
-      margin-top: 20px;
+      margin-top: 0;
       position: relative;
       background-color: $cwhite;
       text-align: center;
@@ -546,7 +549,7 @@
         margin: 0 auto;
         display: block;
         position: absolute;
-        bottom: 0;
+        bottom: calc(0% + 20px);
         right: 0;
         background: $cgrey4;
       }
