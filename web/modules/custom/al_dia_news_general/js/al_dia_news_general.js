@@ -249,34 +249,31 @@
           });
       }
       
-      Array.from(
-        document.querySelectorAll(".block-gamw")
-      ).map(function (element) {
-        debugger
-          if (element != null) {
-            var iframe_gamw = element.querySelector("iframe");
-            if (iframe_gamw == null) {
-              var ads = element.closest(".ads");
-
-              if (!!ads) {
-                if (!!ads.parentElement)
-                  ads.parentElement.classList.add("non-adversiting-t");
-                  ads.remove();
-              } else {
-                if (!!element.parentElement)
-                element.parentElement.classList.add("non-adversiting-t");
-                element.remove();
-              }
-            }
-          }
-        
-      });
-
       //js para eliminar publicidad vacia
       setTimeout(() => {
         
 
-       
+        Array.from(
+          document.querySelectorAll(".block-gamw")
+        ).map(function (element) {
+            if (element != null) {
+              var iframe_gamw = element.querySelector("iframe");
+              if (iframe_gamw == null) {
+                var ads = element.closest(".ads");
+  
+                if (!!ads) {
+                  if (!!ads.parentElement)
+                    ads.parentElement.classList.add("non-adversiting");
+                    ads.remove();
+                } else {
+                  if (!!element.parentElement)
+                  element.parentElement.classList.add("non-adversiting");
+                  element.remove();
+                }
+              }
+            }
+          
+        });
 
         //js para agregar padres de publicdad jobs --------------------------------///
         var block_jobs = document.querySelector(
@@ -373,7 +370,7 @@
         if (!!block_term_services && !!term_services_container) {
           term_services_container.classList.add("non-ads-father");
         } 
-      }, 2500);
+      }, 1500);
     });
     }
   };
