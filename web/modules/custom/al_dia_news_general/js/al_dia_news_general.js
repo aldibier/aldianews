@@ -264,11 +264,11 @@
   
                 if (!!ads) {
                   if (!!ads.parentElement)
-                    ads.parentElement.classList.add("non-adversiting");
+                    ads.parentElement.classList.add("non-adversiting-t");
                     ads.remove();
                 } else {
                   if (!!element.parentElement)
-                  element.parentElement.classList.add("non-adversiting");
+                  element.parentElement.classList.add("non-adversiting-t");
                   element.remove();
                 }
               }
