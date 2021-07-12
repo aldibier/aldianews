@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   module:
+    - context
     - system
   theme:
     - al_dia_news
@@ -19,4 +20,10 @@ settings:
   label: Breadcrumbs
   provider: system
   label_display: '0'
-visibility: {  }
+visibility:
+  http_status_code:
+    id: http_status_code
+    status_codes:
+      403: 403
+      404: 404
+    negate: true
