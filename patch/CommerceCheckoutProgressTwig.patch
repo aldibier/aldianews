@@ -1,0 +1,20 @@
+diff --git a/modules/checkout/templates/commerce-checkout-progress.html.twig b/modules/checkout/templates/commerce-checkout-progress.html.twig
+--- commerce-checkout-progress.html.twig	2021-07-12 10:29:42.000000000 -0500
++++ commerce-checkout-progress.html.twig	2021-07-12 10:28:57.000000000 -0500
+@@ -14,6 +14,15 @@
+ #}
+ <ol class="checkout-progress clearfix">
+   {% for step in steps %}
+-    <li class="checkout-progress--step checkout-progress--step__{{ step.position }}">{{ step.label }}</li>
++    {% if  step.label == 'Order information' %}
++      {% set new_label = "Step 1 of 3" %}
++    {% endif %}
++    {% if  step.label == 'Review' %}
++      {% set new_label = "Step 2 of 3" %}
++    {% endif %}
++    {% if  step.label == 'Complete' %}
++      {% set new_label = "Step 3 of 3" %}
++    {% endif %}
++    <li class="checkout-progress--step checkout-progress--step__{{ step.position }}">{{ new_label }}</li>
+   {% endfor %}
+ </ol>
