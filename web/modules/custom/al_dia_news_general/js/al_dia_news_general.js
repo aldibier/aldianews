@@ -249,32 +249,33 @@
           });
       }
       
-      //js para eliminar publicidad vacia
-      setTimeout(() => {
- debugger;
-        
+      Array.from(
+        document.querySelectorAll(".block-gamw")
+      ).map(function (element) {
+          if (element != null) {
+            var iframe_gamw = element.querySelector("iframe");
+            if (iframe_gamw == null) {
+              var ads = element.closest(".ads");
 
-        Array.from(
-          document.querySelectorAll(".block-gamw")
-        ).map(function (element) {
-            if (element != null) {
-              var iframe_gamw = element.querySelector("iframe");
-              if (iframe_gamw == null) {
-                var ads = element.closest(".ads");
-  
-                if (!!ads) {
-                  if (!!ads.parentElement)
-                    ads.parentElement.classList.add("non-adversiting-t");
-                    ads.remove();
-                } else {
-                  if (!!element.parentElement)
-                  element.parentElement.classList.add("non-adversiting-t");
-                  element.remove();
-                }
+              if (!!ads) {
+                if (!!ads.parentElement)
+                  ads.parentElement.classList.add("non-adversiting-t");
+                  ads.remove();
+              } else {
+                if (!!element.parentElement)
+                element.parentElement.classList.add("non-adversiting-t");
+                element.remove();
               }
             }
-          
-        });
+          }
+        
+      });
+
+      //js para eliminar publicidad vacia
+      setTimeout(() => {
+        
+
+       
 
         //js para agregar padres de publicdad jobs --------------------------------///
         var block_jobs = document.querySelector(
