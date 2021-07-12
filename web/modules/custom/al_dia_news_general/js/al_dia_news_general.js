@@ -8,7 +8,7 @@
   Drupal.behaviors.aldia_news_advertising = {
     attach: function(context) {
 
-      window.onload = function () {
+    $(window).load(function(){
       var total_post_time = Date.now();
       var total_time = total_post_time - timerStart;
       console.log(timerStart, total_post_time, total_time);
@@ -364,7 +364,7 @@
           term_services_container.classList.add("non-ads-father");
         } 
       }, 2500);
-    };
+    });
     }
   };
 })(jQuery);
