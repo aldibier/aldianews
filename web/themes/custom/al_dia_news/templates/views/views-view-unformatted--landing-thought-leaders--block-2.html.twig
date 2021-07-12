@@ -95,13 +95,13 @@
 			<span class="skys-scroll skys2 ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_20') }}</span>
 		{% endif %}
 
+		<div{{row.attributes.addClass(row_classes)}}>
+			{{- row.content -}}
+		</div>
+
 		{## banner ##}
 		{% if loop.index == 16 %}
 			<span class="banner-scroll ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_15') }}</span>
 		{% endif %}
-
-		<div{{row.attributes.addClass(row_classes)}}>
-			{{- row.content -}}
-		</div>
 	{% endfor %}
 {% endif %}
