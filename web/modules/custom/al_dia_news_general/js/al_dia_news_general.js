@@ -12,7 +12,6 @@
     attach: function(context) {
 
       $(window).on("load",function(){
- debugger;
 
       var total_post_time = Date.now();
       var total_time = total_post_time - timerStart;
@@ -252,7 +251,7 @@
       
       //js para eliminar publicidad vacia
       setTimeout(() => {
-        // const allBlocksGamw = document.querySelectorAll(".block-gamw");
+ debugger;
         
 
         Array.from(
