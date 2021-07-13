@@ -174,13 +174,6 @@
       margin: 0;
       transform: translateY(-20px);
     }
-    
-    .skys-scroll {
-      grid-row: span 1;
-      &::before {
-        display: none;
-      }
-    }
 
     .skys-scroll.skys2 {
       &::before {
@@ -207,6 +200,16 @@
       }
     }
 
+    .skys-scroll.ads.ads-mobile {
+      content: '';
+      width: 35px;
+      height: 100%;
+      position: absolute;
+      left: calc(0% - 30px);
+      top: 0;
+      background: $cwhite;
+    }
+
     .skys-scroll.ads-mobile:not(.skys2) {
       &::before {
         display: none;
@@ -221,7 +224,7 @@
       }
     }
 
-    .block-scroll.ads-mobile  {
+    .block-scroll.ads-mobile {
       width: 100%;
       max-width: 100%;
       max-height: initial;
