@@ -44,8 +44,8 @@ function al_dia_news_preprocess_views_view(&$vars) {
   }
 }
 
-function al_dia_news_preprocess_views_view_table(&$variables) {
-  ksm($variables);
+function al_dia_newsviews_query_alter($view,$query) {
+  ksm($view);
 }
 
  /**
@@ -60,9 +60,11 @@ function al_dia_news_preprocess_views_view_unformatted(&$vars) {
   if($id === 'block_guest'){
     $entityManager = \Drupal::service('entity_type.manager');
 
-    $current_path = \Drupal::service('path.current')->getPath();
+    /* $current_path = \Drupal::service('path.current')->getPath();
     $explodePath = explode('/',$current_path);
-    $nodeId = $explodePath[2];
+    $nodeId = $explodePath[2]; */
+    $node = \Drupal::request()->attributes->get('node');
+    $nodeId = $node->id();
     $entityNode = $entityManager->getStorage('node')->load($nodeId);
     $guestFields = $entityNode->field_guest_block;
     $styleValues = [];
@@ -114,7 +116,3 @@ function al_dia_news_preprocess_views_view_unformatted(&$vars) {
     }
   }
 }
-
-
-
-/* if (isset($variables['paragraph']) && $variables['paragraph']->bundle() === 'modulo_de_contenido_tipo_1') { */
