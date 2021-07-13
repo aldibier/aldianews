@@ -10,7 +10,26 @@ use Drupal\Core\Url;
 use Drupal\Component\Serialization\Json;
 use Drupal\Core\Path\CurrentPathStack;
 
-
+/**
+ * User agent device
+ */
+function is_mobile() {
+  if (empty($_SERVER['HTTP_USER_AGENT'])) {
+      $is_mobile = false;
+  } else if (strpos($_SERVER['HTTP_USER_AGENT'], 'Mobile') !== false
+      // many mobile devices (all iPhone, iPad, etc.)
+      || strpos($_SERVER['HTTP_USER_AGENT'], 'Android') !== false
+      || strpos($_SERVER['HTTP_USER_AGENT'], 'Silk/') !== false
+      || strpos($_SERVER['HTTP_USER_AGENT'], 'Kindle') !== false
+      || strpos($_SERVER['HTTP_USER_AGENT'], 'BlackBerry') !== false
+      || strpos($_SERVER['HTTP_USER_AGENT'], 'Opera Mini') !== false
+      || strpos($_SERVER['HTTP_USER_AGENT'], 'Opera Mobi') !== false) {
+      $is_mobile = true;
+  } else {
+      $is_mobile = false;
+  }
+  return $is_mobile;
+}
 
 /**
  * @file
@@ -280,6 +299,7 @@ function al_dia_news_form_views_exposed_form_alter(&$form, &$form_state) {
  * @param query consulta sql de la vista
  */
 function al_dia_news_general_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
+  ksm($view->id());
   switch ($view->id()) {
     case 'last_news':
       if ($view->getDisplay()->display['id'] == 'block_1') {
@@ -569,9 +589,37 @@ function al_dia_news_general_views_query_alter(ViewExecutable $view, QueryPlugin
         }
       }
     break;
+    case "landing_thought_leaders":
+      if ($view->getDisplay()->display['id'] == 'block_2') {
+        $is_mobile = is_mobile();
+
+        if($is_mobile){
+          $view->setOffset(2);
+          $view->getPager()->setItemsPerPage(16);
+        }
+      }
+    break;
+    case "search_results_al_dia_solr":
+      if ($view->getDisplay()->display['id'] == 'page_1') {
+        $is_mobile = is_mobile();
+
+        if($is_mobile){
+          $view->setOffset(0);
+          $view->getPager()->setItemsPerPage(22);
+        }
+      }
+    break;
+    case "last_news_in_error_page":
+      if ($view->getDisplay()->display['id'] == 'block_1') {
+        $is_mobile = is_mobile();
+
+        if($is_mobile){
+          $view->setOffset(0);
+          $view->getPager()->setItemsPerPage(22);
+        }
+      }
+    break;
   }
-
-
 }
 
 function al_dia_news_general_theme() {
