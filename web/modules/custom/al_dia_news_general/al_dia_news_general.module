@@ -299,7 +299,6 @@ function al_dia_news_form_views_exposed_form_alter(&$form, &$form_state) {
  * @param query consulta sql de la vista
  */
 function al_dia_news_general_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
-  ksm($view->id());
   switch ($view->id()) {
     case 'last_news':
       if ($view->getDisplay()->display['id'] == 'block_1') {
