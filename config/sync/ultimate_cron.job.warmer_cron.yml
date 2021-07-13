@@ -1,0 +1,17 @@
+uuid: 4ddf2262-b539-428f-99d4-0e56bd2ef5d1
+langcode: en
+status: true
+dependencies:
+  module:
+    - warmer
+title: 'Default cron handler'
+id: warmer_cron
+weight: 0
+module: warmer
+callback: warmer_cron
+scheduler:
+  id: simple
+launcher:
+  id: serial
+logger:
+  id: database
