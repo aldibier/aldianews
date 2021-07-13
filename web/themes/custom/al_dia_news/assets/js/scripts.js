@@ -1221,7 +1221,7 @@ function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread n
 
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
-function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
 
 function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
 
@@ -1229,7 +1229,20 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 var initMain = function initMain($, Drupal) {
   window.onload = function () {
-    /// js scroll newsletter
+    // js requeridos en register
+    var city_input = document.querySelector('.webform-submission-register-form #edit-address-city');
+    var city_label = document.querySelector('.webform-submission-register-form label[for="edit-address-city"]');
+    var state_select = document.querySelector('.webform-submission-register-form #edit-address-state-province');
+    var state_label = document.querySelector('.webform-submission-register-form label[for="edit-address-state-province"]');
+
+    if (!!city_input && !!city_label && !!state_select && !!state_label) {
+      city_input.setAttribute("required", "required");
+      city_label.setAttribute("class", "form-required");
+      state_select.setAttribute("required", "required");
+      state_label.setAttribute("class", "form-required");
+    } /// js scroll newsletter
+
+
     var container = document.querySelector('body');
     var elemento = document.getElementById('block-webform-2');
 
@@ -1574,33 +1587,29 @@ var initMain = function initMain($, Drupal) {
           }
         });
       }
-    }); ///// js para modos de visualizacion de guest event
-
-    Array.from(document.querySelectorAll(".view-block-guest .views-field-field-style div")).map(function (e) {
-      if (e != null) {
-        if (e.innerText == "one") {
-          e.closest(".views-row").classList.add("mode-one");
-        } else if (e.innerText == "two") {
-          e.closest(".views-row").classList.add("mode-two");
-        } else if (e.innerText == "three") {
-          e.closest(".views-row").classList.add("mode-three");
-        } else if (e.innerText == "more") {
-          e.closest(".views-row").classList.add("mode-more");
-        }
-      }
     }); ///// js indentificar de primer modo de vista en guest event
 
-    var adversiting = document.querySelector(".three-content-event-advertising");
+    var adversiting = document.querySelector(".three-content-event-advertising iframe");
     var first_element = document.querySelector(".view-block-guest  .views-row:nth-child(1) .views-field-field-style > div");
 
     if (adversiting != null && first_element != null) {
       if (first_element.innerText == "one") {
-        adversiting.classList.add("maxim");
+        if (!!adversiting.parentElement.parentElement) adversiting.parentElement.parentElement.classList.add("maxim");
       } else {
         adversiting.classList.add("dis-none");
       }
-    } //js para form sponsorship 
+    } //js para eliminar publicidad two column events
 
+
+    setTimeout(function () {
+      var adversiting_two_col = document.querySelector(".view-id-block_guest .ads-two-col .block-gamw");
+      var position_two_col = document.querySelector(".view-id-block_guest .mode-two");
+
+      if (!!adversiting_two_col && !!position_two_col) {
+        position_two_col.appendChild(adversiting_two_col);
+        adversiting_two_col.classList.add("four-content-event-advertising", "ads");
+      }
+    }, 2500); //js para form sponsorship 
 
     var addStateAndCity = function addStateAndCity(state, city) {
       var sumoSelect = state.querySelector('.SumoSelect');
@@ -1972,19 +1981,19 @@ __webpack_require__.r(__webpack_exports__);
     /////
     if ($(".page-node-type-news .block-field-blocknodenewsfield-video iframe").length) {
       var url = $(".page-node-type-news .block-field-blocknodenewsfield-video iframe")[0].src += "&mute=1";
-      var video = url.replace("autoplay=0", "autoplay=1").replace(".com", "-nocookie.com");
+      var video = url.replace("autoplay=0", "autoplay=1");
       $(".page-node-type-news .block-field-blocknodenewsfield-video iframe").attr("src", video);
     }
 
     if ($(".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video iframe").length) {
       var url = $(".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video iframe")[0].src += "&mute=1";
-      var video = url.replace("autoplay=0", "autoplay=1").replace(".com", "-nocookie.com");
+      var video = url.replace("autoplay=0", "autoplay=1");
       $(".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video iframe").attr("src", video);
     }
 
     if ($(".watch-live-video .video-embed-field-provider-youtube iframe").length) {
-      var url = $(".watch-live-video .video-embed-field-provider-youtube iframe")[0].src += "";
-      var video = url.replace(".com", "-nocookie.com");
+      var url = $(".watch-live-video .video-embed-field-provider-youtube iframe")[0].src += "&mute=1";
+      var video = url.replace("autoplay=0", "autoplay=1");
       $(".watch-live-video .video-embed-field-provider-youtube iframe").attr("src", video);
     } //--------- menu--------------------//
 
@@ -2317,6 +2326,7 @@ var initScrollMagic = function initScrollMagic($, Drupal) {
 
   var rigthPages = document.querySelector('.content-right-pages');
   var pautas = document.querySelector('.pautas');
+  var leftContent = document.querySelector('.page-node-type-feature-employer .content-left-pages');
 
   if (!!rigthPages && !!pautas) {
     var getDurationScene1 = function getDurationScene1() {
@@ -2325,22 +2335,21 @@ var initScrollMagic = function initScrollMagic($, Drupal) {
 
 
     //------------ not sticky --------------//
+    var limitHigh = 1940;
     if (rigthPages.offsetHeight === pautas.offsetHeight) return;
+    if (leftContent.offsetHeight < limitHigh) return;
     var scene1 = new ScrollMagic.Scene({
       triggerElement: pautas,
       triggerHook: 1,
       duration: getDurationScene1
     }).addTo(new ScrollMagic.Controller()).offset(pautas.offsetHeight + 20).setPin(pautas, {
       pushFollowers: false
-    }).addIndicators({
-      name: "1"
     });
   }
 
   var containerRigth = document.querySelector('.container-right');
   var containerLeft = document.querySelector('.content-news-internal-left');
-  var noticias = document.querySelector('.block-views-blockmore-in-this-section-news-block-1');
-  var limitHigh = 1690; //------------ scroll internas --------------//
+  var noticias = document.querySelector('.block-views-blockmore-in-this-section-news-block-1'); //------------ scroll internas --------------//
 
   if (!!containerRigth && !!noticias) {
     /* setTimeout(()=>{
@@ -2354,8 +2363,9 @@ var initScrollMagic = function initScrollMagic($, Drupal) {
     }; //window.addEventListener("resize", () => resizeActivation(noticias, scene2));
 
 
-    //------------ not sticky --------------//
-    if (containerLeft.offsetHeight < limitHigh) return;
+    var _limitHigh = 1940; //------------ not sticky --------------//
+
+    if (containerLeft.offsetHeight < _limitHigh) return;
     if (containerRigth.offsetHeight === noticias.offsetHeight) return;
     var scene2 = new ScrollMagic.Scene({
       triggerElement: containerRigth,
@@ -2389,7 +2399,7 @@ var initScrollMagic = function initScrollMagic($, Drupal) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
@@ -2533,7 +2543,7 @@ var initSlick = function initSlick($, Drupal) {
   var slider_general = {
     infinite: true,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 3500,
     variableWidth: true
   };
 
@@ -2550,26 +2560,12 @@ var initSlick = function initSlick($, Drupal) {
 
   var slider_three = _objectSpread(_objectSpread({}, slider_general), {}, {
     slidesToShow: 3,
-    slidesToScroll: 3,
-    responsive: [{
-      breakpoint: 500,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2
-      }
-    }]
+    slidesToScroll: 3
   });
 
   var slider_more = _objectSpread(_objectSpread({}, slider_general), {}, {
     slidesToShow: 4,
-    slidesToScroll: 1,
-    responsive: [{
-      breakpoint: 500,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2
-      }
-    }]
+    slidesToScroll: 1
   });
 
   Array.from(document.querySelectorAll(".view-slider-internal-event .views-row")).map(function (e) {
@@ -2619,8 +2615,8 @@ var initSlick = function initSlick($, Drupal) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/usuario/Desktop/Proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
-module.exports = __webpack_require__(/*! /Users/usuario/Desktop/Proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
+__webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
+module.exports = __webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
 
 
 /***/ })

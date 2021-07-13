@@ -11,7 +11,7 @@
     font-size: $px50;
     line-height: 60px;
     text-transform: uppercase;
-    color: $cwhite; 
+    color: $cwhite;
     margin: 0px 0px 25px;
   }
   img {
@@ -130,12 +130,12 @@
 }
 
 .page-node-type-event {
-  .layout-container .width1440{
+  .layout-container .width1440 {
     max-width: none;
   }
   .section-flex {
     display: flex;
-    flex-wrap: wrap;  
+    flex-wrap: wrap;
   }
 
   .breadcrumb {
@@ -198,6 +198,7 @@
   .body-lateral-section-advertising {
     max-width: 400px;
     width: 100%;
+    margin-top: 60px;
   }
   .layout-container .layout-main {
     max-width: 1440px;
@@ -209,7 +210,7 @@
     width: 100%;
     .block {
       margin: 0 auto;
-      @media (max-width: $tablet){
+      @media (max-width: $tablet) {
         margin: 0;
       }
     }
@@ -337,6 +338,11 @@
     max-width: 400px;
   }
   .mode-more {
+    .item-list ul::after {
+      display: block;
+      content: "";
+      width: 314px;
+    }
     .item-list ul li {
       max-width: 300px;
       margin-bottom: 70px;
@@ -446,9 +452,13 @@
     right: 0px;
   }
   ///---- view modes-----//
-  .slider-one .item img {
-    max-width: 570px;
-    margin: 0 auto;
+  .slider-one .item {
+    margin-right: 0px;
+    padding-left: 0px;
+    img{
+      max-width: 570px;
+      margin: 0 auto;
+    }
   }
   .slider-two .item {
     margin-right: 30px;
@@ -595,9 +605,11 @@
   height: 100% !important;
   .views-label.views-label-field-webform {
     font-size: $px35;
+    line-height: 42px;
   }
   label {
     font-size: $px20 !important;
+    line-height: 24px !important;
   }
   input {
     max-width: 405px;
@@ -612,7 +624,8 @@
   .form-item-address-city {
     width: 100%;
   }
-  .SumoSelect>.CaptionCont, form select{
+  .SumoSelect > .CaptionCont,
+  form select {
     min-height: 40px;
     margin-top: 4px;
   }
@@ -637,7 +650,7 @@
 .form-register-events .contact-form {
   max-width: 990px;
   padding: 80px 75px 50px;
-  @media (max-width: $desktop){
+  @media (max-width: $desktop) {
     padding: 50px 20px;
   }
 }
@@ -699,7 +712,7 @@
   .form-actions {
     width: 100%;
     max-width: 150px;
-  } 
+  }
 }
 
 //------------------ Media Queries ------------//
@@ -720,7 +733,7 @@
     }
   }
   .page-node-type-event {
-    .block-gamw{
+    .block-gamw {
       display: flex;
       justify-content: center;
     }
@@ -931,15 +944,17 @@
       &:last-child {
         max-width: none;
       }
-      &:nth-child(2){
-        border-right:0px;
+      &:nth-child(2) {
+        border-right: 0px;
       }
     }
     .mode-more {
       .item-list ul li {
         max-width: 140px;
         margin-bottom: 50px;
-        &:nth-child(4n + 4):before {
+        border-right: 0px;
+        &:nth-child(4n + 4):before,
+        &:nth-child(3):before {
           display: block;
           content: "";
           width: 100%;
@@ -954,8 +969,10 @@
         &:nth-child(6) {
           border-right: 0 !important;
         }
-        &:nth-child(3n) {
-          border-right: 0.5px solid #b1b1b1;
+        &:nth-child(2n) {
+          border-left: 0.5px solid #b1b1b1;
+          padding-left: 20px;
+          margin-left: 0px;
         }
       }
       .event-guest-photo {
@@ -1006,8 +1023,8 @@
       height: 15px;
     }
     ///---- view modes-----//
-    .slider-one{
-      .slick-list{
+    .slider-one {
+      .slick-list {
         max-width: none;
       }
       .item img {
@@ -1016,9 +1033,10 @@
       .item {
         margin-right: 0px;
       }
-    } 
+    }
     .slider-two .item {
       margin-right: 10px;
+      padding-right: 0px;
     }
     .slider-three .item {
       width: 115px;
@@ -1094,8 +1112,8 @@
     #edit-container--2 {
       width: 100%;
     }
-  
-    .views-label.views-label-field-webform{
+
+    .views-label.views-label-field-webform {
       font-size: 20px;
     }
     #edit-address--wrapper {
@@ -1105,21 +1123,22 @@
         margin: 0px 0px 20px;
       }
     }
-    .form-item{
+    .form-item {
       margin: 0 0 20px;
     }
-    label{
+    label {
       font-size: 15px !important;
     }
-    input{
+    input {
       min-height: 30px;
     }
-    .SumoSelect>.CaptionCont, form select{
+    .SumoSelect > .CaptionCont,
+    form select {
       min-height: 30px;
     }
-    .form-actions .button{
+    .form-actions .button {
       margin-top: 0px;
-    max-width: 110px;
+      max-width: 110px;
     }
   }
   .webform-submission-sponsorship-upcoming-event-form {

@@ -1,0 +1,23 @@
+uuid: 57642d72-ad35-402b-996f-76933dd53ae0
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: podcast_categories
+label: 'Podcast categories'
+type: 'canonical_entities:taxonomy_term'
+pattern: 'podcast/[term:name]'
+selection_criteria:
+  92d89a06-b0eb-458a-bc40-ebb10eca7586:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      podcast_category: podcast_category
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: 92d89a06-b0eb-458a-bc40-ebb10eca7586
+selection_logic: and
+weight: -5
+relationships: {  }

@@ -179,7 +179,7 @@
   .three-content-buttons {
     .field-content {
       display: flex;
-      @media (max-width: $tablet){
+      @media (max-width: $tablet) {
         justify-content: center;
       }
     }
@@ -274,6 +274,10 @@
     font-family: $PrNovacond-light;
   }
 }
+
+.page-node-type-feature-employer .region-header #block-al-dia-news-branding {
+  margin: -10px 0 10px -25px;
+}
 .page-node-type-job div.block-extra-field-blocknodenewsaddtoany {
   @media screen and (max-width: $broken) {
     margin-bottom: 30px;
@@ -301,20 +305,28 @@
   }
 }
 
-article[about="/terms-of-service"] .content-right-pages{
+article[about="/terms-of-service"] .content-right-pages {
   @media (max-width: $tablet) {
- 
     margin: 10px 0 40px;
-
   }
 }
- 
-article[about="/contact-us"] .content-left-pages{
+
+article[about="/contact-us"] .content-left-pages {
   margin-bottom: 60px;
 }
 
-article[about="/about-us"] .content-left-pages{
+article[about="/about-us"] .content-left-pages {
   @media (max-width: $tablet) {
     padding: 0 0 0px;
+  }
+}
+
+// Logo aldia en titulos
+
+.page-node-type-page {
+  h1 {
+    .aldia-logo-in-text {
+      max-width: 115px;
+    }
   }
 }

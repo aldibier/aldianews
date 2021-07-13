@@ -11,7 +11,7 @@
 
     @media screen and (min-width: $tablet) {
       min-height: 470px;
-      margin: 0 -80px 20px;
+      margin: 0 -80px 70px;
       padding: 40px 80px 70px;
       position: relative;
     }
@@ -84,16 +84,17 @@
 
   .views-infinite-scroll-content-wrapper {
     display: grid;
-    grid-template-columns: minmax(200px, 420px) minmax(200px, 440px) minmax(
-        200px,
-        420px
-      );
+    grid-template-columns: minmax(200px, 420px) minmax(200px, 440px) minmax(200px,420px);
     gap: 0px 40px;
     overflow: hidden;
     grid-auto-flow: dense;
-
+    @media (min-width: $broken) {
+      .banner-horizontal {
+        margin: 40px 0 50px;
+      }
+    }
     .views-row {
-      margin: 40px 0;
+      margin: 0 0 80px;
       position: relative;
 
       &::after {
@@ -118,19 +119,8 @@
         right: 0;
         margin: -40px auto;
       }
-      
-      @media screen and (min-width: $tablet) {
-        &:nth-child(-n + 3){
-          margin-top: 0;
-        }
-      }
 
       @media screen and (max-width: $tablet) {
-
-        &:first-child{
-          margin-top: 0;
-        }
-
         &::before {
           width: 100%;
           margin: -20px auto;
@@ -152,7 +142,7 @@
       }
       .views-row {
         width: 100%;
-        margin: 20px 0;
+        margin: 0 0 40px;
         padding: 0;
       }
     }
@@ -189,7 +179,7 @@
       margin: 0 auto;
       .field-content {
         position: relative;
-        left: 85px;
+        left: 112px;
         bottom: 310px;
         line-height: 28px;
         color: $cwhite;
@@ -199,10 +189,6 @@
         max-width: 1200px;
         padding-right: 50px;
         font-family: $PrNovacond-reg;
-        @media (min-width: 1500px){
-          left: 112px;
-
-        }
       }
     }
 
@@ -284,9 +270,9 @@
       margin-left: 15px;
     }
   }
-  .non-adversiting .block-content-left{
-    margin: 0 auto;
-  }
+  // .non-adversiting .block-content-left {
+  //   margin: 0 auto;
+  // }
 
   .block-views-blockcarousel-jobs-landing-block-1 {
     margin: 75px auto 100px;
@@ -344,7 +330,6 @@
   }
 }
 
-
 // estilos de bloque careers news
 .block-views-blockcareer-news-block-4 {
   width: 21.095%;
@@ -379,7 +364,7 @@
     font-family: $PrNovacond-reg;
     color: $corange;
     margin-top: 10px;
-    @media (max-width: $desktop){
+    @media (max-width: $desktop) {
       font-family: $PrNovacond-Sbold;
     }
   }
@@ -525,19 +510,23 @@
   width: 100%;
 
   .view-content {
+    .views-row:nth-child(1) {
+      max-width: 418px;
+      padding: 0px;
+    }
     .views-row:nth-child(2) {
       border-right: 1px solid $cgrey4;
-      padding-right: 15.4px;
+      max-width: 418px;
+      padding: 0px;
     }
 
     .views-row:nth-child(3) {
-      padding-right: 15.4px;
-      padding-left: 15.4px;
+      padding: 0px;
       border-right: 0px solid $cgrey4;
       border-bottom: 0px;
       margin-bottom: 60px;
       flex-direction: column;
-
+      max-width: 400px;
       &::before {
         display: none;
       }
@@ -546,7 +535,7 @@
         max-width: 400px;
         max-height: 235px;
         overflow: hidden;
-        margin-bottom: 25px;
+        margin: 0 0 25px auto;
       }
 
       .card-title {
@@ -736,29 +725,25 @@
   }
 }
 
-@media (max-width: $broken){
+@media (max-width: $broken) {
   .path-jobs .layout-container .layout-main {
     margin: 30px auto 10px;
-    .watch-live-button{
+    .watch-live-button {
       margin: 0 auto 20px;
     }
-    .style-jobs .breadcrumb{
+    .style-jobs .breadcrumb {
       margin: 20px auto 10px;
     }
-    .non-adversiting .content-right-pages{
-      margin: 0px;
-    }
+    // .non-adversiting .content-right-pages {
+    //   margin: 0px;
+    // }
   }
 }
 
-
-
-
 @media (max-width: $tablet) {
-  
-#block-system-menu-block-jobs-landing-menu .menu{
-  padding: 20px 25px 0;
-}
+  #block-system-menu-block-jobs-landing-menu .menu {
+    padding: 20px 25px 0;
+  }
   .jobs.style-jobs {
     h1 {
       bottom: 110px;
@@ -811,7 +796,8 @@
       }
 
       .button-apply {
-        margin-top: 25px;
+        margin-top: 10px;
+        margin-bottom: 20px;
       }
     }
 
@@ -961,22 +947,39 @@
         align-items: center;
         border-top: 1px;
         width: 100%;
+        flex-direction: row;
+        border-bottom: 1px solid #b1b1b1;
+        margin-bottom: 10px;
         .views-field-nothing {
           max-width: none;
+        }
+        .views-field-field-image {
+          max-width: 140px;
+          max-height: 80px;
+          width: 100%;
+          margin-right: 20px;
+        }
+        .card-date::before {
+          display: none;
         }
       }
       .views-row:nth-child(3) {
         padding-right: 0px;
-        border-right: 0px solid $cgrey4;
         margin-bottom: 20px;
         margin-right: 0px;
         max-width: none;
         border-top: 1px;
         width: 100%;
+        flex-direction: row;
+        margin-bottom: 10px;
+        border-bottom: 0px;
+        padding-top: 0px;
         .views-field-field-image {
-          max-width: 340px;
-          max-height: 180px;
           margin-bottom: 0px;
+          max-width: 140px;
+          max-height: 80px;
+          width: 100%;
+          margin-right: 20px;
         }
         .views-field-nothing {
           max-width: none;
@@ -993,7 +996,6 @@
 
       .views-row:nth-child(4) {
         position: relative;
-
         &::before {
           display: none;
         }
@@ -1003,6 +1005,10 @@
         &::before {
           display: none;
         }
+      }
+      .views-row:nth-child(7),
+      .views-row:nth-child(8) {
+        border-bottom: 0px solid $cgrey4;
       }
     }
   }
@@ -1123,7 +1129,7 @@
       .views-row:nth-child(3) {
         padding-left: 0px;
         margin-right: 0px;
-        padding-top: 30px;
+        padding-top: 0px;
         padding-bottom: 0px;
 
         .views-field-field-image {

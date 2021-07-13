@@ -173,12 +173,17 @@
       margin-right: 0;
     }
 
+    @media screen and (max-width: $tablet) {
+      text-align: center;
+    }
+
     > .content,
     .field--type-text-with-summary {
-      margin-bottom: 90px;
+      margin-bottom: 60px;
 
       @media screen and (max-width: $tablet) {
         margin-bottom: 20px;
+        text-align: initial;
       }
     }
 
@@ -855,8 +860,8 @@
       color: #ed1c24;
 
       img {
-        width: 175px;
-        height: 41.18px;
+        width: 180px;
+        height: 35px;
         margin: 10px 0 -5px;
       }
     }
@@ -914,7 +919,7 @@
         padding: 0 0 5px;
 
         img {
-          width: 70px;
+          width: 85px;
           height: 17.65px;
           margin: 0 0 -2px 5px;
         }
@@ -943,27 +948,29 @@
     }
   }
 
-  .view-events-in-al-dia-live{
-    @media screen and (max-width: $broken){
-
-    .card-event{
-  
-      .card-event-title{
+  .view-events-in-al-dia-live {
+    @media screen and (max-width: $broken) {
+      .card-event {
+        .card-event-title {
           min-height: auto;
         }
-        .card-event-date{
+        .card-event-date {
           font-family: $PrNovacond-Sbold;
         }
       }
-    } 
-    .view-content{
-      margin-bottom: 0px;
     }
-  } 
-}
-.view-id-events_in_al_dia_live{
-  margin: 0 auto 0px;
-  .banner-horizontal{
-    margin: 0 -15px 0px;
+    .view-content {
+      margin-bottom: 28px;
+
+      @media screen and (max-width: $tablet) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  h1 {
+    .aldia-logo-in-text {
+      max-width: 108px;
+    }
   }
 }

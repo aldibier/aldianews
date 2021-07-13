@@ -22,7 +22,7 @@
 {% endif %}
 {% if device  == 'desktop' %}
 	{% if rows.block_type[0] == 'block_top' %}
-		<div class="block-advertising-top">{{ drupal_entity('block', 'gamwadvertisement_29') }}</div>
+		<div class="block-advertising-top ads">{{ drupal_entity('block', 'gamwadvertisement_29') }}</div>
 	{% endif %}
 {% endif %}
 {% for row in rows %}
@@ -40,8 +40,8 @@
 {% endfor %}
 
 {% if (rows.block_type[0] == 'advertising_complete') and (device  == 'desktop') %}
-	<div class="block-advertising-complete">{{ drupal_entity('block', 'gamwadvertisement_35') }}</div>
+	<div class="block-advertising-complete ads">{{ drupal_entity('block', 'gamwadvertisement_35') }}</div>
 {% endif %}
 {% if (rows.block_type[0] == 'block_bottom') and (device  == 'desktop') %}
-	<div class="block-advertising-bottom">{{ drupal_entity('block', 'gamwadvertisement_28') }}</div>
+	<div class="block-advertising-bottom ads">{{ drupal_entity('block', 'gamwadvertisement_28') }}</div>
 {% endif %}

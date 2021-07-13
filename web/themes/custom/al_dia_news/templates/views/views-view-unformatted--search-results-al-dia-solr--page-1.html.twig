@@ -35,15 +35,15 @@
 
 		{## block ##}
 		{% if loop.index  == 15 %}
-			<div class="block-scroll ads">{{ drupal_entity('block', 'gamwadvertisement_16') }}</div>
+			<span class="block-scroll ads">{{ drupal_entity('block', 'gamwadvertisement_16') }}</span>
 		{% endif %}
 
 		{## skyscraper ##}
 		{% if loop.index  == 22 %}
-			<div class="skys-scroll ads">{{ drupal_entity('block', 'gamwadvertisement_17') }}</div>
+			<span class="skys-scroll ads">{{ drupal_entity('block', 'gamwadvertisement_17') }}</span>
 		{% endif %}
 		{% if loop.index  == 24 %}
-			<div class="skys-scroll skys2 ads">{{ drupal_entity('block', 'gamwadvertisement_20') }}</div>
+			<span class="skys-scroll skys2 ads">{{ drupal_entity('block', 'gamwadvertisement_20') }}</span>
 		{% endif %}
 
 		{% if loop.index in index_hide_lines %}
@@ -59,22 +59,25 @@
 
 		{## banner ##}
 		{% if loop.index == 9 %}
-			<div class="banner-scroll ads">{{ drupal_entity('block', 'gamwadvertisement_15') }}</div>
+			<span class="banner-scroll ads">{{ drupal_entity('block', 'gamwadvertisement_15') }}</span>
 		{% endif %}
 		{% if loop.index == 17 %}
-			<div class="banner-scroll ban2 ads">{{ drupal_entity('block', 'gamwadvertisement_18') }}</div>
+			<span class="banner-scroll ban2 ads">{{ drupal_entity('block', 'gamwadvertisement_18') }}</span>
 		{% endif %}
 		{% if loop.index == 23 %}
-			<div class="banner-scroll ban3 ads">{{ drupal_entity('block', 'gamwadvertisement_19') }}</div>
+			<span class="banner-scroll ban3 ads">{{ drupal_entity('block', 'gamwadvertisement_19') }}</span>
 		{% endif %}
 		{% if loop.index == 31 %}
-			<div class="banner-scroll last-banner ads">{{ drupal_entity('block', 'gamwadvertisement_36') }}</div>
+			<span class="banner-scroll last-banner ads">{{ drupal_entity('block', 'gamwadvertisement_36') }}</span>
 		{% endif %}
 
 	{% endfor %}
 {% endif %}
 
 {% if device == 'mobile' %}
+
+	{% set index_hide_lines = [5,6,13,14] %}
+
 	{% for row in rows %}
 
 		{%
@@ -85,33 +88,40 @@
 
 		{## block ##}
 		{% if loop.index  == 10 %}
-			<div class="block-scroll ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_16') }}</div>
+			<span class="block-scroll ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_16') }}</span>
 		{% endif %}
 
 		{## skyscraper ##}
 		{% if loop.index  == 17 %}
-			<div class="skys-scroll ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_17') }}</div>
+			<span class="skys-scroll ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_17') }}</span>
 		{% endif %}
 		{% if loop.index  == 19 %}
-			<div class="skys-scroll skys2 ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_20') }}</div>
+			<span class="skys-scroll skys2 ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_20') }}</span>
+		{% endif %}
+
+		{% if loop.index in index_hide_lines %}
+			<div class="card-one-column views-row not-show-line-mobile">
+				{{- row.content -}}
+			</div>
+		{% else %}
+			<div{{row.attributes.addClass(row_classes)}}>
+				{{- row.content -}}
+			</div>
 		{% endif %}
 
 		{## banner ##}
 		{% if loop.index == 6 %}
-			<div class="banner-scroll ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_15') }}</div>
+			<span class="banner-scroll ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_15') }}</span>
 		{% endif %}
 		{% if loop.index == 14 %}
-			<div class="banner-scroll ban2 ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_18') }}</div>
+			<span class="banner-scroll ban2 ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_18') }}</span>
 		{% endif %}
 		{% if loop.index == 18 %}
-			<div class="banner-scroll ban3 ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_19') }}</div>
+			<span class="banner-scroll ban3 ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_19') }}</span>
 		{% endif %}
 		{% if loop.index == 24 %}
-			<div class="banner-scroll last-banner ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_36') }}</div>
+			<span class="banner-scroll last-banner ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_36') }}</span>
 		{% endif %}
 
-		<div{{row.attributes.addClass(row_classes)}}>
-			{{- row.content -}}
-		</div>
 	{% endfor %}
 {% endif %}

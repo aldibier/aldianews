@@ -29,6 +29,7 @@ display:
           label: Status
           settings:
             format_custom_true: Activo
+            format_custom_false: Blocked
         roles_target_id:
           label: Roles
         operations:
@@ -42,6 +43,8 @@ display:
             group_items:
               1:
                 title: Activo
+              2:
+                title: Blocked
         roles_target_id:
           expose:
             label: Rol

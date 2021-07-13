@@ -1,5 +1,18 @@
 const initMain = ($, Drupal) => {
 	window.onload = function () {
+		// js requeridos en register
+		var city_input = document.querySelector('.webform-submission-register-form #edit-address-city');
+		var city_label = document.querySelector('.webform-submission-register-form label[for="edit-address-city"]');
+		var state_select = document.querySelector('.webform-submission-register-form #edit-address-state-province');
+		var state_label = document.querySelector('.webform-submission-register-form label[for="edit-address-state-province"]');
+
+		if(!!city_input && !!city_label && !!state_select && !!state_label){
+			city_input.setAttribute("required", "required");
+			city_label.setAttribute("class", "form-required");
+			state_select.setAttribute("required", "required");
+			state_label.setAttribute("class", "form-required");
+		}
+
 		/// js scroll newsletter
 		var container = document.querySelector('body');
 		var elemento = document.getElementById('block-webform-2');
@@ -416,40 +429,36 @@ const initMain = ($, Drupal) => {
 			}
 		});
 
-		///// js para modos de visualizacion de guest event
-
-		Array.from(
-			document.querySelectorAll(
-				".view-block-guest .views-field-field-style div"
-			)
-		).map(e => {
-			if (e != null) {
-				if (e.innerText == "one") {
-					e.closest(".views-row").classList.add("mode-one");
-				} else if (e.innerText == "two") {
-					e.closest(".views-row").classList.add("mode-two");
-				} else if (e.innerText == "three") {
-					e.closest(".views-row").classList.add("mode-three");
-				} else if (e.innerText == "more") {
-					e.closest(".views-row").classList.add("mode-more");
-				}
-			}
-		});
-
 		///// js indentificar de primer modo de vista en guest event
 		var adversiting = document.querySelector(
-			".three-content-event-advertising"
+			".three-content-event-advertising iframe"
 		);
 		var first_element = document.querySelector(
 			".view-block-guest  .views-row:nth-child(1) .views-field-field-style > div"
 		);
 		if (adversiting != null && first_element != null) {
 			if (first_element.innerText == "one") {
-				adversiting.classList.add("maxim");
+				if(!!adversiting.parentElement.parentElement) adversiting.parentElement.parentElement.classList.add("maxim");
 			} else {
 				adversiting.classList.add("dis-none");
-			}
+			} 
+			
 		}
+
+      //js para eliminar publicidad two column events
+	  setTimeout(() => {
+	  	var adversiting_two_col = document.querySelector(
+		".view-id-block_guest .ads-two-col .block-gamw"
+		);
+		var position_two_col = document.querySelector(
+			".view-id-block_guest .mode-two"
+		);
+		if (!!adversiting_two_col && !!position_two_col) {
+			position_two_col.appendChild(adversiting_two_col);
+			adversiting_two_col.classList.add("four-content-event-advertising", "ads");
+		}
+		}, 2500);
+
 
 		//js para form sponsorship 
 

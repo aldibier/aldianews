@@ -217,7 +217,7 @@
     width: 100%;
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       top: 0;
       left: 0;
@@ -302,39 +302,33 @@
   }
 
   .views-infinite-scroll-content-wrapper {
+    margin-bottom: 120px;
     display: grid;
-    grid-template-columns: minmax(250px, 355px) minmax(250px, 355px) minmax(250px,355px);
+    grid-template-columns: minmax(250px, 400px) minmax(250px, 400px) minmax(250px,400px);
     grid-auto-flow: dense;
-    grid-gap: 0 85px;
+    grid-gap: 0 40px;
     justify-content: center;
     overflow: hidden;
    
-    .banner-scroll {
-      margin-top: 80px;
-    }
-
     @media (max-width: $broken) {
       position: relative;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
+      grid-auto-rows: initial;
       grid-auto-flow: dense;
       grid-gap: 0 30px;
       overflow: hidden;
-  
-      .banner-scroll {
-        margin-top: 30px;
-      }
-      .skys-scroll{
-        grid-row: span 1;
-      }
+    }
+
+    @media (max-width: $tablet) {
+      margin-bottom: 30px;
+      overflow: initial;
     }
 
     .views-row {
       max-width: 440px;
-      margin: 50px 0 40px;
+      margin: 0 0 90px;
       position: relative;
-
-      $screen-query: 993px;
 
       &::after {
         content: "";
@@ -342,35 +336,29 @@
         height: 100%;
         position: absolute;
         top: 0;
-        right: calc(0% - 44px);
+        right: calc(0% - 20px);
         background-color: $cgrey4;
       }
 
       &::before {
         display: block;
         content: "";
-        width: calc(100% + 85px);
+        width: calc(100% + 40px);
         height: 1px;
-        left: -43px;
+        left: -20px;
         bottom: 0;
         background: $cgrey4;
         position: absolute;
         right: 0;
-        margin: -40px auto;
+        margin: -45px auto;
       }
 
-      @media screen and (min-width: $screen-query) {
-        &:nth-child(-n + 3){
-          margin-top: 0;
-        }
+      @media screen and (min-width: $broken) {
+        height: 345px;
       }
 
       @media screen and (max-width: $broken) {
-        margin: 30px 0;
-
-        &:nth-child(-n + 2){
-          margin-top: 0;
-        }
+        margin: 0 0 60px;
 
         &::after {
           right: calc(0% - 15px);
@@ -381,6 +369,33 @@
           margin: -30px auto;
           left: 0;
           right: 0;
+        }
+      }
+
+      @media screen and (max-width: $tablet) {
+        &::before  {
+          display: none;
+        }
+
+        &:nth-of-type(even) {
+          &::after {
+            display: none;
+          }
+        }
+
+        &:nth-of-type(odd) {
+          &::before {
+            content: "";
+            width: calc(100vw - 30px);
+            height: 1px;
+            margin: -30px auto;
+            display: block;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: $cgrey4;
+          }
         }
       }
     }
@@ -643,7 +658,13 @@
 
     .views-infinite-scroll-content-wrapper {
       .views-row {
-        margin: 30px 0;
+
+        &:nth-last-of-type(-n+2){
+          margin-bottom: 0;
+          &::before {
+            display: none !important;
+          }
+        }
 
         .author-information-more-content {
           flex-wrap: wrap;

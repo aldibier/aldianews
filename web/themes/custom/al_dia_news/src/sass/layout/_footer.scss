@@ -209,7 +209,7 @@
     bottom: 0;
     left: 402px;
     width: 100%;
-    max-width: 390px;
+    max-width: 290px;
     z-index: 4;
 
     a {
@@ -242,6 +242,7 @@
       align-items: center;
       justify-content: center;
       transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+      color: #292929;
 
       > div {
         transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
@@ -264,6 +265,14 @@
         > li {
           transform: scale(1.2);
           transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+        }
+      }
+
+      .menu_link_content {
+        padding-top: 3px;
+
+        .icon {
+          font-size: 18px;
         }
       }
     }

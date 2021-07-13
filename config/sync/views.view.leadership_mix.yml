@@ -24,7 +24,6 @@ dependencies:
     - node
     - taxonomy
     - user
-    - views_block_area
     - views_field_view
 id: leadership_mix
 label: 'LEADERSHIP MIX'
@@ -117,7 +116,7 @@ display:
           exclude: true
           alter:
             alter_text: true
-            text: "<span class=\"category-title\">\r\n    <h1>AL DÍA <a href=\"/leadership\">LEADERSHIP</a></h1>\r\n</span>"
+            text: "<span class=\"category-title\">\r\n    <h2>AL DÍA <a href=\"/leadership\">LEADERSHIP</a></h2>\r\n</span>"
             make_link: false
             path: ''
             absolute: false
@@ -553,17 +552,7 @@ display:
           plugin_id: standard
       title: 'LEADERSHIP MIX'
       header: {  }
-      footer:
-        views_block_area:
-          id: views_block_area
-          table: views
-          field: views_block_area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: false
-          block_id: 'block_group:home_category_leadership_bottom_mobile'
-          plugin_id: views_block_area
+      footer: {  }
       empty: {  }
       relationships:
         reverse__node__field_category:

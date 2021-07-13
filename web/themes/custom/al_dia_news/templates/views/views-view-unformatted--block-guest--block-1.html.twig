@@ -22,12 +22,27 @@
 {% endif %}
 
 {% for row in rows %}
+
+	{% set style_mode = row['content']['style'] %}
+	{% set class_style = 'mode-' ~ style_mode %}
+
 	{%
 		set row_classes = [
 		default_row_class ? 'views-row',
-		]%}
+		class_style
+		]
+	%}
 
-	<div{{row.attributes.addClass(row_classes)}}>
-		{{- row.content -}}
-	</div>
+	{% if style_mode == 'two'%}
+		<div{{row.attributes.addClass(row_classes)}}>
+			{{- row.content -}}
+			<div class="four-content-event-advertising ads">{{ drupal_entity('block', 'gamwadvertisement_37') }}</div>
+		</div>
+	{% else %}
+		<div{{row.attributes.addClass(row_classes)}}>
+			{{- row.content -}}
+		</div>
+	{% endif %}
+
+
 {% endfor %}

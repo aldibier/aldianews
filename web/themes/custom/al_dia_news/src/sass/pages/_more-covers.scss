@@ -10,6 +10,17 @@
     }
   }
 
+  header {
+    h1.selectionShareable {
+      font-size: 1.357em;
+      margin: 0;
+
+      @media (max-width: $tablet) {
+        margin: 0px 0 10px;
+      }
+    }
+  }
+
   .block-field-blocknodemore-coversfield-cover-page {
     img {
       width: 100%;
@@ -99,7 +110,8 @@
 
           &:before {
             content: "";
-            width: calc(100% - 440px);
+            // width: calc(100% - 440px);
+            width: 95%;
             height: 1px;
             position: absolute;
             left: 0;
@@ -278,6 +290,10 @@
       justify-content: center;
     }
   }
+
+  .content-left-pages {
+    position: relative;
+  }
 }
 
 // --------landing more-covers -----------///
@@ -382,7 +398,8 @@
       margin-bottom: 40px;
       min-height: 225px;
       margin-bottom: 10px;
-      &:nth-child(2n):before {
+      padding-bottom: 20px;
+      &:nth-child(odd):before {
         display: block;
         content: "";
         width: 100%;
