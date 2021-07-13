@@ -23,18 +23,26 @@
 
 {% for row in rows %}
 
+	{% set style_mode = row['content']['style'] %}
+	{% set class_style = 'mode-' ~ style_mode %}
+
 	{%
 		set row_classes = [
 		default_row_class ? 'views-row',
+		class_style
 		]
 	%}
 
-	<div{{row.attributes.addClass(row_classes)}}>
-		<div class="ads-two-col dis-none">
-			<div class=" ads">{{ drupal_entity('block', 'gamwadvertisement_37') }}</div>
+	{% if style_mode == 'two'%}
+		<div{{row.attributes.addClass(row_classes)}}>
+			{{- row.content -}}
+			<div class="four-content-event-advertising ads">{{ drupal_entity('block', 'gamwadvertisement_37') }}</div>
 		</div>
-		{{- row.content -}}
-	</div>
+	{% else %}
+		<div{{row.attributes.addClass(row_classes)}}>
+			{{- row.content -}}
+		</div>
+	{% endif %}
 
 
 {% endfor %}

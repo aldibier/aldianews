@@ -429,26 +429,6 @@ const initMain = ($, Drupal) => {
 			}
 		});
 
-		///// js para modos de visualizacion de guest event
-
-		Array.from(
-			document.querySelectorAll(
-				".view-block-guest .views-field-field-style div"
-			)
-		).map(e => {
-			if (e != null) {
-				if (e.innerText == "one") {
-					e.closest(".views-row").classList.add("mode-one");
-				} else if (e.innerText == "two") {
-					e.closest(".views-row").classList.add("mode-two");
-				} else if (e.innerText == "three") {
-					e.closest(".views-row").classList.add("mode-three");
-				} else if (e.innerText == "more") {
-					e.closest(".views-row").classList.add("mode-more");
-				}
-			}
-		});
-
 		///// js indentificar de primer modo de vista en guest event
 		var adversiting = document.querySelector(
 			".three-content-event-advertising iframe"
@@ -464,7 +444,6 @@ const initMain = ($, Drupal) => {
 			} 
 			
 		}
-
 
       //js para eliminar publicidad two column events
 	  setTimeout(() => {

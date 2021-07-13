@@ -44,6 +44,10 @@ function al_dia_news_preprocess_views_view(&$vars) {
   }
 }
 
+function al_dia_news_preprocess_views_view_table(&$variables) {
+  ksm($variables);
+}
+
  /**
  * Implements hook_preprocess_views_view_unformatted()
  */
@@ -51,6 +55,32 @@ function al_dia_news_preprocess_views_view_unformatted(&$vars) {
   $view = $vars['view'];
   $id = $view->id();
   $display = $view->getDisplay();
+
+
+  if($id === 'block_guest'){
+    $entityManager = \Drupal::service('entity_type.manager');
+
+    $current_path = \Drupal::service('path.current')->getPath();
+    $explodePath = explode('/',$current_path);
+    $nodeId = $explodePath[2];
+    $entityNode = $entityManager->getStorage('node')->load($nodeId);
+    $guestFields = $entityNode->field_guest_block;
+    $styleValues = [];
+
+    if(isset($guestFields)){
+      foreach($guestFields as $guestField){
+        $paragraphId = $guestField->getValue()['target_id'];
+        $entityParagraph = $entityManager->getStorage('paragraph')->load($paragraphId);
+        $styleValues[] = $entityParagraph->field_style->value;
+      }
+    }
+
+    if(!empty($styleValues)){
+      foreach($vars['rows'] as $index => $row){
+        $vars['rows'][$index]['content']['style'] = $styleValues[$index];
+      }
+    }
+  }
 
   if (is_mobile()) {
     $vars['device'] = 'mobile';
@@ -85,7 +115,6 @@ function al_dia_news_preprocess_views_view_unformatted(&$vars) {
   }
 }
 
-function al_dia_news_preprocess_paragraph(&$vars) {
 
-}
 
+/* if (isset($variables['paragraph']) && $variables['paragraph']->bundle() === 'modulo_de_contenido_tipo_1') { */
