@@ -201,13 +201,15 @@
     }
 
     .skys-scroll.ads.ads-mobile {
-      content: '';
-      width: 35px;
-      height: 100%;
-      position: absolute;
-      left: calc(0% - 30px);
-      top: 0;
-      background: $cwhite;
+      &::after {
+        content: '';
+        width: 35px;
+        height: 100%;
+        position: absolute;
+        left: calc(0% - 30px);
+        top: 0;
+        background: $cwhite;
+      }
     }
 
     .skys-scroll.ads-mobile:not(.skys2) {
