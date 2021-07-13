@@ -1,7 +1,9 @@
 uuid: 0dd6f573-18d2-4387-a7f5-3f4fcb25887c
 langcode: en
 status: open
-dependencies: {  }
+dependencies:
+  module:
+    - webform_sendgrid
 open: null
 close: null
 weight: 0
@@ -223,5 +225,18 @@ access:
     roles: {  }
     users: {  }
     permissions: {  }
-handlers: {  }
+handlers:
+  sendgrid:
+    id: sendgrid
+    label: SendGrid
+    notes: ''
+    handler_id: sendgrid
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      list: 8b25a693-5ace-4afe-b2f3-18ff6a426fdb
+      email_field: email
+      reserved_fields: {  }
+      custom_fields: {  }
 variants: {  }
