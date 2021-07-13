@@ -1081,7 +1081,7 @@ body.open-menu {
 
       &.open {
         background: $cwhite url("../img/user.svg") center top no-repeat;
-        @media (max-width: $desktop) {
+        @media (min-width: $desktop) {
           margin-bottom: 0px;
           border-top: 16px solid white;
           height: 65px;
