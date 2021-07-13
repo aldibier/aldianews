@@ -709,7 +709,15 @@
   }
 
   @media (max-width: $tablet-min) {  
-    margin: 0 auto -43px;
+    margin: 0 auto ;
+
+    .form-item {
+      margin: 0 0 15px;
+    }
+
+    .field--type-address .address-container-inline .form-item {
+      max-width: 100%;
+    }
 
     .layout-checkout-form {
       display: flex;
@@ -799,11 +807,7 @@
         }
       }
     }
-
-    .form-item {
-      margin: 0;
-    }
-
+    
     .paypal-buttons-container {
       padding: 0;
       margin: 20px auto 0;
