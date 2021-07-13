@@ -369,4 +369,124 @@
     });
     }
   };
+
+  Drupal.behaviors.aldia_news_sumoselect = {
+    attach: function(context) {
+      //// sumo select
+
+      const addSumoselect = (select) => {
+        if (select!= null) {
+          select.classList.add("testselect1");
+          $(".testselect1").SumoSelect({
+            forceCustomRendering: true,
+            floatWidth: 300
+          });
+        }
+      }
+
+      Array.from(document.querySelectorAll(".region-content select")).map(select => {
+        addSumoselect(select)
+      });
+
+      Array.from(document.querySelectorAll("form select")).map(select => {
+        addSumoselect(select)
+      });
+    }
+  }
+
+  Drupal.behaviors.aldia_news_state_and_city = {
+    attach: function(context) {
+        const addStateAndCity = (state, city) => {
+          let sumoSelect = state.querySelector('.SumoSelect');
+          let labelState = state.querySelector('label');
+          let labelCity = city.querySelector('label');
+          let selectState = state.querySelector('select');
+          let inputCity = city.querySelector('input');
+    
+          sumoSelect.setAttribute('tabindex', '0');
+          state.classList.remove('disabled');
+          city.classList.remove('disabled');
+    
+          labelState.classList.add('js-form-required', 'form-required');
+          selectState.classList.add('required');
+          selectState.setAttribute('required', 'required')
+          selectState.setAttribute('aria-required', 'true');
+          selectState.removeAttribute('disabled')
+    
+          labelCity.classList.add('js-form-required', 'form-required')
+          inputCity.classList.add('required');
+          inputCity.setAttribute('required', 'required')
+          inputCity.setAttribute('aria-required', 'true');
+          inputCity.removeAttribute('disabled');
+        }
+
+        const removeStateAndCity = (state, city) => {
+          let sumoSelect = state.querySelector('.SumoSelect');
+          let labelState = state.querySelector('label');
+          let labelCity = city.querySelector('label');
+          let selectState = state.querySelector('select');
+          let inputCity = city.querySelector('input');
+        
+          if (state.classList.contains('disabled') || city.classList.contains('disabled')) return;
+        
+          sumoSelect.setAttribute('tabindex', '-1');
+          state.classList.add('disabled');
+          city.classList.add('disabled');
+        
+          labelState.classList.remove('js-form-required', 'form-required');
+          selectState.classList.remove('required');
+          selectState.removeAttribute('required');
+          selectState.removeAttribute('aria-required');
+          selectState.setAttribute('disabled', 'disabled');
+        
+          labelCity.classList.remove('js-form-required', 'form-required');
+          inputCity.classList.remove('required');
+          inputCity.removeAttribute('required');
+          inputCity.removeAttribute('aria-required');
+          inputCity.setAttribute('disabled', 'disabled')
+        }
+
+        const validateFormSponsorship = (form) => {
+          if(!form) return;
+
+          const selectCountry = form.querySelector('select[name="address[country]"]');
+          const filedCountry = form.querySelector('.form-item-address-country');
+          const fieldState = form.querySelector('.form-item-address-state-province');
+          const fieldCity = form.querySelector('.form-item-address-city');
+          const selectParent = selectCountry.parentElement;
+          const countriesItems = selectParent.querySelectorAll('.opt');
+
+          const contrySelected = selectCountry.value;
+			    //disabled at startup
+			    if(contrySelected.toLocaleLowerCase() != "united states" ) removeStateAndCity(fieldState, fieldCity);
+
+          //reorder fields 
+          filedCountry.insertAdjacentElement('afterend', fieldState);
+          fieldState.insertAdjacentElement('afterend', fieldCity);
+
+          if(form.classList.contains('webform-submission-sponsorship-upcoming-event-form')){
+            const budgetEvent = document.querySelector('.form-item-budget');
+            fieldCity.insertAdjacentElement('afterend', budgetEvent)
+          } 
+
+          countriesItems.forEach(item => item.addEventListener('click', (event) => {
+            if (event.target.innerText.toLowerCase() === 'united states') {
+              addStateAndCity(fieldState, fieldCity);
+            } else {
+              removeStateAndCity(fieldState, fieldCity);
+            }
+          }));
+        }
+
+        if (!!document.querySelector('.webform-about-al-dia-live .webform-submission-sponsorship-form')) {
+          const form = document.querySelector('.webform-about-al-dia-live .webform-submission-sponsorship-form');
+          validateFormSponsorship(form);
+        }
+
+        if(!!document.querySelector('.webform-submission-sponsorship-upcoming-event-form')){
+          const form = document.querySelector('.webform-submission-sponsorship-upcoming-event-form');
+          validateFormSponsorship(form);
+        }
+    }
+  }
 })(jQuery);
