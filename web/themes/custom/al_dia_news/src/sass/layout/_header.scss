@@ -139,7 +139,7 @@ body.open-menu {
         z-index: 33;
         position: absolute;
         right: 0px;
-        left: -144px;
+        left: -150px;
         width: 250px;
         background: rgb(255, 255, 255);
         bottom: -214px;
@@ -147,6 +147,9 @@ body.open-menu {
         flex-wrap: wrap;
         margin: 0px;
         padding: 20px;
+        @media (max-width: 350px) {
+          left: -144px;
+        }
         a {
           font-style: normal;
           font-weight: 300;
@@ -554,7 +557,7 @@ body.open-menu {
   }
   .item-list.open {
     right: 15px !important;
-    top: 79px;
+    top: 87px;
   }
 }
 
@@ -1077,8 +1080,12 @@ body.open-menu {
       margin: auto 0 auto 0;
 
       &.open {
-        background: $cwhite url("../img/user.svg") center center no-repeat;
-
+        background: $cwhite url("../img/user.svg") center top no-repeat;
+        @media (min-width: $desktop) {
+          margin-bottom: 0px;
+          border-top: 16px solid white;
+          height: 65px;
+        }
         @media (max-width: $tablet) {
           .content {
             &::before {
@@ -1107,5 +1114,5 @@ body.open-menu {
 
 .admin-menu #block-menuuseritem .item-list.open {
   right: 0px !important;
-  top: 59px;
+  top: 48px;
 }
