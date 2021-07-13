@@ -202,6 +202,7 @@
 
     .skys-scroll {
       position: relative;
+      grid-row: span 1;
     }
 
     .skys-scroll.ads.ads-mobile {
@@ -216,7 +217,7 @@
       }
     }
 
-    .skys-scroll.ads-mobile:not(.skys2) {
+    .skys-scroll:not(.skys2).ads-mobile {
       &::before {
         display: none;
       }
