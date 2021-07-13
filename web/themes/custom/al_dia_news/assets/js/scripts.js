@@ -1609,74 +1609,7 @@ var initMain = function initMain($, Drupal) {
         position_two_col.appendChild(adversiting_two_col);
         adversiting_two_col.classList.add("four-content-event-advertising", "ads");
       }
-    }, 2500); //js para form sponsorship 
-
-    var addStateAndCity = function addStateAndCity(state, city) {
-      var sumoSelect = state.querySelector('.SumoSelect');
-      var labelState = state.querySelector('label');
-      var labelCity = city.querySelector('label');
-      var selectState = state.querySelector('select');
-      var inputCity = city.querySelector('input');
-      sumoSelect.setAttribute('tabindex', '0');
-      state.classList.remove('disabled');
-      city.classList.remove('disabled');
-      labelState.classList.add('js-form-required', 'form-required');
-      selectState.classList.add('required');
-      selectState.setAttribute('required', 'required');
-      selectState.setAttribute('aria-required', 'true');
-      selectState.removeAttribute('disabled');
-      labelCity.classList.add('js-form-required', 'form-required');
-      inputCity.classList.add('required');
-      inputCity.setAttribute('required', 'required');
-      inputCity.setAttribute('aria-required', 'true');
-      inputCity.removeAttribute('disabled');
-    };
-
-    var removeStateAndCity = function removeStateAndCity(state, city) {
-      var sumoSelect = state.querySelector('.SumoSelect');
-      var labelState = state.querySelector('label');
-      var labelCity = city.querySelector('label');
-      var selectState = state.querySelector('select');
-      var inputCity = city.querySelector('input');
-      if (state.classList.contains('disabled') || city.classList.contains('disabled')) return;
-      sumoSelect.setAttribute('tabindex', '-1');
-      state.classList.add('disabled');
-      city.classList.add('disabled');
-      labelState.classList.remove('js-form-required', 'form-required');
-      selectState.classList.remove('required');
-      selectState.removeAttribute('required');
-      selectState.removeAttribute('aria-required');
-      selectState.setAttribute('disabled', 'disabled');
-      labelCity.classList.remove('js-form-required', 'form-required');
-      inputCity.classList.remove('required');
-      inputCity.removeAttribute('required');
-      inputCity.removeAttribute('aria-required');
-      inputCity.setAttribute('disabled', 'disabled');
-    };
-
-    if (!!document.querySelector('.webform-submission-sponsorship-form')) {
-      var selectCountry = document.querySelector('.webform-submission-sponsorship-form select[name="address[country]"]');
-      var filedCountry = document.querySelector('.webform-submission-sponsorship-form .form-item-address-country');
-      var fieldState = document.querySelector('.webform-submission-sponsorship-form .form-item-address-state-province');
-      var fieldCity = document.querySelector('.webform-submission-sponsorship-form .form-item-address-city');
-      var selectParent = selectCountry.parentElement;
-      var countriesItems = selectParent.querySelectorAll('.opt'); //disabled at startup
-
-      removeStateAndCity(fieldState, fieldCity); //reorder fields 
-
-      filedCountry.insertAdjacentElement('afterend', fieldState);
-      fieldState.insertAdjacentElement('afterend', fieldCity);
-      countriesItems.forEach(function (item) {
-        return item.addEventListener('click', function (event) {
-          if (event.target.innerText.toLowerCase() === 'united states') {
-            addStateAndCity(fieldState, fieldCity);
-          } else {
-            removeStateAndCity(fieldState, fieldCity);
-          }
-        });
-      });
-    } //js para comment anonymous
-
+    }, 2500); //js para comment anonymous
 
     if (!!document.querySelector('.block-comments-anonymous')) {
       var blockAnonymus = document.querySelector('.block-comments-anonymous');
