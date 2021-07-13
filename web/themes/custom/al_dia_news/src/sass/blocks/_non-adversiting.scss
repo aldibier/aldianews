@@ -1,5 +1,6 @@
 ///---------- estilos para publicidad en infinit scroll ---------//
-.view-landing-thought-leaders .views-infinite-scroll-content-wrapper:not(.non-adversiting) {
+.view-landing-thought-leaders
+  .views-infinite-scroll-content-wrapper:not(.non-adversiting) {
   @media (min-width: $broken) {
     .views-row.not-show-line {
       margin-bottom: 0;
@@ -11,7 +12,8 @@
   }
 }
 
-.view-more-videos-in-landing .views-infinite-scroll-content-wrapper:not(.non-adversiting),
+.view-more-videos-in-landing
+  .views-infinite-scroll-content-wrapper:not(.non-adversiting),
 .news-gallery .views-infinite-scroll-content-wrapper:not(.non-adversiting) {
   @media (min-width: $broken) {
     .banner-horizontal {
@@ -21,8 +23,10 @@
 }
 
 .news-gallery .views-infinite-scroll-content-wrapper:not(.non-adversiting),
-.view-landing-thought-leaders .views-infinite-scroll-content-wrapper:not(.non-adversiting),
-.view-jobs-in-i-am-a-job-seeker .views-infinite-scroll-content-wrapper:not(.non-adversiting) {
+.view-landing-thought-leaders
+  .views-infinite-scroll-content-wrapper:not(.non-adversiting),
+.view-jobs-in-i-am-a-job-seeker
+  .views-infinite-scroll-content-wrapper:not(.non-adversiting) {
   .views-row.not-show-line {
     @media screen and (min-width: $broken) {
       &::before {
@@ -49,16 +53,17 @@
       width: 100%;
       max-width: none;
     }
-  } 
+  }
 }
 .horizontal-advertising-general-horizontal.non-adversiting {
   margin: 0px;
 }
 
-#block-block-group-current-edition-advertising-home .non-adversiting .block-views-blockhome-current-edition--block-1 {
+#block-block-group-current-edition-advertising-home
+  .non-adversiting
+  .block-views-blockhome-current-edition--block-1 {
   margin: 0 auto 100px !important;
 }
-
 
 .path-about-al-dia-live .non-adversiting {
   .block-fixed-block-contentbody-about-al-dia-live {
@@ -99,16 +104,25 @@ article[about="/terms-of-service"] {
 .node--type-more-covers .non-ads-father {
   .content-left-pages {
     padding: 0px;
-  } 
+  }
   .content-right-pages::after {
     display: none;
   }
 }
+
+article[about="/terms-of-service"] {
+  .non-ads-father .content-left-pages {
+    margin-top: 45px;
+    @media (max-width: $broken) {
+      margin-top: 0px;
+    }
+  }
+}
+
 ///------ non adversiting en movil-----------//
 
 @media (max-width: $broken) {
   .non-adversiting {
-   
     &.view-more-in-this-section-news .card-more:nth-child(1) {
       border-bottom: 0px;
     }
@@ -144,23 +158,23 @@ article[about="/terms-of-service"] {
     &.section-event-body .body-lateral-section-advertising {
       margin: 0px;
     }
-   
   }
-  
+
   .node--view-mode-work-whit-al-dia
     .horizontal-advertising-general-horizontal.non-adversiting {
     margin: 20px 0 0;
   }
 }
 
-
 ///---------- infinit scroll ---------//
 .news-gallery .views-infinite-scroll-content-wrapper.non-adversiting,
-.view-landing-thought-leaders .views-infinite-scroll-content-wrapper.non-adversiting,
-.view-jobs-in-i-am-a-job-seeker .views-infinite-scroll-content-wrapper.non-adversiting {
+.view-landing-thought-leaders
+  .views-infinite-scroll-content-wrapper.non-adversiting,
+.view-jobs-in-i-am-a-job-seeker
+  .views-infinite-scroll-content-wrapper.non-adversiting {
   .banner-scroll,
   .skys-scroll,
-  .block-scroll {
+  .block-scroll  {
     display: none !important;
   }
 }
