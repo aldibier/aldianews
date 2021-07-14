@@ -2667,6 +2667,7 @@ display:
         - 'config:core.entity_view_display.node.article.teaser'
         - 'config:core.entity_view_display.node.event.default'
         - 'config:core.entity_view_display.node.event.teaser'
+        - 'config:core.entity_view_display.node.event.work_whit_al_dia'
         - 'config:core.entity_view_display.node.feature_employer.default'
         - 'config:core.entity_view_display.node.feature_employer.teaser'
         - 'config:core.entity_view_display.node.job.default'
@@ -3402,6 +3403,7 @@ display:
         type: none
         options: {  }
       use_ajax: true
+      block_hide_empty: true
     cache_metadata:
       max-age: -1
       contexts:
