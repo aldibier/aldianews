@@ -10,6 +10,11 @@
  * @ingroup themeable
  */
 #}
+
+{% set subcategory_only_for_children = drupal_view_result('subcategory_only_for_children', 'block_4')|length %}
+{% set first_block_subcategory = drupal_view_result('subcategory_only_for_children', 'block_1')|length %}
+{% set subcategory_taxonomy = drupal_view_result('subcategory_only_for_children', 'block_3')|length %}
+
 {% if content %}
   <div class="container-content">
 
@@ -29,17 +34,17 @@
           {{ content.two_more_content}} 
         </div>
     {% endif %}
-    {% if content.header_subcategory %}
+    {% if content.header_subcategory and subcategory_only_for_children != 0 %}
         <div {{ region_attributes.header_subcategory.addClass('header-subcategory-taxonomy') }}>
           {{ content.header_subcategory}} 
         </div>
     {% endif %}
-    {% if content.first_block_subcategory %}
+    {% if content.first_block_subcategory and first_block_subcategory != 0 %}
         <div {{ region_attributes.first_block_subcategory.addClass('first-block-subcategory-taxonomy') }}>
           {{ content.first_block_subcategory}} 
         </div>
     {% endif %}
-    {% if content.subcategory %}
+    {% if content.subcategory and subcategory_taxonomy != 0 %}
         <div {{ region_attributes.subcategory.addClass('subcategory-taxonomy') }}>
           {{ content.subcategory}} 
         </div>
