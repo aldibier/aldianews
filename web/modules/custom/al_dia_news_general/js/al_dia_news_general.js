@@ -378,7 +378,7 @@
           term_events_container.classList.add("non-ads-father");
         } 
 
-      }, 2500);
+      }, 2000);
     });
     }
   };
