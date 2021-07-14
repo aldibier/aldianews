@@ -25,3 +25,22 @@
 // }
 
 
+.sponsorship-popup-event-landing.ui-widget.ui-corner-all:not(button)  {
+    width: calc(100% - 30px);
+    max-width: 100%;
+
+    >.ui-dialog-content {
+        padding: 0;
+        overflow: initial;
+    }
+
+    .webform-contact-employer {
+        .close-modal {
+            display: none;
+        }
+    }
+
+    .form-type-webform-markup {
+        display: none;
+    }
+}
