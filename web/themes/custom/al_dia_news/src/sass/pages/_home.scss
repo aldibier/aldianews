@@ -30,12 +30,17 @@
 
     > .view-content {
       width: max-content;
+      max-height: 821px;
       padding-right: 20px;
       display: grid;
       grid-template-columns: minmax(200px, 400px) minmax(200px, 400px);
       grid-gap: 0 40px;
       position: relative;
       overflow: hidden;
+
+      @media (min-width: $broken) {
+        max-height: 815px;
+      }
 
       @media (max-width: $broken) {
         width: 100%;
