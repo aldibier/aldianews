@@ -64,9 +64,14 @@
   }
 
   .slick-list {
+    padding: 3px;
     @media screen and(min-width:$broken) {
-      &:hover {
-        height: 540px;
+      height: 485px;
+      transition: all .5s linear;
+
+      &:hover,
+      &:focus-within {
+        height: 550px;
       }
     }
   }
@@ -102,7 +107,7 @@
     background-color: $cwhite;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.22);
     overflow: hidden;
-    transition: all 0.5s linear;
+    transition: all .6s linear;
 
     @media screen and(max-width:$tablet) {
       height: 45px;
