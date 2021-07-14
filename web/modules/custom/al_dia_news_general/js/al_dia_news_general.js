@@ -365,6 +365,19 @@
         if (!!block_term_services && !!term_services_container) {
           term_services_container.classList.add("non-ads-father");
         } 
+
+        //js para agregar padres de publicidad term services --------------------------------///
+        var block_term_events = document.querySelector(
+          '.node--type-event .body-lateral-section-advertising .non-adversiting'
+        );
+        var term_events_container = document.querySelector(
+          '.node--type-event .container-content'
+        );
+
+        if (!!block_term_events && !!term_events_container) {
+          term_events_container.classList.add("non-ads-father");
+        } 
+
       }, 2500);
     });
     }

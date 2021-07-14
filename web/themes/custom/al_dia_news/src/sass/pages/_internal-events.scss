@@ -152,7 +152,9 @@
   }
   .content-present-by-advertising {
     display: flex;
+    margin: 40px auto 0 !important;
     @media (max-width: 1200px) {
+      margin: 0px auto 0 !important;
       .maxim {
         display: none;
       }
@@ -455,7 +457,7 @@
   .slider-one .item {
     margin-right: 0px;
     padding-left: 0px;
-    img{
+    img {
       max-width: 570px;
       margin: 0 auto;
     }
@@ -964,6 +966,9 @@
           position: absolute;
           right: 0;
           margin: -35px 0;
+        }
+        &:nth-child(1n + 4):before {
+          height: 0.8px;
         }
         &:nth-child(2n),
         &:nth-child(6) {
