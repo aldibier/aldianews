@@ -181,9 +181,10 @@
       margin-bottom: 69px;
       &::after {
         content: "";
-        width: 1px;
+        width: 0;
         position: absolute;
         height: 100%;
+        padding: 0.1mm;
         display: block;
         background: $cgrey4;
         left: -20px;
