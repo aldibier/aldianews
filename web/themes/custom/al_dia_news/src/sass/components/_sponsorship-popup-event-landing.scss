@@ -61,4 +61,17 @@
         top: 0;
         padding: 0 50px 50px;
     }
+
+    @media (max-width: $tablet-min) {
+        max-height: 70%;
+
+        .form-type-textarea {
+            margin-top: 20px;
+        }
+
+        .contact-form {
+            top: 0;
+            padding: 0 20px 27px;
+        }
+    }
 }
