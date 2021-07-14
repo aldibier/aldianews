@@ -45,7 +45,7 @@
   .block-banner-page {
     position: relative;
     width: 100%;
-
+    margin-top: 20px;
     .field--name-field-description {
       max-height: 1px;
       position: absolute;
@@ -352,6 +352,9 @@
     #page {
       padding: 52px 0 0;
     }
+    .block-banner-page {
+      margin-top: 0px;
+    }
   }
 
   @media (max-width: $tablet) {
@@ -477,21 +480,20 @@
     top: -13px;
   }
   .layout-container,
-  .style-jobs{
+  .style-jobs {
     max-width: none;
   }
   .content-page-jobs {
     max-width: 1440px;
     padding: 0 15px;
     margin: 0 auto;
-    > .content{
+    > .content {
       display: flex;
-        flex-wrap: wrap;
-        width: 100%;
+      flex-wrap: wrap;
+      width: 100%;
     }
-    @media (max-width: $broken){
-    padding: 0;
-
+    @media (max-width: $broken) {
+      padding: 0;
     }
   }
 }
