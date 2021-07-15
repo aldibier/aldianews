@@ -60,11 +60,12 @@
       display: flex;
       align-items: center;
       max-width: 315px;
+      width: 28%;
     }
     .form-item-email {
       margin: 0px;
       max-width: 510px;
-      width: 100%;
+      width: 53%;
       label {
         display: none;
       }
@@ -79,7 +80,8 @@
     }
     .form-actions {
       max-width: 180px;
-      width: 100%;
+      width: 19%;
+      min-width: 180px;
     }
     .form-submit {
       min-height: 39.6px;
@@ -130,6 +132,9 @@
         line-height: 18px;
         margin: auto 0 12px;
         text-align: center;
+        width: 100%;
+        max-width: 100%;
+        display: block;
       }
       .form-item-email {
         max-width: 149px;
@@ -149,6 +154,7 @@
       }
       .form-actions {
         max-width: 105px;
+        min-width: 105px;
       }
       .form-submit {
         font-size: $px14 !important;
