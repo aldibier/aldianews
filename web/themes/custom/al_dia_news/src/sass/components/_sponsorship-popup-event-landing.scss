@@ -1,20 +1,174 @@
-.sponsorship-popup-event-landing {
-    .form-item-markup {
+// .sponsorship-popup-event-landing.ui-widget.ui-corner-all:not(button) {
+//     .form-item-markup {
+//         display: none;
+//     }
+
+//     >.ui-dialog-content {
+//         padding: 0;
+//         overflow: initial;
+//     }
+
+//     @extend .contact-form;
+//     @extend .form-general;
+
+//     .webform-type-webform-address {
+//         max-width: 525px;
+//         width: 100%;
+
+//         .fieldset-wrapper {
+//             display: flex;
+//             flex-wrap: wrap;
+//             width: 100%;
+//             margin: 0;
+//         }
+//     }
+// }
+
+
+.sponsorship-popup-event-landing.ui-widget.ui-corner-all:not(button)  {
+    width: calc(100% - 30px) !important;
+    max-width: 820px;
+    max-height: 830px;
+
+    >.ui-dialog-content {
+        padding: 0;
+        overflow: initial;
+    }
+
+    .webform-contact-employer {
+        .close-modal {
+            display: none;
+        }
+    }
+
+    .webform-type-webform-address  {
+        width: 100%;
+        max-width: 100%;
+
+        .fieldset-wrapper {
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+    }
+
+    .form-type-webform-markup {
         display: none;
     }
 
-    @extend .contact-form;
-    @extend .form-general;
+    .contact-form {
+        top: 0;
+        padding: 0 50px 50px;
+    }
 
-    .webform-type-webform-address {
-        max-width: 525px;
-        width: 100%;
+    .button--primary {
+        display: block !important;
+    }
 
-        .fieldset-wrapper {
-            display: flex;
-            flex-wrap: wrap;
-            width: 100%;
+    @media (max-width: $tablet-min) {
+        max-height: 70%;
+
+        .form-type-textarea {
+            margin-top: 20px;
+        }
+
+        .contact-form {
+            top: 0;
+            padding: 0 20px 27px;
+            max-height: initial;
+        }
+
+        .button--primary {
             margin: 0;
+        }
+    }
+}
+
+.registerhere-popup-event-landing.ui-widget.ui-corner-all:not(button) {
+    width: calc(100% - 30px) !important;
+    max-width: 990px;
+    max-height: 640px;
+
+
+    .webform-contact-employer {
+        .close-modal {
+            display: none;
+        }
+    }
+
+    .form-type-webform-markup {
+        display: none;
+    }
+
+    .contact-form {
+        top: 0;
+        padding: 0 50px 50px;
+    }
+
+    .button--primary {
+        display: block !important;
+        width: 150px;
+        margin: 0;
+    }
+
+    .ui-dialog-content {
+        padding: 0;
+    }
+
+    form {
+        justify-content: space-between;
+    }
+
+    .fieldset-wrapper {
+        margin: 0;
+    }
+
+    select {
+        max-width: 405px;
+    }
+
+    .form-wrapper {
+        max-width: 50%;
+        width: calc(100% - 15px);
+    }
+
+    .form-item-address-city {
+        margin-bottom: 20px;
+    }
+
+    fieldset {
+        width: 100%;
+        max-width: 50%;
+        padding: 0 0 0 15px;
+    }
+
+    @media (max-width: $tablet-min) {
+        max-height: 70%;
+
+        .ui-dialog-title {
+            margin: 0 0 30px;
+        }
+
+        .contact-form {
+            top: 0;
+            padding: 0 20px 27px;
+            max-height: initial;
+        }
+
+        .button--primary {
+            margin: 0;
+        }
+        
+        .form-wrapper {
+            max-width: 100%;
+            width: 100%;
+        }
+
+        fieldset {
+            max-width: 100%;
+            width: 100%;
+            padding: 0;
         }
     }
 }
