@@ -108,6 +108,8 @@
 
     .button--primary {
         display: block !important;
+        width: 150px;
+        margin: 0;
     }
 
     .ui-dialog-content {
@@ -116,6 +118,14 @@
 
     form {
         justify-content: space-between;
+    }
+
+    .fieldset-wrapper {
+        margin: 0;
+    }
+
+    select {
+        max-width: 405px;
     }
 
     .form-wrapper {
@@ -144,6 +154,17 @@
 
         .button--primary {
             margin: 0;
+        }
+        
+        .form-wrapper {
+            max-width: 100%;
+            width: 100%;
+        }
+
+        fieldset {
+            max-width: 100%;
+            width: 100%;
+            padding: 0;
         }
     }
 }
