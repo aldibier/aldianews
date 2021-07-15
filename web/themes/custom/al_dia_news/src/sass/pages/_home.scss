@@ -9,7 +9,7 @@
       display: none;
     }
   }
- 
+
   fieldset {
     all: initial;
     display: block;
@@ -472,11 +472,6 @@
         position: relative;
       }
 
-      .block-fixed-block-content-small-vertical-advertising,
-      .block-fixed-block-contentbig-vertical-advertising {
-        /* display: none; */
-      }
-
       .category-title h2 {
         margin-bottom: 0px;
         border-bottom: 2px solid #e92f31;
@@ -516,6 +511,15 @@
 
         .card-category {
           margin-bottom: 0px;
+        }
+        .card-title {
+          .aldia-logo-in-text {
+            max-width: 35px;
+            img {
+              width: 100%;
+              height: 10.25px;
+            }
+          }
         }
 
         &:nth-child(3),
@@ -577,7 +581,7 @@
         z-index: 0;
       }
     }
-    
+
     a {
       &::after {
         display: none;
@@ -585,7 +589,7 @@
     }
   }
 
-  h2  {
+  h2 {
     width: max-content;
     z-index: 1;
 
