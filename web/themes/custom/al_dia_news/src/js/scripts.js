@@ -66,24 +66,24 @@ import replaceToken from "./modules/replaceToken";
     !!containerVideo
   ) {
 
-    const videoThoughtLeadersHeigth = videoThoughtLeaders.outerHeight();
+    const videoThoughtLeadersHeigth = $(videoThoughtLeaders).outerHeight();
 
     $window.on("scroll", function() {
       var windowScrollTop = $window.scrollTop();
       var videoBottom =
-        videoThoughtLeadersHeigth + containerVideo.offset().top;
+        videoThoughtLeadersHeigth + $(containerVideo).offset().top;
 
       if (windowScrollTop > videoBottom) {
-        containerVideo.height(videoThoughtLeadersHeigth);
-        videoThoughtLeaders.addClass("stuck");
+        $(containerVideo).height(videoThoughtLeadersHeigth);
+        $(videoThoughtLeaders).addClass("stuck");
       } else {
-        containerVideo.height("auto");
-        videoThoughtLeaders.removeClass("stuck");
+        $(containerVideo).height("auto");
+        $(videoThoughtLeaders).removeClass("stuck");
       }
       $(
         '.block-field-blocknodenewsfield-video .stuck button[name="close"]'
       ).click(function() {
-        videoThoughtLeaders.addClass("disnone");
+        $(videoThoughtLeaders).addClass("disnone");
       });
     });
   }
@@ -91,23 +91,23 @@ import replaceToken from "./modules/replaceToken";
 
   jQuery(document).ready(function() {
     /////
-    if ($(".page-node-type-news .block-field-blocknodenewsfield-video iframe").length ) {
+   /*  if ($(".page-node-type-news .block-field-blocknodenewsfield-video iframe").length ) {
       var url = ($(".page-node-type-news .block-field-blocknodenewsfield-video iframe")[0].src += "&mute=1");
       var video = url.replace("autoplay=0", "autoplay=1");
       $(".page-node-type-news .block-field-blocknodenewsfield-video iframe").attr("src", video);
-    }
+    } */
 
-    if ($( ".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video iframe" ).length ){
+    /* if ($( ".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video iframe" ).length ){
       var url = ($(".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video iframe")[0].src += "&mute=1");
       var video = url.replace("autoplay=0", "autoplay=1");
       $(".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video iframe").attr("src", video);
-    }
+    } */
 
-    if ($(".watch-live-video .video-embed-field-provider-youtube iframe").length ){
+    /* if ($(".watch-live-video .video-embed-field-provider-youtube iframe").length ){
       var url = ($(".watch-live-video .video-embed-field-provider-youtube iframe")[0].src += "&mute=1");
       var video = url.replace("autoplay=0", "autoplay=1");
       $(".watch-live-video .video-embed-field-provider-youtube iframe").attr("src", video);
-    }
+    } */
 
     //--------- menu--------------------//
     $(".region-header #block-blockheader").click(function() {
