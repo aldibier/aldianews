@@ -1891,46 +1891,46 @@ __webpack_require__.r(__webpack_exports__);
   var videoThoughtLeaders = document.querySelector('.page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video .content');
 
   if (!!document.querySelector(".page-node-type-thought-leaders") && !!videoThoughtLeaders && !!containerVideo) {
-    var videoThoughtLeadersHeigth = videoThoughtLeaders.outerHeight();
+    var videoThoughtLeadersHeigth = $(videoThoughtLeaders).outerHeight();
     $window.on("scroll", function () {
       var windowScrollTop = $window.scrollTop();
-      var videoBottom = videoThoughtLeadersHeigth + containerVideo.offset().top;
+      var videoBottom = videoThoughtLeadersHeigth + $(containerVideo).offset().top;
 
       if (windowScrollTop > videoBottom) {
-        containerVideo.height(videoThoughtLeadersHeigth);
-        videoThoughtLeaders.addClass("stuck");
+        $(containerVideo).height(videoThoughtLeadersHeigth);
+        $(videoThoughtLeaders).addClass("stuck");
       } else {
-        containerVideo.height("auto");
-        videoThoughtLeaders.removeClass("stuck");
+        $(containerVideo).height("auto");
+        $(videoThoughtLeaders).removeClass("stuck");
       }
 
       $('.block-field-blocknodenewsfield-video .stuck button[name="close"]').click(function () {
-        videoThoughtLeaders.addClass("disnone");
+        $(videoThoughtLeaders).addClass("disnone");
       });
     });
   }
 
   jQuery(document).ready(function () {
     /////
-    if ($(".page-node-type-news .block-field-blocknodenewsfield-video iframe").length) {
-      var url = $(".page-node-type-news .block-field-blocknodenewsfield-video iframe")[0].src += "&mute=1";
-      var video = url.replace("autoplay=0", "autoplay=1");
-      $(".page-node-type-news .block-field-blocknodenewsfield-video iframe").attr("src", video);
-    }
 
-    if ($(".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video iframe").length) {
-      var url = $(".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video iframe")[0].src += "&mute=1";
+    /*  if ($(".page-node-type-news .block-field-blocknodenewsfield-video iframe").length ) {
+       var url = ($(".page-node-type-news .block-field-blocknodenewsfield-video iframe")[0].src += "&mute=1");
+       var video = url.replace("autoplay=0", "autoplay=1");
+       $(".page-node-type-news .block-field-blocknodenewsfield-video iframe").attr("src", video);
+     } */
+
+    /* if ($( ".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video iframe" ).length ){
+      var url = ($(".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video iframe")[0].src += "&mute=1");
       var video = url.replace("autoplay=0", "autoplay=1");
       $(".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video iframe").attr("src", video);
-    }
+    } */
 
-    if ($(".watch-live-video .video-embed-field-provider-youtube iframe").length) {
-      var url = $(".watch-live-video .video-embed-field-provider-youtube iframe")[0].src += "&mute=1";
+    /* if ($(".watch-live-video .video-embed-field-provider-youtube iframe").length ){
+      var url = ($(".watch-live-video .video-embed-field-provider-youtube iframe")[0].src += "&mute=1");
       var video = url.replace("autoplay=0", "autoplay=1");
       $(".watch-live-video .video-embed-field-provider-youtube iframe").attr("src", video);
-    } //--------- menu--------------------//
-
-
+    } */
+    //--------- menu--------------------//
     $(".region-header #block-blockheader").click(function () {
       if ($(".region-secondary-menu").hasClass("open-menu")) {
         $(".region-secondary-menu").removeClass("open-menu");
@@ -2548,8 +2548,8 @@ var initSlick = function initSlick($, Drupal) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\valer\Desktop\4ld14-n3ws\web\themes\custom\al_dia_news\src\js\scripts.js */"./src/js/scripts.js");
-module.exports = __webpack_require__(/*! C:\Users\valer\Desktop\4ld14-n3ws\web\themes\custom\al_dia_news\src\sass\styles.scss */"./src/sass/styles.scss");
+__webpack_require__(/*! /Users/usuario/Desktop/Proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
+module.exports = __webpack_require__(/*! /Users/usuario/Desktop/Proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
 
 
 /***/ })
