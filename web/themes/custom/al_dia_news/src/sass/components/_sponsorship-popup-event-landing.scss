@@ -101,7 +101,26 @@
         display: none;
     }
 
+    .contact-form {
+        top: 0;
+        padding: 0 50px 50px;
+    }
+
+    .button--primary {
+        display: block !important;
+    }
+
     @media (max-width: $tablet-min) {
         max-height: 70%;
+
+        .contact-form {
+            top: 0;
+            padding: 0 20px 27px;
+            max-height: initial;
+        }
+
+        .button--primary {
+            margin: 0;
+        }
     }
 }
