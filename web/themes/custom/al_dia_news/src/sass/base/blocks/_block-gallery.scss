@@ -24,7 +24,8 @@
         display: block;
         content: "";
         width: calc(100% + 40px);
-        height: 1px;
+        height: 0;
+        padding: 0.1mm;
         left: -20px;
         bottom: 0;
         background: $cgrey4;
@@ -65,7 +66,8 @@
 
         &::before {
           width: calc(100vw - 30px);
-          height: 1px;
+          height: 0;
+          padding: 0.1mm;
           left: 0;
           right: 0;
           margin: -20px auto;
@@ -83,8 +85,9 @@
           &::before {
             content: '';
             width: calc(100vw - 30px);
-            height: 1px;
+            height: 0;
             margin: -20px auto;
+            padding: 0.1mm;
             display: block;
             position: absolute;
             left: 0;
@@ -209,7 +212,8 @@
       position:relative;
       &:nth-child(odd)::before{
         width:calc(100vw - 30px);
-        height: 0.5px;
+        height: 0;
+        padding: 0.1mm;
         content:'';
         position: absolute;
         bottom: 0;
