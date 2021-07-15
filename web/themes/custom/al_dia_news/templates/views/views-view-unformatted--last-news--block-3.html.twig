@@ -20,10 +20,8 @@
 {% if title %}
 	<h3>{{ title }}</h3>
 {% endif %}
-{% if device  == 'desktop' %}
-	{% if rows.block_type[0] == 'block_top' %}
-		<div class="block-advertising-top ads">{{ drupal_entity('block', 'gamwadvertisement_29') }}</div>
-	{% endif %}
+{% if rows.block_type[0] == 'block_top' and device  == 'desktop' %}
+	<div class="block-advertising-top ads">{{ drupal_entity('block', 'gamwadvertisement_29') }}</div>
 {% endif %}
 {% for row in rows %}
 	{%
