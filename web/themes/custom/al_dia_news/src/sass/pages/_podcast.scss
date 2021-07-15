@@ -318,8 +318,9 @@
   li:not(:last-child) {
     &::after {
       content: "";
-      width: 1px;
+      width: 0;
       height: 100%;
+      padding: 0.1mm;
       position: absolute;
       top: 0;
       right: calc(0% - 20px);

@@ -529,7 +529,8 @@ display:
     display_title: First
     position: 1
     display_options:
-      display_extenders: {  }
+      display_extenders:
+        ajax_history: {  }
       display_description: ''
       fields:
         name:
@@ -781,6 +782,7 @@ display:
         groups:
           1: AND
       header: {  }
+      block_hide_empty: true
     cache_metadata:
       max-age: -1
       contexts:
@@ -798,6 +800,7 @@ display:
         - 'config:core.entity_view_display.node.article.teaser'
         - 'config:core.entity_view_display.node.event.default'
         - 'config:core.entity_view_display.node.event.teaser'
+        - 'config:core.entity_view_display.node.event.work_whit_al_dia'
         - 'config:core.entity_view_display.node.feature_employer.default'
         - 'config:core.entity_view_display.node.feature_employer.teaser'
         - 'config:core.entity_view_display.node.job.default'
@@ -837,7 +840,8 @@ display:
     display_title: 'Next 4'
     position: 2
     display_options:
-      display_extenders: {  }
+      display_extenders:
+        ajax_history: {  }
       display_description: ''
       pager:
         type: some
@@ -1290,6 +1294,7 @@ display:
       row:
         type: fields
         options: {  }
+      block_hide_empty: true
     cache_metadata:
       max-age: -1
       contexts:
@@ -1307,6 +1312,7 @@ display:
         - 'config:core.entity_view_display.node.article.teaser'
         - 'config:core.entity_view_display.node.event.default'
         - 'config:core.entity_view_display.node.event.teaser'
+        - 'config:core.entity_view_display.node.event.work_whit_al_dia'
         - 'config:core.entity_view_display.node.feature_employer.default'
         - 'config:core.entity_view_display.node.feature_employer.teaser'
         - 'config:core.entity_view_display.node.job.default'
@@ -1950,6 +1956,7 @@ display:
         - 'config:core.entity_view_display.node.article.teaser'
         - 'config:core.entity_view_display.node.event.default'
         - 'config:core.entity_view_display.node.event.teaser'
+        - 'config:core.entity_view_display.node.event.work_whit_al_dia'
         - 'config:core.entity_view_display.node.feature_employer.default'
         - 'config:core.entity_view_display.node.feature_employer.teaser'
         - 'config:core.entity_view_display.node.job.default'
@@ -1992,7 +1999,8 @@ display:
     display_title: 'Block 4'
     position: 4
     display_options:
-      display_extenders: {  }
+      display_extenders:
+        ajax_history: {  }
       fields:
         name:
           id: name
@@ -2113,6 +2121,7 @@ display:
         fields: false
         header: false
       header: {  }
+      block_hide_empty: true
     cache_metadata:
       max-age: -1
       contexts:

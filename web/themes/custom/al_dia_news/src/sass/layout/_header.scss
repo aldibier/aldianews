@@ -901,7 +901,7 @@ body.open-menu {
     text-transform: uppercase;
     font-family: $PrNovacond-Sbold;
     letter-spacing: 0.741176px;
-    @media (min-width: $desktop) {
+    @media (min-width: $tablet) {
       // padding-right: 15px;
       padding-right: 0px;
       margin-right: 20px;
@@ -924,6 +924,11 @@ body.open-menu {
       color: $cblack2;
     }
   }
+
+  #block-loginformpopup {
+    min-width: max-content;
+  }
+  
   #block-loginformpopup a {
     font-size: 16px;
     line-height: 25px;
