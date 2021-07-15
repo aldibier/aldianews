@@ -110,6 +110,29 @@
         display: block !important;
     }
 
+    .ui-dialog-content {
+        padding: 0;
+    }
+
+    form {
+        justify-content: space-between;
+    }
+
+    .form-wrapper {
+        max-width: 50%;
+        width: calc(100% - 15px);
+    }
+
+    .form-item-address-city {
+        margin-bottom: 20px;
+    }
+
+    fieldset {
+        width: 100%;
+        max-width: 50%;
+        padding: 0 0 0 15px;
+    }
+
     @media (max-width: $tablet-min) {
         max-height: 70%;
 
