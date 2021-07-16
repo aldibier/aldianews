@@ -53,6 +53,23 @@ function al_dia_news_preprocess_views_view_unformatted(&$vars) {
   $id = $view->id();
   $display = $view->getDisplay();
 
+  //opcion 1 crear mas bloques ad manager
+  if($id === 'categories_sons'){
+    foreach($vars['rows'] as $index => $row){
+      $vars['rows'][$index]['content']['index'] = $index;
+      $vars['rows'][$index]['content']['subcategory'] = $row;
+    }
+  }
+
+  /* if($id === 'categories_sons'){
+    $entityManager = \Drupal::service('entity_type.manager');
+    $block = $entityManager->getStorage('block')->load('gamwadvertisement_14');
+    $renderBlock = $entityManager->getViewBuilder('block')->view($block);
+
+    foreach($vars['rows'] as $index => $row){
+      $vars['rows'][$index]['content']['block_gamw'] = $renderBlock ;
+    }
+  } */
 
   if($id === 'block_guest'){
     $entityManager = \Drupal::service('entity_type.manager');
@@ -112,4 +129,9 @@ function al_dia_news_preprocess_views_view_unformatted(&$vars) {
       }
     }
   }
+}
+
+function al_dia_news_preprocess_block__gamw(&$vars) {
+ /* ksm($vars['attributes']['id']); */
+ /* $vars['attributes']['id'] = $vars['attributes']['id'].hash('md5','gamw-'.rand(0,99)); */
 }
