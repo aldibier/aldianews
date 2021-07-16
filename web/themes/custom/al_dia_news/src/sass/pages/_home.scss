@@ -84,7 +84,7 @@
       max-width: 440px;
     }
   }
-
+  
   .card-one-column {
     margin: 40px 0;
     position: relative;
@@ -182,6 +182,11 @@
   }
 }
 
+.view-high-impact-news-home.view-display-id-block_1 .featured-news::after{
+  @media (max-width: $tablet){
+    width: calc(100% - 30px);
+  }
+}
 //------------ Ultimas noticias ---------------//
 .wrapper-news-trending {
   margin-bottom: 80px;
@@ -495,11 +500,11 @@
       }
 
       .aldia-logo-in-text {
-        max-width: 70px;
+        max-width: 55px;
 
         img {
           width: 100%;
-          height: 24.25px;
+          height: 17.25px;
         }
       }
 
@@ -791,7 +796,7 @@
   .view-thought-leaders-home.view-display-id-block_3
     .view-content
     .aldia-logo-in-text {
-    margin-bottom: 6px;
+    margin-bottom: 0px;
   }
 }
 
