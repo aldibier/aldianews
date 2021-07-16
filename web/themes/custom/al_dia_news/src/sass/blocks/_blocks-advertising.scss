@@ -302,90 +302,6 @@
   }
 }
 
-//----------------- jobs  ----------------------------------//
-.path-job-seeker .views-infinite-scroll-content-wrapper:not(.non-adversiting) {
-  @media screen and (max-width: $tablet) {
-    .block-scroll.ads-mobile {
-      width: 100%;
-      max-width: 100%;
-      margin: 0 0 22px;
-      position: relative;
-      text-align: center;
-
-      &::after {
-        content: "";
-        width: calc(100vw - 30px);
-        height: 0;
-        margin: 0 auto;
-        padding: 0.1mm;
-        position: absolute;
-        bottom: calc(0% - 20px);
-        left: 0;
-        right: 0;
-        background: $cgrey4;
-      }
-    }
-
-    .banner-scroll.ads-mobile {
-      margin: 20px 0 40px;
-
-      .banner-horizontal {
-        margin: 0px -15px 0;
-      }
-    }
-
-    .banner-scroll.ban2.ads-mobile {
-      margin: 49px 0px 42px;
-
-      .banner-horizontal {
-        margin: 0px -15px 0;
-      }
-    }
-  }
-}
-
-.path-jobs .views-infinite-scroll-content-wrapper:not(.non-adversiting) {
-  .block-scroll {
-    margin: 0;
-  }
-
-  .block-scroll.block2 {
-    width: 100%;
-    height: 100%;
-    max-width: none;
-    max-height: none;
-    position: relative;
-
-    &::before {
-      display: block;
-      content: "";
-      width: calc(100% + 40px);
-      padding: 0.1mm;
-      height: 0;
-      left: -20px;
-      bottom: calc(0% + 40px);
-      background: $cgrey4;
-      position: absolute;
-      right: 0px;
-      margin: 0 auto;
-    }
-  }
-
-  .skys-scroll {
-    margin: 0;
-  }
-
-  @media (min-width: $broken) {
-    .views-row.not-show-line {
-      margin-bottom: 0;
-    }
-
-    .banner-horizontal {
-      margin: 90px 0;
-    }
-  }
-}
-
 //----------------- clases generales para publicidad ----------------------------------//
 
 .banner-horizontal {
@@ -436,6 +352,92 @@
 
     @media screen and (max-width: $tablet) {
       margin: 0 auto 50px;
+    }
+  }
+}
+
+.path-jobs .views-infinite-scroll-content-wrapper:not(.non-adversiting),
+.path-job-seeker .views-infinite-scroll-content-wrapper:not(.non-adversiting) {
+  .block-scroll {
+    margin: 0;
+  }
+
+  .block-scroll.block2 {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    position: relative;
+
+    &::before {
+      display: block;
+      content: "";
+      width: calc(100% + 40px);
+      padding: 0.1mm;
+      height: 0;
+      left: -20px;
+      bottom: calc(0% + 40px);
+      background: $cgrey4;
+      position: absolute;
+      right: 0px;
+      margin: 0 auto;
+    }
+  }
+
+  .skys-scroll {
+    margin: 0;
+  }
+
+  @media (min-width: $broken) {
+    .views-row.not-show-line {
+      margin-bottom: 0;
+    }
+
+    .banner-horizontal {
+      margin: 90px 0;
+    }
+  }
+
+  @media screen and (max-width: $tablet) {
+
+    .views-row.not-show-line-mobile {
+      margin-bottom: 0;
+
+      &::before {
+        display: none;
+      }
+    }
+
+    .block-scroll.ads-mobile {
+      width: 100%;
+      max-width: 100%;
+      max-height: none;
+      margin: 50px 0px 22px;
+      padding: 20px 0;
+      border-top: 1px solid $cgrey4;
+      border-bottom: 1px solid $cgrey4;
+      position: relative;
+      text-align: center;
+    }
+
+    .banner-scroll.ads-mobile {
+      margin: 20px 0 40px;
+
+      .banner-horizontal {
+        margin: 0px -15px 0;
+      }
+    }
+
+    .banner-scroll.ban2.ads-mobile {
+      margin: 49px 0px 42px;
+
+      .banner-horizontal {
+        margin: 0px -15px 0;
+      }
+    }
+
+    .block-scroll.ads.ads-mobile + .banner-scroll {
+      margin-top: 0 !important;
     }
   }
 }
@@ -576,7 +578,8 @@
   }
 }
 
-.path-search-results .news-gallery .view-content > div:not(.no-result-search) {
+.path-search-results .news-gallery .view-content > div:not(.no-result-search),
+.view-last-news-in-error-page .view-content {
   @media screen and (max-width: $tablet) {
     .banner-scroll .banner-horizontal {
       margin: 0 -15px 35px;
