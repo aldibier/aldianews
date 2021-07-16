@@ -573,7 +573,8 @@
   }
 }
 
-.path-search-results .news-gallery .view-content > div:not(.no-result-search) {
+.path-search-results .news-gallery .view-content > div:not(.no-result-search),
+.view-last-news-in-error-page .view-content {
   @media screen and (max-width: $tablet) {
     .banner-scroll .banner-horizontal {
       margin: 0 -15px 35px;
