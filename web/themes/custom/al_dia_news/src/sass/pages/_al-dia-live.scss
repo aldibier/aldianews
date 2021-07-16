@@ -31,6 +31,11 @@
   .modal-form.show {
     display: block;
   }
+  .events-gallery{
+    @media screen and (max-width: $broken) {
+      margin: 0 auto 35px;
+    }
+  }
 
   //------ about al dia live banner ------------//
   .block-system-main-block {

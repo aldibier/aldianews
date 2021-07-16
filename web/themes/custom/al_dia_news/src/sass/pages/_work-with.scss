@@ -249,10 +249,16 @@
   }
 }
 
-article[about="/jobs/job-seeker/social-intrapreneur-fellowship-entrepreneurial-fellowship-entrepreneurial"] .view-id-internal_links_to_job_postings{
-  margin-top: 50px;
-
-  @media screen and (min-width: $tablet) {
-    margin-top: 20px;
+article[about="/jobs/job-seeker/social-intrapreneur-fellowship-entrepreneurial-fellowship-entrepreneurial"]{
+  .view-id-internal_links_to_job_postings{
+    margin-top: 50px;
+  }
+  @media (max-width: $tablet) {
+    .view-id-internal_links_to_job_postings{
+      margin-top: 20px;
+    }
+    .content-right-pages{
+      margin: 25px 0;
+    }
   }
 }
