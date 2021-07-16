@@ -2261,7 +2261,7 @@ var initScrollMagic = function initScrollMagic($, Drupal) {
   var pautas = document.querySelector('.pautas');
   var leftContent = document.querySelector('.page-node-type-feature-employer .content-left-pages');
 
-  if (!!rigthPages && !!pautas) {
+  if (!!rigthPages && !!pautas && !!leftContent) {
     var getDurationScene1 = function getDurationScene1() {
       return rigthPages.offsetHeight - pautas.offsetHeight - 20;
     }; //window.addEventListener("resize", () => resizeActivation(pautas, scene1));
