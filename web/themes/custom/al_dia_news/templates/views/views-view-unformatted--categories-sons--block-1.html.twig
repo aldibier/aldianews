@@ -21,7 +21,17 @@
 	<h3>{{ title }}</h3>
 {% endif %}
 
-{% for row in rows %}
+{% set index = rows|keys[0] %}
+{% set subcategory = rows[index]['content']['subcategory'] %}
+
+<div class="views-row">
+	{{subcategory}}
+	<div class="banner-scroll ads">{{ drupal_entity('block', 'gamwadvertisement_14') }}</div>
+</div>
+
+{# {% for row in rows %}
+
+	{% set block_gamw = row['content']['block_gamw'] %}
 
 	{%
 		set row_classes = [
@@ -29,10 +39,14 @@
 		]
 	%}
 
+	{% set index = row['content']['style'] %}
+	{% set subcategory = row['content']['subcategory'] %}
+	
 	<div{{row.attributes.addClass(row_classes)}}>
-		{{- row.content -}}
+		{{ subcategory }}
 		<div class="banner-scroll ads">{{ drupal_entity('block', 'gamwadvertisement_14') }}</div>
 	</div>
-
-
+	
+	
 {% endfor %}
+ #}
