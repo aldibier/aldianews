@@ -12,9 +12,17 @@
   }
 
   .aldia-logo-in-text {
-    max-width: 60px !important;
+    max-width: 43px !important;
     img {
-      height: 18px !important;
+      height: 13px !important;
+    }
+    @media (max-width: $broken){
+    max-width: 35px !important;
+      img{
+        top: 0px;
+      height: 11px !important;
+        
+      }
     }
   }
   //end reset style
@@ -155,7 +163,7 @@
 
   //------ more content category ------------//
   &-category,
-  &-subcategory {
+  &-subcategory {.aldia-logo-in-text
     .container-content,
     .last-content-category-childs {
       display: flex;
