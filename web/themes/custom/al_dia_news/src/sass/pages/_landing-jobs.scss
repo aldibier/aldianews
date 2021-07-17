@@ -81,7 +81,7 @@
       }
     }
   }
-  .watch-live{
+  .watch-live {
     padding-top: 70px;
   }
 
@@ -145,7 +145,7 @@
       display: flex;
       flex-wrap: wrap;
       overflow: initial;
-      
+
       .views-row {
         width: 100%;
         margin: 0 0 40px;
@@ -215,7 +215,7 @@
       font-size: $px24;
     }
   }
-  #block-system-menu-block-jobs-landing-menu{
+  #block-system-menu-block-jobs-landing-menu {
     padding-left: 11px;
   }
 
@@ -267,16 +267,25 @@
       padding-top: 125px;
       margin-bottom: 75px;
       padding: 0px 15px;
+      @media screen and (min-width: $desktop) {
+        padding: 0px;
+      }
     }
 
     p {
       line-height: 34.84px;
       color: $cblack3;
+      @media screen and (min-width: $desktop) {
+        padding: 0px;
+      }
     }
 
     .button-apply {
       margin-top: 55px;
       margin-left: 15px;
+      @media screen and (min-width: $desktop) {
+        margin-left: 0px;
+      }
     }
   }
   // .non-adversiting .block-content-left {
