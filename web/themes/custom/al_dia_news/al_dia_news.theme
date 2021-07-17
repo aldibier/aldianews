@@ -53,23 +53,105 @@ function al_dia_news_preprocess_views_view_unformatted(&$vars) {
   $id = $view->id();
   $display = $view->getDisplay();
 
-  //opcion 1 crear mas bloques ad manager
-  if($id === 'categories_sons'){
+  /* if($id === 'categories_sons'){
+   
+    static $control;
+
+    if(empty($control)) $control = [];
+
+    array_push($control,$vars['rows']);
+
     foreach($vars['rows'] as $index => $row){
+      $vars['rows'][$index]['content']['result'] = count($view->result);
       $vars['rows'][$index]['content']['index'] = $index;
-      $vars['rows'][$index]['content']['subcategory'] = $row;
+    }
+
+    $vars['subcategories'] = $control;
+  }*/
+
+  if($id === 'categories_sons'){
+    $entityManager = \Drupal::service('entity_type.manager');
+
+    foreach($vars['rows'] as $index => $row){
+      switch ($index) {
+        case 0:
+          $block = $entityManager->getStorage('block')->load('gamwadvertisement_14');
+          $renderBlock = $entityManager->getViewBuilder('block')->view($block);
+          $vars['rows'][$index]['content']['block_gamw'] = $renderBlock;
+        break;
+        case 1:
+          $block = $entityManager->getStorage('block')->load('gamwadvertisement_38');
+          $renderBlock = $entityManager->getViewBuilder('block')->view($block);
+          $vars['rows'][$index]['content']['block_gamw'] = $renderBlock;
+        break;
+        case 3:
+          $block = $entityManager->getStorage('block')->load('gamwadvertisement_39');
+          $renderBlock = $entityManager->getViewBuilder('block')->view($block);
+          $vars['rows'][$index]['content']['block_gamw'] = $renderBlock;
+        break;
+        case 4:
+          $block = $entityManager->getStorage('block')->load('gamwadvertisement_40');
+          $renderBlock = $entityManager->getViewBuilder('block')->view($block);
+          $vars['rows'][$index]['content']['block_gamw'] = $renderBlock;
+        break;
+        case 5:
+          $block = $entityManager->getStorage('block')->load('gamwadvertisement_41');
+          $renderBlock = $entityManager->getViewBuilder('block')->view($block);
+          $vars['rows'][$index]['content']['block_gamw'] = $renderBlock;
+        break;
+        case 6:
+          $block = $entityManager->getStorage('block')->load('gamwadvertisement_42');
+          $renderBlock = $entityManager->getViewBuilder('block')->view($block);
+          $vars['rows'][$index]['content']['block_gamw'] = $renderBlock;
+        break;
+        case 7:
+          $block = $entityManager->getStorage('block')->load('gamwadvertisement_43');
+          $renderBlock = $entityManager->getViewBuilder('block')->view($block);
+          $vars['rows'][$index]['content']['block_gamw'] = $renderBlock;
+        break;
+        case 8:
+          $block = $entityManager->getStorage('block')->load('gamwadvertisement_44');
+          $renderBlock = $entityManager->getViewBuilder('block')->view($block);
+          $vars['rows'][$index]['content']['block_gamw'] = $renderBlock;
+        break;
+        case 9:
+          $block = $entityManager->getStorage('block')->load('gamwadvertisement_45');
+          $renderBlock = $entityManager->getViewBuilder('block')->view($block);
+          $vars['rows'][$index]['content']['block_gamw'] = $renderBlock;
+        break;
+        case 10:
+          $block = $entityManager->getStorage('block')->load('gamwadvertisement_46');
+          $renderBlock = $entityManager->getViewBuilder('block')->view($block);
+          $vars['rows'][$index]['content']['block_gamw'] = $renderBlock;
+        break;
+        case 11:
+          $block = $entityManager->getStorage('block')->load('gamwadvertisement_47');
+          $renderBlock = $entityManager->getViewBuilder('block')->view($block);
+          $vars['rows'][$index]['content']['block_gamw'] = $renderBlock;
+        break;
+        case 12:
+          $block = $entityManager->getStorage('block')->load('gamwadvertisement_48');
+          $renderBlock = $entityManager->getViewBuilder('block')->view($block);
+          $vars['rows'][$index]['content']['block_gamw'] = $renderBlock;
+        break;
+        case 13:
+          $block = $entityManager->getStorage('block')->load('gamwadvertisement_49');
+          $renderBlock = $entityManager->getViewBuilder('block')->view($block);
+          $vars['rows'][$index]['content']['block_gamw'] = $renderBlock;
+        break;
+        case 14:
+          $block = $entityManager->getStorage('block')->load('gamwadvertisement_50');
+          $renderBlock = $entityManager->getViewBuilder('block')->view($block);
+          $vars['rows'][$index]['content']['block_gamw'] = $renderBlock;
+        break;
+        case 15:
+          $block = $entityManager->getStorage('block')->load('gamwadvertisement_51');
+          $renderBlock = $entityManager->getViewBuilder('block')->view($block);
+          $vars['rows'][$index]['content']['block_gamw'] = $renderBlock;
+        break;
+      }
     }
   }
-
-  /* if($id === 'categories_sons'){
-    $entityManager = \Drupal::service('entity_type.manager');
-    $block = $entityManager->getStorage('block')->load('gamwadvertisement_14');
-    $renderBlock = $entityManager->getViewBuilder('block')->view($block);
-
-    foreach($vars['rows'] as $index => $row){
-      $vars['rows'][$index]['content']['block_gamw'] = $renderBlock ;
-    }
-  } */
 
   if($id === 'block_guest'){
     $entityManager = \Drupal::service('entity_type.manager');

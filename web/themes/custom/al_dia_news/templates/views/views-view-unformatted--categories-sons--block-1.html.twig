@@ -17,36 +17,40 @@
  * @ingroup themeable
  */
 #}
+
+{% set index = rows|keys[0] %}
+{% set block_gamw = row[index]['content']['block_gamw'] %}
+
+
 {% if title %}
 	<h3>{{ title }}</h3>
 {% endif %}
 
-{% set index = rows|keys[0] %}
-{% set subcategory = rows[index]['content']['subcategory'] %}
+{% for row in rows %}
+  {%
+    set row_classes = [
+    	default_row_class ? 'views-row',
+    ]
+  %}
 
-<div class="views-row">
-	{{subcategory}}
-	<div class="banner-scroll ads">{{ drupal_entity('block', 'gamwadvertisement_14') }}</div>
-</div>
-
-{# {% for row in rows %}
-
-	{% set block_gamw = row['content']['block_gamw'] %}
-
-	{%
-		set row_classes = [
-		default_row_class ? 'views-row',
-		]
-	%}
-
-	{% set index = row['content']['style'] %}
-	{% set subcategory = row['content']['subcategory'] %}
-	
-	<div{{row.attributes.addClass(row_classes)}}>
-		{{ subcategory }}
-		<div class="banner-scroll ads">{{ drupal_entity('block', 'gamwadvertisement_14') }}</div>
-	</div>
-	
-	
+  <div{{ row.attributes.addClass(row_classes) }}>
+    {{- row.content -}}
+	<div class="banner-horizontal ads">{{block_gamw}}</div>
+  </div>
 {% endfor %}
- #}
+
+{# {% if (index + 1) >= result  %}
+
+	{% for row in subcategories %}
+		{% if title %}
+			<h3>{{ title }}</h3>
+		{% endif %}
+
+		<div class="views-row">
+			{{row}}
+			<div class="banner-horizontal ads">{{ drupal_entity('block', 'gamwadvertisement_14') }}</div>
+		</div>
+
+	{% endfor %}
+
+{% endif %} #}
