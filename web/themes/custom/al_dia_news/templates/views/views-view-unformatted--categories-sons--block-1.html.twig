@@ -19,8 +19,7 @@
 #}
 
 {% set index = rows|keys[0] %}
-{% set block_gamw = row[index]['content']['block_gamw'] %}
-
+{% set block_gamw = rows[index]['content']['block_gamw'] %}
 
 {% if title %}
 	<h3>{{ title }}</h3>
