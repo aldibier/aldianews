@@ -12,9 +12,17 @@
   }
 
   .aldia-logo-in-text {
-    max-width: 60px !important;
+    max-width: 43px !important;
     img {
-      height: 18px !important;
+      height: 13px !important;
+    }
+    @media (max-width: $broken){
+    max-width: 35px !important;
+      img{
+        top: 0px !important;
+      height: 11px !important;
+        
+      }
     }
   }
   //end reset style
@@ -153,7 +161,7 @@
     }
   }
 
-  //------ more content category ------------//
+  //------ more content category ------------/  
   &-category,
   &-subcategory {
     .container-content,
@@ -337,7 +345,7 @@
       h3 {
         margin: 0 0 15px;
         font-size: $px19;
-        font-family: $Modcond-bold;
+        font-family: $Mod-bold;
         font-style: normal;
         font-weight: bold;
         line-height: 23px;

@@ -269,11 +269,6 @@
             }
           
         });
-      }, 2500);
-
-
-       //js para eliminar publicidad con non-ads-father
-       setTimeout(() => {
 
         //js para agregar padres de publicdad jobs --------------------------------///
         var block_jobs = document.querySelector(
@@ -383,7 +378,7 @@
           term_events_container.classList.add("non-ads-father");
         } 
 
-      }, 1500);
+      }, 2000);
     });
     }
   };
