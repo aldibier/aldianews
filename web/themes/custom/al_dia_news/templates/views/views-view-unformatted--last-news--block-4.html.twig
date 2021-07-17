@@ -44,6 +44,7 @@
 		{% if loop.index  == 22 %}
 			<span class="skys-scroll ads">{{ drupal_entity('block', 'gamwadvertisement_17') }}</span>
 		{% endif %}
+
 		{% if loop.index  == 24 %}
 			<span class="skys-scroll skys2 ads">{{ drupal_entity('block', 'gamwadvertisement_20') }}</span>
 		{% endif %}
@@ -71,11 +72,6 @@
 		{% if loop.index == 31 %}
 			<span class="banner-scroll last-banner ads">{{ drupal_entity('block', 'gamwadvertisement_36') }}</span>
 		{% endif %}
-
-
-		<div{{row.attributes.addClass(row_classes)}}>
-			{{- row.content -}}
-		</div>
 	{% endfor %}
 {% endif %}
 
