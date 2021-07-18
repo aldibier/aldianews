@@ -197,7 +197,7 @@
 .path-frontpage  {
   .newsletter {
     margin-bottom: 25px;
-    padding: 9px 11px;
+    padding: 9.5px 11px;
     background-color: $bgrey3;
 
     @media screen and(max-width: $tablet) {
@@ -218,6 +218,19 @@
               text-align: center;
             }
           }
+        }
+      }
+    }
+
+    .webform-submission-boletines-form {
+      @media screen and(min-width:$broken) {
+        .form-item-email:lang(es) {
+          width: 65%;
+          max-width: none;
+        }
+
+        #edit-actions:lang(es){
+          width: 35%;
         }
       }
     }
@@ -246,7 +259,7 @@
 
     .form-item-markup {
       min-height: 20px;
-      margin: 10px auto;
+      margin: 0 auto 21px;
       font-size: szrem(16);
       font-style: normal;
       font-weight: bold;
@@ -267,6 +280,7 @@
       }
 
       input {
+        min-height: 40px;
         margin: 0;
         padding: 8px 15px;
         background-color: $cwhite;
