@@ -109,7 +109,7 @@ class CustomModalController extends ControllerBase {
         ],
       ];
       $items['info'][] = [
-          '#markup' => $r_period. $last_name,
+          '#markup' => $r_period . $last_name,
           '#attributes' => [
               'class' => [
                   'info-user-popup',
