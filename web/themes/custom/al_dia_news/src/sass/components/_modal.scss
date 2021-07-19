@@ -51,8 +51,10 @@
     width: 20px !important;
     height: 20px;
     position: absolute;
-    top: 31px;
-    right: 28px;
+    top: 0;
+    right: 0;
+    //top: 31px;
+    //right: 28px;
     transform: none;
 
     @media screen and (max-width: $tablet) {
@@ -65,7 +67,8 @@
 
   .ui-dialog-titlebar {
     margin: 0 auto;
-    padding: 46px 48px 0 47px;
+    padding: 0;
+    //padding: 46px 48px 0 47px;
     border: none;
     background: #fff;
 
@@ -76,7 +79,8 @@
 
   .ui-dialog-content {
     margin: 0 auto;
-    padding: 0 48px 0 47px;
+    padding: 0;
+    //padding: 0 48px 0 47px;
     font-style: normal;
     font-weight: 600;
     font-size: szrem(22);
@@ -123,6 +127,10 @@
       }
     }
   }
+}
+
+.ui-dialog:not(.ui-dialog-off-canvas){
+  border-radius: initial !important;
 }
 
 .background-modal::before {
@@ -251,11 +259,16 @@
   }
 }
 
+//modal medium
 //------ specific styles ------//
 .ui-widget.account-modal--login,
 .ui-widget.account-modal--password,
-.ui-widget.account-modal--register {
+.ui-widget.account-modal--register,
+.ui-widget.edit-info-user.ui-corner-all:not(button),
+.popup-class-user-information.ui-widget.ui-corner-all:not(button),
+div.popup-login.ui-widget.ui-corner-all:not(button){
   max-width: 535px;
+  padding: 46px 48px 47px 47px;
 }
 
 .modal-video-landing {
@@ -406,7 +419,7 @@
     }
   }
   .user-register-login {
-    margin-bottom: 60px;
+    //margin-bottom: 60px;
   }
   @media (max-width: $tablet) {
     max-width: 290px !important;
@@ -459,7 +472,7 @@
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
-    margin-bottom: 50px !important;
+    //margin-bottom: 50px !important;
     .form-submit {
       display: block !important;
       max-width: 165px;
@@ -519,10 +532,10 @@
 }
 
 .account-modal--password {
-  height: 420px !important;
+  //height: 420px !important;
   @media (min-width: $desktop) {
     .ui-dialog-titlebar {
-      padding: 63px 48px 0 47px !important;
+      //padding: 63px 48px 0 47px !important;
     }
   }
   @media (max-width: $tablet) {
