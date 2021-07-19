@@ -300,7 +300,7 @@
     line-height: 127.8%;
     letter-spacing: 0.2px;
     font-family: $PrNovacond-bold;
-    color: #0B0B0B;
+    color: #0b0b0b;
   }
 
   .addtoany_list.a2a_kit_size_32 a > span {
@@ -819,6 +819,14 @@ div[data-embed-button="related_content"] {
       line-height: 127.8%;
       margin-bottom: 0px;
     }
+  }
+}
+
+html[lang="es"] #comment-form .form-actions,
+html[lang="es"] .block-field-blocknodenewsfield-comments .form-actions {
+  .cbutton-back,
+  input.button--primary {
+    max-width: 225px;
   }
 }
 
