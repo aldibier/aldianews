@@ -96,7 +96,7 @@ class CustomModalController extends ControllerBase {
       //$user_name = $this->currentUser->getAccountName();
       $user = User::load($this->currentUser->id());
       $r_period = $user->field_first_name->value;
-      $last_name = $user->field_last_name->value;      
+      $last_name = $user->field_last_name->value;
       $email_user = $user->getEmail();
 
       $items['info'] = [
@@ -109,7 +109,7 @@ class CustomModalController extends ControllerBase {
         ],
       ];
       $items['info'][] = [
-          '#markup' => $r_period . $last_name,
+          '#markup' => $r_period . " ".$last_name,
           '#attributes' => [
               'class' => [
                   'info-user-popup',
@@ -137,8 +137,8 @@ class CustomModalController extends ControllerBase {
       $items['container'][] = [
         '#type' => 'link',
         '#title' => $this->t('Edit'),
-        '#url' => Url::fromRoute('entity.user.edit_form', [ 
-          'user' => $user->id(), 
+        '#url' => Url::fromRoute('entity.user.edit_form', [
+          'user' => $user->id(),
         ]),
         '#attributes' => [
             'class' => [
@@ -152,8 +152,8 @@ class CustomModalController extends ControllerBase {
       $items[] = [
         '#type' => 'link',
         '#title' => $this->t('Cancel my Account'),
-        '#url' => Url::fromRoute('entity.user.cancel_form', [ 
-          'user' => $user->id(), 
+        '#url' => Url::fromRoute('entity.user.cancel_form', [
+          'user' => $user->id(),
         ]),
         '#attributes' => [
             'class' => [
@@ -179,7 +179,7 @@ class CustomModalController extends ControllerBase {
         ],
       ];
     }
-    
+
     return [
       '#theme' => 'item_list',
       '#items' => $items,
