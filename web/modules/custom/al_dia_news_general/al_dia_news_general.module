@@ -9,6 +9,7 @@ use Drupal\Component\Utility\Html;
 use Drupal\Core\Url;
 use Drupal\Component\Serialization\Json;
 use Drupal\Core\Path\CurrentPathStack;
+use Drupal\Core\Form\FormStateInterface;
 
 /**
  * User agent device
@@ -61,6 +62,7 @@ function al_dia_news_general_customize_address($element, $form_state) {
   $element['address_line2']['#weight'] = 21;
   return $element;
 }
+
 /**
  * Implements hook_form_alter()
  */
@@ -642,4 +644,28 @@ function al_dia_news_general_theme() {
       ],
     ],
   ];
+}
+
+/**
+ * Implements hook_element_info_alter().
+ */
+function al_dia_news_general_element_info_alter(array &$info) {
+  if (isset($info['password_confirm'])) {
+    $info['password_confirm']['#after_build'][] = 'al_dia_news_general_after_build';
+  }
+}
+
+/**
+ * After build function for password_confirm elements.
+ *
+ * @param array $element
+ *   The element being altered after build.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   The form_state object returned with the element.
+ */
+function al_dia_news_general_after_build(array $element, FormStateInterface $form_state) {
+  $element['pass1']['#required'] = TRUE;
+  $element['pass2']['#required'] = TRUE;
+  return $element;
+
 }
