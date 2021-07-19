@@ -2,9 +2,9 @@
   margin-bottom: 100px;
 
   @media screen and (max-width: $broken) {
-      margin-bottom: 30px;
-    }
- }
+    margin-bottom: 30px;
+  }
+}
 
 .current-edition {
   max-width: 840px;
@@ -193,7 +193,7 @@
       padding: 0;
       display: flex;
       align-items: center;
-
+      min-height: 28px;
       @media screen and(max-width:$tablet) {
         margin-bottom: 20px;
       }
@@ -341,7 +341,7 @@
         font-weight: bold;
         line-height: 25px;
         letter-spacing: 0.741176px;
-        color: $corange;
+        color: #e3e3e3;
 
         @media screen and (max-width: $tablet) {
           font-size: szrem(15);
