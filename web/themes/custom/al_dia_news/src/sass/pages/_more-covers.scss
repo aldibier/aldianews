@@ -334,7 +334,9 @@
 
 .view-more-covers-landing {
   .views-infinite-scroll-content-wrapper::after {
-    display: none;
+    display: block;
+    position: relative;
+    width: 392px;
   }
   .view-content {
     margin: 30px auto;
@@ -393,6 +395,9 @@
       display: grid !important;
       grid-template-columns: 1fr 1fr;
       grid-gap: 10px;
+      &::after {
+        display: none;
+      }
     }
     .views-row {
       max-width: none;
@@ -410,6 +415,9 @@
         position: absolute;
         right: 0;
         margin: -20px 0;
+      }
+      &:nth-child(1):before {
+        display: none;
       }
     }
     .views-field-field-cover-page {

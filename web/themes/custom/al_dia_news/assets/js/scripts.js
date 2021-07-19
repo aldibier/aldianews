@@ -1691,6 +1691,12 @@ var initMain = function initMain($, Drupal) {
         e.closest(".views-row").classList.add("slider-more");
       }
     }
+  }); ///// js para interna de more covers feature
+
+  Array.from(document.querySelectorAll(".page-node-type-more-covers .related-content-covers .field__item")).map(function (e) {
+    if (e != null) {
+      e.setAttribute("href", "/subscribe");
+    }
   }); ////// js para añadir el boton de respuesta en la lista
 
   Array.from(document.querySelectorAll(".al-dia-news-reply-comments input[value=REPLY]")).map(function (e) {
@@ -1894,12 +1900,12 @@ __webpack_require__.r(__webpack_exports__);
 
   $(document).ajaxComplete(function () {
     $(".popup-login .js-form-item-pass-pass1 input").blur(function () {
-      var background = $(".popup-login .password-strength__indicator").css('background-color');
+      var background = $(".popup-login .password-strength__indicator").css("background-color");
       $(".popup-login .password-strength__text").css("color", background);
     });
   });
-  var containerVideo = document.querySelector('.page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video');
-  var videoThoughtLeaders = document.querySelector('.page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video .content');
+  var containerVideo = document.querySelector(".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video");
+  var videoThoughtLeaders = document.querySelector(".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video .content");
 
   if (!!document.querySelector(".page-node-type-thought-leaders") && !!videoThoughtLeaders && !!containerVideo) {
     var videoThoughtLeadersHeigth = $(videoThoughtLeaders).outerHeight();
@@ -1925,10 +1931,10 @@ __webpack_require__.r(__webpack_exports__);
     /////
 
     /*  if ($(".page-node-type-news .block-field-blocknodenewsfield-video iframe").length ) {
-       var url = ($(".page-node-type-news .block-field-blocknodenewsfield-video iframe")[0].src += "&mute=1");
-       var video = url.replace("autoplay=0", "autoplay=1");
-       $(".page-node-type-news .block-field-blocknodenewsfield-video iframe").attr("src", video);
-     } */
+      var url = ($(".page-node-type-news .block-field-blocknodenewsfield-video iframe")[0].src += "&mute=1");
+      var video = url.replace("autoplay=0", "autoplay=1");
+      $(".page-node-type-news .block-field-blocknodenewsfield-video iframe").attr("src", video);
+    } */
 
     /* if ($( ".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video iframe" ).length ){
       var url = ($(".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video iframe")[0].src += "&mute=1");
@@ -1956,9 +1962,9 @@ __webpack_require__.r(__webpack_exports__);
       $("body").removeClass("open-menu");
     });
     $(".page-node-type-webform .webform-confirmation-modal .button-back").click(function () {
-      $(this).parents('.webform-confirmation-modal').css('display', 'none');
-      $(this).parents('.page-node-type-webform').find('.ui-widget-overlay').css('display', 'none');
-      $(this).attr('href', '#');
+      $(this).parents(".webform-confirmation-modal").css("display", "none");
+      $(this).parents(".page-node-type-webform").find(".ui-widget-overlay").css("display", "none");
+      $(this).attr("href", "#");
     }); //--------puopup-- login - movil -----------//
 
     $(".user-logged-in #block-menuuseritem-2").click(function () {
@@ -2243,8 +2249,17 @@ __webpack_require__.r(__webpack_exports__);
           });
         }
 
-        $('div.popup-class-restore-pwd.ui-widget.ui-corner-all:not(button) .close-button-modal').html('<a href="/">OK</a>');
-        $('.popup-class-cancel-account.ui-widget.ui-corner-all:not(button) .close-button-modal').html('<a href="/">GO TO OUR LATEST CONTENT</a>');
+        window.onload = function () {
+          var esp = document.querySelector('html[lang="es"]');
+
+          if (!!esp) {
+            $("div.popup-class-restore-pwd.ui-widget.ui-corner-all:not(button) .close-button-modal").html('<a href="/">OK</a>');
+            $(".popup-class-cancel-account.ui-widget.ui-corner-all:not(button) .close-button-modal").html('<a href="/">GO TO OUR LATEST CONTENT</a>');
+          } else {
+            $("div.popup-class-restore-pwd.ui-widget.ui-corner-all:not(button) .close-button-modal").html('<a href="/">OK</a>');
+            $(".popup-class-cancel-account.ui-widget.ui-corner-all:not(button) .close-button-modal").html('<a href="/">IR A NUESTRO ÚLTIMO CONTENIDO</a>');
+          }
+        };
       });
     }
   };

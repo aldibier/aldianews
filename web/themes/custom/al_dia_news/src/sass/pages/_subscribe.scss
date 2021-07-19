@@ -22,7 +22,7 @@
     max-width: 580px;
     margin: 0px auto 10px;
     .aldia-logo-in-text {
-      max-width: 98px;
+      max-width: 97.44px;
       img {
         height: 30px;
       }
@@ -277,6 +277,9 @@
 
     #edit-actions input {
       font-size: 16px;
+      width: 136.71px !important;
+      height: 30px;
+      margin-right: 0;
     }
   }
 }
@@ -314,7 +317,7 @@
 
 .block-simple-blockauto-renewal-terms-orders-simple-block {
   max-width: 620px;
-  margin: 57px auto 20px;
+  margin: 57px auto 100px;
 
   p {
     font-weight: 600px;
@@ -460,7 +463,7 @@
 
 .commerce-checkout-flow{
   max-width: 620px;
-  margin: 0 auto 100px;
+  margin: 0 auto 50px;
 
   .checkout-pane-payment-information {
     display: none;
@@ -494,6 +497,7 @@
       font-weight: 600;
       font-size: $px20;
       line-height: 24px;
+      color: #333333;
     }
   }
 
@@ -687,7 +691,7 @@
 
   .paypal-buttons-container {
     max-width: 620px;
-    margin: 50px 0 0 auto;
+    margin: 50px 0 50px auto;
     display: flex;
     overflow: hidden;
     height: 58px;
@@ -711,12 +715,22 @@
     font-size: $px18;
     line-height: 25px;
     font-family: $PrNovacond-Sbold;
-    margin: -52px 0 0;
+    margin: -103px 0 50px;
     text-transform: uppercase;
+  }
+
+  input[class*=form], textarea[class*=form],
+  .SumoSelect>.CaptionCont, select {
+    min-height: 40px;
   }
 
   @media (max-width: $tablet-min) {  
     margin: 0 auto ;
+
+    input[class*=form], textarea[class*=form],
+    .SumoSelect>.CaptionCont, select {
+      min-height: 30px;
+    }
 
     .form-item {
       margin: 0 0 15px;
@@ -817,13 +831,13 @@
 
     .paypal-buttons-container {
       padding: 0;
-      margin: 20px auto 0;
+      margin: 20px auto 40px;
       width: 100%;
       order: 2;
     }
 
     .link--previous {
-      margin: 10px auto 0;
+      margin: 25px auto 0;
       width: 100%;
       height: 30px;
       font-size: 16px;
@@ -1217,7 +1231,7 @@
       font-weight: normal;
       font-size: $px15;
       line-height: 18px;
-      font-family: $PrNovacond-reg;
+      font-family: $Modcond-reg;
       margin: 0;
       max-width: 355px;
       color: #333333;
