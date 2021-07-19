@@ -5,20 +5,9 @@ dependencies:
   config:
     - taxonomy.vocabulary.categories
   content:
-    - 'taxonomy_term:categories:01a8bc97-1ab4-43eb-bd86-b3c9f3e1d0f6'
     - 'taxonomy_term:categories:088d9fe2-1e7b-4b60-a66b-515958f1ee4f'
-    - 'taxonomy_term:categories:16566281-4b54-4ceb-a09a-d98edd203d66'
-    - 'taxonomy_term:categories:1867ed5e-0304-40ee-80d6-42a3cf4676bb'
-    - 'taxonomy_term:categories:289b2ec5-5021-47dd-bd88-06b7f4ad9d7c'
     - 'taxonomy_term:categories:35e711a0-e9d4-45fe-8147-997d1394844b'
-    - 'taxonomy_term:categories:3d19b461-771e-41d1-8330-df316faf8b47'
-    - 'taxonomy_term:categories:4969e35d-adab-4b7f-bda6-4e9a7f60aae9'
     - 'taxonomy_term:categories:aec049fa-a86a-42fb-8dc9-173f58881fde'
-    - 'taxonomy_term:categories:baa0a831-19ba-45bf-ba8a-be44d13892bd'
-    - 'taxonomy_term:categories:c51d8cc3-4350-4d6c-8668-9a89f7a0d2f0'
-    - 'taxonomy_term:categories:eee54e65-ed4e-4b29-891e-229a2f2a4f1c'
-    - 'taxonomy_term:categories:fc9a2fed-71d1-442c-8f5a-a24f095e7020'
-    - 'taxonomy_term:categories:fd49a7f8-2d48-4a3e-b99f-a7fb82320620'
   module:
     - better_exposed_filters
     - node
@@ -116,7 +105,7 @@ display:
           exclude: true
           alter:
             alter_text: true
-            text: "<span class=\"category-title\">\r\n    <h2>AL DÍA <a href=\"/leadership\">LEADERSHIP</a></h2>\r\n</span>"
+            text: "<span class=\"category-title\">\r\n    <h2>AL DÍA <a href=\"/leadership\">{{ parent_target_id }}</a></h2>\r\n</span>"
             make_link: false
             path: ''
             absolute: false
@@ -156,7 +145,7 @@ display:
           click_sort_column: target_id
           type: entity_reference_label
           settings:
-            link: true
+            link: false
           group_column: target_id
           group_columns: {  }
           group_rows: true
