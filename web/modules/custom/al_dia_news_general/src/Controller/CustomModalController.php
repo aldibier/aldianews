@@ -87,7 +87,7 @@ class CustomModalController extends ControllerBase {
   }
   public function cancel() {
     return [
-      '#markup' => '<p class="pop-up-home-cancel-account">You can continue enjoying the best of the American Latino experience through our standart content on the website.</p><p class="close-button-modal">OK</p>'
+      '#markup' => $this->t('<p class="pop-up-home-cancel-account">You can continue enjoying the best of the American Latino experience through our standart content on the website.</p><p class="close-button-modal">OK</p>'),
     ];
   }
   public function userInformation() {
