@@ -305,11 +305,16 @@
   }
 }
 
-article[about="/terms-of-service"] .content-right-pages {
-  @media (max-width: $tablet) {
-    margin: 10px 0 40px;
+article[about="/terms-of-service"]{
+  .content-left-pages{
+    margin-bottom: 70px;
   }
-}
+  .content-right-pages {
+    @media (max-width: $tablet) {
+      margin: 10px 0 30px;
+    }
+  }
+} 
 
 article[about="/contact-us"] .content-left-pages {
   margin-bottom: 60px;

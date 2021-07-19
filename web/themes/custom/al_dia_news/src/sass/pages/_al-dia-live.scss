@@ -1,5 +1,5 @@
 .path-about-al-dia-live {
-  .layout-container,
+  #main-wrapper,
   .layout-container .width1440 {
     max-width: none;
   }
@@ -30,6 +30,11 @@
 
   .modal-form.show {
     display: block;
+  }
+  .events-gallery{
+    @media screen and (max-width: $broken) {
+      margin: 0 auto 35px;
+    }
   }
 
   //------ about al dia live banner ------------//
@@ -474,7 +479,7 @@
 
   //------ about al dia live testimonies ------------//
   .testimonial-wrapper {
-    max-width: 1310px; 
+    max-width: 1310px;
     margin: 0 auto 64px;
     padding: 0 15px;
 
@@ -507,7 +512,7 @@
       position: relative;
     }
 
-    @media (max-width: $broken){
+    @media (max-width: $broken) {
       margin: 0 auto 0px;
     }
   }
@@ -921,7 +926,7 @@
         font-size: 16px;
         line-height: 19px;
         padding: 0 0 5px;
-
+        margin-top: 0px;
         img {
           width: 85px;
           height: 17.65px;

@@ -105,6 +105,16 @@ const initMain = ($, Drupal) => {
 			});
 		}
 
+		//add dots date comments
+		if (!!document.querySelector(".comment--type-comments-content")) {
+			const commentsDate = document.querySelectorAll(".comment--type-comments-content .field--name-comment-post-date");
+			
+			commentsDate.forEach(date => {
+				const dateTxt = date.innerText;
+				date.innerText = `${dateTxt.substring(0,(dateTxt.length - 3))} ${dateTxt.charAt(dateTxt.length - 2)}.${dateTxt.charAt(dateTxt.length - 1)}`;
+			});
+		}
+
 		//// js ajuste ancla en employed
 		Array.from(
 			document.querySelectorAll(".menu--i-am-an-employer-menu li a")

@@ -63,6 +63,9 @@
   .non-adversiting
   .block-views-blockhome-current-edition--block-1 {
   margin: 0 auto 100px !important;
+  @media screen and (max-width: $broken) {
+    margin-bottom: 30px !important;
+  }
 }
 
 .path-about-al-dia-live .non-adversiting {
@@ -80,7 +83,7 @@
     margin: 0px;
   }
   #block-bodyjobslanding {
-    max-width: 1300px;
+    max-width: 1250px;
   }
 }
 .node--view-mode-work-whit-al-dia .non-ads-father .two-content-general-work {
@@ -123,7 +126,7 @@ article[about="/terms-of-service"] {
 }
 
 .node--type-event .non-ads-father .body-lateral-section-advertising {
-  margin: 20px 0px 0px;
+  margin: 20px 0px 0px !important;
 }
 
 ///------ non adversiting en movil-----------//

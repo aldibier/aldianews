@@ -395,7 +395,7 @@ blockquote {
 
     &:before,
     &:after {
-      width: 30px;
+      width: 50px;
       height: 30px;
       position: relative;
       top: initial;
@@ -464,6 +464,15 @@ blockquote {
 
     @media (max-width: $tablet) {
       font-size: szrem(18);
+    }
+  }
+  .banner-horizontal {
+    margin: 20px auto 40px;
+    max-width: 840px;
+    max-height: 240px;
+    @media (max-width: $tablet) {
+      max-height: 140px;
+      margin: 10px -15px 30px;
     }
   }
 

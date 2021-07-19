@@ -9,7 +9,7 @@
       display: none;
     }
   }
- 
+
   fieldset {
     all: initial;
     display: block;
@@ -84,7 +84,7 @@
       max-width: 440px;
     }
   }
-
+  
   .card-one-column {
     margin: 40px 0;
     position: relative;
@@ -182,6 +182,11 @@
   }
 }
 
+.view-high-impact-news-home.view-display-id-block_1 .featured-news::after{
+  @media (max-width: $tablet){
+    width: calc(100% - 30px);
+  }
+}
 //------------ Ultimas noticias ---------------//
 .wrapper-news-trending {
   margin-bottom: 80px;
@@ -362,11 +367,6 @@
     }
 
     .views-field-view-2 {
-      .views-row:last-child {
-        /* margin-bottom: 25px;
-        padding-bottom: 25px;
-        border-bottom: 1px solid #b1b1b1; */
-      }
 
       .content {
         margin: 0px;
@@ -380,8 +380,8 @@
     }
 
     .card-more-category .field--name-field-short-title a {
-      font-size: $px24;
-      line-height: 29px;
+      font-size: szrem(18);
+      line-height: 21px;
     }
 
     @media (max-width: 1250px) {
@@ -476,11 +476,6 @@
         position: relative;
       }
 
-      .block-fixed-block-content-small-vertical-advertising,
-      .block-fixed-block-contentbig-vertical-advertising {
-        /* display: none; */
-      }
-
       .category-title h2 {
         margin-bottom: 0px;
         border-bottom: 2px solid #e92f31;
@@ -500,11 +495,11 @@
       }
 
       .aldia-logo-in-text {
-        max-width: 70px;
+        max-width: 55px;
 
         img {
           width: 100%;
-          height: 24.25px;
+          height: 17.25px;
         }
       }
 
@@ -520,6 +515,15 @@
 
         .card-category {
           margin-bottom: 0px;
+        }
+        .card-title {
+          .aldia-logo-in-text {
+            max-width: 35px;
+            img {
+              width: 100%;
+              height: 10.25px;
+            }
+          }
         }
 
         &:nth-child(3),
@@ -581,7 +585,7 @@
         z-index: 0;
       }
     }
-    
+
     a {
       &::after {
         display: none;
@@ -589,7 +593,7 @@
     }
   }
 
-  h2  {
+  h2 {
     width: max-content;
     z-index: 1;
 
@@ -757,11 +761,16 @@
       max-width: 80px;
       max-height: 80px;
       margin: 0 auto 10px;
+      img {
+        max-width: 80px;
+        max-height: 80px;
+      }
     }
 
     .views-field-name {
       font-size: $px14;
       line-height: 17px;
+      min-height: 34px;
     }
 
     .views-field-title {
@@ -782,7 +791,7 @@
   .view-thought-leaders-home.view-display-id-block_3
     .view-content
     .aldia-logo-in-text {
-    margin-bottom: 6px;
+    margin-bottom: 2px;
   }
 }
 

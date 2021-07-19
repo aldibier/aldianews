@@ -58,6 +58,8 @@
     @media screen and (max-width: $tablet) {
       top: 25px;
       right: 15px;
+      width: 15px !important;
+      height: 15px;
     }
   }
 
@@ -174,8 +176,9 @@
     cursor: pointer;
 
     @media screen and (max-width: $tablet) {
+      background-image: url("../img/x-mob.png");
       width: 15px !important;
-      height: 15px;
+      height: 15px !important;
     }
   }
 }
@@ -443,7 +446,7 @@
   min-height: 450px;
   overflow: auto;
   overscroll-behavior: contain;
-  #password-policy-status{
+  #password-policy-status {
     display: none;
   }
   .form-item-mail {

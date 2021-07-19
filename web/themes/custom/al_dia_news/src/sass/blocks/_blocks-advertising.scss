@@ -158,9 +158,23 @@
   display: none;
 }
 
-//----------------- thought leaders ----------------------------------//
-.path-thought-leaders .views-infinite-scroll-content-wrapper:not(.non-adversiting) {
+//----------------- landing category ----------------------------------//
+.path-taxonomy .view-categories-sons.view-display-id-block_1 {
+  .views-row {
+    .banner-horizontal {
+      margin: 80px auto 0;
 
+      @media (max-width: $broken) {
+        max-height: none;
+        margin: 35px auto 0;
+      }
+    }
+  }
+}
+
+//----------------- thought leaders ----------------------------------//
+.path-thought-leaders
+  .views-infinite-scroll-content-wrapper:not(.non-adversiting) {
   .skys-scroll {
     width: 100%;
     max-width: 100%;
@@ -179,23 +193,23 @@
       &::before {
         content: "";
         width: calc(100vw - 30px);
-        height: 1px;
+        height: 0;
         margin: -35px auto;
+        padding: 0.1mm;
         display: block;
         position: absolute;
         right: 0;
         bottom: 0px;
         background: $cgrey4;
       }
-    } 
+    }
   }
 
   @media screen and (max-width: $tablet) {
-
     .views-row.not-show-line-mobile {
       margin-bottom: 0;
 
-      &::before {
+      &::before  {
         display: none;
       }
     }
@@ -207,7 +221,7 @@
 
     .skys-scroll.ads.ads-mobile {
       &::after {
-        content: '';
+        content: "";
         width: 35px;
         height: 100%;
         position: absolute;
@@ -227,10 +241,11 @@
       margin-bottom: 50px;
 
       &::before {
-        content: '';
+        content: "";
         width: calc(100vw - 30px);
-        height: 1px;
+        height: 0;
         margin: -25px auto;
+        padding: 0.1mm;
         position: absolute;
         bottom: 0;
         right: 0;
@@ -238,7 +253,7 @@
       }
     }
 
-    .block-scroll.ads-mobile {
+    .block-scroll.ads-mobile  {
       width: 100%;
       max-width: 100%;
       max-height: initial;
@@ -249,7 +264,7 @@
       display: block;
       position: relative;
       text-align: center;
-    }  
+    }
 
     .block-scroll.block2.ads-mobile {
       margin-bottom: 20px;
@@ -265,7 +280,8 @@
   }
 }
 
-.view-more-videos-in-landing .views-infinite-scroll-content-wrapper:not(.non-adversiting),
+.view-more-videos-in-landing
+  .views-infinite-scroll-content-wrapper:not(.non-adversiting),
 .news-gallery .views-infinite-scroll-content-wrapper:not(.non-adversiting) {
   @media (min-width: $broken) {
     .banner-horizontal {
@@ -275,8 +291,10 @@
 }
 
 .news-gallery .views-infinite-scroll-content-wrapper:not(.non-adversiting),
-.view-landing-thought-leaders .views-infinite-scroll-content-wrapper:not(.non-adversiting),
-.view-jobs-in-i-am-a-job-seeker .views-infinite-scroll-content-wrapper:not(.non-adversiting) {
+.view-landing-thought-leaders
+  .views-infinite-scroll-content-wrapper:not(.non-adversiting),
+.view-jobs-in-i-am-a-job-seeker
+  .views-infinite-scroll-content-wrapper:not(.non-adversiting) {
   .views-row.not-show-line {
     @media screen and (min-width: $broken) {
       &::before {
@@ -286,7 +304,7 @@
   }
 }
 
-.news-gallery .views-infinite-scroll-content-wrapper:not(.non-adversiting) {
+.news-gallery .views-infinite-scroll-content-wrapper:not(.non-adversiting)  {
   .views-row.not-show-line-mobile {
     @media screen and (max-width: $tablet) {
       margin-bottom: 35px;
@@ -294,90 +312,6 @@
       &::before {
         display: none !important;
       }
-    }
-  }
-}
-
-
-//----------------- jobs  ----------------------------------//
-.path-job-seeker .views-infinite-scroll-content-wrapper:not(.non-adversiting){
-  @media screen and (max-width: $tablet) {
-    .block-scroll.ads-mobile {
-      width: 100%;
-      max-width: 100%;
-      margin: 0 0 22px;
-      position: relative;
-      text-align: center;
-  
-      &::after {
-        content: "";
-        width: calc(100vw - 30px);
-        height: 0;
-        margin: 0 auto;
-        padding: 0.1mm;
-        position: absolute;
-        bottom: calc(0% - 20px);
-        left: 0;
-        right: 0;
-        background: $cgrey4;
-      }
-    }
-
-    .banner-scroll.ads-mobile {
-      margin: 20px 0 40px;
-      
-      .banner-horizontal {
-        margin: 0px -15px 0;
-      }
-    }
-
-    .banner-scroll.ban2.ads-mobile {
-      margin: 49px 0px 42px;
-      
-      .banner-horizontal {
-        margin: 0px -15px 0;
-      }
-    }
-  }
-}
-
-.path-jobs .views-infinite-scroll-content-wrapper:not(.non-adversiting) {
-  .block-scroll {
-    margin: 0;
-  }
-  
-  .block-scroll.block2  {
-    width: 100%;
-    height: 100%;
-    max-width: none;
-    max-height: none;
-    position: relative;
-
-    &::before {
-      display: block;
-      content: "";
-      width: calc(100% + 40px);
-      height: 1px;
-      left: -20px;
-      bottom: calc(0% + 40px);
-      background: $cgrey4;
-      position: absolute;
-      right: 0px;
-      margin: 0 auto;
-    }
-  }
-
-  .skys-scroll {
-    margin: 0;
-  }
-
-  @media (min-width: $broken) {
-    .views-row.not-show-line {
-      margin-bottom: 0;
-    }
-
-    .banner-horizontal {
-      margin: 90px 0;
     }
   }
 }
@@ -436,6 +370,92 @@
   }
 }
 
+.path-jobs .views-infinite-scroll-content-wrapper:not(.non-adversiting),
+.path-job-seeker .views-infinite-scroll-content-wrapper:not(.non-adversiting) {
+  .block-scroll {
+    margin: 0;
+  }
+
+  .block-scroll.block2 {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    position: relative;
+
+    &::before {
+      display: block;
+      content: "";
+      width: calc(100% + 40px);
+      padding: 0.1mm;
+      height: 0;
+      left: -20px;
+      bottom: calc(0% + 40px);
+      background: $cgrey4;
+      position: absolute;
+      right: 0px;
+      margin: 0 auto;
+    }
+  }
+
+  .skys-scroll {
+    margin: 0;
+  }
+
+  @media (min-width: $broken) {
+    .views-row.not-show-line {
+      margin-bottom: 0;
+    }
+
+    .banner-horizontal {
+      margin: 90px 0;
+    }
+  }
+
+  @media screen and (max-width: $tablet) {
+
+    .views-row.not-show-line-mobile {
+      margin-bottom: 0;
+
+      &::before {
+        display: none;
+      }
+    }
+
+    .block-scroll.ads-mobile {
+      width: 100%;
+      max-width: 100%;
+      max-height: none;
+      margin: 50px 0px 22px;
+      padding: 20px 0;
+      border-top: 1px solid $cgrey4;
+      border-bottom: 1px solid $cgrey4;
+      position: relative;
+      text-align: center;
+    }
+
+    .banner-scroll.ads-mobile {
+      margin: 20px 0 40px;
+
+      .banner-horizontal {
+        margin: 0px -15px 0;
+      }
+    }
+
+    .banner-scroll.ban2.ads-mobile {
+      margin: 49px 0px 42px;
+
+      .banner-horizontal {
+        margin: 0px -15px 0;
+      }
+    }
+
+    .block-scroll.ads.ads-mobile + .banner-scroll {
+      margin-top: 0 !important;
+    }
+  }
+}
+
 //----------------- about al dia live ----------------------------------//
 .path-about-al-dia-live {
   .first-block-bottom-banner {
@@ -475,6 +495,9 @@
       margin-bottom: 40px;
     }
   }
+  .content-left-pages{
+    margin-bottom: 70px;
+  }
 
   [data-ad-unit="about-us-banner-prefooter-mobile"] {
     @media screen and (min-width: $tablet) {
@@ -484,22 +507,21 @@
 }
 
 //----------------- internal news ----------------------------------//
-#block-al-dia-news-content + .banner-horizontal {
+#block-al-dia-news-content + .banner-horizontal  {
   margin-bottom: 100px;
 }
 
 //----------------- more news and more authors   ----------------------------------//
 .view-more-news,
-.view-more-authors {
-
+.view-more-authors  {
   @media screen and (min-width: $tablet) {
-    .skyscraper-mobile {
+    .skyscraper-mobile  {
       display: none;
     }
   }
 
   @media screen and (max-width: $tablet) {
-    .skyscraper-mobile {
+    .skyscraper-mobile  {
       margin-bottom: 50px !important;
 
       &::before {
@@ -511,7 +533,7 @@
         background: $cwhite;
         left: calc(0% - 30px);
       }
-    } 
+    }
   }
 }
 
@@ -522,8 +544,6 @@
     }
   }
 }
-
-
 
 .banner-scroll {
   grid-column: span 3;
@@ -572,7 +592,9 @@
   }
 }
 
-.path-search-results .news-gallery .view-content > div:not(.no-result-search) {
+.path-search-results .news-gallery .view-content > div:not(.no-result-search),
+.path-taxonomy .news-gallery .views-infinite-scroll-content-wrapper,
+.view-last-news-in-error-page .view-content {
   @media screen and (max-width: $tablet) {
     .banner-scroll .banner-horizontal {
       margin: 0 -15px 35px;
@@ -640,22 +662,6 @@
   }
 }
 
-.view-jobs-in-i-am-a-job-seeker .views-infinite-scroll-content-wrapper,
-.view-landing-thought-leaders .views-infinite-scroll-content-wrapper,
-.news-gallery .views-infinite-scroll-content-wrapper {
-  @media screen and (min-width: $tablet) {
-    .ads-mobile {
-      display: none !important;
-    }
-  }
-
-  @media screen and (max-width: $broken) {
-    .ads:not(.ads.ads-mobile) {
-      display: none;
-    }
-  }
-}
-
 .news-gallery .block-scroll,
 .view-landing-thought-leaders .block-scroll,
 .news-gallery .skys-scroll.skys2,
@@ -667,7 +673,8 @@
       display: block;
       content: "";
       width: calc(100% + 40px);
-      height: 1px;
+      height: 0;
+      padding: 0.1mm;
       left: -20px;
       bottom: 0;
       background: $cgrey4;
@@ -744,8 +751,6 @@ div[data-ad-unit*="pre-footer-bottom-banner"] {
     margin-left: 0px !important;
   }
 }
-
-
 
 div[data-ad-unit*="Home-post-main-headline"] {
   margin-left: 0px !important;

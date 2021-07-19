@@ -1,8 +1,6 @@
 //-------------block landing categories-----------------//
 .view-last-news-category-sons,
 .view-subcategory-only-for-children {
-  
-
   .category-title {
     padding-bottom: 10px;
     border-bottom: 3px solid $corange;
@@ -99,8 +97,14 @@
       }
     }
   }
+  .card-one-column .card-title h3 .aldia-logo-in-text {
+    max-width: 66px;
+  }
 }
 
+.main-news.view-last-news-category-sons.view-display-id-block_1 {
+  max-width: 840px;
+}
 .path-taxonomy .view-id-categories_sons {
   @media (max-width: $desktop) {
     margin-top: 0px;
@@ -174,8 +178,6 @@
     grid-area: area-2;
   }
 }
-
-
 
 .first-block-subcategory-taxonomy {
   .block-field-blocknodenewsfield-image {

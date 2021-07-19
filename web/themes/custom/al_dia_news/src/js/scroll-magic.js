@@ -11,7 +11,7 @@ const initScrollMagic = ($, Drupal) => {
     const pautas = document.querySelector('.pautas');
     const leftContent = document.querySelector('.page-node-type-feature-employer .content-left-pages');
 
-    if (!!rigthPages && !!pautas) {
+    if (!!rigthPages && !!pautas && !!leftContent ) {
         //------------ not sticky --------------//
         let limitHigh = 1940;
         if (rigthPages.offsetHeight === pautas.offsetHeight) return;
