@@ -274,7 +274,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<span class="review-order-subscribe-text">* This price will be valid for the 12 week introductory period. Your account will be, thereafter, automatically charged on a monthly or annual basis.</span>'
+            text: "<span class=\"review-order-subscribe-text\">{% trans %}\r\n* This price will be valid for the 12 week introductory period. Your account will be, thereafter, automatically charged on a monthly or annual basis.{% endtrans %}</span>"
             make_link: false
             path: ''
             absolute: false
