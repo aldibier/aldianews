@@ -163,6 +163,12 @@
 
     h3 {
       line-height: 0;
+      .aldia-logo-in-text {
+        max-width: 67px;
+        @media screen and (max-width: $broken) {
+          max-width: 32px;
+        }
+      }
     }
 
     a {
