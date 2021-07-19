@@ -1,9 +1,9 @@
 .webform-submission-request-a-call-back-add-form {
-    max-width: 660px;
+    max-width: 690px;
     width: 100%;
     margin: 0 auto;    
     display: flex;
-    padding: 0 15px;
+    padding: 0 15px 95px;
 
     h1 {
         font-style: normal;
@@ -93,10 +93,13 @@
     }
 
     @media screen and (max-width:$tablet) {
+        padding: 0 15px 40px;
 
         .button--primary {
             width: 100%;
             height: 30px;
+            font-size: 16px !important;
+            line-height: 25px !important;
         }
 
         #edit-markup,
