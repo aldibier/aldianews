@@ -9,7 +9,7 @@ import replaceToken from "./modules/replaceToken";
 
   // Selection share
   const sharer = new SelectionSharer();
-  sharer.setElements("p,a,h1,h2,h3,blockquote,em,strong");
+  sharer.setElements("p,h1,h2,h3,blockquote,em,strong,a:not(.selectionSharer a)");
 
   // Replace key word by another value
   const headingTags = document.querySelectorAll("h1, h2, h3");
