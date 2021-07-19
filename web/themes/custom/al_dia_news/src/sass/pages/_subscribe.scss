@@ -715,8 +715,18 @@
     text-transform: uppercase;
   }
 
+  input[class*=form], textarea[class*=form],
+  .SumoSelect>.CaptionCont, select {
+    min-height: 40px;
+  }
+
   @media (max-width: $tablet-min) {  
     margin: 0 auto ;
+
+    input[class*=form], textarea[class*=form],
+    .SumoSelect>.CaptionCont, select {
+      min-height: 30px;
+    }
 
     .form-item {
       margin: 0 0 15px;
