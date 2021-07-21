@@ -587,7 +587,7 @@ const initMain = ($, Drupal) => {
 					return ev;
 				}
 			});
-			e.querySelector(".container-show-hide span").innerHTML =
+			e.querySelector(".container-show-hide .num").innerHTML =
 				count_children.length;
 		} else {
 			e.classList.add("no-answer");
