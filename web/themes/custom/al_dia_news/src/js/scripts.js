@@ -92,7 +92,7 @@ import replaceToken from "./modules/replaceToken";
     });
   }
 
-  jQuery(document).ready(function() {
+  $(window).on('load', function() {
     /////
     /*  if ($(".page-node-type-news .block-field-blocknodenewsfield-video iframe").length ) {
       var url = ($(".page-node-type-news .block-field-blocknodenewsfield-video iframe")[0].src += "&mute=1");

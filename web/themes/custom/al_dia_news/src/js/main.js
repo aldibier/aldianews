@@ -500,29 +500,43 @@ const initMain = ($, Drupal) => {
 		}
 
 		//--------puopup-- login-----------//
-		// $(".user-logged-in #block-menuuseritem").click(function() {
-		// 	if ($(this).hasClass("open")) {
-		// 	  $(this).removeClass("open");
-		// 	  $(".user-logged-in #block-menuuseritem .item-list").removeClass("open");
-		// 	} else {
-		// 	  $(".user-logged-in #block-menuuseritem .item-list").addClass("open");
-		// 	  $(this).addClass("open");
-		// 	}
-		//   });
+		/* $(".user-logged-in #block-menuuseritem").click(function() {
+		 	if ($(this).hasClass("open")) {
+		 	  $(this).removeClass("open");
+		 	  $(".user-logged-in #block-menuuseritem .item-list").removeClass("open");
+		 	} else {
+		 	  $(".user-logged-in #block-menuuseritem .item-list").addClass("open");
+		 	  $(this).addClass("open");
+		 	}
+		}); */
 
-		  var icon_menu = document.querySelector(".user-logged-in #block-menuuseritem");
-		  var list_menu = document.querySelector(".user-logged-in #block-menuuseritem .item-list");
-		  if(!!icon_menu && !!list_menu){
-			icon_menu.addEventListener('click', () => {
-				if(icon_menu.classList.contains("open")){
-					icon_menu.classList.remove("open");
-					list_menu.classList.remove("open");
-				} else{
-					list_menu.classList.add("open");
-					icon_menu.classList.add("open");
+		/* var icon_menu = document.querySelector(".user-logged-in #block-menuuseritem");
+		var list_menu = document.querySelector(".user-logged-in #block-menuuseritem .item-list");
+
+		if(!!icon_menu && !!list_menu){
+		icon_menu.addEventListener('click', () => {
+			if(icon_menu.classList.contains("open")){
+				icon_menu.classList.remove("open");
+				list_menu.classList.remove("open");
+			} else{
+				list_menu.classList.add("open");
+				icon_menu.classList.add("open");
+			}
+			})
+		} */
+
+		if(!!document.querySelector(".user-logged-in #block-menuuseritem")){
+			document.querySelector(".user-logged-in #block-menuuseritem").addEventListener('click',function(){
+				if(this.classList.contains('open')){
+					console.log(this);
+					this.classList.remove('open');
+					document.querySelector('.user-logged-in #block-menuuseritem .item-list').classList.remove('open');
+				}else {
+					document.querySelector('.user-logged-in #block-menuuseritem .item-list').classList.add('open');
+					this.classList.add('open');
 				}
-			 })
-		  }
+			})		
+		}
 	};
 
 	///// js para modos de visualizacion de slider event
