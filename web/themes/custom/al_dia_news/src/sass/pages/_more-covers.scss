@@ -64,9 +64,11 @@
   }
 
   .related-content-covers {
-    border-top: 3px solid $cblack3;
     margin: 60px auto 0;
 
+    .view-header{
+      border-top: 3px solid $cblack3;
+    }
     // .field__label,
     h2 {
       font-style: normal;
@@ -228,9 +230,10 @@
     }
 
     .related-content-covers {
-      border-top: 1.5px solid $cblack3;
       margin: 30px auto 0;
-
+      .view-header{
+      border-top: 1.5px solid $cblack3;
+      }
       // .field__label,
       h2 {
         font-size: 15px;
