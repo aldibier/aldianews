@@ -8,7 +8,7 @@
     position: absolute;
     content: "";
     display: block;
-    top: 79px;
+    top: 68px;
     height: 5px;
     background: $corange;
     right: 0;
@@ -33,7 +33,7 @@
 
   #block-footerlogo {
     position: absolute;
-    top: 0;
+    top: -11px;
     right: 0;
     width: calc(100% - 395px);
     z-index: 2;
@@ -407,6 +407,8 @@
     #block-footerlogo {
       position: relative;
       width: 100%;
+      z-index: 0;
+      top: 0;
 
       .content {
         flex-wrap: wrap;
