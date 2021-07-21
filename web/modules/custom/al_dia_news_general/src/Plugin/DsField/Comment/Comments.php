@@ -23,7 +23,7 @@ use Drupal\Core\Form\FormBuilder;
  */
 class Comments extends DsFieldBase {
 
-  
+
   /**
    * Consulta a la base de datos.
    *
@@ -118,7 +118,7 @@ class Comments extends DsFieldBase {
           '#markup' => '<div class="container-reply"></div>',
         ];
         $items[] = [
-          '#markup' => '<div class="container-show-hide"><div class="show">SEE </div><div class="hide">HIDE </div><span></span> ANSWERS</div>',
+          '#markup' => $this->t('<div class="container-show-hide"><div class="show">SEE </div><div class="hide">HIDE </div><span></span> ANSWERS</div>'),
           '#attributes' => [
             'class' => [
               'show-hide-comment',
@@ -142,7 +142,7 @@ class Comments extends DsFieldBase {
       ];
 
       $items[] = [
-        '#markup' => '<span class="text-anonymous-comment">or</span>',
+        '#markup' => $this->t('<span class="text-anonymous-comment">or</span>'),
       ];
 
       $items[] = [
@@ -160,11 +160,11 @@ class Comments extends DsFieldBase {
       ];
 
       $items[] = [
-        '#markup' => '<span class="text-anonymous-comment">to reply</span>',
+        '#markup' => $this->t('<span class="text-anonymous-comment">to reply</span>'),
       ];
-      
+
       $items[] = [
-        '#markup' => '<div class="container-show-hide"><div class="show">SEE </div><div class="hide">HIDE </div><span></span> ANSWERS</div>',
+        '#markup' => $this->t('<div class="container-show-hide"><div class="show">SEE </div><div class="hide">HIDE </div><span></span> ANSWERS</div>'),
         '#attributes' => [
           'class' => [
             'show-hide-comment',
@@ -172,7 +172,7 @@ class Comments extends DsFieldBase {
         ],
       ];
     }
-    
+
 
     $query = $this->dataBase->select('comment_field_data', 'c');
     $query->addField("c", "cid");
@@ -183,21 +183,21 @@ class Comments extends DsFieldBase {
 
     if(!$result){
       // $comment = $this->entityTypeManager->getStorage('comment')->create([
-      //   'entity_id'=> $entity->getCommentedEntityId(), 
-      //   'pid'=> $entity->id(), 
-      //   'entity_type'=> $entity->getCommentedEntityTypeId(), 
+      //   'entity_id'=> $entity->getCommentedEntityId(),
+      //   'pid'=> $entity->id(),
+      //   'entity_type'=> $entity->getCommentedEntityTypeId(),
       //   'field_name'=> $entity->getFieldName()
       // ]);
       // $form = $this->entityFormBuilder->getForm($comment);
       // $form['actions']['submit']['#value'] = $this->t("POST ANSWER");
       $items[] = $this->formBuilder->getForm('Drupal\al_dia_news_general\Form\ReplyComments', [
-        'entity_id'=> $entity->getCommentedEntityId(), 
-        'pid'=> $entity->id(), 
-        'entity_type'=> $entity->getCommentedEntityTypeId(), 
+        'entity_id'=> $entity->getCommentedEntityId(),
+        'pid'=> $entity->id(),
+        'entity_type'=> $entity->getCommentedEntityTypeId(),
         'field_name'=> $entity->getFieldName()
       ]);
     }
-    
+
       //$form['comment_form'] = $this->entityFormBuilder->getForm($comment);
     return [
       '#theme' => 'item_list',
@@ -206,5 +206,5 @@ class Comments extends DsFieldBase {
 
     ];
   }
-  
+
 }

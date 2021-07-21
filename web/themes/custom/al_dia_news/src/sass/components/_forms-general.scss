@@ -8,6 +8,12 @@
   overflow: hidden;
   z-index: 3;
 
+  &__large {
+    max-width: 820px;
+    padding: 60px 60px 58px 50px;
+    overflow: hidden;
+  }
+
   form {
     overflow-y: scroll;
     height: 70%;
@@ -24,8 +30,6 @@
     margin: 0;
   }
 }
-
-
 
 //-------------form title------------//
 .views-label.views-label-field-webform,
@@ -310,11 +314,10 @@ button[name="close"],
 }
 
 .contact-form {
-  max-height: 830px;
-  overflow: hidden;
-  padding: 60px 50px 50px;
-  max-width: 820px;
-  height: 100%;
+  //max-height: 830px;
+  //padding: 60px 50px 50px;
+  //max-width: 820px;
+  //height: 100%;
 }
 
 @media (max-width: $tablet) {
