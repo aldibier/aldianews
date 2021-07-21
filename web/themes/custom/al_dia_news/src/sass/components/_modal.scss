@@ -58,8 +58,8 @@
     transform: none;
 
     @media screen and (max-width: $tablet) {
-      top: 25px;
-      right: 15px;
+      top: 0; //25px
+      right: 0; //15px
       width: 15px !important;
       height: 15px;
     }
@@ -272,7 +272,7 @@ div.popup-login.ui-widget.ui-corner-all:not(button){
   
   @media screen and (max-width: $tablet) {
     width: calc(100% - 30px)!important;
-    padding: 0;
+    padding: 35px 20px 34px;
 
     .user-pass>p{
       text-align: left;
@@ -280,7 +280,7 @@ div.popup-login.ui-widget.ui-corner-all:not(button){
   }
 }
 
-.ui-widget.account-modal--login {
+.ui-widget.account-modal--login.ui-corner-all:not(button){
   padding-bottom: 65px;
 }
 
