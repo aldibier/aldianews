@@ -558,20 +558,18 @@ const initMain = ($, Drupal) => {
 		}
 	});
 
-	///// js para interna de more covers feature
-	Array.from(
-		document.querySelectorAll(
-			".page-node-type-more-covers .related-content-covers .field__item"
-		)
-	).map(e => {
-		if (e != null) {
-			e.setAttribute("href", "/subscribe");
-		}
-	});
 
 	////// js para añadir el boton de respuesta en la lista
 	Array.from(
 		document.querySelectorAll(".al-dia-news-reply-comments input[value=REPLY]")
+	).map(function (e) {
+		var father_li = e.closest("ul").querySelector(".container-reply");
+		if (!!e && !!father_li) {
+			father_li.appendChild(e);
+		}
+	});
+	Array.from(
+		document.querySelectorAll(".al-dia-news-reply-comments input[value=RESPONDER]")
 	).map(function (e) {
 		var father_li = e.closest("ul").querySelector(".container-reply");
 		if (!!e && !!father_li) {
