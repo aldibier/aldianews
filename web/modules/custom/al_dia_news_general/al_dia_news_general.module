@@ -174,7 +174,7 @@ function al_dia_news_general_form_alter(&$form, $form_state, $form_id) {
     case "change_pwd_form":
       $form['#title'] = t("CHANGE PASSWORD");
       $form['#submit'][] = 'custom_password_reset';
-      $form['actions']['submit']['#value'] = 'CHANGE';
+      $form['actions']['submit']['#value'] = t('CHANGE');
     break;
     case "user_pass":
       $form['#title'] = t("RESTORE PASSWORD");
