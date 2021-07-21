@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.more_covers.field_start_date
     - field.field.node.more_covers.field_year_covers
     - node.type.more_covers
+    - views.view.related_news_in_more_covers_
   module:
     - al_dia_layouts
     - blockgroup
@@ -21,6 +22,7 @@ dependencies:
     - image
     - layout_builder
     - user
+    - views
 third_party_settings:
   field_group:
     group_date:
@@ -138,27 +140,6 @@ third_party_settings:
                 third_party_settings: {  }
             additional: {  }
             weight: 0
-          dd017f30-3c13-4a87-89a8-1aeca552fad7:
-            uuid: dd017f30-3c13-4a87-89a8-1aeca552fad7
-            region: three_content
-            configuration:
-              id: 'field_block:node:more_covers:field_related_more_covers'
-              label: FEATURES
-              provider: layout_builder
-              label_display: visible
-              formatter:
-                label: hidden
-                type: entity_reference_revisions_entity_view
-                settings:
-                  view_mode: default
-                third_party_settings:
-                  field_formatter_class:
-                    class: ''
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-            additional: {  }
-            weight: 0
           c6ea9853-8d1a-424e-9a00-81d076acf09e:
             uuid: c6ea9853-8d1a-424e-9a00-81d076acf09e
             region: one_content
@@ -215,6 +196,19 @@ third_party_settings:
               label: 'GAMW - fixed skyscraper adversiting'
               provider: blockgroup
               label_display: '0'
+              context_mapping: {  }
+            additional: {  }
+            weight: 1
+          5287dcad-8296-4d79-8b19-fc8e1fb02c18:
+            uuid: 5287dcad-8296-4d79-8b19-fc8e1fb02c18
+            region: three_content
+            configuration:
+              id: 'views_block:related_news_in_more_covers_-block_1'
+              label: ''
+              provider: views
+              label_display: '0'
+              views_label: ''
+              items_per_page: none
               context_mapping: {  }
             additional: {  }
             weight: 1

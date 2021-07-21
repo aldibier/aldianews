@@ -64,9 +64,11 @@
   }
 
   .related-content-covers {
-    border-top: 3px solid $cblack3;
     margin: 60px auto 0;
 
+    .view-header{
+      border-top: 3px solid $cblack3;
+    }
     // .field__label,
     h2 {
       font-style: normal;
@@ -228,9 +230,10 @@
     }
 
     .related-content-covers {
-      border-top: 1.5px solid $cblack3;
       margin: 30px auto 0;
-
+      .view-header{
+      border-top: 1.5px solid $cblack3;
+      }
       // .field__label,
       h2 {
         font-size: 15px;
@@ -334,7 +337,9 @@
 
 .view-more-covers-landing {
   .views-infinite-scroll-content-wrapper::after {
-    display: none;
+    display: block;
+    position: relative;
+    width: 392px;
   }
   .view-content {
     margin: 30px auto;
@@ -393,6 +398,9 @@
       display: grid !important;
       grid-template-columns: 1fr 1fr;
       grid-gap: 10px;
+      &::after {
+        display: none;
+      }
     }
     .views-row {
       max-width: none;
@@ -410,6 +418,9 @@
         position: absolute;
         right: 0;
         margin: -20px 0;
+      }
+      &:nth-child(1):before {
+        display: none;
       }
     }
     .views-field-field-cover-page {
