@@ -274,6 +274,7 @@ div.popup-login.ui-widget.ui-corner-all:not(button){
   
   @media screen and (max-width: $tablet) {
     width: calc(100% - 30px)!important;
+    min-width: 290px;
     padding: 35px 20px 34px;
 
     .user-pass>p{
@@ -287,6 +288,27 @@ div.popup-login.ui-widget.ui-corner-all:not(button){
 
   @media screen and (max-width: $tablet) {
     padding-bottom: 34px;
+  }
+}
+
+.account-modal.account-modal--password {
+
+  @media screen and (max-width: $tablet) {
+    padding-bottom: 30px;
+  }
+
+  .form-item-name {
+    @media screen and (max-width: $tablet) {
+      margin-bottom: 15px;
+    }
+  }
+
+  .form-item-name + p {
+    margin-bottom: 40px;
+
+    @media screen and (max-width: $tablet) {
+      margin-bottom: 35px;
+    }
   }
 }
 
@@ -441,7 +463,7 @@ div.popup-login.ui-widget.ui-corner-all:not(button){
     //margin-bottom: 60px;
   }
   @media (max-width: $tablet) {
-    max-width: 290px !important;
+    //max-width: 290px !important;
     left: 0px !important;
     right: 0px;
     margin: 0 auto;
@@ -550,7 +572,7 @@ div.popup-login.ui-widget.ui-corner-all:not(button){
     }
   }
   @media (max-width: $tablet) {
-    max-width: 290px !important;
+    //max-width: 290px !important;
     left: 0px !important;
     right: 0px;
     margin: 0 auto;
@@ -712,7 +734,7 @@ div.popup-login.ui-widget.ui-corner-all:not(button){
     }
   }
   @media (max-width: $tablet) {
-    max-width: 290px !important;
+    //max-width: 290px !important;
     min-height: 270px;
     top: 85px;
     padding: 30px 25px;
