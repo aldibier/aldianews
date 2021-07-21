@@ -6,10 +6,9 @@ import initSlick from "./slick.js";
 import replaceToken from "./modules/replaceToken";
 
 (function($, Drupal) {
-
   // Selection share
   const sharer = new SelectionSharer();
-  sharer.setElements("p,a,h1,h2,h3,blockquote,em,strong");
+  sharer.setElements("p,h1,h2,h3,blockquote,em,strong,a:not(.selectionSharer a)");
 
   // Replace key word by another value
   const headingTags = document.querySelectorAll("h1, h2, h3");
@@ -50,22 +49,27 @@ import replaceToken from "./modules/replaceToken";
     });
   }
 
-  $( document ).ajaxComplete(function() {
-    $( ".popup-login .js-form-item-pass-pass1 input" ).blur(function() {
-      var background = $( ".popup-login .password-strength__indicator" ).css('background-color');
+  $(document).ajaxComplete(function() {
+    $(".popup-login .js-form-item-pass-pass1 input").blur(function() {
+      var background = $(".popup-login .password-strength__indicator").css(
+        "background-color"
+      );
       $(".popup-login .password-strength__text").css("color", background);
     });
   });
 
-  const containerVideo = document.querySelector('.page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video');
-  const videoThoughtLeaders = document.querySelector('.page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video .content');
+  const containerVideo = document.querySelector(
+    ".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video"
+  );
+  const videoThoughtLeaders = document.querySelector(
+    ".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video .content"
+  );
 
   if (
     !!document.querySelector(".page-node-type-thought-leaders") &&
     !!videoThoughtLeaders &&
     !!containerVideo
   ) {
-
     const videoThoughtLeadersHeigth = $(videoThoughtLeaders).outerHeight();
 
     $window.on("scroll", function() {
@@ -88,10 +92,9 @@ import replaceToken from "./modules/replaceToken";
     });
   }
 
-
   jQuery(document).ready(function() {
     /////
-   /*  if ($(".page-node-type-news .block-field-blocknodenewsfield-video iframe").length ) {
+    /*  if ($(".page-node-type-news .block-field-blocknodenewsfield-video iframe").length ) {
       var url = ($(".page-node-type-news .block-field-blocknodenewsfield-video iframe")[0].src += "&mute=1");
       var video = url.replace("autoplay=0", "autoplay=1");
       $(".page-node-type-news .block-field-blocknodenewsfield-video iframe").attr("src", video);
@@ -125,11 +128,18 @@ import replaceToken from "./modules/replaceToken";
       $("body").removeClass("open-menu");
     });
 
-    $(".page-node-type-webform .webform-confirmation-modal .button-back").click(function() {
-      $(this).parents('.webform-confirmation-modal').css('display','none');
-      $(this).parents('.page-node-type-webform').find('.ui-widget-overlay').css('display','none');
-      $(this).attr('href','#');
-    });
+    $(".page-node-type-webform .webform-confirmation-modal .button-back").click(
+      function() {
+        $(this)
+          .parents(".webform-confirmation-modal")
+          .css("display", "none");
+        $(this)
+          .parents(".page-node-type-webform")
+          .find(".ui-widget-overlay")
+          .css("display", "none");
+        $(this).attr("href", "#");
+      }
+    );
 
     //--------puopup-- login - movil -----------//
     $(".user-logged-in #block-menuuseritem-2").click(function() {
@@ -388,7 +398,7 @@ import replaceToken from "./modules/replaceToken";
     $(document).ready(function() {
       $("#block-modalhomepassword a.button").click();
     });
-    
+
     initMain();
     initSlick($, Drupal);
   });
@@ -396,8 +406,6 @@ import replaceToken from "./modules/replaceToken";
   Drupal.behaviors.form_checkbox = {
     attach: function(context, settings) {
       $(function() {
-     
-
         //js para recargar
         Array.from(document.querySelectorAll(".button-preload")).map(function(
           e
@@ -566,9 +574,24 @@ import replaceToken from "./modules/replaceToken";
             }
           });
         }
-        
-        $('div.popup-class-restore-pwd.ui-widget.ui-corner-all:not(button) .close-button-modal').html( '<a href="/">OK</a>');
-        $('.popup-class-cancel-account.ui-widget.ui-corner-all:not(button) .close-button-modal').html( '<a href="/">GO TO OUR LATEST CONTENT</a>');
+        window.onload = function() {
+          var esp = document.querySelector('html[lang="es"]');
+          if (!!esp) {
+            $(
+              "div.popup-class-restore-pwd.ui-widget.ui-corner-all:not(button) .close-button-modal"
+            ).html('<a href="/">OK</a>');
+            $(
+              ".popup-class-cancel-account.ui-widget.ui-corner-all:not(button) .close-button-modal"
+            ).html('<a href="/">GO TO OUR LATEST CONTENT</a>');
+          } else {
+            $(
+              "div.popup-class-restore-pwd.ui-widget.ui-corner-all:not(button) .close-button-modal"
+            ).html('<a href="/">OK</a>');
+            $(
+              ".popup-class-cancel-account.ui-widget.ui-corner-all:not(button) .close-button-modal"
+            ).html('<a href="/">IR A NUESTRO ÚLTIMO CONTENIDO</a>');
+          }
+        };
       });
     }
   };
