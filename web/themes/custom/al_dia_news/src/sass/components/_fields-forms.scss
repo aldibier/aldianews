@@ -247,6 +247,12 @@ form {
     line-height: 22px;
     letter-spacing: 0.025em;
     color: $cblack;
+
+    @media screen and (max-width: $tablet) {
+      font-size: 12px;
+      font-weight: normal;
+      line-height: 14px;
+    }    
   }
 
   .button-preload {
@@ -408,7 +414,7 @@ form {
     label:not(li > label),
     .form-item label:not(li > label) {
       max-height: 30px;
-      margin: 0 0 5px;
+      margin: 0 0 10px;
       padding: 0;
       font-size: 15px;
       line-height: 18px;
@@ -497,7 +503,8 @@ form {
     }
 
     #captcha {
-      margin: 20px 0;
+      //margin: 20px 0;
+      margin: 0 0 20px 0;
     }
 
     .g-recaptcha {
@@ -517,7 +524,7 @@ form {
     }
   }
 
-  @media (max-width: $mobile-mid) {
+  @media (max-width: $tablet) {
     .g-recaptcha {
       iframe {
         transform: scale(0.8);
