@@ -1731,7 +1731,7 @@ var initMain = function initMain($, Drupal) {
         }
       });
 
-      e.querySelector(".container-show-hide span").innerHTML = count_children.length;
+      e.querySelector(".container-show-hide .num").innerHTML = count_children.length;
     } else {
       e.classList.add("no-answer");
     }
