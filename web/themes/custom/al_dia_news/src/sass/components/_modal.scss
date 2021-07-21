@@ -269,6 +269,11 @@
 div.popup-login.ui-widget.ui-corner-all:not(button){
   max-width: 535px;
   padding: 46px 48px 47px 47px;
+  
+  @media screen and (max-width: $tablet) {
+    width: calc(100% - 30px)!important;
+    padding: 0;
+  }
 }
 
 .modal-video-landing {
