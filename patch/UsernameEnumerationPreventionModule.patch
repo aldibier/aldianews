@@ -1,0 +1,12 @@
+diff --git a/username_enumeration_prevention.module b/username_enumeration_prevention.module
+--- username_enumeration_prevention.module	2021-07-21 12:01:47.646579000 -0500
++++ username_enumeration_prevention1.module	2021-07-21 11:59:48.613343000 -0500
+@@ -35,7 +35,7 @@
+  * Ensures usernames are not exposed when spoofing a reset password URL.
+  */
+ function username_enumeration_prevention_form_user_pass_reset_alter(&$form, FormStateInterface $form_state, $form_id) {
+-  $form['message'] = ['#markup' => t('<p>This is a one-time login.</p><p>Click on this button to log in to the site and change your password.</p>')];
++  $form['message'] = ['#markup' => t('<p>Hello,</p><p>Please remember that this is a one-time link to set a new password and log in and it will expire in the next 24 hours. If you don’t have access to this link later, request a new one by entering to the “Forgot your password?” in the log in section.</p>')];
+ }
+
+ /**

@@ -118,7 +118,7 @@ class Comments extends DsFieldBase {
           '#markup' => '<div class="container-reply"></div>',
         ];
         $items[] = [
-          '#markup' => $this->t('<div class="container-show-hide"><div class="show">SEE </div><div class="hide">HIDE </div><span></span> ANSWERS</div>'),
+          '#markup' => $this->t('<span class="container-show-hide"><span class="show">SEE </span><span class="hide">HIDE </span><span class="num"></span> ANSWERS</span>'),
           '#attributes' => [
             'class' => [
               'show-hide-comment',
@@ -164,7 +164,7 @@ class Comments extends DsFieldBase {
       ];
 
       $items[] = [
-        '#markup' => $this->t('<div class="container-show-hide"><div class="show">SEE </div><div class="hide">HIDE </div><span></span> ANSWERS</div>'),
+        '#markup' => $this->t('<span class="container-show-hide"><span class="show">SEE </span><span class="hide">HIDE </span><span class="num"></span> ANSWERS</span>'),
         '#attributes' => [
           'class' => [
             'show-hide-comment',

@@ -113,7 +113,8 @@ section .comment {
         }
       }
 
-      input[value="REPLY"] {
+      input[value="REPLY"],
+      input[value="RESPONDER"] {
         color: $corange !important;
         text-transform: uppercase;
         border-bottom: 0px;
@@ -264,7 +265,8 @@ section .comment {
           padding: 0.2em 0em 0px 0px;
         }
 
-        input[value="REPLY"] {
+        input[value="REPLY"],
+        input[value="RESPONDER"]  {
           font-size: $px16;
         }
       }
@@ -298,7 +300,8 @@ section .indented {
     }
 
     .field--name-comment-display-custom .item-list,
-    .field--name-comment-display-custom .item-list input[value="REPLY"] {
+    .field--name-comment-display-custom .item-list input[value="REPLY"],
+    .field--name-comment-display-custom .item-list input[value="RESPONDER"]  {
       font-size: szrem(16);
     }
 
@@ -444,12 +447,22 @@ section > .comment:nth-of-type(1) {
   }
 }
 
+html[lang="es"] section > .comment:nth-of-type(1) {
+
+  &::before {
+    content: "COMENTARIOS";
+  }
+}
+
+
+
 .no-answer .container-show-hide {
   display: none;
 }
 
 .al-dia-news-reply-comments {
-  input[value="REPLY"] {
+  input[value="REPLY"],
+  input[value="RESPONDER"] {
     display: none;
   }
 
