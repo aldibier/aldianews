@@ -261,9 +261,9 @@
 
 //modal medium
 //------ specific styles ------//
-.ui-widget.account-modal--login,
-.ui-widget.account-modal--password,
-.ui-widget.account-modal--register,
+.ui-widget.account-modal--login.ui-corner-all:not(button),
+.ui-widget.account-modal--password.ui-corner-all:not(button),
+.ui-widget.account-modal--register.ui-corner-all:not(button),
 .ui-widget.edit-info-user.ui-corner-all:not(button),
 .popup-class-user-information.ui-widget.ui-corner-all:not(button),
 div.popup-login.ui-widget.ui-corner-all:not(button){
@@ -273,6 +273,10 @@ div.popup-login.ui-widget.ui-corner-all:not(button){
   @media screen and (max-width: $tablet) {
     width: calc(100% - 30px)!important;
     padding: 0;
+
+    .user-pass>p{
+      text-align: left;
+    }
   }
 }
 
