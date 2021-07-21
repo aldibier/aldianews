@@ -74,7 +74,6 @@ function al_dia_news_general_form_alter(&$form, $form_state, $form_id) {
   // $route_name = $url_object->getRouteName();
   // ksm($route_name);
   // $route_parameters = $url_object->getrouteParameters();
-  ksm($form);
   $current_user = \Drupal::currentUser();
   switch ($form_id) {
     case  "comment_comments_content_form":
@@ -238,22 +237,24 @@ function al_dia_news_general_form_alter(&$form, $form_state, $form_id) {
     break;
     case "user_cancel_form":
       $form['actions']['submit']['#submit'][] = 'custom_cancel_account';
-      $form['actions']['cancel'] = [
-        '#type' => 'link',
-        '#title' => t('CANCEL'),
-        '#url' => Url::fromRoute('al_dia_news_general.modal', [
-          'type' => 'user',
-        ]),
-        '#attributes' => [
-          'class' => [
-            'use-ajax',
-            'user-register-login',
+      if ( $current_user->getRoles()[1] != "administrator") {
+        $form['actions']['cancel'] = [
+          '#type' => 'link',
+          '#title' => t('CANCEL'),
+          '#url' => Url::fromRoute('al_dia_news_general.modal', [
+            'type' => 'user',
+          ]),
+          '#attributes' => [
+            'class' => [
+              'use-ajax',
+              'user-register-login',
+            ],
+            'data-dialog-type' => 'modal',
+            'data-dialog-options' => Json::encode(['dialogClass' => 'popup-login'],['width' => 550]),
           ],
-          'data-dialog-type' => 'modal',
-          'data-dialog-options' => Json::encode(['dialogClass' => 'popup-login'],['width' => 550]),
-        ],
-      ];
-      $form['#title'] = t('CANCEL MY ACCOUNT');
+        ];
+        $form['#title'] = t('CANCEL MY ACCOUNT');
+      }
     break;
   }
   if (strpos($form_id, 'commerce_order_item_add_to_cart_form_commerce_product_') !== FALSE) {
