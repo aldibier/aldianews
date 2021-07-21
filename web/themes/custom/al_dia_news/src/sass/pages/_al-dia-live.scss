@@ -13,12 +13,11 @@
 
     &.show {
       display: block;
+      top: 60%;
     }
   }
 
-  .modal-video.show {
-    display: block;
-  }
+  
 
   .modal-form {
     display: none;
@@ -475,6 +474,20 @@
         text-align: center;
       }
     }
+    .views-field-field-item-text div{
+      font-size: szrem(30);
+      font-family: $PrNovacond-reg;
+      font-style: normal;
+      line-height: 37px;
+      letter-spacing: 0.025em;
+      color: $cgrey6;
+
+      @media screen and (max-width: $tablet) {
+        text-align: center;
+        font-size: szrem(15);
+        line-height: 18.27px;
+      }
+    }
   }
 
   //------ about al dia live testimonies ------------//
@@ -514,6 +527,9 @@
 
     @media (max-width: $broken) {
       margin: 0 auto 0px;
+      #block-gamwadvertisement-8{
+        margin-bottom: 40px;
+      }
     }
   }
 
@@ -624,9 +640,9 @@
       }
     }
 
-    img {
-      transform: scale(1.5);
-    }
+    // img {
+    //   transform: scale(1.5);
+    // }
 
     .testimonial-author-name {
       margin-bottom: 10px;
