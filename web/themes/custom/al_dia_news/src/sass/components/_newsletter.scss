@@ -210,6 +210,24 @@
     }
   }
 
+  .view-high-impact-news-home {
+    .webform-submission-boletines-form {
+
+      @media screen and(min-width:$broken) {
+        .webform-confirmation__message:lang(es){
+          margin-bottom: 10px;
+        }
+        
+        .webform-confirmation__back:lang(es) {
+          a {
+            font-size: szrem(12);
+          }
+        }
+      }
+    }
+  }
+
+
   .wrapper-news-trending {
     .webform-submission-newsletters-form {
       @media screen and(min-width:$broken) {
@@ -224,14 +242,27 @@
     }
 
     .webform-submission-boletines-form {
+
       @media screen and(min-width:$broken) {
+        .webform-confirmation__message:lang(es){
+          margin-bottom: 10px;
+        }
+        
+        .webform-confirmation__back:lang(es) {
+          a {
+            font-size: szrem(12);
+          }
+        }
+      }
+
+      @media screen and(max-width:$broken) {
         .form-item-email:lang(es) {
-          width: 65%;
+          width: 80%;
           max-width: none;
         }
 
         #edit-actions:lang(es){
-          width: 35%;
+          width: 20%;
         }
       }
     }
@@ -269,6 +300,12 @@
       text-align: center;
       letter-spacing: 0.741176px;
       color: $cgrey5;
+
+      @media screen and(min-width: $broken) {
+        &:lang(es) {
+          margin: 0 auto 10px;
+        }
+      }
     }
 
     .form-item-email {
@@ -282,6 +319,7 @@
 
       input {
         min-height: 40px;
+        max-height: 40px;
         margin: 0;
         padding: 8px 15px;
         background-color: $cwhite;
@@ -366,6 +404,10 @@
   .wrapper-news-trending {
     .newsletter {
       padding: 9px;
+
+      @media screen and(min-width: $broken) {
+        min-height: 140px;
+      } 
     }
 
     .webform-submission-newsletters-form  {
