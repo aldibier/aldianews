@@ -139,6 +139,66 @@ button[name="close"],
   }
 }
 
+
+//-------------form nominate ------------//
+.page-node-type-event .form-nominee-events {
+  max-width: 820px;
+  margin: 0 auto;
+
+  .webform-contact-employer {
+    padding: 60px 60px 50px 50px;
+    @media (max-width: $tablet) {
+      padding: 54px 20px 37px;
+    }
+  }
+
+  .close-modal {
+    top: 0;
+    right: 15px;
+  }
+
+  form input {
+    margin: 0;
+  }
+
+  .form-type-textfield,
+  .js-form-type-tel {
+    @media (max-width: $tablet) {
+      width: 100%;
+      max-width: 100%;
+      flex: 1 1 100%;
+    }
+  }
+
+  .js-form-item-email {
+    margin-bottom: 50px;
+  }
+
+  .form-item-short-bio-list-of-accomplishments {
+    margin: 0 auto 40px;
+  }
+
+  .form-item-upload-file {
+    margin: 0;
+  }
+
+  .file-upload #edit-container {
+    flex: 1 1 100%;
+
+    label {
+      margin-bottom: 25px;
+    }
+  } 
+
+  .file-upload #edit-container .webform-file-button {
+    top: 48px;
+  }
+
+  .file-upload #edit-container .action-button input[value="Upload"] {
+    visibility: hidden;
+  }
+}
+
 //-------------form advertising ------------//
 .webform-advertising,
 .webform-about-al-dia-live,
