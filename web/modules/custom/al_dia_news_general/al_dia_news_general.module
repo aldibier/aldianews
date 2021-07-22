@@ -179,6 +179,7 @@ function al_dia_news_general_form_alter(&$form, $form_state, $form_id) {
     case "user_pass":
       $form['#title'] = t("RESTORE PASSWORD");
       $form['mail']['#markup'] = t("Password reset instructions will be sent to your registered email address. You must log out to use the password reset link in the email.");
+      $form['name']['#required'] = TRUE;
       $form['actions']['register'] = [
         '#type' => 'link',
         '#title' => t('BACK'),
@@ -214,7 +215,7 @@ function al_dia_news_general_form_alter(&$form, $form_state, $form_id) {
       $form['actions']['submit']['#value'] = t('CHANGE PASSWORD AND LOG IN');
     break;
     case "user_form":
-      $form['#title'] = "EDIT";
+      $form['#title'] = t("EDIT");
       if ( $current_user->getRoles()[1] != "administrator") {
         $form['actions']['delete']['#access'] = FALSE;
         $form['actions']['cancel'] = [
