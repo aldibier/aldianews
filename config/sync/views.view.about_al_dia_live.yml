@@ -20,6 +20,7 @@ dependencies:
     - field.storage.paragraph.field_photo
     - field.storage.paragraph.field_position
     - field.storage.paragraph.field_testimonial
+    - image.style.75x75
     - responsive_image.styles.image_style_crop_page_headers_responsive
     - responsive_image.styles.slider_live_events_
   module:
@@ -1565,7 +1566,7 @@ display:
           click_sort_column: target_id
           type: image
           settings:
-            image_style: ''
+            image_style: 75x75
             image_link: ''
           group_column: ''
           group_columns: {  }
