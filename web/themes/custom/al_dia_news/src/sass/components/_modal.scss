@@ -180,13 +180,13 @@
   .ui-icon-closethick {
     width: 20px;
     height: 20px;
-    background-image: icon("close-black");
+    background-image: icon("close-black") !important;
     background-size: contain;
     background-position: center;
     cursor: pointer;
 
     @media screen and (max-width: $tablet) {
-      background-image: url("../img/x-mob.png");
+      background-image: url("../img/x-mob.png") !important;
       width: 15px !important;
       height: 15px !important;
     }
@@ -324,6 +324,25 @@ div.popup-login.ui-widget.ui-corner-all:not(button){
   .ui-dialog-content {
     overflow: initial;
   }
+}
+
+//------ modal account iformation ------//
+.popup-class-user-information.ui-widget.ui-corner-all:not(button) {
+  padding-bottom: 39px;
+
+  @media screen and (max-width: $tablet) {
+    padding-bottom: 27px;
+  }
+
+  .item-list ul,
+  .item-list ul li {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.popup-class-user-information.ui-widget.ui-corner-all:not(button) .ui-dialog-titlebar-close {
+  background: none !important;
 }
 
 .modal-video-landing {
