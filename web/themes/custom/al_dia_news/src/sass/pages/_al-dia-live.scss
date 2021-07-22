@@ -17,8 +17,6 @@
     }
   }
 
-  
-
   .modal-form {
     display: none;
 
@@ -30,7 +28,7 @@
   .modal-form.show {
     display: block;
   }
-  .events-gallery{
+  .events-gallery {
     @media screen and (max-width: $broken) {
       margin: 0 auto 35px;
     }
@@ -286,7 +284,7 @@
 
     .views-field-nothing {
       height: 100px;
-      margin-bottom: 74px;
+      margin-bottom: 40px;
       position: relative;
       order: -1;
 
@@ -438,6 +436,7 @@
       @media screen and (max-width: $broken) {
         &:nth-child(2) {
           padding: 0 35px;
+          grid-row: 1;
         }
       }
 
@@ -474,7 +473,7 @@
         text-align: center;
       }
     }
-    .views-field-field-item-text div{
+    .views-field-field-item-text div {
       font-size: szrem(30);
       font-family: $PrNovacond-reg;
       font-style: normal;
@@ -527,7 +526,7 @@
 
     @media (max-width: $broken) {
       margin: 0 auto 0px;
-      #block-gamwadvertisement-8{
+      #block-gamwadvertisement-8 {
         margin-bottom: 40px;
       }
     }

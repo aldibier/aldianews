@@ -283,6 +283,15 @@
       .aldia-logo-in-text {
         max-width: 48px;
         max-height: 16px;
+        position: relative;
+        top: 5px;
+        @media screen and(max-width:$tablet) {
+          max-width: 29px;
+          top: 2px;
+          img {
+            height: 9px;
+          }
+        }
       }
 
       button {
