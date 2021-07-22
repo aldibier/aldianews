@@ -261,7 +261,6 @@
   }
 }
 
-//modal medium
 //------ specific styles ------//
 .ui-widget.account-modal--login.ui-corner-all:not(button),
 .ui-widget.account-modal--password.ui-corner-all:not(button),
@@ -283,6 +282,7 @@ div.popup-login.ui-widget.ui-corner-all:not(button){
   }
 }
 
+//------ modal login ------//
 .ui-widget.account-modal--login.ui-corner-all:not(button){
   padding-bottom: 65px;
 
@@ -291,6 +291,7 @@ div.popup-login.ui-widget.ui-corner-all:not(button){
   }
 }
 
+//------ modal password ------//
 .account-modal.account-modal--password {
 
   @media screen and (max-width: $tablet) {
@@ -309,6 +310,19 @@ div.popup-login.ui-widget.ui-corner-all:not(button){
     @media screen and (max-width: $tablet) {
       margin-bottom: 35px;
     }
+  }
+}
+
+//------ modal register ------//
+.ui-widget.account-modal--register.ui-corner-all:not(button) {
+  padding-bottom: 49px;
+
+  @media screen and (max-width: $tablet) {
+    margin-bottom: 29px;
+  }
+
+  .ui-dialog-content {
+    overflow: initial;
   }
 }
 
@@ -569,6 +583,7 @@ div.popup-login.ui-widget.ui-corner-all:not(button){
     }
     @media (max-width: $tablet) {
       top: 65px;
+      right: -10px;
     }
   }
   @media (max-width: $tablet) {
