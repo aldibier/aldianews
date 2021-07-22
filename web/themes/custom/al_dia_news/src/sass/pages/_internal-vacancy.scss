@@ -78,9 +78,10 @@
     }
 
     > .modal-apply-webform {
+      max-height: 70%;
       z-index: 2;
       max-width: 990px;
-      min-height: 650px;
+      //min-height: 650px;
       background: $cwhite;
       position: absolute;
       width: calc(100% - 30px);
@@ -92,9 +93,11 @@
       padding: 70px 75px;
       height: max-content;
       box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.45);
+      overflow: auto;
+      overscroll-behavior: contain;
 
       > .content {
-        position: relative;
+        //position: relative;
       }
     }
 
@@ -295,8 +298,8 @@
 
     #edit-close-window {
       position: absolute;
-      top: 0;
-      right: 0;
+      top: 40px;
+      right: 40px;
       width: 20px;
       height: 20px;
       overflow: hidden;
@@ -306,7 +309,13 @@
       font-size: 0;
       background: url("../img/close.svg") center center no-repeat;
       background-size: contain;
-      margin: -90px 0 0;
+      //margin: -90px 0 0;
+      margin: 0;
+
+      @media (max-width: $tablet) {
+        top: 19px;
+        right: 24px;
+      }
 
       .webform-custom-options-button {
         padding: 0;
@@ -321,11 +330,13 @@
       width: 100%;
       font-family: $PrNovacond-Sbold;
       margin: 5px auto 0;
-      max-width: 405px;
+      //max-width: 405px;
+      max-width: 100%;
       border: 0px;
     }
 
     h2 {
+      margin: 0 auto 80px;
       font-style: normal;
       font-weight: 600;
       font-size: $px34;
@@ -352,10 +363,11 @@
     .webform-file-button {
       background: $bgrey;
       min-width: 165px;
+      margin: 0;
       width: max-content;
       display: flex;
       z-index: 2;
-      top: 39px;
+      top: 48px;
       position: absolute;
       left: 0;
       &:before {
@@ -393,6 +405,7 @@
 
     .js-form-item-upload-file {
       width: auto;
+      margin-bottom: 0;
     }
 
     #edit-actions-submit {
@@ -455,6 +468,8 @@
 
     .upload-and-files {
       position: relative;
+      flex: 1 1 100%;
+
       label {
         order: 1;
       }
@@ -488,7 +503,7 @@
       h2 {
         font-size: 20px;
         line-height: 24px;
-        margin: 40px 0 0;
+        margin: 40px 0 80px;
         padding: 5px 0;
       }
       .js-form-managed-file {
@@ -497,15 +512,9 @@
       }
 
       .js-form-item {
-        &:nth-child(2n + 1) {
-          padding: 0;
-          width: max-content;
-        }
-
-        &:nth-child(2n + 2) {
-          padding: 0;
-          width: max-content;
-        }
+        width: max-content;
+        padding: 0;
+        flex: 1 1 50%;
       }
 
       label {
@@ -516,18 +525,25 @@
       input {
         height: 30px;
         font-size: 16px;
+        margin: 0;
       }
 
       .webform-file-button {
+        width: 100%;
+        max-width: 165px;
         min-width: 120px;
+        min-height: 40px;
+        margin: 0;
+        padding: 0;
         font-size: 14px;
         height: 30px;
+        flex: 1 1 165px;
       }
 
       #edit-actions-submit {
-        height: 30px;
-        left: 134px;
-        min-width: 120px;
+        height: 40px;
+        left: calc(0% + 195px);
+        min-width: 150px;
         font-size: 14px;
       }
 
@@ -536,9 +552,45 @@
       }
 
       #edit-close-window {
-        margin: -80px 0 0 0;
+        margin: 0;
         width: 15px;
         height: 15px;
+      }
+    }
+  }
+
+  @media (max-width: $tablet) { 
+    .block-webform-block.open {
+      h2 {
+        margin: 0 0 25px;
+      }
+      .js-form-item {
+        flex: 1 1 100%;
+  
+        &:nth-child(2n + 1),
+        &:nth-child(2n + 2) {
+          padding: 0
+        } 
+      }
+
+      .webform-file-button {
+        max-width: 120px;
+        min-height: 30px;
+      }
+
+      #edit-actions-submit {
+        max-width: 120px;
+        min-width: 120px;
+        height: 30px;
+        left: calc(0% + 130px);
+      }
+
+      .js-form-managed-file {
+        margin-bottom: 29px;
+      }
+
+      [class*="js-form-item-upload-file-file"]{
+        margin-bottom: 25px;
       }
     }
   }
