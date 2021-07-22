@@ -107,7 +107,7 @@
       .webform-confirmation__back {
         display: block;
         margin: 0 0 0 auto;
-        a { 
+        a {
           min-width: 240px;
           display: flex;
           align-items: center;
@@ -212,12 +212,11 @@
 
   .view-high-impact-news-home {
     .webform-submission-boletines-form {
-
       @media screen and(min-width:$broken) {
-        .webform-confirmation__message:lang(es){
+        .webform-confirmation__message:lang(es) {
           margin-bottom: 10px;
         }
-        
+
         .webform-confirmation__back:lang(es) {
           a {
             font-size: szrem(12);
@@ -226,7 +225,6 @@
       }
     }
   }
-
 
   .wrapper-news-trending {
     .webform-submission-newsletters-form {
@@ -242,12 +240,11 @@
     }
 
     .webform-submission-boletines-form {
-
       @media screen and(min-width:$broken) {
-        .webform-confirmation__message:lang(es){
+        .webform-confirmation__message:lang(es) {
           margin-bottom: 10px;
         }
-        
+
         .webform-confirmation__back:lang(es) {
           a {
             font-size: szrem(12);
@@ -261,7 +258,7 @@
           max-width: none;
         }
 
-        #edit-actions:lang(es){
+        #edit-actions:lang(es) {
           width: 20%;
         }
       }
@@ -286,7 +283,7 @@
 
   .webform-submission-newsletters-form,
   .webform-submission-boletines-form {
-    padding: 20px 23px 19px 13px;
+    padding: 20px 23px 18px 13px;
     border: 1px solid #797979;
 
     .form-item-markup {
@@ -407,7 +404,7 @@
 
       @media screen and(min-width: $broken) {
         min-height: 140px;
-      } 
+      }
     }
 
     .webform-submission-newsletters-form  {

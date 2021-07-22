@@ -396,7 +396,7 @@ blockquote {
 
     &:before,
     &:after {
-      width: 78px;
+      width: 96px;
       height: 20px;
       position: relative;
       top: initial;
@@ -405,6 +405,9 @@ blockquote {
       right: initial;
       font-size: szrem(80);
       line-height: 1;
+      @media (max-width: 350px) {
+        width: 108px;
+      }
     }
 
     &:before {
