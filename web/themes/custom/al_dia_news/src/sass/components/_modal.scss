@@ -267,6 +267,7 @@
 .ui-widget.account-modal--register.ui-corner-all:not(button),
 .ui-widget.edit-info-user.ui-corner-all:not(button),
 .popup-class-user-information.ui-widget.ui-corner-all:not(button),
+.popup-cancel-account.ui-widget.ui-corner-all:not(button),
 div.popup-login.ui-widget.ui-corner-all:not(button){
   max-width: 535px;
   padding: 46px 48px 47px 47px;
@@ -326,7 +327,7 @@ div.popup-login.ui-widget.ui-corner-all:not(button){
   }
 }
 
-//------ modal account iformation ------//
+//------ modal account information ------//
 .popup-class-user-information.ui-widget.ui-corner-all:not(button) {
   padding-bottom: 39px;
 
@@ -343,6 +344,66 @@ div.popup-login.ui-widget.ui-corner-all:not(button){
 
 .popup-class-user-information.ui-widget.ui-corner-all:not(button) .ui-dialog-titlebar-close {
   background: none !important;
+}
+
+//------ modal account cancel ------//
+.popup-cancel-account.ui-widget.ui-corner-all:not(button) {
+  padding-bottom: 37px;
+
+  @media screen and (max-width: $broken) {
+    padding-bottom: 25px;
+  }
+
+  .user-cancel-form {
+    font-style: normal;
+    font-weight: 600;
+    font-size: szrem(18);
+    line-height: 128%;
+
+    @media screen and (max-width: $broken) {
+      font-size: 15px;
+    }
+  }
+
+  .form-actions {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+
+    @media screen and (max-width: $broken) {
+      margin-top: 25px;
+      flex-direction: column;
+    }
+
+    a,
+    input {
+      width: 190px;
+      height: 40px;
+      margin: 0;
+      flex: 0 1 190px;
+      color: $cwhite;
+
+      @media screen and (max-width: $broken) {
+        width: 100%;
+        max-width: 100%;
+        flex: 1 1 100%;
+      }
+    }
+
+    a {
+      margin-right: 30px;
+
+      @media screen and (max-width: $broken) {
+        margin-right: 0;
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  .ui-icon-closethick {
+    -webkit-mask-image: none;
+    background: none;
+  }
 }
 
 .modal-video-landing {
