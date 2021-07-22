@@ -2263,17 +2263,15 @@ __webpack_require__.r(__webpack_exports__);
           });
         }
 
-        window.onload = function () {
-          var esp = document.querySelector('html[lang="es"]');
+        var esp = document.querySelector('html[lang="es"]');
 
-          if (!!esp) {
-            $("div.popup-class-restore-pwd.ui-widget.ui-corner-all:not(button) .close-button-modal").html('<a href="/">OK</a>');
-            $(".popup-class-cancel-account.ui-widget.ui-corner-all:not(button) .close-button-modal").html('<a href="/">IR A NUESTRO ÚLTIMO CONTENIDO</a>');
-          } else {
-            $("div.popup-class-restore-pwd.ui-widget.ui-corner-all:not(button) .close-button-modal").html('<a href="/">OK</a>');
-            $(".popup-class-cancel-account.ui-widget.ui-corner-all:not(button) .close-button-modal").html('<a href="/">GO TO OUR LATEST CONTENT</a>');
-          }
-        };
+        if (!!esp) {
+          $("div.popup-class-restore-pwd.ui-widget.ui-corner-all:not(button) .close-button-modal").html('<a href="/">OK</a>');
+          $(".popup-class-cancel-account.ui-widget.ui-corner-all:not(button) .close-button-modal").html('<a href="/">IR A NUESTRO ÚLTIMO CONTENIDO</a>');
+        } else {
+          $("div.popup-class-restore-pwd.ui-widget.ui-corner-all:not(button) .close-button-modal").html('<a href="/">OK</a>');
+          $(".popup-class-cancel-account.ui-widget.ui-corner-all:not(button) .close-button-modal").html('<a href="/">GO TO OUR LATEST CONTENT</a>');
+        }
       });
     }
   };

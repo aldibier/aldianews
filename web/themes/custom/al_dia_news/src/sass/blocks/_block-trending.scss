@@ -67,7 +67,7 @@
     padding: 3px;
     @media screen and(min-width:$broken) {
       height: 485px;
-      transition: all .5s linear;
+      transition: all 0.5s linear;
 
       &:hover,
       &:focus-within {
@@ -91,11 +91,17 @@
   .slick-prev {
     left: calc(50% - 25px);
     background-image: url("../../assets/img/arrow-left.svg");
+    @media screen and (max-width: $tablet) {
+      left: calc(50% - 40px);
+    }
   }
 
   .slick-next {
     left: calc(50% + 25px);
     background-image: url("../../assets/img/arrow-right.svg");
+    @media screen and (max-width: $tablet) {
+      left: calc(50% + 17px);
+    }
   }
 
   .views-row {
@@ -107,7 +113,7 @@
     background-color: $cwhite;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.22);
     overflow: hidden;
-    transition: all .6s linear;
+    transition: all 0.6s linear;
 
     @media screen and(max-width:$tablet) {
       height: 45px;
@@ -178,11 +184,10 @@
   }
 }
 
-#block-block-group-latest-categories-tending-block{
+#block-block-group-latest-categories-tending-block {
   // margin-bottom: 80px;
   margin-bottom: 65px;
-  @media screen and (max-width: $broken){
+  @media screen and (max-width: $broken) {
     margin-bottom: 30px;
-
-  } 
+  }
 }

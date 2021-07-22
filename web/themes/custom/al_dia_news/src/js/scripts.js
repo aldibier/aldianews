@@ -574,7 +574,6 @@ import replaceToken from "./modules/replaceToken";
             }
           });
         }
-        window.onload = function() {
           var esp = document.querySelector('html[lang="es"]');
           if (!!esp) {
             $(
@@ -591,7 +590,6 @@ import replaceToken from "./modules/replaceToken";
               ".popup-class-cancel-account.ui-widget.ui-corner-all:not(button) .close-button-modal"
             ).html('<a href="/">GO TO OUR LATEST CONTENT</a>');
           }
-        };
       });
     }
   };
