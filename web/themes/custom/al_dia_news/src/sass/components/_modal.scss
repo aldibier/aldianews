@@ -314,6 +314,23 @@ div.popup-login.ui-widget.ui-corner-all:not(button){
   }
 }
 
+//------ modal change password ------//
+div.popup-login.ui-widget.ui-corner-all:not(button){
+
+  .ui-dialog-content {
+    overflow: initial;
+  }
+
+  .password-suggestions {
+    left: initial;
+    right: -25px;
+
+    @media screen and (max-width: $tablet) {
+      right: 0;
+    }
+  }
+}
+
 //------ modal register ------//
 .ui-widget.account-modal--register.ui-corner-all:not(button) {
   padding-bottom: 49px;
@@ -403,6 +420,39 @@ div.popup-login.ui-widget.ui-corner-all:not(button){
   .ui-icon-closethick {
     -webkit-mask-image: none;
     background: none;
+  }
+}
+
+//------ modal account edit ------//
+.edit-info-user.ui-widget.ui-corner-all:not(button){
+
+  .js-form-item-mail {
+    margin-bottom: 40px;
+
+    @media screen and (max-width: $tablet) {
+      margin-bottom: 35px;
+    }  
+  }
+
+  .form-actions {
+    a,
+    input {
+      margin: 0;
+      flex: 0 1 165px;
+
+      @media screen and (max-width: $tablet) {
+        flex: 0 1 100px;
+        max-width: 100%;
+      }  
+    }
+
+    a {
+      margin-right: 30px;
+
+      @media screen and (max-width: $tablet) {
+        margin-right: 20px;
+      }  
+    }
   }
 }
 
@@ -663,7 +713,7 @@ div.popup-login.ui-widget.ui-corner-all:not(button){
     }
     @media (max-width: $tablet) {
       top: 65px;
-      right: -10px;
+      right: 0;
     }
   }
   @media (max-width: $tablet) {
