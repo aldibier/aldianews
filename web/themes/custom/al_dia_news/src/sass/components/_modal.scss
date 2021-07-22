@@ -314,6 +314,23 @@ div.popup-login.ui-widget.ui-corner-all:not(button){
   }
 }
 
+//------ modal change password ------//
+div.popup-login.ui-widget.ui-corner-all:not(button){
+
+  .ui-dialog-content {
+    overflow: initial;
+  }
+
+  .password-suggestions {
+    left: initial;
+    right: -25px;
+
+    @media screen and (max-width: $tablet) {
+      right: 0;
+    }
+  }
+}
+
 //------ modal register ------//
 .ui-widget.account-modal--register.ui-corner-all:not(button) {
   padding-bottom: 49px;
@@ -663,7 +680,7 @@ div.popup-login.ui-widget.ui-corner-all:not(button){
     }
     @media (max-width: $tablet) {
       top: 65px;
-      right: -10px;
+      right: 0;
     }
   }
   @media (max-width: $tablet) {
