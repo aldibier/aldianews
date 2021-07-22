@@ -567,6 +567,10 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+
+    @media (max-width: $tablet) {
+      flex-direction: column;
+    }
   }
   #edit-markup,
   label[for*="nominee-information"] {
@@ -580,7 +584,7 @@
     color: $corange;
     width: 100%;
     border-bottom: 1px solid $corange;
-    margin-bottom: 50px;
+    margin-bottom: 45px;
   }
   .fieldset-wrapper {
     display: flex;
@@ -680,6 +684,10 @@
   }
   .SumoSelect.open > .optWrapper {
     top: 39px;
+
+    @media (max-width: $tablet) {
+      top: 48px;
+    }
   }
   .form-item-company {
     padding-left: 15px;
