@@ -125,17 +125,31 @@
 .registerhere-popup-event-landing.ui-widget.ui-corner-all:not(button) {
     width: calc(100% - 30px) !important;
     max-width: 990px;
-    max-height: 640px;
+    //max-height: 640px;
+    max-height: 70%;
+    padding-top: 100px;
 
+    .ui-dialog-titlebar {
+        .ui-dialog-title {
+            display: none;
+        }
+    }
 
     .webform-contact-employer {
         .close-modal {
             //display: none;
+            top: 0;
+            right: 50px;
         }
     }
 
     .form-type-webform-markup {
-        display: none;
+        width: 100%;
+        //display: none;
+    }
+
+    input:not(.form-submit) {
+        max-width: 100%;
     }
 
     .contact-form {
@@ -144,13 +158,20 @@
     }
 
     .button--primary {
-        display: block !important;
         width: 150px;
         margin: 0;
+        display: block !important;
+        background-color: $red1 !important;
+        border-radius: initial;
+        box-shadow: none;
     }
 
     .ui-dialog-content {
         padding: 0;
+    }
+
+    .form-general form  {
+        padding-bottom: 0;
     }
 
     form {
