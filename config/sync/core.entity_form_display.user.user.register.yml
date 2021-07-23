@@ -8,8 +8,6 @@ dependencies:
     - field.field.user.user.field_first_name
     - field.field.user.user.field_id_subscription
     - field.field.user.user.field_last_name
-    - field.field.user.user.field_last_password_reset
-    - field.field.user.user.field_password_expiration
     - field.field.user.user.user_picture
   module:
     - user
@@ -41,13 +39,16 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  translation:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
 hidden:
   commerce_remote_id: true
   contact: true
   customer_profiles: true
   field_id_subscription: true
-  field_last_password_reset: true
-  field_password_expiration: true
   langcode: true
   language: true
   path: true
