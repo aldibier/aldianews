@@ -589,7 +589,7 @@ import replaceToken from "./modules/replaceToken";
             '.link--previous[href*="/order_information"]'
           );
           if (!!button_subscribe) {
-            button_subscribe.innerHTML("REGRESAR");
+            button_subscribe.innerHTML = "REGRESAR";
           }
         } else {
           $(
