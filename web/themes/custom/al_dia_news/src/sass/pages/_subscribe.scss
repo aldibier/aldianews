@@ -1059,6 +1059,10 @@
     }
 
     .views-field-field-new-payment-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
       tr,
       td,
       th {
@@ -1066,6 +1070,16 @@
         border-bottom: 0;
         padding: 0 20px;
         border: none;
+      }
+
+      img,
+      form {
+        height: auto;
+      }
+
+      input[ type="image"] {
+        width: auto;
+        background: none;
       }
     }
 
