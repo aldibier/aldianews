@@ -908,7 +908,7 @@
     
     .form-actions {
       width: 100%;
-      padding: 0 20px;
+      //padding: 0 20px;
 
       input {
         width: 150px;
@@ -927,7 +927,8 @@
     input[class*="form"],
     .SumoSelect > .CaptionCont,
     select {
-      height: 40px;
+      height: 35px;
+      margin-top: 0;
     }
 
     @media screen and (max-width: $tablet) {
@@ -972,11 +973,13 @@
       }
 
       .form-actions {
-        padding: 10px 15px 0;
+        //padding: 10px 15px 0;
+        padding: 0;
 
         input {
           width: 110px !important;
           height: 30px;
+          margin: 0;
         }
       }
     }

@@ -300,18 +300,56 @@ button[name="close"],
 
 //-------------form al dia live ------------//
 .path-about-al-dia-live .webform-about-al-dia-live {
-  //width: calc(100% - 30px);
-  //max-width: 990px;
   height: 70%;
-  //max-height: 890px;
-  //padding: 100px 75px 98px;
+  padding-bottom: 48px;
+
+  &.form-general form  {
+    height: 100%;
+  }
 
   .SumoSelect.open > .optWrapper {
     top: 45px;
   }
 
   form {
-    padding-bottom: 98px;
+    padding-bottom: 85px;
+
+    @media screen and (max-width: $tablet) {
+      padding-bottom: 39px;
+    }
+
+    .js-form-item-message {
+      @media (max-width: $tablet) { 
+        margin-bottom: 20px;
+      }
+    }
+ 
+    textarea[class*=form]{
+      min-height: 130px;
+      margin: 0;
+    }
+
+    input {
+      margin-top: 0;
+    }
+  }
+
+  fieldset#edit-address--wrapper  {
+    @media (max-width: $tablet) { 
+      margin-bottom: 0;
+    }
+  }
+
+  .fieldset .CaptionCont {
+    margin-top: 0;
+  }
+
+  fieldset .form-item-budget{
+    margin-bottom: 25px;
+  }
+
+  .form-item-event-i-m-interested-in {
+    margin-bottom: 0;
   }
 
   .form-item-address-city {
@@ -361,6 +399,10 @@ button[name="close"],
     width: 150px;
     height: 40px;
     margin: 50px 0 0;
+
+    @media screen and (max-width: $tablet) {
+      margin: 0;
+    }
   }
 }
 
