@@ -415,6 +415,70 @@ button[name="close"],
   }
 }
 
+//-------------- contact receive updates -------------//
+.path-about-al-dia-live .block-webform .webform-submission-receive-updates-for-al-dia-live-form {
+  max-width: 1310px;
+  padding: 0 15px;
+  margin: 0 auto 100px;
+
+  @media (max-width: $tablet) { 
+    margin: 0 auto 40px;
+  }
+
+  #edit-processed-text.form-item {
+    flex: 1 1 100%;
+    margin: 0 auto 40px;
+    padding: 0;
+
+    @media (max-width: $tablet) { 
+      margin: 0 auto 25px;
+    }
+  }
+
+  .form-item label:not(li>label),
+  form label:not(li>label){
+    margin-bottom: 10px;
+  }
+
+  .form-item {
+    width: 50%;
+    max-width: 640px;
+    margin-bottom: 0;
+
+    @media (max-width: $tablet) { 
+      width: 100%;
+      max-width: 100%;
+      margin-bottom: 20px;
+    }
+
+    &:nth-child(-n + 2){
+      @media (min-width: $tablet) { 
+        margin-bottom: 25px;
+      }
+    }
+
+    &:nth-child(even){
+      @media (min-width: $tablet) { 
+        padding-right: 20px;
+      }
+    }
+
+    &:nth-child(odd){
+      @media (min-width: $tablet) { 
+        padding-left: 20px;
+      }
+    }
+  }
+
+  .form-actions {
+    margin-top: 50px;
+
+    @media (max-width: $tablet) { 
+      margin-top: 30px;
+    }
+  }
+}
+
 //-------------- contact general -------------//
 .contact-form-father {
   .field-content {
