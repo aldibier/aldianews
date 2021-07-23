@@ -1180,6 +1180,21 @@
       }
     }
   }
+  .views-row:nth-child(2) .field--widget-commerce-product-variation-attributes {
+    input[type="radio"]:checked ~ .option::after,
+    input[type="radio"]:checked ~ .option::before {
+      top: 2px;
+    }
+  }
+  @media (max-width: $tablet) {
+    .views-row:nth-child(3)
+      .field--widget-commerce-product-variation-attributes {
+      input[type="radio"]:checked ~ .option::after,
+      input[type="radio"]:checked ~ .option::before {
+        top: 2px;
+      }
+    }
+  }
 }
 
 html[lang="es"] .view-subscribe .views-row {
@@ -1449,5 +1464,6 @@ html[lang="es"] .view-subscribe .views-row {
 #block-buttonrequestcallback p button {
   @media (max-width: $tablet) {
     margin: 12px auto 40px 24px;
+    letter-spacing: 0.741176px;
   }
 }
