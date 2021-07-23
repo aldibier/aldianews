@@ -8,7 +8,9 @@ import replaceToken from "./modules/replaceToken";
 (function($, Drupal) {
   // Selection share
   const sharer = new SelectionSharer();
-  sharer.setElements("p,h1,h2,h3,blockquote,em,strong,a:not(.selectionSharer a)");
+  sharer.setElements(
+    "p,h1,h2,h3,blockquote,em,strong,a:not(.selectionSharer a)"
+  );
 
   // Replace key word by another value
   const headingTags = document.querySelectorAll("h1, h2, h3");
@@ -92,7 +94,7 @@ import replaceToken from "./modules/replaceToken";
     });
   }
 
-  $(window).on('load', function() {
+  $(window).on("load", function() {
     /////
     /*  if ($(".page-node-type-news .block-field-blocknodenewsfield-video iframe").length ) {
       var url = ($(".page-node-type-news .block-field-blocknodenewsfield-video iframe")[0].src += "&mute=1");
@@ -574,22 +576,25 @@ import replaceToken from "./modules/replaceToken";
             }
           });
         }
-          var esp = document.querySelector('html[lang="es"]');
-          if (!!esp) {
-            $(
-              "div.popup-class-restore-pwd.ui-widget.ui-corner-all:not(button) .close-button-modal"
-            ).html('<a href="/">OK</a>');
-            $(
-              ".popup-class-cancel-account.ui-widget.ui-corner-all:not(button) .close-button-modal"
-            ).html('<a href="/">IR A NUESTRO ÚLTIMO CONTENIDO</a>');
-          } else {
-            $(
-              "div.popup-class-restore-pwd.ui-widget.ui-corner-all:not(button) .close-button-modal"
-            ).html('<a href="/">OK</a>');
-            $(
-              ".popup-class-cancel-account.ui-widget.ui-corner-all:not(button) .close-button-modal"
-            ).html('<a href="/">GO TO OUR LATEST CONTENT</a>');
-          }
+        var esp = document.querySelector('html[lang="es"]');
+        if (!!esp) {
+          $(
+            "div.popup-class-restore-pwd.ui-widget.ui-corner-all:not(button) .close-button-modal"
+          ).html('<a href="/">OK</a>');
+          $(
+            ".popup-class-cancel-account.ui-widget.ui-corner-all:not(button) .close-button-modal"
+          ).html('<a href="/">IR A NUESTRO ÚLTIMO CONTENIDO</a>');
+          $(
+            ".popup-class-cancel-account.ui-widget.ui-corner-all:not(button) .close-button-modal"
+          ).html('<a href="/">IR A NUESTRO ÚLTIMO CONTENIDO</a>');
+        } else {
+          $(
+            "div.popup-class-restore-pwd.ui-widget.ui-corner-all:not(button) .close-button-modal"
+          ).html('<a href="/">OK</a>');
+          $('.link--previous[href*="/order_information"]').innerHTML(
+            "REGRESAR"
+          );
+        }
       });
     }
   };
