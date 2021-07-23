@@ -58,8 +58,6 @@ import replaceToken from "./modules/replaceToken";
       );
       $(".popup-login .password-strength__text").css("color", background);
     });
-
-    $('.account-modal--password input').unbind();
   });
 
   const containerVideo = document.querySelector(
@@ -402,7 +400,6 @@ import replaceToken from "./modules/replaceToken";
     $(document).ready(function() {
       $("#block-modalhomepassword a.button").click();
     });
-    
 
     initMain();
     initSlick($, Drupal);
@@ -587,16 +584,20 @@ import replaceToken from "./modules/replaceToken";
           $(
             ".popup-class-cancel-account.ui-widget.ui-corner-all:not(button) .close-button-modal"
           ).html('<a href="/">IR A NUESTRO ÚLTIMO CONTENIDO</a>');
-          $(
-            ".popup-class-cancel-account.ui-widget.ui-corner-all:not(button) .close-button-modal"
-          ).html('<a href="/">IR A NUESTRO ÚLTIMO CONTENIDO</a>'); 
+
+          var button_subscribe = document.querySelector(
+            '.link--previous[href*="/order_information"]'
+          );
+          if (!!button_subscribe) {
+            button_subscribe.innerHTML = "REGRESAR";
+          }
         } else {
           $(
             "div.popup-class-restore-pwd.ui-widget.ui-corner-all:not(button) .close-button-modal"
           ).html('<a href="/">OK</a>');
-          $('.link--previous[href*="/order_information"]').innerHTML(
-            "REGRESAR"
-          );
+          $(
+            ".popup-class-cancel-account.ui-widget.ui-corner-all:not(button) .close-button-modal"
+          ).html('<a href="/">GO TO OUR LATEST CONTENT</a>');
         }
       });
     }
