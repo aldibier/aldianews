@@ -10,6 +10,8 @@ use Drupal\Core\Url;
 use Drupal\Component\Serialization\Json;
 use Drupal\Core\Path\CurrentPathStack;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\RedirectCommand;
 
 /**
  * User agent device
@@ -173,7 +175,12 @@ function al_dia_news_general_form_alter(&$form, $form_state, $form_id) {
 
     case "change_pwd_form":
       $form['#title'] = t("CHANGE PASSWORD");
-      $form['#submit'][] = 'custom_password_reset';
+      $form['actions']['submit']['#ajax'] = [
+        'callback' => 'callback_change_password',
+        'wrapper' => 'cambio-contrasena',
+      ];
+      $form['#prefix'] = '<div id="cambio-contrasena">';
+      $form['#suffix'] = '</div>';
       $form['actions']['submit']['#value'] = t('CHANGE');
     break;
     case "user_pass":
@@ -277,13 +284,21 @@ function al_dia_news_general_form_alter(&$form, $form_state, $form_id) {
 
   }
 
-
 }
 
+function callback_change_password(&$form, &$form_state){
 
-function custom_password_reset(&$form, &$form_state) {
-  $form_state->setRedirect('<front>', ['modal'=>TRUE]);
+  if (is_null($form['#children_errors'])){
+    $response = new AjaxResponse();
+    $redirect = new RedirectCommand('/?modal=1');
+    $response->addCommand($redirect);
+    return $response;
+  }
+  else {
+    return $form;
+  }
 }
+
 function custom_cancel_account(&$form, &$form_state) {
   $form_state->setRedirect('<front>');
 }
