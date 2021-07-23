@@ -56,6 +56,8 @@ import replaceToken from "./modules/replaceToken";
       );
       $(".popup-login .password-strength__text").css("color", background);
     });
+
+    $('.account-modal--password input').unbind();
   });
 
   const containerVideo = document.querySelector(
@@ -398,6 +400,7 @@ import replaceToken from "./modules/replaceToken";
     $(document).ready(function() {
       $("#block-modalhomepassword a.button").click();
     });
+    
 
     initMain();
     initSlick($, Drupal);
