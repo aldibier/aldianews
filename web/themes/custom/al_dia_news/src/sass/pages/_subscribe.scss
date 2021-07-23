@@ -1140,6 +1140,13 @@
     @media (max-width: $tablet) {
       width: 100%;
 
+      .views-field-field-new-payment-button {
+        
+        form .SumoSelect>.CaptionCont, form select {
+          max-width: 250px;
+        }
+      }
+
       .field--name-title {
         font-size: 22px;
         line-height: 27px;
