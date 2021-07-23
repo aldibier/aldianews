@@ -1,4 +1,5 @@
 label: Comments
+description: 'Find and manage comments.'
 display:
   default:
     display_title: Default
@@ -33,6 +34,7 @@ display:
           label: Autor
           separator: ', '
         entity_id:
+          label: 'Posted in'
           separator: ', '
         changed:
           label: Actualizado
@@ -45,20 +47,38 @@ display:
         subject:
           expose:
             label: Subject
+        combine:
+          expose:
+            label: 'Author name'
         langcode:
           expose:
             label: Language
       title: Comments
+      empty:
+        area_text_custom:
+          content: 'No comments available.'
+      use_more_text: more
   page_published:
+    display_title: 'Published comments'
     display_options:
       menu:
         title: Comments
+        description: 'Comments published'
+      display_description: 'The approved comments listing.'
   page_unapproved:
+    display_title: 'Unapproved comments'
     display_options:
+      menu:
+        title: 'Unapproved comments'
+        description: 'Comments unapproved'
+      display_description: 'The unapproved comments listing.'
       filters:
         subject:
           expose:
             label: Subject
+        combine:
+          expose:
+            label: 'Author Name'
         langcode:
           expose:
             label: Language
@@ -74,6 +94,7 @@ display:
           label: Autor
           separator: ', '
         entity_id:
+          label: 'Posted in'
           separator: ', '
         changed:
           label: Actualizado
