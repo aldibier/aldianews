@@ -14,8 +14,6 @@ dependencies:
     - field.field.commerce_product.default.field_weekly_value
     - field.field.commerce_product.default.field_weight
   module:
-    - commerce_product
-    - field_formatter_class
     - image
     - text
 _core:
@@ -49,17 +47,8 @@ content:
     third_party_settings: {  }
     type: string
     region: content
-  field_new_payment_button:
-    weight: 5
-    label: hidden
-    settings: {  }
-    third_party_settings:
-      field_formatter_class:
-        class: new-payment-paypal
-    type: text_default
-    region: content
   field_price_companion:
-    weight: 9
+    weight: 7
     label: hidden
     settings:
       link_to_entity: false
@@ -67,7 +56,7 @@ content:
     type: string
     region: content
   field_symbol:
-    weight: 6
+    weight: 4
     label: hidden
     settings:
       link_to_entity: false
@@ -75,7 +64,7 @@ content:
     type: string
     region: content
   field_text:
-    weight: 8
+    weight: 6
     label: hidden
     settings:
       link_to_entity: false
@@ -83,7 +72,7 @@ content:
     type: string
     region: content
   field_weekly_value:
-    weight: 7
+    weight: 5
     label: hidden
     settings:
       thousand_separator: ''
@@ -92,25 +81,19 @@ content:
     type: number_integer
     region: content
   title:
-    label: hidden
     type: string
     weight: 0
     region: content
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-  variations:
-    type: commerce_add_to_cart
-    weight: 4
-    region: content
-    label: hidden
-    settings:
-      combine: true
-    third_party_settings: {  }
 hidden:
   created: true
+  field_new_payment_button: true
   field_weight: true
   langcode: true
   search_api_excerpt: true
   stores: true
   uid: true
+  variations: true
