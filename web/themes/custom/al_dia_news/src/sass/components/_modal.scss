@@ -46,7 +46,9 @@
   border: none;
   overflow: hidden auto;
   overscroll-behavior: contain;
-
+  &.popup-class-restore-pwd {
+    width: 90% !important;
+  }
   .ui-dialog-titlebar-close {
     width: 20px !important;
     height: 20px;
@@ -131,7 +133,7 @@
   }
 }
 
-.ui-dialog:not(.ui-dialog-off-canvas){
+.ui-dialog:not(.ui-dialog-off-canvas) {
   border-radius: initial !important;
 }
 
@@ -268,23 +270,23 @@
 .ui-widget.edit-info-user.ui-corner-all:not(button),
 .popup-class-user-information.ui-widget.ui-corner-all:not(button),
 .popup-cancel-account.ui-widget.ui-corner-all:not(button),
-div.popup-login.ui-widget.ui-corner-all:not(button){
+div.popup-login.ui-widget.ui-corner-all:not(button) {
   max-width: 535px;
   padding: 46px 48px 47px 47px;
-  
+
   @media screen and (max-width: $tablet) {
-    width: calc(100% - 30px)!important;
+    width: calc(100% - 30px) !important;
     min-width: 290px;
     padding: 35px 20px 34px;
 
-    .user-pass>p{
+    .user-pass > p {
       text-align: left;
     }
   }
 }
 
 //------ modal login ------//
-.ui-widget.account-modal--login.ui-corner-all:not(button){
+.ui-widget.account-modal--login.ui-corner-all:not(button) {
   padding-bottom: 65px;
 
   @media screen and (max-width: $tablet) {
@@ -293,8 +295,7 @@ div.popup-login.ui-widget.ui-corner-all:not(button){
 }
 
 //------ modal password ------//
-.account-modal.account-modal--password {
-
+.account-modal.account-modal--password  {
   @media screen and (max-width: $tablet) {
     padding-bottom: 30px;
   }
@@ -315,8 +316,7 @@ div.popup-login.ui-widget.ui-corner-all:not(button){
 }
 
 //------ modal change password ------//
-div.popup-login.ui-widget.ui-corner-all:not(button){
-
+div.popup-login.ui-widget.ui-corner-all:not(button) {
   .ui-dialog-content {
     overflow: initial;
   }
@@ -359,7 +359,8 @@ div.popup-login.ui-widget.ui-corner-all:not(button){
   }
 }
 
-.popup-class-user-information.ui-widget.ui-corner-all:not(button) .ui-dialog-titlebar-close {
+.popup-class-user-information.ui-widget.ui-corner-all:not(button)
+  .ui-dialog-titlebar-close {
   background: none !important;
 }
 
@@ -424,26 +425,25 @@ div.popup-login.ui-widget.ui-corner-all:not(button){
 }
 
 //------ modal account edit ------//
-.edit-info-user.ui-widget.ui-corner-all:not(button){
-
+.edit-info-user.ui-widget.ui-corner-all:not(button) {
   .js-form-item-mail {
     margin-bottom: 40px;
 
     @media screen and (max-width: $tablet) {
       margin-bottom: 35px;
-    }  
+    }
   }
 
   .form-actions {
     a,
-    input {
+    input  {
       margin: 0;
       flex: 0 1 165px;
 
       @media screen and (max-width: $tablet) {
         flex: 0 1 100px;
         max-width: 100%;
-      }  
+      }
     }
 
     a {
@@ -451,7 +451,7 @@ div.popup-login.ui-widget.ui-corner-all:not(button){
 
       @media screen and (max-width: $tablet) {
         margin-right: 20px;
-      }  
+      }
     }
   }
 }
@@ -633,7 +633,7 @@ div.popup-login.ui-widget.ui-corner-all:not(button){
     letter-spacing: 0.025em;
     color: $corange;
 
-    @media screen and (max-width:$tablet) {
+    @media screen and (max-width: $tablet) {
       margin-bottom: 20px;
       font-size: 15px;
       line-height: 18px;
