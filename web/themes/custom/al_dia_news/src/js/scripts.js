@@ -58,6 +58,8 @@ import replaceToken from "./modules/replaceToken";
       );
       $(".popup-login .password-strength__text").css("color", background);
     });
+
+    $('.account-modal--password input').unbind();
   });
 
   const containerVideo = document.querySelector(
@@ -400,6 +402,7 @@ import replaceToken from "./modules/replaceToken";
     $(document).ready(function() {
       $("#block-modalhomepassword a.button").click();
     });
+    
 
     initMain();
     initSlick($, Drupal);
@@ -586,7 +589,7 @@ import replaceToken from "./modules/replaceToken";
           ).html('<a href="/">IR A NUESTRO ÚLTIMO CONTENIDO</a>');
           $(
             ".popup-class-cancel-account.ui-widget.ui-corner-all:not(button) .close-button-modal"
-          ).html('<a href="/">IR A NUESTRO ÚLTIMO CONTENIDO</a>');
+          ).html('<a href="/">IR A NUESTRO ÚLTIMO CONTENIDO</a>'); 
         } else {
           $(
             "div.popup-class-restore-pwd.ui-widget.ui-corner-all:not(button) .close-button-modal"

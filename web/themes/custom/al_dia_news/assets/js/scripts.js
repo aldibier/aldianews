@@ -1915,6 +1915,7 @@ __webpack_require__.r(__webpack_exports__);
       var background = $(".popup-login .password-strength__indicator").css("background-color");
       $(".popup-login .password-strength__text").css("color", background);
     });
+    $('.account-modal--password input').unbind();
   });
   var containerVideo = document.querySelector(".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video");
   var videoThoughtLeaders = document.querySelector(".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video .content");

@@ -81,7 +81,7 @@ class OrderProductName extends  BlockBase implements ContainerFactoryPluginInter
     }
     return [
       '#cache' => ["max-age" => 0],
-      '#markup' => '<span class="your-order-subscribe">YOUR ORDER: </span>'. $name,
+      '#markup' => $this->t('<span class="your-order-subscribe">YOUR ORDER: </span>'). $name,
     ];
   }
 
