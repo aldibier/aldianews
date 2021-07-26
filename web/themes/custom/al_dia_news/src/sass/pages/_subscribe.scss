@@ -1058,9 +1058,48 @@
       background: #5c6165;
     }
 
-    &:hover {
+    .views-field-field-new-payment-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      tr,
+      td,
+      th {
+        background: none;
+        border-bottom: 0;
+        padding: 0;
+        border: none;
+        text-align: center;
+      }
+
+      img,
+      form {
+        height: max-content;
+      }
+
+      input[ type="image"] {
+        width: auto;
+        background: none;
+        display: block;
+        margin: 0 auto;
+      }
+    }
+
+    &:nth-child(2) {
       background: #f2f2f2;
       transition: all 0.25s linear;
+
+      .views-field-field-new-payment-button {
+  
+        form .SumoSelect .optWrapper>.options>li {
+          background: #fff;
+        }
+  
+        form .SumoSelect>.CaptionCont, form select {
+          background: #fff url(/themes/custom/al_dia_news/assets/css/../img/fle.png) no-repeat right;
+        }
+      }
 
       .button {
         background-color: #e21;
@@ -1100,6 +1139,13 @@
 
     @media (max-width: $tablet) {
       width: 100%;
+
+      .views-field-field-new-payment-button {
+        
+        form .SumoSelect>.CaptionCont, form select {
+          max-width: 250px;
+        }
+      }
 
       .field--name-title {
         font-size: 22px;
@@ -1169,7 +1215,9 @@
         margin-right: auto !important;
       }
 
-      &:hover {
+      &:nth-child(2) {
+        margin: 0 auto 30px;
+        
         .weekly-information {
           font-size: 40px;
 
