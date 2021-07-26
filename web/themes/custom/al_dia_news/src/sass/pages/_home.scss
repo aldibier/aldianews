@@ -295,6 +295,16 @@
     }
   }
 
+  .view-high-impact-news-home {
+    h3 .aldia-logo-in-text {
+      img {
+        @media (max-width: $broken) {
+          bottom: -1px;
+        }
+      }
+    }
+  }
+
   .main-news-date {
     font-size: $px16;
     line-height: 19.49px;
