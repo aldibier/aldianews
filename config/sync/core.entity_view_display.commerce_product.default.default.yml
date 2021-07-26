@@ -14,6 +14,7 @@ dependencies:
     - field.field.commerce_product.default.field_weekly_value
     - field.field.commerce_product.default.field_weight
   module:
+    - field_formatter_class
     - image
     - text
 _core:
@@ -53,7 +54,9 @@ content:
     region: content
     label: above
     settings: {  }
-    third_party_settings: {  }
+    third_party_settings:
+      field_formatter_class:
+        class: new-payment-button
   field_price_companion:
     weight: 7
     label: hidden
