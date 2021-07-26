@@ -1,0 +1,39 @@
+display:
+  default:
+    display_options:
+      fields:
+        field_date_of_event:
+          settings:
+            date_format: 'l, F jS / Y - g:i a'
+      header:
+        area:
+          content:
+            value: "<div><img class=\"image-desktop\" src=\"/themes/custom/al_dia_news/assets/img/al-dia-live-logo.png\" /></div>\r\n"
+            format: full_html
+      footer:
+        area:
+          content:
+            value: "<div class=\"footer-red\"><button name=\"sponsorship\" type=\"button\">SPONSORSHIP</button><button name=\"register-here\" type=\"button\">REGISTER HERE</button></div>\r\n"
+            format: full_html
+  block_3:
+    display_options:
+      fields:
+        nothing_1:
+          alter:
+            text: "<div class=\"views-field views-field-fieldset-3\">\r\n  <span class=\"views-label\">FECHA Y HORA: </span>\r\n  <span class=\"field-content\">\r\n    <div class=\"al-dia-date al-dia-wrapper-container\">{{ field_date_of_event }} \r\n       <span class=\"card-event-date-hour  al-dia-hour\">{{ field_date_of_event_1 }}</span>\r\n    </div>\r\n  </span>\r\n</div>"
+        field_venue_of_the_event:
+          label: UBICACIÓN
+        nothing:
+          alter:
+            text: '<a href=''/node/{{ nid }}/register'' class="use-ajax user-edit" data-dialog-type="modal" data-dialog-options=''{"dialogClass":"popup-account-information"}''>PATROCINIO</a>'
+        nid_1:
+          alter:
+            text: '<a href=''/node/{{ nid_1__value }}/register'' class="use-ajax edit-user register-event-landing" data-dialog-type="modal" data-dialog-options=''{"dialogClass":"registerhere-popup-event-landing"}''>REGISTRARSE AQUÍ</a>'
+        nid:
+          alter:
+            text: '<a href=''/node/{{ nid__value }}/sponsorship'' class="use-ajax edit-user sponsorship-event-landing" data-dialog-type="modal" data-dialog-options=''{"dialogClass":"sponsorship-popup-event-landing"}''>PATROCINIO</a>'
+      footer:
+        area:
+          content:
+            value: "<div class=\"footer-red\">{{ nid }} {{ nid_1 }}</div>\r\n"
+            format: full_html
