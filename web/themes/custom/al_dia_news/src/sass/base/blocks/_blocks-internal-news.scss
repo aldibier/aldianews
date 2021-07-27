@@ -477,15 +477,7 @@ blockquote {
   a {
     color: #ed1c24;
   }
-
-  .twitter-tweet-rendered {
-    blockquote,
-    p{
-      font-size: 0;
-      opacity: 0;
-    }
-  }
-
+  
   blockquote,
   blockquote > p {
     font-family: $PrNovacond-reg;
@@ -493,6 +485,11 @@ blockquote {
     font-size: szrem(28);
     line-height: 140%;
     color: $cgrey2;
+
+    &.twitter-video{
+      font-size: 0;
+      opacity: 0;
+    }
 
     @media (max-width: $tablet) {
       font-size: szrem(18);
