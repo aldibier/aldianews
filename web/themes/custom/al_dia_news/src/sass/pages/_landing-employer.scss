@@ -116,7 +116,6 @@
       padding: 0 15px;
       max-width: 1310px;
       margin: 0 auto;
-      transition: all 1s ease-in-out;
       z-index: 2;
 
       li {
@@ -164,12 +163,13 @@
     }
 
     .menu.active {
-      margin: 87px auto 0 !important;
+      margin: 95px auto 0 !important;
       left: 0 !important;
       right: 0 !important;
       background: $cblack3;
-      transition: all 1s ease-in-out;
       padding: 32.5px 20px;
+      max-width: 1323px;
+      top: 0 !important;
 
       &:after,
       &:before {
@@ -193,6 +193,7 @@
       @media (max-width: $tablet) {
         padding: 15px 25px;
         width: 100% !important;
+        margin: 71px auto 0 !important;
       }
     }
   }

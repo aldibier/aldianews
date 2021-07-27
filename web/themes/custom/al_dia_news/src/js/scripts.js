@@ -190,7 +190,7 @@ import replaceToken from "./modules/replaceToken";
     if (!!containermenu && !!menu) {
       var controller2 = new ScrollMagic.Controller({
         globalSceneOptions: {
-          triggerHook: 0,
+          triggerHook: 0.14,
           duration: time.offsetHeight
         }
       });
@@ -199,8 +199,8 @@ import replaceToken from "./modules/replaceToken";
         .setClassToggle(menu, "active") // add class toggle
         //.offset()
         .setPin(menu, { pushFollowers: false })
-        .addTo(controller2);
-      //.addIndicators();
+        .addTo(controller2)
+        //.addIndicators();
     }
 
     $(

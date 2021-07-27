@@ -4,6 +4,7 @@
   overflow: hidden;
   z-index: 9;
   padding: 80px;
+  min-height: 560px;
   h1 {
     font-family: $ModernoFB-Regular;
     font-style: normal;
@@ -18,7 +19,8 @@
     width: 100%;
     height: auto;
   }
-  .contextual-region {
+  .contextual-region,
+  .view-header-of-the-event-internal .view-content > .views-row {
     position: initial;
     max-width: 1310px;
     margin: 0 auto;
@@ -142,7 +144,7 @@
   }
   .breadcrumb {
     max-width: 1310px;
-    margin: 45px auto 0px;
+    margin: 45px auto 30px;
     padding: 0 15px;
   }
   h1 .aldia-logo-in-text {
@@ -734,6 +736,7 @@
 
 @media (max-width: $desktop) {
   .banner-events {
+    min-height: auto;
     a.buttton-link {
       max-width: 105px;
       min-height: 25px;
