@@ -52,8 +52,10 @@
   } */
 
   .twitter-tweet-rendered {
-    >* {
+    blockquote,
+    p{
       font-size: 0;
+      opacity: 0;
     }
   }
 
