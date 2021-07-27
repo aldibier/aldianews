@@ -281,10 +281,12 @@
 
 .path-frontpage {
   h3 .aldia-logo-in-text {
-    max-width: 105px;
+    // max-width: 105px;
+    max-width: 160px;
 
     img {
-      height: 30px;
+      // height: 30px;
+      height: 45px;
       position: relative;
       width: 100%;
       bottom: 1px;
@@ -294,6 +296,8 @@
       }
     }
   }
+
+  
 
   .view-high-impact-news-home {
     h3 .aldia-logo-in-text {
@@ -318,10 +322,25 @@
     a {
       width: 100%;
       font-size: 38px;
-      margin-left: 5px;
+      // margin-left: 5px;
       line-height: 46px;
       color: $corange;
+
+      @media (max-width: $tablet) {
+        margin-left: 5px;
+      }
     }
+    
+    @media (max-width: $tablet) {
+      .aldia-logo-in-text {
+        max-width: 77.24px;
+        img {
+          
+          height: 26.12px;
+        }
+      }
+    }
+
   }
   .card-title .aldia-logo-in-text {
     max-width: 72px;
