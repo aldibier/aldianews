@@ -2012,7 +2012,7 @@ __webpack_require__.r(__webpack_exports__);
     if (!!containermenu && !!menu) {
       var controller2 = new ScrollMagic.Controller({
         globalSceneOptions: {
-          triggerHook: 0,
+          triggerHook: 2,
           duration: time.offsetHeight
         }
       });
