@@ -12,16 +12,15 @@
   }
 
   .aldia-logo-in-text {
-    max-width: 56px!important;
+    max-width: 56px !important;
     img {
       height: 18px !important;
     }
-    @media (max-width: $broken){
-    max-width: 35px !important;
-      img{
+    @media (max-width: $broken) {
+      max-width: 35px !important;
+      img {
         top: 0px !important;
-      height: 11px !important;
-        
+        height: 11px !important;
       }
     }
   }
@@ -46,7 +45,6 @@
       .card-more-news .short-title-date h3 {
         margin: 0px;
       }
-     
     }
   }
 
@@ -161,7 +159,7 @@
     }
   }
 
-  //------ more content category ------------/  
+  //------ more content category ------------/
   &-category,
   &-subcategory {
     .container-content,
@@ -270,13 +268,13 @@
 
       a {
         border: none;
-        font-size: szrem(24);
+        font-size: szrem(18);
         font-family: $PrNovacond-Xbold;
         font-style: normal;
         font-weight: bold;
         text-transform: uppercase;
         text-decoration: none;
-        line-height: 24px;
+        line-height: 21px;
         color: $cblack;
 
         @media (max-width: $tablet) {
@@ -441,7 +439,7 @@
   }
 }
 
-.card-more-news {
+.card-more-news  {
   img {
     @media screen and (min-width: $broken) {
       max-width: 175px;
