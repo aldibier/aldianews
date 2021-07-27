@@ -421,6 +421,24 @@
   }
 
   @media (min-width: $broken) {
+    .skys-scroll {
+      position: relative;
+      z-index: 10;
+
+      &::before {
+        content: '';
+        width: 20px;
+        height: 100%;
+        display: block;
+        position: absolute;
+        left: -20px;
+        background-color: $cwhite;
+        z-index: 10;
+      }
+    }
+  }
+
+  @media (min-width: $broken) {
     .views-row.not-show-line {
       margin-bottom: 0;
     }
