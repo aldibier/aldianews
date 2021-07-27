@@ -418,7 +418,7 @@
 
       .field--name-body {
         width: 100%;
-        padding: 20px 0 0;
+        padding: 29px 0 0;
         position: relative;
 
         &:after {
@@ -437,7 +437,7 @@
       }
 
       .field--name-field-image-block {
-        margin: 5px 0 0 -8px;
+        margin: 10px 0 0 0px;
         width: 140px;
       }
     }
@@ -559,11 +559,15 @@
         p {
           font-size: 11px;
           line-height: 13px;
+          @media (max-width: $tablet) {
+            font-size: 10px;
+            letter-spacing: -0.1px;
+          }
         }
 
         &:after {
           height: 3px;
-          top: 6px;
+          top: 14px;
         }
       }
     }
