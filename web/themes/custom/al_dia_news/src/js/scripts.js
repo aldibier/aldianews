@@ -190,7 +190,7 @@ import replaceToken from "./modules/replaceToken";
     if (!!containermenu && !!menu) {
       var controller2 = new ScrollMagic.Controller({
         globalSceneOptions: {
-          triggerHook: 0.3,
+          triggerHook: 0.2,
           duration: time.offsetHeight
         }
       });
