@@ -190,7 +190,7 @@ import replaceToken from "./modules/replaceToken";
     if (!!containermenu && !!menu) {
       var controller2 = new ScrollMagic.Controller({
         globalSceneOptions: {
-          triggerHook: 0.12,
+          triggerHook: 0.13,
           duration: time.offsetHeight
         }
       });
@@ -200,7 +200,7 @@ import replaceToken from "./modules/replaceToken";
         //.offset()
         .setPin(menu, { pushFollowers: false })
         .addTo(controller2)
-        .addIndicators();
+        //.addIndicators();
     }
 
     $(
