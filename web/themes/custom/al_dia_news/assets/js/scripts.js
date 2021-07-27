@@ -1940,6 +1940,12 @@ __webpack_require__.r(__webpack_exports__);
     });
   }
 
+  $(document).ready(function () {
+    //--------- initialization --------------------//
+    if (window.matchMedia("(min-width: 992px)").matches) {
+      Object(_scroll_magic__WEBPACK_IMPORTED_MODULE_2__["default"])($, Drupal);
+    }
+  });
   $(window).on("load", function () {
     /////
 
@@ -1996,12 +2002,7 @@ __webpack_require__.r(__webpack_exports__);
     $(".region-secondary-menu #block-al-dia-news-main-menu a").each(function () {
       var text = $(this).html();
       $(this).html(text.replace(/AL/g, "<br>AL"));
-    }); //--------- initialization --------------------//
-
-    if (window.matchMedia("(min-width: 992px)").matches) {
-      Object(_scroll_magic__WEBPACK_IMPORTED_MODULE_2__["default"])($, Drupal);
-    } //------------ scroll jobs --------------//
-
+    }); //------------ scroll jobs --------------//
 
     var containermenu = document.querySelector("#block-system-menu-block-i-am-an-employer-menu");
     var menu = document.querySelector("#block-system-menu-block-i-am-an-employer-menu .menu");
