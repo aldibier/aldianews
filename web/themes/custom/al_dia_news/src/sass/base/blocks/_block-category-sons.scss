@@ -124,10 +124,10 @@
       }
 
       @media screen and (max-width: $broken) {
-        margin: 0 0 -15px;
+        margin: 0;
         position: relative;
 
-        &:after {
+        /* &:after {
           width: 100%;
           content: '';
           height: 1px;
@@ -136,7 +136,7 @@
           bottom: 15px;
           left: 0;
           background: #B1B1B1;
-        }
+        } */
 
         .view-content {
           display: grid;
