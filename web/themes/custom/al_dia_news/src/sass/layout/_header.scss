@@ -640,9 +640,10 @@ body.open-menu {
   background: $cblack0;
   display: flex;
   padding: 15px 15px 0;
-  max-width: 1315px;
+  max-width: max-content;
   margin: 0 auto;
   position: relative;
+  
   @media (min-width: $desktop) {
     max-height: 90px;
     padding: 12px 15px 0;
@@ -939,6 +940,8 @@ body.open-menu {
   }
 
   @media (max-width: $broken) {
+    max-width: 1300px;
+
     #block-sitedescription {
       width: 100%;
       margin: auto;
