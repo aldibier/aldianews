@@ -51,12 +51,6 @@
     margin-bottom: 35px;
   } */
 
-  .twitter-tweet-rendered {
-    >* {
-      font-size: 0;
-    }
-  }
-
   .video-body-notice-embed {
     height: 0;
     overflow: hidden;
@@ -483,7 +477,7 @@ blockquote {
   a {
     color: #ed1c24;
   }
-
+  
   blockquote,
   blockquote > p {
     font-family: $PrNovacond-reg;
@@ -491,6 +485,11 @@ blockquote {
     font-size: szrem(28);
     line-height: 140%;
     color: $cgrey2;
+
+    &.twitter-video{
+      font-size: 0;
+      opacity: 0;
+    }
 
     @media (max-width: $tablet) {
       font-size: szrem(18);
