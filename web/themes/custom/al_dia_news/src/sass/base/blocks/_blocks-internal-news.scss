@@ -51,6 +51,26 @@
     margin-bottom: 35px;
   } */
 
+  .video-body-notice-embed {
+    height: 0;
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    position: relative;
+
+    >iframe {
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+  }
+
+  .block-field-blocknodenewsbody iframe {
+    width: 100%;
+  }
+
   iframe[title*="Twitter"] {
     height: 815px;
     margin: 0 auto;
