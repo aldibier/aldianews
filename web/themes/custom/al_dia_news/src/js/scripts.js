@@ -199,8 +199,8 @@ import replaceToken from "./modules/replaceToken";
         .setClassToggle(menu, "active") // add class toggle
         //.offset()
         .setPin(menu, { pushFollowers: false })
-        .addTo(controller2);
-      //.addIndicators();
+        .addTo(controller2)
+        .addIndicators();
     }
 
     $(

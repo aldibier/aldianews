@@ -2022,7 +2022,7 @@ __webpack_require__.r(__webpack_exports__);
       //.offset()
       .setPin(menu, {
         pushFollowers: false
-      }).addTo(controller2); //.addIndicators();
+      }).addTo(controller2).addIndicators();
     }
 
     $('.block-fixed-block-content-horizontal-advertising-close  button[name="close"]').click(function () {
