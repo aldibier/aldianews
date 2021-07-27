@@ -49,6 +49,8 @@ import replaceToken from "./modules/replaceToken";
         $video.addClass("disnone");
       });
     });
+
+    $('.node--type-news .block-field-blocknodenewsbody iframe[title="YouTube video player"]').parent().addClass("video-body-notice-embed");
   }
 
   $(document).ajaxComplete(function() {
