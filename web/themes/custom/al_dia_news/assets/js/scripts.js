@@ -1908,6 +1908,7 @@ __webpack_require__.r(__webpack_exports__);
         $video.addClass("disnone");
       });
     });
+    $('.node--type-news .block-field-blocknodenewsbody iframe[title="YouTube video player"]').parent().addClass("video-body-notice-embed");
   }
 
   $(document).ajaxComplete(function () {
@@ -1940,6 +1941,12 @@ __webpack_require__.r(__webpack_exports__);
     });
   }
 
+  $(document).ready(function () {
+    //--------- initialization --------------------//
+    if (window.matchMedia("(min-width: 992px)").matches) {
+      Object(_scroll_magic__WEBPACK_IMPORTED_MODULE_2__["default"])($, Drupal);
+    }
+  });
   $(window).on("load", function () {
     /////
 
@@ -1996,12 +2003,7 @@ __webpack_require__.r(__webpack_exports__);
     $(".region-secondary-menu #block-al-dia-news-main-menu a").each(function () {
       var text = $(this).html();
       $(this).html(text.replace(/AL/g, "<br>AL"));
-    }); //--------- initialization --------------------//
-
-    if (window.matchMedia("(min-width: 992px)").matches) {
-      Object(_scroll_magic__WEBPACK_IMPORTED_MODULE_2__["default"])($, Drupal);
-    } //------------ scroll jobs --------------//
-
+    }); //------------ scroll jobs --------------//
 
     var containermenu = document.querySelector("#block-system-menu-block-i-am-an-employer-menu");
     var menu = document.querySelector("#block-system-menu-block-i-am-an-employer-menu .menu");
@@ -2590,8 +2592,8 @@ var initSlick = function initSlick($, Drupal) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/usuario/Desktop/Proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
-module.exports = __webpack_require__(/*! /Users/usuario/Desktop/Proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
+__webpack_require__(/*! /Users/andresmartinez/sites/News/code/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
+module.exports = __webpack_require__(/*! /Users/andresmartinez/sites/News/code/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
 
 
 /***/ })

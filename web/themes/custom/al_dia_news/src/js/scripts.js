@@ -49,6 +49,8 @@ import replaceToken from "./modules/replaceToken";
         $video.addClass("disnone");
       });
     });
+
+    $('.node--type-news .block-field-blocknodenewsbody iframe[title="YouTube video player"]').parent().addClass("video-body-notice-embed");
   }
 
   $(document).ajaxComplete(function() {
@@ -95,6 +97,13 @@ import replaceToken from "./modules/replaceToken";
       });
     });
   }
+
+  $(document).ready(function(){
+    //--------- initialization --------------------//
+    if (window.matchMedia("(min-width: 992px)").matches) {
+      initScrollMagic($, Drupal);
+    }
+  })
 
   $(window).on("load", function() {
     /////
@@ -168,12 +177,6 @@ import replaceToken from "./modules/replaceToken";
       var text = $(this).html();
       $(this).html(text.replace(/AL/g, "<br>AL"));
     });
-
-    //--------- initialization --------------------//
-
-    if (window.matchMedia("(min-width: 992px)").matches) {
-      initScrollMagic($, Drupal);
-    }
 
     //------------ scroll jobs --------------//
     const containermenu = document.querySelector(
