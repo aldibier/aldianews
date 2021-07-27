@@ -473,7 +473,7 @@
     .block-fixed-block-contentlocation {
       position: relative;
       margin: 0;
-      width: 50%;
+      width: 52%;
       display: flex;
       align-items: flex-end;
 
@@ -599,7 +599,7 @@
     #block-footer {
       .menu {
         a {
-          font-size: 17px;
+          font-size: 14px;
           line-height: 21px;
           margin: 0;
           padding: 0;
@@ -663,6 +663,16 @@
       height: 10px;
       margin: 1px 5px -1px 0;
     }
+  }
+}
+
+@media (max-width: 600px) and (min-width: 360px) {
+  .site-footer .block-fixed-block-contentlocation .field--type-image {
+    margin: auto 0 -23px 15px;
+  }
+
+  .block-fixed-block-contentlocation .main-news-body {
+    margin: auto 0 auto 33px !important;
   }
 }
 
