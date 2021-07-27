@@ -2328,12 +2328,17 @@ var initScrollMagic = function initScrollMagic($, Drupal) {
   var noticias = document.querySelector('.block-views-blockmore-in-this-section-news-block-1'); //------------ scroll internas --------------//
 
   if (!!containerRigth && !!noticias) {
+    /* const scene2 = new ScrollMagic.Scene({ triggerElement: containerRigth, duration: getDurationScene2 })
+        .addTo(controller)
+        .offset(noticias.offsetHeight + 20)
+        .setPin(noticias, { pushFollowers: false })  */
+
     /* setTimeout(()=>{
         const scene2 = new ScrollMagic.Scene({ triggerElement: containerRigth, duration: getDurationScene2 })
         .addTo(controller)
         .offset(noticias.offsetHeight + 20)
         .setPin(noticias, { pushFollowers: false })    
-    },6000); */
+    },1500); */
     var getDurationScene2 = function getDurationScene2() {
       return containerRigth.offsetHeight - noticias.offsetHeight;
     }; //window.addEventListener("resize", () => resizeActivation(noticias, scene2));
@@ -2343,12 +2348,6 @@ var initScrollMagic = function initScrollMagic($, Drupal) {
 
     if (containerLeft.offsetHeight < _limitHigh) return;
     if (containerRigth.offsetHeight === noticias.offsetHeight) return;
-    var scene2 = new ScrollMagic.Scene({
-      triggerElement: containerRigth,
-      duration: getDurationScene2
-    }).addTo(controller).offset(noticias.offsetHeight + 20).setPin(noticias, {
-      pushFollowers: false
-    });
   }
 
   function resizeActivation(element, scene) {
