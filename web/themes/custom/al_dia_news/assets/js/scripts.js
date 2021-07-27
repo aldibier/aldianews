@@ -1908,6 +1908,7 @@ __webpack_require__.r(__webpack_exports__);
         $video.addClass("disnone");
       });
     });
+    $('.node--type-news .block-field-blocknodenewsbody iframe[title="YouTube video player"]').parent().addClass("video-body-notice-embed");
   }
 
   $(document).ajaxComplete(function () {
@@ -2011,7 +2012,7 @@ __webpack_require__.r(__webpack_exports__);
     if (!!containermenu && !!menu) {
       var controller2 = new ScrollMagic.Controller({
         globalSceneOptions: {
-          triggerHook: 0,
+          triggerHook: 0.21,
           duration: time.offsetHeight
         }
       });
@@ -2021,7 +2022,7 @@ __webpack_require__.r(__webpack_exports__);
       //.offset()
       .setPin(menu, {
         pushFollowers: false
-      }).addTo(controller2); //.addIndicators();
+      }).addTo(controller2).addIndicators();
     }
 
     $('.block-fixed-block-content-horizontal-advertising-close  button[name="close"]').click(function () {
