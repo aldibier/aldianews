@@ -800,6 +800,8 @@
       * {
         font-size: $px16;
         line-height: 19px;
+        @include ellipsis(75px, 4);
+        display: flex;
       }
     }
 

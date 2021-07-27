@@ -2012,7 +2012,7 @@ __webpack_require__.r(__webpack_exports__);
     if (!!containermenu && !!menu) {
       var controller2 = new ScrollMagic.Controller({
         globalSceneOptions: {
-          triggerHook: 0,
+          triggerHook: 0.2,
           duration: time.offsetHeight
         }
       });
@@ -2022,7 +2022,7 @@ __webpack_require__.r(__webpack_exports__);
       //.offset()
       .setPin(menu, {
         pushFollowers: false
-      }).addTo(controller2); //.addIndicators();
+      }).addTo(controller2).addIndicators();
     }
 
     $('.block-fixed-block-content-horizontal-advertising-close  button[name="close"]').click(function () {
