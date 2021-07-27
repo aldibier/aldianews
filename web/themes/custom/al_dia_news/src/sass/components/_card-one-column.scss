@@ -166,7 +166,10 @@
       .aldia-logo-in-text {
         max-width: 67px;
         @media screen and (max-width: $broken) {
-          max-width: 32px;
+          max-width: 37px;
+          img {
+            height: 12px;
+          }
         }
       }
     }
