@@ -2382,6 +2382,12 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 var initSlick = function initSlick($, Drupal) {
   jQuery(document).ready(function () {
     var categoriesMore = document.querySelectorAll(".view-categories-sons .view-more-category .view-content");
@@ -2403,7 +2409,7 @@ var initSlick = function initSlick($, Drupal) {
     if (window.matchMedia("(max-width: 768px)").matches) {
       setTimeout(function () {
         categoriesMore.forEach(function (element) {
-          if (!!element && element != null) $(element).slick(settings);
+          if (!!element && element != null) $(element).not('.slick-initialized').slick(settings);
         });
       }, 2000);
     }
@@ -2412,7 +2418,7 @@ var initSlick = function initSlick($, Drupal) {
       if (window.matchMedia("(max-width: 768px)").matches) {
         setTimeout(function () {
           categoriesMore.forEach(function (element) {
-            if (!!element && element != null) $(element).slick(settings);
+            if (!!element && element != null) $(element).not('.slick-initialized').slick(settings);
           });
         }, 2000);
       }
@@ -2502,18 +2508,48 @@ var initSlick = function initSlick($, Drupal) {
   } /// Slider para thought leaders
 
 
-  var width_h = window.innerWidth;
+  if ($(".view-id-thought_leaders_home.view-display-id-block_1").length) {
+    var settingThoughtLeaders = {
+      infinite: true,
+      variableWidth: true,
+      slidesToShow: 2,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 3000,
+      mobileFirst: true,
+      responsive: [{
+        breakpoint: 768,
+        settings: "unslick"
+      }, {
+        breakpoint: 330,
+        settings: {
+          slidesToShow: 3,
+          centerMode: true
+        }
+      }]
+    };
+    var mobileWidth = 768;
+    var resizeObserver = new ResizeObserver(function (entries) {
+      var _iterator = _createForOfIteratorHelper(entries),
+          _step;
 
-  if (width_h <= 580) {
-    if ($(".view-id-thought_leaders_home.view-display-id-block_1")) {
-      $(".view-id-thought_leaders_home.view-display-id-block_1 .view-content").slick({
-        infinite: true,
-        slidesToShow: 2,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 3000
-      });
-    }
+      try {
+        for (_iterator.s(); !(_step = _iterator.n()).done;) {
+          var entry = _step.value;
+          var currentWidth = entry.contentBoxSize[0].inlineSize;
+          if (currentWidth > mobileWidth) return;
+
+          if (currentWidth <= mobileWidth) {
+            $(".view-id-thought_leaders_home.view-display-id-block_1 .view-content").not('.slick-initialized').slick(settingThoughtLeaders);
+          }
+        }
+      } catch (err) {
+        _iterator.e(err);
+      } finally {
+        _iterator.f();
+      }
+    });
+    resizeObserver.observe(document.querySelector('body'));
   } // slider interna eventos modo de vista
 
 

@@ -25,7 +25,7 @@ const initSlick = ($, Drupal) => {
     if (window.matchMedia("(max-width: 768px)").matches) {
       setTimeout(function() {
         categoriesMore.forEach(element => {
-          if(!!element && element != null) $(element).slick(settings);
+          if(!!element && element != null) $(element).not('.slick-initialized').slick(settings);
         });
       }, 2000);
     }
@@ -34,7 +34,7 @@ const initSlick = ($, Drupal) => {
       if (window.matchMedia("(max-width: 768px)").matches) {
         setTimeout(function() {
           categoriesMore.forEach(element => {
-            if(!!element && element != null) $(element).slick(settings)
+            if(!!element && element != null) $(element).not('.slick-initialized').slick(settings)
           });
         }, 2000);
       }
@@ -142,19 +142,46 @@ const initSlick = ($, Drupal) => {
   }
 
   /// Slider para thought leaders
-  var width_h = window.innerWidth;
-  if (width_h <= 580) {
-    if ($(".view-id-thought_leaders_home.view-display-id-block_1")) {
-      $(
-        ".view-id-thought_leaders_home.view-display-id-block_1 .view-content"
-      ).slick({
-        infinite: true,
-        slidesToShow: 2,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 3000
-      });
+  if ($(".view-id-thought_leaders_home.view-display-id-block_1").length) {
+
+    const settingThoughtLeaders = {
+      infinite: true,
+      variableWidth: true,
+      slidesToShow: 2,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 3000,
+      mobileFirst: true,
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: "unslick"
+        },
+        {
+          breakpoint: 330,
+          settings: {
+            slidesToShow: 3,
+            centerMode: true
+          }
+        },
+      ]
     }
+
+    const mobileWidth = 768;
+
+    const resizeObserver = new ResizeObserver(entries => {
+      for (let entry of entries) {
+        let currentWidth = entry.contentBoxSize[0].inlineSize;
+
+        if(currentWidth > mobileWidth) return;
+
+        if(currentWidth <= mobileWidth){   
+          $(".view-id-thought_leaders_home.view-display-id-block_1 .view-content").not('.slick-initialized').slick(settingThoughtLeaders);
+        }
+      }
+    });
+
+    resizeObserver.observe(document.querySelector('body'));
   }
 
   // slider interna eventos modo de vista
