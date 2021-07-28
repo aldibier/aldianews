@@ -308,6 +308,9 @@
       }
 
       @media screen and(max-width:$tablet) {
+        display: flex;
+        padding: 15px;
+
         .form-item-email:lang(es) {
           width: initial;
           max-width: none;
@@ -319,11 +322,6 @@
           max-width: none;
           flex: 0 1 90px;
         }
-      }
-
-      @media screen and(max-width:$tablet) {
-        display: flex;
-        padding: 15px;
       }
     }
   }
