@@ -7,7 +7,7 @@
     width: 55%;
     position: absolute;
     content: "";
-    display: block;
+    display: block; 
     top: 68px;
     height: 5px;
     background: $corange;
@@ -124,8 +124,14 @@
         display: flex;
         width: 50%;
 
-        > div {
-          order: 2;
+        > div{
+
+          &:lang(es) {
+            order: 2;
+          }
+          &:lang(en) {
+            order: 1;
+          }
         }
 
         &:nth-child(7),
@@ -145,6 +151,12 @@
         margin: -45px 0;
         width: 82.89px;
         height: 32px;
+        @media (max-width: $tablet) {
+
+          &:lang(en) {
+            margin: -45px -13px -45px 0;
+          }
+        }
       }
 
       img {
@@ -155,13 +167,17 @@
         border: none;
         margin: 13px 0 17px;
         font-weight: 300;
-        padding: 0 15px 0 0;
+        padding: 0 5px 0 0;
         order: 1;
         font-style: normal;
         font-size: $px20;
         line-height: 24px;
         color: $cwhite;
         font-family: $PrNova-light;
+
+        &:lang(en) {
+          order: 2;
+        }
       }
     }
   }
@@ -619,6 +635,10 @@
 
           > div {
             margin: -9px -8px 0 -3px;
+
+            &:lang(en){
+              margin: -8px 9px 0 -8px;
+            }
           }
         }
 
@@ -688,6 +708,9 @@
 @media (max-width: 361px) {
   .site-footer #block-subscribeblockfooter a {
     bottom: -10px;
+  }
+  html[lang="es"] .site-footer #block-footerlogo .field--name-body p {
+    letter-spacing: -0.2px;
   }
 }
 

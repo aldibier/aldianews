@@ -204,7 +204,6 @@
                 $(viewContent)
                   .find(".card-more-category")
                   .each(function(index, value) {
-                    debugger
                     if (index == 2 && $(value).closest('.block-advertising-top')) {
                       $(value).addClass("not-show-line");
                     }

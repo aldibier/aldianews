@@ -34,6 +34,15 @@
       height: 100%;
       z-index: -2;
     }
+
+    img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      -o-object-fit: cover;
+      object-fit: cover;
+    }
+
     &::before {
       content: "";
       display: block;
@@ -52,7 +61,6 @@
     width: 100%;
     height: auto;
     overflow: hidden;
-    max-height: 75px;
     margin-bottom: 45px;
     .content {
       margin-top: 0px;
@@ -452,12 +460,20 @@
     background: transparent url(../img/izq.png) center center no-repeat;
     background-size: contain;
     left: 0px;
+
+    &.slick-disabled {
+      opacity: 0.5;
+    }
   }
 
   .slick-next {
     background: transparent url(../img/der.png) center center no-repeat;
     background-size: contain;
     right: 0px;
+
+    &.slick-disabled {
+      opacity: 0.5;
+    }
   }
   ///---- view modes-----//
   .slider-one .item {
@@ -847,11 +863,9 @@
     }
     .block-field-blocknodeeventfield-logo {
       max-width: 140px;
-      max-height: 34.38px;
       overflow: hidden;
       margin-bottom: 15px;
       > div {
-        max-height: 34.38px;
         overflow: hidden;
       }
     }

@@ -214,6 +214,7 @@
 
     @media (max-width: $broken) {
       width: 100%;
+      min-width: initial;
     }
   }
 
@@ -283,12 +284,12 @@
   h3 .aldia-logo-in-text {
     // max-width: 105px;
     position: relative;
-    max-width: 103px;
+    max-width: 133px;
     top: -1px;
     margin-right: 5px;
 
     img {
-      height: 32px;
+      height: 46px;
       // height: 45px;
       position: relative;
       width: 100%;
@@ -339,7 +340,9 @@
       .aldia-logo-in-text {
         max-width: 77.24px;
         img {
-          height: 26.12px;
+          height: 100%;//26.12px
+          max-height: 24px;
+          margin-top: 1px;
         }
       }
     }
@@ -516,6 +519,7 @@
         margin-bottom: 0px;
         border-bottom: 2px solid #e92f31;
         padding-bottom: 10px;
+        align-items: flex-start;
 
         a,
         span {
@@ -665,6 +669,9 @@
   .aldia-logo-in-text {
     margin-right: 5px;
     top: 2px;
+    @media (max-width: $broken) {
+      max-width: 54.24px;
+    }
   }
 }
 
@@ -852,7 +859,8 @@
   .view-thought-leaders-home.view-display-id-block_3
     .view-content
     .aldia-logo-in-text {
-    margin-bottom: 2px;
+    margin-bottom: 4px;
+    max-width: 64px;
   }
 }
 
