@@ -167,14 +167,16 @@
         position: relative;
         max-width: 75px;
         top: 2px;
+        img {
+          height: 23px;
+        }
         @media screen and (max-width: $broken) {
           max-width: 37px;
+          top: 0px;
+          margin-right: 5px;
           img {
-            height: 12px;
+            height: 12px !important;
           }
-        }
-        img{
-          height: 23px;
         }
       }
     }
