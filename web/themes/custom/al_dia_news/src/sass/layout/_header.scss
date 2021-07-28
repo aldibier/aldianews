@@ -756,7 +756,7 @@ body.open-menu {
 
   #block-magnifierheader {
     order: 4;
-    margin: auto 0 auto 35px;
+    margin: auto 0 auto 26px;
     @media (max-width: $tablet) {
       order: 6;
       max-height: 38px;
@@ -927,7 +927,8 @@ body.open-menu {
   }
 
   #block-loginformpopup {
-    min-width: max-content;
+    min-width: initial;
+    max-width: 56px;
   }
   
   #block-loginformpopup a {
