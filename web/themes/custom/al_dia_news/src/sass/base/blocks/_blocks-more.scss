@@ -78,11 +78,19 @@
     .slick-prev {
       left: calc(50% - 25px);
       background-image: url("../../assets/img/arrow-left.svg");
+
+      &.slick-disabled {
+        opacity: 0.5;
+      }
     }
 
     .slick-next {
       left: calc(50% + 25px);
       background-image: url("../../assets/img/arrow-right.svg");
+      
+      &.slick-disabled {
+        opacity: 0.5;
+      }
     }
   }
 

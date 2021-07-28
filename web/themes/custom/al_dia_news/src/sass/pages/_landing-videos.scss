@@ -541,12 +541,20 @@
     background: transparent url(../img/izqw.png) center center no-repeat;
     background-size: contain;
     left: 0px;
+
+    &.slick-disabled {
+      opacity: 0.5;
+    }
   }
 
   .slick-next {
     background: transparent url(../img/derw.png) center center no-repeat;
     background-size: contain;
     right: 0px;
+
+    &.slick-disabled {
+      opacity: 0.5;
+    }
   }
 }
 
