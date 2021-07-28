@@ -42,12 +42,15 @@
     > h3 {
       margin: 0;
 
-      @media (max-width: $tablet) {
-        //margin: 20px 0 0;
-      }
-
       a {
         @include title-section-line($px34, $ModernoFB-Regular, $corange2);
+      }
+      
+      @media (max-width: $tablet) {
+        a {
+          font-size: 20px;
+          line-height: 24px;
+        }
       }
     }
 
