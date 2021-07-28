@@ -51,7 +51,8 @@
     margin-bottom: 35px;
   } */
 
-  .video-body-notice-embed {
+  .video-body-notice-embed,
+  .field--name-field-media-oembed-video {
     height: 0;
     overflow: hidden;
     padding-bottom: 56.25%;
@@ -486,7 +487,8 @@ blockquote {
     line-height: 140%;
     color: $cgrey2;
 
-    &.twitter-video{
+    &.twitter-video,
+    &.twitter-tweet{
       font-size: 0;
       opacity: 0;
     }
