@@ -96,14 +96,18 @@ import replaceToken from "./modules/replaceToken";
     });
   }
 
-  $(document).ready(function(){
-    $('.node--type-news .block-field-blocknodenewsbody iframe[title="YouTube video player"]').parent().addClass("video-body-notice-embed");
-    
+  $(document).ready(function() {
+    $(
+      '.node--type-news .block-field-blocknodenewsbody iframe[title="YouTube video player"]'
+    )
+      .parent()
+      .addClass("video-body-notice-embed");
+
     //--------- initialization --------------------//
     if (window.matchMedia("(min-width: 992px)").matches) {
       initScrollMagic($, Drupal);
     }
-  })
+  });
 
   $(window).on("load", function() {
     /////
@@ -199,8 +203,8 @@ import replaceToken from "./modules/replaceToken";
         .setClassToggle(menu, "active") // add class toggle
         //.offset()
         .setPin(menu, { pushFollowers: false })
-        .addTo(controller2)
-        //.addIndicators();
+        .addTo(controller2);
+      //.addIndicators();
     }
 
     $(
@@ -594,6 +598,10 @@ import replaceToken from "./modules/replaceToken";
           );
           if (!!button_subscribe) {
             button_subscribe.innerHTML = "REGRESAR";
+          }
+          var en_vivo = document.querySelector(".watch-live-button");
+          if (!!button_subscribe) {
+            button_subscribe.innerHTML = "EN VIVO";
           }
         } else {
           $(
