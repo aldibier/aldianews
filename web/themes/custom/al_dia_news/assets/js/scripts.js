@@ -2275,8 +2275,8 @@ __webpack_require__.r(__webpack_exports__);
 
           var en_vivo = document.querySelector(".watch-live-button");
 
-          if (!!button_subscribe) {
-            button_subscribe.innerHTML = "EN VIVO";
+          if (!!en_vivo) {
+            en_vivo.innerHTML = "EN VIVO";
           }
         } else {
           $("div.popup-class-restore-pwd.ui-widget.ui-corner-all:not(button) .close-button-modal").html('<a href="/">OK</a>');

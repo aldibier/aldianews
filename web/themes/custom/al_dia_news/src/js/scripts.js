@@ -600,8 +600,8 @@ import replaceToken from "./modules/replaceToken";
             button_subscribe.innerHTML = "REGRESAR";
           }
           var en_vivo = document.querySelector(".watch-live-button");
-          if (!!button_subscribe) {
-            button_subscribe.innerHTML = "EN VIVO";
+          if (!!en_vivo) {
+            en_vivo.innerHTML = "EN VIVO";
           }
         } else {
           $(
