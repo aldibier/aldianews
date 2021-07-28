@@ -70,6 +70,7 @@
         line-height: 22px;
         font-family: $NimS-reg;
         color: $cwhite;
+        letter-spacing: .05em;
 
         strong {
           color: $corange;
@@ -445,9 +446,13 @@
       }
 
       .field--name-body {
-        width: 100%;
+        width: calc(100% + 15px);
         padding: 29px 0 0;
         position: relative;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
 
         &:after {
           width: calc(100% + 30px);
@@ -587,9 +592,11 @@
         p {
           font-size: 11px;
           line-height: 13px;
+          letter-spacing: .05em;
+          margin: 0 -15px 0;
           @media (max-width: 350px) {
             font-size: 10px;
-            letter-spacing: -0.1px;
+            letter-spacing: 0;
           }
         }
 
