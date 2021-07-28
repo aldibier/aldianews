@@ -49,8 +49,6 @@ import replaceToken from "./modules/replaceToken";
         $video.addClass("disnone");
       });
     });
-
-    $('.node--type-news .block-field-blocknodenewsbody iframe[title="YouTube video player"]').parent().addClass("video-body-notice-embed");
   }
 
   $(document).ajaxComplete(function() {
@@ -99,6 +97,8 @@ import replaceToken from "./modules/replaceToken";
   }
 
   $(document).ready(function(){
+    $('.node--type-news .block-field-blocknodenewsbody iframe[title="YouTube video player"]').parent().addClass("video-body-notice-embed");
+    
     //--------- initialization --------------------//
     if (window.matchMedia("(min-width: 992px)").matches) {
       initScrollMagic($, Drupal);
