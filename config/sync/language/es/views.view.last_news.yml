@@ -1,0 +1,14 @@
+display:
+  block_4:
+    display_options:
+      header:
+        area:
+          content:
+            value: "<h3>MÁS CONTENIDO</h3>\r\n"
+            format: full_html
+  block_5:
+    display_options:
+      fields:
+        nothing:
+          alter:
+            text: "<div class=\"category-view-more\">\r\n   <a href=\"{{ view_taxonomy_term }}\">MÁS SOBRE {{ field_category }} </a>\r\n</div>"
