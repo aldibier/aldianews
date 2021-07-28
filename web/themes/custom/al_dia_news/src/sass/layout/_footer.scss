@@ -347,6 +347,12 @@
     max-width: 50%;
     right: 31px;
 
+    @media(min-width:$tablet) {
+      &:lang(es){
+        bottom: 103px;
+      }
+    }
+
     &:before {
       content: "";
       width: 15px;
@@ -376,6 +382,12 @@
     bottom: 21px;
     right: 31px;
     width: 50%;
+
+    @media(min-width:$tablet) {
+      &:lang(es){
+        bottom: 45px;
+      }
+    }
 
     &::after {
       content: "";
