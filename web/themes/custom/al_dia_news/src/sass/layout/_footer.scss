@@ -125,7 +125,7 @@
         width: 50%;
 
         > div {
-          order: 1;
+          order: 2;
         }
 
         &:nth-child(7),
@@ -142,7 +142,7 @@
 
       .field--name-field-image {
         float: left;
-        margin: -43px 0;
+        margin: -45px 0;
         width: 82.89px;
         height: 32px;
       }
@@ -156,7 +156,7 @@
         margin: 13px 0 17px;
         font-weight: 300;
         padding: 0 15px 0 0;
-        order: 2;
+        order: 1;
         font-style: normal;
         font-size: $px20;
         line-height: 24px;
@@ -418,7 +418,7 @@
 
       .field--name-body {
         width: 100%;
-        padding: 20px 0 0;
+        padding: 29px 0 0;
         position: relative;
 
         &:after {
@@ -437,7 +437,7 @@
       }
 
       .field--name-field-image-block {
-        margin: 5px 0 0 -8px;
+        margin: 10px 0 0 0px;
         width: 140px;
       }
     }
@@ -473,7 +473,7 @@
     .block-fixed-block-contentlocation {
       position: relative;
       margin: 0;
-      width: 50%;
+      width: 52%;
       display: flex;
       align-items: flex-end;
 
@@ -559,11 +559,15 @@
         p {
           font-size: 11px;
           line-height: 13px;
+          @media (max-width: 350px) {
+            font-size: 10px;
+            letter-spacing: -0.1px;
+          }
         }
 
         &:after {
           height: 3px;
-          top: 6px;
+          top: 14px;
         }
       }
     }
@@ -595,7 +599,7 @@
     #block-footer {
       .menu {
         a {
-          font-size: 17px;
+          font-size: 14px;
           line-height: 21px;
           margin: 0;
           padding: 0;
@@ -659,6 +663,16 @@
       height: 10px;
       margin: 1px 5px -1px 0;
     }
+  }
+}
+
+@media (max-width: 600px) and (min-width: 360px) {
+  .site-footer .block-fixed-block-contentlocation .field--type-image {
+    margin: auto 0 -23px 15px;
+  }
+
+  .block-fixed-block-contentlocation .main-news-body {
+    margin: auto 0 auto 33px !important;
   }
 }
 
