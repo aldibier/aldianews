@@ -201,6 +201,10 @@
     padding: 9.5px 11px;
     background-color: $bgrey3;
 
+    .close-modal {
+      display: none;
+    }
+
     @media screen and(max-width: $tablet) {
       width: 100%;
       margin-bottom: 0;
@@ -211,6 +215,7 @@
       z-index: 100;
 
       .close-modal {
+        display: block;
         top: 10px;
         right: 18px;
       }

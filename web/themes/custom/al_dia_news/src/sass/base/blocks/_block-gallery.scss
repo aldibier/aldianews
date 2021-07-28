@@ -23,7 +23,7 @@
       &::before {
         display: block;
         content: "";
-        width: calc(100% + 40px);
+        width: calc(100vw + 40px);
         height: 0;
         padding: 0.1mm;
         left: -20px;
@@ -35,13 +35,6 @@
       }
 
       @media screen and (min-width: $screen-query) {
-
-        &:nth-child(-n + 3) {
-          @media screen and (min-width: $screen-query) {
-            
-          }
-        }
-
         &::after {
           content: "";
           width: 0;
@@ -51,6 +44,14 @@
           top: 0;
           right: calc(0% - 20px);
           background-color: $cgrey4;
+        }
+      }
+
+      @media screen and (min-width: $broken) {
+        &:nth-last-of-type(-n + 3) {
+          &::before {
+            content: none;
+          }
         }
       }
 
