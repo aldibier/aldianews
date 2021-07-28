@@ -40,6 +40,10 @@
 
     .main-news-body {
       display: block;
+
+      @media screen and(max-width:$broken) {
+        font-size: 0.9rem;
+      }
     }
 
     @media screen and(max-width:$broken) {
