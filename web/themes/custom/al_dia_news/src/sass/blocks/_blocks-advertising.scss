@@ -332,6 +332,20 @@
       }
     }
   }
+
+  .skys-scroll {
+    @media screen and (min-width: $broken) {
+      &::before {
+        content: '';
+        width: 20px;
+        height: 100%;
+        position: absolute;
+        left: -20px;
+        top: 0;
+        background-color: $cwhite;
+      }
+    }
+  }
 }
 
 //----------------- clases generales para publicidad ----------------------------------//

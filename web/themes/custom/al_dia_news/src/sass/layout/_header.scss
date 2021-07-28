@@ -904,8 +904,9 @@ body.open-menu {
     letter-spacing: 0.741176px;
     @media (min-width: $tablet) {
       // padding-right: 15px;
-      padding-right: 0px;
+      padding-right: 0;
       margin-right: 20px;
+      margin-left: 10px;
     }
   }
 
@@ -929,11 +930,12 @@ body.open-menu {
   #block-loginformpopup {
     min-width: initial;
     max-width: 56px;
+    margin: 30px 0 0;
   }
 
   #block-loginformpopup a {
     font-size: 16px;
-    line-height: 25px;
+    line-height: 16px;
     font-family: $PrNovacond-Xbold;
     color: $corange;
     text-transform: uppercase;
@@ -1060,7 +1062,7 @@ body.open-menu {
     }
 
     #block-languageswitcher {
-      margin: 0 auto 0 0;
+      margin: 0 auto 0;
     }
  
     #block-sitedescription {

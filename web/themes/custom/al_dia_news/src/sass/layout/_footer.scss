@@ -167,7 +167,7 @@
         border: none;
         margin: 13px 0 17px;
         font-weight: 300;
-        padding: 0 15px 0 0;
+        padding: 0 5px 0 0;
         order: 1;
         font-style: normal;
         font-size: $px20;
@@ -347,6 +347,12 @@
     max-width: 50%;
     right: 31px;
 
+    @media(min-width:$tablet) {
+      &:lang(es){
+        bottom: 103px;
+      }
+    }
+
     &:before {
       content: "";
       width: 15px;
@@ -376,6 +382,12 @@
     bottom: 21px;
     right: 31px;
     width: 50%;
+
+    @media(min-width:$tablet) {
+      &:lang(es){
+        bottom: 45px;
+      }
+    }
 
     &::after {
       content: "";

@@ -91,6 +91,10 @@
   .slick-prev {
     left: calc(50% - 25px);
     background-image: url("../../assets/img/arrow-left.svg");
+
+    &.slick-disabled {
+      opacity: 0.5;
+    }
     @media screen and (max-width: $tablet) {
       left: calc(50% - 40px);
     }
@@ -99,6 +103,10 @@
   .slick-next {
     left: calc(50% + 25px);
     background-image: url("../../assets/img/arrow-right.svg");
+    
+    &.slick-disabled {
+      opacity: 0.5;
+    }
     @media screen and (max-width: $tablet) {
       left: calc(50% + 17px);
     }

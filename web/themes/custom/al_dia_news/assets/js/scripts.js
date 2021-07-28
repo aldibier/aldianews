@@ -382,7 +382,6 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
       var left = screen.width / 2 - w / 2;
       var top = screen.height / 2 - h / 2 - 100;
       window.open(url, 'share_twitter', 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
-      debugger;
       self.hide();
       return false;
     };
@@ -448,7 +447,6 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
       email.subject = encodeURIComponent('Quote from ' + document.title);
       email.body = encodeURIComponent('“' + text + '”') + '%0D%0A%0D%0AFrom: ' + document.title + '%0D%0A' + window.location.href;
       $(this).attr('href', 'mailto:?subject=' + email.subject + '&body=' + email.body);
-      debugger;
       self.hide();
       return true;
     };
