@@ -286,7 +286,6 @@
           ', left=' +
           left
       );
-      debugger;
       self.hide();
       return false;
     };
@@ -435,7 +434,6 @@
         '%0D%0A' +
         window.location.href;
       $(this).attr('href', 'mailto:?subject=' + email.subject + '&body=' + email.body);
-      debugger;
       self.hide();
       return true;
     };
