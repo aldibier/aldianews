@@ -204,14 +204,16 @@
     @media screen and(max-width: $tablet) {
       width: 100%;
       margin-bottom: 0;
+      padding: 30px 18px 10px;
       position: fixed;
       bottom: 0;
       left: 0;
       z-index: 100;
-    }
 
-    .close-modal {
-      display: none;
+      .close-modal {
+        top: 10px;
+        right: 18px;
+      }
     }
   }
 
@@ -223,8 +225,8 @@
         .webform-confirmation__back{
           a {
             font-size: 12px;
-            min-height: 30px;
-            max-height: 30px;
+            min-height: 40px;
+            max-height: 40px;
             padding: 0;
           }
         }
@@ -232,7 +234,7 @@
 
       @media screen and(max-width:$tablet) {
         display: flex;
-        padding: 15px;
+        padding: 20px 10px;
 
         .form-item-email{
           width: initial;
@@ -263,7 +265,7 @@
 
       @media screen and(max-width:$tablet) {
         display: flex;
-        padding: 15px;
+        padding: 20px 10px;
 
         .form-item-email:lang(es){
           width: initial;
@@ -314,7 +316,7 @@
 
       @media screen and(max-width:$tablet) {
         display: flex;
-        padding: 15px;
+        padding: 20px 10px;
 
         .form-item-email:lang(es) {
           width: initial;
@@ -405,8 +407,8 @@
         }
 
         @media screen and(max-width: $tablet) {
-          min-height: 30px;
-          max-height: 30px;
+          min-height: 40px;
+          max-height: 40px;
           padding: 0;
 
           &::placeholder {
@@ -438,8 +440,8 @@
 
         @media screen and(max-width: $tablet) {
           min-width: initial;
-          max-height: 30px;
-          min-height: 30px;
+          max-height: 40px;
+          min-height: 40px;
           font-size: 12px;
         }
       }
