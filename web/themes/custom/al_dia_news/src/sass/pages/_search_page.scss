@@ -282,17 +282,33 @@
     }
   }
 }
+
+@keyframes rotation {
+  0% {
+    transform:rotate(0deg);
+  }
+  100% {
+    transform:rotate(360deg);
+  }
+}
+
+
 .path-search-results {
   .region-content {
     position: relative;
   }
 
   .ajax-progress.ajax-progress-fullscreen {
-    background: transparent url("../img/live_dot.gif") center center no-repeat;
+    background: transparent url("../img/load.png") center center no-repeat;
     margin: 0 auto -30px;
     width: 30px;
     height: 30px;
     background-size: contain;
+    display: block;
+    animation-name: rotation;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
   }
   
   .ajax-progress:nth-child(2) {
