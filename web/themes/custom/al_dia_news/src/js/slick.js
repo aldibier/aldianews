@@ -145,7 +145,7 @@ const initSlick = ($, Drupal) => {
   if ($(".view-id-thought_leaders_home.view-display-id-block_1").length) {
 
     const settingThoughtLeaders = {
-      infinite: true,
+      infinite: false,
       variableWidth: true,
       slidesToShow: 2,
       slidesToScroll: 1,
