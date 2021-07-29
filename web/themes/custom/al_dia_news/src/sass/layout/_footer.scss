@@ -153,7 +153,11 @@
         height: 32px;
         @media (max-width: $tablet) {
           &:lang(en) {
-            margin: -45px -13px -45px 0;
+            margin: -45px -18px -45px 0;
+          }
+
+          &:lang(es) {
+            margin: -45px 0 0 -4px;
           }
         }
       }
@@ -696,7 +700,7 @@
       &:after {
         width: 50px;
         height: 15px;
-        margin: 0;
+        margin: 2px 0px -3px -2px;
       }
     }
 
