@@ -711,11 +711,13 @@
   padding: 30px 25px;
   margin-top: 40px;
 
-  &:hover {
-    background: #000000;
-    opacity: 0.8;
+  @media (min-width: $tablet) {
+    &:hover {
+      background: #000000;
+      opacity: 0.8;
+    }
   }
-
+ 
   @media (max-width: $desktop) {
     max-width: 230px;
   }
