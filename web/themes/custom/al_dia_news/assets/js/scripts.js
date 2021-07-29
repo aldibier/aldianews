@@ -2266,18 +2266,18 @@ __webpack_require__.r(__webpack_exports__);
 
         if (!!esp) {
           $("div.popup-class-restore-pwd.ui-widget.ui-corner-all:not(button) .close-button-modal").html('<a href="/">OK</a>');
-          $(".popup-class-cancel-account.ui-widget.ui-corner-all:not(button) .close-button-modal").html('<a href="/">IR A NUESTRO ÚLTIMO CONTENIDO</a>');
+          $(".popup-class-cancel-account.ui-widget.ui-corner-all:not(button) .close-button-modal").html('<a href="/">IR A NUESTRO ÚLTIMO CONTENIDO</a>'); //////
+
           var button_subscribe = document.querySelector('.link--previous[href*="/order_information"]');
 
           if (!!button_subscribe) {
             button_subscribe.innerHTML = "REGRESAR";
-          }
+          } //////
 
-          var en_vivo = document.querySelector(".watch-live-button");
 
-          if (!!en_vivo) {
-            en_vivo.innerHTML = "EN VIVO";
-          }
+          Array.from(document.querySelectorAll(".watch-live-button")).map(function (e) {
+            if (!!e) e.innerHTML = "EN VIVO";
+          }); //////
 
           var share = document.querySelector(".block-extra-field-blocknodenewsaddtoany h2");
 
