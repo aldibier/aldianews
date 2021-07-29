@@ -333,8 +333,22 @@
     }
   }
 
-  .skys-scroll {
-    @media screen and (min-width: $broken) {
+  @media screen and (min-width: $broken) { 
+    .skys-scroll:nth-last-child(6){
+      &::before {
+        content: none;
+      }
+    }
+  
+    .block-scroll:nth-last-child(1){
+      &::before {
+        content: none;
+      }
+    }
+
+    .skys-scroll {
+      position: relative;
+
       &::before {
         content: '';
         width: 20px;
