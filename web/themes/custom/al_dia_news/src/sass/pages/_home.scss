@@ -609,18 +609,37 @@
   justify-content: center;
   //align-items: flex-start;
 
+  .slick-list {
+    width: 280px;
+    max-width: 280px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
   .views-row {
     display: flex;
     grid-gap: 0px;
     width: 100%;
     margin-right: 55px;
 
+
+    &.cloned {
+      display: none;
+    }
+
     &:last-child {
       margin-right: 0;
     }
 
     @media (max-width: $broken) {
-      margin-right: 20px;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+    @media (max-width: $tablet) {
+      &.cloned {
+        display: block;
+      }
     }
   }
 }

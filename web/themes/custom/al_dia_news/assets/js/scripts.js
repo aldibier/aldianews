@@ -2512,18 +2512,11 @@ var initSlick = function initSlick($, Drupal) {
       variableWidth: true,
       slidesToShow: 2,
       slidesToScroll: 1,
-      autoplay: true,
       autoplaySpeed: 3000,
       mobileFirst: true,
       responsive: [{
         breakpoint: 768,
         settings: "unslick"
-      }, {
-        breakpoint: 330,
-        settings: {
-          slidesToShow: 3,
-          centerMode: true
-        }
       }]
     };
     var mobileWidth = 768;
@@ -2536,6 +2529,7 @@ var initSlick = function initSlick($, Drupal) {
           var entry = _step.value;
           var currentWidth = entry.contentBoxSize[0].inlineSize;
           if (currentWidth > mobileWidth) return;
+          if ($(".view-id-thought_leaders_home.view-display-id-block_1 .view-content").hasClass("slick-initialized")) return;
 
           if (currentWidth <= mobileWidth) {
             $(".view-id-thought_leaders_home.view-display-id-block_1 .view-content").not('.slick-initialized').slick(settingThoughtLeaders);
