@@ -1,0 +1,19 @@
+uuid: ab141723-ecfc-4131-813a-36556088acf6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_short_title_thounght
+    - node.type.thought_leaders
+id: node.thought_leaders.field_short_title_thounght
+field_name: field_short_title_thounght
+entity_type: node
+bundle: thought_leaders
+label: 'Short title'
+description: 'This field will be reflected in the home section.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
