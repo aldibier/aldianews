@@ -668,16 +668,16 @@ function al_dia_news_general_views_query_alter(ViewExecutable $view, QueryPlugin
         }
       }
     break;
-    // case "search_results_al_dia_solr":
-    //   if ($view->getDisplay()->display['id'] == 'page_1') {
-    //     $is_mobile = is_mobile();
-    //
-    //     if($is_mobile){
-    //       $view->setOffset(0);
-    //       $view->getPager()->setItemsPerPage(22);
-    //     }
-    //   }
-    // break;
+    case "search_results_al_dia_solr":
+      if ($view->getDisplay()->display['id'] == 'page_1') {
+        $is_mobile = is_mobile();
+
+        if($is_mobile){
+          $view->setOffset(0);
+          $view->getPager()->setItemsPerPage(22);
+        }
+      }
+    break;
     case "last_news_in_error_page":
       if ($view->getDisplay()->display['id'] == 'block_1') {
         $is_mobile = is_mobile();
