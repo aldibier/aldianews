@@ -145,7 +145,7 @@ const initSlick = ($, Drupal) => {
   if ($(".view-id-thought_leaders_home.view-display-id-block_1").length) {
 
     const settingThoughtLeaders = {
-      infinite: true,
+      infinite: false,
       variableWidth: true,
       slidesToShow: 2,
       slidesToScroll: 1,
@@ -158,7 +158,7 @@ const initSlick = ($, Drupal) => {
         },
       ]
     }
-
+/* 
     const mobileWidth = 768;
 
     const resizeObserver = new ResizeObserver(entries => {
@@ -174,7 +174,19 @@ const initSlick = ($, Drupal) => {
       }
     });
 
-    resizeObserver.observe(document.querySelector('body'));
+    resizeObserver.observe(document.querySelector('body')); */
+
+
+    //slide edit resize
+    if (window.matchMedia("(max-width: 768px)").matches) {
+      $(".view-id-thought_leaders_home.view-display-id-block_1 .view-content").not('.slick-initialized').slick(settingThoughtLeaders);
+    }
+
+    window.addEventListener("resize", () => {
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        $(".view-id-thought_leaders_home.view-display-id-block_1 .view-content").not('.slick-initialized').slick(settingThoughtLeaders);
+      }
+    });
   }
 
   // slider interna eventos modo de vista

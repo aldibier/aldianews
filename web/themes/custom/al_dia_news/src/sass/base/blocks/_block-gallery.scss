@@ -126,6 +126,8 @@
       grid-gap: 0 40px;
       overflow: hidden;
       grid-auto-flow: dense;
+      margin-bottom: 100px;
+
       @media screen and (max-width: $broken) {
         margin-bottom: 40px;
         display: grid;
@@ -135,6 +137,7 @@
       }
 
       @media screen and (max-width: $tablet) {
+        margin-bottom: 40px;
         overflow: initial;
       }
     }
