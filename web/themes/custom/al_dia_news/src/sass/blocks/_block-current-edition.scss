@@ -321,12 +321,16 @@
   }
 
   .view-title-into-current-edition-home {
-    // margin-bottom: 50px;
-    height: 203px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin-bottom: 50px;
 
+    @media (max-width: $tablet) {
+      height: 203px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+    }
+    
     .views-field-body {
       p {
         margin-bottom: 5px;
