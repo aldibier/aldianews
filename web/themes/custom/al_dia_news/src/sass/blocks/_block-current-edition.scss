@@ -291,9 +291,16 @@
         max-height: 16px;
         position: relative;
         top: 5px;
+
+        
         @media screen and(max-width:$tablet) {
           max-width: 36px;
           top: 2px;
+
+          &:lang(es){
+            margin: -2px 1px 0;
+          }
+          
           img {
             height: 12px;
           }
