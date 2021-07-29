@@ -128,6 +128,12 @@
 }
 
 .current-edition-cover-page  {
+
+  a {
+    display: block;
+    line-height: 1;
+  }
+
   img {
     width: 100%;
     height: auto;
@@ -318,13 +324,22 @@
 
   .views-field-view-2 {
     grid-area: title;
+
+    @media (max-width: $tablet) {
+      align-self: center;
+    }
+
+    span {
+      display: block;
+      line-height: 1;
+    }
   }
 
   .view-title-into-current-edition-home {
     margin-bottom: 50px;
 
     @media (max-width: $tablet) {
-      height: 203px;
+      //height: 203px;
       display: flex;
       justify-content: center;
       align-items: center;
