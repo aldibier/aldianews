@@ -294,22 +294,54 @@
 
 .ajax-progress.ajax-progress-fullscreen,
 .ajax-progress {
-  background: #fff url("../img/load.png") center center no-repeat;
-  width: 100px;
-  height: 100px;
-  background-size: contain;
-  display: block;
-  animation-name: rotation;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  overflow: hidden;
-  border-radius: 100%;
+
+  display: flex;
+  max-width: max-content;
+  align-items: center;
+  justify-content: center;
+
+  &:before {
+    content: 'Loading';
+    display: block;
+    font-size: $PrNovacond-reg;
+    font-size: 16px;
+    line-height: 0;
+    color: #f71805;
+    order: 2;
+
+    &:lang(es) {
+      content: 'Cargando';
+    }
+
+  }
+
+  &:after {
+    background: transparent url("../img/loading.png") center center no-repeat;
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    display: block;
+    animation-name: rotation;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    overflow: hidden;
+    border-radius: 100%;
+    display: block;
+    order: 1;
+    content: '';
+  }
 
   @media (max-width: $tablet) {
-    width: 50px;
-    height: 50px;
-    background-size: contain;
+    &:after {
+      width: 10px;
+      height: 10px;
+      background-size: contain;
+    }
+
+    &:before {
+      font-size: 14px;
+    }
   }
 }
 
