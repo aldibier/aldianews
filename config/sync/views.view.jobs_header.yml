@@ -509,6 +509,7 @@ display:
     cache_metadata:
       max-age: -1
       contexts:
+        - 'languages:language_content'
         - 'languages:language_interface'
       tags:
         - 'config:field.storage.block_content.body'
@@ -524,10 +525,11 @@ display:
       display_extenders:
         ajax_history: {  }
       path: jobs
-      rendering_language: '***LANGUAGE_site_default***'
+      rendering_language: '***LANGUAGE_entity_translation***'
     cache_metadata:
       max-age: -1
       contexts:
+        - 'languages:language_content'
         - 'languages:language_interface'
       tags:
         - 'config:field.storage.block_content.body'
