@@ -603,6 +603,12 @@ import replaceToken from "./modules/replaceToken";
           if (!!en_vivo) {
             en_vivo.innerHTML = "EN VIVO";
           }
+          var share = document.querySelector(
+            ".block-extra-field-blocknodenewsaddtoany h2"
+          );
+          if (!!share) {
+            share.innerHTML = "COMPARTE ESTE CONTENIDO:";
+          }
         } else {
           $(
             "div.popup-class-restore-pwd.ui-widget.ui-corner-all:not(button) .close-button-modal"
