@@ -286,7 +286,11 @@
   .region-content {
     position: relative;
   }
-  .ajax-progress {
+  .ajax-progress.ajax-progress-fullscreen {
+
+  }
+  
+  .ajax-progress:nth-child(2) {
     display: none;
   }
   .no-result-search {
