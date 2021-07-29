@@ -70,6 +70,7 @@
         line-height: 22px;
         font-family: $NimS-reg;
         color: $cwhite;
+        letter-spacing: .05em;
 
         strong {
           color: $corange;
@@ -167,7 +168,7 @@
         border: none;
         margin: 13px 0 17px;
         font-weight: 300;
-        padding: 0 15px 0 0;
+        padding: 0 5px 0 0;
         order: 1;
         font-style: normal;
         font-size: $px20;
@@ -347,6 +348,12 @@
     max-width: 50%;
     right: 31px;
 
+    @media(min-width:$tablet) {
+      &:lang(es){
+        bottom: 103px;
+      }
+    }
+
     &:before {
       content: "";
       width: 15px;
@@ -376,6 +383,12 @@
     bottom: 21px;
     right: 31px;
     width: 50%;
+
+    @media(min-width:$tablet) {
+      &:lang(es){
+        bottom: 45px;
+      }
+    }
 
     &::after {
       content: "";
@@ -433,9 +446,13 @@
       }
 
       .field--name-body {
-        width: 100%;
+        width: calc(100% + 15px);
         padding: 29px 0 0;
         position: relative;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
 
         &:after {
           width: calc(100% + 30px);
@@ -575,9 +592,11 @@
         p {
           font-size: 11px;
           line-height: 13px;
+          letter-spacing: .05em;
+          margin: 0 -15px 0;
           @media (max-width: 350px) {
             font-size: 10px;
-            letter-spacing: -0.1px;
+            letter-spacing: 0;
           }
         }
 

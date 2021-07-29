@@ -2272,6 +2272,12 @@ __webpack_require__.r(__webpack_exports__);
           if (!!button_subscribe) {
             button_subscribe.innerHTML = "REGRESAR";
           }
+
+          var en_vivo = document.querySelector(".watch-live-button");
+
+          if (!!en_vivo) {
+            en_vivo.innerHTML = "EN VIVO";
+          }
         } else {
           $("div.popup-class-restore-pwd.ui-widget.ui-corner-all:not(button) .close-button-modal").html('<a href="/">OK</a>');
           $(".popup-class-cancel-account.ui-widget.ui-corner-all:not(button) .close-button-modal").html('<a href="/">GO TO OUR LATEST CONTENT</a>');
