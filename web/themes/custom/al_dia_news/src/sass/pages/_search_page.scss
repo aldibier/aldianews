@@ -297,15 +297,18 @@
 
   display: flex;
   background: none;
+  width: 400px;
+  background: none;
 
   &:after {
     content: 'Loading';
     display: block;
-    font-size: $PrNovacond-reg;
-    font-size: 16px;
+    font-family: $PrNovacond-reg;
+    font-size: 20px;
     line-height: 0;
     color: #f71805;
     order: 2;
+    margin: 0 0 0 5px;
 
     &:lang(es) {
       content: 'Cargando';
@@ -315,8 +318,8 @@
 
   &:before {
     background: transparent url("../img/loading.png") center center no-repeat;
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     background-size: contain;
     display: block;
     animation-name: rotation;
@@ -332,13 +335,13 @@
 
   @media (max-width: $tablet) {
     &:before {
-      width: 10px;
-      height: 10px;
+      width: 20px;
+      height: 20px;
       background-size: contain;
     }
 
     &:after {
-      font-size: 14px;
+      font-size: 16px;
     }
   }
 }
