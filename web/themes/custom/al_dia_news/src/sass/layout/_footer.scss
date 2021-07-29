@@ -7,7 +7,7 @@
     width: 55%;
     position: absolute;
     content: "";
-    display: block; 
+    display: block;
     top: 68px;
     height: 5px;
     background: $corange;
@@ -36,7 +36,7 @@
     top: -11px;
     right: 0;
     width: calc(100% - 395px);
-    z-index: 2;
+    z-index: 1;
 
     .field--name-field-image-block {
       max-width: 265px;
@@ -70,7 +70,7 @@
         line-height: 22px;
         font-family: $NimS-reg;
         color: $cwhite;
-        letter-spacing: .05em;
+        letter-spacing: 0.05em;
 
         strong {
           color: $corange;
@@ -125,8 +125,7 @@
         display: flex;
         width: 50%;
 
-        > div{
-
+        > div {
           &:lang(es) {
             order: 2;
           }
@@ -153,7 +152,6 @@
         width: 82.89px;
         height: 32px;
         @media (max-width: $tablet) {
-
           &:lang(en) {
             margin: -45px -13px -45px 0;
           }
@@ -348,8 +346,8 @@
     max-width: 50%;
     right: 31px;
 
-    @media(min-width:$tablet) {
-      &:lang(es){
+    @media (min-width: $tablet) {
+      &:lang(es) {
         bottom: 103px;
       }
     }
@@ -384,8 +382,8 @@
     right: 31px;
     width: 50%;
 
-    @media(min-width:$tablet) {
-      &:lang(es){
+    @media (min-width: $tablet) {
+      &:lang(es) {
         bottom: 45px;
       }
     }
@@ -592,7 +590,7 @@
         p {
           font-size: 11px;
           line-height: 13px;
-          letter-spacing: .05em;
+          letter-spacing: 0.05em;
           margin: 0 -15px 0;
           @media (max-width: 350px) {
             font-size: 10px;
@@ -655,7 +653,7 @@
           > div {
             margin: -9px -8px 0 -3px;
 
-            &:lang(en){
+            &:lang(en) {
               margin: -8px 9px 0 -8px;
             }
           }
