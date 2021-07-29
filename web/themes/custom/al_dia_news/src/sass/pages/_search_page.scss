@@ -282,12 +282,38 @@
     }
   }
 }
+
+@keyframes rotation {
+  0% {
+    transform:rotate(0deg);
+  }
+  100% {
+    transform:rotate(360deg);
+  }
+}
+
+
 .path-search-results {
   .region-content {
     position: relative;
   }
-  .ajax-progress.ajax-progress-fullscreen {
 
+  .ajax-progress.ajax-progress-fullscreen {
+    background: transparent url("../img/load.png") center center no-repeat;
+    margin: 0 auto -30px;
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    display: block;
+    animation-name: rotation;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    @media (max-width: $tablet) {
+      width: 50px;
+      height: 50px;
+    }
   }
   
   .ajax-progress:nth-child(2) {
