@@ -296,11 +296,9 @@
 .ajax-progress {
 
   display: flex;
-  max-width: max-content;
-  align-items: center;
-  justify-content: center;
+  background: none;
 
-  &:before {
+  &:after {
     content: 'Loading';
     display: block;
     font-size: $PrNovacond-reg;
@@ -315,7 +313,7 @@
 
   }
 
-  &:after {
+  &:before {
     background: transparent url("../img/loading.png") center center no-repeat;
     width: 20px;
     height: 20px;
@@ -333,13 +331,13 @@
   }
 
   @media (max-width: $tablet) {
-    &:after {
+    &:before {
       width: 10px;
       height: 10px;
       background-size: contain;
     }
 
-    &:before {
+    &:after {
       font-size: 14px;
     }
   }
