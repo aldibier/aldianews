@@ -518,8 +518,8 @@
     }
   };
 
-  $( document ).ajaxStop(function() {
-    $(".views-infinite-scroll-content-wrapper").remove('.views-infinite-scroll-content-wrapper .ajax-progress');
+  $(document).ajaxComplete(function() {
+    $('.views-infinite-scroll-content-wrapper .ajax-progress:last-child').remove();
   });
 
 })(jQuery);
