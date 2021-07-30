@@ -44,8 +44,13 @@
 .ui-widget.ui-corner-all:not(button) {
   width: 100% !important;
   border: none;
-  overflow: hidden auto;
+  overflow: auto;
   overscroll-behavior: contain;
+
+  @supports (overflow: hidden auto){
+    overflow: hidden auto;
+  }
+
   &.popup-class-restore-pwd {
     padding: 40px 40px 0;
     width: 90% !important;

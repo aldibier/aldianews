@@ -292,58 +292,75 @@
   }
 }
 
-.ajax-progress.ajax-progress-fullscreen,
-.ajax-progress {
+// .ui-dialog.ui-corner-all,
+// .red-banner,
+// #header {
 
-  display: flex;
-  background: none;
-  width: 400px;
-  background: none;
-  align-items: center;
-  justify-content: center;
+//   .ajax-progress.ajax-progress-fullscreen,
+//   .ajax-progress {
+//     display: none;
+//   }
+// }
 
-  &:after {
-    content: 'Loading';
-    display: block;
-    font-family: $PrNovacond-reg;
-    font-size: 25px;
-    line-height: 0;
-    color: #f71805;
-    order: 2;
-    margin: 0 0 0 5px;
+.news-gallery {
+  .ajax-progress.ajax-progress-fullscreen,
+  .ajax-progress {
+
+    display: flex;
+    background: none;
+    width: 400px;
+    background: none;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 0 -210px;
+
+
 
     &:lang(es) {
-      content: 'Cargando';
-    }
 
-  }
-
-  &:before {
-    background: transparent url("../img/loading.png") center center no-repeat;
-    width: 30px;
-    height: 30px;
-    background-size: contain;
-    display: block;
-    animation-name: rotation;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    overflow: hidden;
-    border-radius: 100%;
-    display: block;
-    order: 1;
-    content: '';
-  }
-
-  @media (max-width: $tablet) {
-    &:before {
-      width: 20px;
-      height: 20px;
-      background-size: contain;
+      &:after {
+        content: 'Cargando';
+      }
     }
 
     &:after {
-      font-size: 16px;
+      content: 'Loading';
+      display: block;
+      font-family: $PrNovacond-reg;
+      font-size: 25px;
+      line-height: 0;
+      color: #f71805;
+      order: 2;
+      margin: 0 0 0 5px;
+    }
+
+    &:before {
+      background: transparent url("../img/loading.png") center center no-repeat;
+      width: 30px;
+      height: 30px;
+      background-size: contain;
+      display: block;
+      animation-name: rotation;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      overflow: hidden;
+      border-radius: 100%;
+      display: block;
+      order: 1;
+      content: '';
+    }
+
+    @media (max-width: $tablet) {
+      &:before {
+        width: 20px;
+        height: 20px;
+        background-size: contain;
+      }
+
+      &:after {
+        font-size: 16px;
+      }
     }
   }
 }
