@@ -313,6 +313,15 @@
   justify-content: center;
   margin: 0 0 0 -210px;
 
+
+
+  &:lang(es) {
+
+    &:after {
+      content: 'Cargando';
+    }
+  }
+
   &:after {
     content: 'Loading';
     display: block;
@@ -322,11 +331,6 @@
     color: #f71805;
     order: 2;
     margin: 0 0 0 5px;
-
-    &:lang(es) {
-      content: 'Cargando';
-    }
-
   }
 
   &:before {
