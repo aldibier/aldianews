@@ -302,17 +302,20 @@
 //   }
 // }
 
-.news-gallery {
+.views-infinite-scroll-content-wrapper {
   .ajax-progress.ajax-progress-fullscreen,
   .ajax-progress {
 
     display: flex;
-    background: none;
-    width: 400px;
+    width: auto;
     background: none;
     align-items: center;
     justify-content: center;
-    margin: 0 0 0 -210px;
+    margin: 0 auto;
+    font-size: 0;
+    position: initial;
+    height: 50px;
+    grid-column: 3 span;
 
 
 
