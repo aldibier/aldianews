@@ -505,4 +505,21 @@
         }
     }
   }
+
+  Drupal.behaviors.progress_indicator = {
+    attach: function (context, settings) {
+      let hasInfiniteScroll = context.querySelector('.views-infinite-scroll-content-wrapper');
+
+      if(!!hasInfiniteScroll){
+        let infiniteScroll = document.querySelector('.views-infinite-scroll-content-wrapper');
+
+        infiniteScroll.insertAdjacentHTML("beforeend",'<div class="ajax-progress ajax-progress-fullscreen">progress</div>');
+      }
+    }
+  };
+
+  $( document ).ajaxStop(function() {
+    $(".views-infinite-scroll-content-wrapper").remove('.views-infinite-scroll-content-wrapper .ajax-progress');
+  });
+
 })(jQuery);
