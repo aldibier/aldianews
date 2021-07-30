@@ -519,7 +519,7 @@
   };
 
   $(document).ajaxComplete(function() {
-    $('.views-infinite-scroll-content-wrapper .ajax-progress:last-child').remove();
+    $('.views-infinite-scroll-content-wrapper .ajax-progress:last-child').hide();
   });
 
 })(jQuery);

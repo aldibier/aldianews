@@ -301,7 +301,7 @@
   .ajax-progress.ajax-progress-fullscreen,
   .ajax-progress {
 
-    display: flex;
+    display: none;
     width: auto;
     background: none;
     align-items: center;
@@ -312,7 +312,9 @@
     height: 50px;
     grid-column: 3 span;
 
-
+    &:last-child {
+      display: flex;
+    }
 
     &:lang(es) {
 
