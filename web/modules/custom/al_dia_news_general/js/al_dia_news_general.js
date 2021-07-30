@@ -506,20 +506,36 @@
     }
   }
 
+  let flag = 1;
+  let control = [];
+  control[0] = 0;
+
   Drupal.behaviors.progress_indicator = {
     attach: function (context, settings) {
-      let hasInfiniteScroll = context.querySelector('.views-infinite-scroll-content-wrapper');
+      if(flag > control[0]){
+        let hasInfiniteScroll = context.querySelector('.views-infinite-scroll-content-wrapper');
 
-      if(!!hasInfiniteScroll){
-        let infiniteScroll = document.querySelector('.views-infinite-scroll-content-wrapper');
+        if(!!hasInfiniteScroll){
+          flag++;
+          let infiniteScroll = document.querySelector('.views-infinite-scroll-content-wrapper');
 
-        infiniteScroll.insertAdjacentHTML("beforeend",'<div class="ajax-progress ajax-progress-fullscreen">progress</div>');
+          infiniteScroll.insertAdjacentHTML("beforeend",'<div class="ajax-progress ajax-progress-fullscreen">progress</div>');
+        }
+      }else {
+        control[0] = flag;
       }
     }
   };
 
   $(document).ajaxComplete(function() {
-    $('.views-infinite-scroll-content-wrapper .ajax-progress:last-child').hide();
+    let list = $('.views-infinite-scroll-content-wrapper .ajax-progress');
+    $(list)[0].remove();
+
+    if(flag == control[0]){ 
+      $('.views-infinite-scroll-content-wrapper .ajax-progress').remove();
+    }
+
+    control[0] = flag;
   });
 
 })(jQuery);
