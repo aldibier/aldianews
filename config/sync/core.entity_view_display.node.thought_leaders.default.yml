@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.thought_leaders.field_comments
     - field.field.node.thought_leaders.field_image
     - field.field.node.thought_leaders.field_short_title
+    - field.field.node.thought_leaders.field_short_title_thounght
     - field.field.node.thought_leaders.field_tags
     - field.field.node.thought_leaders.field_video
     - node.type.thought_leaders
@@ -364,6 +365,14 @@ content:
     region: content
   field_short_title:
     weight: 104
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_short_title_thounght:
+    weight: 109
     label: above
     settings:
       link_to_entity: false

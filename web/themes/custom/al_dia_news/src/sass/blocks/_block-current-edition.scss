@@ -291,11 +291,22 @@
         max-height: 16px;
         position: relative;
         top: 5px;
+
+        
         @media screen and(max-width:$tablet) {
-          max-width: 29px;
+          max-width: 36px;
           top: 2px;
+
+          &:lang(es){
+            margin: -2px 1px 0;
+
+            img {
+              margin: -8px 0 1px;
+            }
+          }
+          
           img {
-            height: 9px;
+            height: 12px;
           }
         }
       }
@@ -368,7 +379,7 @@
 
       a {
         font-size: szrem(16);
-        font-family: $PrNovacond-bold;
+        font-family: $PrNovacond-light;
         font-style: normal;
         font-weight: bold;
         line-height: 25px;
