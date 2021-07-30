@@ -36,7 +36,22 @@ body.open-menu {
     &:after {
       display: none;
     }
+
+    #block-magnifierheader, #block-languageswitcher {
+      padding: 12px 0;
+    }
+  
+    #block-loginformpopup {
+      margin: 0;
+      display: flex;
+      align-items: center;
+    }
+  
+    #block-views-block-current-edition-header-and-footer-block-1 {
+      padding-top: 14px;
+    }
   }
+
   @media (max-width: $tablet) {
     position: relative;
     .region-header {
