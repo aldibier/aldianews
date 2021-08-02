@@ -92,7 +92,7 @@
       @media screen and(max-width:767px) {
         margin-right: 5px;
         font-size: szrem(14);
-        line-height: 16px;
+        // line-height: 16px;
       }
     }
 
@@ -136,6 +136,10 @@
 
     .form-actions {
       display: none;
+    }
+
+    @media screen and(max-width:767px) {
+      margin-top: 20px;
     }
   }
 
