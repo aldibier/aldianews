@@ -909,6 +909,19 @@ div.popup-login.ui-widget.ui-corner-all:not(button) {
     min-height: 270px;
     top: 85px;
     padding: 30px 25px;
+
+
+    &.ui-widget.ui-corner-all:not(button){
+      width: calc(100% - 30px) !important;
+      min-height: auto !important;
+      margin-bottom: 0 !important;
+    }
+
+    .ui-dialog-titlebar {
+      width: 100% !important;
+      padding: 0 !important;
+    }
+
     .ui-dialog-title {
       font-size: $px16 !important;
       line-height: 19px !important;
@@ -917,8 +930,13 @@ div.popup-login.ui-widget.ui-corner-all:not(button) {
     .ui-widget-content {
       font-size: $px15 !important;
       line-height: 19px !important;
-      margin: 0 0 25px !important;
+      margin: 0 0 0 !important;
     }
+
+    .ui-dialog-content {
+      padding: 0 !important;
+    }
+
     .button-back,
     .button-preload {
       max-width: 240px;
