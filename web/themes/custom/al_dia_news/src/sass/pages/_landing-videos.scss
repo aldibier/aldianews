@@ -231,6 +231,20 @@
   }
 }
 
+.path-videos.safari {
+
+  .view-filters legend {
+    display: contents;
+    span {
+      margin-right: 20px;
+
+      @media (max-width: $tablet) {
+        margin-right: 5px;
+      }
+    }
+  }
+}
+
 // estilo de titulo videos
 .title-white {
   .views-field-nothing {
