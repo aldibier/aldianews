@@ -93,7 +93,7 @@
     background-image: url("../../assets/img/arrow-left.svg");
 
     &.slick-disabled {
-      opacity: 0.5;
+      opacity: 0.3;
     }
     @media screen and (max-width: $tablet) {
       left: calc(50% - 40px);
@@ -105,7 +105,7 @@
     background-image: url("../../assets/img/arrow-right.svg");
     
     &.slick-disabled {
-      opacity: 0.5;
+      opacity: 0.3;
     }
     @media screen and (max-width: $tablet) {
       left: calc(50% + 17px);
@@ -113,7 +113,7 @@
   }
 
   .views-row {
-    height: 80px;
+    height: 77px;
     padding: 20px 35px;
     display: grid !important;
     grid-template: 40px 1fr / 40px auto;

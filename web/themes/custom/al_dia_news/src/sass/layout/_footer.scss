@@ -153,7 +153,11 @@
         height: 32px;
         @media (max-width: $tablet) {
           &:lang(en) {
-            margin: -45px -13px -45px 0;
+            margin: -45px -18px -45px 0;
+          }
+
+          &:lang(es) {
+            margin: -45px 0 0 -4px;
           }
         }
       }
@@ -599,8 +603,9 @@
         }
 
         &:after {
-          height: 3px;
-          top: 14px;
+          height: 2px;
+          top: 13px;
+          z-index: -1;
         }
       }
     }
@@ -617,7 +622,11 @@
         font-size: 14px;
         line-height: 25px;
         position: relative;
-        bottom: 3px;
+        bottom: 6px;
+
+        @media(max-width: 600px) and (min-width: 360px) {
+          bottom: 6px;
+        }
       }
     }
 
@@ -691,7 +700,7 @@
       &:after {
         width: 50px;
         height: 15px;
-        margin: 0;
+        margin: 2px 0px -3px -2px;
       }
     }
 
@@ -724,7 +733,7 @@
 
 @media (max-width: 361px) {
   .site-footer #block-subscribeblockfooter a {
-    bottom: -10px;
+    bottom: 6px;
   }
   html[lang="es"] .site-footer #block-footerlogo .field--name-body p {
     letter-spacing: -0.2px;

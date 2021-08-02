@@ -37,7 +37,7 @@
         }
 
         .ui-dialog-titlebar-close {
-            top: 60px;
+            top: 70px;
             right: 75px;
             z-index: 999;
 
@@ -54,6 +54,7 @@
 
     .form-general form {
         padding-bottom: 0;
+        overflow: hidden;
     }
 
     >.ui-dialog-content {
@@ -64,7 +65,8 @@
     .webform-contact-employer {
         .close-modal {
             //display: none;
-            pointer-events: none;
+            top: 0;
+            right: 0;
         }
     }
 
@@ -158,12 +160,8 @@
         .close-modal {
             //display: none;
             top: 0;
-            right: 50px;
-            pointer-events: none;
-
-            @media (max-width: $tablet) {
-                right: 15px;
-            }
+            right: 0;
+            //pointer-events: none;
         }
     }
 
@@ -196,6 +194,7 @@
 
     .form-general form  {
         padding-bottom: 0;
+        overflow: hidden;
     }
 
     form {

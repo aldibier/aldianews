@@ -333,8 +333,18 @@
     }
   }
 
-  .skys-scroll {
-    @media screen and (min-width: $broken) {
+  @media screen and (min-width: $broken) { 
+    .skys-scroll:nth-last-child(6),
+    .skys-scroll:nth-last-child(1),
+    .block-scroll:nth-last-child(1){
+      &::before {
+        content: none;
+      }
+    }
+
+    .skys-scroll {
+      position: relative;
+
       &::before {
         content: '';
         width: 20px;
@@ -501,6 +511,12 @@
 
     .block-scroll.ads.ads-mobile + .banner-scroll {
       margin-top: 0 !important;
+    }
+  }
+
+  @media (min-width: $broken) {
+    .block-scroll.ads {
+      margin: 0 auto;
     }
   }
 }
@@ -734,10 +750,10 @@
     &:before {
       display: block;
       content: "";
-      width: calc(100% + 40px);
+      width: calc(100vw + 40px);
       height: 0;
       padding: 0.1mm;
-      left: -20px;
+      right: 0;
       bottom: 0;
       background: $cgrey4;
       position: absolute;
