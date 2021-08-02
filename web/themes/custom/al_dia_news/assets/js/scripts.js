@@ -2288,7 +2288,21 @@ __webpack_require__.r(__webpack_exports__);
           $("div.popup-class-restore-pwd.ui-widget.ui-corner-all:not(button) .close-button-modal").html('<a href="/">OK</a>');
           $(".popup-class-cancel-account.ui-widget.ui-corner-all:not(button) .close-button-modal").html('<a href="/">GO TO OUR LATEST CONTENT</a>');
         }
-      });
+      }); //fake click dialog modal
+
+      console.log(context);
+
+      if (!!context.querySelector('.close-modal')) {
+        var closeFake = context.querySelector('.close-modal');
+
+        if (!!closeFake) {
+          closeFake.addEventListener('click', function () {
+            var closeDialog = document.querySelector('.ui-dialog-titlebar button.ui-dialog-titlebar-close');
+            console.log(closeDialog);
+            if (!!closeDialog) closeDialog.click();
+          });
+        }
+      }
     }
   };
 })(jQuery, Drupal);
