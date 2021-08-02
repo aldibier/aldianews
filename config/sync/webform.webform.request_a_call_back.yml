@@ -44,8 +44,9 @@ elements: |-
     '#title': 'Job title'
   phone_number_:
     '#type': tel
-    '#title': 'Phone number*'
+    '#title': 'Phone number'
     '#required': true
+    '#pattern': \d+
   optional_message:
     '#type': textarea
     '#title': 'Optional message'
