@@ -149,7 +149,9 @@
   .block-views-blockmore-videos-in-landing-block-1 {
     .modal-video {
       display: none;
-      top: 65%;
+      top: 60%;
+      background: rgba(0,0,0,.8);
+      height: 100%;
       &.show {
         display: block;
       }
@@ -173,6 +175,11 @@
         max-width: 860px;
         max-height: 490px;
         margin: 0 auto;
+
+        iframe {
+          max-height: 490px;
+        }
+
         @media screen and (min-width: $broken) and (max-height: 900px) {
           padding-bottom: 44.44%;
         }
