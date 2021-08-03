@@ -366,6 +366,10 @@
     flex-wrap: wrap;
     max-width: 50%;
     right: 31px;
+    
+    @media (min-width: $tablet) and (max-width: 1320px) {
+      right: 0;
+    }
 
     @media (min-width: $tablet) {
       &:lang(es) {
@@ -402,6 +406,10 @@
     bottom: 21px;
     right: 31px;
     width: 50%;
+
+    @media (min-width: $tablet) and (max-width: 1320px) {
+      right: 0;
+    }
 
     @media (min-width: $tablet) {
       &:lang(es) {
