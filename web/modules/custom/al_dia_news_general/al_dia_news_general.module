@@ -17,6 +17,9 @@ use Drupal\Core\Ajax\RedirectCommand;
  * User agent device
  */
 function is_mobile() {
+
+  \Drupal::service('page_cache_kill_switch')->trigger();
+
   if (empty($_SERVER['HTTP_USER_AGENT'])) {
       $is_mobile = false;
   } else if (strpos($_SERVER['HTTP_USER_AGENT'], 'Mobile') !== false
@@ -31,6 +34,7 @@ function is_mobile() {
   } else {
       $is_mobile = false;
   }
+
   return $is_mobile;
 }
 
