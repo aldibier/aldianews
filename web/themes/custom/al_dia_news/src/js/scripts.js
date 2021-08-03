@@ -630,14 +630,12 @@ import replaceToken from "./modules/replaceToken";
       });
 
       //fake click dialog modal
-      console.log(context);
       if(!!context.querySelector('.close-modal')){
         let closeFake = context.querySelector('.close-modal');
 
         if(!!closeFake){
           closeFake.addEventListener('click',()=>{
             let closeDialog = document.querySelector('.ui-dialog-titlebar button.ui-dialog-titlebar-close');
-            console.log(closeDialog);
             
             if(!!closeDialog) closeDialog.click();
           })

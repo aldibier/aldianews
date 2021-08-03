@@ -1458,6 +1458,13 @@ var initMain = function initMain($, Drupal) {
     });
   };
 
+  var removeActiveElements = function removeActiveElements() {
+    var list = document.querySelectorAll('.block-views-blockcarousel-videos-landing-block-2 .views-row');
+    list.forEach(function (item) {
+      if (item.classList.contains('active')) item.classList.remove('active');
+    });
+  };
+
   var toggleVideo = function toggleVideo(nid, list) {
     list.forEach(function (item) {
       var videoNid = item.dataset.nid;
@@ -1472,8 +1479,8 @@ var initMain = function initMain($, Drupal) {
       var hasActive = item.parentElement.querySelector('.active');
       var activeNid = !!hasActive ? hasActive.dataset.nid : false;
       if (nid === activeNid) return;
-      if (!!hasActive) hasActive.classList.remove('active');
       resetAlliframes(allIframes);
+      removeActiveElements();
       item.classList.add('active');
       toggleVideo(nid, itemsNews);
     });
@@ -1677,7 +1684,6 @@ var initMain = function initMain($, Drupal) {
   if (!!document.querySelector(".user-logged-in #block-menuuseritem")) {
     document.querySelector(".user-logged-in #block-menuuseritem").addEventListener('click', function () {
       if (this.classList.contains('open')) {
-        console.log(this);
         this.classList.remove('open');
         document.querySelector('.user-logged-in #block-menuuseritem .item-list').classList.remove('open');
       } else {
@@ -2294,15 +2300,12 @@ __webpack_require__.r(__webpack_exports__);
         }
       }); //fake click dialog modal
 
-      console.log(context);
-
       if (!!context.querySelector('.close-modal')) {
         var closeFake = context.querySelector('.close-modal');
 
         if (!!closeFake) {
           closeFake.addEventListener('click', function () {
             var closeDialog = document.querySelector('.ui-dialog-titlebar button.ui-dialog-titlebar-close');
-            console.log(closeDialog);
             if (!!closeDialog) closeDialog.click();
           });
         }
@@ -2649,8 +2652,8 @@ var initSlick = function initSlick($, Drupal) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/andresmartinez/sites/News/code/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
-module.exports = __webpack_require__(/*! /Users/andresmartinez/sites/News/code/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
+__webpack_require__(/*! /Users/usuario/Desktop/Proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
+module.exports = __webpack_require__(/*! /Users/usuario/Desktop/Proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
 
 
 /***/ })
