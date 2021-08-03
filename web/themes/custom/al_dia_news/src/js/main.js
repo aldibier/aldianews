@@ -264,6 +264,14 @@ const initMain = ($, Drupal) => {
 		});
 	};
 
+	const removeActiveElements = () => {
+		const list = document.querySelectorAll('.block-views-blockcarousel-videos-landing-block-2 .views-row');
+		
+		list.forEach(item => {
+			if(item.classList.contains('active')) item.classList.remove('active');
+		})
+	}
+
 	const toggleVideo = (nid,list) =>{
 		list.forEach(item => {
 			let videoNid = item.dataset.nid;
@@ -280,8 +288,8 @@ const initMain = ($, Drupal) => {
 
 			if(nid === activeNid) return;
 
-			if(!!hasActive) hasActive.classList.remove('active');
 			resetAlliframes(allIframes);
+			removeActiveElements();
 
 			item.classList.add('active');
 			toggleVideo(nid,itemsNews);
