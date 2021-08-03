@@ -280,16 +280,17 @@
   }
   .event-guest-photo {
     max-width: 220px;
-    width: 100%;
+    width: 220px;//100%
     max-height: 220px;
-    height: auto;
+    height: 220px;//auto
     overflow: hidden;
     border-radius: 120px;
     box-shadow: 2px 2px 2px $cblack3;
     margin: 0 auto 30px !important;
     img {
       width: 100%;
-      height: auto;
+      height: 100%;
+      object-fit: cover;
     }
   }
   .event-guest-name {
@@ -396,8 +397,17 @@
       }
     }
     .event-guest-photo {
+      width: 170px;
+      height: 170px;
       max-width: 170px;
       max-height: 170px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
     }
     .event-guest-name {
       font-size: $px20;
