@@ -2597,7 +2597,7 @@ var initSlick = function initSlick($, Drupal) {
 
   var slider_three = _objectSpread(_objectSpread({}, slider_general), {}, {
     slidesToShow: 3,
-    slidesToScroll: 3
+    slidesToScroll: 1
   });
 
   var slider_more = _objectSpread(_objectSpread({}, slider_general), {}, {

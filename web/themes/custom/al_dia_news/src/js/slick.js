@@ -212,7 +212,7 @@ const initSlick = ($, Drupal) => {
   const slider_three = {
     ...slider_general,
     slidesToShow: 3,
-    slidesToScroll: 3,
+    slidesToScroll: 1,
   };
   const slider_more = {
     ...slider_general,
