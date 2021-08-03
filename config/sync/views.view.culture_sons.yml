@@ -11,32 +11,21 @@ dependencies:
     - field.storage.node.field_short_description
     - field.storage.node.field_short_title
     - field.storage.node.field_type_of_content
-    - image.style.card_one_column_desktop
     - lazy.settings
     - node.type.news
     - responsive_image.styles.last_news_home
+    - responsive_image.styles.next_two_image_responsive
     - taxonomy.vocabulary.categories
   content:
-    - 'taxonomy_term:categories:01a8bc97-1ab4-43eb-bd86-b3c9f3e1d0f6'
     - 'taxonomy_term:categories:088d9fe2-1e7b-4b60-a66b-515958f1ee4f'
-    - 'taxonomy_term:categories:16566281-4b54-4ceb-a09a-d98edd203d66'
-    - 'taxonomy_term:categories:1867ed5e-0304-40ee-80d6-42a3cf4676bb'
-    - 'taxonomy_term:categories:289b2ec5-5021-47dd-bd88-06b7f4ad9d7c'
     - 'taxonomy_term:categories:2b0b755a-69bc-43eb-aa05-b9e49b90ebb5'
     - 'taxonomy_term:categories:2ba3b1d8-d69e-4bff-bb55-1696e4c85102'
     - 'taxonomy_term:categories:35e711a0-e9d4-45fe-8147-997d1394844b'
-    - 'taxonomy_term:categories:3d19b461-771e-41d1-8330-df316faf8b47'
-    - 'taxonomy_term:categories:4969e35d-adab-4b7f-bda6-4e9a7f60aae9'
     - 'taxonomy_term:categories:4f42d147-084b-4591-9dac-456e7e3704b3'
     - 'taxonomy_term:categories:5c694ec9-71d1-4ee6-ab3c-56d20a158a71'
     - 'taxonomy_term:categories:91a72607-f5ae-488c-83bf-10956697c5e1'
     - 'taxonomy_term:categories:aec049fa-a86a-42fb-8dc9-173f58881fde'
-    - 'taxonomy_term:categories:baa0a831-19ba-45bf-ba8a-be44d13892bd'
-    - 'taxonomy_term:categories:c51d8cc3-4350-4d6c-8668-9a89f7a0d2f0'
     - 'taxonomy_term:categories:ce75d793-8c04-42c0-bcdb-abf0fa29cd0e'
-    - 'taxonomy_term:categories:eee54e65-ed4e-4b29-891e-229a2f2a4f1c'
-    - 'taxonomy_term:categories:fc9a2fed-71d1-442c-8f5a-a24f095e7020'
-    - 'taxonomy_term:categories:fd49a7f8-2d48-4a3e-b99f-a7fb82320620'
   module:
     - image
     - lazy
@@ -2049,7 +2038,7 @@ display:
           label: ''
           exclude: false
           alter:
-            alter_text: true
+            alter_text: false
             text: " {% if (( field_my_content_has_a_main_vide )) == \"On\" %}\r\n    {{ field_image }} \r\n     <span class=\"player-news\"></span>\r\n {% else %}\r\n    {{ field_image }} \r\n {% endif %}"
             make_link: false
             path: ''
@@ -2088,9 +2077,9 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: image
+          type: lazy_responsive_image
           settings:
-            image_style: card_one_column_desktop
+            responsive_image_style: next_two_image_responsive
             image_link: content
           group_column: ''
           group_columns: {  }
@@ -3108,6 +3097,7 @@ display:
         - 'config:core.entity_view_display.node.article.teaser'
         - 'config:core.entity_view_display.node.event.default'
         - 'config:core.entity_view_display.node.event.teaser'
+        - 'config:core.entity_view_display.node.event.work_whit_al_dia'
         - 'config:core.entity_view_display.node.feature_employer.default'
         - 'config:core.entity_view_display.node.feature_employer.teaser'
         - 'config:core.entity_view_display.node.job.default'

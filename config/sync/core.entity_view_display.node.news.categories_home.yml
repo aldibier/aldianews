@@ -22,6 +22,7 @@ dependencies:
     - field.field.node.news.field_test
     - field.field.node.news.field_type_of_content
     - field.field.node.news.field_video
+    - lazy.settings
     - node.type.news
     - responsive_image.styles.next_two_image_responsive
   module:
@@ -157,7 +158,7 @@ bundle: news
 mode: categories_home
 content:
   field_image:
-    type: responsive_image
+    type: lazy_responsive_image
     weight: 4
     region: ds_content
     label: hidden
