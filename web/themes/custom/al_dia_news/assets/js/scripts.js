@@ -1677,7 +1677,6 @@ var initMain = function initMain($, Drupal) {
   if (!!document.querySelector(".user-logged-in #block-menuuseritem")) {
     document.querySelector(".user-logged-in #block-menuuseritem").addEventListener('click', function () {
       if (this.classList.contains('open')) {
-        console.log(this);
         this.classList.remove('open');
         document.querySelector('.user-logged-in #block-menuuseritem .item-list').classList.remove('open');
       } else {
@@ -2294,15 +2293,12 @@ __webpack_require__.r(__webpack_exports__);
         }
       }); //fake click dialog modal
 
-      console.log(context);
-
       if (!!context.querySelector('.close-modal')) {
         var closeFake = context.querySelector('.close-modal');
 
         if (!!closeFake) {
           closeFake.addEventListener('click', function () {
             var closeDialog = document.querySelector('.ui-dialog-titlebar button.ui-dialog-titlebar-close');
-            console.log(closeDialog);
             if (!!closeDialog) closeDialog.click();
           });
         }

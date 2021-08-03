@@ -528,7 +528,6 @@ const initMain = ($, Drupal) => {
 	if(!!document.querySelector(".user-logged-in #block-menuuseritem")){
 		document.querySelector(".user-logged-in #block-menuuseritem").addEventListener('click',function(){
 			if(this.classList.contains('open')){
-				console.log(this);
 				this.classList.remove('open');
 				document.querySelector('.user-logged-in #block-menuuseritem .item-list').classList.remove('open');
 			}else {
