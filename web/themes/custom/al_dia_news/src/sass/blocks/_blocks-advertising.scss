@@ -869,3 +869,35 @@ div[data-ad-unit*="Home-post-main-headline"] {
     display: initial;
   }
 }
+
+.page-node-type-news,
+.page-node-type-thought-leaders {
+  .container-right {
+    > .margin-bottom.ads {
+      @media (max-width: $tablet) {
+        margin-left: -15px;
+        margin-right: -15px;
+        flex: 1 1 100%;
+        text-align: center;
+      }
+    }
+  }
+
+  .content-news-internal-left {
+    > .block.block-gamw {
+      @media (max-width: $tablet) {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+
+  .content-page-node {
+    > .content-advertising  {
+      width: 100%;
+      margin-left: -15px;
+      margin-right: -15px;
+      flex: 1 1 100%;
+    }
+  }
+}
