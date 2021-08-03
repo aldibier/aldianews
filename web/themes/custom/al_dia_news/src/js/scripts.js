@@ -62,11 +62,11 @@ import replaceToken from "./modules/replaceToken";
     $(".account-modal--password input").unbind();
 
     let email = $('input[type="email"]');
-    $(email).attr("pattern", '[^@]+@[^@]+\.[a-zA-Z]{2,6}');
+    $(email).attr("pattern", '[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$');
   });
 
   let email = $('input[type="email"]');
-  $(email).attr("pattern", '[^@]+@[^@]+\.[a-zA-Z]{2,6}');
+  $(email).attr("pattern", '[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$');
 
   const containerVideo = document.querySelector(
     ".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video"
