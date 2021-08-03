@@ -1921,10 +1921,10 @@ __webpack_require__.r(__webpack_exports__);
     });
     $(".account-modal--password input").unbind();
     var email = $('input[type="email"]');
-    $(email).attr("pattern", '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$');
+    $(email).attr("pattern", '[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$');
   });
   var email = $('input[type="email"]');
-  $(email).attr("pattern", '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$');
+  $(email).attr("pattern", '[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$');
   var containerVideo = document.querySelector(".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video");
   var videoThoughtLeaders = document.querySelector(".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video .content");
 
