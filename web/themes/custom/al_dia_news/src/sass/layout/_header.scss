@@ -746,6 +746,11 @@ body.open-menu {
     max-height: 75px;
     margin: -15px 0 10px -25px;
     z-index: 2;
+    
+    @media (min-width: $tablet) and (max-width: 1320px) {
+      min-width: 239px;
+      max-width: 245px;
+    }
 
     .site-branding__text {
       font-size: 0;
@@ -948,7 +953,7 @@ body.open-menu {
   }
 
   #block-loginformpopup {
-    min-width: initial;
+    min-width: 50px;
     max-width: 56px;
     margin: 30px 0 0;
   }
