@@ -144,6 +144,15 @@
 
       @extend .rows-employer;
     }
+
+    .ajax-progress.ajax-progress-fullscreen,
+    .ajax-progress {
+      grid-column: 3 span;
+
+      @media (max-width: $tablet) {
+        grid-column: 1/-1;
+      }
+    }
   }
 
   @media (max-width: $tablet) {
