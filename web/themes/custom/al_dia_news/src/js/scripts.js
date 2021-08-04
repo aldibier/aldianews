@@ -61,7 +61,7 @@ import replaceToken from "./modules/replaceToken";
 
     $(".account-modal--password input").unbind();
 
-    $("input[type='submit']").unbind();
+    $(".edit-info-user input[type='submit']").unbind();
 
     let email = $('input[type="email"]');
     $(email).attr("pattern", '[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$');
