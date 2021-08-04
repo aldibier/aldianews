@@ -875,8 +875,7 @@ div[data-ad-unit*="Home-post-main-headline"] {
   .container-right {
     > .margin-bottom.ads {
       @media (max-width: $tablet) {
-        margin-left: -15px;
-        margin-right: -15px;
+        margin: 0 -15px 45px;
         flex: 1 1 100%;
         text-align: center;
       }
@@ -886,6 +885,7 @@ div[data-ad-unit*="Home-post-main-headline"] {
   .content-news-internal-left {
     > .block.block-gamw {
       @media (max-width: $tablet) {
+        margin-bottom: 45px;
         display: flex;
         justify-content: center;
       }
