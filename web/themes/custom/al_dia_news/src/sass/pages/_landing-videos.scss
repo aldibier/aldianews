@@ -233,6 +233,12 @@
       }
     }
   }
+  
+  @media (max-width: $tablet) {
+    .watch-live-button {
+      width: calc(100% - 30px);
+    }
+  }
 }
 
 .path-videos.safari {
