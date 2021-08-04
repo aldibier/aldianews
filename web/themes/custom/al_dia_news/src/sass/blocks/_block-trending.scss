@@ -64,7 +64,6 @@
   }
 
   .slick-list {
-    padding: 3px;
     @media screen and(min-width:$broken) {
       height: 485px;
       transition: all 0.5s linear;
@@ -77,6 +76,8 @@
   }
 
   .slick-slide  {
+    margin: 3px;
+
     > div {
       &:not(:last-child) {
         margin-bottom: 20px;
