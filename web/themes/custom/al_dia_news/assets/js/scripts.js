@@ -1920,11 +1920,13 @@ __webpack_require__.r(__webpack_exports__);
       $(".popup-login .password-strength__text").css("color", background);
     });
     $(".account-modal--password input").unbind();
+    $(".edit-info-user input[type='submit']").unbind();
+    $(".account-modal--register input[type='submit']").unbind();
     var email = $('input[type="email"]');
-    $(email).attr("pattern", '[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$');
+    $(email).attr("pattern", '[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}');
   });
   var email = $('input[type="email"]');
-  $(email).attr("pattern", '[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$');
+  $(email).attr("pattern", '[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}');
   var containerVideo = document.querySelector(".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video");
   var videoThoughtLeaders = document.querySelector(".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video .content");
 

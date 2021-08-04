@@ -1,0 +1,10 @@
+display:
+  default:
+    display_options:
+      fields:
+        field_expiration_date:
+          alter:
+            text: "{# Se obtiene la fecha actual #}\r\n{% set now = date() %}\r\n\r\n{# Mediante un condicional  se compara la fecha de expiracion con la fecha actual, ambas fechas se pasan se segundos en Unix y a la fecha actual se le suman 604800 segundos que corresponden a las 7 dias de diferencia horaria #}\r\n\r\n{% if ((field_expiration_date__value | date('U') )) <= ((now | date('U')) + 604800) %}\r\n<div class=\"container-content__date lightned\">\r\n\r\n  {% if (now | date('U'))  > (field_expiration_date__value | date('U')) %}\r\n    {% set mydate = now | date('U') - field_expiration_date__value | date('U') %}\r\n    <p>{{ mydate |date(\"d\") }} DÍAS PARA APLICAR</p>\r\n  {% else %}\r\n    {% set mydate = field_expiration_date__value | date('U')  -  now | date('U')  %}\r\n    <p>{{ mydate |date(\"d\") }} DÍAS PARA APLICAR </p>\r\n  {% endif %}\r\n\r\n</div>\r\n{% else %}\r\n<div class=\"container-content__date\">\r\n  {% if (now | date('U'))  > (field_expiration_date__value | date('U')) %}\r\n    {% set mydate = now | date('U') - field_expiration_date__value | date('U') %}\r\n    <p>{{ mydate |date(\"d\") }} DÍAS PARA APLICAR </p>\r\n  {% else %}\r\n    {% set mydate = field_expiration_date__value | date('U')  -  now | date('U')  %}\r\n    <p>{{ mydate |date(\"d\") }} DÍAS PARA APLICAR </p>\r\n  {% endif %}\r\n</div>\r\n{% endif %}"
+        nothing:
+          alter:
+            text: "<div class=\"job-container\">\r\n  <div class=\"job-and-company\">\r\n     <h3><strong>{{ title }}</strong></h3>\r\n     <span>{{ field_company_name }}</span>\r\n  </div>\r\n  <div class=\"job-categories\">\r\n    <ul>\r\n       <li>{{ field_sector }}</li>\r\n       <li>{{ field_type_of_working_day }}</li>\r\n   </ul>\r\n  </div>\r\n   <div class=\"place-employer\">\r\n     {{ field_place }}\r\n   </div>\r\n   <div class=\"date-expiration-job\">\r\n      {{ field_expiration_date }}\r\n   </div>\r\n</div>\r\n<div class=\"button-details\">\r\n  <a href=\"{{ view_node }} \">VER DETALLES</a>\r\n</div>"
