@@ -345,19 +345,22 @@
       &::before {
         display: block;
         content: "";
-        width: calc(100% + 40px);
+        width: 100vw;
         height: 0;
         margin: -45px auto;
         padding: 0.1mm;
-        left: -20px;
+        left: 0;
         bottom: 0;
         background: $cgrey4;
         position: absolute;
-        right: 0;
       }
 
       @media screen and (min-width: $broken) {
         height: 345px;
+
+        &:nth-last-child(-n + 3)::before {
+          display: none !important;
+        }
       }
 
       @media screen and (max-width: $broken) {
