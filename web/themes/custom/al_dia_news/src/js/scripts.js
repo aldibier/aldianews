@@ -66,11 +66,11 @@ import replaceToken from "./modules/replaceToken";
     $(".account-modal--register input[type='submit']").unbind();
 
     let email = $('input[type="email"]');
-    $(email).attr("pattern", '[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$');
+    $(email).attr("pattern", '[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}');
   });
 
   let email = $('input[type="email"]');
-  $(email).attr("pattern", '[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$');
+  $(email).attr("pattern", '[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}');
 
   const containerVideo = document.querySelector(
     ".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video"
