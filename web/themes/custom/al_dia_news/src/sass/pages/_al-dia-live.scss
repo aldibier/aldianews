@@ -1,5 +1,5 @@
 .path-about-al-dia-live {
-  .layout-container,
+  #main-wrapper,
   .layout-container .width1440 {
     max-width: none;
   }
@@ -13,11 +13,8 @@
 
     &.show {
       display: block;
+      top: 60%;
     }
-  }
-
-  .modal-video.show {
-    display: block;
   }
 
   .modal-form {
@@ -30,6 +27,11 @@
 
   .modal-form.show {
     display: block;
+  }
+  .events-gallery {
+    @media screen and (max-width: $broken) {
+      margin: 0 auto 35px;
+    }
   }
 
   //------ about al dia live banner ------------//
@@ -282,7 +284,7 @@
 
     .views-field-nothing {
       height: 100px;
-      margin-bottom: 74px;
+      margin-bottom: 40px;
       position: relative;
       order: -1;
 
@@ -434,6 +436,7 @@
       @media screen and (max-width: $broken) {
         &:nth-child(2) {
           padding: 0 35px;
+          grid-row: 1;
         }
       }
 
@@ -468,6 +471,20 @@
         font-size: szrem(25);
         line-height: 30px;
         text-align: center;
+      }
+    }
+    .views-field-field-item-text div {
+      font-size: szrem(30);
+      font-family: $PrNovacond-reg;
+      font-style: normal;
+      line-height: 37px;
+      letter-spacing: 0.025em;
+      color: $cgrey6;
+
+      @media screen and (max-width: $tablet) {
+        text-align: center;
+        font-size: szrem(15);
+        line-height: 18.27px;
       }
     }
   }
@@ -505,6 +522,13 @@
     .slick-slider {
       padding-bottom: 50px;
       position: relative;
+    }
+
+    @media (max-width: $broken) {
+      margin: 0 auto 0px;
+      #block-gamwadvertisement-8 {
+        margin-bottom: 40px;
+      }
     }
   }
 
@@ -615,9 +639,9 @@
       }
     }
 
-    img {
-      transform: scale(1.5);
-    }
+    // img {
+    //   transform: scale(1.5);
+    // }
 
     .testimonial-author-name {
       margin-bottom: 10px;
@@ -840,7 +864,7 @@
 
     form {
       display: flex;
-      margin: 0 auto 100px;
+      //margin: 0 auto 100px;
     }
 
     #edit-processed-text.form-item {
@@ -866,17 +890,27 @@
       }
     }
 
-    .form-item {
-      width: 50%;
-      max-width: 660px;
-      padding: 0 20px;
+    .form-item:not(fieldset) {
+      //width: 50%;
+      //max-width: 660px;
+      //padding: 0 20px;
     }
 
+    fieldset#edit-address--wrapper {
+      width: 100%;
+      max-width: 100%;
+
+      .form-item-address-city {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+    
     .form-actions {
       width: 100%;
-      padding: 0 20px;
+      //padding: 0 20px;
 
-      input {
+      #edit-actions-submit {
         width: 150px;
         height: 40px;
       }
@@ -893,7 +927,8 @@
     input[class*="form"],
     .SumoSelect > .CaptionCont,
     select {
-      height: 40px;
+      height: 35px;
+      margin-top: 0;
     }
 
     @media screen and (max-width: $tablet) {
@@ -917,7 +952,7 @@
         font-size: 16px;
         line-height: 19px;
         padding: 0 0 5px;
-
+        margin-top: 0px;
         img {
           width: 85px;
           height: 17.65px;
@@ -934,15 +969,17 @@
         width: 100%;
         max-width: 100%;
         margin: 0 0 15px;
-        padding: 0 15px;
+        padding: 0;
       }
 
       .form-actions {
-        padding: 10px 15px 0;
+        //padding: 10px 15px 0;
+        padding: 0;
 
         input {
           width: 110px !important;
           height: 30px;
+          margin: 0;
         }
       }
     }

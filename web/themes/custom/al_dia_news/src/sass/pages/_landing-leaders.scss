@@ -221,8 +221,9 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: 1px;
+      width: 0;
       height: 100%;
+      padding: 0.1mm;
       background-color: $cgrey4;
 
       @media (max-width: $broken) {
@@ -332,8 +333,9 @@
 
       &::after {
         content: "";
-        width: 1px;
+        width: 0;
         height: 100%;
+        padding: 0.1mm;
         position: absolute;
         top: 0;
         right: calc(0% - 20px);
@@ -343,18 +345,22 @@
       &::before {
         display: block;
         content: "";
-        width: calc(100% + 40px);
-        height: 1px;
-        left: -20px;
+        width: 100vw;
+        height: 0;
+        margin: -45px auto;
+        padding: 0.1mm;
+        left: 0;
         bottom: 0;
         background: $cgrey4;
         position: absolute;
-        right: 0;
-        margin: -45px auto;
       }
 
       @media screen and (min-width: $broken) {
         height: 345px;
+
+        &:nth-last-child(-n + 3)::before {
+          display: none !important;
+        }
       }
 
       @media screen and (max-width: $broken) {
@@ -387,8 +393,9 @@
           &::before {
             content: "";
             width: calc(100vw - 30px);
-            height: 1px;
+            height: 0;
             margin: -30px auto;
+            padding: 0.1mm;
             display: block;
             position: absolute;
             left: 0;

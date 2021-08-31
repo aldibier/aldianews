@@ -65,13 +65,19 @@
 
   .slick-list {
     @media screen and(min-width:$broken) {
-      &:hover {
-        height: 540px;
+      height: 485px;
+      transition: all 0.5s linear;
+
+      &:hover,
+      &:focus-within {
+        height: 550px;
       }
     }
   }
 
   .slick-slide  {
+    margin: 3px;
+
     > div {
       &:not(:last-child) {
         margin-bottom: 20px;
@@ -86,15 +92,29 @@
   .slick-prev {
     left: calc(50% - 25px);
     background-image: url("../../assets/img/arrow-left.svg");
+
+    &.slick-disabled {
+      opacity: 0.3;
+    }
+    @media screen and (max-width: $tablet) {
+      left: calc(50% - 40px);
+    }
   }
 
   .slick-next {
     left: calc(50% + 25px);
     background-image: url("../../assets/img/arrow-right.svg");
+    
+    &.slick-disabled {
+      opacity: 0.3;
+    }
+    @media screen and (max-width: $tablet) {
+      left: calc(50% + 17px);
+    }
   }
 
   .views-row {
-    height: 80px;
+    height: 77px;
     padding: 20px 35px;
     display: grid !important;
     grid-template: 40px 1fr / 40px auto;
@@ -102,7 +122,7 @@
     background-color: $cwhite;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.22);
     overflow: hidden;
-    transition: all 0.5s linear;
+    transition: all 0.6s linear;
 
     @media screen and(max-width:$tablet) {
       height: 45px;
@@ -173,10 +193,10 @@
   }
 }
 
-#block-block-group-latest-categories-tending-block{
-  margin-bottom: 80px;
-  @media screen and (max-width: $broken){
+#block-block-group-latest-categories-tending-block {
+  // margin-bottom: 80px;
+  margin-bottom: 65px;
+  @media screen and (max-width: $broken) {
     margin-bottom: 30px;
-
-  } 
+  }
 }

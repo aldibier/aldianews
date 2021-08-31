@@ -51,6 +51,28 @@
     margin-bottom: 35px;
   } */
 
+  .video-body-notice-embed,
+  .field--name-field-media-oembed-video {
+    height: 0;
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    position: relative;
+    margin: 0 0 15px;
+
+    >iframe {
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+  }
+
+  .block-field-blocknodenewsbody iframe {
+    width: 100%;
+  }
+
   iframe[title*="Twitter"] {
     height: 815px;
     margin: 0 auto;
@@ -300,6 +322,7 @@
     line-height: 127.8%;
     letter-spacing: 0.2px;
     font-family: $PrNovacond-bold;
+    color: #0b0b0b;
   }
 
   .addtoany_list.a2a_kit_size_32 a > span {
@@ -354,14 +377,15 @@ blockquote {
     background: transparent url("../../assets/img/comillas.png") center center
       no-repeat;
     background-size: contain;
-    width: 48.38px;
-    height: 34.84px;
+    width: 45px;
+    height: 35px;
     content: "";
   }
 
   &:before {
     left: 0;
     top: 0px;
+    margin-right: 7px;
   }
 
   &:after {
@@ -395,8 +419,8 @@ blockquote {
 
     &:before,
     &:after {
-      width: 30px;
-      height: 30px;
+      width: 100%;
+      max-width: 29px;
       position: relative;
       top: initial;
       bottom: initial;
@@ -404,6 +428,8 @@ blockquote {
       right: initial;
       font-size: szrem(80);
       line-height: 1;
+      margin: 0px;
+      height: 20px;
     }
 
     &:before {
@@ -453,7 +479,7 @@ blockquote {
   a {
     color: #ed1c24;
   }
-
+  
   blockquote,
   blockquote > p {
     font-family: $PrNovacond-reg;
@@ -462,8 +488,23 @@ blockquote {
     line-height: 140%;
     color: $cgrey2;
 
+    &.twitter-video,
+    &.twitter-tweet{
+      font-size: 0;
+      opacity: 0;
+    }
+
     @media (max-width: $tablet) {
       font-size: szrem(18);
+    }
+  }
+  .banner-horizontal {
+    margin: 20px auto 40px;
+    max-width: 840px;
+    max-height: 240px;
+    @media (max-width: $tablet) {
+      max-height: 140px;
+      margin: 10px -15px 30px;
     }
   }
 
@@ -809,6 +850,14 @@ div[data-embed-button="related_content"] {
       line-height: 127.8%;
       margin-bottom: 0px;
     }
+  }
+}
+
+html[lang="es"] #comment-form .form-actions,
+html[lang="es"] .block-field-blocknodenewsfield-comments .form-actions {
+  .cbutton-back,
+  input.button--primary {
+    max-width: 225px;
   }
 }
 

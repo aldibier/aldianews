@@ -44,37 +44,72 @@
 .ui-widget.ui-corner-all:not(button) {
   width: 100% !important;
   border: none;
-  overflow: hidden auto;
+  overflow: auto;
   overscroll-behavior: contain;
 
+  @supports (overflow: hidden auto){
+    overflow: hidden auto;
+  }
+
+  &.popup-class-restore-pwd {
+    padding: 40px 40px 0;
+    width: 90% !important;
+    .close-button-modal {
+      margin-bottom: 0px;
+    }
+    .pop-up-home-reset {
+      margin-bottom: 25px;
+    }
+    .ui-dialog-title {
+      margin-bottom: 10px;
+    }
+    @media (max-width: $tablet) {
+      padding: 30px 25px 30px;
+      right: 0px;
+      margin: 0 auto;
+    }
+  }
+  &.popup-class-cancel-account {
+    width: 90% !important;
+    left: 0px;
+    right: 0px;
+    margin: 0 auto;
+  }
   .ui-dialog-titlebar-close {
     width: 20px !important;
     height: 20px;
     position: absolute;
-    top: 31px;
-    right: 28px;
+    top: 0;
+    right: 0;
+    //top: 31px;
+    //right: 28px;
     transform: none;
 
     @media screen and (max-width: $tablet) {
-      top: 25px;
-      right: 15px;
+      top: 0; //25px
+      right: 0; //15px
+      width: 15px !important;
+      height: 15px;
     }
   }
 
   .ui-dialog-titlebar {
     margin: 0 auto;
-    padding: 46px 48px 0 47px;
+    padding: 0;
+    //padding: 46px 48px 0 47px;
     border: none;
     background: #fff;
 
     @media screen and (max-width: $tablet) {
-      padding: 34px 20px 0;
+      //padding: 34px 20px 0;
+      padding: 0;
     }
   }
 
   .ui-dialog-content {
     margin: 0 auto;
-    padding: 0 48px 0 47px;
+    padding: 0;
+    //padding: 0 48px 0 47px;
     font-style: normal;
     font-weight: 600;
     font-size: szrem(22);
@@ -84,7 +119,8 @@
     max-height: max-content !important;
 
     @media screen and (max-width: $tablet) {
-      padding: 0 20px 25px;
+      //padding: 0 20px 25px;
+      padding: 0;
       font-size: 15px;
       line-height: 18px;
     }
@@ -121,6 +157,10 @@
       }
     }
   }
+}
+
+.ui-dialog:not(.ui-dialog-off-canvas) {
+  border-radius: initial !important;
 }
 
 .background-modal::before {
@@ -168,14 +208,15 @@
   .ui-icon-closethick {
     width: 20px;
     height: 20px;
-    background-image: icon("close-black");
+    background-image: icon("close-black") !important;
     background-size: contain;
     background-position: center;
     cursor: pointer;
 
     @media screen and (max-width: $tablet) {
+      background-image: url("../img/x-mob.png") !important;
       width: 15px !important;
-      height: 15px;
+      height: 15px !important;
     }
   }
 }
@@ -249,10 +290,196 @@
 }
 
 //------ specific styles ------//
-.ui-widget.account-modal--login,
-.ui-widget.account-modal--password,
-.ui-widget.account-modal--register {
+.ui-widget.account-modal--login.ui-corner-all:not(button),
+.ui-widget.account-modal--password.ui-corner-all:not(button),
+.ui-widget.account-modal--register.ui-corner-all:not(button),
+.ui-widget.edit-info-user.ui-corner-all:not(button),
+.popup-class-user-information.ui-widget.ui-corner-all:not(button),
+.popup-cancel-account.ui-widget.ui-corner-all:not(button),
+div.popup-login.ui-widget.ui-corner-all:not(button) {
   max-width: 535px;
+  padding: 46px 48px 47px 47px;
+
+  @media screen and (max-width: $tablet) {
+    width: calc(100% - 30px) !important;
+    min-width: 290px;
+    padding: 35px 20px 34px;
+
+    .user-pass > p {
+      text-align: left;
+    }
+  }
+}
+
+//------ modal login ------//
+.ui-widget.account-modal--login.ui-corner-all:not(button) {
+  padding-bottom: 65px;
+
+  @media screen and (max-width: $tablet) {
+    padding-bottom: 34px;
+  }
+}
+
+//------ modal password ------//
+.account-modal.account-modal--password  {
+  @media screen and (max-width: $tablet) {
+    padding-bottom: 30px;
+  }
+
+  .form-item-name {
+    @media screen and (max-width: $tablet) {
+      margin-bottom: 15px;
+    }
+  }
+
+  .form-item-name + p {
+    margin-bottom: 40px;
+
+    @media screen and (max-width: $tablet) {
+      margin-bottom: 35px;
+    }
+  }
+}
+
+//------ modal change password ------//
+div.popup-login.ui-widget.ui-corner-all:not(button) {
+  .ui-dialog-content {
+    overflow: initial;
+  }
+
+  .password-suggestions {
+    left: initial;
+    right: -25px;
+
+    @media screen and (max-width: $tablet) {
+      right: 0;
+    }
+  }
+}
+
+//------ modal register ------//
+.ui-widget.account-modal--register.ui-corner-all:not(button) {
+  padding-bottom: 49px;
+
+  @media screen and (max-width: $tablet) {
+    margin-bottom: 29px;
+  }
+
+  .ui-dialog-content {
+    overflow: initial;
+  }
+}
+
+//------ modal account information ------//
+.popup-class-user-information.ui-widget.ui-corner-all:not(button) {
+  padding-bottom: 39px;
+
+  @media screen and (max-width: $tablet) {
+    padding-bottom: 27px;
+  }
+
+  .item-list ul,
+  .item-list ul li {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.popup-class-user-information.ui-widget.ui-corner-all:not(button)
+  .ui-dialog-titlebar-close {
+  background: none !important;
+}
+
+//------ modal account cancel ------//
+.popup-cancel-account.ui-widget.ui-corner-all:not(button) {
+  padding-bottom: 37px;
+
+  @media screen and (max-width: $broken) {
+    padding-bottom: 25px;
+  }
+
+  .user-cancel-form {
+    font-style: normal;
+    font-weight: 600;
+    font-size: szrem(18);
+    line-height: 128%;
+
+    @media screen and (max-width: $broken) {
+      font-size: 15px;
+    }
+  }
+
+  .form-actions {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+
+    @media screen and (max-width: $broken) {
+      margin-top: 25px;
+      flex-direction: column;
+    }
+
+    a,
+    input {
+      width: 190px;
+      height: 40px;
+      margin: 0;
+      flex: 0 1 190px;
+      color: $cwhite;
+
+      @media screen and (max-width: $broken) {
+        width: 100%;
+        max-width: 100%;
+        flex: 1 1 100%;
+      }
+    }
+
+    a {
+      margin-right: 30px;
+
+      @media screen and (max-width: $broken) {
+        margin-right: 0;
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  .ui-icon-closethick {
+    -webkit-mask-image: none;
+    background: none;
+  }
+}
+
+//------ modal account edit ------//
+.edit-info-user.ui-widget.ui-corner-all:not(button) {
+  .js-form-item-mail {
+    margin-bottom: 40px;
+
+    @media screen and (max-width: $tablet) {
+      margin-bottom: 35px;
+    }
+  }
+
+  .form-actions {
+    a,
+    input  {
+      margin: 0;
+      flex: 0 1 165px;
+
+      @media screen and (max-width: $tablet) {
+        flex: 0 1 100px;
+        max-width: 100%;
+      }
+    }
+
+    a {
+      margin-right: 30px;
+
+      @media screen and (max-width: $tablet) {
+        margin-right: 20px;
+      }
+    }
+  }
 }
 
 .modal-video-landing {
@@ -403,10 +630,10 @@
     }
   }
   .user-register-login {
-    margin-bottom: 60px;
+    //margin-bottom: 60px;
   }
   @media (max-width: $tablet) {
-    max-width: 290px !important;
+    //max-width: 290px !important;
     left: 0px !important;
     right: 0px;
     margin: 0 auto;
@@ -415,7 +642,8 @@
       margin-bottom: 15px !important;
     }
     .user-register-login {
-      margin-bottom: 30px;
+      //margin-bottom: 30px;
+      margin-bottom: 0;
     }
   }
 
@@ -430,6 +658,12 @@
     line-height: 27px;
     letter-spacing: 0.025em;
     color: $corange;
+
+    @media screen and (max-width: $tablet) {
+      margin-bottom: 20px;
+      font-size: 15px;
+      line-height: 18px;
+    }
   }
 
   .ui-dialog-buttonpane button {
@@ -443,7 +677,7 @@
   min-height: 450px;
   overflow: auto;
   overscroll-behavior: contain;
-  #password-policy-status{
+  #password-policy-status {
     display: none;
   }
   .form-item-mail {
@@ -456,7 +690,7 @@
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
-    margin-bottom: 50px !important;
+    //margin-bottom: 50px !important;
     .form-submit {
       display: block !important;
       max-width: 165px;
@@ -505,10 +739,11 @@
     }
     @media (max-width: $tablet) {
       top: 65px;
+      right: 0;
     }
   }
   @media (max-width: $tablet) {
-    max-width: 290px !important;
+    //max-width: 290px !important;
     left: 0px !important;
     right: 0px;
     margin: 0 auto;
@@ -516,10 +751,10 @@
 }
 
 .account-modal--password {
-  height: 420px !important;
+  //height: 420px !important;
   @media (min-width: $desktop) {
     .ui-dialog-titlebar {
-      padding: 63px 48px 0 47px !important;
+      //padding: 63px 48px 0 47px !important;
     }
   }
   @media (max-width: $tablet) {
@@ -670,10 +905,23 @@
     }
   }
   @media (max-width: $tablet) {
-    max-width: 290px !important;
+    //max-width: 290px !important;
     min-height: 270px;
     top: 85px;
     padding: 30px 25px;
+
+
+    &.ui-widget.ui-corner-all:not(button){
+      width: calc(100% - 30px) !important;
+      min-height: auto !important;
+      margin-bottom: 0 !important;
+    }
+
+    .ui-dialog-titlebar {
+      width: 100% !important;
+      padding: 0 !important;
+    }
+
     .ui-dialog-title {
       font-size: $px16 !important;
       line-height: 19px !important;
@@ -682,8 +930,13 @@
     .ui-widget-content {
       font-size: $px15 !important;
       line-height: 19px !important;
-      margin: 0 0 25px !important;
+      margin: 0 0 0 !important;
     }
+
+    .ui-dialog-content {
+      padding: 0 !important;
+    }
+
     .button-back,
     .button-preload {
       max-width: 240px;

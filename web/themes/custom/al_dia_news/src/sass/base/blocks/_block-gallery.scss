@@ -23,8 +23,9 @@
       &::before {
         display: block;
         content: "";
-        width: calc(100% + 40px);
-        height: 1px;
+        width: calc(100vw + 40px);
+        height: 0;
+        padding: 0.1mm;
         left: -20px;
         bottom: 0;
         background: $cgrey4;
@@ -34,21 +35,23 @@
       }
 
       @media screen and (min-width: $screen-query) {
-
-        &:nth-child(-n + 3) {
-          @media screen and (min-width: $screen-query) {
-            
-          }
-        }
-
         &::after {
           content: "";
-          width: 1px;
+          width: 0;
           height: 100%;
+          padding: 0.1mm;
           position: absolute;
           top: 0;
           right: calc(0% - 20px);
           background-color: $cgrey4;
+        }
+      }
+
+      @media screen and (min-width: $broken) {
+        &:nth-last-of-type(-n + 3) {
+          &::before {
+            content: none;
+          }
         }
       }
 
@@ -64,7 +67,8 @@
 
         &::before {
           width: calc(100vw - 30px);
-          height: 1px;
+          height: 0;
+          padding: 0.1mm;
           left: 0;
           right: 0;
           margin: -20px auto;
@@ -82,8 +86,9 @@
           &::before {
             content: '';
             width: calc(100vw - 30px);
-            height: 1px;
+            height: 0;
             margin: -20px auto;
+            padding: 0.1mm;
             display: block;
             position: absolute;
             left: 0;
@@ -121,6 +126,8 @@
       grid-gap: 0 40px;
       overflow: hidden;
       grid-auto-flow: dense;
+      margin-bottom: 100px;
+
       @media screen and (max-width: $broken) {
         margin-bottom: 40px;
         display: grid;
@@ -130,6 +137,7 @@
       }
 
       @media screen and (max-width: $tablet) {
+        margin-bottom: 40px;
         overflow: initial;
       }
     }
@@ -208,7 +216,8 @@
       position:relative;
       &:nth-child(odd)::before{
         width:calc(100vw - 30px);
-        height: 0.5px;
+        height: 0;
+        padding: 0.1mm;
         content:'';
         position: absolute;
         bottom: 0;

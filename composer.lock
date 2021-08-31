@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9e34bfb308078516b0c5accba48382a0",
+    "content-hash": "d2461dc0a5d535e27ee368858277b3ad",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -5062,7 +5062,8 @@
                 },
                 "patches_applied": {
                     "Grouped exposed taxonomy term filters do not work": "https://www.drupal.org/files/issues/1810148-58.patch",
-                    "Cambio redirección al cancelar la cuenta": "patch/UserController.patch"
+                    "Cambio redirección al cancelar la cuenta": "patch/UserController.patch",
+                    "Callers of LayoutEntityHelperTrait::getEntitySections() do not account for the view mode": "https://www.drupal.org/files/issues/2020-08-27/3008924-rerolled-17.patch"
                 }
             },
             "autoload": {
@@ -11494,6 +11495,9 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "Cambio texto para cambio de contraseña": "patch/UsernameEnumerationPreventionModule.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -12523,16 +12527,16 @@
         },
         {
             "name": "giggsey/libphonenumber-for-php",
-            "version": "8.12.26",
+            "version": "8.12.28",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giggsey/libphonenumber-for-php.git",
-                "reference": "0c5804c09087e841d7594c3d7f72003f703abf69"
+                "reference": "f503d56d269e9b8572440820ef029e296dadaa1e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giggsey/libphonenumber-for-php/zipball/0c5804c09087e841d7594c3d7f72003f703abf69",
-                "reference": "0c5804c09087e841d7594c3d7f72003f703abf69",
+                "url": "https://api.github.com/repos/giggsey/libphonenumber-for-php/zipball/f503d56d269e9b8572440820ef029e296dadaa1e",
+                "reference": "f503d56d269e9b8572440820ef029e296dadaa1e",
                 "shasum": ""
             },
             "require": {
@@ -12587,7 +12591,7 @@
                 "phonenumber",
                 "validation"
             ],
-            "time": "2021-06-23T10:32:05+00:00"
+            "time": "2021-07-20T13:33:24+00:00"
         },
         {
             "name": "giggsey/locale",

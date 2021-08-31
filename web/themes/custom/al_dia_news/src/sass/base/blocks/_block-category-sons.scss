@@ -39,18 +39,18 @@
 //block category sons
 .view-categories-sons {
   > .view-content {
-    // .non-adversiting{
-    //   display: none;
-    // }
     > h3 {
       margin: 0;
 
-      @media (max-width: $tablet) {
-        //margin: 20px 0 0;
-      }
-
       a {
         @include title-section-line($px34, $ModernoFB-Regular, $corange2);
+      }
+      
+      @media (max-width: $tablet) {
+        a {
+          font-size: 20px;
+          line-height: 24px;
+        }
       }
     }
 
@@ -76,7 +76,7 @@
         }
       }
       @media (max-width: $tablet) {
-        margin-bottom: 30px;
+        margin-bottom: 35px;
       }
     }
 
@@ -128,6 +128,18 @@
 
       @media screen and (max-width: $broken) {
         margin: 0;
+        position: relative;
+
+        /* &:after {
+          width: 100%;
+          content: '';
+          height: 1px;
+          display: block;
+          position: absolute;
+          bottom: 15px;
+          left: 0;
+          background: #B1B1B1;
+        } */
 
         .view-content {
           display: grid;
@@ -247,8 +259,9 @@
     &:nth-child(2n + 1){
       &::after {
         content: '';
-        width: 1px;
+        width: 0;
         height: 100%;
+        padding: 0.1mm;
         position: absolute;
         top: 0;
         right: calc(0% - 20px);
@@ -266,9 +279,4 @@
 
     }
   }
-  // .non-adversiting .card-one-column{
-  //   @media screen and (max-width: $broken) {
-  //     margin: 0px 0 20px;
-  //   }
-  // }
 }

@@ -2,9 +2,9 @@
   margin-bottom: 100px;
 
   @media screen and (max-width: $broken) {
-      margin-bottom: 30px;
-    }
- }
+    margin-bottom: 30px;
+  }
+}
 
 .current-edition {
   max-width: 840px;
@@ -128,6 +128,12 @@
 }
 
 .current-edition-cover-page  {
+
+  a {
+    display: block;
+    line-height: 1;
+  }
+
   img {
     width: 100%;
     height: auto;
@@ -193,9 +199,9 @@
       padding: 0;
       display: flex;
       align-items: center;
-
+      min-height: 28px;
       @media screen and(max-width:$tablet) {
-        margin-bottom: 20px;
+        margin-bottom: 10px;
       }
 
       &:last-child {
@@ -283,6 +289,26 @@
       .aldia-logo-in-text {
         max-width: 48px;
         max-height: 16px;
+        position: relative;
+        top: 5px;
+
+        
+        @media screen and(max-width:$tablet) {
+          max-width: 36px;
+          top: 2px;
+
+          &:lang(es){
+            margin: -2px 1px 0;
+
+            img {
+              margin: -8px 0 1px;
+            }
+          }
+          
+          img {
+            height: 12px;
+          }
+        }
       }
 
       button {
@@ -309,11 +335,28 @@
 
   .views-field-view-2 {
     grid-area: title;
+
+    @media (max-width: $tablet) {
+      align-self: center;
+    }
+
+    span {
+      display: block;
+      line-height: 1;
+    }
   }
 
   .view-title-into-current-edition-home {
     margin-bottom: 50px;
 
+    @media (max-width: $tablet) {
+      //height: 203px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+    }
+    
     .views-field-body {
       p {
         margin-bottom: 5px;
@@ -336,15 +379,16 @@
 
       a {
         font-size: szrem(16);
-        font-family: $PrNovacond-bold;
+        font-family: $PrNovacond-light;
         font-style: normal;
         font-weight: bold;
         line-height: 25px;
         letter-spacing: 0.741176px;
-        color: $corange;
+        color: #e3e3e3;
 
         @media screen and (max-width: $tablet) {
-          font-size: szrem(15);
+          font-size: .75rem;
+          line-height: 15px;
         }
       }
     }

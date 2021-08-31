@@ -35,8 +35,11 @@ a {
 }
 
 .admin-menu {
-  #header {
+  #header { 
     top: 39px;
+  }
+  .region-header #block-sitedescription p{
+    letter-spacing: 0.01em;
   }
 }
 
@@ -70,7 +73,7 @@ a {
 
 body.open-menu {
   #page {
-    padding: 125px 0 0;
+    padding: 217px 0 0;
 
     @media (max-width: $broken2) {
       padding: 203px 0 0;
@@ -159,7 +162,7 @@ body.toolbar-tray-open.user-logged-in {
   }
 }
 
-.user-logged-in .layout-container {
+.user-logged-in #main-wrapper {
   margin-top: 0px;
 }
 
@@ -186,6 +189,10 @@ body.toolbar-tray-open.user-logged-in {
   font-size: $px42;
   line-height: 50px;
   color: $corange;
+}
+
+.path-session-limit #edit-submit[value="Disconnect session"]{
+  margin: 0 auto 30px;
 }
 
 @media (max-width: 768px) {

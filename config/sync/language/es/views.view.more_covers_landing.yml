@@ -17,5 +17,14 @@ display:
       header:
         area:
           content:
-            value: "<h1>MORE COVERS</h1>\r\n"
+            value: "<h1>MÁS PORTADAS</h1>\r\n"
             format: full_html
+      exposed_form:
+        options:
+          text_input_required_format: ''
+          submit_button: BUSCAR
+      title: 'Más portadas'
+      filters:
+        field_year_covers_target_id:
+          expose:
+            label: 'Filtrar por año'

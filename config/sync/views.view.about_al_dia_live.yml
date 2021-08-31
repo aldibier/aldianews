@@ -20,6 +20,7 @@ dependencies:
     - field.storage.paragraph.field_photo
     - field.storage.paragraph.field_position
     - field.storage.paragraph.field_testimonial
+    - image.style.75x75
     - responsive_image.styles.image_style_crop_page_headers_responsive
     - responsive_image.styles.slider_live_events_
   module:
@@ -522,7 +523,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"title-video-about-al-dia-live\">\r\n    <img class=\"image-desktop\" src=\"/themes/custom/al_dia_news/assets/img/logo-al-dia-live-blanco.png\"></img>\r\n    <img class=\"image-mobile\" src=\"/themes/custom/al_dia_news/assets/img/logo-al-dia-live-blanco-mobile.png\"></img>\r\n    <div class=\"video-title\">{{ field_video_title }}</div>\r\n<div>"
+            text: "<div class=\"title-video-about-al-dia-live\">\r\n    <img class=\"image-desktop\" src=\"/themes/custom/al_dia_news/assets/img/logo-al-dia-live-blanco.png\"></img>\r\n    <img class=\"image-mobile\" src=\"/themes/custom/al_dia_news/assets/img/logo-al-dia-live-blanco-mobile.png\"></img>\r\n<div>"
             make_link: false
             path: ''
             absolute: false
@@ -1144,6 +1145,90 @@ display:
           entity_type: block_content
           entity_field: type
           plugin_id: bundle
+        langcode:
+          id: langcode
+          table: block_content_field_data
+          field: langcode
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value:
+            '***LANGUAGE_language_interface***': '***LANGUAGE_language_interface***'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: block_content
+          entity_field: langcode
+          plugin_id: language
+        langcode_1:
+          id: langcode_1
+          table: paragraphs_item_field_data
+          field: langcode
+          relationship: field_statistics
+          group_type: group
+          admin_label: ''
+          operator: in
+          value:
+            '***LANGUAGE_language_interface***': '***LANGUAGE_language_interface***'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: paragraph
+          entity_field: langcode
+          plugin_id: language
       defaults:
         filters: false
         filter_groups: false
@@ -1565,7 +1650,7 @@ display:
           click_sort_column: target_id
           type: image
           settings:
-            image_style: ''
+            image_style: 75x75
             image_link: ''
           group_column: ''
           group_columns: {  }

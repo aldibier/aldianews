@@ -94,7 +94,7 @@
 
   .al-dia-hour {
     max-width: 230px;
-    text-transform: uppercase;
+    text-transform: lowercase;
     position: relative;
     margin-left: 30px;
     padding-left: 10px;
@@ -187,7 +187,7 @@
       .sponsorship-event-landing {
         margin-right: 10px;
       }
-      
+
       a {
         width: 140px;
         min-height: 30px;
@@ -209,7 +209,7 @@
         border-bottom: 1px solid #ee2211;
         max-width: none;
         max-height: 25px;
-        margin-top: 20px;
+        margin-top: 10px;
         img {
           max-width: 93px;
           max-height: 20.35px;
@@ -274,6 +274,19 @@
     padding: 0 15px;
     margin: 0 auto;
     width: 100%;
+  }
+  .breadcrumb {
+    margin: 5px 0 30px;
+  }
+  .card-event .card-event-venue {
+    font-size: 20px;
+    line-height: 24px;
+    color: #333333;
+    @media screen and (max-width: $tablet) {
+      font-family: $PrNovacond-reg;
+      font-size: 12px;
+      line-height: 15px;
+    }
   }
 
   ul.tabs {
@@ -345,7 +358,7 @@
   .pager {
     margin-bottom: 100px;
     @media screen and (max-width: $tablet) {
-      margin-bottom: 45px;
+      margin-bottom: 60px;
     }
     .pager__items {
       display: flex;

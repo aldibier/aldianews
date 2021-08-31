@@ -123,7 +123,7 @@
 
 /// bloque buscador formulario
 #block-exposedformsearch-results-al-dia-solrpage-1 {
-  margin-bottom: 70px;
+  margin-bottom: 45px;
   .form--inline {
     display: flex;
     align-items: flex-end;
@@ -160,7 +160,7 @@
     width: 100%;
   }
   .SumoSelect.open > .optWrapper {
-    top: 54px;
+    top: 50px;
   }
   .search_api_relevance_ASC,
   .form-item-sort-bef-combine .options li:nth-child(3) {
@@ -185,7 +185,7 @@
     font-family: $PrNovacond-reg;
     color: #8b8b8b;
     border-right: 14px solid #ededed;
-    border-left: 14px solid #ededed;
+    // border-left: 14px solid #ededed;
     border-top: 0px;
     border-bottom: 0px;
   }
@@ -212,9 +212,9 @@
     .opt label {
       padding-left: 12px;
       display: block;
-      padding-top: 14px;
+      padding-top: 16px;
       font-size: 20px;
-      border-bottom: 0.5px solid #b1b1b1;
+      // border-bottom: 0.5px solid #b1b1b1;
       &:first-letter {
         color: transparent;
       }
@@ -282,11 +282,100 @@
     }
   }
 }
+
+@keyframes rotation {
+  0% {
+    transform:rotate(0deg);
+  }
+  100% {
+    transform:rotate(360deg);
+  }
+}
+
+
+.ajax-progress.ajax-progress-fullscreen {
+  display: none;
+}
+
+.views-infinite-scroll-content-wrapper {
+  .ajax-progress.ajax-progress-fullscreen,
+  .ajax-progress {
+
+    display: none;
+    width: auto;
+    background: none;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 0;
+    position: initial;
+    height: 50px;
+    grid-column: 3 span;
+
+    &:last-child {
+      display: flex !important;
+    }
+
+    &:lang(es) {
+
+      &:after {
+        content: 'Cargando';
+      }
+    }
+
+    &:after {
+      content: 'Loading';
+      display: block;
+      font-family: $PrNovacond-reg;
+      font-size: 25px;
+      line-height: 0;
+      color: #f71805;
+      order: 2;
+      margin: 0 0 0 5px;
+    }
+
+    &:before {
+      background: transparent url("../img/loading.png") center center no-repeat;
+      width: 30px;
+      height: 30px;
+      background-size: contain;
+      display: block;
+      animation-name: rotation;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      overflow: hidden;
+      border-radius: 100%;
+      display: block;
+      order: 1;
+      content: '';
+    }
+
+    @media (max-width: $broken) {
+      grid-column: 2 span;
+    }
+
+    @media (max-width: $tablet) {
+      &:before {
+        width: 20px;
+        height: 20px;
+        background-size: contain;
+      }
+
+      &:after {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+
 .path-search-results {
   .region-content {
     position: relative;
   }
-  .ajax-progress {
+
+  .ajax-progress:nth-child(2) {
     display: none;
   }
   .no-result-search {
@@ -324,7 +413,12 @@
 
     @media screen and (max-width: $tablet) {
       margin-bottom: 10px;
-      font-size: szrem(15);
+      font-size: szrem(16);
+    font-family: $PrNovacond-reg;
+    min-height: 45px;
+      .view-search-results-al-dia-solr{
+        margin: 0 auto;
+      }
     }
   }
 
@@ -344,7 +438,7 @@
 }
 
 .sapi-did-you-mean {
-  margin-bottom: 50px;
+  margin-bottom: 15px;
 
   @media screen and (max-width: $tablet) {
     margin-bottom: 20px;
@@ -548,7 +642,7 @@
       color: #4c4546;
       margin-top: 0;
       border-right: 15px solid #ededed;
-      // border-left: 15px solid #ededed;
+      border-left: 15px solid #ededed;
     }
     .form-type-select {
       max-width: none;

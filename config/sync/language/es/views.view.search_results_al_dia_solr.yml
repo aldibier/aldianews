@@ -1,0 +1,29 @@
+display:
+  default:
+    display_options:
+      filters:
+        field_category:
+          expose:
+            label: Categoría
+          group_info:
+            label: Categoría
+        search_api_fulltext:
+          expose:
+            label: 'Palabras clave'
+  block_1:
+    display_options:
+      fields:
+        nothing_1:
+          alter:
+            text: '<h1>Resultados de la búsqueda</h1>'
+        nothing_2:
+          alter:
+            text: '<div>También puede encontrar noticias de archivo filtrando con las opciones siguientes.</div>'
+  page_1:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: BUSCAR
+          exposed_sorts_label: 'Ordenar por'
+          sort_asc_label: Antiguos
+          sort_desc_label: Recientes

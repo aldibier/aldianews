@@ -21,6 +21,7 @@
     max-width: 100%;
     width: 100%;
     padding: 0;
+    overflow: initial;
 
     > * {
       padding: 0;
@@ -31,9 +32,20 @@
 
 .page-node-type-news,
 .page-node-type-thought-leaders {
+  .breadcrumb {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
   .div[data-ad-unit="header-top-banner"] {
     margin-bottom: 30px;
   }
+  @media (max-width: $tablet) {
+    .watch-live-button {
+      width: calc(100% - 30px);
+    }
+  }
+
   @media (min-width: $tablet) {
     .node__content > .container-content {
       display: flex;

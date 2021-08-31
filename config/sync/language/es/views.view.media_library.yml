@@ -1,9 +1,12 @@
+label: 'Media library'
+description: 'Find and manage media.'
 display:
   default:
     display_title: Default
     display_options:
       exposed_form:
         options:
+          submit_button: 'Apply filters'
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
           sort_asc_label: Asc
@@ -22,6 +25,8 @@ display:
           action_title: Action
       filters:
         status:
+          expose:
+            label: 'Publishing status'
           group_info:
             label: Publicado
             group_items:
@@ -40,7 +45,20 @@ display:
         langcode:
           expose:
             label: Language
+      sorts:
+        created:
+          expose:
+            label: 'Newest first'
+        name:
+          expose:
+            label: 'Name (A-Z)'
+        name_1:
+          expose:
+            label: 'Name (Z-A)'
       title: Multimedia
+      empty:
+        area_text_custom:
+          content: 'No media available.'
   page:
     display_title: Página
     display_options:
@@ -50,8 +68,14 @@ display:
         name:
           separator: ', '
         edit_media:
+          alter:
+            text: 'Edit {{ name }}'
+            alt: 'Edit {{ name }}'
           text: Editar
         delete_media:
+          alter:
+            text: 'Delete {{ name }}'
+            alt: 'Delete {{ name }}'
           text: Eliminar
   widget:
     display_title: Control
@@ -64,6 +88,11 @@ display:
         bundle:
           exception:
             title: All
+      header:
+        display_link_grid:
+          label: Grid
+        display_link_table:
+          label: Table
   widget_table:
     display_options:
       fields:
@@ -83,3 +112,8 @@ display:
         bundle:
           exception:
             title: All
+      header:
+        display_link_grid:
+          label: Grid
+        display_link_table:
+          label: Table

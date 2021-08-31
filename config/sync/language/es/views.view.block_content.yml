@@ -1,3 +1,5 @@
+label: 'Custom block library'
+description: 'Find and manage custom blocks.'
 display:
   default:
     display_title: Default
@@ -36,5 +38,12 @@ display:
         type:
           expose:
             label: 'Tipo de bloque'
+      title: 'Custom block library'
+      empty:
+        area_text_custom:
+          content: 'There are no custom blocks available.'
   page_1:
     display_title: Página
+    display_options:
+      menu:
+        title: 'Custom block library'

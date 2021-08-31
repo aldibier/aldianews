@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.thought_leaders.field_comments
     - field.field.node.thought_leaders.field_image
     - field.field.node.thought_leaders.field_short_title
+    - field.field.node.thought_leaders.field_short_title_thounght
     - field.field.node.thought_leaders.field_tags
     - field.field.node.thought_leaders.field_video
     - node.type.thought_leaders
@@ -22,6 +23,7 @@ dependencies:
     - gamw
     - image
     - layout_builder
+    - layout_discovery
     - text
     - user
     - video_embed_field
@@ -31,6 +33,26 @@ third_party_settings:
     allow_custom: false
     enabled: true
     sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: 'gamw header'
+          context_mapping: {  }
+        components:
+          5480e789-28b1-41d7-95a7-e31c1b7110e4:
+            uuid: 5480e789-28b1-41d7-95a7-e31c1b7110e4
+            region: content
+            configuration:
+              id: gamw
+              label: 'header top banner'
+              provider: gamw
+              label_display: '0'
+              ad_unit: header-top-banner
+              attributes_wrapper: null
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+        third_party_settings: {  }
       -
         layout_id: thought_leaders
         layout_settings:
@@ -343,6 +365,14 @@ content:
     region: content
   field_short_title:
     weight: 104
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_short_title_thounght:
+    weight: 109
     label: above
     settings:
       link_to_entity: false

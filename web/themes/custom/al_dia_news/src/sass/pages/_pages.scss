@@ -30,7 +30,7 @@ h3 {
   .aldia-logo-in-text {
     max-width: 130px;
     min-height: auto;
-    
+
     img {
       // width: 50px;
       // height: 15px;
@@ -79,7 +79,8 @@ p .aldia-logo-in-text img {
 .path-node:not(.page-node-type-feature-employer),
 .path-node:not(.page-node-type-job),
 .path-node:not(.page-premium),
-.page-node-type-al-dia-vacancy {
+.page-node-type-al-dia-vacancy,
+.path--seeker {
   #main-wrapper {
     max-width: none;
     #main {
@@ -87,7 +88,7 @@ p .aldia-logo-in-text img {
       padding: 0px;
       .region-breadcrumb {
         max-width: 1300px;
-        padding: 0 15px;
+        padding: 0;
         margin: 0 auto;
       }
       .content-page-node {
@@ -101,9 +102,17 @@ p .aldia-logo-in-text img {
     }
   }
 }
+.page-error.content-page-node {
+  max-width: 1280px;
+  margin: 0 auto;
+}
 
-.path-user .user-register-login,
 a.user-register-login {
   max-width: none;
-  margin: 0 auto 40px;
+  margin: 0 auto;
+}
+
+.path-user .user-register-login {
+  max-width: none;
+  margin: 0 auto 30px;
 }

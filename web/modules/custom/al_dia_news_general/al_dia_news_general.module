@@ -9,11 +9,17 @@ use Drupal\Component\Utility\Html;
 use Drupal\Core\Url;
 use Drupal\Component\Serialization\Json;
 use Drupal\Core\Path\CurrentPathStack;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\RedirectCommand;
 
 /**
  * User agent device
  */
 function is_mobile() {
+
+  \Drupal::service('page_cache_kill_switch')->trigger();
+
   if (empty($_SERVER['HTTP_USER_AGENT'])) {
       $is_mobile = false;
   } else if (strpos($_SERVER['HTTP_USER_AGENT'], 'Mobile') !== false
@@ -28,6 +34,7 @@ function is_mobile() {
   } else {
       $is_mobile = false;
   }
+
   return $is_mobile;
 }
 
@@ -61,6 +68,7 @@ function al_dia_news_general_customize_address($element, $form_state) {
   $element['address_line2']['#weight'] = 21;
   return $element;
 }
+
 /**
  * Implements hook_form_alter()
  */
@@ -171,12 +179,18 @@ function al_dia_news_general_form_alter(&$form, $form_state, $form_id) {
 
     case "change_pwd_form":
       $form['#title'] = t("CHANGE PASSWORD");
-      $form['#submit'][] = 'custom_password_reset';
-      $form['actions']['submit']['#value'] = 'CHANGE';
+      $form['actions']['submit']['#ajax'] = [
+        'callback' => 'callback_change_password',
+        'wrapper' => 'cambio-contrasena',
+      ];
+      $form['#prefix'] = '<div id="cambio-contrasena">';
+      $form['#suffix'] = '</div>';
+      $form['actions']['submit']['#value'] = t('CHANGE');
     break;
     case "user_pass":
       $form['#title'] = t("RESTORE PASSWORD");
       $form['mail']['#markup'] = t("Password reset instructions will be sent to your registered email address. You must log out to use the password reset link in the email.");
+      $form['name']['#required'] = TRUE;
       $form['actions']['register'] = [
         '#type' => 'link',
         '#title' => t('BACK'),
@@ -210,9 +224,11 @@ function al_dia_news_general_form_alter(&$form, $form_state, $form_id) {
       $form['message']['#markup'] = t('<p>Hello,</p><p>Please remember that this is a one-time link to set a new password and log in and it will expire in the next 24 hours. If you don’t have access to this link later, request a new one by entering to the “Forgot your password?” in the log in section.</p>');
       $form['help']['#markup'] = "";
       $form['actions']['submit']['#value'] = t('CHANGE PASSWORD AND LOG IN');
+      $form['actions']['submit']['#submit'][] = 'custom_cancel_account';
+
     break;
     case "user_form":
-      $form['#title'] = "EDIT";
+      $form['#title'] = t("EDIT");
       if ( $current_user->getRoles()[1] != "administrator") {
         $form['actions']['delete']['#access'] = FALSE;
         $form['actions']['cancel'] = [
@@ -230,11 +246,31 @@ function al_dia_news_general_form_alter(&$form, $form_state, $form_id) {
             'data-dialog-options' => Json::encode(['dialogClass' => 'popup-login'],['width' => 550]),
           ],
         ];
+        $form['actions']['submit']['#submit'][] = 'custom_cancel_account';
+
       }
 
     break;
     case "user_cancel_form":
       $form['actions']['submit']['#submit'][] = 'custom_cancel_account';
+      if ( $current_user->getRoles()[1] != "administrator") {
+        $form['actions']['cancel'] = [
+          '#type' => 'link',
+          '#title' => t('CANCEL'),
+          '#url' => Url::fromRoute('al_dia_news_general.modal', [
+            'type' => 'user',
+          ]),
+          '#attributes' => [
+            'class' => [
+              'use-ajax',
+              'user-register-login',
+            ],
+            'data-dialog-type' => 'modal',
+            'data-dialog-options' => Json::encode(['dialogClass' => 'popup-login'],['width' => 550]),
+          ],
+        ];
+        $form['#title'] = t('CANCEL MY ACCOUNT');
+      }
     break;
   }
   if (strpos($form_id, 'commerce_order_item_add_to_cart_form_commerce_product_') !== FALSE) {
@@ -256,13 +292,21 @@ function al_dia_news_general_form_alter(&$form, $form_state, $form_id) {
 
   }
 
-
 }
 
+function callback_change_password(&$form, &$form_state){
 
-function custom_password_reset(&$form, &$form_state) {
-  $form_state->setRedirect('<front>', ['modal'=>TRUE]);
+  if (is_null($form['#children_errors'])){
+    $response = new AjaxResponse();
+    $redirect = new RedirectCommand('/?modal=1');
+    $response->addCommand($redirect);
+    return $response;
+  }
+  else {
+    return $form;
+  }
 }
+
 function custom_cancel_account(&$form, &$form_state) {
   $form_state->setRedirect('<front>');
 }
@@ -302,6 +346,7 @@ function al_dia_news_form_views_exposed_form_alter(&$form, &$form_state) {
  * @param query consulta sql de la vista
  */
 function al_dia_news_general_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
+  /* ksm($view->id()); */
   switch ($view->id()) {
     case 'last_news':
       if ($view->getDisplay()->display['id'] == 'block_1') {
@@ -446,6 +491,13 @@ function al_dia_news_general_views_query_alter(ViewExecutable $view, QueryPlugin
             }
           }
         }
+
+        $is_mobile = is_mobile();
+
+        if($is_mobile){
+          $view->setOffset(0);
+          $view->getPager()->setItemsPerPage(22);
+        }
       }
     break;
     //Omito el id de los nodos del primer bloque en el home
@@ -495,6 +547,13 @@ function al_dia_news_general_views_query_alter(ViewExecutable $view, QueryPlugin
             }
           }
         }
+
+        $is_mobile = is_mobile();
+
+        if($is_mobile){
+          $view->setOffset(5);
+          $view->getPager()->setItemsPerPage(8);
+        }
       }
     break;
     case "culture_sons":
@@ -541,6 +600,13 @@ function al_dia_news_general_views_query_alter(ViewExecutable $view, QueryPlugin
               }
             }
           }
+        }
+
+        $is_mobile = is_mobile();
+
+        if($is_mobile){
+          $view->setOffset(5);
+          $view->getPager()->setItemsPerPage(8);
         }
       }
     break;
@@ -589,6 +655,13 @@ function al_dia_news_general_views_query_alter(ViewExecutable $view, QueryPlugin
             }
           }
         }
+
+        $is_mobile = is_mobile();
+
+        if($is_mobile){
+          $view->setOffset(5);
+          $view->getPager()->setItemsPerPage(8);
+        }
       }
     break;
     case "landing_thought_leaders":
@@ -635,4 +708,28 @@ function al_dia_news_general_theme() {
       ],
     ],
   ];
+}
+
+/**
+ * Implements hook_element_info_alter().
+ */
+function al_dia_news_general_element_info_alter(array &$info) {
+  if (isset($info['password_confirm'])) {
+    $info['password_confirm']['#after_build'][] = 'al_dia_news_general_after_build';
+  }
+}
+
+/**
+ * After build function for password_confirm elements.
+ *
+ * @param array $element
+ *   The element being altered after build.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   The form_state object returned with the element.
+ */
+function al_dia_news_general_after_build(array $element, FormStateInterface $form_state) {
+  $element['pass1']['#required'] = TRUE;
+  $element['pass2']['#required'] = TRUE;
+  return $element;
+
 }

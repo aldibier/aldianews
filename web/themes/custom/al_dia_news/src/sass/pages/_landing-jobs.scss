@@ -1,7 +1,7 @@
 .path-job-seeker {
   .block-fixed-block-contentheader-i-am-a-job-seeker {
     min-height: 215px;
-    margin: 0 -15px 20px;
+    margin: 7px -15px 20px;
     padding: 0 25px 25px;
     display: flex;
     align-items: flex-end;
@@ -11,7 +11,7 @@
 
     @media screen and (min-width: $tablet) {
       min-height: 470px;
-      margin: 0 -80px 70px;
+      margin: 15px -80px 70px;
       padding: 40px 80px 70px;
       position: relative;
     }
@@ -81,10 +81,16 @@
       }
     }
   }
+  .watch-live {
+    padding-top: 70px;
+  }
 
   .views-infinite-scroll-content-wrapper {
     display: grid;
-    grid-template-columns: minmax(200px, 420px) minmax(200px, 440px) minmax(200px,420px);
+    grid-template-columns: minmax(200px, 420px) minmax(200px, 440px) minmax(
+        200px,
+        420px
+      );
     gap: 0px 40px;
     overflow: hidden;
     grid-auto-flow: dense;
@@ -99,8 +105,9 @@
 
       &::after {
         content: "";
-        width: 1px;
+        width: 0;
         height: 100%;
+        padding: 0.1mm;
         position: absolute;
         top: 0;
         right: calc(0% - 20px);
@@ -110,14 +117,21 @@
       &::before {
         display: block;
         content: "";
-        width: calc(100% + 40px);
-        height: 1px;
+        width: calc(100vw + 40px);
+        height: 0;
+        padding: 0.1mm;
         left: -20px;
         bottom: 0;
         background: $cgrey4;
         position: absolute;
         right: 0;
         margin: -40px auto;
+      }
+
+      &:nth-last-of-type(-n + 3){
+        &::before {
+          content: none;
+        }
       }
 
       @media screen and (max-width: $tablet) {
@@ -130,6 +144,15 @@
 
       @extend .rows-employer;
     }
+
+    .ajax-progress.ajax-progress-fullscreen,
+    .ajax-progress {
+      grid-column: 3 span;
+
+      @media (max-width: $tablet) {
+        grid-column: 1/-1;
+      }
+    }
   }
 
   @media (max-width: $tablet) {
@@ -137,9 +160,7 @@
       display: flex;
       flex-wrap: wrap;
       overflow: initial;
-      .ads {
-        margin-top: 20px;
-      }
+
       .views-row {
         width: 100%;
         margin: 0 0 40px;
@@ -152,7 +173,7 @@
 .jobs.style-jobs {
   h1 {
     bottom: 320px;
-    left: 65px;
+    left: 5px;
   }
   .aldia-logo-in-text {
     max-width: none;
@@ -179,7 +200,7 @@
       margin: 0 auto;
       .field-content {
         position: relative;
-        left: 112px;
+        left: 85px;
         bottom: 310px;
         line-height: 28px;
         color: $cwhite;
@@ -209,6 +230,9 @@
       font-size: $px24;
     }
   }
+  #block-system-menu-block-jobs-landing-menu {
+    padding-left: 11px;
+  }
 
   .block-content-form .modal-apply-webform.open {
     button[name="close"] {
@@ -228,6 +252,7 @@
       min-height: 200px;
     }
     .form-actions .button {
+      width: 150px;
       max-width: 100px;
       text-transform: uppercase;
     }
@@ -258,16 +283,25 @@
       padding-top: 125px;
       margin-bottom: 75px;
       padding: 0px 15px;
+      @media screen and (min-width: $desktop) {
+        padding: 0px;
+      }
     }
 
     p {
       line-height: 34.84px;
       color: $cblack3;
+      @media screen and (min-width: $desktop) {
+        padding: 0px;
+      }
     }
 
     .button-apply {
       margin-top: 55px;
       margin-left: 15px;
+      @media screen and (min-width: $desktop) {
+        margin-left: 0px;
+      }
     }
   }
   // .non-adversiting .block-content-left {
@@ -320,6 +354,10 @@
       background: transparent url(../img/izq.png) center center no-repeat;
       background-size: contain;
       left: 0px;
+
+      &.slick-disabled {
+        opacity: 0.3;
+      }
     }
 
     .slick-next {
@@ -437,7 +475,8 @@
       display: block;
       position: absolute;
       width: 100%;
-      height: 1px;
+      height: 0;
+      padding: 0.1mm;
       background: $cgrey4;
       left: 0px;
       right: 0px;
@@ -487,8 +526,9 @@
         content: "";
         display: block;
         position: absolute;
-        width: 1px;
+        width: 0;
         height: 370px;
+        padding: 0.1mm;
         background: $cgrey4;
         right: -18px;
         top: 0px;
@@ -555,8 +595,9 @@
         content: "";
         display: block;
         position: absolute;
-        width: 1px;
+        width: 0;
         height: 370px;
+        padding: 0.1mm;
         background: $cgrey3;
         right: -18px;
         top: 0px;
@@ -570,8 +611,9 @@
         content: "";
         display: block;
         position: absolute;
-        width: 1px;
+        width: 0;
         height: 370px;
+        padding: 0.1mm;
         background: $cgrey3;
         right: -18px;
         top: 0px;
@@ -592,6 +634,15 @@
 
   .content {
     margin: 0px;
+  }
+}
+
+.block-views-blockcareer-news-block-1:not(.view-complete) {
+  .views-row:last-child,
+  .views-row:nth-last-child(2) {
+    margin-bottom: 0px;
+    border-bottom: 0px;
+    padding-bottom: 10px;
   }
 }
 
@@ -730,6 +781,8 @@
     margin: 30px auto 10px;
     .watch-live-button {
       margin: 0 auto 20px;
+      width: calc(100% - 30px);
+      max-width: 100%;
     }
     .style-jobs .breadcrumb {
       margin: 20px auto 10px;
@@ -891,6 +944,9 @@
       .card-title a {
         font-size: $px14;
         line-height: 17px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
       }
 
       .card-date {
@@ -1109,7 +1165,8 @@
             content: "";
             display: block;
             position: absolute;
-            height: 1px;
+            height: 0;
+            padding: 0.1mm;
             background: $cgrey4;
             width: 100%;
             left: 0px;

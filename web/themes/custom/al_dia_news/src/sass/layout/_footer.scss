@@ -8,7 +8,7 @@
     position: absolute;
     content: "";
     display: block;
-    top: 79px;
+    top: 68px;
     height: 5px;
     background: $corange;
     right: 0;
@@ -33,17 +33,17 @@
 
   #block-footerlogo {
     position: absolute;
-    top: 0;
+    top: -11px;
     right: 0;
     width: calc(100% - 395px);
-    z-index: 2;
+    z-index: 1;
 
     .field--name-field-image-block {
       max-width: 265px;
       margin: 0px 15px 0 0;
       @media (min-width: $desktop) {
         position: relative;
-        top: 9px;
+        top: 20px;
       }
       img {
         margin: -11px 0px;
@@ -63,13 +63,14 @@
       display: flex;
 
       p {
-        margin: 45px 0 auto;
+        margin: 60px 0 auto;
         font-style: normal;
         font-weight: normal;
         font-size: 18px;
         line-height: 22px;
         font-family: $NimS-reg;
         color: $cwhite;
+        letter-spacing: 0.05em;
 
         strong {
           color: $corange;
@@ -84,6 +85,12 @@
     display: flex;
     flex-wrap: wrap;
     padding: 0px 73px 62px;
+
+
+    @media (min-width: $tablet) and (max-width: 1320px) {
+      padding: 0 15px 62px;
+    }
+
   }
 
   .block-fixed-block-contentlast-print-edition,
@@ -114,18 +121,34 @@
     margin: 112px auto 0 0;
     max-width: 540px;
 
+    @media (min-width: $tablet) and (max-width: 1320px) {
+      margin: 112px 0 0 0;
+      max-width: 403px;
+      width: 100%;
+      right: 0;
+    }
+
     .menu {
       width: 100%;
       display: flex;
       flex-wrap: wrap;
       margin: 20px 0 0 -30px;
 
+      @media (min-width: $tablet) and (max-width: 1320px) {
+        margin: 20px 0 0 0;
+      }
+
       li {
         display: flex;
         width: 50%;
 
         > div {
-          order: 1;
+          &:lang(es) {
+            order: 2;
+          }
+          &:lang(en) {
+            order: 1;
+          }
         }
 
         &:nth-child(7),
@@ -142,9 +165,18 @@
 
       .field--name-field-image {
         float: left;
-        margin: -43px 0;
+        margin: -45px 0;
         width: 82.89px;
         height: 32px;
+        @media (max-width: $tablet) {
+          &:lang(en) {
+            margin: -45px -18px -45px 0;
+          }
+
+          &:lang(es) {
+            margin: -45px 0 0 -4px;
+          }
+        }
       }
 
       img {
@@ -155,13 +187,17 @@
         border: none;
         margin: 13px 0 17px;
         font-weight: 300;
-        padding: 0 15px 0 0;
-        order: 2;
+        padding: 0 5px 0 0;
+        order: 1;
         font-style: normal;
         font-size: $px20;
         line-height: 24px;
         color: $cwhite;
         font-family: $PrNova-light;
+
+        &:lang(en) {
+          order: 2;
+        }
       }
     }
   }
@@ -182,7 +218,7 @@
       font-family: $PrNova-light;
 
       &:first-child {
-        margin: 0 0 10px;
+        margin: 0 0 5px;
       }
     }
 
@@ -269,7 +305,9 @@
       }
 
       .menu_link_content {
-        padding-top: 3px;
+        //padding-top: 3px;
+        padding: 0;
+        line-height: 0;
 
         .icon {
           font-size: 18px;
@@ -328,6 +366,16 @@
     flex-wrap: wrap;
     max-width: 50%;
     right: 31px;
+    
+    @media (min-width: $tablet) and (max-width: 1320px) {
+      right: 0;
+    }
+
+    @media (min-width: $tablet) {
+      &:lang(es) {
+        bottom: 103px;
+      }
+    }
 
     &:before {
       content: "";
@@ -358,6 +406,16 @@
     bottom: 21px;
     right: 31px;
     width: 50%;
+
+    @media (min-width: $tablet) and (max-width: 1320px) {
+      right: 0;
+    }
+
+    @media (min-width: $tablet) {
+      &:lang(es) {
+        bottom: 45px;
+      }
+    }
 
     &::after {
       content: "";
@@ -407,15 +465,21 @@
     #block-footerlogo {
       position: relative;
       width: 100%;
+      z-index: 0;
+      top: 0;
 
       .content {
         flex-wrap: wrap;
       }
 
       .field--name-body {
-        width: 100%;
-        padding: 20px 0 0;
+        width: calc(100% + 15px);
+        padding: 29px 0 0;
         position: relative;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
 
         &:after {
           width: calc(100% + 30px);
@@ -433,7 +497,7 @@
       }
 
       .field--name-field-image-block {
-        margin: 5px 0 0 -8px;
+        margin: 10px 0 0 0px;
         width: 140px;
       }
     }
@@ -469,7 +533,7 @@
     .block-fixed-block-contentlocation {
       position: relative;
       margin: 0;
-      width: 50%;
+      width: 51%;
       display: flex;
       align-items: flex-end;
 
@@ -530,7 +594,7 @@
 
   @media (max-width: $tablet) {
     #block-socialmedia-2 {
-      padding: 10px 0 35px;
+      padding: 10px 0 50px;
     }
 
     .copyr,
@@ -555,11 +619,18 @@
         p {
           font-size: 11px;
           line-height: 13px;
+          letter-spacing: 0.05em;
+          margin: 0 -15px 0;
+          @media (max-width: 350px) {
+            font-size: 10px;
+            letter-spacing: 0;
+          }
         }
 
         &:after {
-          height: 3px;
-          top: 6px;
+          height: 2px;
+          top: 13px;
+          z-index: -1;
         }
       }
     }
@@ -576,7 +647,11 @@
         font-size: 14px;
         line-height: 25px;
         position: relative;
-        bottom: 3px;
+        bottom: 6px;
+
+        @media(max-width: 600px) and (min-width: 360px) {
+          bottom: 6px;
+        }
       }
     }
 
@@ -591,7 +666,7 @@
     #block-footer {
       .menu {
         a {
-          font-size: 17px;
+          font-size: 14px;
           line-height: 21px;
           margin: 0;
           padding: 0;
@@ -602,7 +677,7 @@
           flex-wrap: wrap;
 
           &:nth-child(2n) {
-            margin: 35px 0 -39px;
+            margin: 0 0 -39px;
           }
 
           &:last-child {
@@ -610,8 +685,11 @@
           }
 
           > div {
-            margin: -33px -8px 0px -12px;
-            position: absolute;
+            margin: -9px -8px 0 -3px;
+
+            &:lang(en) {
+              margin: -8px 9px 0 -8px;
+            }
           }
         }
 
@@ -629,6 +707,7 @@
 
       .field--type-image {
         width: 100%;
+        margin: auto 0 10px 15px;
 
         img {
           height: 15px;
@@ -646,7 +725,7 @@
       &:after {
         width: 50px;
         height: 15px;
-        margin: 0;
+        margin: 2px 0px -3px -2px;
       }
     }
 
@@ -655,6 +734,34 @@
       height: 10px;
       margin: 1px 5px -1px 0;
     }
+  }
+}
+
+@media (max-width: 600px) and (min-width: 360px) {
+  .site-footer .block-fixed-block-contentlocation .field--type-image {
+    margin: auto 0 -23px 15px;
+  }
+
+  .site-footer .block-fixed-block-contentlocation {
+    width: 55%;
+  }
+
+  .block-fixed-block-contentlocation .main-news-body {
+    margin: auto 0 auto 40px !important;
+  }
+
+  .site-footer .block-fixed-block-contentlocation p {
+    font-size: 11px;
+    line-height: 100%;
+  }
+}
+
+@media (max-width: 361px) {
+  .site-footer #block-subscribeblockfooter a {
+    bottom: 6px;
+  }
+  html[lang="es"] .site-footer #block-footerlogo .field--name-body p {
+    letter-spacing: -0.2px;
   }
 }
 

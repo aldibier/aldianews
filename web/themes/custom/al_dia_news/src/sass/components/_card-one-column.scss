@@ -163,6 +163,25 @@
 
     h3 {
       line-height: 0;
+      .aldia-logo-in-text {
+        position: relative;
+        max-width: 75px;
+        top: 2px;
+        img {
+          height: 23px;
+        }
+        @media screen and (max-width: $broken) {
+          max-width: 37px;
+          top: 0px;
+          margin-right: 5px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          img {
+            height: 12px !important;
+          }
+        }
+      }
     }
 
     a {
@@ -195,6 +214,8 @@
       a {
         font-size: 14px;
         line-height: 17px;
+        display: flex;
+        flex-wrap: wrap;
       }
     }
   }

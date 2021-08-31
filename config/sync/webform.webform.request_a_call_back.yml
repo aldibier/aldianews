@@ -1,7 +1,12 @@
 uuid: 7e0a5a5a-13f8-4f5e-baf4-7b1e82638aee
 langcode: en
 status: open
-dependencies: {  }
+dependencies:
+  module:
+    - honeypot
+third_party_settings:
+  honeypot:
+    honeypot: true
 open: null
 close: null
 weight: 0
@@ -27,22 +32,21 @@ elements: |-
     '#type': textfield
     '#title': 'Last name'
     '#required': true
-  company:
-    '#type': textfield
-    '#title': Company
-    '#required': true
-  job_title:
-    '#type': textfield
-    '#title': 'Job title'
-    '#required': true
   email_address:
     '#type': email
     '#title': 'Email address'
     '#required': true
+  company:
+    '#type': textfield
+    '#title': Company
+  job_title:
+    '#type': textfield
+    '#title': 'Job title'
   phone_number_:
     '#type': tel
-    '#title': 'Phone number*'
+    '#title': 'Phone number'
     '#required': true
+    '#pattern': \d+
   optional_message:
     '#type': textarea
     '#title': 'Optional message'

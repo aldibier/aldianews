@@ -9,6 +9,11 @@
   @media (max-width: $tablet) {
     border-bottom: 2px solid $corange;
   }
+
+  .ajax-progress.ajax-progress-fullscreen,
+  .ajax-progress {
+    display: none !important;
+  }
 }
 
 .site-branding__logo {
@@ -31,7 +36,22 @@ body.open-menu {
     &:after {
       display: none;
     }
+
+    #block-magnifierheader, #block-languageswitcher {
+      padding: 12px 0;
+    }
+  
+    #block-loginformpopup {
+      margin: 0;
+      display: flex;
+      align-items: center;
+    }
+  
+    #block-views-block-current-edition-header-and-footer-block-1 {
+      padding-top: 14px;
+    }
   }
+
   @media (max-width: $tablet) {
     position: relative;
     .region-header {
@@ -338,13 +358,20 @@ body.open-menu {
       height: 25px;
       position: relative;
       margin: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+      background-color: $cgrey5;
+      border-radius: 100%;
 
       &:hover {
         transform: scale(1.2);
       }
 
       @media (max-width: $mobile-mid) {
+        width: 25px !important;
+        height: 25px !important;
         margin: 0 15px 0 0;
 
         &:last-child {
@@ -369,14 +396,8 @@ body.open-menu {
     }
 
     .menu-link-contentsocial-media {
-      width: 25px;
-      height: 25px;
-      padding: 2px 0 0;
-      background: $cgrey5;
-      border-radius: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      padding: 0;//2px 0 0
+      line-height: 1;
     }
 
     * {
@@ -505,8 +526,8 @@ body.open-menu {
 
   @media (max-width: $tablet) {
     position: absolute;
-    top: 15px;
-    right: 20px;
+    top: 17px;
+    right: 5px;
   }
 }
 
@@ -640,9 +661,10 @@ body.open-menu {
   background: $cblack0;
   display: flex;
   padding: 15px 15px 0;
-  max-width: 1315px;
+  max-width: max-content;
   margin: 0 auto;
   position: relative;
+
   @media (min-width: $desktop) {
     max-height: 90px;
     padding: 12px 15px 0;
@@ -725,6 +747,11 @@ body.open-menu {
     max-height: 75px;
     margin: -15px 0 10px -25px;
     z-index: 2;
+    
+    @media (min-width: $tablet) and (max-width: 1320px) {
+      min-width: 239px;
+      max-width: 245px;
+    }
 
     .site-branding__text {
       font-size: 0;
@@ -755,7 +782,7 @@ body.open-menu {
 
   #block-magnifierheader {
     order: 4;
-    margin: auto 0 auto 35px;
+    margin: auto 0 auto 26px;
     @media (max-width: $tablet) {
       order: 6;
       max-height: 38px;
@@ -865,8 +892,8 @@ body.open-menu {
     .views-field-field-cover-page {
       position: absolute;
       z-index: 3;
-      width: 78px;
-      height: 86px;
+      width: 77.75px;
+      height: 85.15px;
       left: 20px;
       overflow: hidden;
       transform: rotate(-17deg);
@@ -901,10 +928,11 @@ body.open-menu {
     text-transform: uppercase;
     font-family: $PrNovacond-Sbold;
     letter-spacing: 0.741176px;
-    @media (min-width: $desktop) {
+    @media (min-width: $tablet) {
       // padding-right: 15px;
-      padding-right: 0px;
+      padding-right: 0;
       margin-right: 20px;
+      margin-left: 10px;
     }
   }
 
@@ -924,9 +952,16 @@ body.open-menu {
       color: $cblack2;
     }
   }
+
+  #block-loginformpopup {
+    min-width: 50px;
+    max-width: 56px;
+    margin: 30px 0 0;
+  }
+
   #block-loginformpopup a {
     font-size: 16px;
-    line-height: 25px;
+    line-height: 16px;
     font-family: $PrNovacond-Xbold;
     color: $corange;
     text-transform: uppercase;
@@ -934,6 +969,8 @@ body.open-menu {
   }
 
   @media (max-width: $broken) {
+    max-width: 1300px;
+
     #block-sitedescription {
       width: 100%;
       margin: auto;
@@ -958,7 +995,7 @@ body.open-menu {
     }
 
     #block-blockheader {
-      margin: 6px 0 0;
+      margin: 6px 0 0 -15px;
       z-index: 2;
       height: 30px;
 
@@ -1051,12 +1088,12 @@ body.open-menu {
     }
 
     #block-languageswitcher {
-      margin: 0 0 0 auto;
+      margin: 0 auto 0;
     }
-
+ 
     #block-sitedescription {
-      bottom: -29px;
-      padding: 7px 0 0;
+      bottom: -31px;
+      padding: 9px 0 0;
       p {
         font-size: 11px;
         line-height: 13px;
@@ -1065,7 +1102,20 @@ body.open-menu {
           letter-spacing: 0px;
         }
       }
+      @media (max-width: 350px) {
+        bottom: -33px;
+        padding: 11px 0 0;
+      }
     }
+  }
+}
+
+.region-secondary-menu.open-menu ~ .region-header {
+  #block-al-dia-news-branding {
+    margin: -5px 0 10px -25px;
+  }
+  #block-blockheader {
+    margin: 30px 35px 7px 0;
   }
 }
 

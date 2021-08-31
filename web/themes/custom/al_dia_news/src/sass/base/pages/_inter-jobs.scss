@@ -150,7 +150,7 @@
 
   .block-field-blocknodejobbody,
   .text-formatted {
-    p {
+    p,li {
       font-style: normal;
       font-weight: 500;
       font-size: $px24;
@@ -240,7 +240,7 @@
 
     .block-field-blocknodejobbody,
     .text-formatted {
-      p {
+      p,li {
         font-size: 15px;
         line-height: 140%;
       }
@@ -270,7 +270,8 @@
 }
 .page-node-type-feature-employer,
 .page-node-type-page {
-  .content-left-pages .text-formatted p {
+  .content-left-pages .text-formatted p,
+  .content-left-pages .text-formatted li {
     font-family: $PrNovacond-light;
   }
 }
@@ -305,11 +306,16 @@
   }
 }
 
-article[about="/terms-of-service"] .content-right-pages {
-  @media (max-width: $tablet) {
-    margin: 10px 0 40px;
+article[about="/terms-of-service"]{
+  .content-left-pages{
+    margin-bottom: 70px;
   }
-}
+  .content-right-pages {
+    @media (max-width: $tablet) {
+      margin: 10px 0 30px;
+    }
+  }
+} 
 
 article[about="/contact-us"] .content-left-pages {
   margin-bottom: 60px;

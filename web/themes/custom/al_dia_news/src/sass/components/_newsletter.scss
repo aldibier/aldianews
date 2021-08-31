@@ -60,11 +60,12 @@
       display: flex;
       align-items: center;
       max-width: 315px;
+      width: 28%;
     }
     .form-item-email {
       margin: 0px;
       max-width: 510px;
-      width: 100%;
+      width: 53%;
       label {
         display: none;
       }
@@ -79,7 +80,8 @@
     }
     .form-actions {
       max-width: 180px;
-      width: 100%;
+      width: 19%;
+      min-width: 180px;
     }
     .form-submit {
       min-height: 39.6px;
@@ -117,6 +119,7 @@
           font-size: 14px;
           line-height: 25px;
           color: #fff;
+          padding: 0 7px;
         }
       }
     }
@@ -126,8 +129,13 @@
       padding: 20px 10px;
       .form-item-markup {
         font-size: $px16;
-        height: 20px;
-        margin: auto;
+        height: initial;
+        line-height: 18px;
+        margin: auto 0 12px;
+        text-align: center;
+        width: 100%;
+        max-width: 100%;
+        display: block;
       }
       .form-item-email {
         max-width: 149px;
@@ -143,10 +151,13 @@
 
         @media (max-width: $tablet) {
           max-width: 155px;
+          margin: 0 0 0 auto;
         }
       }
       .form-actions {
         max-width: 105px;
+        min-width: 105px;
+        margin: 0 auto 0 0;
       }
       .form-submit {
         font-size: $px14 !important;
@@ -158,6 +169,7 @@
           font-size: 13px;
           line-height: 20px;
           margin: 0;
+          text-align: center;
         }
         .webform-confirmation__back {
           margin: 5px auto;
@@ -178,10 +190,6 @@
     @media (max-width: $tablet) {
       justify-content: center;
       border: 1px solid #797979;
-
-      div:first-child {
-        margin-bottom: 21px;
-      }
     }
   }
 }
@@ -190,15 +198,98 @@
 .path-frontpage  {
   .newsletter {
     margin-bottom: 25px;
-    padding: 9px 11px;
+    padding: 9.5px 11px;
     background-color: $bgrey3;
 
-    @media screen and(max-width: $tablet) {
+    .close-modal {
       display: none;
     }
 
-    .close-modal {
-      display: none;
+    @media screen and(max-width: $tablet) {
+      width: 100%;
+      margin-bottom: 0;
+      padding: 30px 18px 10px;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      z-index: 100;
+
+      .close-modal {
+        display: block;
+        top: 10px;
+        right: 18px;
+      }
+    }
+  }
+
+  .view-high-impact-news-home {
+
+    .webform-submission-newsletters-form {
+
+      @media screen and(max-width:$broken) { 
+        .webform-confirmation__back{
+          a {
+            font-size: 12px;
+            min-height: 40px;
+            max-height: 40px;
+            padding: 0;
+          }
+        }
+      }
+
+      @media screen and(max-width:$tablet) {
+        display: flex;
+        padding: 20px 10px;
+
+        .form-item-email{
+          width: initial;
+          max-width: none;
+          flex: 1 1 145px;
+        }
+
+        #edit-actions{
+          width: initial;
+          max-width: none;
+          flex: 0 1 90px;
+        }
+      }
+    }
+
+    .webform-submission-boletines-form {
+      @media screen and(min-width:$broken) {
+        .webform-confirmation__message:lang(es) {
+          margin-bottom: 10px;
+        }
+
+        .webform-confirmation__back:lang(es) {
+          a {
+            font-size: szrem(12);
+          }
+        }
+      }
+
+      @media screen and(max-width:$tablet) {
+        display: flex;
+        padding: 20px 10px;
+
+        .form-item-email:lang(es){
+          width: initial;
+          max-width: none;
+          flex: 1 1 140px;
+        }
+
+        #edit-actions:lang(es){
+          width: initial;
+          max-width: none;
+          flex: 0 1 100px;
+        }
+
+        .webform-confirmation__back:lang(es) {
+          a {
+            font-size: szrem(11);
+          }
+        }
+      }
     }
   }
 
@@ -211,6 +302,37 @@
               text-align: center;
             }
           }
+        }
+      }
+    }
+
+    .webform-submission-boletines-form {
+      @media screen and(min-width:$broken) {
+        .webform-confirmation__message:lang(es) {
+          margin-bottom: 10px;
+        }
+
+        .webform-confirmation__back:lang(es) {
+          a {
+            font-size: szrem(12);
+          }
+        }
+      }
+
+      @media screen and(max-width:$tablet) {
+        display: flex;
+        padding: 20px 10px;
+
+        .form-item-email:lang(es) {
+          width: initial;
+          max-width: none;
+          flex: 1 1 144px;
+        }
+
+        #edit-actions:lang(es) {
+          width: initial;
+          max-width: none;
+          flex: 0 1 90px;
         }
       }
     }
@@ -234,12 +356,12 @@
 
   .webform-submission-newsletters-form,
   .webform-submission-boletines-form {
-    padding: 15px 23px 14px 23px;
+    padding: 20px 23px 18px 13px;
     border: 1px solid #797979;
 
     .form-item-markup {
       min-height: 20px;
-      margin: 10px auto;
+      margin: 0 auto 21px;
       font-size: szrem(16);
       font-style: normal;
       font-weight: bold;
@@ -248,6 +370,18 @@
       text-align: center;
       letter-spacing: 0.741176px;
       color: $cgrey5;
+
+      @media screen and(min-width: $broken) {
+        &:lang(es) {
+          margin: 0 auto 10px;
+        }
+      }
+
+      @media screen and(max-width: $tablet) {
+        margin: 0px auto 10px;
+        flex: 1 1 100%;
+        font-size: 14px;
+      }
     }
 
     .form-item-email {
@@ -260,6 +394,8 @@
       }
 
       input {
+        min-height: 40px;
+        max-height: 40px;
         margin: 0;
         padding: 8px 15px;
         background-color: $cwhite;
@@ -273,6 +409,16 @@
           letter-spacing: 0.741176px;
           color: $cblack0;
           opacity: 0.4;
+        }
+
+        @media screen and(max-width: $tablet) {
+          min-height: 40px;
+          max-height: 40px;
+          padding: 0;
+
+          &::placeholder {
+            font-size: szrem(14);
+          }
         }
       }
 
@@ -296,6 +442,13 @@
         padding: 0;
         font-size: szrem(14);
         background-color: $cgrey3;
+
+        @media screen and(max-width: $tablet) {
+          min-width: initial;
+          max-height: 40px;
+          min-height: 40px;
+          font-size: 12px;
+        }
       }
 
       @media screen and(max-width: $broken) {
@@ -309,7 +462,6 @@
 
     .webform-confirmation {
       min-height: 20px;
-      margin-bottom: 21px;
       font-size: szrem(16);
       font-style: normal;
       font-weight: bold;
@@ -345,10 +497,19 @@
   .wrapper-news-trending {
     .newsletter {
       padding: 9px;
+
+      @media screen and(min-width: $broken) {
+        min-height: 140px;
+      }
     }
 
     .webform-submission-newsletters-form  {
       padding: 20px 25px 19px 25px;
+
+      @media screen and(max-width: $tablet) {
+        padding: 10px;
+        display: flex;
+      }
     }
 
     .form-item-email {
@@ -358,11 +519,23 @@
         width: 100%;
         max-width: 90%;
       }
+
+      @media screen and(max-width: $tablet) {
+        width: initial;
+        max-width: none;
+        flex: 1 1 180px;
+      }
     }
 
     #edit-actions {
       @media screen and(max-width: $broken) {
         width: 10%;
+      }
+
+      @media screen and(max-width: $tablet) {
+        width: initial;
+        max-width: none;
+        flex: 0 1 70px;
       }
     }
   }

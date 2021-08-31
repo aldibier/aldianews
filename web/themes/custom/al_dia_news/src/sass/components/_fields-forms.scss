@@ -15,6 +15,10 @@ form {
 
   .form-item {
     margin: 0 0 25px;
+
+    @media screen and (max-width: $tablet) {
+      margin: 0 0 20px;
+    } 
   }
 
   button[name="close"] {
@@ -61,7 +65,7 @@ form {
 
   label:not(li > label),
   .form-item label:not(li > label) {
-    margin-bottom: 0px;
+    margin-bottom: 15px;
     font-style: normal;
     font-weight: 600;
     font-size: szrem(18);
@@ -247,6 +251,12 @@ form {
     line-height: 22px;
     letter-spacing: 0.025em;
     color: $cblack;
+
+    @media screen and (max-width: $tablet) {
+      font-size: 12px;
+      font-weight: normal;
+      line-height: 14px;
+    }    
   }
 
   .button-preload {
@@ -344,9 +354,14 @@ form {
       }
     }
   }
+
+  .password-confirm  {
+    min-height: 40px;
+  }
+
   #edit-pass-pass1 {
     margin-top: 5px;
-    min-height: 37px;
+    min-height: 40px;
     &:focus {
       outline: 0px;
     }
@@ -363,7 +378,8 @@ form {
   ////--captcha---/////
   #captcha {
     border: 0px;
-    margin: 10px 0 40px;
+    //margin: 10px 0 40px;
+    margin: 0 0 40px;
     width: 100%;
     summary,
     .details-description {
@@ -382,6 +398,15 @@ form {
   }
 
   @media (max-width: $tablet) {
+    
+    .js-form-item-pass-pass2 {
+      margin-top: 20px;
+    }
+
+    .password-confirm  {
+      min-height: 30px;
+    }
+
     button[name="close"] {
       width: 15px;
       height: 15px;
@@ -393,7 +418,7 @@ form {
     label:not(li > label),
     .form-item label:not(li > label) {
       max-height: 30px;
-      margin: 0 0 5px;
+      margin: 0 0 10px;
       padding: 0;
       font-size: 15px;
       line-height: 18px;
@@ -459,7 +484,7 @@ form {
       margin: 0 auto 0px;
     }
     .password-suggestions {
-      max-width: 260px;
+      max-width: 220px;//260px
       min-height: 135px;
       padding: 10px;
       top: 50px;
@@ -473,7 +498,7 @@ form {
       ul {
         margin-top: 10px;
         &::before {
-          top: -102px;
+          top: -95px;
         }
       }
     }
@@ -482,7 +507,8 @@ form {
     }
 
     #captcha {
-      margin: 20px 0;
+      //margin: 20px 0;
+      margin: 0 0 20px 0;
     }
 
     .g-recaptcha {
@@ -502,7 +528,7 @@ form {
     }
   }
 
-  @media (max-width: $mobile-mid) {
+  @media (max-width: $tablet) {
     .g-recaptcha {
       iframe {
         transform: scale(0.8);
