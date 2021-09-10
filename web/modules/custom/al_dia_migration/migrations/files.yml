@@ -27,6 +27,7 @@ process:
     -
       plugin: urlencode
   uri:
+    #plugin: default_value
     plugin: file_copy
     source:
       - '@source_full_path'

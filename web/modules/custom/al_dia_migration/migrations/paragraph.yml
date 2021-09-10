@@ -13,9 +13,84 @@ process:
     source: title
   field_image_related_covers: field_image/0/fid
   field_taxonomy_term_related_cove: 
-    plugin: default_value
-    default_value: "159"
+    -
+      plugin: skip_on_empty
+      method: process 
+      source: field_topics/0/tid
+    -
+      plugin: static_map      
+      map:
+        832: 7
+        2: 7
+        1: 193
+        8: 7
+        9: 7
+        15876: 189
+        3: 134
+        14889: 134
+        210: 134
+        511: 134
+        218: 197
+        475: 133
+        209: 131
+        212: 134
+        208: 133
+        10320: 134
+        15877: 160
+        512: 132
+        11: 200
+        15878: 195
+        6: 201
+        15: 185
+        13579: 137
+        18605: 137
+        4: 136
+        15522: 137
+        14518: 135
+        15518: 137
+        15520: 137
+        14520: 137
+        15519: 137
+        14519: 137
+        15879: 187
+        17391: 7
+        16777: 134
+        16526: 123
+        19030: 123
+        395: 206
+        1127: 206
+        813: 206
+        8066: 206
+        191: 206
+        211: 134
+        1501: 204
+        510: 201
+        12: 7
+        10: 7
+        14: 7
+        13: 186
+        1424: 134
+        207: 134
+        1459: 131
+        4151: 185
+        8006: 184
+        5: 137
+        215: 137
+        216: 134
+        10308: 134
+        213: 134
+        214: 185
+        10039: 7
+        3924: 7
+        6481: 204
+        7: 134
 
 destination:
   plugin: 'entity_reference_revisions:paragraph'
   default_bundle: features_more_covers
+
+migration_dependencies:
+  required: 
+    - taxonomy_tags
+    - files
+    - users

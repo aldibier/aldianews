@@ -83,7 +83,7 @@ class PrintEdition extends FieldableEntity
     return [
       'nid' => [
         'type' => 'integer',
-        'alias' => 'e',
+        //'alias' => 'e',
       ],
     ];
   }
