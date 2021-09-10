@@ -35,7 +35,6 @@ third_party_settings:
   field_group:
     group_image_or_video:
       children:
-        - field_internal_image
         - field_image
         - field_video
         - field_my_content_has_a_main_vide
@@ -146,14 +145,6 @@ content:
     region: content
   field_image:
     weight: 28
-    settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
-    third_party_settings: {  }
-    type: image_image
-    region: content
-  field_internal_image:
-    weight: 27
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
@@ -303,5 +294,11 @@ content:
       match_limit: 10
     region: content
     third_party_settings: {  }
+  url_redirects:
+    weight: 22
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
+  field_internal_image: true
   langcode: true
