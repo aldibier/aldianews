@@ -1,0 +1,7 @@
+display:
+  default:
+    display_options:
+      fields:
+        nothing:
+          alter:
+            text: "<div class=\"employer-container\" id=\"block-{{ uuid }}\">\r\n  <div class=\"employer-image\">\r\n     {{ field_image }}\r\n  </div>\r\n  <div class=\"employer-title-body\">\r\n     <div class=\"info-employer-container\">\r\n        <div class=\"title-employer\">{{ field_custom_title }}</div>\r\n        <div class=\"body-employer\">{{ body }}</div>\r\n     </div>\r\n    <a  class=\"button-apply\">CONTÁCTENOS</a>\r\n  </div>\r\n</div>"
