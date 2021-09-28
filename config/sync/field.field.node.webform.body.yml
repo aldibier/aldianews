@@ -7,6 +7,11 @@ dependencies:
     - node.type.webform
   module:
     - text
+    - text_summary_options
+third_party_settings:
+  text_summary_options:
+    show_summary: 0
+    summary_help: ''
 _core:
   default_config_hash: '-Qu0UyzQ0jD4TDYq8fOasS-D-vGd3gSwzi15PzRJUD4'
 id: node.webform.body
@@ -16,7 +21,7 @@ bundle: webform
 label: Body
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
