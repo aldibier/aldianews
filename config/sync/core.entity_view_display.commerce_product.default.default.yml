@@ -5,6 +5,7 @@ dependencies:
   config:
     - commerce_product.commerce_product_type.default
     - field.field.commerce_product.default.body
+    - field.field.commerce_product.default.field_highlighted
     - field.field.commerce_product.default.field_image
     - field.field.commerce_product.default.field_intro
     - field.field.commerce_product.default.field_new_payment_button
@@ -30,6 +31,16 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
+    region: content
+  field_highlighted:
+    weight: 9
+    label: inline
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
     region: content
   field_image:
     weight: 1
