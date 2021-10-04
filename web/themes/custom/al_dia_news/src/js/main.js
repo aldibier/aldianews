@@ -6,7 +6,7 @@ const initMain = ($, Drupal) => {
 	var state_select = document.querySelector('.webform-submission-register-form #edit-address-state-province');
 	var state_label = document.querySelector('.webform-submission-register-form label[for="edit-address-state-province"]');
 
-	if(!!city_input && !!city_label && !!state_select && !!state_label){
+	if (!!city_input && !!city_label && !!state_select && !!state_label) {
 		city_input.setAttribute("required", "required");
 		city_label.setAttribute("class", "form-required");
 		state_select.setAttribute("required", "required");
@@ -18,25 +18,25 @@ const initMain = ($, Drupal) => {
 	var elemento = document.getElementById('block-webform-2');
 
 	container.onscroll = function () {
-	var heightBody = container.scrollHeight - 499;
-	var scroll = window.scrollY + window.innerHeight;
+		var heightBody = container.scrollHeight - 499;
+		var scroll = window.scrollY + window.innerHeight;
 
-	/* if(scroll >= heightBody) {
-		elemento.classList.add('fix');
-	} else { 
-		if(elemento.classList.contains('fix')) {
-			elemento.classList.remove('fix');
-		}
-	} */
+		/* if(scroll >= heightBody) {
+			elemento.classList.add('fix');
+		} else { 
+			if(elemento.classList.contains('fix')) {
+				elemento.classList.remove('fix');
+			}
+		} */
 	}
-	
-		/// close 
-	if(!!document.querySelector('.newsletter .close-modal')){
+
+	/// close 
+	if (!!document.querySelector('.newsletter .close-modal')) {
 		const newsletter = document.querySelector('.newsletter');
 		const closeNewsletter = document.querySelector('.newsletter .close-modal');
-		closeNewsletter.addEventListener('click',()=>{
+		closeNewsletter.addEventListener('click', () => {
 			newsletter.classList.add('dis-none')
-		},{once: true})
+		}, { once: true })
 	}
 
 	///// js para caption en imagenes news
@@ -108,10 +108,10 @@ const initMain = ($, Drupal) => {
 	//add dots date comments
 	if (!!document.querySelector(".comment--type-comments-content")) {
 		const commentsDate = document.querySelectorAll(".comment--type-comments-content .field--name-comment-post-date");
-		
+
 		commentsDate.forEach(date => {
 			const dateTxt = date.innerText;
-			date.innerText = `${dateTxt.substring(0,(dateTxt.length - 3))} ${dateTxt.charAt(dateTxt.length - 2)}.${dateTxt.charAt(dateTxt.length - 1)}`;
+			date.innerText = `${dateTxt.substring(0, (dateTxt.length - 3))} ${dateTxt.charAt(dateTxt.length - 2)}.${dateTxt.charAt(dateTxt.length - 1)}`;
 		});
 	}
 
@@ -185,13 +185,13 @@ const initMain = ($, Drupal) => {
 	if (!!document.querySelector(".path-videos")) {
 
 		const resetIframe = (element) => {
-			if(!!element){
+			if (!!element) {
 				let iframe = element.querySelector('iframe');
 
 				if (iframe.src.indexOf('?') > 0) {
 					const srcEdit = iframe.src.split('?');
 					iframe.src = `${srcEdit[0]}?start=0&rel=0`;
-				}else {
+				} else {
 					iframe.src = iframe.src;
 				}
 
@@ -201,13 +201,13 @@ const initMain = ($, Drupal) => {
 		};
 
 		document.body.addEventListener("click", event => {
-			if(event.target.classList.contains('card-one-column')){
+			if (event.target.classList.contains('card-one-column')) {
 				let container = event.target.parentNode;
 				let currentElement = event.target;
 				let node = container.firstElementChild;
 
 				while (node) {
-					if(node.classList.contains('.banner-scroll')) continue;
+					if (node.classList.contains('.banner-scroll')) continue;
 					if (event.target.closest(".modal-video")) return;
 
 					if (
@@ -215,8 +215,8 @@ const initMain = ($, Drupal) => {
 						node.nodeType === Node.ELEMENT_NODE
 					) {
 						resetIframe(node);
-						if(node.querySelector(".modal-video")) node.querySelector(".modal-video").classList.remove("show");
-					}else {
+						if (node.querySelector(".modal-video")) node.querySelector(".modal-video").classList.remove("show");
+					} else {
 						resetIframe(node);
 						node.querySelector(".modal-video").classList.toggle("show");
 					}
@@ -255,7 +255,7 @@ const initMain = ($, Drupal) => {
 			if (iframe.src.indexOf('?') > 0) {
 				const srcEdit = iframe.src.split('?');
 				iframe.src = `${srcEdit[0]}?start=0&rel=0`;
-			}else {
+			} else {
 				iframe.src = iframe.src;
 			}
 
@@ -266,36 +266,36 @@ const initMain = ($, Drupal) => {
 
 	const removeActiveElements = () => {
 		const list = document.querySelectorAll('.block-views-blockcarousel-videos-landing-block-2 .views-row');
-		
+
 		list.forEach(item => {
-			if(item.classList.contains('active')) item.classList.remove('active');
+			if (item.classList.contains('active')) item.classList.remove('active');
 		})
 	}
 
-	const toggleVideo = (nid,list) =>{
+	const toggleVideo = (nid, list) => {
 		list.forEach(item => {
 			let videoNid = item.dataset.nid;
-			if(nid != videoNid) item.classList.remove('active');
-			if(nid == videoNid) item.classList.add('active');
+			if (nid != videoNid) item.classList.remove('active');
+			if (nid == videoNid) item.classList.add('active');
 		})
 	}
 
 	itemsCarousel.forEach(item => {
-		item.addEventListener('click',()=>{
+		item.addEventListener('click', () => {
 			let nid = item.dataset.nid;
 			let hasActive = item.parentElement.querySelector('.active');
 			let activeNid = !!hasActive ? hasActive.dataset.nid : false;
 
-			if(nid === activeNid) return;
+			if (nid === activeNid) return;
 
 			resetAlliframes(allIframes);
 			removeActiveElements();
 
 			item.classList.add('active');
-			toggleVideo(nid,itemsNews);
+			toggleVideo(nid, itemsNews);
 		})
 	})
-	
+
 	//// js para controlar pop-up advertising
 	if (!!document.querySelector(".path-advertising")) {
 		const allButtonsApply = document.querySelectorAll(".button-apply");
@@ -456,25 +456,25 @@ const initMain = ($, Drupal) => {
 	);
 	if (adversiting != null && first_element != null) {
 		if (first_element.innerText == "one") {
-			if(!!adversiting.parentElement.parentElement) adversiting.parentElement.parentElement.classList.add("maxim");
+			if (!!adversiting.parentElement.parentElement) adversiting.parentElement.parentElement.classList.add("maxim");
 		} else {
 			adversiting.classList.add("dis-none");
-		} 
-		
+		}
+
 	}
 
 	//js para eliminar publicidad two column events
 	setTimeout(() => {
-	var adversiting_two_col = document.querySelector(
-	".view-id-block_guest .ads-two-col .block-gamw"
-	);
-	var position_two_col = document.querySelector(
-		".view-id-block_guest .mode-two"
-	);
-	if (!!adversiting_two_col && !!position_two_col) {
-		position_two_col.appendChild(adversiting_two_col);
-		adversiting_two_col.classList.add("four-content-event-advertising", "ads");
-	}
+		var adversiting_two_col = document.querySelector(
+			".view-id-block_guest .ads-two-col .block-gamw"
+		);
+		var position_two_col = document.querySelector(
+			".view-id-block_guest .mode-two"
+		);
+		if (!!adversiting_two_col && !!position_two_col) {
+			position_two_col.appendChild(adversiting_two_col);
+			adversiting_two_col.classList.add("four-content-event-advertising", "ads");
+		}
 	}, 2500);
 
 	//js para comment anonymous
@@ -494,7 +494,7 @@ const initMain = ($, Drupal) => {
 		message.appendChild(allTextMessage[1])
 		message.appendChild(register);
 		message.appendChild(allTextMessage[2])
-		
+
 		container.appendChild(allTextMessage[0]);
 		container.appendChild(message);
 
@@ -533,16 +533,16 @@ const initMain = ($, Drupal) => {
 		})
 	} */
 
-	if(!!document.querySelector(".user-logged-in #block-menuuseritem")){
-		document.querySelector(".user-logged-in #block-menuuseritem").addEventListener('click',function(){
-			if(this.classList.contains('open')){
+	if (!!document.querySelector(".user-logged-in #block-menuuseritem")) {
+		document.querySelector(".user-logged-in #block-menuuseritem").addEventListener('click', function () {
+			if (this.classList.contains('open')) {
 				this.classList.remove('open');
 				document.querySelector('.user-logged-in #block-menuuseritem .item-list').classList.remove('open');
-			}else {
+			} else {
 				document.querySelector('.user-logged-in #block-menuuseritem .item-list').classList.add('open');
 				this.classList.add('open');
 			}
-		})		
+		})
 	}
 
 	///// js para modos de visualizacion de slider event
@@ -623,43 +623,43 @@ const initMain = ($, Drupal) => {
 			buttonCategories.classList.toggle('up');
 		})
 	}
-	
+
 	// validador watchlive
 	var watch_live_iframe = document.querySelector(".watch-live-video iframe");
 	var watch_live_content = document.querySelector(".watch-live");
-	if(watch_live_iframe == null && !!watch_live_content){watch_live_content.classList.add("watch-dis-none");}
+	if (watch_live_iframe == null && !!watch_live_content) { watch_live_content.classList.add("watch-dis-none"); }
 
 	// js para pagina premium, boton e video y comentarios
 	var premium = document.querySelector(".node--view-mode-premium");
-	if(!!premium){premium.closest("body").classList.add("page-premium");}
+	if (!!premium) { premium.closest("body").classList.add("page-premium"); }
 
 	var video_premium = document.querySelector(".block-field-blocknodenewsfield-video.premium .close-modal");
 	var content_premium = document.querySelector(".block-field-blocknodenewsfield-video.premium .content");
-	if(!!video_premium && !!content_premium){content_premium.prepend(video_premium);}
+	if (!!video_premium && !!content_premium) { content_premium.prepend(video_premium); }
 
 	// Js password strength color
 
 	var inputPassword = document.querySelector(".form-item-pass-pass1 input");
 
 	if (inputPassword) {
-	inputPassword.addEventListener("keyup", function() {
-		var LineKeyStrength = document.querySelector(
-		".password-strength__indicator"
-		);
-		var TextKeyStrength = document.querySelector(".password-strength__text");
+		inputPassword.addEventListener("keyup", function () {
+			var LineKeyStrength = document.querySelector(
+				".password-strength__indicator"
+			);
+			var TextKeyStrength = document.querySelector(".password-strength__text");
 
-		var colorLineKeyStrength = window
-		.getComputedStyle(LineKeyStrength)
-		.getPropertyValue("background-color");
-		TextKeyStrength.style.color = colorLineKeyStrength;
-	});
+			var colorLineKeyStrength = window
+				.getComputedStyle(LineKeyStrength)
+				.getPropertyValue("background-color");
+			TextKeyStrength.style.color = colorLineKeyStrength;
+		});
 	}
 
 	//// js para sponsorchip budget
 	var budget = document.querySelector(".webform-submission-sponsorship-upcoming-event-form .form-item-budget");
 	var container_country = document.querySelector(".webform-submission-sponsorship-upcoming-event-form #edit-address--2--wrapper .fieldset-wrapper");
 
-	if(!!budget && !!container_country){
+	if (!!budget && !!container_country) {
 		container_country.appendChild(budget);
 	}
 
@@ -667,15 +667,29 @@ const initMain = ($, Drupal) => {
 	var modal_welcome = document.querySelector(".pop-up-wellcome-aldia");
 	var background_body = document.querySelector("body");
 
-	if(!!modal_welcome && !!background_body){
+	if (!!modal_welcome && !!background_body) {
 		let btn = modal_welcome.querySelector('.aldia-home-close');
 		let btnPreload = modal_welcome.querySelector('.button-preload');
 
-		if(!!btn) btn.addEventListener('click',()=>location.reload());
-		if(!!btnPreload) btnPreload.addEventListener('click',()=>location.reload());
+		if (!!btn) btn.addEventListener('click', () => location.reload());
+		if (!!btnPreload) btnPreload.addEventListener('click', () => location.reload());
 
 		background_body.classList.add("background-modal");
 	}
+
+	// traducion filtro videos
+	var filterVideos = document.querySelector('#views-exposed-form-more-videos-in-landing-block-1');
+
+	if (!!filterVideos) {
+		var lang = document.documentElement.lang;
+		var labelAny = filterVideos.querySelector('#edit-tid-all + label');
+		
+		if(lang == 'es') {
+			labelAny.textContent = 'Cualquiera';
+		}
+
+	}
+
 };
 
 export default initMain;
