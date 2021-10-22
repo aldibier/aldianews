@@ -313,8 +313,8 @@
   iframe,
   video,
   .video-embed-field-responsive-video {
-    width: 840px;
-    height: 480px;
+    width: 100%;
+    height: 100%;
   }
 
   iframe {
@@ -625,8 +625,8 @@
     iframe,
     video,
     .video-embed-field-responsive-video {
-      width: 740px;
-      height: 380px;
+      //width: 740px;
+      //height: 380px;
     }
 
     .container-video-landing {
@@ -730,8 +730,8 @@
     iframe,
     video,
     .video-embed-field-responsive-video {
-      width: 290px;
-      height: 165px;
+      min-width: 290px;
+      min-height: 165px;
     }
   }
 
