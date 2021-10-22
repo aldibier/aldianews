@@ -214,16 +214,6 @@
       .views-row {
       }
     }
-
-    .card-one-column {
-      .card-name-category,
-      .card-title {
-        margin-bottom: 0px;
-      }
-      .card-image {
-        margin-bottom: 5px;
-      }
-    }
   }
 
   @media (max-width: $broken) {
@@ -237,6 +227,16 @@
   @media (max-width: $tablet) {
     .watch-live-button {
       width: calc(100% - 30px);
+    }
+
+		.card-one-column {
+      .card-name-category,
+      .card-title {
+        margin-bottom: 0px;
+      }
+      .card-image {
+        margin-bottom: 5px;
+      }
     }
   }
 }
