@@ -214,16 +214,6 @@
       .views-row {
       }
     }
-
-    .card-one-column {
-      .card-name-category,
-      .card-title {
-        margin-bottom: 0px;
-      }
-      .card-image {
-        margin-bottom: 5px;
-      }
-    }
   }
 
   @media (max-width: $broken) {
@@ -237,6 +227,16 @@
   @media (max-width: $tablet) {
     .watch-live-button {
       width: calc(100% - 30px);
+    }
+
+		.card-one-column {
+      .card-name-category,
+      .card-title {
+        margin-bottom: 0px;
+      }
+      .card-image {
+        margin-bottom: 5px;
+      }
     }
   }
 }
@@ -313,8 +313,8 @@
   iframe,
   video,
   .video-embed-field-responsive-video {
-    width: 840px;
-    height: 480px;
+    width: 100%;
+    height: 100%;
   }
 
   iframe {
@@ -625,12 +625,12 @@
     iframe,
     video,
     .video-embed-field-responsive-video {
-      width: 740px;
-      height: 380px;
+      //width: 740px;
+      //height: 380px;
     }
 
     .container-video-landing {
-      min-height: 250px;
+      //min-height: 250px;
       padding-top: 0px;
       .aldia-logo-in-text {
         max-width: 37px;
@@ -730,8 +730,8 @@
     iframe,
     video,
     .video-embed-field-responsive-video {
-      width: 290px;
-      height: 165px;
+      min-width: 290px;
+      min-height: 165px;
     }
   }
 

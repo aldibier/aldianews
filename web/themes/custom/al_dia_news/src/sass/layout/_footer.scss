@@ -3,24 +3,14 @@
   border: none;
   position: relative;
 
-  &:after {
-    width: 55%;
-    position: absolute;
-    content: "";
-    display: block;
-    top: 68px;
-    height: 5px;
-    background: $corange;
-    right: 0;
+	.main-news-body {
+		margin: 0;
+	}
 
-    @media (max-width: 1004px) {
-      width: 47%;
-    }
-
-    @media (max-width: $broken3) {
-      display: none;
-    }
-  }
+	.main-news-body.field--type-text-with-summary{
+		position: initial;
+		top: inherit;
+	}
 
   .site-footer__bottom {
     border: none;
@@ -32,22 +22,48 @@
   }
 
   #block-footerlogo {
-    position: absolute;
-    top: -11px;
-    right: 0;
-    width: calc(100% - 395px);
-    z-index: 1;
+		position: relative;
+		grid-area: logo-title;
+    // position: absolute;
+    // top: -11px;
+    // right: 0;
+    //width: calc(100% - 395px);
+    //z-index: 1;
+
+		&:after {
+			width: 100vw;
+			position: absolute;
+			z-index: 0;
+			content: "";
+			display: block;
+			top: 0;
+			left: 0;
+			height: 5px;
+			background: $corange;
+			right: 0;
+	
+			@media (max-width: 1004px) {
+				width: 47%;
+			}
+	
+			@media (max-width: $broken3) {
+				display: none;
+			}
+		}
 
     .field--name-field-image-block {
-      max-width: 265px;
-      margin: 0px 15px 0 0;
+      //max-width: 265px;
+      //margin: 0px 15px 0 0;
+
       @media (min-width: $desktop) {
-        position: relative;
-        top: 20px;
+        //position: relative;
+        //top: 20px;
       }
+
       img {
-        margin: -11px 0px;
+				margin-top: -3px;
       }
+
       @media (max-width: $tablet) {
         img {
           margin: -12px 0px;
@@ -56,14 +72,16 @@
     }
 
     .content {
+			position: relative;
+			z-index: 1;
       display: flex;
     }
 
     .field--name-body {
-      display: flex;
+      //display: flex;
 
       p {
-        margin: 60px 0 auto;
+        margin: 10px 0 0 0;
         font-style: normal;
         font-weight: normal;
         font-size: 18px;
@@ -82,10 +100,12 @@
   }
 
   .region-footer-fifth {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0px 73px 62px;
-
+    display: grid;
+		grid-template-columns: 343px repeat(3, 1fr);
+    grid-template-areas: 'image logo-title logo-title logo-title'
+      'image location footer footer'
+      'suscribe networks footer footer';
+    //padding: 0px 73px 62px;
 
     @media (min-width: $tablet) and (max-width: 1320px) {
       padding: 0 15px 62px;
@@ -95,31 +115,29 @@
 
   .block-fixed-block-contentlast-print-edition,
   #block-views-block-current-edition-header-and-footer-block-1-2 {
-    left: 0;
-    max-width: 300px;
-    position: relative;
-    margin-top: 12px;
-    width: 280px;
-    max-height: 305px;
-    overflow: hidden;
-    margin-bottom: 30px;
+		grid-area: image;
+    margin-right: 60px;
+    // left: 0;
+    // max-width: 300px;
+    // position: relative;
+    // margin-top: 12px;
+    // width: 280px;
+    // max-height: 305px;
+    // overflow: hidden;
+    // margin-bottom: 30px;
     a {
-      // position: absolute;
-      // display: block;
-      // top: 6px;
-      // width: 100%;
-      // height: 305px;
       font-size: 0;
       border: none;
     }
   }
 
   #block-footer {
-    position: absolute;
-    right: 50px;
-    width: calc(100% - 604px);
-    margin: 112px auto 0 0;
-    max-width: 540px;
+		grid-area: footer;
+    //position: absolute;
+    //right: 50px;
+    //width: calc(100% - 604px);
+    //margin: 112px auto 0 0;
+    //max-width: 540px;
 
     @media (min-width: $tablet) and (max-width: 1320px) {
       margin: 112px 0 0 0;
@@ -132,7 +150,8 @@
       width: 100%;
       display: flex;
       flex-wrap: wrap;
-      margin: 20px 0 0 -30px;
+      margin: 0;
+			//margin: 20px 0 0 -30px;
 
       @media (min-width: $tablet) and (max-width: 1320px) {
         margin: 20px 0 0 0;
@@ -142,10 +161,11 @@
         display: flex;
         width: 50%;
 
-        > div {
+        >div {
           &:lang(es) {
             order: 2;
           }
+
           &:lang(en) {
             order: 1;
           }
@@ -168,6 +188,7 @@
         margin: -45px 0;
         width: 82.89px;
         height: 32px;
+
         @media (max-width: $tablet) {
           &:lang(en) {
             margin: -45px -18px -45px 0;
@@ -185,7 +206,9 @@
 
       a {
         border: none;
-        margin: 13px 0 17px;
+				padding: 0;
+				margin: 0;
+				//margin: 13px 0 17px;
         font-weight: 300;
         padding: 0 5px 0 0;
         order: 1;
@@ -203,12 +226,13 @@
   }
 
   .block-fixed-block-contentlocation {
-    width: calc(100% - 395px);
-    margin: 150px 0 0 auto;
-    max-width: 100%;
-    position: absolute;
-    right: 0;
-    letter-spacing: 0.025em;
+    grid-area: location;
+    //width: calc(100% - 395px);
+    //margin: 150px 0 0 auto;
+    //max-width: 100%;
+    //position: absolute;
+    //right: 0;
+    //letter-spacing: 0.025em;
     p {
       margin: 0;
       font-style: normal;
@@ -229,7 +253,8 @@
     .field--type-image {
       width: 18.75px;
       height: 25px;
-      margin: 5px 30px auto 15px;
+      margin: 0;
+			//margin: 5px 30px auto 15px;
 
       img {
         height: 25px;
@@ -241,12 +266,13 @@
   }
 
   #block-socialmedia-2 {
-    position: absolute;
-    bottom: 0;
-    left: 402px;
-    width: 100%;
-    max-width: 290px;
-    z-index: 4;
+		grid-area: networks;
+    //position: absolute;
+    //bottom: 0;
+    //left: 402px;
+    //width: 100%;
+    //max-width: 290px;
+    //z-index: 4;
 
     a {
       top: 0;
@@ -280,7 +306,7 @@
       transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
       color: #292929;
 
-      > div {
+      >div {
         transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
         position: absolute;
       }
@@ -298,7 +324,7 @@
         transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
 
         a,
-        > li {
+        >li {
           transform: scale(1.2);
           transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
         }
@@ -317,16 +343,18 @@
   }
 
   #block-subscribeblockfooter {
-    position: absolute;
-    bottom: 20px;
-    width: 280px;
+		grid-area: suscribe;
+		margin-right: 60px;
+    //position: absolute;
+    //bottom: 20px;
+    //width: 280px;
 
     a {
       width: 165px;
       height: 40px;
       display: block;
       border: none;
-      margin: -20px auto;
+      margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -336,6 +364,7 @@
       font-family: $PrNovacond-Sbold;
       background: $corange;
       color: #ffff;
+
       &:hover {
         transform: scale(1.2);
       }
@@ -351,6 +380,7 @@
     line-height: 17px;
     font-family: $PrNova-thin;
     letter-spacing: 0.025em;
+
     p,
     div {
       margin: auto 0;
@@ -366,7 +396,7 @@
     flex-wrap: wrap;
     max-width: 50%;
     right: 31px;
-    
+
     @media (min-width: $tablet) and (max-width: 1320px) {
       right: 0;
     }
@@ -431,6 +461,7 @@
   }
 
   @media (max-width: $broken) {
+
     .copyr,
     .powerd {
       right: 17px;
@@ -448,6 +479,7 @@
   }
 
   @media (max-width: $broken3) {
+
     .copyr,
     .powerd {
       right: auto;
@@ -621,6 +653,7 @@
           line-height: 13px;
           letter-spacing: 0.05em;
           margin: 0 -15px 0;
+
           @media (max-width: 350px) {
             font-size: 10px;
             letter-spacing: 0;
@@ -684,7 +717,7 @@
             margin: 0;
           }
 
-          > div {
+          >div {
             margin: -9px -8px 0 -3px;
 
             &:lang(en) {
@@ -760,6 +793,7 @@
   .site-footer #block-subscribeblockfooter a {
     bottom: 6px;
   }
+
   html[lang="es"] .site-footer #block-footerlogo .field--name-body p {
     letter-spacing: -0.2px;
   }
