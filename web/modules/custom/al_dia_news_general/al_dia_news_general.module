@@ -322,7 +322,7 @@ function closeModalForm() {
 
 function al_dia_news_form_views_exposed_form_alter(&$form, &$form_state) {
   if($form["#id"] == 'views-exposed-form-more-videos-in-landing-block-1') {
-    $form['tid']['#options']['All'] = 'Any';
+    $form['tid']['#options']['All'] = 'ALL';
   };
   if($form["#id"] == 'views-exposed-form-search-results-al-dia-solr-page-1') {
     $form['field_category']['#options']['All'] = 'Select';
@@ -349,6 +349,7 @@ function al_dia_news_general_views_query_alter(ViewExecutable $view, QueryPlugin
   /* ksm($view->id()); */
   switch ($view->id()) {
     case 'last_news':
+      $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
       if ($view->getDisplay()->display['id'] == 'block_1') {
         $current_path = \Drupal::service('path.current')->getPath();
         $path_args = explode('/', $current_path);
@@ -363,6 +364,7 @@ function al_dia_news_general_views_query_alter(ViewExecutable $view, QueryPlugin
           $query1->condition("ttp.parent_target_id", $path_args[3], "=");
           $query1->condition("nfd.type", "news", "=");
           $query1->condition("nfd.status", 1, "=");
+          $query1->condition("nfd.langcode", $language, "=");
           $query1->distinct();
           $query1->orderBy("nfd.created", "DESC");
           $query1->range(0, 5);
@@ -393,6 +395,7 @@ function al_dia_news_general_views_query_alter(ViewExecutable $view, QueryPlugin
           $query1->condition("ttp.parent_target_id", $path_args[3], "=");
           $query1->condition("nfd.type", "news", "=");
           $query1->condition("nfd.status", 1, "=");
+          $query1->condition("nfd.langcode", $language, "=");
           $query1->distinct();
           $query1->orderBy("nfd.created", "DESC");
           $query1->range(0, 5);
@@ -423,6 +426,7 @@ function al_dia_news_general_views_query_alter(ViewExecutable $view, QueryPlugin
           $query1->condition("ttp.parent_target_id", $path_args[3], "=");
           $query1->condition("nfd.type", "news", "=");
           $query1->condition("nfd.status", 1, "=");
+          $query1->condition("nfd.langcode", $language, "=");
           $query1->distinct();
           $query1->orderBy("nfd.created", "DESC");
           $query1->range(0, 5);
@@ -452,6 +456,7 @@ function al_dia_news_general_views_query_alter(ViewExecutable $view, QueryPlugin
           $query1->condition("ttp.parent_target_id", $path_args[3], "=");
           $query1->condition("nfd.type", "news", "=");
           $query1->condition("nfd.status", 1, "=");
+          $query1->condition("nfd.langcode", $language, "=");
           $query1->range(0, 5);
           $query1->distinct();
           $query1->orderBy("nfd.created", "DESC");
@@ -470,6 +475,7 @@ function al_dia_news_general_views_query_alter(ViewExecutable $view, QueryPlugin
               $query1->condition("tfd.tid", $hijo->entity_id, "=");
               $query1->condition("nfd.type", "news", "=");
               $query1->condition("nfd.status", 1, "=");
+              $query1->condition("nfd.langcode", $language, "=");
               $query1->condition("nfd.nid", $nids, "NOT IN");
               $query1->distinct();
               $query1->orderBy("nfd.created", "DESC");
