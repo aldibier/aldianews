@@ -3,14 +3,14 @@
   border: none;
   position: relative;
 
-	.main-news-body {
-		margin: 0;
-	}
+  .main-news-body {
+    margin: 0;
+  }
 
-	.main-news-body.field--type-text-with-summary{
-		position: initial;
-		top: inherit;
-	}
+  .main-news-body.field--type-text-with-summary {
+    position: initial;
+    top: inherit;
+  }
 
   .site-footer__bottom {
     border: none;
@@ -22,63 +22,45 @@
   }
 
   #block-footerlogo {
-		position: relative;
-		grid-area: logo-title;
-    // position: absolute;
-    // top: -11px;
-    // right: 0;
-    //width: calc(100% - 395px);
-    //z-index: 1;
+    position: relative;
+    grid-area: logo-title;
+    margin-bottom: 59px;
 
-		&:after {
-			width: 100vw;
-			position: absolute;
-			z-index: 0;
-			content: "";
-			display: block;
-			top: 0;
-			left: 0;
-			height: 5px;
-			background: $corange;
-			right: 0;
-	
-			@media (max-width: 1004px) {
-				width: 47%;
-			}
-	
-			@media (max-width: $broken3) {
-				display: none;
-			}
-		}
+    &:after {
+      width: 100vw;
+      position: absolute;
+      z-index: 0;
+      content: "";
+      display: block;
+      top: 0;
+      left: 0;
+      height: 5px;
+      background: $corange;
+      right: 0;
 
-    .field--name-field-image-block {
-      //max-width: 265px;
-      //margin: 0px 15px 0 0;
-
-      @media (min-width: $desktop) {
-        //position: relative;
-        //top: 20px;
+      @media (max-width: 1004px) {
+        width: 47%;
       }
 
-      img {
-				margin-top: -3px;
-      }
-
-      @media (max-width: $tablet) {
-        img {
-          margin: -12px 0px;
-        }
+      @media (max-width: $broken3) {
+        display: none;
       }
     }
 
     .content {
-			position: relative;
-			z-index: 1;
+      position: relative;
+      z-index: 1;
       display: flex;
     }
 
+    .field--name-field-image-block {
+      margin-right: 30px;
+      margin-top: -3px;
+    }
+
     .field--name-body {
-      //display: flex;
+      display: flex;
+      align-items: center;
 
       p {
         margin: 10px 0 0 0;
@@ -101,7 +83,8 @@
 
   .region-footer-fifth {
     display: grid;
-		grid-template-columns: 343px repeat(3, 1fr);
+    grid-template-columns: 343px repeat(3, 1fr);
+    grid-template-rows: auto 1fr auto;
     grid-template-areas: 'image logo-title logo-title logo-title'
       'image location footer footer'
       'suscribe networks footer footer';
@@ -115,16 +98,10 @@
 
   .block-fixed-block-contentlast-print-edition,
   #block-views-block-current-edition-header-and-footer-block-1-2 {
-		grid-area: image;
+    grid-area: image;
     margin-right: 60px;
-    // left: 0;
-    // max-width: 300px;
-    // position: relative;
-    // margin-top: 12px;
-    // width: 280px;
-    // max-height: 305px;
-    // overflow: hidden;
-    // margin-bottom: 30px;
+    margin-bottom: 30px;
+
     a {
       font-size: 0;
       border: none;
@@ -132,12 +109,7 @@
   }
 
   #block-footer {
-		grid-area: footer;
-    //position: absolute;
-    //right: 50px;
-    //width: calc(100% - 604px);
-    //margin: 112px auto 0 0;
-    //max-width: 540px;
+    grid-area: footer;
 
     @media (min-width: $tablet) and (max-width: 1320px) {
       margin: 112px 0 0 0;
@@ -146,20 +118,37 @@
       right: 0;
     }
 
+		.content {
+			>.copyr,
+			>.powerd {
+				display: none;
+			}
+		}
+
     .menu {
       width: 100%;
       display: flex;
       flex-wrap: wrap;
       margin: 0;
-			//margin: 20px 0 0 -30px;
 
-      @media (min-width: $tablet) and (max-width: 1320px) {
-        margin: 20px 0 0 0;
+      &.menu-level-0>li {
+        flex: 1 1 50%;
+        list-style: none;
+
+        >span {
+          display: none;
+        }
+
       }
 
-      li {
+      &.menu-level-0>li li {
         display: flex;
-        width: 50%;
+        flex: 1 1 100%;
+        margin-bottom: 35px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
 
         >div {
           &:lang(es) {
@@ -168,17 +157,6 @@
 
           &:lang(en) {
             order: 1;
-          }
-        }
-
-        &:nth-child(7),
-        &:nth-child(8) {
-          width: 100%;
-
-          @media (min-width: $tablet) {
-            a {
-              max-width: 50%;
-            }
           }
         }
       }
@@ -206,9 +184,9 @@
 
       a {
         border: none;
-				padding: 0;
-				margin: 0;
-				//margin: 13px 0 17px;
+        padding: 0;
+        margin: 0;
+        //margin: 13px 0 17px;
         font-weight: 300;
         padding: 0 5px 0 0;
         order: 1;
@@ -227,6 +205,7 @@
 
   .block-fixed-block-contentlocation {
     grid-area: location;
+
     //width: calc(100% - 395px);
     //margin: 150px 0 0 auto;
     //max-width: 100%;
@@ -248,13 +227,13 @@
 
     .content {
       display: flex;
+      align-items: center;
     }
 
     .field--type-image {
       width: 18.75px;
       height: 25px;
-      margin: 0;
-			//margin: 5px 30px auto 15px;
+      margin: 0 23px 0 0;
 
       img {
         height: 25px;
@@ -266,13 +245,8 @@
   }
 
   #block-socialmedia-2 {
-		grid-area: networks;
-    //position: absolute;
-    //bottom: 0;
-    //left: 402px;
-    //width: 100%;
-    //max-width: 290px;
-    //z-index: 4;
+    grid-area: networks;
+    align-self: flex-end;
 
     a {
       top: 0;
@@ -343,8 +317,8 @@
   }
 
   #block-subscribeblockfooter {
-		grid-area: suscribe;
-		margin-right: 60px;
+    grid-area: suscribe;
+    margin-right: 60px;
     //position: absolute;
     //bottom: 20px;
     //width: 280px;
@@ -390,13 +364,10 @@
 
   .copyr {
     width: 100%;
-    position: absolute;
-    bottom: 80px;
+		min-height: 24px;
     display: flex;
     flex-wrap: wrap;
-    max-width: 50%;
-    right: 31px;
-
+		
     @media (min-width: $tablet) and (max-width: 1320px) {
       right: 0;
     }
@@ -432,11 +403,8 @@
   .powerd {
     list-style: none;
     display: flex;
-    position: absolute;
-    bottom: 21px;
-    right: 31px;
-    width: 50%;
-
+		align-items: center;
+  
     @media (min-width: $tablet) and (max-width: 1320px) {
       right: 0;
     }
@@ -446,6 +414,10 @@
         bottom: 45px;
       }
     }
+
+		p {
+			margin: 0;
+		}
 
     &::after {
       content: "";

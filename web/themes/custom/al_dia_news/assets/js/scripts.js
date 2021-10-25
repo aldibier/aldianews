@@ -1829,6 +1829,14 @@ var initMain = function initMain($, Drupal) {
       labelAny.textContent = 'Cualquiera';
     }
   }
+
+  var menuFooterSecondColumn = document.querySelector("#block-footer > div.content > ul > li:nth-child(2) > ul");
+
+  if (!!menuFooterSecondColumn) {
+    var copyr = document.querySelector('.copyr').cloneNode(true);
+    var powerd = document.querySelector('.powerd').cloneNode(true);
+    menuFooterSecondColumn.append(copyr, powerd);
+  }
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (initMain);
