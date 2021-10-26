@@ -45,13 +45,14 @@
     margin: 0 auto;
     border: 2px solid #797979;
     display: flex;
-    justify-content: space-between;
-    padding: 30px 40px;
-    flex-wrap: wrap;
+    //justify-content: space-between;
+    padding: 30px 38px;
+    flex-wrap: nowrap;
 
     .form-item-markup {
-      margin: 0 0 21px;
-      font-family: $PrNovacond-Sbold;
+			flex: 0 0 315px;
+			margin: 0 20px 0 0;
+			font-family: $PrNovacond-Sbold;
       font-size: $px20;
       line-height: 25px;
       letter-spacing: 0.741176px;
@@ -59,13 +60,22 @@
       height: 39px;
       display: flex;
       align-items: center;
-      max-width: 315px;
-      width: 28%;
+
+			@media (max-width: $desktop) {
+				flex: 0 0 auto;
+			}
+
+			@media (min-width: $tablet) {
+				&:lang(es){
+					flex: 0 0 275px;
+				}
+			}
+
     }
     .form-item-email {
-      margin: 0px;
-      max-width: 510px;
-      width: 53%;
+      flex: 1 1 auto;
+			margin: 0 20px 0 0;
+
       label {
         display: none;
       }
@@ -79,9 +89,8 @@
       }
     }
     .form-actions {
-      max-width: 180px;
-      width: 19%;
-      min-width: 180px;
+      flex: 0 1 180px;
+			margin: 0;
     }
     .form-submit {
       min-height: 39.6px;
@@ -126,12 +135,19 @@
 
     @media (max-width: $tablet) {
       max-height: 120px;
-      padding: 20px 10px;
+      padding: 20px 8px;
+			flex-wrap: wrap;
+
+			&:lang(es){
+				max-height: initial;
+			}
+
       .form-item-markup {
+				flex: 1 1 100%;
         font-size: $px16;
         height: initial;
         line-height: 18px;
-        margin: auto 0 12px;
+        margin: auto 0 21px;
         text-align: center;
         width: 100%;
         max-width: 100%;
@@ -150,15 +166,19 @@
         }
 
         @media (max-width: $tablet) {
-          max-width: 155px;
+          flex: 1 1 155px;
+					max-width: none;
           margin: 0 0 0 auto;
         }
       }
       .form-actions {
-        max-width: 105px;
-        min-width: 105px;
+				flex: 0 1 105px;
         margin: 0 auto 0 0;
       }
+			#edit-actions input {
+				margin-right: 0;
+			}
+
       .form-submit {
         font-size: $px14 !important;
         min-height: 40px;
@@ -189,6 +209,7 @@
   .webform-submission-newsletters-form {
     @media (max-width: $tablet) {
       justify-content: center;
+			flex-wrap: wrap;
       border: 1px solid #797979;
     }
   }
