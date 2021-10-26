@@ -48,6 +48,10 @@
       }
 
       @media screen and (min-width: $broken) {
+				&:nth-child(-n+3){
+					margin-top: 0;
+				}
+
         &:nth-last-of-type(-n + 3) {
           &::before {
             content: none;
