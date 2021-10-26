@@ -1,6 +1,7 @@
 form {
   height: 100%;
   flex-wrap: wrap;
+
   fieldset {
     border: 0px;
     padding: 0px;
@@ -18,7 +19,7 @@ form {
 
     @media screen and (max-width: $tablet) {
       margin: 0 0 20px;
-    } 
+    }
   }
 
   button[name="close"] {
@@ -33,20 +34,20 @@ form {
     border: none;
     cursor: pointer;
   }
+
   textarea:focus-visible {
     outline: 0px;
   }
+
   .form-actions {
     padding-top: 0px;
     margin: 0px;
 
-    .form-submit  {
-      @include button(
-        $btnWidth: 100%,
+    .form-submit {
+      @include button($btnWidth: 100%,
         $btnHeight: 40px,
         $btnBackground: $corange,
-        $btnColor: $cwhite
-      );
+        $btnColor: $cwhite);
       padding: 0 !important;
       max-width: 100%;
       margin: 0 auto;
@@ -74,6 +75,7 @@ form {
     letter-spacing: 0.025em;
     color: $cblack;
   }
+
   input {
     width: 100%;
     min-height: 35px;
@@ -93,8 +95,15 @@ form {
     color: $cblack2;
   }
 
+  .form-composite>.fieldset-wrapper>.description,
+  .form-item .description {
+		font-family: $PrNovacond-light;
+		font-weight: normal;
+    font-size: 0.85em;
+  }
+
   select,
-  .SumoSelect > .CaptionCont {
+  .SumoSelect>.CaptionCont {
     padding: 0px;
     width: 100%;
     min-height: 35px;
@@ -109,31 +118,37 @@ form {
     border-radius: 0px;
     border-right: 14px solid rgb(242, 242, 242);
   }
-  .SumoSelect > .CaptionCont {
+
+  .SumoSelect>.CaptionCont {
     display: flex;
     align-items: center;
-    > label > i {
+
+    >label>i {
       display: none;
     }
   }
+
   .SumoSelect.open {
-    > .optWrapper {
+    >.optWrapper {
       border: 0px;
       border-radius: 0px;
       box-shadow: 0px 0px 0px transparent;
       z-index: 10;
     }
-    > .CaptionCont {
+
+    >.CaptionCont {
       box-shadow: 0px 0px 0px transparent;
       padding: 0 0 0 13px;
     }
   }
-  .SumoSelect > .optWrapper > .options {
+
+  .SumoSelect>.optWrapper>.options {
     &::-webkit-scrollbar-thumb {
       max-width: 6px;
       background: #c4c4c4;
       border-radius: 8px;
     }
+
     &::-webkit-scrollbar-track,
     &::-webkit-scrollbar {
       max-width: 6px;
@@ -141,11 +156,13 @@ form {
       text-align: center;
       margin-right: 12px;
     }
+
     &::-webkit-scrollbar-button {
       display: none;
     }
   }
-  .SumoSelect .optWrapper > .options > li {
+
+  .SumoSelect .optWrapper>.options>li {
     margin-bottom: 0;
     border: 0;
     display: flex;
@@ -182,8 +199,9 @@ form {
   }
 
   select,
-  .SumoSelect > .CaptionCont {
-    background: #ededed url(../img/fle.png); /*aquí deberás escribir la ruta de la imagen que utilizarás como flecha del desplegable*/
+  .SumoSelect>.CaptionCont {
+    background: #ededed url(../img/fle.png);
+    /*aquí deberás escribir la ruta de la imagen que utilizarás como flecha del desplegable*/
     background-repeat: no-repeat;
     background-position: right center;
     -webkit-appearance: none;
@@ -194,20 +212,22 @@ form {
     padding-left: 13px;
   }
 
-  .SumoSelect > .CaptionCont > span {
+  .SumoSelect>.CaptionCont>span {
     padding-right: 0;
     // padding-left: 15px;
     font-size: $px20;
   }
-  .SumoSelect:focus > .CaptionCont,
-  .SumoSelect:hover > .CaptionCont,
-  .SumoSelect.open > .CaptionCont {
+
+  .SumoSelect:focus>.CaptionCont,
+  .SumoSelect:hover>.CaptionCont,
+  .SumoSelect.open>.CaptionCont {
     box-shadow: 0 0 2px transparent;
     border-color: transparent;
   }
 
   select::-ms-expand {
-    display: none; /*Evita que se muestre la flecha por defecto en versiones de IE*/
+    display: none;
+    /*Evita que se muestre la flecha por defecto en versiones de IE*/
   }
 
   textarea {
@@ -229,7 +249,7 @@ form {
       }
     }
 
-    > label {
+    >label {
       user-select: none;
       pointer-events: none;
       color: $cgrey6;
@@ -256,7 +276,7 @@ form {
       font-size: 12px;
       font-weight: normal;
       line-height: 14px;
-    }    
+    }
   }
 
   .button-preload {
@@ -277,26 +297,31 @@ form {
   #edit-account {
     width: 100%;
   }
+
   #edit-pass {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     position: relative;
   }
+
   #edit-pass--description,
   .password-confirm-message {
     display: none;
   }
+
   .password-strength__title {
-    font-family: $PrNovacond-reg;
+    font-family: $PrNovacond-light;
     font-style: normal;
     font-size: $px18;
     line-height: 22px;
     letter-spacing: 0.025em;
     color: $cgrey6;
   }
+
   .password-strength {
     width: 100%;
+
     .password-strength__meter {
       height: 6px;
       margin: 0 0 0px;
@@ -304,14 +329,17 @@ form {
       top: -8px;
     }
   }
+
   .password-strength__indicator {
     &.is-good {
       background-color: #77b259;
     }
+
     &.is-fair {
       background-color: #e8e608;
     }
   }
+
   .password-suggestions {
     //tooltip
     position: absolute;
@@ -334,10 +362,12 @@ form {
     letter-spacing: 0.025em;
     color: $cgrey6;
     letter-spacing: 0.025em;
+
     ul {
       margin-top: 20px;
       position: relative;
       padding-left: 7px;
+
       &::before {
         content: "";
         display: block;
@@ -355,21 +385,23 @@ form {
     }
   }
 
-  .password-confirm  {
+  .password-confirm {
     min-height: 40px;
   }
 
   #edit-pass-pass1 {
     margin-top: 5px;
     min-height: 40px;
+
     &:focus {
       outline: 0px;
     }
   }
 
   .password-parent {
-    &:focus-within ~ .password-suggestions,
-    &:focus ~ .password-suggestions {
+
+    &:focus-within~.password-suggestions,
+    &:focus~.password-suggestions {
       visibility: visible;
       pointer-events: all;
     }
@@ -381,16 +413,18 @@ form {
     //margin: 10px 0 40px;
     margin: 0 0 40px;
     width: 100%;
+
     summary,
     .details-description {
       display: none;
     }
+
     .details-wrapper {
       padding: 0px;
     }
 
     .g-recaptcha,
-    .g-recaptcha > div,
+    .g-recaptcha>div,
     iframe {
       width: 100%;
       text-align: center;
@@ -398,12 +432,12 @@ form {
   }
 
   @media (max-width: $tablet) {
-    
+
     .js-form-item-pass-pass2 {
       margin-top: 20px;
     }
 
-    .password-confirm  {
+    .password-confirm {
       min-height: 30px;
     }
 
@@ -434,6 +468,7 @@ form {
       width: 100%;
       max-width: 100%;
     }
+
     select {
       max-width: 100%;
       width: 100%;
@@ -441,23 +476,27 @@ form {
       font-size: 15px;
       background-size: 11px;
     }
-    .SumoSelect .optWrapper > .options > li label {
+
+    .SumoSelect .optWrapper>.options>li label {
       min-height: 35px;
     }
+
     select,
-    .SumoSelect > .CaptionCont {
+    .SumoSelect>.CaptionCont {
       min-height: 30px;
-      background: url(../img/fle_mobil.png) center right no-repeat
-        rgb(237, 237, 237);
-      > span {
+      background: url(../img/fle_mobil.png) center right no-repeat rgb(237, 237, 237);
+
+      >span {
         font-size: szrem(15); //$px13
         padding-left: 0px;
       }
     }
+
     textarea {
       max-width: 100%;
       font-size: 15px;
     }
+
     .form-actions {
       .button {
         min-width: 100px;
@@ -466,42 +505,52 @@ form {
         min-height: 30px;
       }
     }
+
     .SumoSelect {
       width: 100%;
     }
+
     ///-- PAsword --///
     .password-strength__title {
       font-size: $px12;
       line-height: 16px;
     }
+
     .password-strength {
       margin: 0px 0px 5px;
+
       .password-strength__meter {
         margin: 0 0 0px;
       }
     }
+
     .form-type-password {
       margin: 0 auto 0px;
     }
+
     .password-suggestions {
-      max-width: 220px;//260px
+      max-width: 220px; //260px
       min-height: 135px;
       padding: 10px;
       top: 50px;
       left: 10px;
       font-size: $px15;
       line-height: 18px;
+
       * {
         font-size: $px12;
         line-height: 16px;
       }
+
       ul {
         margin-top: 10px;
+
         &::before {
           top: -95px;
         }
       }
     }
+
     #edit-pass-pass1 {
       min-height: 30px;
     }
@@ -512,8 +561,8 @@ form {
     }
 
     .g-recaptcha {
-      > div {
-        > div {
+      >div {
+        >div {
           display: flex;
           justify-content: center;
           align-items: center;
@@ -522,7 +571,7 @@ form {
     }
 
     #captcha .g-recaptcha,
-    #captcha .g-recaptcha > div,
+    #captcha .g-recaptcha>div,
     #captcha iframe {
       width: initial !important;
     }
@@ -539,12 +588,10 @@ form {
 
 a.user-register-login,
 .user-register-login {
-  @include button(
-    $btnWidth: 100%,
+  @include button($btnWidth: 100%,
     $btnHeight: 40px,
     $btnBackground: $bgrey2,
-    $btnColor: $cwhite
-  );
+    $btnColor: $cwhite);
   max-width: 440px;
   margin: 0 auto;
   font-size: szrem(18);
@@ -559,7 +606,7 @@ a.user-register-login,
 
 .button,
 .button:not(:focus),
-.form-actions .button,
+.form-actions .button,
 .action-link--icon-trash.action-link {
   border: 0px !important;
 }
@@ -576,6 +623,7 @@ a.user-register-login,
   position: absolute;
   right: -12px;
   top: -17px;
+
   &::before {
     content: "";
     height: 20px;
@@ -591,6 +639,7 @@ a.user-register-login,
     background-size: contain;
     box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
   }
+
   // &::after {
   //   content: "✔";
   //   height: 29px;
@@ -606,9 +655,11 @@ a.user-register-login,
   //   justify-content: center;
   // }
 }
-.active-check + .fake-checkbox::after {
+
+.active-check+.fake-checkbox::after {
   display: flex;
 }
+
 .js-form-fake-checkbox {
   order: 2;
   position: relative;
@@ -619,7 +670,8 @@ a.user-register-login,
   cursor: pointer;
   margin-left: -26px !important;
 }
-.fake-checkbox + label {
+
+.fake-checkbox+label {
   order: 4;
 }
 
@@ -628,13 +680,16 @@ a.user-register-login,
   position: relative;
 
   .action-button {
+
     input[value="Upload"],
     .webform-file-button {
       background: #c4c4c4 !important;
     }
   }
+
   &.disable-button {
     position: relative;
+
     &::before {
       content: "";
       position: absolute;
@@ -646,24 +701,29 @@ a.user-register-login,
       height: 100px;
       z-index: 9;
     }
+
     @media (max-width: $tablet) {
       &::before {
         width: 130px;
       }
     }
   }
+
   #ajax-wrapper {
     width: auto;
     margin: 0;
+
     .js-form-item {
       width: auto;
       padding: 0;
     }
   }
+
   .form-type-managed-file {
     display: flex;
     flex-direction: column;
   }
+
   input[value="Upload"] {
     border: none;
     border-radius: 0px;
@@ -685,6 +745,7 @@ a.user-register-login,
     text-transform: uppercase;
     display: flex !important;
   }
+
   label {
     font-style: normal;
     font-weight: 600;
@@ -694,10 +755,12 @@ a.user-register-login,
     font-family: $PrNovacond-Sbold;
     order: 1;
   }
+
   .form-managed-file {
     padding: 0px 0 0;
     order: 3;
   }
+
   .webform-file-button {
     background: #5c6165;
     min-width: 165px;
@@ -716,22 +779,26 @@ a.user-register-login,
     line-height: 25px;
     color: #fff;
   }
+
   .webform-element-description {
     font-size: 0px;
   }
+
   .text-description,
   .description strong {
     max-width: 165px;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 100;
     font-size: $px12;
     line-height: 15px;
     color: #767676;
     font-family: $PrNovacond-reg;
   }
+
   .managed-file-placeholder {
     display: none;
   }
+
   .webform-button--submit {
     position: absolute;
     left: 190px;
@@ -743,10 +810,12 @@ a.user-register-login,
     height: 40px;
     font-family: $PrNovacond-Sbold;
   }
+
   .description {
     order: 2;
     margin-top: 70px;
   }
+
   .js-form-type-checkbox:nth-child(2n + 1),
   .js-form-type-checkbox:nth-child(2n + 2) {
     position: relative;
@@ -755,10 +824,12 @@ a.user-register-login,
     width: max-content;
     margin-bottom: 20px;
   }
+
   .js-form-type-checkbox {
     margin: 20px 25px 0 0;
     float: left;
     display: flex;
+
     input {
       position: absolute;
       right: -22px;
@@ -770,10 +841,12 @@ a.user-register-login,
       max-width: 405px;
       border: 0;
     }
+
     .option {
       width: 165px;
       height: 65px;
     }
+
     span {
       background: #c4c4c4;
       width: 100%;
@@ -782,6 +855,7 @@ a.user-register-login,
       position: relative;
       height: 65px;
       overflow: hidden;
+
       &::after {
         position: absolute;
         top: 0;
@@ -796,6 +870,7 @@ a.user-register-login,
         text-transform: uppercase;
       }
     }
+
     a {
       display: flex;
       font-family: $PrNovacond-reg;
@@ -815,10 +890,12 @@ a.user-register-login,
       background: #f2f2f2;
       overflow: hidden;
     }
+
     .file--mime-image-png:after {
       content: "png";
     }
   }
+
   input[value="Remove selected"] {
     display: none;
     min-width: 180px;
@@ -836,34 +913,41 @@ a.user-register-login,
     position: absolute;
     bottom: -70px;
   }
+
   @media (max-width: $tablet) {
     .js-form-item:nth-child(2n + 1) {
       padding: 0;
       width: max-content;
     }
+
     .js-form-managed-file {
       display: flex;
       flex-direction: column;
     }
+
     label {
       font-size: 15px;
       line-height: 18px;
     }
+
     .webform-file-button {
       min-width: 120px;
       font-size: 14px;
       height: 30px;
       background: #5c6165;
     }
+
     input[value="Upload"] {
       min-width: 120px;
       max-width: 120px;
       max-height: 30px;
       font-size: $px14;
     }
+
     input {
       font-size: 16px;
     }
+
     .webform-button--submit {
       height: 30px;
       left: 134px;
@@ -874,18 +958,10 @@ a.user-register-login,
   }
 }
 
-.user-logged-in.page-node-type-al-dia-vacancy
-  .block-webform-block.open
-  .js-form-type-checkbox
-  span
-  a:not(a[href]) {
+.user-logged-in.page-node-type-al-dia-vacancy .block-webform-block.open .js-form-type-checkbox span a:not(a[href]) {
   display: none;
 }
-.user-logged-in
-  .file-upload
-  #edit-container
-  .js-form-type-checkbox
-  span
-  a:not(a[href]) {
+
+.user-logged-in .file-upload #edit-container .js-form-type-checkbox span a:not(a[href]) {
   display: none;
 }
