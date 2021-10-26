@@ -171,14 +171,15 @@
           height: 23px;
         }
         @media screen and (max-width: $broken) {
-          max-width: 37px;
+          //max-width: 37px;
           top: 0px;
           margin-right: 5px;
-          display: flex;
+          //display: flex;
           align-items: center;
           justify-content: center;
           img {
-            height: 12px !important;
+            //height: 12px !important;
+						vertical-align: middle;
           }
         }
       }
