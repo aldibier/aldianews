@@ -1837,6 +1837,17 @@ var initMain = function initMain($, Drupal) {
     var powerd = document.querySelector('.powerd').cloneNode(true);
     menuFooterSecondColumn.append(copyr, powerd);
   }
+
+  var landingVideos = document.querySelector(".path-videos");
+
+  if (!!landingVideos) {
+    var _lang = document.documentElement.lang;
+    var radioAllItem = document.querySelector('#edit-tid-all label');
+
+    if (_lang == 'es') {
+      radioAllItem.textContent = 'TODOS';
+    }
+  }
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (initMain);

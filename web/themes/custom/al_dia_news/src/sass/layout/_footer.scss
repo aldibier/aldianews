@@ -113,7 +113,7 @@
     }
 
     @media (max-width: $tablet) {
-			margin-bottom: 10px;
+      margin-bottom: 10px;
 
       .field--name-field-image-block {
         width: 140px;
@@ -148,7 +148,7 @@
     }
 
     @media (max-width:$tablet) {
-      grid-gap: 10px;
+      grid-gap: 0 10px;
     }
 
   }
@@ -198,6 +198,7 @@
 
       &.menu-level-0>li li {
         display: flex;
+				align-items: center;
         flex: 1 1 100%;
         margin-bottom: 35px;
 
@@ -256,6 +257,11 @@
         }
       }
     }
+
+    @media (max-width: $tablet) {
+      padding-top: 30px;
+    }
+
   }
 
   .block-fixed-block-contentlocation {
@@ -299,6 +305,19 @@
       .content {
         justify-content: center;
       }
+    }
+
+    @media (max-width: $tablet) {
+      justify-self: flex-start;
+
+      .content {
+        flex-direction: column;
+      }
+
+			.main-news-body {
+				margin: 0;
+			}
+
     }
 
   }
@@ -413,6 +432,10 @@
       align-self: end;
     }
 
+    @media (max-widtH: $tablet) {
+      justify-self: flex-start;
+    }
+
   }
 
   .copyr,
@@ -502,27 +525,9 @@
     }
   }
 
-  @media (max-width: $broken) {
-
-    .copyr,
-    .powerd {
-      right: 17px;
-    }
-
-    #block-footer {
-      //right: 15px;
-
-      .menu a {
-        // font-size: $px17;
-        // line-height: 18px;
-        // padding: 0 0px 0 15px;
-      }
-    }
-  }
-
   @media (max-width: $tablet) {
     #block-socialmedia-2 {
-      padding: 10px 0 50px;
+      padding: 25px 0;
     }
 
     .copyr,
@@ -533,7 +538,7 @@
     }
 
     .copyr {
-      margin: 10px 0;
+      margin: 0 0 33px 0;
 
       .logo {
         width: 39.61px;
@@ -585,9 +590,25 @@
     }
 
     #block-footer {
+
+      .content>.menu {
+				margin-bottom: 33px;
+
+        .powerd,
+        .copyr {
+          display: none;
+        }
+      }
+
+      .content>.powerd,
+      .content>.copyr {
+        display: flex;
+				align-items: center;
+      }
+
       .menu {
         a {
-          font-size: 14px;
+          font-size: 17px;
           line-height: 21px;
           margin: 0;
           padding: 0;
@@ -623,7 +644,7 @@
     .block-fixed-block-contentlocation {
       .field--type-image {
         width: 100%;
-        margin: auto 0 10px 15px;
+        margin: 0;
 
         img {
           height: 15px;
@@ -638,6 +659,8 @@
     }
 
     .powerd {
+			margin-bottom: 30px;
+
       &:after {
         width: 50px;
         height: 15px;

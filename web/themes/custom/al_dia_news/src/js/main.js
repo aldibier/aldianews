@@ -700,6 +700,18 @@ const initMain = ($, Drupal) => {
 
 	}
 
+	const landingVideos = document.querySelector(".path-videos");
+
+	if (!!landingVideos) {
+		const lang = document.documentElement.lang;
+		const radioAllItem = document.querySelector('#edit-tid-all label'); 
+
+		if(lang == 'es'){
+			radioAllItem.textContent = 'TODOS';
+		}
+
+	}
+
 };
 
 export default initMain;
