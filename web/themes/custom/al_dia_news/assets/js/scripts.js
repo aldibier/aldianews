@@ -1842,7 +1842,7 @@ var initMain = function initMain($, Drupal) {
 
   if (!!landingVideos) {
     var _lang = document.documentElement.lang;
-    var radioAllItem = document.querySelector('#edit-tid-all label');
+    var radioAllItem = document.querySelector('#edit-tid-all + label');
 
     if (_lang == 'es') {
       radioAllItem.textContent = 'TODOS';
