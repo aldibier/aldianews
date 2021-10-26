@@ -28,27 +28,32 @@ import replaceToken from "./modules/replaceToken";
   var $video = $(
     ".page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video .content"
   );
-  var videoHeight = $video.outerHeight();
 
   if (!!document.querySelector(".page-node-type-news") && $video.length != 0) {
     $window.on("scroll", function() {
-      var windowScrollTop = $window.scrollTop();
+			var headerHeigth = $('#header').outerHeight();
+      var windowScrollTop = $window.scrollTop() + headerHeigth;
+			var videoHeight = $video.outerHeight();
       var videoBottom = videoHeight + $videoWrap.offset().top;
 
       if (windowScrollTop > videoBottom) {
+				if($video.hasClass('stuck')) return;
         $videoWrap.height(videoHeight);
         $video.addClass("stuck");
-      } else {
+      } 
+			
+			if(windowScrollTop <= videoBottom){
         $videoWrap.height("auto");
         $video.removeClass("stuck");
       }
-
-      $(
-        '.block-field-blocknodenewsfield-video .stuck button[name="close"]'
-      ).click(function() {
-        $video.addClass("disnone");
-      });
     });
+
+		$(
+			'.block-field-blocknodenewsfield-video .stuck button[name="close"]'
+		).click(function() {
+			$video.addClass("disnone");
+		});
+
   }
 
   $(document).ajaxComplete(function() {
