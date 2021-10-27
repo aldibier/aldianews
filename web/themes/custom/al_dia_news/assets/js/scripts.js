@@ -1943,8 +1943,12 @@ __webpack_require__.r(__webpack_exports__);
         $video.removeClass("stuck");
       }
     });
-    $('.block-field-blocknodenewsfield-video .stuck button[name="close"]').click(function () {
-      $video.addClass("disnone");
+    $('.block-field-blocknodenewsfield-video').click(function (event) {
+      var target = event.target;
+
+      if (target.classList.contains('stuck') || target.closest('.stuck')) {
+        $video.addClass("disnone");
+      }
     });
   }
 

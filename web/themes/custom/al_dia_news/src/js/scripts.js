@@ -48,10 +48,13 @@ import replaceToken from "./modules/replaceToken";
       }
     });
 
-		$(
-			'.block-field-blocknodenewsfield-video .stuck button[name="close"]'
-		).click(function() {
-			$video.addClass("disnone");
+		$('.block-field-blocknodenewsfield-video').click(function(event) {
+			const target = event.target;
+
+			if(target.classList.contains('stuck') || target.closest('.stuck')){
+				$video.addClass("disnone");
+			}
+
 		});
 
   }
