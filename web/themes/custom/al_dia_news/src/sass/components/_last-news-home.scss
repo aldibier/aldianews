@@ -46,6 +46,8 @@
     position: absolute;
     bottom: calc(0% + 86px);
     background-color: rgba(0,0,0,0.6);
+		pointer-events: none;
+    user-select: none;
 
     @media screen and (max-width: $tablet) {
         max-width: 100%;
