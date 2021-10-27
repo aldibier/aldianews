@@ -1,6 +1,6 @@
 .last-news-home {
     max-width: 910px;
-    height: 555px;
+    //height: 555px;
     margin-bottom: 35px;
     padding-bottom: 35px;
     border-bottom: 1px solid $cgrey4;
@@ -22,7 +22,7 @@
 .last-news-home-image {
     img {
         height: 100%;
-        min-height: 520px;
+        //min-height: 520px;
         max-height: 520px;
         width: 100%;
         max-width: initial;
@@ -46,6 +46,8 @@
     position: absolute;
     bottom: calc(0% + 86px);
     background-color: rgba(0,0,0,0.6);
+		pointer-events: none;
+    user-select: none;
 
     @media screen and (max-width: $tablet) {
         max-width: 100%;

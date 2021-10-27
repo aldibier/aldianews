@@ -683,9 +683,31 @@ const initMain = ($, Drupal) => {
 	if (!!filterVideos) {
 		var lang = document.documentElement.lang;
 		var labelAny = filterVideos.querySelector('#edit-tid-all + label');
-		
-		if(lang == 'es') {
+
+		if (lang == 'es') {
 			labelAny.textContent = 'Cualquiera';
+		}
+
+	}
+
+	const menuFooterSecondColumn = document.querySelector("#block-footer > div.content > ul > li:nth-child(2) > ul");
+
+	if (!!menuFooterSecondColumn) {
+		let copyr = document.querySelector('.copyr').cloneNode(true);
+		let powerd = document.querySelector('.powerd').cloneNode(true);
+
+		menuFooterSecondColumn.append(copyr, powerd);
+
+	}
+
+	const landingVideos = document.querySelector(".path-videos");
+
+	if (!!landingVideos) {
+		const lang = document.documentElement.lang;
+		const radioAllItem = document.querySelector('#edit-tid-all + label'); 
+
+		if(lang == 'es'){
+			radioAllItem.textContent = 'TODOS';
 		}
 
 	}

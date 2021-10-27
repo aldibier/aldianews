@@ -19,6 +19,11 @@
 
   //end reset style
 
+	.views-field-fieldset-1 {
+		pointer-events: none;
+    user-select: none;
+	}
+
   .views-row,
   .container-content {
     position: relative;
@@ -103,9 +108,19 @@
   }
 
   &-image {
+
+
+
     @media screen and(min-width:$broken) {
       max-height: 520px;
     }
+
+		a,
+		picture {
+			display: block;
+    	width: 100%;
+    	height: 100%;
+		}
 
     a {
       border: none;

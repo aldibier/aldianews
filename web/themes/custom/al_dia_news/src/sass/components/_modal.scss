@@ -689,7 +689,7 @@ div.popup-login.ui-widget.ui-corner-all:not(button) {
   .form-actions {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: space-between;
+    justify-content: flex-end;
     //margin-bottom: 50px !important;
     .form-submit {
       display: block !important;
@@ -698,6 +698,7 @@ div.popup-login.ui-widget.ui-corner-all:not(button) {
     .user-login {
       max-width: 165px;
       min-height: 40px;
+			margin-right: 30px;
       background: #777777;
       font-family: $PrNovacond-Sbold;
       font-weight: bold;
@@ -721,6 +722,7 @@ div.popup-login.ui-widget.ui-corner-all:not(button) {
       .user-login {
         max-width: 100px;
         min-height: 30px;
+				margin-right: 20px;
         font-size: $px14;
         line-height: 16px;
       }

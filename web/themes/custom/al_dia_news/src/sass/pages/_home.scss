@@ -304,7 +304,7 @@
       margin-right: 0px;
       img {
         bottom: 2px;
-        height: 20.12px;
+        //height: 20.12px;
       }
     }
   }
@@ -624,10 +624,10 @@
 
   .views-row {
     display: flex;
+		justify-content: flex-start;
     grid-gap: 0px;
     width: 100%;
     margin-right: 55px;
-
 
     &.cloned {
       display: none;
@@ -636,6 +636,11 @@
     &:last-child {
       margin-right: 0;
     }
+
+
+    @media (max-width: $desktop) {
+			margin-right: 22.5px;
+		}
 
     @media (max-width: $broken) {
       margin-left: 10px;
@@ -695,7 +700,7 @@
     margin-right: 5px;
     top: 2px;
     @media (max-width: $broken) {
-      max-width: 54.24px;
+      //max-width: 54.24px;
     }
   }
 }
@@ -730,6 +735,7 @@
     border-radius: 100%;
     filter: grayscale(1);
     margin: 0 auto 15px;
+		flex: 0 0 120px;
 
     .field-content {
       width: inherit;
@@ -744,6 +750,8 @@
   }
 
   .views-field-name {
+		min-height: 45px;
+		max-height: 45px;
     font-family: $ModernoFB-Regular;
     font-style: normal;
     font-weight: bold;
@@ -755,9 +763,10 @@
   }
 
   .views-field-title {
+		flex: 1 1 100%;
     width: 100%;
     margin-bottom: 10px;
-    margin-top: 20px;
+    //margin-top: 20px;
     * {
       font-family: $PrNovacond-Sbold;
       font-style: normal;

@@ -1829,6 +1829,25 @@ var initMain = function initMain($, Drupal) {
       labelAny.textContent = 'Cualquiera';
     }
   }
+
+  var menuFooterSecondColumn = document.querySelector("#block-footer > div.content > ul > li:nth-child(2) > ul");
+
+  if (!!menuFooterSecondColumn) {
+    var copyr = document.querySelector('.copyr').cloneNode(true);
+    var powerd = document.querySelector('.powerd').cloneNode(true);
+    menuFooterSecondColumn.append(copyr, powerd);
+  }
+
+  var landingVideos = document.querySelector(".path-videos");
+
+  if (!!landingVideos) {
+    var _lang = document.documentElement.lang;
+    var radioAllItem = document.querySelector('#edit-tid-all + label');
+
+    if (_lang == 'es') {
+      radioAllItem.textContent = 'TODOS';
+    }
+  }
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (initMain);
@@ -1905,24 +1924,31 @@ __webpack_require__.r(__webpack_exports__);
   var $window = $(window);
   var $videoWrap = $(".page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video");
   var $video = $(".page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video .content");
-  var videoHeight = $video.outerHeight();
 
   if (!!document.querySelector(".page-node-type-news") && $video.length != 0) {
     $window.on("scroll", function () {
-      var windowScrollTop = $window.scrollTop();
+      var headerHeigth = $('#header').outerHeight();
+      var windowScrollTop = $window.scrollTop() + headerHeigth;
+      var videoHeight = $video.outerHeight();
       var videoBottom = videoHeight + $videoWrap.offset().top;
 
       if (windowScrollTop > videoBottom) {
+        if ($video.hasClass('stuck')) return;
         $videoWrap.height(videoHeight);
         $video.addClass("stuck");
-      } else {
+      }
+
+      if (windowScrollTop <= videoBottom) {
         $videoWrap.height("auto");
         $video.removeClass("stuck");
       }
+    });
+    $('.block-field-blocknodenewsfield-video').click(function (event) {
+      var target = event.target;
 
-      $('.block-field-blocknodenewsfield-video .stuck button[name="close"]').click(function () {
+      if (target.classList.contains('stuck') || target.closest('.stuck')) {
         $video.addClass("disnone");
-      });
+      }
     });
   }
 
