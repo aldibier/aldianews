@@ -60,7 +60,8 @@ body.open-menu {
     position: relative;
 
     .region-header {
-      max-height: 46px;
+			max-height: max-content;
+      //max-height: 46px;
     }
 
     .region-secondary-menu div#block-menuuseritem-2 {
@@ -719,7 +720,7 @@ body.open-menu {
     height: 40px;
     position: relative;
     //margin: 20px 35px 7px 0;
-    margin: auto 35 px auto 0;
+    margin: auto 35px auto 0;
     cursor: pointer;
 
     &:before,
@@ -1218,6 +1219,7 @@ body.open-menu {
 .region-secondary-menu.open-menu~.region-header {
   #block-al-dia-news-branding {
     margin: 0 0 0 -25px;
+		max-height: fit-content;
   }
 
   #block-blockheader {
