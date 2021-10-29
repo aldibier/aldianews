@@ -693,8 +693,13 @@ body.open-menu {
   margin: 0 auto;
   position: relative;
 
+  @media (max-width: $broken4) {
+    flex-wrap: wrap;
+    max-height: max-content;
+  }
+
   @media (min-width: $desktop) {
-    max-height: 90px;
+    //max-height: 90px;
     padding: 12px 15px 0;
   }
 
@@ -774,12 +779,12 @@ body.open-menu {
     position: relative;
     order: 2;
     max-width: 272px;
-    max-height: 75px;
+    max-height: inherit;
+    //max-height: 75px;
     margin: 0 15px 0 0;
     z-index: 2;
-    align-self: baseline;
 
-		$save-size: 1905px;
+    $save-size: 1905px;
 
     &::after {
       content: '';
@@ -797,6 +802,10 @@ body.open-menu {
     @media (min-width: $tablet) and (max-width: 1320px) {
       min-width: 239px;
       max-width: 245px;
+    }
+
+    @media (max-width: $broken4) {
+      max-height: 80px;
     }
 
     .site-branding__logo {
@@ -835,7 +844,7 @@ body.open-menu {
       flex: 1 1 100%;
       order: 9;
       width: 100%;
-      margin: 0 -15 px;
+      margin: 0 -15px;
       padding-left: 15px;
       padding-right: 15px;
       background-color: $cblack2;
