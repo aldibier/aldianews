@@ -630,7 +630,8 @@
 }
 
 .banner-scroll {
-  grid-column: span 3;
+  grid-column: 1/-1;
+	//grid-column: span 3;
   width: 100%;
   @media (max-width: $tablet) {
     grid-column: span 2;
