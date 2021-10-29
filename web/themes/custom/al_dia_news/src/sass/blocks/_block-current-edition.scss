@@ -374,8 +374,17 @@
         text-transform: uppercase;
         color: $cwhite;
 
+				&:lang(es){
+					font-size: szrem(30);
+				}
+
         @media screen and (max-width: $tablet) {
           font-size: szrem(20);
+
+					&:lang(es){
+						font-size: szrem(16);
+					}
+
         }
       }
     }
