@@ -7,7 +7,7 @@
   z-index: 101;
 
   @media (max-width: $tablet) {
-    border-bottom: 2px solid $corange;
+    //border-bottom: 2px solid $corange;
   }
 
   .ajax-progress.ajax-progress-fullscreen,
@@ -718,7 +718,8 @@ body.open-menu {
     width: 40px;
     height: 40px;
     position: relative;
-    margin: 20px 35px 7px 0;
+    //margin: 20px 35px 7px 0;
+    margin: auto 35 px auto 0;
     cursor: pointer;
 
     &:before,
@@ -808,12 +809,6 @@ body.open-menu {
 
     @media (max-width: $broken4) {
       max-height: 80px;
-    }
-
-    @media (max-width: $tablet) {
-      &::after {
-        content: none;
-      }
     }
 
     h1,
