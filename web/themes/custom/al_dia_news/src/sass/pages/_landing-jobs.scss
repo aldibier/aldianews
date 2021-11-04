@@ -351,22 +351,22 @@
       }
     }
 
-		.slick-initialized.slick-slider {
-			width: 100%;
-			max-width: 100%;
-			padding: 0 70px;
-			margin: 0 auto;
+    .slick-initialized.slick-slider {
+      width: 100%;
+      max-width: 100%;
+      padding: 0 70px;
+      margin: 0 auto;
 
-			@media (max-width: $tablet) {
-				padding: 0 30px;
-			}
+      @media (max-width: $tablet) {
+        padding: 0 30px;
+      }
 
-		}
+    }
 
     .slick-list {
       //max-width: 1170px;
       max-width: 100%;
-			//margin: 0 auto;
+      //margin: 0 auto;
     }
 
     .slick-arrow {
@@ -465,7 +465,7 @@
     width: 100%;
 
     .views-field-field-image {
-			flex: 1 1 175px;
+      flex: 1 1 175px;
       max-width: 175px;
       max-height: 100px;
       overflow: hidden;
@@ -505,14 +505,15 @@
   }
 
   .view-content {
-    //display: flex;
-    //flex-wrap: wrap;
-    //justify-content: space-between;
-		display: grid;
-    grid-template-columns: repeat(3,minmax(auto,1fr));
+    display: grid;
+    grid-template-columns: repeat(3, minmax(auto, 1fr));
     grid-gap: 0 40px;
     position: relative;
     overflow: hidden;
+
+    @media (max-width:$tablet) {
+      grid-template-columns: repeat(2, minmax(auto, 1fr));
+    }
 
     &::after {
       content: "";
@@ -549,6 +550,7 @@
       max-width: 418px;
 
       .views-field-field-image {
+        flex: 1 1 100%;
         max-width: 400px;
         max-height: 235px;
         overflow: hidden;
@@ -603,23 +605,18 @@
 
   .view-content {
     .views-row:nth-child(1) {
-      //max-width: 418px;
       padding: 0px;
     }
 
     .views-row:nth-child(2) {
-      //border-right: 1px solid $cgrey4;
-      //max-width: 418px;
       padding: 0px;
     }
 
     .views-row:nth-child(3) {
       padding: 0px;
-      //border-right: 0px solid $cgrey4;
       border-bottom: 0px;
       margin-bottom: 60px;
       flex-direction: column;
-      //max-width: 400px;
 
       &::before {
         display: none;
@@ -703,7 +700,7 @@
 
 .block-block-groupgroup-career-news-jobs {
   position: relative;
-	width: 100%;
+  width: 100%;
   max-width: 1310px;
   margin: 0 auto 80px;
   padding: 0 15px;
@@ -733,6 +730,21 @@
 
 .block-block-groupgroup-career-news-jobs+.block-fixed-block-contenthorizontal-advertising {
   margin: 0 auto 100px;
+}
+
+@media (max-width:$broken2) {
+	.block-views-blockcareer-news-block-1 .view-content {
+		.views-row:nth-child(1),
+		.views-row:nth-child(2),
+		.views-row:nth-child(3) {
+			margin-right: 0;
+			margin-left: 0;
+			border-right: none;
+			max-width: 100%;
+			padding-right: 0px;
+			border-top: 0px;
+		}
+	}
 }
 
 @media (max-width: $desktop) {
@@ -789,7 +801,7 @@
     }
 
     .view-content {
-      justify-content: space-around;
+      //justify-content: space-around;
 
       &::before {
         display: none;
@@ -826,16 +838,16 @@
   .block-views-blockcareer-news-block-1.view-complete {
     .view-content {
 
-      .views-row:nth-child(1),
-      .views-row:nth-child(2),
-      .views-row:nth-child(3) {
-        margin-right: auto;
-        margin-left: auto;
-        border-right: 0px solid #b1b1b1;
-        max-width: 300px;
-        padding-right: 0px;
-        border-top: 0px;
-      }
+      // .views-row:nth-child(1),
+      // .views-row:nth-child(2),
+      // .views-row:nth-child(3) {
+      //   margin-right: 0;
+      //   margin-left: 0;
+      //   border-right: none;
+      //   max-width: 100%;
+      //   padding-right: 0px;
+      //   border-top: 0px;
+      // }
 
       .views-row:nth-child(4)::before,
       .views-row:nth-child(5)::before {
@@ -1043,7 +1055,7 @@
     }
 
     .view-content {
-      flex-direction: column;
+      //flex-direction: column;
 
       .views-row:nth-child(1),
       .views-row:nth-child(2) {
