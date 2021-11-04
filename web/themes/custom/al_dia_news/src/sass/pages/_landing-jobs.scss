@@ -511,7 +511,7 @@
     position: relative;
     overflow: hidden;
 
-    @media (max-width:$tablet) {
+    @media (max-width:$broken2) {
       grid-template-columns: repeat(2, minmax(auto, 1fr));
     }
 
@@ -732,21 +732,6 @@
   margin: 0 auto 100px;
 }
 
-@media (max-width:$broken2) {
-	.block-views-blockcareer-news-block-1 .view-content {
-		.views-row:nth-child(1),
-		.views-row:nth-child(2),
-		.views-row:nth-child(3) {
-			margin-right: 0;
-			margin-left: 0;
-			border-right: none;
-			max-width: 100%;
-			padding-right: 0px;
-			border-top: 0px;
-		}
-	}
-}
-
 @media (max-width: $desktop) {
   .jobs.style-jobs {
     .block-content-left {
@@ -795,8 +780,8 @@
     width: 100%;
 
     .views-row {
-      border-bottom: 0px;
-      border-top: 1px solid #b1b1b1;
+      //border-bottom: 0px;
+      //border-top: 1px solid #b1b1b1;
       padding: 20px 0px 0px;
     }
 
@@ -809,14 +794,14 @@
 
       .views-row:nth-child(1),
       .views-row:nth-child(2) {
-        margin-right: 440px;
-        border-right: 0px;
+        //margin-right: 440px;
+        //border-right: 0px;
       }
 
       .views-row:nth-child(1) {
-        border-right: 0px solid #b1b1b1;
-        border-top: 0px;
-        padding-right: 15.4px;
+        //border-right: 0px solid #b1b1b1;
+        //border-top: 0px;
+        //padding-right: 15.4px;
       }
 
       .views-row:nth-child(3)::before,
@@ -854,6 +839,44 @@
         display: none;
       }
     }
+  }
+}
+
+@media (max-width:$broken2) {
+  .block-views-blockcareer-news-block-1 .view-content {
+
+    .views-row:nth-child(1),
+    .views-row:nth-child(2),
+    .views-row:nth-child(3) {
+      flex-direction: initial;
+      margin: 0;
+      border-right: none;
+      max-width: 100%;
+      padding-top: 20px;
+      padding-right: 0px;
+      border-top: 0px;
+    }
+
+    .views-row:nth-child(1) .views-field-field-image,
+    .views-row:nth-child(2) .views-field-field-image,
+    .views-row:nth-child(3) .views-field-field-image {
+      max-width: 175px;
+      margin: 0;
+    }
+
+    .views-row:nth-child(1) .views-field-field-image,
+    .views-row:nth-child(2) .views-field-field-image,
+    .views-row:nth-child(3) .views-field-field-image {
+      margin-right: 15px;
+    }
+
+    .views-row:nth-child(1) .card-title a,
+    .views-row:nth-child(2) .card-title a,
+    .views-row:nth-child(3) .card-title a {
+      font-size: szrem(24);
+      line-height: 29px;
+    }
+
   }
 }
 
