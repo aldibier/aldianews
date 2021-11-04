@@ -465,6 +465,7 @@
     width: 100%;
 
     .views-field-field-image {
+			flex: 1 1 175px;
       max-width: 175px;
       max-height: 100px;
       overflow: hidden;
@@ -508,7 +509,7 @@
     //flex-wrap: wrap;
     //justify-content: space-between;
 		display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(auto,400px));
+    grid-template-columns: repeat(3,minmax(auto,1fr));
     grid-gap: 0 40px;
     position: relative;
     overflow: hidden;
