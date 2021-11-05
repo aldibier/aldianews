@@ -843,13 +843,14 @@
 }
 
 @media (max-width:$broken2) {
+
   .block-views-blockcareer-news-block-1 .view-content,
-	.block-views-blockcareer-news-block-1.view-complete .view-content  {
+  .block-views-blockcareer-news-block-1.view-complete .view-content {
 
     .views-row:nth-child(1),
     .views-row:nth-child(2),
     .views-row:nth-child(3),
-		.views-row:nth-child(3) {
+    .views-row:nth-child(3) {
       flex-direction: initial;
       margin: 0;
       border-right: none;
@@ -1124,61 +1125,61 @@
 
       .views-row:nth-child(1),
       .views-row:nth-child(2) {
-        max-width: none;
-        align-items: center;
-        border-top: 1px;
-        width: 100%;
-        flex-direction: row;
-        border-bottom: 1px solid #b1b1b1;
-        margin-bottom: 10px;
+        // max-width: none;
+        // align-items: center;
+        // border-top: 1px;
+        // width: 100%;
+        // flex-direction: row;
+        // border-bottom: 1px solid #b1b1b1;
+        // margin-bottom: 10px;
 
         .views-field-nothing {
-          max-width: none;
+          // max-width: none;
         }
 
         .views-field-field-image {
-          max-width: 140px;
-          max-height: 80px;
-          width: 100%;
-          margin-right: 20px;
+          // max-width: 140px;
+          // max-height: 80px;
+          // width: 100%;
+          // margin-right: 20px;
         }
 
         .card-date::before {
-          display: none;
+          // display: none;
         }
       }
 
       .views-row:nth-child(3) {
-        padding-right: 0px;
-        margin-bottom: 20px;
-        margin-right: 0px;
-        max-width: none;
-        border-top: 1px;
-        width: 100%;
-        flex-direction: row;
-        margin-bottom: 10px;
-        border-bottom: 0px;
-        padding-top: 0px;
+        // padding-right: 0px;
+        // margin-bottom: 20px;
+        // margin-right: 0px;
+        // max-width: none;
+        // border-top: 1px;
+        // width: 100%;
+        // flex-direction: row;
+        // margin-bottom: 10px;
+        // border-bottom: 0px;
+        // padding-top: 0px;
 
         .views-field-field-image {
-          margin-bottom: 0px;
-          max-width: 140px;
-          max-height: 80px;
-          width: 100%;
-          margin-right: 20px;
+          // margin-bottom: 0px;
+          // max-width: 140px;
+          // max-height: 80px;
+          // width: 100%;
+          // margin-right: 20px;
         }
 
         .views-field-nothing {
-          max-width: none;
+          // max-width: none;
         }
 
         .card-title {
-          margin-bottom: 5px;
+          // margin-bottom: 5px;
         }
 
         .card-title a {
-          font-size: $px14;
-          line-height: 17.05px;
+          // font-size: $px14;
+          // line-height: 17.05px;
         }
       }
 
@@ -1201,6 +1202,41 @@
         border-bottom: 0px solid $cgrey4;
       }
     }
+  }
+
+  .block-views-blockcareer-news-block-1 {
+    .view-content {
+
+      .views-row:nth-child(1),
+      .views-row:nth-child(2) {
+        padding-top: 10px;
+        padding-bottom: 0;
+        border-bottom: 0;
+        border-top: 1px solid #b1b1b1;
+        margin-bottom: 10px;
+        max-width: none;
+      }
+
+      .views-row:nth-child(1) .views-field-field-image,
+      .views-row:nth-child(2) .views-field-field-image,
+      .views-row:nth-child(3) .views-field-field-image {
+        max-width: 240px;
+        max-height: 180px;
+        margin-right: 20px;
+      }
+
+      .views-row:nth-child(1) .card-title a,
+      .views-row:nth-child(2) .card-title a,
+      .views-row:nth-child(3) .card-title a {
+        font-size: szrem(14);
+        line-height: 17px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+      }
+
+    }
+
   }
 
   .block-block-groupgroup-career-news-jobs+.block-fixed-block-contenthorizontal-advertising {
