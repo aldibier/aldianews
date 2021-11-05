@@ -2587,22 +2587,22 @@ var initSlick = function initSlick($, Drupal) {
       }]
     };
     /* 
-        const mobileWidth = 768;
+    		const mobileWidth = 768;
     
-        const resizeObserver = new ResizeObserver(entries => {
-          for (let entry of entries) {
-            let currentWidth = entry.contentBoxSize[0].inlineSize;
+    		const resizeObserver = new ResizeObserver(entries => {
+    			for (let entry of entries) {
+    				let currentWidth = entry.contentBoxSize[0].inlineSize;
     
-            if(currentWidth > mobileWidth) return;
-            if($(".view-id-thought_leaders_home.view-display-id-block_1 .view-content").hasClass("slick-initialized")) return;
+    				if(currentWidth > mobileWidth) return;
+    				if($(".view-id-thought_leaders_home.view-display-id-block_1 .view-content").hasClass("slick-initialized")) return;
     
-            if(currentWidth <= mobileWidth){   
-              $(".view-id-thought_leaders_home.view-display-id-block_1 .view-content").not('.slick-initialized').slick(settingThoughtLeaders);
-            }
-          }
-        });
+    				if(currentWidth <= mobileWidth){   
+    					$(".view-id-thought_leaders_home.view-display-id-block_1 .view-content").not('.slick-initialized').slick(settingThoughtLeaders);
+    				}
+    			}
+    		});
     
-        resizeObserver.observe(document.querySelector('body')); */
+    		resizeObserver.observe(document.querySelector('body')); */
     //slide edit resize
 
     if (window.matchMedia("(max-width: 768px)").matches) {
