@@ -12,7 +12,7 @@ term_hierarchy: false
 absolute_paths: false
 hide_single_home_item: true
 title_from_page_when_available: false
-capitalizator_mode: ucwords
+capitalizator_mode: ucforce
 capitalizator_ignored_words:
   - of
   - and
@@ -22,8 +22,14 @@ capitalizator_ignored_words:
   - 'y'
   - o
   - a
-capitalizator_forced_words: {  }
-capitalizator_forced_words_first_letter: false
+capitalizator_forced_words:
+  - al
+  - 'dia,'
+  - Al
+  - 'DIA,'
+  - AL
+  - dia
+capitalizator_forced_words_first_letter: true
 capitalizator_forced_words_case_sensitivity: true
 add_structured_data_json_ld: false
 use_site_title: false
