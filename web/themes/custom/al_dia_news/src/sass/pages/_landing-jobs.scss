@@ -843,11 +843,13 @@
 }
 
 @media (max-width:$broken2) {
-  .block-views-blockcareer-news-block-1 .view-content {
+  .block-views-blockcareer-news-block-1 .view-content,
+	.block-views-blockcareer-news-block-1.view-complete .view-content  {
 
     .views-row:nth-child(1),
     .views-row:nth-child(2),
-    .views-row:nth-child(3) {
+    .views-row:nth-child(3),
+		.views-row:nth-child(3) {
       flex-direction: initial;
       margin: 0;
       border-right: none;
