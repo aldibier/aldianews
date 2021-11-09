@@ -11,7 +11,7 @@
     margin: 0 auto;
     margin-bottom: 40px;
 
-    > div {
+    >div {
       max-width: 265px;
       width: 100%;
       max-height: 62.35px;
@@ -98,6 +98,7 @@
     position: relative;
     margin-left: 30px;
     padding-left: 10px;
+
     &::before {
       display: block;
       position: absolute;
@@ -121,6 +122,7 @@
     margin: 0 auto;
     width: 100%;
     position: relative;
+
     .footer-red {
       position: absolute;
       right: 80px;
@@ -173,6 +175,12 @@
     }
   }
 
+  @media (max-width: $tablet) {
+    .view-footer .footer-red {
+      justify-content: flex-start;
+    }
+  }
+
   .footer-red {
     a {
       @extend button;
@@ -201,17 +209,20 @@
   @media (max-width: $tablet) {
     border-bottom: 1px solid #333333;
     margin-bottom: 20px;
+
     .view-header {
       border-bottom: 0px solid #ee2211;
       margin-bottom: 20px;
       padding: 0 15px;
-      > div {
+
+      >div {
         border-bottom: 1px solid #ee2211;
         max-width: none;
         max-height: 25px;
         //margin-top: 10px;
         margin: 15px 0 20px;
-				img {
+
+        img {
           max-width: 93px;
           max-height: 20.35px;
         }
@@ -243,6 +254,7 @@
       font-size: $px16;
       line-height: 20px;
     }
+
     .al-dia-wrapper-container {
       display: block;
     }
@@ -256,6 +268,7 @@
     .al-dia-hour {
       max-width: 125px;
       margin-left: 0px;
+
       &::before {
         top: -7px;
       }
@@ -276,14 +289,17 @@
     margin: 0 auto;
     width: 100%;
   }
+
   .breadcrumb {
     //margin: 5px 0 30px;
-		margin: 0;
-	}
+    margin: 0;
+  }
+
   .card-event .card-event-venue {
     font-size: 20px;
     line-height: 24px;
     color: #333333;
+
     @media screen and (max-width: $tablet) {
       font-family: $PrNovacond-reg;
       font-size: 12px;
@@ -303,6 +319,7 @@
     }
 
     &.primary {
+
       li,
       a {
         all: initial;
@@ -349,6 +366,7 @@
         border: 0;
         border-bottom: 2px solid currentColor;
         color: $corange;
+
         @media screen and (max-width: $broken) {
           padding-bottom: 5px;
         }
@@ -359,9 +377,11 @@
   //-------------pager events-----------------//
   .pager {
     margin-bottom: 100px;
+
     @media screen and (max-width: $tablet) {
       margin-bottom: 60px;
     }
+
     .pager__items {
       display: flex;
       justify-content: center;
@@ -379,8 +399,8 @@
       color: #777777;
     }
 
-    .pager__item--previous  {
-      + .pager__item--ellipsis {
+    .pager__item--previous {
+      +.pager__item--ellipsis {
         margin-right: 10px;
       }
     }
@@ -436,9 +456,11 @@
         font-weight: bold;
         line-height: 25px;
         color: #777777;
+
         span {
           display: none;
         }
+
         @media screen and (max-width: $tablet) {
           font-size: szrem(24);
         }
