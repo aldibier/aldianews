@@ -638,10 +638,12 @@
     }
 
     .views-row:nth-child(3) {
-      padding: 0px;
-      border-bottom: 0px;
-      margin-bottom: 60px;
-      flex-direction: column;
+      flex: 1 1 100%;
+      max-width: 400px;
+      max-height: 235px;
+      overflow: hidden;
+      margin: 0 0 25px auto;
+      margin-right: 0;
 
       &::before {
         display: none;
@@ -878,7 +880,7 @@
 
     .views-row {
       padding-top: 15px;
-			border-top: 1px solid $cgrey4;
+      border-top: 1px solid $cgrey4;
       margin-top: 15px;
     }
 
@@ -889,8 +891,20 @@
       margin: 0;
       border-right: none;
       max-width: 100%;
-			padding: 15px 0 0 0;
-			border-top: 1px solid $cgrey4;
+      padding: 0;
+      margin: 0;
+    }
+
+    .views-row:nth-child(1),
+    .views-row:nth-child(2) {
+      padding: 0;
+      margin: 0;
+      border: none;
+    }
+
+    .views-row:nth-child(3) {
+      padding: 15px 0 0 0;
+      border-top: 1px solid $cgrey4;
       margin-top: 15px;
     }
 
