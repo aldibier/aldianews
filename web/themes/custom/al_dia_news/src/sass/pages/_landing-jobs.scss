@@ -1108,9 +1108,9 @@
       max-width: none;
 
       &:first-child {
-        margin: 0;
-        border: 0;
-        padding: 0;
+        margin: 0 !important;
+        border: 0 !important;
+        padding: 0 !important;
       }
 
       &::before {
@@ -1222,10 +1222,17 @@
 
       .views-row {
         padding: 10px 0 0 0 !important;
-        margin-top: 10px 0 0 0 !important;
+        margin: 10px 0 0 0 !important;
         border-bottom: 0;
         border-top: 1px solid $cgrey4;
         max-width: none;
+
+				&:first-child {
+					margin: 0 !important;
+					border: 0 !important;
+					padding: 0 !important;
+				}
+
       }
 
       .views-row:nth-child(2),
