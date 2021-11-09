@@ -1041,6 +1041,10 @@
   }
 
   .block-views-blockcareer-news-block-1 {
+		.view-content {
+			grid-template-columns: 1fr;
+		}
+		
     .views-row {
       padding-top: 10px;
       padding-bottom: 0px;
@@ -1050,7 +1054,7 @@
       max-width: none;
 
       .views-field-field-image {
-				flex: 1 0 140px;
+				flex: 0 0 140px;
         max-height: 140px;
         margin-right: 20px;
       }
@@ -1216,7 +1220,7 @@
       .views-row:nth-child(1) .views-field-field-image,
       .views-row:nth-child(2) .views-field-field-image,
       .views-row:nth-child(3) .views-field-field-image {
-        flex: 1 0 140px;
+        flex: 0 0 140px;
 				max-width: 100%;
         max-height: 180px;
         margin-right: 20px;
