@@ -474,13 +474,17 @@
     max-width: 400px;
     width: 100%;
 
+		&:first-child {
+			position: relative;
+		}
+
     &:first-child::after {
       content: '';
       position: absolute;
       bottom: calc(0% - 30px);
       display: block;
       width: 100vw;
-      height: 2px;
+      height: 1px;
       background-color: $cgrey4;
     }
 
