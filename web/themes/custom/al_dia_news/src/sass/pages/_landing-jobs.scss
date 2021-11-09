@@ -129,6 +129,12 @@
         margin: -40px auto;
       }
 
+      &:nth-child(n + 7) {
+        margin-top: 15px;
+        padding-top: 15px;
+        border-top: 1px solid $cgrey4;
+      }
+
       &:nth-last-of-type(-n + 3) {
         &::before {
           content: none;
@@ -351,6 +357,10 @@
       }
     }
 
+    .views-field-nothing {
+      flex: 1;
+    }
+
     .slick-initialized.slick-slider {
       width: 100%;
       max-width: 100%;
@@ -457,12 +467,22 @@
   width: 66%;
 
   .views-row {
-    padding-bottom: 15.4px;
+    //padding-bottom: 15.4px;
     //border-bottom: 1px solid $cgrey4;
-    margin-bottom: 15px;
+    //margin-bottom: 15px;
     display: flex;
     max-width: 400px;
     width: 100%;
+
+    &:first-child::after {
+      content: '';
+      position: absolute;
+      bottom: calc(0% - 30px);
+      display: block;
+      width: 100vw;
+      height: 2px;
+      background-color: $cgrey4;
+    }
 
     .views-field-field-image {
       flex: 1 1 175px;
@@ -701,9 +721,13 @@
 .block-block-groupgroup-career-news-jobs {
   position: relative;
   width: 100%;
-  max-width: 1310px;
+  max-width: 1280px;
   margin: 0 auto 80px;
-  padding: 0 15px;
+  padding: 0;
+
+  @media (max-width: $broken) {
+    padding: 0 15px;
+  }
 
   >div.content {
     display: flex;
@@ -782,7 +806,7 @@
     .views-row {
       //border-bottom: 0px;
       //border-top: 1px solid #b1b1b1;
-      padding: 20px 0px 0px;
+      //padding: 20px 0px 0px;
     }
 
     .view-content {
@@ -1041,10 +1065,10 @@
   }
 
   .block-views-blockcareer-news-block-1 {
-		.view-content {
-			grid-template-columns: 1fr;//
-		}
-		
+    .view-content {
+      grid-template-columns: 1fr; //
+    }
+
     .views-row {
       padding-top: 10px;
       padding-bottom: 0px;
@@ -1054,7 +1078,7 @@
       max-width: none;
 
       .views-field-field-image {
-				flex: 0 0 140px;
+        flex: 0 0 140px;
         max-height: 140px;
         margin-right: 20px;
       }
@@ -1221,7 +1245,7 @@
       .views-row:nth-child(2) .views-field-field-image,
       .views-row:nth-child(3) .views-field-field-image {
         flex: 0 0 140px;
-				max-width: 100%;
+        max-width: 100%;
         max-height: 180px;
         margin-right: 20px;
       }
@@ -1360,7 +1384,7 @@
           position: relative;
 
           &::before {
-            content: "";
+            /* content: "";
             display: block;
             position: absolute;
             height: 0;
@@ -1368,7 +1392,7 @@
             background: $cgrey4;
             width: 100%;
             left: 0px;
-            bottom: -30px;
+            bottom: -30px; */
           }
         }
       }
