@@ -701,9 +701,13 @@
 .block-block-groupgroup-career-news-jobs {
   position: relative;
   width: 100%;
-  max-width: 1310px;
+  max-width: 1280px;
   margin: 0 auto 80px;
-  padding: 0 15px;
+  padding: 0;
+
+  @media (max-width: $broken) {
+		padding: 0 15px;
+	}
 
   >div.content {
     display: flex;
@@ -1360,7 +1364,7 @@
           position: relative;
 
           &::before {
-            content: "";
+            /* content: "";
             display: block;
             position: absolute;
             height: 0;
@@ -1368,7 +1372,7 @@
             background: $cgrey4;
             width: 100%;
             left: 0px;
-            bottom: -30px;
+            bottom: -30px; */
           }
         }
       }
