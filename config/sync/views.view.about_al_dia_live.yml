@@ -21,7 +21,6 @@ dependencies:
     - field.storage.paragraph.field_position
     - field.storage.paragraph.field_testimonial
     - image.style.75x75
-    - responsive_image.styles.image_style_crop_page_headers_responsive
     - responsive_image.styles.slider_live_events_
   module:
     - block_content
@@ -2421,9 +2420,9 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: responsive_image
+          type: image
           settings:
-            responsive_image_style: image_style_crop_page_headers_responsive
+            image_style: ''
             image_link: ''
           group_column: ''
           group_columns: {  }
