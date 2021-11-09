@@ -15,7 +15,7 @@ bundle: event
 label: 'Slider block'
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
@@ -30,6 +30,9 @@ settings:
         enabled: false
       advertising_options:
         weight: 13
+        enabled: false
+      contact:
+        weight: 16
         enabled: false
       features_items:
         weight: 14
@@ -48,6 +51,9 @@ settings:
         enabled: false
       main_features:
         weight: 19
+        enabled: false
+      platforms:
+        weight: 23
         enabled: false
       sliders_in_internal_events:
         enabled: true
