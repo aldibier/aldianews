@@ -1123,6 +1123,12 @@
         margin-right: 20px;
       }
 
+			.views-field-field-image a,
+			.views-field-field-image picture {
+				display: block;
+				line-height: 1;
+			}
+
       .card-title {
         margin-bottom: 5px;
       }
@@ -1227,11 +1233,11 @@
         border-top: 1px solid $cgrey4;
         max-width: none;
 
-				&:first-child {
-					margin: 0 !important;
-					border: 0 !important;
-					padding: 0 !important;
-				}
+        &:first-child {
+          margin: 0 !important;
+          border: 0 !important;
+          padding: 0 !important;
+        }
 
       }
 
@@ -1321,6 +1327,12 @@
         max-height: 180px;
         margin-right: 20px;
       }
+
+			.views-row .views-field-field-image a,
+			.views-row .views-field-field-image picture {
+				display: block !important;
+				line-height: 1 !important;
+			}
 
       .views-row:nth-child(1) .card-title a,
       .views-row:nth-child(2) .card-title a,
