@@ -525,10 +525,16 @@
     }
 
     @media (max-width: $broken) {
-      margin: 0 auto 0px;
-      #block-gamwadvertisement-8 {
+      //margin: 0 auto 0px;
+      margin: 0px 0 90px auto;
+			#block-gamwadvertisement-8 {
         margin-bottom: 40px;
       }
+    }
+
+		@media (max-width: $tablet) {
+      //margin: 0 auto 0px;
+      margin: 0;
     }
   }
 
