@@ -266,7 +266,7 @@
 
       @media (max-width: $tablet) {
         height: auto;
-				min-height: initial;
+        min-height: initial;
 
         .employer-image {
           min-height: 175px;
@@ -286,7 +286,7 @@
 
       @media (max-width: $tablet) {
         height: auto;
-				min-height: initial;
+        min-height: initial;
 
         .employer-image {
           min-height: 280px;
@@ -306,8 +306,8 @@
 
       @media (max-width: $tablet) {
         height: auto;
-				min-height: initial;
-				
+        min-height: initial;
+
         .employer-image {
           min-height: 200px;
         }
@@ -533,6 +533,11 @@
         max-width: 180px;
       }
 
+      :lang(es) .field--name-field-text {
+        max-width: 280px;
+      }
+
+
       @media (max-width: $tablet) {
         margin-right: 0;
         padding-bottom: 40px;
@@ -548,6 +553,12 @@
           width: 50%;
           max-width: initial;
         }
+
+				:lang(es) .field--name-field-text {
+					width: 80%;
+					max-width: 280px;
+				}
+
       }
     }
 
