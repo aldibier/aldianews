@@ -1,11 +1,13 @@
 .path-advertising {
-  .modal-form  {
+  .modal-form {
     display: none;
   }
+
   .watch-live {
     max-width: 1280px;
     margin: 0 auto;
   }
+
   .modal-form.show {
     display: block;
   }
@@ -23,6 +25,7 @@
   max-height: 710px;
   overflow: hidden;
   margin-top: 15px;
+
   .views-row {
     max-width: 1310px;
     margin: 0 auto;
@@ -254,8 +257,16 @@
     &:nth-child(1) {
       height: 400px;
 
+      @media (max-width: $broken2) {
+        &:lang(es) {
+          height: 100%;
+          min-height: min-content;
+        }
+      }
+
       @media (max-width: $tablet) {
         height: auto;
+				min-height: initial;
 
         .employer-image {
           min-height: 175px;
@@ -266,8 +277,16 @@
     &:nth-child(2) {
       height: 640px;
 
+      @media (max-width: $broken2) {
+        &:lang(es) {
+          height: 100%;
+          min-height: min-content;
+        }
+      }
+
       @media (max-width: $tablet) {
         height: auto;
+				min-height: initial;
 
         .employer-image {
           min-height: 280px;
@@ -278,9 +297,17 @@
     &:nth-child(3) {
       height: 450px;
 
+      @media (max-width: $broken2) {
+        &:lang(es) {
+          height: 100%;
+          min-height: min-content;
+        }
+      }
+
       @media (max-width: $tablet) {
         height: auto;
-
+				min-height: initial;
+				
         .employer-image {
           min-height: 200px;
         }
@@ -295,7 +322,7 @@
       }
     }
 
-    > .views-field {
+    >.views-field {
       max-width: 1310px;
       margin: 0 auto;
       padding: 0 15px;
@@ -435,6 +462,7 @@
     }
   }
 }
+
 .block-block-groupadvertising-webform {
   max-width: 1310px;
   margin: 0 auto;
@@ -478,7 +506,7 @@
     flex-direction: column;
   }
 
-  > .field__item {
+  >.field__item {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -605,7 +633,7 @@
 }
 
 .block-fixed-block-contentinformation-footer-advertising {
-  & + .button-apply {
+  &+.button-apply {
     margin: 0 auto 71px;
     padding: 0;
     border: none;
