@@ -5,6 +5,7 @@
   z-index: 9;
   padding: 80px;
   min-height: 560px;
+
   h1 {
     font-family: $ModernoFB-Regular;
     font-style: normal;
@@ -15,24 +16,27 @@
     color: $cwhite;
     margin: 0px 0px 25px;
   }
+
   img {
     width: auto;
     height: auto;
     max-width: 100%;
     max-height: 250px;
-    
+
     @media(max-width: $tablet) {
       max-height: 83px;
     }
   }
+
   .contextual-region,
-  .view-header-of-the-event-internal .view-content > .views-row {
+  .view-header-of-the-event-internal .view-content>.views-row {
     position: initial;
     max-width: 1310px;
     margin: 0 auto;
   }
+
   .block-field-blocknodeeventfield-image {
-    > div.content {
+    >div.content {
       position: absolute;
       top: 0px;
       left: 0px;
@@ -63,16 +67,19 @@
       z-index: -1;
     }
   }
+
   .block-field-blocknodeeventfield-logo {
     max-width: 290px;
     width: 100%;
     height: auto;
     overflow: hidden;
     margin-bottom: 45px;
+
     .content {
       margin-top: 0px;
     }
   }
+
   .field--name-field-nomination-status {
     font-family: $PrNovacond-Sbold;
     font-style: normal;
@@ -81,9 +88,11 @@
     color: $red1;
     margin-bottom: 10px;
   }
+
   .header-content-date-place {
     margin-bottom: 30px;
     display: flex;
+
     * {
       font-family: $PrNovacond-reg;
       font-style: normal;
@@ -91,11 +100,13 @@
       line-height: 30px;
       color: $cwhite;
     }
+
     .block-field-blocknodeeventfield-venue-of-the-event {
       padding-left: 18px;
       margin-left: 18px;
       position: relative;
       max-width: 330px;
+
       &::before {
         content: "";
         display: block;
@@ -108,12 +119,15 @@
       }
     }
   }
+
   .datetime {
     font-weight: 600;
   }
+
   .field--name-field-venue-of-the-event {
     font-weight: normal;
   }
+
   a.buttton-link {
     max-width: 200px;
     min-height: 55px;
@@ -130,10 +144,12 @@
     text-transform: uppercase;
     width: 100%;
     background: transparent;
+
     &:last-child {
       margin-right: 0px;
     }
   }
+
   .text-and-buttons-event span {
     width: 100%;
     font-family: $PrNovacond-Sbold;
@@ -150,47 +166,59 @@
   .layout-container .width1440 {
     max-width: none;
   }
+
   .section-flex {
     display: flex;
     flex-wrap: wrap;
   }
-  .view-id-header_of_the_event_internal .view-footer{
+
+  .view-id-header_of_the_event_internal .view-footer {
     max-width: 1310px;
     margin: 0 auto;
   }
+
   .guest-event-advertising {
     margin: 40px auto 0;
   }
+
   .breadcrumb {
     max-width: 1310px;
     margin: 45px auto 30px;
     padding: 0 15px;
   }
+
   h1 .aldia-logo-in-text {
     max-width: 150px;
+
     img {
       height: 40px;
       width: 100%;
     }
   }
+
   .content-present-by-advertising {
     display: flex;
     margin: 40px auto 0 !important;
+
     @media (max-width: 1200px) {
       margin: 0px auto 0 !important;
+
       .maxim {
         display: none;
       }
+
       .three-content-event {
         max-width: none;
         margin: 0 auto;
       }
     }
   }
+
   .body-lateral-section {
     max-width: 840px;
     margin-right: 40px;
     width: 100%;
+
     p {
       font-family: $PrNovacond-light;
       font-style: normal;
@@ -198,6 +226,7 @@
       line-height: 33px;
       color: $cblack3;
     }
+
     .field__label {
       font-family: $ModernoFB-Regular;
       font-weight: bold;
@@ -208,6 +237,7 @@
       text-transform: uppercase;
       margin-top: 40px;
     }
+
     .field--type-image .field__item {
       max-width: 351px;
       width: 100%;
@@ -215,35 +245,43 @@
       height: auto;
       overflow: hidden;
       margin: 60px auto;
+
       img {
         width: 100%;
         height: auto;
       }
     }
   }
+
   .body-lateral-section-advertising {
     max-width: 400px;
     width: 100%;
     margin-top: 5px;
   }
+
   .layout-container .layout-main {
     max-width: 1440px;
     margin: 0 auto 0px;
     padding: 0px;
   }
+
   .body-adversiting-section {
     margin: 30px auto 50px;
     width: 100%;
+
     .block {
       margin: 0 auto;
+
       @media (max-width: $tablet) {
         margin: 0;
       }
     }
   }
+
   .maxim {
     max-height: 350px;
   }
+
   form .form-item-markup {
     width: 100%;
   }
@@ -255,22 +293,26 @@
   .views-field-field-style {
     display: none;
   }
+
   .item-list ul {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     margin-bottom: 100px;
     position: relative;
+
     li {
       width: 100%;
       margin: 0 auto;
       margin-bottom: 40px;
       border-right: 1px solid #b1b1b1;
+
       &:last-child {
         border-right: 0px;
       }
     }
   }
+
   .paragraph--type--guest {
     display: flex;
     justify-content: space-evenly;
@@ -278,21 +320,24 @@
     align-items: center;
     text-align: center;
   }
+
   .event-guest-photo {
     max-width: 220px;
-    width: 220px;//100%
+    width: 220px; //100%
     max-height: 220px;
-    height: 220px;//auto
+    height: 220px; //auto
     overflow: hidden;
     border-radius: 120px;
     box-shadow: 2px 2px 2px $cblack3;
     margin: 0 auto 30px !important;
+
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
   }
+
   .event-guest-name {
     font-family: $PrNovacond-Sbold;
     font-style: normal;
@@ -304,6 +349,7 @@
     margin: 0 auto 20px;
     max-width: 340px;
   }
+
   .event-guest-position {
     font-family: $ModernoFB-Regular;
     font-style: normal;
@@ -315,6 +361,7 @@
     margin: 0 auto 5px;
     max-width: 340px;
   }
+
   .event-guest-company {
     font-family: $ModernoFB-Regular;
     font-style: normal;
@@ -326,6 +373,7 @@
     max-width: 340px;
     margin: 0 auto;
   }
+
   .four-content-event-advertising {
     display: none;
   }
@@ -334,55 +382,69 @@
   .mode-one {
     max-width: 840px;
     margin-right: auto;
+
     .item-list ul li {
       max-width: 650px;
       border-right: 0px;
     }
   }
+
   .mode-two {
     display: flex;
     flex-wrap: wrap;
+
     .subtitle-events {
       max-width: 840px;
     }
+
     .views-field-field-guest {
       max-width: 840px;
       margin-right: auto;
       width: 100%;
     }
+
     .paragraph {
       display: flex;
       flex-direction: column;
     }
+
     .item-list ul li {
       max-width: 400px;
     }
+
     .four-content-event-advertising {
       display: block;
     }
   }
+
   .mode-three .item-list ul li {
     max-width: 400px;
   }
+
   .mode-more {
     .item-list ul::after {
       display: block;
       content: "";
       width: 314px;
     }
+
     .item-list ul li {
       max-width: 300px;
       margin-bottom: 70px;
+
       .paragraph {
         display: flex;
         flex-direction: column;
       }
+
       &:nth-child(4n) {
         border-right: 0px;
       }
+
       &:nth-child(4)::before {
         display: none !important;
       }
+
       &:nth-child(1n + 4):before {
         display: block;
         content: "";
@@ -396,6 +458,7 @@
         margin: -35px 0;
       }
     }
+
     .event-guest-photo {
       width: 170px;
       height: 170px;
@@ -409,16 +472,19 @@
       }
 
     }
+
     .event-guest-name {
       font-size: $px20;
       line-height: 24px;
       max-width: 270px;
     }
+
     .event-guest-position {
       font-size: $px16;
       line-height: 19px;
       max-width: 270px;
     }
+
     .event-guest-company {
       font-size: $px20;
       line-height: 24px;
@@ -457,20 +523,25 @@
       height: auto;
     }
   }
+
   .views-field-field-slider-styl {
     display: none;
   }
+
   .item-list ul {
     margin: 0px auto 100px;
     width: 100%;
   }
+
   .slick-list {
     max-width: 1170px;
     margin: 0 auto;
   }
+
   li.slick-slide:not(.item) {
     //display: none;
   }
+
   .slick-arrow {
     border: 0px;
     font-size: 0px;
@@ -499,47 +570,69 @@
       opacity: 0.3;
     }
   }
+
   ///---- view modes-----//
   .slider-one li {
     margin-right: 0px;
     padding-left: 0px;
+
     img {
       max-width: 570px;
       margin: 0 auto;
     }
   }
-  .slider-two li{
+
+  .slider-two li {
     margin-right: 30px;
   }
+
   .slider-three li {
     width: 380px;
     height: 200px;
   }
+
   .slider-more li {
     width: 280px;
     height: 147px;
     margin-right: 17px;
   }
 }
+
 //------------------ Contacto interna de eventos ------------//
 .view-contact-event {
   max-width: 1310px;
   margin: 0 auto 90px;
-  padding: 0 15px;
+  //padding: 0 15px;
+  padding: 0;
+
   .view-content {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: minmax(auto, 430px) minmax(auto, 430px);
+    grid-gap: 40px 80px;
   }
+
   .views-row {
+    position: relative;
     max-width: 470px;
-    padding-right: 70px;
-    border-right: 1px solid #b1b1b1;
-    margin-right: 40px;
+    padding-right: 0;
+    margin-right: 0;
+
+    &:first-child::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: calc(0% - 40px);
+      width: 1px;
+      height: 100%;
+      background-color: $cgrey4;
+    }
+
     &:last-child {
       border-right: 0px;
       margin-right: 0px;
     }
   }
+
   .views-field-field-description-contact {
     font-family: $PrNovacond-reg;
     font-style: normal;
@@ -550,6 +643,7 @@
     margin-bottom: 40px;
     min-height: 115px;
   }
+
   .name-contact-event {
     font-family: $PrNovacond-Sbold;
     font-style: normal;
@@ -558,6 +652,7 @@
     color: $red1;
     margin-bottom: 5px;
   }
+
   .position-contact-event {
     font-family: $PrNovacond-Sbold;
     font-style: normal;
@@ -567,6 +662,7 @@
     margin-bottom: 35px;
     min-height: 88px;
   }
+
   .phone-contact-event {
     font-family: $PrNovacond-Sbold;
     font-style: normal;
@@ -575,6 +671,7 @@
     color: $cblack2;
     margin-bottom: 5px;
   }
+
   .views-field-field-email {
     font-family: $PrNovacond-reg;
     font-style: normal;
@@ -583,13 +680,16 @@
     color: $cblack2;
   }
 }
+
 .five-content-event-contact {
   margin-bottom: 100px !important;
+
   .block-gamw {
     margin: 80px auto;
     max-width: 1280px;
     max-height: 149px;
     overflow: hidden;
+
     @media (max-width: $tablet) {
       margin: 30px -15px;
       max-height: 100px;
@@ -604,6 +704,7 @@
 .webform-submission-nominate-form {
   justify-content: space-between;
   height: 100% !important;
+
   #edit-fieldset {
     width: 100%;
     display: flex;
@@ -614,6 +715,7 @@
       //flex-direction: column;
     }
   }
+
   #edit-markup,
   label[for*="nominee-information"] {
     font-family: $ModernoFB-Regular;
@@ -628,115 +730,143 @@
     border-bottom: 1px solid $corange;
     margin-bottom: 45px;
   }
+
   .fieldset-wrapper {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
   }
+
   .form-type-email,
   .form-type-textarea {
     width: 100%;
     max-width: none;
   }
+
   textarea {
     max-width: none;
     min-height: 230px;
   }
+
   .form-type-textfield {
     max-width: 405px;
   }
+
   .form-item-last-name {
     padding-left: 0px;
   }
+
   .form-type-textfield,
   .js-form-type-tel {
     width: 49%;
   }
 }
+
 .webform-submission-register-form {
   height: 100% !important;
+
   .views-label.views-label-field-webform {
     font-size: $px35;
     line-height: 42px;
   }
+
   label {
     font-size: $px20 !important;
     line-height: 24px !important;
   }
+
   input {
     max-width: 405px;
     min-height: 40px;
   }
+
   #edit-container--2 {
     width: 50%;
   }
+
   .form-type-email,
   .form-item-company,
   .form-actions,
   .form-item-address-city {
     width: 100%;
   }
-  .SumoSelect > .CaptionCont,
+
+  .SumoSelect>.CaptionCont,
   form select {
     min-height: 40px;
     margin-top: 4px;
   }
+
   #edit-address--wrapper {
     max-width: none;
     width: 50%;
     padding-left: 15px;
+
     .fieldset-wrapper {
       margin: 0px;
     }
   }
-  .SumoSelect .optWrapper > .options > li label {
+
+  .SumoSelect .optWrapper>.options>li label {
     min-height: 45px;
   }
-  .SumoSelect.open > .optWrapper {
+
+  .SumoSelect.open>.optWrapper {
     top: 44px;
   }
+
   .form-actions {
     max-width: 150px;
   }
 }
+
 .form-register-events .contact-form {
   max-width: 990px;
   padding: 80px 75px 50px;
+
   @media (max-width: $desktop) {
     padding: 50px 20px;
   }
 }
+
 .webform-submission-sponsorship-upcoming-event-form {
   justify-content: space-between;
   height: 100% !important;
+
   .form-type-textfield,
   .form-type-email,
   .js-form-type-select {
     max-width: 340px;
   }
+
   .form-item-last-name,
   .form-item-company,
   .form-item-address-state-province,
   .form-item-budget {
     max-width: 355px;
   }
-  .SumoSelect .optWrapper > .options > li label {
+
+  .SumoSelect .optWrapper>.options>li label {
     min-height: 45px;
     color: #000000;
   }
-  .SumoSelect.open > .optWrapper {
+
+  .SumoSelect.open>.optWrapper {
     top: 39px;
 
     @media (max-width: $tablet) {
       top: 48px;
     }
   }
+
   .form-item-company {
     padding-left: 15px;
   }
+
   #edit-address--2--wrapper {
     width: 100%;
     max-width: none;
+
     .fieldset-wrapper {
       margin: 0px;
       display: flex;
@@ -744,28 +874,34 @@
       justify-content: space-between;
     }
   }
+
   .form-item-address-state-province,
   .form-item-address-country,
   .form-item-budget {
     width: 50%;
     padding-left: 15px;
     margin: 0px 0px 25px;
+
     .CaptionCont {
       //margin-top: 5px;
       margin-top: 0;
     }
   }
+
   .form-item-address-country {
     padding-left: 0px;
   }
+
   .form-item-message {
     max-width: none;
     margin-bottom: 60px;
+
     textarea {
       width: 100% !important;
       max-width: none;
     }
   }
+
   .form-actions {
     width: 100%;
     max-width: 150px;
@@ -777,6 +913,7 @@
 @media (max-width: $desktop) {
   .banner-events {
     min-height: auto;
+
     a.buttton-link {
       max-width: 105px;
       min-height: 25px;
@@ -785,32 +922,40 @@
       line-height: 14px;
       margin-bottom: 10px;
     }
+
     .text-and-buttons-event span {
       font-size: $px14;
       line-height: 17px;
     }
   }
+
   .page-node-type-event {
     .block-gamw {
       display: flex;
       justify-content: center;
     }
+
     h1 .aldia-logo-in-text {
       max-width: 45px;
+
       img {
         height: 14px;
         width: 100%;
       }
     }
+
     .breadcrumb {
       margin: 10px auto 0px;
     }
+
     .section-flex {
       justify-content: center;
     }
+
     .text-and-buttons-event {
       justify-content: flex-start;
     }
+
     .body-lateral-section-advertising {
       margin: 10px auto 40px;
     }
@@ -821,53 +966,66 @@
     .item-list ul {
       margin-bottom: 40px;
     }
+
     .mode-one {
       max-width: none;
       margin: 0 auto;
     }
+
     .mode-two {
       justify-content: center;
+
       .views-field-field-guest {
         max-width: none;
         margin: 0 auto;
       }
+
       .four-content-event-advertising {
         margin: 0px auto 40px;
       }
+
       .paragraph {
         justify-content: center;
       }
+
       .event-guest-photo {
         margin: 0px 20px 15px !important;
       }
     }
+
     .mode-three {
       .item-list ul li {
         &:nth-child(3) {
           border-right: 0px;
         }
+
         &:last-child {
           border-top: 1px solid #b1b1b1;
           padding-top: 25px;
           max-width: none;
+
           .paragraph {
             justify-content: center;
           }
+
           .event-guest-photo {
             margin: 0px 20px 15px !important;
           }
         }
       }
     }
+
     .mode-more .item-list ul li {
       &:nth-child(3n) {
         border-right: 0;
       }
+
       &:nth-child(4n) {
         border-right: 0.5px solid #b1b1b1;
       }
     }
   }
+
   //------------------ modos de visulizacion slider interna de eventos ------------//
   .view-contact-event {
     .views-row {
@@ -880,68 +1038,84 @@
   .banner-events {
     max-height: 285px;
     padding: 30px 25px 25px;
+
     h1 {
       font-size: $px16;
       line-height: 19px;
       margin: 0px 0px 10px;
     }
+
     .block-field-blocknodeeventfield-logo {
       max-width: 140px;
       overflow: hidden;
       margin-bottom: 15px;
-      > div {
+
+      >div {
         overflow: hidden;
       }
     }
+
     .field--name-field-nomination-status {
       font-size: $px12;
       line-height: 14px;
     }
+
     .header-content-date-place {
       margin-bottom: 25px;
+
       * {
         font-size: $px14;
         line-height: 17.05px;
       }
     }
   }
+
   .page-node-type-event {
     .body-adversiting-section {
       margin: 20px auto 10px;
     }
+
     .guest-event-advertising {
       margin: 0 auto;
     }
+
     .body-lateral-section {
       max-width: none;
       margin-right: 0px;
+
       p {
         font-size: $px15;
         line-height: 21px;
       }
+
       .field__label {
         font-size: $px16;
         line-height: 19px;
         margin-top: 0px;
       }
+
       .field--type-image .field__item {
         max-width: 230px;
         max-height: 113px;
         margin: 30px auto;
       }
     }
+
     .body-lateral-section-advertising {
       display: none;
     }
+
     .section-event-body .body-lateral-section-advertising {
       display: block;
       max-width: 200px;
       margin: 20px auto 40px;
     }
+
     .block-extra-field-blocknodenewsaddtoany h2 {
       margin: 10px 0 5px;
     }
-    .block-extra-field-blocknodenewsaddtoany > .content {
+
+    .block-extra-field-blocknodenewsaddtoany>.content {
       margin: 10px auto 10px 0;
     }
   }
@@ -951,26 +1125,31 @@
   .guest-event-advertising {
     .item-list ul {
       margin-bottom: 50px;
+
       li {
         margin-bottom: 30px;
       }
     }
+
     .event-guest-photo {
       max-width: 105px;
       max-height: 105px;
       margin: 0 auto 15px !important;
     }
+
     .event-guest-name {
       font-size: $px14;
       line-height: 17px;
       margin: 0 auto 10px;
       max-width: 130px;
     }
+
     .event-guest-position {
       font-size: $px10;
       line-height: 12px;
       max-width: 130px;
     }
+
     .event-guest-company {
       font-size: $px12;
       line-height: 14px;
@@ -981,38 +1160,48 @@
     .mode-one {
       max-width: none;
       margin: 0 auto;
+
       .item-list ul {
         margin-bottom: 0px;
       }
+
       .item-list ul li {
         max-width: none;
       }
+
       .paragraph {
         justify-content: center;
       }
+
       .event-guest-photo {
         margin: 0px 20px 15px !important;
       }
     }
+
     .mode-two {
       .item-list ul li {
         max-width: 50%;
       }
     }
+
     .mode-three .item-list ul li {
       max-width: 50%;
+
       &:last-child {
         max-width: none;
       }
+
       &:nth-child(2) {
         border-right: 0px;
       }
     }
+
     .mode-more {
       .item-list ul li {
         max-width: 140px;
         margin-bottom: 50px;
         border-right: 0px;
+
         &:nth-child(4n + 4):before,
         &:nth-child(3):before {
           display: block;
@@ -1025,33 +1214,40 @@
           right: 0;
           margin: -35px 0;
         }
+
         &:nth-child(1n + 4):before {
           height: 0.8px;
         }
+
         &:nth-child(2n),
         &:nth-child(6) {
           border-right: 0 !important;
         }
+
         &:nth-child(2n) {
           border-left: 0.5px solid #b1b1b1;
           padding-left: 20px;
           margin-left: 0px;
         }
       }
+
       .event-guest-photo {
         max-width: 105px;
         max-height: 105px;
       }
+
       .event-guest-name {
         font-size: $px14;
         line-height: 17px;
         max-width: 130px;
       }
+
       .event-guest-position {
         font-size: $px10;
         line-height: 12px;
         max-width: 130px;
       }
+
       .event-guest-company {
         font-size: $px12;
         line-height: 14px;
@@ -1070,96 +1266,129 @@
   //------------------ modos de visulizacion slider interna de eventos ------------//
 
   .view-slider-internal-event {
-    .item-list li{
+    .item-list li {
       width: 122.5px;
       height: 60px;
       margin-right: 10px;
     }
+
     .item-list ul {
       margin: 0px auto 40px;
     }
+
     .slick-list {
       max-width: 240px;
     }
+
     .slick-arrow {
       width: 10px;
       height: 15px;
     }
+
     ///---- view modes-----//
     .slider-one {
       .slick-list {
         max-width: none;
       }
+
       li img {
         max-width: 122.5px;
       }
-      li{
+
+      li {
         margin-right: 0px;
       }
     }
+
     .slider-two li {
       margin-right: 10px;
       padding-right: 0px;
     }
+
     .slider-three li {
       width: 122.5px;
       height: 60px;
     }
+
     .slider-more li {
       width: 122.5px;
       height: 60px;
       margin-right: 10px;
     }
   }
+
   //------------------ modos de visulizacion slider interna de eventos ------------//
   .view-contact-event {
     margin: 0 auto 40px;
     padding: 0px;
+
+    .view-content {
+      grid-template-columns: 1fr;
+      gap: 40px 0;
+    }
+
     .views-row {
       max-width: none;
       padding-right: 0px;
-      border-right: 0px solid #b1b1b1;
-      border-bottom: 1px solid #b1b1b1;
-      padding-bottom: 20px;
+      border-right: none;
+      border-bottom: none;
+      padding-bottom: 0;
       margin-right: 0px;
-      margin-bottom: 20px;
+      margin-bottom: 0;
+
+			&:first-child::after {
+				top: initial;
+				bottom: calc(0% - 20px);
+				right: initial;
+				width: 100%;
+				height: 1px;
+			}
+
       &:last-child {
         border-bottom: 0px;
         padding-bottom: 0px;
         margin-bottom: 0px;
       }
     }
+
     .views-field-field-description-contact {
       font-size: $px18;
       line-height: 21px;
       margin-bottom: 20px;
       min-height: auto;
     }
+
     .name-contact-event {
       font-size: $px20;
       line-height: 24px;
     }
+
     .position-contact-event {
       font-size: $px20;
       line-height: 24px;
       margin-bottom: 20px;
       min-height: auto;
     }
+
     .phone-contact-event {
       font-size: $px20;
       line-height: 24px;
     }
+
     .views-field-field-email {
       font-size: $px20;
       line-height: 24px;
     }
   }
+
   .five-content-event-contact {
     margin-bottom: 40px !important;
   }
+
   //------------------ Formulario modal nominate ------------//
 
   .webform-submission-nominate-form {
+
     #edit-markup,
     label[for*="nominee-information"] {
       font-size: $px20;
@@ -1167,10 +1396,12 @@
       padding-bottom: 5px;
       margin-bottom: 30px;
     }
+
     textarea {
       min-height: 200px;
     }
   }
+
   .webform-submission-register-form {
     #edit-container--2 {
       width: 100%;
@@ -1180,53 +1411,67 @@
       font-size: 20px;
       line-height: 1;
     }
+
     #edit-address--wrapper {
       width: 100%;
       padding-left: 0px;
+
       .fieldset-wrapper {
         margin: 0px 0px 20px;
       }
     }
+
     .form-item {
       margin: 0 0 20px;
     }
+
     label {
       font-size: 15px !important;
     }
+
     input {
       min-height: 30px;
     }
-    .SumoSelect > .CaptionCont,
+
+    .SumoSelect>.CaptionCont,
     form select {
       min-height: 30px;
     }
+
     .form-actions .button {
       margin-top: 0px;
       max-width: 110px;
     }
   }
+
   .webform-submission-sponsorship-upcoming-event-form {
+
     .form-type-textfield,
     .form-type-email,
     .js-form-type-select {
       max-width: none;
     }
+
     .form-item-company {
       padding-left: 0px;
       width: 100%;
     }
+
     .form-item-address-state-province,
     .form-item-address-country,
     .form-item-budget {
       width: 100%;
       padding-left: 0px;
     }
+
     .form-item-message {
       margin-bottom: 30px;
+
       textarea {
         min-height: 200px;
       }
     }
+
     .form-actions .button {
       max-width: 110px;
     }
