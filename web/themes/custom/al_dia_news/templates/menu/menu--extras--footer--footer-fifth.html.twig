@@ -7,9 +7,10 @@
  * - menu_name: The machine name of the menu.
  * - items: A nested list of menu items. Each menu item contains:
  *   - attributes: HTML attributes for the menu item.
- *   - below: The menu item child items.
+ *   - content.children: The menu item child items.
  *   - title: The menu link title.
  *   - url: The menu link url, instance of \Drupal\Core\Url
+ *   - content: The field item content.
  *   - localized_options: Menu link localized options.
  *   - is_expanded: TRUE if the link has visible children within the current
  *     menu tree.
@@ -18,41 +19,17 @@
  *   - in_active_trail: TRUE if the link is in the active trail.
  */
 #}
-{% import _self as menus %}
 
-{#
-  We call a macro which calls itself to render the full tree.
-  @see https://twig.symfony.com/doc/1.x/tags/macro.html
-#}
+{% import "menu-levels.html.twig" as menu %}
 
-{{ menus.menu_links(items, attributes, 0) }}
+{{ menu.menu_links(items, attributes, 0) }}
 
-{% macro menu_links(items, attributes, menu_level) %}
-	{% import _self as menus %}
-	{% if items %}
-		{% if menu_level == 0 %}
-			<ul{{attributes.addClass('menu','menu-level-0')}}>
-			{% else %}
-				<ul class="menu">
-				{% endif %}
-				{% for item in items %}
-					<li{{item.attributes.addClass(classes)}}>
-						{{ link(item.title, item.url) }}
-						{% if item.below %}
-							{{ menus.menu_links(item.below, attributes, menu_level + 1) }}
-						{% endif %}
-					</li>
-				{% endfor %}
-			</ul>
-		{% endif %}
-	{% endmacro %}
-
-	<li class="copyr">
-		<p>2021</p>
-		<div class="logo">AL DIA</div>
-		<p>NEWS Media.</p>
-		<p></p>
-	</li>
-	<li class="powerd">
-		<p>Powered by</p>
-	</li>
+<li class="copyr">
+	<p>2021</p>
+	<div class="logo">AL DIA</div>
+	<p>NEWS Media.</p>
+	<p></p>
+</li>
+<li class="powerd">
+	<p>Powered by</p>
+</li>

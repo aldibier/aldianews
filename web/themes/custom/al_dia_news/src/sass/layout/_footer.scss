@@ -90,10 +90,10 @@
         flex-direction: column;
       }
 
-			.field--name-body {
-				justify-content: center;
-				text-align: center;
-			}
+      .field--name-body {
+        justify-content: center;
+        text-align: center;
+      }
 
       .field--name-field-image-block {
         position: relative;
@@ -144,7 +144,7 @@
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: initial;
       grid-auto-rows: auto;
-      grid-gap: 30px;
+      grid-gap: 70px;
       grid-template-areas: 'logo-title logo-title'
         'image location'
         'image suscribe'
@@ -203,9 +203,13 @@
 
       &.menu-level-0>li li {
         display: flex;
-				align-items: center;
+        align-items: center;
         flex: 1 1 100%;
         margin-bottom: 35px;
+
+        @media (max-width: $tablet) {
+          margin-bottom: 15px;
+        }
 
         &:last-child {
           margin-bottom: 0;
@@ -223,24 +227,27 @@
       }
 
       .field--name-field-image {
-        float: left;
-        margin: -45px 0;
         width: 82.89px;
-        height: 32px;
+        height: 0;
 
         @media (max-width: $tablet) {
+          position: absolute;
+          height: initial;
+          top: -80px;
+          left: -20px;
+
           &:lang(en) {
-            margin: -45px -18px -45px 0;
+            //margin: -45px -18px -45px 0;
           }
 
           &:lang(es) {
-            margin: -45px 0 0 -4px;
+            //margin: -45px 0 0 -4px;
           }
         }
       }
 
       img {
-        transform: scale(1.3);
+        transform: scale(1.3) translateY(-60%);
       }
 
       a {
@@ -319,9 +326,9 @@
         flex-direction: column;
       }
 
-			.main-news-body {
-				margin: 0;
-			}
+      .main-news-body {
+        margin: 0;
+      }
 
     }
 
@@ -597,7 +604,11 @@
     #block-footer {
 
       .content>.menu {
-				margin-bottom: 33px;
+        margin-bottom: 33px;
+
+        >li:last-child {
+          margin-top: 35px;
+        }
 
         .powerd,
         .copyr {
@@ -608,7 +619,7 @@
       .content>.powerd,
       .content>.copyr {
         display: flex;
-				align-items: center;
+        align-items: center;
       }
 
       .menu {
@@ -632,16 +643,16 @@
           }
 
           >div {
-            margin: -9px -8px 0 -3px;
+            //margin: -9px -8px 0 -3px;
 
             &:lang(en) {
-              margin: -8px 9px 0 -8px;
+              //margin: -8px 9px 0 -8px;
             }
           }
         }
 
         img {
-          transform: initial;
+          transform: scale(.8);
         }
       }
     }
@@ -664,7 +675,7 @@
     }
 
     .powerd {
-			margin-bottom: 30px;
+      margin-bottom: 30px;
 
       &:after {
         width: 50px;
