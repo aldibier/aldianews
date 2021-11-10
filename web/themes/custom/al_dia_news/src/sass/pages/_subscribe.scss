@@ -12,6 +12,7 @@
     padding-bottom: 15px;
     border-bottom: 2px solid #ed1c24;
   }
+
   h2 {
     font-family: $Mod-bold;
     font-style: normal;
@@ -21,15 +22,18 @@
     color: $cgrey6;
     max-width: 580px;
     margin: 0px auto 10px;
+
     .aldia-logo-in-text {
       max-width: 79.44px;
       position: relative;
       top: 2px;
+
       img {
         height: 24px;
       }
     }
   }
+
   h3 {
     font-family: $ModernoFB-Regular;
     font-style: normal;
@@ -57,6 +61,7 @@
         height: 16px;
         width: initial;
       }
+
       .last-word {
         display: none;
       }
@@ -105,6 +110,7 @@
     }
 
     .field--type-address {
+
       input[class*="form"],
       textarea[class*="form"],
       select,
@@ -126,6 +132,7 @@
     padding: 0;
     justify-content: space-between;
   }
+
   .field--type-string,
   .field--type-email,
   .field--type-phone-international {
@@ -150,15 +157,19 @@
 
   .field--type-address {
     width: 100%;
+
     summary {
       display: none;
     }
+
     details {
       border: 0px;
     }
+
     .details-wrapper {
       padding: 0px;
     }
+
     .js-form-item-order-fieldscheckout-field-address-0-address-address-line2 {
       position: relative;
     }
@@ -167,6 +178,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
+
       .form-item {
         max-width: 290px;
         width: 100%;
@@ -174,13 +186,16 @@
       }
     }
   }
+
   .form-item label {
     font-size: $px20;
     line-height: 24px;
   }
+
   form input {
     min-height: 40px;
   }
+
   .red-text {
     font-family: $PrNovacond-bold;
     font-style: normal;
@@ -190,6 +205,7 @@
     color: $red1;
     margin-bottom: 15px;
   }
+
   .field--name-field-terms-and-privacy p {
     font-family: $PrNovacond-reg;
     font-style: normal;
@@ -197,6 +213,7 @@
     line-height: 18px;
     color: $cgrey6;
     margin: 0 auto 30px;
+
     a {
       font-family: $PrNovacond-Sbold;
       text-decoration: underline;
@@ -205,6 +222,7 @@
       line-height: 18px;
     }
   }
+
   .form-actions {
     display: flex;
     flex-direction: row-reverse;
@@ -218,6 +236,7 @@
       max-width: 165px;
       margin: 0px;
     }
+
     a {
       max-width: 165px;
       width: 100%;
@@ -235,6 +254,7 @@
       margin: 0 30px 0 0;
     }
   }
+
   .layout-region-checkout-footer {
     max-width: 660px;
     margin: 0 auto;
@@ -716,7 +736,7 @@
 
   input[class*="form"],
   textarea[class*="form"],
-  .SumoSelect > .CaptionCont,
+  .SumoSelect>.CaptionCont,
   select {
     min-height: 40px;
   }
@@ -726,7 +746,7 @@
 
     input[class*="form"],
     textarea[class*="form"],
-    .SumoSelect > .CaptionCont,
+    .SumoSelect>.CaptionCont,
     select {
       min-height: 30px;
     }
@@ -782,6 +802,7 @@
     }
 
     .checkout-pane-review {
+
       .field--name-field-first-name,
       .field--name-field-last-name {
         font-size: 15px;
@@ -851,12 +872,17 @@
   .view-content {
     display: flex;
     flex-wrap: wrap;
-		row-gap: 25px;
+    row-gap: 25px;
+  }
+
+  img[src$="pixel.gif"] {
+    display: none;
   }
 
   .views-row {
     width: 33.33%;
     max-width: 400px;
+		padding-bottom: 40px;
     margin: 0 auto;
     transition: all 0.25s linear;
 
@@ -940,7 +966,7 @@
         font-family: $PrNovacond-bold;
       }
 
-      > span {
+      >span {
         width: max-content;
         margin: 0 auto;
         display: block;
@@ -966,7 +992,7 @@
     .text-formatted {
       padding: 30px 0 0;
       max-width: 265px;
-      margin: 70px auto 0;
+      margin: 40px auto 0;
       border-top: 1px solid #b1b1b1;
 
       p {
@@ -989,7 +1015,7 @@
         align-items: center;
         justify-content: center;
 
-        > div {
+        >div {
           display: none;
         }
       }
@@ -997,6 +1023,7 @@
       legend {
         display: none;
       }
+
       .form-radios {
         display: flex;
         padding: 0 10px;
@@ -1035,7 +1062,7 @@
         transition: all 0.25s linear;
       }
 
-      input[type="radio"]:checked ~ .option::after {
+      input[type="radio"]:checked~.option::after {
         display: block;
         position: absolute;
         content: "";
@@ -1092,12 +1119,13 @@
       transition: all 0.25s linear;
 
       .views-field-field-new-payment-button {
-  
+
         form .SumoSelect .optWrapper>.options>li {
           background: #fff;
         }
-  
-        form .SumoSelect>.CaptionCont, form select {
+
+        form .SumoSelect>.CaptionCont,
+        form select {
           background: #fff url(/themes/custom/al_dia_news/assets/css/../img/fle.png) no-repeat right;
         }
       }
@@ -1108,7 +1136,7 @@
 
       #edit-purchased-entity-0-attributes,
       .field--widget-commerce-product-variation-attributes {
-        input[type="radio"]:checked ~ .option::after {
+        input[type="radio"]:checked~.option::after {
           background: #ed1c24;
           transition: all 0.25s linear;
         }
@@ -1140,10 +1168,12 @@
 
     @media (max-width: $tablet) {
       width: 100%;
+			padding-bottom: 35px;
 
       .views-field-field-new-payment-button {
-        
-        form .SumoSelect>.CaptionCont, form select {
+
+        form .SumoSelect>.CaptionCont,
+        form select {
           max-width: 250px;
         }
       }
@@ -1192,7 +1222,7 @@
 
       #edit-purchased-entity-0-attributes,
       .field--widget-commerce-product-variation-attributes {
-        input[type="radio"]:checked ~ .option::after {
+        input[type="radio"]:checked~.option::after {
           left: 4px;
           height: 8px;
           width: 8px;
@@ -1218,7 +1248,7 @@
 
       &:nth-child(2) {
         margin: 0 auto 30px;
-        
+
         .weekly-information {
           font-size: 40px;
 
@@ -1229,17 +1259,20 @@
       }
     }
   }
+
   .views-row:nth-child(2) .field--widget-commerce-product-variation-attributes {
-    input[type="radio"]:checked ~ .option::after,
-    input[type="radio"]:checked ~ .option::before {
+
+    input[type="radio"]:checked~.option::after,
+    input[type="radio"]:checked~.option::before {
       top: 2px;
     }
   }
+
   @media (max-width: $tablet) {
-    .views-row:nth-child(3)
-      .field--widget-commerce-product-variation-attributes {
-      input[type="radio"]:checked ~ .option::after,
-      input[type="radio"]:checked ~ .option::before {
+    .views-row:nth-child(3) .field--widget-commerce-product-variation-attributes {
+
+      input[type="radio"]:checked~.option::after,
+      input[type="radio"]:checked~.option::before {
         top: 2px;
       }
     }
@@ -1250,6 +1283,7 @@ html[lang="es"] .view-subscribe .views-row {
   .button {
     max-width: 210px;
   }
+
   .intro-offer-subscribe .field--name-field-price-companion {
     right: -202px;
   }
