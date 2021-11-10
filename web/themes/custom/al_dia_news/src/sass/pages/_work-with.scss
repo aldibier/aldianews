@@ -2,10 +2,12 @@
   .content {
     margin: 0;
   }
+
   .content-page-node {
     display: flex;
     flex-wrap: wrap;
   }
+
   .block-fixed-block-contentheader-work-with-al-dia {
     min-width: 75px;
     margin-right: 15px;
@@ -25,15 +27,18 @@
 
     h1 {
       @include text($PrNovacond-bold, szrem(25), $cwhite, 95%);
+
       .aldia-logo-in-text {
         max-width: 200px;
         margin: 5px 0;
         position: relative;
+
         /* left: -4px; */
         img {
           height: auto;
         }
       }
+
       @media screen and (min-width: $tablet) {
         font-size: szrem(78);
         line-height: 97%;
@@ -42,11 +47,9 @@
 
     p,
     .field--name-field-description {
-      @include text(
-        $family: $PrNovacond-light,
+      @include text($family: $PrNovacond-light,
         $color: $cwhite,
-        $size: szrem(14)
-      );
+        $size: szrem(14));
       line-height: 11px;
 
       @media screen and (min-width: $tablet) {
@@ -91,7 +94,7 @@
         padding-left: 1.5px;
       }
 
-      &:nth-last-child(2) { 
+      &:nth-last-child(2) {
         min-width: 100px;
         max-width: 50%;
         padding-right: 2.5px;
@@ -134,6 +137,13 @@
           padding-left: 0;
         }
 
+        &:lang(es):nth-child(3),
+        &:lang(es):nth-child(4),
+        &:lang(es):last-child {
+          max-width: 30%;
+          width: 100%;
+        }
+
         &:nth-child(n + 3):not(:last-child) {
           min-height: 70px;
           padding-right: 24.5px;
@@ -150,12 +160,18 @@
         }
       }
 
+      @media screen and (max-width: $tablet) {
+        &:lang(es):nth-child(3),
+        &:lang(es):nth-child(4) {
+          width: 100%;
+          max-width: 50%;
+        }
+      }
+
       a {
-        @include link-box(
-          $colorBcolor: $cwhite,
+        @include link-box($colorBcolor: $cwhite,
           $fontSize: szrem(10),
-          $lineHeight: szrem(11)
-        );
+          $lineHeight: szrem(11));
         padding: 0;
 
         @media screen and (min-width: $tablet) {
@@ -249,15 +265,17 @@
   }
 }
 
-article[about="/jobs/job-seeker/social-intrapreneur-fellowship-entrepreneurial-fellowship-entrepreneurial"]{
-  .view-id-internal_links_to_job_postings{
+article[about="/jobs/job-seeker/social-intrapreneur-fellowship-entrepreneurial-fellowship-entrepreneurial"] {
+  .view-id-internal_links_to_job_postings {
     margin-top: 50px;
   }
+
   @media (max-width: $tablet) {
-    .view-id-internal_links_to_job_postings{
+    .view-id-internal_links_to_job_postings {
       margin-top: 20px;
     }
-    .content-right-pages{
+
+    .content-right-pages {
       margin: 25px 0;
     }
   }
@@ -265,7 +283,7 @@ article[about="/jobs/job-seeker/social-intrapreneur-fellowship-entrepreneurial-f
 
 article.node--type-al-dia-vacancy {
   @media (max-width: $tablet) {
-    .content-right-pages{
+    .content-right-pages {
       margin: 25px 0;
     }
   }
