@@ -3,7 +3,7 @@
   max-height: 560px;
   overflow: hidden;
   z-index: 9;
-  padding: 80px;
+  padding: 0 80px;
   min-height: 560px;
 
   h1 {
@@ -915,7 +915,8 @@
     min-height: auto;
 
     a.buttton-link {
-      max-width: 105px;
+      //max-width: 105px;
+      flex: 1 1 80px;
       min-height: 25px;
       margin-right: 10px;
       font-size: $px11;
@@ -1037,7 +1038,8 @@
 @media (max-width: $tablet) {
   .banner-events {
     max-height: 285px;
-    padding: 30px 25px 25px;
+    //padding: 30px 25px 25px;
+    padding: 0 30px;
 
     h1 {
       font-size: $px16;
@@ -1336,13 +1338,13 @@
       margin-right: 0px;
       margin-bottom: 0;
 
-			&:first-child::after {
-				top: initial;
-				bottom: calc(0% - 20px);
-				right: initial;
-				width: 100%;
-				height: 1px;
-			}
+      &:first-child::after {
+        top: initial;
+        bottom: calc(0% - 20px);
+        right: initial;
+        width: 100%;
+        height: 1px;
+      }
 
       &:last-child {
         border-bottom: 0px;
