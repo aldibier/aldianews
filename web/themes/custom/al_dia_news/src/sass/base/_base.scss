@@ -35,10 +35,11 @@ a {
 }
 
 .admin-menu {
-  #header { 
+  #header {
     top: 39px;
   }
-  .region-header #block-sitedescription p{
+
+  .region-header #block-sitedescription p {
     letter-spacing: 0.01em;
   }
 }
@@ -60,17 +61,22 @@ a {
 #page {
   padding: 75px 0 0;
 
+	@media (max-width: $broken4) {
+		padding: 145px 0px 0px;
+	}
+
   @media (max-width: $broken2) {
-    padding: 100px 0 0;
+    //padding: 100px 0 0;
   }
 }
+
 .path-frontpage #page {
   padding: 105px 0 0;
 
-	@media (max-width: $broken) {
+  @media (max-width: $broken) {
     padding: 170px 0 0;
   }
-	
+
 }
 
 .contextual {
@@ -103,10 +109,12 @@ body.toolbar-tray-open.user-logged-in {
 
 .non-desktop {
   display: none;
+
   @media (max-width: $broken) {
     display: block;
   }
 }
+
 .layout-container {
   max-width: 1440px;
 
@@ -114,9 +122,11 @@ body.toolbar-tray-open.user-logged-in {
     max-width: 1310px;
     padding: 0 15px;
     margin: 0 auto; //0 auto 40px;
+
     @media screen and (min-width: $broken) {
       margin-top: 60px !important;
     }
+
     @media screen and (min-width: $tablet) {
       //margin-bottom: 100px;
     }
@@ -126,43 +136,54 @@ body.toolbar-tray-open.user-logged-in {
     max-width: 1440px;
     margin: 0 auto 0px;
     padding: 0px;
+
     .section1310 {
       max-width: 1310px;
       padding: 0 15px;
       margin: 0 auto;
     }
+
     @media (max-width: $tablet) {
       margin-bottom: 0px;
       padding: 15px 0px;
+
       .padd15 {
         padding: 0 15px;
+
         .breadcrumb {
           padding: 0px 0px 10px;
         }
       }
     }
   }
+
   .width1310 {
     max-width: 1310px;
     padding: 0 15px;
     margin: 0 auto 40px;
+
     @media (max-width: $tablet) {
       margin-bottom: 40px;
       padding: 0 15px;
+
       .padd15 {
         padding: 0 15px;
       }
     }
   }
+
   #main-wrapper {
     margin-top: 60px;
+
     @media screen and (max-width: $broken) {
       margin-top: 0px;
     }
   }
 }
+
 .widthnone {
   max-width: none;
+
   .width1440 {
     max-width: none;
   }
@@ -197,7 +218,7 @@ body.toolbar-tray-open.user-logged-in {
   color: $corange;
 }
 
-.path-session-limit #edit-submit[value="Disconnect session"]{
+.path-session-limit #edit-submit[value="Disconnect session"] {
   margin: 0 auto 30px;
 }
 
@@ -208,6 +229,7 @@ body.toolbar-tray-open.user-logged-in {
     font-size: $px20;
     line-height: 24px;
   }
+
   #gtx-trans {
     display: none;
   }
@@ -257,6 +279,7 @@ body.toolbar-tray-open.user-logged-in {
     font-size: 10px;
     line-height: 12px;
     padding-bottom: 10px;
+
     li {
       &:before {
         width: 9px;
@@ -299,42 +322,50 @@ body.toolbar-tray-open.user-logged-in {
     margin: 30px 0 10px;
   }
 }
+
 //---------------------end main title----------------------//
 
 //---------------------Clases generales----------------------//
 .dis-none {
   display: none;
 }
+
 .dis-none-obligate {
   display: none !important;
 }
+
 .dis-block {
   display: block !important;
 }
+
 .margin-top {
   margin-top: 20px;
-  > div {
+
+  >div {
     margin-top: 20px;
   }
 }
+
 .margin-bottom {
   margin-bottom: 20px;
 }
+
 .margin {
   margin: 20px auto;
 }
+
 // div:empty {
 //   display: none;
 // }
 
 .site-footer__bottom .region {
-	margin-top: 0;
+  margin-top: 0;
 }
 
 .site-footer__bottom .block {
-	margin: 0;
+  margin: 0;
 }
 
 .site-footer__bottom .content {
-	padding: 0;
+  padding: 0;
 }
