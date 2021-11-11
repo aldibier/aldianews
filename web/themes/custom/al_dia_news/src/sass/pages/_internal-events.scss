@@ -3,7 +3,7 @@
   max-height: 560px;
   overflow: hidden;
   z-index: 9;
-  padding: 0 80px;
+  padding: 80px;
   min-height: 560px;
 
   h1 {
@@ -936,14 +936,14 @@
       justify-content: center;
     }
 
-    h1 .aldia-logo-in-text {
-      max-width: 45px;
+    // h1 .aldia-logo-in-text {
+    //   max-width: 45px;
 
-      img {
-        height: 14px;
-        width: 100%;
-      }
-    }
+    //   img {
+    //     height: 14px;
+    //     width: 100%;
+    //   }
+    // }
 
     .breadcrumb {
       margin: 10px auto 0px;
@@ -1073,6 +1073,15 @@
   }
 
   .page-node-type-event {
+		h1 .aldia-logo-in-text {
+      max-width: 45px;
+
+      img {
+        height: 14px;
+        width: 100%;
+      }
+    }
+
     .body-adversiting-section {
       margin: 20px auto 10px;
     }
