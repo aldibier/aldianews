@@ -174,7 +174,8 @@
 .jobs.style-jobs {
   h1 {
     bottom: 320px;
-    left: 5px;
+    //left: 5px;
+    left: 0;
   }
 
   .aldia-logo-in-text {
@@ -205,15 +206,19 @@
 
       .field-content {
         position: relative;
-        left: 85px;
+        //left: 85px;
+        left: 0;
         bottom: 310px;
         line-height: 28px;
         color: $cwhite;
         font-size: $px28;
         font-weight: 100;
         z-index: 2;
-        max-width: 1200px;
-        padding-right: 50px;
+        //max-width: 1200px;
+        max-width: 1310px;
+        padding: 0 15px;
+        margin: 0 auto;
+        //padding-right: 50px;
         font-family: $PrNovacond-reg;
       }
     }
@@ -226,9 +231,13 @@
   }
 
   .block-menu-float {
-    margin: -235px 0px 62px;
-    padding-left: 65px;
     width: 100%;
+    margin: -235px 0px 62px;
+    //padding-left: 65px;
+    padding: 0 15px;
+    max-width: 1310px;
+    margin-left: auto;
+    margin-right: auto;
 
     .menu a {
       min-width: 290px;
@@ -237,7 +246,7 @@
   }
 
   #block-system-menu-block-jobs-landing-menu {
-    padding-left: 11px;
+    //padding-left: 11px;
   }
 
   .block-content-form .modal-apply-webform.open {
@@ -269,7 +278,8 @@
 
   .block-block-groupadvertising-blocks-in-job-landing-pages {
     margin-top: 55px;
-    margin-right: auto;
+    // margin-right: auto;
+    margin-right: 0;
 
     .block-fixed-block-content-small-vertical-advertising {
       margin-bottom: 45px;
@@ -292,7 +302,7 @@
       color: $cblack;
       padding-top: 125px;
       margin-bottom: 75px;
-      padding: 0px 15px;
+      //padding: 0px 15px;
 
       @media screen and (min-width: $desktop) {
         padding: 0px;
@@ -310,7 +320,8 @@
 
     .button-apply {
       margin-top: 55px;
-      margin-left: 15px;
+      //margin-left: 15px;
+      margin-left: 0;
 
       @media screen and (min-width: $desktop) {
         margin-left: 0px;
@@ -325,8 +336,8 @@
   .block-views-blockcarousel-jobs-landing-block-1 {
     margin: 75px auto 100px;
     width: 100%;
-    //padding: 0 15px;
-    //max-width: 1310px;
+    padding: 0;
+    max-width: 1280px;
 
     h2 {
       border-bottom: 2px solid $cblack3;
@@ -358,7 +369,7 @@
       margin: 0 auto;
 
       @media (max-width: $tablet) {
-        padding: 0 30px;
+        padding: 0 41px;
       }
 
     }
@@ -386,12 +397,21 @@
       &.slick-disabled {
         opacity: 0.3;
       }
+
+      @media (max-width: $tablet) {
+        left: calc(0% + 15px);
+      }
     }
 
     .slick-next {
       background: transparent url(../img/der.png) center center no-repeat;
       background-size: contain;
       right: 0px;
+
+      @media (max-width: $tablet) {
+        right: calc(0% + 15px);
+      }
+
     }
   }
 }
@@ -761,6 +781,7 @@
   .jobs.style-jobs {
     .block-content-left {
       h2 {
+        padding-top: 35px;
         margin-top: 0px;
       }
     }
@@ -770,7 +791,8 @@
     }
 
     .block-views-blockcarousel-jobs-landing-block-1 {
-      padding: 0 15px;
+      //padding: 0 15px;
+      padding: 0;
 
       .slick-list {
         //max-width: 900px;
@@ -953,14 +975,16 @@
 
 @media (max-width: $tablet) {
   #block-system-menu-block-jobs-landing-menu .menu {
-    padding: 20px 25px 0;
+    //padding: 20px 25px 0;
+    padding: 20px 0 0;
   }
 
   .jobs.style-jobs {
     h1 {
       bottom: 110px;
-      left: 25px;
-      padding: 0px;
+      //left: 25px;
+      left: 0;
+      padding: 0 25px;
     }
 
     .aldia-logo-in-text img {
@@ -979,15 +1003,19 @@
     }
 
     .block-banner-page .views-field-field-description .field-content {
-      left: 27px;
+      //left: 27px;
+      left: 0;
       bottom: 89px;
-      line-height: 28px;
+      padding: 0 25px;
+      //line-height: 28px;
+      line-height: 1.5;
       font-size: $px12;
     }
 
     .block-menu-float {
       margin: -75px 0 62px;
-      padding-left: 3px;
+      //padding-left: 3px;
+      padding: 0 25px;
 
       .menu a {
         max-width: none;
@@ -1002,6 +1030,7 @@
       h2 {
         line-height: 33.5px;
         font-size: $px25;
+        padding: 0 15px;
         margin-bottom: 25px;
       }
 
@@ -1012,8 +1041,11 @@
       }
 
       .button-apply {
+        padding: 0 15px;
         margin-top: 10px;
         margin-bottom: 40px;
+        margin-left: 15px;
+        margin-right: 15px;
       }
     }
 
@@ -1029,7 +1061,7 @@
       font-size: $px20;
       line-height: 24px;
       padding-bottom: 10px;
-      margin: 0 0 38px;
+      margin: 0 15px 38px;
     }
 
     .block-views-blockcarousel-jobs-landing-block-1 {
@@ -1123,11 +1155,11 @@
         margin-right: 20px;
       }
 
-			.views-field-field-image a,
-			.views-field-field-image picture {
-				display: block;
-				line-height: 1;
-			}
+      .views-field-field-image a,
+      .views-field-field-image picture {
+        display: block;
+        line-height: 1;
+      }
 
       .card-title {
         margin-bottom: 5px;
@@ -1328,11 +1360,11 @@
         margin-right: 20px;
       }
 
-			.views-row .views-field-field-image a,
-			.views-row .views-field-field-image picture {
-				display: block !important;
-				line-height: 1 !important;
-			}
+      .views-row .views-field-field-image a,
+      .views-row .views-field-field-image picture {
+        display: block !important;
+        line-height: 1 !important;
+      }
 
       .views-row:nth-child(1) .card-title a,
       .views-row:nth-child(2) .card-title a,
