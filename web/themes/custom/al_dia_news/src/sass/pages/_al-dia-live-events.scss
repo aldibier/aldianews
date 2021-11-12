@@ -116,18 +116,27 @@
     display: flex;
   }
 
+  .date-time-vanue-event {
+    .views-field-fieldset-2 {
+      //max-width: 765px;
+      padding-right: 515px;
+    }
+  }
+
   .view-footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: calc(0% + 55px);
+    width: 100%;
     max-width: 1310px;
     padding: 0 15px;
     margin: 0 auto;
-    width: 100%;
-    position: relative;
 
     .footer-red {
-      position: absolute;
-      right: 80px;
-      bottom: 50px;
       display: flex;
+      max-width: 515px;
+      margin-left: auto;
     }
   }
 
@@ -155,11 +164,21 @@
   }
 
   @media (max-width: 1230px) {
-    .view-footer .footer-red {
+    .date-time-vanue-event .views-field-fieldset-2 {
+      padding-right: 0;
+    }
+
+    .view-footer {
       position: relative;
       right: auto;
       bottom: auto;
       justify-content: center;
+    }
+
+    .view-footer .footer-red {
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: 0;
     }
 
     button {
@@ -210,7 +229,7 @@
         // min-height: 30px;
         // font-style: normal;
         // font-size: $px12;
-        margin-bottom: 25px;
+        //margin-bottom: 25px;
       }
     }
 
