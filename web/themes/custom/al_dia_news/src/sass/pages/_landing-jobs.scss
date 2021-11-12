@@ -929,13 +929,13 @@
   .block-views-blockcareer-news-block-1.view-complete {
     .view-content {
       .views-row {
-        // padding-top: 15px;
-        // border-top: 1px solid $cgrey4;
-        // margin-top: 15px;
+        padding-top: 15px;
+        border-top: 1px solid $cgrey4;
+        margin-top: 15px;
       }
 
       .views-row .views-field-field-image {
-        //flex: 1 0 175px;
+        flex: 1 0 175px;
       }
 
       .views-row:nth-child(1),
@@ -956,11 +956,11 @@
         border: none;
       }
 
-      // .views-row:nth-child(3) {
-      //   padding: 15px 0 0 0;
-      //   border-top: 1px solid $cgrey4;
-      //   margin-top: 15px;
-      // }
+      .views-row:nth-child(3) {
+        padding: 15px 0 0 0;
+        border-top: 1px solid $cgrey4;
+        margin-top: 15px;
+      }
 
       .views-row:nth-child(1) .views-field-field-image,
       .views-row:nth-child(2) .views-field-field-image,
@@ -981,7 +981,7 @@
       .views-row:nth-child(3)::before,
       .views-row:nth-child(4)::before,
       .views-row:nth-child(5)::before {
-        //display: none !important;
+        display: none !important;
       }
     }
   }
