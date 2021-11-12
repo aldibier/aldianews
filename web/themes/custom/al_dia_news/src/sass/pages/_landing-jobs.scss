@@ -716,6 +716,35 @@
     grid-template-columns: repeat(2, minmax(auto, 1fr));
   }
 
+  .views-row:nth-child(1),
+  .views-row:nth-child(2) {
+    padding-right: 14px;
+    margin-bottom: 60px;
+    flex-direction: column;
+    padding-bottom: 0px;
+    border-bottom: 0px solid $cgrey4;
+    max-width: 418px;
+
+    .views-field-field-image {
+      flex: 1 1 100%;
+      max-width: 400px;
+      max-height: 235px;
+      overflow: hidden;
+      margin-bottom: 25px;
+      margin-right: 0px;
+    }
+
+    .card-title {
+      margin-bottom: 10px;
+    }
+
+    .card-title a {
+      font-size: $px30;
+      line-height: 37px;
+    }
+  }
+
+
   .views-row:first-child {}
 
   .views-row:last-child,
