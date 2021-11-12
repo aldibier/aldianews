@@ -106,6 +106,30 @@
         padding-right: 2.5px;
       }
 
+      &:lang(es):nth-child(3) {
+        width: 100%;
+        max-width: 100%;
+        flex: 0 1 30%;
+      }
+
+      &:lang(es):nth-child(4) {
+        width: 100%;
+        max-width: 100%;
+        flex: 1 1 21.6%;
+      }
+
+      &:lang(es):nth-child(5) {
+        width: 100%;
+        max-width: 100%;
+        flex: 1 1 21.6%;
+      }
+
+      &:lang(es):last-child {
+        width: 100%;
+        max-width: 100%;
+        flex: 1 1 21.6%;
+      }
+
       @media screen and (min-width: $tablet) {
         height: 50px;
         margin-top: 30px;
@@ -137,13 +161,6 @@
           padding-left: 0;
         }
 
-        &:lang(es):nth-child(3),
-        &:lang(es):nth-child(4),
-        &:lang(es):last-child {
-          max-width: 30%;
-          width: 100%;
-        }
-
         &:nth-child(n + 3):not(:last-child) {
           min-height: 70px;
           padding-right: 24.5px;
@@ -160,7 +177,19 @@
         }
       }
 
+      @media screen and (max-width: $broken) {
+
+        &:lang(es):nth-child(3),
+        &:lang(es):nth-child(4),
+        &:lang(es):nth-child(5) {
+          width: 100%;
+          max-width: 100%;
+          flex: 0 0 50%;
+        }
+      }
+
       @media screen and (max-width: $tablet) {
+
         &:lang(es):nth-child(3),
         &:lang(es):nth-child(4) {
           width: 100%;
@@ -174,6 +203,12 @@
           $lineHeight: szrem(11));
         padding: 0;
 
+        // @media (min-width: $tablet) {
+        //   &:lang(es) {
+        //     padding: 0 15px;
+        //   }
+        // }
+
         @media screen and (min-width: $tablet) {
           font-size: 1rem;
           line-height: 1rem;
@@ -182,6 +217,10 @@
         }
 
         @media screen and (min-width: $desktop) {
+          font-size: szrem(16);
+        }
+
+        @media screen and (min-width: $large-min) {
           font-size: szrem(20);
           line-height: szrem(25);
         }
