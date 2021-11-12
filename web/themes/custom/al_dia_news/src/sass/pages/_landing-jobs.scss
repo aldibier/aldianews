@@ -605,6 +605,17 @@
   .view-content {
     grid-template-columns: repeat(3, minmax(auto, 1fr));
 
+
+    .views-row {
+      @media (min-width:$broken2) {
+        &:nth-child(n + 7) {
+          margin-top: 15px;
+          padding-top: 15px;
+          border-top: 1px solid $cgrey4;
+        }
+      }
+    }
+
     .views-row:nth-child(1),
     .views-row:nth-child(2),
     .views-row:nth-child(3) {
@@ -714,6 +725,16 @@
 
   .view-content {
     grid-template-columns: repeat(2, minmax(auto, 1fr));
+
+		.views-row {
+      @media (min-width:$broken2) {
+        &:nth-child(n + 4) {
+          margin-top: 15px;
+          padding-top: 15px;
+          border-top: 1px solid $cgrey4;
+        }
+      }
+    }
   }
 
   .views-row:nth-child(1),
