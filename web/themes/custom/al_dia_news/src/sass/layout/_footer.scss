@@ -223,6 +223,12 @@
           &:lang(en) {
             order: 1;
           }
+
+          @media (max-width:$tablet) {
+            &:lang(es) {
+              order: initial;
+            }
+          }
         }
       }
 
@@ -610,9 +616,9 @@
           margin-top: 35px;
         }
 
-				>li:last-child .menu .menu-item:first-child {
-					position: relative;
-				}
+        >li:last-child .menu .menu-item:first-child {
+          position: relative;
+        }
 
         .powerd,
         .copyr {
