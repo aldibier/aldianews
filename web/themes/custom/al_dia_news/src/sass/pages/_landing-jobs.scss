@@ -563,8 +563,8 @@
     }
 
     .views-row:nth-child(2) {
-      padding-left: 15px;
-      padding-right: 0px;
+      //padding-left: 15px;
+      //padding-right: 0px;
     }
 
     .views-row:nth-child(3) {
@@ -715,7 +715,12 @@
 
 //View with advertising
 .block-views-blockcareer-news-block-1:not(.view-complete) {
-  width: 66%;
+  //width: 66%;
+  flex: 1;
+
+  @media (min-widt: $tablet) and (max-width:$broken2) {
+    display: none;
+  }
 
   .view-content {
     grid-template-columns: repeat(2, minmax(auto, 1fr));
@@ -762,13 +767,13 @@
     content: '';
     position: absolute;
     top: 0;
-    right: calc(0% - 15px);
+    right: calc(0% - 20px);
     width: 1px;
     height: 100%;
     background-color: $cgrey4;
   }
 
-  .views-row:nth-child(4) {
+  .views-row:nth-child(3) {
     position: relative;
 
     &::before {
@@ -806,8 +811,8 @@
   }
 
   .block-fixed-block-contentbig-vertical-advertising {
+    flex: 0 0 420px;
     border-left: 1px solid $cgrey4;
-    width: 33%;
     text-align: right;
     padding-left: 20px;
     max-width: 420px;
