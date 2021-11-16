@@ -718,10 +718,6 @@
   //width: 66%;
   flex: 1;
 
-  @media (min-widt: $tablet) and (max-width:$broken2) {
-    display: none;
-  }
-
   .view-content {
     grid-template-columns: repeat(2, minmax(auto, 1fr));
 
@@ -818,6 +814,10 @@
     max-width: 420px;
     margin-left: 20px;
 
+		@media (min-width: $tablet) and (max-width:$broken2) {
+			display: none;
+		}
+
     .content {
       margin: 0px;
     }
@@ -911,11 +911,11 @@
   }
 
   .block-block-groupgroup-career-news-jobs .block-fixed-block-contentbig-vertical-advertising {
-    margin-left: 0px;
-    margin-bottom: 0px;
-    position: absolute;
-    top: 0px;
-    right: 30px;
+    // margin-left: 0px;
+    // margin-bottom: 0px;
+    // position: absolute;
+    // top: 0px;
+    // right: 30px;
   }
 
   .block-views-blockcareer-news-block-1.view-complete {
