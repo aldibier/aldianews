@@ -1010,33 +1010,19 @@
   }
 
   //View with advertising
-  // .block-views-blockcareer-news-block-1:not(.view-complete) {
+  .block-views-blockcareer-news-block-1:not(.view-complete) {
+    .view-content {
+      grid-template-columns: repeat(2, minmax(auto, 1fr));
 
-  //   .views-row:nth-child(1),
-  //   .views-row:nth-child(2) {
-  //     margin-bottom: 0;
-  //     flex-direction: initial;
-  //     border-bottom: none;
-  //     max-width: 400px;
-
-  //     .views-field-field-image {
-  //       flex: 1 1 175px;
-  //       max-height: 100px;
-  //       overflow: hidden;
-  //       margin-bottom: 25px;
-  //       margin-right: 0px;
-  //     }
-
-  //     .card-title {
-  //       margin-bottom: 10px;
-  //     }
-
-  //     .card-title a {
-  //       font-size: $px30;
-  //       line-height: 37px;
-  //     }
-  //   }
-  // }
+      .views-row {
+        &:nth-child(n + 3) {
+          margin-top: 15px;
+          padding-top: 15px;
+          border-top: 1px solid $cgrey4;
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: $broken) {
