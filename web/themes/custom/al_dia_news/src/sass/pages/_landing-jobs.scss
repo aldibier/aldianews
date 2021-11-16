@@ -732,57 +732,61 @@
     }
   }
 
-  .views-row:nth-child(1),
-  .views-row:nth-child(2) {
-    margin-bottom: 60px;
-    flex-direction: column;
-    padding-bottom: 0px;
-    border-bottom: 0px solid $cgrey4;
-    max-width: 418px;
-
-    .views-field-field-image {
-      flex: 1 1 100%;
-      max-width: 400px;
-      max-height: 235px;
-      overflow: hidden;
-      margin-bottom: 25px;
-      margin-right: 0px;
-    }
-
-    .card-title {
-      margin-bottom: 10px;
-    }
-
-    .card-title a {
-      font-size: $px30;
-      line-height: 37px;
-    }
-  }
-
-  .views-row:first-child::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: calc(0% - 20px);
-    width: 1px;
-    height: 100%;
-    background-color: $cgrey4;
-  }
-
-  .views-row:nth-child(3) {
-    position: relative;
-
-    &::before {
-      content: "";
-      display: block;
+  @media (min-width: $broken2) {
+    .views-row:first-child::before {
+      content: '';
       position: absolute;
-      width: 0;
-      height: 100vh;
-      padding: 0.1mm;
-      background: $cgrey4;
-      right: -18px;
-      top: 0px;
+      top: 0;
+      right: calc(0% - 20px);
+      width: 1px;
+      height: 100%;
+      background-color: $cgrey4;
     }
+
+    .views-row:nth-child(1),
+    .views-row:nth-child(2) {
+      margin-bottom: 60px;
+      flex-direction: column;
+      padding-bottom: 0px;
+      border-bottom: 0px solid $cgrey4;
+      max-width: 418px;
+
+      .views-field-field-image {
+        flex: 1 1 100%;
+        max-width: 400px;
+        max-height: 235px;
+        overflow: hidden;
+        margin-bottom: 25px;
+        margin-right: 0px;
+      }
+
+      .card-title {
+        margin-bottom: 10px;
+      }
+
+      .card-title a {
+        font-size: $px30;
+        line-height: 37px;
+      }
+    }
+
+
+    .views-row:nth-child(3) {
+      position: relative;
+
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 0;
+        height: 100vh;
+        padding: 0.1mm;
+        background: $cgrey4;
+        right: -18px;
+        top: 0px;
+      }
+    }
+
   }
 }
 
@@ -814,9 +818,9 @@
     max-width: 420px;
     margin-left: 20px;
 
-		@media (min-width: $tablet) and (max-width:$broken2) {
-			display: none;
-		}
+    @media (min-width: $tablet) and (max-width:$broken2) {
+      display: none;
+    }
 
     .content {
       margin: 0px;
@@ -1007,8 +1011,33 @@
   }
 
   //View with advertising
-  .block-views-blockcareer-news-block-1:not(.view-complete) {}
+  // .block-views-blockcareer-news-block-1:not(.view-complete) {
 
+  //   .views-row:nth-child(1),
+  //   .views-row:nth-child(2) {
+  //     margin-bottom: 0;
+  //     flex-direction: initial;
+  //     border-bottom: none;
+  //     max-width: 400px;
+
+  //     .views-field-field-image {
+  //       flex: 1 1 175px;
+  //       max-height: 100px;
+  //       overflow: hidden;
+  //       margin-bottom: 25px;
+  //       margin-right: 0px;
+  //     }
+
+  //     .card-title {
+  //       margin-bottom: 10px;
+  //     }
+
+  //     .card-title a {
+  //       font-size: $px30;
+  //       line-height: 37px;
+  //     }
+  //   }
+  // }
 }
 
 @media (max-width: $broken) {
