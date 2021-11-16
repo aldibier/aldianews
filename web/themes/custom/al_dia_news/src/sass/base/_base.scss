@@ -65,14 +65,14 @@ a {
 }
 
 #page {
-  padding: 75px 0 0;
+  padding: 100px 0 0;
 
   @media (max-width: $broken4) {
     padding: 145px 0px 0px;
   }
 
-  @media (max-width: $broken2) {
-    //padding: 100px 0 0;
+  @media (max-width: $tablet) {
+    padding: 100px 0 0;
   }
 }
 
@@ -128,8 +128,9 @@ body.toolbar-tray-open.user-logged-in {
     max-width: 1310px;
     padding: 0 15px;
     margin: 0 auto; //0 auto 40px;
+		margin-top: 30px !important;
 
-    @media screen and (min-width: $broken) {
+    @media screen and (min-width: $tablet) {
       margin-top: 60px !important;
     }
 
