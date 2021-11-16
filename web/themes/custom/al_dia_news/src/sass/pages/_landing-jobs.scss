@@ -1,3 +1,5 @@
+$brokenPixelUp: $broken2+1;
+
 .path-job-seeker {
   .block-fixed-block-contentheader-i-am-a-job-seeker {
     min-height: 215px;
@@ -523,7 +525,7 @@
       color: $cgrey3;
     }
 
-    @media (min-width:$broken2) {
+    @media (min-width:$brokenPixelUp) {
 
       &:first-child {
         position: relative;
@@ -601,7 +603,7 @@
     }
 
     .views-row {
-      @media (min-width:$broken2) {
+      @media (min-width:$brokenPixelUp) {
         &:nth-child(n + 7) {
           margin-top: 15px;
           padding-top: 15px;
@@ -721,7 +723,7 @@
     grid-template-columns: repeat(2, minmax(auto, 1fr));
 
     .views-row {
-      @media (min-width:$broken2) {
+      @media (min-width:$brokenPixelUp) {
         &:nth-child(n + 5) {
           margin-top: 15px;
           padding-top: 15px;
@@ -731,7 +733,7 @@
     }
   }
 
-  @media (min-width: $broken2) {
+  @media (min-width: $brokenPixelUp) {
     .views-row:first-child::before {
       content: '';
       position: absolute;
