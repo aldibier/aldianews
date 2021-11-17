@@ -137,14 +137,8 @@
       border-bottom: none;
     }
 
-    @media (max-width: $broken) {
+    @media (max-width: $broken) and (min-width: $tablet) {
       position: relative;
-      width: 100%;
-      max-width: none;
-      //margin: 35px 0;
-      margin: 65px 0 0 0;
-      padding: 0px;
-      border: none;
 
       &:nth-child(odd)::before {
         content: '';
@@ -155,6 +149,15 @@
         background-color: $cgrey4;
       }
 
+    }
+
+    @media (max-width: $broken) {
+      width: 100%;
+      max-width: none;
+      //margin: 35px 0;
+      margin: 65px 0 0 0;
+      padding: 0px;
+      border: none;
     }
 
     &:last-child {
