@@ -248,10 +248,16 @@
         letter-spacing: 0.08em;
         color: $corange;
 
-        @media screen and(max-width:$broken) {
-          font-size: szrem(18);
-          line-height: 22px;
+
+				@media screen and(max-width:$broken) {
+          font-size: szrem(16);
+          line-height: 19px;
         }
+
+        // @media screen and(max-width:$broken) {
+        //   font-size: szrem(18);
+        //   line-height: 22px;
+        // }
 
         @media screen and(max-width:$tablet) {
           font-size: 10px;
@@ -276,6 +282,11 @@
         text-decoration: none;
         line-height: 21px;
         color: $cblack;
+
+				@media screen and(max-width:$broken) {
+          font-size: szrem(30);
+          line-height: 35px;
+        }
 
         @media (max-width: $tablet) {
           font-size: 14px;
@@ -398,7 +409,9 @@
       flex-direction: column;
     }
 
-    @media screen and (max-width: $tablet - 1) {
+		$query-mobile-custom: $tablet - 1; 
+
+    @media screen and (max-width: $query-mobile-custom) {
       // width: max-content;
       width: 100%;
       img {
