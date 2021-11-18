@@ -12,8 +12,27 @@
     font-family: initial;
   }
 
-  .aldia-logo-in-text {
+  a {
+    display: flex;
+    align-items: center;
+
     @media (max-width: $broken) {
+      display: initial;
+      align-items: initial;
+    }
+
+  }
+
+  .aldia-logo-in-text {
+    height: 15px;
+    margin-right: 5px;
+
+    img {
+      height: 15px;
+    }
+
+    @media (max-width: $broken) {
+      height: auto;
       max-width: 75px !important;
       margin-right: 5px;
 
