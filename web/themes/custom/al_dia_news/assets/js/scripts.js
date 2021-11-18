@@ -1830,7 +1830,7 @@ var initMain = function initMain($, Drupal) {
     }
   }
 
-  var menuFooterSecondColumn = document.querySelector("#block-footer > div.content > ul > li:nth-child(2) > ul");
+  var menuFooterSecondColumn = document.querySelector("#block-footer > div.content > ul > li:nth-child(2) > div > ul");
 
   if (!!menuFooterSecondColumn) {
     var copyr = document.querySelector('.copyr').cloneNode(true);

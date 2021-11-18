@@ -690,7 +690,7 @@ const initMain = ($, Drupal) => {
 
 	}
 
-	const menuFooterSecondColumn = document.querySelector("#block-footer > div.content > ul > li:nth-child(2) > ul");
+	const menuFooterSecondColumn = document.querySelector("#block-footer > div.content > ul > li:nth-child(2) > div > ul")
 
 	if (!!menuFooterSecondColumn) {
 		let copyr = document.querySelector('.copyr').cloneNode(true);
