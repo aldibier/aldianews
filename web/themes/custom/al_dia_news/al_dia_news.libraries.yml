@@ -6,7 +6,7 @@ global:
       assets/css/icon.css: {}
       assets/libraries/css/font-awesome/css/all.min.css: {}
   js:
-    #assets/libraries/YTPlayer/YTPlayer.js: {}
+    assets/libraries/YTPlayer/YTPlayer.js: {}
     assets/js/scripts.js: { minified: true, attributes: { defer: true } }
     assets/libraries/browserclass.js: {}
   dependencies:
@@ -19,13 +19,13 @@ global:
 scrollmagic:
   version: 2.0.7
   js:
-    assets/libraries/scrollmagic/minified/ScrollMagic.min.js: { minified: true, attributes: { defer: true } }
+    assets/libraries/scrollmagic/minified/ScrollMagic.min.js: {}
     #assets/libraries/scrollmagic/uncompressed/plugins/debug.addIndicators.js: {}
 
 slick:
   version: 1.8.1
   js:
-    assets/libraries/slick/js/slick.min.js: { minified: true, attributes: { defer: true } }
+    assets/libraries/slick/js/slick.min.js: {}
   css:
     theme:
       assets/libraries/slick/css/slick.css: {}
@@ -33,7 +33,7 @@ slick:
 sumoselect:
   version: 3.0.2
   js:
-    assets/libraries/sumoselect/minified/jquery.sumoselect.min.js: { minified: true, attributes: { defer: true } }
+    assets/libraries/sumoselect/minified/jquery.sumoselect.min.js: {}
   css:
     theme:
       assets/libraries/sumoselect/uncompressed/sumoselect.css: {}
