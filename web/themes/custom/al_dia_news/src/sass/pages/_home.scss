@@ -78,6 +78,11 @@
 
     .watch-live {
       margin-top: 0;
+
+			@media (max-width: $broken) {
+				display: none;
+			}
+
     }
 
     .watch-live-button {
@@ -220,6 +225,10 @@
 
   .watch-live {
     margin-top: 0;
+
+		@media (max-width: $broken) {
+			display: none;
+		}
   }
 }
 

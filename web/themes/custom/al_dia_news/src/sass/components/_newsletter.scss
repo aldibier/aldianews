@@ -80,7 +80,7 @@
     }
 
     .form-item-email {
-      flex: 1 1 auto;
+      flex: 0 1 auto;
       margin: 0 20px 0 0;
 
       label {
@@ -402,6 +402,7 @@
     border: 1px solid #797979;
 
     .form-item-markup {
+      flex: 1 1 100%;
       min-height: 20px;
       margin: 0 auto 21px;
       font-size: szrem(16);
@@ -427,7 +428,7 @@
     }
 
     .form-item-email {
-      flex: 0 1 235px;
+      flex: 1 1 235px;
       //max-width: 235px;
       margin: 0;
       float: left;
@@ -481,9 +482,13 @@
       flex: 1 1 auto;
       display: inline-block;
 
+			@media screen and(max-width: $broken) {
+				flex: 0 1 auto;
+			}
+
       input {
         margin: 0;
-        padding: 0;
+        padding: 0 10px !important;
         font-size: szrem(14);
         background-color: $cgrey3;
 

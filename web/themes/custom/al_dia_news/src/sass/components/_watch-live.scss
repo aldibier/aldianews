@@ -241,18 +241,20 @@
     }
   }
 
-  @media (max-width: $tablet) {
-    .watch-live-button {
-      display: none;
-    }
-
+  @media (max-width:$broken) {
     .watch-live-mobile {
       margin: 0 auto 20px;
       font-size: 1rem;
-      max-width: 100%;
+      max-width: 400px;
       width: calc(100% - 30px);
       min-height: 30px;
       display: flex;
+    }
+  }
+
+  @media (max-width: $tablet) {
+    .watch-live-button:not(.watch-live-mobile) {
+      display: none;
     }
 
     .block-fixed-block-contentwatch-live,
