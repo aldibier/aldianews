@@ -1,11 +1,11 @@
 //------------ Bloque noticia destacada ---------------//
 .block-block-grouphigh-impact-and-most-visited-news-home {
-  + .wrapper-news-trending {
+  +.wrapper-news-trending {
     display: none;
   }
 
-  > .content {
-    .block-block-groupright-column-home:only-child  {
+  >.content {
+    .block-block-groupright-column-home:only-child {
       display: none;
     }
   }
@@ -28,7 +28,7 @@
       margin-bottom: 0;
     }
 
-    > .view-content {
+    >.view-content {
       width: max-content;
       max-height: 821px;
       padding-right: 20px;
@@ -67,7 +67,7 @@
         margin-bottom: 0;
       }
 
-      > .content {
+      >.content {
         margin: 0 0 0 20px;
 
         @media (max-width: $broken) {
@@ -78,6 +78,11 @@
 
     .watch-live {
       margin-top: 0;
+
+      @media (max-width: $broken) {
+        display: none;
+      }
+
     }
 
     .watch-live-button {
@@ -168,7 +173,7 @@
   }
 }
 
-.block-views-blockpolitics-mix-block-1  {
+.block-views-blockpolitics-mix-block-1 {
   margin-bottom: 120px;
 
   @media (max-width: $tablet) {
@@ -177,7 +182,7 @@
 }
 
 .block-views-blockhigh-impact-news-home-block-1 {
-  + .block-block-groupright-column-home {
+  +.block-block-groupright-column-home {
     display: none;
   }
 }
@@ -187,11 +192,12 @@
     width: calc(100% - 30px);
   }
 }
+
 //------------ Ultimas noticias ---------------//
 .wrapper-news-trending {
   margin-bottom: 80px;
 
-  > .content {
+  >.content {
     display: flex;
 
     @media (max-width: $broken) {
@@ -203,6 +209,7 @@
     margin-right: 40px;
     width: 100%;
     max-width: 950px;
+
     @media (max-width: $broken) {
       margin-right: 0;
     }
@@ -220,6 +227,10 @@
 
   .watch-live {
     margin-top: 0;
+
+    @media (max-width: $broken) {
+      display: none;
+    }
   }
 }
 
@@ -234,7 +245,7 @@
     margin-bottom: 30px;
   }
 
-  > .node--type-news {
+  >.node--type-news {
     &:nth-child(1) {
       padding-right: 55px;
       border-right: 1px solid $cgrey4;
@@ -281,7 +292,7 @@
 }
 
 .path-frontpage {
-  
+
   h3 h2 .aldia-logo-in-text {
     margin-right: 5px;
   }
@@ -299,10 +310,12 @@
       position: relative;
       width: 100%;
       bottom: 1px;
-			vertical-align: middle;
+      //vertical-align: middle;
     }
+
     @media (max-width: $broken) {
       margin-right: 0px;
+
       img {
         bottom: 2px;
         //height: 20.12px;
@@ -332,7 +345,7 @@
 
     a {
       width: 100%;
-			max-height: 46px;
+      max-height: 46px;
       font-size: 38px;
       // margin-left: 5px;
       // line-height: 46px;
@@ -346,21 +359,26 @@
     @media (max-width: $tablet) {
       .aldia-logo-in-text {
         max-width: 77.24px;
+
         img {
-          height: 100%;//26.12px
+          height: 100%; //26.12px
           max-height: 24px;
           margin-top: 1px;
         }
       }
     }
   }
+
   .card-title .aldia-logo-in-text {
     max-width: 72px;
+
     img {
       height: 22px;
     }
+
     @media (max-width: $broken) {
       max-width: 40px;
+
       img {
         height: 12px;
       }
@@ -428,6 +446,17 @@
     .card-more-category .field--name-field-short-title a {
       font-size: szrem(18);
       line-height: 21px;
+
+      @media screen and(max-width:$broken) {
+        font-size: szrem(30);
+        line-height: 35px;
+      }
+
+      @media (max-width: $tablet) {
+        font-size: 14px;
+        line-height: 17px;
+      }
+
     }
 
     @media (max-width: 1250px) {
@@ -448,8 +477,8 @@
         &:nth-last-child(1),
         &:nth-last-child(2) {
           //margin-bottom: 35px;
-					margin-bottom: 0;
-				}
+          margin-bottom: 0;
+        }
       }
     }
 
@@ -480,6 +509,7 @@
   .main-news-date,
   .card-more-category .field--name-created {
     font-size: $px12;
+
     p {
       font-size: $px12;
     }
@@ -488,8 +518,10 @@
   .card-more-news .short-title-date a {
     font-size: $px18;
   }
+
   .category-view-more a {
     font-size: $px12;
+
     @media (max-width: $broken) {
       margin-top: 6px;
     }
@@ -501,12 +533,13 @@
     #page {
       padding: 87px 0 0;
     }
+
     .view-categories-sons {
-      > .view-content > h3 a {
+      >.view-content>h3 a {
         line-height: initial;
       }
 
-      > .view-content .views-field-view-2 .view-content {
+      >.view-content .views-field-view-2 .view-content {
         margin-top: 0px;
         padding-bottom: 50px;
       }
@@ -519,7 +552,7 @@
         }
       }
 
-      > .view-content .views-field-view-1 .view-content {
+      >.view-content .views-field-view-1 .view-content {
         position: relative;
       }
 
@@ -565,6 +598,7 @@
         .card-category {
           margin-bottom: 0px;
         }
+
         .card-title {
           .aldia-logo-in-text {
             max-width: 35px;
@@ -573,6 +607,7 @@
             align-items: center;
             justify-content: center;
             margin: auto 3px auto 0;
+
             img {
               width: 100%;
               height: 22.25px;
@@ -604,6 +639,7 @@
   .view-thought-leaders-home {
     max-width: 1280px;
     margin: 0 auto;
+
     .category-title {
       @media (max-width: $broken) {
         margin-top: 20px;
@@ -627,7 +663,7 @@
 
   .views-row {
     display: flex;
-		justify-content: flex-start;
+    justify-content: flex-start;
     grid-gap: 0px;
     width: 100%;
     margin-right: 55px;
@@ -642,8 +678,8 @@
 
 
     @media (max-width: $desktop) {
-			margin-right: 22.5px;
-		}
+      margin-right: 22.5px;
+    }
 
     @media (max-width: $broken) {
       margin-left: 10px;
@@ -702,6 +738,7 @@
   .aldia-logo-in-text {
     margin-right: 5px;
     top: 2px;
+
     @media (max-width: $broken) {
       //max-width: 54.24px;
     }
@@ -726,7 +763,7 @@
       opacity: 0.8;
     }
   }
- 
+
   @media (max-width: $desktop) {
     max-width: 230px;
   }
@@ -738,7 +775,7 @@
     border-radius: 100%;
     filter: grayscale(1);
     margin: 0 auto 15px;
-		flex: 0 0 120px;
+    flex: 0 0 120px;
 
     .field-content {
       width: inherit;
@@ -753,8 +790,8 @@
   }
 
   .views-field-name {
-		min-height: 45px;
-		max-height: 45px;
+    min-height: 45px;
+    max-height: 45px;
     font-family: $ModernoFB-Regular;
     font-style: normal;
     font-weight: bold;
@@ -766,9 +803,10 @@
   }
 
   .views-field-title {
-		flex: 1 1 100%;
+    flex: 1 1 100%;
     width: 100%;
     margin-bottom: 10px;
+
     //margin-top: 20px;
     * {
       font-family: $PrNovacond-Sbold;
@@ -794,13 +832,15 @@
 
 .block-block-groupcurrent-edition-advertising-home {
   padding: 0 80px;
-  > .content {
+
+  >.content {
     display: flex;
   }
 
   @media screen and (max-width: $broken) {
     padding: 0;
-    > .content {
+
+    >.content {
       flex-direction: column;
     }
   }
@@ -829,6 +869,7 @@
 
 @media (max-width: $desktop) {
   .view-thought-leaders-home {
+
     .views-field-view,
     .views-field-view-1 {
       padding: 0 15px;
@@ -838,6 +879,7 @@
 
 @media (max-width: $tablet) {
   .view-thought-leaders-home {
+
     .views-field-view,
     .views-field-view-1 {
       padding: 0;
@@ -866,6 +908,7 @@
       max-width: 80px;
       max-height: 80px;
       margin: 0 auto 10px;
+
       img {
         max-width: 80px;
         max-height: 80px;
@@ -895,9 +938,7 @@
     }
   }
 
-  .view-thought-leaders-home.view-display-id-block_3
-    .view-content
-    .aldia-logo-in-text {
+  .view-thought-leaders-home.view-display-id-block_3 .view-content .aldia-logo-in-text {
     margin-bottom: 4px;
     max-width: 64px;
   }

@@ -4,7 +4,8 @@
   position: relative;
 
   .layout-container {
-    max-width: 1390px;
+    //max-width: 1390px;
+    max-width: 1310px;
     margin: 0 auto;
     padding-left: 15px;
     padding-right: 15px;
@@ -183,6 +184,25 @@
       >.powerd {
         display: none;
       }
+
+      ul>li:nth-child(2)>div>ul>li:nth-child(1) {
+        >div {
+          &:lang(es) {
+            order: 2;
+          }
+
+          &:lang(en) {
+            order: 1;
+          }
+
+          @media (max-width:$tablet) {
+            &:lang(es) {
+              order: initial;
+            }
+          }
+        }
+      }
+
     }
 
     .menu {
@@ -213,22 +233,6 @@
 
         &:last-child {
           margin-bottom: 0;
-        }
-
-        >div {
-          &:lang(es) {
-            order: 2;
-          }
-
-          &:lang(en) {
-            order: 1;
-          }
-
-          @media (max-width:$tablet) {
-            &:lang(es) {
-              order: initial;
-            }
-          }
         }
       }
 
@@ -720,7 +724,7 @@ footer.site-footer {
     padding: 0;
   }
 
-	@media (max-width: $tablet) {
+  @media (max-width: $tablet) {
     padding-top: 7px;
   }
 

@@ -34,7 +34,9 @@
 
 body.open-menu {
   .region-header {
-    padding: 0 15px;
+    @media (max-width: $tablet) {
+      padding: 0 15px;
+    }
 
     &:after {
       display: none;
@@ -60,7 +62,7 @@ body.open-menu {
     position: relative;
 
     .region-header {
-			max-height: max-content;
+      max-height: max-content;
       //max-height: 46px;
     }
 
@@ -687,6 +689,7 @@ body.open-menu {
 //----------------menu primary------------------//
 
 .region-header {
+  max-height: 100px;
   background: $cblack0;
   display: flex;
   padding: 15px 15px 0;
@@ -711,7 +714,7 @@ body.open-menu {
     position: absolute;
     content: "";
     //background: $cblack0;
-		background-color: transparent;
+    background-color: transparent;
   }
 
   #block-blockheader {
@@ -1022,10 +1025,10 @@ body.open-menu {
     font-family: $PrNovacond-Sbold;
     letter-spacing: 0.741176px;
 
-		&:lang(es){
-			align-self: flex-start;
-			margin: 10px 20px 0 10px;
-		}
+    &:lang(es) {
+      align-self: flex-start;
+      margin: 10px 20px 0 10px;
+    }
 
     @media (min-width: $tablet) {
       // padding-right: 15px;
@@ -1060,9 +1063,9 @@ body.open-menu {
     margin: auto 0;
 
     &:lang(es) {
-			align-self: flex-start;
+      align-self: flex-start;
       min-width: min-content;
-			margin: 13px 0 0 0;
+      margin: 13px 0 0 0;
     }
 
   }
@@ -1225,13 +1228,19 @@ body.open-menu {
 
 .region-secondary-menu.open-menu~.region-header {
   #block-al-dia-news-branding {
-    margin: 0 0 0 -25px;
-		max-height: fit-content;
+    margin: 0 15px 0 -25px;
+    max-height: fit-content;
+
+    @media (max-width: $tablet) {
+      margin: 0 0 0 -25px
+    }
+
   }
 
   #block-blockheader {
-    margin: auto 35px 7px 0;
-  }
+    //margin: auto 35px 7px 0;
+		margin: auto 35px auto 0;
+	}
 }
 
 .user-logged-in {

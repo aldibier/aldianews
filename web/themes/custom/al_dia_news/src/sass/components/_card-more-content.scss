@@ -1,7 +1,8 @@
 //------ related content card ------------//
 .card-more {
+
   //reset style
-  .node__content  {
+  .node__content {
     margin: 0;
   }
 
@@ -11,19 +12,44 @@
     font-family: initial;
   }
 
-  .aldia-logo-in-text {
-    max-width: 56px !important;
-    img {
-      height: 18px !important;
-    }
+  a {
+    display: flex;
+    align-items: center;
+
     @media (max-width: $broken) {
+      display: initial;
+      align-items: initial;
+    }
+
+  }
+
+  .aldia-logo-in-text {
+    height: 15px;
+    margin-right: 5px !important;
+
+    img {
+      height: 15px !important;
+    }
+
+    @media (max-width: $broken) {
+      height: auto;
+      max-width: 75px !important;
+
+      img {
+        height: 23px !important;
+      }
+    }
+
+    @media (max-width: $tablet) {
       max-width: 35px !important;
+
       img {
         top: 0px !important;
         height: 11px !important;
       }
     }
   }
+
   //end reset style
 
   @media (max-width: $broken) {
@@ -42,6 +68,7 @@
     &.view-more-in-this-section-news {
       width: auto;
       max-width: none;
+
       .card-more-news .short-title-date h3 {
         margin: 0px;
       }
@@ -57,24 +84,21 @@
     .block-field-blocknodenewsfield-type-of-content {
       font-size: 0;
     }
-    .block-field-blocknodenewsfield-type-of-content
-      .field--name-field-type-of-content,
+
+    .block-field-blocknodenewsfield-type-of-content .field--name-field-type-of-content,
     .field--name-field-my-content-has-a-main-vide {
       z-index: 8;
       font-size: 0px;
-      @include player-icon(
-        $desktop-size: 50px,
+      @include player-icon($desktop-size: 50px,
         $tablet-size: 50px,
-        $mobile-size: 30px
-      );
+        $mobile-size: 30px);
 
       &.logo-podcast {
-        @include microphone-icon(
-          $desktop-size: 50px,
+        @include microphone-icon($desktop-size: 50px,
           $tablet-size: 50px,
-          $mobile-size: 30px
-        );
+          $mobile-size: 30px);
       }
+
       &:empty,
       &.logo-none {
         display: none;
@@ -83,7 +107,7 @@
   }
 
   &-news {
-    .related-content > a {
+    .related-content>a {
       width: 175px;
       height: 100px;
       min-height: 100px;
@@ -162,6 +186,7 @@
   //------ more content category ------------/
   &-category,
   &-subcategory {
+
     .container-content,
     .last-content-category-childs {
       display: flex;
@@ -248,10 +273,16 @@
         letter-spacing: 0.08em;
         color: $corange;
 
+
         @media screen and(max-width:$broken) {
-          font-size: szrem(18);
-          line-height: 22px;
+          font-size: szrem(16);
+          line-height: 19px;
         }
+
+        // @media screen and(max-width:$broken) {
+        //   font-size: szrem(18);
+        //   line-height: 22px;
+        // }
 
         @media screen and(max-width:$tablet) {
           font-size: 10px;
@@ -276,6 +307,11 @@
         text-decoration: none;
         line-height: 21px;
         color: $cblack;
+
+        @media screen and(max-width:$broken) {
+          font-size: szrem(30);
+          line-height: 35px;
+        }
 
         @media (max-width: $tablet) {
           font-size: 14px;
@@ -307,7 +343,7 @@
 
   //------ more content author ------------//
   &-author {
-    .related-content > a {
+    .related-content>a {
       width: 115px;
       height: 115px;
       margin-right: 20px;
@@ -389,7 +425,7 @@
   .related-content {
     display: flex;
 
-    a  {
+    a {
       display: block;
       line-height: 0;
     }
@@ -398,9 +434,12 @@
       flex-direction: column;
     }
 
-    @media screen and (max-width: $tablet - 1) {
+    $query-mobile-custom: $tablet - 1;
+
+    @media screen and (max-width: $query-mobile-custom) {
       // width: max-content;
       width: 100%;
+
       img {
         width: 100%;
         max-width: none;
@@ -427,19 +466,22 @@
   .card-title-more {
     //margin-top: 10px !important;
   }
+
   .views-row {
     margin: 20px 0;
     padding-bottom: 20px;
   }
+
   .one-content-subcategory-four {
     margin-right: 15px;
+
     @media screen and (max-width: $broken) {
       margin-right: 0px;
     }
   }
 }
 
-.card-more-news  {
+.card-more-news {
   img {
     @media screen and (min-width: $broken) {
       max-width: 175px;
