@@ -228,7 +228,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<span class=\"category-title\">\r\n    <h2> <a href=\"/leadership\">AL DÍA<span class=\"text\">{{ parent_target_id_1 }}</span></a></h2>\r\n</span>"
+            text: "<h2 class=\"category-title\"> <a href=\"/leadership\">AL DÍA<span class=\"text\">{{ parent_target_id_1 }}</span></a></h2>\r\n"
             make_link: false
             path: ''
             absolute: false
@@ -302,13 +302,13 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: ''
+          element_type: '0'
           element_class: ''
-          element_label_type: ''
+          element_label_type: '0'
           element_label_class: ''
           element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: 'views-field views-field-view-3'
+          element_wrapper_type: '0'
+          element_wrapper_class: more-on-category-home
           element_default_classes: false
           empty: ''
           hide_empty: false
