@@ -42,6 +42,10 @@
     > h3 {
       margin: 0;
 
+			.category-title {
+				display: block
+			}
+
       a {
         @include title-section-line($px34, $ModernoFB-Regular, $corange2);
       }
@@ -79,6 +83,20 @@
         margin-bottom: 35px;
       }
     }
+
+		.views-field-fieldset {
+			grid-area: head;
+
+			.field-content {}
+
+			.group-title-link {}
+
+
+			.category-title {}
+
+			.views-field-view-3 {}
+
+		}
 
     .views-field-view {
       max-width: 840px;
