@@ -1,14 +1,16 @@
 @media (min-width: $tablet) and (max-width: $desktop) {
-  .path-frontpage
-    .view-categories-sons
-    .views-field-view-1
-    .block-fixed-block-content-small-vertical-advertising {
-    align-self: center;
+  .path-frontpage .view-categories-sons .views-field-view-1 .block-fixed-block-content-small-vertical-advertising {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
+
   .block-fixed-block-contentbig-vertical-advertising {
+		max-width: 100% !important;
     text-align: center;
-    margin-top: 50px !important;
+    margin-top: 0 !important;
   }
+
   .banner-horizontal {
     text-align: center;
   }
