@@ -16,8 +16,8 @@
     &.show {
       display: block;
       //top: 60%;
-			top: 50%;
-		}
+      top: 50%;
+    }
   }
 
   .modal-form {
@@ -161,6 +161,8 @@
     }
 
     .block-fixed-block-contentbig-vertical-advertising {
+      flex: 1 0 400px;
+
       @media screen and (max-width: $broken) {
         display: none;
       }
@@ -172,7 +174,8 @@
   }
 
   .block-fixed-block-contentbody-about-al-dia-live {
-    width: 800px;
+    flex: 1 1 800px;
+    width: 100%;
     max-width: 100%;
     margin-right: 80px;
 
@@ -521,6 +524,12 @@
       }
     }
 
+    .block-views-blockabout-al-dia-live-block-4+.block-gamw {
+      display: flex;
+      justify-content: center;
+      flex: 1;
+    }
+
     .slick-list {
       margin-bottom: 15px;
 
@@ -547,8 +556,8 @@
     @media (max-width: $tablet) {
       //margin: 0 auto 0px;
       //margin: 0;
-			margin-bottom: 40px;
-		}
+      margin-bottom: 40px;
+    }
   }
 
   .about-al-dia-live-testimonies {
@@ -814,9 +823,9 @@
       visibility: hidden;
     }
 
-		@media (max-width: $tablet) {
-			margin-bottom: 15px;
-		}
+    @media (max-width: $tablet) {
+      margin-bottom: 15px;
+    }
 
   }
 
@@ -1041,11 +1050,12 @@
     .aldia-logo-in-text {
       max-width: 108px;
     }
-		@media screen and (max-width: $tablet) {
-			.aldia-logo-in-text {
-				max-height: 16px;
-				margin: 0 5px
-			}
-		}
+
+    @media screen and (max-width: $tablet) {
+      .aldia-logo-in-text {
+        max-height: 16px;
+        margin: 0 5px
+      }
+    }
   }
 }
