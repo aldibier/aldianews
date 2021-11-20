@@ -1,6 +1,6 @@
 @media (min-width: $tablet) and (max-width: $desktop) {
 
-	//structure and spaces modification
+  //structure and spaces modification
 
 
   .path-frontpage .view-categories-sons .views-field-view-1 .block-fixed-block-content-small-vertical-advertising {
@@ -10,13 +10,22 @@
   }
 
   .block-fixed-block-contentbig-vertical-advertising {
-		max-width: 100% !important;
+    max-width: 100% !important;
     text-align: center;
     margin-top: 0 !important;
   }
 
   .banner-horizontal {
-		margin: 90px auto !important;
+    margin: 90px auto !important;
     text-align: center;
   }
+
+  //Category sons
+  .path-taxonomy .view-categories-sons.view-display-id-block_1 .views-row .banner-horizontal {
+		grid-column: span 2;
+		max-width: 100%;
+    max-height: initial;
+    margin: 80px auto 0;
+  }
+
 }
