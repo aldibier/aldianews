@@ -22,10 +22,18 @@
 
   //Category sons
   .path-taxonomy .view-categories-sons.view-display-id-block_1 .views-row .banner-horizontal {
-		grid-column: span 2;
-		max-width: 100%;
+    grid-column: span 2;
+    max-width: 100%;
     max-height: initial;
     margin: 80px auto 0;
+  }
+
+  //Internal news
+  div[data-unit*="internal-news-thought-banner-last-block-top-mobile"] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
   }
 
 }
