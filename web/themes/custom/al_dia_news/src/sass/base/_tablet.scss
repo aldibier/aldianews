@@ -16,9 +16,13 @@
   }
 
   .banner-horizontal {
-    margin: 90px auto !important;
+    margin: 65px auto !important;
     text-align: center;
   }
+
+  // .block-block-group-current-edition-advertising-home + .banner-horizontal{
+
+  // }
 
   //Category sons
   .path-taxonomy .view-categories-sons.view-display-id-block_1 .views-row .banner-horizontal {
@@ -63,7 +67,7 @@
 
   //Internal event 
   .page-node-type-event .body-lateral-section-advertising {
-		display: flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     flex: 1 1 400px;
@@ -89,6 +93,14 @@
 
   .skyscraper-mobile {
     align-self: center;
-    }
+  }
+
+  .view-categories-sons .skyscraper-mobile {
+    align-self: flex-start;
+  }
+
+	.view-categories-sons .block-fixed-block-contentsquare-advertising-mobile {
+		margin-top: 70px;
+	}
+
 }
- 
