@@ -47,15 +47,48 @@
 
         a {
           @include title-section-line($px34, $ModernoFB-Regular, $corange2);
+          display: flex;
+          align-items: center;
         }
 
         @media (max-width: $tablet) {
+					max-height: 37px;
+					padding-bottom: 10px;
+					border-bottom: 1.5px solid $corange2;
+
           a {
             font-size: 20px;
             line-height: 24px;
+
+						&::after {
+							display: none;
+						}
           }
         }
       }
+
+      .aldia-logo-in-text,
+      .text {
+        position: relative;
+        z-index: 1;
+        background-color: $cwhite;
+        line-height: 1;
+      }
+
+      .aldia-logo-in-text {
+        padding-right: 10px;
+
+				@media (max-width: $tablet) {
+					padding-right: 5px;
+				}
+
+      }
+
+
+			.text {
+				padding-right: 20px;
+			}
+
     }
 
     >.views-row {
@@ -89,16 +122,6 @@
 
     .views-field-fieldset {
       grid-area: head;
-
-      .field-content {}
-
-      .group-title-link {}
-
-
-      .category-title {}
-
-      .views-field-view-3 {}
-
     }
 
     .views-field-view {

@@ -400,7 +400,7 @@
         margin-bottom: 0;
       }
 
-      &:nth-child(3) {
+      &:nth-child(2n + 3) {
         &::before {
           content: "";
           width: 100vw;
@@ -699,7 +699,7 @@
     position: relative;
 
     @media (min-width: $tablet) {
-      &::before {
+      &::after {
         content: "";
         width: calc(100% - 50px);
         position: absolute;
