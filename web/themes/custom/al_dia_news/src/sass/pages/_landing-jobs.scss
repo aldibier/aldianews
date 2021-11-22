@@ -389,7 +389,7 @@ $brokenPixelUp: $broken2+1;
       height: 35px;
       position: absolute;
       top: 40%;
-			cursor: pointer;
+      cursor: pointer;
     }
 
     .slick-prev {
@@ -617,23 +617,23 @@ $brokenPixelUp: $broken2+1;
     .views-row:nth-child(2),
     .views-row:nth-child(3) {
       //padding-right: 14px;
-			position: relative;
+      position: relative;
       margin-bottom: 60px;
       flex-direction: column;
       padding-bottom: 0px;
       border-bottom: 0px solid $cgrey4;
       max-width: 418px;
 
-			&::before {
-				content: "";
-				display: block;
-				position: absolute;
-				width: 1px;
-				height: 100%;
-				background: $cgrey4;
-				right: -18px;
-				top: 0;
-			}
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 1px;
+        height: 100%;
+        background: $cgrey4;
+        right: calc(0% - 20px);
+        top: 0;
+      }
 
       .views-field-field-image {
         flex: 1 1 100%;
@@ -1514,7 +1514,7 @@ $brokenPixelUp: $broken2+1;
       .views-row:nth-child(1) .views-field-field-image,
       .views-row:nth-child(2) .views-field-field-image {
         flex: 0 0 auto;
-				max-width: 140px;
+        max-width: 140px;
         margin-right: 0 !important;
         margin-bottom: 10px !important;
       }
