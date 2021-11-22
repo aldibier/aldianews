@@ -297,12 +297,13 @@
     margin-right: 5px;
   }
 
-  h3 .aldia-logo-in-text {
+  h2 .aldia-logo-in-text {
     // max-width: 105px;
     position: relative;
     max-width: 133px;
     //top: -1px;
     margin-right: 0;
+		line-height: 1;
 
     img {
       //height: 46px;
@@ -577,12 +578,15 @@
       }
 
       .aldia-logo-in-text {
-        max-width: 55px;
+        //max-width: 55px;
+				max-width: 85px;
 
         img {
           width: 100%;
-          height: 17.25px;
-          margin: auto 0;
+					min-width: 77px;
+          //height: 17.25px;
+          height: 24px;
+					margin: auto 0;
         }
       }
 
@@ -698,9 +702,10 @@
 .view-thought-leaders-home.view-display-id-block_3 .view-content {
   .category-title {
     position: relative;
+		width: 100%;
 
     @media (min-width: $tablet) {
-      &::before {
+      &::after {
         content: "";
         width: calc(100% - 50px);
         position: absolute;
