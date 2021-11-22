@@ -21,6 +21,7 @@
     text-transform: uppercase;
     margin: -10px 0 0;
     display: block;
+
     @media (max-width: $tablet) {
       font-size: szrem(12);
       line-height: 25px;
@@ -38,27 +39,26 @@
 
 //block category sons
 .view-categories-sons {
-  > .view-content {
-    > h3 {
-      margin: 0;
+  >.view-content {
+    .group-title-link {
+      h2 {
+        display: block;
+        margin: 0;
 
-			.category-title {
-				display: block
-			}
-
-      a {
-        @include title-section-line($px34, $ModernoFB-Regular, $corange2);
-      }
-      
-      @media (max-width: $tablet) {
         a {
-          font-size: 20px;
-          line-height: 24px;
+          @include title-section-line($px34, $ModernoFB-Regular, $corange2);
+        }
+
+        @media (max-width: $tablet) {
+          a {
+            font-size: 20px;
+            line-height: 24px;
+          }
         }
       }
     }
 
-    > .views-row {
+    >.views-row {
       margin-bottom: 90px;
       display: grid;
       grid-template-columns: minmax(auto, 860px) minmax(420px, 1fr);
@@ -72,31 +72,34 @@
         grid-column: span 2;
         margin-top: 80px;
       }
+
       @media (max-width: $broken) {
         display: flex;
         flex-direction: column;
+
         .banner-scroll {
           margin-top: 30px;
         }
       }
+
       @media (max-width: $tablet) {
         margin-bottom: 35px;
       }
     }
 
-		.views-field-fieldset {
-			grid-area: head;
+    .views-field-fieldset {
+      grid-area: head;
 
-			.field-content {}
+      .field-content {}
 
-			.group-title-link {}
+      .group-title-link {}
 
 
-			.category-title {}
+      .category-title {}
 
-			.views-field-view-3 {}
+      .views-field-view-3 {}
 
-		}
+    }
 
     .views-field-view {
       max-width: 840px;
@@ -203,7 +206,7 @@
           }
 
           .slick-slide {
-            > div {
+            >div {
               .views-row {
                 padding-top: 10px;
                 padding-bottom: 10px;
@@ -241,7 +244,7 @@
       grid-column: 2 span;
     }
   }
-  
+
 
   //next two
   .card-one-column {
@@ -258,8 +261,9 @@
       }
     }
   }
-  .view-display-id-block_5 .category-view-more a{
-    @media (max-width: $tablet){
+
+  .view-display-id-block_5 .category-view-more a {
+    @media (max-width: $tablet) {
       margin: -3px 0px -7px;
     }
   }
@@ -268,13 +272,13 @@
 .path-taxonomy .views-field-view-1 {
   .card-one-column {
     position: relative;
-    
+
     &:nth-child(1),
-    &:nth-child(2){
+    &:nth-child(2) {
       margin-top: 0;
     }
 
-    &:nth-child(2n + 1){
+    &:nth-child(2n + 1) {
       &::after {
         content: '';
         width: 0;

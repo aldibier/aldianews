@@ -50,8 +50,10 @@
 
 @media (max-width: $desktop) {
   .block-content-left {
-    max-width: 555px;
-    margin-right: 28px;
+    //max-width: 555px;
+    flex: 1 1 555px;
+		max-width: 100%;
+		margin-right: 28px;
   }
 }
 

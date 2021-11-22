@@ -1,31 +1,85 @@
 @media (min-width: $tablet) and (max-width: $desktop) {
-  .path-frontpage
-    .view-categories-sons
-    .views-field-view-1
-    .block-fixed-block-content-small-vertical-advertising {
-    align-self: center;
+
+  //structure and spaces modification
+
+
+  .path-frontpage .view-categories-sons .views-field-view-1 .block-fixed-block-content-small-vertical-advertising {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
+
   .block-fixed-block-contentbig-vertical-advertising {
+    max-width: 100% !important;
     text-align: center;
-    margin-top: 50px !important;
+    margin-top: 0 !important;
   }
+
   .banner-horizontal {
+    margin: 90px auto !important;
     text-align: center;
   }
-  
+
+  //Category sons
+  .path-taxonomy .view-categories-sons.view-display-id-block_1 .views-row .banner-horizontal {
+    grid-column: span 2;
+    max-width: 100%;
+    max-height: initial;
+    margin: 80px auto 0;
+  }
+
+  //Internal news
+  div[data-ad-unit*="internal-news-thought-banner-last-block-top-mobile"] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+
+  //Landing jobs
+  .path-jobs .banner-horizontal {
+    flex: 1 1 100%;
+    max-height: 200px !important;
+    margin: 0 auto !important;
+
+    .banner-horizontal {
+      margin: 0 auto !important;
+    }
+
+  }
+
+  .jobs.style-jobs .block-block-groupadvertising-blocks-in-job-landing-pages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 100%;
+  }
+
+  .block-block-groupgroup-career-news-jobs .block-fixed-block-contentbig-vertical-advertising {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  //Infinite scroll 
+  .block-scroll {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100% !important;
+    margin: 35px auto;
+  }
+
+  .skys-scroll {
+    max-width: 100% !important;
+    max-height: initial !important;
+    margin: 0 auto !important;
+    grid-row: span 1 !important;
+
+  }
+
   .skyscraper-mobile {
     align-self: center;
     }
-    
-    añada ese tambien
-    
-  .skys-scroll{
-    grid-row: span 1;
-    }
-    
-  .block-scroll{
-    margin: 80px auto 35px;
-    }
-
 }
  
