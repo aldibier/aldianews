@@ -86,9 +86,9 @@
       content: "";
       position: absolute;
       z-index: 1;
-      top: calc(0% - 70px);
+      top: calc(0% - 35px);
       display: block !important;
-			width: 100vw;
+      width: 100vw;
       height: 70px;
       background-color: $cwhite;
     }
@@ -97,8 +97,8 @@
       content: "";
       position: absolute;
       z-index: 1;
-      bottom: calc(0% - 70px);
-			display: block !important;
+      bottom: calc(0% - 35px);
+      display: block !important;
       width: 100vw;
       height: 70px;
       background-color: $cwhite;
@@ -116,7 +116,7 @@
       content: "";
       position: absolute;
       top: calc(0% - 70px);
-			display: block !important;
+      display: block !important;
       width: 100vw !important;
       max-width: 100vw !important;
       height: 70px !important;
@@ -129,7 +129,7 @@
       content: "";
       position: absolute;
       bottom: calc(0% - 70px);
-			display: block !important;
+      display: block !important;
       width: 100vw;
       max-width: 100vw;
       height: 70px;
@@ -148,6 +148,13 @@
     margin: 0 auto !important;
     grid-row: span 1 !important;
     background-color: $cwhite;
+
+    &::before,
+    &::after {
+      content: none !important;
+      display: none !important;
+    }
+
   }
 
   .view-categories-sons .skyscraper-mobile {
