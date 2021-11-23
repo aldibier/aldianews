@@ -619,16 +619,15 @@
   @media screen and (max-width: $tablet) {
     .skyscraper-mobile  {
       margin-bottom: 50px !important;
-
-      &::before {
-        content: "";
-        width: 30px;
-        height: 100%;
-        display: block;
-        position: absolute;
-        background: $cwhite;
-        left: calc(0% - 30px);
-      }
+    }
+    .skyscraper-mobile  ::before {
+      content: "";
+      width: 30px;
+      height: 100%;
+      display: block;
+      position: absolute;
+      background: $cwhite;
+      left: calc(0% - 30px);
     }
   }
 }
