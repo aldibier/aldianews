@@ -26,7 +26,7 @@
 
 .path-podcast {
   @media screen and (max-width: $broken) {
-    .region-content > #block-gamw {
+    .region-content>#block-gamw {
       margin: 0 -15px 30px;
     }
   }
@@ -38,7 +38,7 @@
     .block-fixed-block-contenthorizontal-advertising {
       margin-bottom: 90px;
 
-      .content  {
+      .content {
         margin: 0;
       }
 
@@ -50,7 +50,7 @@
   }
 }
 
-.podcast-category-block  {
+.podcast-category-block {
   margin-bottom: 75px;
   display: grid;
   grid-template-columns: minmax(auto, 840px) 400px;
@@ -135,7 +135,7 @@
   }
 }
 
-.podcast-category-description  {
+.podcast-category-description {
   p {
     margin: 0;
     font-size: szrem(19);
@@ -164,7 +164,7 @@
     margin-bottom: 15px;
   }
 
-  img  {
+  img {
     height: 445px;
 
     @media screen and (max-width: $broken) {
@@ -180,7 +180,7 @@
   }
 }
 
-.al-dia-podcast-social-media  {
+.al-dia-podcast-social-media {
   padding-top: 45px;
   border-top: 2px solid $cgrey4;
   grid-area: social-media;
@@ -368,7 +368,7 @@
   }
 }
 
-.podcast-category  {
+.podcast-category {
   position: relative;
   list-style: none;
 
@@ -414,9 +414,12 @@
   margin-bottom: 90px;
   display: flex;
 
+  @media screen and (max-width: $broken) {
+    flex-direction: column;
+  }
+
   @media screen and (max-width: $tablet) {
     margin-bottom: 40px;
-    flex-direction: column;
   }
 
   .view-header {
@@ -438,14 +441,11 @@
       width: 100%;
       max-width: 100%;
       margin-right: 0;
-    }
-
-    @media screen and (max-width: $tablet) {
-      margin-bottom: 40px;
+			margin-bottom: 40px;
     }
   }
 
-  .view-footer  {
+  .view-footer {
     display: none;
 
     @media screen and (max-width: $tablet) {
@@ -511,7 +511,7 @@
   }
 }
 
-.podcast-item-authored-on  {
+.podcast-item-authored-on {
   margin-bottom: 15px;
   display: block;
   font-size: szrem(18);
@@ -528,7 +528,7 @@
   }
 }
 
-.podcast-item-body  {
+.podcast-item-body {
   margin-bottom: 25px;
   font-size: szrem(19);
   font-family: $CenturyOld-Regular;
