@@ -217,7 +217,7 @@
 
   .view-more-authors .skyscraper-mobile,
   .view-more-news .skyscraper-mobile {
-    margin: 30px 0px;
+    margin: 30px 0px !important;
     display: block !important;
     z-index: 2;
     background: white;
@@ -288,9 +288,12 @@
     z-index: 2;
   }
   .view-more-news .skyscraper-mobile {
-    margin: 20px auto;
+    margin: 20px auto !important;
   }
   .page-node-type-more-covers main .container-content {
+    margin-bottom: 20px;
+  }
+  .node--type-more-covers .non-ads-father .content-right-pages .pautas {
     margin-bottom: 20px;
   }
 }
