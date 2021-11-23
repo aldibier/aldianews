@@ -6,13 +6,10 @@ dependencies:
     - field.field.node.al_dia_vacancy.body
     - field.field.node.al_dia_vacancy.field_email
     - field.field.node.al_dia_vacancy.field_picture
-    - fixed_block_content.fixed_block_content._small_vertical_advertising
-    - fixed_block_content.fixed_block_content.big_vertical_advertising
     - node.type.al_dia_vacancy
     - webform.webform.apply_to_this_job
   module:
     - al_dia_layouts
-    - fixed_block_content
     - gamw
     - image
     - layout_builder
@@ -92,30 +89,6 @@ third_party_settings:
                 view_mode: view_mode
             additional: {  }
             weight: 0
-          3807bc84-6cf0-4beb-b971-550ee2a657a4:
-            uuid: 3807bc84-6cf0-4beb-b971-550ee2a657a4
-            region: one_vertical_advertising
-            configuration:
-              id: 'fixed_block_content:_small_vertical_advertising'
-              label: ' Small vertical advertising'
-              provider: fixed_block_content
-              label_display: '0'
-              view_mode: ''
-              context_mapping: {  }
-            additional: {  }
-            weight: 0
-          6d99cb25-fb67-41b3-a84f-a5c56fbe02ae:
-            uuid: 6d99cb25-fb67-41b3-a84f-a5c56fbe02ae
-            region: two_vertical_advertising
-            configuration:
-              id: 'fixed_block_content:big_vertical_advertising'
-              label: 'Big vertical advertising'
-              provider: fixed_block_content
-              label_display: '0'
-              view_mode: ''
-              context_mapping: {  }
-            additional: {  }
-            weight: 1
           26c4e740-008b-4435-8fba-22111231b418:
             uuid: 26c4e740-008b-4435-8fba-22111231b418
             region: two_content
@@ -143,6 +116,38 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: 1
+          908f7c57-cc4b-478a-90a3-c6e0d46278a6:
+            uuid: 908f7c57-cc4b-478a-90a3-c6e0d46278a6
+            region: one_vertical_advertising
+            configuration:
+              id: gamw
+              label: 'GAMW Advertisement'
+              provider: gamw
+              label_display: visible
+              ad_unit: fixed-internal-side-section-top-block
+              attributes_wrapper:
+                0: ''
+                add: 'Add another targeting attribute'
+                remove: 'Remove last targeting attribute'
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+          2307fa5d-5d74-4a76-a5a7-5a265c187d00:
+            uuid: 2307fa5d-5d74-4a76-a5a7-5a265c187d00
+            region: two_vertical_advertising
+            configuration:
+              id: gamw
+              label: 'GAMW Advertisement'
+              provider: gamw
+              label_display: visible
+              ad_unit: fixed-internal-side-section-bottom-skyscraper
+              attributes_wrapper:
+                0: ''
+                add: 'Add another targeting attribute'
+                remove: 'Remove last targeting attribute'
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
         third_party_settings: {  }
 id: node.al_dia_vacancy.default
 targetEntityType: node
