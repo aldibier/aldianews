@@ -1,10 +1,7 @@
 @media (min-width: $tablet) and (max-width: $desktop) {
   //structure and spaces modification
 
-  .path-frontpage
-    .view-categories-sons
-    .views-field-view-1
-    .block-fixed-block-content-small-vertical-advertising {
+  .path-frontpage .view-categories-sons .views-field-view-1 .block-fixed-block-content-small-vertical-advertising {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,15 +18,12 @@
     text-align: center;
   }
 
-  #block-block-group-current-edition-advertising-home + .banner-horizontal {
+  #block-block-group-current-edition-advertising-home+.banner-horizontal {
     margin: 100px auto !important;
   }
 
   //Category sons
-  .path-taxonomy
-    .view-categories-sons.view-display-id-block_1
-    .views-row
-    .banner-horizontal {
+  .path-taxonomy .view-categories-sons.view-display-id-block_1 .views-row .banner-horizontal {
     grid-column: span 2;
     max-width: 100%;
     max-height: initial;
@@ -69,8 +63,7 @@
     flex: 1 1 100%;
   }
 
-  .block-block-groupgroup-career-news-jobs
-    .block-fixed-block-contentbig-vertical-advertising {
+  .block-block-groupgroup-career-news-jobs .block-fixed-block-contentbig-vertical-advertising {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -89,13 +82,25 @@
   .banner-scroll {
     position: relative;
 
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      top: calc(0% - 70px);
+      display: block !important;
+			width: 100vw;
+      height: 70px;
+      background-color: $cwhite;
+    }
+
     &::after {
       content: "";
       position: absolute;
-			z-index: 1;
-      top: -10px;
+      z-index: 1;
+      bottom: calc(0% - 70px);
+			display: block !important;
       width: 100vw;
-      height: 10px;
+      height: 70px;
       background-color: $cwhite;
     }
   }
@@ -110,22 +115,24 @@
     &::before {
       content: "";
       position: absolute;
-			top: calc(0% - 35px);
+      top: calc(0% - 70px);
+			display: block !important;
       width: 100vw !important;
       max-width: 100vw !important;
-      height: 35px !important;
+      height: 70px !important;
       padding: 0 !important;
-			margin: 0 !important;
+      margin: 0 !important;
       background-color: $cwhite !important;
     }
 
     &::after {
       content: "";
       position: absolute;
-      top: 0;
+      bottom: calc(0% - 70px);
+			display: block !important;
       width: 100vw;
       max-width: 100vw;
-      height: 1px;
+      height: 70px;
       padding: 0;
       background-color: $cwhite;
     }
@@ -212,9 +219,7 @@
     text-align: center;
   }
 
-  .block-views-blockmore-in-this-section-news-block-1
-    .view-content
-    .skyscraper-mobile {
+  .block-views-blockmore-in-this-section-news-block-1 .view-content .skyscraper-mobile {
     display: block !important;
     align-self: center;
     text-align: center;
@@ -224,23 +229,17 @@
 
   // thougth leaders
 
-  .view-landing-thought-leaders
-    .views-infinite-scroll-content-wrapper.non-adversiting
-    .block-scroll {
+  .view-landing-thought-leaders .views-infinite-scroll-content-wrapper.non-adversiting .block-scroll {
     display: block !important;
     margin-bottom: 30px;
   }
 
-  .view-landing-thought-leaders
-    .views-infinite-scroll-content-wrapper.non-adversiting
-    .skys-scroll {
+  .view-landing-thought-leaders .views-infinite-scroll-content-wrapper.non-adversiting .skys-scroll {
     display: block !important;
     margin: 0 auto 40px !important;
   }
 
-  .view-landing-thought-leaders
-    .views-infinite-scroll-content-wrapper.non-adversiting
-    .banner-scroll {
+  .view-landing-thought-leaders .views-infinite-scroll-content-wrapper.non-adversiting .banner-scroll {
     display: block !important;
     margin: 0px auto;
 
@@ -249,9 +248,7 @@
     }
   }
 
-  .block-views-blockmore-in-this-section-news-block-1
-    .view-content
-    .skyscraper-mobile {
+  .block-views-blockmore-in-this-section-news-block-1 .view-content .skyscraper-mobile {
     margin: 0 0 30px 19px;
     display: block !important;
     z-index: 2;
@@ -270,42 +267,29 @@
     align-self: center;
   }
 
-  .block-block-groupgroup-career-news-jobs
-    .block-fixed-block-contentbig-vertical-advertising {
+  .block-block-groupgroup-career-news-jobs .block-fixed-block-contentbig-vertical-advertising {
     display: flex;
   }
 
   // job seeker
 
-  .path-job-seeker
-    .views-infinite-scroll-content-wrapper:not(.non-adversiting)
-    .block-scroll,
-  .path-jobs
-    .views-infinite-scroll-content-wrapper:not(.non-adversiting)
-    .block-scroll {
+  .path-job-seeker .views-infinite-scroll-content-wrapper:not(.non-adversiting) .block-scroll,
+  .path-jobs .views-infinite-scroll-content-wrapper:not(.non-adversiting) .block-scroll {
     margin: 20px auto;
     align-self: center;
     text-align: center;
   }
 
-  .path-job-seeker
-    .views-infinite-scroll-content-wrapper:not(.non-adversiting)
-    .block-scroll.block2,
-  .path-jobs
-    .views-infinite-scroll-content-wrapper:not(.non-adversiting)
-    .block-scroll.block2 {
+  .path-job-seeker .views-infinite-scroll-content-wrapper:not(.non-adversiting) .block-scroll.block2,
+  .path-jobs .views-infinite-scroll-content-wrapper:not(.non-adversiting) .block-scroll.block2 {
     margin: 20px auto 40px;
     // &::before{
     //     bottom: calc(0% - 20px);
     // }
   }
 
-  .path-job-seeker
-    .views-infinite-scroll-content-wrapper:not(.non-adversiting)
-    .skys-scroll,
-  .path-jobs
-    .views-infinite-scroll-content-wrapper:not(.non-adversiting)
-    .skys-scroll {
+  .path-job-seeker .views-infinite-scroll-content-wrapper:not(.non-adversiting) .skys-scroll,
+  .path-jobs .views-infinite-scroll-content-wrapper:not(.non-adversiting) .skys-scroll {
     display: none;
   }
 
@@ -317,16 +301,11 @@
     margin: 0 auto 20px;
   }
 
-  .path-about-al-dia-live
-    .testimonial-wrapper
-    .block-views-blockabout-al-dia-live-block-4
-    + .block-gamw {
+  .path-about-al-dia-live .testimonial-wrapper .block-views-blockabout-al-dia-live-block-4+.block-gamw {
     margin-top: 30px;
   }
 
-  .block-views-blockmore-in-this-section-news-block-1
-    .view-content
-    .skyscraper-mobile,
+  .block-views-blockmore-in-this-section-news-block-1 .view-content .skyscraper-mobile,
   .view-more-news .skyscraper-mobile {
     display: block;
     align-self: center;
@@ -338,6 +317,7 @@
   .view-more-news .skyscraper-mobile {
     margin: 20px auto !important;
     width: 100%;
+
     &::before {
       background: transparent !important;
     }
@@ -346,6 +326,7 @@
   .page-node-type-more-covers main .container-content {
     margin-bottom: 20px;
   }
+
   .node--type-more-covers .non-ads-father .content-right-pages .pautas {
     margin-bottom: 20px;
   }
