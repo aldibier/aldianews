@@ -1,7 +1,10 @@
 @media (min-width: $tablet) and (max-width: $desktop) {
   //structure and spaces modification
 
-  .path-frontpage .view-categories-sons .views-field-view-1 .block-fixed-block-content-small-vertical-advertising {
+  .path-frontpage
+    .view-categories-sons
+    .views-field-view-1
+    .block-fixed-block-content-small-vertical-advertising {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,12 +21,15 @@
     text-align: center;
   }
 
-  #block-block-group-current-edition-advertising-home+.banner-horizontal {
+  #block-block-group-current-edition-advertising-home + .banner-horizontal {
     margin: 100px auto !important;
   }
 
   //Category sons
-  .path-taxonomy .view-categories-sons.view-display-id-block_1 .views-row .banner-horizontal {
+  .path-taxonomy
+    .view-categories-sons.view-display-id-block_1
+    .views-row
+    .banner-horizontal {
     grid-column: span 2;
     max-width: 100%;
     max-height: initial;
@@ -38,10 +44,11 @@
     margin-bottom: 40px;
   }
 
-  //Internal work with us 
+  //Internal work with us
   div[data-ad-unit*="fixed-internal-side-section-top-block"] {
     display: flex;
     justify-content: center;
+    margin-top: 20px;
   }
 
   //Landing jobs
@@ -62,7 +69,8 @@
     flex: 1 1 100%;
   }
 
-  .block-block-groupgroup-career-news-jobs .block-fixed-block-contentbig-vertical-advertising {
+  .block-block-groupgroup-career-news-jobs
+    .block-fixed-block-contentbig-vertical-advertising {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -147,5 +155,142 @@
 
   .page-node-type-page .pautas {
     margin: 0 auto;
+  }
+
+  .content-right-pages {
+    flex: 1 1 200px;
+    justify-content: center;
+  }
+
+  .margin-bottom {
+    text-align: center;
+  }
+
+  .five-content-event-contact .block-gamw {
+    text-align: center;
+  }
+
+  .block-views-blockmore-in-this-section-news-block-1
+    .view-content
+    .skyscraper-mobile {
+    display: block !important;
+    align-self: center;
+    text-align: center;
+    background: white;
+    z-index: 2;
+  }
+
+  // thougth leaders
+
+  .view-landing-thought-leaders
+    .views-infinite-scroll-content-wrapper.non-adversiting
+    .block-scroll {
+    display: block !important;
+    margin-bottom: 30px;
+  }
+  .view-landing-thought-leaders
+    .views-infinite-scroll-content-wrapper.non-adversiting
+    .skys-scroll {
+    display: block !important;
+    margin: 0 auto 40px !important;
+  }
+  .view-landing-thought-leaders
+    .views-infinite-scroll-content-wrapper.non-adversiting
+    .banner-scroll {
+    display: block !important;
+    margin: 0px auto;
+    .banner-horizontal {
+      margin: 5px auto 35px !important;
+    }
+  }
+
+  .block-views-blockmore-in-this-section-news-block-1
+    .view-content
+    .skyscraper-mobile {
+    margin: 0 0 30px 19px;
+    display: block !important;
+    z-index: 2;
+    background: white;
+    text-align: center;
+    align-self: center;
+  }
+
+  .view-more-authors .skyscraper-mobile,
+  .view-more-news .skyscraper-mobile {
+    margin: 30px 0px;
+    display: block !important;
+    z-index: 2;
+    background: white;
+    text-align: center;
+    align-self: center;
+  }
+
+  .block-block-groupgroup-career-news-jobs
+    .block-fixed-block-contentbig-vertical-advertising {
+    display: flex;
+  }
+
+  // job seeker
+
+  .path-job-seeker
+    .views-infinite-scroll-content-wrapper:not(.non-adversiting)
+    .block-scroll,
+  .path-jobs
+    .views-infinite-scroll-content-wrapper:not(.non-adversiting)
+    .block-scroll {
+    margin: 20px auto;
+    align-self: center;
+    text-align: center;
+  }
+
+  .path-job-seeker
+    .views-infinite-scroll-content-wrapper:not(.non-adversiting)
+    .block-scroll.block2,
+  .path-jobs
+    .views-infinite-scroll-content-wrapper:not(.non-adversiting)
+    .block-scroll.block2 {
+    margin: 20px auto 40px;
+    // &::before{
+    //     bottom: calc(0% - 20px);
+    // }
+  }
+  .path-job-seeker
+    .views-infinite-scroll-content-wrapper:not(.non-adversiting)
+    .skys-scroll,
+  .path-jobs
+    .views-infinite-scroll-content-wrapper:not(.non-adversiting)
+    .skys-scroll {
+    display: none;
+  }
+
+  .path-job-seeker .views-infinite-scroll-content-wrapper .banner-horizontal {
+    margin: 40px auto !important;
+  }
+
+  .page-node-type-feature-employer .horizontal-advertising-general-horizontal {
+    margin: 0 auto 20px;
+  }
+  .path-about-al-dia-live
+    .testimonial-wrapper
+    .block-views-blockabout-al-dia-live-block-4
+    + .block-gamw {
+    margin-top: 30px;
+  }
+
+  .block-views-blockmore-in-this-section-news-block-1
+    .view-content
+    .skyscraper-mobile,
+  .view-more-news .skyscraper-mobile {
+    display: block;
+    align-self: center;
+    text-align: center;
+    background: white;
+    z-index: 2;
+  }
+  .view-more-news .skyscraper-mobile {
+    margin: 20px auto;
+  }
+  .page-node-type-more-covers main .container-content {
+    margin-bottom: 20px;
   }
 }
