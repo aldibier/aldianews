@@ -298,7 +298,8 @@
 .content-right-pages {
   display: flex;
   flex-wrap: wrap;
-  max-width: 400px;
+	flex: 1 1 400px;
+  max-width: 100%;
 
   @media (max-width: $tablet) {
     margin: 40px 0;

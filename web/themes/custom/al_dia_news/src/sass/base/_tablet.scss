@@ -1,10 +1,7 @@
 @media (min-width: $tablet) and (max-width: $desktop) {
   //structure and spaces modification
 
-  .path-frontpage
-    .view-categories-sons
-    .views-field-view-1
-    .block-fixed-block-content-small-vertical-advertising {
+  .path-frontpage .view-categories-sons .views-field-view-1 .block-fixed-block-content-small-vertical-advertising {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,15 +18,12 @@
     text-align: center;
   }
 
-  #block-block-group-current-edition-advertising-home + .banner-horizontal {
+  #block-block-group-current-edition-advertising-home+.banner-horizontal {
     margin: 100px auto !important;
   }
 
   //Category sons
-  .path-taxonomy
-    .view-categories-sons.view-display-id-block_1
-    .views-row
-    .banner-horizontal {
+  .path-taxonomy .view-categories-sons.view-display-id-block_1 .views-row .banner-horizontal {
     grid-column: span 2;
     max-width: 100%;
     max-height: initial;
@@ -42,6 +36,12 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 40px;
+  }
+
+  //Internal work with us 
+  div[data-ad-unit*="fixed-internal-side-section-top-block"] {
+    display: flex;
+    justify-content: center;
   }
 
   //Landing jobs
@@ -62,8 +62,7 @@
     flex: 1 1 100%;
   }
 
-  .block-block-groupgroup-career-news-jobs
-    .block-fixed-block-contentbig-vertical-advertising {
+  .block-block-groupgroup-career-news-jobs .block-fixed-block-contentbig-vertical-advertising {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -104,9 +103,11 @@
   .page-node-type-al-dia-vacancy .pautas {
     width: 100% !important;
   }
+
   .page-node-type-job .horizontal-advertising-general-horizontal {
     margin: 0 auto 20px;
   }
+
   .page-node-type-job .pautas .one-vertical-advertising,
   .page-node-type-feature-employer .pautas .one-vertical-advertising,
   .page-node-type-page .pautas .one-vertical-advertising {
@@ -135,6 +136,7 @@
     justify-content: center;
     text-align: center;
   }
+
   .view-categories-sons .skyscraper-mobile {
     align-self: flex-start;
   }
@@ -142,6 +144,7 @@
   .view-categories-sons .block-fixed-block-contentsquare-advertising-mobile {
     margin-top: 70px;
   }
+
   .page-node-type-page .pautas {
     margin: 0 auto;
   }
