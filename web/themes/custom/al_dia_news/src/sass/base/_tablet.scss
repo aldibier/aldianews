@@ -160,6 +160,77 @@
 
   }
 
+	//Infinite scroll thought leaders
+	.path-thought-leaders .banner-scroll {
+		margin-top: 0 !important;
+
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      top: calc(0% - 60px);
+      display: block !important;
+      width: 100vw;
+      height: 60px;
+      background-color: $cwhite;
+    }
+
+    // &::after {
+    //   content: "";
+    //   position: absolute;
+    //   z-index: 1;
+    //   bottom: calc(0% - 35px);
+    //   display: block !important;
+    //   width: 100vw;
+    //   height: 70px;
+    //   background-color: $cwhite;
+    // }
+  }
+
+	.path-thought-leaders .block-scroll {
+		position: relative;
+    grid-column: 1/-1 !important;
+    width: 100%;
+    max-width: 100% !important;
+		margin-top: 0 !important;
+		margin-bottom: 60px !important;
+    text-align: center;
+
+    &::before {
+      content: "";
+      position: absolute;
+			z-index: 1;
+      top: calc(0% - 60px);
+			left: 0;
+      display: block !important;
+      width: 100vw !important;
+      max-width: 100vw !important;
+      height: 40px !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      background-color: $cwhite !important;
+    }
+
+    // &::after {
+    //   content: "";
+    //   position: absolute;
+    //   bottom: calc(0% - 70px);
+    //   display: block !important;
+    //   width: 100vw;
+    //   max-width: 100vw;
+    //   height: 70px;
+    //   padding: 0;
+    //   background-color: $cwhite;
+    // }
+  }
+
+	.path-thought-leaders .skys-scroll  {
+    grid-row: span 2 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	}
+
   .view-categories-sons .skyscraper-mobile {
     align-self: center;
   }
