@@ -1,11 +1,11 @@
 .close-gamw {
-	display: none !important;
+  display: none !important;
 }
 
 .block-fixed-block-content-horizontal-advertising-close {
-	.close-gamw {
-		display: block !important;
-	}
+  .close-gamw {
+    display: block !important;
+  }
 }
 
 // ---------------- clase para layout laterales izquierdo contenido ---------//
@@ -62,8 +62,8 @@
   .block-content-left {
     //max-width: 555px;
     flex: 1 1 555px;
-		max-width: 100%;
-		margin-right: 28px;
+    max-width: 100%;
+    margin-right: 28px;
   }
 }
 
@@ -274,7 +274,7 @@
     }
 
     .skys-scroll.skys2.ads-mobile {
-      margin-bottom: 50px;
+      margin-bottom: 50px !important;
 
       &::before {
         content: "";
@@ -351,20 +351,20 @@
     }
   }
 
-  @media screen and (min-width: $broken) { 
+  @media screen and (min-width: $broken) {
     .skys-scroll:nth-last-child(6),
     .skys-scroll:nth-last-child(1),
-    .block-scroll:nth-last-child(1){
+    .block-scroll:nth-last-child(1) {
       &::before {
         content: none;
       }
     }
 
-    .skys-scroll {
+    .skys-scroll  {
       position: relative;
 
       &::before {
-        content: '';
+        content: "";
         width: 20px;
         height: 100%;
         position: absolute;
@@ -468,7 +468,7 @@
       z-index: 10;
 
       &::before {
-        content: '';
+        content: "";
         width: 20px;
         height: 100%;
         display: block;
@@ -619,16 +619,15 @@
   @media screen and (max-width: $tablet) {
     .skyscraper-mobile  {
       margin-bottom: 50px !important;
-
-      &::before {
-        content: "";
-        width: 30px;
-        height: 100%;
-        display: block;
-        position: absolute;
-        background: $cwhite;
-        left: calc(0% - 30px);
-      }
+    }
+    .skyscraper-mobile::before {
+      content: "";
+      width: 30px;
+      height: 100%;
+      display: block;
+      position: absolute;
+      background: $cwhite;
+      left: calc(0% - 30px);
     }
   }
 }
@@ -643,7 +642,7 @@
 
 .banner-scroll {
   grid-column: 1/-1;
-	//grid-column: span 3;
+  //grid-column: span 3;
   width: 100%;
   @media (max-width: $tablet) {
     grid-column: span 2;
@@ -912,7 +911,7 @@ div[data-ad-unit*="Home-post-main-headline"] {
   }
 
   .content-page-node {
-    > .content-advertising  {
+    > .content-advertising   {
       /* width: 100%;
       margin-left: -15px;
       margin-right: -15px;
