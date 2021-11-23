@@ -85,6 +85,7 @@
     &::after {
       content: '';
       position: absolute;
+			z-index: 1;
       top: -10px;
       width: 100vw;
       height: 10px;
@@ -94,7 +95,7 @@
   }
 
   .block-scroll {
-    grid-column: 1/-1;
+    grid-column: 1/-1 !important;
     width: 100%;
     max-width: 100% !important;
     margin: 35px auto;
@@ -103,12 +104,13 @@
     &::before {
       content: '';
       position: absolute;
-      top: 0;
-      width: 100vw;
-      max-width: 100vw;
-      height: 1px;
-      padding: 0;
-      background-color: $cwhite;
+			top: calc(0% - 35px);
+      width: 100vw !important;
+      max-width: 100vw !important;
+      height: 35px !important;
+      padding: 0 !important;
+			margin: 0 !important;
+      background-color: $cwhite !important;
     }
 
     &::after {
