@@ -11,11 +11,15 @@ $brokenPixelUp: $broken2+1;
     max-height: 710px;
     overflow: hidden;
 
-    @media screen and (min-width: $tablet) {
+		@media screen and (min-width: $tablet) {
       min-height: 470px;
+      margin: 15px -15px 70px;
+      padding: 40px 80px 70px;
+    }
+
+    @media screen and (min-width: $broken5) {
       margin: 15px -80px 70px;
       padding: 40px 80px 70px;
-      position: relative;
     }
 
     .field--name-field-image-block {
