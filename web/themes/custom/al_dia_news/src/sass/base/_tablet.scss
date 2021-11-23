@@ -175,17 +175,15 @@
       background-color: $cwhite;
     }
 
-    // &::after {
-    //   content: "";
-    //   position: absolute;
-    //   z-index: 1;
-    //   bottom: calc(0% - 35px);
-    //   display: block !important;
-    //   width: 100vw;
-    //   height: 70px;
-    //   background-color: $cwhite;
-    // }
+    &::after {
+			content: none !important;
+			display: none !important;
+    }
   }
+
+	.path-thought-leaders .banner-horizontal {
+		margin-top: 0 !important;
+	}
 
 	.path-thought-leaders .block-scroll {
 		position: relative;
