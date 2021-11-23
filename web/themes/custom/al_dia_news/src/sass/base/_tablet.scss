@@ -290,6 +290,9 @@
   .view-more-news .skyscraper-mobile {
     margin: 20px auto !important;
     width: 100%;
+    &::before {
+      background: transparent;
+    }
   }
   .page-node-type-more-covers main .container-content {
     margin-bottom: 20px;
