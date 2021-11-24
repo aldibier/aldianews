@@ -165,7 +165,7 @@
       line-height: 0;
       .aldia-logo-in-text {
 				display: flex;
-				align-self: center;
+				align-self: baseline;
         position: relative;
         max-width: 75px;
 				margin-right: 5px;
@@ -200,9 +200,10 @@
       font-style: normal;
       font-weight: bold;
       //line-height: 35px;
-      line-height: 1;
+      line-height: 23px;
 			text-transform: uppercase;
       color: $cblack;
+			word-break: break-all;
     }
 
     &-white {
@@ -214,7 +215,7 @@
     @media screen and (max-width: $broken) {
       a {
         font-size: szrem(30);
-        line-height: 35px;
+        line-height: 23px;
       }
     }
 
