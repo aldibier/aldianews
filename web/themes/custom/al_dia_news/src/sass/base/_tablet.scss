@@ -274,13 +274,16 @@
   }
 
   .view-categories-sons .skyscraper-mobile {
-    align-self: flex-start;
+    align-self: center;
+    grid-row: span 2;
+    background: white;
+    z-index: 2;
   }
 
   .view-categories-sons .block-fixed-block-contentsquare-advertising-mobile {
     margin-top: 70px;
-  }
-
+  } 
+ 
   .page-node-type-page .pautas {
     margin: 0 auto;
   }
@@ -400,11 +403,11 @@
     &::before {
       background: transparent !important;
     }
-  }
+  } 
 
   .page-node-type-more-covers main .container-content {
     margin-bottom: 20px;
-  }
+  } 
 
   .node--type-more-covers .non-ads-father .content-right-pages .pautas {
     margin-bottom: 20px;
