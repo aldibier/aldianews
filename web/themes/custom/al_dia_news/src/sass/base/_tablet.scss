@@ -1,7 +1,10 @@
 @media (min-width: $tablet) and (max-width: $desktop) {
   //structure and spaces modification
 
-  .path-frontpage .view-categories-sons .views-field-view-1 .block-fixed-block-content-small-vertical-advertising {
+  .path-frontpage
+    .view-categories-sons
+    .views-field-view-1
+    .block-fixed-block-content-small-vertical-advertising {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,12 +21,15 @@
     text-align: center;
   }
 
-  #block-block-group-current-edition-advertising-home+.banner-horizontal {
+  #block-block-group-current-edition-advertising-home + .banner-horizontal {
     margin: 100px auto !important;
   }
 
   //Category sons
-  .path-taxonomy .view-categories-sons.view-display-id-block_1 .views-row .banner-horizontal {
+  .path-taxonomy
+    .view-categories-sons.view-display-id-block_1
+    .views-row
+    .banner-horizontal {
     grid-column: span 2;
     max-width: 100%;
     max-height: initial;
@@ -63,7 +69,8 @@
     flex: 1 1 100%;
   }
 
-  .block-block-groupgroup-career-news-jobs .block-fixed-block-contentbig-vertical-advertising {
+  .block-block-groupgroup-career-news-jobs
+    .block-fixed-block-contentbig-vertical-advertising {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -106,7 +113,7 @@
   }
 
   .block-scroll {
-		position: relative;
+    position: relative;
     grid-column: 1/-1 !important;
     width: 100%;
     max-width: 100% !important;
@@ -116,9 +123,9 @@
     &::before {
       content: "";
       position: absolute;
-			z-index: 1;
+      z-index: 1;
       top: calc(0% - 60px);
-			left: 0;
+      left: 0;
       display: block !important;
       width: 100vw !important;
       max-width: 100vw !important;
@@ -148,7 +155,7 @@
     width: 100% !important;
     max-width: 100% !important;
     max-height: initial !important;
-    margin: 0 auto !important;
+    margin: 0 auto 20px !important;
     grid-row: span 1 !important;
     background-color: $cwhite;
 
@@ -157,12 +164,11 @@
       content: none !important;
       display: none !important;
     }
-
   }
 
-	//Infinite scroll thought leaders
-	.path-thought-leaders .banner-scroll {
-		margin-top: 0 !important;
+  //Infinite scroll thought leaders
+  .path-thought-leaders .banner-scroll {
+    margin-top: 0 !important;
 
     &::before {
       content: "";
@@ -176,30 +182,30 @@
     }
 
     &::after {
-			content: none !important;
-			display: none !important;
+      content: none !important;
+      display: none !important;
     }
   }
 
-	.path-thought-leaders .banner-horizontal {
-		margin-top: 0 !important;
-	}
+  .path-thought-leaders .banner-horizontal {
+    margin-top: 0 !important;
+  }
 
-	.path-thought-leaders .block-scroll {
-		position: relative;
+  .path-thought-leaders .block-scroll {
+    position: relative;
     grid-column: 1/-1 !important;
     width: 100%;
     max-width: 100% !important;
-		margin-top: 0 !important;
-		margin-bottom: 60px !important;
+    margin-top: 0 !important;
+    margin-bottom: 60px !important;
     text-align: center;
 
     &::before {
       content: "";
       position: absolute;
-			z-index: 1;
+      z-index: 1;
       top: calc(0% - 60px);
-			left: 0;
+      left: 0;
       display: block !important;
       width: 100vw !important;
       max-width: 100vw !important;
@@ -222,12 +228,12 @@
     // }
   }
 
-	.path-thought-leaders .skys-scroll  {
+  .path-thought-leaders .skys-scroll {
     grid-row: span 2 !important;
     display: flex;
     justify-content: center;
     align-items: center;
-	}
+  }
 
   .view-categories-sons .skyscraper-mobile {
     align-self: center;
@@ -282,8 +288,8 @@
 
   .view-categories-sons .block-fixed-block-contentsquare-advertising-mobile {
     margin-top: 70px;
-  } 
- 
+  }
+
   .page-node-type-page .pautas {
     margin: 0 auto;
   }
@@ -301,7 +307,9 @@
     text-align: center;
   }
 
-  .block-views-blockmore-in-this-section-news-block-1 .view-content .skyscraper-mobile {
+  .block-views-blockmore-in-this-section-news-block-1
+    .view-content
+    .skyscraper-mobile {
     display: block !important;
     align-self: center;
     text-align: center;
@@ -311,17 +319,23 @@
 
   // thougth leaders
 
-  .view-landing-thought-leaders .views-infinite-scroll-content-wrapper.non-adversiting .block-scroll {
+  .view-landing-thought-leaders
+    .views-infinite-scroll-content-wrapper.non-adversiting
+    .block-scroll {
     display: block !important;
     margin-bottom: 30px;
   }
 
-  .view-landing-thought-leaders .views-infinite-scroll-content-wrapper.non-adversiting .skys-scroll {
+  .view-landing-thought-leaders
+    .views-infinite-scroll-content-wrapper.non-adversiting
+    .skys-scroll {
     display: block !important;
     margin: 0 auto 40px !important;
   }
 
-  .view-landing-thought-leaders .views-infinite-scroll-content-wrapper.non-adversiting .banner-scroll {
+  .view-landing-thought-leaders
+    .views-infinite-scroll-content-wrapper.non-adversiting
+    .banner-scroll {
     display: block !important;
     margin: 0px auto;
 
@@ -330,7 +344,9 @@
     }
   }
 
-  .block-views-blockmore-in-this-section-news-block-1 .view-content .skyscraper-mobile {
+  .block-views-blockmore-in-this-section-news-block-1
+    .view-content
+    .skyscraper-mobile {
     margin: 0 0 30px 19px;
     display: block !important;
     z-index: 2;
@@ -349,29 +365,42 @@
     align-self: center;
   }
 
-  .block-block-groupgroup-career-news-jobs .block-fixed-block-contentbig-vertical-advertising {
+  .block-block-groupgroup-career-news-jobs
+    .block-fixed-block-contentbig-vertical-advertising {
     display: flex;
   }
 
   // job seeker
 
-  .path-job-seeker .views-infinite-scroll-content-wrapper:not(.non-adversiting) .block-scroll,
-  .path-jobs .views-infinite-scroll-content-wrapper:not(.non-adversiting) .block-scroll {
+  .path-job-seeker
+    .views-infinite-scroll-content-wrapper:not(.non-adversiting)
+    .block-scroll,
+  .path-jobs
+    .views-infinite-scroll-content-wrapper:not(.non-adversiting)
+    .block-scroll {
     margin: 20px auto;
     align-self: center;
     text-align: center;
   }
 
-  .path-job-seeker .views-infinite-scroll-content-wrapper:not(.non-adversiting) .block-scroll.block2,
-  .path-jobs .views-infinite-scroll-content-wrapper:not(.non-adversiting) .block-scroll.block2 {
+  .path-job-seeker
+    .views-infinite-scroll-content-wrapper:not(.non-adversiting)
+    .block-scroll.block2,
+  .path-jobs
+    .views-infinite-scroll-content-wrapper:not(.non-adversiting)
+    .block-scroll.block2 {
     margin: 20px auto 40px;
     // &::before{
     //     bottom: calc(0% - 20px);
     // }
   }
 
-  .path-job-seeker .views-infinite-scroll-content-wrapper:not(.non-adversiting) .skys-scroll,
-  .path-jobs .views-infinite-scroll-content-wrapper:not(.non-adversiting) .skys-scroll {
+  .path-job-seeker
+    .views-infinite-scroll-content-wrapper:not(.non-adversiting)
+    .skys-scroll,
+  .path-jobs
+    .views-infinite-scroll-content-wrapper:not(.non-adversiting)
+    .skys-scroll {
     display: none;
   }
 
@@ -383,11 +412,16 @@
     margin: 0 auto 20px;
   }
 
-  .path-about-al-dia-live .testimonial-wrapper .block-views-blockabout-al-dia-live-block-4+.block-gamw {
+  .path-about-al-dia-live
+    .testimonial-wrapper
+    .block-views-blockabout-al-dia-live-block-4
+    + .block-gamw {
     margin-top: 30px;
   }
 
-  .block-views-blockmore-in-this-section-news-block-1 .view-content .skyscraper-mobile,
+  .block-views-blockmore-in-this-section-news-block-1
+    .view-content
+    .skyscraper-mobile,
   .view-more-news .skyscraper-mobile {
     display: block;
     align-self: center;
@@ -403,11 +437,11 @@
     &::before {
       background: transparent !important;
     }
-  } 
+  }
 
   .page-node-type-more-covers main .container-content {
     margin-bottom: 20px;
-  } 
+  }
 
   .node--type-more-covers .non-ads-father .content-right-pages .pautas {
     margin-bottom: 20px;
