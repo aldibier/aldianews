@@ -389,6 +389,10 @@
     display: flex;
     justify-content: center;
     overflow: initial;
+    div[data-ad-unit="Home-post-main-headline"] {
+      overflow: hidden;
+      max-height: 100px;
+    }
   }
   &.bot-bottom {
     margin-bottom: 0px;
