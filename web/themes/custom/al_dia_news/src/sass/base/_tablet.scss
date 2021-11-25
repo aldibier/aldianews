@@ -290,6 +290,21 @@
     background: $cwhite;
   }
 
+  .path-frontpage .view-categories-sons .skyscraper-mobile {
+		position: relative;
+    margin: 35px 0 25px;
+
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			height: 0.1mm;
+			width: 100vw;
+			background-color: #ccc;
+		}
+  }
+
   .view-categories-sons .block-fixed-block-contentsquare-advertising-mobile {
     margin-top: 70px;
   }
