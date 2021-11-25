@@ -168,15 +168,13 @@
 
 .block-views-blockmore-in-this-section-news-block-1 {
   .views-row {
-    border-bottom: 1px solid $cgrey4;
 
-    &:last-child {
-      border-bottom: none;
-    }
+		@media (max-width: $broken) and (min-width: 769px) {
+			border-bottom: 0;
 
-    @media (max-width: $broken) and (min-width: 769px) {
       position: relative;
 
+			&:nth-child(odd)::before,
       &::before {
         content: '';
         position: absolute;
