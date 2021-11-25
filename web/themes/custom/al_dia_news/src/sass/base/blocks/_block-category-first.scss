@@ -212,9 +212,12 @@
 }
 
 .first-block-subcategory-taxonomy {
-  .block-field-blocknodenewsfield-image {
-    margin-right: 10px;
+  .one-content-subcategory-four {
+    .block-field-blocknodenewsfield-image {
+      margin-right: 15px;
+    }
   }
+
 
   @media screen and(max-width:$desktop) {
     margin-bottom: 30px;
@@ -222,11 +225,16 @@
     .one-content-subcategory-four {
       margin-right: 0px !important;
     }
-
-    .block-field-blocknodenewsfield-image {
-      margin-right: 0px;
-    }
   }
+
+	@media screen and(max-width:$broken) {
+    .one-content-subcategory-four {
+      .block-field-blocknodenewsfield-image {
+        margin-right: 0;
+				margin-bottom: 15px;
+      }
+    }
+	}
 }
 
 .view-id-last_news.view-display-id-block_4 .view-header h3 {
