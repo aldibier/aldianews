@@ -235,8 +235,12 @@
         }
       }
 
+			&::before {
+        display: none !important;
+      }
+
       &::before {
-        display: block;
+        display: block !important;
         content: "";
         width: 100vw;
         height: 0;
