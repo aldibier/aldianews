@@ -53,6 +53,7 @@
     }
 
     .slick-slide {
+      border-top: 1px solid #b1b1b1;
       padding-top: 10px;
 
       >div {
@@ -317,8 +318,8 @@
       }
 
       @media (max-width: $tablet) {
-				margin-top: 0;
-				
+        margin-top: 0;
+
         &:nth-child(-n + 2) {
           margin: 0 0 40px 0px;
 
