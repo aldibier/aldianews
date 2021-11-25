@@ -177,6 +177,7 @@
 			&:nth-child(odd)::before,
       &::before {
         content: '';
+				display: block !important;
         position: absolute;
         top: calc(0% - 20px);
         width: 100vw;
