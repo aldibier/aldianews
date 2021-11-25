@@ -18,19 +18,28 @@
  */
 #}
 {% if title %}
-  <h3>{{ title }}</h3>
+	<h3>{{ title }}</h3>
 {% endif %}
 {% for row in rows %}
-  {%
+	{%
     set row_classes = [
       default_row_class ? 'views-row',
     ]
   %}
-  <div{{ row.attributes.addClass(row_classes) }}>
-    {{- row.content -}}
-  </div>
+	
+	<div{{row.attributes.addClass(row_classes)}}>
+		{{- row.content -}}
+	</div>
 
-  {% if (loop.index == 1) and (device == 'mobile') %}
-		<div class="skyscraper-mobile ads">{{ drupal_entity('block', 'gamwadvertisement_35') }}</div>
+	{% if (loop.index == 1) and (device == 'mobile') %}
+		{% if rows.index_pos[0] == 1  %}
+			<div class="skyscraper-mobile ads">{{ drupal_entity('block', 'gamwadvertisement_29') }}</div>
+		{% endif %}
+		{% if rows.index_pos[0] == 2 %}
+			<div class="skyscraper-mobile ads">{{ drupal_entity('block', 'gamwadvertisement_35') }}</div>
+		{% endif %}
+		{% if rows.index_pos[0] == 3  %}
+			<div class="skyscraper-mobile ads">{{ drupal_entity('block', 'gamwadvertisement_11') }}</div>
+		{% endif %}
 	{% endif %}
 {% endfor %}
