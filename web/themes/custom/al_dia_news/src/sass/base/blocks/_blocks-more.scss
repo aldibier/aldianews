@@ -272,7 +272,7 @@
 
       @media (max-width: $broken) {
         margin-bottom: 0;
-				padding-bottom: 0;
+        padding-bottom: 0;
       }
     }
   }
@@ -305,6 +305,16 @@
     .views-row.card-more-category {
       margin-top: 0;
       position: relative;
+
+      @media (max-width: $broken) {
+        margin-top: 65px;
+
+        &:nth-child(1),
+        &:nth-child(2) {
+          margin-top: 0;
+        }
+
+      }
 
       @media (max-width: $tablet) {
 
