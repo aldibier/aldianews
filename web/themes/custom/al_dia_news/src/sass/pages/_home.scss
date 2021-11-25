@@ -78,6 +78,7 @@
     }
 
     .watch-live {
+			padding: 0;
       margin-top: 0;
 
       @media (max-width: $broken) {
@@ -228,6 +229,7 @@
 
   .watch-live {
     margin-top: 0;
+		padding: 0;
 
     @media (max-width: $broken) {
       display: none;
@@ -409,6 +411,7 @@
           margin: -35px 0;
           padding: 0.1mm;
           position: absolute;
+					left: 0;
           display: block;
           background-color: $cgrey4;
         }
@@ -546,6 +549,7 @@
       }
 
       .views-field-view-2 {
+				padding-top: 20px;
         border-top: 1px solid #b1b1b1;
 
         .views-row:last-child {

@@ -53,8 +53,6 @@
     }
 
     .slick-slide {
-      padding-top: 10px;
-
       >div {
         height: auto;
         margin: 0;
@@ -168,6 +166,40 @@
   }
 }
 
+.block-views-blockmore-in-this-section-news-block-1 {
+  .views-row {
+
+		@media (max-width: $broken){
+			border-bottom: 0;
+
+      position: relative;
+
+			&:nth-child(odd)::before,
+      &::before {
+        content: '';
+				display: block !important;
+        position: absolute;
+        top: calc(0% - 20px);
+        width: 100vw;
+        height: 1px;
+        background-color: $cgrey4;
+      }
+
+      &:nth-child(1)::before {
+        display: none !important;
+      }
+    }
+  }
+}
+
+.path-taxonomy .view-categories-sons {
+  .view-more-category {
+    .slick-slide {
+      border-top: 1px solid #b1b1b1;
+      padding-top: 20px;
+    }
+  }
+}
 
 .card-more-author {
   margin-top: 0;
@@ -229,19 +261,18 @@
         }
       }
 
-      &::before {
-        display: block;
-        content: "";
-        width: 100vw;
-        height: 0;
-        margin: 0px;
-        padding: 0.1mm;
-        position: absolute;
-        left: 0px;
-        right: 0px;
-        bottom: calc(0% - 20px);
-        background: $cgrey4;
-      }
+      // &::before {
+      //   content: "";
+      //   width: 100vw;
+      //   height: 0;
+      //   margin: 0px;
+      //   padding: 0.1mm;
+      //   position: absolute;
+      //   left: 0px;
+      //   right: 0px;
+      //   bottom: calc(0% - 20px);
+      //   background: $cgrey4;
+      // }
     }
   }
 
@@ -271,7 +302,8 @@
       }
 
       @media (max-width: $broken) {
-        margin-bottom: 20px;
+        margin-bottom: 0;
+        padding-bottom: 0;
       }
     }
   }
@@ -306,6 +338,18 @@
       position: relative;
 
       @media (max-width: $broken) {
+        margin-top: 65px;
+
+        &:nth-child(1),
+        &:nth-child(2) {
+          margin-top: 0;
+          margin-bottom: 0;
+        }
+
+      }
+
+      @media (max-width: $tablet) {
+        margin-top: 0;
 
         &:nth-child(-n + 2) {
           margin: 0 0 40px 0px;
@@ -327,4 +371,5 @@
       }
     }
   }
+
 }

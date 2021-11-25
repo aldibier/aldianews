@@ -22,18 +22,20 @@
 {% set block_gamw = rows[index]['content']['block_gamw'] %}
 
 {% if title %}
-	<h3>{{ title }}</h3>
+	<div class="group-title-link sub-category-link">
+		<h2 class="category-title">{{ title }}</h2>
+	</div>
 {% endif %}
 
 {% for row in rows %}
-  {%
+	{%
     set row_classes = [
     	default_row_class ? 'views-row',
     ]
   %}
 
-  <div{{ row.attributes.addClass(row_classes) }}>
-    {{- row.content -}}
-	<div class="banner-horizontal ads">{{block_gamw}}</div>
-  </div>
+	<div{{row.attributes.addClass(row_classes)}}>
+		{{- row.content -}}
+		<div class="banner-horizontal ads">{{block_gamw}}</div>
+	</div>
 {% endfor %}

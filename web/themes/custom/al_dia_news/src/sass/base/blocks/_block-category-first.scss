@@ -9,6 +9,7 @@
     align-items: baseline;
     overflow: hidden;
     text-transform: uppercase;
+
     @media screen and (max-width: $tablet) {
       padding-bottom: 5px;
       border-width: 1px;
@@ -58,7 +59,7 @@
       }
     }
 
-    .aldia-logo-in-text  {
+    .aldia-logo-in-text {
       max-width: 145px;
       max-height: 50px;
       margin-right: 10px;
@@ -97,6 +98,7 @@
       }
     }
   }
+
   .card-one-column .card-title h3 .aldia-logo-in-text {
     max-width: 66px;
   }
@@ -104,19 +106,28 @@
 
 .main-news.view-last-news-category-sons.view-display-id-block_1 {
   max-width: 840px;
+
+  @media (max-width: $broken) {
+    max-width: 100%;
+  }
+
 }
+
 .path-taxonomy .view-id-categories_sons {
   @media (max-width: $desktop) {
     margin-top: 0px;
-    .banner-scroll .content > div {
+
+    .banner-scroll .content>div {
       text-align: center;
     }
   }
 }
+
 //-------------block category first -----------------//
 //-------------block subcategory first -----------------//
 .header-subcategory-taxonomy {
   margin-bottom: 50px;
+
   @media (max-width: $desktop) {
     margin: 15px 0 20px;
   }
@@ -133,6 +144,7 @@
     "area-1 area-2";
   overflow: hidden;
   margin-bottom: 90px;
+
   @media screen and(max-width:$broken) {
     max-height: initial;
     grid-template-columns: 1fr;
@@ -152,12 +164,32 @@
     grid-area: area-1;
 
     @media screen and(max-width:$broken) {
+      position: relative;
       max-width: 100%;
       margin-right: 0;
-      margin-bottom: 40px;
+      margin-bottom: 65px;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: calc(0% - 35px);
+        height: 1px;
+        width: 100%;
+        background-color: #b1b1b1;
+      }
+
     }
 
-    > .content {
+    @media screen and(max-width:$tablet) {
+      margin-bottom: 20px;
+
+      &::after {
+        display: none;
+      }
+
+    }
+
+    >.content {
       height: 100%;
       margin: 0;
     }
@@ -180,18 +212,38 @@
 }
 
 .first-block-subcategory-taxonomy {
-  .block-field-blocknodenewsfield-image {
-    margin-right: 10px;
+  .one-content-subcategory-four {
+    .block-field-blocknodenewsfield-image {
+      margin-right: 15px;
+    }
   }
+
+
   @media screen and(max-width:$desktop) {
     margin-bottom: 30px;
+
     .one-content-subcategory-four {
       margin-right: 0px !important;
     }
-    .block-field-blocknodenewsfield-image {
-      margin-right: 0px;
-    }
   }
+
+	@media screen and(max-width:$broken) {
+    .one-content-subcategory-four {
+      .block-field-blocknodenewsfield-image {
+        margin-right: 0;
+				margin-bottom: 15px;
+      }
+    }
+	}
+
+	@media screen and(max-width:$broken) {
+    .one-content-subcategory-four {
+      .block-field-blocknodenewsfield-image {
+				margin-bottom: 10px;
+      }
+    }
+	}
+
 }
 
 .view-id-last_news.view-display-id-block_4 .view-header h3 {

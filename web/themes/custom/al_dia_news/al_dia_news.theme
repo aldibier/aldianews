@@ -190,6 +190,28 @@ function al_dia_news_preprocess_views_view_unformatted(&$vars) {
 
   if($id == 'last_news'){
 
+		if($display->display['id'] === 'block_2'){
+			static $index;
+
+			if(empty($index)) $index = 0;
+
+			switch($index){
+        case 0:
+          $vars['rows']['index_pos'][] = '1';
+					$index = 1;
+        break;
+        case 1:
+					$vars['rows']['index_pos'][] = '2';
+          $index = 2;
+        break;
+        case 2:
+					$vars['rows']['index_pos'][] = '3';;
+          $index = 3;
+        break;
+      }
+
+		}
+
     if($display->display['id'] === 'block_3'){
       static $control;
 
