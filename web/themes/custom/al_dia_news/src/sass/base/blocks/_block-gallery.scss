@@ -77,6 +77,14 @@
           right: 0;
           margin: -20px auto;
         }
+
+				&:nth-last-of-type(-n + 2){
+          &::before {
+            margin-bottom: 0 !important;
+            display: none !important;
+          }
+        }
+				
       }
 
       @media screen and (max-width: $tablet) {
