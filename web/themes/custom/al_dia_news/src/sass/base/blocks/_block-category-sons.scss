@@ -87,11 +87,13 @@
       }
 
       .aldia-logo-in-text img {
+        min-width: 145px;
         max-width: 145px;
         max-height: 45px;
 
         @media (max-width: $tablet) {
-          min-width: 77px;
+					max-width: 70px;
+          min-width: 70px;
           min-height: 26px;
         }
 
@@ -116,10 +118,10 @@
 
         @media (max-width: $tablet) {
           position: relative;
-					display: flex;
-					min-height: 15px;
+          display: flex;
+          min-height: 15px;
           font-size: szrem(15);
-					line-height: 1;
+          line-height: 1;
           background-color: transparent;
 
           &::after {
@@ -153,9 +155,9 @@
         margin-top: 80px;
       }
 
-			@media (max-width: $desktop) {
-				margin-bottom: 40px;
-			}
+      @media (max-width: $desktop) {
+        margin-bottom: 40px;
+      }
 
       @media (max-width: $broken) {
         display: flex;
