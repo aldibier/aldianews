@@ -36,15 +36,18 @@
     'block-' ~ plugin_id|clean_class,
   ]
 %}
-<div{{ attributes.addClass(classes) }}>
-  {{ title_prefix }}
-  {% if label %}
-    <h2{{ title_attributes }}>{{ 'JOBS IN THIS COMPANY'|trans }}</h2>
-  {% endif %}
-  {{ title_suffix }}
-  {% block content %}
-    <div{{ content_attributes.addClass('content') }}>
-      {{ content }}
-    </div>
-  {% endblock %}
-</div>
+
+{% if drupal_view_result('jobs_in_this_company', 'block_1')|length > 0  %}
+	<div{{attributes.addClass(classes)}}>
+		{{ title_prefix }}
+		{% if label %}
+			<h2{{title_attributes}}>{{ 'JOBS IN THIS COMPANY'|trans }}</h2>
+		{% endif %}
+		{{ title_suffix }}
+		{% block content %}
+			<div{{content_attributes.addClass('content')}}>
+				{{ content }}
+			</div>
+		{% endblock %}
+	</div>
+{% endif %}
