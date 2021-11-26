@@ -677,10 +677,16 @@
   //align-items: flex-start;
 
   .slick-list {
-    width: 280px;
-    max-width: 280px;
+    width: 480px;
+    max-width: 480px;
     margin: 0 auto;
     overflow: hidden;
+
+		@media (max-width: $tablet) {
+			width: 280px;
+			max-width: 280px;
+    }
+
   }
 
   .views-row {
