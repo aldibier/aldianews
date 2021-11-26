@@ -744,11 +744,13 @@
 			}
 	
       img {
+				min-width: 145px;
         max-width: 145px;
         max-height: 45px;
 
 				@media (max-width: $tablet) {
-					min-width: 77px;
+					max-width: 70px;
+					min-width: 70px;
 					min-height: 26px;
 				}
       }

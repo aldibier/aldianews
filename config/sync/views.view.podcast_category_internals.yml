@@ -16,7 +16,6 @@ dependencies:
     - taxonomy
     - text
     - user
-    - views_block_area
     - views_field_view
     - views_infinite_scroll
 id: podcast_category_internals
@@ -456,17 +455,7 @@ display:
           entity_field: weight
           plugin_id: standard
       display_description: ''
-      footer:
-        views_block_area:
-          id: views_block_area
-          table: views
-          field: views_block_area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: false
-          block_id: 'fixed_block_content:horizontal_advertising'
-          plugin_id: views_block_area
+      footer: {  }
       style:
         type: html_list
         options:
@@ -1120,17 +1109,7 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-      header:
-        views_block_area:
-          id: views_block_area
-          table: views
-          field: views_block_area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: false
-          block_id: 'block_content:1207d672-d01a-4bda-aa66-848a5250e550'
-          plugin_id: views_block_area
+      header: {  }
       use_ajax: true
       css_class: podcast-content-list
       style:
@@ -1142,17 +1121,7 @@ display:
       row:
         type: fields
         options: {  }
-      footer:
-        views_block_area:
-          id: views_block_area
-          table: views
-          field: views_block_area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: false
-          block_id: 'fixed_block_content:_small_vertical_advertising'
-          plugin_id: views_block_area
+      footer: {  }
       filters:
         status:
           value: '1'
