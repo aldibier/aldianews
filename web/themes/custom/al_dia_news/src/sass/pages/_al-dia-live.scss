@@ -1,5 +1,4 @@
 .path-about-al-dia-live {
-
   #main-wrapper,
   .layout-container .width1440 {
     max-width: none;
@@ -95,8 +94,10 @@
   .views-field-fieldset-1 {
     @media screen and (max-width: $tablet) {
       img {
-        width: 53px;
-        height: 16px;
+        width: 95px;
+        height: 20px;
+        position: relative;
+        top: 2px;
       }
     }
   }
@@ -168,7 +169,7 @@
       }
     }
 
-    >.content {
+    > .content {
       display: flex;
     }
   }
@@ -188,7 +189,7 @@
       text-align: center;
     }
 
-    >.content,
+    > .content,
     .field--type-text-with-summary {
       margin-bottom: 60px;
 
@@ -236,10 +237,12 @@
     a {
       margin-right: 30px;
       font-size: szrem(24);
-      @include button($btnWidth: 250px,
+      @include button(
+        $btnWidth: 250px,
         $btnHeight: 55px,
         $btnBackground: $corange,
-        $btnColor: $cwhite);
+        $btnColor: $cwhite
+      );
 
       @media screen and (max-width: $tablet) {
         width: 130px;
@@ -252,10 +255,12 @@
 
     .button-apply {
       font-size: szrem(24);
-      @include button($btnWidth: 250px,
+      @include button(
+        $btnWidth: 250px,
         $btnHeight: 55px,
         $btnBackground: $bgrey,
-        $btnColor: $cwhite);
+        $btnColor: $cwhite
+      );
 
       @media screen and (max-width: $tablet) {
         width: 130px;
@@ -300,9 +305,11 @@
     }
 
     .play-icon {
-      @include player-icon($desktop-size: 100px,
+      @include player-icon(
+        $desktop-size: 100px,
         $tablet-size: 100px,
-        $mobile-size: 30px);
+        $mobile-size: 30px
+      );
     }
 
     .title-video-about-al-dia-live {
@@ -500,7 +507,7 @@
     margin: 0 auto 64px;
     padding: 0 15px;
 
-    >.content {
+    > .content {
       display: flex;
 
       @media screen and (max-width: $broken) {
@@ -524,7 +531,7 @@
       }
     }
 
-    .block-views-blockabout-al-dia-live-block-4+.block-gamw {
+    .block-views-blockabout-al-dia-live-block-4 + .block-gamw {
       display: flex;
       justify-content: center;
       flex: 1;
@@ -536,7 +543,6 @@
       @media (max-width: $tablet) {
         margin-bottom: 0;
       }
-
     }
 
     .slick-slider {
@@ -547,10 +553,6 @@
     @media (max-width: $broken) {
       //margin: 0 auto 0px;
       margin: 0px 0 90px auto;
-
-      #block-gamwadvertisement-8 {
-        margin-bottom: 40px;
-      }
     }
 
     @media (max-width: $tablet) {
@@ -607,7 +609,6 @@
       }
 
       @media screen and (max-width: $tablet) {
-
         &::before,
         &::after {
           width: 20px;
@@ -826,7 +827,6 @@
     @media (max-width: $tablet) {
       margin-bottom: 15px;
     }
-
   }
 
   //------ slick arrows custom style ------------//
@@ -962,16 +962,15 @@
     }
 
     input[class*="form"],
-    .SumoSelect>.CaptionCont,
+    .SumoSelect > .CaptionCont,
     select {
       height: 35px;
       margin-top: 0;
     }
 
     @media screen and (max-width: $tablet) {
-
       input[class*="form"],
-      .SumoSelect>.CaptionCont,
+      .SumoSelect > .CaptionCont,
       select {
         height: 30px;
       }
@@ -1054,7 +1053,7 @@
     @media screen and (max-width: $tablet) {
       .aldia-logo-in-text {
         max-height: 16px;
-        margin: 0 5px
+        margin: 0 5px;
       }
     }
   }

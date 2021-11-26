@@ -82,7 +82,6 @@ a {
   @media (max-width: $broken) {
     padding: 170px 0 0;
   }
-
 }
 
 .contextual {
@@ -120,6 +119,11 @@ body.toolbar-tray-open.user-logged-in {
     display: block;
   }
 }
+@media (max-width: $broken) {
+  .ads-aboutus-mobile {
+    margin: 20px auto 40px;
+  }
+}
 
 .layout-container {
   max-width: 1440px;
@@ -128,7 +132,7 @@ body.toolbar-tray-open.user-logged-in {
     max-width: 1310px;
     padding: 0 15px;
     margin: 0 auto; //0 auto 40px;
-		margin-top: 30px !important;
+    margin-top: 30px !important;
 
     @media screen and (min-width: $tablet) {
       margin-top: 60px !important;
@@ -348,7 +352,7 @@ body.toolbar-tray-open.user-logged-in {
 .margin-top {
   margin-top: 20px;
 
-  >div {
+  > div {
     margin-top: 20px;
   }
 }

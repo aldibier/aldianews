@@ -487,7 +487,7 @@
         height: 30px;
         font-size: 12px;
         line-height: 25px;
-        margin-top: 0px;
+        margin-top: 25px;
       }
     }
 
@@ -560,18 +560,18 @@
     }
   }
 
-  @media (max-width: $tablet) { 
+  @media (max-width: $tablet) {
     .block-webform-block.open {
-      h2 {
+      h2  {
         margin: 0 0 25px;
       }
       .js-form-item {
         flex: 1 1 100%;
-  
+
         &:nth-child(2n + 1),
         &:nth-child(2n + 2) {
-          padding: 0
-        } 
+          padding: 0;
+        }
       }
 
       .webform-file-button {
@@ -590,7 +590,7 @@
         margin-bottom: 29px;
       }
 
-      [class*="js-form-item-upload-file-file"]{
+      [class*="js-form-item-upload-file-file"] {
         margin-bottom: 25px;
       }
     }

@@ -3,7 +3,8 @@
 }
 
 ///---------- estilos para publicidad en infinit scroll ---------//
-.view-landing-thought-leaders .views-infinite-scroll-content-wrapper:not(.non-adversiting) {
+.view-landing-thought-leaders
+  .views-infinite-scroll-content-wrapper:not(.non-adversiting) {
   @media (min-width: $broken) {
     .views-row.not-show-line {
       margin-bottom: 0;
@@ -15,7 +16,8 @@
   }
 }
 
-.view-more-videos-in-landing .views-infinite-scroll-content-wrapper:not(.non-adversiting),
+.view-more-videos-in-landing
+  .views-infinite-scroll-content-wrapper:not(.non-adversiting),
 .news-gallery .views-infinite-scroll-content-wrapper:not(.non-adversiting) {
   @media (min-width: $broken) {
     .banner-horizontal {
@@ -25,8 +27,10 @@
 }
 
 .news-gallery .views-infinite-scroll-content-wrapper:not(.non-adversiting),
-.view-landing-thought-leaders .views-infinite-scroll-content-wrapper:not(.non-adversiting),
-.view-jobs-in-i-am-a-job-seeker .views-infinite-scroll-content-wrapper:not(.non-adversiting) {
+.view-landing-thought-leaders
+  .views-infinite-scroll-content-wrapper:not(.non-adversiting),
+.view-jobs-in-i-am-a-job-seeker
+  .views-infinite-scroll-content-wrapper:not(.non-adversiting) {
   .views-row.not-show-line {
     @media screen and (min-width: $broken) {
       &::before {
@@ -67,10 +71,11 @@
   @media screen and (max-width: $tablet) {
     margin-bottom: 30px !important;
   }
-
 }
 
-#block-block-group-current-edition-advertising-home .non-adversiting .block-views-blockhome-current-edition--block-1 {
+#block-block-group-current-edition-advertising-home
+  .non-adversiting
+  .block-views-blockhome-current-edition--block-1 {
   margin: 0 auto !important;
 
   @media screen and (max-width: $broken) {
@@ -89,7 +94,6 @@
 }
 
 .non-ads-father {
-
   .first-block-bottom-banner,
   .block-block-groupadvertising-blocks-in-job-landing-pages {
     margin: 0px;
@@ -111,7 +115,6 @@
     max-width: 100%;
     margin-right: 0;
   }
-
 }
 
 .node--view-mode-work-whit-al-dia .non-ads-father .two-content-general-work {
@@ -154,6 +157,7 @@ article[about="/terms-of-service"] {
 
     @media (max-width: $broken) {
       margin-top: 0px;
+      margin-bottom: 40px;
     }
   }
 }
@@ -179,7 +183,8 @@ article[about="/terms-of-service"] {
       margin-bottom: 0px;
     }
 
-    &.node--view-mode-basic-page-about-us .horizontal-advertising-general-horizontal {
+    &.node--view-mode-basic-page-about-us
+      .horizontal-advertising-general-horizontal {
       margin-bottom: 0px;
     }
 
@@ -207,16 +212,18 @@ article[about="/terms-of-service"] {
     }
   }
 
-  .node--view-mode-work-whit-al-dia .horizontal-advertising-general-horizontal.non-adversiting {
+  .node--view-mode-work-whit-al-dia
+    .horizontal-advertising-general-horizontal.non-adversiting {
     margin: 20px 0 0;
   }
 }
 
 ///---------- infinit scroll ---------//
 .news-gallery .views-infinite-scroll-content-wrapper.non-adversiting,
-.view-landing-thought-leaders .views-infinite-scroll-content-wrapper.non-adversiting,
-.view-jobs-in-i-am-a-job-seeker .views-infinite-scroll-content-wrapper.non-adversiting {
-
+.view-landing-thought-leaders
+  .views-infinite-scroll-content-wrapper.non-adversiting,
+.view-jobs-in-i-am-a-job-seeker
+  .views-infinite-scroll-content-wrapper.non-adversiting {
   .banner-scroll,
   .skys-scroll,
   .block-scroll {

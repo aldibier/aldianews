@@ -1,4 +1,4 @@
-$brokenPixelUp: $broken2+1;
+$brokenPixelUp: $broken2 + 1;
 
 .path-job-seeker {
   .block-fixed-block-contentheader-i-am-a-job-seeker {
@@ -94,8 +94,10 @@ $brokenPixelUp: $broken2+1;
 
   .views-infinite-scroll-content-wrapper {
     display: grid;
-    grid-template-columns: minmax(200px, 420px) minmax(200px, 440px) minmax(200px,
-        420px);
+    grid-template-columns: minmax(200px, 420px) minmax(200px, 440px) minmax(
+        200px,
+        420px
+      );
     gap: 0px 40px;
     overflow: hidden;
     grid-auto-flow: dense;
@@ -141,15 +143,14 @@ $brokenPixelUp: $broken2+1;
         }
       }
 
-      >.views-field {
+      > .views-field {
         height: 100%;
 
-        >.field-content {
+        > .field-content {
           display: flex;
           flex-direction: column;
           height: 100%;
         }
-
       }
 
       @media screen and (max-width: $tablet) {
@@ -324,7 +325,7 @@ $brokenPixelUp: $broken2+1;
   }
 
   .block-content-left {
-    margin-left: auto;
+    // margin-left: auto;
 
     h2 {
       font-style: normal;
@@ -404,7 +405,6 @@ $brokenPixelUp: $broken2+1;
       @media (max-width: $tablet) {
         padding: 0 41px;
       }
-
     }
 
     .slick-list {
@@ -445,7 +445,6 @@ $brokenPixelUp: $broken2+1;
       @media (max-width: $tablet) {
         right: calc(0% + 15px);
       }
-
     }
   }
 }
@@ -557,14 +556,13 @@ $brokenPixelUp: $broken2+1;
       color: $cgrey3;
     }
 
-    @media (min-width:$brokenPixelUp) {
-
+    @media (min-width: $brokenPixelUp) {
       &:first-child {
         position: relative;
       }
 
       &:first-child::after {
-        content: '';
+        content: "";
         position: absolute;
         bottom: calc(0% - 30px);
         display: block;
@@ -578,9 +576,7 @@ $brokenPixelUp: $broken2+1;
         padding-top: 15px;
         border-top: 1px solid $cgrey4;
       }
-
     }
-
   }
 
   .view-content {
@@ -623,19 +619,19 @@ $brokenPixelUp: $broken2+1;
   }
 }
 
-//View complete 
+//View complete
 .block-views-blockcareer-news-block-1.view-complete {
   width: 100%;
 
   .view-content {
     grid-template-columns: repeat(3, minmax(auto, 1fr));
 
-    @media (max-width:$broken2) {
+    @media (max-width: $broken2) {
       grid-template-columns: repeat(2, minmax(auto, 1fr));
     }
 
     .views-row {
-      @media (min-width:$brokenPixelUp) {
+      @media (min-width: $brokenPixelUp) {
         &:nth-child(n + 7) {
           margin-top: 15px;
           padding-top: 15px;
@@ -767,7 +763,7 @@ $brokenPixelUp: $broken2+1;
     grid-template-columns: repeat(2, minmax(auto, 1fr));
 
     .views-row {
-      @media (min-width:$brokenPixelUp) {
+      @media (min-width: $brokenPixelUp) {
         &:nth-child(n + 5) {
           margin-top: 15px;
           padding-top: 15px;
@@ -779,7 +775,7 @@ $brokenPixelUp: $broken2+1;
 
   @media (min-width: $brokenPixelUp) {
     .views-row:first-child::before {
-      content: '';
+      content: "";
       position: absolute;
       top: 0;
       right: calc(0% - 20px);
@@ -815,7 +811,6 @@ $brokenPixelUp: $broken2+1;
       }
     }
 
-
     .views-row:nth-child(3) {
       position: relative;
 
@@ -831,7 +826,6 @@ $brokenPixelUp: $broken2+1;
         top: 0px;
       }
     }
-
   }
 }
 
@@ -846,7 +840,7 @@ $brokenPixelUp: $broken2+1;
     //padding: 0 15px;
   }
 
-  >div.content {
+  > div.content {
     display: flex;
     justify-content: space-between;
 
@@ -863,7 +857,7 @@ $brokenPixelUp: $broken2+1;
     max-width: 420px;
     margin-left: 20px;
 
-    @media (min-width: $tablet) and (max-width:$broken2) {
+    @media (min-width: $tablet) and (max-width: $broken2) {
       display: none;
     }
 
@@ -873,7 +867,8 @@ $brokenPixelUp: $broken2+1;
   }
 }
 
-.block-block-groupgroup-career-news-jobs+.block-fixed-block-contenthorizontal-advertising {
+.block-block-groupgroup-career-news-jobs
+  + .block-fixed-block-contenthorizontal-advertising {
   margin: 0 auto 100px;
 }
 
@@ -959,7 +954,8 @@ $brokenPixelUp: $broken2+1;
     }
   }
 
-  .block-block-groupgroup-career-news-jobs .block-fixed-block-contentbig-vertical-advertising {
+  .block-block-groupgroup-career-news-jobs
+    .block-fixed-block-contentbig-vertical-advertising {
     // margin-left: 0px;
     // margin-bottom: 0px;
     // position: absolute;
@@ -969,7 +965,6 @@ $brokenPixelUp: $broken2+1;
 
   .block-views-blockcareer-news-block-1.view-complete {
     .view-content {
-
       // .views-row:nth-child(1),
       // .views-row:nth-child(2),
       // .views-row:nth-child(3) {
@@ -989,8 +984,7 @@ $brokenPixelUp: $broken2+1;
   }
 }
 
-@media (max-width:$broken) {
-
+@media (max-width: $broken) {
   //View general
   .block-views-blockcareer-news-block-1 {
     .views-row .card-title {
@@ -999,8 +993,7 @@ $brokenPixelUp: $broken2+1;
   }
 }
 
-@media (max-width:$broken2) {
-
+@media (max-width: $broken2) {
   //View general
   .block-views-blockcareer-news-block-1 {
     .views-row .views-field-field-image {
@@ -1085,6 +1078,10 @@ $brokenPixelUp: $broken2+1;
   }
 }
 
+.path-jobs .jobs .content-page-jobs > .content {
+  justify-content: center;
+}
+
 @media (max-width: $broken) {
   .path-jobs .layout-container .layout-main {
     margin: 30px auto 10px;
@@ -1113,7 +1110,7 @@ $brokenPixelUp: $broken2+1;
 
   .jobs.style-jobs {
     h1 {
-      bottom: 110px;
+      bottom: 75px;
       //left: 25px;
       left: 0;
       padding: 0 25px;
@@ -1131,13 +1128,13 @@ $brokenPixelUp: $broken2+1;
     }
 
     .banner-horizontal {
-      margin: 0 auto 30px;
+      margin: 20px auto 30px;
     }
 
     .block-banner-page .views-field-field-description .field-content {
       //left: 27px;
       left: 0;
-      bottom: 89px;
+      bottom: 75px;
       padding: 0 25px;
       //line-height: 28px;
       line-height: 1.5;
@@ -1182,7 +1179,7 @@ $brokenPixelUp: $broken2+1;
     }
 
     .block-block-groupadvertising-blocks-in-job-landing-pages {
-      margin: 40px auto;
+      margin: 0 auto 40px;
 
       .block-fixed-block-contentbig-vertical-advertising {
         display: none;
@@ -1331,7 +1328,6 @@ $brokenPixelUp: $broken2+1;
           border: 0 !important;
           padding: 0 !important;
         }
-
       }
 
       .views-row:nth-child(2),
@@ -1528,9 +1524,7 @@ $brokenPixelUp: $broken2+1;
         // font-size: szrem(24);
         // line-height: 29px;
       }
-
     }
-
   }
 
   //View with advertising
@@ -1564,7 +1558,8 @@ $brokenPixelUp: $broken2+1;
     }
   }
 
-  .block-block-groupgroup-career-news-jobs+.block-fixed-block-contenthorizontal-advertising {
+  .block-block-groupgroup-career-news-jobs
+    + .block-fixed-block-contenthorizontal-advertising {
     margin: 0px auto;
   }
 }
@@ -1572,7 +1567,7 @@ $brokenPixelUp: $broken2+1;
 @media (max-width: $mobile-mid) {
   .jobs.style-jobs {
     h1 {
-      bottom: 85px;
+      bottom: 75px;
     }
 
     .block-views-blockcarousel-jobs-landing-block-1 {
@@ -1639,7 +1634,6 @@ $brokenPixelUp: $broken2+1;
     }
 
     .view-content {
-
       .views-row:nth-child(1),
       .views-row:nth-child(2) {
         padding-left: 0px;
