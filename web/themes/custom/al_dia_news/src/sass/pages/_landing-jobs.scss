@@ -141,6 +141,17 @@ $brokenPixelUp: $broken2+1;
         }
       }
 
+      >.views-field {
+        height: 100%;
+
+        >.field-content {
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+        }
+
+      }
+
       @media screen and (max-width: $tablet) {
         &::before {
           width: 100%;
@@ -150,6 +161,12 @@ $brokenPixelUp: $broken2+1;
       }
 
       @extend .rows-employer;
+    }
+
+    .button-details {
+      flex: 1 1 100%;
+      display: flex;
+      align-items: flex-end;
     }
 
     .ajax-progress.ajax-progress-fullscreen,
@@ -966,8 +983,8 @@ $brokenPixelUp: $broken2+1;
 
   //View general
   .block-views-blockcareer-news-block-1 {
-    .views-row .card-title{
-			margin-bottom: 10px;
+    .views-row .card-title {
+      margin-bottom: 10px;
     }
   }
 }
