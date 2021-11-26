@@ -9,13 +9,20 @@
 #block-al-dia-news-breadcrumbs {
   max-width: 1310px;
   margin: 0 auto 35px;
-  padding: 0;
   padding: 0 15px;
 
   @media (max-width: $tablet) {
     margin: 0 auto 18px;
   }
 
+}
+
+.path-leadership #block-al-dia-news-breadcrumbs,
+.path-culture #block-al-dia-news-breadcrumbs,
+.path-politics #block-al-dia-news-breadcrumbs,
+.path-sponsored-content-local #block-al-dia-news-breadcrumbs,
+.path-podcast #block-al-dia-news-breadcrumbs .path-sponsored-content-brand-studio #block-al-dia-news-breadcrumbs {
+  padding: 0;
 }
 
 h1,
@@ -262,7 +269,7 @@ body.toolbar-tray-open.user-logged-in {
   font-size: 13px;
   line-height: 16px;
   margin: 0;
-	padding: 0;
+  padding: 0;
 
   ol {
     display: flex;
@@ -382,4 +389,9 @@ p:last-child {
 
 .site-footer__bottom .content {
   padding: 0;
+}
+
+.node__content {
+	margin-top: 0;
+	font-size: initial;
 }
