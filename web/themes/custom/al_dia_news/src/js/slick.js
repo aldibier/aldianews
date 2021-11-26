@@ -178,12 +178,12 @@ const initSlick = ($, Drupal) => {
 
 
 		//slide edit resize
-		if (window.matchMedia("(max-width: 768px)").matches) {
+		if (window.matchMedia("(max-width: 1024px)").matches) {
 			$(".view-id-thought_leaders_home.view-display-id-block_1 .view-content").not('.slick-initialized').slick(settingThoughtLeaders);
 		}
 
 		window.addEventListener("resize", () => {
-			if (window.matchMedia("(max-width: 768px)").matches) {
+			if (window.matchMedia("(max-width: 1024px)").matches) {
 				$(".view-id-thought_leaders_home.view-display-id-block_1 .view-content").not('.slick-initialized').slick(settingThoughtLeaders);
 			}
 		});

@@ -15,7 +15,6 @@
   @media (max-width: $tablet) {
     margin: 0 auto 18px;
   }
-
 }
 
 h1,
@@ -127,7 +126,8 @@ body.toolbar-tray-open.user-logged-in {
 }
 @media (max-width: $broken) {
   .ads-aboutus-mobile {
-    margin: 20px auto 40px;
+    margin: 0px auto 40px;
+    margin-bottom: 40px !important;
   }
 }
 
@@ -266,7 +266,7 @@ body.toolbar-tray-open.user-logged-in {
   font-size: 13px;
   line-height: 16px;
   margin: 0;
-	padding: 0;
+  padding: 0;
 
   ol {
     display: flex;

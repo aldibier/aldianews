@@ -2582,7 +2582,7 @@ var initSlick = function initSlick($, Drupal) {
       autoplaySpeed: 3000,
       mobileFirst: true,
       responsive: [{
-        breakpoint: 1024,
+        breakpoint: 1025,
         settings: "unslick"
       }]
     };
