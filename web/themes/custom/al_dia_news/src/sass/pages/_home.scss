@@ -1,10 +1,10 @@
 //------------ Bloque noticia destacada ---------------//
 .block-block-grouphigh-impact-and-most-visited-news-home {
-  +.wrapper-news-trending {
+  + .wrapper-news-trending {
     display: none;
   }
 
-  >.content {
+  > .content {
     .block-block-groupright-column-home:only-child {
       display: none;
     }
@@ -28,7 +28,7 @@
       margin-bottom: 0;
     }
 
-    >.view-content {
+    > .view-content {
       width: max-content;
       max-height: 821px;
       padding-right: 20px;
@@ -68,7 +68,7 @@
         margin-bottom: 0;
       }
 
-      >.content {
+      > .content {
         margin: 0 0 0 20px;
 
         @media (max-width: $broken) {
@@ -78,13 +78,12 @@
     }
 
     .watch-live {
-			padding: 0;
+      padding: 0;
       margin-top: 0;
 
       @media (max-width: $broken) {
         display: none;
       }
-
     }
 
     .watch-live-button {
@@ -184,7 +183,7 @@
 }
 
 .block-views-blockhigh-impact-news-home-block-1 {
-  +.block-block-groupright-column-home {
+  + .block-block-groupright-column-home {
     display: none;
   }
 }
@@ -199,7 +198,7 @@
 .wrapper-news-trending {
   margin-bottom: 80px;
 
-  >.content {
+  > .content {
     display: flex;
 
     @media (max-width: $broken) {
@@ -229,7 +228,7 @@
 
   .watch-live {
     margin-top: 0;
-		padding: 0;
+    padding: 0;
 
     @media (max-width: $broken) {
       display: none;
@@ -248,7 +247,7 @@
     margin-bottom: 30px;
   }
 
-  >.node--type-news {
+  > .node--type-news {
     &:nth-child(1) {
       padding-right: 55px;
       border-right: 1px solid $cgrey4;
@@ -295,7 +294,6 @@
 }
 
 .path-frontpage {
-
   h3 h2 .aldia-logo-in-text {
     margin-right: 5px;
   }
@@ -411,7 +409,7 @@
           margin: -35px 0;
           padding: 0.1mm;
           position: absolute;
-					left: 0;
+          left: 0;
           display: block;
           background-color: $cgrey4;
         }
@@ -460,7 +458,6 @@
         font-size: 14px;
         line-height: 17px;
       }
-
     }
 
     @media (max-width: 1250px) {
@@ -539,17 +536,17 @@
     }
 
     .view-categories-sons {
-      >.view-content>h3 a {
+      > .view-content > h3 a {
         line-height: initial;
       }
 
-      >.view-content .views-field-view-2 .view-content {
+      > .view-content .views-field-view-2 .view-content {
         margin-top: 0px;
         padding-bottom: 50px;
       }
 
       .views-field-view-2 {
-				padding-top: 20px;
+        padding-top: 20px;
         border-top: 1px solid #b1b1b1;
 
         .views-row:last-child {
@@ -557,7 +554,7 @@
         }
       }
 
-      >.view-content .views-field-view-1 .view-content {
+      > .view-content .views-field-view-1 .view-content {
         position: relative;
       }
 
@@ -704,17 +701,9 @@
       margin-right: 0;
     }
 
-
     @media (max-width: $desktop) {
-      margin-right: 22.5px;
-    }
-
-    @media (max-width: $broken) {
       margin-left: 10px;
       margin-right: 10px;
-    }
-
-    @media (max-width: $tablet) {
       &.cloned {
         display: block;
       }
@@ -741,29 +730,29 @@
     }
 
     .aldia-logo-in-text {
-			z-index: 1;
-			padding-right: 10px;
-			background: #f1f1f1;
+      z-index: 1;
+      padding-right: 10px;
+      background: #f1f1f1;
 
-			@media (max-width: $tablet) {
-				padding-right: 5px;
-			}
-	
+      @media (max-width: $tablet) {
+        padding-right: 5px;
+      }
+
       img {
-				min-width: 145px;
+        min-width: 145px;
         max-width: 145px;
         max-height: 45px;
 
-				@media (max-width: $tablet) {
-					max-width: 70px;
-					min-width: 70px;
-					min-height: 26px;
-				}
+        @media (max-width: $tablet) {
+          max-width: 70px;
+          min-width: 70px;
+          min-height: 26px;
+        }
       }
     }
 
     .text {
-			z-index: 1;
+      z-index: 1;
       max-height: 26px;
       padding-right: 20px;
       border: none;
@@ -775,18 +764,17 @@
       line-height: 1;
       text-transform: uppercase;
       color: $corange;
-			background: #f1f1f1;
+      background: #f1f1f1;
 
-			@media (max-width: $tablet) {
-				padding-right: 0;
-				font-size: szrem(20);
-			}
-
+      @media (max-width: $tablet) {
+        padding-right: 0;
+        font-size: szrem(20);
+      }
     }
 
     a {
-			border: 0;
-			text-decoration: none;
+      border: 0;
+      text-decoration: none;
       &::after {
         display: none;
       }
@@ -798,9 +786,9 @@
     z-index: 1;
 
     @media (max-width: $tablet) {
-			max-height: 37px;
-			padding-bottom: 10px;
-			border-bottom: 1.5px solid $corange;
+      max-height: 37px;
+      padding-bottom: 10px;
+      border-bottom: 1.5px solid $corange;
     }
 
     a {
@@ -808,7 +796,6 @@
       align-items: center;
     }
   }
-
 }
 
 .card-leaders {
@@ -899,14 +886,14 @@
 .block-block-groupcurrent-edition-advertising-home {
   padding: 0 80px;
 
-  >.content {
+  > .content {
     display: flex;
   }
 
   @media screen and (max-width: $broken) {
     padding: 0;
 
-    >.content {
+    > .content {
       flex-direction: column;
     }
   }
@@ -935,36 +922,29 @@
 
 @media (max-width: $desktop) {
   .view-thought-leaders-home {
-
     .views-field-view,
     .views-field-view-1 {
       padding: 0 15px;
     }
   }
-}
-
-@media (max-width: $tablet) {
   .view-thought-leaders-home {
-
     .views-field-view,
     .views-field-view-1 {
       padding: 0;
     }
   }
-
-  .block-views-blockthought-leaders-home-block-4 {
-    margin-bottom: 20px;
-    padding-top: 5px;
-    padding-bottom: 2px;
-  }
-
   .view-id-thought_leaders_home.view-display-id-block_1 {
     .slick-initialized .slick-slide {
       width: 130px !important;
       max-width: none;
     }
   }
-
+  .view-thought-leaders-home.view-display-id-block_3
+    .view-content
+    .aldia-logo-in-text {
+    margin-bottom: 0;
+    max-width: 82px;
+  }
   .card-leaders {
     min-height: 300px !important;
     padding: 17px 12px 13px;
@@ -1003,10 +983,13 @@
       line-height: 12px;
     }
   }
+}
 
-  .view-thought-leaders-home.view-display-id-block_3 .view-content .aldia-logo-in-text {
-    margin-bottom: 0;
-    max-width: 82px;
+@media (max-width: $tablet) {
+  .block-views-blockthought-leaders-home-block-4 {
+    margin-bottom: 20px;
+    padding-top: 5px;
+    padding-bottom: 2px;
   }
 }
 
