@@ -6,6 +6,11 @@
   .content-page-node {
     display: flex;
     flex-wrap: wrap;
+
+    @media screen and (max-width: $tablet) {
+      margin-bottom: 40px !important;
+    }
+
   }
 
   .block-fixed-block-contentheader-work-with-al-dia {
@@ -56,6 +61,12 @@
         font-size: szrem(26);
         line-height: szrem(28);
       }
+    }
+  }
+
+  .block-hero-image {
+    @media (max-width: $tablet) {
+      margin-bottom: 30px;
     }
   }
 
