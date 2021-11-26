@@ -95,7 +95,6 @@ a {
   @media (max-width: $broken) {
     padding: 170px 0 0;
   }
-
 }
 
 .contextual {
@@ -131,6 +130,11 @@ body.toolbar-tray-open.user-logged-in {
 
   @media (max-width: $broken) {
     display: block;
+  }
+}
+@media (max-width: $broken) {
+  .ads-aboutus-mobile {
+    margin: 20px auto 40px;
   }
 }
 
@@ -362,7 +366,7 @@ body.toolbar-tray-open.user-logged-in {
 .margin-top {
   margin-top: 20px;
 
-  >div {
+  > div {
     margin-top: 20px;
   }
 }

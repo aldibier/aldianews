@@ -7,9 +7,9 @@
     display: block !important;
   }
 
-	div[id*="google_ads_iframe"]{
-		overflow: hidden;
-	}
+  div[id*="google_ads_iframe"] {
+    overflow: hidden;
+  }
 }
 
 // ---------------- clase para layout laterales izquierdo contenido ---------//
@@ -575,10 +575,6 @@
 .page-node-type-more-covers {
   .block-block-groupfixed-blocks-adversiting {
     margin-bottom: 40px;
-
-    @media screen and (max-width: $broken) {
-      margin-bottom: 0;
-    }
   }
 }
 
@@ -626,7 +622,7 @@
 
   @media screen and (max-width: $tablet) {
     .skyscraper-mobile  {
-			margin-top: 0 !important;
+      margin-top: 0 !important;
       margin-bottom: 50px !important;
     }
     .skyscraper-mobile::before {

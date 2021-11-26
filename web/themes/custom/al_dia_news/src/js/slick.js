@@ -153,7 +153,7 @@ const initSlick = ($, Drupal) => {
 			mobileFirst: true,
 			responsive: [
 				{
-					breakpoint: 768,
+					breakpoint: 1024,
 					settings: "unslick"
 				},
 			]
