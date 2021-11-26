@@ -1,7 +1,9 @@
 .path-thought-leaders {
   //--------structure------------------//
 
-  @media (max-width: 1086px) and (min-width: $broken + 1) {
+  $brokenUp: $broken + 1;
+
+  @media (max-width: 1086px) and (min-width: $brokenUp) {
     div.block-views-blocklanding-thought-leaders-block-1 {
       max-width: 358px;
     }
@@ -46,6 +48,7 @@
     margin: 0 0 0 -8px;
     display: flex;
     align-items: center;
+
     img {
       @media (min-width: $desktop) {
         height: 45px;
@@ -116,11 +119,9 @@
         display: block;
         top: 0;
         left: 0;
-        background: linear-gradient(
-          90deg,
-          #0b0b0b 55.93%,
-          rgba(11, 11, 11, 0) 72.49%
-        );
+        background: linear-gradient(90deg,
+            #0b0b0b 55.93%,
+            rgba(11, 11, 11, 0) 72.49%);
       }
     }
 
@@ -305,12 +306,12 @@
   .views-infinite-scroll-content-wrapper {
     margin-bottom: 120px;
     display: grid;
-    grid-template-columns: minmax(250px, 400px) minmax(250px, 400px) minmax(250px,400px);
+    grid-template-columns: minmax(250px, 400px) minmax(250px, 400px) minmax(250px, 400px);
     grid-auto-flow: dense;
     grid-gap: 0 40px;
     justify-content: center;
     overflow: hidden;
-   
+
     @media (max-width: $broken) {
       position: relative;
       display: grid;
@@ -358,7 +359,7 @@
       @media screen and (min-width: $broken) {
         height: 345px;
 
-        &:nth-last-child(-n + 3)::before {
+        &:nth-last-child(-n + 3)::before {
           display: none !important;
         }
       }
@@ -379,7 +380,7 @@
       }
 
       @media screen and (max-width: $tablet) {
-        &::before  {
+        &::before {
           display: none;
         }
 
@@ -510,7 +511,7 @@
         width: 100%;
         display: flex;
         flex-wrap: wrap;
-				flex-direction: column;
+        flex-direction: column;
         margin: 15px 0;
       }
 
@@ -541,6 +542,7 @@
       padding: 0 0 5px;
       border-bottom: 1px solid $corange;
       margin: 15px 0 auto;
+
       h1 {
         font-size: 20px;
         line-height: 24px;
@@ -667,8 +669,9 @@
     .views-infinite-scroll-content-wrapper {
       .views-row {
 
-        &:nth-last-of-type(-n+2){
+        &:nth-last-of-type(-n+2) {
           margin-bottom: 0;
+
           &::before {
             display: none !important;
           }
