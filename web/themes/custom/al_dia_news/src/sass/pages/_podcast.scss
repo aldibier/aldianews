@@ -433,17 +433,31 @@
   }
 
   .view-content {
-    max-width: 840px;
+    //max-width: 840px;
+		flex: 0 1 840px;
     margin-right: 40px;
-    order: -1;
+    //order: -1;
 
     @media screen and (max-width: $broken) {
+			flex: 0 1 auto;
       width: 100%;
       max-width: 100%;
       margin-right: 0;
 			margin-bottom: 40px;
     }
   }
+
+	.block-fixed-advertising {
+		#block-gamwadvertisement-7 {
+			margin-bottom: 50px;
+		}
+
+		#block-gamwadvertisement-5 {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	}
 
   .view-footer {
     display: none;
