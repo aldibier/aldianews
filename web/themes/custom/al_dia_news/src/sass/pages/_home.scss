@@ -1,10 +1,10 @@
 //------------ Bloque noticia destacada ---------------//
 .block-block-grouphigh-impact-and-most-visited-news-home {
-  + .wrapper-news-trending {
+  +.wrapper-news-trending {
     display: none;
   }
 
-  > .content {
+  >.content {
     .block-block-groupright-column-home:only-child {
       display: none;
     }
@@ -28,7 +28,7 @@
       margin-bottom: 0;
     }
 
-    > .view-content {
+    >.view-content {
       width: max-content;
       max-height: 821px;
       padding-right: 20px;
@@ -68,7 +68,7 @@
         margin-bottom: 0;
       }
 
-      > .content {
+      >.content {
         margin: 0 0 0 20px;
 
         @media (max-width: $broken) {
@@ -183,7 +183,7 @@
 }
 
 .block-views-blockhigh-impact-news-home-block-1 {
-  + .block-block-groupright-column-home {
+  +.block-block-groupright-column-home {
     display: none;
   }
 }
@@ -198,7 +198,7 @@
 .wrapper-news-trending {
   margin-bottom: 80px;
 
-  > .content {
+  >.content {
     display: flex;
 
     @media (max-width: $broken) {
@@ -247,7 +247,7 @@
     margin-bottom: 30px;
   }
 
-  > .node--type-news {
+  >.node--type-news {
     &:nth-child(1) {
       padding-right: 55px;
       border-right: 1px solid $cgrey4;
@@ -536,11 +536,11 @@
     }
 
     .view-categories-sons {
-      > .view-content > h3 a {
+      >.view-content>h3 a {
         line-height: initial;
       }
 
-      > .view-content .views-field-view-2 .view-content {
+      >.view-content .views-field-view-2 .view-content {
         margin-top: 0px;
         padding-bottom: 50px;
       }
@@ -554,7 +554,7 @@
         }
       }
 
-      > .view-content .views-field-view-1 .view-content {
+      >.view-content .views-field-view-1 .view-content {
         position: relative;
       }
 
@@ -578,8 +578,6 @@
       }
 
       .aldia-logo-in-text {
-        max-width: 55px;
-
         img {
           width: 100%;
           height: 17.25px;
@@ -669,9 +667,12 @@
 
 .view-thought-leaders-home.view-display-id-block_1 .view-content {
   display: flex;
-  //justify-content: space-between;
   justify-content: center;
-  //align-items: flex-start;
+  column-gap: 55px;
+
+  @media (max-width: $desktop) {
+    column-gap: 0;
+  }
 
   .slick-list {
     width: 480px;
@@ -679,11 +680,24 @@
     margin: 0 auto;
     overflow: hidden;
 
-		@media (max-width: $tablet) {
-			width: 280px;
-			max-width: 280px;
+    @media (max-width: $desktop) {
+      width: 590px;
+      max-width: 590px;
     }
 
+    @media (max-width: $tablet) {
+      width: 280px;
+      max-width: 280px;
+    }
+
+  }
+
+  .slick-slide {
+    @media (max-width: $tablet) {
+      width: 130px !important;
+      max-width: none;
+      padding: 12px;
+    }
   }
 
   .views-row {
@@ -691,7 +705,6 @@
     justify-content: flex-start;
     grid-gap: 0px;
     width: 100%;
-    margin-right: 55px;
 
     &.cloned {
       display: none;
@@ -702,12 +715,13 @@
     }
 
     @media (max-width: $desktop) {
-      margin-left: 10px;
-      margin-right: 10px;
-      &.cloned {
-        display: block;
-      }
+      margin-right: 30px;
     }
+
+    @media (max-width: $tablet) {
+      margin-right: 20px;
+    }
+
   }
 }
 
@@ -716,7 +730,7 @@
     position: relative;
     width: 100%;
 
-    @media (min-width: $tablet) {
+    @media (min-width: 769px) {
       &::after {
         content: "";
         width: calc(100% - 50px);
@@ -775,6 +789,7 @@
     a {
       border: 0;
       text-decoration: none;
+
       &::after {
         display: none;
       }
@@ -817,8 +832,8 @@
     }
   }
 
-  @media (max-width: $desktop) {
-    max-width: 230px;
+  @media (max-width: $tablet) {
+    min-height: 300px;
   }
 
   .views-field-field-authors-photo {
@@ -829,6 +844,13 @@
     filter: grayscale(1);
     margin: 0 auto 15px;
     flex: 0 0 120px;
+
+    @media (max-width: $tablet) {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 10px;
+      flex: 0 0 80px;
+    }
 
     .field-content {
       width: inherit;
@@ -853,6 +875,14 @@
     text-align: center;
     color: $cwhite;
     margin-bottom: 20px;
+
+    @media (max-width: $tablet) {
+      min-height: 34px;
+      margin-bottom: 10px;
+      font-size: szrem(14);
+      line-height: 17px;
+    }
+
   }
 
   .views-field-title {
@@ -860,8 +890,7 @@
     width: 100%;
     margin-bottom: 10px;
 
-    //margin-top: 20px;
-    * {
+    a {
       font-family: $PrNovacond-Sbold;
       font-style: normal;
       font-weight: bold;
@@ -870,6 +899,17 @@
       color: $cwhite;
       border-bottom: 0px;
     }
+
+    @media (max-width: $tablet) {
+      margin-bottom: 20px;
+
+      a {
+        font-size: szrem(16);
+        line-height: 19px;
+      }
+
+    }
+
   }
 
   .views-field-created {
@@ -886,14 +926,14 @@
 .block-block-groupcurrent-edition-advertising-home {
   padding: 0 80px;
 
-  > .content {
+  >.content {
     display: flex;
   }
 
   @media screen and (max-width: $broken) {
     padding: 0;
 
-    > .content {
+    >.content {
       flex-direction: column;
     }
   }
@@ -922,65 +962,18 @@
 
 @media (max-width: $desktop) {
   .view-thought-leaders-home {
+
     .views-field-view,
     .views-field-view-1 {
       padding: 0 15px;
     }
   }
+
   .view-thought-leaders-home {
+
     .views-field-view,
     .views-field-view-1 {
       padding: 0;
-    }
-  }
-  .view-id-thought_leaders_home.view-display-id-block_1 {
-    .slick-initialized .slick-slide {
-      width: 130px !important;
-      max-width: none;
-    }
-  }
-  .view-thought-leaders-home.view-display-id-block_3
-    .view-content
-    .aldia-logo-in-text {
-    margin-bottom: 0;
-    max-width: 82px;
-  }
-  .card-leaders {
-    min-height: 300px !important;
-    padding: 17px 12px 13px;
-    margin-top: 20px;
-
-    .views-field-field-authors-photo {
-      max-width: 80px;
-      max-height: 80px;
-      margin: 0 auto 10px;
-
-      img {
-        max-width: 80px;
-        max-height: 80px;
-      }
-    }
-
-    .views-field-name {
-      font-size: $px14;
-      line-height: 17px;
-      min-height: 34px;
-    }
-
-    .views-field-title {
-      margin-bottom: 20px;
-
-      * {
-        font-size: $px16;
-        line-height: 19px;
-        @include ellipsis(75px, 4);
-        display: flex;
-      }
-    }
-
-    .views-field-created {
-      font-size: $px10;
-      line-height: 12px;
     }
   }
 }
