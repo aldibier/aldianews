@@ -188,7 +188,7 @@
 
   .section-flex {
     display: flex;
-    flex-wrap: wrap;
+    //flex-wrap: wrap;
     gap: 15px 0;
   }
 
@@ -235,13 +235,12 @@
   }
 
   .body-lateral-section {
-    display: flex;
-    align-items: center;
-    flex: 1 1 840px;
-    flex-wrap: wrap;
-    width: 100%;
-    max-width: 100%;
-    //max-width: 840px;
+    //display: flex;
+    //align-items: center;
+    //flex-wrap: wrap;
+		flex: 0 1 840px;
+		width: 100%;
+    //max-width: 100%;
     margin-right: 40px;
 
     p {
@@ -404,8 +403,8 @@
 
   ///--- view modes -----//
   .mode-one {
-    flex: 1 1 840px;
-    max-width: 100%;
+    //max-width: 100%;
+		max-width: 840px;
     margin-right: auto;
 
     .item-list ul li {
