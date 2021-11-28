@@ -54,7 +54,7 @@
 
     @media (max-width: $tablet) {
       max-width: 45px;
-			max-height: 14px;
+      max-height: 14px;
 
       img {
         top: 0px;
@@ -118,7 +118,35 @@
       @media (max-width: $tablet) {
         padding-right: 0;
       }
+    }
+  }
+}
 
+/* Category title though leaders*/
+
+.view-thought-leaders-home {
+  .category-title {
+    .aldia-logo-in-text {
+      z-index: 1;
+			max-width: 155px;
+			margin: 0;
+      background: #f1f1f1;
+
+      @media (max-width: $tablet) {
+				max-width: 75px;
+      }
+
+      img {
+        min-width: 145px;
+        max-width: 145px;
+        max-height: 45px;
+
+        @media (max-width: $tablet) {
+          max-width: 70px;
+          min-width: 70px;
+          min-height: 26px;
+        }
+      }
     }
   }
 }
