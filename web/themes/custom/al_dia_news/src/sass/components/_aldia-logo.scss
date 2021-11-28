@@ -128,12 +128,12 @@
   .category-title {
     .aldia-logo-in-text {
       z-index: 1;
-			max-width: 155px;
-			margin: 0;
+      max-width: 155px;
+      margin: 0;
       background: #f1f1f1;
 
       @media (max-width: $tablet) {
-				max-width: 75px;
+        max-width: 75px;
       }
 
       img {
@@ -146,6 +146,34 @@
           min-width: 70px;
           min-height: 26px;
         }
+      }
+    }
+  }
+}
+
+/* Current edition */
+
+.current-edition-content {
+  .aldia-logo-in-text {
+    max-width: 48px;
+    max-height: 16px;
+    top: 5px;
+
+    @media screen and(max-width:$tablet) {
+      max-width: 36px;
+			max-height: 13px;
+      top: 2px;
+
+      &:lang(es) {
+        margin: -2px 1px 0;
+
+        img {
+          margin: -8px 0 1px;
+        }
+      }
+
+      img {
+        height: 13px;
       }
     }
   }
