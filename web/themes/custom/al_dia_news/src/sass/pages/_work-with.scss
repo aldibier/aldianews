@@ -33,17 +33,6 @@
     h1 {
       @include text($PrNovacond-bold, szrem(25), $cwhite, 95%);
 
-      .aldia-logo-in-text {
-        max-width: 200px;
-        margin: 5px 0;
-        position: relative;
-
-        /* left: -4px; */
-        img {
-          height: auto;
-        }
-      }
-
       @media screen and (min-width: $tablet) {
         font-size: szrem(78);
         line-height: 97%;
