@@ -30,15 +30,18 @@
     height: auto;
   }
 }
+
 .block-fixed-block-contenthorizontal-advertising {
   max-width: 1280px;
   max-height: 150px;
   overflow: hidden;
+
   img {
     width: 100%;
     height: auto;
   }
 }
+
 .block-content-small-vertical-advertising,
 .block-fixed-block-content-small-vertical-advertising {
   max-width: 400px;
@@ -56,6 +59,7 @@
   max-width: 210px;
   max-height: 575px;
   overflow: hidden;
+
   img {
     width: 100%;
     height: auto;
@@ -76,10 +80,12 @@
     max-width: none;
     margin-right: 0px;
   }
+
   .block-fixed-block-contentsquare-advertising-mobile,
   .block-fixed-block-contentvertical-advertising-mobile {
     display: block;
   }
+
   .block-fixed-block-contentsquare-advertising-mobile,
   .block-fixed-block-content-small-vertical-advertising {
     max-width: 200px;
@@ -87,11 +93,13 @@
     overflow: hidden;
     margin: 30px auto;
     grid-column: span 2;
+
     img {
       width: 100%;
       height: auto;
     }
   }
+
   .skyscraper-mobile {
     grid-row: span 2;
     margin: 0px 0px 0px 19px;
@@ -141,6 +149,7 @@
     border: none;
     cursor: pointer;
   }
+
   @media (max-width: $tablet) {
     margin: 0px auto 20px !important;
     display: flex;
@@ -153,6 +162,7 @@
       background-size: contain;
       top: 4px;
       right: 8%;
+
       @media (max-width: 350px) {
         right: 1%;
       }
@@ -179,6 +189,7 @@
       overflow: hidden;
       margin: 0px auto;
       grid-column: initial;
+
       img {
         width: 100%;
         height: auto;
@@ -193,14 +204,13 @@
   }
 }
 
-.block-gamw:not(.block-gamw.block-fixed-block-content-horizontal-advertising-close)
-  button[name="close"] {
+.block-gamw:not(.block-gamw.block-fixed-block-content-horizontal-advertising-close) button[name="close"] {
   display: none;
 }
 
 //----------------- landing category ----------------------------------//
 .path-taxonomy .view-categories-sons.view-display-id-block_1 {
-  .views-row  {
+  .views-row {
     .banner-horizontal {
       margin: 80px auto 0;
 
@@ -213,14 +223,29 @@
 }
 
 //----------------- thought leaders ----------------------------------//
-.path-thought-leaders
-  .views-infinite-scroll-content-wrapper:not(.non-adversiting) {
+.path-thought-leaders .views-infinite-scroll-content-wrapper:not(.non-adversiting) {
   .skys-scroll {
     width: 100%;
     max-width: 100%;
     margin: 0;
     position: relative;
     text-align: center;
+  }
+
+  @media screen and (min-width: $desktop) {
+    .skys-scroll {
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: calc(0% - 20px);
+        width: 20px;
+        height: 100%;
+        background-color: white;
+      }
+    }
   }
 
   @media screen and (min-width: $broken) {
@@ -249,7 +274,7 @@
     .views-row.not-show-line-mobile {
       margin-bottom: 0;
 
-      &::before  {
+      &::before {
         display: none;
       }
     }
@@ -293,7 +318,7 @@
       }
     }
 
-    .block-scroll.ads-mobile  {
+    .block-scroll.ads-mobile {
       width: 100%;
       max-width: 100%;
       max-height: initial;
@@ -320,8 +345,7 @@
   }
 }
 
-.view-more-videos-in-landing
-  .views-infinite-scroll-content-wrapper:not(.non-adversiting),
+.view-more-videos-in-landing .views-infinite-scroll-content-wrapper:not(.non-adversiting),
 .news-gallery .views-infinite-scroll-content-wrapper:not(.non-adversiting) {
   @media (min-width: $broken) {
     .banner-horizontal {
@@ -331,10 +355,8 @@
 }
 
 .news-gallery .views-infinite-scroll-content-wrapper:not(.non-adversiting),
-.view-landing-thought-leaders
-  .views-infinite-scroll-content-wrapper:not(.non-adversiting),
-.view-jobs-in-i-am-a-job-seeker
-  .views-infinite-scroll-content-wrapper:not(.non-adversiting) {
+.view-landing-thought-leaders .views-infinite-scroll-content-wrapper:not(.non-adversiting),
+.view-jobs-in-i-am-a-job-seeker .views-infinite-scroll-content-wrapper:not(.non-adversiting) {
   .views-row.not-show-line {
     @media screen and (min-width: $broken) {
       &::before {
@@ -344,7 +366,7 @@
   }
 }
 
-.news-gallery .views-infinite-scroll-content-wrapper:not(.non-adversiting)  {
+.news-gallery .views-infinite-scroll-content-wrapper:not(.non-adversiting) {
   .views-row.not-show-line-mobile {
     @media screen and (max-width: $tablet) {
       margin-bottom: 35px;
@@ -356,6 +378,7 @@
   }
 
   @media screen and (min-width: $broken) {
+
     .skys-scroll:nth-last-child(6),
     .skys-scroll:nth-last-child(1),
     .block-scroll:nth-last-child(1) {
@@ -364,7 +387,7 @@
       }
     }
 
-    .skys-scroll  {
+    .skys-scroll {
       position: relative;
 
       &::before {
@@ -387,24 +410,29 @@
   max-width: 1280px;
   max-height: 149px;
   overflow: hidden;
+
   @media (max-width: $tablet) {
     max-height: 100px;
     margin: 0 -15px 30px;
     display: flex;
     justify-content: center;
     overflow: initial;
+
     div[data-ad-unit="Home-post-main-headline"] {
       overflow: hidden;
       max-height: 100px;
     }
   }
+
   &.bot-bottom {
     margin-bottom: 0px;
   }
+
   &.null-margin {
     margin: 0 auto;
   }
 }
+
 .block-print-edition {
   max-width: 400px;
   min-width: 400px;
@@ -419,9 +447,11 @@
 //----------------- general header top banner ----------------------------------//
 [data-ad-unit="header-top-banner"] {
   margin-bottom: 60px;
-  > div {
+
+  >div {
     text-align: center;
   }
+
   @media screen and (max-width: $tablet) {
     margin: 0 auto 30px;
   }
@@ -535,7 +565,7 @@
       }
     }
 
-    .block-scroll.ads.ads-mobile + .banner-scroll {
+    .block-scroll.ads.ads-mobile+.banner-scroll {
       margin-top: 0 !important;
     }
   }
@@ -579,7 +609,7 @@
 }
 
 //----------------- about us ----------------------------------//
-.node--view-mode-basic-page-about-us  {
+.node--view-mode-basic-page-about-us {
   .horizontal-advertising-general-horizontal {
     margin-bottom: 90px;
 
@@ -595,6 +625,7 @@
       margin-bottom: 40px;
     }
   }
+
   .content-left-pages {
     margin-bottom: 70px;
   }
@@ -607,24 +638,25 @@
 }
 
 //----------------- internal news ----------------------------------//
-#block-al-dia-news-content + .banner-horizontal  {
+#block-al-dia-news-content+.banner-horizontal {
   margin-bottom: 100px;
 }
 
 //----------------- more news and more authors   ----------------------------------//
 .view-more-news,
-.view-more-authors  {
+.view-more-authors {
   @media screen and (min-width: $tablet) {
-    .skyscraper-mobile  {
+    .skyscraper-mobile {
       display: none;
     }
   }
 
   @media screen and (max-width: $tablet) {
-    .skyscraper-mobile  {
+    .skyscraper-mobile {
       margin-top: 0 !important;
       margin-bottom: 50px !important;
     }
+
     .skyscraper-mobile::before {
       content: "";
       width: 30px;
@@ -649,6 +681,7 @@
   grid-column: 1/-1;
   //grid-column: span 3;
   width: 100%;
+
   @media (max-width: $tablet) {
     grid-column: span 2;
   }
@@ -675,6 +708,7 @@
   grid-column: 3;
   grid-row: span 2;
   z-index: 2;
+
   @media (max-width: $broken) {
     max-width: 120px;
     max-height: 320px;
@@ -685,7 +719,7 @@
   }
 }
 
-.path-videos .news-gallery .view-content > div:not(.no-result-search) {
+.path-videos .news-gallery .view-content>div:not(.no-result-search) {
   @media screen and (max-width: $tablet) {
     .banner-scroll .banner-horizontal {
       margin: 40px -15px;
@@ -693,7 +727,7 @@
   }
 }
 
-.path-search-results .news-gallery .view-content > div:not(.no-result-search),
+.path-search-results .news-gallery .view-content>div:not(.no-result-search),
 .path-taxonomy .news-gallery .views-infinite-scroll-content-wrapper,
 .view-last-news-in-error-page .view-content {
   @media screen and (max-width: $tablet) {
@@ -768,8 +802,10 @@
 .news-gallery .skys-scroll.skys2,
 .view-landing-thought-leaders .skys-scroll.skys2 {
   $screen-query: 993px;
+
   @media screen and (min-width: $screen-query) {
     position: relative;
+
     &:before {
       display: block;
       content: "";
@@ -785,6 +821,7 @@
     }
   }
 }
+
 ///---------- estilos para publicidad con close en mobile ---------//
 
 .block-fixed-block-content-horizontal-advertising-close {
@@ -896,7 +933,7 @@ div[data-ad-unit*="Home-post-main-headline"] {
 .page-node-type-news,
 .page-node-type-thought-leaders {
   .container-right {
-    > .margin-bottom.ads {
+    >.margin-bottom.ads {
       @media (max-width: $tablet) {
         margin: 0 -15px 45px;
         flex: 1 1 100%;
@@ -906,7 +943,7 @@ div[data-ad-unit*="Home-post-main-headline"] {
   }
 
   .content-news-internal-left {
-    > .block.block-gamw {
+    >.block.block-gamw {
       @media (max-width: $tablet) {
         margin-bottom: 45px;
         display: flex;
@@ -916,7 +953,7 @@ div[data-ad-unit*="Home-post-main-headline"] {
   }
 
   .content-page-node {
-    > .content-advertising   {
+    >.content-advertising {
       /* width: 100%;
       margin-left: -15px;
       margin-right: -15px;
