@@ -232,20 +232,26 @@
     }
 
     .title-employer {
-			display: flex;
-			align-items: center;
+			// display: flex;
+			// align-items: center;
       font-style: normal;
       font-weight: 600;
       font-size: $px36;
-      line-height: 43px;
+      line-height: 1;
       color: $cblack3;
       padding: 0px 0 10px;
       border-bottom: 1px solid $cblack3;
       margin: 0 0 40px;
       font-family: $ModernoFB-Regular;
+			word-break: break-all;
 
 			h2 {
+				display: inline-block;
+				max-width: 110px;
+				max-height: 40px;
 				margin-top: 0;
+				margin-right: 10px;
+				line-height: 1;
 			}
     }
 
@@ -432,6 +438,8 @@
       }
 
 			.title-employer h2 {
+				max-width: 45px;
+				margin-right: 5px;
 				line-height: 1;
 			}
 
