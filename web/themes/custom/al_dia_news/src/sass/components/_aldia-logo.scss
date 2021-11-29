@@ -267,6 +267,29 @@
   }
 }
 
+/* Page information */
+.block-field-blocknodepagebody {
+  h1 {
+    .aldia-logo-in-text {
+      max-width: 90px;
+
+      img {
+        height: 30px;
+      }
+    }
+
+    @media screen and (max-width: $tablet) {
+      .aldia-logo-in-text {
+        max-width: 50px;
+
+        img {
+          height: 15px;
+        }
+      }
+    }
+  }
+}
+
 /* Landing events */
 .path-about-al-dia-live-al-dia-live {
   .red-banner {
@@ -342,7 +365,6 @@
 }
 
 /* Landing employer */
-
 .style-jobs {
   .block-content-form {
     .title-employer {
