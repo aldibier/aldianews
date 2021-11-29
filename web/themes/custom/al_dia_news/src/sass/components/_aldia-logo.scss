@@ -12,6 +12,35 @@
 
 }
 
+/* Main news */
+
+.main-news {
+  .main-news-title {
+    .aldia-logo-in-text {
+      max-width: 108px;
+			max-height: 36px;
+
+      img {
+        height: 34px;
+      }
+    }
+
+    @media screen and(max-width:$broken) {
+      .aldia-logo-in-text {
+        max-width: 48px;
+
+        img {
+          min-height: auto;
+          width: 100%;
+          height: 17px;
+          position: relative;
+          top: 3px;
+        }
+      }
+    }
+  }
+}
+
 /* Card one column */
 .card-one-column .aldia-logo-in-text {
   max-width: 75px;
