@@ -961,3 +961,19 @@ div[data-ad-unit*="Home-post-main-headline"] {
     }
   }
 }
+
+.page-node-type-thought-leaders {
+  @media (max-width: $tablet) {
+    .block-views-blockmore-in-this-section-news-block-1 .view-content:not(.non-adversiting) {
+      .card-more:first-child {
+        margin-bottom: 60px;
+      }
+
+      .card-more:nth-of-type(2)::before {
+        top: calc(0% - 30px);
+        bottom: 0;
+        margin-bottom: 60px;
+      }
+    }
+  }
+}
