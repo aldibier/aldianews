@@ -1096,7 +1096,8 @@ $brokenPixelUp: $broken2 + 1;
 @media (max-width: $tablet) {
   #block-system-menu-block-jobs-landing-menu .menu {
     //padding: 20px 25px 0;
-    padding: 20px 0 0;
+    //padding: 20px 0 0;
+		padding: 0;
   }
 
   .jobs.style-jobs {
@@ -1105,6 +1106,7 @@ $brokenPixelUp: $broken2 + 1;
       //left: 25px;
       left: 0;
       padding: 0 25px;
+			margin-bottom: 5px;
     }
 		
     .block-content-form .modal-apply-webform.open {
@@ -1123,7 +1125,8 @@ $brokenPixelUp: $broken2 + 1;
     .block-banner-page .views-field-field-description .field-content {
       //left: 27px;
       left: 0;
-      bottom: 75px;
+      bottom: 73px;
+			margin-bottom: 10px;
       padding: 0 25px;
       //line-height: 28px;
       line-height: 1.5;
@@ -1131,7 +1134,9 @@ $brokenPixelUp: $broken2 + 1;
     }
 
     .block-menu-float {
-      margin: -75px 0 62px;
+			max-height: 26px;
+      //margin: -75px 0 62px;
+			margin: -50px 0 62px;
       //padding-left: 3px;
       padding: 0 25px;
 
@@ -1556,8 +1561,14 @@ $brokenPixelUp: $broken2 + 1;
 @media (max-width: $mobile-mid) {
   .jobs.style-jobs {
     h1 {
-      bottom: 75px;
+      bottom: 90px;
+			margin-bottom: 5px;
     }
+
+		.block-banner-page .views-field-field-description .field-content{
+			bottom: 90px;
+			min-height: 36px;
+		}
 
     .block-views-blockcarousel-jobs-landing-block-1 {
       .slick-list {
