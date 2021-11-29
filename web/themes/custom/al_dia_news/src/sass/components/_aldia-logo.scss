@@ -419,6 +419,60 @@
   }
 }
 
+/* Suscribe */
+
+.block-fixed-block-contentheader-landing-subscribe {
+  h2 {
+    .aldia-logo-in-text {
+      max-width: 79.44px;
+
+      img {
+        height: 24px;
+      }
+    }
+  }
+
+  @media (max-width: $tablet) {
+    h2 {
+      font-size: 17px;
+      line-height: 20px;
+
+			.aldia-logo-in-text {
+				max-width: 50px;
+			}
+
+      .aldia-logo-in-text img {
+        height: 16px;
+        width: initial;
+      }
+
+      .last-word {
+        display: none;
+      }
+    }
+  }
+}
+
+.block-fixed-block-contentpop-up-cancel-form-subscribe {
+  .aldia-logo-in-text {
+    height: 25px;
+    width: 83px;
+
+    img {
+      height: 100%;
+      width: auto;
+    }
+  }
+
+  @media (max-width: $tablet) {
+    .aldia-logo-in-text {
+      width: 50px;
+      height: 15px;
+    }
+  }
+
+}
+
 // .view-last-news-category-sons {
 //   .category-title {
 //     .aldia-logo-in-text {
