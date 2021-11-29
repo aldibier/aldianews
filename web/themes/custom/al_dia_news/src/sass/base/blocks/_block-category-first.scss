@@ -24,7 +24,6 @@
     }
 
     h1 {
-      max-height: 60px;
       margin: 0;
       font-family: $Mod-light;
       font-style: normal;
@@ -38,35 +37,16 @@
 .view-last-news-category-sons {
   .category-title {
     height: auto;
-    max-height: 70px;
+    max-height: none;
 
     h1 {
       display: flex;
-      align-items: center;
-      font-size: szrem(50);
+      font-size: szrem(42);
 
       @media screen and (max-width: $tablet) {
+				align-items: center;
         font-size: 20px;
         line-height: 1;
-      }
-    }
-
-    span {
-      max-height: 60px;
-
-      @media screen and (max-width: $tablet) {
-        max-height: 15px;
-      }
-    }
-
-    img {
-      width: 100%;
-      height: 45px;
-      margin-right: 5px;
-      order: 1;
-
-      @media screen and (max-width: $tablet) {
-        height: 22px;
       }
     }
   }
