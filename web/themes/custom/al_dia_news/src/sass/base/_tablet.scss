@@ -169,6 +169,7 @@
   //Infinite scroll thought leaders
   .path-thought-leaders .banner-scroll {
     margin-top: 0 !important;
+		z-index: 2;
 
     &::before {
       content: "";
@@ -189,15 +190,17 @@
 
   .path-thought-leaders .banner-horizontal {
     margin-top: 0 !important;
+		margin-bottom: 90px !important;
   }
 
   .path-thought-leaders .block-scroll {
     position: relative;
+    z-index: 2 !important;
     grid-column: 1/-1 !important;
     width: 100%;
     max-width: 100% !important;
     margin-top: 0 !important;
-    margin-bottom: 60px !important;
+    margin-bottom: 90px !important;
     text-align: center;
 
     &::before {
@@ -229,10 +232,22 @@
   }
 
   .path-thought-leaders .skys-scroll {
+		position: relative;
     grid-row: span 2 !important;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0px 0px 90px !important;
+
+    &::after {
+			content: "" !important;
+			display: block !important;
+			position: absolute;
+			left: calc(0% - 20px);
+			height: 100%;
+			width: 20px;
+			background-color: $cwhite;
+    }
   }
 
   .view-categories-sons .skyscraper-mobile {
@@ -291,18 +306,18 @@
   }
 
   .path-frontpage .view-categories-sons .skyscraper-mobile {
-		position: relative;
+    position: relative;
     margin: 35px 0 25px;
 
-		&::after {
-			content: '';
-			position: absolute;
-			bottom: 0;
-			right: 0;
-			height: 0.1mm;
-			width: 100vw;
-			background-color: #ccc;
-		}
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      height: 0.1mm;
+      width: 100vw;
+      background-color: #ccc;
+    }
   }
 
   .view-categories-sons .block-fixed-block-contentsquare-advertising-mobile {
@@ -442,16 +457,15 @@
   //.node--view-mode-basic-page-about-us .content-left-pages{
   //  margin-bottom: auto !important; }
 
-  .node--view-mode-basic-page-about-us .content-left-pages{
+  .node--view-mode-basic-page-about-us .content-left-pages {
     margin-bottom: 10px;
   }
 
-  .contact-us .container-wrapper .content-left-pages{
+  .contact-us .container-wrapper .content-left-pages {
     padding-bottom: 0;
   }
 
-  .page-node-type-news .node__content .container-right{
+  .page-node-type-news .node__content .container-right {
     margin-top: 0;
   }
 }
-  
