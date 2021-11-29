@@ -335,14 +335,41 @@
     @media (max-width: $tablet) {
       .title-employer h2 .aldia-logo-in-text {
         height: auto;
-				max-width: 45px;
+        max-width: 45px;
         margin-right: 10px;
 
-				img {
-					height: 15px;
-				}
+        img {
+          height: 15px;
+        }
       }
     }
+  }
+}
+
+/* Landing videos */
+.view-id-carousel_videos_landing {
+  .container-video-landing {
+    .aldia-logo-in-text {
+      max-width: 69px;
+      max-height: 23px;
+      line-height: 1;
+
+      img {
+        height: 22px;
+      }
+    }
+
+    @media (max-width: $tablet) {
+      .aldia-logo-in-text {
+        max-width: 47px;
+        max-height: 17px;
+
+        img {
+          height: 15px;
+        }
+      }
+    }
+
   }
 }
 
