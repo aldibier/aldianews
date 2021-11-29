@@ -152,6 +152,10 @@
     margin: 0 auto;
     padding: 0 10px;
 
+		@media screen and(max-width:$broken) {
+			margin: 0;
+    }
+
     @media screen and(max-width:$tablet) {
       padding: 0;
     }
