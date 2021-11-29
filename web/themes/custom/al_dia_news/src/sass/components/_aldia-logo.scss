@@ -253,19 +253,44 @@
 
       @media screen and(max-width:$tablet) {
         max-width: 47px;
-				max-height: 16px;
+        max-height: 16px;
       }
 
-			img {
-				@media screen and (max-width: $tablet) {
-					img {
-						height: 15px;
-					}
-				}
-	
-			}
+      img {
+        @media screen and (max-width: $tablet) {
+          img {
+            height: 15px;
+          }
+        }
+
+      }
     }
   }
+}
+
+/* Internal events */
+
+.page-node-type-event {
+  h1 .aldia-logo-in-text {
+    max-width: 126px;
+		max-height: 40px;
+
+    img {
+      height: 40px;
+      width: 100%;
+    }
+  }
+
+	@media (max-width: $tablet) {
+		h1 .aldia-logo-in-text {
+			max-width: 45px;
+	
+			img {
+				height: 14px;
+				width: 100%;
+			}
+		}
+	}
 }
 
 // .view-last-news-category-sons {

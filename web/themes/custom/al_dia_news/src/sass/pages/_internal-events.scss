@@ -14,7 +14,7 @@
     font-style: normal;
     font-weight: bold;
     font-size: $px50;
-    line-height: 60px;
+    line-height: 50px;
     text-transform: uppercase;
     color: $cwhite;
     margin: 0px 0px 25px;
@@ -42,14 +42,14 @@
   }
 
   .contextual-region,
-  .view-header-of-the-event-internal .view-content > .views-row {
+  .view-header-of-the-event-internal .view-content>.views-row {
     position: initial;
     max-width: 1310px;
     margin: 0 auto;
   }
 
   .block-field-blocknodeeventfield-image {
-    > div.content {
+    >div.content {
       position: absolute;
       top: 0px;
       left: 0px;
@@ -192,6 +192,10 @@
     gap: 15px 0;
   }
 
+  .banner-events .section-flex {
+    flex-wrap: wrap;
+  }
+
   .view-id-header_of_the_event_internal .view-footer {
     max-width: 1310px;
     margin: 0 auto;
@@ -205,6 +209,13 @@
     max-width: 1310px;
     margin: 45px auto 30px;
     padding: 0 15px;
+  }
+
+
+  .block-field-blocknodeeventbody {
+    @media (max-width: $tablet) {
+      margin-bottom: 30px;
+    }
   }
 
   .content-present-by-advertising {
@@ -229,8 +240,8 @@
     //display: flex;
     //align-items: center;
     //flex-wrap: wrap;
-		flex: 0 1 840px;
-		width: 100%;
+    flex: 0 1 840px;
+    width: 100%;
     //max-width: 100%;
     margin-right: 40px;
 
@@ -395,7 +406,7 @@
   ///--- view modes -----//
   .mode-one {
     //max-width: 100%;
-		max-width: 840px;
+    max-width: 840px;
     margin-right: auto;
 
     .item-list ul li {
@@ -629,6 +640,7 @@
     background-size: contain;
     left: 0px;
     cursor: pointer;
+
     &.slick-disabled {
       opacity: 0.3;
     }
@@ -639,6 +651,7 @@
     background-size: contain;
     right: 0px;
     cursor: pointer;
+
     &.slick-disabled {
       opacity: 0.3;
     }
@@ -864,7 +877,7 @@
     width: 100%;
   }
 
-  .SumoSelect > .CaptionCont,
+  .SumoSelect>.CaptionCont,
   form select {
     min-height: 40px;
     margin-top: 4px;
@@ -880,11 +893,11 @@
     }
   }
 
-  .SumoSelect .optWrapper > .options > li label {
+  .SumoSelect .optWrapper>.options>li label {
     min-height: 45px;
   }
 
-  .SumoSelect.open > .optWrapper {
+  .SumoSelect.open>.optWrapper {
     top: 44px;
   }
 
@@ -919,12 +932,12 @@
     max-width: 355px;
   }
 
-  .SumoSelect .optWrapper > .options > li label {
+  .SumoSelect .optWrapper>.options>li label {
     min-height: 45px;
     color: #000000;
   }
 
-  .SumoSelect.open > .optWrapper {
+  .SumoSelect.open>.optWrapper {
     top: 39px;
 
     @media (max-width: $tablet) {
@@ -983,8 +996,7 @@
 
 //------------------ Media Queries ------------//
 @media (max-width: $broken) {
-  .guest-event-advertising .mode-one {
-  }
+  .guest-event-advertising .mode-one {}
 
   .guest-event-advertising .mode-two,
   .guest-event-advertising .mode-three,
@@ -1106,7 +1118,7 @@
       overflow: hidden;
       margin-bottom: 15px;
 
-      > div {
+      >div {
         overflow: hidden;
       }
     }
@@ -1171,7 +1183,7 @@
       margin: 10px 0 5px;
     }
 
-    .block-extra-field-blocknodenewsaddtoany > .content {
+    .block-extra-field-blocknodenewsaddtoany>.content {
       margin: 10px auto 10px 0;
     }
   }
@@ -1411,6 +1423,7 @@
   //------------------ Formulario modal nominate ------------//
 
   .webform-submission-nominate-form {
+
     #edit-markup,
     label[for*="nominee-information"] {
       font-size: $px20;
@@ -1455,7 +1468,7 @@
       min-height: 30px;
     }
 
-    .SumoSelect > .CaptionCont,
+    .SumoSelect>.CaptionCont,
     form select {
       min-height: 30px;
     }
@@ -1467,6 +1480,7 @@
   }
 
   .webform-submission-sponsorship-upcoming-event-form {
+
     .form-type-textfield,
     .form-type-email,
     .js-form-type-select {
