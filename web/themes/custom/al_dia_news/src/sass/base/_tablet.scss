@@ -169,7 +169,7 @@
   //Infinite scroll thought leaders
   .path-thought-leaders .banner-scroll {
     margin-top: 0 !important;
-		z-index: 2;
+    z-index: 2;
 
     &::before {
       content: "";
@@ -188,9 +188,13 @@
     }
   }
 
+  .path-thought-leaders .banner-scroll:not(.ban2, .ban3, .last-banner) {
+    margin-top: 90px !important;
+  }
+
   .path-thought-leaders .banner-horizontal {
     margin-top: 0 !important;
-		margin-bottom: 90px !important;
+    margin-bottom: 90px !important;
   }
 
   .path-thought-leaders .block-scroll {
@@ -232,7 +236,7 @@
   }
 
   .path-thought-leaders .skys-scroll {
-		position: relative;
+    position: relative;
     grid-row: span 2 !important;
     display: flex;
     justify-content: center;
@@ -240,13 +244,13 @@
     margin: 0px 0px 90px !important;
 
     &::after {
-			content: "" !important;
-			display: block !important;
-			position: absolute;
-			left: calc(0% - 20px);
-			height: 100%;
-			width: 20px;
-			background-color: $cwhite;
+      content: "" !important;
+      display: block !important;
+      position: absolute;
+      left: calc(0% - 20px);
+      height: 100%;
+      width: 20px;
+      background-color: $cwhite;
     }
   }
 
@@ -467,5 +471,28 @@
 
   .page-node-type-news .node__content .container-right {
     margin-top: 0;
+  }
+}
+
+@media (min-width: $tablet) and (max-width: $broken) {
+
+  // interna thoguh leaders
+  .page-node-type-thought-leaders {
+    .view-more-authors {
+      .skyscraper-mobile {
+				position: relative;
+        margin-top: 0 !important;
+        margin-bottom: 40px !important;
+
+        &::before {
+          content: '';
+          position: absolute;
+          left: calc(0% - 10px);
+          width: 10px;
+          height: 100%;
+          background-color: white;
+        }
+      }
+    }
   }
 }
