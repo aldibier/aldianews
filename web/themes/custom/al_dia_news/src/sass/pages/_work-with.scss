@@ -6,9 +6,10 @@
   .content-page-node {
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 40px !important;
 
-    @media screen and (max-width: $tablet) {
-      margin-bottom: 40px !important;
+    @media screen and (min-width: $broken) {
+      margin-bottom: 0 !important;
     }
 
   }
@@ -20,7 +21,7 @@
 
     .container-content {
       @media screen and (min-width: $tablet) {
-        margin-bottom: 100px;
+        margin-bottom: 100px !important;
       }
     }
 
