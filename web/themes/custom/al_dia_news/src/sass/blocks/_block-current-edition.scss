@@ -263,6 +263,14 @@
         margin: 0;
       }
 
+			.field--name-body {
+				margin-bottom: 20px;
+
+				@media screen and(max-width:$tablet) {
+					margin-bottom: 0;
+				}
+			}
+
       .dollar-sing {
         margin-right: 2px;
         font-family: $NimS-bold;
