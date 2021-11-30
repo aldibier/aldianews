@@ -100,6 +100,30 @@
     }
   }
 
+  .path-taxonomy {
+
+    .block-fixed-block-contentsquare-advertising-mobile,
+    .block-fixed-block-content-small-vertical-advertising {
+      max-width: 100%;
+      max-height: initial;
+      overflow: initial;
+      margin: 0;
+      grid-column: initial;
+    }
+
+
+    .views-field-view-1:not(.non-adversiting .views-field-view-1) {
+      .card-one-column:nth-of-type(2)::before {
+        content: '';
+        position: absolute;
+        top: calc(0% - 35px);
+        width: 100vw;
+        height: 1px;
+        background-color: $cgrey4;
+      }
+    }
+  }
+
   .skyscraper-mobile {
     grid-row: span 2;
     margin: 0px 0px 0px 19px;
@@ -220,6 +244,18 @@
       }
     }
   }
+}
+
+//----------------- landing category infinite scroll ----------------------------------//
+.path-taxonomy .views-infinite-scroll-content-wrapper:not(.non-adversiting) {
+  .block-scroll::before {
+    content: none !important;
+  }
+
+  .skys-scroll::before {
+    margin: 0 !important;
+  }
+
 }
 
 //----------------- thought leaders ----------------------------------//

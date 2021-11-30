@@ -192,6 +192,12 @@
     gap: 15px 0;
   }
 
+  .section-event-body.section-flex {
+    @media (max-width: $tablet) {
+      flex-direction: column;
+    }
+  }
+
   .banner-events .section-flex {
     flex-wrap: wrap;
   }
@@ -230,13 +236,13 @@
   }
 
   .body-lateral-section {
-    //display: flex;
-    //align-items: center;
-    //flex-wrap: wrap;
     flex: 0 1 840px;
     width: 100%;
-    //max-width: 100%;
     margin-right: 40px;
+
+    @media (max-width: $broken) {
+      flex: 0 1 auto;
+    }
 
     p {
       font-family: $PrNovacond-light;

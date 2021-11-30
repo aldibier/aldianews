@@ -166,6 +166,30 @@
     }
   }
 
+  //Infinite scroll category 
+  .path-taxonomy #block-al-dia-news-content {
+    .views-infinite-scroll-content-wrapper {
+      .banner-scroll {
+        .banner-horizontal {
+          margin: 35px auto 35px !important;
+        }
+      }
+
+      .block-scroll {
+        &::before {
+          content: "" !important;
+          position: absolute;
+          top: calc(0% - 70px) !important;
+          display: block !important;
+          width: 100% !important;
+          max-width: 100% !important;
+          height: 70px !important;
+          background-color: $cwhite;
+        }
+      }
+    }
+  }
+
   //Infinite scroll videos
   .path-more-covers .banner-scroll {
     &::before {
