@@ -124,7 +124,7 @@
       content: "";
       position: absolute;
       z-index: 1;
-      top: calc(0% - 35px);
+      top: calc(0% - 36px);
       left: 0;
       display: block !important;
       width: 100vw !important;
@@ -164,6 +164,20 @@
       content: none !important;
       display: none !important;
     }
+  }
+
+  //Infinite scroll videos
+  .path-videos .banner-scroll {
+
+    &::before,
+    &::after {
+      background-color: #333;
+    }
+
+    .banner-horizontal {
+      margin: 35px auto !important;
+    }
+
   }
 
   //Infinite scroll thought leaders
@@ -405,12 +419,12 @@
     justify-content: center;
     align-items: center;
     grid-column: initial !important;
-		margin-bottom: 80px;
+    margin-bottom: 80px;
 
-		&::before,
-		&::after {
+    &::before,
+    &::after {
       content: none !important;
-			display: none !important;
+      display: none !important;
     }
   }
 
@@ -429,12 +443,12 @@
 
     &::after {
       content: none !important;
-			display: none !important;
+      display: none !important;
     }
 
-		.banner-horizontal{
-			margin: 0 auto 80px !important;
-		}
+    .banner-horizontal {
+      margin: 0 auto 80px !important;
+    }
 
   }
 

@@ -47,7 +47,9 @@
         }
       }
 
-      @media screen and (min-width: $broken) {
+			$brokenUp: $broken + 1;
+
+      @media screen and (min-width: $brokenUp) {
 				&:nth-child(-n+3){
 					margin-top: 0;
 				}
