@@ -398,21 +398,51 @@
   }
 
   // job seeker
+  .path-job-seeker .views-infinite-scroll-content-wrapper:not(.non-adversiting) .block-scroll {
+    all: initial;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: initial !important;
+		margin-bottom: 80px;
+
+		&::before,
+		&::after {
+      content: none !important;
+			display: none !important;
+    }
+  }
+
+  .path-job-seeker .views-infinite-scroll-content-wrapper:not(.non-adversiting) .banner-scroll {
+
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      top: calc(0% - 80px);
+      width: 100vw;
+      height: 80px;
+      background-color: white;
+      display: block !important;
+    }
+
+    &::after {
+      content: none !important;
+			display: none !important;
+    }
+
+		.banner-horizontal{
+			margin: 0 auto 80px !important;
+		}
+
+  }
 
   .path-job-seeker .views-infinite-scroll-content-wrapper:not(.non-adversiting) .block-scroll,
-  .path-jobs .views-infinite-scroll-content-wrapper:not(.non-adversiting) .block-scroll {
-    margin: 20px auto;
-    align-self: center;
-    text-align: center;
-  }
+  .path-jobs .views-infinite-scroll-content-wrapper:not(.non-adversiting) .block-scroll {}
 
   .path-job-seeker .views-infinite-scroll-content-wrapper:not(.non-adversiting) .block-scroll.block2,
-  .path-jobs .views-infinite-scroll-content-wrapper:not(.non-adversiting) .block-scroll.block2 {
-    margin: 20px auto 40px;
-    // &::before{
-    //     bottom: calc(0% - 20px);
-    // }
-  }
+  .path-jobs .views-infinite-scroll-content-wrapper:not(.non-adversiting) .block-scroll.block2 {}
 
   .path-job-seeker .views-infinite-scroll-content-wrapper:not(.non-adversiting) .skys-scroll,
   .path-jobs .views-infinite-scroll-content-wrapper:not(.non-adversiting) .skys-scroll {
@@ -480,7 +510,7 @@
   .page-node-type-thought-leaders {
     .view-more-authors {
       .skyscraper-mobile {
-				position: relative;
+        position: relative;
         margin-top: 0 !important;
         margin-bottom: 40px !important;
 
