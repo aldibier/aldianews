@@ -64,7 +64,7 @@
   .aldia-logo-in-text {
     max-width: 47px;
     height: 17px;
-		line-height: 1;
+    line-height: 1;
 
     img {
       height: 17px;
@@ -94,10 +94,34 @@
 .page-node-type-news,
 .page-node-type-thought-leaders {
   .card-more .aldia-logo-in-text img {
-    width: auto;
-    min-width: auto;
-    bottom: 0;
+    width: inherit;
+    min-width: initial;
   }
+
+  @media (max-width: $broken) {
+    .card-more .aldia-logo-in-text {
+      max-width: 50px;
+      max-height: 15px;
+      line-height: 1;
+
+      img {
+        height: 15px;
+      }
+    }
+  }
+
+	@media (max-width: $tablet) {
+    .card-more .aldia-logo-in-text {
+      max-width: 40px;
+      max-height: 12px;
+
+      img {
+        height: 12px;
+				max-width: 40px;
+      }
+    }
+  }
+
 }
 
 /* Category title */
@@ -437,9 +461,9 @@
       font-size: 17px;
       line-height: 20px;
 
-			.aldia-logo-in-text {
-				max-width: 50px;
-			}
+      .aldia-logo-in-text {
+        max-width: 50px;
+      }
 
       .aldia-logo-in-text img {
         height: 16px;

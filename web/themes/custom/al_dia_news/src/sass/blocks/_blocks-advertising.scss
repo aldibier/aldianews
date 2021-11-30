@@ -977,3 +977,24 @@ div[data-ad-unit*="Home-post-main-headline"] {
     }
   }
 }
+
+//More covers
+.path-more-covers {
+  .banner-scroll {
+		position: relative;
+		
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 70px;
+      bottom: calc(0% - 70px);
+      background-color: $cwhite;
+      z-index: 1;
+    }
+
+    .banner-horizontal {
+      margin-bottom: 0;
+    }
+  }
+}

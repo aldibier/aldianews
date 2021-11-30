@@ -5,6 +5,7 @@
     line-height: 50px;
     letter-spacing: 1px;
     margin: 30px 0 10px;
+
     @media (max-width: $tablet) {
       margin: 0px 0 10px;
     }
@@ -69,6 +70,7 @@
     .view-header {
       border-top: 3px solid $cblack3;
     }
+
     // .field__label,
     h2 {
       font-style: normal;
@@ -88,9 +90,10 @@
       display: flex;
       flex-wrap: wrap;
 
-      > .field__item {
+      >.field__item {
         width: 50%;
         margin: 35px 0;
+
         &:nth-child(2n) {
           padding: 0 0 0 20px;
           position: relative;
@@ -153,6 +156,7 @@
       color: $corange;
       font-family: $ModernoFB-Regular;
       text-transform: uppercase;
+
       a {
         font-style: normal;
         font-weight: 600;
@@ -181,6 +185,7 @@
     .content-right-pages {
       position: relative;
       margin-bottom: 69px;
+
       &::after {
         content: "";
         width: 0;
@@ -198,7 +203,7 @@
   @media (max-width: $broken) {
     .related-content-covers {
       .field__items {
-        > .field__item {
+        >.field__item {
           &:nth-child(2n + 1) {
             &:before {
               width: 100%;
@@ -231,9 +236,11 @@
 
     .related-content-covers {
       margin: 30px auto 0;
+
       .view-header {
         border-top: 1.5px solid $cblack3;
       }
+
       // .field__label,
       h2 {
         font-size: 15px;
@@ -250,6 +257,7 @@
         margin: 0 0 0px;
         font-size: 10px;
         line-height: 12px;
+
         a {
           font-size: 10px;
           line-height: 12px;
@@ -265,7 +273,8 @@
         display: flex;
         flex-wrap: wrap;
         position: relative;
-        > .field__item {
+
+        >.field__item {
           margin: 20px 0;
 
           &:nth-child(2n) {
@@ -287,6 +296,7 @@
         }
       }
     }
+
     .content-right-pages {
       border-top: 0.5px solid #b1b1b1;
       padding-top: 40px;
@@ -303,25 +313,6 @@
 // --------landing more-covers -----------///
 
 .flex-style {
-  .view-content > div {
-		display: grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-gap: 70px 40px;
-
-    .views-row {
-      // &:nth-child(3n + 4):before {
-      //   display: block;
-      //   content: "";
-      //   width: 100%;
-      //   height: 1px;
-      //   left: 0;
-      //   background: #b1b1b1;
-      //   position: absolute;
-      //   right: 0;
-      //   margin: -35px 0;
-      // }
-    }
-  }
   .block-fixed-block-contenthorizontal-advertising {
     width: 100%;
     margin: 30px auto;
@@ -329,31 +320,57 @@
 }
 
 .view-more-covers-landing {
-  .views-infinite-scroll-content-wrapper::after {
-    display: block;
-    position: relative;
-    width: 392px;
+
+  .views-infinite-scroll-content-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 70px 40px;
+    margin-bottom: 100px;
+    overflow: hidden;
   }
+
   .view-content {
     margin: 30px auto;
   }
+
   .views-row {
+    position: relative;
     max-width: 100%;
+
+    &:nth-of-type(3n + 4)::before {
+      content: '';
+      position: absolute;
+      top: calc(0% - 35px);
+      width: 100vw;
+      height: 1px;
+      background-color: $cgrey4;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: calc(0% - 20px);
+      width: 1px;
+      height: 100%;
+      background-color: $cgrey4;
+    }
+
   }
+
   .views-field-field-cover-page {
-    max-width: 400px;
-    width: 100%;
-    max-height: 440px;
-    height: auto;
-    overflow: hidden;
     margin-bottom: 20px;
+
     img {
       width: 100%;
+      max-width: 100%;
       height: auto;
     }
   }
+
   .views-field-title {
     margin-bottom: 5px;
+
     a {
       font-family: $PrNovacond-Sbold;
       font-style: normal;
@@ -364,6 +381,7 @@
       color: $cblack;
     }
   }
+
   .date-more-covers {
     font-family: $PrNovacond-reg;
     font-style: normal;
@@ -375,58 +393,72 @@
 }
 
 @media (max-width: $broken) {
-  .flex-style .view-content > div {
-    .views-row {
-      padding-right: 0px;
-      border-right: 0px solid #b1b1b1;
-      &:nth-child(3n + 4):before {
-        display: none;
-      }
-    }
-  }
-
   .view-more-covers-landing {
     .views-infinite-scroll-content-wrapper {
-      display: grid !important;
       grid-template-columns: 1fr 1fr;
-      grid-gap: 10px;
-      &::after {
-        display: none;
-      }
     }
+
     .views-row {
-      max-width: none;
-      margin-bottom: 40px;
-      min-height: 225px;
-      margin-bottom: 10px;
-      padding-bottom: 20px;
-      &:nth-child(odd):before {
-        display: block;
-        content: "";
-        width: 100%;
-        height: 1px;
-        left: 0;
-        background: #b1b1b1;
-        position: absolute;
-        right: 0;
-        margin: -20px 0;
+      &:nth-child(3n + 4)::before {
+        content: none;
       }
-      &:nth-child(1):before {
-        display: none;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: calc(0% - 35px);
+        width: 100vw;
+        height: 1px;
+        background-color: $cgrey4;
+      }
+
+      &:nth-child(1)::before,
+      &:nth-child(2)::before {
+        content: none;
+      }
+
+    }
+  }
+}
+
+@media (max-width: $tablet) {
+  .view-more-covers-landing {
+    .views-infinite-scroll-content-wrapper {
+      grid-gap: 40px 10px;
+      margin-bottom: 40px;
+    }
+
+    .views-row {
+      &::after {
+        content: none;
+      }
+
+      &:nth-child(2n + 3)::before {
+        top: calc(0% - 20px);
       }
     }
+
     .views-field-field-cover-page {
       max-width: none;
-      max-height: 155px;
+      min-height: 155px;
       margin-bottom: 10px;
+      line-height: 1;
+
+      img {
+        min-height: 155px;
+      }
+
     }
+
     .views-field-title {
       min-height: 38px;
+
       a {
         font-size: $px14;
         line-height: 17px;
       }
     }
+
     .date-more-covers {
       font-size: $px10;
       line-height: 12px;
@@ -441,20 +473,25 @@
     font-weight: normal;
     font-family: $PrNovacond-reg;
   }
+
   .SumoSelect {
     width: 230px;
     height: 50px;
   }
+
   .form--inline.clearfix {
     display: flex;
     align-items: flex-end;
     flex-wrap: wrap;
   }
+
   .form-type-select {
     margin: 40px 20px 20px 0px;
   }
+
   .form-actions {
     margin-bottom: 15px;
+
     input {
       min-height: 50px;
       width: 155px;
@@ -463,70 +500,87 @@
       font-family: $PrNovacond-Sbold;
     }
   }
+
   .SumoSelect:focus-within .CaptionCont {
     outline: 0px;
   }
+
   .CaptionCont.SelectBox {
     padding-left: 18px;
   }
-  .SumoSelect > .CaptionCont {
+
+  .SumoSelect>.CaptionCont {
     min-height: 50px;
   }
-  .SumoSelect .optWrapper > .options > li label {
+
+  .SumoSelect .optWrapper>.options>li label {
     min-height: 45px;
     color: #333333;
     font-weight: normal;
   }
-  .SumoSelect.open > .optWrapper {
+
+  .SumoSelect.open>.optWrapper {
     top: 50px;
   }
-  .SumoSelect > .optWrapper > .options {
+
+  .SumoSelect>.optWrapper>.options {
     // max-height: 275px;
     max-height: 220px;
     border-right: 12px solid #ededed;
   }
 }
+
 @media (max-width: $tablet) {
   #views-exposed-form-more-covers-landing-page-1 {
     .SumoSelect {
       width: 100%;
       height: 30px;
     }
+
     .form-type-select {
       margin: 20px auto 15px;
       width: 100%;
     }
+
     .CaptionCont.SelectBox {
       padding-left: 15px;
     }
+
     .form-actions {
       margin-bottom: 10px;
       max-width: 100px;
+
       input {
         min-height: 30px;
         width: 100px;
         max-width: 100px;
       }
     }
-    .SumoSelect .optWrapper > .options > li label {
+
+    .SumoSelect .optWrapper>.options>li label {
       min-height: 40px;
     }
-    .SumoSelect > .CaptionCont {
+
+    .SumoSelect>.CaptionCont {
       min-height: 30px;
     }
-    .SumoSelect.open > .optWrapper {
+
+    .SumoSelect.open>.optWrapper {
       top: 35px;
       z-index: 1;
     }
-    .SumoSelect > .optWrapper > .options {
+
+    .SumoSelect>.optWrapper>.options {
       max-height: 245px;
     }
-    .SumoSelect > .CaptionCont > span {
+
+    .SumoSelect>.CaptionCont>span {
       line-height: 18px;
       font-weight: 500;
     }
   }
-  .advertising-covers #block-gamwadvertisement-6 .content > div > div {
+
+  .advertising-covers #block-gamwadvertisement-6 .content>div>div {
     text-align: center;
   }
 }
