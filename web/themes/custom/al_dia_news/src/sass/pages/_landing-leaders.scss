@@ -288,7 +288,6 @@
       font-family: $PrNovacond-bold;
       color: $cblack3;
       padding: 5px 0 0;
-			@include ellipsis(115px,3);	
 
       a {
         font-style: normal;
@@ -414,27 +413,27 @@
         }
       }
 
-			>.views-field-nothing {
-				height: inherit;
-			}
+      >.views-field-nothing {
+        height: inherit;
+      }
 
-			>.views-field-nothing>.field-content {
-				display: block;
-				height: inherit;
-			}
+      >.views-field-nothing>.field-content {
+        display: block;
+        height: inherit;
+      }
 
-			.more-content-landing {
-				display: flex;
-				flex-direction: column;
-				height: 100%;
-			}
+      .more-content-landing {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
 
-			.information-node-more-content {
-				display: flex;
-				flex-direction: column;
-				flex: 1 1 100%;
-				height: 100%;
-			}
+      .information-node-more-content {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 100%;
+        height: 100%;
+      }
 
     }
 
@@ -486,6 +485,7 @@
       margin: 20px 0 0;
       font-family: $PrNovacond-bold;
       color: $cblack3;
+      @include ellipsis(115px, 3);
 
       a {
         font-style: normal;
@@ -497,9 +497,9 @@
     }
 
     .authored-on-landing {
-			display: flex;
-			align-items: center;
-			flex: 1 1 100%;
+      display: flex;
+      align-items: center;
+      flex: 1 1 100%;
       font-style: normal;
       font-weight: normal;
       font-size: $px20;
@@ -564,8 +564,13 @@
         max-width: 100%;
       }
 
+      .views-row:nth-child(1),
+      .views-row:nth-child(2) {
+        margin-bottom: 0;
+      }
+
       .title-node-landing {
-        min-height: initial;
+        //min-height: initial;
       }
     }
   }
@@ -712,7 +717,7 @@
         .author-information-more-content {
           flex-wrap: wrap;
         }
-       
+
       }
 
       .name-profession-author {
@@ -736,6 +741,7 @@
         font-size: 15px;
         line-height: 18px;
         margin: 0;
+				@include ellipsis(75px,4)
       }
 
       .authored-on-landing {
