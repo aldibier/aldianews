@@ -564,8 +564,8 @@
         max-width: 100%;
       }
 
-      .views-row:nth-child(1),
-      .views-row:nth-child(2) {
+      .views-row:nth-last-child(1),
+      .views-row:nth-last-child(2) {
         margin-bottom: 0;
       }
 
@@ -738,6 +738,8 @@
       }
 
       .title-node-landing {
+				height: 75px;
+				min-height: 76px;
         font-size: 15px;
         line-height: 18px;
         margin: 0;
