@@ -132,10 +132,11 @@ body.toolbar-tray-open.user-logged-in {
     display: block;
   }
 }
+
 @media (max-width: $broken) {
   .ads-aboutus-mobile {
-		display: flex;
-		justify-content: center;
+    display: flex;
+    justify-content: center;
     margin: 20px auto 40px;
   }
 }
@@ -368,7 +369,7 @@ body.toolbar-tray-open.user-logged-in {
 .margin-top {
   margin-top: 20px;
 
-  > div {
+  >div {
     margin-top: 20px;
   }
 }
@@ -398,6 +399,14 @@ p:last-child {
 }
 
 .node__content {
-	margin-top: 0;
-	font-size: initial;
+  margin-top: 0;
+  font-size: initial;
+}
+
+ul,
+ol,
+.text-formatted ul,
+.text-formatted ol {
+  padding: 0;
+  list-style-position: inside;
 }
