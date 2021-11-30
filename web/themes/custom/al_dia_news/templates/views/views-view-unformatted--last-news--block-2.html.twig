@@ -33,13 +33,13 @@
 
 	{% if (loop.index == 1) and (device == 'mobile') %}
 		{% if rows.index_pos[0] == 1  %}
-			<div class="skyscraper-mobile ads">{{ drupal_entity('block', 'gamwadvertisement_29') }}</div>
+			<span class="skyscraper-mobile ads">{{ drupal_entity('block', 'gamwadvertisement_29') }}</span>
 		{% endif %}
 		{% if rows.index_pos[0] == 2 %}
-			<div class="skyscraper-mobile ads">{{ drupal_entity('block', 'gamwadvertisement_35') }}</div>
+			<span class="skyscraper-mobile ads">{{ drupal_entity('block', 'gamwadvertisement_35') }}</span>
 		{% endif %}
 		{% if rows.index_pos[0] == 3  %}
-			<div class="skyscraper-mobile ads">{{ drupal_entity('block', 'gamwadvertisement_11') }}</div>
+			<span class="skyscraper-mobile ads">{{ drupal_entity('block', 'gamwadvertisement_11') }}</span>
 		{% endif %}
 	{% endif %}
 {% endfor %}
