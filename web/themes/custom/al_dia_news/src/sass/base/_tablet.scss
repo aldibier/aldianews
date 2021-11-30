@@ -167,6 +167,13 @@
   }
 
   //Infinite scroll videos
+  .path-more-covers .banner-scroll {
+    &::before {
+      top: calc(0% - 70px);
+    }
+  }
+
+  //Infinite scroll videos
   .path-videos .banner-scroll {
 
     &::before,
@@ -519,6 +526,16 @@
 }
 
 @media (min-width: $tablet) and (max-width: $broken) {
+
+  //Infinite more covers
+  .path-more-covers .banner-scroll {
+    &::before {
+      top: calc(0% - 70px);
+      height: 70px;
+      background-color: $cwhite;
+      display: block !important;
+    }
+  }
 
   // interna thoguh leaders
   .page-node-type-thought-leaders {

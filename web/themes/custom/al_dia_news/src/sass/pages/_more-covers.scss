@@ -337,13 +337,15 @@
     position: relative;
     max-width: 100%;
 
-    &:nth-of-type(3n + 4)::before {
-      content: '';
-      position: absolute;
-      top: calc(0% - 35px);
-      width: 100vw;
-      height: 1px;
-      background-color: $cgrey4;
+    @media (min-width: $broken) {
+      &:nth-of-type(3n + 4)::before {
+        content: '';
+        position: absolute;
+        top: calc(0% - 35px);
+        width: 100vw;
+        height: 1px;
+        background-color: $cgrey4;
+      }
     }
 
     &::after {
@@ -399,10 +401,6 @@
     }
 
     .views-row {
-      &:nth-child(3n + 4)::before {
-        content: none;
-      }
-
       &::before {
         content: '';
         position: absolute;
@@ -426,15 +424,29 @@
     .views-infinite-scroll-content-wrapper {
       grid-gap: 40px 10px;
       margin-bottom: 40px;
+      overflow: visible;
     }
 
     .views-row {
-      &::after {
-        content: none;
+      &::before {
+        display: none;
       }
 
-      &:nth-child(2n + 3)::before {
-        top: calc(0% - 20px);
+      &:nth-of-type(odd)::before {
+        width: calc(100vw - 30px);
+        height: 0;
+        margin: 0 auto;
+        padding: .1mm;
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+				top: calc(0% - 20px);
+        background: $cgrey4;
+      }
+
+      &::after {
+        content: none;
       }
     }
 

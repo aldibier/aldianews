@@ -981,8 +981,8 @@ div[data-ad-unit*="Home-post-main-headline"] {
 //More covers
 .path-more-covers {
   .banner-scroll {
-		position: relative;
-		
+    position: relative;
+
     &::after {
       content: '';
       position: absolute;
@@ -994,7 +994,14 @@ div[data-ad-unit*="Home-post-main-headline"] {
     }
 
     .banner-horizontal {
-      margin-bottom: 0;
+      margin: 0 auto !important;
+    }
+
+    @media (max-width: $tablet) {
+      &::after {
+        height: 40px;
+        bottom: calc(0% - 40px);
+      }
     }
   }
 }
