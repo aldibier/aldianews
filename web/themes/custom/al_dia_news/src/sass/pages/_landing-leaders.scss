@@ -125,11 +125,11 @@
       }
     }
 
-		.information-node-more-content .authored-on-landing {
-			display: flex;
-			flex-direction: column;
-			flex: 1 1 100%;
-		}
+    .information-node-more-content .authored-on-landing {
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 100%;
+    }
 
     .more-content-landing {
       height: 100%;
@@ -328,7 +328,7 @@
     }
 
     @media (max-width: $tablet) {
-			grid-gap: 0 30px;
+      grid-gap: 0 30px;
       margin-bottom: 30px;
       overflow: initial;
     }
@@ -412,6 +412,27 @@
           }
         }
       }
+
+			>.views-field-nothing {
+				height: inherit;
+			}
+
+			>.views-field-nothing>.field-content {
+				display: block;
+				height: inherit;
+			}
+
+			.more-content-landing {
+				display: flex;
+				flex-direction: column;
+				height: 100%;
+			}
+
+			.information-node-more-content {
+				display: flex;
+				flex-direction: column;
+			}
+
     }
 
     .author-information-more-content {
@@ -473,6 +494,7 @@
     }
 
     .authored-on-landing {
+			flex: 1 1 100%;
       font-style: normal;
       font-weight: normal;
       font-size: $px20;
@@ -674,7 +696,6 @@
 
     .views-infinite-scroll-content-wrapper {
       .views-row {
-
         &:nth-last-of-type(-n+2) {
           margin-bottom: 0;
 
@@ -686,11 +707,7 @@
         .author-information-more-content {
           flex-wrap: wrap;
         }
-
-				.information-node-more-content {
-					display: flex;
-					flex-direction: column;
-				}
+       
       }
 
       .name-profession-author {
