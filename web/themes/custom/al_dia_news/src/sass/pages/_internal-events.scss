@@ -221,10 +221,11 @@
     display: flex;
     margin: 40px auto 0 !important;
 
-    @media (max-width: 1200px) {
+    @media (max-width: $desktop) {
       margin: 0px auto 0 !important;
 
-      .maxim {
+      .maxim,
+      .body-lateral-section-advertising {
         display: none;
       }
 
@@ -404,9 +405,14 @@
 
   ///--- view modes -----//
   .mode-one {
-    //max-width: 100%;
-    max-width: 840px;
+    max-width: 100%;
+    //max-width: 840px;
+    padding-right: 440px;
     margin-right: auto;
+
+    @media (max-width: $desktop) {
+      padding-right: 0;
+    }
 
     @media (max-width: $broken) {
       max-width: 100%;
