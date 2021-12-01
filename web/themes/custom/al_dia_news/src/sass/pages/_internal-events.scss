@@ -193,7 +193,7 @@
   }
 
   .section-event-body.section-flex {
-    @media (max-width: $tablet) {
+    @media (max-width: $broken) {
       flex-direction: column;
     }
   }
@@ -408,6 +408,10 @@
     max-width: 840px;
     margin-right: auto;
 
+    @media (max-width: $broken) {
+      max-width: 100%;
+    }
+
     .item-list ul li {
       max-width: 650px;
       border-right: 0px;
@@ -468,6 +472,15 @@
 
     .four-content-event-advertising {
       display: block;
+      margin: 0 auto;
+
+      .block-gamw {
+        margin-bottom: 100px;
+      }
+
+      @media (max-width:$tablet) {
+        margin-bottom: 50px;
+      }
     }
   }
 
