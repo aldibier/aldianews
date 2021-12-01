@@ -399,7 +399,6 @@
   }
 
   // thougth leaders
-
   .view-landing-thought-leaders .views-infinite-scroll-content-wrapper.non-adversiting .block-scroll {
     display: block !important;
     margin-bottom: 30px;
@@ -549,7 +548,32 @@
   }
 }
 
-@media (min-width: $broken) and (max-width: $desktop) {
+@media (min-width: 993px) and (max-width: $desktop) {
+
+  // interna news 
+  .page-node-type-news {
+    .view-more-news {
+      .skyscraper-mobile {
+        border-bottom: 1px solid $cgrey4;
+        padding-bottom: 20px;
+      }
+    }
+  }
+
+  .page-node-type-thought-leaders {
+    .view-more-authors {
+      .skyscraper-mobile {
+        border-bottom: 1px solid $cgrey4;
+        padding-bottom: 20px;
+        margin: 0 auto 20px !important;
+
+        .block-gamw {
+          margin: 0 !important;
+        }
+      }
+    }
+  }
+
   .path-frontpage .view-categories-sons .skyscraper-mobile {
     &::before {
       content: '';
