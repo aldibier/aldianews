@@ -237,10 +237,11 @@
         bottom: 0;
       }
       &:nth-child(even)::before{
-        width:calc(100vw - 30px);
-        height: 0px;
-        content:'';
-        position: absolute;
+				display: none;
+        // width:calc(100vw - 30px);
+        // height: 0px;
+        // content:'';
+        // position: absolute;
       }
       &:nth-last-child(-n+2)::before{
         width:0;
