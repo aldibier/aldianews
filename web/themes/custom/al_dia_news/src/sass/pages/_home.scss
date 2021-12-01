@@ -429,6 +429,13 @@
         &:nth-last-child(2) {
           margin: 20px 0;
         }
+
+				&:nth-child(2n + 3) {
+					&::before {
+						margin: -20px 0;
+					}
+				}
+
       }
 
       .card-more-category .field--name-field-short-title a {
