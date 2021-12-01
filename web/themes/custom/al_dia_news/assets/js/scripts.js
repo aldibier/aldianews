@@ -2632,12 +2632,24 @@ var initSlick = function initSlick($, Drupal) {
   var slider_one = _objectSpread(_objectSpread({}, slider_general), {}, {
     slidesToShow: 1,
     slidesToScroll: 1,
-    variableWidth: false
+    variableWidth: false,
+    responsive: [{
+      breakpoint: 769,
+      settings: {
+        variableWidth: true
+      }
+    }]
   });
 
   var slider_two = _objectSpread(_objectSpread({}, slider_general), {}, {
     slidesToShow: 2,
-    slidesToScroll: 1
+    slidesToScroll: 1,
+    responsive: [{
+      breakpoint: 769,
+      settings: {
+        variableWidth: true
+      }
+    }]
   });
 
   var slider_three = _objectSpread(_objectSpread({}, slider_general), {}, {
@@ -2658,7 +2670,18 @@ var initSlick = function initSlick($, Drupal) {
 
   var slider_more = _objectSpread(_objectSpread({}, slider_general), {}, {
     slidesToShow: 4,
-    slidesToScroll: 1
+    slidesToScroll: 1,
+    responsive: [{
+      breakpoint: 993,
+      settings: {
+        slidesToShow: 2
+      }
+    }, {
+      breakpoint: 769,
+      settings: {
+        variableWidth: true
+      }
+    }]
   });
 
   Array.from(document.querySelectorAll(".view-slider-internal-event .views-row")).map(function (e) {
