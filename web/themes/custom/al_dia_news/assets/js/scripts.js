@@ -1221,7 +1221,7 @@ function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread n
 
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
-function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
 
 function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
 
@@ -1518,32 +1518,34 @@ var initMain = function initMain($, Drupal) {
     var buttonApply = document.querySelector(".path-about-al-dia-live .button-apply");
     var buttonClose = document.querySelector(".webform-about-al-dia-live .close-modal");
     var modalForm = document.querySelector(".modal-form");
-    if (!document.body.contains(buttonApply)) return;
-    buttonApply.addEventListener("click", function () {
-      return modalForm.classList.add("show");
-    });
-    buttonClose.addEventListener("click", function () {
-      return modalForm.classList.remove("show");
-    }); //// js pop-up about al dia live
 
-    var triggerVideo = document.querySelector(".block-views-blockabout-al-dia-live-block-1 .about-al-dia-live-container-video");
-    var buttonCloseVideo = document.querySelector(".close-video");
-    var video = document.querySelector(".modal-video");
-    var iframe = document.querySelector('.about-al-dia-live-container-video iframe'); //reset src iframe
+    if (!!document.body.contains(buttonApply)) {
+      buttonApply.addEventListener("click", function () {
+        return modalForm.classList.add("show");
+      });
+      buttonClose.addEventListener("click", function () {
+        return modalForm.classList.remove("show");
+      }); //// js pop-up about al dia live
 
-    if (iframe.src.indexOf('?') > 0) {
-      var srcEdit = iframe.src.split('?');
-      iframe.src = "".concat(srcEdit[0], "?start=0&rel=0");
+      var triggerVideo = document.querySelector(".block-views-blockabout-al-dia-live-block-1 .about-al-dia-live-container-video");
+      var buttonCloseVideo = document.querySelector(".close-video");
+      var video = document.querySelector(".modal-video");
+      var iframe = document.querySelector('.about-al-dia-live-container-video iframe'); //reset src iframe
+
+      if (iframe.src.indexOf('?') > 0) {
+        var srcEdit = iframe.src.split('?');
+        iframe.src = "".concat(srcEdit[0], "?start=0&rel=0");
+      }
+
+      triggerVideo.addEventListener("click", function () {
+        video.classList.add("show");
+      });
+      buttonCloseVideo.addEventListener("click", function (event) {
+        event.stopPropagation();
+        video.classList.remove("show");
+        iframe.src = iframe.src;
+      });
     }
-
-    triggerVideo.addEventListener("click", function () {
-      video.classList.add("show");
-    });
-    buttonCloseVideo.addEventListener("click", function (event) {
-      event.stopPropagation();
-      video.classList.remove("show");
-      iframe.src = iframe.src;
-    });
   } //// js desplegable buscador y close modal
 
 
@@ -1668,7 +1670,7 @@ var initMain = function initMain($, Drupal) {
 
   /* var icon_menu = document.querySelector(".user-logged-in #block-menuuseritem");
   var list_menu = document.querySelector(".user-logged-in #block-menuuseritem .item-list");
-  	if(!!icon_menu && !!list_menu){
+   if(!!icon_menu && !!list_menu){
   icon_menu.addEventListener('click', () => {
   	if(icon_menu.classList.contains("open")){
   		icon_menu.classList.remove("open");
@@ -1753,11 +1755,13 @@ var initMain = function initMain($, Drupal) {
   if (!!document.querySelector('.path-podcast') || !!document.querySelector('.path-taxonomy')) {
     var containerContainer = document.querySelector('.category-list');
     var buttonCategories = document.querySelector('.category-button-mobile');
-    if (!containerContainer) return;
-    buttonCategories.addEventListener('click', function () {
-      containerContainer.classList.toggle('open');
-      buttonCategories.classList.toggle('up');
-    });
+
+    if (!!containerContainer) {
+      buttonCategories.addEventListener('click', function () {
+        containerContainer.classList.toggle('open');
+        buttonCategories.classList.toggle('up');
+      });
+    }
   } // validador watchlive
 
 
@@ -1831,6 +1835,7 @@ var initMain = function initMain($, Drupal) {
   }
 
   var menuFooterSecondColumn = document.querySelector("#block-footer > div.content > ul > li:nth-child(2) > div > ul");
+  console.log(menuFooterSecondColumn);
 
   if (!!menuFooterSecondColumn) {
     var copyr = document.querySelector('.copyr').cloneNode(true);
@@ -2447,7 +2452,7 @@ var initScrollMagic = function initScrollMagic($, Drupal) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
@@ -2692,8 +2697,8 @@ var initSlick = function initSlick($, Drupal) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
-module.exports = __webpack_require__(/*! /Users/aplle/Desktop/AlDia/code/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
+__webpack_require__(/*! /Users/usuario/Desktop/Proyectos/4ld14-n3ws-new/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
+module.exports = __webpack_require__(/*! /Users/usuario/Desktop/Proyectos/4ld14-n3ws-new/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
 
 
 /***/ })
