@@ -607,11 +607,14 @@
 
 .view-slider-internal-event {
   .item-list li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     overflow: hidden;
     width: 570px;
     height: 300px;
     //margin-right: 15px;
-    margin: 0 15px 0 0;
+    margin: 0;
     padding: 0;
 
     img {
@@ -629,8 +632,15 @@
     width: 100%;
   }
 
+  .slick-initialized.slick-slider {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 70px;
+  }
+
   .slick-list {
-    max-width: 1170px;
+    width: 100%;
+    max-width: 100%;
     margin: 0 auto;
   }
 
@@ -639,12 +649,13 @@
   }
 
   .slick-arrow {
+    position: absolute;
+    top: 50%;
     border: 0px;
     font-size: 0px;
     width: 20px;
     height: 35px;
-    position: absolute;
-    top: 40%;
+    transform: translateY(-50%);
   }
 
   .slick-prev {
@@ -669,7 +680,13 @@
     }
   }
 
-  ///---- view modes-----//
+  //---- view mode one -----//
+  .slider-one {
+    .slick-initialized.slick-slider {
+      max-height: 300px;
+    }
+  }
+
   .slider-one li {
     margin-right: 0px;
     padding-left: 0px;
@@ -680,18 +697,42 @@
     }
   }
 
+  .slider-one {
+    .slick-initialized.slick-slider {
+      max-height: 300px;
+    }
+  }
+
+  //---- view mode two -----//
+  .slider-two {
+    .slick-initialized.slick-slider {
+      max-height: 300px;
+    }
+  }
+
   .slider-two li {
     margin-right: 30px;
   }
 
+  //---- view mode three -----//
+  .slider-three {
+    .slick-initialized.slick-slider {
+      max-height: 200px;
+    }
+  }
+
   .slider-three li {
-    width: 380px;
     height: 200px;
   }
 
+  //---- view mode four -----//
+  .slider-more {
+    .slick-initialized.slick-slider {
+      max-height: 147px;
+    }
+  }
+
   .slider-more li {
-    width: 280px;
-    height: 147px;
     margin-right: 17px;
   }
 }
@@ -1313,18 +1354,25 @@
   //------------------ modos de visulizacion slider interna de eventos ------------//
 
   .view-slider-internal-event {
-    .item-list li {
-      width: 122.5px;
+    li.slick-slide {
+      width: 115px;
       height: 60px;
-      margin-right: 10px;
+      min-width: 115px;
+			margin-right: 10px;
     }
 
     .item-list ul {
       margin: 0px auto 40px;
     }
 
+    .slick-initialized.slick-slider {
+      padding: 0px 25px;
+    }
+
     .slick-list {
+      width: 100%;
       max-width: 240px;
+			max-height: 60px;
     }
 
     .slick-arrow {
@@ -1332,36 +1380,46 @@
       height: 15px;
     }
 
+    //---- view mode two -----//
+    .slider-one,
+    .slider-two,
+    .slider-three,
+    .slider-more {
+      .slick-initialized.slick-slider {
+        max-height: 60px;
+      }
+    }
+
     ///---- view modes-----//
-    .slider-one {
-      .slick-list {
-        max-width: none;
-      }
+    // .slider-one {
+    //   .slick-list {
+    //     max-width: none;
+    //   }
 
-      li img {
-        max-width: 122.5px;
-      }
+    //   li img {
+    //     max-width: 122.5px;
+    //   }
 
-      li {
-        margin-right: 0px;
-      }
-    }
+    //   li {
+    //     margin-right: 0px;
+    //   }
+    // }
 
-    .slider-two li {
-      margin-right: 10px;
-      padding-right: 0px;
-    }
+    // .slider-two li {
+    //   margin-right: 10px;
+    //   padding-right: 0px;
+    // }
 
-    .slider-three li {
-      width: 122.5px;
-      height: 60px;
-    }
+    // .slider-three li {
+    //   width: 122.5px;
+    //   height: 60px;
+    // }
 
-    .slider-more li {
-      width: 122.5px;
-      height: 60px;
-      margin-right: 10px;
-    }
+    // .slider-more li {
+    //   width: 122.5px;
+    //   height: 60px;
+    //   margin-right: 10px;
+    // }
   }
 
   //------------------ modos de visulizacion slider interna de eventos ------------//

@@ -2625,8 +2625,8 @@ var initSlick = function initSlick($, Drupal) {
   var slider_general = {
     infinite: true,
     autoplay: true,
-    autoplaySpeed: 3500,
-    variableWidth: true
+    autoplaySpeed: 3500 //variableWidth: true
+
   };
 
   var slider_one = _objectSpread(_objectSpread({}, slider_general), {}, {
@@ -2642,7 +2642,18 @@ var initSlick = function initSlick($, Drupal) {
 
   var slider_three = _objectSpread(_objectSpread({}, slider_general), {}, {
     slidesToShow: 3,
-    slidesToScroll: 1
+    slidesToScroll: 1,
+    responsive: [{
+      breakpoint: 993,
+      settings: {
+        slidesToShow: 2
+      }
+    }, {
+      breakpoint: 769,
+      settings: {
+        variableWidth: true
+      }
+    }]
   });
 
   var slider_more = _objectSpread(_objectSpread({}, slider_general), {}, {

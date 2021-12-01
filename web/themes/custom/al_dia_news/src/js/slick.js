@@ -195,7 +195,7 @@ const initSlick = ($, Drupal) => {
 		infinite: true,
 		autoplay: true,
 		autoplaySpeed: 3500,
-		variableWidth: true
+		//variableWidth: true
 	};
 
 	const slider_one = {
@@ -204,21 +204,39 @@ const initSlick = ($, Drupal) => {
 		slidesToScroll: 1,
 		variableWidth: false
 	};
+
 	const slider_two = {
 		...slider_general,
 		slidesToShow: 2,
 		slidesToScroll: 1
 	};
+
 	const slider_three = {
 		...slider_general,
 		slidesToShow: 3,
 		slidesToScroll: 1,
+		responsive: [
+			{
+				breakpoint: 993,
+				settings: {
+					slidesToShow: 2,
+				}
+			},
+			{
+				breakpoint: 769,
+				settings: {
+					variableWidth: true
+				}
+			},
+		]
 	};
+
 	const slider_more = {
 		...slider_general,
 		slidesToShow: 4,
 		slidesToScroll: 1,
 	};
+
 	Array.from(
 		document.querySelectorAll(".view-slider-internal-event .views-row")
 	).map(e => {
