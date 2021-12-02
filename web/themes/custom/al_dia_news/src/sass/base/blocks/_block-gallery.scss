@@ -20,19 +20,19 @@
 
       $screen-query: 993px;
 
-      // &::before {
-      //   display: block;
-      //   content: "";
-      //   width: calc(100vw + 40px);
-      //   height: 0;
-      //   padding: 0.1mm;
-      //   left: -20px;
-      //   top: 0;
-      //   background: $cgrey4;
-      //   position: absolute;
-      //   right: 0;
-      //   margin: -35px auto;
-      // }
+      &::before {
+        display: block;
+        content: "";
+        width: calc(100vw + 40px);
+        height: 0;
+        padding: 0.1mm;
+        left: -20px;
+        top: 0;
+        background: $cgrey4;
+        position: absolute;
+        right: 0;
+        margin: -35px auto;
+      }
 
       @media screen and (min-width: $screen-query) {
         &::after {
