@@ -18,10 +18,10 @@
     text-align: center;
   }
 
-	//Error pages
-	.view-last-news-in-error-page .banner-horizontal {
-		margin: 35px auto !important;
-	}
+  //Error pages
+  .view-last-news-in-error-page .banner-horizontal {
+    margin: 35px auto !important;
+  }
 
   #block-block-group-current-edition-advertising-home+.banner-horizontal {
     margin: 100px auto !important;
@@ -65,6 +65,13 @@
 
     .banner-horizontal {
       margin: 0 auto !important;
+    }
+  }
+
+  //Landing job seeker
+  .path-jobs-job-seeker .banner-horizontal {
+    .banner-horizontal {
+      margin-bottom: 90px !important;
     }
   }
 
@@ -143,7 +150,7 @@
     &::after {
       content: "";
       position: absolute;
-			z-index: 1;
+      z-index: 1;
       bottom: calc(0% - 70px);
       display: block !important;
       width: 100vw;
@@ -219,9 +226,9 @@
 
   //Infinite scroll thought leaders
   .path-thought-leaders .banner-scroll {
-		z-index: 2;
+    z-index: 2;
     margin-top: 0 !important;
-		background-color: $cwhite;
+    background-color: $cwhite;
 
     &::before {
       content: "";
@@ -624,10 +631,10 @@
       }
     }
 
-		.view-content:not(.non-adversiting) {
-			.card-more-author {
-				border-right: 0 !important;
-			}
-		}	
+    .view-content:not(.non-adversiting) {
+      .card-more-author {
+        border-right: 0 !important;
+      }
+    }
   }
 }
