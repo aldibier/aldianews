@@ -857,12 +857,15 @@
       text-align: center;
 
       &::before {
-        display: block;
+				content: '' !important;
+        display: block !important;
         padding: 0;
         margin: 10px auto 50px !important;
       }
 
       &::after {
+				content: '' !important;
+				display: block !important;
         width: 100%;
         max-width: 100%;
         max-height: none;
