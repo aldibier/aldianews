@@ -325,6 +325,17 @@
 
 }
 
+//----------------- landing subcategory infinite scroll ----------------------------------//
+.path-taxonomy .view-subcategory-only-for-children {
+  .views-infinite-scroll-content-wrapper:not(.non-adversiting) {
+    @media screen and (max-width: $tablet) {
+      .card-one-column {
+        min-height: 143px;
+      }
+    }
+  }
+}
+
 //----------------- thought leaders ----------------------------------//
 .path-thought-leaders .views-infinite-scroll-content-wrapper:not(.non-adversiting) {
   .skys-scroll {
