@@ -122,9 +122,7 @@
       transition: background 1s ease-in-out;
 
       li {
-        //padding: 0 22px 0 0;
-        flex: 1 1 auto;
-        padding: 0;
+        padding: 0 22px 0 0;
       }
 
       li:last-child {
@@ -494,8 +492,23 @@
   }
 }
 
+.path-jobs:not(.path-jobs-employer) {
+  .block-menu-float .menu::before,
+  .block-menu-float .menu::after {
+    display: none;
+  }
+}
+
 .path-jobs-employer,
 .path-trabajos-empleador {
+
+  .menu--i-am-an-employer-menu {
+    li {
+      flex: 1 1 auto;
+      padding: 0 !important;
+    }
+  }
+
   .menu--i-am-an-employer-menu .menu {
     @media (min-width: $tablet) {
       gap: 25px;
