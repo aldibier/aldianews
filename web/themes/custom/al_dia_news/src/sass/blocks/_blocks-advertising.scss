@@ -90,7 +90,8 @@
       .view-content {
 
         .skyscraper-mobile {
-					position: relative;
+          position: relative;
+
           &::before {
             content: '';
             position: absolute;
@@ -124,7 +125,7 @@
     .views-field-view-1 {
       .view-content {
 
-				.skyscraper-mobile+.card-one-column {
+        .skyscraper-mobile+.card-one-column {
           margin-top: 35px;
         }
 
@@ -475,6 +476,15 @@
 
       &::before {
         display: none !important;
+      }
+    }
+  }
+
+  .views-row.show-line-mobile {
+    @media screen and (max-width: $tablet) {
+      &::before {
+        content: '' !important;
+        display: block !important;
       }
     }
   }
@@ -841,26 +851,26 @@
       width: 100%;
       max-width: 100%;
       max-height: none;
-			padding: 0;
-			margin-bottom: 50px !important;
+      padding: 0;
+      margin-bottom: 50px !important;
       position: relative;
       text-align: center;
 
-			&::before {
-				display: block;
-				padding: 0;
-				margin: 10px auto 50px !important;
-			}
+      &::before {
+        display: block;
+        padding: 0;
+        margin: 10px auto 50px !important;
+      }
 
-			&::after {
-				width: 100%;
-				max-width: 100%;
-				max-height: none;
-				margin: 0 0 30px;
-				padding-bottom: 20px;
-				position: relative;
-				text-align: center;
-			}
+      &::after {
+        width: 100%;
+        max-width: 100%;
+        max-height: none;
+        margin: 0 0 30px;
+        padding-bottom: 20px;
+        position: relative;
+        text-align: center;
+      }
 
       // &::after {
       //   content: "";

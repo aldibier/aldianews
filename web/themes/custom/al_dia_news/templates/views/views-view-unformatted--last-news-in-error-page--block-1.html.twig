@@ -79,6 +79,7 @@
 
 	{# {% set index_hide_lines = [5,6,13,14] %} #}
 	{% set index_hide_lines = [7,8,11,12,15,16,19,21,22] %}
+	{% set index_show_lines = [18,20] %}
 
 	{% for row in rows %}
 
@@ -101,8 +102,22 @@
 			<span class="skys-scroll skys2 ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_20') }}</span>
 		{% endif %}
 
+		{# {% if loop.index in index_hide_lines %}
+											<div class="card-one-column views-row not-show-line-mobile">
+												{{- row.content -}}
+											</div>
+										{% else %}
+											<div{{row.attributes.addClass(row_classes)}}>
+												{{- row.content -}}
+											</div>
+										{% endif %} #}
+
 		{% if loop.index in index_hide_lines %}
 			<div class="card-one-column views-row not-show-line-mobile">
+				{{- row.content -}}
+			</div>
+		{% elseif loop.index in index_show_lines  %}
+			<div class="card-one-column views-row show-line-mobile">
 				{{- row.content -}}
 			</div>
 		{% else %}
