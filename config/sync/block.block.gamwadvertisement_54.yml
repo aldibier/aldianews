@@ -1,0 +1,32 @@
+uuid: 65dd3964-8f60-4166-9e08-408f78db69ac
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - gamw
+    - system
+  theme:
+    - al_dia_news
+third_party_settings:
+  block_class:
+    classes: 'banner-horizontal ads'
+id: gamwadvertisement_54
+theme: al_dia_news
+region: content
+weight: 0
+provider: null
+plugin: gamw
+settings:
+  id: gamw
+  label: 'Internal category podcast - banner - prefooter'
+  provider: gamw
+  label_display: visible
+  ad_unit: pre-footer-bottom-banner
+  attributes_wrapper:
+    - ''
+visibility:
+  request_path:
+    id: request_path
+    pages: '/podcast/*'
+    negate: false
