@@ -117,7 +117,7 @@
     grid-column: 1/-1 !important;
     width: 100%;
     max-width: 100% !important;
-    margin: 35px auto;
+    margin: 35px auto !important;
     text-align: center;
 
     &::before {
@@ -138,6 +138,7 @@
     &::after {
       content: "";
       position: absolute;
+			z-index: 1;
       bottom: calc(0% - 70px);
       display: block !important;
       width: 100vw;
