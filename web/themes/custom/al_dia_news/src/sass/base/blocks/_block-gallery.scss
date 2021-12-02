@@ -55,12 +55,11 @@
         }
       }
 
-			@media screen and (max-width: $brokenUp) {
-
-				&:nth-child(-n+2)::before {
-					content: none;
-					display: none;
-				}
+      @media screen and (max-width: $brokenUp) {
+        &:nth-child(-n+2)::before {
+          content: none;
+          display: none;
+        }
 
         &:nth-child(-n+2) {
           margin-top: 0;
@@ -72,7 +71,7 @@
         max-width: 100%;
         margin: 0 0 40px;
         border: none;
- 
+
         &::before {
           width: calc(100vw - 30px);
           height: 0;
@@ -82,7 +81,7 @@
           margin: -20px auto;
         }
 
-        &:nth-last-of-type(-n + 2) {
+        &:nth-child(-n+2) {
           &::before {
             margin-bottom: 0 !important;
             display: none !important;
@@ -114,7 +113,7 @@
           }
         }
 
-        &:nth-last-of-type(-n + 2) {
+        &:nth-child(-n+2) {
           &::before {
             margin-bottom: 0 !important;
             display: none !important;
