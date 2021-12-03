@@ -1923,7 +1923,7 @@ __webpack_require__.r(__webpack_exports__);
 
   var headingTags = document.querySelectorAll("h1, h2, h3");
   var paragraphTags = document.querySelectorAll("p");
-  var aldiaLogoStructure = "<span class=\"aldia-logo-in-text\" title=\"AL D\xCDA\">\n                                <img alt=\"AL D\xCDA\" src=\"".concat(drupalSettings.path.baseUrl, "themes/custom/al_dia_news/assets/img/aldia.svg\">\n                              </span>");
+  var aldiaLogoStructure = "<span class=\"aldia-logo-in-text\" alt=\"ALD\xCDA\">\n                                <img alt=\"ALD\xCDA\" src=\"".concat(drupalSettings.path.baseUrl, "themes/custom/al_dia_news/assets/img/aldia.svg\">\n                              </span>");
   Object(_modules_replaceToken__WEBPACK_IMPORTED_MODULE_5__["default"])("AL DÍA", aldiaLogoStructure, headingTags);
   Object(_modules_replaceToken__WEBPACK_IMPORTED_MODULE_5__["default"])("{aldia}", aldiaLogoStructure, paragraphTags);
   var $window = $(window);
@@ -2004,21 +2004,21 @@ __webpack_require__.r(__webpack_exports__);
     /////
 
     /*  if ($(".page-node-type-news .block-field-blocknodenewsfield-video iframe").length ) {
-      var url = ($(".page-node-type-news .block-field-blocknodenewsfield-video iframe")[0].src += "&mute=1");
-      var video = url.replace("autoplay=0", "autoplay=1");
-      $(".page-node-type-news .block-field-blocknodenewsfield-video iframe").attr("src", video);
+    	var url = ($(".page-node-type-news .block-field-blocknodenewsfield-video iframe")[0].src += "&mute=1");
+    	var video = url.replace("autoplay=0", "autoplay=1");
+    	$(".page-node-type-news .block-field-blocknodenewsfield-video iframe").attr("src", video);
     } */
 
     /* if ($( ".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video iframe" ).length ){
-      var url = ($(".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video iframe")[0].src += "&mute=1");
-      var video = url.replace("autoplay=0", "autoplay=1");
-      $(".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video iframe").attr("src", video);
+    	var url = ($(".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video iframe")[0].src += "&mute=1");
+    	var video = url.replace("autoplay=0", "autoplay=1");
+    	$(".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video iframe").attr("src", video);
     } */
 
     /* if ($(".watch-live-video .video-embed-field-provider-youtube iframe").length ){
-      var url = ($(".watch-live-video .video-embed-field-provider-youtube iframe")[0].src += "&mute=1");
-      var video = url.replace("autoplay=0", "autoplay=1");
-      $(".watch-live-video .video-embed-field-provider-youtube iframe").attr("src", video);
+    	var url = ($(".watch-live-video .video-embed-field-provider-youtube iframe")[0].src += "&mute=1");
+    	var video = url.replace("autoplay=0", "autoplay=1");
+    	$(".watch-live-video .video-embed-field-provider-youtube iframe").attr("src", video);
     } */
     //--------- menu--------------------//
     $(".region-header #block-blockheader").click(function () {
@@ -2354,6 +2354,22 @@ __webpack_require__.r(__webpack_exports__);
             if (!!closeDialog) closeDialog.click();
           });
         }
+      }
+    }
+  };
+  Drupal.behaviors.aldia_logo = {
+    attach: function attach(context, settings) {
+      var infiniteScroll = context.querySelector('.views-infinite-scroll-content-wrapper');
+
+      if (!!infiniteScroll) {
+        //Replace token
+        var headingScroll = infiniteScroll.querySelectorAll("h1, h2, h3");
+        Object(_modules_replaceToken__WEBPACK_IMPORTED_MODULE_5__["default"])("AL DÍA", aldiaLogoStructure, headingScroll);
+        Object(_modules_replaceToken__WEBPACK_IMPORTED_MODULE_5__["default"])("{aldia}", aldiaLogoStructure, headingScroll); //Selection sharer
+
+        var _sharer = new _assets_libraries_selection_sharer_selection_sharer_js__WEBPACK_IMPORTED_MODULE_1___default.a();
+
+        _sharer.setElements("p,h1,h2,h3,blockquote,em,strong,a:not(.selectionSharer a)");
       }
     }
   };
