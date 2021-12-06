@@ -24,10 +24,6 @@
   .site-footer__bottom {
     border: none;
     position: relative;
-
-    @media (max-width: $broken3) {
-      margin-top: 0;
-    }
   }
 
   #block-footerlogo {
@@ -101,7 +97,7 @@
         position: relative;
         margin-right: 0;
         margin-top: 0;
-        padding-right: 75px;
+        padding-left: 75px;
       }
 
       .field--name-field-image-block::after {
@@ -127,7 +123,7 @@
         width: 140px;
         margin-bottom: 15px;
         line-height: 1;
-        padding-right: 15px;
+        padding-left: 25px;
 
         img {
           min-width: 140px;
@@ -560,6 +556,11 @@
   }
 
   @media (max-width: $tablet) {
+
+    .site-footer__bottom {
+      margin-top: 0;
+    }
+
     #block-socialmedia-2 {
       padding: 25px 0;
     }
@@ -732,8 +733,8 @@ footer.site-footer {
   padding: 20px 0 70px;
   height: auto;
 
-  @media (max-width: $broken3) {
-    padding: 0;
+  @media (max-width: $broken) {
+    padding: 0 0 70px;
   }
 
   @media (max-width: $tablet) {
