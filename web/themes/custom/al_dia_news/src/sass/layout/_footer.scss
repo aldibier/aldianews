@@ -240,14 +240,15 @@
       }
 
       .field--name-field-image {
-        width: 82.89px;
+        width: 50px;
         height: 0;
+				margin-right: 5px;
 
         @media (max-width: $tablet) {
           position: absolute;
           height: initial;
-          top: -70px;
-          left: -15px;
+          top: -60px;
+          left: 0;
 
           &:lang(en) {
             //margin: -45px -18px -45px 0;
@@ -260,7 +261,9 @@
       }
 
       img {
-        transform: scale(1.3) translateY(-60%);
+        //transform: scale(1.3) translateY(-60%);
+				transform: translateY(-46.5px);
+				width: 100%;
       }
 
       a {
