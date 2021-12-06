@@ -138,9 +138,14 @@
       }
     }
 
-    .views-field-fieldset {
+		>.views-row  .views-field-fieldset {
       grid-area: head;
 			margin-bottom: 62px;
+
+			@media (max-width: $broken) {
+        margin-bottom: 45px;
+      }
+
     }
 
     .views-field-view {
