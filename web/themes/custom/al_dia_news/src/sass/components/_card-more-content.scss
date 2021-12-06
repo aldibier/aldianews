@@ -467,9 +467,16 @@
     }
 
     @media screen and (max-width: $tablet) {
+			flex: 1 1 140px;
       margin: 0 10px 0 0;
     }
   }
+
+	.two-content-category-four.short-title-date {
+		@media screen and (max-width: $tablet) {
+			flex: 1 0 140px;
+    }
+	}
 }
 
 .path-taxonomy {
