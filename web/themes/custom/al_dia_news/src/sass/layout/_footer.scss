@@ -2,7 +2,7 @@
   margin: 0;
   border: none;
   position: relative;
-	overflow-x: hidden;
+  overflow-x: hidden;
 
   .layout-container {
     //max-width: 1390px;
@@ -101,6 +101,7 @@
         position: relative;
         margin-right: 0;
         margin-top: 0;
+        padding-right: 75px;
       }
 
       .field--name-field-image-block::after {
@@ -126,8 +127,13 @@
         width: 140px;
         margin-bottom: 15px;
         line-height: 1;
-      }
+        padding-right: 15px;
 
+        img {
+          min-width: 140px;
+          max-height: 45px;
+        }
+      }
     }
 
   }
@@ -280,9 +286,9 @@
         }
       }
 
-			a[href*="/es/compartir-una-noticia"]{
-				max-width: 200px;
-			}
+      a[href*="/es/compartir-una-noticia"] {
+        max-width: 200px;
+      }
 
     }
 
