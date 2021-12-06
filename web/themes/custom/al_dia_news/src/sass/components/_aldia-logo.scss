@@ -135,7 +135,9 @@
       margin: 0;
 
       @media (max-width: $tablet) {
+				top: -1px;
         max-width: 75px;
+				max-height: 25px;
         padding-right: 5px;
       }
 
@@ -162,10 +164,11 @@
     }
 
     .text {
-      max-height: 27px;
+      max-height: 28px;
       padding-right: 20px;
 
       @media (max-width: $tablet) {
+				max-height: 15px;
         padding-right: 0;
       }
     }
@@ -182,7 +185,9 @@
       background: #f1f1f1;
 
       @media (max-width: $tablet) {
+				top: -1px;
         max-width: 75px;
+				max-height: 25px;
       }
 
       img {
