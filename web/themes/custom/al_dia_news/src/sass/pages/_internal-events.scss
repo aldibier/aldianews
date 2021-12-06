@@ -624,7 +624,7 @@
     padding: 0;
 
     img {
-      width: 100%;
+      //width: 100%;
       height: auto;
     }
   }
@@ -1366,6 +1366,13 @@
 
     .item-list ul {
       margin: 0px auto 40px;
+    }
+
+    .item-list li {
+      img {
+        width: 100%;
+        max-height: 100%;
+      }
     }
 
     .slick-initialized.slick-slider {
