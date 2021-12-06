@@ -550,10 +550,10 @@
   margin: 0 auto 100px;
   padding: 30px 15px 50px;
 
-	.group-title-link {
-		max-height: 45px;
-		line-height: 1;
-	}
+  .group-title-link {
+    max-height: 45px;
+    line-height: 1;
+  }
 
   .view-thought-leaders-home {
     max-width: 1280px;
@@ -561,6 +561,10 @@
 
     .views-field-fieldset {
       margin-bottom: 64px;
+
+      @media (max-width: $broken) {
+        margin-bottom: 50px;
+      }
     }
 
     .category-title {
