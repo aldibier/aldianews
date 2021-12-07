@@ -3,10 +3,12 @@
   //border-bottom: 5px solid $corange;
   position: fixed;
   width: 100%;
+  min-height: 90px;
   top: 0;
   z-index: 101;
 
   @media (max-width: $tablet) {
+    min-height: 80px;
     //border-bottom: 2px solid $corange;
   }
 
@@ -34,27 +36,18 @@
 
 body.open-menu {
   .region-header {
-    @media (max-width: $tablet) {
-      padding: 0 15px;
-    }
+    padding-top: 0;
+    max-height: 75px;
 
     &:after {
       display: none;
     }
 
-    #block-magnifierheader,
-    #block-languageswitcher {
-      padding: 12px 0;
-    }
-
     #block-loginformpopup {
       margin: 0;
+      padding-bottom: 5px;
       display: flex;
       align-items: center;
-    }
-
-    #block-views-block-current-edition-header-and-footer-block-1 {
-      padding-top: 14px;
     }
   }
 
@@ -70,16 +63,19 @@ body.open-menu {
       display: block !important;
       position: absolute;
       top: 15px;
-      left: 62.5%;
+      left: calc(50% + 30px);
+      right: 0;
       min-width: 100px;
+      max-width: 100px;
       height: 24px;
       box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
       background: $cwhite;
       text-align: center;
-      margin: 0 0 0 -22px;
+      margin: 0;
+      transform: translateX(-50%);
 
       .item-list ul li {
-        padding-top: 0px;
+        padding: 0;
         display: flex;
       }
 
@@ -99,13 +95,15 @@ body.open-menu {
       display: block !important;
       position: absolute;
       top: 15px;
-      left: 50%;
+      left: calc(50% - 80px);
+      right: 0;
       background: $corange;
-      margin: 0 0 0 -125px;
-      width: 130px;
+      margin: 0;
+      width: 95px;
       height: 25px;
       align-items: center;
       text-align: center;
+      transform: translateX(-50%);
 
       a {
         letter-spacing: 0.741176px;
@@ -246,8 +244,9 @@ body.open-menu {
     &:after {
       position: absolute;
       top: 62px;
-      width: 100%;
-      max-width: 250px;
+      width: calc(100vw - 70px);
+      max-width: 100%;
+      min-width: 250px;
       left: 0;
       right: 0;
       margin: 0 auto;
@@ -268,10 +267,11 @@ body.open-menu {
   transition: all 1s cubic-bezier(0.55, 0, 0.1, 1);
 
   >* {
-    transition: all 1s cubic-bezier(0.55, 0, 0.1, 1);
+    //transition: all 1s cubic-bezier(0.55, 0, 0.1, 1);
     opacity: 0;
     height: 0;
     overflow: hidden;
+		transition: none;
   }
 
   &:before {
@@ -359,7 +359,8 @@ body.open-menu {
         }
       }
 
-      @media (min-width: $mobile-mid) {
+      // @media (min-width: $mobile-mid) {
+      @media (min-width: $tablet) {
         &:nth-child(10) {
           a {
             max-width: 81px;
@@ -393,7 +394,8 @@ body.open-menu {
         transform: scale(1.2);
       }
 
-      @media (max-width: $mobile-mid) {
+      // @media (max-width: $mobile-mid) {
+      @media (max-width: $tablet) {
         width: 25px !important;
         height: 25px !important;
         margin: 0 15px 0 0;
@@ -447,7 +449,8 @@ body.open-menu {
     }
   }
 
-  @media (max-width: $mobile-mid) {
+  // @media (max-width: $mobile-mid) {
+  @media (max-width: $tablet) {
     .menu {
       .menu-item {
         width: 50%;
@@ -552,7 +555,8 @@ body.open-menu {
   @media (max-width: $tablet) {
     position: absolute;
     top: 17px;
-    right: 5px;
+    right: calc(0% + 35px);
+    margin: 0;
   }
 }
 
@@ -689,33 +693,36 @@ body.open-menu {
 //----------------menu primary------------------//
 
 .region-header {
-  max-height: 100px;
+  width: 100%;
+  max-width: 1310px;
+  max-height: 90px;
   background: $cblack0;
   display: flex;
   padding: 15px 15px 0;
-  max-width: max-content;
+  //max-width: max-content;
   margin: 0 auto;
   position: relative;
 
   @media (max-width: $broken4) {
     flex-wrap: wrap;
-    max-height: max-content;
+    max-height: 100px;
   }
 
-  @media (min-width: $desktop) {
-    //max-height: 90px;
-    padding: 12px 15px 0;
+  @media (max-width: $tablet) {
+    height: 80px;
+    max-height: 80px;
+    padding: 10px 15px 0;
   }
 
-  &:after {
-    display: block;
-    height: 15px;
-    width: 100%;
-    position: absolute;
-    content: "";
-    //background: $cblack0;
-    background-color: transparent;
-  }
+  // &:after {
+  //   display: block;
+  //   height: 15px;
+  //   width: 100%;
+  //   position: absolute;
+  //   content: "";
+  //   //background: $cblack0;
+  //   background-color: transparent;
+  // }
 
   #block-blockheader {
     order: 1;
@@ -812,10 +819,6 @@ body.open-menu {
       max-width: 245px;
     }
 
-    @media (max-width: $broken4) {
-      max-height: 80px;
-    }
-
     h1,
     h1>a {
       line-height: 0;
@@ -837,13 +840,15 @@ body.open-menu {
   }
 
   #block-sitedescription {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
     order: 3;
-    margin: auto auto auto 0;
     font-style: normal;
     font-weight: normal;
     font-size: $px18;
     line-height: 22px;
-    padding: 12px 0 0;
 
     strong {
       font-style: normal;
@@ -852,8 +857,9 @@ body.open-menu {
     }
 
     p {
-      margin: 0 0 7px 0;
+      margin: 0;
       font-family: $NimS-reg;
+      font-size: szrem(16);
       letter-spacing: 0.05em;
     }
 
@@ -862,21 +868,25 @@ body.open-menu {
       order: 9;
       width: 100%;
       margin: 0 -15px;
-      padding-left: 15px;
-      padding-right: 15px;
+      padding: 10px 15px;
       background-color: $cblack2;
     }
 
   }
 
   #block-magnifierheader {
+    display: flex;
+    align-items: center;
     order: 4;
-    margin: auto 0 auto 26px;
+    padding-bottom: 5px;
+    margin: 0 15px 0 26px;
 
     @media (max-width: $tablet) {
       order: 6;
+      width: 15px;
+      height: 15px;
       max-height: 38px;
-      margin: -2px 0 auto 0;
+      margin: 8px 0 0 0;
     }
   }
 
@@ -886,14 +896,15 @@ body.open-menu {
     }
 
     .form-actions {
-      width: 46px;
-      height: 65px;
+      width: 20px;
+      height: 20px;
       display: block;
       padding: 0;
+      margin: 0;
 
       input {
-        width: 100%;
-        height: 45px;
+        width: 20px;
+        height: 20px;
         display: block;
         background: transparent url("../img/search.svg") center center no-repeat;
         border: none;
@@ -907,7 +918,10 @@ body.open-menu {
   }
 
   #block-languageswitcher {
+    display: flex;
+    align-items: center;
     order: 5;
+    padding-bottom: 5px;
     margin: 0 auto 0 0;
   }
 
@@ -929,9 +943,7 @@ body.open-menu {
 
     .links {
       width: 50px;
-      height: 67px;
-      display: flex;
-      flex-wrap: wrap;
+      height: 45px;
       padding: 0;
       position: relative;
       padding-left: 10px;
@@ -942,11 +954,11 @@ body.open-menu {
       text-align: center;
 
       &:first-child {
-        margin: auto 0 0 0;
+        margin: 0;
       }
 
       &:last-child {
-        margin: 0 0 auto 0;
+        margin: 0;
       }
 
       &:after {
@@ -1020,6 +1032,7 @@ body.open-menu {
     display: flex;
     align-items: center;
     text-align: center;
+    padding-bottom: 5px;
     margin: 0 auto;
     text-transform: uppercase;
     font-family: $PrNovacond-Sbold;
@@ -1107,9 +1120,11 @@ body.open-menu {
     }
 
     #block-blockheader {
-      margin: 6px 0 0 -15px;
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+      margin: 8px 15px 0 0;
       z-index: 2;
-      height: 30px;
 
       &:before,
       &:after {
@@ -1128,16 +1143,21 @@ body.open-menu {
     }
 
     #block-al-dia-news-branding {
-      max-width: 180px;
-      max-height: 44px;
-      margin: 0;
+      flex: 1 1 145px;
+      width: 100%;
+      height: 45px;
+      min-width: auto;
+      max-width: 100%;
+      margin: 0 15px 0 0;
     }
 
     .block-language {
       .links {
+        display: flex;
         width: auto;
         flex-wrap: nowrap;
-        height: 33px;
+        height: auto;
+        padding: 0;
       }
 
       li {
@@ -1183,30 +1203,30 @@ body.open-menu {
 
     .block-search {
       .form-actions {
-        width: 20px;
-        height: 20px;
-        margin-left: 10px;
+        width: 15px;
+        height: 15px;
+        margin: 0;
 
         input {
-          width: 20px;
-          height: 20px;
-          background-size: 15px 15px;
-          background-position-x: 1px;
-          background-position-y: 2px;
-          margin: 2px 0 0 2px;
+          width: 100%;
+          height: 100%;
+          padding: 0;
+          margin: 0;
+          background-size: contain;
+          background-position: center;
           position: relative;
-          top: -4px;
         }
       }
     }
 
     #block-languageswitcher {
-      margin: 0 auto 0;
+      height: 25px;
+      margin: 8px 25px 0 0;
     }
 
     #block-sitedescription {
       //bottom: -31px;
-      padding: 9px 15px 0;
+      padding: 10px 15px;
 
       p {
         font-size: 11px;
@@ -1220,27 +1240,10 @@ body.open-menu {
 
       @media (max-width: 350px) {
         //bottom: -33px;
-        padding: 9px 10px 0;
+        padding: 10px;
       }
     }
   }
-}
-
-.region-secondary-menu.open-menu~.region-header {
-  #block-al-dia-news-branding {
-    margin: 0 15px 0 -25px;
-    max-height: fit-content;
-
-    @media (max-width: $tablet) {
-      margin: 0 0 0 -25px
-    }
-
-  }
-
-  #block-blockheader {
-    //margin: auto 35px 7px 0;
-		margin: auto 35px auto 0;
-	}
 }
 
 .user-logged-in {
