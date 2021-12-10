@@ -237,19 +237,15 @@
   }
 
   @media (max-width: $tablet) {
+		width: max-content;
     margin: 0px auto 20px !important;
 
     button[name="close"] {
       width: 10px;
       height: 10px;
       background: url("../img/close-black.png") center center no-repeat;
-      background-size: contain;
-      top: 4px;
-      right: 8%;
-
-      @media (max-width: 350px) {
-        right: 1%;
-      }
+      top: 0;
+      right: 0;
     }
   }
 }
