@@ -271,7 +271,7 @@ body.open-menu {
     opacity: 0;
     height: 0;
     overflow: hidden;
-		transition: none;
+    transition: none;
   }
 
   &:before {
@@ -319,6 +319,11 @@ body.open-menu {
       flex-wrap: wrap;
       margin: 35px 0;
 
+			@media (max-width: $tablet) {
+				gap: 15px;
+				padding-left: 15px;
+      }
+
       @media (max-width: $tablet) {
         margin: 0;
       }
@@ -334,6 +339,12 @@ body.open-menu {
       letter-spacing: 0.025em;
       padding: 8px 1em;
       margin: auto 0;
+
+			@media (max-width: $desktop) {
+				padding: 0;
+				margin: 0;
+				text-align: left;
+      }
     }
   }
 
@@ -359,14 +370,10 @@ body.open-menu {
         }
       }
 
-      // @media (min-width: $mobile-mid) {
-      @media (min-width: $tablet) {
-        &:nth-child(10) {
-          a {
-            max-width: 81px;
-            text-align: center;
-          }
-        }
+			@media (max-width: $desktop) {
+				align-items: center;
+        flex: 0 1 100px;
+				text-align: left;
       }
     }
   }
