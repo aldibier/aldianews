@@ -339,7 +339,7 @@ body.open-menu {
       line-height: 19px;
       text-align: center;
       letter-spacing: 0.025em;
-      padding: 8px 1em;
+      padding: 0;
       margin: auto 0;
 
 			@media (max-width: $desktop) {
@@ -359,10 +359,6 @@ body.open-menu {
       margin: 0;
       display: flex;
       flex-wrap: wrap;
-
-      @media (min-width: 1164px) {
-        margin: 0 auto;
-      }
 
       a {
         color: $cblack0;
