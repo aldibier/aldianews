@@ -89,15 +89,19 @@ a {
   }
 
   @media (max-width: $tablet) {
-    padding: 100px 0 0;
+    padding: 90px 0 0;
   }
 }
 
 .path-frontpage #page {
-  padding: 105px 0 0;
+  padding: 90px 0 0;
 
-  @media (max-width: $broken) {
-    padding: 170px 0 0;
+  @media (max-width: $broken4) {
+    padding: 140px 0 0;
+  }
+
+  @media (max-width: $tablet) {
+    padding: 90px 0 0;
   }
 }
 
@@ -417,6 +421,6 @@ ol,
 
 //Image placeholder lazy-load
 img[src*="placeholder-image.svg"] {
-	width: 100vw;
-	max-width: 100%;
+  width: 100vw;
+  max-width: 100%;
 }
