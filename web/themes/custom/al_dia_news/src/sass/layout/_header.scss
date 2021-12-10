@@ -43,6 +43,10 @@ body.open-menu {
       display: none;
     }
 
+		#block-al-dia-news-branding h1{
+			margin-bottom: 4px;
+		}
+
     #block-loginformpopup {
       margin: 0;
       padding-bottom: 5px;
@@ -319,11 +323,15 @@ body.open-menu {
     z-index: 2;
     max-width: 1030px;
 
+		@media (max-width: $tablet) {
+			justify-content: center;
+		}
+
     .menu {
 			align-items: center;
 			gap: 25px;
       flex-wrap: wrap;
-      margin: 0;
+      margin: 35px 0;
 
 			&::after {
 				content: none;
