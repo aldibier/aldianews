@@ -228,12 +228,22 @@
     right: 35px;
     width: 20px;
     height: 20px;
+		padding: 0;
     display: block;
     font-size: 0;
     background: url("../img/close-white.png") center center no-repeat;
     border: none;
     cursor: pointer;
   }
+
+	@media (max-width: $tablet) {
+		right: calc(0% + 15px);
+    top: 0;
+    width: 15px;
+    height: 15px;
+    margin: 1px;
+		background: none;
+	}
 
   @media (max-width: $tablet) {
     margin: 0px auto 20px !important;
