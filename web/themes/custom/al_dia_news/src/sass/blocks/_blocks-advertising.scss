@@ -236,19 +236,8 @@
     cursor: pointer;
   }
 
-	@media (max-width: $tablet) {
-		right: calc(0% + 15px);
-    top: 0;
-    width: 15px;
-    height: 15px;
-    margin: 1px;
-		background: none;
-	}
-
   @media (max-width: $tablet) {
     margin: 0px auto 20px !important;
-    display: flex;
-    justify-content: center;
 
     button[name="close"] {
       width: 10px;
