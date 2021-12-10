@@ -228,6 +228,7 @@ body.open-menu {
 //------------------menu secondary----------//
 .region-secondary-menu.open-menu {
   height: auto;
+	min-height: 120px;
   transition: all 1s cubic-bezier(0.55, 0, 0.1, 1);
 
   >* {
@@ -312,15 +313,21 @@ body.open-menu {
   }
 
   #block-al-dia-news-main-menu {
+		display: flex;
+		align-items: center;
     width: 100%;
     z-index: 2;
     max-width: 1030px;
 
     .menu {
-			align-items: baseline;
-			gap: 0 25px;
+			align-items: center;
+			gap: 25px;
       flex-wrap: wrap;
-      margin: 35px 0;
+      margin: 0;
+
+			&::after {
+				content: none;
+			}
 
 			@media (max-width: $desktop) {
 				gap: 15px;
@@ -341,7 +348,7 @@ body.open-menu {
       text-align: center;
       letter-spacing: 0.025em;
       padding: 0;
-      margin: auto 0;
+      margin: 0;
 
 			@media (max-width: $desktop) {
 				padding: 0;
@@ -356,7 +363,6 @@ body.open-menu {
     .menu-item {
 			flex: 0 1 auto;
 			min-width: 60px;
-			min-height: 38px;
       margin: 0;
       display: flex;
       flex-wrap: wrap;
