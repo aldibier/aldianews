@@ -259,7 +259,8 @@ body.open-menu {
 
 .region-secondary-menu {
   display: flex;
-  max-width: 1280px;
+  max-width: 1310px;
+	padding: 0 15px;
   margin: 0 auto;
   position: relative;
   background: $cwhite;
@@ -316,12 +317,13 @@ body.open-menu {
     max-width: 1030px;
 
     .menu {
+			align-items: baseline;
+			gap: 0 25px;
       flex-wrap: wrap;
       margin: 35px 0;
 
 			@media (max-width: $desktop) {
 				gap: 15px;
-				padding-left: 15px;
       }
 
       @media (max-width: $tablet) {
@@ -343,7 +345,6 @@ body.open-menu {
 			@media (max-width: $desktop) {
 				padding: 0;
 				margin: 0;
-				text-align: left;
       }
     }
   }
@@ -352,6 +353,9 @@ body.open-menu {
     display: flex;
 
     .menu-item {
+			flex: 0 1 auto;
+			min-width: 60px;
+			min-height: 38px;
       margin: 0;
       display: flex;
       flex-wrap: wrap;
@@ -390,6 +394,7 @@ body.open-menu {
 			flex: 0 0 auto;
       width: 25px;
       height: 25px;
+			min-width: initial;
 			min-height: initial;
       position: relative;
       margin: 5px;
