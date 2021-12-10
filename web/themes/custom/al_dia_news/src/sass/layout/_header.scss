@@ -801,7 +801,7 @@ body.open-menu {
       }
 
       &:after {
-        content: "Menú";
+        content: "Menu";
         display: block;
         position: absolute;
         left: 0;
@@ -816,6 +816,10 @@ body.open-menu {
         text-align: center;
         bottom: 4px;
       }
+
+			&:lang(es)::after{
+				content: "Menú";
+			}
     }
   }
 
