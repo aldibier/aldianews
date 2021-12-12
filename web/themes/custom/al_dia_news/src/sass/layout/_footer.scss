@@ -146,7 +146,7 @@
 
     @media (max-width:$broken) {
       grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: initial;
+      grid-template-rows: auto;
       grid-auto-rows: auto;
       grid-gap: 70px;
       grid-template-areas: 'logo-title logo-title'
