@@ -632,7 +632,13 @@
     #block-footer {
 
       .content>.menu {
+				gap: 20px;
+				flex-wrap: nowrap;
         margin-bottom: 33px;
+
+				&:lang(es){
+					gap: 25px;
+				}
 
         >li:last-child {
           margin-top: 35px;
