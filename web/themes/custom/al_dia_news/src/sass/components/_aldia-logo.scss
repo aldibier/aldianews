@@ -110,14 +110,14 @@
     }
   }
 
-	@media (max-width: $tablet) {
+  @media (max-width: $tablet) {
     .card-more .aldia-logo-in-text {
       max-width: 40px;
       max-height: 12px;
 
       img {
         height: 12px;
-				max-width: 40px;
+        max-width: 40px;
       }
     }
   }
@@ -135,9 +135,9 @@
       margin: 0;
 
       @media (max-width: $tablet) {
-				top: -1px;
+        top: -1px;
         max-width: 75px;
-				max-height: 25px;
+        max-height: 25px;
         padding-right: 5px;
       }
 
@@ -168,7 +168,7 @@
       padding-right: 20px;
 
       @media (max-width: $tablet) {
-				max-height: 15px;
+        max-height: 15px;
         padding-right: 0;
       }
     }
@@ -185,9 +185,9 @@
       background: #f1f1f1;
 
       @media (max-width: $tablet) {
-				top: -1px;
+        top: -1px;
         max-width: 75px;
-				max-height: 25px;
+        max-height: 25px;
       }
 
       img {
@@ -315,6 +315,19 @@
       }
     }
   }
+}
+
+/* Share a news tip */
+.path-share-a-news-tip {
+	.block-field-blocknodepagebody h1 .aldia-logo-in-text img  {
+		width: 130px;
+    height: 35px;
+
+		@media screen and(max-width:$tablet) {
+			width: 50px;
+			height: 15px;
+		}
+	}
 }
 
 /* Landing events */
