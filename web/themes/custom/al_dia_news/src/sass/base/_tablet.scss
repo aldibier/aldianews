@@ -26,12 +26,12 @@
     margin-bottom: 65px !important;
 
     button[name="close"] {
-			right: calc(0% + 15px);
-			top: 0;
-			width: 15px;
-			height: 15px;
-			margin: 1px;
-			background: url("../img/close-black.png") center center no-repeat;
+      right: calc(0% + 15px);
+      top: 0;
+      width: 15px;
+      height: 15px;
+      margin: 1px;
+      background: url("../img/close-black.png") center center no-repeat;
     }
   }
 
@@ -397,6 +397,12 @@
       width: 100vw;
       background-color: #ccc;
     }
+
+    ~.card-one-column:nth-child(1n + 4)::before {
+      content: none !important;
+      display: none !important;
+    }
+
   }
 
   .view-categories-sons .block-fixed-block-contentsquare-advertising-mobile {
