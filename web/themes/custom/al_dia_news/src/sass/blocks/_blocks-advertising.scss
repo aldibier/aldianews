@@ -228,7 +228,7 @@
     right: 35px;
     width: 20px;
     height: 20px;
-		padding: 0;
+    padding: 0;
     display: block;
     font-size: 0;
     background: url("../img/close-white.png") center center no-repeat;
@@ -237,7 +237,7 @@
   }
 
   @media (max-width: $tablet) {
-		width: max-content;
+    width: max-content;
     margin: 0px auto 20px !important;
 
     button[name="close"] {
@@ -840,6 +840,10 @@
 .path-videos .news-gallery .view-content>div:not(.no-result-search) {
   .empty-box {
     font-size: 0;
+  }
+
+  @media screen and (min-width: $tablet) {
+    display: none;
   }
 
   @media screen and (max-width: $tablet) {
