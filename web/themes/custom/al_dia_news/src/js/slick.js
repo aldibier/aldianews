@@ -83,19 +83,12 @@ const initSlick = ($, Drupal) => {
 		slidesToScroll: 1,
 		responsive: [
 			{
-				breakpoint: 768,
-				settings: {
-					slidesToShow: 3,
-					slidesToScroll: 1
-				}
-			},
-			{
-				breakpoint: 500,
+				breakpoint: 769,
 				settings: {
 					slidesToShow: 2,
 					slidesToScroll: 1
 				}
-			}
+			},
 		]
 	});
 
