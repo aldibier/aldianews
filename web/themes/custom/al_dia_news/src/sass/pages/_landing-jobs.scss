@@ -1088,11 +1088,11 @@ $brokenPixelUp: $broken2+1;
 
   //View with advertising
   .block-views-blockcareer-news-block-1:not(.view-complete) {
-		flex: 1 0 400px;
+    flex: 1 0 400px;
 
     .view-content {
       //grid-template-columns: repeat(2, minmax(auto, 1fr));
-			grid-template-columns: 1fr;
+      grid-template-columns: 1fr;
 
       .views-row {
         &:nth-child(n + 2) {
@@ -1104,9 +1104,9 @@ $brokenPixelUp: $broken2+1;
     }
   }
 
-	.block-views-blockcareer-news-block-1:not(.view-complete) + .block-fixed-block-contentbig-vertical-advertising {
-		flex: 0 1 420px;
-	}
+  .block-views-blockcareer-news-block-1:not(.view-complete)+.block-fixed-block-contentbig-vertical-advertising {
+    flex: 0 1 420px;
+  }
 
 }
 
