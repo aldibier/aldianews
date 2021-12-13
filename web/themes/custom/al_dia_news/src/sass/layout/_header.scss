@@ -43,9 +43,9 @@ body.open-menu {
       display: none;
     }
 
-		#block-al-dia-news-branding h1{
-			margin-bottom: 4px;
-		}
+    #block-al-dia-news-branding h1 {
+      margin-bottom: 4px;
+    }
 
     #block-loginformpopup {
       margin: 0;
@@ -232,7 +232,7 @@ body.open-menu {
 //------------------menu secondary----------//
 .region-secondary-menu.open-menu {
   height: auto;
-	min-height: 120px;
+  min-height: 120px;
   transition: all 1s cubic-bezier(0.55, 0, 0.1, 1);
 
   >* {
@@ -265,7 +265,7 @@ body.open-menu {
 .region-secondary-menu {
   display: flex;
   max-width: 1310px;
-	padding: 0 15px;
+  padding: 0 15px;
   margin: 0 auto;
   position: relative;
   background: $cwhite;
@@ -317,32 +317,32 @@ body.open-menu {
   }
 
   #block-al-dia-news-main-menu {
-		display: flex;
-		align-items: center;
+    display: flex;
+    align-items: center;
     width: 100%;
     z-index: 2;
     max-width: 1030px;
 
-		@media (max-width: $tablet) {
-			justify-content: center;
-		}
+    @media (max-width: $tablet) {
+      justify-content: center;
+    }
 
     .menu {
-			align-items: center;
-			gap: 25px;
+      align-items: center;
+      gap: 25px;
       flex-wrap: wrap;
       margin: 35px 0;
 
-			&::after {
-				content: none;
-			}
+      &::after {
+        content: none;
+      }
 
-			@media (max-width: $desktop) {
-				gap: 15px;
+      @media (max-width: $desktop) {
+        gap: 15px;
       }
 
       @media (max-width: $tablet) {
-				gap: 0;
+        gap: 0;
         margin: 0;
       }
     }
@@ -358,9 +358,9 @@ body.open-menu {
       padding: 0;
       margin: 0;
 
-			@media (max-width: $desktop) {
-				padding: 0;
-				margin: 0;
+      @media (max-width: $desktop) {
+        padding: 0;
+        margin: 0;
       }
     }
   }
@@ -369,8 +369,8 @@ body.open-menu {
     display: flex;
 
     .menu-item {
-			flex: 0 1 auto;
-			min-width: 60px;
+      flex: 0 1 auto;
+      min-width: 60px;
       margin: 0;
       display: flex;
       flex-wrap: wrap;
@@ -385,16 +385,16 @@ body.open-menu {
         }
       }
 
-			@media (max-width: $desktop) {
-				align-items: center;
+      @media (max-width: $desktop) {
+        align-items: center;
         flex: 0 1 100px;
-				min-height: 38px;
+        min-height: 38px;
       }
 
-			@media (max-width: $tablet) {
-				flex: initial;
-				min-height: 20px;
-			}
+      @media (max-width: $tablet) {
+        flex: initial;
+        min-height: 20px;
+      }
     }
   }
 
@@ -406,11 +406,11 @@ body.open-menu {
     min-width: 195px;
 
     .menu-item {
-			flex: 0 0 auto;
+      flex: 0 0 auto;
       width: 25px;
       height: 25px;
-			min-width: initial;
-			min-height: initial;
+      min-width: initial;
+      min-height: initial;
       position: relative;
       margin: 5px;
       display: flex;
@@ -419,7 +419,7 @@ body.open-menu {
       transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
       background-color: $cgrey5;
       border-radius: 100%;
-			text-align: center;
+      text-align: center;
 
       &:hover {
         transform: scale(1.2);
@@ -817,9 +817,9 @@ body.open-menu {
         bottom: 4px;
       }
 
-			&:lang(es)::after{
-				content: "Menú";
-			}
+      &:lang(es)::after {
+        content: "Menú";
+      }
     }
   }
 
@@ -907,6 +907,20 @@ body.open-menu {
       background-color: $cblack2;
     }
 
+    @media (max-width: $broken) {
+      justify-content: center;
+
+      p {
+        font-size: szrem(18);
+      }
+
+    }
+
+    @media (max-width: $tablet) {
+      p {
+        font-size: szrem(11);
+      }
+    }
   }
 
   #block-magnifierheader {
@@ -1258,12 +1272,13 @@ body.open-menu {
     }
 
     #block-sitedescription {
-      //bottom: -31px;
+      justify-content: center;
       padding: 10px 15px;
 
       p {
         font-size: 11px;
         line-height: 13px;
+        text-align: center;
 
         @media (max-width: 350px) {
           font-size: 10px;
