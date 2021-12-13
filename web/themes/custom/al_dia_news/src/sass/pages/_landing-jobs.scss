@@ -773,8 +773,7 @@ $brokenPixelUp: $broken2+1;
   flex: 1;
 
   .view-content {
-    //grid-template-columns: repeat(2, minmax(auto, 1fr));
-		grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(auto, 1fr));
 
     .views-row {
       @media (min-width: $brokenPixelUp) {
@@ -1089,7 +1088,7 @@ $brokenPixelUp: $broken2+1;
 
   //View with advertising
   .block-views-blockcareer-news-block-1:not(.view-complete) {
-
+		grid-template-columns: 1fr;
 
 		.block-views-blockcareer-news-block-1 {
 			flex: 1 0 400px;
