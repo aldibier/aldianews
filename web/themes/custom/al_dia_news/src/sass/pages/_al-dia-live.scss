@@ -713,6 +713,31 @@
       height: 100%;
     }
 
+
+    .about-al-dia-live-slider {
+      ul:not(.slick-slider) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 160px;
+        overflow: hidden;
+
+				li {
+					min-width: 290px;
+					height: 165px;
+				}
+
+        @media screen and (max-width: $tablet) {
+          margin-bottom: 80px;
+
+					li {
+						min-width: 120px;
+						height: 65px;
+					}
+        }
+      }
+    }
+
     .slick-slider {
       margin-bottom: 60px;
       padding-bottom: 50px;
