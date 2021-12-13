@@ -773,7 +773,8 @@ $brokenPixelUp: $broken2+1;
   flex: 1;
 
   .view-content {
-    grid-template-columns: repeat(2, minmax(auto, 1fr));
+    //grid-template-columns: repeat(2, minmax(auto, 1fr));
+		grid-template-columns: 1fr;
 
     .views-row {
       @media (min-width: $brokenPixelUp) {
@@ -1088,11 +1089,21 @@ $brokenPixelUp: $broken2+1;
 
   //View with advertising
   .block-views-blockcareer-news-block-1:not(.view-complete) {
+
+
+		.block-views-blockcareer-news-block-1 {
+			flex: 1 0 400px;
+		}
+
+		.block-views-blockcareer-news-block-1 + .block-fixed-block-contentbig-vertical-advertising {
+			flex: 0 1 420px;
+		}
+
     .view-content {
       grid-template-columns: repeat(2, minmax(auto, 1fr));
 
       .views-row {
-        &:nth-child(n + 3) {
+        &:nth-child(n + 2) {
           margin-top: 15px;
           padding-top: 15px;
           border-top: 1px solid $cgrey4;
