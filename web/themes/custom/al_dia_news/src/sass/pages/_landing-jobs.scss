@@ -361,14 +361,28 @@ $brokenPixelUp: $broken2+1;
 
     .brands-carousel-wrapper {
       .view-content:not(.slick-slider) {
-				display: flex;
-				justify-content: center;
-				overflow: hidden;
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
 
-				.brands-carousel-slide {
-					min-width: 380px;
-					height: 200px;
-				}
+        .brands-carousel-slide {
+          min-width: 380px;
+          height: 200px;
+        }
+
+        @media (max-width: $broken) {
+          .brands-carousel-slide {
+            min-width: 274px;
+            height: 145px;
+          }
+        }
+
+        @media (max-width: $tablet) {
+          .brands-carousel-slide {
+            min-width: 230px;
+            height: 115px;
+          }
+        }
       }
     }
 
