@@ -82,7 +82,7 @@
         @include esize(100%);
         z-index: 0;
         object-fit: cover;
-				object-position: top;
+        object-position: top;
       }
 
       @media screen and (min-width: $tablet) {
@@ -258,7 +258,7 @@
       border-bottom: 1px solid $cblack3;
       margin: 0 0 40px;
       font-family: $ModernoFB-Regular;
-      word-break: break-all;
+      word-break: break-word;
 
       h2 {
         display: inline-block;
@@ -494,6 +494,7 @@
 }
 
 .path-jobs:not(.path-jobs-employer) {
+
   .block-menu-float .menu::before,
   .block-menu-float .menu::after {
     display: none;
