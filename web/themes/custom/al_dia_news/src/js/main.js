@@ -721,8 +721,6 @@ const initMain = ($, Drupal) => {
 
 	const menuFooterSecondColumn = document.querySelector("#block-footer > div.content > ul > li:nth-child(2) > div > ul")
 
-	console.log(menuFooterSecondColumn);
-
 	if (!!menuFooterSecondColumn) {
 		let copyr = document.querySelector('.copyr').cloneNode(true);
 		let powerd = document.querySelector('.powerd').cloneNode(true);
