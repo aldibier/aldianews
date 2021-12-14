@@ -474,10 +474,11 @@
       left: 0px;
       right: 0px;
       margin: 0 auto;
-      top: 35px;
+      top: 50%;
       background: transparent url(../img/svg/player.svg) center center no-repeat;
       background-size: contain;
       z-index: 2;
+			transform: translateY(-50%);
     }
 
     img {
@@ -704,7 +705,6 @@
       &::before {
         width: 33px;
         height: 33px;
-        top: 23px;
       }
     }
 
