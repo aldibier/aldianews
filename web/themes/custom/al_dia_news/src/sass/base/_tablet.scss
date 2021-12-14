@@ -362,9 +362,9 @@
     margin: 25px auto !important;
   }
 
-	.path-about-al-dia-live .first-block-bottom-banner {
-		margin: 0 auto 35px !important;
-	}
+  .path-about-al-dia-live .first-block-bottom-banner {
+    margin: 0 auto 35px !important;
+  }
 
   //Podcast y more covers
   .podcast-content-list .view-header,
@@ -420,6 +420,18 @@
   .content-right-pages {
     flex: 1 1 200px;
     justify-content: center;
+  }
+
+  .path-share-a-news-tip .content-left-pages,
+  .path-compartir-una-noticia .content-left-pages {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .path-share-a-news-tip .content-right-pages,
+  .path-compartir-una-noticia .content-right-pages {
+    display: none;
   }
 
   .margin-bottom {
