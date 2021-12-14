@@ -217,6 +217,13 @@
           background-color: $cwhite;
         }
       }
+
+			.skys-scroll {
+				&::after {
+					content: '' !important;
+					display: block !important;
+				}
+			}
     }
   }
 
