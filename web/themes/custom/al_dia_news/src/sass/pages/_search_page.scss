@@ -526,9 +526,15 @@
   }
 }
 
+@media (max-width: $broken4) {
+	#block-exposedformsearch-results-al-dia-solrpage-1-2 {
+		bottom: -121px;
+	}
+}
+
 @media (max-width: $tablet) {
   #block-exposedformsearch-results-al-dia-solrpage-1-2 {
-    bottom: -148px;
+    bottom: -118px;
     min-height: 110px;
     border-bottom: 0px;
     padding: 15px;
@@ -542,6 +548,7 @@
       right: 20px;
       width: 15px;
       height: 15px;
+			background-size: contain;
     }
     .form-type-textfield {
       padding: 0px 20px 0px 25px;
