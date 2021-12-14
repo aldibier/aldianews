@@ -218,12 +218,17 @@
         }
       }
 
-			.skys-scroll {
-				&::after {
-					content: '' !important;
-					display: block !important;
-				}
-			}
+      .skys-scroll {
+        &::after {
+          content: "" !important;
+          position: absolute;
+          display: block !important;
+          left: calc(0% - 20px);
+          width: 20px;
+          height: 100%;
+          background-color: $cwhite;
+        }
+      }
     }
   }
 
