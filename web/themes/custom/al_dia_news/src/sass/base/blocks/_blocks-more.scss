@@ -180,7 +180,7 @@
         display: block !important;
         position: absolute;
         top: calc(0% - 35px);
-        width: 100%;
+        width: 100vw;
         height: 1px;
         background-color: $cgrey4;
       }
@@ -200,6 +200,14 @@
         display: none !important;
       }
     }
+
+		@media (max-width: $tablet) {
+			&:nth-child(odd)::before,
+      &::before {
+        content: '';
+        top: calc(0% - 20px);
+      }
+		}
   }
 }
 
@@ -306,7 +314,12 @@
     .view-more-authors {
       .views-row {
         min-width: 140px;
+				margin: 20px 0 !important;
       }
+    }
+
+		.views-row:not(.card-more-author) {
+			margin: 20px 0 !important;
     }
   }
 }
