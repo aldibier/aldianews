@@ -108,6 +108,7 @@
     justify-content: center;
     align-items: center;
     flex: 1 1 100%;
+		margin-top: 60px;
   }
 
   .block-block-groupgroup-career-news-jobs .block-fixed-block-contentbig-vertical-advertising {
@@ -670,6 +671,12 @@
 }
 
 @media (min-width: $tablet) and (max-width: $broken) {
+
+	.block-views-blockmore-in-this-section-news-block-1 .view-content .skyscraper-mobile,
+  .view-more-news .skyscraper-mobile {
+		margin: 0 0 40px 0 !important;
+  }
+
 
   //Infinite more covers
   .path-more-covers .banner-scroll {
