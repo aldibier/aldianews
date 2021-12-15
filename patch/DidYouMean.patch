@@ -24,11 +24,11 @@ index 42ef994..91dcb36 100644
  use Drupal\search_api\Query\ResultSetInterface;
  use Drupal\views\Plugin\views\area\AreaPluginBase;
 +use Symfony\Component\HttpFoundation\RedirectResponse;
- 
+
  /**
   * Provides an area for messages.
 @@ -112,15 +113,35 @@ class DidYouMeanSpellCheck extends AreaPluginBase {
- 
+
          // Don't offer the identical search keys as "Did you mean".
          if ($new_keys !== $keys) {
 +
@@ -64,7 +64,7 @@ index 42ef994..91dcb36 100644
 +    ];
 +
    }
- 
+
    /**
 @@ -165,10 +186,13 @@ class DidYouMeanSpellCheck extends AreaPluginBase {
     * @return \Drupal\Core\StringTranslation\TranslatableMarkup
@@ -76,7 +76,7 @@ index 42ef994..91dcb36 100644
 +  // protected function getSuggestionLabel($original_token) {
 +  //   return $this->t('We’re sorry. We could not find results for "@original_token"', ['@original_token' => $original_token]);
 +  // }
- 
+
 +  // protected function getSuggestionLabelResults($token) {
 +  //   return $this->t('Showing results for "@token"', ['@token' => $token]);
 +  // }
@@ -84,7 +84,7 @@ index 42ef994..91dcb36 100644
     * Gets the suggestion link.
     *
 @@ -188,4 +212,51 @@ class DidYouMeanSpellCheck extends AreaPluginBase {
- 
+
      return Link::fromTextAndUrl($new_keys, $url);
    }
 +
@@ -142,10 +142,12 @@ index 42b474e..2ffdd17 100644
 @@ -12,9 +12,24 @@
   */
  #}
- 
+
 +<script type="text/javascript">
 +  var elem = document.getElementById("dym-wrapper");
++ if(!!elem){
 +  elem.remove();
++ }
 +</script>
 +
 +{% if url_redirect %}
@@ -165,5 +167,5 @@ index 42b474e..2ffdd17 100644
 +  <div class="did-you-mean-prefix">{{ 'We’re sorry. We could not find results for '|t }}<span class="original-token-i">"{{ original_token }}"</span></div>
 +  <div class="showing-token">{{ 'Showing results for '|t }}<span class="token-it">"{{ token }}"</span></div>
  </div>
- 
+
 +{% endif %}
