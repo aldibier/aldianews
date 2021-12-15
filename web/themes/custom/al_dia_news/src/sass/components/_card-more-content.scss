@@ -133,6 +133,11 @@
         line-height: 19px;
         color: $cgrey3;
 
+				@media (max-width: $broken) {
+          font-size: szrem(12);
+          line-height: 20px;
+        }
+
         @media (max-width: $tablet) {
           font-size: szrem(10);
           line-height: 12px;
