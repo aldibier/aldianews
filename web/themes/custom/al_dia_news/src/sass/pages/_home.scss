@@ -640,13 +640,14 @@
     @media (min-width: 769px) {
       &::after {
         content: "";
-        width: calc(100% - 50px);
+        width: 100%;
         position: absolute;
         right: 0;
         background: $corange2;
         height: 3px;
-        top: calc(50% - 5px);
+        top: calc(50%);
         z-index: 0;
+				transform: translateY(-50%);
       }
     }
 
