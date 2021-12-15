@@ -114,14 +114,15 @@
         color: $cblack;
 
         @media (max-width: $broken) {
+          font-size: szrem(30);
+          line-height: 23px;
+        }
+
+        @media (max-width: $tablet) {
           font-size: 14px;
           line-height: 17px;
         }
 
-        @media (max-width: $tablet) {
-          font-size: szrem(30);
-          line-height: 23px;
-        }
       }
 
       .date-more-content {
