@@ -1134,9 +1134,13 @@ body.open-menu {
 
   #block-loginformpopup {
     //min-width: 50px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
     min-width: max-content;
     max-width: 56px;
-    margin: auto 0;
+		padding-bottom: 5px;
+    margin: 0;
 
     &:lang(es) {
       min-width: min-content;

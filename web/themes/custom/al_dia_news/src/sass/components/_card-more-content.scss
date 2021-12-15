@@ -11,7 +11,7 @@
     margin: 0;
     font-family: initial;
   }
-	
+
   //end reset style
 
   @media (max-width: $broken) {
@@ -113,9 +113,14 @@
         line-height: 29px;
         color: $cblack;
 
-        @media (max-width: $tablet) {
+        @media (max-width: $broken) {
           font-size: 14px;
           line-height: 17px;
+        }
+
+        @media (max-width: $tablet) {
+          font-size: szrem(30);
+          line-height: 23px;
         }
       }
 
@@ -453,7 +458,7 @@
 
   .views-field-fieldset {
     @media screen and (max-width: $broken) {
-      margin-bottom: 10px;
+      margin-bottom: 15px;
     }
   }
 }
@@ -467,16 +472,16 @@
     }
 
     @media screen and (max-width: $tablet) {
-			flex: 1 1 140px;
+      flex: 1 1 140px;
       margin: 0 10px 0 0;
     }
   }
 
-	.two-content-category-four.short-title-date {
-		@media screen and (max-width: $tablet) {
-			flex: 1 0 140px;
+  .two-content-category-four.short-title-date {
+    @media screen and (max-width: $tablet) {
+      flex: 1 0 140px;
     }
-	}
+  }
 }
 
 .path-taxonomy {

@@ -108,7 +108,7 @@
     justify-content: center;
     align-items: center;
     flex: 1 1 100%;
-		margin-top: 60px;
+    margin-top: 60px;
   }
 
   .block-block-groupgroup-career-news-jobs .block-fixed-block-contentbig-vertical-advertising {
@@ -533,11 +533,11 @@
 
     &::before {
       content: "" !important;
-			position: absolute;
+      position: absolute;
       z-index: 1;
       top: calc(0% - 80px);
-			display: block !important;
-			width: 100vw !important;
+      display: block !important;
+      width: 100vw !important;
       height: 80px !important;
       background-color: $cwhite;
     }
@@ -634,6 +634,22 @@
 
 @media (min-width: 993px) and (max-width: $desktop) {
 
+  .path-frontpage .view-categories-sons .skyscraper-mobile {
+    position: relative;
+
+    ~.card-one-column:nth-child(1n + 4)::after {
+      content: '' !important;
+      display: block !important;
+      position: absolute;
+      top: 0;
+      right: calc(0% - 20px);
+      width: 1px;
+      height: 100%;
+      background-color: #ccc;
+    }
+
+  }
+
   // interna news 
   .page-node-type-news {
     .view-more-news {
@@ -672,9 +688,9 @@
 
 @media (min-width: $tablet) and (max-width: $broken) {
 
-	.block-views-blockmore-in-this-section-news-block-1 .view-content .skyscraper-mobile,
+  .block-views-blockmore-in-this-section-news-block-1 .view-content .skyscraper-mobile,
   .view-more-news .skyscraper-mobile {
-		margin: 0 0 40px 0 !important;
+    margin: 0 0 40px 0 !important;
   }
 
 
