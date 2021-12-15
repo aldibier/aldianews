@@ -234,7 +234,8 @@
         padding-bottom: 0;
         position: relative;
 
-        &:first-child {
+        &:nth-child(1),
+				&:nth-child(2){
           margin-top: 0 !important;
         }
 
@@ -243,6 +244,7 @@
         }
 
         &:nth-last-child(-n+2) {
+					margin-bottom: 0 !important;
           &::before {
             display: none;
           }
@@ -269,12 +271,21 @@
       padding: 0;
       position: relative;
 
+			&:nth-child(1),
+			&:nth-child(2){
+				margin-top: 0 !important;
+			}
+
       &:nth-last-child(1),
       &:nth-last-child(2) {
         &::before {
           display: none;
         }
       }
+
+			&:nth-last-child(-n+2) {
+				margin-bottom: 0 !important;
+			}
 
       // &::before {
       //   content: "";

@@ -39,8 +39,13 @@
       line-height: 32px;
       color: $cblack2;
 
+			@media screen and (max-width: $broken) {
+        font-size: szrem(28);
+        line-height: 18px;
+      }
+
       @media screen and (max-width: $tablet) {
-        font-size: szrem(15);
+        font-size: szrem(17);
         line-height: 18px;
       }
     }
