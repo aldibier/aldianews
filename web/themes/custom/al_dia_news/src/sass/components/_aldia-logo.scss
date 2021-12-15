@@ -470,6 +470,34 @@
   }
 }
 
+.view-id-carousel_videos_landing.view-display-id-page_1 {
+  .container-video-landing {
+    .aldia-logo-in-text {
+			top: 2px;
+      max-width: 70px;
+      max-height: 30px;
+      line-height: 1;
+
+      img {
+				height: 34px;
+				max-height: 25px;
+      }
+    }
+
+    @media (max-width: $tablet) {
+      .aldia-logo-in-text {
+        max-width: 40px;
+        max-height: 17px;
+
+        img {
+          height: 15px;
+        }
+      }
+    }
+
+  }
+}
+
 /* Suscribe */
 .block-fixed-block-contentheader-landing-subscribe {
   h2 {
