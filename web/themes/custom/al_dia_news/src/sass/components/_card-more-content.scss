@@ -12,6 +12,10 @@
     font-family: initial;
   }
 
+	.short-title-date {
+		line-height: 1;
+	}
+
   //end reset style
 
   @media (max-width: $broken) {
@@ -40,6 +44,11 @@
 	@media (max-width: $tablet) {
 		&.view-more-in-this-section-news {
 			margin-bottom: 40px;
+
+			.card-more-news .short-title-date h3 {
+        margin: 0 0 5px 0;
+      }
+
 		}
 	}
 
@@ -462,7 +471,7 @@
 
 .card-more-news {
   img {
-    @media screen and (min-width: $broken) {
+    @media screen and (min-width: 993px) {
       max-width: 175px;
       min-width: 175px;
     }
@@ -471,6 +480,10 @@
   .views-field-fieldset {
     @media screen and (max-width: $broken) {
       margin-bottom: 15px;
+    }
+
+		@media screen and (max-width: $tablet) {
+      margin-bottom: 10px;
     }
   }
 }
