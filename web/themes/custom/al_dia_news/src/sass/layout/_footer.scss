@@ -245,18 +245,26 @@
         margin-right: 5px;
 
         @media (max-width: $tablet) {
-          position: absolute;
-          display: block;
-          height: initial;
-          top: -55px;
-          left: 0;
-          width: 50px;
-
-          &:lang(es) {
-            left: 0;
-          }
+          display: none;
         }
       }
+
+      .field--name-field-image-footer-mobile {
+				position: absolute;
+				display: none;
+				height: initial;
+				top: -55px;
+				left: 0;
+				width: 50px;
+
+				&:lang(es) {
+					left: 0;
+				}
+				@media (max-width: $tablet) {
+					display: block;
+				}
+
+			}
 
       img {
         //transform: scale(1.3) translateY(-60%);
@@ -527,6 +535,10 @@
       background-position: center;
       background-repeat: no-repeat;
       background-size: contain;
+
+			@media (max-width: $tablet) {
+				background-image: icon('logo-footer-x1-mobile', 'png');
+			}
     }
   }
 
