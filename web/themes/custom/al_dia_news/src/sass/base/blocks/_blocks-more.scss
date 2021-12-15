@@ -179,7 +179,7 @@
         content: '';
 				display: block !important;
         position: absolute;
-        top: calc(0% - 20px);
+        top: calc(0% - 35px);
         width: 100vw;
         height: 1px;
         background-color: $cgrey4;
@@ -219,9 +219,13 @@
 
     .view-more-authors {
       .views-row {
-        margin: 0 0 40px;
+        margin: 35px 0 !important;
         padding-bottom: 0;
         position: relative;
+
+				&:first-child {
+					margin-top: 0 !important;
+				}
 
         &:nth-of-type(2n + 1) {
           border-right: 1px solid $cgrey4;
