@@ -390,7 +390,14 @@
     attach: function(context) {
       //// sumo select
 
-			console.log(context);
+			if(context.classList.contains('.form-sponsorship-events')){
+				const selectCountry = document.querySelector('select[id*="edit-address-country"]');
+				const optionToMove = selectCountry.querySelector('option[value="United States"]');
+				const optionFirst = selectCountry.firstElementChild;
+
+				if(!!optionToMove)optionFirst.insertAdjacentElement('afterend',optionToMove);
+
+			}
 
       const addSumoselect = (select) => {
         if (select!= null) {
