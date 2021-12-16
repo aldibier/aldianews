@@ -942,7 +942,11 @@ body.open-menu {
     align-items: center;
     order: 4;
     padding-bottom: 5px;
-    margin: 0 15px 0 26px;
+    margin: 0 15px 0 auto;
+
+		.block-search {
+			margin-left: 27px;
+		}
 
     @media (max-width: $tablet) {
       order: 6;
@@ -950,6 +954,11 @@ body.open-menu {
       height: 15px;
       max-height: 38px;
       margin: 8px 0 0 0;
+
+			.block-search {
+				margin-left: 0;
+			}
+
     }
   }
 
@@ -985,7 +994,7 @@ body.open-menu {
     align-items: center;
     order: 5;
     padding-bottom: 5px;
-    margin: 0 auto 0 0;
+    margin: 0 40px 0 0;
   }
 
   .block-language {
