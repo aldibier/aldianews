@@ -2566,7 +2566,7 @@ var initSlick = function initSlick($, Drupal) {
     }, {
       breakpoint: 769,
       settings: {
-        slidesToShow: 3,
+        slidesToShow: 2,
         slidesToScroll: 1,
         centerMode: true
       }
