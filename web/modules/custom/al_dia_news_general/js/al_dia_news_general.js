@@ -390,6 +390,8 @@
     attach: function(context) {
       //// sumo select
 
+			console.log(context);
+
       const addSumoselect = (select) => {
         if (select!= null) {
           select.classList.add("testselect1");
