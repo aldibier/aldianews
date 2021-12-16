@@ -252,6 +252,10 @@
     &:nth-child(1) {
       height: 400px;
 
+			img {
+				object-fit: contain;
+			}
+
       @media (max-width: $broken2) {
         &:lang(es) {
           height: 100%;
