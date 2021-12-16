@@ -113,12 +113,12 @@ body.open-menu {
   #page {
     padding: 200px 0 0;
 
-		@media (max-width: $broken4) {
-			padding: 300px 0 0;
+    @media (max-width: $broken4) {
+      padding: 300px 0 0;
     }
 
-		@media (max-width: $tablet) {
-			padding: 380px 0 0;
+    @media (max-width: $tablet) {
+      padding: 380px 0 0;
     }
   }
 }
@@ -427,4 +427,16 @@ ol,
 img[src*="placeholder-image.svg"] {
   width: 100vw;
   max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+p,
+strong,
+a,
+div,
+span,
+li {
+  word-break: break-word;
 }
