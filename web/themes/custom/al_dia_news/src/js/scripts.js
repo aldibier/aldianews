@@ -20,6 +20,7 @@ import replaceToken from "./modules/replaceToken";
                               </span>`;
 	replaceToken("AL DÍA", aldiaLogoStructure, headingTags);
 	replaceToken("{aldia}", aldiaLogoStructure, paragraphTags);
+	replaceToken("AL DIA", aldiaLogoStructure, headingTags);
 
 	var $window = $(window);
 	var $videoWrap = $(

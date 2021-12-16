@@ -1942,6 +1942,7 @@ __webpack_require__.r(__webpack_exports__);
   var aldiaLogoStructure = "<span class=\"aldia-logo-in-text\" alt=\"ALD\xCDA\">\n                                <img alt=\"ALD\xCDA\" src=\"".concat(drupalSettings.path.baseUrl, "themes/custom/al_dia_news/assets/img/aldia.svg\">\n                              </span>");
   Object(_modules_replaceToken__WEBPACK_IMPORTED_MODULE_5__["default"])("AL DÍA", aldiaLogoStructure, headingTags);
   Object(_modules_replaceToken__WEBPACK_IMPORTED_MODULE_5__["default"])("{aldia}", aldiaLogoStructure, paragraphTags);
+  Object(_modules_replaceToken__WEBPACK_IMPORTED_MODULE_5__["default"])("AL DIA", aldiaLogoStructure, headingTags);
   var $window = $(window);
   var $videoWrap = $(".page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video");
   var $video = $(".page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video .content");
