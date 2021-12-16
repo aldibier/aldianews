@@ -344,6 +344,11 @@
     flex-wrap: wrap;
     align-items: center;
     text-align: center;
+
+		@media (max-width: $tablet) {
+			margin-bottom: 45px;
+		}
+
   }
 
   .event-guest-photo {
