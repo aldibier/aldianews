@@ -25,7 +25,7 @@
   }
 
   h3 {
-    font-family: $ModernoFB-Regular;
+    font-family: $Mod-light;
     font-style: normal;
     font-size: $px25;
     line-height: 30px;
@@ -876,8 +876,8 @@
   }
 
   .views-row {
-		display: flex;
-		flex-direction: column;
+    display: flex;
+    flex-direction: column;
     width: 100%;
     max-width: 100%;
     padding-bottom: 40px;
@@ -885,10 +885,10 @@
     transition: all 0.25s linear;
 
 
-		> span {
-			display: block;
-			flex: 1 1 100%;
-		}
+    >span {
+      display: block;
+      flex: 1 1 100%;
+    }
 
     .field--name-title {
       font-style: normal;
@@ -921,8 +921,8 @@
       font-weight: 600;
       font-size: $px34;
       line-height: 35px;
-      font-family: $PrNovacond-reg;
-      margin: 15px auto 0;
+      font-family: $PrNovacond-light;
+      margin: 15px auto;
       text-align: center;
       letter-spacing: -3px;
       color: #ed1c24;
@@ -1005,7 +1005,7 @@
 
       p {
         font-style: normal;
-        font-weight: 600;
+        font-weight: normal;
         font-size: 16px;
         line-height: 19px;
         text-align: center;
@@ -1098,7 +1098,7 @@
       display: flex;
       align-items: flex-end;
       justify-content: center;
-			height: 100%;
+      height: 100%;
 
       tr,
       td,
@@ -1360,7 +1360,7 @@ html[lang="es"] .view-subscribe .views-row {
 
     p {
       font-style: normal;
-      font-weight: 600;
+      font-weight: normal;
       font-size: $px18;
       line-height: 140%;
       font-family: $PrNovacond-reg;
@@ -1394,7 +1394,7 @@ html[lang="es"] .view-subscribe .views-row {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: $PrNovacond-bold;
+    font-family: $PrNovacond-reg;
     cursor: pointer;
     margin: -10px 0 0;
   }
