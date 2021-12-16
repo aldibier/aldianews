@@ -219,8 +219,9 @@ class RelatedContentFieldFormatter extends FormatterBase {
 
     $block = $entityManager->getStorage('block')->load('gamwadvertisement_22');
     $renderBlock = $entityManager->getViewBuilder('block')->view($block);
+    $block_content = \Drupal::service('renderer')->render($renderBlock);
 
-    return $renderBlock;
+    return $block_content;
   }
 
 }
