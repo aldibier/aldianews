@@ -230,7 +230,7 @@ class RelatedContentFieldFormatter extends FormatterBase {
       return [];
     }
     $build = $plugin_block->build();
-    $block_content = $this->renderer->render($build);
+    $block_content = \Drupal::service('renderer')->render($build);
     // Add the cache tags/contexts.
     \Drupal::service('renderer')->addCacheableDependency($render, $plugin_block);
 
