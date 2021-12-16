@@ -199,6 +199,8 @@ class RelatedContentFieldFormatter extends FormatterBase {
 
     $html = $dom->saveHtml();
 
+    \Drupal::logger('al_dia_news_general')->notice('Bloque'. json_encode($this->getBlockAd()));
+
     $content = "</p><div data-embed-button='related_content'>". $related_content ."</div>";
 
     // HTML to return
@@ -206,6 +208,32 @@ class RelatedContentFieldFormatter extends FormatterBase {
 
     return $html;
 
+  }
+  /**
+   * Render a new BLock AD from Gamw
+   *
+   * @return string
+   */
+  public function getBlockAd(){
+    $block_manager = \Drupal::service('plugin.manager.block');
+    // You can hard code configuration or you load from settings.
+    $config = [
+      'ad_unit' => ['internal-section-body']
+    ];
+    $plugin_block = $block_manager->createInstance('gamw', $config);
+    // Some blocks might implement access check.
+    $access_result = $plugin_block->access(\Drupal::currentUser());
+    // Return empty render array if user doesn't have access.
+    // $access_result can be boolean or an AccessResult class
+    if (is_object($access_result) && $access_result->isForbidden() || is_bool($access_result) && !$access_result) {
+      // You might need to add some cache tags/contexts.
+      return [];
+    }
+    $render = $plugin_block->build();
+    // Add the cache tags/contexts.
+    \Drupal::service('renderer')->addCacheableDependency($render, $plugin_block);
+
+    return $render;
   }
 
 }
