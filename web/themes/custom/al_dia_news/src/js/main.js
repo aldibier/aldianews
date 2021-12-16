@@ -762,16 +762,16 @@ const initMain = ($, Drupal) => {
 
 	function checkReloadPage(device, currentWidth) {
 		if (device === 'desktop') {
-			if (initialWidth < tablet) location.reload();
+			if (currentWidth < tablet) location.reload();
 		}
 
 		if (device === 'tablet') {
-			if (initialWidth > tablet) location.reload();
-			if (initialWidth < mobile) location.reload();
+			if (currentWidth > tablet) location.reload();
+			if (currentWidth < mobile) location.reload();
 		}
 
 		if (device === 'mobile') {
-			if (initialWidth > mobile) location.reload();
+			if (currentWidth > mobile) location.reload();
 		}
 	}
 
