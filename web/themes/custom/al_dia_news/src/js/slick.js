@@ -92,8 +92,9 @@ const initSlick = ($, Drupal) => {
 			{
 				breakpoint: 769,
 				settings: {
-					slidesToShow: 2,
-					slidesToScroll: 1
+					slidesToShow: 3,
+					slidesToScroll: 1,
+					centerMode: true,
 				}
 			},
 		]
