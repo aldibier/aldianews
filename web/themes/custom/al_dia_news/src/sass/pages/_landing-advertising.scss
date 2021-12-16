@@ -2,7 +2,7 @@
   .modal-form {
     display: none;
   }
-	
+
   .modal-form.show {
     display: block;
   }
@@ -252,9 +252,11 @@
     &:nth-child(1) {
       height: 400px;
 
-			.employer-image img {
-				object-fit: contain;
-			}
+      .employer-image img {
+        top: 50%;
+        transform: translateY(-50%);
+        object-fit: contain;
+      }
 
       @media (max-width: $broken2) {
         &:lang(es) {
@@ -553,10 +555,10 @@
           max-width: initial;
         }
 
-				:lang(es) .field--name-field-text {
-					width: 80%;
-					max-width: 280px;
-				}
+        :lang(es) .field--name-field-text {
+          width: 80%;
+          max-width: 280px;
+        }
 
       }
     }
