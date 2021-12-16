@@ -17,13 +17,16 @@
  * @ingroup themeable
  */
 #}
+
+
 {% if title %}
 	<h3>{{ title }}</h3>
 {% endif %}
 
 {% if device == 'desktop' %}
 
-	{% set index_hide_lines = [7,8,9,15,16,17,23,24,29,30,31] %}
+	{# {% set index_hide_lines = [7,8,9,15,16,17,23,24,29,30,31] %} #}
+	{% set index_hide_lines = [1,2,3,10,11,12,18,19,20,25,26] %}
 
 	{% for row in rows %}
 
@@ -56,7 +59,6 @@
 			</div>
 		{% endif %}
 
-
 		{## banner ##}
 		{% if loop.index == 9 %}
 			<span class="banner-scroll ads">{{ drupal_entity('block', 'gamwadvertisement_15') }}</span>
@@ -70,13 +72,14 @@
 		{% if loop.index == 31 %}
 			<span class="banner-scroll last-banner ads">{{ drupal_entity('block', 'gamwadvertisement_36') }}</span>
 		{% endif %}
-
 	{% endfor %}
 {% endif %}
 
 {% if device == 'mobile' %}
 
-	{% set index_hide_lines = [5,6,13,14] %}
+	{# {% set index_hide_lines = [5,6,13,14] %} #}
+	{% set index_hide_lines = [7,8,11,12,15,16,19,21,22] %}
+	{% set index_show_lines = [18,20] %}
 
 	{% for row in rows %}
 
@@ -103,6 +106,10 @@
 			<div class="card-one-column views-row not-show-line-mobile">
 				{{- row.content -}}
 			</div>
+		{% elseif loop.index in index_show_lines  %}
+			<div class="card-one-column views-row show-line-mobile">
+				{{- row.content -}}
+			</div>
 		{% else %}
 			<div{{row.attributes.addClass(row_classes)}}>
 				{{- row.content -}}
@@ -122,6 +129,5 @@
 		{% if loop.index == 24 %}
 			<span class="banner-scroll last-banner ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_36') }}</span>
 		{% endif %}
-
 	{% endfor %}
 {% endif %}

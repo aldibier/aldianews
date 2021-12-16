@@ -38,11 +38,13 @@
 
   .pautas {
     height: max-content;
-    min-height: 1205px;
+		margin-bottom: 100px;
+    //min-height: 1205px;
 
     @media (max-width: $broken) {
       min-height: initial;
       width: 100%;
+			margin-bottom: 0;
     }
 
     @media (min-width: $tablet) {
@@ -58,7 +60,7 @@
     @media (max-width: $tablet) {
       .one-vertical-advertising {
         width: 100%;
-        margin: 0 auto 20px;
+        margin: 0 auto 40px;
         padding: 0 45px;
         max-width: 500px;
         text-align: center;
@@ -150,13 +152,14 @@
 
   .block-field-blocknodejobbody,
   .text-formatted {
-    p,li {
+    p,
+    li {
       font-style: normal;
       font-weight: 500;
       font-size: $px24;
       line-height: 140%;
       color: $cblack3;
-      font-family: $PrNovacond-reg;
+      font-family: $PrNovacond-light;
       strong {
         font-family: $PrNovacond-Sbold;
       }
@@ -240,7 +243,8 @@
 
     .block-field-blocknodejobbody,
     .text-formatted {
-      p,li {
+      p,
+      li {
         font-size: 15px;
         line-height: 140%;
       }
@@ -276,9 +280,6 @@
   }
 }
 
-.page-node-type-feature-employer .region-header #block-al-dia-news-branding {
-  margin: -10px 0 10px -25px;
-}
 .page-node-type-job div.block-extra-field-blocknodenewsaddtoany {
   @media screen and (max-width: $broken) {
     margin-bottom: 30px;
@@ -290,14 +291,20 @@
 .page-node-type-page .banner-horizontal {
   margin: 30px auto 80px;
   @media screen and (max-width: $broken) {
-    margin: 30px auto;
+    margin: 40px auto;
+  }
+}
+@media screen and (max-width: $broken) {
+  .one-vertical-advertising.content-right-pages {
+    flex: auto;
   }
 }
 
 .content-right-pages {
   display: flex;
   flex-wrap: wrap;
-  max-width: 400px;
+  flex: 1 1 400px;
+  max-width: 100%;
 
   @media (max-width: $tablet) {
     margin: 40px 0;
@@ -306,8 +313,8 @@
   }
 }
 
-article[about="/terms-of-service"]{
-  .content-left-pages{
+article[about="/terms-of-service"] {
+  .content-left-pages {
     margin-bottom: 70px;
   }
   .content-right-pages {
@@ -315,7 +322,7 @@ article[about="/terms-of-service"]{
       margin: 10px 0 30px;
     }
   }
-} 
+}
 
 article[about="/contact-us"] .content-left-pages {
   margin-bottom: 60px;
@@ -327,12 +334,3 @@ article[about="/about-us"] .content-left-pages {
   }
 }
 
-// Logo aldia en titulos
-
-.page-node-type-page {
-  h1 {
-    .aldia-logo-in-text {
-      max-width: 115px;
-    }
-  }
-}

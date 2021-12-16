@@ -48,13 +48,15 @@
         // }
 
         .name-date {
-            max-width: 320px;
+						flex: 0 1 320px;
+            //max-width: 320px;
             position: relative;
             margin: auto 0 auto 25px;
         }
 
         .photo {
-            width: 220px;
+						flex: 0 0 220px;
+            //width: 220px;
             height: 220px;
         }
 
@@ -136,6 +138,7 @@
             }
 
             .photo {
+								flex: 0 0 95px;
                 width: 95px;
                 height: 95px;
             }

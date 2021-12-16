@@ -3,6 +3,10 @@
   position: relative;
 
   //reset style
+	span.field-content {
+		display: block;
+		width: 100%;
+	}
 
   .block-field-blocknodenewsbody {
     all: initial;
@@ -18,6 +22,11 @@
   }
 
   //end reset style
+
+	.views-field-fieldset-1 {
+		pointer-events: none;
+    user-select: none;
+	}
 
   .views-row,
   .container-content {
@@ -37,6 +46,7 @@
     );
     width: 100%;
     padding: 8rem 0 48px;
+		pointer-events: none;
 
     .main-news-body {
       display: block;
@@ -103,9 +113,19 @@
   }
 
   &-image {
+
+
+
     @media screen and(min-width:$broken) {
       max-height: 520px;
     }
+
+		a,
+		picture {
+			display: block;
+    	width: 100%;
+    	height: 100%;
+		}
 
     a {
       border: none;
@@ -132,6 +152,10 @@
     max-width: 755px;
     margin: 0 auto;
     padding: 0 10px;
+
+		@media screen and(max-width:$broken) {
+			margin: 0;
+    }
 
     @media screen and(max-width:$tablet) {
       padding: 0;
@@ -173,25 +197,9 @@
       text-transform: uppercase;
       color: $cwhite;
     }
-    .aldia-logo-in-text{
-      max-width: 108px;
-      img{
-        height: 34px;
-      }
-    }
-
+ 
     @media screen and(max-width:$broken) {
       line-height: 0;
-      .aldia-logo-in-text{
-        max-width: 48px;
-        img{
-          min-height: auto;
-          width: 100%;
-          height: 17px;
-          position: relative;
-          top: 3px;
-        }
-      }
     }
 
     @media screen and(max-width:$tablet) {

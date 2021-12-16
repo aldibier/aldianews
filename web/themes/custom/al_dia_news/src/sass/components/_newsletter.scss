@@ -1,6 +1,6 @@
 //----Newsletter internal --//
 .page-node-type-news,
-.page-node-type-thought-leaders  {
+.page-node-type-thought-leaders {
   .newsletter {
     background: #f2f2f2;
     box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.08);
@@ -11,25 +11,31 @@
     left: 0px;
     right: 0px;
     margin: 0 auto !important;
-    padding: 19px 20px !important;
+    padding: 19px 40px !important;
+
     .container {
       width: 100%;
       max-width: 1230px;
       margin: 0 auto;
       position: relative;
     }
+
     .close-modal {
-      top: 0px;
-      right: 15px;
+      top: 0;
+      //right: 15px;
+      right: calc(0% - 30px);
     }
+
     &.fix {
       position: absolute;
       top: -122px;
       bottom: auto;
     }
+
     @media (max-width: $tablet) {
       background: #e7e8ea;
       padding: 30px 18px 10px !important;
+
       .close-modal {
         top: -20px;
         right: 0px;
@@ -45,12 +51,13 @@
     margin: 0 auto;
     border: 2px solid #797979;
     display: flex;
-    justify-content: space-between;
-    padding: 30px 40px;
-    flex-wrap: wrap;
+    //justify-content: space-between;
+    padding: 30px 38px;
+    flex-wrap: nowrap;
 
     .form-item-markup {
-      margin: 0 0 21px;
+      flex: 0 0 315px;
+      margin: 0 20px 0 0;
       font-family: $PrNovacond-Sbold;
       font-size: $px20;
       line-height: 25px;
@@ -59,16 +66,27 @@
       height: 39px;
       display: flex;
       align-items: center;
-      max-width: 315px;
-      width: 28%;
+
+      @media (max-width: $desktop) {
+        flex: 0 0 auto;
+      }
+
+      @media (min-width: $tablet) {
+        &:lang(es) {
+          flex: 0 0 275px;
+        }
+      }
+
     }
+
     .form-item-email {
-      margin: 0px;
-      max-width: 510px;
-      width: 53%;
+      flex: 0 1 auto;
+      margin: 0 20px 0 0;
+
       label {
         display: none;
       }
+
       input {
         max-width: 510px;
         width: 100%;
@@ -78,11 +96,12 @@
         padding-left: 20px;
       }
     }
+
     .form-actions {
-      max-width: 180px;
-      width: 19%;
-      min-width: 180px;
+      flex: 0 1 180px;
+      margin: 0;
     }
+
     .form-submit {
       min-height: 39.6px;
       background-color: #5c6165 !important;
@@ -90,6 +109,7 @@
       line-height: 25px;
       padding-left: 0 !important;
     }
+
     .webform-confirmation {
       width: 100%;
       display: flex;
@@ -107,6 +127,7 @@
       .webform-confirmation__back {
         display: block;
         margin: 0 0 0 auto;
+
         a {
           min-width: 240px;
           display: flex;
@@ -126,19 +147,28 @@
 
     @media (max-width: $tablet) {
       max-height: 120px;
-      padding: 20px 10px;
+      padding: 20px 8px;
+      flex-wrap: wrap;
+
+      &:lang(es) {
+        max-height: initial;
+      }
+
       .form-item-markup {
+        flex: 1 1 100%;
         font-size: $px16;
         height: initial;
         line-height: 18px;
-        margin: auto 0 12px;
+        margin: auto 0 21px;
         text-align: center;
         width: 100%;
         max-width: 100%;
         display: block;
       }
+
       .form-item-email {
         max-width: 149px;
+
         input {
           max-width: 149px;
           padding-left: 15px;
@@ -150,27 +180,36 @@
         }
 
         @media (max-width: $tablet) {
-          max-width: 155px;
+          flex: 1 1 155px;
+          max-width: none;
           margin: 0 0 0 auto;
         }
       }
+
       .form-actions {
-        max-width: 105px;
-        min-width: 105px;
+        flex: 0 1 105px;
         margin: 0 auto 0 0;
       }
+
+      #edit-actions input {
+        margin-right: 0;
+      }
+
       .form-submit {
         font-size: $px14 !important;
         min-height: 40px;
       }
+
       .webform-confirmation {
         flex-wrap: wrap;
+
         .webform-confirmation__message {
           font-size: 13px;
           line-height: 20px;
           margin: 0;
           text-align: center;
         }
+
         .webform-confirmation__back {
           margin: 5px auto;
 
@@ -189,19 +228,20 @@
   .webform-submission-newsletters-form {
     @media (max-width: $tablet) {
       justify-content: center;
+      flex-wrap: wrap;
       border: 1px solid #797979;
     }
   }
 }
 
 //----Newsletter home --//
-.path-frontpage  {
+.path-frontpage {
   .newsletter {
     margin-bottom: 25px;
     padding: 9.5px 11px;
     background-color: $bgrey3;
 
-    .close-modal {
+    .close-modal {
       display: none;
     }
 
@@ -226,8 +266,8 @@
 
     .webform-submission-newsletters-form {
 
-      @media screen and(max-width:$broken) { 
-        .webform-confirmation__back{
+      @media screen and(max-width:$broken) {
+        .webform-confirmation__back {
           a {
             font-size: 12px;
             min-height: 40px;
@@ -241,13 +281,13 @@
         display: flex;
         padding: 20px 10px;
 
-        .form-item-email{
+        .form-item-email {
           width: initial;
           max-width: none;
           flex: 1 1 145px;
         }
 
-        #edit-actions{
+        #edit-actions {
           width: initial;
           max-width: none;
           flex: 0 1 90px;
@@ -272,13 +312,13 @@
         display: flex;
         padding: 20px 10px;
 
-        .form-item-email:lang(es){
+        .form-item-email:lang(es) {
           width: initial;
           max-width: none;
           flex: 1 1 140px;
         }
 
-        #edit-actions:lang(es){
+        #edit-actions:lang(es) {
           width: initial;
           max-width: none;
           flex: 0 1 100px;
@@ -356,10 +396,13 @@
 
   .webform-submission-newsletters-form,
   .webform-submission-boletines-form {
-    padding: 20px 23px 18px 13px;
+    display: flex;
+    //padding: 20px 23px 18px 13px;
+    padding: 20px 22.5px 18px 12.5px;
     border: 1px solid #797979;
 
     .form-item-markup {
+      flex: 1 1 100%;
       min-height: 20px;
       margin: 0 auto 21px;
       font-size: szrem(16);
@@ -385,7 +428,8 @@
     }
 
     .form-item-email {
-      max-width: 235px;
+      flex: 1 1 235px;
+      //max-width: 235px;
       margin: 0;
       float: left;
 
@@ -434,12 +478,17 @@
 
     div[id*="edit-actions"],
     #edit-actions {
-      width: 105px;
+      //width: 105px;
+      flex: 1 1 auto;
       display: inline-block;
+
+			@media screen and(max-width: $broken) {
+				flex: 0 1 auto;
+			}
 
       input {
         margin: 0;
-        padding: 0;
+        padding: 0 10px !important;
         font-size: szrem(14);
         background-color: $cgrey3;
 
@@ -474,6 +523,7 @@
 
     .webform-confirmation__back {
       margin: 0;
+
       a {
         max-width: 100%;
         padding: 0 10px;
@@ -503,7 +553,7 @@
       }
     }
 
-    .webform-submission-newsletters-form  {
+    .webform-submission-newsletters-form {
       padding: 20px 25px 19px 25px;
 
       @media screen and(max-width: $tablet) {

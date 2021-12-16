@@ -34,12 +34,12 @@
 	{# banner #}
 	{% if device == 'desktop' %}
 		{% if loop.index  == 4 %}
-			<div class="margin ads">{{ drupal_entity('block', 'gamwadvertisement_13') }}</div>
+			<span class="margin ads">{{ drupal_entity('block', 'gamwadvertisement_13') }}</span>
 		{% endif %}
 	{% endif %}
 	{% if device == 'mobile' %}
 		{% if loop.index  == 2 %}
-			<div class="skyscraper-mobile ads">{{ drupal_entity('block', 'gamwadvertisement_12') }}</div>
+			<span class="skyscraper-mobile ads">{{ drupal_entity('block', 'gamwadvertisement_12') }}</span>
 		{% endif %}
 	{% endif %}
 	<div{{row.attributes.addClass(row_classes)}}>
@@ -48,5 +48,5 @@
 {% endfor %}
 
 {% if device == 'desktop' %}
-	<div class="margin-top ads">{{ drupal_entity('block', 'gamwadvertisement_12') }}</div>
+	<span class="margin-top ads">{{ drupal_entity('block', 'gamwadvertisement_12') }}</span>
 {% endif %}

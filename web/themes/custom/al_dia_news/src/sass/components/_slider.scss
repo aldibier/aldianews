@@ -43,6 +43,31 @@
 
 .slider-al-dia {
   .about-al-dia-live-slider {
+
+		ul:not(.slick-slider,.slick-dots) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+			padding-bottom: 50px;
+			margin-bottom: 60px;
+      overflow: hidden;
+
+      li {
+        min-width: 290px;
+        height: 165px;
+      }
+
+      @media screen and (max-width: $tablet) {
+				padding-bottom: 30px;
+				margin-bottom: 30px;
+				
+        li {
+          min-width: 120px;
+          height: 65px;
+        }
+      }
+    }
+
     img {
       width: 100%;
       height: 100%;

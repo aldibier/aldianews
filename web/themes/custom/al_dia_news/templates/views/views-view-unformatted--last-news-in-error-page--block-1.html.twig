@@ -25,7 +25,8 @@
 
 {% if device == 'desktop' %}
 
-	{% set index_hide_lines = [7,8,9,15,16,17,23,24,29,30,31] %}
+	{# {% set index_hide_lines = [7,8,9,15,16,17,23,24,29,30,31] %} #}
+	{% set index_hide_lines = [1,2,3,10,11,12,18,19,20,25,26] %}
 
 	{% for row in rows %}
 
@@ -76,7 +77,9 @@
 
 {% if device == 'mobile' %}
 
-	{% set index_hide_lines = [5,6,13,14] %}
+	{# {% set index_hide_lines = [5,6,13,14] %} #}
+	{% set index_hide_lines = [7,8,11,12,15,16,19,21,22] %}
+	{% set index_show_lines = [18,20] %}
 
 	{% for row in rows %}
 
@@ -101,6 +104,10 @@
 
 		{% if loop.index in index_hide_lines %}
 			<div class="card-one-column views-row not-show-line-mobile">
+				{{- row.content -}}
+			</div>
+		{% elseif loop.index in index_show_lines  %}
+			<div class="card-one-column views-row show-line-mobile">
 				{{- row.content -}}
 			</div>
 		{% else %}

@@ -52,7 +52,7 @@ class LatestCategories extends BlockBase implements ContainerFactoryPluginInterf
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->database = $connection;
     $this->entityTypeManager = $entity_type_manager;
-    $this->tempStore = $temp_store_factory->get('al_dia_news');  
+    $this->tempStore = $temp_store_factory->get('al_dia_news');
   }
 
   /**
@@ -108,7 +108,7 @@ class LatestCategories extends BlockBase implements ContainerFactoryPluginInterf
       $user = $this->entityTypeManager->getStorage('node')->load($results->nid);
       $render_controller = $this->entityTypeManager->getViewBuilder($user->getEntityTypeId());
       $mode = $render_controller->view($user, 'first_category_home'); //selecciono el modo de visualización en news, first_category_home
-      $return["main"]["main"] = $mode; 
+      $return["main"]["main"] = $mode;
     }
 
     //Segunda consulta, omitiendo el id de la categoria con la variable $category, la omito en el padre con nietos y en el padre sin nietos
@@ -134,7 +134,7 @@ class LatestCategories extends BlockBase implements ContainerFactoryPluginInterf
         'class' => 'second-news',
       ],
     ];
-    
+
     //Condición para almacenar el id de la categoria y no repetirlo, dependiendo si es parent tt o si es un padre sin nietos
     if ($results) {
       $nids[] = $results->nid;
@@ -147,9 +147,9 @@ class LatestCategories extends BlockBase implements ContainerFactoryPluginInterf
       $user = $this->entityTypeManager->getStorage('node')->load($results->nid);
       $render_controller = $this->entityTypeManager->getViewBuilder($user->getEntityTypeId());
       $mode = $render_controller->view($user, 'categories_home'); //selecciono el modo de visualización en news, first_category_home
-      $return["second"]["one"] = $mode; 
+      $return["second"]["one"] = $mode;
     }
-    
+
     //Tercera consulta, omitiendo el id de la categoria con la variable $category, la omito en el padre con nietos y en el padre sin nietos
     $query3 = $this->database->select('node_field_data', 'n');
     $query3->fields("n", ["nid", "created"]);
@@ -171,12 +171,12 @@ class LatestCategories extends BlockBase implements ContainerFactoryPluginInterf
       $user = $this->entityTypeManager->getStorage('node')->load($results->nid);
       $render_controller = $this->entityTypeManager->getViewBuilder($user->getEntityTypeId());
       $mode = $render_controller->view($user, 'categories_home');
-      $return["second"]["two"] = $mode; 
+      $return["second"]["two"] = $mode;
     }
 
     // $relatedArticles = views_embed_view('high_impact_news_home', 'block_2', 23);
     // $variables['related_articles'] = drupal_render($relatedArticles);
-    
+
     $res = views_get_view_result("high_impact_news_home", "block_1");
     //Defino variable para pasar argumentos en la línea 192
 
@@ -192,7 +192,7 @@ class LatestCategories extends BlockBase implements ContainerFactoryPluginInterf
           }
         }
       }
-      //ksm($nids); 
+      //ksm($nids);
 
     }
     // if ($nid_block2) {
@@ -203,7 +203,7 @@ class LatestCategories extends BlockBase implements ContainerFactoryPluginInterf
     //     $view->preExecute();
     //     $view->execute();
     //     //Paso argumentos a la vista
-    //     $content = $view->buildRenderable('block_2', [$nid_block2]); 
+    //     $content = $view->buildRenderable('block_2', [$nid_block2]);
     //     foreach ($content["#view"]->result as $ids) {
     //       //Almacenos los id de la vista en el mismo arrat de nids, no se borran los datos anteriores, se sigue almacenando
     //       $nids[] = $ids->nid;

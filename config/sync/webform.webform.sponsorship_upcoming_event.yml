@@ -14,7 +14,7 @@ id: sponsorship_upcoming_event
 title: SPONSORSHIP
 description: 'Upcoming event Sponsorship'
 category: ''
-elements: |
+elements: |-
   markup:
     '#type': webform_markup
     '#markup': '<div class="views-label views-label-field-webform">SPONSORSHIP</div>'
@@ -37,6 +37,13 @@ elements: |
   address:
     '#type': webform_address
     '#title': Address
+    '#default_value':
+      city: ''
+      state_province: ''
+      country: ''
+      address: ''
+      address_2: ''
+      postal_code: ''
     '#address__access': false
     '#address_2__access': false
     '#postal_code__access': false

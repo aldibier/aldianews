@@ -14,9 +14,11 @@ dependencies:
     - field.field.commerce_product.default.field_text
     - field.field.commerce_product.default.field_weekly_value
     - field.field.commerce_product.default.field_weight
+    - image.style.suscribe_image
   module:
     - field_formatter_class
     - image
+    - lazy
     - text
 _core:
   default_config_hash: 10qgl6V_HwkrJufzsNCV75OpqOeMzzKDJb3BhaogmzQ
@@ -46,9 +48,15 @@ content:
     weight: 1
     label: hidden
     settings:
-      image_style: ''
+      image_style: suscribe_image
       image_link: ''
-    third_party_settings: {  }
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+      lazy:
+        placeholder_style: ''
+        lazy_image: '0'
+        data_uri: false
     type: image
     region: content
   field_intro:

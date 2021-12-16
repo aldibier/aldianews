@@ -1,9 +1,4 @@
 .style-jobs {
-  .breadcrumb {
-    max-width: 1310px;
-    margin: 15px auto 10px;
-    padding: 0 15px;
-  }
 
   .layout-container .layout-main {
     max-width: 1440px;
@@ -29,6 +24,7 @@
     right: 0;
     padding: 0 15px;
   }
+
   .field--name-body p {
     font-style: normal;
     font-weight: 400;
@@ -36,7 +32,7 @@
     line-height: 32px;
     font-family: $PrNovacond-reg;
     color: #333;
-    padding: 0 15px;
+    //padding: 0 15px;
     max-width: 1310px;
     margin-left: auto;
     margin-right: auto;
@@ -46,6 +42,7 @@
     position: relative;
     width: 100%;
     margin-top: 20px;
+
     .field--name-field-description {
       max-height: 1px;
       position: absolute;
@@ -54,9 +51,11 @@
       z-index: 2;
       max-width: 1200px;
       padding-right: 50px;
+
       .field__label {
         display: none;
       }
+
       .field__item {
         line-height: 28px;
         color: $cwhite;
@@ -68,6 +67,7 @@
     .field--type-image {
       max-height: 710px;
       overflow: hidden;
+
       &::after {
         @include absolute(top 0 left 0);
         @include esize(100%);
@@ -82,6 +82,7 @@
         @include esize(100%);
         z-index: 0;
         object-fit: cover;
+        object-position: top;
       }
 
       @media screen and (min-width: $tablet) {
@@ -113,57 +114,71 @@
 
     .menu {
       display: flex;
-      padding: 0 15px;
+      //padding: 0 15px;
+      width: 100%;
+      padding: 0;
       max-width: 1310px;
       margin: 0 auto;
       z-index: 2;
+      transition: background 1s ease-in-out;
 
       li {
         padding: 0 22px 0 0;
       }
+
       li:last-child {
         padding: 0 0px 0 0;
       }
 
       a {
-        @include link-box(
-          $colorBcolor: $cwhite,
+        @include link-box($colorBcolor: $cwhite,
           $fontSize: szrem(10),
-          $lineHeight: szrem(11)
-        );
+          $lineHeight: szrem(11));
         border: 3px solid #fff;
         padding: 0 15px;
         font-size: $px24;
         line-height: 29px;
         min-height: 60px;
         letter-spacing: 0.04em;
+
+        @media (max-width: $desktop) {
+          font-size: szrem(16);
+          line-height: 1;
+        }
+
         @media (max-width: $tablet) {
           padding: 0px 10px;
+          border-width: 1px;
         }
       }
 
       &:after,
       &:before {
         content: "";
-        width: 0;
+        width: 100%;
         height: 100%;
         display: block;
         position: absolute;
         top: 0;
-        transition: all 1s ease-in-out;
+        background: transparent;
+        transition: background 1s ease-in-out;
       }
 
-      &:after {
-        right: 0;
-      }
-
-      &:before {
+      &::before {
         left: 0;
+        transform: translateX(-100%);
       }
+
+      &::after {
+        right: 0;
+        transform: translateX(100%);
+      }
+
     }
 
     .menu.active {
-      margin: 95px auto 0 !important;
+      width: 100% !important;
+      margin: 90px auto 0 !important;
       left: 0 !important;
       right: 0 !important;
       background: $cblack3;
@@ -173,17 +188,19 @@
 
       &:after,
       &:before {
-        width: 101%;
-        transition: all 1s ease-in-out;
         background: $cblack3;
       }
 
-      &:after {
-        right: -100%;
-      }
+      // &:after {
+      //   right: -100%;
+      // }
 
-      &:before {
-        left: -100%;
+      // &:before {
+      //   left: -100%;
+      // }
+
+      @media (max-width: $broken4) {
+        margin: 140px auto 0 !important;
       }
 
       @media (max-width: $broken2) and(min-width: $tablet) {
@@ -193,7 +210,7 @@
       @media (max-width: $tablet) {
         padding: 15px 25px;
         width: 100% !important;
-        margin: 71px auto 0 !important;
+        margin: 88px auto 0 !important;
       }
     }
   }
@@ -204,6 +221,25 @@
         background: #e6e7e8;
       }
     }
+
+		.views-row:nth-child(2),
+		.views-row:nth-child(4){
+			.employer-image img {
+				height: auto;
+				object-fit: contain;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+		}
+
+		@media (max-width: $tablet) {
+			.views-row:nth-child(2),
+			.views-row:nth-child(4){
+				.employer-image img {
+					height: 100%;
+				}
+			}
+		}
 
     .employer-title-body {
       padding: 50px;
@@ -231,31 +267,26 @@
     }
 
     .title-employer {
-			display: flex;
-			align-items: center;
+      // display: flex;
+      // align-items: center;
       font-style: normal;
       font-weight: 600;
       font-size: $px36;
-      line-height: 43px;
+      line-height: 1;
       color: $cblack3;
       padding: 0px 0 10px;
       border-bottom: 1px solid $cblack3;
       margin: 0 0 40px;
       font-family: $ModernoFB-Regular;
+      word-break: break-word;
 
-			h2 {
-				margin-top: 0;
-			}
-
-			h2 .aldia-logo-in-text {
-				width: 110px;
-				height: 35px;
-				margin-right: 10px;
-			}
-
-      h3 .aldia-logo-in-text img {
-        height: 30px;
-        width: 97px;
+      h2 {
+        display: inline-block;
+        max-width: 110px;
+        max-height: 40px;
+        margin-top: 0;
+        margin-right: 10px;
+        line-height: 1;
       }
     }
 
@@ -275,6 +306,7 @@
       // padding: 0 0 0 25px;
       margin: 0 0 25px;
     }
+
     .body-employer ul {
       list-style: inside;
       padding: 0 0 0 0px;
@@ -364,9 +396,6 @@
   }
 
   @media (max-width: 930px) {
-    #page {
-      padding: 52px 0 0;
-    }
     .block-banner-page {
       margin-top: 0px;
     }
@@ -379,10 +408,12 @@
       line-height: 30px;
       padding: 0 25px;
     }
+
     .block-banner-page .field--name-field-description {
       left: 25px;
       bottom: 123px;
       padding-right: 0px;
+
       .field__item {
         line-height: 9px;
         font-size: $px10;
@@ -396,10 +427,11 @@
       .menu {
         flex-wrap: wrap;
         padding: 0 25px;
+        gap: 0 10px;
 
-				&:lang(es){
-					padding: 0 15px;
-				}
+        &:lang(es) {
+          padding: 0 15px;
+        }
 
         a {
           font-size: 10px;
@@ -441,15 +473,11 @@
         margin: 0 0 10px;
       }
 
-			.title-employer  h2 .aldia-logo-in-text {
-				width: auto;
-				height: auto;
-				margin-right: 10px;
-			}
-
-			.title-employer h2 {
-				line-height: 1;
-			}
+      .title-employer h2 {
+        max-width: 45px;
+        margin-right: 5px;
+        line-height: 1;
+      }
 
       p {
         font-size: 14px;
@@ -486,10 +514,42 @@
   }
 }
 
+.path-jobs:not(.path-jobs-employer) {
+
+  .block-menu-float .menu::before,
+  .block-menu-float .menu::after {
+    display: none;
+  }
+}
+
+.path-jobs-employer,
+.path-trabajos-empleador {
+
+  .menu--i-am-an-employer-menu {
+    li {
+      flex: 1 1 auto;
+      padding: 0 !important;
+
+			@media (max-width: $tablet) {
+				flex: 0 1 auto;
+			}
+    }
+  }
+
+  .menu--i-am-an-employer-menu .menu {
+    @media (min-width: $tablet) {
+      gap: 25px;
+      padding: 0 15px;
+    }
+  }
+}
+
 .path-employer .layout-container .layout-main {
   margin-bottom: 0px;
 }
+
 .user-logged-in .style-jobs {
+
   .view-jobs-menu,
   .block-menu-float {
     .menu.active {
@@ -503,26 +563,30 @@
 }
 
 .path-jobs {
+
   .region-header #block-lastprintedition .field--name-field-image,
-  .region-header
-    #block-views-block-current-edition-header-and-footer-block-1
-    .field--name-field-image {
+  .region-header #block-views-block-current-edition-header-and-footer-block-1 .field--name-field-image {
     top: -13px;
   }
- #main-wrapper ,
+
+  #main-wrapper,
   .style-jobs {
     max-width: none;
   }
+
   .content-page-jobs {
+    width: 100%;
     max-width: 1440px;
     padding: 0 15px;
     margin: 0 auto;
-    > .content {
+
+    >.content {
       display: flex;
       flex-wrap: wrap;
       width: 100%;
     }
-    @media (max-width: $broken) {
+
+    @media (max-width: $tablet) {
       padding: 0;
     }
   }
@@ -531,10 +595,4 @@
 .webform-submission-contact-us-form .form-actions {
   width: 100%;
   max-width: 150px;
-}
-
-@media (max-width: $tablet-min) {
-  .path-jobs #page {
-    padding: 60px 0 0;
-  }
 }

@@ -505,3 +505,22 @@ podcast_category:
   regions:
     one_content:
       label: Primero - content
+
+basic_page_share_a_news_tip:
+  label: 'Basic Page share a news tip' #--> Nombre
+  path: layouts/basic_page
+  template: layout--basic-page-share-a-news-tip
+  category: 'Basic Page'
+  default_region: content
+  icon_map: #--> Creacion region
+    - [horizontal_advertising]
+    - [one_content_title]
+    - [two_content]
+    - [two_vertical_advertising]
+  regions:
+    horizontal_advertising:
+      label: Publicidad horizontal
+    two_content:
+      label: Segundo - Contenido
+    two_vertical_advertising:
+      label: Publicidad vertical dos

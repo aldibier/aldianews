@@ -1,5 +1,5 @@
 .block-views-blockhome-current-edition--block-1 {
-  margin-bottom: 100px;
+  //margin-bottom: 100px;
 
   @media screen and (max-width: $broken) {
     margin-bottom: 30px;
@@ -10,7 +10,7 @@
   max-width: 840px;
   background-color: #4d4d4d;
 
-  > .view-content  {
+  >.view-content {
     height: auto;
     max-height: 615px;
 
@@ -20,10 +20,10 @@
     }
   }
 
-	@media screen and (max-width: 1400px) {
-    > .view-content  {
-			max-height: max-content;
-		}
+  @media screen and (max-width: 1400px) {
+    >.view-content {
+      max-height: max-content;
+    }
   }
 
   @media screen and (max-width: $broken) {
@@ -33,7 +33,7 @@
   @media screen and (max-width: $tablet) {
     margin: 0px -15px 0 0;
 
-    > .view-content  {
+    >.view-content {
       max-height: initial;
       min-height: 455px;
     }
@@ -71,7 +71,7 @@
       border-left: 20px solid transparent;
     }
 
-    &::after  {
+    &::after {
       content: "";
       width: 30px;
       position: absolute;
@@ -89,7 +89,7 @@
         border-width: 7.5px;
       }
 
-      &::after  {
+      &::after {
         box-shadow: 10px 4px 10px 2px #00000045;
       }
     }
@@ -117,7 +117,7 @@
     }
   }
 
-  .date-current-edition  {
+  .date-current-edition {
     font-size: szrem(20);
     font-family: $PrNovacond-light;
     font-style: normal;
@@ -133,7 +133,7 @@
   }
 }
 
-.current-edition-cover-page  {
+.current-edition-cover-page {
 
   a {
     display: block;
@@ -147,8 +147,8 @@
     max-height: 480px;
 
     @media screen and (max-width: $tablet) {
-      min-width: 130px;
-      min-height: 145px;
+      width: 130px;
+      height: 145px;
     }
   }
 }
@@ -156,7 +156,7 @@
 .current-edition-content {
   padding: 0 40px 55px;
   display: grid;
-  grid-template-columns: minmax(auto, 435px) minmax(auto, 280px);
+  grid-template-columns: minmax(150px, 435px) minmax(auto, 280px);
   grid-template-rows: repeat(2, auto);
   grid-template-areas:
     "cover-image title"
@@ -165,7 +165,7 @@
 
   @media screen and (max-width: $tablet) {
     padding: 0px 15px 22px;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: auto 1fr;
     grid-template-areas:
       "cover-image title"
       "content content";
@@ -178,8 +178,9 @@
 
   .views-field-view-1 {
     grid-area: content;
+    align-self: end;
 
-    .view-header  {
+    .view-header {
       margin-bottom: 20px;
       font-size: szrem(22);
       font-family: $Mod-Sbold;
@@ -206,6 +207,7 @@
       display: flex;
       align-items: center;
       min-height: 28px;
+
       @media screen and(max-width:$tablet) {
         margin-bottom: 10px;
       }
@@ -224,7 +226,7 @@
       }
     }
 
-    .views-field-field-card-title-related-covers  {
+    .views-field-field-card-title-related-covers {
       @include ellipsis(35px, 2);
       font-size: szrem(16);
       font-family: $PrNovacond-Sbold;
@@ -240,7 +242,7 @@
       }
     }
 
-    .view-content  {
+    .view-content {
       margin-bottom: 43px;
 
       @media screen and(max-width:$tablet) {
@@ -248,8 +250,8 @@
       }
     }
 
-    .view-footer  {
-      .block-fixed-block-contentorder-today-current-edition-bloc  {
+    .view-footer {
+      .block-fixed-block-contentorder-today-current-edition-bloc {
         @media screen and(max-width:$tablet) {
           display: flex;
           justify-content: flex-end;
@@ -261,6 +263,14 @@
         margin: 0;
       }
 
+			.field--name-body {
+				margin-bottom: 20px;
+
+				@media screen and(max-width:$tablet) {
+					margin-bottom: 0;
+				}
+			}
+
       .dollar-sing {
         margin-right: 2px;
         font-family: $NimS-bold;
@@ -268,7 +278,7 @@
       }
 
       p {
-        font-size: szrem(17);
+        font-size: szrem(14);
         font-family: $Mod-bold;
         font-style: normal;
         font-weight: bold;
@@ -292,40 +302,13 @@
         margin: 0;
       }
 
-      .aldia-logo-in-text {
-        max-width: 48px;
-        max-height: 16px;
-        position: relative;
-        top: 5px;
-
-        
-        @media screen and(max-width:$tablet) {
-          max-width: 36px;
-          top: 2px;
-
-          &:lang(es){
-            margin: -2px 1px 0;
-
-            img {
-              margin: -8px 0 1px;
-            }
-          }
-          
-          img {
-            height: 12px;
-          }
-        }
-      }
-
       button {
         font-size: szrem(18);
         letter-spacing: 0.741176px;
-        @include button(
-          $btnWidth: 165px,
+        @include button($btnWidth: 165px,
           $btnHeight: 40px,
           $btnBackground: $corange,
-          $btnColor: $cwhite
-        );
+          $btnColor: $cwhite);
 
         @media screen and(max-width:$tablet) {
           width: 100px;
@@ -362,7 +345,7 @@
       align-items: center;
       margin: 0;
     }
-    
+
     .views-field-body {
       p {
         margin-bottom: 5px;
@@ -374,13 +357,22 @@
         text-transform: uppercase;
         color: $cwhite;
 
+        &:lang(es) {
+          font-size: szrem(30);
+        }
+
         @media screen and (max-width: $tablet) {
           font-size: szrem(20);
+
+          &:lang(es) {
+            font-size: szrem(16);
+          }
+
         }
       }
     }
 
-    .views-field-nothing  {
+    .views-field-nothing {
       margin: 0;
 
       a {

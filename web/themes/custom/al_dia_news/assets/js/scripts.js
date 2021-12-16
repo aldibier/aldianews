@@ -1473,18 +1473,35 @@ var initMain = function initMain($, Drupal) {
     });
   };
 
-  itemsCarousel.forEach(function (item) {
-    item.addEventListener('click', function () {
-      var nid = item.dataset.nid;
-      var hasActive = item.parentElement.querySelector('.active');
-      var activeNid = !!hasActive ? hasActive.dataset.nid : false;
-      if (nid === activeNid) return;
-      resetAlliframes(allIframes);
-      removeActiveElements();
-      item.classList.add('active');
-      toggleVideo(nid, itemsNews);
+  if (document.body.classList.contains('path-videos')) {
+    document.body.addEventListener('click', function (event) {
+      var target = event.target;
+
+      if (target.classList.contains('slick-slide')) {
+        var nid = target.dataset.nid;
+        var hasActive = target.parentElement.querySelector('.active');
+        var activeNid = !!hasActive ? hasActive.dataset.nid : false;
+        if (nid === activeNid) return;
+        resetAlliframes(allIframes);
+        removeActiveElements();
+        target.classList.add('active');
+        toggleVideo(nid, itemsNews);
+      }
     });
-  }); //// js para controlar pop-up advertising
+  } // itemsCarousel.forEach(item => {
+  //   item.addEventListener('click', () => {
+  //     let nid = item.dataset.nid;
+  //     let hasActive = item.parentElement.querySelector('.active');
+  //     let activeNid = !!hasActive ? hasActive.dataset.nid : false;
+  //     if (nid === activeNid) return;
+  //     resetAlliframes(allIframes);
+  //     removeActiveElements();
+  //     item.classList.add('active');
+  //     toggleVideo(nid, itemsNews);
+  //   })
+  // })
+  //// js para controlar pop-up advertising
+
 
   if (!!document.querySelector(".path-advertising")) {
     var allButtonsApply = document.querySelectorAll(".button-apply");
@@ -1518,32 +1535,34 @@ var initMain = function initMain($, Drupal) {
     var buttonApply = document.querySelector(".path-about-al-dia-live .button-apply");
     var buttonClose = document.querySelector(".webform-about-al-dia-live .close-modal");
     var modalForm = document.querySelector(".modal-form");
-    if (!document.body.contains(buttonApply)) return;
-    buttonApply.addEventListener("click", function () {
-      return modalForm.classList.add("show");
-    });
-    buttonClose.addEventListener("click", function () {
-      return modalForm.classList.remove("show");
-    }); //// js pop-up about al dia live
 
-    var triggerVideo = document.querySelector(".block-views-blockabout-al-dia-live-block-1 .about-al-dia-live-container-video");
-    var buttonCloseVideo = document.querySelector(".close-video");
-    var video = document.querySelector(".modal-video");
-    var iframe = document.querySelector('.about-al-dia-live-container-video iframe'); //reset src iframe
+    if (!!document.body.contains(buttonApply)) {
+      buttonApply.addEventListener("click", function () {
+        return modalForm.classList.add("show");
+      });
+      buttonClose.addEventListener("click", function () {
+        return modalForm.classList.remove("show");
+      }); //// js pop-up about al dia live
 
-    if (iframe.src.indexOf('?') > 0) {
-      var srcEdit = iframe.src.split('?');
-      iframe.src = "".concat(srcEdit[0], "?start=0&rel=0");
+      var triggerVideo = document.querySelector(".block-views-blockabout-al-dia-live-block-1 .about-al-dia-live-container-video");
+      var buttonCloseVideo = document.querySelector(".close-video");
+      var video = document.querySelector(".modal-video");
+      var iframe = document.querySelector('.about-al-dia-live-container-video iframe'); //reset src iframe
+
+      if (iframe.src.indexOf('?') > 0) {
+        var srcEdit = iframe.src.split('?');
+        iframe.src = "".concat(srcEdit[0], "?start=0&rel=0");
+      }
+
+      triggerVideo.addEventListener("click", function () {
+        video.classList.add("show");
+      });
+      buttonCloseVideo.addEventListener("click", function (event) {
+        event.stopPropagation();
+        video.classList.remove("show");
+        iframe.src = iframe.src;
+      });
     }
-
-    triggerVideo.addEventListener("click", function () {
-      video.classList.add("show");
-    });
-    buttonCloseVideo.addEventListener("click", function (event) {
-      event.stopPropagation();
-      video.classList.remove("show");
-      iframe.src = iframe.src;
-    });
   } //// js desplegable buscador y close modal
 
 
@@ -1753,11 +1772,13 @@ var initMain = function initMain($, Drupal) {
   if (!!document.querySelector('.path-podcast') || !!document.querySelector('.path-taxonomy')) {
     var containerContainer = document.querySelector('.category-list');
     var buttonCategories = document.querySelector('.category-button-mobile');
-    if (!containerContainer) return;
-    buttonCategories.addEventListener('click', function () {
-      containerContainer.classList.toggle('open');
-      buttonCategories.classList.toggle('up');
-    });
+
+    if (!!containerContainer) {
+      buttonCategories.addEventListener('click', function () {
+        containerContainer.classList.toggle('open');
+        buttonCategories.classList.toggle('up');
+      });
+    }
   } // validador watchlive
 
 
@@ -1827,6 +1848,58 @@ var initMain = function initMain($, Drupal) {
 
     if (lang == 'es') {
       labelAny.textContent = 'Cualquiera';
+    }
+  }
+
+  var menuFooterSecondColumn = document.querySelector("#block-footer > div.content > ul > li:nth-child(2) > div > ul");
+
+  if (!!menuFooterSecondColumn) {
+    var copyr = document.querySelector('.copyr').cloneNode(true);
+    var powerd = document.querySelector('.powerd').cloneNode(true);
+    menuFooterSecondColumn.append(copyr, powerd);
+  }
+
+  var landingVideos = document.querySelector(".path-videos");
+
+  if (!!landingVideos) {
+    var _lang = document.documentElement.lang;
+    var radioAllItem = document.querySelector('#edit-tid-all + label');
+
+    if (_lang == 'es') {
+      radioAllItem.textContent = 'TODOS';
+    }
+  }
+
+  var initialWidth = window.innerWidth;
+  var tablet = 1024;
+  var mobile = 768;
+  var device = 'desktop';
+
+  if (initialWidth <= tablet) {
+    device = 'tablet';
+  }
+
+  if (initialWidth <= mobile) {
+    device = 'mobile';
+  }
+
+  window.addEventListener('resize', function () {
+    var currentWidth = window.innerWidth;
+    checkReloadPage(device, currentWidth);
+  });
+
+  function checkReloadPage(device, currentWidth) {
+    if (device === 'desktop') {
+      if (currentWidth < tablet) location.reload();
+    }
+
+    if (device === 'tablet') {
+      if (currentWidth > tablet) location.reload();
+      if (currentWidth < mobile) location.reload();
+    }
+
+    if (device === 'mobile') {
+      if (currentWidth > mobile) location.reload();
     }
   }
 };
@@ -1899,30 +1972,38 @@ __webpack_require__.r(__webpack_exports__);
 
   var headingTags = document.querySelectorAll("h1, h2, h3");
   var paragraphTags = document.querySelectorAll("p");
-  var aldiaLogoStructure = "<span class=\"aldia-logo-in-text\" title=\"AL D\xCDA\">\n                                <img alt=\"AL D\xCDA\" src=\"".concat(drupalSettings.path.baseUrl, "themes/custom/al_dia_news/assets/img/aldia.svg\">\n                              </span>");
+  var aldiaLogoStructure = "<span class=\"aldia-logo-in-text\" alt=\"ALD\xCDA\">\n                                <img alt=\"ALD\xCDA\" src=\"".concat(drupalSettings.path.baseUrl, "themes/custom/al_dia_news/assets/img/aldia.svg\">\n                              </span>");
   Object(_modules_replaceToken__WEBPACK_IMPORTED_MODULE_5__["default"])("AL DÍA", aldiaLogoStructure, headingTags);
   Object(_modules_replaceToken__WEBPACK_IMPORTED_MODULE_5__["default"])("{aldia}", aldiaLogoStructure, paragraphTags);
+  Object(_modules_replaceToken__WEBPACK_IMPORTED_MODULE_5__["default"])("AL DIA", aldiaLogoStructure, headingTags);
   var $window = $(window);
   var $videoWrap = $(".page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video");
   var $video = $(".page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video .content");
-  var videoHeight = $video.outerHeight();
 
   if (!!document.querySelector(".page-node-type-news") && $video.length != 0) {
     $window.on("scroll", function () {
-      var windowScrollTop = $window.scrollTop();
+      var headerHeigth = $('#header').outerHeight();
+      var windowScrollTop = $window.scrollTop() + headerHeigth;
+      var videoHeight = $video.outerHeight();
       var videoBottom = videoHeight + $videoWrap.offset().top;
 
       if (windowScrollTop > videoBottom) {
+        if ($video.hasClass('stuck')) return;
         $videoWrap.height(videoHeight);
         $video.addClass("stuck");
-      } else {
+      }
+
+      if (windowScrollTop <= videoBottom) {
         $videoWrap.height("auto");
         $video.removeClass("stuck");
       }
+    });
+    $('.block-field-blocknodenewsfield-video').click(function (event) {
+      var target = event.target;
 
-      $('.block-field-blocknodenewsfield-video .stuck button[name="close"]').click(function () {
+      if (target.classList.contains('stuck') || target.closest('.stuck')) {
         $video.addClass("disnone");
-      });
+      }
     });
   }
 
@@ -1973,21 +2054,21 @@ __webpack_require__.r(__webpack_exports__);
     /////
 
     /*  if ($(".page-node-type-news .block-field-blocknodenewsfield-video iframe").length ) {
-      var url = ($(".page-node-type-news .block-field-blocknodenewsfield-video iframe")[0].src += "&mute=1");
-      var video = url.replace("autoplay=0", "autoplay=1");
-      $(".page-node-type-news .block-field-blocknodenewsfield-video iframe").attr("src", video);
+    	var url = ($(".page-node-type-news .block-field-blocknodenewsfield-video iframe")[0].src += "&mute=1");
+    	var video = url.replace("autoplay=0", "autoplay=1");
+    	$(".page-node-type-news .block-field-blocknodenewsfield-video iframe").attr("src", video);
     } */
 
     /* if ($( ".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video iframe" ).length ){
-      var url = ($(".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video iframe")[0].src += "&mute=1");
-      var video = url.replace("autoplay=0", "autoplay=1");
-      $(".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video iframe").attr("src", video);
+    	var url = ($(".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video iframe")[0].src += "&mute=1");
+    	var video = url.replace("autoplay=0", "autoplay=1");
+    	$(".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video iframe").attr("src", video);
     } */
 
     /* if ($(".watch-live-video .video-embed-field-provider-youtube iframe").length ){
-      var url = ($(".watch-live-video .video-embed-field-provider-youtube iframe")[0].src += "&mute=1");
-      var video = url.replace("autoplay=0", "autoplay=1");
-      $(".watch-live-video .video-embed-field-provider-youtube iframe").attr("src", video);
+    	var url = ($(".watch-live-video .video-embed-field-provider-youtube iframe")[0].src += "&mute=1");
+    	var video = url.replace("autoplay=0", "autoplay=1");
+    	$(".watch-live-video .video-embed-field-provider-youtube iframe").attr("src", video);
     } */
     //--------- menu--------------------//
     $(".region-header #block-blockheader").click(function () {
@@ -2034,8 +2115,8 @@ __webpack_require__.r(__webpack_exports__);
     if (!!containermenu && !!menu) {
       var controller2 = new ScrollMagic.Controller({
         globalSceneOptions: {
-          triggerHook: 0.14,
-          duration: time.offsetHeight
+          triggerHook: 0.14 // duration: time.offsetHeight 
+
         }
       });
       new ScrollMagic.Scene({
@@ -2326,6 +2407,22 @@ __webpack_require__.r(__webpack_exports__);
       }
     }
   };
+  Drupal.behaviors.aldia_logo = {
+    attach: function attach(context, settings) {
+      var infiniteScroll = context.querySelector('.views-infinite-scroll-content-wrapper');
+
+      if (!!infiniteScroll) {
+        //Replace token
+        var headingScroll = infiniteScroll.querySelectorAll("h1, h2, h3");
+        Object(_modules_replaceToken__WEBPACK_IMPORTED_MODULE_5__["default"])("AL DÍA", aldiaLogoStructure, headingScroll);
+        Object(_modules_replaceToken__WEBPACK_IMPORTED_MODULE_5__["default"])("{aldia}", aldiaLogoStructure, headingScroll); //Selection sharer
+
+        var _sharer = new _assets_libraries_selection_sharer_selection_sharer_js__WEBPACK_IMPORTED_MODULE_1___default.a();
+
+        _sharer.setElements("p,h1,h2,h3,blockquote,em,strong,a:not(.selectionSharer a)");
+      }
+    }
+  };
 })(jQuery, Drupal);
 
 /***/ }),
@@ -2495,16 +2592,18 @@ var initSlick = function initSlick($, Drupal) {
     slidesToShow: 5,
     slidesToScroll: 1,
     responsive: [{
-      breakpoint: 768,
+      breakpoint: 1024,
       settings: {
-        slidesToShow: 3,
+        slidesToShow: 4,
         slidesToScroll: 1
       }
     }, {
-      breakpoint: 500,
+      breakpoint: 769,
       settings: {
-        slidesToShow: 2,
-        slidesToScroll: 1
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        centerMode: true,
+        variableWidth: true
       }
     }]
   }); //slide about al dia events
@@ -2556,35 +2655,35 @@ var initSlick = function initSlick($, Drupal) {
       autoplaySpeed: 3000,
       mobileFirst: true,
       responsive: [{
-        breakpoint: 768,
+        breakpoint: 1024,
         settings: "unslick"
       }]
     };
     /* 
-        const mobileWidth = 768;
+    		const mobileWidth = 768;
     
-        const resizeObserver = new ResizeObserver(entries => {
-          for (let entry of entries) {
-            let currentWidth = entry.contentBoxSize[0].inlineSize;
+    		const resizeObserver = new ResizeObserver(entries => {
+    			for (let entry of entries) {
+    				let currentWidth = entry.contentBoxSize[0].inlineSize;
     
-            if(currentWidth > mobileWidth) return;
-            if($(".view-id-thought_leaders_home.view-display-id-block_1 .view-content").hasClass("slick-initialized")) return;
+    				if(currentWidth > mobileWidth) return;
+    				if($(".view-id-thought_leaders_home.view-display-id-block_1 .view-content").hasClass("slick-initialized")) return;
     
-            if(currentWidth <= mobileWidth){   
-              $(".view-id-thought_leaders_home.view-display-id-block_1 .view-content").not('.slick-initialized').slick(settingThoughtLeaders);
-            }
-          }
-        });
+    				if(currentWidth <= mobileWidth){   
+    					$(".view-id-thought_leaders_home.view-display-id-block_1 .view-content").not('.slick-initialized').slick(settingThoughtLeaders);
+    				}
+    			}
+    		});
     
-        resizeObserver.observe(document.querySelector('body')); */
-    //slide edit resize
+    		resizeObserver.observe(document.querySelector('body')); */
+    //slide edit resize 
 
-    if (window.matchMedia("(max-width: 768px)").matches) {
+    if (window.matchMedia("(max-width: 1024px)").matches) {
       $(".view-id-thought_leaders_home.view-display-id-block_1 .view-content").not('.slick-initialized').slick(settingThoughtLeaders);
     }
 
     window.addEventListener("resize", function () {
-      if (window.matchMedia("(max-width: 768px)").matches) {
+      if (window.matchMedia("(max-width: 1024px)").matches) {
         $(".view-id-thought_leaders_home.view-display-id-block_1 .view-content").not('.slick-initialized').slick(settingThoughtLeaders);
       }
     });
@@ -2594,29 +2693,63 @@ var initSlick = function initSlick($, Drupal) {
   var slider_general = {
     infinite: true,
     autoplay: true,
-    autoplaySpeed: 3500,
-    variableWidth: true
+    autoplaySpeed: 3500 //variableWidth: true
+
   };
 
   var slider_one = _objectSpread(_objectSpread({}, slider_general), {}, {
     slidesToShow: 1,
     slidesToScroll: 1,
-    variableWidth: false
+    variableWidth: false,
+    responsive: [{
+      breakpoint: 769,
+      settings: {
+        variableWidth: true
+      }
+    }]
   });
 
   var slider_two = _objectSpread(_objectSpread({}, slider_general), {}, {
     slidesToShow: 2,
-    slidesToScroll: 1
+    slidesToScroll: 1,
+    responsive: [{
+      breakpoint: 769,
+      settings: {
+        variableWidth: true
+      }
+    }]
   });
 
   var slider_three = _objectSpread(_objectSpread({}, slider_general), {}, {
     slidesToShow: 3,
-    slidesToScroll: 1
+    slidesToScroll: 1,
+    responsive: [{
+      breakpoint: 993,
+      settings: {
+        slidesToShow: 2
+      }
+    }, {
+      breakpoint: 769,
+      settings: {
+        variableWidth: true
+      }
+    }]
   });
 
   var slider_more = _objectSpread(_objectSpread({}, slider_general), {}, {
     slidesToShow: 4,
-    slidesToScroll: 1
+    slidesToScroll: 1,
+    responsive: [{
+      breakpoint: 993,
+      settings: {
+        slidesToShow: 2
+      }
+    }, {
+      breakpoint: 769,
+      settings: {
+        variableWidth: true
+      }
+    }]
   });
 
   Array.from(document.querySelectorAll(".view-slider-internal-event .views-row")).map(function (e) {
@@ -2666,8 +2799,8 @@ var initSlick = function initSlick($, Drupal) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/usuario/Desktop/Proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
-module.exports = __webpack_require__(/*! /Users/usuario/Desktop/Proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
+__webpack_require__(/*! /Users/usuario/Desktop/Proyectos/4ld14-n3ws-new/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
+module.exports = __webpack_require__(/*! /Users/usuario/Desktop/Proyectos/4ld14-n3ws-new/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
 
 
 /***/ })

@@ -36,7 +36,9 @@ const initMain = ($, Drupal) => {
 		const closeNewsletter = document.querySelector('.newsletter .close-modal');
 		closeNewsletter.addEventListener('click', () => {
 			newsletter.classList.add('dis-none')
-		}, { once: true })
+		}, {
+			once: true
+		})
 	}
 
 	///// js para caption en imagenes news
@@ -48,10 +50,12 @@ const initMain = ($, Drupal) => {
 		const images = document.querySelectorAll(
 			".page-node-type-news .block-field-blocknodenewsbody img"
 		);
+
 		images.forEach(img => {
 			const caption = img.dataset.caption;
 
 			if (typeof caption === 'undefined') return;
+
 
 			img.insertAdjacentHTML(
 				"afterend",
@@ -280,21 +284,40 @@ const initMain = ($, Drupal) => {
 		})
 	}
 
-	itemsCarousel.forEach(item => {
-		item.addEventListener('click', () => {
-			let nid = item.dataset.nid;
-			let hasActive = item.parentElement.querySelector('.active');
-			let activeNid = !!hasActive ? hasActive.dataset.nid : false;
+	if (document.body.classList.contains('path-videos')) {
+		document.body.addEventListener('click', (event) => {
+			const target = event.target;
+			if (target.classList.contains('slick-slide')) {
+				const nid = target.dataset.nid;
+				const hasActive = target.parentElement.querySelector('.active');
+				const activeNid = !!hasActive ? hasActive.dataset.nid : false;
 
-			if (nid === activeNid) return;
+				if (nid === activeNid) return;
 
-			resetAlliframes(allIframes);
-			removeActiveElements();
+				resetAlliframes(allIframes);
+				removeActiveElements();
 
-			item.classList.add('active');
-			toggleVideo(nid, itemsNews);
+				target.classList.add('active');
+				toggleVideo(nid, itemsNews);
+			}
 		})
-	})
+	}
+
+	// itemsCarousel.forEach(item => {
+	//   item.addEventListener('click', () => {
+	//     let nid = item.dataset.nid;
+	//     let hasActive = item.parentElement.querySelector('.active');
+	//     let activeNid = !!hasActive ? hasActive.dataset.nid : false;
+
+	//     if (nid === activeNid) return;
+
+	//     resetAlliframes(allIframes);
+	//     removeActiveElements();
+
+	//     item.classList.add('active');
+	//     toggleVideo(nid, itemsNews);
+	//   })
+	// })
 
 	//// js para controlar pop-up advertising
 	if (!!document.querySelector(".path-advertising")) {
@@ -332,38 +355,38 @@ const initMain = ($, Drupal) => {
 		const buttonClose = document.querySelector(".webform-about-al-dia-live .close-modal");
 		const modalForm = document.querySelector(".modal-form");
 
-		if (!document.body.contains(buttonApply)) return;
+		if (!!document.body.contains(buttonApply)) {
+			buttonApply.addEventListener("click", () =>
+				modalForm.classList.add("show")
+			);
+			buttonClose.addEventListener("click", () =>
+				modalForm.classList.remove("show")
+			);
 
-		buttonApply.addEventListener("click", () =>
-			modalForm.classList.add("show")
-		);
-		buttonClose.addEventListener("click", () =>
-			modalForm.classList.remove("show")
-		);
+			//// js pop-up about al dia live
+			const triggerVideo = document.querySelector(
+				".block-views-blockabout-al-dia-live-block-1 .about-al-dia-live-container-video"
+			);
+			const buttonCloseVideo = document.querySelector(".close-video");
+			const video = document.querySelector(".modal-video");
+			const iframe = document.querySelector('.about-al-dia-live-container-video iframe');
 
-		//// js pop-up about al dia live
-		const triggerVideo = document.querySelector(
-			".block-views-blockabout-al-dia-live-block-1 .about-al-dia-live-container-video"
-		);
-		const buttonCloseVideo = document.querySelector(".close-video");
-		const video = document.querySelector(".modal-video");
-		const iframe = document.querySelector('.about-al-dia-live-container-video iframe');
+			//reset src iframe
+			if (iframe.src.indexOf('?') > 0) {
+				const srcEdit = iframe.src.split('?');
+				iframe.src = `${srcEdit[0]}?start=0&rel=0`;
+			}
 
-		//reset src iframe
-		if (iframe.src.indexOf('?') > 0) {
-			const srcEdit = iframe.src.split('?');
-			iframe.src = `${srcEdit[0]}?start=0&rel=0`;
+			triggerVideo.addEventListener("click", () => {
+				video.classList.add("show");
+			});
+
+			buttonCloseVideo.addEventListener("click", event => {
+				event.stopPropagation();
+				video.classList.remove("show");
+				iframe.src = iframe.src;
+			});
 		}
-
-		triggerVideo.addEventListener("click", () => {
-			video.classList.add("show");
-		});
-
-		buttonCloseVideo.addEventListener("click", event => {
-			event.stopPropagation();
-			video.classList.remove("show");
-			iframe.src = iframe.src;
-		});
 	}
 
 	//// js desplegable buscador y close modal
@@ -616,26 +639,32 @@ const initMain = ($, Drupal) => {
 		const containerContainer = document.querySelector('.category-list');
 		const buttonCategories = document.querySelector('.category-button-mobile');
 
-		if (!containerContainer) return;
-
-		buttonCategories.addEventListener('click', () => {
-			containerContainer.classList.toggle('open');
-			buttonCategories.classList.toggle('up');
-		})
+		if (!!containerContainer) {
+			buttonCategories.addEventListener('click', () => {
+				containerContainer.classList.toggle('open');
+				buttonCategories.classList.toggle('up');
+			})
+		}
 	}
 
 	// validador watchlive
 	var watch_live_iframe = document.querySelector(".watch-live-video iframe");
 	var watch_live_content = document.querySelector(".watch-live");
-	if (watch_live_iframe == null && !!watch_live_content) { watch_live_content.classList.add("watch-dis-none"); }
+	if (watch_live_iframe == null && !!watch_live_content) {
+		watch_live_content.classList.add("watch-dis-none");
+	}
 
 	// js para pagina premium, boton e video y comentarios
 	var premium = document.querySelector(".node--view-mode-premium");
-	if (!!premium) { premium.closest("body").classList.add("page-premium"); }
+	if (!!premium) {
+		premium.closest("body").classList.add("page-premium");
+	}
 
 	var video_premium = document.querySelector(".block-field-blocknodenewsfield-video.premium .close-modal");
 	var content_premium = document.querySelector(".block-field-blocknodenewsfield-video.premium .content");
-	if (!!video_premium && !!content_premium) { content_premium.prepend(video_premium); }
+	if (!!video_premium && !!content_premium) {
+		content_premium.prepend(video_premium);
+	}
 
 	// Js password strength color
 
@@ -683,11 +712,67 @@ const initMain = ($, Drupal) => {
 	if (!!filterVideos) {
 		var lang = document.documentElement.lang;
 		var labelAny = filterVideos.querySelector('#edit-tid-all + label');
-		
-		if(lang == 'es') {
+
+		if (lang == 'es') {
 			labelAny.textContent = 'Cualquiera';
 		}
 
+	}
+
+	const menuFooterSecondColumn = document.querySelector("#block-footer > div.content > ul > li:nth-child(2) > div > ul")
+
+	if (!!menuFooterSecondColumn) {
+		let copyr = document.querySelector('.copyr').cloneNode(true);
+		let powerd = document.querySelector('.powerd').cloneNode(true);
+
+		menuFooterSecondColumn.append(copyr, powerd);
+
+	}
+
+	const landingVideos = document.querySelector(".path-videos");
+
+	if (!!landingVideos) {
+		const lang = document.documentElement.lang;
+		const radioAllItem = document.querySelector('#edit-tid-all + label');
+
+		if (lang == 'es') {
+			radioAllItem.textContent = 'TODOS';
+		}
+
+	}
+
+	const initialWidth = window.innerWidth;
+	const tablet = 1024;
+	const mobile = 768;
+
+	let device = 'desktop';
+
+	if (initialWidth <= tablet) {
+		device = 'tablet';
+	}
+
+	if (initialWidth <= mobile) {
+		device = 'mobile';
+	}
+
+	window.addEventListener('resize', function () {
+		const currentWidth = window.innerWidth;
+		checkReloadPage(device, currentWidth);
+	})
+
+	function checkReloadPage(device, currentWidth) {
+		if (device === 'desktop') {
+			if (currentWidth < tablet) location.reload();
+		}
+
+		if (device === 'tablet') {
+			if (currentWidth > tablet) location.reload();
+			if (currentWidth < mobile) location.reload();
+		}
+
+		if (device === 'mobile') {
+			if (currentWidth > mobile) location.reload();
+		}
 	}
 
 };

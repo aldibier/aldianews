@@ -27,7 +27,7 @@
         height: 0;
         padding: 0.1mm;
         left: -20px;
-        bottom: 0;
+        top: 0;
         background: $cgrey4;
         position: absolute;
         right: 0;
@@ -47,23 +47,30 @@
         }
       }
 
-      @media screen and (min-width: $broken) {
-        &:nth-last-of-type(-n + 3) {
-          &::before {
-            content: none;
-          }
+      $brokenUp: $broken+1;
+
+      @media screen and (min-width: $brokenUp) {
+        &:nth-child(-n+3) {
+          margin-top: 0;
         }
       }
 
-      @media screen and (max-width: $broken) {
+      @media screen and (max-width: $brokenUp) {
+        &:nth-child(-n+2)::before {
+          content: none;
+          display: none;
+        }
+
+        &:nth-child(-n+2) {
+          margin-top: 0;
+        }
+      }
+
+      @media screen and (max-width: $tablet) {
         width: 100%;
         max-width: 100%;
         margin: 0 0 40px;
         border: none;
-
-        &:nth-child(-n + 2) {
-          margin-top: 0;
-        }
 
         &::before {
           width: calc(100vw - 30px);
@@ -73,16 +80,24 @@
           right: 0;
           margin: -20px auto;
         }
+
+        &:nth-child(-n+2) {
+          &::before {
+            margin-bottom: 0 !important;
+            display: none !important;
+          }
+        }
+
       }
 
       @media screen and (max-width: $tablet) {
         margin-top: 0;
 
-        &::before {
+        &::before {
           display: none;
         }
 
-        &:nth-of-type(odd){
+        &:nth-of-type(odd) {
           &::before {
             content: '';
             width: calc(100vw - 30px);
@@ -98,8 +113,8 @@
           }
         }
 
-        &:nth-last-of-type(-n + 2){
-          &::before {
+        &:nth-child(-n+2) {
+          &::before {
             margin-bottom: 0 !important;
             display: none !important;
           }
@@ -117,12 +132,10 @@
 
 .news-gallery {
   .view-content {
-    > div:not(.no-result-search) {
+    >div:not(.no-result-search) {
       display: grid;
-      grid-template-columns: minmax(250px, 420px) minmax(250px, 440px) minmax(
-          250px,
-          420px
-        );
+      grid-template-columns: minmax(250px, 420px) minmax(250px, 440px) minmax(250px,
+          420px);
       grid-gap: 0 40px;
       overflow: hidden;
       grid-auto-flow: dense;
@@ -165,7 +178,7 @@
   margin-bottom: 90px;
 
   @media screen and (max-width: $tablet) {
-    margin-bottom: 40px;  
+    margin-bottom: 40px;
   }
 }
 
@@ -177,10 +190,8 @@
   .view-content {
     margin-bottom: 60px;
     display: grid;
-    grid-template-columns: minmax(250px, 420px) minmax(250px, 440px) minmax(
-        250px,
-        420px
-      );
+    grid-template-columns: minmax(250px, 420px) minmax(250px, 440px) minmax(250px,
+        420px);
     grid-gap: 0 40px;
     overflow: hidden;
 
@@ -207,34 +218,40 @@
   }
 }
 
-.path-about-al-dia-live{
-  .events-gallery .view-content .views-row{
-    &:nth-last-child(-n+3)::before{
-      width:0;
-    }
-    @media screen and (max-width: $broken){
-      position:relative;
-      &:nth-child(odd)::before{
-        width:calc(100vw - 30px);
+.path-about-al-dia-live {
+  .events-gallery .view-content .views-row {
+    // &:nth-last-child(-n+3)::before {
+    //   width: 0;
+    // }
+
+    @media screen and (max-width: $broken) {
+      position: relative;
+
+      &:nth-child(odd)::before {
+        width: 100vw;
         height: 0;
         padding: 0.1mm;
-        content:'';
+        content: '';
         position: absolute;
         bottom: 0;
       }
-      &:nth-child(even)::before{
-        width:calc(100vw - 30px);
-        height: 0px;
-        content:'';
-        position: absolute;
+
+      &:nth-child(even)::before {
+        display: none;
+        // width:calc(100vw - 30px);
+        // height: 0px;
+        // content:'';
+        // position: absolute;
       }
-      &:nth-last-child(-n+2)::before{
-        width:0;
-      }
-    } 
+
+      // &:nth-last-child(-n+2)::before {
+      //   width: 0;
+      // }
+    }
   }
-  .view-events-in-al-dia-live .view-content{
-    @media screen and (max-width: $tablet){
+
+  .view-events-in-al-dia-live .view-content {
+    @media screen and (max-width: $tablet) {
       margin-bottom: 5px !important;
     }
   }

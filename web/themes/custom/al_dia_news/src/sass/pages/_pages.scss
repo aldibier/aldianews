@@ -11,83 +11,17 @@ article[about="/terms-of-service"] {
   }
 }
 
-.aldia-logo-in-text {
-  border: 0;
-  display: inline-block;
-  &:hover {
-    text-decoration: none;
-  }
-
-  img {
-    height: 100%;
-    width: auto;
-  }
-}
-
-h1,
-h2,
-h3 {
-  .aldia-logo-in-text {
-    max-width: 130px;
-    min-height: auto;
-
-    img {
-      // width: 50px;
-      // height: 15px;
-
-      width: 100%;
-      height: auto;
-    }
-
-    @media screen and (min-width: $tablet) {
-      // max-width: 130px;
-      max-width: 185px;
-      min-height: auto;
-    }
-
-    @media screen and (max-width: $tablet) {
-      max-width: 72px;
-    }
-  }
-}
-
-.block-hero-image {
-  h1,
-  h2 {
-    .aldia-logo-in-text img {
-      width: 63px;
-      height: 20px;
-
-      @media screen and (min-width: $tablet) {
-        height: 62px;
-        width: 200px;
-      }
-    }
-  }
-}
-
-p .aldia-logo-in-text img {
-  width: 40px;
-  height: 13px;
-
-  @media screen and (min-width: $tablet) {
-    height: 18px;
-    width: 58px !important;
-  }
-}
-
 .path-node:not(.page-node-type-feature-employer),
 .path-node:not(.page-node-type-job),
 .path-node:not(.page-premium),
-.page-node-type-al-dia-vacancy,
-.path--seeker {
+.page-node-type-al-dia-vacancy{
   #main-wrapper {
-    max-width: none;
+    //max-width: none;
     #main {
       max-width: none;
       padding: 0px;
       .region-breadcrumb {
-        max-width: 1300px;
+        //max-width: 1300px;
         padding: 0;
         margin: 0 auto;
       }
@@ -102,6 +36,7 @@ p .aldia-logo-in-text img {
     }
   }
 }
+
 .page-error.content-page-node {
   max-width: 1280px;
   margin: 0 auto;
