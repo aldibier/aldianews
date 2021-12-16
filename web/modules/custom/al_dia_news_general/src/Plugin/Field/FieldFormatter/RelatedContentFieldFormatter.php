@@ -218,7 +218,7 @@ class RelatedContentFieldFormatter extends FormatterBase {
     $block_manager = \Drupal::service('plugin.manager.block');
     // You can hard code configuration or you load from settings.
     $config = [
-      'ad_unit' => ['internal-section-body']
+      'ad_unit' => 'internal-section-body'
     ];
     $plugin_block = $block_manager->createInstance('gamw', $config);
     // Some blocks might implement access check.
@@ -229,11 +229,12 @@ class RelatedContentFieldFormatter extends FormatterBase {
       // You might need to add some cache tags/contexts.
       return [];
     }
-    $render = $plugin_block->build();
+    $build = $plugin_block->build();
+    $block_content = $this->renderer->render($build);
     // Add the cache tags/contexts.
     \Drupal::service('renderer')->addCacheableDependency($render, $plugin_block);
 
-    return $render;
+    return $block_content;
   }
 
 }
