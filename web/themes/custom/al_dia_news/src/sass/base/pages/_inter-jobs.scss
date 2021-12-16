@@ -38,11 +38,13 @@
 
   .pautas {
     height: max-content;
-    min-height: 1205px;
+		margin-bottom: 100px;
+    //min-height: 1205px;
 
     @media (max-width: $broken) {
       min-height: initial;
       width: 100%;
+			margin-bottom: 0;
     }
 
     @media (min-width: $tablet) {
