@@ -95,6 +95,7 @@ const initSlick = ($, Drupal) => {
 					slidesToShow: 1,
 					slidesToScroll: 1,
 					centerMode: true,
+					variableWidth: true
 				}
 			},
 		]

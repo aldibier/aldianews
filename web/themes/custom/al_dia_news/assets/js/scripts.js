@@ -2568,7 +2568,8 @@ var initSlick = function initSlick($, Drupal) {
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
-        centerMode: true
+        centerMode: true,
+        variableWidth: true
       }
     }]
   }); //slide about al dia events
