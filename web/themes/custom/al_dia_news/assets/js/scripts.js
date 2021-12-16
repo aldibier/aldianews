@@ -1869,6 +1869,39 @@ var initMain = function initMain($, Drupal) {
       radioAllItem.textContent = 'TODOS';
     }
   }
+
+  var initialWidth = window.innerWidth;
+  var tablet = 1024;
+  var mobile = 768;
+  var device = 'desktop';
+
+  if (initialWidth <= tablet) {
+    device = 'tablet';
+  }
+
+  if (initialWidth <= mobile) {
+    device = 'mobile';
+  }
+
+  window.addEventListener('resize', function () {
+    var currentWidth = window.innerWidth;
+    checkReloadPage(device, currentWidth);
+  });
+
+  function checkReloadPage(device, currentWidth) {
+    if (device === 'desktop') {
+      if (initialWidth < tablet) location.reload();
+    }
+
+    if (device === 'tablet') {
+      if (initialWidth > tablet) location.reload();
+      if (initialWidth < mobile) location.reload();
+    }
+
+    if (device === 'mobile') {
+      if (initialWidth > mobile) location.reload();
+    }
+  }
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (initMain);

@@ -741,6 +741,40 @@ const initMain = ($, Drupal) => {
 
 	}
 
+	const initialWidth = window.innerWidth;
+	const tablet = 1024;
+	const mobile = 768;
+
+	let device = 'desktop';
+
+	if (initialWidth <= tablet) {
+		device = 'tablet';
+	}
+
+	if (initialWidth <= mobile) {
+		device = 'mobile';
+	}
+
+	window.addEventListener('resize', function () {
+		const currentWidth = window.innerWidth;
+		checkReloadPage(device, currentWidth);
+	})
+
+	function checkReloadPage(device, currentWidth) {
+		if (device === 'desktop') {
+			if (initialWidth < tablet) location.reload();
+		}
+
+		if (device === 'tablet') {
+			if (initialWidth > tablet) location.reload();
+			if (initialWidth < mobile) location.reload();
+		}
+
+		if (device === 'mobile') {
+			if (initialWidth > mobile) location.reload();
+		}
+	}
+
 };
 
 export default initMain;
