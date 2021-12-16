@@ -222,6 +222,16 @@
       }
     }
 
+		.views-row:nth-child(2),
+		.views-row:nth-child(4){
+			.employer-image img {
+				height: auto;
+				object-fit: contain;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+		}
+
     .employer-title-body {
       padding: 50px;
       width: 50%;
@@ -333,16 +343,6 @@
         object-fit: cover;
       }
     }
-
-		.employer-image:nth-child(2),
-		.employer-image:nth-child(4){
-			img {
-				height: auto;
-				object-fit: contain;
-				top: 50%;
-				transform: translateY(-50%);
-			}
-		}
 
     .views-field-nothing {
       .employer-container {
