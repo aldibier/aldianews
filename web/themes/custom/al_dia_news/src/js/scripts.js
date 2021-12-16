@@ -214,7 +214,6 @@ import replaceToken from "./modules/replaceToken";
 			var controller2 = new ScrollMagic.Controller({
 				globalSceneOptions: {
 					triggerHook: 0.14,
-					duration: "100vh"
 					// duration: time.offsetHeight 
 				}
 			});
