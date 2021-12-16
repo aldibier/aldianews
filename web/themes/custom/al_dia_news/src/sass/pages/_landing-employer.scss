@@ -334,6 +334,16 @@
       }
     }
 
+		.employer-image:nth-child(2),
+		.employer-image:nth-child(4){
+			img {
+				height: auto;
+				object-fit: contain;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+		}
+
     .views-field-nothing {
       .employer-container {
         display: flex;
