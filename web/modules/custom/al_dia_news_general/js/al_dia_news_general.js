@@ -391,11 +391,14 @@
 			//// sumo select
 
 			if (context.classList.contains('form-sponsorship-events')) {
-				const selectCountry = document.querySelector('select[id*="edit-address-country"]');
-				const optionToMove = selectCountry.querySelector('option[value="United States"]');
+				const selectCountry = document.querySelector('select[id*="edit-address-country"]')
+				let optionToMove = selectCountry.querySelector('option[value="United States"]');
+
+				if(!optionToMove){
+					optionToMove = selectCountry.querySelector('option[value="Estados Unidos"]');
+				}
+				
 				const optionFirst = selectCountry.firstElementChild;
-
-
 
 				if (!!optionToMove) {
 					optionFirst.insertAdjacentElement('afterend', optionToMove);
@@ -426,7 +429,7 @@
 				if (!!formItems) {
 					//add styles
 					formItems.forEach(item => {
-						if (item.textContent.includes("United States")) {
+						if (item.textContent.includes("United States") || item.textContent.includes("Estados Unidos")) {
 							item.style.borderBottom = "3px solid #b1b1b1";
 						}
 					})
