@@ -199,8 +199,9 @@ class RelatedContentFieldFormatter extends FormatterBase {
 
     $html = $dom->saveHtml();
 
-    $ad = '<div id="gamw_33f4a863-8a7f-4295-a232-92ce1ad94690" data-uuid="33f4a863-8a7f-4295-a232-92ce1ad94690" data-ad-unit="internal-section-body"></div>';
-    $content = $ad."</p><div data-embed-button='related_content'>". $related_content ."</div>";
+    \Drupal::logger('al_dia_news_general')->notice('Bloque'. json_encode($this->getBlockAd()));
+
+    $content = $this->getBlockAd()."</p><div data-embed-button='related_content'>". $related_content ."</div>";
 
     // HTML to return
     $html = str_replace("[related-content]</p>", $content, $html);
