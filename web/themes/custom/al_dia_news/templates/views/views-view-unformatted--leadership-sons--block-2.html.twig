@@ -31,16 +31,19 @@
 		let device = 'desktop';
 
 		if (initialWidth <= tablet) {
-		device = 'tablet';
+			device = 'tablet';
 		}
 
 		if (initialWidth <= mobile) {
-		device = 'mobile';
+			device = 'mobile';
 		}
 
-		console.log(device);
+		{% set test = device %}
+
 	</script>
 {% endblock %}
+
+{{test}}
 
 {% for row in rows %}
 	{%
