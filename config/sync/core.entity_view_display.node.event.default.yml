@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.event.field_guest_block
     - field.field.node.event.field_image
     - field.field.node.event.field_images_of_the_event
+    - field.field.node.event.field_landing_image
     - field.field.node.event.field_logo
     - field.field.node.event.field_nomination_status
     - field.field.node.event.field_present_by
@@ -33,8 +34,8 @@ dependencies:
     - entity_reference_revisions
     - fixed_block_content
     - gamw
-    - image
     - layout_builder
+    - svg_image
     - text
     - user
     - views
@@ -456,6 +457,27 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: -6
+          22beaae2-cca6-4c0a-ab4e-931030d83fd2:
+            uuid: 22beaae2-cca6-4c0a-ab4e-931030d83fd2
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:event:field_landing_image'
+              formatter:
+                label: above
+                settings:
+                  svg_attributes:
+                    width: null
+                    height: null
+                  svg_render_as_image: true
+                  image_style: ''
+                  image_link: ''
+                third_party_settings: {  }
+                type: image
+            additional: {  }
+            weight: 7
         third_party_settings: {  }
 id: node.event.default
 targetEntityType: node
@@ -516,6 +538,19 @@ content:
     weight: 114
     label: above
     settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_landing_image:
+    weight: 115
+    label: above
+    settings:
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
       image_style: ''
       image_link: ''
     third_party_settings: {  }
