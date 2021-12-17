@@ -199,13 +199,29 @@ class RelatedContentFieldFormatter extends FormatterBase {
 
     $html = $dom->saveHtml();
 
-    $content = "</p><div data-embed-button='related_content'>". $related_content ."</div>";
+    \Drupal::logger('al_dia_news_general')->notice('Bloque'. json_encode($this->getBlockAd()));
+
+    $content = $this->getBlockAd()."</p><div data-embed-button='related_content'>". $related_content ."</div>";
 
     // HTML to return
     $html = str_replace("[related-content]</p>", $content, $html);
 
     return $html;
 
+  }
+  /**
+   * Render a new BLock AD from Gamw
+   *
+   * @return string
+   */
+  public function getBlockAd(){
+    $entityManager = \Drupal::service('entity_type.manager');
+
+    $block = $entityManager->getStorage('block')->load('gamwadvertisement_22');
+    $renderBlock = $entityManager->getViewBuilder('block')->view($block);
+    $block_content = \Drupal::service('renderer')->renderPlain($renderBlock);
+
+    return $block_content;
   }
 
 }
