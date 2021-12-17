@@ -749,3 +749,13 @@ function al_dia_news_general_after_build(array $element, FormStateInterface $for
   return $element;
 
 }
+
+/**
+ * Implements hook_editor_js_settings_alter().
+ */
+function al_dia_news_general_editor_js_settings_alter(array &$settings) {
+  if (!empty($settings['editor']['formats']['full_html'])) {
+    $full_html = &$settings['editor']['formats']['full_html'];
+    $full_html['editorSettings']['forcePasteAsPlainText'] = TRUE;
+  }
+}
