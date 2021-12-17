@@ -22,7 +22,11 @@
 	<h3>{{ title }}</h3>
 {% endif %}
 
-{{device}}
+{% block javascripts %}
+    <script>
+			console.log('js twig!');
+		</script>
+{% endblock %}
 
 {% for row in rows %}
 	{%
