@@ -398,15 +398,6 @@
 
 
 				if (!!optionToMove) {
-					//add styles
-					const formItems = document.querySelectorAll('.form-sponsorship-events .opt label');
-
-					formItems.forEach(item => {
-						if (item.textContent.includes("United States")) {
-							item.style.borderBottom = "3px solid #b1b1b1";
-						}
-					})
-
 					optionFirst.insertAdjacentElement('afterend', optionToMove);
 				}
 
@@ -429,6 +420,20 @@
 			Array.from(document.querySelectorAll("form select")).map(select => {
 				addSumoselect(select)
 			});
+
+			if (context.classList.contains('form-sponsorship-events')) {
+				if (!!optionToMove) {
+					//add styles
+					const formItems = document.querySelectorAll('.form-sponsorship-events .opt label');
+
+					formItems.forEach(item => {
+						if (item.textContent.includes("United States")) {
+							item.style.borderBottom = "3px solid #b1b1b1";
+						}
+					})
+				}
+
+			}
 		}
 	}
 
