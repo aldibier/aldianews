@@ -5,14 +5,15 @@ dependencies:
   config:
     - field.storage.node.field_date_of_event
     - field.storage.node.field_image
+    - field.storage.node.field_landing_image
     - field.storage.node.field_logo
     - field.storage.node.field_nomination_status
     - field.storage.node.field_venue_of_the_event
     - node.type.event
   module:
     - datetime
-    - image
     - node
+    - svg_image
     - user
     - views_field_view
     - views_fieldsets
@@ -757,7 +758,7 @@ display:
           group_type: group
           admin_label: ''
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: true
             text: " <div class=\"content\">\r\n   <div class=\"field field--name-field-image field--type-image field--label-hidden field__item\">\r\n     {{ field_image }}\r\n   </div>\r\n </div>\r\n"
@@ -802,6 +803,78 @@ display:
           settings:
             image_style: ''
             image_link: ''
+            svg_render_as_image: true
+            svg_attributes:
+              width: null
+              height: null
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_landing_image:
+          id: field_landing_image
+          table: node__field_landing_image
+          field: field_landing_image
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: " <div class=\"content\">\r\n   <div class=\"field field--name-field-image field--type-image field--label-hidden field__item\">\r\n     {{ field_landing_image }}\r\n   </div>\r\n </div>\r\n"
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: '0'
+          element_class: ''
+          element_label_type: '0'
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: div
+          element_wrapper_class: 'block block-layout-builder block-field-blocknodeeventfield-image'
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: image
+          settings:
+            image_style: ''
+            image_link: ''
+            svg_render_as_image: true
+            svg_attributes:
+              width: null
+              height: null
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -1188,6 +1261,7 @@ display:
       tags:
         - 'config:field.storage.node.field_date_of_event'
         - 'config:field.storage.node.field_image'
+        - 'config:field.storage.node.field_landing_image'
         - 'config:field.storage.node.field_logo'
         - 'config:field.storage.node.field_nomination_status'
         - 'config:field.storage.node.field_venue_of_the_event'
