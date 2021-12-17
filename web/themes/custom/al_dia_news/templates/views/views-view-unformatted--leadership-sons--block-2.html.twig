@@ -22,29 +22,6 @@
 	<h3>{{ title }}</h3>
 {% endif %}
 
-{% block javascripts %}
-	<script>
-		const initialWidth = window.innerWidth;
-		const tablet = 1024;
-		const mobile = 768;
-
-		let device = 'desktop';
-
-		if (initialWidth <= tablet) {
-			device = 'tablet';
-		}
-
-		if (initialWidth <= mobile) {
-			device = 'mobile';
-		}
-
-		{% set test = device %}
-
-	</script>
-{% endblock %}
-
-{{test}}
-
 {% for row in rows %}
 	{%
     set row_classes = [

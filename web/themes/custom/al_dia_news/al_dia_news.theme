@@ -203,7 +203,7 @@ function al_dia_news_preprocess_views_view_unformatted(&$vars) {
     }
   }
 
-	browser_size();
+	// browser_size();
 
   if (is_mobile()) {
     $vars['device'] = 'mobile';
