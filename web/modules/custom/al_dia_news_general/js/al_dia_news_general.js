@@ -399,7 +399,13 @@
 
 				if (!!optionToMove) {
 					//add styles
-					optionToMove.querySelector('label').style.color = "border-bottom: 2px solid #b1b1b1;";
+					const formItems = document.querySelectorAll('.form-sponsorship-events .opt label');
+
+					formItems.forEach(item => {
+						if (item.textContent.includes("United States")) {
+							item.style.borderBottom = "3px solid #b1b1b1";
+						}
+					})
 
 					optionFirst.insertAdjacentElement('afterend', optionToMove);
 				}
