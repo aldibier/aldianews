@@ -23,9 +23,23 @@
 {% endif %}
 
 {% block javascripts %}
-    <script>
-			console.log('js twig!');
-		</script>
+	<script>
+		const initialWidth = window.innerWidth;
+		const tablet = 1024;
+		const mobile = 768;
+
+		let device = 'desktop';
+
+		if (initialWidth <= tablet) {
+		device = 'tablet';
+		}
+
+		if (initialWidth <= mobile) {
+		device = 'mobile';
+		}
+
+		console.log(device);
+	</script>
 {% endblock %}
 
 {% for row in rows %}
