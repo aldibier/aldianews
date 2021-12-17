@@ -47,6 +47,8 @@ function browser_size() {
   if (empty($_SERVER['HTTP_USER_AGENT'])) {
   }else {
 		ksm($_SERVER['HTTP_USER_AGENT']);
+		$navegador = get_browser(null, true);
+		ksm($navegador);
 	}
 } 
 
@@ -202,7 +204,7 @@ function al_dia_news_preprocess_views_view_unformatted(&$vars) {
   }
 
 	browser_size();
-	
+
   if (is_mobile()) {
     $vars['device'] = 'mobile';
   } else {
