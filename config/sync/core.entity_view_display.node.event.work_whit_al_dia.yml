@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.event.field_guest_block
     - field.field.node.event.field_image
     - field.field.node.event.field_images_of_the_event
+    - field.field.node.event.field_landing_image
     - field.field.node.event.field_logo
     - field.field.node.event.field_nomination_status
     - field.field.node.event.field_present_by
@@ -20,8 +21,8 @@ dependencies:
   module:
     - datetime
     - entity_reference_revisions
-    - image
     - layout_builder
+    - svg_image
     - text
     - user
 third_party_settings:
@@ -141,6 +142,7 @@ content:
     region: content
 hidden:
   addtoany: true
+  field_landing_image: true
   langcode: true
   premium_message: true
   search_api_excerpt: true
