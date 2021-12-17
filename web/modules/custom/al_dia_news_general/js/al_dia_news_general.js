@@ -422,17 +422,15 @@
 			});
 
 			if (context.classList.contains('form-sponsorship-events')) {
-				if (!!optionToMove) {
+				const formItems = document.querySelectorAll('.form-sponsorship-events .opt label');
+				if (!!formItems) {
 					//add styles
-					const formItems = document.querySelectorAll('.form-sponsorship-events .opt label');
-
 					formItems.forEach(item => {
 						if (item.textContent.includes("United States")) {
 							item.style.borderBottom = "3px solid #b1b1b1";
 						}
 					})
 				}
-
 			}
 		}
 	}
