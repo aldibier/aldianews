@@ -397,7 +397,7 @@
 				if(!optionToMove){
 					optionToMove = selectCountry.querySelector('option[value="Estados Unidos"]');
 				}
-				
+
 				const optionFirst = selectCountry.firstElementChild;
 
 				if (!!optionToMove) {
@@ -502,7 +502,7 @@
 
 				const contrySelected = selectCountry.value;
 				//disabled at startup
-				if (contrySelected.toLocaleLowerCase() != "united states") removeStateAndCity(fieldState, fieldCity);
+				if (contrySelected.toLocaleLowerCase() != "united states" || contrySelected.toLocaleLowerCase() != "estados unidos") removeStateAndCity(fieldState, fieldCity);
 
 				//reorder fields 
 				filedCountry.insertAdjacentElement('afterend', fieldState);
@@ -514,7 +514,7 @@
 				}
 
 				countriesItems.forEach(item => item.addEventListener('click', (event) => {
-					if (event.target.innerText.toLowerCase() === 'united states') {
+					if (event.target.innerText.toLowerCase() === 'united states' || event.target.innerText.toLowerCase() === 'estados unidos') {
 						addStateAndCity(fieldState, fieldCity);
 					} else {
 						removeStateAndCity(fieldState, fieldCity);
