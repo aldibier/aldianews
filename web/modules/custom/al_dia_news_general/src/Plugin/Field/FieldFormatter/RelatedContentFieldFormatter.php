@@ -215,24 +215,11 @@ class RelatedContentFieldFormatter extends FormatterBase {
    * @return string
    */
   public function getBlockAd(){
-    $block_manager = \Drupal::service('plugin.manager.block');
-    // You can hard code configuration or you load from settings.
-    $config = [
-      'ad_unit' => 'internal-section-body'
-    ];
-    $plugin_block = $block_manager->createInstance('gamw', $config);
-    // Some blocks might implement access check.
-    $access_result = $plugin_block->access(\Drupal::currentUser());
-    // Return empty render array if user doesn't have access.
-    // $access_result can be boolean or an AccessResult class
-    if (is_object($access_result) && $access_result->isForbidden() || is_bool($access_result) && !$access_result) {
-      // You might need to add some cache tags/contexts.
-      return [];
-    }
-    $build = $plugin_block->build();
-    $block_content = \Drupal::service('renderer')->renderPlain($build);
-    // Add the cache tags/contexts.
-    \Drupal::service('renderer')->addCacheableDependency($build, $plugin_block);
+    $entityManager = \Drupal::service('entity_type.manager');
+
+    $block = $entityManager->getStorage('block')->load('gamwadvertisement_22');
+    $renderBlock = $entityManager->getViewBuilder('block')->view($block);
+    $block_content = \Drupal::service('renderer')->renderPlain($renderBlock);
 
     return $block_content;
   }
