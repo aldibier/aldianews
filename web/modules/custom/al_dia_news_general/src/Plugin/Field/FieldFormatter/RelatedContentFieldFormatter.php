@@ -200,8 +200,13 @@ class RelatedContentFieldFormatter extends FormatterBase {
     $html = $dom->saveHtml();
 
     \Drupal::logger('al_dia_news_general')->notice('Bloque'. json_encode($this->getBlockAd()));
-
-    $content = $this->getBlockAd()."</p><div data-embed-button='related_content'>". $related_content ."</div>";
+    $ad = "<!-- /66060234/internal-section-body -->
+    <div id='div-gpt-ad-1639705123281-0' style='min-width: 320px; min-height: 60px;'>
+      <script>
+        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1639705123281-0'); });
+      </script>
+    </div>";
+    $content = $ad."</p><div data-embed-button='related_content'>". $related_content ."</div>";
 
     // HTML to return
     $html = str_replace("[related-content]</p>", $content, $html);
