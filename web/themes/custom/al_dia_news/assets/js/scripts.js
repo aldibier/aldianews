@@ -1878,7 +1878,9 @@ var initMain = function initMain($, Drupal) {
   } else if (url.charAt(url.length - 1) == '/' && url.indexOf('device=mobile') < 0) {
     newUrl = url.replace(/\/$/, '?');
     newUrl += 'device=mobile';
-  } else if (url.indexOf('device=mobile') < 0) {
+  } else if (url.indexOf('device=mobile') > 0) {
+    newUrl = url;
+  } else {
     newUrl = "".concat(url, "?device=mobile");
   }
 

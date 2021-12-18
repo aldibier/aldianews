@@ -746,11 +746,12 @@ const initMain = ($, Drupal) => {
 
 	if (url.indexOf('?') > 0 && url.indexOf('device=mobile') < 0) {
 		newUrl = `${url}&device=mobile`;
-	}
-	else if (url.charAt(url.length - 1) == '/' && url.indexOf('device=mobile') < 0) {
+	} else if (url.charAt(url.length - 1) == '/' && url.indexOf('device=mobile') < 0) {
 		newUrl = url.replace(/\/$/, '?');
 		newUrl += 'device=mobile';
-	} else if (url.indexOf('device=mobile') < 0) {
+	} else if (url.indexOf('device=mobile') > 0) {
+		newUrl = url;
+	} else {
 		newUrl = `${url}?device=mobile`;
 	}
 
