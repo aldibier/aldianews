@@ -1870,6 +1870,18 @@ var initMain = function initMain($, Drupal) {
     }
   }
 
+  var url = window.location.href;
+  var newUrl;
+
+  if (url.indexOf('?') > 0) {
+    newUrl = "".concat(url, "&device=mobile");
+  } else if (url.charAt(url.length - 1) == '/') {
+    newUrl = url.replace(/\/$/, '?');
+    newUrl += 'device=mobile';
+  } else {
+    newUrl = "".concat(url, "?device=mobile");
+  }
+
   var initialWidth = window.innerWidth;
   var tablet = 1024;
   var mobile = 768;
@@ -1890,16 +1902,16 @@ var initMain = function initMain($, Drupal) {
 
   function checkReloadPage(device, currentWidth) {
     if (device === 'desktop') {
-      if (currentWidth < tablet) location.reload();
+      if (currentWidth < tablet) window.location.replace(newUrl);
     }
 
     if (device === 'tablet') {
       if (currentWidth > tablet) location.reload();
-      if (currentWidth < mobile) location.reload();
+      if (currentWidth < mobile) window.location.replace(newUrl);
     }
 
     if (device === 'mobile') {
-      if (currentWidth > mobile) location.reload();
+      if (currentWidth > mobile) window.location.replace(newUrl);
     }
   }
 };

@@ -741,6 +741,19 @@ const initMain = ($, Drupal) => {
 
 	}
 
+	const url = window.location.href;
+	let newUrl;
+
+	if(url.indexOf('?') > 0 ){
+		newUrl = `${url}&device=mobile`;
+	}	
+	else if (url.charAt(url.length - 1) == '/') {
+		newUrl = url.replace(/\/$/, '?');
+		newUrl += 'device=mobile';
+	} else {
+		newUrl = `${url}?device=mobile`;
+	}
+
 	const initialWidth = window.innerWidth;
 	const tablet = 1024;
 	const mobile = 768;
@@ -762,16 +775,16 @@ const initMain = ($, Drupal) => {
 
 	function checkReloadPage(device, currentWidth) {
 		if (device === 'desktop') {
-			if (currentWidth < tablet) location.reload();
+			if (currentWidth < tablet) window.location.replace(newUrl);
 		}
 
 		if (device === 'tablet') {
 			if (currentWidth > tablet) location.reload();
-			if (currentWidth < mobile) location.reload();
+			if (currentWidth < mobile) window.location.replace(newUrl);
 		}
 
 		if (device === 'mobile') {
-			if (currentWidth > mobile) location.reload();
+			if (currentWidth > mobile) window.location.replace(newUrl);
 		}
 	}
 
