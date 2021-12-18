@@ -801,11 +801,11 @@ const initMain = ($, Drupal) => {
 		let newUrl;
 
 		if (url.indexOf(`?${strParam}`) > 0) {
-			newUrl = url.replace(`?${strParam}`, '')
+			newUrl = url.replaceAll(`\?${strParam}`, '')
 		}
 
 		if (url.indexOf(`&${strParam}`) > 0) {
-			newUrl = url.replace(`&${strParam}`, '')
+			newUrl = url.replaceAll(`\&${strParam}`, '')
 		}
 
 		return newUrl;

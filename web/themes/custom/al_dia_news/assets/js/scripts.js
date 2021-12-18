@@ -1930,11 +1930,11 @@ var initMain = function initMain($, Drupal) {
     var newUrl;
 
     if (url.indexOf("?".concat(strParam)) > 0) {
-      newUrl = url.replace("?".concat(strParam), '');
+      newUrl = url.replaceAll("?".concat(strParam), '');
     }
 
     if (url.indexOf("&".concat(strParam)) > 0) {
-      newUrl = url.replace("&".concat(strParam), '');
+      newUrl = url.replaceAll("&".concat(strParam), '');
     }
 
     return newUrl;
