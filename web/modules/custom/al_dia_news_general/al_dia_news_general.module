@@ -23,7 +23,7 @@ function is_mobile() {
   \Drupal::service('page_cache_kill_switch')->trigger();
 
 	$paramDevice = \Drupal::request()->query->get('device');
-	
+
   if (empty($_SERVER['HTTP_USER_AGENT'])) {
       $is_mobile = false;
   }else if($paramDevice == 'mobile'){
@@ -763,5 +763,6 @@ function al_dia_news_general_editor_js_settings_alter(array &$settings) {
   if (!empty($settings['editor']['formats']['full_html'])) {
     $full_html = &$settings['editor']['formats']['full_html'];
     $full_html['editorSettings']['forcePasteAsPlainText'] = TRUE;
+		$full_html['editorSettings']['pasteFilter'] = 'plain-text';
   }
 }
