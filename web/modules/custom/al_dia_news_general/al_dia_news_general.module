@@ -17,10 +17,12 @@ use Drupal\Core\Ajax\RedirectCommand;
  * User agent device
  */
 
-	if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
+	if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on'){
 		$url = "https";
-	else $url = "http";
-
+	}else {
+		$url = "http";
+	}
+		
 	$url .= "://";
 
 	$url .= $_SERVER['HTTP_HOST'];
