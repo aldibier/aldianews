@@ -1873,7 +1873,7 @@ var initMain = function initMain($, Drupal) {
   var url = window.location.href;
   var newUrl;
 
-  if (url.indexOf('?') > 0) {
+  if (url.indexOf('?') > 0 && url.indexOf('device=mobile') < 0) {
     newUrl = "".concat(url, "&device=mobile");
   } else if (url.charAt(url.length - 1) == '/') {
     newUrl = url.replace(/\/$/, '?');
@@ -1906,14 +1906,38 @@ var initMain = function initMain($, Drupal) {
     }
 
     if (device === 'tablet') {
-      if (currentWidth > tablet) location.reload();
+      if (currentWidth > tablet) {
+        var urlWithoutParam = removeParam(newUrl, 'device=mobile');
+        window.location.replace(urlWithoutParam);
+      }
+
       if (currentWidth < mobile) window.location.replace(newUrl);
     }
 
     if (device === 'mobile') {
-      if (currentWidth > mobile && currentWidth < tablet) window.location.replace(newUrl);
+      if (currentWidth > tablet) {
+        var _urlWithoutParam = removeParam(newUrl, 'device=mobile');
+
+        window.location.replace(_urlWithoutParam);
+      }
+
+      ;
       if (currentWidth > mobile) location.reload();
     }
+  }
+
+  function removeParam(url, strParam) {
+    var newUrl;
+
+    if (url.indexOf("?".concat(strParam)) > 0) {
+      newUrl = url.replace("?".concat(strParam), '');
+    }
+
+    if (url.indexOf("&".concat(strParam)) > 0) {
+      newUrl = url.replace("&".concat(strParam), '');
+    }
+
+    return newUrl;
   }
 };
 

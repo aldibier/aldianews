@@ -744,9 +744,9 @@ const initMain = ($, Drupal) => {
 	const url = window.location.href;
 	let newUrl;
 
-	if(url.indexOf('?') > 0 ){
+	if (url.indexOf('?') > 0 && url.indexOf('device=mobile') < 0) {
 		newUrl = `${url}&device=mobile`;
-	}	
+	}
 	else if (url.charAt(url.length - 1) == '/') {
 		newUrl = url.replace(/\/$/, '?');
 		newUrl += 'device=mobile';
@@ -779,14 +779,37 @@ const initMain = ($, Drupal) => {
 		}
 
 		if (device === 'tablet') {
-			if (currentWidth > tablet) location.reload();
+			if (currentWidth > tablet) {
+				const urlWithoutParam = removeParam(newUrl,'device=mobile');
+				window.location.replace(urlWithoutParam);
+			}
+
 			if (currentWidth < mobile) window.location.replace(newUrl);
 		}
 
 		if (device === 'mobile') {
-			if (currentWidth > mobile && currentWidth < tablet) window.location.replace(newUrl);
+			if (currentWidth > tablet ){
+				const urlWithoutParam = removeParam(newUrl,'device=mobile');
+				window.location.replace(urlWithoutParam);
+			};
+
 			if (currentWidth > mobile) location.reload();
 		}
+	}
+
+	function removeParam(url, strParam) {
+		let newUrl;
+
+		if (url.indexOf(`?${strParam}`) > 0) {
+			newUrl = url.replace(`?${strParam}`, '')
+		}
+
+		if (url.indexOf(`&${strParam}`) > 0) {
+			newUrl = url.replace(`&${strParam}`, '')
+		}
+
+		return newUrl;
+
 	}
 
 };
