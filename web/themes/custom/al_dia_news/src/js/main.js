@@ -747,10 +747,10 @@ const initMain = ($, Drupal) => {
 	if (url.indexOf('?') > 0 && url.indexOf('device=mobile') < 0) {
 		newUrl = `${url}&device=mobile`;
 	}
-	else if (url.charAt(url.length - 1) == '/') {
+	else if (url.charAt(url.length - 1) == '/' && url.indexOf('device=mobile') < 0) {
 		newUrl = url.replace(/\/$/, '?');
 		newUrl += 'device=mobile';
-	} else {
+	} else if (url.indexOf('device=mobile') < 0) {
 		newUrl = `${url}?device=mobile`;
 	}
 
@@ -780,7 +780,7 @@ const initMain = ($, Drupal) => {
 
 		if (device === 'tablet') {
 			if (currentWidth > tablet) {
-				const urlWithoutParam = removeParam(newUrl,'device=mobile');
+				const urlWithoutParam = removeParam(newUrl, 'device=mobile');
 				window.location.replace(urlWithoutParam);
 			}
 
@@ -788,8 +788,8 @@ const initMain = ($, Drupal) => {
 		}
 
 		if (device === 'mobile') {
-			if (currentWidth > tablet ){
-				const urlWithoutParam = removeParam(newUrl,'device=mobile');
+			if (currentWidth > tablet) {
+				const urlWithoutParam = removeParam(newUrl, 'device=mobile');
 				window.location.replace(urlWithoutParam);
 			};
 
