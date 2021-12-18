@@ -17,19 +17,11 @@ use Drupal\Core\Ajax\RedirectCommand;
  * User agent device
  */
 
-// if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on'){
-// 	$url = "https";
-// }else {
-// 	$url = "http";
-// }
-	
-// $url .= "://";
+$current_path = \Drupal::service('path.current')->getPath();
+$current_uri = \Drupal::request()->getRequestUri();
 
-// $url .= $_SERVER['HTTP_HOST'];
-
-// $url .= $_SERVER['REQUEST_URI'];
-
-// ksm($url);
+ksm($current_path);
+ksm($current_uri);
 
 function is_mobile() {
 
