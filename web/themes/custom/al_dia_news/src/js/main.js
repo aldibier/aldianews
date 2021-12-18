@@ -784,7 +784,8 @@ const initMain = ($, Drupal) => {
 		}
 
 		if (device === 'mobile') {
-			if (currentWidth > mobile) window.location.replace(newUrl);
+			if (currentWidth > mobile && currentWidth < tablet) window.location.replace(newUrl);
+			if (currentWidth > mobile) location.reload();
 		}
 	}
 
