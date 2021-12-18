@@ -792,9 +792,9 @@ const initMain = ($, Drupal) => {
 			if (currentWidth > tablet) {
 				const urlWithoutParam = removeParam(newUrl, 'device=mobile');
 				window.location.replace(urlWithoutParam);
-			};
-
-			if (currentWidth > mobile) location.reload();
+			}else if (currentWidth > mobile && currentWidth < tablet){
+				location.reload();
+			}
 		}
 	}
 

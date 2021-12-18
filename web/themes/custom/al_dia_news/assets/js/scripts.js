@@ -1921,10 +1921,9 @@ var initMain = function initMain($, Drupal) {
         var _urlWithoutParam = removeParam(newUrl, 'device=mobile');
 
         window.location.replace(_urlWithoutParam);
+      } else if (currentWidth > mobile && currentWidth < tablet) {
+        location.reload();
       }
-
-      ;
-      if (currentWidth > mobile) location.reload();
     }
   }
 
