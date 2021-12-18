@@ -17,15 +17,14 @@ use Drupal\Core\Ajax\RedirectCommand;
  * User agent device
  */
 
-$current_path = \Drupal::service('path.current')->getPath();
-$current_uri = \Drupal::request()->getRequestUri();
-
-ksm($current_path);
-ksm($current_uri);
 
 function is_mobile() {
 
   \Drupal::service('page_cache_kill_switch')->trigger();
+
+	$current_path = Url::fromRoute('<current>',array(),array('absolute'=>'true'));
+
+	ksm($current_path);
 
   if (empty($_SERVER['HTTP_USER_AGENT'])) {
       $is_mobile = false;
