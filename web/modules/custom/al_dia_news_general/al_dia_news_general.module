@@ -22,9 +22,10 @@ function is_mobile() {
 
   \Drupal::service('page_cache_kill_switch')->trigger();
 
-	$current_path = \Drupal::service('path.current')->getPath();
+	$param = \Drupal::request()->query->all();
+	$paramDevice = \Drupal::request()->query->get('device');
 
-	ksm($current_path);
+	ksm($paramDevice);
 
   if (empty($_SERVER['HTTP_USER_AGENT'])) {
       $is_mobile = false;
