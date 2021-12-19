@@ -537,7 +537,9 @@
   }
 
   .menu--i-am-an-employer-menu .menu {
-    @media (min-width: $tablet) {
+		gap: 10px;
+
+    @media (min-width: $broken) {
       gap: 25px;
       padding: 0 15px;
     }
