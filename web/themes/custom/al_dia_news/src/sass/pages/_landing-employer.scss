@@ -222,24 +222,25 @@
       }
     }
 
-		.views-row:nth-child(2),
-		.views-row:nth-child(4){
-			.employer-image img {
-				height: auto;
-				object-fit: contain;
-				top: 50%;
-				transform: translateY(-50%);
-			}
-		}
+    .views-row:nth-child(2),
+    .views-row:nth-child(4) {
+      .employer-image img {
+        height: auto;
+        object-fit: contain;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
 
-		@media (max-width: $tablet) {
-			.views-row:nth-child(2),
-			.views-row:nth-child(4){
-				.employer-image img {
-					height: 100%;
-				}
-			}
-		}
+    @media (max-width: $tablet) {
+
+      .views-row:nth-child(2),
+      .views-row:nth-child(4) {
+        .employer-image img {
+          height: 100%;
+        }
+      }
+    }
 
     .employer-title-body {
       padding: 50px;
@@ -401,6 +402,14 @@
     }
   }
 
+  @media (max-width: $broken) {
+    .block-content-form {
+      .title-employer {
+        font-size: szrem(30);
+      }
+    }
+  }
+
   @media (max-width: $tablet) {
     h1 {
       bottom: 125px;
@@ -514,7 +523,7 @@
   }
 }
 
-.path-jobs:not(.path-jobs-employer,.path-trabajos-empleador) {
+.path-jobs:not(.path-jobs-employer, .path-trabajos-empleador) {
 
   .block-menu-float .menu::before,
   .block-menu-float .menu::after {
@@ -530,14 +539,14 @@
       flex: 1 1 auto;
       padding: 0 !important;
 
-			@media (max-width: $tablet) {
-				flex: 0 1 auto;
-			}
+      @media (max-width: $tablet) {
+        flex: 0 1 auto;
+      }
     }
   }
 
   .menu--i-am-an-employer-menu .menu {
-		gap: 10px;
+    gap: 10px;
 
     @media (min-width: $broken) {
       gap: 25px;
