@@ -13,14 +13,9 @@ import replaceToken from "./modules/replaceToken";
 	);
 
 	// Replace key word by another value
-	const headingTags = document.querySelectorAll("h1, h2, h3");
-	const paragraphTags = document.querySelectorAll("p");
 	const aldiaLogoStructure = `<span class="aldia-logo-in-text" alt="ALDÍA">
                                 <img alt="ALDÍA" src="${drupalSettings.path.baseUrl}themes/custom/al_dia_news/assets/img/aldia.svg">
                               </span>`;
-	replaceToken("AL DÍA", aldiaLogoStructure, headingTags);
-	replaceToken("{aldia}", aldiaLogoStructure, paragraphTags);
-	replaceToken("AL DIA", aldiaLogoStructure, headingTags);
 
 	var $window = $(window);
 	var $videoWrap = $(
@@ -129,24 +124,12 @@ import replaceToken from "./modules/replaceToken";
 	});
 
 	$(window).on("load", function () {
-		/////
-		/*  if ($(".page-node-type-news .block-field-blocknodenewsfield-video iframe").length ) {
-			var url = ($(".page-node-type-news .block-field-blocknodenewsfield-video iframe")[0].src += "&mute=1");
-			var video = url.replace("autoplay=0", "autoplay=1");
-			$(".page-node-type-news .block-field-blocknodenewsfield-video iframe").attr("src", video);
-		} */
+		const headingTags = document.querySelectorAll("h1, h2, h3");
+		const paragraphTags = document.querySelectorAll("p");
 
-		/* if ($( ".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video iframe" ).length ){
-			var url = ($(".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video iframe")[0].src += "&mute=1");
-			var video = url.replace("autoplay=0", "autoplay=1");
-			$(".page-node-type-thought-leaders .block-field-blocknodethought-leadersfield-video iframe").attr("src", video);
-		} */
-
-		/* if ($(".watch-live-video .video-embed-field-provider-youtube iframe").length ){
-			var url = ($(".watch-live-video .video-embed-field-provider-youtube iframe")[0].src += "&mute=1");
-			var video = url.replace("autoplay=0", "autoplay=1");
-			$(".watch-live-video .video-embed-field-provider-youtube iframe").attr("src", video);
-		} */
+		replaceToken("AL DÍA", aldiaLogoStructure, headingTags);
+		replaceToken("{aldia}", aldiaLogoStructure, paragraphTags);
+		replaceToken("AL DIA", aldiaLogoStructure, headingTags);
 
 		//--------- menu--------------------//
 		$(".region-header #block-blockheader").click(function () {
@@ -664,10 +647,12 @@ import replaceToken from "./modules/replaceToken";
 
 			if (!!infiniteScroll) {
 				//Replace token
-				const headingScroll = infiniteScroll.querySelectorAll("h1, h2, h3");
-				replaceToken("AL DÍA", aldiaLogoStructure, headingTags);
-				replaceToken("{aldia}", aldiaLogoStructure, paragraphTags);
-				replaceToken("AL DIA", aldiaLogoStructure, headingTags);
+				const headingScrollTags = document.querySelectorAll("h1, h2, h3");
+				const paragraphScrollTags = document.querySelectorAll("p");
+
+				replaceToken("AL DÍA", aldiaLogoStructure, headingScrollTags);
+				replaceToken("{aldia}", aldiaLogoStructure, paragraphScrollTags);
+				replaceToken("AL DIA", aldiaLogoStructure, headingScrollTags);
 
 				//Selection sharer
 				const sharer = new SelectionSharer();

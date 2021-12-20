@@ -8,8 +8,10 @@
 const replaceToken = (regexToken, value, elements = []) => {
   const search = new RegExp(`${regexToken}`, 'gim');
 
+	console.log(elements);
+
   if (elements.length) {
-    Array.from(elements).map(element => {
+    Array.from(elements).forEach(element => {
       if (element instanceof Element) {
         element.innerHTML = element.innerHTML.replace(search, value);
       }
