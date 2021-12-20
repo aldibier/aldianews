@@ -220,7 +220,7 @@ class RelatedContentFieldFormatter extends FormatterBase {
     $content = "</p><div data-embed-button='related_content'>". $related_content ."</div>";
 
     // HTML to return
-    $html = str_replace("[ad]</p>", $content, $html);
+    $html = str_replace("[ad]</p>", $ad, $html);
     $html = str_replace("[related-content]</p>", $content, $html);
 
     return $html;
