@@ -665,8 +665,9 @@ import replaceToken from "./modules/replaceToken";
 			if (!!infiniteScroll) {
 				//Replace token
 				const headingScroll = infiniteScroll.querySelectorAll("h1, h2, h3");
-				replaceToken("AL DÍA", aldiaLogoStructure, headingScroll);
-				replaceToken("{aldia}", aldiaLogoStructure, headingScroll);
+				replaceToken("AL DÍA", aldiaLogoStructure, headingTags);
+				replaceToken("{aldia}", aldiaLogoStructure, paragraphTags);
+				replaceToken("AL DIA", aldiaLogoStructure, headingTags);
 
 				//Selection sharer
 				const sharer = new SelectionSharer();
