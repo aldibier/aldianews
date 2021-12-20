@@ -390,7 +390,9 @@
 		attach: function (context) {
 			//// sumo select
 
-			if (context.classList.contains('form-sponsorship-events')) {
+			const formSponsorship = context.querySelector('.webform-submission-sponsorship-upcoming-event-form');
+
+			if (!!formSponsorship) {
 				const selectCountry = document.querySelector('select[id*="edit-address-country"]')
 				let optionToMove = selectCountry.querySelector('option[value="United States"]');
 
@@ -424,7 +426,7 @@
 				addSumoselect(select)
 			});
 
-			if (context.classList.contains('form-sponsorship-events')) {
+			if (!!formSponsorship) {
 				const formItems = document.querySelectorAll('.form-sponsorship-events .opt label');
 				if (!!formItems) {
 					//add styles

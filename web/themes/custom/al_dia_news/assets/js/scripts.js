@@ -1965,7 +1965,6 @@ __webpack_require__.r(__webpack_exports__);
 var replaceToken = function replaceToken(regexToken, value) {
   var elements = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : [];
   var search = new RegExp("".concat(regexToken), 'gim');
-  console.log(elements);
 
   if (elements.length) {
     Array.from(elements).forEach(function (element) {
