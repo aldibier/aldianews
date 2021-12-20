@@ -63,8 +63,17 @@
       <script>
         window.googletag = window.googletag || {cmd: []};
         googletag.cmd.push(function() {
-          googletag.defineSlot('/66060234/internal-section-body', [[840, 240], [320, 140], [468, 60]], 'div-gpt-ad-1639705123281-0').addService(googletag.pubads());
-          googletag.pubads().enableSingleRequest();
+					 var mapping = googletag.sizeMapping()
+					 									.addSize([0,0], [[320, 140]])
+                            .addSize([769,0], [[468, 60]])
+                            .addSize([1024,0], [[840, 240]])
+                            .build();
+
+          googletag.defineSlot('/66060234/internal-section-body', [[320, 140], [468, 60],[840, 240]], 'div-gpt-ad-1639705123281-0')
+					.defineSizeMapping(mapping)
+					.addService(googletag.pubads());
+
+					googletag.pubads().enableSingleRequest();
           googletag.pubads().collapseEmptyDivs();
           googletag.enableServices();
         });
