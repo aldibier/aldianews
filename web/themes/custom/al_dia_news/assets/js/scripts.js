@@ -1940,6 +1940,22 @@ var initMain = function initMain($, Drupal) {
 
     return newUrl;
   }
+
+  var queryString = window.location.search;
+  var urlParams = new URLSearchParams(queryString);
+  var deviceParam = urlParams.get('device');
+
+  if (deviceParam == 'mobile') {
+    var linksToAddParam = document.querySelectorAll('a:not(a.visually-hidden,a.use-ajax,a.menu-toggle,#block-socialmedia a,a[tabindex="-1"],#block-socialmedia-2 a,a[href*="aldianewsfound.org"],[id*="selectionSharerPopunder"] a,[id*="selectionSharerPopover"] a,.al-dia-podcast-social-media a,.addtoany_list a,.items-social-media-employer a,a[href*="mailto"])');
+    var param = '?device=mobile';
+    linksToAddParam.forEach(function (link) {
+      var href = link.href;
+
+      if (href.indexOf('device=mobile') < 0) {
+        link.href = "".concat(href + param);
+      }
+    });
+  }
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (initMain);

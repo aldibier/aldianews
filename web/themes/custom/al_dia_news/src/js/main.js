@@ -792,7 +792,7 @@ const initMain = ($, Drupal) => {
 			if (currentWidth > tablet) {
 				const urlWithoutParam = removeParam(newUrl, 'device=mobile');
 				window.location.replace(urlWithoutParam);
-			}else if (currentWidth > mobile && currentWidth < tablet){
+			} else if (currentWidth > mobile && currentWidth < tablet) {
 				location.reload();
 			}
 		}
@@ -813,6 +813,21 @@ const initMain = ($, Drupal) => {
 
 	}
 
+	const queryString = window.location.search;
+	const urlParams = new URLSearchParams(queryString);
+	const deviceParam = urlParams.get('device')
+
+	if (deviceParam == 'mobile') {
+		const linksToAddParam = document.querySelectorAll('a:not(a.visually-hidden,a.use-ajax,a.menu-toggle,#block-socialmedia a,a[tabindex="-1"],#block-socialmedia-2 a,a[href*="aldianewsfound.org"],[id*="selectionSharerPopunder"] a,[id*="selectionSharerPopover"] a,.al-dia-podcast-social-media a,.addtoany_list a,.items-social-media-employer a,a[href*="mailto"])');
+		const param = '?device=mobile'
+
+		linksToAddParam.forEach(link => {
+			let href = link.href;
+			if (href.indexOf('device=mobile') < 0) {
+				link.href = `${href + param}`;
+			}
+		})
+	}
 };
 
 export default initMain;
