@@ -358,6 +358,7 @@
     color: $cwhite;
     text-transform: uppercase;
     text-decoration: none;
+		word-break: break-word;
   }
 
   h2 {
@@ -373,6 +374,7 @@
     color: $cwhite;
     margin-bottom: 35px;
     @include ellipsis(115px, 4);
+		word-break: break-word;
   }
 
   .date-video-content {
@@ -518,6 +520,7 @@
     color: $cgrey8;
     margin: 0px 0px 5px;
     text-transform: uppercase;
+		word-break: break-word;
   }
 
   .date-video-content {

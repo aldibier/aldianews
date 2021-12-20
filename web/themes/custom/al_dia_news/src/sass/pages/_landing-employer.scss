@@ -215,6 +215,8 @@
     }
   }
 
+
+
   .block-content-form {
     .views-row {
       &:nth-child(2n + 2) {
@@ -222,24 +224,25 @@
       }
     }
 
-		.views-row:nth-child(2),
-		.views-row:nth-child(4){
-			.employer-image img {
-				height: auto;
-				object-fit: contain;
-				top: 50%;
-				transform: translateY(-50%);
-			}
-		}
+    .views-row:nth-child(2),
+    .views-row:nth-child(4) {
+      .employer-image img {
+        height: auto;
+        object-fit: contain;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
 
-		@media (max-width: $tablet) {
-			.views-row:nth-child(2),
-			.views-row:nth-child(4){
-				.employer-image img {
-					height: 100%;
-				}
-			}
-		}
+    @media (max-width: $tablet) {
+
+      .views-row:nth-child(2),
+      .views-row:nth-child(4) {
+        .employer-image img {
+          height: 100%;
+        }
+      }
+    }
 
     .employer-title-body {
       padding: 50px;
@@ -401,6 +404,14 @@
     }
   }
 
+  @media (max-width: $broken) {
+    .block-content-form {
+      .title-employer {
+        font-size: szrem(30);
+      }
+    }
+  }
+
   @media (max-width: $tablet) {
     h1 {
       bottom: 125px;
@@ -514,7 +525,33 @@
   }
 }
 
-.path-jobs:not(.path-jobs-employer) {
+.open-menu .style-jobs .block-menu-float .menu.active,
+.open-menu .style-jobs .view-jobs-menu .menu.active {
+  margin: 195px auto 0 !important;
+
+  @media (max-width: 1285px) {
+    margin: 225px auto 0 !important;
+  }
+
+  @media (max-width: 1285px) {
+    margin: 225px auto 0 !important;
+  }
+
+  @media (max-width: $broken4) {
+    margin: 269px auto 0 !important;
+  }
+
+	@media (max-width: 942px) {
+		margin: 330px auto 0px !important;
+  }
+
+	@media (max-width: $tablet) {
+		margin: 380px auto 0px !important;
+  }
+
+}
+
+.path-jobs:not(.path-jobs-employer, .path-trabajos-empleador) {
 
   .block-menu-float .menu::before,
   .block-menu-float .menu::after {
@@ -530,14 +567,16 @@
       flex: 1 1 auto;
       padding: 0 !important;
 
-			@media (max-width: $tablet) {
-				flex: 0 1 auto;
-			}
+      @media (max-width: $tablet) {
+        flex: 0 1 auto;
+      }
     }
   }
 
   .menu--i-am-an-employer-menu .menu {
-    @media (min-width: $tablet) {
+    gap: 0 10px;
+
+    @media (min-width: $broken) {
       gap: 25px;
       padding: 0 15px;
     }

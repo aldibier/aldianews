@@ -110,6 +110,7 @@
     font-weight: bold;
     line-height: 1;
     color: $cwhite;
+		word-break: break-word;
 
     @media screen and (max-width: $tablet) {
       margin-bottom: 5px;
@@ -224,10 +225,12 @@
       color: $cgrey6;
       text-decoration: none;
       cursor: pointer;
+			word-break: break-word;
     }
 
     strong {
       font-family: $PrNovacond-Sbold;
+			word-break: break-word;
     }
 
     p {
@@ -235,6 +238,7 @@
       font-family: $PrNovacond-light;
       font-style: normal;
       font-weight: normal;
+			word-break: break-word;
 
       @media screen and (max-width: $tablet) {
         font-size: szrem(15);

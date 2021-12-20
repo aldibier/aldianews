@@ -1024,6 +1024,11 @@ body.open-menu {
       padding: 0;
       position: relative;
       padding-left: 10px;
+
+      a {
+        word-break: normal;
+      }
+
     }
 
     li {
@@ -1119,6 +1124,10 @@ body.open-menu {
     //   align-self: flex-start;
     //   margin: 10px 20px 0 10px;
     // }
+
+		a {
+			word-break: normal;
+		}
 
     @media (min-width: $tablet) {
       // padding-right: 15px;
@@ -1308,12 +1317,11 @@ body.open-menu {
       padding: 10px 15px;
 
       p {
-        font-size: 11px;
+        font-size: 10px;
         line-height: 13px;
         text-align: center;
 
         @media (max-width: 350px) {
-          font-size: 10px;
           letter-spacing: 0px;
         }
       }
