@@ -174,41 +174,53 @@ class RelatedContentFieldFormatter extends FormatterBase {
     // get count paragraphs
     $count_p = count($dom->getElementsByTagName('p'));
 
-    // get paragraph position
-    $position = intval($count_p / 2);
+    // get paragraph position, divided by 3
+    $position = intval($count_p / 3);
 
-    if($count_p != 1){
-      if($count_p % 2 == 0){
-        $par = true;
-      }else{
-        $par = false;
-        $position = $position + 1;
-      }
-    }else{
-      $position = 1;
+    if($count_p == 1 || $count_p == 2){
+      $position_ad = $position_related = 1;
     }
+    elseif ($count_p == 3){
+      $position_ad = 1;
+      $position_related = 2;
+    }
+    elseif ($count_p == 4 || $count_p == 5){
+      $position_ad = 2;
+      $position_related = 3;
+    }
+    elseif($count_p >= 6){
+      $position_ad = $position;
+      $position_related = $position * 2;
+    }
+
 
     // insert a token into html to be replaced
     $count = 1;
     foreach ($dom->getElementsByTagName('p') as $paragraph) {
-      if ($position == $count){
+
+      if ($position_ad == $count){
+        $paragraph->nodeValue = $paragraph->nodeValue."[ad]";
+      }
+
+      if ($position_related == $count){
         $paragraph->nodeValue = $paragraph->nodeValue."[related-content]";
       }
+
       $count++;
     }
 
     $html = $dom->saveHtml();
 
-    \Drupal::logger('al_dia_news_general')->notice('Bloque'. json_encode($this->getBlockAd()));
-    $ad = "<!-- /66060234/internal-section-body -->
+    $ad = "</p><!-- /66060234/internal-section-body -->
     <div id='div-gpt-ad-1639705123281-0' style='min-width: 320px; min-height: 60px;'>
       <script>
         googletag.cmd.push(function() { googletag.display('div-gpt-ad-1639705123281-0'); });
       </script>
     </div>";
-    $content = $ad."</p><div data-embed-button='related_content'>". $related_content ."</div>";
+    $content = "</p><div data-embed-button='related_content'>". $related_content ."</div>";
 
     // HTML to return
+    $html = str_replace("[ad]</p>", $ad, $html);
     $html = str_replace("[related-content]</p>", $content, $html);
 
     return $html;
