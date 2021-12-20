@@ -215,6 +215,8 @@
     }
   }
 
+
+
   .block-content-form {
     .views-row {
       &:nth-child(2n + 2) {
@@ -523,6 +525,32 @@
   }
 }
 
+.open-menu .style-jobs .block-menu-float .menu.active,
+.open-menu .style-jobs .view-jobs-menu .menu.active {
+  margin: 195px auto 0 !important;
+
+  @media (max-width: 1285px) {
+    margin: 225px auto 0 !important;
+  }
+
+  @media (max-width: 1285px) {
+    margin: 225px auto 0 !important;
+  }
+
+  @media (max-width: $broken4) {
+    margin: 269px auto 0 !important;
+  }
+
+	@media (max-width: 942px) {
+		margin: 330px auto 0px !important;
+  }
+
+	@media (max-width: $tablet) {
+		margin: 380px auto 0px !important;
+  }
+
+}
+
 .path-jobs:not(.path-jobs-employer, .path-trabajos-empleador) {
 
   .block-menu-float .menu::before,
@@ -546,7 +574,7 @@
   }
 
   .menu--i-am-an-employer-menu .menu {
-    gap: 10px;
+    gap: 0 10px;
 
     @media (min-width: $broken) {
       gap: 25px;
