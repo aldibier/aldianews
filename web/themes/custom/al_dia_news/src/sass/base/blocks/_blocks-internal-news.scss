@@ -51,12 +51,15 @@
 
 .node--type-news,
 .node--type-thought-leaders {
-  /* margin-bottom: 80px;
-  @media screen and (max-width: $broken) {
-    margin-bottom: 35px;
-  } */
-
   .block-field-blocknodenewsbody {
+
+		li {
+			font-size: szrem(18);
+			
+			@media screen and (max-width: $tablet) {
+				font-size: szrem(15);
+			}
+		}
 
     img.align-right,
     img.align-left,
