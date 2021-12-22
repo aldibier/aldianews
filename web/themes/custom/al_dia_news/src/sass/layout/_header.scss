@@ -912,6 +912,10 @@ body.open-menu {
       letter-spacing: 0.05em;
     }
 
+    @media (min-width: 1310px) {
+      flex: 0 0 auto;
+    }
+
     @media (max-width: $broken4) {
       flex: 1 1 100%;
       order: 9;
@@ -1125,9 +1129,9 @@ body.open-menu {
     //   margin: 10px 20px 0 10px;
     // }
 
-		a {
-			word-break: normal;
-		}
+    a {
+      word-break: normal;
+    }
 
     @media (min-width: $tablet) {
       // padding-right: 15px;
