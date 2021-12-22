@@ -17,19 +17,6 @@ const initMain = ($, Drupal) => {
 	var container = document.querySelector('body');
 	var elemento = document.getElementById('block-webform-2');
 
-	container.onscroll = function () {
-		var heightBody = container.scrollHeight - 499;
-		var scroll = window.scrollY + window.innerHeight;
-
-		/* if(scroll >= heightBody) {
-			elemento.classList.add('fix');
-		} else { 
-			if(elemento.classList.contains('fix')) {
-				elemento.classList.remove('fix');
-			}
-		} */
-	}
-
 	/// close 
 	if (!!document.querySelector('.newsletter .close-modal')) {
 		const newsletter = document.querySelector('.newsletter');
