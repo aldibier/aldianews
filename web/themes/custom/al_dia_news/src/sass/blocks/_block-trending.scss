@@ -122,7 +122,8 @@
     background-color: $cwhite;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.22);
     overflow: hidden;
-    transition: all 0.6s linear;
+    transition: height 0.6s linear,background-color 0.6s linear;
+		will-change: height, background-color;
 
     @media screen and(max-width:$tablet) {
       height: 45px;
@@ -173,7 +174,8 @@
       text-transform: uppercase;
       text-decoration: none;
       color: $cgrey3;
-      transition: all 0.3s;
+      transition: color 0.3s;
+			will-change: color;
 
       @media screen and(max-width:$tablet) {
         font-size: szrem(15);
