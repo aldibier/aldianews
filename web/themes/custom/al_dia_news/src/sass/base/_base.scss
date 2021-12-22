@@ -355,7 +355,7 @@ body.toolbar-tray-open.user-logged-in {
   color: $cblack;
   font-family: $Mod-bold;
   margin: 60px 0 20px;
-	word-break: break-word;
+  word-break: break-word;
 
   @media screen and(max-width: $tablet) {
     font-size: 30px;
@@ -430,9 +430,6 @@ img[src*="placeholder-image.svg"] {
   max-width: 100%;
 }
 
-//Style list in body
-.field--name-body.field--type-text-with-summary {
-  li {
-    font-family: $PrNovacond-light;
-  }
+body li:not(li.menu-item) {
+  font-family: $PrNovacond-light;
 }

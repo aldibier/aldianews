@@ -17,6 +17,7 @@
   .block-field-blocknodenewsbody p {
     font-family: $PrNovacond-light;
   }
+
   .block-field-blocknodenewsfield-podcast-player {
     width: 100%;
     max-width: 840px;
@@ -40,7 +41,11 @@
     }
   }
 }
-.node--type-news .block-field-blocknodenewsbody p {
+
+.node--type-news .block-field-blocknodenewsbody p,
+.node--type-news .block-field-blocknodenewsbody li,
+.node--type-news .block-field-blocknodenewsbody strong,
+.node--type-news .block-field-blocknodenewsbody blockquote {
   font-family: $CenturyOld-Regular !important;
 }
 
@@ -52,6 +57,7 @@
   } */
 
   .block-field-blocknodenewsbody {
+
     img.align-right,
     img.align-left,
     img {
@@ -108,7 +114,7 @@
   font-weight: 600;
   line-height: 140%;
   color: $cblack3;
-	word-break: break-word;
+  word-break: break-word;
 
   @media screen and (max-width: $tablet) {
     margin-bottom: 35px;
@@ -178,7 +184,7 @@
     line-height: 140%;
     font-family: $PrNovacond-reg;
 
-    > .content {
+    >.content {
       padding: 0;
     }
   }
@@ -223,12 +229,13 @@
   }
 }
 
-.block-field-blocknodenewsfield-video {
-	background-color: $cblack0;
+.block-field-blocknodenewsfield-video {
+  background-color: $cblack0;
 }
 
 .block-field-blocknodenewsfield-video {
-  + .block-field-blocknodenewsfield-image,
+
+  +.block-field-blocknodenewsfield-image,
   button[name="close"] {
     display: none;
   }
@@ -341,13 +348,13 @@
     color: #0b0b0b;
   }
 
-  .addtoany_list.a2a_kit_size_32 a > span {
+  .addtoany_list.a2a_kit_size_32 a>span {
     padding: 4px;
     border-radius: 100%;
     background: $cgrey !important;
   }
 
-  > .content {
+  >.content {
     margin: 0;
   }
 
@@ -390,8 +397,7 @@ blockquote {
     // color: $corange;
     // font-size: $px130;
     position: absolute;
-    background: transparent url("../../assets/img/comillas.png") center center
-      no-repeat;
+    background: transparent url("../../assets/img/comillas.png") center center no-repeat;
     background-size: contain;
     width: 45px;
     height: 35px;
@@ -410,6 +416,7 @@ blockquote {
     top: auto;
     transform: rotate(180deg);
   }
+
   a {
     color: #ed1c24;
   }
@@ -468,11 +475,11 @@ blockquote {
     width: 100%;
   }
 
-  > * {
+  >* {
     padding: 0;
   }
 
-  > figcaption {
+  >figcaption {
     padding: 15px 0;
     border: none;
     text-align: left;
@@ -492,12 +499,13 @@ blockquote {
     width: 100%;
     max-width: 100%;
   }
+
   a {
     color: #ed1c24;
   }
-  
+
   blockquote,
-  blockquote > p {
+  blockquote>p {
     font-family: $PrNovacond-reg;
     font-style: normal;
     font-size: szrem(28);
@@ -505,7 +513,7 @@ blockquote {
     color: $cgrey2;
 
     &.twitter-video,
-    &.twitter-tweet{
+    &.twitter-tweet {
       font-size: 0;
       opacity: 0;
     }
@@ -514,10 +522,12 @@ blockquote {
       font-size: szrem(18);
     }
   }
+
   .banner-horizontal {
     margin: 20px auto 40px;
     max-width: 840px;
     max-height: 240px;
+
     @media (max-width: $tablet) {
       max-height: 140px;
       margin: 10px -15px 30px;
@@ -547,7 +557,7 @@ blockquote {
 
   strong {
     font-family: $PrNovacond-Sbold;
-    font-weight: bold;
+    font-weight: normal;
     font-style: normal;
     font-size: 1.4rem;
     line-height: 140%;
@@ -569,10 +579,11 @@ blockquote {
     letter-spacing: initial;
     text-transform: uppercase;
     text-align: left;
+
     strong {
       color: $corange;
       font-family: $PrNovacond-Sbold;
-      font-weight: 700;
+      font-weight: normal;
       line-height: 36px;
       font-size: $px26;
       font-style: normal;
@@ -595,6 +606,7 @@ blockquote {
   }
 
   @media (max-width: $tablet) {
+
     h1,
     h2,
     h3,
@@ -651,7 +663,7 @@ div[data-embed-button="related_content"] {
     color: $cblack;
     border: none;
     font-family: $PrNovacond-Sbold;
-		word-break: break-word;
+    word-break: break-word;
 
     a:hover {
       text-decoration: none;
@@ -775,6 +787,7 @@ div[data-embed-button="related_content"] {
 //--------------coments
 .block-field-blocknodenewsfield-comments,
 #comment-form {
+
   h2.comment-form__title,
   label {
     font-style: normal;
@@ -801,6 +814,7 @@ div[data-embed-button="related_content"] {
   .form-actions {
     display: flex;
     margin-top: 30px;
+
     input.button--primary,
     .cbutton-back {
       background: $corange;
@@ -815,6 +829,7 @@ div[data-embed-button="related_content"] {
       padding: 0 24px;
       max-width: 165px;
       margin: 0px;
+
       &:lang(es) {
         max-width: 225px;
       }
@@ -851,6 +866,7 @@ div[data-embed-button="related_content"] {
 
     .form-actions {
       margin-top: 10px;
+
       input.button--primary {
         height: 30px;
         font-size: 12px;
@@ -872,6 +888,7 @@ div[data-embed-button="related_content"] {
 
 html[lang="es"] #comment-form .form-actions,
 html[lang="es"] .block-field-blocknodenewsfield-comments .form-actions {
+
   .cbutton-back,
   input.button--primary {
     max-width: 225px;
@@ -884,15 +901,19 @@ html[lang="es"] .block-field-blocknodenewsfield-comments .form-actions {
   margin: 0 auto;
   right: 0px;
   border-radius: 0px !important;
+
   @media (max-width: $tablet) {
     max-width: 290px !important;
   }
+
   * {
     max-width: 875px !important;
   }
+
   .ui-dialog-titlebar-close {
     display: none;
   }
+
   .ui-dialog-title {
     font-size: $px28 !important;
     line-height: 34px;
@@ -900,19 +921,23 @@ html[lang="es"] .block-field-blocknodenewsfield-comments .form-actions {
     padding-top: 20px;
     white-space: break-spaces;
     text-align: left;
+
     @media (max-width: $tablet) {
       font-size: $px18 !important;
       margin: 0px 0px 10px !important;
     }
   }
+
   .ui-dialog-titlebar {
     padding: 0 20px;
     margin: 0 auto;
     border: 0px solid #dddddd;
     background: transparent;
   }
+
   .form-type-textarea {
     margin: 40px 0 20px;
+
     textarea {
       padding: 25px;
       min-height: 182px;
@@ -922,19 +947,23 @@ html[lang="es"] .block-field-blocknodenewsfield-comments .form-actions {
       color: $cblack3;
       min-width: 835px;
       padding-bottom: 0px;
+
       &::placeholder {
         text-transform: capitalize;
         font-size: $px20;
         line-height: 28px;
       }
     }
+
     @media (max-width: $tablet) {
       margin: 20px 0;
+
       textarea {
         min-width: 250px;
         min-height: 260px;
         font-size: $px18;
         line-height: 20px;
+
         &::placeholder {
           font-size: $px18;
           line-height: 20px;
@@ -942,24 +971,30 @@ html[lang="es"] .block-field-blocknodenewsfield-comments .form-actions {
       }
     }
   }
+
   .ui-icon-closethick {
     background: gray !important;
     top: 10px !important;
+
     @media (max-width: $tablet) {
       width: 60% !important;
       height: 60% !important;
     }
   }
+
   .ui-dialog-content {
     padding: 0 20px !important;
     margin: 0 auto;
   }
+
   details.js-form-wrapper.form-wrapper {
     display: none;
   }
+
   .ui-widget.ui-corner-all .form-item {
     margin: 0 0 25px;
   }
+
   .ui-dialog-buttonpane {
     border: 0px !important;
     padding: 0 20px !important;
@@ -967,6 +1002,7 @@ html[lang="es"] .block-field-blocknodenewsfield-comments .form-actions {
     max-width: 400px !important;
     background: transparent !important;
     display: block !important;
+
     button,
     a {
       height: 40px;
@@ -987,8 +1023,10 @@ html[lang="es"] .block-field-blocknodenewsfield-comments .form-actions {
       color: #fff;
       width: 100%;
     }
+
     @media (max-width: $tablet) {
       padding: 0px !important;
+
       button,
       a {
         max-width: 120px !important;
@@ -996,17 +1034,21 @@ html[lang="es"] .block-field-blocknodenewsfield-comments .form-actions {
         font-size: $px12 !important;
       }
     }
+
     .cancel-button-edit {
       display: flex !important;
     }
+
     .button--primary,
     .button--primary:not(:focus):hover {
       background: #e21 !important;
     }
+
     .ui-dialog-buttonset {
       display: flex;
       justify-content: space-around !important;
       flex-direction: row-reverse;
+
       button:last-child,
       a:last-child {
         background: $bgrey;
@@ -1018,6 +1060,7 @@ html[lang="es"] .block-field-blocknodenewsfield-comments .form-actions {
 
 .popup-delete-comment {
   max-width: 535px !important;
+
   * {
     max-width: 480px !important;
   }
@@ -1033,29 +1076,37 @@ html[lang="es"] .block-field-blocknodenewsfield-comments .form-actions {
     font-size: $px18;
     line-height: 24px;
     color: $cblack;
+
     @media (max-width: $tablet) {
       margin: 20px auto;
       font-size: $px15;
       line-height: 18px;
     }
   }
+
   .ui-dialog-title {
     margin: 0 0 34px !important;
   }
+
   .ui-dialog-buttonpane {
     margin: 0 auto 27px !important;
   }
+
   .ui-dialog-titlebar {
     padding: 50px 20px 0 !important;
   }
+
   @media (max-width: $tablet) {
     max-width: 290px !important;
+
     .ui-dialog-title {
       margin: 28px 0 0px !important;
     }
+
     .ui-dialog-buttonpane {
       padding: 0 !important;
     }
+
     .ui-dialog-titlebar {
       padding: 10px 20px 0 !important;
     }
@@ -1066,25 +1117,31 @@ html[lang="es"] .block-field-blocknodenewsfield-comments .form-actions {
   .ui-dialog-title {
     margin: 10px 0 6px !important;
   }
+
   .form-type-textarea {
     margin: 15px 0 20px;
   }
+
   .ui-dialog-titlebar {
     padding: 35px 20px 0 !important;
   }
+
   .ui-dialog-buttonpane {
     margin: 0 auto 30px !important;
     max-width: 875px !important;
   }
+
   .ui-dialog-buttonpane .ui-dialog-buttonset {
     max-width: 350px !important;
     float: left;
     justify-content: space-between !important;
     flex-direction: row;
+
     button:last-child {
       background: #e21;
       padding: 0px;
     }
+
     button:first-child {
       background: #5c6165;
     }
@@ -1094,6 +1151,7 @@ html[lang="es"] .block-field-blocknodenewsfield-comments .form-actions {
 .comment-form .cancel-button-edit {
   display: none !important;
 }
+
 .comment {
   width: 100%;
   padding: 25px;
@@ -1248,19 +1306,12 @@ div#selectionSharerPopover {
   }
 }
 
-.page-node-type-news
-  .content-news-internal-first
-  .block-field-blocknodenewsfield-video
-  .content
-  iframe {
+.page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video .content iframe {
   max-width: 100%;
   max-height: 100%;
 }
 
-.admin-menu.page-node-type-news
-  .content-news-internal-first
-  .block-field-blocknodenewsfield-video
-  .content.stuck {
+.admin-menu.page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video .content.stuck {
   top: 124px;
 
   @media (max-width: $broken) {
@@ -1273,7 +1324,7 @@ div#selectionSharerPopover {
 }
 
 .page-node-type-news .block-field-blocknodenewsfield-video {
-  > .content.stuck {
+  >.content.stuck {
     @media (max-width: $broken) {
       top: 140px;
     }
