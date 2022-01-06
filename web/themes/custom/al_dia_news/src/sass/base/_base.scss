@@ -430,6 +430,8 @@ img[src*="placeholder-image.svg"] {
   max-width: 100%;
 }
 
-body li:not(li.menu-item) {
+body .field--name-body li:not(li.menu-item),
+body  .block-field-blocknodenewsbody li:not(li.menu-item)
+{
   font-family: $PrNovacond-light;
 }
