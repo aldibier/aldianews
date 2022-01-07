@@ -389,7 +389,6 @@
   Drupal.behaviors.aldia_news_sumoselect = {
     attach: function (context,settings) {
       //// sumo select
-			console.log(context);
 			let isDialog = false;
 			const parentElementContext = context.parentElement;
 
@@ -444,6 +443,12 @@
           }
         }
       }
+
+			if(context.id == 'views-exposed-form-search-results-al-dia-solr-page-1'){
+				Array.from(context.querySelectorAll("select.SumoUnder")).forEach(select => {
+          $(select)[0].sumo.reload();
+        });
+			}
     }
   }
 
