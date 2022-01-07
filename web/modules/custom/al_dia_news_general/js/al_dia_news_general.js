@@ -389,6 +389,7 @@
   Drupal.behaviors.aldia_news_sumoselect = {
     attach: function (context,settings) {
       //// sumo select
+			console.log(context);
 			let isDialog = false;
 			const parentElementContext = context.parentElement;
 
