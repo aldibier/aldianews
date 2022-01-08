@@ -336,7 +336,21 @@ function al_dia_news_form_views_exposed_form_alter(&$form, &$form_state) {
     $form['sort_bef_combine']['#options']['created_ASC'] = 'Oldest';
     $form['sort_bef_combine']['#options']['created_DESC'] = 'Newest';
     $form['sort_bef_combine']['#options']['search_api_relevance_DESC'] = 'Relevance';
+
+		//ksm($form);
+		$categories = $form['field_category']['#options'];
+
+		if(isset($categories)){
+			foreach ($categories as $index=>$item) {
+				$key = array_keys($item->option)[0];
+				$value = $item->option[$key];
+
+				$txtReplace = str_replace("-", " ",$value);
+				$categories[$index]->option["$key"] = $txtReplace;
+			}
+		}
   };
+	
   if($form["#id"] == 'views-exposed-form-more-covers-landing-page-1') {
     $form['field_year_covers_target_id']['#options']['All'] = 'All';
   }
