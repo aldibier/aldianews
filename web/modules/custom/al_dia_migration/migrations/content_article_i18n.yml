@@ -43,12 +43,6 @@ process:
     migration: taxonomy_tags
     source: field_author_tags
 
-  field_image/0/target_id: 
-    plugin: image_relation
-    source: field_image
-
-  field_image/0/alt: field_image/0/alt
-
   field_caption:
     -
       plugin: callback
