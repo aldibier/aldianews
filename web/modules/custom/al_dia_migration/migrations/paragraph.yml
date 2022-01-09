@@ -11,7 +11,16 @@ process:
   field_card_title_related_covers: 
     plugin: lead_title_paragraph
     source: title
-  field_image_related_covers: field_image/0/fid
+  field_image_related_covers: 
+    plugin: sub_process
+    source: field_image
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: files
+        source: fid
+        no_stub: true
+      alt: alt
   field_taxonomy_term_related_cove: 
     -
       plugin: skip_on_empty
@@ -84,6 +93,7 @@ process:
         3924: 7
         6481: 204
         7: 134
+        23215: 223
 
 destination:
   plugin: 'entity_reference_revisions:paragraph'

@@ -30,10 +30,6 @@ process:
   body/format: 
     plugin: default_value
     default_value: full_html
-
-  field_image/0/target_id: 
-    plugin: image_relation
-    source: field_image
   
   field_date_of_event:
     plugin: sub_process
