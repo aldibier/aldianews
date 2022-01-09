@@ -21,6 +21,17 @@ process:
     plugin: default_value
     default_value: full_html
 
+  field_landing_image:
+    plugin: sub_process
+    source: field_image
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: files
+        source: fid
+        no_stub: true
+      alt: alt
+      
   field_image:
     plugin: sub_process
     source: field_image
