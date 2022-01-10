@@ -40,7 +40,7 @@ function is_mobile() {
   } else {
       $is_mobile = false;
   }
-	
+
   return $is_mobile;
 }
 
@@ -350,7 +350,7 @@ function al_dia_news_form_views_exposed_form_alter(&$form, &$form_state) {
 			}
 		}
   };
-	
+
   if($form["#id"] == 'views-exposed-form-more-covers-landing-page-1') {
     $form['field_year_covers_target_id']['#options']['All'] = 'All';
   }
@@ -540,45 +540,54 @@ function al_dia_news_general_views_query_alter(ViewExecutable $view, QueryPlugin
     //Este id esta almacenado en una variable de caché nids_home en el archivo src/block/LatestCategories
     case "leadership_sons":
       if ($view->getDisplay()->display['id'] == 'block_1') {
-        $cache = \Drupal::service('tempstore.private')->get('al_dia_news');
-        $cached = $cache->get("nids_home");
-        if ($cached) {
+        $cid = 'al_dia_news_general:nids_home';
+        $nids_home = NULL;
+        if ($cache = \Drupal::cache()
+          ->get($cid)) {
+          $nids_home = $cache->data;
+        }
+        if ($nids_home) {
           foreach ($query->where as &$condition_group) {
             foreach ($condition_group['conditions'] as &$condition) {
               if($condition["field"] == "node_field_data.nid"){
-                $condition["value"] = $cached;
+                $condition["value"] = $nids_home;
                 $condition["operator"] = "NOT IN";
-                //ksm($cached->data);
               }
             }
           }
         }
       }
       if ($view->getDisplay()->display['id'] == 'block_2') {
-        $cache = \Drupal::service('tempstore.private')->get('al_dia_news');
-        $cached = $cache->get("nids_home");
-        if ($cached) {
+        $cid = 'al_dia_news_general:nids_home';
+        $nids_home = NULL;
+        if ($cache = \Drupal::cache()
+          ->get($cid)) {
+          $nids_home = $cache->data;
+        }
+        if ($nids_home) {
           foreach ($query->where as &$condition_group) {
             foreach ($condition_group['conditions'] as &$condition) {
               if($condition["field"] == "node_field_data.nid"){
-                $condition["value"] = $cached;
+                $condition["value"] = $nids_home;
                 $condition["operator"] = "NOT IN";
-                //ksm($cached->data);
               }
             }
           }
         }
       }
       if ($view->getDisplay()->display['id'] == 'block_3') {
-        $cache = \Drupal::service('tempstore.private')->get('al_dia_news');
-        $cached = $cache->get("nids_home");
-        if ($cached) {
+        $cid = 'al_dia_news_general:nids_home';
+        $nids_home = NULL;
+        if ($cache = \Drupal::cache()
+          ->get($cid)) {
+          $nids_home = $cache->data;
+        }
+        if ($nids_home) {
           foreach ($query->where as &$condition_group) {
             foreach ($condition_group['conditions'] as &$condition) {
               if($condition["field"] == "node_field_data.nid"){
-                $condition["value"] = $cached;
+                $condition["value"] = $nids_home;
                 $condition["operator"] = "NOT IN";
-                //ksm($cached->data);
               }
             }
           }
@@ -594,45 +603,54 @@ function al_dia_news_general_views_query_alter(ViewExecutable $view, QueryPlugin
     break;
     case "culture_sons":
       if ($view->getDisplay()->display['id'] == 'block_1') {
-        $cache = \Drupal::service('tempstore.private')->get('al_dia_news');
-        $cached = $cache->get("nids_home");
-        if ($cached) {
+        $cid = 'al_dia_news_general:nids_home';
+        $nids_home = NULL;
+        if ($cache = \Drupal::cache()
+          ->get($cid)) {
+          $nids_home = $cache->data;
+        }
+        if ($nids_home) {
           foreach ($query->where as &$condition_group) {
             foreach ($condition_group['conditions'] as &$condition) {
               if($condition["field"] == "node_field_data.nid"){
-                $condition["value"] = $cached;
+                $condition["value"] = $nids_home;
                 $condition["operator"] = "NOT IN";
-                //ksm($cached->data);
               }
             }
           }
         }
       }
       if ($view->getDisplay()->display['id'] == 'block_2') {
-        $cache = \Drupal::service('tempstore.private')->get('al_dia_news');
-        $cached = $cache->get("nids_home");
-        if ($cached) {
+        $cid = 'al_dia_news_general:nids_home';
+        $nids_home = NULL;
+        if ($cache = \Drupal::cache()
+          ->get($cid)) {
+          $nids_home = $cache->data;
+        }
+        if ($nids_home) {
           foreach ($query->where as &$condition_group) {
             foreach ($condition_group['conditions'] as &$condition) {
               if($condition["field"] == "node_field_data.nid"){
-                $condition["value"] = $cached;
+                $condition["value"] = $nids_home;
                 $condition["operator"] = "NOT IN";
-                //ksm($cached->data);
               }
             }
           }
         }
       }
       if ($view->getDisplay()->display['id'] == 'block_3') {
-        $cache = \Drupal::service('tempstore.private')->get('al_dia_news');
-        $cached = $cache->get("nids_home");
-        if ($cached) {
+        $cid = 'al_dia_news_general:nids_home';
+        $nids_home = NULL;
+        if ($cache = \Drupal::cache()
+          ->get($cid)) {
+          $nids_home = $cache->data;
+        }
+        if ($nids_home) {
           foreach ($query->where as &$condition_group) {
             foreach ($condition_group['conditions'] as &$condition) {
               if($condition["field"] == "node_field_data.nid"){
-                $condition["value"] = $cached;
+                $condition["value"] = $nids_home;
                 $condition["operator"] = "NOT IN";
-                //ksm($cached->data);
               }
             }
           }
@@ -648,45 +666,54 @@ function al_dia_news_general_views_query_alter(ViewExecutable $view, QueryPlugin
     break;
     case "politics_sons":
       if ($view->getDisplay()->display['id'] == 'block_1') {
-        $cache = \Drupal::service('tempstore.private')->get('al_dia_news');
-        $cached = $cache->get("nids_home");
-        if ($cached) {
+        $cid = 'al_dia_news_general:nids_home';
+        $nids_home = NULL;
+        if ($cache = \Drupal::cache()
+          ->get($cid)) {
+          $nids_home = $cache->data;
+        }
+        if ($nids_home) {
           foreach ($query->where as &$condition_group) {
             foreach ($condition_group['conditions'] as &$condition) {
               if($condition["field"] == "node_field_data.nid"){
-                $condition["value"] = $cached;
+                $condition["value"] = $nids_home;
                 $condition["operator"] = "NOT IN";
-                //ksm($cached->data);
               }
             }
           }
         }
       }
       if ($view->getDisplay()->display['id'] == 'block_2') {
-        $cache = \Drupal::service('tempstore.private')->get('al_dia_news');
-        $cached = $cache->get("nids_home");
-        if ($cached) {
+        $cid = 'al_dia_news_general:nids_home';
+        $nids_home = NULL;
+        if ($cache = \Drupal::cache()
+          ->get($cid)) {
+          $nids_home = $cache->data;
+        }
+        if ($nids_home) {
           foreach ($query->where as &$condition_group) {
             foreach ($condition_group['conditions'] as &$condition) {
               if($condition["field"] == "node_field_data.nid"){
-                $condition["value"] = $cached;
+                $condition["value"] = $nids_home;
                 $condition["operator"] = "NOT IN";
-                //ksm($cached->data);
               }
             }
           }
         }
       }
       if ($view->getDisplay()->display['id'] == 'block_3') {
-        $cache = \Drupal::service('tempstore.private')->get('al_dia_news');
-        $cached = $cache->get("nids_home");
-        if ($cached) {
+        $cid = 'al_dia_news_general:nids_home';
+        $nids_home = NULL;
+        if ($cache = \Drupal::cache()
+          ->get($cid)) {
+          $nids_home = $cache->data;
+        }
+        if ($nids_home) {
           foreach ($query->where as &$condition_group) {
             foreach ($condition_group['conditions'] as &$condition) {
               if($condition["field"] == "node_field_data.nid"){
-                $condition["value"] = $cached;
+                $condition["value"] = $nids_home;
                 $condition["operator"] = "NOT IN";
-                //ksm($cached->data);
               }
             }
           }

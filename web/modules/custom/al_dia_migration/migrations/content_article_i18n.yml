@@ -43,12 +43,6 @@ process:
     migration: taxonomy_tags
     source: field_author_tags
 
-  field_image/0/target_id: 
-    plugin: image_relation
-    source: field_image
-
-  field_image/0/alt: field_image/0/alt
-
   field_caption:
     -
       plugin: callback
@@ -59,7 +53,7 @@ process:
   
   field_short_title:
     plugin: lead
-    source: title
+    source: field_banner_headline
 
   field_category:
     -
@@ -133,6 +127,7 @@ process:
         813: 206
         8066: 206
         191: 206
+        23215: 223
 
   field_author:    
     -
@@ -246,6 +241,16 @@ process:
         21578: 113
         22059: 114
         22048: 115
+        22912: 117
+        23091: 118
+        23391: 119
+        23042: 120
+        23347: 121
+        22913: 122
+        23237: 123
+        23976: 124
+        23127: 125
+        23089: 126
 
   field_video:
     plugin: extract
