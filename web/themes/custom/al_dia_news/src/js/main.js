@@ -359,20 +359,26 @@ const initMain = ($, Drupal) => {
 			const iframe = document.querySelector('.about-al-dia-live-container-video iframe');
 
 			//reset src iframe
-			if (iframe.src.indexOf('?') > 0) {
-				const srcEdit = iframe.src.split('?');
-				iframe.src = `${srcEdit[0]}?start=0&rel=0`;
+			if (!!iframe) {
+				if (iframe.src.indexOf('?') > 0) {
+					const srcEdit = iframe.src.split('?');
+					iframe.src = `${srcEdit[0]}?start=0&rel=0`;
+				}
 			}
 
-			triggerVideo.addEventListener("click", () => {
-				video.classList.add("show");
-			});
+			if (!!triggerVideo) {
+				triggerVideo.addEventListener("click", () => {
+					video.classList.add("show");
+				});
+			}
 
-			buttonCloseVideo.addEventListener("click", event => {
-				event.stopPropagation();
-				video.classList.remove("show");
-				iframe.src = iframe.src;
-			});
+			if (!!buttonCloseVideo) {
+				buttonCloseVideo.addEventListener("click", event => {
+					event.stopPropagation();
+					video.classList.remove("show");
+					iframe.src = iframe.src;
+				});
+			}
 		}
 	}
 
