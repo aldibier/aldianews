@@ -31,19 +31,16 @@ class CategoryPodcast extends ProcessPluginBase {
    * {@inheritdoc}
    */
   public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
-    dump($value);
+    
     // remove HTML tags and trim to 170 chars
     //$value = Unicode::truncate(trim(Html::decodeEntities(strip_tags($value))), 20, TRUE, TRUE);
     
     if($value == "163"){
       $value = 22801;
-      dump("if");
     }
     else{
       $value = NULL;
-      dump("else");
     }
-
 
     return $value;
   }
