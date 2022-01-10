@@ -52,6 +52,10 @@ process:
       - field_job_location/0/locality
       #- field_job_location/0/thoroughfare
     delimiter: ', '
+
+  field_expiration_date: 
+    plugin: default_value
+    default_value: "2022-01-15"
   
   field_company_name:
     -
