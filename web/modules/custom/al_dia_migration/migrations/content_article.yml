@@ -27,12 +27,20 @@ process:
     default_value: full_html
 
   field_type_of_content:
-    plugin: static_map
-    source: field_add_media
-    map: 
-      "Image only": 161
-      "Image and audio": 163
-      "Image and video": 162
+    -
+      plugin: static_map
+      source: field_add_media
+      map: 
+        "Image only": 161
+        "Image and audio": 163
+        "Image and video": 162
+        "Image and slideshow": 161
+        "Image audio and slideshow": 161
+        "Image video and slideshow": 161
+    -
+      plugin: default_value
+      default_value: 161
+    
 
   field_postcast_categories:
     -
@@ -42,6 +50,9 @@ process:
         "Image only": 161
         "Image and audio": 163
         "Image and video": 162
+        "Image and slideshow": 161
+        "Image audio and slideshow": 161
+        "Image video and slideshow": 161
     - 
       plugin: category_podcast
 
