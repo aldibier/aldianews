@@ -577,15 +577,15 @@ $brokenPixelUp: $broken2+1;
         position: relative;
       }
 
-      &:first-child::after {
-        content: "";
-        position: absolute;
-        bottom: calc(0% - 30px);
-        display: block;
-        width: 100vw;
-        height: 1px;
-        background-color: $cgrey4;
-      }
+      // &:first-child::after {
+      //   content: "";
+      //   position: absolute;
+      //   bottom: calc(0% - 30px);
+      //   display: block;
+      //   width: 100vw;
+      //   height: 1px;
+      //   background-color: $cgrey4;
+      // }
 
       &:nth-child(n + 7) {
         margin-top: 15px;
@@ -647,13 +647,24 @@ $brokenPixelUp: $broken2+1;
     }
 
     .views-row {
-      @media (min-width: $brokenPixelUp) {
-        &:nth-child(n + 7) {
-          margin-top: 15px;
-          padding-top: 15px;
-          border-top: 1px solid $cgrey4;
-        }
-      }
+
+			@media (min-width: $brokenPixelUp) {	
+				&:nth-child(4)::after {
+					content: "";
+					position: absolute;
+					top: calc(0% - 30px);
+					display: block;
+					width: 100vw;
+					height: 1px;
+					background-color: $cgrey4;
+				}
+	
+				&:nth-child(n + 7) {
+					margin-top: 15px;
+					padding-top: 15px;
+					border-top: 1px solid $cgrey4;
+				}
+			}
     }
 
     .views-row:nth-child(1),
@@ -780,6 +791,17 @@ $brokenPixelUp: $broken2+1;
 
     .views-row {
       @media (min-width: $brokenPixelUp) {
+
+				&:nth-child(3)::after {
+					content: "";
+					position: absolute;
+					top: calc(0% - 30px);
+					display: block;
+					width: 100vw;
+					height: 1px;
+					background-color: $cgrey4;
+				}
+
         &:nth-child(n + 5) {
           margin-top: 15px;
           padding-top: 15px;
