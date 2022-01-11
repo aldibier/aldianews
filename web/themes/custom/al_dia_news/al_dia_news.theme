@@ -16,13 +16,6 @@ function al_dia_news_preprocess_html(&$vars)
 	$vars['attributes']['class'][] = 'path-' . str_replace('/', '-', trim($result, '/'));
 }
 
-/**
- * @file
- * Theme functions.
- */
-
-function al_dia_news_preprocess_node(&$vars) {
-}
  /**
  * Implements hook_preprocess_views_view()
  */
