@@ -33,7 +33,7 @@ class Lead extends ProcessPluginBase {
   public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
     //dump($value);
     // remove HTML tags and trim to 170 chars
-    $value = Unicode::truncate(trim(Html::decodeEntities(strip_tags($value))), 20, TRUE, TRUE);
+    $value = Unicode::truncate(trim(Html::decodeEntities($value)), 20, TRUE, TRUE);
     
     return $value;
   }
