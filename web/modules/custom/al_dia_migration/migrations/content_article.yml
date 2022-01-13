@@ -84,14 +84,9 @@ process:
       plugin: leadcaption
 
   field_short_title:
-    -
-      plugin: skip_on_empty
-      method: process 
-      source: field_banner_headline/0/value
-      default_value: ''
-    -
-      plugin: lead
-    
+    plugin: headline
+    source: title
+
   field_category:
     -
       plugin: skip_on_empty
