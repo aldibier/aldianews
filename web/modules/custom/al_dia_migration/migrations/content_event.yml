@@ -10,13 +10,14 @@ source:
 process:
   title: title
   
-  body/value:
-    plugin: concat
-    source:
-      - body/0/value
-      - field_register_link/0/url
-    delimiter: ' '
-    
+  body:
+    plugin: sub_process
+    source: body
+    process:
+      value:
+        plugin: fix_media_tags
+        source: value
+      
   body/format: 
     plugin: default_value
     default_value: full_html
