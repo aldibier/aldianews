@@ -4,11 +4,12 @@ status: true
 dependencies:
   config:
     - field.field.taxonomy_term.podcast_category.field_category_image
+    - field.field.taxonomy_term.podcast_category.field_field_category_image_thumb
     - image.style.thumbnail
     - taxonomy.vocabulary.podcast_category
   module:
-    - image
     - path
+    - svg_image
     - text
 id: taxonomy_term.podcast_category.default
 targetEntityType: taxonomy_term
@@ -17,7 +18,7 @@ mode: default
 content:
   description:
     type: text_textarea
-    weight: 2
+    weight: 3
     region: content
     settings:
       placeholder: ''
@@ -31,9 +32,17 @@ content:
     third_party_settings: {  }
     type: image_image
     region: content
+  field_field_category_image_thumb:
+    weight: 2
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
   langcode:
     type: language_select
-    weight: 3
+    weight: 4
     region: content
     settings:
       include_locked: true
@@ -48,7 +57,7 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 5
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -56,11 +65,11 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 6
+    weight: 7
     region: content
     third_party_settings: {  }
   translation:
-    weight: 4
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
