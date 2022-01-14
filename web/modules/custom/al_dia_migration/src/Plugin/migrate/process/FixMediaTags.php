@@ -25,7 +25,16 @@ class FixMediaTags extends ProcessPluginBase {
    */
   public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
     $value = ' ' . $value . ' ';
-    $value = preg_replace_callback('/\[\[.*?\]\]/s', [&$this, 'replaceToken'], $value);
+    
+    $clave = strpos($row->get('body')[0]['value'],'[[{');
+
+    if($clave != false){
+      $value = preg_replace_callback('/\[\[.*?\]\]/s', [&$this, 'replaceToken'], $value);
+    }
+    else{
+      $value = $row->get('body')[0]['value'];
+    }
+    
     return $value;
   }
 
@@ -58,7 +67,7 @@ class FixMediaTags extends ProcessPluginBase {
       }
       //dump($tag_info['fid']);
       // Load the file.
-    
+      
       $file = \Drupal\file\Entity\File::load($this->FidDrupal9($tag_info['fid']));
       
       if (!$file) {
@@ -148,6 +157,9 @@ class FixMediaTags extends ProcessPluginBase {
     ->fetchAll();
 
     $fid_d9 = $results[0]->destid1;
+    /* if(!isset($fid_d9)){
+      $fid_d9 = 75639;
+    } */
     return $fid_d9;
   }
 }
