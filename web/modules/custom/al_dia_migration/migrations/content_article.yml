@@ -8,16 +8,13 @@ source:
  key: migrate
 
 process:
+
   title: title
 
   body/value:
-    plugin: extract
-    source: body
-    default: ''
-    index: 
-      - 0
-      - value
-
+    plugin: fix_media_tags
+    source: body/0/value
+   
   body/summary:
     plugin: leadsummary
     source: body/0/summary
