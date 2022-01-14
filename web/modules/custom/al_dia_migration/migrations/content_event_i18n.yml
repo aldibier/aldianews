@@ -21,11 +21,14 @@ process:
   title: title
 
   body/value:
-    plugin: concat
-    source:
-      - body/0/value
-      - field_register_link/0/url
-    delimiter: ' '
+    - 
+      plugin: concat
+      source:
+        - body/0/value
+        - field_register_link/0/url
+      delimiter: ' '
+    -
+      plugin: fix_media_tags
     
   body/format: 
     plugin: default_value

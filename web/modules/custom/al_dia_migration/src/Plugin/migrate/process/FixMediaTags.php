@@ -7,7 +7,9 @@ use Drupal\migrate\MigrateExecutableInterface;
 use Drupal\migrate\ProcessPluginBase;
 use Drupal\migrate\Row;
 use Drupal\Component\Serialization\Json;
-use Drupal\file\Entity\File;
+use Drupal\Core\Database;
+use Drupal\migrate\Plugin\migrate\source\SqlBase;
+
 
 /**
  * Convert a Drupal 7 media tag to a rendered image field.
@@ -36,10 +38,12 @@ class FixMediaTags extends ProcessPluginBase {
    *   Takes a match of tag code
    */
   private function replaceToken($match) {
+   
     $settings = [];
     $match = str_replace("[[", "", $match);
     $match = str_replace("]]", "", $match);
     $tag = $match[0];
+
 
     try {
       if (!is_string($tag)) {
@@ -51,19 +55,18 @@ class FixMediaTags extends ProcessPluginBase {
 
       if (!isset($tag_info['fid'])) {
         throw new MigrateSkipRowException('No FID', TRUE);
-        
       }
-
+      //dump($tag_info['fid']);
       // Load the file.
-      $file = File::load((int)$tag_info['fid']);
-
+    
+      $file = \Drupal\file\Entity\File::load($this->FidDrupal9($tag_info['fid']));
+      
       if (!$file) {
         throw new MigrateSkipRowException('Couldn\'t Load File', TRUE);
       }
 
       // Grab the uri.
       $uri = $file->getFileUri();
-
       // The class attributes is a string, but drupal requires it to be an array, so we fix it here.
       if (!empty($tag_info['attributes']['class'])) {
         $tag_info['attributes']['class'] = explode(" ", $tag_info['attributes']['class']);
@@ -86,6 +89,7 @@ class FixMediaTags extends ProcessPluginBase {
           }
           elseif (isset($settings['attributes'][$dimension])) {
             $settings[$dimension] = $settings['attributes'][$dimension];
+            
           }
         }
       }
@@ -133,5 +137,17 @@ class FixMediaTags extends ProcessPluginBase {
       }
     }
     return $properties;
+  }
+  public function FidDrupal9($fid){
+    $drupalDb = \Drupal\Core\Database\Database::getConnection('default', 'default');
+
+    $results = $drupalDb->select('migrate_map_files', 'mmipp')
+    ->fields('mmipp', ['sourceid1','destid1'])
+    ->condition('mmipp.sourceid1', $fid , '=')
+    ->execute()
+    ->fetchAll();
+
+    $fid_d9 = $results[0]->destid1;
+    return $fid_d9;
   }
 }

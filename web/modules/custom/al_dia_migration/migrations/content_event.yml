@@ -11,12 +11,15 @@ process:
   title: title
   
   body/value:
-    plugin: concat
-    source:
-      - body/0/value
-      - field_register_link/0/url
-    delimiter: ' '
-      
+    - 
+      plugin: concat
+      source:
+        - body/0/value
+        - field_register_link/0/url
+      delimiter: ' '
+    -
+      plugin: fix_media_tags
+    
   body/format: 
     plugin: default_value
     default_value: full_html
@@ -30,7 +33,7 @@ process:
         migration: files
         source: fid
         no_stub: true
-      alt: alt
+  field_landing_image/0/alt: title
       
   field_image:
     plugin: sub_process
@@ -41,7 +44,7 @@ process:
         migration: files
         source: fid
         no_stub: true
-      alt: alt        
+  field_image/0/alt: title       
       
 
   field_date_of_event:
