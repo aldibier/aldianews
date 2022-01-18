@@ -234,16 +234,22 @@
 
 .block-field-blocknodenewsfield-video {
   background-color: $cblack0;
+
+	.content.stuck {
+		button[name="close"]{
+			display: block !important;
+		}
+	}
 }
 
-.node_has_video {
+.page-node-type-news .node_has_video {
 	.block-field-blocknodenewsfield-image,
 	button[name="close"] {
 		display: none;
 	}
 }
 
-.node_has_image {
+.page-node-type-news .node_has_image {
 	.block-field-blocknodenewsfield-video {
 		display: none;
 	}

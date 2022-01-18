@@ -22,9 +22,7 @@ import { validateFormSponsorship, unitedStateFirst } from './modules/state_and_c
 	var $videoWrap = $(
 		".page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video"
 	);
-	var $video = $(
-		".page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video .content"
-	);
+	var $video = $(".page-node-type-news .content-news-internal-first .block-field-blocknodenewsfield-video .content");
 
 	if (!!document.querySelector(".page-node-type-news") && $video.length != 0) {
 		$window.on("scroll", function () {
@@ -104,7 +102,7 @@ import { validateFormSponsorship, unitedStateFirst } from './modules/state_and_c
 				$(videoThoughtLeaders).removeClass("stuck");
 			}
 			$(
-				'.block-field-blocknodenewsfield-video .stuck button[name="close"]'
+				'.block-field-blocknodethought-leadersfield-video .stuck button[name="close"]'
 			).click(function () {
 				$(videoThoughtLeaders).addClass("disnone");
 			});

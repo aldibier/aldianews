@@ -4,12 +4,24 @@
       .content.stuck {
         top: 125px;
 
+				button[name="close"]{
+					display: block;
+				}
+
         @media (max-width: $tablet) {
           top: 138px;
         }
       }
     }
   }
+
+	.block-field-blocknodethought-leadersfield-video  {
+		.content.stuck {
+			button[name="close"]{
+				display: block !important;
+			}
+		}
+	}
   
   .content-advertising {
     width: 100%;
@@ -48,6 +60,10 @@
     & + .block-field-blocknodethought-leadersfield-image {
       display: none;
     }
+
+		button[name="close"]{
+			display: none;
+		}
 
     .field--name-field-video {
       max-height: 730px;
