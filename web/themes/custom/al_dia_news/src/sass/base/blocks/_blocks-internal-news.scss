@@ -234,16 +234,22 @@
 
 .block-field-blocknodenewsfield-video {
   background-color: $cblack0;
+
+	.content.stuck {
+		button[name="close"]{
+			display: block !important;
+		}
+	}
 }
 
-.node_has_video {
+.page-node-type-news .node_has_video {
 	.block-field-blocknodenewsfield-image,
 	button[name="close"] {
 		display: none;
 	}
 }
 
-.node_has_image {
+.page-node-type-news .node_has_image {
 	.block-field-blocknodenewsfield-video {
 		display: none;
 	}
@@ -388,13 +394,13 @@
 //---------block content news -----------//
 //------- twitter
 
-.twitter-tweet {
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  max-width: 450px !important;
-}
+// .twitter-tweet {
+//   margin: 0 auto;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   max-width: 450px !important;
+// }
 
 //------- blockquote
 
@@ -406,7 +412,7 @@ blockquote {
   background: none;
   color: $cgrey2;
   width: fit-content;
-  max-width: 660px;
+  max-width: 755px;
 
   &:before,
   &:after {
@@ -528,11 +534,11 @@ blockquote {
     line-height: 140%;
     color: $cgrey2;
 
-    &.twitter-video,
-    &.twitter-tweet {
-      font-size: 0;
-      opacity: 0;
-    }
+    // &.twitter-video,
+    // &.twitter-tweet {
+    //   font-size: 0;
+    //   opacity: 0;
+    // }
 
     @media (max-width: $tablet) {
       font-size: szrem(18);
