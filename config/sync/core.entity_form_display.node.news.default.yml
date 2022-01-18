@@ -28,7 +28,6 @@ dependencies:
     - field_group
     - maxlength
     - path
-    - shs
     - svg_image
     - text
     - video_embed_field
@@ -127,13 +126,9 @@ content:
     region: content
   field_category:
     weight: 10
-    settings:
-      display_node_count: false
-      create_new_items: false
-      create_new_levels: false
-      force_deepest: false
+    settings: {  }
     third_party_settings: {  }
-    type: options_shs
+    type: options_select
     region: content
   field_comments:
     weight: 20
