@@ -178,10 +178,10 @@ import { validateFormSponsorship, unitedStateFirst } from './modules/state_and_c
 			}
 		});
 
-		$(".region-secondary-menu #block-al-dia-news-main-menu a").each(function () {
-			var text = $(this).html();
-			$(this).html(text.replace(/AL/g, "<br>AL"));
-		});
+		// $(".region-secondary-menu #block-al-dia-news-main-menu a").each(function () {
+		// 	var text = $(this).html();
+		// 	$(this).html(text.replace(/AL/g, "<br>AL"));
+		// });
 
 		//------------ scroll jobs --------------//
 		const containermenu = document.querySelector(
