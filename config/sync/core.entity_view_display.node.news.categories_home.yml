@@ -60,10 +60,9 @@ third_party_settings:
         - group_container_icon
         - field_type_of_content
         - group_container_news_wrapper
-        - group_container_news_info
         - field_image
+        - group_container_news_info
         - category_home
-        - field_short_title
         - field_new_short_title
         - 'dynamic_token_field:node-authored_on'
     fields:
@@ -119,7 +118,6 @@ third_party_settings:
     group_container_news_info:
       children:
         - category_home
-        - field_short_title
         - field_new_short_title
         - 'dynamic_token_field:node-authored_on'
       parent_name: group_container_news
@@ -185,16 +183,6 @@ content:
     third_party_settings:
       field_formatter_class:
         class: card-title
-  field_short_title:
-    type: string
-    weight: 12
-    region: ds_content
-    label: hidden
-    settings:
-      link_to_entity: true
-    third_party_settings:
-      field_formatter_class:
-        class: card-title
   field_type_of_content:
     type: entity_reference_label
     weight: 3
@@ -219,6 +207,7 @@ hidden:
   field_podcast_player: true
   field_postcast_categories: true
   field_short_description: true
+  field_short_title: true
   field_tags: true
   field_test: true
   field_video: true
