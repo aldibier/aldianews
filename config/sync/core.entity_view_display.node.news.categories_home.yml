@@ -64,6 +64,7 @@ third_party_settings:
         - field_image
         - category_home
         - field_short_title
+        - field_new_short_title
         - 'dynamic_token_field:node-authored_on'
     fields:
       category_home:
@@ -73,7 +74,7 @@ third_party_settings:
         formatter: default
       'dynamic_token_field:node-authored_on':
         plugin_id: 'dynamic_token_field:node-authored_on'
-        weight: 13
+        weight: 14
         label: hidden
         formatter: default
   field_group:
@@ -119,6 +120,7 @@ third_party_settings:
       children:
         - category_home
         - field_short_title
+        - field_new_short_title
         - 'dynamic_token_field:node-authored_on'
       parent_name: group_container_news
       weight: 4
@@ -173,6 +175,16 @@ content:
         placeholder_style: ''
         lazy_image: '0'
         data_uri: false
+  field_new_short_title:
+    type: string
+    weight: 13
+    region: ds_content
+    label: hidden
+    settings:
+      link_to_entity: true
+    third_party_settings:
+      field_formatter_class:
+        class: card-title
   field_short_title:
     type: string
     weight: 12
@@ -203,7 +215,6 @@ hidden:
   field_high_impact_news: true
   field_internal_image: true
   field_my_content_has_a_main_vide: true
-  field_new_short_title: true
   field_news: true
   field_podcast_player: true
   field_postcast_categories: true
