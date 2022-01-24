@@ -14,6 +14,7 @@ dependencies:
     - field.field.node.news.field_image
     - field.field.node.news.field_internal_image
     - field.field.node.news.field_my_content_has_a_main_vide
+    - field.field.node.news.field_new_short_title
     - field.field.node.news.field_news
     - field.field.node.news.field_podcast_player
     - field.field.node.news.field_postcast_categories
@@ -27,8 +28,8 @@ dependencies:
   module:
     - al_dia_layouts
     - comment
-    - image
     - layout_builder
+    - svg_image
     - text
     - user
 third_party_settings:
@@ -67,25 +68,6 @@ third_party_settings:
                 view_mode: view_mode
             additional: {  }
             weight: -8
-          ebc75a3f-3ce1-49fa-8599-0879fa71cd97:
-            uuid: ebc75a3f-3ce1-49fa-8599-0879fa71cd97
-            region: two_content
-            configuration:
-              id: 'field_block:node:news:field_short_title'
-              label: 'Short title'
-              provider: layout_builder
-              label_display: '0'
-              formatter:
-                label: hidden
-                type: string
-                settings:
-                  link_to_entity: true
-                third_party_settings: {  }
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-            additional: {  }
-            weight: -10
           ebeffecd-de49-4389-ae99-2a834ea97594:
             uuid: ebeffecd-de49-4389-ae99-2a834ea97594
             region: two_content
@@ -140,6 +122,27 @@ third_party_settings:
                 label: hidden
                 type: basic_string
                 settings: {  }
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: -8
+          46779c55-7eec-4003-b382-3a42b3d64f12:
+            uuid: 46779c55-7eec-4003-b382-3a42b3d64f12
+            region: two_content
+            configuration:
+              id: 'field_block:node:news:field_new_short_title'
+              label: 'Short title'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: string
+                settings:
+                  link_to_entity: true
                 third_party_settings:
                   field_formatter_class:
                     class: ''
@@ -228,6 +231,7 @@ hidden:
   field_high_impact_news: true
   field_internal_image: true
   field_my_content_has_a_main_vide: true
+  field_new_short_title: true
   field_news: true
   field_podcast_player: true
   field_postcast_categories: true

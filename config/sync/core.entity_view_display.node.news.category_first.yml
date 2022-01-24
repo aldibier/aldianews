@@ -14,6 +14,7 @@ dependencies:
     - field.field.node.news.field_image
     - field.field.node.news.field_internal_image
     - field.field.node.news.field_my_content_has_a_main_vide
+    - field.field.node.news.field_new_short_title
     - field.field.node.news.field_news
     - field.field.node.news.field_podcast_player
     - field.field.node.news.field_postcast_categories
@@ -27,8 +28,8 @@ dependencies:
   module:
     - al_dia_layouts
     - comment
-    - image
     - layout_builder
+    - svg_image
     - text
     - user
 third_party_settings:
@@ -60,25 +61,6 @@ third_party_settings:
                 view_mode: view_mode
             additional: {  }
             weight: -10
-          9c68e11a-7458-4def-8f01-ecd79cff42b8:
-            uuid: 9c68e11a-7458-4def-8f01-ecd79cff42b8
-            region: two_content
-            configuration:
-              id: 'field_block:node:news:field_short_title'
-              label: 'Short title'
-              provider: layout_builder
-              label_display: '0'
-              formatter:
-                label: hidden
-                type: string
-                settings:
-                  link_to_entity: true
-                third_party_settings: {  }
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-            additional: {  }
-            weight: -9
           5603d68b-506c-4b0a-b0b7-c65a5f857902:
             uuid: 5603d68b-506c-4b0a-b0b7-c65a5f857902
             region: two_content
@@ -167,6 +149,27 @@ third_party_settings:
                 view_mode: view_mode
             additional: {  }
             weight: -7
+          01aaf7e7-cc42-4fc1-861f-22476afb0eb4:
+            uuid: 01aaf7e7-cc42-4fc1-861f-22476afb0eb4
+            region: two_content
+            configuration:
+              id: 'field_block:node:news:field_new_short_title'
+              label: 'Short title'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: string
+                settings:
+                  link_to_entity: true
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: -8
         third_party_settings: {  }
 id: node.news.category_first
 targetEntityType: node
@@ -247,6 +250,7 @@ hidden:
   field_high_impact_news: true
   field_internal_image: true
   field_my_content_has_a_main_vide: true
+  field_new_short_title: true
   field_news: true
   field_podcast_player: true
   field_postcast_categories: true
