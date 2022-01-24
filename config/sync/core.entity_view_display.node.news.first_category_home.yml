@@ -62,11 +62,13 @@ third_party_settings:
         - group_container_icon
         - field_image
         - field_short_title
+        - field_new_short_title
         - field_short_description
   field_group:
     group_featured_news_wrapper:
       children:
         - field_short_title
+        - field_new_short_title
         - field_short_description
       parent_name: ''
       weight: 1
@@ -140,6 +142,16 @@ content:
         data_uri: false
     type: lazy_responsive_image
     region: ds_content
+  field_new_short_title:
+    type: string
+    weight: 5
+    region: ds_content
+    label: hidden
+    settings:
+      link_to_entity: true
+    third_party_settings:
+      field_formatter_class:
+        class: last-news-home-title
   field_short_description:
     type: basic_string
     weight: 6
@@ -179,7 +191,6 @@ hidden:
   field_high_impact_news: true
   field_internal_image: true
   field_my_content_has_a_main_vide: true
-  field_new_short_title: true
   field_news: true
   field_podcast_player: true
   field_postcast_categories: true
