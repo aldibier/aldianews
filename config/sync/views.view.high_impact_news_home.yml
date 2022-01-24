@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.body
     - field.storage.node.field_category
     - field.storage.node.field_image
+    - field.storage.node.field_new_short_title
     - field.storage.node.field_short_description
     - field.storage.node.field_short_title
     - field.storage.node.field_tags
@@ -19,6 +20,7 @@ dependencies:
     - lazy
     - node
     - responsive_image
+    - svg_image
     - taxonomy
     - text
     - user
@@ -774,6 +776,7 @@ display:
           hide_alter_empty: true
           fields:
             - field_short_title
+            - field_new_short_title
             - field_short_description
             - body
           wrapper: div
@@ -786,6 +789,69 @@ display:
           id: field_short_title
           table: node__field_short_title
           field: field_short_title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: featured-news-title
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_new_short_title:
+          id: field_new_short_title
+          table: node__field_new_short_title
+          field: field_new_short_title
           relationship: none
           group_type: group
           admin_label: ''
@@ -1290,6 +1356,7 @@ display:
       tags:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_image'
+        - 'config:field.storage.node.field_new_short_title'
         - 'config:field.storage.node.field_short_description'
         - 'config:field.storage.node.field_short_title'
         - 'config:field.storage.node.field_tags'
@@ -1571,7 +1638,6 @@ display:
           fields:
             - field_type_of_content
             - field_image
-            - field_my_content_has_a_main_vide
           wrapper: fieldset
           legend: ''
           classes: container-wrapper
@@ -1709,6 +1775,69 @@ display:
           id: field_short_title
           table: node__field_short_title
           field: field_short_title
+          relationship: field_news
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: h3
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_new_short_title:
+          id: field_new_short_title
+          table: node__field_new_short_title
+          field: field_new_short_title
           relationship: field_news
           group_type: group
           admin_label: ''
@@ -2037,7 +2166,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"card-content\">\r\n   <div class=\"card-name-category\"><h2>{{ parent_target_id }}</h2></div>\r\n   <div class=\"card-title\"><h3>{{ field_short_title }}</h3></div>\r\n   <div class=\"card-date\">{{ created }}</div>\r\n</div>"
+            text: "<div class=\"card-content\">\r\n   <div class=\"card-name-category\"><h2>{{ parent_target_id }}</h2></div>\r\n   <div class=\"card-title\"><h3>{{ field_new_short_title }}</h3></div>\r\n   <div class=\"card-date\">{{ created }}</div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -2116,6 +2245,7 @@ display:
       tags:
         - 'config:field.storage.node.field_category'
         - 'config:field.storage.node.field_image'
+        - 'config:field.storage.node.field_new_short_title'
         - 'config:field.storage.node.field_short_title'
         - 'config:field.storage.node.field_tags'
         - 'config:field.storage.node.field_type_of_content'
