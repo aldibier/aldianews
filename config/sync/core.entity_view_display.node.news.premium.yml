@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.news.field_image
     - field.field.node.news.field_internal_image
     - field.field.node.news.field_my_content_has_a_main_vide
+    - field.field.node.news.field_new_short_title
     - field.field.node.news.field_news
     - field.field.node.news.field_podcast_player
     - field.field.node.news.field_postcast_categories
@@ -27,9 +28,9 @@ dependencies:
     - ds
     - field_formatter_class
     - field_group
-    - image
     - layout_builder
     - lazy
+    - svg_image
     - text
     - user
     - video_embed_field
@@ -312,6 +313,7 @@ hidden:
   field_high_impact_news: true
   field_internal_image: true
   field_my_content_has_a_main_vide: true
+  field_new_short_title: true
   field_news: true
   field_postcast_categories: true
   field_short_description: true

@@ -14,6 +14,7 @@ dependencies:
     - field.field.node.news.field_image
     - field.field.node.news.field_internal_image
     - field.field.node.news.field_my_content_has_a_main_vide
+    - field.field.node.news.field_new_short_title
     - field.field.node.news.field_news
     - field.field.node.news.field_podcast_player
     - field.field.node.news.field_postcast_categories
@@ -27,8 +28,8 @@ dependencies:
   module:
     - al_dia_layouts
     - comment
-    - image
     - layout_builder
+    - svg_image
     - text
     - user
 third_party_settings:
@@ -247,6 +248,7 @@ hidden:
   field_high_impact_news: true
   field_internal_image: true
   field_my_content_has_a_main_vide: true
+  field_new_short_title: true
   field_news: true
   field_podcast_player: true
   field_postcast_categories: true

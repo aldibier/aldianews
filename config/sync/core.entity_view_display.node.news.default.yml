@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.news.field_image
     - field.field.node.news.field_internal_image
     - field.field.node.news.field_my_content_has_a_main_vide
+    - field.field.node.news.field_new_short_title
     - field.field.node.news.field_news
     - field.field.node.news.field_podcast_player
     - field.field.node.news.field_postcast_categories
@@ -31,8 +32,8 @@ dependencies:
     - al_dia_layouts
     - comment
     - gamw
-    - image
     - layout_builder
+    - svg_image
     - text
     - user
     - video_embed_field
@@ -498,6 +499,22 @@ third_party_settings:
                 type: basic_string
             additional: {  }
             weight: 12
+          eb99b499-b2a5-4a7c-bcf0-276768b28656:
+            uuid: eb99b499-b2a5-4a7c-bcf0-276768b28656
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:news:field_new_short_title'
+              formatter:
+                label: above
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+                type: string
+            additional: {  }
+            weight: 13
         third_party_settings: {  }
 id: node.news.default
 targetEntityType: node
@@ -586,6 +603,14 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     type: boolean
+    region: content
+  field_new_short_title:
+    weight: 19
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
   field_news:
     weight: 16
