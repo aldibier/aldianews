@@ -7,16 +7,16 @@ dependencies:
 id: news_content
 label: 'News content'
 type: 'canonical_entities:node'
-pattern: '[node:field_category:entity:parent]/[node:field_category]/[node:field_short_title]'
+pattern: '[node:field_category:entity:parent]/[node:field_category]/[node:field_new_short_title]'
 selection_criteria:
-  7e1622ab-6ed5-4f8b-b24c-42784c9e14ac:
+  c50e821b-27e7-4cbf-9f86-9d495250d3a5:
     id: node_type
     bundles:
       news: news
     negate: false
     context_mapping:
       node: node
-    uuid: 7e1622ab-6ed5-4f8b-b24c-42784c9e14ac
+    uuid: c50e821b-27e7-4cbf-9f86-9d495250d3a5
 selection_logic: and
 weight: -5
 relationships: {  }
