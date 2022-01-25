@@ -19,6 +19,19 @@
       max-width: 108px;
       max-height: 36px;
     }
+
+		@media screen and(max-width:$tablet) {
+      .aldia-logo-in-text {
+        max-width: 50px;
+        max-height: 16px;
+
+        img {
+          min-height: auto;
+          width: 100%;
+        }
+      }
+    }
+		
 	}
 }
 
