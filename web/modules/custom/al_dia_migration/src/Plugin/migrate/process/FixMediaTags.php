@@ -47,7 +47,6 @@ class FixMediaTags extends ProcessPluginBase {
    *   Takes a match of tag code
    */
   private function replaceToken($match) {
-    dump($match);
     $settings = [];
     $match = str_replace("[[", "", $match);
     $match = str_replace("]]", "", $match);
@@ -63,7 +62,7 @@ class FixMediaTags extends ProcessPluginBase {
       if (!isset($tag_info['fid'])) {
         throw new MigrateSkipRowException('No FID', TRUE);
       }
-      //dump($tag_info['fid']);
+
       // Load the file.
       $file = \Drupal\file\Entity\File::load($this->FidDrupal9($tag_info['fid']));
       
