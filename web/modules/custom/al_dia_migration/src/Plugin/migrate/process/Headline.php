@@ -36,7 +36,7 @@ class Headline extends ProcessPluginBase {
       $output = $value;
     }
     //dump($row->getSource());
-    return Unicode::truncate(trim(Html::decodeEntities($output)), 20, TRUE, TRUE);;
+    return Unicode::truncate(trim(Html::decodeEntities($output)), 28, TRUE, TRUE);;
   }
 
 }
