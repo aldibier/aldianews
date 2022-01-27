@@ -18,12 +18,6 @@ process:
 
   title: title
 
-  field_image/0/target_id: 
-    plugin: image_relation
-    source: field_image
-  
-  field_image/0/alt: field_image/0/alt
-
   body/value:
     plugin: fix_media_tags
     source: body/0/value
