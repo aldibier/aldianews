@@ -229,6 +229,14 @@
         .menu-level-1 {
           height: 100%;
 
+          .menu-level-1 > .menu-item:first-child{
+            align-self: flex-start;
+          }
+
+          .menu-level-1 .powerd{
+            align-self: flex-end;
+          }
+
           @media (max-width: $tablet) {
             height: auto;
           }
