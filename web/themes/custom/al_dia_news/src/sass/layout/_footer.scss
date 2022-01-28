@@ -223,6 +223,17 @@
         }
 
       }
+      
+      &.menu-level-0>li:nth-child(2){
+        .menu_link_content,
+        .menu-level-1 {
+          height: 100%;
+
+          @media (max-width: $tablet) {
+            height: auto;
+          }
+        }
+      }
 
       &.menu-level-0>li li {
         display: flex;
