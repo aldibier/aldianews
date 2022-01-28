@@ -12,6 +12,23 @@
 
 }
 
+/* Featured news */
+.featured-news {
+	.featured-news-title {
+		.aldia-logo-in-text {
+      max-width: 130px;
+      max-height: 36px;
+    }
+
+		@media screen and(max-width:$tablet) {
+			.aldia-logo-in-text {
+				max-width: 50px;
+				max-height: 17px;
+			}
+		}
+	}
+}
+
 /* Last news home */
 .last-news-home {
 	.last-news-home-title {

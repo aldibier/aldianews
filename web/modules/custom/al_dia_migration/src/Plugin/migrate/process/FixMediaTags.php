@@ -47,58 +47,55 @@ class FixMediaTags extends ProcessPluginBase {
    *   Takes a match of tag code
    */
   private function replaceToken($match) {
-   
     $settings = [];
     $match = str_replace("[[", "", $match);
     $match = str_replace("]]", "", $match);
     $tag = $match[0];
 
-
     try {
       if (!is_string($tag)) {
         throw new MigrateSkipRowException('No File Tag', TRUE);
       }
-
       // Make it into a fancy array.
       $tag_info = Json::decode($tag);
 
       if (!isset($tag_info['fid'])) {
         throw new MigrateSkipRowException('No FID', TRUE);
       }
-      //dump($tag_info['fid']);
+
       // Load the file.
-      
       $file = \Drupal\file\Entity\File::load($this->FidDrupal9($tag_info['fid']));
       
       if (!$file) {
-        throw new MigrateSkipRowException('Couldn\'t Load File', TRUE);
+        $file = 0;
       }
+      else{
+        // Grab the uri.
+        $uri = $file->getFileUri();
+        // The class attributes is a string, but drupal requires it to be an array, so we fix it here.
+        if (!empty($tag_info['attributes']['class'])) {
+          $tag_info['attributes']['class'] = explode(" ", $tag_info['attributes']['class']);
+        }
 
-      // Grab the uri.
-      $uri = $file->getFileUri();
-      // The class attributes is a string, but drupal requires it to be an array, so we fix it here.
-      if (!empty($tag_info['attributes']['class'])) {
-        $tag_info['attributes']['class'] = explode(" ", $tag_info['attributes']['class']);
-      }
+        $settings['attributes'] = is_array($tag_info['attributes']) ? $tag_info['attributes'] : [];
 
-      $settings['attributes'] = is_array($tag_info['attributes']) ? $tag_info['attributes'] : [];
-
-      // Many media formatters will want to apply width and height independently
-      // of the style attribute or the corresponding HTML attributes, so pull
-      // these two out into top-level settings. Different WYSIWYG editors have
-      // different behavior with respect to whether they store user-specified
-      // dimensions in the HTML attributes or the style attribute, so check both.
-      // Per http://www.w3.org/TR/html5/the-map-element.html#attr-dim-width, the
-      // HTML attributes are merely hints: CSS takes precedence.
-      if (isset($settings['attributes']['style'])) {
-        $css_properties = $this->MediaParseCssDeclarations($settings['attributes']['style']);
-        foreach (['width', 'height'] as $dimension) {
-          if (isset($css_properties[$dimension]) && substr($css_properties[$dimension], -2) == 'px') {
-            $settings[$dimension] = substr($css_properties[$dimension], 0, -2);
-          }
-          elseif (isset($settings['attributes'][$dimension])) {
-            $settings[$dimension] = $settings['attributes'][$dimension];
-            
+        // Many media formatters will want to apply width and height independently
+        // of the style attribute or the corresponding HTML attributes, so pull
+        // these two out into top-level settings. Different WYSIWYG editors have
+        // different behavior with respect to whether they store user-specified
+        // dimensions in the HTML attributes or the style attribute, so check both.
+        // Per http://www.w3.org/TR/html5/the-map-element.html#attr-dim-width, the
+        // HTML attributes are merely hints: CSS takes precedence.
+        if (isset($settings['attributes']['style'])) {
+          $css_properties = $this->MediaParseCssDeclarations($settings['attributes']['style']);
+          foreach (['width', 'height'] as $dimension) {
+            if (isset($css_properties[$dimension]) && substr($css_properties[$dimension], -2) == 'px') {
+              $settings[$dimension] = substr($css_properties[$dimension], 0, -2);
+            }
+            elseif (isset($settings['attributes'][$dimension])) {
+              $settings[$dimension] = $settings['attributes'][$dimension];
+              
+            }
           }
         }
       }
@@ -107,18 +104,21 @@ class FixMediaTags extends ProcessPluginBase {
       $msg = t('Unable to render media from %tag. Error: %error', ['%tag' => $tag, '%error' => $e->getMessage()]);
       throw new MigrateSkipRowException($msg, TRUE);
     }
-
     // Render the image.
-    $element = [
-      '#theme' => 'image',
-      '#uri' => $uri,
-      '#attributes' => isset($settings['attributes']) ? $settings['attributes'] : '',
-      '#width' => $settings['width'],
-      '#height' => $settings['height'],
-    ];
-
-    $output = \Drupal::service('renderer')->renderRoot($element);
-
+    if(isset($uri)){
+      $element = [
+        '#theme' => 'image',
+        '#uri' => $uri,
+        '#attributes' => isset($settings['attributes']) ? $settings['attributes'] : '',
+        '#width' => $settings['width'],
+        '#height' => $settings['height'],
+      ];
+      $output = \Drupal::service('renderer')->renderRoot($element);
+    }else{
+      $output = '';
+    }
+    
+    
     return $output;
   }
 
