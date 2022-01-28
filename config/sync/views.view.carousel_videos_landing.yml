@@ -7,6 +7,7 @@ dependencies:
     - field.storage.node.field_category
     - field.storage.node.field_image
     - field.storage.node.field_my_content_has_a_main_vide
+    - field.storage.node.field_new_short_title
     - field.storage.node.field_short_title
     - field.storage.node.field_type_of_content
     - field.storage.node.field_video
@@ -16,8 +17,8 @@ dependencies:
   content:
     - 'taxonomy_term:type_of_content:a0472952-9ab8-46ce-911b-d6d34c5a57a3'
   module:
-    - image
     - node
+    - svg_image
     - taxonomy
     - text
     - user
@@ -1026,6 +1027,69 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
+        field_new_short_title:
+          id: field_new_short_title
+          table: node__field_new_short_title
+          field: field_new_short_title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
         created:
           id: created
           table: node_field_data
@@ -1168,7 +1232,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"container-video-landing\">\r\n  <div class=\"category-video-content\">{{ field_category }}</div>\r\n  <h2 class=\"title-video-content\">{{ field_short_title }}</h2> \r\n  <div class=\"date-video-content\">{{ created }}</div>\r\n </div>"
+            text: "<div class=\"container-video-landing\">\r\n  <div class=\"category-video-content\">{{ field_category }}</div>\r\n  <h2 class=\"title-video-content\">{{ field_new_short_title }}</h2> \r\n  <div class=\"date-video-content\">{{ created }}</div>\r\n </div>"
             make_link: false
             path: ''
             absolute: false
@@ -1385,6 +1449,7 @@ display:
         - 'config:field.storage.node.field_category'
         - 'config:field.storage.node.field_image'
         - 'config:field.storage.node.field_my_content_has_a_main_vide'
+        - 'config:field.storage.node.field_new_short_title'
         - 'config:field.storage.node.field_short_title'
         - 'config:field.storage.node.field_type_of_content'
   page_1:
