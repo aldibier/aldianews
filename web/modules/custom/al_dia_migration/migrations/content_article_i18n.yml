@@ -18,12 +18,6 @@ process:
 
   title: title
 
-  field_image/0/target_id: 
-    plugin: image_relation
-    source: field_image
-  
-  field_image/0/alt: field_image/0/alt
-
   body/value:
     plugin: fix_media_tags
     source: body/0/value
@@ -50,8 +44,8 @@ process:
       plugin: leadcaption
   
   field_new_short_title:
-    plugin: lead
-    source: field_banner_headline
+    plugin: headline
+    source: title
 
   field_category:
     -
