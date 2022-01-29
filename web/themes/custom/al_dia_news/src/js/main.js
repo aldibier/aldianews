@@ -72,7 +72,11 @@ const initMain = ($, Drupal) => {
 
 	if (!!containerSummary) {
 		let summary = containerSummary.querySelector(".summary-news");
-		containerSummary.insertAdjacentElement("beforebegin", summary);
+
+		if(!!summary){
+			containerSummary.insertAdjacentElement("beforebegin", summary);
+		}
+		
 	}
 
 	// js video en interna
