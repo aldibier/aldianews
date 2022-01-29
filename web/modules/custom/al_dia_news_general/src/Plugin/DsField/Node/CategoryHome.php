@@ -71,7 +71,7 @@ class CategoryHome extends DsFieldBase {
         $query1->range(0, 1);
         $results = $query1->execute()->fetchObject();
         if ($results->tt_parent_target_id) {
-            $title = $results->ttd_name;
+            $title = $this->getTranslation($results->tt_parent_target_id);
             $link = Url::fromRoute('entity.taxonomy_term.canonical', [
                 'taxonomy_term' => $results->tt_parent_target_id,
             ]);
@@ -92,4 +92,24 @@ class CategoryHome extends DsFieldBase {
     return $output;
   }
 
+  /**
+   * Get Term ID to get translation
+   *
+   * @param [type] $tid
+   * @return void
+   */
+  public function getTranslation($tid){
+    $tids = [$tid];
+    $language =  \Drupal::languageManager()->getCurrentLanguage()->getId();
+    $terms = \Drupal\taxonomy\Entity\Term::loadMultiple($tids);
+    $translation = "";
+
+    foreach($terms as $term) {
+      if($term->hasTranslation($language)){
+          $translated_term = \Drupal::service('entity.repository')->getTranslationFromContext($term, $language);
+          $translation = $translated_term->getName();
+      }
+  }
+
+  return $translation;
 }
