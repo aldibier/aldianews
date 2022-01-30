@@ -99,6 +99,7 @@ class CategoryHome extends DsFieldBase {
    * @return void
    */
   public function getTranslation($tid){
+    \Drupal::logger('CategoryHome')->notice('tid: '. $tid);
     $tids = [$tid];
     $language =  \Drupal::languageManager()->getCurrentLanguage()->getId();
     $taxonomy_term = Term::load($tid);
