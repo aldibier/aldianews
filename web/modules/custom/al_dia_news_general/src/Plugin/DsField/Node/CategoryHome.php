@@ -6,6 +6,8 @@ use Drupal\ds\Plugin\DsField\DsFieldBase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Database\Connection;
 use Drupal\Core\Url;
+use Drupal\taxonomy\Entity\Term;
+use Drupal\Core\Language\LanguageInterface;
 
 /**
  * Plugin that renders the author of a Documentos.
@@ -100,7 +102,6 @@ class CategoryHome extends DsFieldBase {
    */
   public function getTranslation($tid){
     \Drupal::logger('CategoryHome')->notice('tid: '. $tid);
-    $tids = [$tid];
     $language =  \Drupal::languageManager()->getCurrentLanguage()->getId();
     $taxonomy_term = Term::load($tid);
     $translation = "";
