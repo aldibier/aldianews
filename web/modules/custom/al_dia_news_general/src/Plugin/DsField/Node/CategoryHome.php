@@ -6,6 +6,8 @@ use Drupal\ds\Plugin\DsField\DsFieldBase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Database\Connection;
 use Drupal\Core\Url;
+use Drupal\taxonomy\Entity\Term;
+use Drupal\Core\Language\LanguageInterface;
 
 /**
  * Plugin that renders the author of a Documentos.
@@ -104,15 +106,14 @@ class CategoryHome extends DsFieldBase {
     \Drupal::logger('CategoryHome')->notice('tid: '.$tid);
     $language =  \Drupal::languageManager()->getCurrentLanguage()->getId();
     \Drupal::logger('CategoryHome')->notice('Language: '.$language);
-    $terms = \Drupal\taxonomy\Entity\Term::loadMultiple($tids);
-    \Drupal::logger('mCategoryHome')->notice('terms: '.json_encode($terms));
+    $taxonomy_term = Term::load($tid);
+    \Drupal::logger('CategoryHome')->notice('terms: '.json_encode($terms));
     $translation = "";
 
-    foreach($terms as $term) {
-      if($term->hasTranslation($language)){
-          $translated_term = \Drupal::service('entity.repository')->getTranslationFromContext($term, $language);
-          $translation = $translated_term->getName();
-      }
+    if($taxonomy_term->hasTranslation($language)){
+      $translated_term = \Drupal::service('entity.repository')->getTranslationFromContext($taxonomy_term, $language);
+      $translation = $translated_term->getName();
+      Drupal::logger('CategoryHome')->notice('translation: '.$translation);
     }
 
     return $translation;
