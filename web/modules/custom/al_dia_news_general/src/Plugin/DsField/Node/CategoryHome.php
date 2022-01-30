@@ -101,8 +101,11 @@ class CategoryHome extends DsFieldBase {
    */
   public function getTranslation($tid){
     $tids = [$tid];
+    \Drupal::logger('CategoryHome')->notice('tid: '.$tid);
     $language =  \Drupal::languageManager()->getCurrentLanguage()->getId();
+    \Drupal::logger('CategoryHome')->notice('Language: '.$language);
     $terms = \Drupal\taxonomy\Entity\Term::loadMultiple($tids);
+    \Drupal::logger('mCategoryHome')->notice('terms: '.json_encode($terms));
     $translation = "";
 
     foreach($terms as $term) {
