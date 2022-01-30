@@ -9,7 +9,7 @@ dependencies:
 id: al_dia_dev
 label: 'Al Día Dev'
 weight: 0
-container_id: GTM-KF2LNCS
+container_id: GTM-NV5RTNW
 data_layer: dataLayer
 include_classes: false
 whitelist_classes: |-
@@ -53,8 +53,37 @@ conditions:
   request_path_exclusion:
     id: request_path_exclusion
     pages: ''
-    negate: null
+    negate: true
   view_inclusion:
     id: view_inclusion
-    negate: null
+    negate: false
     view_inclusion: {  }
+  'entity_bundle:commerce_product':
+    id: 'entity_bundle:commerce_product'
+    bundles: {  }
+    negate: false
+    context_mapping:
+      commerce_product: '@commerce_product.product_route_context:commerce_product'
+  'entity_bundle:commerce_product_variation':
+    id: 'entity_bundle:commerce_product_variation'
+    bundles: {  }
+    negate: false
+    context_mapping:
+      commerce_product_variation: '@commerce_product.product_variation_route_context:commerce_product_variation'
+  'entity_bundle:taxonomy_term':
+    id: 'entity_bundle:taxonomy_term'
+    bundles: {  }
+    negate: false
+    context_mapping:
+      taxonomy_term: '@taxonomy_term.taxonomy_term_route_context:taxonomy_term'
+  'entity_bundle:webform_submission':
+    id: 'entity_bundle:webform_submission'
+    bundles: {  }
+    negate: false
+    context_mapping:
+      webform_submission: '@webform.webform_submission_route_context:webform_submission'
+  webform:
+    id: webform
+    webforms: {  }
+    negate: false
+    context_mapping: {  }
