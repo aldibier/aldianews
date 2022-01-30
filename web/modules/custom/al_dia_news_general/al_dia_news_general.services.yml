@@ -1,0 +1,6 @@
+services:
+  cache_context.al_dia_news_general_context_mobile_detected:
+    class: Drupal\al_dia_news_general\Cache\Context\MobileDetectCacheContext
+    arguments: []
+    tags:
+      - { name: cache.context }
