@@ -112,7 +112,7 @@ class CategoryHome extends DsFieldBase {
     if($taxonomy_term->hasTranslation($language)){
       $translated_term = \Drupal::service('entity.repository')->getTranslationFromContext($taxonomy_term, $language);
       $translation = $translated_term->getName();
-      Drupal::logger('CategoryHome')->notice('translation: '.$translation);
+      \Drupal::logger('CategoryHome')->notice('translation: '.$translation);
     }
 
     return $translation;
