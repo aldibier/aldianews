@@ -58,6 +58,7 @@ class CategoryHome extends DsFieldBase {
         $query1 = $this->database->select('node_field_data', 'n');
         $query1->fields("n", ["nid", "created"]);
         $query1->addField("t", "parent_target_id");
+        $query1->addField("c", "entity_id");
         $query1->addField("td", "name");
         $query1->addField("ttd", "name");
         $query1->addField("tt", "parent_target_id");
@@ -77,7 +78,7 @@ class CategoryHome extends DsFieldBase {
             ]);
         }
         else {
-            $title = $results->name;
+          $title = $this->getTranslation($results->entity_id);
             $link = Url::fromRoute('entity.taxonomy_term.canonical', [
                 'taxonomy_term' => $results->parent_target_id,
             ]);
