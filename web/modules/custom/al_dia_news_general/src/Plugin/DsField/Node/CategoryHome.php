@@ -109,7 +109,8 @@ class CategoryHome extends DsFieldBase {
           $translated_term = \Drupal::service('entity.repository')->getTranslationFromContext($term, $language);
           $translation = $translated_term->getName();
       }
-  }
+    }
 
-  return $translation;
+    return $translation;
+  }
 }
