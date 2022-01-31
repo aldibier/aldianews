@@ -74,6 +74,7 @@ class LatestCategories extends BlockBase implements ContainerFactoryPluginInterf
    */
   public function build() {
     //Consulto el primer nodo, último publicado, ontendo el parent para armar el enlace, alias tt
+    $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
     $query1 = $this->database->select('node_field_data', 'n');
     $query1->fields("n", ["nid", "created"]);
     $query1->addField("t", "parent_target_id");
@@ -83,6 +84,7 @@ class LatestCategories extends BlockBase implements ContainerFactoryPluginInterf
     $query1->leftJoin("taxonomy_term__parent", "tt", "t.parent_target_id = tt.entity_id");
     $query1->condition("n.type", "news", "=");
     $query1->condition("c.field_category_target_id", 123, "<>");
+    $query1->condition("n.langcode", $language, "=");
     $query1->orderBy("n.created", "DESC");
     $query1->range(0, 1);
     $results = $query1->execute()->fetchObject();
@@ -123,6 +125,7 @@ class LatestCategories extends BlockBase implements ContainerFactoryPluginInterf
     $query2->condition("t.parent_target_id", $category, "NOT IN");
     $query2->condition("tt.parent_target_id", $category, "NOT IN");
     $query2->condition("c.field_category_target_id", 123, "<>");
+    $query2->condition("n.langcode", $language, "=");
     $query2->orderBy("n.created", "DESC");
     $query2->range(0, 1);
     $results = $query2->execute()->fetchObject();
@@ -162,6 +165,7 @@ class LatestCategories extends BlockBase implements ContainerFactoryPluginInterf
     $query3->condition("t.parent_target_id", $category, "NOT IN");
     $query3->condition("tt.parent_target_id", $category, "NOT IN");
     $query3->condition("c.field_category_target_id", 123, "<>");
+    $query3->condition("n.langcode", $language, "=");
     $query3->orderBy("n.created", "DESC");
     $query3->range(0, 1);
     $results = $query3->execute()->fetchObject();
