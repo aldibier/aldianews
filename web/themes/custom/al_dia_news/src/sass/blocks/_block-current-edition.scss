@@ -257,6 +257,22 @@
           display: flex;
           justify-content: flex-end;
           flex-direction: row-reverse;
+
+          .field--name-body {
+            display: flex;
+            align-items: center;
+          }
+
+          .field--name-body > p {
+            &:nth-child(1){
+              order: 1;
+            }
+
+            &:nth-child(2){
+              order: 0;
+            }
+          }
+          
         }
       }
 
