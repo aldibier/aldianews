@@ -368,6 +368,7 @@ display:
         filter_groups: false
         fields: false
         pager: false
+        sorts: false
       filter_groups:
         operator: AND
         groups:
@@ -827,6 +828,20 @@ display:
             offset: false
             offset_label: Offset
           quantity: 3
+      sorts:
+        field_date_of_event_value:
+          id: field_date_of_event_value
+          table: node__field_date_of_event
+          field: field_date_of_event_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          granularity: second
+          plugin_id: datetime
     cache_metadata:
       max-age: -1
       contexts:
