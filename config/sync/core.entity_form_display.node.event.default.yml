@@ -15,13 +15,16 @@ dependencies:
     - field.field.node.event.field_nomination_status
     - field.field.node.event.field_present_by
     - field.field.node.event.field_slider_block
+    - field.field.node.event.field_ticketlap_link
     - field.field.node.event.field_venue_of_the_event
     - image.style.thumbnail
     - node.type.event
   module:
     - datetime
+    - link
     - paragraphs
     - path
+    - scheduler
     - svg_image
     - text
 id: node.event.default
@@ -162,6 +165,14 @@ content:
         duplicate: duplicate
     third_party_settings: {  }
     region: content
+  field_ticketlap_link:
+    weight: 31
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
   field_venue_of_the_event:
     weight: 6
     settings:
@@ -196,6 +207,12 @@ content:
       display_label: true
     weight: 19
     region: content
+    third_party_settings: {  }
+  publish_on:
+    type: datetime_timestamp_no_default
+    weight: 30
+    region: content
+    settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
@@ -233,6 +250,12 @@ content:
       placeholder: ''
       match_limit: 10
     region: content
+    third_party_settings: {  }
+  unpublish_on:
+    type: datetime_timestamp_no_default
+    weight: 30
+    region: content
+    settings: {  }
     third_party_settings: {  }
   url_redirects:
     weight: 23

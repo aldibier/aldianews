@@ -8,10 +8,12 @@ dependencies:
     - field.storage.node.field_landing_image
     - field.storage.node.field_logo
     - field.storage.node.field_nomination_status
+    - field.storage.node.field_ticketlap_link
     - field.storage.node.field_venue_of_the_event
     - node.type.event
   module:
     - datetime
+    - link
     - node
     - svg_image
     - user
@@ -608,9 +610,9 @@ display:
           group_type: group
           admin_label: ''
           empty: false
-          tokenize: false
+          tokenize: true
           content:
-            value: "\t\t\t\t<div class=\"text-and-buttons-event section-flex\">\r\n\t\t\t\t\t<span>Click here to register, to nominate, or to sponsor</span>\r\n                                        <a class=\"buttton-link\" id=\"nominee\" href=\"#\" role=\"button\">NOMINATE</a>\r\n                                        <a class=\"buttton-link\" id=\"register-here\" href=\"#\" role=\"button\">REGISTER HERE</a>\r\n                                        <a class=\"buttton-link\" id=\"sponsorship\" href=\"#\" role=\"button\">SPONSORSHIP</a>\r\n\t\t\t\t</div>"
+            value: "\t\t\t\t<div class=\"text-and-buttons-event section-flex\">\r\n\t\t\t\t\t<span>Click here to register, to nominate, or to sponsor</span>\r\n                                        <a class=\"buttton-link\" id=\"nominee\" href=\"#\" role=\"button\">NOMINATE</a>\r\n                                        {{ field_ticketlap_link }}\r\n                                        <a class=\"buttton-link\" id=\"sponsorship\" href=\"#\" role=\"button\">SPONSORSHIP</a>\r\n\t\t\t\t</div>"
             format: full_html
           plugin_id: text
       defaults:
@@ -1133,6 +1135,73 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
+        field_ticketlap_link:
+          id: field_ticketlap_link
+          table: node__field_ticketlap_link
+          field: field_ticketlap_link
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: true
+            text: '<a class="buttton-link"  href="{{ field_ticketlap_link__uri }}"  role="button" target="_blank" >REGISTER HERE</a>'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: uri
+          type: link
+          settings:
+            trim_length: 80
+            url_only: true
+            url_plain: false
+            rel: '0'
+            target: '0'
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
       filters:
         status:
           value: '1'
@@ -1264,6 +1333,7 @@ display:
         - 'config:field.storage.node.field_landing_image'
         - 'config:field.storage.node.field_logo'
         - 'config:field.storage.node.field_nomination_status'
+        - 'config:field.storage.node.field_ticketlap_link'
         - 'config:field.storage.node.field_venue_of_the_event'
   block_2:
     display_plugin: block

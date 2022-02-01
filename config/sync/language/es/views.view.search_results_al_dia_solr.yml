@@ -5,20 +5,29 @@ display:
         field_category:
           expose:
             label: Categoría
+            description: ''
           group_info:
             label: Categoría
         search_api_fulltext:
           expose:
             label: 'Palabras clave'
+      header:
+        result:
+          content: 'Hemos encontrado @total resultados para'
   block_1:
     display_options:
       fields:
         nothing_1:
           alter:
             text: '<h1>Resultados de la búsqueda</h1>'
+          admin_label: Título
         nothing_2:
           alter:
             text: '<div>También puede encontrar noticias de archivo filtrando con las opciones siguientes.</div>'
+          admin_label: Cuerpo
+      header:
+        result:
+          content: 'Hemos encontrado @total resultados para'
   page_1:
     display_options:
       exposed_form:
@@ -27,3 +36,48 @@ display:
           exposed_sorts_label: 'Ordenar por'
           sort_asc_label: Antiguos
           sort_desc_label: Recientes
+          reset_button_label: Reiniciar
+          text_input_required: 'Seleccione cualquier filtro y haga clic en Aplicar para ver los resultados'
+          bef:
+            general:
+              secondary_label: 'Opciones avanzadas'
+            sort:
+              advanced:
+                combine_rewrite: "Post date Asc|Más antiguos primero\r\nPost date Desc|Más nuevos primero"
+                collapsible_label: 'Opciones de ordenación'
+      filters:
+        search_api_fulltext:
+          expose:
+            label: 'Palabras clave'
+        field_category:
+          expose:
+            label: Categoría
+          group_info:
+            label: Categoría
+            group_items:
+              1:
+                title: LIDERAZGO
+              2:
+                title: CULTURA
+              3:
+                title: POLÍTICA
+        field_type_of_content:
+          expose:
+            label: 'Tipo de contenido'
+            description: ''
+          group_info:
+            label: 'Tipo de contenido'
+            group_items:
+              1:
+                title: Artículos
+              2:
+                title: 'Solo artículos con video'
+      sorts:
+        search_api_relevance:
+          expose:
+            label: Relevancia
+  block_2:
+    display_options:
+      header:
+        area_text_custom:
+          content: "<div class=\"red-text-no-results\">Lo lamentamos. No pudimos encontrar resultados para su búsqueda.</div>\r\n<div class=\"black-text-no-results\">Explore nuestro contenido más reciente</div>"

@@ -16,6 +16,7 @@ dependencies:
     - field.field.node.event.field_nomination_status
     - field.field.node.event.field_present_by
     - field.field.node.event.field_slider_block
+    - field.field.node.event.field_ticketlap_link
     - field.field.node.event.field_venue_of_the_event
     - fixed_block_content.fixed_block_content._small_vertical_advertising
     - node.type.event
@@ -35,6 +36,7 @@ dependencies:
     - fixed_block_content
     - gamw
     - layout_builder
+    - link
     - svg_image
     - text
     - user
@@ -478,6 +480,26 @@ third_party_settings:
                 type: image
             additional: {  }
             weight: 7
+          3a989b74-6b19-4ad8-a2f2-d9374cf7bc8a:
+            uuid: 3a989b74-6b19-4ad8-a2f2-d9374cf7bc8a
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:event:field_ticketlap_link'
+              formatter:
+                label: above
+                settings:
+                  trim_length: 80
+                  url_only: false
+                  url_plain: false
+                  rel: ''
+                  target: ''
+                third_party_settings: {  }
+                type: link
+            additional: {  }
+            weight: 8
         third_party_settings: {  }
 id: node.event.default
 targetEntityType: node
@@ -590,6 +612,18 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    region: content
+  field_ticketlap_link:
+    weight: 116
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
     region: content
   field_venue_of_the_event:
     weight: 113
