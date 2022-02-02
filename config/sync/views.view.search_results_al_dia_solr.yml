@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_category
     - field.storage.node.field_image
+    - field.storage.node.field_new_short_title
     - field.storage.node.field_short_title
     - field.storage.node.field_type_of_content
     - responsive_image.styles.next_two_image_responsive
@@ -15,7 +16,6 @@ dependencies:
     - better_exposed_filters
     - responsive_image
     - search_api
-    - search_api_spellcheck
     - views_fieldsets
     - views_infinite_scroll
 id: search_results_al_dia_solr
@@ -1539,6 +1539,14 @@ display:
               anonymous: '0'
               administrator: '0'
               editor: '0'
+              site_administrator: '0'
+              writer: '0'
+              sales: '0'
+              contributor: '0'
+              publisher: '0'
+              events: '0'
+              columnist: '0'
+              freelancer: '0'
             placeholder: ''
             expose_fields: false
             searched_fields_id: search_api_fulltext_searched_fields
@@ -1558,6 +1566,7 @@ display:
           min_length: null
           fields:
             - aggregated_field
+            - field_new_short_title
             - field_short_title
           plugin_id: search_api_fulltext
         field_category:
@@ -2219,6 +2228,76 @@ display:
             multi_type: separator
             multi_separator: ', '
           plugin_id: search_api_field
+        field_new_short_title:
+          id: field_new_short_title
+          table: search_api_index_news
+          field: field_new_short_title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: true
+            text: '<h3>{{ field_new_short_title }}</h3>'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          field_rendering: true
+          fallback_handler: search_api
+          fallback_options:
+            link_to_item: false
+            use_highlighting: false
+            multi_type: separator
+            multi_separator: ', '
+          plugin_id: search_api_field
         created_1:
           id: created_1
           table: search_api_index_news
@@ -2305,7 +2384,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"card-content\">\r\n   <div class=\"card-name-category\">{{ field_category }}</div>\r\n   <div class=\"card-title\">{{ field_short_title }}</div>\r\n   <div class=\"card-date\">{{ created_1 }}</div>\r\n</div>"
+            text: "<div class=\"card-content\">\r\n   <div class=\"card-name-category\">{{ field_category }}</div>\r\n   <div class=\"card-title\">{{ field_new_short_title }}</div>\r\n   <div class=\"card-date\">{{ created_1 }}</div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -2412,6 +2491,7 @@ display:
       tags:
         - 'config:field.storage.node.field_category'
         - 'config:field.storage.node.field_image'
+        - 'config:field.storage.node.field_new_short_title'
         - 'config:field.storage.node.field_short_title'
         - 'config:field.storage.node.field_type_of_content'
         - 'config:search_api.index.news'
