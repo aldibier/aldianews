@@ -5,7 +5,10 @@ defaults:
 _core:
   default_config_hash: IhwTepsVwtbtbcT5GzQKhCXDCRvbk3MNkWqPiuiZ10s
 modules:
-  smtp: {  }
+  smtp:
+    none:
+      formatter: php_mail
+      sender: php_mail
   webform:
     none:
       formatter: mime_mail
