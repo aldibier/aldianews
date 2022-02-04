@@ -63,22 +63,19 @@
       <script>
         window.googletag = window.googletag || {cmd: []};
         googletag.cmd.push(function() {
-          var mapping =
-              googletag.sizeMapping()
-                      .addSize([1024,0], [[840, 240]])
-                      .addSize([769,0], [[750, 200]])
-                      .addSize([0,0], [[320,140]])
-                      .build();
+          var mapping = googletag.sizeMapping()
+                  .addSize([1024,0], [[840, 240]])
+                  .addSize([769,0], [[750, 200]])
+                  .addSize([0,0], [[320,140]])
+                  .build();
 
-          googletag.defineSlot('/66060234/internal-section-body', [[840, 240], [750, 200], [468, 60]], 'div-gpt-ad-1639705123281-0')
-                      .defineSizeMapping(mapping)
-                      .addService(googletag.pubads());
+          googletag.defineSlot('/309686595/internal-section-body', [[840, 240], [320, 140], [750, 200]], 'div-gpt-ad-1644009767547-0')
+          .defineSizeMapping(mapping)
+          .addService(googletag.pubads());
           googletag.pubads().enableSingleRequest();
           googletag.pubads().collapseEmptyDivs();
           googletag.enableServices();
         });
-
-
       </script>
 
     </header>

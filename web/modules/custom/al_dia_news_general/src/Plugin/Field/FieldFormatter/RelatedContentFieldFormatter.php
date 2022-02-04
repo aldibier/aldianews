@@ -210,13 +210,13 @@ class RelatedContentFieldFormatter extends FormatterBase {
     }
 
     $html = $dom->saveHtml();
-
-    $ad = "</p><!-- /66060234/internal-section-body -->
-    <div id='div-gpt-ad-1639705123281-0' style='min-width: 320px; min-height: 60px;'>
+    $ad = "<!-- /309686595/internal-section-body -->
+    <div id='div-gpt-ad-1644009767547-0' style='min-width: 320px; min-height: 140px;'>
       <script>
-        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1639705123281-0'); });
+        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1644009767547-0'); });
       </script>
     </div>";
+
     $content = "</p><div data-embed-button='related_content'>". $related_content ."</div>";
 
     // HTML to return
