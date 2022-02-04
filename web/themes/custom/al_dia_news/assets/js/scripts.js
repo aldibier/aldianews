@@ -2428,6 +2428,28 @@ __webpack_require__.r(__webpack_exports__);
       Object(_modules_state_and_city__WEBPACK_IMPORTED_MODULE_6__["validateFormSponsorship"])(_form);
       Object(_modules_state_and_city__WEBPACK_IMPORTED_MODULE_6__["unitedStateFirst"])(_form);
     }
+
+    formApplyModified('.webform-submission-nominate-form', '.close-modal');
+    $(window).on('resize', function () {
+      formApplyModified('.webform-submission-nominate-form', '.close-modal');
+    });
+
+    function formApplyModified(form, elementClass) {
+      if ($(form).length) {
+        var formWidth = getSizeForm(form);
+        var btn = $(form).find(elementClass).first();
+        if ($(btn).length) addSizeProperty(btn, formWidth);
+      }
+    }
+
+    function getSizeForm(form) {
+      var formSize = $(form)[0].width();
+      return formSize;
+    }
+
+    function addSizeProperty(element, formWidth) {
+      $(element).get(0).style.setProperty("--form-size", "".concat(formWidth, "px"));
+    }
   });
   Drupal.behaviors.aldia_news_sumoselect = {
     attach: function attach(context, settings) {

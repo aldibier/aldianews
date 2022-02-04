@@ -454,6 +454,30 @@ import { validateFormSponsorship, unitedStateFirst } from './modules/state_and_c
 			unitedStateFirst(form);
 		}
 
+		formApplyModified('.webform-submission-nominate-form', '.close-modal');
+
+		$(window).on('resize', function () {
+			formApplyModified('.webform-submission-nominate-form', '.close-modal');
+		})
+
+		function formApplyModified(form, elementClass) {
+			if ($(form).length) {
+				const formWidth = getSizeForm(form);
+				const btn = $(form).find(elementClass).first();
+
+				if ($(btn).length) addSizeProperty(btn, formWidth);
+			}
+		}
+
+		function getSizeForm(form) {
+			const formSize = $(form)[0].width();
+			return formSize;
+		}
+
+		function addSizeProperty(element, formWidth) {
+			$(element).get(0).style.setProperty("--form-size", `${formWidth}px`);
+		}
+
 	});
 
 	Drupal.behaviors.aldia_news_sumoselect = {
