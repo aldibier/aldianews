@@ -221,3 +221,26 @@ function al_dia_news_preprocess_views_view_unformatted(&$vars) {
     }
   }
 }
+
+// function al_dia_news_suggestions_block_alter(array &$suggestions, array $variables) {
+//   if($variables['elements']['#id'] == 'customsearchform'){
+//       $suggestions[] = 'block__custom_search_form';
+//   }
+// }
+
+function al_dia_news_suggestions_block_alter(array &$suggestions, array $vars) {
+  echo "Suggestions alter";
+  var_dump($vars['elements']['#id']);
+
+  if (empty($variables['header'])) {
+    $suggestions[] = 'hookname__' . 'no_header';
+  }
+}
+
+function al_dia_news_theme_suggestions_alter(array &$suggestions, array $vars, $hook) {
+  if($vars['elements']['#plugin_id'] == 'gamw'){
+    if($vars['elements']['#configuration']['ad_unit'] == 'internal-news-thought-banner-last-block-top-mobile'){
+      $suggestions[] = 'block__gamw_last_top_mobile';
+    }
+  }
+}
