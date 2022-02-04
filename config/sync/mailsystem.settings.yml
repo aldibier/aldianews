@@ -4,3 +4,12 @@ defaults:
   formatter: mime_mail
 _core:
   default_config_hash: IhwTepsVwtbtbcT5GzQKhCXDCRvbk3MNkWqPiuiZ10s
+modules:
+  smtp:
+    none:
+      formatter: php_mail
+      sender: php_mail
+  webform:
+    none:
+      formatter: mime_mail
+      sender: php_mail

@@ -258,18 +258,11 @@ handlers:
       cc_options: {  }
       bcc_mail: ''
       bcc_options: {  }
-      from_mail: mjbuitrago@seedem.co
+      from_mail: no-reply@aldianews.com
       from_options: {  }
       from_name: _default
       subject: _default
-      body: |
-        **Important: Please do not reply to the e-mail mjbuitrago@seedem.co, reply to the e-mail registered in the body of the message.
-
-        <p>Posted on: {{ webform_token('[webform_submission:created]', webform_submission, [], options) }}</p>
-        <p>Sending by: {{ 
-        webform_token('[webform_submission:user]', webform_submission, [], options) }}</p>
-        <p>Contenido:</p>
-        {{ webform_token('[webform_submission:values]', webform_submission, [], options) }}
+      body: "**Important: Please do not reply to the e-mail mjbuitrago@seedem.co, reply to the e-mail registered in the body of the message.\r\n\r\n<p>Posted on: {{ webform_token('[webform_submission:created]', webform_submission, [], options) }}</p>\r\n<p>Sending by: {{ \r\nwebform_token('[webform_submission:user]', webform_submission, [], options) }}</p>\r\n<p>Contenido:</p>\r\n{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}\r\n"
       excluded_elements: {  }
       ignore_access: 0
       exclude_empty: true
