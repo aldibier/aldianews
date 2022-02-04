@@ -2443,7 +2443,7 @@ __webpack_require__.r(__webpack_exports__);
     }
 
     function getSizeForm(form) {
-      var formSize = $(form)[0].width();
+      var formSize = $(form).width();
       return formSize;
     }
 

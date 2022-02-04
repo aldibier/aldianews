@@ -470,7 +470,7 @@ import { validateFormSponsorship, unitedStateFirst } from './modules/state_and_c
 		}
 
 		function getSizeForm(form) {
-			const formSize = $(form)[0].width();
+			const formSize = $(form).width();
 			return formSize;
 		}
 
