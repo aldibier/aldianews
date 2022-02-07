@@ -63,25 +63,12 @@ elements: |-
     '#type': textarea
     '#title': 'Short Bio / List of accomplishments'
     '#required': true
+  actions:
+    '#type': webform_actions
+    '#title': 'Submit button(s)'
+    '#submit__label': SUBMIT
   container:
     '#type': container
-    upload_file:
-      '#type': managed_file
-      '#title': 'Photo and Resumé of Nominee'
-      '#multiple': 3
-      '#description': 'Upload a maximum of two files on jpg, jpeg, png or pdf format no more than 2MB of weight for each.'
-      '#help_display': element_after
-      '#required': true
-      '#file_placeholder': 'Upload a maximum of two files on jpg, jpeg, png or pdf format no more than 2MB of weight for each.'
-      '#max_filesize': '2'
-      '#file_extensions': 'jpg jpeg png pdf'
-      '#sanitize': true
-      '#button': true
-      '#button__title': 'UPLOAD FILE'
-    actions:
-      '#type': webform_actions
-      '#title': 'Submit button(s)'
-      '#submit__label': SUBMIT
 css: ''
 javascript: ''
 settings:
