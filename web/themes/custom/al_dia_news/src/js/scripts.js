@@ -5,6 +5,7 @@ import initMain from "./main.js";
 import initSlick from "./slick.js";
 import replaceToken from "./modules/replaceToken";
 import { validateFormSponsorship, unitedStateFirst } from './modules/state_and_city';
+import { formApplyModified } from './modules/fixedCloseWebforms';
 
 (function ($, Drupal) {
 	// Selection share
@@ -308,6 +309,8 @@ import { validateFormSponsorship, unitedStateFirst } from './modules/state_and_c
 			$(".form-nominee-events")
 				.parents(".modal-apply-webform")
 				.addClass("open");
+				const form = document.querySelector('.webform-submission-nominate-form');
+				formApplyModified(form,'.close-modal');
 		});
 
 		$(".banner-events a#register-here").click(function () {
@@ -454,36 +457,15 @@ import { validateFormSponsorship, unitedStateFirst } from './modules/state_and_c
 			unitedStateFirst(form);
 		}
 
-		formApplyModified('.webform-submission-nominate-form', '.close-modal');
-
 		$(window).on('resize', function () {
-			formApplyModified('.webform-submission-nominate-form', '.close-modal');
+			const form = document.querySelector('.webform-submission-nominate-form');
+			formApplyModified(form,'.close-modal');
 		})
-
-		function formApplyModified(form, elementClass) {
-			if ($(form).length) {
-				const formWidth = getSizeForm(form);
-				const btn = $(form).find(elementClass).first();
-
-				if ($(btn).length) addSizeProperty(btn, formWidth);
-			}
-		}
-
-		function getSizeForm(form) {
-			const formSize = $(form).width();
-			return formSize;
-		}
-
-		function addSizeProperty(element, formWidth) {
-			$(element).get(0).style.setProperty("--form-size", `${formWidth}px`);
-		}
-
 	});
 
 	Drupal.behaviors.aldia_news_sumoselect = {
 		attach: function (context, settings) {
 			//// sumo select
-			console.log(context);
 			let isDialog = false;
 			const parentElementContext = context.parentElement;
 
