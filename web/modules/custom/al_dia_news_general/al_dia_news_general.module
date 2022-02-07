@@ -341,24 +341,23 @@ function al_dia_news_form_views_exposed_form_alter(&$form, &$form_state) {
     $form['tid']['#options']['All'] = 'ALL';
   };
   if($form["#id"] == 'views-exposed-form-search-results-al-dia-solr-page-1') {
-    $form['field_category']['#options']['All'] = 'Select';
+    $form['field_category']['#options']['All'] = t('Select');
     $form['field_type_of_content']['#options']['All'] = t('Select');
     $form['sort_bef_combine']['#options']['created_ASC'] = t('Oldest');
     $form['sort_bef_combine']['#options']['created_DESC'] = t('Newest');
     $form['sort_bef_combine']['#options']['search_api_relevance_DESC'] = t('Relevance');
 
-		//ksm($form);
 		$categories = $form['field_category']['#options'];
 
-		if(isset($categories)){
-			foreach ($categories as $index=>$item) {
-				$key = array_keys($item->option)[0];
-				$value = $item->option[$key];
+		// if(isset($categories)){
+		// 	foreach ($categories as $index=>$item) {
+		// 		$key = array_keys($item->option)[0];
+		// 		$value = $item->option[$key];
 
-				$txtReplace = str_replace("-", " ",$value);
-				$categories[$index]->option["$key"] = $txtReplace;
-			}
-		}
+		// 		$txtReplace = str_replace("-", " ",$value);
+		// 		$categories[$index]->option["$key"] = $txtReplace;
+		// 	}
+		// }
   };
 
   if($form["#id"] == 'views-exposed-form-more-covers-landing-page-1') {
