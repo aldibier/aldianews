@@ -342,10 +342,10 @@ function al_dia_news_form_views_exposed_form_alter(&$form, &$form_state) {
   };
   if($form["#id"] == 'views-exposed-form-search-results-al-dia-solr-page-1') {
     $form['field_category']['#options']['All'] = 'Select';
-    $form['field_type_of_content']['#options']['All'] = 'Select';
-    $form['sort_bef_combine']['#options']['created_ASC'] = 'Oldest';
-    $form['sort_bef_combine']['#options']['created_DESC'] = 'Newest';
-    $form['sort_bef_combine']['#options']['search_api_relevance_DESC'] = 'Relevance';
+    $form['field_type_of_content']['#options']['All'] = t('Select');
+    $form['sort_bef_combine']['#options']['created_ASC'] = t('Oldest');
+    $form['sort_bef_combine']['#options']['created_DESC'] = t('Newest');
+    $form['sort_bef_combine']['#options']['search_api_relevance_DESC'] = t('Relevance');
 
 		//ksm($form);
 		$categories = $form['field_category']['#options'];
