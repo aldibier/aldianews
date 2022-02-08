@@ -184,7 +184,7 @@ class LatestCategories extends BlockBase implements ContainerFactoryPluginInterf
 
     $res = views_get_view_result("high_impact_news_home", "block_1");
     //Defino variable para pasar argumentos en la línea 192
-
+    \Drupal::logger('al_dia_news_general')->notice("aquí");
     if($res) {
       foreach ($res as $re) {
         $nids[] = $re->nid;
@@ -206,7 +206,7 @@ class LatestCategories extends BlockBase implements ContainerFactoryPluginInterf
 
     \Drupal::cache()->set($cid, $nids);
 
-    $return['#cache'] = ["max-age" => 0];
+    // $return['#cache'] = ["max-age" => 60];
     return $return;
   }
 
