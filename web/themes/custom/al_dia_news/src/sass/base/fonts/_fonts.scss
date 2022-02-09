@@ -8,6 +8,19 @@ $fonts: "../fonts/";
   font-display: fallback;
 }
 
+//---- century-old-style-std-bold ----//
+@font-face {
+  font-family: 'century-old-style-std-bold';
+  src: url('#{$fonts}/century-old-style-std-bold/CenturyOldStyleStd-Bold.eot');
+  src: url('#{$fonts}/century-old-style-std-bold/CenturyOldStyleStd-Bold.eot?#iefix') format('embedded-opentype'),
+       url('#{$fonts}/century-old-style-std-bold/CenturyOldStyleStd-Bold.svg#CenturyOldStyleStd-Bold') format('svg'),
+       url('#{$fonts}/century-old-style-std-bold/CenturyOldStyleStd-Bold.ttf') format('truetype'),
+       url('#{$fonts}/century-old-style-std-bold/CenturyOldStyleStd-Bold.woff') format('woff'),
+       url('#{$fonts}/century-old-style-std-bold/CenturyOldStyleStd-Bold.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
 //---- ModernoFB Regular ----//
 @font-face {
   font-family: "ModernoFB-Regular";
