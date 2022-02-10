@@ -3,7 +3,7 @@
 namespace Drupal\content_authors;
 
 use Drupal\Core\StringTranslation\StringTranslationTrait;
-use Drupal\content_authors\Entity\Authors;
+use Drupal\content_authors\Entity\AuthorsType;
 
 
 /**
@@ -26,7 +26,7 @@ class AuthorsPermissions{
   public function generatePermissions() {
     $perms = [];
 
-    foreach (Authors::loadMultiple() as $type) {
+    foreach (AuthorsType::loadMultiple() as $type) {
       $perms += $this->buildPermissions($type);
     }
 
