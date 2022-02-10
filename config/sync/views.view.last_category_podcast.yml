@@ -1343,7 +1343,8 @@ display:
     position: 1
     display_options:
       display_extenders:
-        ajax_history: {  }
+        ajax_history:
+          enable_history: false
       path: podcast
       fields:
         view_3:
@@ -1871,6 +1872,7 @@ display:
         header: false
         filters: false
         filter_groups: false
+        use_ajax: false
       sorts:
         created:
           id: created
@@ -1962,6 +1964,7 @@ display:
         operator: AND
         groups:
           1: AND
+      use_ajax: true
     cache_metadata:
       max-age: -1
       contexts:
