@@ -1,0 +1,34 @@
+uuid: ce1883da-4e45-4c85-b281-ba283f9f8cc0
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.last_category_podcast
+  module:
+    - mobile_detect
+    - system
+    - views
+  theme:
+    - al_dia_news
+id: views_block__last_category_podcast_block_4
+theme: al_dia_news
+region: content
+weight: -61
+provider: null
+plugin: 'views_block:last_category_podcast-block_4'
+settings:
+  id: 'views_block:last_category_podcast-block_4'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  mobile_detect_device_type:
+    id: mobile_detect_device_type
+    devices: {  }
+    negate: null
+  request_path:
+    id: request_path
+    pages: /podcast-good
+    negate: false
