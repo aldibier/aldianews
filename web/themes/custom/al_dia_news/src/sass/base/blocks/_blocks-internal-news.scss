@@ -50,7 +50,14 @@
 
 .node--type-news .block-field-blocknodenewsbody strong {
   font-family: $CenturyOld-Bold !important;
+  font-size: szrem(19);
   font-weight: bold;
+
+  @media screen and (max-width: $tablet) {
+    font-size: szrem(15);
+    line-height: 140%;
+  }
+
 }
 
 .node--type-news,
