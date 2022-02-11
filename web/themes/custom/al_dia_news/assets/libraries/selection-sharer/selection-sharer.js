@@ -209,7 +209,7 @@
           self.$popover
             .removeClass('anim')
             .css('top', top + 10)
-            .css('left', left)
+            .css('left', Math.abs(left))
             .show();
           setTimeout(function() {
             self.$popover.addClass('anim').css('top', top);

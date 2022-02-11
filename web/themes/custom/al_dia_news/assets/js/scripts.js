@@ -334,7 +334,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - type
               return;
           }
 
-          self.$popover.removeClass('anim').css('top', top + 10).css('left', left).show();
+          self.$popover.removeClass('anim').css('top', top + 10).css('left', Math.abs(left)).show();
           setTimeout(function () {
             self.$popover.addClass('anim').css('top', top);
           }, 0);
