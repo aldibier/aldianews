@@ -9,6 +9,7 @@ source:
   plugin: urls_redirect
   constants:
     prefix: node
+  key: migrate
 
 process:
 
@@ -27,6 +28,8 @@ process:
     -
       plugin: skip_on_empty
       method: row
+    -
+      plugin: transform_nid
 
   _redirect:
     plugin: concat
