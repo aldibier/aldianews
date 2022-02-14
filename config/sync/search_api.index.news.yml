@@ -7,8 +7,12 @@ dependencies:
     - node
     - search_api
   config:
+    - field.storage.node.field_author
+    - field.storage.node.body
+    - field.storage.node.field_caption
     - field.storage.node.field_category
     - field.storage.node.field_image
+    - field.storage.node.field_short_description
     - field.storage.node.field_new_short_title
     - field.storage.node.field_short_title
     - field.storage.node.field_type_of_content
@@ -69,6 +73,14 @@ field_settings:
         - 'entity:node/body'
         - 'entity:node/field_short_title'
         - 'entity:node/title'
+  body:
+    label: Body
+    datasource_id: 'entity:node'
+    property_path: body
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.body
   created:
     label: 'Authored on'
     datasource_id: 'entity:node'
@@ -85,6 +97,22 @@ field_settings:
     dependencies:
       module:
         - node
+  field_author:
+    label: Author
+    datasource_id: 'entity:node'
+    property_path: field_author
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_author
+  field_caption:
+    label: Caption
+    datasource_id: 'entity:node'
+    property_path: field_caption
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_caption
   field_category:
     label: Category
     datasource_id: 'entity:node'
@@ -109,6 +137,14 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_new_short_title
+  field_short_description:
+    label: 'Short Description'
+    datasource_id: 'entity:node'
+    property_path: field_short_description
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_short_description
   field_short_title:
     label: 'Short title'
     datasource_id: 'entity:node'
