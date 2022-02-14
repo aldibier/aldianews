@@ -172,6 +172,14 @@ field_settings:
         - field.storage.node.field_author
       module:
         - content_authors
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: text
+    dependencies:
+      module:
+        - node
   type:
     label: 'Content type'
     datasource_id: 'entity:node'
