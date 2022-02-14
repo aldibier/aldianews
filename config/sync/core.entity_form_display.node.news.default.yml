@@ -224,7 +224,7 @@ content:
     type: entity_reference_autocomplete_tags
     region: content
   field_test:
-    weight: 21
+    weight: 22
     settings: {  }
     third_party_settings: {  }
     type: comment_default
@@ -241,6 +241,13 @@ content:
     third_party_settings: {  }
     type: video_embed_field_textfield
     region: content
+  langcode:
+    type: language_select
+    weight: 26
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
   path:
     type: path
     weight: 16
@@ -263,12 +270,12 @@ content:
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 30
+    weight: 25
     region: content
     settings: {  }
     third_party_settings: {  }
   scheduler_settings:
-    weight: 20
+    weight: 21
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -314,16 +321,15 @@ content:
     third_party_settings: {  }
   unpublish_on:
     type: datetime_timestamp_no_default
-    weight: 30
+    weight: 24
     region: content
     settings: {  }
     third_party_settings: {  }
   url_redirects:
-    weight: 22
+    weight: 23
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
   field_internal_image: true
   field_short_title: true
-  langcode: true
