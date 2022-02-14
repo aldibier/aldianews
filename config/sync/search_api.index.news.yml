@@ -5,6 +5,7 @@ dependencies:
   module:
     - search_api_solr
     - node
+    - content_authors
     - search_api
   config:
     - field.storage.node.field_author
@@ -97,14 +98,6 @@ field_settings:
     dependencies:
       module:
         - node
-  field_author:
-    label: Author
-    datasource_id: 'entity:node'
-    property_path: field_author
-    type: text
-    dependencies:
-      config:
-        - field.storage.node.field_author
   field_caption:
     label: Caption
     datasource_id: 'entity:node'
@@ -169,6 +162,16 @@ field_settings:
     dependencies:
       module:
         - node
+  name:
+    label: 'Author » Authors » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_author:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_author
+      module:
+        - content_authors
   type:
     label: 'Content type'
     datasource_id: 'entity:node'
