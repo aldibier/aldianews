@@ -1,0 +1,23 @@
+uuid: 45c520b4-f0fe-4877-af50-fe2e6535e522
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_enable_nominate_button
+    - node.type.event
+id: node.event.field_enable_nominate_button
+field_name: field_enable_nominate_button
+entity_type: node
+bundle: event
+label: 'Enable nominate button'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

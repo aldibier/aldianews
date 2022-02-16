@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.event.field_contact_block
     - field.field.node.event.field_date_of_event
     - field.field.node.event.field_email
+    - field.field.node.event.field_enable_nominate_button
     - field.field.node.event.field_guest_block
     - field.field.node.event.field_image
     - field.field.node.event.field_images_of_the_event
@@ -143,6 +144,7 @@ content:
     region: content
 hidden:
   addtoany: true
+  field_enable_nominate_button: true
   field_landing_image: true
   field_ticketlap_link: true
   langcode: true
