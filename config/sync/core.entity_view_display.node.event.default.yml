@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.event.field_contact_block
     - field.field.node.event.field_date_of_event
     - field.field.node.event.field_email
+    - field.field.node.event.field_enable_nominate_button
     - field.field.node.event.field_guest_block
     - field.field.node.event.field_image
     - field.field.node.event.field_images_of_the_event
@@ -500,6 +501,24 @@ third_party_settings:
                 type: link
             additional: {  }
             weight: 8
+          dd0f73da-435d-445c-8604-f940dcf37388:
+            uuid: dd0f73da-435d-445c-8604-f940dcf37388
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:event:field_enable_nominate_button'
+              formatter:
+                label: above
+                settings:
+                  format: default
+                  format_custom_false: ''
+                  format_custom_true: ''
+                third_party_settings: {  }
+                type: boolean
+            additional: {  }
+            weight: 9
         third_party_settings: {  }
 id: node.event.default
 targetEntityType: node
@@ -537,6 +556,16 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: basic_string
+    region: content
+  field_enable_nominate_button:
+    weight: 117
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
     region: content
   field_guest_block:
     type: entity_reference_revisions_entity_view

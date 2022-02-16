@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.event.field_contact_block
     - field.field.node.event.field_date_of_event
     - field.field.node.event.field_email
+    - field.field.node.event.field_enable_nominate_button
     - field.field.node.event.field_guest_block
     - field.field.node.event.field_image
     - field.field.node.event.field_images_of_the_event
@@ -79,6 +80,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: email_default
+    region: content
+  field_enable_nominate_button:
+    weight: 32
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
     region: content
   field_guest_block:
     type: paragraphs
