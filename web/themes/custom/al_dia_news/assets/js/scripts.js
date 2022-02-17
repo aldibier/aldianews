@@ -2413,6 +2413,7 @@ __webpack_require__.r(__webpack_exports__);
 
     $(".block-search input").click(function () {
       $("#block-exposedformsearch-results-al-dia-solrpage-1-2").addClass("open");
+      $("#block-exposedformsearch-results-al-dia-solrpage-1-2 .form-item-token input").focus();
       $(".layout-main-wrapper.layout-container").addClass("color-mod");
     }); //modal subscribe
 

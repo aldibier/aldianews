@@ -377,6 +377,7 @@ import { formApplyModified } from './modules/fixedCloseWebforms';
 			$("#block-exposedformsearch-results-al-dia-solrpage-1-2").addClass(
 				"open"
 			);
+			$("#block-exposedformsearch-results-al-dia-solrpage-1-2 .form-item-token input").focus();
 			$(".layout-main-wrapper.layout-container").addClass("color-mod");
 		});
 
