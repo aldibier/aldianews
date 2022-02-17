@@ -393,25 +393,6 @@ body.open-menu {
       display: flex;
       flex-wrap: wrap;
 
-      @supports not (gap: 25px) {
-        &:not(:last-child){
-          margin-right: 25px;
-        }
-
-        @media (max-width: $desktop) {
-          &:not(:last-child){
-            margin-right: 15px;
-          }
-        }
-
-        @media (max-width: $tablet) {
-          &:not(:last-child){
-            margin-right: 0;
-          }
-        }
-
-      }
-
       a {
         color: $cblack0;
       }
@@ -584,6 +565,30 @@ body.open-menu {
       .menu {
         margin: 0 auto;
         max-width: 250px;
+      }
+    }
+  }
+}
+
+/* Support to safari old version */
+.safari13 .region-secondary-menu,
+.safari12 .region-secondary-menu,
+.safari11 .region-secondary-menu,
+.safari10 .region-secondary-menu{
+  .menu .menu-item {
+    &:not(:last-child){
+      margin-right: 25px;
+    }
+
+    @media (max-width: $desktop) {
+      &:not(:last-child){
+        margin-right: 15px;
+      }
+    }
+
+    @media (max-width: $tablet) {
+      &:not(:last-child){
+        margin-right: 0;
       }
     }
   }
