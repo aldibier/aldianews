@@ -1,19 +1,19 @@
-function formApplyModified(form, elementClass) {
-    if (!!form) {
-        const formWidth = getSizeForm(form);
-        const btn = form.querySelector(elementClass);
+function formApplyModified(element, elementClass) {
+    if (!!element) {
+        const elementWidth = getSizeForm(element);
+        const btn = element.querySelector(elementClass);
 
-        if (!!btn) addSizeProperty(btn, formWidth);
+        if (!!btn) addSizeProperty(btn, elementWidth);
     }
 }
 
-function getSizeForm(form) {
-    const formSize = form.offsetWidth;
-    return formSize;
+function getSizeForm(element) {
+    const elementSize = element.offsetWidth;
+    return elementSize;
 }
 
-function addSizeProperty(element, formWidth) {
-    element.style.setProperty("--form-size", `${formWidth}px`);
+function addSizeProperty(element, elementWidth) {
+    element.style.setProperty("--form-size", `${elementWidth}px`);
 }
 
 export { formApplyModified }

@@ -220,6 +220,19 @@ button[name="close"],
   }
 }
 
+//-------------form event sponsorship ------------//
+.page-node-type-event .form-sponsorship-events {
+  .form-item-markup {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+
+    .views-label {
+      background-color: $cwhite;
+    }
+  }
+}
+
 //-------------form register event ------------//
 .page-node-type-event .form-register-events {
   .close-modal {
@@ -252,11 +265,16 @@ button[name="close"],
 //-------------form sponsorship event ------------//
 .page-node-type-event .form-sponsorship-events {
   .close-modal {
-    top: 0;
-    right: 15px;
+    position: fixed;
+    z-index: 99999;
+    top: initial;
+    right: initial;
+    left: initial;
+    margin-left: var(--form-size);
+    transform: translateX(-100%);
 
     @media (max-width: $tablet) {
-      right: 0;
+      //right: 0;
     }
   }
 
