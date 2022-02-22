@@ -1,0 +1,18 @@
+display:
+  block_1:
+    display_options:
+      footer:
+        area:
+          content:
+            value: "<div class=\"text-and-buttons-event section-flex\"><span>Haga clic aquí para inscribirse, nominar o patrocinar </span>{{ view }} {{ field_ticketlap_link }} <a class=\"buttton-link\" href=\"#\" id=\"sponsorship\" role=\"button\">PATROCINIO</a></div>\r\n"
+            format: full_html
+      fields:
+        field_ticketlap_link:
+          alter:
+            text: '<a class="buttton-link"  href="{{ field_ticketlap_link__uri }}"  role="button" target="_blank" >REGÍSTRESE AQUÍ</a>'
+  block_4:
+    display_options:
+      fields:
+        nothing:
+          alter:
+            text: " <a class=\"buttton-link\" id=\"nominee\" href=\"#\" role=\"button\">NOMINAR</a>\r\n"
