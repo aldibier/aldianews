@@ -1,15 +1,9 @@
 label: Contenido
-description: 'Find and manage content.'
 display:
   default:
     display_options:
       exposed_form:
-        options:
-          submit_button: Filter
-          reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
-          sort_asc_label: Asc
-          sort_desc_label: Desc
+        options: {  }
       pager:
         options:
           tags:
@@ -20,44 +14,37 @@ display:
       fields:
         title:
           label: Título
-        type:
-          label: 'Content type'
-          separator: ', '
+        type: {  }
         name:
-          label: Autor
+          label: ' Publicado por'
         status:
-          label: Status
           settings:
             format_custom_true: Publicado
             format_custom_false: 'Sin publicar'
         changed:
           label: Actualizado
-        operations:
-          label: Operations
+        operations: {  }
+        field_author:
+          label: Autor
       filters:
         title:
           expose:
             label: Título
         type:
-          expose:
-            label: 'Content type'
+          expose: {  }
         status:
-          expose:
-            label: Status
+          expose: {  }
           group_info:
-            label: 'Published status'
             group_items:
               1:
                 title: Publicado
               2:
                 title: 'Sin publicar'
         langcode:
-          expose:
-            label: Language
+          expose: {  }
       title: Contenido
       empty:
-        area_text_custom:
-          content: 'No content available.'
+        area_text_custom: {  }
     display_title: Default
   page_1:
     display_options:
@@ -65,5 +52,4 @@ display:
         title: Contenido
       tab_options:
         title: Contenido
-        description: 'Find and manage content'
     display_title: Página
