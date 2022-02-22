@@ -348,21 +348,11 @@ body.open-menu {
 
     .menu {
       align-items: center;
-      gap: 25px;
       flex-wrap: wrap;
       margin: 35px 0;
 
       &::after {
         content: none;
-      }
-
-      @media (max-width: $desktop) {
-        gap: 15px;
-      }
-
-      @media (max-width: $tablet) {
-        gap: 0;
-        margin: 0;
       }
     }
 
@@ -391,7 +381,13 @@ body.open-menu {
       flex: 0 1 auto;
       margin: 0;
       display: flex;
+      align-items: center;
       flex-wrap: wrap;
+      min-height: 25px;
+
+      &:not(:last-child){
+        margin-right: 25px;
+      }
 
       a {
         color: $cblack0;
@@ -407,11 +403,20 @@ body.open-menu {
         align-items: center;
         flex: 0 1 100px;
         min-height: 38px;
+
+        &:not(:last-child){
+          margin-right: 15px;
+        }
+
       }
 
       @media (max-width: $tablet) {
         flex: initial;
         min-height: 20px;
+
+        &:not(:last-child){
+          margin-right: 0;
+        }
       }
     }
   }
