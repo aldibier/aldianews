@@ -998,6 +998,36 @@ div.popup-login.ui-widget.ui-corner-all:not(button) {
   }
 }
 
+//Sticky title forms
+.ui-widget.account-modal--login.ui-corner-all:not(button),
+.ui-widget.account-modal--register.ui-corner-all:not(button){
+  .ui-dialog-titlebar{
+    position: sticky;
+    z-index: 9999;
+    top: 0;
+    background-color: transparent;
+  }
+
+  .ui-dialog-title {
+    background-color: $cwhite;
+  }
+
+  .ui-dialog-titlebar::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    background-color: $cwhite;
+  }
+}
+
+.ui-widget.account-modal--login.ui-corner-all:not(button),
+.ui-widget.account-modal--register.ui-corner-all:not(button){
+  .ui-dialog-titlebar::before {
+    height: 47px;
+    top: calc(0% - 47px);
+  }
+}
+
 @media (max-width: 48em) {
   .ui-dialog:not(.ui-dialog-off-canvas) {
     min-width: auto !important;

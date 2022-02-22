@@ -323,6 +323,8 @@ import { formApplyModified } from './modules/fixedCloseWebforms';
 			$(".form-sponsorship-events")
 				.parents(".modal-apply-webform")
 				.addClass("open");
+				const formSponsorshipEvent = document.querySelector('.webform-submission-sponsorship-upcoming-event-form');
+				formApplyModified(formSponsorshipEvent,'.close-modal');
 		});
 
 		$('.modal-apply-webform  button[name="close"]').click(function () {
@@ -458,9 +460,21 @@ import { formApplyModified } from './modules/fixedCloseWebforms';
 			unitedStateFirst(form);
 		}
 
+		const formSponsorshipEvent = document.querySelector('.webform-submission-sponsorship-upcoming-event-form');
+		formApplyModified(formSponsorshipEvent,'.close-modal');
+		
 		$(window).on('resize', function () {
-			const form = document.querySelector('.webform-submission-nominate-form');
-			formApplyModified(form,'.close-modal');
+			const formNominate = document.querySelector('.webform-submission-nominate-form');
+			const formSponsorshipEvent = document.querySelector('.webform-submission-sponsorship-upcoming-event-form');
+
+			if(!!formNominate){
+				formApplyModified(formNominate,'.close-modal');
+			}
+
+			if(!!formSponsorshipEvent){
+				formApplyModified(formSponsorshipEvent,'.close-modal');
+			}
+	
 		})
 	});
 
@@ -735,5 +749,14 @@ import { formApplyModified } from './modules/fixedCloseWebforms';
 			}
 		}
 	};
+
+	Drupal.behaviors.aldia_logo = {
+		attach: function (context, settings) {
+			const formLogin = document.querySelector('.account-modal--login');
+			if(!!formLogin){
+				formApplyModified(formLogin,'.ui-dialog-titlebar-close');
+			}
+		}
+	}
 
 })(jQuery, Drupal);

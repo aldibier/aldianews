@@ -1969,21 +1969,21 @@ var initMain = function initMain($, Drupal) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "formApplyModified", function() { return formApplyModified; });
-function formApplyModified(form, elementClass) {
-  if (!!form) {
-    var formWidth = getSizeForm(form);
-    var btn = form.querySelector(elementClass);
-    if (!!btn) addSizeProperty(btn, formWidth);
+function formApplyModified(element, elementClass) {
+  if (!!element) {
+    var elementWidth = getSizeForm(element);
+    var btn = element.querySelector(elementClass);
+    if (!!btn) addSizeProperty(btn, elementWidth);
   }
 }
 
-function getSizeForm(form) {
-  var formSize = form.offsetWidth;
-  return formSize;
+function getSizeForm(element) {
+  var elementSize = element.offsetWidth;
+  return elementSize;
 }
 
-function addSizeProperty(element, formWidth) {
-  element.style.setProperty("--form-size", "".concat(formWidth, "px"));
+function addSizeProperty(element, elementWidth) {
+  element.style.setProperty("--form-size", "".concat(elementWidth, "px"));
 }
 
 
@@ -2389,6 +2389,8 @@ __webpack_require__.r(__webpack_exports__);
     });
     $(".banner-events a#sponsorship").click(function () {
       $(".form-sponsorship-events").parents(".modal-apply-webform").addClass("open");
+      var formSponsorshipEvent = document.querySelector('.webform-submission-sponsorship-upcoming-event-form');
+      Object(_modules_fixedCloseWebforms__WEBPACK_IMPORTED_MODULE_7__["formApplyModified"])(formSponsorshipEvent, '.close-modal');
     });
     $('.modal-apply-webform  button[name="close"]').click(function () {
       if ($(".modal-open .modal-apply-webform").hasClass("open")) {
@@ -2465,9 +2467,19 @@ __webpack_require__.r(__webpack_exports__);
       Object(_modules_state_and_city__WEBPACK_IMPORTED_MODULE_6__["unitedStateFirst"])(_form);
     }
 
+    var formSponsorshipEvent = document.querySelector('.webform-submission-sponsorship-upcoming-event-form');
+    Object(_modules_fixedCloseWebforms__WEBPACK_IMPORTED_MODULE_7__["formApplyModified"])(formSponsorshipEvent, '.close-modal');
     $(window).on('resize', function () {
-      var form = document.querySelector('.webform-submission-nominate-form');
-      Object(_modules_fixedCloseWebforms__WEBPACK_IMPORTED_MODULE_7__["formApplyModified"])(form, '.close-modal');
+      var formNominate = document.querySelector('.webform-submission-nominate-form');
+      var formSponsorshipEvent = document.querySelector('.webform-submission-sponsorship-upcoming-event-form');
+
+      if (!!formNominate) {
+        Object(_modules_fixedCloseWebforms__WEBPACK_IMPORTED_MODULE_7__["formApplyModified"])(formNominate, '.close-modal');
+      }
+
+      if (!!formSponsorshipEvent) {
+        Object(_modules_fixedCloseWebforms__WEBPACK_IMPORTED_MODULE_7__["formApplyModified"])(formSponsorshipEvent, '.close-modal');
+      }
     });
   });
   Drupal.behaviors.aldia_news_sumoselect = {
@@ -2680,6 +2692,15 @@ __webpack_require__.r(__webpack_exports__);
         var _sharer = new _assets_libraries_selection_sharer_selection_sharer_js__WEBPACK_IMPORTED_MODULE_1___default.a();
 
         _sharer.setElements("p,h1,h2,h3,blockquote,em,strong,a:not(.selectionSharer a)");
+      }
+    }
+  };
+  Drupal.behaviors.aldia_logo = {
+    attach: function attach(context, settings) {
+      var formLogin = document.querySelector('.account-modal--login');
+
+      if (!!formLogin) {
+        Object(_modules_fixedCloseWebforms__WEBPACK_IMPORTED_MODULE_7__["formApplyModified"])(formLogin, '.ui-dialog-titlebar-close');
       }
     }
   };
