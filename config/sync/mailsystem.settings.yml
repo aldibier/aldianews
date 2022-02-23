@@ -5,19 +5,7 @@ defaults:
 _core:
   default_config_hash: IhwTepsVwtbtbcT5GzQKhCXDCRvbk3MNkWqPiuiZ10s
 modules:
-  smtp:
-    none:
-      formatter: php_mail
-      sender: php_mail
-  webform:
-    none:
-      formatter: mime_mail
-      sender: php_mail
-  user_registrationpassword:
-    none:
-      formatter: mime_mail
-      sender: mime_mail
-  user:
-    none:
-      formatter: mime_mail
-      sender: mime_mail
+  smtp: {  }
+  webform: {  }
+  user_registrationpassword: {  }
+  user: {  }
