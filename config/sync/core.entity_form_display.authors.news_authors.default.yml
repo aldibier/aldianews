@@ -5,9 +5,10 @@ dependencies:
   config:
     - content_authors.authors_type.news_authors
     - field.field.authors.news_authors.field_authors_photo
+    - field.field.authors.news_authors.field_job_title_or_prof_all_news
     - image.style.thumbnail
   module:
-    - image
+    - svg_image
 id: authors.news_authors.default
 targetEntityType: authors
 bundle: news_authors
@@ -20,6 +21,14 @@ content:
       preview_image_style: thumbnail
     third_party_settings: {  }
     type: image_image
+    region: content
+  field_job_title_or_prof_all_news:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
     region: content
   langcode:
     type: language_select
@@ -35,6 +44,11 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 4
+    region: content
+    settings: {  }
     third_party_settings: {  }
 hidden:
   user_id: true
