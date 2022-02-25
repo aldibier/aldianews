@@ -999,11 +999,90 @@ div.popup-login.ui-widget.ui-corner-all:not(button) {
 }
 
 //Sticky title forms
+.path-about-al-dia-live-al-dia-live .form-sponsorship-events,
+.path-acerca-de-al-dia-live-al-dia-live .form-sponsorship-events {
+  .form-general,
+  form {
+    overflow: initial !important;
+  }
+
+  .close-modal {
+    position: fixed;
+    z-index: 10;
+    top: initial;
+    left: initial;
+    right: inherit;
+    margin-left: calc(0% + var(--form-size));
+    transform: translateX(-100%);
+  }
+
+  .form-item-markup {
+    position: sticky;
+    top: 60px;
+    z-index: 1;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: calc(0% - 60px);
+      width: 100%;
+      height: 60px;
+      background-color: $cwhite;
+    }
+
+    .views-label {
+      background-color: $cwhite;
+    }
+
+  }
+
+}
+
+.registerhere-popup-event-landing {
+  .ui-dialog-content,
+  .form-register-events,
+  .form-general,
+  form {
+    overflow: initial !important;
+  }
+
+  .close-modal {
+    position: fixed;
+    z-index: 10;
+    top: initial !important;
+    right: initial !important;
+    left: initial;
+    margin-left: calc(0% + var(--form-size));
+    transform: translateX(-100%);
+  }
+
+  .form-item-markup {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: calc(0% - 60px);
+      width: 100%;
+      height: 60px;
+      background-color: $cwhite;
+    }
+
+    .views-label {
+      background-color: $cwhite;
+    }
+
+  }
+
+}
+
 .ui-widget.account-modal--login.ui-corner-all:not(button),
 .ui-widget.account-modal--register.ui-corner-all:not(button){
   .ui-dialog-titlebar{
     position: sticky;
-    z-index: 9999;
+    z-index: 1;
     top: 0;
     background-color: transparent;
   }

@@ -2472,6 +2472,7 @@ __webpack_require__.r(__webpack_exports__);
     $(window).on('resize', function () {
       var formNominate = document.querySelector('.webform-submission-nominate-form');
       var formSponsorshipEvent = document.querySelector('.webform-submission-sponsorship-upcoming-event-form');
+      var formRegisterEvent = document.querySelector('.registerhere-popup-event-landing .webform-submission-register-form');
 
       if (!!formNominate) {
         Object(_modules_fixedCloseWebforms__WEBPACK_IMPORTED_MODULE_7__["formApplyModified"])(formNominate, '.close-modal');
@@ -2479,6 +2480,12 @@ __webpack_require__.r(__webpack_exports__);
 
       if (!!formSponsorshipEvent) {
         Object(_modules_fixedCloseWebforms__WEBPACK_IMPORTED_MODULE_7__["formApplyModified"])(formSponsorshipEvent, '.close-modal');
+      }
+
+      if (!!formRegisterEvent) {
+        setTimeout(function () {
+          Object(_modules_fixedCloseWebforms__WEBPACK_IMPORTED_MODULE_7__["formApplyModified"])(formRegisterEvent, '.close-modal');
+        }, 0);
       }
     });
   });
@@ -2695,13 +2702,25 @@ __webpack_require__.r(__webpack_exports__);
       }
     }
   };
-  Drupal.behaviors.aldia_logo = {
+  Drupal.behaviors.titleFixed = {
     attach: function attach(context, settings) {
-      var formLogin = document.querySelector('.account-modal--login');
+      setTimeout(function () {
+        var formLogin = document.querySelector('.account-modal--login');
+        var formSponsorshipEvent = context.querySelector('.webform-submission-sponsorship-upcoming-event-form');
+        var formRegisterEvent = document.querySelector('.registerhere-popup-event-landing .webform-submission-register-form');
 
-      if (!!formLogin) {
-        Object(_modules_fixedCloseWebforms__WEBPACK_IMPORTED_MODULE_7__["formApplyModified"])(formLogin, '.ui-dialog-titlebar-close');
-      }
+        if (!!formLogin) {
+          Object(_modules_fixedCloseWebforms__WEBPACK_IMPORTED_MODULE_7__["formApplyModified"])(formLogin, '.ui-dialog-titlebar-close');
+        }
+
+        if (!!formSponsorshipEvent) {
+          Object(_modules_fixedCloseWebforms__WEBPACK_IMPORTED_MODULE_7__["formApplyModified"])(formSponsorshipEvent, '.close-modal');
+        }
+
+        if (!!formRegisterEvent) {
+          Object(_modules_fixedCloseWebforms__WEBPACK_IMPORTED_MODULE_7__["formApplyModified"])(formRegisterEvent, '.close-modal');
+        }
+      }, 100);
     }
   };
 })(jQuery, Drupal);
