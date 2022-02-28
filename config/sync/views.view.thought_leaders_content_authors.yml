@@ -3,15 +3,9 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.authors.field_authors_photo
-    - field.storage.authors.field_job_title_or_prof_all_news
-    - field.storage.authors.field_job_title_or_profession_co
-    - image.style.medium
     - node.type.thought_leaders
   module:
-    - content_authors
     - node
-    - svg_image
     - user
 id: thought_leaders_content_authors
 label: 'Thought leaders content authors'
@@ -62,71 +56,6 @@ display:
       row:
         type: fields
       fields:
-        name:
-          id: name
-          table: authors_field_data
-          field: name
-          relationship: field_author_thought_leaders
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          entity_type: authors
-          entity_field: name
-          plugin_id: field
         created:
           id: created
           table: node_field_data
@@ -193,196 +122,6 @@ display:
           field_api_classes: false
           entity_type: node
           entity_field: created
-          plugin_id: field
-        field_authors_photo:
-          id: field_authors_photo
-          table: authors__field_authors_photo
-          field: field_authors_photo
-          relationship: field_author_thought_leaders
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: image
-          settings:
-            image_style: medium
-            image_link: ''
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
-        field_job_title_or_profession_co:
-          id: field_job_title_or_profession_co
-          table: authors__field_job_title_or_profession_co
-          field: field_job_title_or_profession_co
-          relationship: field_author_thought_leaders
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
-        field_job_title_or_prof_all_news:
-          id: field_job_title_or_prof_all_news
-          table: authors__field_job_title_or_prof_all_news
-          field: field_job_title_or_prof_all_news
-          relationship: field_author_thought_leaders
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
           plugin_id: field
         nothing:
           id: nothing
@@ -459,48 +198,6 @@ display:
           expose:
             operator_limit_selection: false
             operator_list: {  }
-        langcode:
-          id: langcode
-          table: authors_field_data
-          field: langcode
-          relationship: field_author_thought_leaders
-          group_type: group
-          admin_label: ''
-          operator: in
-          value:
-            '***LANGUAGE_language_interface***': '***LANGUAGE_language_interface***'
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          entity_type: authors
-          entity_field: langcode
-          plugin_id: language
         langcode_1:
           id: langcode_1
           table: node_field_data
@@ -563,16 +260,7 @@ display:
       header: {  }
       footer: {  }
       empty: {  }
-      relationships:
-        field_author_thought_leaders:
-          id: field_author_thought_leaders
-          table: node__field_author_thought_leaders
-          field: field_author_thought_leaders
-          relationship: none
-          group_type: group
-          admin_label: 'field_author_thought_leaders: Authors'
-          required: false
-          plugin_id: standard
+      relationships: {  }
       arguments:
         nid:
           id: nid
@@ -619,10 +307,7 @@ display:
         - url
         - 'user.node_grants:view'
         - user.permissions
-      tags:
-        - 'config:field.storage.authors.field_authors_photo'
-        - 'config:field.storage.authors.field_job_title_or_prof_all_news'
-        - 'config:field.storage.authors.field_job_title_or_profession_co'
+      tags: {  }
   block_1:
     display_plugin: block
     id: block_1
@@ -638,7 +323,4 @@ display:
         - url
         - 'user.node_grants:view'
         - user.permissions
-      tags:
-        - 'config:field.storage.authors.field_authors_photo'
-        - 'config:field.storage.authors.field_job_title_or_prof_all_news'
-        - 'config:field.storage.authors.field_job_title_or_profession_co'
+      tags: {  }
