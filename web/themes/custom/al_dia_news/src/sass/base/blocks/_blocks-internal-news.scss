@@ -42,7 +42,7 @@
   }
 }
 
-.node--type-news .block-field-blocknodenewsbody p,
+.node--type-news .block-field-blocknodenewsbody p:not(.caption,.question),
 .node--type-news .block-field-blocknodenewsbody li,
 .node--type-news .block-field-blocknodenewsbody blockquote {
   font-family: $CenturyOld-Regular !important;
@@ -608,7 +608,7 @@ blockquote {
     font-weight: 700;
     line-height: 36px;
     font-style: normal;
-    font-size: $px26;
+    //font-size: $px26;
     letter-spacing: initial;
     text-transform: uppercase;
     text-align: left;
