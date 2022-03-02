@@ -4,13 +4,12 @@ status: true
 dependencies:
   config:
     - field.storage.authors.field_authors_photo
-    - field.storage.authors.field_job_title_or_profession_co
-    - image.style.photo_autor
+    - field.storage.authors.field_job_title_or_prof_all_news
     - node.type.thought_leaders
   module:
     - content_authors
-    - image
     - node
+    - svg_image
     - user
     - views_block_area
     - views_infinite_scroll
@@ -133,10 +132,10 @@ display:
           entity_type: authors
           entity_field: name
           plugin_id: field
-        field_job_title_or_profession_co:
-          id: field_job_title_or_profession_co
-          table: authors__field_job_title_or_profession_co
-          field: field_job_title_or_profession_co
+        field_job_title_or_prof_all_news:
+          id: field_job_title_or_prof_all_news
+          table: authors__field_job_title_or_prof_all_news
+          field: field_job_title_or_prof_all_news
           relationship: field_author_thought_leaders
           group_type: group
           admin_label: ''
@@ -249,6 +248,10 @@ display:
           settings:
             image_style: ''
             image_link: ''
+            svg_render_as_image: true
+            svg_attributes:
+              width: null
+              height: null
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -403,7 +406,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"more-content-landing\">\r\n  <div class=\"author-information-more-content\">\r\n     <div class=\"photo-author-landing-more\">{{ field_authors_photo }}</div>\r\n     <div class=\"name-author-landing-more\"> {{ name }}</div>\r\n     <div class=\"job-author-landing-more\">{{ field_job_title_or_profession_co }}</div>\r\n  </div>\r\n  <div class=\"information-node-more-content\">\r\n    <div class=\"title-node-landing\">\"{{ title_1 }}\"</div>\r\n    <div class=\"authored-on-landing\">{{ created }}</div>\r\n  </div>\r\n</div>"
+            text: "<div class=\"more-content-landing\">\r\n  <div class=\"author-information-more-content\">\r\n     <div class=\"photo-author-landing-more\">{{ field_authors_photo }} </div>\r\n     <div class=\"name-author-landing-more\">{{ name }} </div>\r\n     <div class=\"job-author-landing-more\">{{ field_job_title_or_prof_all_news }}</div>\r\n  </div>\r\n  <div class=\"information-node-more-content\">\r\n    <div class=\"title-node-landing\">\"{{ title_1 }}\"</div>\r\n    <div class=\"authored-on-landing\">{{ created }}</div>\r\n  </div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -598,7 +601,7 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.authors.field_authors_photo'
-        - 'config:field.storage.authors.field_job_title_or_profession_co'
+        - 'config:field.storage.authors.field_job_title_or_prof_all_news'
   block_1:
     display_plugin: block
     id: block_1
@@ -681,10 +684,10 @@ display:
           entity_type: authors
           entity_field: name
           plugin_id: field
-        field_job_title_or_profession_co:
-          id: field_job_title_or_profession_co
-          table: authors__field_job_title_or_profession_co
-          field: field_job_title_or_profession_co
+        field_job_title_or_prof_all_news:
+          id: field_job_title_or_prof_all_news
+          table: authors__field_job_title_or_prof_all_news
+          field: field_job_title_or_prof_all_news
           relationship: field_author_thought_leaders
           group_type: group
           admin_label: ''
@@ -797,6 +800,10 @@ display:
           settings:
             image_style: ''
             image_link: ''
+            svg_render_as_image: true
+            svg_attributes:
+              width: null
+              height: null
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -951,7 +958,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"more-content-landing\">\r\n  <div class=\"author-information-more-content\">\r\n     <div class=\"photo-author-landing-more\">{{ field_authors_photo }}</div>\r\n     <div class=\"name-profession-author\">\r\n          <div class=\"name-author-landing-more\"> {{ name }}</div>\r\n          <div class=\"job-author-landing-more\">{{ field_job_title_or_profession_co }}</div>\r\n     </div>\r\n  </div>\r\n  <div class=\"information-node-more-content\">\r\n    <div class=\"title-node-landing\">\"{{ title_1 }}\"</div>\r\n    <div class=\"authored-on-landing\">{{ created }}</div>\r\n  </div>\r\n</div>"
+            text: "<div class=\"more-content-landing\">\r\n  <div class=\"author-information-more-content\">\r\n     <div class=\"photo-author-landing-more\">{{ field_authors_photo }}</div>\r\n     <div class=\"name-profession-author\">\r\n          <div class=\"name-author-landing-more\"> {{ name }}</div>\r\n          <div class=\"job-author-landing-more\">{{ field_job_title_or_prof_all_news }}</div>\r\n     </div>\r\n  </div>\r\n  <div class=\"information-node-more-content\">\r\n    <div class=\"title-node-landing\">\"{{ title_1 }}\"</div>\r\n    <div class=\"authored-on-landing\">{{ created }}</div>\r\n  </div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -998,7 +1005,7 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.authors.field_authors_photo'
-        - 'config:field.storage.authors.field_job_title_or_profession_co'
+        - 'config:field.storage.authors.field_job_title_or_prof_all_news'
   block_2:
     display_plugin: block
     id: block_2
@@ -1101,10 +1108,10 @@ display:
           entity_type: authors
           entity_field: name
           plugin_id: field
-        field_job_title_or_profession_co:
-          id: field_job_title_or_profession_co
-          table: authors__field_job_title_or_profession_co
-          field: field_job_title_or_profession_co
+        field_job_title_or_prof_all_news:
+          id: field_job_title_or_prof_all_news
+          table: authors__field_job_title_or_prof_all_news
+          field: field_job_title_or_prof_all_news
           relationship: field_author_thought_leaders
           group_type: group
           admin_label: ''
@@ -1215,8 +1222,12 @@ display:
           click_sort_column: target_id
           type: image
           settings:
-            image_style: photo_autor
+            image_style: ''
             image_link: ''
+            svg_render_as_image: true
+            svg_attributes:
+              width: null
+              height: null
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -1371,7 +1382,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"more-content-landing\">\r\n  <div class=\"author-information-more-content\">\r\n     <div class=\"photo-author-landing-more\">{{ field_authors_photo }}</div>\r\n     <div class=\"name-profession-author\">\r\n          <div class=\"name-author-landing-more\"> {{ name }}</div>\r\n          <div class=\"job-author-landing-more\">{{ field_job_title_or_profession_co }}</div>\r\n     </div>\r\n  </div>\r\n  <div class=\"information-node-more-content\">\r\n    <div class=\"title-node-landing\">\"{{ title_1 }}\"</div>\r\n    <div class=\"authored-on-landing\">{{ created }}</div>\r\n  </div>\r\n</div>"
+            text: "<div class=\"more-content-landing\">\r\n  <div class=\"author-information-more-content\">\r\n     <div class=\"photo-author-landing-more\">{{ field_authors_photo }}</div>\r\n     <div class=\"name-profession-author\">\r\n          <div class=\"name-author-landing-more\"> {{ name }}</div>\r\n          <div class=\"job-author-landing-more\">{{ field_job_title_or_prof_all_news }}</div>\r\n     </div>\r\n  </div>\r\n  <div class=\"information-node-more-content\">\r\n    <div class=\"title-node-landing\">\"{{ title_1 }}\"</div>\r\n    <div class=\"authored-on-landing\">{{ created }}</div>\r\n  </div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -1430,7 +1441,7 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.authors.field_authors_photo'
-        - 'config:field.storage.authors.field_job_title_or_profession_co'
+        - 'config:field.storage.authors.field_job_title_or_prof_all_news'
   page_1:
     display_plugin: page
     id: page_1
@@ -1464,4 +1475,4 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.authors.field_authors_photo'
-        - 'config:field.storage.authors.field_job_title_or_profession_co'
+        - 'config:field.storage.authors.field_job_title_or_prof_all_news'
