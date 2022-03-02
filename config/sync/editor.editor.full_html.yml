@@ -48,6 +48,7 @@ settings:
           name: 'Block Formatting'
           items:
             - Format
+            - Styles
         -
           name: Tools
           items:
@@ -63,7 +64,7 @@ settings:
             - JustifyRight
   plugins:
     stylescombo:
-      styles: ''
+      styles: "p.caption|Caption\r\np.editor-notes|Editor Notes (aligned right)\r\np.question|Question"
     language:
       language_list: un
     autoembed:
