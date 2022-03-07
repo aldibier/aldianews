@@ -1,0 +1,23 @@
+uuid: 10df6cad-739e-4825-b85f-473c6449ad71
+langcode: en
+status: true
+dependencies:
+  config:
+    - content_authors.authors_type.news_authors
+    - field.storage.authors.field_display_in_the_authors_lan
+id: authors.news_authors.field_display_in_the_authors_lan
+field_name: field_display_in_the_authors_lan
+entity_type: authors
+bundle: news_authors
+label: 'Display in the authors'' landing page'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

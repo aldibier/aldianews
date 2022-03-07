@@ -1,0 +1,19 @@
+uuid: 15a7e44f-9712-422e-965c-f81d50000e6f
+langcode: en
+status: true
+dependencies:
+  config:
+    - content_authors.authors_type.news_authors
+    - field.storage.authors.field_lead
+id: authors.news_authors.field_lead
+field_name: field_lead
+entity_type: authors
+bundle: news_authors
+label: Lead
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

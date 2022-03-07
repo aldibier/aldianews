@@ -1,0 +1,21 @@
+uuid: 053bcbe0-1102-4c46-8816-26bf89561da0
+langcode: en
+status: true
+dependencies:
+  module:
+    - content_authors
+id: authors.field_lead
+field_name: field_lead
+entity_type: authors
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -5,9 +5,14 @@ dependencies:
   config:
     - content_authors.authors_type.news_authors
     - field.field.authors.news_authors.field_authors_photo
+    - field.field.authors.news_authors.field_biography
+    - field.field.authors.news_authors.field_display_in_the_authors_lan
     - field.field.authors.news_authors.field_job_title_or_prof_all_news
+    - field.field.authors.news_authors.field_lead
+    - field.field.authors.news_authors.field_social_media
     - image.style.thumbnail
   module:
+    - paragraphs
     - svg_image
 id: authors.news_authors.default
 targetEntityType: authors
@@ -15,12 +20,27 @@ bundle: news_authors
 mode: default
 content:
   field_authors_photo:
-    weight: 1
+    weight: 2
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
     type: image_image
+    region: content
+  field_biography:
+    weight: 5
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_display_in_the_authors_lan:
+    weight: 1
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
     region: content
   field_job_title_or_prof_all_news:
     weight: 3
@@ -30,13 +50,26 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
-  langcode:
-    type: language_select
-    weight: 2
-    region: content
+  field_lead:
+    weight: 4
     settings:
-      include_locked: true
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_social_media:
+    type: entity_reference_paragraphs
+    weight: 26
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
   name:
     type: string_textfield
     weight: 0
@@ -45,10 +78,7 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  translation:
-    weight: 4
-    region: content
-    settings: {  }
-    third_party_settings: {  }
 hidden:
+  langcode: true
+  translation: true
   user_id: true

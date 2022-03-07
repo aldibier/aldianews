@@ -1,0 +1,67 @@
+uuid: d7b1de15-8f00-4079-980c-f76eb40c39ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - content_authors.authors_type.news_authors
+    - field.storage.authors.field_social_media
+    - paragraphs.paragraphs_type.social_media
+  module:
+    - entity_reference_revisions
+id: authors.news_authors.field_social_media
+field_name: field_social_media
+entity_type: authors
+bundle: news_authors
+label: 'Social media'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      social_media: social_media
+    target_bundles_drag_drop:
+      advertising_informative_items_:
+        weight: 14
+        enabled: false
+      advertising_options:
+        weight: 15
+        enabled: false
+      contact:
+        weight: 16
+        enabled: false
+      features_items:
+        weight: 17
+        enabled: false
+      features_more_covers:
+        weight: 18
+        enabled: false
+      guest:
+        weight: 19
+        enabled: false
+      gust_block:
+        weight: 20
+        enabled: false
+      i_am_an_employer_sections:
+        weight: 21
+        enabled: false
+      main_features:
+        weight: 22
+        enabled: false
+      platforms:
+        weight: 23
+        enabled: false
+      sliders_in_internal_events:
+        weight: 24
+        enabled: false
+      social_media:
+        enabled: true
+        weight: 25
+      testimonies:
+        weight: 26
+        enabled: false
+field_type: entity_reference_revisions
