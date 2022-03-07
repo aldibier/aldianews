@@ -25,7 +25,14 @@ function is_mobile() {
 
   $detect = \Drupal::service('mobile_detect');
 
-  return $detect->isMobile();
+  $device_param = \Drupal::request()->query->get('device'); 
+
+  if($device_param == 'mobile'){
+    return 'mobile';
+  }else {
+    return $detect->isMobile();
+  }
+
 }
 
 /**
