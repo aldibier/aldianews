@@ -12,6 +12,7 @@ use Drupal\Core\Path\CurrentPathStack;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\RedirectCommand;
+use Drupal\editor\Entity\Editor;
 
 /**
  * User agent device
@@ -816,7 +817,17 @@ function al_dia_news_general_editor_js_settings_alter(array &$settings) {
 		$full_html['editorSettings']['pasteFilter'] = 'plain-text';
 		$full_html['editorSettings']['allowedContent'] = TRUE;
 		$full_html['editorSettings']['pasteFromWordPromptCleanup'] = FALSE;
+
+    //$full_html['editorSettings']['bodyClass'] = "al_dia_news_general/custom_css";
+    $full_html['editorSettings']['#attached']['library'][] = 'al_dia_news_general/custom_css';
 	}
+}
+
+/**
+ * Implements hook_ckeditor_css_alter().
+ */
+function al_dia_news_general_ckeditor_css_alter(array &$css, Editor $editor) {
+  $css[] = drupal_get_path('module', 'al_dia_news_general') . '/src/css/custom.css';
 }
 
 function al_dia_news_general_preprocess_block(&$vars) {
