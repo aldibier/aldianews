@@ -1,0 +1,48 @@
+uuid: 622658e3-96b0-43ef-addc-f05e2b27a0bc
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.job_posting_company_name
+  module:
+    - path
+id: taxonomy_term.job_posting_company_name.default
+targetEntityType: taxonomy_term
+bundle: job_posting_company_name
+mode: default
+content:
+  langcode:
+    type: language_select
+    weight: 1
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 4
+    region: content
+    third_party_settings: {  }
+  translation:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  description: true
