@@ -40,6 +40,12 @@
     }
   }
 
+  .view-content {
+    max-width: 1310px;
+    padding: 0 15px 10px;
+    margin: 0 auto;
+  }
+
   .view-text {
     max-width: 1310px;
     padding: 0 15px;
@@ -341,6 +347,8 @@
 //sass temporary
 .path-about-al-dia-live {
   .block-system-main-block {
+    max-width: 1310px;
+    padding: 0 15px;
     margin: 0 auto;
   }
 
@@ -348,9 +356,20 @@
   .block-local-tasks-block {
     max-width: 1310px;
     padding: 0 15px;
-    margin: 0 auto;
+    margin: 0 auto 70px;
     width: 100%;
+
+    @media screen and (max-width: $tablet) {
+      margin: 0 auto 40px;
+    }
+
+    .tabs {
+      max-width: 1310px;
+      margin: 0 auto;
+    }
+
   }
+
 
   .card-event .card-event-venue {
     font-size: 20px;

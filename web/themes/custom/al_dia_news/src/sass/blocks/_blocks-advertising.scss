@@ -552,6 +552,11 @@
   }
 }
 
+.path-about-al-dia-live .banner-horizontal {
+  display: flex;
+  justify-content: center;
+}
+
 .block-print-edition {
   max-width: 400px;
   min-width: 400px;
@@ -712,9 +717,12 @@
 //----------------- about al dia live ----------------------------------//
 .path-about-al-dia-live {
   .first-block-bottom-banner {
+    max-width: 1310px;
+    padding: 0 15px;
     margin: 0 auto 90px;
 
     @media screen and (max-width: $tablet) {
+      padding: 0;
       margin: 0 auto 40px;
     }
   }
