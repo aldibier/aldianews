@@ -7,7 +7,7 @@ news:
   icon_map:
     - [one_advertising]
     - [one_content]
-    - [one_more] 
+    - [one_more]
     - [two_content]
     - [two_advertising]
   regions:
@@ -31,7 +31,7 @@ thought_leaders:
   icon_map:
     - [one_advertising]
     - [one_content]
-    - [one_more] 
+    - [one_more]
     - [two_content]
     - [two_advertising]
   regions:
@@ -99,7 +99,7 @@ category_next_four:
   default_region: content
   icon_map:
     - [one_content]
-    - [two_content]   
+    - [two_content]
   regions:
     one_content:
       label: Primero - Imagen
@@ -130,7 +130,7 @@ subcategory_first:
   default_region: content
   icon_map:
     - [one_content]
-    - [two_content]   
+    - [two_content]
   regions:
     one_content:
       label: Primero - Imagen
@@ -145,7 +145,7 @@ subcategory_next_four:
   default_region: content
   icon_map:
     - [one_content]
-    - [two_content]   
+    - [two_content]
   regions:
     one_content:
       label: Primero - Imagen
@@ -407,7 +407,7 @@ categories_home:
   default_region: content
   icon_map:
     - [one_content]
-    - [two_content]   
+    - [two_content]
   regions:
     one_content:
       label: Primero - Imagen
@@ -423,7 +423,7 @@ first_category_home:
   default_region: content
   icon_map:
     - [one_content]
-    - [two_content]   
+    - [two_content]
   regions:
     one_content:
       label: Primero - Imagen
@@ -439,8 +439,8 @@ more_covers:
   default_region: content
   icon_map:
     - [one_content]
-    - [two_content]   
-    - [three_content]   
+    - [two_content]
+    - [three_content]
   regions:
     one_content:
       label: Primero - Contenido
@@ -459,13 +459,13 @@ events:
     - [header_content]
     - [content_header]
     - [advertising_content]
-    - [one_first, one_second]   
-    - [two_content]   
-    - [three_content, three_content_second]   
-    - [four_content, four_content_second]   
+    - [one_first, one_second]
+    - [two_content]
+    - [three_content, three_content_second]
+    - [four_content, four_content_second]
     - [five_content]
-    - [slider_past_event] 
-    - [six_content]  
+    - [slider_past_event]
+    - [six_content]
   regions:
     header_content:
       label: Header - Contenido
@@ -524,3 +524,24 @@ basic_page_share_a_news_tip:
       label: Segundo - Contenido
     two_vertical_advertising:
       label: Publicidad vertical dos
+
+authors_intern:
+  label: 'Authors entity intern' #--> Nombre
+  path: layouts/authors_intern
+  template: layout--authors-intern
+  category: 'Authors'
+  default_region: content
+  icon_map: #--> Creacion region
+    - [horizontal_advertising]
+    - [author_information]
+    - [related_authors]
+    - [authors_news]
+  regions:
+    horizontal_advertising:
+      label: Publicidad horizontal
+    author_information:
+      label: Informacion del autor
+    related_authors:
+      label: Autores relacionados
+    authors_news:
+      label: Noticas del autor
