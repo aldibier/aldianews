@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.premium
     - field.field.node.thought_leaders.body
+    - field.field.node.thought_leaders.field_author
     - field.field.node.thought_leaders.field_author_thought_leaders
     - field.field.node.thought_leaders.field_caption
     - field.field.node.thought_leaders.field_comments
@@ -18,9 +19,9 @@ dependencies:
     - ds
     - field_formatter_class
     - field_group
-    - image
     - layout_builder
     - lazy
+    - svg_image
     - text
     - user
     - video_embed_field
@@ -286,6 +287,7 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_author: true
   field_author_thought_leaders: true
   field_comments: true
   field_short_title: true
