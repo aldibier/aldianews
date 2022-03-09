@@ -21,6 +21,7 @@ dependencies:
     - content_authors
     - entity_reference_revisions
     - node
+    - other_view_filter
     - responsive_image
     - svg_image
     - views_fieldsets
@@ -1157,6 +1158,9 @@ display:
         style: false
         row: false
         header: false
+        sorts: false
+        filters: false
+        filter_groups: false
       arguments: {  }
       pager:
         type: some
@@ -1201,6 +1205,121 @@ display:
             value: '<h2>MORE PROFILES</h2>'
             format: full_html
           plugin_id: text
+      sorts: {  }
+      filters:
+        status:
+          value: '1'
+          table: authors_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: authors
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+          group: 1
+        type:
+          id: type
+          table: authors_field_data
+          field: type
+          value:
+            news_authors: news_authors
+          entity_type: authors
+          entity_field: type
+          plugin_id: bundle
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+        langcode:
+          id: langcode
+          table: authors_field_data
+          field: langcode
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value:
+            '***LANGUAGE_language_interface***': '***LANGUAGE_language_interface***'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: authors
+          entity_field: langcode
+          plugin_id: language
+        other_view_filter:
+          id: other_view_filter
+          table: authors_field_data
+          field: other_view_filter
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: 'not in'
+          value:
+            'internal_author_information_:block_1': 'internal_author_information_:block_1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          inherit_contextual_filters: 1
+          entity_type: authors
+          plugin_id: other_views_filter
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
     cache_metadata:
       max-age: -1
       contexts:
