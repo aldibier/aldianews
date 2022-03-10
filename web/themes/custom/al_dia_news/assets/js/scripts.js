@@ -1298,11 +1298,10 @@ var initMain = function initMain($, Drupal) {
 
 
   if (!!document.querySelector(".card-event-date-hour")) {
-    var allEventsTime = document.querySelectorAll(".card-event-date-hour");
-    allEventsTime.forEach(function (eventTime) {
-      var txt = eventTime.innerText;
-      eventTime.innerText = "".concat(txt.substring(0, 7), ".").concat(txt.charAt(7), ".");
-    });
+    var timeMainEvent = document.querySelector(".card-event-date-hour");
+    var time = timeMainEvent.innerText;
+    var timetLength = time.length;
+    timeMainEvent.innerText = "".concat(time.substring(0, timetLength - 1), ".").concat(time.substring(timetLength - 1), ".");
   } //add dots date comments
 
 
