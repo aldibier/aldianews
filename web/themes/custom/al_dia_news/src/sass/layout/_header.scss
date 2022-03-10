@@ -60,23 +60,9 @@ body.open-menu {
     }
   }
 
-  #block-exposedformsearch-results-al-dia-solrpage-1-2 {
-    bottom: -71px;
-  }
-
-  @media (max-width: $broken4) {
-    #block-exposedformsearch-results-al-dia-solrpage-1-2 {
-      bottom: -111px;
-    }
-  }
-
   @media (max-width: $tablet) {
     position: relative;
-
-    #block-exposedformsearch-results-al-dia-solrpage-1-2 {
-      bottom: -113px;
-    }
-
+    
     .region-header {
       max-height: max-content;
       //max-height: 46px;
@@ -235,6 +221,10 @@ body.open-menu {
           line-height: 22px;
         }
       }
+    }
+
+    #block-exposedformsearch-results-al-dia-solrpage-1-2 {
+      bottom: 0;
     }
   }
 }
@@ -950,6 +940,7 @@ body.open-menu {
     }
 
     @media (max-width: $broken4) {
+      z-index: 2;
       flex: 1 1 100%;
       order: 9;
       width: 100%;
