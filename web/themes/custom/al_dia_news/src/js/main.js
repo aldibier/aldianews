@@ -92,12 +92,11 @@ const initMain = ($, Drupal) => {
 
 	//add dots date events time
 	if (!!document.querySelector(".card-event-date-hour")) {
-		const allEventsTime = document.querySelectorAll(".card-event-date-hour");
+		const timeMainEvent = document.querySelector(".card-event-date-hour");
+		const time = timeMainEvent.innerText;
+		const timetLength = time.length;
 
-		allEventsTime.forEach(eventTime => {
-			const txt = eventTime.innerText;
-			eventTime.innerText = `${txt.substring(0, 7)}.${txt.charAt(7)}.`;
-		});
+		timeMainEvent.innerText = `${time.substring(0, timetLength - 1)}.${time.substring(timetLength - 1)}.`;
 	}
 
 	//add dots date comments
