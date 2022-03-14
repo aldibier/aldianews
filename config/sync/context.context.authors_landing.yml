@@ -26,7 +26,7 @@ reactions:
         provider: system
         label_display: '0'
         region: content
-        weight: '0'
+        weight: '1'
         context_mapping: {  }
         custom_id: system_main_block
         theme: al_dia_news
@@ -34,6 +34,36 @@ reactions:
         unique: 0
         context_id: authors_landing
         uuid: adf3ff1a-5e81-4e9c-b80f-14ddb42d01e3
+      1c425fc8-6e20-47b3-a0f3-6eb568a55c7a:
+        id: 'views_block:landing_authors-block_1'
+        label: ''
+        provider: views
+        label_display: '0'
+        views_label: ''
+        items_per_page: none
+        region: content
+        weight: '-1'
+        context_mapping: {  }
+        custom_id: views_block_landing_authors_block_1
+        theme: al_dia_news
+        css_class: ''
+        unique: 0
+        context_id: authors_landing
+        uuid: 1c425fc8-6e20-47b3-a0f3-6eb568a55c7a
+      fe2b8045-47aa-40eb-8bb3-eb3c234dc8b4:
+        id: 'block_group:gamw_first_block_bottom_banner'
+        label: 'GAMW - first block -bottom banner'
+        provider: blockgroup
+        label_display: '0'
+        region: content
+        weight: '0'
+        context_mapping: {  }
+        custom_id: block_group_gamw_first_block_bottom_banner
+        theme: al_dia_news
+        css_class: ''
+        unique: 0
+        context_id: authors_landing
+        uuid: fe2b8045-47aa-40eb-8bb3-eb3c234dc8b4
     id: blocks
     saved: false
     uuid: 1a98434d-5d36-4402-89d1-21406b1c82c0
