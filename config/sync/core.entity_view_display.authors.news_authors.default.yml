@@ -11,12 +11,81 @@ dependencies:
     - field.field.authors.news_authors.field_lead
     - field.field.authors.news_authors.field_social_media
     - image.style.photo_autor
+    - views.view.internal_author_information_
   module:
+    - al_dia_layouts
     - entity_reference_revisions
     - field_formatter_class
+    - gamw
+    - layout_builder
     - lazy
     - svg_image
     - user
+    - views
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: authors_intern
+        layout_settings:
+          label: 'Authors entity intern'
+          context_mapping: {  }
+        components:
+          6a7ce06b-d44c-4e50-a5c4-88e88c1d07e9:
+            uuid: 6a7ce06b-d44c-4e50-a5c4-88e88c1d07e9
+            region: horizontal_advertising
+            configuration:
+              id: gamw
+              label: 'GAMW Advertisement'
+              provider: gamw
+              label_display: '0'
+              ad_unit: header-top-banner
+              attributes_wrapper: null
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+          037e0f84-7142-4342-9958-88b1e1cda9a7:
+            uuid: 037e0f84-7142-4342-9958-88b1e1cda9a7
+            region: author_information
+            configuration:
+              id: 'views_block:internal_author_information_-block_1'
+              label: ''
+              provider: views
+              label_display: '0'
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+          4025a730-96ea-4962-b861-45914ec54451:
+            uuid: 4025a730-96ea-4962-b861-45914ec54451
+            region: related_authors
+            configuration:
+              id: 'views_block:internal_author_information_-block_2'
+              label: ''
+              provider: views
+              label_display: '0'
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+          d1efc698-b766-40fa-b6a5-2ede62b3ebb8:
+            uuid: d1efc698-b766-40fa-b6a5-2ede62b3ebb8
+            region: authors_news
+            configuration:
+              id: 'views_block:internal_author_information_-block_3'
+              label: ''
+              provider: views
+              label_display: '0'
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+        third_party_settings: {  }
 id: authors.news_authors.default
 targetEntityType: authors
 bundle: news_authors
@@ -28,6 +97,10 @@ content:
     settings:
       image_style: photo_autor
       image_link: ''
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
     third_party_settings:
       field_formatter_class:
         class: ''

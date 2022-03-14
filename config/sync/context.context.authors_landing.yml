@@ -1,0 +1,41 @@
+uuid: d07e3413-3369-45f0-aefd-63df0d5c2f3e
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+name: authors_landing
+label: 'Authors landing'
+group: 'General pages'
+description: 'Blocks in authors landing page'
+requireAllConditions: false
+disabled: false
+conditions:
+  request_path:
+    id: request_path
+    pages: /authors
+    negate: false
+    uuid: 33474f1f-76cf-4459-845a-e7dffbef2069
+    context_mapping: {  }
+reactions:
+  blocks:
+    blocks:
+      adf3ff1a-5e81-4e9c-b80f-14ddb42d01e3:
+        id: system_main_block
+        label: 'Main page content'
+        provider: system
+        label_display: '0'
+        region: content
+        weight: '0'
+        context_mapping: {  }
+        custom_id: system_main_block
+        theme: al_dia_news
+        css_class: ''
+        unique: 0
+        context_id: authors_landing
+        uuid: adf3ff1a-5e81-4e9c-b80f-14ddb42d01e3
+    id: blocks
+    saved: false
+    uuid: 1a98434d-5d36-4402-89d1-21406b1c82c0
+    include_default_blocks: 1
+weight: 0
