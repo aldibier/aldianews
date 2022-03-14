@@ -10,6 +10,10 @@
  * @ingroup themeable
  */
 #}
+
+{# Cantidad caracteres para modificar ubicacion publicidad #}
+{% set characters_to_modify = 870 %}
+
 {% if content %}
 	<div class="container-content width1440 modal-open">
 
@@ -36,34 +40,53 @@
 					<div {{ region_attributes.one_first.addClass('body-lateral-section') }}>
 						{{ content.one_first }}
 					</div>
-
 				{% endif %}
 				{% if content.one_second %}
-					<div {{ region_attributes.one_second.addClass('body-lateral-section-advertising') }}>
-						{{ content.one_second }}
-					</div>
+					{% if content.bodylength > characters_to_modify %}
+						<div class="section-event-wrapper">
+							<div {{ region_attributes.one_second.addClass('body-lateral-section-advertising') }}>
+								{{ content.one_second }}
+							</div>
+							<div {{ region_attributes.three_content_second.addClass('three-content-event-advertising body-lateral-section-advertising') }}>
+								{{ content.three_content_second }}
+							</div>
+						</div>
+					{% elseif content.bodylength <= characters_to_modify %}
+						<div {{ region_attributes.one_second.addClass('body-lateral-section-advertising') }}>
+							{{ content.one_second }}
+						</div>
+					{% endif %}
 				{% endif %}
 			</div>
 		</div>
+		{% if content.bodylength > characters_to_modify %}
+		<div class="content-present-by-advertising  section1310 non-ads-element">
+		{% else %}
 		<div class="content-present-by-advertising  section1310">
-			{% if content.three_content %}
-				<div {{ region_attributes.three_content.addClass('three-content-event body-lateral-section') }}>
-					{{ content.three_content }}
-				</div>
+		{% endif %}
+			{% if content.three_content %}		
+					<div {{ region_attributes.three_content.addClass('three-content-event body-lateral-section') }}>
+						{{ content.three_content }}
+					</div>
 			{% endif %}
 			{% if content.three_content_second %}
-				<div {{ region_attributes.three_content_second.addClass('three-content-event-advertising body-lateral-section-advertising') }}>
-					{{ content.three_content_second }}
-				</div>
+				{% if content.bodylength <= characters_to_modify %}
+					<div {{ region_attributes.three_content_second.addClass('three-content-event-advertising body-lateral-section-advertising ') }}>
+						{{ content.three_content_second }}
+					</div>
+				{% endif %}
 			{% endif %}
 		</div>
+		{% if content.bodylength > characters_to_modify %}
+		<div class="guest-event-advertising section1310 non-ads-element">
+		{% else %}
 		<div class="guest-event-advertising section1310">
+		{% endif %}
 			{% if content.four_content %}
 				<div {{ region_attributes.four_content.addClass('four-content-event') }}>
 					{{ content.four_content }}
 				</div>
 			{% endif %}
-
 		</div>
 		{% if content.five_content %}
 			<div {{ region_attributes.five_content.addClass('five-content-event-sliders section1310') }}>

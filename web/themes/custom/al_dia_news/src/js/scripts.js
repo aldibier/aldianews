@@ -518,7 +518,7 @@ import { formApplyModified } from './modules/fixedCloseWebforms';
 			}
 
 			if (context.id == 'views-exposed-form-search-results-al-dia-solr-page-1') {
-				Array.from(context.querySelectorAll("select.SumoUnder")).forEach(select => {
+				Array.from(document.querySelectorAll("select.SumoUnder")).forEach(select => {
 					$(select)[0].sumo.reload();
 				});
 			}
