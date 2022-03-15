@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   module:
+    - mobile_detect
     - system
   theme:
     - al_dia_news
@@ -22,5 +23,9 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: "/jobs/employer\r\n/about-al-dia-live\r\n/about-al-dia-live/al-dia-live\r\n/about-al-dia-live/al-dia-live/past-events\r\n/advertising\r\n/jobs/job-seeker\r\n/jobs\r\n/more-covers\r\n/podcast\r\n/videos"
+    pages: "/jobs/employer\r\n/about-al-dia-live\r\n/about-al-dia-live/al-dia-live\r\n/about-al-dia-live/al-dia-live/past-events\r\n/advertising\r\n/jobs/job-seeker\r\n/jobs\r\n/more-covers\r\n/podcast\r\n/videos\r\n/authors"
     negate: true
+  mobile_detect_device_type:
+    id: mobile_detect_device_type
+    devices: {  }
+    negate: null
