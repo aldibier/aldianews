@@ -3,7 +3,7 @@
 function al_dia_layouts_preprocess_node(&$vars) {
 	$node = $vars['node'];
 	$nodeType = $node->getType();
-  $fields = $node->getFields();
+  	$fields = $node->getFields();
 
 	if($nodeType == "news"){
 		$field_type = $fields['field_type_of_content'];
@@ -22,11 +22,18 @@ function al_dia_layouts_preprocess_node(&$vars) {
 
   if($nodeType == "event"){
     $nodeBody = $vars['node']->get('body')->value;
+	$fieldPresentBy = $fields['field_present_by'];
 
     if(isset($nodeBody)){
       $nodeBody = strip_tags($nodeBody);
       $vars['content']['_layout_builder']['0']['bodylength'] = strlen($nodeBody);
     }
+
+	if(count($fieldPresentBy->getValue()) > 0){
+	  $vars['content']['_layout_builder']['0']['presentByContent'] = true;
+	}else {
+	  $vars['content']['_layout_builder']['0']['presentByContent'] = false;
+	}
 
   }
 

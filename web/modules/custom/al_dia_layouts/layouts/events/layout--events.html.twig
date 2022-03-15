@@ -59,25 +59,28 @@
 				{% endif %}
 			</div>
 		</div>
-		{% if content.bodylength > characters_to_modify %}
-		<div class="content-present-by-advertising  section1310 non-ads-element">
-		{% else %}
-		<div class="content-present-by-advertising  section1310">
-		{% endif %}
-			{% if content.three_content %}		
-					<div {{ region_attributes.three_content.addClass('three-content-event body-lateral-section') }}>
-						{{ content.three_content }}
-					</div>
+		{% if content.presentByContent == true %}
+			{% if content.bodylength > characters_to_modify %}
+			<div class="content-present-by-advertising  section1310 non-ads-element">
+			{% else %}
+			<div class="content-present-by-advertising  section1310">
 			{% endif %}
-			{% if content.three_content_second %}
-				{% if content.bodylength <= characters_to_modify %}
-					<div {{ region_attributes.three_content_second.addClass('three-content-event-advertising body-lateral-section-advertising ') }}>
-						{{ content.three_content_second }}
-					</div>
+				{% if content.three_content %}		
+						<div {{ region_attributes.three_content.addClass('three-content-event body-lateral-section') }}>
+							{{ content.three_content }}
+						</div>
 				{% endif %}
-			{% endif %}
-		</div>
-		{% if content.bodylength > characters_to_modify %}
+				{% if content.three_content_second %}
+					{% if content.bodylength <= characters_to_modify %}
+						<div {{ region_attributes.three_content_second.addClass('three-content-event-advertising body-lateral-section-advertising ') }}>
+							{{ content.three_content_second }}
+						</div>
+					{% endif %}
+				{% endif %}
+			</div>
+		{% endif %}
+		<h1>{{content.presentByContent}}</h1>
+		{% if (content.bodylength > characters_to_modify or content.presentByContent == false) %}
 		<div class="guest-event-advertising section1310 non-ads-element">
 		{% else %}
 		<div class="guest-event-advertising section1310">

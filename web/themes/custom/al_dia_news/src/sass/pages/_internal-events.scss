@@ -212,6 +212,12 @@
     gap: 15px 0;
   }
 
+  .section-event-body {
+    @media (min-width: $broken) {
+      margin-bottom: 70px !important;
+    }
+  }
+
   .section-event-body.section-flex {
     @media (max-width: $broken) {
       flex-direction: column;
@@ -1292,7 +1298,7 @@
       display: none;
     }
 
-    .section-event-body .body-lateral-section-advertising {
+     .body-lateral-section-advertising {
       display: block;
       max-width: 200px;
       margin: 20px auto 40px;
