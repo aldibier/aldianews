@@ -110,7 +110,7 @@ display:
           click_sort_column: value
           type: string
           settings:
-            link_to_entity: true
+            link_to_entity: false
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -244,6 +244,10 @@ display:
           settings:
             image_style: ''
             image_link: ''
+            svg_render_as_image: true
+            svg_attributes:
+              width: null
+              height: null
           group_column: ''
           group_columns: {  }
           group_rows: true
