@@ -35,9 +35,7 @@ class TypeThoughtLeaders extends ProcessPluginBase {
     // remove HTML tags and trim to 170 chars
     //$value = Unicode::truncate(trim(Html::decodeEntities(strip_tags($value))), 20, TRUE, TRUE);
     $category= $row->getSourceProperty("field_topics")[0]['tid'];
-    dump($category);
-    dump($row->getSourceProperty("nid"));
-    dump("ss");
+
     if($category==1){
       $value = 1;
     }
