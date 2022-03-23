@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.teaser
     - field.storage.node.field_company_name
     - field.storage.node.field_expiration_date
     - field.storage.node.field_place
@@ -11,6 +12,7 @@ dependencies:
     - node.type.job
   module:
     - datetime
+    - ds
     - node
     - user
     - views_block_area
@@ -79,7 +81,35 @@ display:
       style:
         type: default
       row:
-        type: fields
+        type: 'ds_entity:node'
+        options:
+          relationship: none
+          view_mode: teaser
+          alternating_fieldset:
+            alternating: false
+            allpages: false
+            item_0: teaser
+            item_1: teaser
+            item_2: teaser
+            item_3: teaser
+            item_4: teaser
+            item_5: teaser
+            item_6: teaser
+            item_7: teaser
+            item_8: teaser
+            item_9: teaser
+            item_10: teaser
+            item_11: teaser
+            item_12: teaser
+            item_13: teaser
+          grouping_fieldset:
+            group: false
+            group_field: node__field_expiration_date|field_expiration_date_value
+            group_field_function: ''
+          delta_fieldset:
+            delta_fields: {  }
+          advanced_fieldset:
+            advanced: false
       fields:
         title:
           id: title
