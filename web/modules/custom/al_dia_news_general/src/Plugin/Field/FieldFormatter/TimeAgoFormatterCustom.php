@@ -52,8 +52,8 @@ class TimeAgoFormatterCustom extends TimestampAgoFormatter {
     $days = $dateDifference->days;
     $class = $days < 8 ? 'container-content__date lightned' : 'container-content__date';
     return [
-      '#prefix' => "<div class='$class'>",
-      '#suffix' => '</div>',
+      '#prefix' => "<div class='$class'><p>",
+      '#suffix' => '</p></div>',
       '#markup' => $this->t('@date @singular left to apply', [
         '@date' => $days,
         '@singular' => $days == 1 ? $this->t('day') : $this->t('days'),
