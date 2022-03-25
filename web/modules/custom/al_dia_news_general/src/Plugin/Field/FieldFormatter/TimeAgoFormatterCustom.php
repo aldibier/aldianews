@@ -54,9 +54,9 @@ class TimeAgoFormatterCustom extends TimestampAgoFormatter {
     return [
       '#prefix' => "<div class='$class'><p>",
       '#suffix' => '</p></div>',
-      '#markup' => $this->t('@date @singular left to apply', [
+      '#markup' => $this->t('@date @singular LEFT TO APPLY', [
         '@date' => $days,
-        '@singular' => $days == 1 ? $this->t('day') : $this->t('days'),
+        '@singular' => $days == 1 ? $this->t('DAY') : $this->t('DAYS'),
       ]),
     ];
   }
