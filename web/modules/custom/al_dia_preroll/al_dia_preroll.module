@@ -1,0 +1,26 @@
+<?php
+use Drupal\Core\Messenger\MessengerInterface;
+
+/**
+ * @file
+ * Contains al_dia_preroll.module.
+ */
+
+function al_dia_preroll_preprocess_node(&$vars){
+    $config = \Drupal::config('al_dia_preroll.adminsettings');
+    $number_of_tags = $config->get('number_of_tags');
+
+    if($number_of_tags > 0){
+        $arr = [];
+        for($i = 1;$i <= $number_of_tags;$i++){
+            $arr[$i]['tag'] =  $config->get("path_vast_$i");
+            $arr[$i]['pos'] =   $config->get("pos_vast_$i");
+        }
+
+        $vars['#attached']['drupalSettings']['vast'] = $arr;
+
+    }
+
+}
+
+
