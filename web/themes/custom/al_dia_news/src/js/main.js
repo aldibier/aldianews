@@ -475,14 +475,13 @@ const initMain = ($, Drupal) => {
 	);
 	if (adversiting != null && first_element != null) {
 
-		if(adversiting.closest('.section-event-wrapper')) return;
-
-		if (first_element.innerText == "one") {
-			if (!!adversiting.parentElement.parentElement) adversiting.parentElement.parentElement.classList.add("maxim");
-		} else {
-			adversiting.classList.add("dis-none");
+		if(!adversiting.closest('.section-event-wrapper')){
+			if (first_element.innerText == "one") {
+				if (!!adversiting.parentElement.parentElement) adversiting.parentElement.parentElement.classList.add("maxim");
+			} else {
+				adversiting.classList.add("dis-none");
+			}
 		}
-
 	}
 
 	//js para eliminar publicidad two column events
