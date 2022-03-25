@@ -2150,133 +2150,6 @@ var unitedStateFirst = function unitedStateFirst(form) {
 
 /***/ }),
 
-/***/ "./src/js/modules/video-pre-roll.js":
-/*!******************************************!*\
-  !*** ./src/js/modules/video-pre-roll.js ***!
-  \******************************************/
-/*! exports provided: videoSDK */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "videoSDK", function() { return videoSDK; });
-function videoSDK() {
-  console.log(drupalSettings);
-  var adsLoadedInitial;
-  var adDisplayContainer;
-  var adsLoader;
-  var adsManager;
-  var flag = 1;
-  var videoElement = document.querySelector('#video-element');
-  var adContainer = document.querySelector('#ad-container');
-  var playAction = document.querySelector('#play-button');
-  var urlTag = 'https://pubads.g.doubleclick.net/gampad/ads?iu=/66060234/video_test_2&description_url=[placeholder]&tfcd=0&npa=0&sz=400x300&gdfp_req=1&output=vast&unviewed_position_start=1&env=vp&impl=s&aconp=2&correlator='; //ulrTag = 'https://pubads.g.doubleclick.net/gampad/ads?iu=/21775744923/external/vmap_ad_samples&sz=640x480&cust_params=sar%3Da0f2&ciu_szs=300x250&ad_rule=1&gdfp_req=1&output=vmap&unviewed_position_start=1&env=vp&impl=s&correlator=';
-  //urlTag = 'https://pubads.g.doubleclick.net/gampad/ads?iu=/66060234/video_test_2&description_url=[placeholder]&tfcd=0&npa=0&sz=400x300&gdfp_req=1&output=vast&unviewed_position_start=1&env=vp&impl=s&vconp=2&vpa=auto&vpi=1&correlator=';
-  // let urlTag = `https://pubads.g.doubleclick.net/gampad/ads
-  // ?iu=/66060234/video_test_2
-  // &tfcd=0 -> Etiqueta dirigada niños
-  // &npa=0 -> Anuncio personalizado
-  // &sz=400x300 -> Tamaños o sizes
-  // &ad_rule=1 -> Solicitud de creatividad VAST (0) o Solicitud de reglas de anuncios (VMAP) (1)
-  // &gdfp_req=1 -> Indicador de esquema de Ad Manager
-  // &output=vmap -> Salida generada
-  // &unviewed_position_start=1 -> Indicar impresiones retrasadas para video.
-  // &env=vp -> Vídeo y/o audio (env=instream) o solo video (env=vp)
-  // &impl=s
-  // &vpi=1 -> Mute apagado (1) o no silenciado (0)
-  // &correlator=`;
-  // urlTag = `https://pubads.g.doubleclick.net/gampad/ads
-  // ?iu=/21775744923/external/vmap_ad_samples
-  // &sz=640x480
-  // &cust_params=sample_ar%3Dpremidpostlongpod
-  // &ciu_szs=300x250
-  // &gdfp_req=1
-  // &ad_rule=1
-  // &output=vmap
-  // &unviewed_position_start=1
-  // &env=vp
-  // &impl=s
-  // &cmsid=496
-  // &vid=short_onecue
-  // &correlator=`;
-
-  playAction.addEventListener('click', function () {
-    loadAds();
-  });
-  initializeIMA();
-
-  function initializeIMA() {
-    adDisplayContainer = new google.ima.AdDisplayContainer(adContainer, videoElement);
-    adsLoader = new google.ima.AdsLoader(adDisplayContainer);
-    adsLoader.addEventListener(google.ima.AdsManagerLoadedEvent.Type.ADS_MANAGER_LOADED, onAdsManagerLoaded, false);
-    adsLoader.addEventListener(google.ima.AdErrorEvent.Type.AD_ERROR, onAdError, false);
-
-    function onAdsManagerLoaded(adsManagerLoadedEvent) {
-      console.log('onAdsManagerLoaded'); // Instanciar el AdsManager desde la respuesta de adsLoader y pasarle el elemento vídeo
-
-      adsManager = adsManagerLoadedEvent.getAdsManager(videoElement);
-      console.log('adsManager', adsManager);
-      adsManager.addEventListener(google.ima.AdErrorEvent.Type.AD_ERROR, onAdError);
-      adsManager.addEventListener(google.ima.AdEvent.Type.LOADED, onAdLoaded);
-    }
-
-    function onAdLoaded(adEvent) {
-      console.log('onAdLoaded');
-    }
-
-    function onAdError(adErrorEvent) {
-      console.log(adErrorEvent.getError());
-
-      if (adsManager) {
-        adsManager.destroy();
-      }
-    }
-
-    actionRequest();
-    adsLoadedInitial = true;
-  }
-
-  function actionRequest() {
-    adsLoader.contentComplete();
-    var adsRequest = new google.ima.AdsRequest();
-    adsRequest.setContinuousPlayback();
-
-    if (flag == 1) {
-      adsRequest.adTagUrl = 'https://pubads.g.doubleclick.net/gampad/ads?iu=/21775744923/external/single_ad_samples&sz=640x480&cust_params=sample_ct%3Dlinear&ciu_szs=300x250%2C728x90&gdfp_req=1&output=vast&unviewed_position_start=1&env=vp&impl=s&correlator=';
-    } else {
-      adsRequest.adTagUrl = urlTag;
-    }
-
-    adsLoader.requestAds(adsRequest);
-    flag++;
-  }
-
-  function loadAds() {
-    if (!adsLoadedInitial) {
-      actionRequest();
-    } // Inicializar el contenedor. Debe hacerse mediante una acción del usuario en los dispositivos móviles.
-
-
-    adDisplayContainer.initialize();
-    var width = videoElement.clientWidth;
-    var heigth = videoElement.clientHeight;
-
-    try {
-      adsManager.init(width, heigth, google.ima.ViewMode.NORMAL);
-      adsManager.start();
-      adsLoadedInitial = false;
-    } catch (adError) {
-      // Reproducir el vídeo sin anuncios, si se produce un error
-      console.log(adError);
-      console.log("AdsManager could not be started"); //videoElement.play();
-    }
-  }
-}
-
-
-
-/***/ }),
-
 /***/ "./src/js/scripts.js":
 /*!***************************!*\
   !*** ./src/js/scripts.js ***!
@@ -2294,15 +2167,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _main_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./main.js */ "./src/js/main.js");
 /* harmony import */ var _slick_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./slick.js */ "./src/js/slick.js");
 /* harmony import */ var _modules_replaceToken__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/replaceToken */ "./src/js/modules/replaceToken.js");
-/* harmony import */ var _modules_video_pre_roll__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/video-pre-roll */ "./src/js/modules/video-pre-roll.js");
-/* harmony import */ var _modules_state_and_city__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/state_and_city */ "./src/js/modules/state_and_city.js");
-/* harmony import */ var _modules_fixedCloseWebforms__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/fixedCloseWebforms */ "./src/js/modules/fixedCloseWebforms.js");
+/* harmony import */ var _modules_state_and_city__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/state_and_city */ "./src/js/modules/state_and_city.js");
+/* harmony import */ var _modules_fixedCloseWebforms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/fixedCloseWebforms */ "./src/js/modules/fixedCloseWebforms.js");
 
 
 
 
 
-
+ //import { videoSDK } from "./modules/video-pre-roll";
 
 
 
@@ -2388,7 +2260,7 @@ __webpack_require__.r(__webpack_exports__);
     }
   });
   $(window).on("load", function () {
-    Object(_modules_video_pre_roll__WEBPACK_IMPORTED_MODULE_6__["videoSDK"])();
+    //videoSDK();
     var headingTags = document.querySelectorAll("h1, h2, h3");
     var paragraphTags = document.querySelectorAll("p");
     Object(_modules_replaceToken__WEBPACK_IMPORTED_MODULE_5__["default"])("AL DÍA", aldiaLogoStructure, headingTags);
@@ -2513,7 +2385,7 @@ __webpack_require__.r(__webpack_exports__);
     $(".banner-events a#nominee").click(function () {
       $(".form-nominee-events").parents(".modal-apply-webform").addClass("open");
       var form = document.querySelector('.webform-submission-nominate-form');
-      Object(_modules_fixedCloseWebforms__WEBPACK_IMPORTED_MODULE_8__["formApplyModified"])(form, '.close-modal');
+      Object(_modules_fixedCloseWebforms__WEBPACK_IMPORTED_MODULE_7__["formApplyModified"])(form, '.close-modal');
     });
     $(".banner-events a#register-here").click(function () {
       $(".form-register-events").parents(".modal-apply-webform").addClass("open");
@@ -2521,7 +2393,7 @@ __webpack_require__.r(__webpack_exports__);
     $(".banner-events a#sponsorship").click(function () {
       $(".form-sponsorship-events").parents(".modal-apply-webform").addClass("open");
       var formSponsorshipEvent = document.querySelector('.webform-submission-sponsorship-upcoming-event-form');
-      Object(_modules_fixedCloseWebforms__WEBPACK_IMPORTED_MODULE_8__["formApplyModified"])(formSponsorshipEvent, '.close-modal');
+      Object(_modules_fixedCloseWebforms__WEBPACK_IMPORTED_MODULE_7__["formApplyModified"])(formSponsorshipEvent, '.close-modal');
     });
     $('.modal-apply-webform  button[name="close"]').click(function () {
       if ($(".modal-open .modal-apply-webform").hasClass("open")) {
@@ -2587,35 +2459,35 @@ __webpack_require__.r(__webpack_exports__);
 
     if (!!document.querySelector('.webform-about-al-dia-live .webform-submission-sponsorship-form')) {
       var form = document.querySelector('.webform-about-al-dia-live .webform-submission-sponsorship-form');
-      Object(_modules_state_and_city__WEBPACK_IMPORTED_MODULE_7__["validateFormSponsorship"])(form);
-      Object(_modules_state_and_city__WEBPACK_IMPORTED_MODULE_7__["unitedStateFirst"])(form);
+      Object(_modules_state_and_city__WEBPACK_IMPORTED_MODULE_6__["validateFormSponsorship"])(form);
+      Object(_modules_state_and_city__WEBPACK_IMPORTED_MODULE_6__["unitedStateFirst"])(form);
     }
 
     if (!!document.querySelector('.webform-submission-sponsorship-upcoming-event-form')) {
       var _form = document.querySelector('.webform-submission-sponsorship-upcoming-event-form');
 
-      Object(_modules_state_and_city__WEBPACK_IMPORTED_MODULE_7__["validateFormSponsorship"])(_form);
-      Object(_modules_state_and_city__WEBPACK_IMPORTED_MODULE_7__["unitedStateFirst"])(_form);
+      Object(_modules_state_and_city__WEBPACK_IMPORTED_MODULE_6__["validateFormSponsorship"])(_form);
+      Object(_modules_state_and_city__WEBPACK_IMPORTED_MODULE_6__["unitedStateFirst"])(_form);
     }
 
     var formSponsorshipEvent = document.querySelector('.webform-submission-sponsorship-upcoming-event-form');
-    Object(_modules_fixedCloseWebforms__WEBPACK_IMPORTED_MODULE_8__["formApplyModified"])(formSponsorshipEvent, '.close-modal');
+    Object(_modules_fixedCloseWebforms__WEBPACK_IMPORTED_MODULE_7__["formApplyModified"])(formSponsorshipEvent, '.close-modal');
     $(window).on('resize', function () {
       var formNominate = document.querySelector('.webform-submission-nominate-form');
       var formSponsorshipEvent = document.querySelector('.webform-submission-sponsorship-upcoming-event-form');
       var formRegisterEvent = document.querySelector('.registerhere-popup-event-landing .webform-submission-register-form');
 
       if (!!formNominate) {
-        Object(_modules_fixedCloseWebforms__WEBPACK_IMPORTED_MODULE_8__["formApplyModified"])(formNominate, '.close-modal');
+        Object(_modules_fixedCloseWebforms__WEBPACK_IMPORTED_MODULE_7__["formApplyModified"])(formNominate, '.close-modal');
       }
 
       if (!!formSponsorshipEvent) {
-        Object(_modules_fixedCloseWebforms__WEBPACK_IMPORTED_MODULE_8__["formApplyModified"])(formSponsorshipEvent, '.close-modal');
+        Object(_modules_fixedCloseWebforms__WEBPACK_IMPORTED_MODULE_7__["formApplyModified"])(formSponsorshipEvent, '.close-modal');
       }
 
       if (!!formRegisterEvent) {
         setTimeout(function () {
-          Object(_modules_fixedCloseWebforms__WEBPACK_IMPORTED_MODULE_8__["formApplyModified"])(formRegisterEvent, '.close-modal');
+          Object(_modules_fixedCloseWebforms__WEBPACK_IMPORTED_MODULE_7__["formApplyModified"])(formRegisterEvent, '.close-modal');
         }, 0);
       }
     });
@@ -2645,8 +2517,8 @@ __webpack_require__.r(__webpack_exports__);
 
         if (!!document.querySelector('.webform-submission-sponsorship-upcoming-event-form')) {
           var form = document.querySelector('.webform-submission-sponsorship-upcoming-event-form');
-          Object(_modules_state_and_city__WEBPACK_IMPORTED_MODULE_7__["validateFormSponsorship"])(form);
-          Object(_modules_state_and_city__WEBPACK_IMPORTED_MODULE_7__["unitedStateFirst"])(form);
+          Object(_modules_state_and_city__WEBPACK_IMPORTED_MODULE_6__["validateFormSponsorship"])(form);
+          Object(_modules_state_and_city__WEBPACK_IMPORTED_MODULE_6__["unitedStateFirst"])(form);
         }
       }
 
@@ -2841,15 +2713,15 @@ __webpack_require__.r(__webpack_exports__);
         var formRegisterEvent = document.querySelector('.registerhere-popup-event-landing .webform-submission-register-form');
 
         if (!!formLogin) {
-          Object(_modules_fixedCloseWebforms__WEBPACK_IMPORTED_MODULE_8__["formApplyModified"])(formLogin, '.ui-dialog-titlebar-close');
+          Object(_modules_fixedCloseWebforms__WEBPACK_IMPORTED_MODULE_7__["formApplyModified"])(formLogin, '.ui-dialog-titlebar-close');
         }
 
         if (!!formSponsorshipEvent) {
-          Object(_modules_fixedCloseWebforms__WEBPACK_IMPORTED_MODULE_8__["formApplyModified"])(formSponsorshipEvent, '.close-modal');
+          Object(_modules_fixedCloseWebforms__WEBPACK_IMPORTED_MODULE_7__["formApplyModified"])(formSponsorshipEvent, '.close-modal');
         }
 
         if (!!formRegisterEvent) {
-          Object(_modules_fixedCloseWebforms__WEBPACK_IMPORTED_MODULE_8__["formApplyModified"])(formRegisterEvent, '.close-modal');
+          Object(_modules_fixedCloseWebforms__WEBPACK_IMPORTED_MODULE_7__["formApplyModified"])(formRegisterEvent, '.close-modal');
         }
       }, 100);
     }
