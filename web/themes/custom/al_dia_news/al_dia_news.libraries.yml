@@ -6,11 +6,12 @@ global:
       assets/css/icon.css: {}
       assets/libraries/css/font-awesome/css/all.min.css: {}
   js:
-    assets/libraries/YTPlayer/YTPlayer.js: {}
+    https://imasdk.googleapis.com/js/sdkloader/ima3.js: { type: external, minified: true }
     assets/js/scripts.js: { minified: true, attributes: { defer: true } }
     assets/libraries/browserclass.js: {}
   dependencies:
     - core/jquery
+    - core/drupalSettings
     - al_dia_news/slick
     - al_dia_news/sumoselect
     - al_dia_news/scrollmagic

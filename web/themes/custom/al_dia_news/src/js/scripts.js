@@ -4,6 +4,7 @@ import initScrollMagic from "./scroll-magic";
 import initMain from "./main.js";
 import initSlick from "./slick.js";
 import replaceToken from "./modules/replaceToken";
+import { videoSDK } from "./modules/video-pre-roll";
 import { validateFormSponsorship, unitedStateFirst } from './modules/state_and_city';
 import { formApplyModified } from './modules/fixedCloseWebforms';
 
@@ -124,6 +125,8 @@ import { formApplyModified } from './modules/fixedCloseWebforms';
 	});
 
 	$(window).on("load", function () {
+		videoSDK();
+
 		const headingTags = document.querySelectorAll("h1, h2, h3");
 		const paragraphTags = document.querySelectorAll("p");
 
