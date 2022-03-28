@@ -18,18 +18,49 @@ function videoSDK() {
   let adsLoader;
   let adsManager;
 
-  let videoElement = document.querySelector('#video-element');
-  let adContainer = document.querySelector('#ad-container');
-  let playAction = document.querySelector('#play-button');
-  let nextAction = document.querySelector('#play-next');
-  let playSwitch = document.querySelector('#play-switch')
-  let previousAction = document.querySelector('#play-previous');
-  let adsSound = document.querySelector('#ads-sound')
+  const videoContainer = document.querySelector('#video-container');
+  const videoElement = document.querySelector('#video-element');
+  const adContainer = document.querySelector('#ad-container');
+  const playAction = document.querySelector('#play-button');
+  const nextAction = document.querySelector('#play-next');
+  const playSwitch = document.querySelector('#play-switch')
+  const previousAction = document.querySelector('#play-previous');
+  const adsSound = document.querySelector('#ads-sound');
+  const btnClosePreroll = document.querySelector('#btn-close-preroll');
   let urlTag = getTagByPosition(vastTags, mapPositions[0]);
+  let adsMuted = true;
 
   playAction.addEventListener('click', function () {
     console.log('load');
     loadAds();
+  });
+
+  playSwitch.addEventListener('click',function(e){
+
+    if(!videoContainer.classList.contains('paused')){
+      adsManager.pause();
+      videoContainer.classList.add('paused');
+    }else {
+      adsManager.resume();
+      videoContainer.classList.remove('paused');
+    }
+    
+  })
+
+  previousAction.addEventListener('click', function () {
+    let pos = this.dataset.position;
+    urlTag = getTagByPosition(vastTags, mapPositions[pos]);
+
+    //reset actions
+    adsManager.destroy();
+    
+    actionRequest();
+
+    setTimeout(function(){
+      playAction.click();
+    },300)
+
+    managementPosition('previous');
   });
 
   nextAction.addEventListener('click', function () {
@@ -48,20 +79,29 @@ function videoSDK() {
     managementPosition('next');
   });
 
-  previousAction.addEventListener('click', function () {
-    let pos = this.dataset.position;
-    urlTag = getTagByPosition(vastTags, mapPositions[pos]);
+  adsSound.addEventListener('click',function(){
+    let volume = adsManager.getVolume();
 
-    //reset actions
+    if(videoContainer.classList.contains('paused')){
+      return;
+    }
+
+    if(volume == 1){
+      adsManager.setVolume(0);
+      videoContainer.classList.add('muted');
+      adsMuted = true;
+    }else {
+      adsManager.setVolume(1);
+      videoContainer.classList.remove('muted');
+      adsMuted = false;
+    }
+
+  })
+
+  btnClosePreroll.addEventListener('click',function(){
     adsManager.destroy();
-    
-    actionRequest();
-
-    setTimeout(function(){
-      playAction.click();
-    },300)
-
-    managementPosition('previous');
+    adsLoader.destroy();
+    videoContainer.remove();
   });
 
   function initializeIMA() {
@@ -83,6 +123,10 @@ function videoSDK() {
       // Instanciar el AdsManager desde la respuesta de adsLoader y pasarle el elemento vídeo
       adsManager = adsManagerLoadedEvent.getAdsManager(videoElement);
 
+      if(adsMuted){
+        adsManager.setVolume(0);
+      }
+
       adsManager.addEventListener(
         google.ima.AdEvent.Type.LOADED,
         onAdLoaded
@@ -101,7 +145,6 @@ function videoSDK() {
     }
 
     function onAdLoaded(adEvent) {
-      console.log(adEvent);
       console.log('onAdLoaded');
     }
 
@@ -229,36 +272,6 @@ function videoSDK() {
   managementPosition('initial');
   initializeIMA();
   actionRequest();
-
-
-  playSwitch.addEventListener('click',function(e){
-
-    if(!adContainer.classList.contains('paused')){
-      adsManager.pause();
-      adContainer.classList.add('paused');
-    }else {
-      adsManager.resume();
-      adContainer.classList.remove('paused');
-    }
-    
-  })
-
-  adsSound.addEventListener('click',function(){
-    let volume = adsManager.getVolume();
-
-    if(adContainer.classList.contains('paused')){
-      return;
-    }
-
-    if(volume == 1){
-      adsManager.setVolume(0);
-      adContainer.classList.add('muted');
-    }else {
-      adsManager.setVolume(1);
-      adContainer.classList.remove('muted');
-    }
-
-  })
 
 }
 
