@@ -127,12 +127,18 @@
 	</div>
 </div>
 {# Reproductor SDK #}
-{#<div id="video-container">
-	<video id="video-element" controls>
+<div id="video-container" muted>
+	<video id="video-element">
 		<source src="https://storage.googleapis.com/interactive-media-ads/media/android.mp4">
 		<source src="https://storage.googleapis.com/interactive-media-ads/media/android.webm">
 		<source src="https://pubads.g.doubleclick.net/gampad/ads?iu=/66060234/video-pre-roll&description_url=https%3A%2F%2Fmaster-4ld14-n3ws.us.seedcloud.co%2F&tfcd=0&npa=0&sz=400x300&min_ad_duration=30000&max_ad_duration=60000&gdfp_req=1&output=vast&unviewed_position_start=1&env=vp&impl=s&correlator=">
 	</video>
 	<div id="ad-container"></div>
 </div>
-<button id="play-button">Play</button>#}
+<button id="play-button">Play</button>
+<button id="play-previous" disabled>Previous</button>
+<button id="play-switch">&#8227</button>
+<button id="play-next">Next</button>
+<button id="ads-sound">&#128266;</button>
+
+
