@@ -2150,226 +2150,6 @@ var unitedStateFirst = function unitedStateFirst(form) {
 
 /***/ }),
 
-/***/ "./src/js/modules/video-pre-roll.js":
-/*!******************************************!*\
-  !*** ./src/js/modules/video-pre-roll.js ***!
-  \******************************************/
-/*! exports provided: videoSDK */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "videoSDK", function() { return videoSDK; });
-function videoSDK() {
-  var vastTags = Object.values(drupalSettings.vast);
-  var mapPositions = vastTags.map(function (tag) {
-    return tag['pos'];
-  });
-  var vastPrev;
-  var vastCurrent;
-  var vastNext;
-  var lastVast = vastTags.length;
-  mapPositions.sort(function (a, b) {
-    return a - b;
-  });
-  var adDisplayContainer;
-  var adsLoader;
-  var adsManager;
-  var videoElement = document.querySelector('#video-element');
-  var adContainer = document.querySelector('#ad-container');
-  var playAction = document.querySelector('#play-button');
-  var nextAction = document.querySelector('#play-next');
-  var playSwitch = document.querySelector('#play-switch');
-  var previousAction = document.querySelector('#play-previous');
-  var adsSound = document.querySelector('#ads-sound');
-  var urlTag = getTagByPosition(vastTags, mapPositions[0]);
-  playAction.addEventListener('click', function () {
-    console.log('load');
-    loadAds();
-  });
-  nextAction.addEventListener('click', function () {
-    var pos = this.dataset.position;
-    urlTag = getTagByPosition(vastTags, mapPositions[pos]); //reset actions
-
-    adsManager.destroy();
-    actionRequest();
-    setTimeout(function () {
-      playAction.click();
-    }, 300);
-    managementPosition('next');
-  });
-  previousAction.addEventListener('click', function () {
-    var pos = this.dataset.position;
-    urlTag = getTagByPosition(vastTags, mapPositions[pos]); //reset actions
-
-    adsManager.destroy();
-    actionRequest();
-    setTimeout(function () {
-      playAction.click();
-    }, 300);
-    managementPosition('previous');
-  });
-
-  function initializeIMA() {
-    adDisplayContainer = new google.ima.AdDisplayContainer(adContainer, videoElement);
-    adsLoader = new google.ima.AdsLoader(adDisplayContainer);
-    adsLoader.addEventListener(google.ima.AdsManagerLoadedEvent.Type.ADS_MANAGER_LOADED, onAdsManagerLoaded, false);
-    adsLoader.addEventListener(google.ima.AdErrorEvent.Type.AD_ERROR, onAdError, false);
-
-    function onAdsManagerLoaded(adsManagerLoadedEvent) {
-      console.log('onAdsManagerLoaded'); // Instanciar el AdsManager desde la respuesta de adsLoader y pasarle el elemento vídeo
-
-      adsManager = adsManagerLoadedEvent.getAdsManager(videoElement);
-      adsManager.addEventListener(google.ima.AdEvent.Type.LOADED, onAdLoaded);
-      adsManager.addEventListener(google.ima.AdEvent.Type.COMPLETE, onAdComplete);
-      adsManager.addEventListener(google.ima.AdErrorEvent.Type.AD_ERROR, onAdError);
-    }
-
-    function onAdLoaded(adEvent) {
-      console.log(adEvent);
-      console.log('onAdLoaded');
-    }
-
-    function onAdComplete() {
-      nextAction.click();
-    }
-
-    function onAdError(adErrorEvent) {
-      console.log(adErrorEvent.getError());
-
-      if (adsManager) {
-        adsManager.destroy();
-      }
-    }
-  }
-
-  function actionRequest() {
-    var adsRequest = new google.ima.AdsRequest();
-    adsRequest.setContinuousPlayback();
-    adsRequest.setAdWillAutoPlay(true);
-    adsRequest.setAdWillPlayMuted(true);
-    adsRequest.adTagUrl = urlTag;
-    adsLoader.requestAds(adsRequest);
-    adsLoader.contentComplete();
-  }
-
-  function loadAds() {
-    // Inicializar el contenedor. Debe hacerse mediante una acción del usuario en los dispositivos móviles.
-    adDisplayContainer.initialize();
-    var width = videoElement.clientWidth;
-    var heigth = videoElement.clientHeight;
-    console.log(adsManager);
-
-    try {
-      adsManager.init(width, heigth, google.ima.ViewMode.NORMAL);
-      adsManager.start();
-      restartControls();
-    } catch (adError) {
-      // Reproducir el vídeo sin anuncios, si se produce un error
-      console.log(adError);
-      console.log("AdsManager could not be started"); //videoElement.play();
-    }
-  }
-
-  function getTagByPosition(arr, pos) {
-    var tag = arr.filter(function (element) {
-      if (element['pos'] == pos) {
-        return element['tag'];
-      }
-    });
-    if (!!tag) return tag[0].tag;
-    return null;
-  }
-
-  function managementPosition(option) {
-    if (option == 'initial') {
-      vastPrev = null;
-      vastCurrent = 0;
-      vastNext = 1;
-      previousAction.setAttribute('disabled', 'disabled');
-      previousAction.classList.add('disabled');
-    }
-
-    if (option == 'next') {
-      vastPrev = vastCurrent;
-      vastCurrent = vastCurrent + 1;
-      vastNext = vastCurrent + 1;
-
-      if (vastNext == lastVast) {
-        nextAction.setAttribute('disabled', 'disabled');
-        nextAction.classList.add('disabled');
-      }
-
-      if (previousAction.classList.contains('disabled')) {
-        previousAction.removeAttribute('disabled', 'disabled');
-        previousAction.classList.remove('disabled');
-      }
-    }
-
-    if (option == 'previous') {
-      vastPrev = vastCurrent - 2;
-      vastCurrent = vastCurrent - 1;
-      vastNext = vastCurrent + 1;
-
-      if (vastCurrent == 0) {
-        previousAction.setAttribute('disabled', 'disabled');
-        previousAction.classList.add('disabled');
-      }
-
-      if (nextAction.classList.contains('disabled')) {
-        nextAction.removeAttribute('disabled', 'disabled');
-        nextAction.classList.remove('disabled');
-      }
-    }
-
-    previousAction.dataset.position = vastPrev;
-    playAction.dataset.position = vastCurrent;
-    nextAction.dataset.position = vastNext;
-  }
-
-  function restartControls() {
-    if (adContainer.classList.contains('paused')) {
-      adContainer.classList.remove('paused');
-    }
-
-    if (adContainer.classList.contains('muted')) {
-      adContainer.classList.remove('muted');
-    }
-  }
-
-  managementPosition('initial');
-  initializeIMA();
-  actionRequest();
-  playSwitch.addEventListener('click', function (e) {
-    if (!adContainer.classList.contains('paused')) {
-      adsManager.pause();
-      adContainer.classList.add('paused');
-    } else {
-      adsManager.resume();
-      adContainer.classList.remove('paused');
-    }
-  });
-  adsSound.addEventListener('click', function () {
-    var volume = adsManager.getVolume();
-
-    if (adContainer.classList.contains('paused')) {
-      return;
-    }
-
-    if (volume == 1) {
-      adsManager.setVolume(0);
-      adContainer.classList.add('muted');
-    } else {
-      adsManager.setVolume(1);
-      adContainer.classList.remove('muted');
-    }
-  });
-}
-
-
-
-/***/ }),
-
 /***/ "./src/js/scripts.js":
 /*!***************************!*\
   !*** ./src/js/scripts.js ***!
@@ -2387,15 +2167,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _main_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./main.js */ "./src/js/main.js");
 /* harmony import */ var _slick_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./slick.js */ "./src/js/slick.js");
 /* harmony import */ var _modules_replaceToken__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/replaceToken */ "./src/js/modules/replaceToken.js");
-/* harmony import */ var _modules_video_pre_roll__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/video-pre-roll */ "./src/js/modules/video-pre-roll.js");
-/* harmony import */ var _modules_state_and_city__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/state_and_city */ "./src/js/modules/state_and_city.js");
-/* harmony import */ var _modules_fixedCloseWebforms__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/fixedCloseWebforms */ "./src/js/modules/fixedCloseWebforms.js");
+/* harmony import */ var _modules_state_and_city__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/state_and_city */ "./src/js/modules/state_and_city.js");
+/* harmony import */ var _modules_fixedCloseWebforms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/fixedCloseWebforms */ "./src/js/modules/fixedCloseWebforms.js");
 
 
 
 
 
-
+ //import { videoSDK } from "./modules/video-pre-roll";
 
 
 
@@ -2481,7 +2260,7 @@ __webpack_require__.r(__webpack_exports__);
     }
   });
   $(window).on("load", function () {
-    Object(_modules_video_pre_roll__WEBPACK_IMPORTED_MODULE_6__["videoSDK"])();
+    //videoSDK();
     var headingTags = document.querySelectorAll("h1, h2, h3");
     var paragraphTags = document.querySelectorAll("p");
     Object(_modules_replaceToken__WEBPACK_IMPORTED_MODULE_5__["default"])("AL DÍA", aldiaLogoStructure, headingTags);
@@ -2606,7 +2385,7 @@ __webpack_require__.r(__webpack_exports__);
     $(".banner-events a#nominee").click(function () {
       $(".form-nominee-events").parents(".modal-apply-webform").addClass("open");
       var form = document.querySelector('.webform-submission-nominate-form');
-      Object(_modules_fixedCloseWebforms__WEBPACK_IMPORTED_MODULE_8__["formApplyModified"])(form, '.close-modal');
+      Object(_modules_fixedCloseWebforms__WEBPACK_IMPORTED_MODULE_7__["formApplyModified"])(form, '.close-modal');
     });
     $(".banner-events a#register-here").click(function () {
       $(".form-register-events").parents(".modal-apply-webform").addClass("open");
@@ -2614,7 +2393,7 @@ __webpack_require__.r(__webpack_exports__);
     $(".banner-events a#sponsorship").click(function () {
       $(".form-sponsorship-events").parents(".modal-apply-webform").addClass("open");
       var formSponsorshipEvent = document.querySelector('.webform-submission-sponsorship-upcoming-event-form');
-      Object(_modules_fixedCloseWebforms__WEBPACK_IMPORTED_MODULE_8__["formApplyModified"])(formSponsorshipEvent, '.close-modal');
+      Object(_modules_fixedCloseWebforms__WEBPACK_IMPORTED_MODULE_7__["formApplyModified"])(formSponsorshipEvent, '.close-modal');
     });
     $('.modal-apply-webform  button[name="close"]').click(function () {
       if ($(".modal-open .modal-apply-webform").hasClass("open")) {
@@ -2680,35 +2459,35 @@ __webpack_require__.r(__webpack_exports__);
 
     if (!!document.querySelector('.webform-about-al-dia-live .webform-submission-sponsorship-form')) {
       var form = document.querySelector('.webform-about-al-dia-live .webform-submission-sponsorship-form');
-      Object(_modules_state_and_city__WEBPACK_IMPORTED_MODULE_7__["validateFormSponsorship"])(form);
-      Object(_modules_state_and_city__WEBPACK_IMPORTED_MODULE_7__["unitedStateFirst"])(form);
+      Object(_modules_state_and_city__WEBPACK_IMPORTED_MODULE_6__["validateFormSponsorship"])(form);
+      Object(_modules_state_and_city__WEBPACK_IMPORTED_MODULE_6__["unitedStateFirst"])(form);
     }
 
     if (!!document.querySelector('.webform-submission-sponsorship-upcoming-event-form')) {
       var _form = document.querySelector('.webform-submission-sponsorship-upcoming-event-form');
 
-      Object(_modules_state_and_city__WEBPACK_IMPORTED_MODULE_7__["validateFormSponsorship"])(_form);
-      Object(_modules_state_and_city__WEBPACK_IMPORTED_MODULE_7__["unitedStateFirst"])(_form);
+      Object(_modules_state_and_city__WEBPACK_IMPORTED_MODULE_6__["validateFormSponsorship"])(_form);
+      Object(_modules_state_and_city__WEBPACK_IMPORTED_MODULE_6__["unitedStateFirst"])(_form);
     }
 
     var formSponsorshipEvent = document.querySelector('.webform-submission-sponsorship-upcoming-event-form');
-    Object(_modules_fixedCloseWebforms__WEBPACK_IMPORTED_MODULE_8__["formApplyModified"])(formSponsorshipEvent, '.close-modal');
+    Object(_modules_fixedCloseWebforms__WEBPACK_IMPORTED_MODULE_7__["formApplyModified"])(formSponsorshipEvent, '.close-modal');
     $(window).on('resize', function () {
       var formNominate = document.querySelector('.webform-submission-nominate-form');
       var formSponsorshipEvent = document.querySelector('.webform-submission-sponsorship-upcoming-event-form');
       var formRegisterEvent = document.querySelector('.registerhere-popup-event-landing .webform-submission-register-form');
 
       if (!!formNominate) {
-        Object(_modules_fixedCloseWebforms__WEBPACK_IMPORTED_MODULE_8__["formApplyModified"])(formNominate, '.close-modal');
+        Object(_modules_fixedCloseWebforms__WEBPACK_IMPORTED_MODULE_7__["formApplyModified"])(formNominate, '.close-modal');
       }
 
       if (!!formSponsorshipEvent) {
-        Object(_modules_fixedCloseWebforms__WEBPACK_IMPORTED_MODULE_8__["formApplyModified"])(formSponsorshipEvent, '.close-modal');
+        Object(_modules_fixedCloseWebforms__WEBPACK_IMPORTED_MODULE_7__["formApplyModified"])(formSponsorshipEvent, '.close-modal');
       }
 
       if (!!formRegisterEvent) {
         setTimeout(function () {
-          Object(_modules_fixedCloseWebforms__WEBPACK_IMPORTED_MODULE_8__["formApplyModified"])(formRegisterEvent, '.close-modal');
+          Object(_modules_fixedCloseWebforms__WEBPACK_IMPORTED_MODULE_7__["formApplyModified"])(formRegisterEvent, '.close-modal');
         }, 0);
       }
     });
@@ -2738,8 +2517,8 @@ __webpack_require__.r(__webpack_exports__);
 
         if (!!document.querySelector('.webform-submission-sponsorship-upcoming-event-form')) {
           var form = document.querySelector('.webform-submission-sponsorship-upcoming-event-form');
-          Object(_modules_state_and_city__WEBPACK_IMPORTED_MODULE_7__["validateFormSponsorship"])(form);
-          Object(_modules_state_and_city__WEBPACK_IMPORTED_MODULE_7__["unitedStateFirst"])(form);
+          Object(_modules_state_and_city__WEBPACK_IMPORTED_MODULE_6__["validateFormSponsorship"])(form);
+          Object(_modules_state_and_city__WEBPACK_IMPORTED_MODULE_6__["unitedStateFirst"])(form);
         }
       }
 
@@ -2934,15 +2713,15 @@ __webpack_require__.r(__webpack_exports__);
         var formRegisterEvent = document.querySelector('.registerhere-popup-event-landing .webform-submission-register-form');
 
         if (!!formLogin) {
-          Object(_modules_fixedCloseWebforms__WEBPACK_IMPORTED_MODULE_8__["formApplyModified"])(formLogin, '.ui-dialog-titlebar-close');
+          Object(_modules_fixedCloseWebforms__WEBPACK_IMPORTED_MODULE_7__["formApplyModified"])(formLogin, '.ui-dialog-titlebar-close');
         }
 
         if (!!formSponsorshipEvent) {
-          Object(_modules_fixedCloseWebforms__WEBPACK_IMPORTED_MODULE_8__["formApplyModified"])(formSponsorshipEvent, '.close-modal');
+          Object(_modules_fixedCloseWebforms__WEBPACK_IMPORTED_MODULE_7__["formApplyModified"])(formSponsorshipEvent, '.close-modal');
         }
 
         if (!!formRegisterEvent) {
-          Object(_modules_fixedCloseWebforms__WEBPACK_IMPORTED_MODULE_8__["formApplyModified"])(formRegisterEvent, '.close-modal');
+          Object(_modules_fixedCloseWebforms__WEBPACK_IMPORTED_MODULE_7__["formApplyModified"])(formRegisterEvent, '.close-modal');
         }
       }, 100);
     }
