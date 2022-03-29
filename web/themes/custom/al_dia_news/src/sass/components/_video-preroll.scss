@@ -15,20 +15,26 @@
   height: 100%;
   background-color: #000;
   position: absolute;
+  top: 0;
   opacity: 0;
   pointer-events: none;
   transition: .2s linear;
 }
 
 #video-container:hover #ads-controls,
-#video-container:hover #ads-sound-container {
+.paused #ads-controls,
+#video-container:hover #ads-sound-container,
+.paused#video-container #ads-sound-container {
   opacity: 1;
   pointer-events: all;
 }
 
-#video-container:hover::after  {
+#video-container:hover::after,
+.paused#video-container::after {
   opacity: .2;
 }
+
+.paused 
 
 #video-element {
   display: none;

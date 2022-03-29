@@ -29,6 +29,7 @@ function videoSDK() {
   const btnClosePreroll = document.querySelector('#btn-close-preroll');
   let urlTag = getTagByPosition(vastTags, mapPositions[0]);
   let adsMuted = true;
+  let lastAd = false;
 
   playAction.addEventListener('click', function () {
     console.log('load');
@@ -67,9 +68,7 @@ function videoSDK() {
     let pos = this.dataset.position;
     urlTag = getTagByPosition(vastTags, mapPositions[pos]);
 
-    //reset actions
     adsManager.destroy();
-    
     actionRequest();
    
     setTimeout(function(){
@@ -149,7 +148,20 @@ function videoSDK() {
     }
 
     function onAdComplete(){
-      nextAction.click();
+      if(!lastAd){
+        nextAction.click();
+      }else {
+        urlTag = getTagByPosition(vastTags, mapPositions[0]);
+        managementPosition('initial');
+
+        adsManager.destroy();
+        actionRequest();
+
+        setTimeout(function(){
+          playAction.click();
+        },300)
+      }
+   
     }
 
     function onAdError(adErrorEvent) {
@@ -163,7 +175,6 @@ function videoSDK() {
 
   function actionRequest() {
     let adsRequest = new google.ima.AdsRequest();
-    adsRequest.setContinuousPlayback();
     adsRequest.setAdWillAutoPlay(true);
     adsRequest.setAdWillPlayMuted(true);
     adsRequest.adTagUrl = urlTag;
@@ -215,6 +226,11 @@ function videoSDK() {
       previousAction.setAttribute('disabled','disabled');
       previousAction.classList.add('disabled');
 
+      if(nextAction.classList.contains('disabled') && lastVast > 0){
+        nextAction.removeAttribute('disabled','disabled');
+        nextAction.classList.remove('disabled')
+      }
+
     }
 
     if(option == 'next'){
@@ -225,6 +241,7 @@ function videoSDK() {
       if(vastNext == lastVast){
         nextAction.setAttribute('disabled','disabled');
         nextAction.classList.add('disabled');
+        lastAd = true;
       }
 
       if(previousAction.classList.contains('disabled')){
@@ -238,6 +255,10 @@ function videoSDK() {
       vastPrev = vastCurrent - 2;
       vastCurrent = vastCurrent - 1;
       vastNext = vastCurrent + 1;
+
+      if(lastAd){
+        lastAd = false;
+      }
 
       if(vastCurrent == 0){
         previousAction.setAttribute('disabled','disabled');
@@ -259,19 +280,23 @@ function videoSDK() {
 
   function restartControls(){
 
-    if(adContainer.classList.contains('paused')){
-      adContainer.classList.remove('paused');
+    if(videoContainer.classList.contains('paused')){
+      videoContainer.classList.remove('paused');
     }
 
-    if(adContainer.classList.contains('muted')){
-      adContainer.classList.remove('muted');
-    }
+    // if(videoContainer.classList.contains('muted')){
+    //   videoContainer.classList.remove('muted');
+    // }
 
   }
 
   managementPosition('initial');
   initializeIMA();
   actionRequest();
+
+  setTimeout(function(){
+    playAction.click();
+  },600)
 
 }
 

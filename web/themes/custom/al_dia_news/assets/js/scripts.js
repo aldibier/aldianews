@@ -2186,6 +2186,7 @@ function videoSDK() {
   var btnClosePreroll = document.querySelector('#btn-close-preroll');
   var urlTag = getTagByPosition(vastTags, mapPositions[0]);
   var adsMuted = true;
+  var lastAd = false;
   playAction.addEventListener('click', function () {
     console.log('load');
     loadAds();
@@ -2212,8 +2213,7 @@ function videoSDK() {
   });
   nextAction.addEventListener('click', function () {
     var pos = this.dataset.position;
-    urlTag = getTagByPosition(vastTags, mapPositions[pos]); //reset actions
-
+    urlTag = getTagByPosition(vastTags, mapPositions[pos]);
     adsManager.destroy();
     actionRequest();
     setTimeout(function () {
@@ -2269,7 +2269,17 @@ function videoSDK() {
     }
 
     function onAdComplete() {
-      nextAction.click();
+      if (!lastAd) {
+        nextAction.click();
+      } else {
+        urlTag = getTagByPosition(vastTags, mapPositions[0]);
+        managementPosition('initial');
+        adsManager.destroy();
+        actionRequest();
+        setTimeout(function () {
+          playAction.click();
+        }, 300);
+      }
     }
 
     function onAdError(adErrorEvent) {
@@ -2283,7 +2293,6 @@ function videoSDK() {
 
   function actionRequest() {
     var adsRequest = new google.ima.AdsRequest();
-    adsRequest.setContinuousPlayback();
     adsRequest.setAdWillAutoPlay(true);
     adsRequest.setAdWillPlayMuted(true);
     adsRequest.adTagUrl = urlTag;
@@ -2326,6 +2335,11 @@ function videoSDK() {
       vastNext = 1;
       previousAction.setAttribute('disabled', 'disabled');
       previousAction.classList.add('disabled');
+
+      if (nextAction.classList.contains('disabled') && lastVast > 0) {
+        nextAction.removeAttribute('disabled', 'disabled');
+        nextAction.classList.remove('disabled');
+      }
     }
 
     if (option == 'next') {
@@ -2336,6 +2350,7 @@ function videoSDK() {
       if (vastNext == lastVast) {
         nextAction.setAttribute('disabled', 'disabled');
         nextAction.classList.add('disabled');
+        lastAd = true;
       }
 
       if (previousAction.classList.contains('disabled')) {
@@ -2348,6 +2363,10 @@ function videoSDK() {
       vastPrev = vastCurrent - 2;
       vastCurrent = vastCurrent - 1;
       vastNext = vastCurrent + 1;
+
+      if (lastAd) {
+        lastAd = false;
+      }
 
       if (vastCurrent == 0) {
         previousAction.setAttribute('disabled', 'disabled');
@@ -2366,18 +2385,20 @@ function videoSDK() {
   }
 
   function restartControls() {
-    if (adContainer.classList.contains('paused')) {
-      adContainer.classList.remove('paused');
-    }
+    if (videoContainer.classList.contains('paused')) {
+      videoContainer.classList.remove('paused');
+    } // if(videoContainer.classList.contains('muted')){
+    //   videoContainer.classList.remove('muted');
+    // }
 
-    if (adContainer.classList.contains('muted')) {
-      adContainer.classList.remove('muted');
-    }
   }
 
   managementPosition('initial');
   initializeIMA();
   actionRequest();
+  setTimeout(function () {
+    playAction.click();
+  }, 600);
 }
 
 
