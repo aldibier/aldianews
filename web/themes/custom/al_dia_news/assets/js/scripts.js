@@ -2169,7 +2169,6 @@ function videoSDK() {
   var vastCurrent;
   var vastNext;
   var lastVast = vastTags.length - 1;
-  console.log('lastVast', lastVast);
   mapPositions.sort(function (a, b) {
     return a - b;
   });
@@ -2306,7 +2305,6 @@ function videoSDK() {
     adDisplayContainer.initialize();
     var width = videoElement.clientWidth;
     var heigth = videoElement.clientHeight;
-    console.log(adsManager);
 
     try {
       adsManager.init(width, heigth, google.ima.ViewMode.NORMAL);

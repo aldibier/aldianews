@@ -10,8 +10,6 @@ function videoSDK() {
   let vastNext;
   let lastVast = vastTags.length - 1;
 
-  console.log('lastVast',lastVast);
-
   mapPositions.sort(function (a, b) {
     return a - b;
   });
@@ -191,8 +189,6 @@ function videoSDK() {
 
     let width = videoElement.clientWidth;
     let heigth = videoElement.clientHeight;
-
-    console.log(adsManager);
 
     try {
       adsManager.init(width, heigth, google.ima.ViewMode.NORMAL);
