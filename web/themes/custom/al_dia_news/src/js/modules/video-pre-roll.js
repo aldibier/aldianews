@@ -229,7 +229,7 @@ function videoSDK() {
         nextAction.classList.remove('disabled')
       }
 
-      if(lastAdComplete == 0){
+      if(lastVast == 0){
         nextAction.setAttribute('disabled','disabled');
         nextAction.classList.add('disabled');
         lastAdComplete = true;
@@ -242,7 +242,7 @@ function videoSDK() {
       vastCurrent = vastCurrent + 1;
       vastNext =  vastCurrent  + 1;
 
-      if(vastNext == lastVast){
+      if(vastNext == (lastVast + 1)){
         nextAction.setAttribute('disabled','disabled');
         nextAction.classList.add('disabled');
         lastAdComplete = true;
