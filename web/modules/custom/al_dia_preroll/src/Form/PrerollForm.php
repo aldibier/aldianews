@@ -109,7 +109,7 @@ class PrerollForm extends ConfigFormBase {
        $config = $this->config('al_dia_preroll.adminsettings');
        $number_of_tags = $config->get('number_of_tags');
 
-       $this->config('al_dia_preroll.adminsettings')->set('number_of_tags',$number_of_tags + 1)->save();
+       $config->set('number_of_tags',$number_of_tags + 1)->save();
        $form_state->setRebuild(TRUE);
     }
 
@@ -120,15 +120,10 @@ class PrerollForm extends ConfigFormBase {
         $config = $this->config('al_dia_preroll.adminsettings');
         $number_of_tags = $config->get('number_of_tags');
 
-        $this->config('al_dia_preroll.adminsettings')
-        ->set("path_vast_$number_of_tags","")
-        ->save();
+        $config->clear("path_vast_$number_of_tags")->save();
+        $config->clear("pos_vast_$number_of_tags")->save();
+        $config->set('number_of_tags', $number_of_tags - 1)->save();
 
-        $this->config('al_dia_preroll.adminsettings')
-            ->set("pos_vast_$number_of_tags","")
-            ->save();
-
-        $this->config('al_dia_preroll.adminsettings')->set('number_of_tags', $number_of_tags - 1)->save();
         $form_state->setRebuild(TRUE);
     }
 
@@ -151,19 +146,12 @@ class PrerollForm extends ConfigFormBase {
 
         for($i = 1;$i <= $tags;$i++ ){
 
-            $this->config('al_dia_preroll.adminsettings')
-            ->set("path_vast_$i",$form_state->getValue('tags')["path_vast_$i"])
-            ->save();
-
-            $this->config('al_dia_preroll.adminsettings')
-                ->set("pos_vast_$i",$form_state->getValue('tags')["pos_vast_$i"])
-                ->save();
+            $config->set("path_vast_$i",$form_state->getValue('tags')["path_vast_$i"])->save();
+            $config->set("pos_vast_$i",$form_state->getValue('tags')["pos_vast_$i"])->save();
 
         }
 
-        $this->config('al_dia_preroll.adminsettings')
-        ->set('number_of_tags_save',$tags)
-        ->save();
+        $config->set('number_of_tags_save',$tags)->save();
         
     }
 

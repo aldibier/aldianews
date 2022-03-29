@@ -2168,7 +2168,8 @@ function videoSDK() {
   var vastPrev;
   var vastCurrent;
   var vastNext;
-  var lastVast = vastTags.length;
+  var lastVast = vastTags.length - 1;
+  console.log('lastVast', lastVast);
   mapPositions.sort(function (a, b) {
     return a - b;
   });
@@ -2186,7 +2187,7 @@ function videoSDK() {
   var btnClosePreroll = document.querySelector('#btn-close-preroll');
   var urlTag = getTagByPosition(vastTags, mapPositions[0]);
   var adsMuted = true;
-  var lastAd = false;
+  var lastAdComplete = false;
   playAction.addEventListener('click', function () {
     console.log('load');
     loadAds();
@@ -2269,7 +2270,7 @@ function videoSDK() {
     }
 
     function onAdComplete() {
-      if (!lastAd) {
+      if (!lastAdComplete) {
         nextAction.click();
       } else {
         urlTag = getTagByPosition(vastTags, mapPositions[0]);
@@ -2340,6 +2341,12 @@ function videoSDK() {
         nextAction.removeAttribute('disabled', 'disabled');
         nextAction.classList.remove('disabled');
       }
+
+      if (lastAdComplete == 0) {
+        nextAction.setAttribute('disabled', 'disabled');
+        nextAction.classList.add('disabled');
+        lastAdComplete = true;
+      }
     }
 
     if (option == 'next') {
@@ -2350,7 +2357,7 @@ function videoSDK() {
       if (vastNext == lastVast) {
         nextAction.setAttribute('disabled', 'disabled');
         nextAction.classList.add('disabled');
-        lastAd = true;
+        lastAdComplete = true;
       }
 
       if (previousAction.classList.contains('disabled')) {
@@ -2364,8 +2371,8 @@ function videoSDK() {
       vastCurrent = vastCurrent - 1;
       vastNext = vastCurrent + 1;
 
-      if (lastAd) {
-        lastAd = false;
+      if (lastAdComplete) {
+        lastAdComplete = false;
       }
 
       if (vastCurrent == 0) {

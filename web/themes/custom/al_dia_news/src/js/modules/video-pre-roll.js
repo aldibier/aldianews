@@ -8,7 +8,9 @@ function videoSDK() {
   let vastPrev;
   let vastCurrent;
   let vastNext;
-  let lastVast = vastTags.length;
+  let lastVast = vastTags.length - 1;
+
+  console.log('lastVast',lastVast);
 
   mapPositions.sort(function (a, b) {
     return a - b;
@@ -29,7 +31,7 @@ function videoSDK() {
   const btnClosePreroll = document.querySelector('#btn-close-preroll');
   let urlTag = getTagByPosition(vastTags, mapPositions[0]);
   let adsMuted = true;
-  let lastAd = false;
+  let lastAdComplete = false;
 
   playAction.addEventListener('click', function () {
     console.log('load');
@@ -148,7 +150,7 @@ function videoSDK() {
     }
 
     function onAdComplete(){
-      if(!lastAd){
+      if(!lastAdComplete){
         nextAction.click();
       }else {
         urlTag = getTagByPosition(vastTags, mapPositions[0]);
@@ -231,6 +233,12 @@ function videoSDK() {
         nextAction.classList.remove('disabled')
       }
 
+      if(lastAdComplete == 0){
+        nextAction.setAttribute('disabled','disabled');
+        nextAction.classList.add('disabled');
+        lastAdComplete = true;
+      }
+
     }
 
     if(option == 'next'){
@@ -241,7 +249,7 @@ function videoSDK() {
       if(vastNext == lastVast){
         nextAction.setAttribute('disabled','disabled');
         nextAction.classList.add('disabled');
-        lastAd = true;
+        lastAdComplete = true;
       }
 
       if(previousAction.classList.contains('disabled')){
@@ -256,8 +264,8 @@ function videoSDK() {
       vastCurrent = vastCurrent - 1;
       vastNext = vastCurrent + 1;
 
-      if(lastAd){
-        lastAd = false;
+      if(lastAdComplete){
+        lastAdComplete = false;
       }
 
       if(vastCurrent == 0){
