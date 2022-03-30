@@ -118,13 +118,13 @@ function videoSDK() {
 
   });
 
-  addEventListener('fullscreenchange', event => {
+  // addEventListener('fullscreenchange', event => {
 
-    if (!document.fullscreenElement) {
-      videoContainer.classList.remove('fullscreen');
-    } 
+  //   if (!document.fullscreenElement) {
+  //     videoContainer.classList.remove('fullscreen');
+  //   } 
 
-  });
+  // });
 
   btnClosePreroll.addEventListener('click',function(){
     adsManager.destroy();

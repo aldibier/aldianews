@@ -2251,12 +2251,12 @@ function videoSDK() {
         videoContainer.classList.add('fullscreen');
       }
     }
-  });
-  addEventListener('fullscreenchange', function (event) {
-    if (!document.fullscreenElement) {
-      videoContainer.classList.remove('fullscreen');
-    }
-  });
+  }); // addEventListener('fullscreenchange', event => {
+  //   if (!document.fullscreenElement) {
+  //     videoContainer.classList.remove('fullscreen');
+  //   } 
+  // });
+
   btnClosePreroll.addEventListener('click', function () {
     adsManager.destroy();
     adsLoader.destroy();
