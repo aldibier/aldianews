@@ -22,10 +22,6 @@
   transition: 0.2s linear;
 }
 
-.paused#video-container::after {
-  opacity: 0.2;
-}
-
 #video-element {
   display: none;
 }
@@ -36,7 +32,7 @@
   height: 100% !important;
 }
 
-#ads-controls {
+#ads-main-controls {
   position: absolute;
   z-index: 1;
   top: 50%;
@@ -61,11 +57,6 @@
   cursor: pointer;
 }
 
-#play-previous.disabled  {
-  opacity: 0.3;
-  pointer-events: none;
-}
-
 #play-switch  {
   width: 20px;
   height: 20px;
@@ -79,10 +70,6 @@
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;
-}
-
-.paused #play-switch {
-  background-image: icon("play-icon", "png");
 }
 
 #play-next {
@@ -99,17 +86,21 @@
   cursor: pointer;
 }
 
-#play-next.disabled {
-  opacity: 0.3;
-  pointer-events: none;
-}
-
-#ads-sound-container {
+#ads-secundary-controls {
   position: absolute;
   z-index: 1;
   bottom: 0;
+  display: flex;
+  align-items: center;
   padding: 5px;
   transition: 0.2s linear;
+}
+
+#ads-sound-container,
+#ads-fullscreen-container {
+  max-width: 30px;
+  max-height: 30px;
+  margin-right: 10px;
 }
 
 #ads-sound {
@@ -126,8 +117,18 @@
   cursor: pointer;
 }
 
-.muted #ads-sound {
-  background-image: icon("sound-off-icon", "png");
+#ads-fullscreen {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  background-image: icon("fullscreen_icon", "png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-size: 0;
+  cursor: pointer;
 }
 
 #btn-close-preroll {
@@ -146,6 +147,37 @@
   cursor: pointer;
 }
 
+//Modifications
+.paused#video-container::after {
+  opacity: 0.2;
+}
+
+#play-previous.disabled  {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+#play-next.disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.paused #play-switch {
+  background-image: icon("play-icon", "png");
+}
+
+.muted #ads-sound {
+  background-image: icon("sound-off-icon", "png");
+}
+
+.fullscreen #play-previous,
+.fullscreen #play-switch,
+.fullscreen #play-next,
+.fullscreen #ads-sound,
+.fullscreen {
+  
+}
+
 @media screen and (min-width: $tablet) {
   #video-container {
     bottom: calc(0% + 187px);
@@ -153,19 +185,19 @@
     height: 190px;
   }
 
-  #video-container #ads-controls,
-  #video-container #ads-sound-container {
+  #video-container #ads-main-controls,
+  #video-container #ads-secundary-controls {
     pointer-events: none;
   }
 
-  #video-container:hover #ads-controls,
-  #video-container:hover #ads-sound-container {
+  #video-container:hover #ads-main-controls,
+  #video-container:hover #ads-secundary-controls {
     opacity: 1;
     pointer-events: all;
   }
 
-  .paused #ads-controls,
-  .paused#video-container #ads-sound-container {
+  .paused #ads-main-controls,
+  .paused#video-container #ads-secundary-controls {
     opacity: 1;
     pointer-events: all;
   }
@@ -182,8 +214,8 @@
     height: 30px;
   }
 
-  #ads-controls,
-  #ads-sound-container  {
+  #ads-main-controls,
+  #ads-secundary-controls  {
     opacity: 0;
   }
 

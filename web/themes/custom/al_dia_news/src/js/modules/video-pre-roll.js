@@ -18,15 +18,20 @@ function videoSDK() {
   let adsLoader;
   let adsManager;
 
+  // Elements container
   const videoContainer = document.querySelector('#video-container');
   const videoElement = document.querySelector('#video-element');
   const adContainer = document.querySelector('#ad-container');
   const playAction = document.querySelector('#play-button');
+
+  // Elements actions
   const nextAction = document.querySelector('#play-next');
   const playSwitch = document.querySelector('#play-switch')
   const previousAction = document.querySelector('#play-previous');
   const adsSound = document.querySelector('#ads-sound');
+  const adsFullscreen = document.querySelector('#ads-fullscreen');
   const btnClosePreroll = document.querySelector('#btn-close-preroll');
+
   let urlTag = getTagByPosition(vastTags, mapPositions[0]);
   let adsMuted = true;
   let lastAdComplete = false;
@@ -96,6 +101,30 @@ function videoSDK() {
     }
 
   })
+
+  adsFullscreen.addEventListener('click',function(){
+
+    if (videoContainer.requestFullscreen) {
+    
+      if (document.fullscreenElement) {
+        document.exitFullscreen();
+        videoContainer.classList.remove('fullscreen');
+      } else {
+        videoContainer.requestFullscreen();
+        videoContainer.classList.add('fullscreen');
+      }
+
+    }
+
+  });
+
+  addEventListener('fullscreenchange', event => {
+
+    if (!document.fullscreenElement) {
+      videoContainer.classList.remove('fullscreen');
+    } 
+
+  });
 
   btnClosePreroll.addEventListener('click',function(){
     adsManager.destroy();
@@ -300,7 +329,7 @@ function videoSDK() {
 
   setTimeout(function(){
     playAction.click();
-  },600)
+  },1000)
 
 }
 
