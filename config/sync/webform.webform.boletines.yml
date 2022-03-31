@@ -23,10 +23,9 @@ elements: |-
     '#title': Email
     '#placeholder': 'Ingrese correo electrónico'
     '#required': true
+    '#required_error': 'This field is required'
     '#unique': true
     '#unique_error': 'Este correo electrónico ya ha sido agregado.'
-    '#pattern': '/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3,4})+$/'
-    '#pattern_error': 'The email is invalid'
   actions:
     '#type': webform_actions
     '#title': 'Submit button(s)'
@@ -221,7 +220,7 @@ handlers:
     conditions: {  }
     weight: 0
     settings:
-      list: a0ffa3f5-61e1-4a21-9978-322afef6f79f
+      list: ae9fd2fe-1985-4730-bbdf-e0afd5f12221
       email_field: email
       reserved_fields: {  }
       custom_fields: {  }
