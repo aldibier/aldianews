@@ -373,6 +373,15 @@ function al_dia_news_form_views_exposed_form_alter(&$form, &$form_state) {
   }
 }
 
+function al_dia_news_general_views_pre_view(ViewExecutable $view, $display_id, array &$args) {
+  if ($view->id() == 'landing_tags' && $display_id == 'block_1') {
+    $id_node = \Drupal::request()->query->get('node');
+    if (!$id_node) {
+      $view->display_handler->default_display->options['pager']['options']['offset'] = 1;
+
+    }
+  }
+}
 
 /**
  * Implement hook_views_query_alter.
@@ -385,6 +394,21 @@ function al_dia_news_form_views_exposed_form_alter(&$form, &$form_state) {
 function al_dia_news_general_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
   /* ksm($view->id()); */
   switch ($view->id()) {
+    case 'landing_tags':
+      if ($view->getDisplay()->display['id'] == 'block_1') {
+        $id_node = \Drupal::request()->query->get('node');
+        if ($id_node) {
+          foreach ($query->where as &$condition_group) {
+            foreach ($condition_group['conditions'] as &$condition) {
+              if($condition["field"] == "field_tags_taxonomy_term_field_data.nid"){
+                $condition["value"] = $id_node;
+                $condition["operator"] = "<>";
+              }
+            }
+          }
+        }
+      }
+    break;
     case 'last_news':
       $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
       if ($view->getDisplay()->display['id'] == 'block_1') {

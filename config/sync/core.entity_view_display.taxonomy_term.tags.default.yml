@@ -1,0 +1,64 @@
+uuid: 1ef36613-8818-4e2e-a631-c422c8b78d70
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.tags
+    - views.view.landing_tags
+  module:
+    - al_dia_layouts
+    - al_dia_news_general
+    - layout_builder
+    - text
+    - views
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: subcategory_next_four
+        layout_settings:
+          label: 'Subcaterory next four'
+          context_mapping: {  }
+        components:
+          1f183bf1-09da-4716-847e-b8ceba7c1e1f:
+            uuid: 1f183bf1-09da-4716-847e-b8ceba7c1e1f
+            region: one_content
+            configuration:
+              id: 'views_block:landing_tags-block_1'
+              label: ''
+              provider: views
+              label_display: '0'
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: -9
+          c026705f-b501-47ae-9570-d3b755dbf814:
+            uuid: c026705f-b501-47ae-9570-d3b755dbf814
+            region: one_content
+            configuration:
+              id: last_node_tag
+              label: LastNodeTag
+              provider: al_dia_news_general
+              label_display: '0'
+              context_mapping: {  }
+            additional: {  }
+            weight: -10
+        third_party_settings: {  }
+id: taxonomy_term.tags.default
+targetEntityType: taxonomy_term
+bundle: tags
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true
+  search_api_excerpt: true
