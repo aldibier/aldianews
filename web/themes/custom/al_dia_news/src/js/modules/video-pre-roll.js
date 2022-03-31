@@ -14,23 +14,29 @@ function videoSDK() {
     return a - b;
   });
 
+  // Elements ads
   let adDisplayContainer;
   let adsLoader;
   let adsManager;
+  let adsObj = {};
 
   // Elements container
   const videoContainer = document.querySelector('#video-container');
   const videoElement = document.querySelector('#video-element');
   const adContainer = document.querySelector('#ad-container');
-  const playAction = document.querySelector('#play-button');
+  const adsProgressContainer = document.querySelector('#ads-progress-container');
 
   // Elements actions
+  const playAction = document.querySelector('#play-button');
   const nextAction = document.querySelector('#play-next');
   const playSwitch = document.querySelector('#play-switch')
   const previousAction = document.querySelector('#play-previous');
   const adsSound = document.querySelector('#ads-sound');
   const adsFullscreen = document.querySelector('#ads-fullscreen');
   const btnClosePreroll = document.querySelector('#btn-close-preroll');
+  const adsBarProgress = document.querySelector('#ads-progress-container .bar');
+  const adsTimeLeft = document.querySelector('.ads-time-left');
+  const adsTimeTotal = document.querySelector('.ads-time-total');
 
   let urlTag = getTagByPosition(vastTags, mapPositions[0]);
   let adsMuted = true;
@@ -44,11 +50,17 @@ function videoSDK() {
   playSwitch.addEventListener('click',function(e){
 
     if(!videoContainer.classList.contains('paused')){
+      clearInterval(adsObj.interval);
       adsManager.pause();
+
       videoContainer.classList.add('paused');
     }else {
-      adsManager.resume();
+      adsObj.interval = setInterval(function(){
+        progressAds(adsObj.progress++,adsObj.duration,adsProgressContainer);
+      },1000);
+
       videoContainer.classList.remove('paused');
+      adsManager.resume();
     }
     
   })
@@ -118,13 +130,13 @@ function videoSDK() {
 
   });
 
-  // addEventListener('fullscreenchange', event => {
+  document.addEventListener('fullscreenchange', event => {
 
-  //   if (!document.fullscreenElement) {
-  //     videoContainer.classList.remove('fullscreen');
-  //   } 
+    if (!document.fullscreenElement) {
+      videoContainer.classList.remove('fullscreen');
+    } 
 
-  // });
+  });
 
   btnClosePreroll.addEventListener('click',function(){
     adsManager.destroy();
@@ -173,7 +185,22 @@ function videoSDK() {
     }
 
     function onAdLoaded(adEvent) {
-      console.log('onAdLoaded');
+      adsObj.ad = adEvent.getAd();
+      adsObj.duration = adsObj.ad.getDuration();
+      adsObj.progress = 0
+
+      adsObj.interval = setInterval(function(){
+        progressAds(adsObj.progress++,adsObj.duration,adsProgressContainer);
+      },1000);
+
+      let minutes = Math.floor(adsObj.duration/60);
+      let seconds = Math.floor(adsObj.duration%60);
+
+      minutes = (minutes < 10) ? '0'+minutes : minutes;
+      seconds = (seconds < 10) ? '0'+seconds : seconds;
+
+      adsTimeTotal.innerHTML = `${minutes}:${seconds}`;
+
     }
 
     function onAdComplete(){
@@ -311,15 +338,29 @@ function videoSDK() {
 
   }
 
+  function progressAds(timeLeft,timeTotal,element){
+    let progressBarPos = Math.floor(timeLeft * element.offsetWidth / timeTotal);
+    let minutes = Math.floor(timeLeft/60);
+    let seconds = Math.floor(timeLeft%60);
+
+    minutes = (minutes < 10) ? '0'+minutes : minutes;
+    seconds = (seconds < 10) ? '0'+seconds : seconds;
+
+    adsBarProgress.style.width = `${progressBarPos}px`;
+    adsTimeLeft.innerHTML = `${minutes}:${seconds}`;
+
+    if(timeLeft >= timeTotal) clearInterval(adsObj.interval);
+  }
+
   function restartControls(){
 
     if(videoContainer.classList.contains('paused')){
       videoContainer.classList.remove('paused');
     }
 
-    // if(videoContainer.classList.contains('muted')){
-    //   videoContainer.classList.remove('muted');
-    // }
+    adsBarProgress.style.width = '0px';
+
+    clearInterval(adsObj.interval);
 
   }
 

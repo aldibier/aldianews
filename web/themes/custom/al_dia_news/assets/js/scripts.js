@@ -2171,22 +2171,28 @@ function videoSDK() {
   var lastVast = vastTags.length - 1;
   mapPositions.sort(function (a, b) {
     return a - b;
-  });
+  }); // Elements ads
+
   var adDisplayContainer;
   var adsLoader;
-  var adsManager; // Elements container
+  var adsManager;
+  var adsObj = {}; // Elements container
 
   var videoContainer = document.querySelector('#video-container');
   var videoElement = document.querySelector('#video-element');
   var adContainer = document.querySelector('#ad-container');
-  var playAction = document.querySelector('#play-button'); // Elements actions
+  var adsProgressContainer = document.querySelector('#ads-progress-container'); // Elements actions
 
+  var playAction = document.querySelector('#play-button');
   var nextAction = document.querySelector('#play-next');
   var playSwitch = document.querySelector('#play-switch');
   var previousAction = document.querySelector('#play-previous');
   var adsSound = document.querySelector('#ads-sound');
   var adsFullscreen = document.querySelector('#ads-fullscreen');
   var btnClosePreroll = document.querySelector('#btn-close-preroll');
+  var adsBarProgress = document.querySelector('#ads-progress-container .bar');
+  var adsTimeLeft = document.querySelector('.ads-time-left');
+  var adsTimeTotal = document.querySelector('.ads-time-total');
   var urlTag = getTagByPosition(vastTags, mapPositions[0]);
   var adsMuted = true;
   var lastAdComplete = false;
@@ -2196,11 +2202,15 @@ function videoSDK() {
   });
   playSwitch.addEventListener('click', function (e) {
     if (!videoContainer.classList.contains('paused')) {
+      clearInterval(adsObj.interval);
       adsManager.pause();
       videoContainer.classList.add('paused');
     } else {
-      adsManager.resume();
+      adsObj.interval = setInterval(function () {
+        progressAds(adsObj.progress++, adsObj.duration, adsProgressContainer);
+      }, 1000);
       videoContainer.classList.remove('paused');
+      adsManager.resume();
     }
   });
   previousAction.addEventListener('click', function () {
@@ -2251,12 +2261,12 @@ function videoSDK() {
         videoContainer.classList.add('fullscreen');
       }
     }
-  }); // addEventListener('fullscreenchange', event => {
-  //   if (!document.fullscreenElement) {
-  //     videoContainer.classList.remove('fullscreen');
-  //   } 
-  // });
-
+  });
+  document.addEventListener('fullscreenchange', function (event) {
+    if (!document.fullscreenElement) {
+      videoContainer.classList.remove('fullscreen');
+    }
+  });
   btnClosePreroll.addEventListener('click', function () {
     adsManager.destroy();
     adsLoader.destroy();
@@ -2284,7 +2294,17 @@ function videoSDK() {
     }
 
     function onAdLoaded(adEvent) {
-      console.log('onAdLoaded');
+      adsObj.ad = adEvent.getAd();
+      adsObj.duration = adsObj.ad.getDuration();
+      adsObj.progress = 0;
+      adsObj.interval = setInterval(function () {
+        progressAds(adsObj.progress++, adsObj.duration, adsProgressContainer);
+      }, 1000);
+      var minutes = Math.floor(adsObj.duration / 60);
+      var seconds = Math.floor(adsObj.duration % 60);
+      minutes = minutes < 10 ? '0' + minutes : minutes;
+      seconds = seconds < 10 ? '0' + seconds : seconds;
+      adsTimeTotal.innerHTML = "".concat(minutes, ":").concat(seconds);
     }
 
     function onAdComplete() {
@@ -2408,13 +2428,24 @@ function videoSDK() {
     nextAction.dataset.position = vastNext;
   }
 
+  function progressAds(timeLeft, timeTotal, element) {
+    var progressBarPos = Math.floor(timeLeft * element.offsetWidth / timeTotal);
+    var minutes = Math.floor(timeLeft / 60);
+    var seconds = Math.floor(timeLeft % 60);
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+    adsBarProgress.style.width = "".concat(progressBarPos, "px");
+    adsTimeLeft.innerHTML = "".concat(minutes, ":").concat(seconds);
+    if (timeLeft >= timeTotal) clearInterval(adsObj.interval);
+  }
+
   function restartControls() {
     if (videoContainer.classList.contains('paused')) {
       videoContainer.classList.remove('paused');
-    } // if(videoContainer.classList.contains('muted')){
-    //   videoContainer.classList.remove('muted');
-    // }
+    }
 
+    adsBarProgress.style.width = '0px';
+    clearInterval(adsObj.interval);
   }
 
   managementPosition('initial');
