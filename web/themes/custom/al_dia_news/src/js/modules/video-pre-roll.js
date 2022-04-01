@@ -5,6 +5,8 @@ function videoSDK() {
     return tag['pos'];
   });
 
+  console.log(vastTags);
+
   let vastPrev;
   let vastCurrent;
   let vastNext;
@@ -207,6 +209,7 @@ function videoSDK() {
       if(!lastAdComplete){
         nextAction.click();
       }else {
+        lastAdComplete = false;
         urlTag = getTagByPosition(vastTags, mapPositions[0]);
         managementPosition('initial');
 
@@ -359,6 +362,8 @@ function videoSDK() {
     }
 
     adsBarProgress.style.width = '0px';
+    adsTimeLeft.innerHTML = '00:00';
+    adsTimeTotal.innerHTML = '00:00';
 
     clearInterval(adsObj.interval);
 

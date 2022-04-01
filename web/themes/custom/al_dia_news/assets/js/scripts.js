@@ -2165,6 +2165,7 @@ function videoSDK() {
   var mapPositions = vastTags.map(function (tag) {
     return tag['pos'];
   });
+  console.log(vastTags);
   var vastPrev;
   var vastCurrent;
   var vastNext;
@@ -2311,6 +2312,7 @@ function videoSDK() {
       if (!lastAdComplete) {
         nextAction.click();
       } else {
+        lastAdComplete = false;
         urlTag = getTagByPosition(vastTags, mapPositions[0]);
         managementPosition('initial');
         adsManager.destroy();
@@ -2445,6 +2447,8 @@ function videoSDK() {
     }
 
     adsBarProgress.style.width = '0px';
+    adsTimeLeft.innerHTML = '00:00';
+    adsTimeTotal.innerHTML = '00:00';
     clearInterval(adsObj.interval);
   }
 

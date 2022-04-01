@@ -49,7 +49,7 @@
   padding: 0;
   border: none;
   background-color: transparent;
-  background-image: icon("step-backward_icon", "png");
+  background-image: icon("step-backward-icon-mobile", "png");
   font-size: 0;
   background-size: contain;
   background-repeat: no-repeat;
@@ -64,7 +64,7 @@
   border: none;
   margin: 0 10px;
   background-color: transparent;
-  background-image: icon("pause_icon", "png");
+  background-image: icon("play-icon-mobile", "png");
   font-size: 0;
   background-size: contain;
   background-repeat: no-repeat;
@@ -78,7 +78,7 @@
   padding: 0;
   border: none;
   background-color: transparent;
-  background-image: icon("step-forward_icon", "png");
+  background-image: icon("step-forward-icon-mobile", "png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -98,13 +98,12 @@
   transition: 0.2s linear;
 }
 
-#ads-progress-container  {
+#ads-progress-container {
   flex: 1 1 100%;
   height: auto;
-  margin-bottom: 10px;
 }
 
-#ads-progress  {
+#ads-progress {
   width: 100%;
   height: 3px;
   background-color: #ffffff63;
@@ -120,6 +119,7 @@
 
 #ads-sound-container {
   margin-right: 10px;
+  overflow: hidden;
 }
 
 #ads-sound {
@@ -128,7 +128,7 @@
   padding: 0;
   border: none;
   background-color: transparent;
-  background-image: icon("sound-on-icon", "png");
+  background-image: icon("sound-on-icon-mobile", "png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -139,14 +139,15 @@
 #ads-time-container {
   margin-right: 10px;
   color: #fff;
+  font-size: 10px;
   font-family: arial;
 }
 
 #ads-fullscreen-container {
   flex: 1 1 auto;
   max-width: 100%;
-  margin-right: 10px;
   text-align: right;
+  overflow: hidden;
 }
 
 #ads-fullscreen  {
@@ -155,7 +156,7 @@
   padding: 0;
   border: none;
   background-color: transparent;
-  background-image: icon("fullscreen_icon", "png");
+  background-image: icon("fullscreen-icon-mobile", "png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -195,17 +196,28 @@
 }
 
 .paused #play-switch {
-  background-image: icon("play-icon", "png");
+  background-image: icon("pause-icon-mobile", "png");
 }
 
 .muted #ads-sound {
-  background-image: icon("sound-off-icon", "png");
+  background-image: icon("sound-off-icon-mobile", "png");
 }
 
-.fullscreen #ads-sound-container,
-.fullscreen #ads-fullscreen-container  {
-  max-width: 60px;
-  max-height: 60px;
+.fullscreen #ads-sound-container {
+  max-width: 30px;
+  max-height: 25px;
+}
+
+.fullscreen #ads-time-container {
+  font-size: 12px;
+}
+
+.fullscreen #ads-fullscreen-container {
+  max-height: 25px;
+}
+
+.fullscreen #ads-progress-container {
+  margin-bottom: 10px;
 }
 
 .fullscreen #play-previous,
@@ -219,7 +231,7 @@
 
 @media screen and (min-width: $tablet) {
   #video-container {
-    bottom: calc(0% + 187px);
+    bottom: calc(0% + 50px);
     width: 330px;
     height: 190px;
   }
@@ -243,6 +255,34 @@
     opacity: 0;
   }
 
+  #ads-progress-container {
+    margin-bottom: 10px;
+  }
+
+  #ads-time-container {
+    font-size: 14px;
+  }
+
+  #play-previous {
+    background-image: icon("step-backward-icon", "png");
+  }
+
+  #play-switch {
+    background-image: icon("play-icon", "png");
+  }
+
+  #play-next {
+    background-image: icon("step-forward-icon", "png");
+  }
+
+  #ads-sound {
+    background-image: icon("sound-on-icon", "png");
+  }
+
+  #ads-fullscreen {
+    background-image: icon("fullscreen-icon", "png");
+  }
+
   #btn-close-preroll  {
     top: calc(0% - 30px);
     width: 20px;
@@ -256,6 +296,14 @@
     pointer-events: all;
   }
 
+  .paused #play-switch {
+    background-image: icon("pause-icon", "png");
+  }
+
+  .muted #ads-sound {
+    background-image: icon("sound-off-icon", "png");
+  }
+
   .paused #ads-main-controls,
   .paused#video-container #ads-secundary-controls {
     opacity: 1;
@@ -266,12 +314,27 @@
     opacity: 0.5;
   }
 
+  .fullscreen #ads-sound-container,
+  .fullscreen #ads-fullscreen-container {
+    max-width: none;
+    max-height: 45px;
+  }
+
+  .fullscreen #ads-time-container {
+    font-size: 16px;
+  }
+  
   .fullscreen #play-previous,
   .fullscreen #play-switch,
   .fullscreen #play-next,
   .fullscreen #ads-sound,
   .fullscreen #ads-fullscreen {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
   }
+
+  .fullscreen #ads-progress  {
+    height: 5px;
+  }
+
 }
