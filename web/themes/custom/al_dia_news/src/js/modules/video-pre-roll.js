@@ -39,6 +39,7 @@ function videoSDK() {
   const adsBarProgress = document.querySelector('#ads-progress-container .bar');
   const adsTimeLeft = document.querySelector('.ads-time-left');
   const adsTimeTotal = document.querySelector('.ads-time-total');
+  const adsLinkDestiny = document.querySelector('.ads-destiny-link');
 
   let urlTag = getTagByPosition(vastTags, mapPositions[0]);
   let adsMuted = true;
@@ -140,6 +141,10 @@ function videoSDK() {
 
   });
 
+  adsLinkDestiny.addEventListener('click',function(){
+    playSwitch.click();
+  })
+
   btnClosePreroll.addEventListener('click',function(){
     adsManager.destroy();
     adsLoader.destroy();
@@ -189,7 +194,15 @@ function videoSDK() {
     function onAdLoaded(adEvent) {
       adsObj.ad = adEvent.getAd();
       adsObj.duration = adsObj.ad.getDuration();
+      adsObj.linkDestiny = adsObj.ad.h.clickThroughUrl;
       adsObj.progress = 0
+
+      if(adsObj.linkDestiny){
+        adsLinkDestiny.style.display = 'block';
+        adsLinkDestiny.href = adsObj.linkDestiny;
+      }else {
+        adsLinkDestiny.style.display = 'none';
+      }
 
       adsObj.interval = setInterval(function(){
         progressAds(adsObj.progress++,adsObj.duration,adsProgressContainer);
