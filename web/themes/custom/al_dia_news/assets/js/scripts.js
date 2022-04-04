@@ -2166,14 +2166,13 @@ var unitedStateFirst = function unitedStateFirst(form) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "videoSDK", function() { return videoSDK; });
 function videoSDK() {
-  var vastTags = Object.values(drupalSettings.vast); // Elements container
-
+  // Elements container
   var videoContainer = document.querySelector("#video-container");
   var videoElement = document.querySelector("#video-element");
   var adContainer = document.querySelector("#ad-container");
   var adsProgressContainer = document.querySelector("#ads-progress-container");
 
-  if (vastTags.length > 0 && vastTags[0].tag != '' && vastTags[0].tag != null) {
+  if (Object.keys(drupalSettings.vast).length > 0 && !!Object.values(drupalSettings.vast)[0].tag) {
     var initializeIMA = function initializeIMA() {
       adDisplayContainer = new google.ima.AdDisplayContainer(adContainer, videoElement);
       adsLoader = new google.ima.AdsLoader(adDisplayContainer);
@@ -2361,16 +2360,17 @@ function videoSDK() {
       clearInterval(adsObj.interval);
     };
 
-    var vastPrev;
-    var vastCurrent;
-    var vastNext;
-    var lastVast = vastTags.length - 1;
+    var vastTags = Object.values(drupalSettings.vast);
     var mapPositions = vastTags.map(function (tag) {
       return tag["pos"];
     });
     mapPositions.sort(function (a, b) {
       return a - b;
-    }); // Elements ads
+    });
+    var vastPrev;
+    var vastCurrent;
+    var vastNext;
+    var lastVast = vastTags.length - 1; // Elements ads
 
     var adDisplayContainer;
     var adsLoader;

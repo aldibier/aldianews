@@ -1,7 +1,5 @@
 function videoSDK() {
 
-  const vastTags = Object.values(drupalSettings.vast);
-
   // Elements container
   const videoContainer = document.querySelector("#video-container");
   const videoElement = document.querySelector("#video-element");
@@ -10,13 +8,9 @@ function videoSDK() {
     "#ads-progress-container"
   );
 
-  if (vastTags.length > 0 && vastTags[0].tag != '' && vastTags[0].tag != null) {
+  if (Object.keys(drupalSettings.vast).length > 0 && !!Object.values(drupalSettings.vast)[0].tag) {
 
-    let vastPrev;
-    let vastCurrent;
-    let vastNext;
-    let lastVast = vastTags.length - 1;
-
+    const vastTags = Object.values(drupalSettings.vast);
     const mapPositions = vastTags.map(function (tag) {
       return tag["pos"];
     });
@@ -24,6 +18,11 @@ function videoSDK() {
     mapPositions.sort(function (a, b) {
       return a - b;
     });
+
+    let vastPrev;
+    let vastCurrent;
+    let vastNext;
+    let lastVast = vastTags.length - 1;
 
     // Elements ads
     let adDisplayContainer;
