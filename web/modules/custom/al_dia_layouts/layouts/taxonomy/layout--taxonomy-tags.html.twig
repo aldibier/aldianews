@@ -1,0 +1,30 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a two-column layout.
+ *
+ * Available variables:
+ * - content: The content for this layout.
+ * - attributes: HTML attributes for the layout <div>.
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% if content %}
+  <div class="container-content">
+
+    {% if content.header_tags %}
+        <div {{ region_attributes.header_tags.addClass('header-tags') }}>{{ content.header_tags }}</div>
+    {% endif %}
+    {% if content.first_block_tags %}
+        <div {{ region_attributes.first_block_tags.addClass('first-block-tags-taxonomy') }}>{{ content.first_block_tags }}</div>
+    {% endif %}
+    {% if content.other_news_tags %}
+        <div {{ region_attributes.other_news_tags.addClass('one-content-taxonomy-tags') }}>
+          {{ content.other_news_tags }}
+        </div>
+    {% endif %}
+
+  </div>
+{% endif %}

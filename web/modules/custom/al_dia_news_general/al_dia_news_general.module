@@ -381,6 +381,12 @@ function al_dia_news_general_views_pre_view(ViewExecutable $view, $display_id, a
 
     }
   }
+  if ($view->id() == 'landing_tags' && $display_id == 'block_2') {
+    $id_node = \Drupal::request()->query->get('node');
+    if (!$id_node) {
+      $view->display_handler->display['display_options']['pager']['options']['offset'] = 5;
+    }
+  }
 }
 
 /**
