@@ -545,3 +545,21 @@ authors_intern:
       label: Autores relacionados
     authors_news:
       label: Noticas del autor
+
+taxonomy_tags:
+  label: 'Taxonomy Tags'
+  path: layouts/taxonomy
+  template: layout--taxonomy-tags
+  category: 'Taxonomy Tags'
+  default_region: content
+  icon_map:
+    - [header_tags]
+    - [first_block_tags]
+    - [other_news_tags]
+  regions:
+    header_tags:
+      label: Header tags
+    first_block_tags:
+      label: First Block Tags
+    other_news_tags:
+      label: Other news tags
