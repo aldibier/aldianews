@@ -17,14 +17,25 @@ third_party_settings:
     enabled: true
     sections:
       -
-        layout_id: subcategory_next_four
+        layout_id: taxonomy_tags
         layout_settings:
-          label: 'Subcaterory next four'
+          label: 'Taxonomy tags'
           context_mapping: {  }
         components:
-          1f183bf1-09da-4716-847e-b8ceba7c1e1f:
-            uuid: 1f183bf1-09da-4716-847e-b8ceba7c1e1f
-            region: one_content
+          0198701a-79da-47b8-8a11-28201d336c2f:
+            uuid: 0198701a-79da-47b8-8a11-28201d336c2f
+            region: first_block_tags
+            configuration:
+              id: last_node_tag
+              label: LastNodeTag
+              provider: al_dia_news_general
+              label_display: '0'
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+          6e78d8f1-0b4f-4196-9164-05c347ae3536:
+            uuid: 6e78d8f1-0b4f-4196-9164-05c347ae3536
+            region: first_block_tags
             configuration:
               id: 'views_block:landing_tags-block_1'
               label: ''
@@ -34,21 +45,10 @@ third_party_settings:
               items_per_page: none
               context_mapping: {  }
             additional: {  }
-            weight: -9
-          c026705f-b501-47ae-9570-d3b755dbf814:
-            uuid: c026705f-b501-47ae-9570-d3b755dbf814
-            region: one_content
-            configuration:
-              id: last_node_tag
-              label: LastNodeTag
-              provider: al_dia_news_general
-              label_display: '0'
-              context_mapping: {  }
-            additional: {  }
-            weight: -10
-          a4c0760d-4f7c-4ccb-a14c-3ba10a91b7e0:
-            uuid: a4c0760d-4f7c-4ccb-a14c-3ba10a91b7e0
-            region: two_content
+            weight: 1
+          3b706750-d023-407c-b935-8083bd8ce201:
+            uuid: 3b706750-d023-407c-b935-8083bd8ce201
+            region: other_news_tags
             configuration:
               id: 'views_block:landing_tags-block_2'
               label: ''
