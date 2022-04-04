@@ -10,6 +10,10 @@ function videoSDK() {
     "#ads-progress-container"
   );
 
+  console.log(drupalSettings.vast);
+
+  debugger;
+
   if (vastTags.length > 0 && vastTags[0].tag != '') {
 
     let vastPrev;
