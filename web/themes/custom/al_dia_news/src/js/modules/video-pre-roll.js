@@ -5,8 +5,6 @@ function videoSDK() {
     return tag['pos'];
   });
 
-  console.log(vastTags);
-
   let vastPrev;
   let vastCurrent;
   let vastNext;

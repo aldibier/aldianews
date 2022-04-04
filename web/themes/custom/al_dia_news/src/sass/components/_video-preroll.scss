@@ -248,7 +248,11 @@
   height: 30px;
 }
 
-//Modifications internals by newsletter
+//Modifications by newsletter
+.path-frontpage #video-container:not(.not-newsletter) {
+  bottom: calc(20px + 152px);
+}
+
 .page-node-type-news #video-container:not(.not-newsletter) {
   bottom: calc(20px + 162px);
 }
@@ -370,6 +374,10 @@
   }
 
   //Modifications internals by newsletter
+  .path-frontpage #video-container:not(.not-newsletter) {
+    bottom: calc(0% + 50px);
+  }
+
   .page-node-type-news #video-container:not(.not-newsletter) {
     bottom: calc(20px + 140px);
   }
