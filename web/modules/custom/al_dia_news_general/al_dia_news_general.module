@@ -408,6 +408,19 @@ function al_dia_news_general_views_query_alter(ViewExecutable $view, QueryPlugin
           }
         }
       }
+      if ($view->getDisplay()->display['id'] == 'block_2') {
+        $id_node = \Drupal::request()->query->get('node');
+        if ($id_node) {
+          foreach ($query->where as &$condition_group) {
+            foreach ($condition_group['conditions'] as &$condition) {
+              if($condition["field"] == "field_tags_taxonomy_term_field_data.nid"){
+                $condition["value"] = $id_node;
+                $condition["operator"] = "<>";
+              }
+            }
+          }
+        }
+      }
     break;
     case 'last_news':
       $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
