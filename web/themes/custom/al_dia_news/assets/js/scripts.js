@@ -2172,10 +2172,8 @@ function videoSDK() {
   var videoElement = document.querySelector("#video-element");
   var adContainer = document.querySelector("#ad-container");
   var adsProgressContainer = document.querySelector("#ads-progress-container");
-  console.log(drupalSettings.vast);
-  debugger;
 
-  if (vastTags.length > 0 && vastTags[0].tag != '') {
+  if (vastTags.length > 0 && vastTags[0].tag != '' && vastTags[0].tag != null) {
     var initializeIMA = function initializeIMA() {
       adDisplayContainer = new google.ima.AdDisplayContainer(adContainer, videoElement);
       adsLoader = new google.ima.AdsLoader(adDisplayContainer);
