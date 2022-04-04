@@ -17,12 +17,19 @@ const initMain = ($, Drupal) => {
 	var container = document.querySelector('body');
 	var elemento = document.getElementById('block-webform-2');
 
+	/// js newsletter
+	const newsletter = document.querySelector('.newsletter');
+
 	/// close 
 	if (!!document.querySelector('.newsletter .close-modal')) {
-		const newsletter = document.querySelector('.newsletter');
 		const closeNewsletter = document.querySelector('.newsletter .close-modal');
 		closeNewsletter.addEventListener('click', () => {
-			newsletter.classList.add('dis-none')
+			newsletter.remove();
+
+			if(!!document.querySelector('#video-container')){
+				document.querySelector('#video-container').classList.add('not-newsletter');
+			}
+			
 		}, {
 			once: true
 		})

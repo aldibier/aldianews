@@ -1,10 +1,12 @@
 #video-container {
   position: fixed;
   z-index: 100;
+  left: initial;
   right: calc(0% + 15px);
   bottom: calc(0% + 68px);
   width: 185px;
   height: 105px;
+  padding: 0 !important;
   background-color: #000;
   box-shadow: 1px 6px 4px rgba(0, 0, 0, 0.25);
 }
@@ -16,6 +18,7 @@
   height: 100%;
   background-color: #000;
   position: absolute;
+  left: 0;
   top: 0;
   opacity: 0;
   pointer-events: none;
@@ -23,6 +26,11 @@
 }
 
 #video-element {
+  width: 100%;
+  height: 100%;
+}
+
+#ad-container {
   display: none;
 }
 
@@ -35,10 +43,10 @@
 #ads-main-controls {
   position: absolute;
   z-index: 2;
+  left: 0;
+  right: 0;
   top: 50%;
-  display: flex;
-  justify-content: center;
-  width: 100%;
+  width: max-content;
   transform: translateY(-50%);
   transition: 0.2s linear;
 }
@@ -240,6 +248,15 @@
   height: 30px;
 }
 
+//Modifications by newsletter
+.path-frontpage #video-container:not(.not-newsletter) {
+  bottom: calc(20px + 152px);
+}
+
+.page-node-type-news #video-container:not(.not-newsletter) {
+  bottom: calc(20px + 162px);
+}
+
 @media screen and (min-width: $tablet) {
   #video-container {
     bottom: calc(0% + 50px);
@@ -250,6 +267,14 @@
   #video-container #ads-main-controls,
   #video-container #ads-secundary-controls {
     pointer-events: none;
+  }
+
+  #video-element {
+    display: none;
+  }
+
+  #ad-container {
+    display: block;
   }
 
   #play-previous,
@@ -334,7 +359,7 @@
   .fullscreen #ads-time-container {
     font-size: 16px;
   }
-  
+
   .fullscreen #play-previous,
   .fullscreen #play-switch,
   .fullscreen #play-next,
@@ -348,4 +373,12 @@
     height: 5px;
   }
 
+  //Modifications internals by newsletter
+  .path-frontpage #video-container:not(.not-newsletter) {
+    bottom: calc(0% + 50px);
+  }
+
+  .page-node-type-news #video-container:not(.not-newsletter) {
+    bottom: calc(20px + 140px);
+  }
 }
