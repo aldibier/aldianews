@@ -2172,7 +2172,7 @@ function videoSDK() {
   var adContainer = document.querySelector("#ad-container");
   var adsProgressContainer = document.querySelector("#ads-progress-container");
 
-  if (Object.keys(drupalSettings.vast).length > 0 && !!Object.values(drupalSettings.vast)[0].tag) {
+  if (!!drupalSettings.vast) {
     var initializeIMA = function initializeIMA() {
       adDisplayContainer = new google.ima.AdDisplayContainer(adContainer, videoElement);
       adsLoader = new google.ima.AdsLoader(adDisplayContainer);
