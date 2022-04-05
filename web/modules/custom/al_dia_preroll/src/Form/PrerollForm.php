@@ -85,7 +85,7 @@ class PrerollForm extends ConfigFormBase {
                 'speed' => 10000
             ],
         ];
-
+        
         $form['tags']['remtag'] = [
             '#type' => 'submit',
             '#value' => $this->t('Remove the last'),
