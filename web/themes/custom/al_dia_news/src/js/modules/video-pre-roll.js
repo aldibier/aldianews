@@ -252,9 +252,11 @@ function videoSDK() {
 
     function actionRequest() {
       let adsRequest = new google.ima.AdsRequest();
+      let correlatorNumber = randomCorrelatorNumber();
       adsRequest.setAdWillAutoPlay(true);
       adsRequest.setAdWillPlayMuted(true);
-      adsRequest.adTagUrl = urlTag;
+      console.log(`${urlTag}${correlatorNumber}`);
+      adsRequest.adTagUrl = `${urlTag}${correlatorNumber}`;
 
       adsLoader.requestAds(adsRequest);
       adsLoader.contentComplete();
@@ -380,6 +382,10 @@ function videoSDK() {
       adsTimeTotal.innerHTML = "00:00";
 
       clearInterval(adsObj.interval);
+    }
+
+    function randomCorrelatorNumber(){
+      return Math.floor(Math.random() * (9999999 - 1 + 1)).toString();
     }
 
     managementPosition("initial");

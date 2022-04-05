@@ -2247,9 +2247,11 @@ function videoSDK() {
 
     var actionRequest = function actionRequest() {
       var adsRequest = new google.ima.AdsRequest();
+      var correlatorNumber = randomCorrelatorNumber();
       adsRequest.setAdWillAutoPlay(true);
       adsRequest.setAdWillPlayMuted(true);
-      adsRequest.adTagUrl = urlTag;
+      console.log("".concat(urlTag).concat(correlatorNumber));
+      adsRequest.adTagUrl = "".concat(urlTag).concat(correlatorNumber);
       adsLoader.requestAds(adsRequest);
       adsLoader.contentComplete();
     };
@@ -2363,6 +2365,10 @@ function videoSDK() {
       adsTimeLeft.innerHTML = "00:00";
       adsTimeTotal.innerHTML = "00:00";
       clearInterval(adsObj.interval);
+    };
+
+    var randomCorrelatorNumber = function randomCorrelatorNumber() {
+      return Math.floor(Math.random() * (9999999 - 1 + 1)).toString();
     };
 
     // Diferencias entre android y iphone
