@@ -44,12 +44,12 @@ class PrerollForm extends ConfigFormBase {
 
         $number_of_tags = $config->get('number_of_tags');
    
-        // if (empty($number_of_tags)) {
-        //     $number_of_tags = 1;
-        //     $this->config('al_dia_preroll.adminsettings')
-        //     ->set('number_of_tags',1)
-        //     ->save();
-        // }
+        if (empty($number_of_tags)) {
+            $form['tags']['initial_message'] = array(
+                '#type' => 'markup',
+                '#markup' => '<p>No tag has been added</p>',
+            );
+        }
 
         for($i = 1;$i <= $number_of_tags;$i++){
 
