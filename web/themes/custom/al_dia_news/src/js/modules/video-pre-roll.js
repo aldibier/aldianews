@@ -1,7 +1,5 @@
 function videoSDK() {
 
-  const vastTags = Object.values(drupalSettings.vast);
-
   // Elements container
   const videoContainer = document.querySelector("#video-container");
   const videoElement = document.querySelector("#video-element");
@@ -10,13 +8,15 @@ function videoSDK() {
     "#ads-progress-container"
   );
 
-  if (vastTags.length > 0 && vastTags[0].tag != '') {
+  if (!!drupalSettings.vast) {
 
-    let vastPrev;
-    let vastCurrent;
-    let vastNext;
-    let lastVast = vastTags.length - 1;
-
+    // Diferencias entre android y iphone
+    // iphone -> video nativo .iphone
+    // android -> adcontainer iframe .android
+    // Detectar clase mobile en body
+    // Cambiar accion de click y reproduccion automatica  -> por touch (todo por accion del usuario)
+    
+    const vastTags = Object.values(drupalSettings.vast);
     const mapPositions = vastTags.map(function (tag) {
       return tag["pos"];
     });
@@ -24,6 +24,12 @@ function videoSDK() {
     mapPositions.sort(function (a, b) {
       return a - b;
     });
+
+    let vastPrev;
+    let vastCurrent;
+    let vastNext;
+    let lastVast = vastTags.length - 1;
+    let initialVast = true;
 
     // Elements ads
     let adDisplayContainer;
@@ -51,7 +57,6 @@ function videoSDK() {
     let lastAdComplete = false;
 
     playAction.addEventListener("click", function () {
-      console.log("load");
       loadAds();
     });
 
@@ -171,6 +176,11 @@ function videoSDK() {
         // Instanciar el AdsManager desde la respuesta de adsLoader y pasarle el elemento vídeo
         adsManager = adsManagerLoadedEvent.getAdsManager(videoElement);
 
+        if(initialVast){
+          playAction.click();
+          initialVast = false;
+        }
+
         if (adsMuted) {
           adsManager.setVolume(0);
         }
@@ -189,6 +199,7 @@ function videoSDK() {
       }
 
       function onAdLoaded(adEvent) {
+        console.log("load!");
         adsObj.ad = adEvent.getAd();
         adsObj.duration = adsObj.ad.getDuration();
         adsObj.linkDestiny = adsObj.ad.h.clickThroughUrl;
@@ -215,10 +226,7 @@ function videoSDK() {
       }
 
       function onAdComplete() {
-        if (!lastAdComplete) {
-          nextAction.click();
-        } else {
-          lastAdComplete = false;
+        if (lastAdComplete) {
           urlTag = getTagByPosition(vastTags, mapPositions[0]);
           managementPosition("initial");
 
@@ -228,6 +236,9 @@ function videoSDK() {
           setTimeout(function () {
             playAction.click();
           }, 300);
+         
+        } else {
+          nextAction.click();
         }
       }
 
@@ -375,9 +386,9 @@ function videoSDK() {
     initializeIMA();
     actionRequest();
 
-    setTimeout(function () {
+    /*setTimeout(function () {
       playAction.click();
-    }, 1000);
+    }, 1000); */
 
   }else {
 
