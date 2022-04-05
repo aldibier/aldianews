@@ -23,6 +23,7 @@ function videoSDK() {
     let vastCurrent;
     let vastNext;
     let lastVast = vastTags.length - 1;
+    let initialVast = true;
 
     // Elements ads
     let adDisplayContainer;
@@ -169,6 +170,11 @@ function videoSDK() {
         console.log("onAdsManagerLoaded");
         // Instanciar el AdsManager desde la respuesta de adsLoader y pasarle el elemento vídeo
         adsManager = adsManagerLoadedEvent.getAdsManager(videoElement);
+
+        if(initialVast){
+          playAction.click();
+          initialVast = false;
+        }
 
         if (adsMuted) {
           adsManager.setVolume(0);
@@ -374,9 +380,9 @@ function videoSDK() {
     initializeIMA();
     actionRequest();
 
-    setTimeout(function () {
+    /*setTimeout(function () {
       playAction.click();
-    }, 1000);
+    }, 1000); */
 
   }else {
 

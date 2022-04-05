@@ -2184,6 +2184,11 @@ function videoSDK() {
 
         adsManager = adsManagerLoadedEvent.getAdsManager(videoElement);
 
+        if (initialVast) {
+          playAction.click();
+          initialVast = false;
+        }
+
         if (adsMuted) {
           adsManager.setVolume(0);
         }
@@ -2370,7 +2375,8 @@ function videoSDK() {
     var vastPrev;
     var vastCurrent;
     var vastNext;
-    var lastVast = vastTags.length - 1; // Elements ads
+    var lastVast = vastTags.length - 1;
+    var initialVast = true; // Elements ads
 
     var adDisplayContainer;
     var adsLoader;
@@ -2473,9 +2479,9 @@ function videoSDK() {
     managementPosition("initial");
     initializeIMA();
     actionRequest();
-    setTimeout(function () {
+    /*setTimeout(function () {
       playAction.click();
-    }, 1000);
+    }, 1000); */
   } else {
     if (videoContainer) videoContainer.remove();
   }
