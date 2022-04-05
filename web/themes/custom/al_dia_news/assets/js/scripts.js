@@ -2199,6 +2199,7 @@ function videoSDK() {
       }
 
       function onAdLoaded(adEvent) {
+        console.log("load!");
         adsObj.ad = adEvent.getAd();
         adsObj.duration = adsObj.ad.getDuration();
         adsObj.linkDestiny = adsObj.ad.h.clickThroughUrl;
@@ -2222,10 +2223,7 @@ function videoSDK() {
       }
 
       function onAdComplete() {
-        if (!lastAdComplete) {
-          nextAction.click();
-        } else {
-          lastAdComplete = false;
+        if (lastAdComplete) {
           urlTag = getTagByPosition(vastTags, mapPositions[0]);
           managementPosition("initial");
           adsManager.destroy();
@@ -2233,6 +2231,8 @@ function videoSDK() {
           setTimeout(function () {
             playAction.click();
           }, 300);
+        } else {
+          nextAction.click();
         }
       }
 
@@ -2365,6 +2365,11 @@ function videoSDK() {
       clearInterval(adsObj.interval);
     };
 
+    // Diferencias entre android y iphone
+    // iphone -> video nativo .iphone
+    // android -> adcontainer iframe .android
+    // Detectar clase mobile en body
+    // Cambiar accion de click y reproduccion automatica  -> por touch (todo por accion del usuario)
     var vastTags = Object.values(drupalSettings.vast);
     var mapPositions = vastTags.map(function (tag) {
       return tag["pos"];
@@ -2398,7 +2403,6 @@ function videoSDK() {
     var adsMuted = true;
     var lastAdComplete = false;
     playAction.addEventListener("click", function () {
-      console.log("load");
       loadAds();
     });
     playSwitch.addEventListener("click", function (e) {

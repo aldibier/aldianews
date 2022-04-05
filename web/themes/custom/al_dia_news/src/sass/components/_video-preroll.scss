@@ -26,6 +26,7 @@
 }
 
 #video-element {
+  display: none;
   width: 100%;
   height: 100%;
 }
@@ -257,6 +258,20 @@
 .page-node-type-news #video-container:not(.not-newsletter),
 .page-node-type-thought-leaders #video-container:not(.not-newsletter) {
   bottom: calc(20px + 162px);
+}
+
+//Modifications by iphone
+.iphone #video-element {
+  display: block;
+}
+
+//Modifications by android
+.android #ad-container {
+  display: block;
+}
+
+.android #ad-container > div > iframe:first-of-type{
+  display: none;
 }
 
 @media screen and (min-width: $tablet) {
