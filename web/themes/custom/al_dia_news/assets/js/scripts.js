@@ -2184,6 +2184,10 @@ function videoSDK() {
 
         adsManager = adsManagerLoadedEvent.getAdsManager(videoElement);
 
+        if (initialVast == false) {
+          playAction.click();
+        }
+
         if (initialVast) {
           playAction.click();
           initialVast = false;
@@ -2191,6 +2195,8 @@ function videoSDK() {
 
         if (adsMuted) {
           adsManager.setVolume(0);
+        } else {
+          adsManager.setVolume(1);
         }
 
         adsManager.addEventListener(google.ima.AdEvent.Type.LOADED, onAdLoaded);
@@ -2250,7 +2256,6 @@ function videoSDK() {
       var correlatorNumber = randomCorrelatorNumber();
       adsRequest.setAdWillAutoPlay(true);
       adsRequest.setAdWillPlayMuted(true);
-      console.log("".concat(urlTag).concat(correlatorNumber));
       adsRequest.adTagUrl = "".concat(urlTag).concat(correlatorNumber);
       adsLoader.requestAds(adsRequest);
       adsLoader.contentComplete();
@@ -2361,6 +2366,12 @@ function videoSDK() {
         videoContainer.classList.remove("paused");
       }
 
+      if (adsMuted) {
+        videoContainer.classList.add("muted");
+      } else {
+        videoContainer.classList.remove("muted");
+      }
+
       adsBarProgress.style.width = "0px";
       adsTimeLeft.innerHTML = "00:00";
       adsTimeTotal.innerHTML = "00:00";
@@ -2426,13 +2437,9 @@ function videoSDK() {
     });
     previousAction.addEventListener("click", function () {
       var pos = this.dataset.position;
-      urlTag = getTagByPosition(vastTags, mapPositions[pos]); //reset actions
-
+      urlTag = getTagByPosition(vastTags, mapPositions[pos]);
       adsManager.destroy();
       actionRequest();
-      setTimeout(function () {
-        playAction.click();
-      }, 300);
       managementPosition("previous");
     });
     nextAction.addEventListener("click", function () {
@@ -2440,9 +2447,6 @@ function videoSDK() {
       urlTag = getTagByPosition(vastTags, mapPositions[pos]);
       adsManager.destroy();
       actionRequest();
-      setTimeout(function () {
-        playAction.click();
-      }, 300);
       managementPosition("next");
     });
     adsSound.addEventListener("click", function () {
@@ -2489,9 +2493,6 @@ function videoSDK() {
     managementPosition("initial");
     initializeIMA();
     actionRequest();
-    /*setTimeout(function () {
-      playAction.click();
-    }, 1000); */
   } else {
     if (videoContainer) videoContainer.remove();
   }

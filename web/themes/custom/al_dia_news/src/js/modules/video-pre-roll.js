@@ -80,15 +80,8 @@ function videoSDK() {
       let pos = this.dataset.position;
       urlTag = getTagByPosition(vastTags, mapPositions[pos]);
 
-      //reset actions
       adsManager.destroy();
-
       actionRequest();
-
-      setTimeout(function () {
-        playAction.click();
-      }, 300);
-
       managementPosition("previous");
     });
 
@@ -98,11 +91,6 @@ function videoSDK() {
 
       adsManager.destroy();
       actionRequest();
-
-      setTimeout(function () {
-        playAction.click();
-      }, 300);
-
       managementPosition("next");
     });
 
@@ -176,6 +164,10 @@ function videoSDK() {
         // Instanciar el AdsManager desde la respuesta de adsLoader y pasarle el elemento vídeo
         adsManager = adsManagerLoadedEvent.getAdsManager(videoElement);
 
+        if(initialVast == false){
+          playAction.click();
+        }
+
         if(initialVast){
           playAction.click();
           initialVast = false;
@@ -183,6 +175,8 @@ function videoSDK() {
 
         if (adsMuted) {
           adsManager.setVolume(0);
+        }else {
+          adsManager.setVolume(1);
         }
 
         adsManager.addEventListener(google.ima.AdEvent.Type.LOADED, onAdLoaded);
@@ -255,7 +249,6 @@ function videoSDK() {
       let correlatorNumber = randomCorrelatorNumber();
       adsRequest.setAdWillAutoPlay(true);
       adsRequest.setAdWillPlayMuted(true);
-      console.log(`${urlTag}${correlatorNumber}`);
       adsRequest.adTagUrl = `${urlTag}${correlatorNumber}`;
 
       adsLoader.requestAds(adsRequest);
@@ -377,6 +370,12 @@ function videoSDK() {
         videoContainer.classList.remove("paused");
       }
 
+      if (adsMuted) {
+        videoContainer.classList.add("muted");
+      }else {
+        videoContainer.classList.remove("muted");
+      }
+
       adsBarProgress.style.width = "0px";
       adsTimeLeft.innerHTML = "00:00";
       adsTimeTotal.innerHTML = "00:00";
@@ -391,11 +390,7 @@ function videoSDK() {
     managementPosition("initial");
     initializeIMA();
     actionRequest();
-
-    /*setTimeout(function () {
-      playAction.click();
-    }, 1000); */
-
+    
   }else {
 
     if(videoContainer) videoContainer.remove();
