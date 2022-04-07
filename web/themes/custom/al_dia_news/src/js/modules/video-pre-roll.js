@@ -209,6 +209,7 @@ function videoSDK() {
 
         adsObj.interval = setInterval(function () {
           progressAds(adsObj.progress++, adsObj.duration, adsProgressContainer);
+          console.log('interval!');
         }, 1000);
 
         let minutes = Math.floor(adsObj.duration / 60);
@@ -227,12 +228,7 @@ function videoSDK() {
           managementPosition("initial");
 
           adsManager.destroy();
-          actionRequest();
-
-          setTimeout(function () {
-            playAction.click();
-          }, 300);
-         
+          actionRequest();         
         } else {
           nextAction.click();
         }
@@ -409,6 +405,10 @@ function videoSDK() {
         case 402 :
           videoContainer.remove();
           console.error('VAST media file loading reached a timeout of 8 seconds.');
+        break;
+        case 400 :
+          videoContainer.remove();
+          console.error('There was an error playing the video ad.');
         break;
         case 303 :
           videoContainer.remove();
