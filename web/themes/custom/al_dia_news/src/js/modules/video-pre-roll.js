@@ -9,13 +9,6 @@ function videoSDK() {
   );
 
   if (!!drupalSettings.vast) {
-
-    // Diferencias entre android y iphone
-    // iphone -> video nativo .iphone
-    // android -> adcontainer iframe .android
-    // Detectar clase mobile en body
-    // Cambiar accion de click y reproduccion automatica  -> por touch (todo por accion del usuario)
-    
     const vastTags = Object.values(drupalSettings.vast);
     const mapPositions = vastTags.map(function (tag) {
       return tag["pos"];
@@ -80,15 +73,8 @@ function videoSDK() {
       let pos = this.dataset.position;
       urlTag = getTagByPosition(vastTags, mapPositions[pos]);
 
-      //reset actions
       adsManager.destroy();
-
       actionRequest();
-
-      setTimeout(function () {
-        playAction.click();
-      }, 300);
-
       managementPosition("previous");
     });
 
@@ -98,11 +84,6 @@ function videoSDK() {
 
       adsManager.destroy();
       actionRequest();
-
-      setTimeout(function () {
-        playAction.click();
-      }, 300);
-
       managementPosition("next");
     });
 
@@ -116,24 +97,42 @@ function videoSDK() {
       if (volume == 1) {
         adsManager.setVolume(0);
         videoContainer.classList.add("muted");
+        videoElement.muted = true;
         adsMuted = true;
       } else {
         adsManager.setVolume(1);
         videoContainer.classList.remove("muted");
+        videoElement.muted = false;
         adsMuted = false;
       }
     });
 
     adsFullscreen.addEventListener("click", function () {
+      console.log('Fullscreen');
       if (videoContainer.requestFullscreen) {
+
         if (document.fullscreenElement) {
           document.exitFullscreen();
+          //document.webkitExitFullscreen() Safari prefixed
           videoContainer.classList.remove("fullscreen");
         } else {
           videoContainer.requestFullscreen();
+          //videoContainer.webkitRequestFullscreen() Safari prefixed
           videoContainer.classList.add("fullscreen");
         }
       }
+
+      //Support safari fullscreen
+      if(!document.body.classList.contains('safari')) return;
+
+      if (!videoContainer.classList.contains('fullscreen')){
+        videoContainer.classList.add('fullscreen');
+        document.body.classList.add('fullscreen-active');
+      }else {
+        videoContainer.classList.remove('fullscreen');
+        document.body.classList.remove('fullscreen-active');
+      }
+
     });
 
     document.addEventListener("fullscreenchange", (event) => {
@@ -176,6 +175,10 @@ function videoSDK() {
         // Instanciar el AdsManager desde la respuesta de adsLoader y pasarle el elemento vídeo
         adsManager = adsManagerLoadedEvent.getAdsManager(videoElement);
 
+        if(initialVast == false){
+          playAction.click();
+        }
+
         if(initialVast){
           playAction.click();
           initialVast = false;
@@ -183,6 +186,8 @@ function videoSDK() {
 
         if (adsMuted) {
           adsManager.setVolume(0);
+        }else {
+          adsManager.setVolume(1);
         }
 
         adsManager.addEventListener(google.ima.AdEvent.Type.LOADED, onAdLoaded);
@@ -199,7 +204,7 @@ function videoSDK() {
       }
 
       function onAdLoaded(adEvent) {
-        console.log("load!");
+        console.log("onAdLoaded");
         adsObj.ad = adEvent.getAd();
         adsObj.duration = adsObj.ad.getDuration();
         adsObj.linkDestiny = adsObj.ad.h.clickThroughUrl;
@@ -214,6 +219,7 @@ function videoSDK() {
 
         adsObj.interval = setInterval(function () {
           progressAds(adsObj.progress++, adsObj.duration, adsProgressContainer);
+          console.log('interval!');
         }, 1000);
 
         let minutes = Math.floor(adsObj.duration / 60);
@@ -226,24 +232,24 @@ function videoSDK() {
       }
 
       function onAdComplete() {
+        console.log('onAdComplete');
         if (lastAdComplete) {
           urlTag = getTagByPosition(vastTags, mapPositions[0]);
           managementPosition("initial");
 
           adsManager.destroy();
-          actionRequest();
-
-          setTimeout(function () {
-            playAction.click();
-          }, 300);
-         
+          actionRequest();         
         } else {
           nextAction.click();
         }
       }
 
       function onAdError(adErrorEvent) {
-        console.log(adErrorEvent.getError());
+        // Maneja el registro de errores.
+        console.log('onAdError');
+        let error = adErrorEvent.getError();
+        managmentErrors(error);
+
         if (adsManager) {
           adsManager.destroy();
         }
@@ -255,9 +261,9 @@ function videoSDK() {
       let correlatorNumber = randomCorrelatorNumber();
       adsRequest.setAdWillAutoPlay(true);
       adsRequest.setAdWillPlayMuted(true);
-      console.log(`${urlTag}${correlatorNumber}`);
       adsRequest.adTagUrl = `${urlTag}${correlatorNumber}`;
 
+      // Pasar la petición al adsLoader para solicitar anuncios
       adsLoader.requestAds(adsRequest);
       adsLoader.contentComplete();
     }
@@ -377,6 +383,12 @@ function videoSDK() {
         videoContainer.classList.remove("paused");
       }
 
+      if (adsMuted) {
+        videoContainer.classList.add("muted");
+      }else {
+        videoContainer.classList.remove("muted");
+      }
+
       adsBarProgress.style.width = "0px";
       adsTimeLeft.innerHTML = "00:00";
       adsTimeTotal.innerHTML = "00:00";
@@ -388,15 +400,44 @@ function videoSDK() {
       return Math.floor(Math.random() * (9999999 - 1 + 1)).toString();
     }
 
+    function managmentErrors(error){
+      let errorCode  = error.h.errorCode;
+
+      switch(errorCode) {
+        case 1005 :
+          videoContainer.remove();
+          console.error('The vast url has an incorrect format.');
+        break;
+        case 1009 :
+          videoContainer.remove();
+          console.error('The VAST response document is empty.');
+        break;
+        case 402 :
+          videoContainer.remove();
+          console.error('VAST media file loading reached a timeout of 8 seconds.');
+        break;
+        case 400 :
+          videoContainer.remove();
+          console.error('There was an error playing the video ad.');
+        break;
+        case 303 :
+          videoContainer.remove();
+          console.error('Empty VAST response returned.');  
+        break;
+        case 301 :
+          videoContainer.remove();
+          console.error('VAST redirection timeout has been reached.');
+        default:
+          console.log(error);
+      }
+
+    }
+
     managementPosition("initial");
     initializeIMA();
     actionRequest();
-
-    /*setTimeout(function () {
-      playAction.click();
-    }, 1000); */
-
-  }else {
+    
+  } else {
 
     if(videoContainer) videoContainer.remove();
 
