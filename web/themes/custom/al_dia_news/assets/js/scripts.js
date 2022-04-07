@@ -2205,7 +2205,7 @@ function videoSDK() {
       }
 
       function onAdLoaded(adEvent) {
-        console.log("load!");
+        console.log("onAdLoaded");
         adsObj.ad = adEvent.getAd();
         adsObj.duration = adsObj.ad.getDuration();
         adsObj.linkDestiny = adsObj.ad.h.clickThroughUrl;
@@ -2229,6 +2229,8 @@ function videoSDK() {
       }
 
       function onAdComplete() {
+        console.log('onAdComplete');
+
         if (lastAdComplete) {
           urlTag = getTagByPosition(vastTags, mapPositions[0]);
           managementPosition("initial");
@@ -2243,7 +2245,10 @@ function videoSDK() {
       }
 
       function onAdError(adErrorEvent) {
-        console.log(adErrorEvent.getError());
+        // Maneja el registro de errores.
+        console.log('onAdError');
+        var error = adErrorEvent.getError();
+        managmentErrors(error);
 
         if (adsManager) {
           adsManager.destroy();
@@ -2256,7 +2261,8 @@ function videoSDK() {
       var correlatorNumber = randomCorrelatorNumber();
       adsRequest.setAdWillAutoPlay(true);
       adsRequest.setAdWillPlayMuted(true);
-      adsRequest.adTagUrl = "".concat(urlTag).concat(correlatorNumber);
+      adsRequest.adTagUrl = "".concat(urlTag).concat(correlatorNumber); // Pasar la petición al adsLoader para solicitar anuncios
+
       adsLoader.requestAds(adsRequest);
       adsLoader.contentComplete();
     };
@@ -2382,11 +2388,39 @@ function videoSDK() {
       return Math.floor(Math.random() * (9999999 - 1 + 1)).toString();
     };
 
-    // Diferencias entre android y iphone
-    // iphone -> video nativo .iphone
-    // android -> adcontainer iframe .android
-    // Detectar clase mobile en body
-    // Cambiar accion de click y reproduccion automatica  -> por touch (todo por accion del usuario)
+    var managmentErrors = function managmentErrors(error) {
+      var errorCode = error.h.errorCode;
+
+      switch (errorCode) {
+        case 1005:
+          videoContainer.remove();
+          console.error('The vast url has an incorrect format.');
+          break;
+
+        case 1009:
+          videoContainer.remove();
+          console.error('The VAST response document is empty.');
+          break;
+
+        case 402:
+          videoContainer.remove();
+          console.error('VAST media file loading reached a timeout of 8 seconds.');
+          break;
+
+        case 303:
+          videoContainer.remove();
+          console.error('Empty VAST response returned.');
+          break;
+
+        case 301:
+          videoContainer.remove();
+          console.error('VAST redirection timeout has been reached.');
+
+        default:
+          console.log(error);
+      }
+    };
+
     var vastTags = Object.values(drupalSettings.vast);
     var mapPositions = vastTags.map(function (tag) {
       return tag["pos"];
@@ -2459,20 +2493,28 @@ function videoSDK() {
       if (volume == 1) {
         adsManager.setVolume(0);
         videoContainer.classList.add("muted");
+        videoElement.muted = true;
         adsMuted = true;
       } else {
         adsManager.setVolume(1);
         videoContainer.classList.remove("muted");
+        videoElement.muted = false;
         adsMuted = false;
       }
     });
     adsFullscreen.addEventListener("click", function () {
+      console.log('Fullscreen!');
+
       if (videoContainer.requestFullscreen) {
-        if (document.fullscreenElement) {
-          document.exitFullscreen();
+        if (document.fullscreenElement || document.webkitFullscreenElement) {
+          document.exitFullscreen(); //Safari prefixed
+
+          document.webkitExitFullscreen();
           videoContainer.classList.remove("fullscreen");
         } else {
-          videoContainer.requestFullscreen();
+          videoContainer.requestFullscreen(); //Safari prefixed
+
+          videoContainer.webkitRequestFullscreen();
           videoContainer.classList.add("fullscreen");
         }
       }
