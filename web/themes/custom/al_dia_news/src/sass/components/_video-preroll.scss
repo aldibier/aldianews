@@ -252,12 +252,21 @@
 
 //Modifications by newsletter
 .path-frontpage #video-container:not(.not-newsletter) {
-  bottom: calc(20px + 152px);
+  bottom: calc(110px + 15px);
+}
+
+.path-frontpage #video-container:not(.not-newsletter):lang(es) {
+  bottom: calc(138px + 15px);
 }
 
 .page-node-type-news #video-container:not(.not-newsletter),
 .page-node-type-thought-leaders #video-container:not(.not-newsletter) {
-  bottom: calc(20px + 162px);
+  bottom: calc(162px + 15px);
+}
+
+.page-node-type-news #video-container:not(.not-newsletter):lang(es),
+.page-node-type-thought-leaders #video-container:not(.not-newsletter):lang(es) {
+  bottom: calc(183px + 15px);
 }
 
 //Modifications by iphone
@@ -306,7 +315,7 @@ body.safari.fullscreen-active {
 
 @media screen and (min-width: $tablet) {
   #video-container {
-    bottom: calc(0% + 50px);
+    bottom: calc(0% + 20px);
     width: 330px;
     height: 190px;
   }
@@ -421,12 +430,16 @@ body.safari.fullscreen-active {
   }
 
   //Modifications internals by newsletter
-  .path-frontpage #video-container:not(.not-newsletter) {
-    bottom: calc(0% + 50px);
+  .path-frontpage #video-container:not(.not-newsletter),
+  .path-frontpage #video-container:not(.not-newsletter):lang(es) {
+    bottom: calc(0% + 20px);
   }
 
   .page-node-type-news #video-container:not(.not-newsletter),
-  .page-node-type-thought-leaders #video-container:not(.not-newsletter) {
-    bottom: calc(20px + 140px);
+  .page-node-type-news #video-container:not(.not-newsletter):lang(es),
+  .page-node-type-thought-leaders #video-container:not(.not-newsletter),
+  .page-node-type-thought-leaders #video-container:not(.not-newsletter):lang(es){
+    bottom: calc(140px + 20px);
   }
+
 }
