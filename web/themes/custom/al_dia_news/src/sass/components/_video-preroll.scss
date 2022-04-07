@@ -265,8 +265,38 @@
   display: block;
 }
 
+//Modifications by safari fullscreen
+.safari #video-container.fullscreen {
+  z-index: 9999;
+  //Reply user agent style by ::fullscreen pseudoclass
+  object-fit: contain;
+  user-select: text;
+  position: fixed !important;
+  top: 0px !important;
+  right: 0px !important;
+  bottom: 0px !important;
+  left: 0px !important;
+  box-sizing: border-box !important;
+  min-width: 0px !important;
+  max-width: none !important;
+  min-height: 0px !important;
+  max-height: none !important;
+  width: 100% !important;
+  height: 100% !important;
+  transform: none !important;
+  margin: 0px !important;
+}
+
+body.safari.fullscreen-active {
+  overflow: hidden;
+}
+
+.safari #video-container.fullscreen video {
+  contain: initial;
+}
+
 //Modifications by android
-.android #ad-container {
+.android #ad-container {
   display: block;
 }
 

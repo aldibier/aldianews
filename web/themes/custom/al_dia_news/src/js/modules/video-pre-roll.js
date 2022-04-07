@@ -108,21 +108,31 @@ function videoSDK() {
     });
 
     adsFullscreen.addEventListener("click", function () {
-      console.log('Fullscreen!');
+      console.log('Fullscreen');
       if (videoContainer.requestFullscreen) {
-        if (document.fullscreenElement || document.webkitFullscreenElement) {
+
+        if (document.fullscreenElement) {
           document.exitFullscreen();
-          //Safari prefixed
-          document.webkitExitFullscreen()
+          //document.webkitExitFullscreen() Safari prefixed
           videoContainer.classList.remove("fullscreen");
         } else {
           videoContainer.requestFullscreen();
-           //Safari prefixed
-          videoContainer.webkitRequestFullscreen()
+          //videoContainer.webkitRequestFullscreen() Safari prefixed
           videoContainer.classList.add("fullscreen");
         }
-
       }
+
+      //Support safari fullscreen
+      if(!document.body.classList.contains('safari')) return;
+
+      if (!videoContainer.classList.contains('fullscreen')){
+        videoContainer.classList.add('fullscreen');
+        document.body.classList.add('fullscreen-active');
+      }else {
+        videoContainer.classList.remove('fullscreen');
+        document.body.classList.remove('fullscreen-active');
+      }
+
     });
 
     document.addEventListener("fullscreenchange", (event) => {
