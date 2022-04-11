@@ -1,0 +1,65 @@
+display:
+  default:
+    display_title: Master
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filter
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Items per page'
+            items_per_page_options_all_label: '- All -'
+            offset_label: Offset
+          tags:
+            previous: '‹ anterior'
+            next: 'siguiente ›'
+            first: '« primero'
+            last: 'último »'
+      fields:
+        taxonomy_term_bulk_form:
+          label: 'Actualización masiva'
+          action_title: Action
+        name:
+          label: Término
+          separator: ', '
+        vid:
+          label: Vocabulario
+          separator: ', '
+        status:
+          label: Status
+          settings:
+            format_custom_true: Publicado
+            format_custom_false: 'Sin publicar'
+          separator: ', '
+        publish_on:
+          label: 'Publicar en'
+          separator: ', '
+        unpublish_on:
+          label: 'Quitar publicación en'
+          separator: ', '
+        operations:
+          label: Operations
+      filters:
+        name:
+          expose:
+            label: 'Nombre del término'
+        vid:
+          expose:
+            label: Vocabulario
+        status:
+          expose:
+            label: Status
+          group_info:
+            label: 'Published status'
+            group_items:
+              1:
+                title: Publicado
+              2:
+                title: 'Sin publicar'
+  overview:
+    display_title: 'Términos de taxonomía'
