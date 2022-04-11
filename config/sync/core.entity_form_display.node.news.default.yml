@@ -29,7 +29,6 @@ dependencies:
     - field_group
     - maxlength
     - path
-    - scheduler
     - shs
     - svg_image
     - text
@@ -269,11 +268,11 @@ content:
     region: content
     third_party_settings: {  }
   publish_on:
-    type: datetime_timestamp_no_default
-    weight: 26
-    region: content
+    weight: 31
     settings: {  }
     third_party_settings: {  }
+    type: datetime_timestamp
+    region: content
   scheduler_settings:
     weight: 22
     region: content
@@ -320,11 +319,11 @@ content:
     region: content
     third_party_settings: {  }
   unpublish_on:
-    type: datetime_timestamp_no_default
-    weight: 25
-    region: content
+    weight: 32
     settings: {  }
     third_party_settings: {  }
+    type: datetime_timestamp
+    region: content
   url_redirects:
     weight: 24
     region: content
