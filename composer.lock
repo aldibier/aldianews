@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c2e9c94b3089efcad18a64e1dcdb8a04",
+    "content-hash": "8f6d158c903ccc085acbf5ba8ae406f7",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -10279,34 +10279,35 @@
         },
         {
             "name": "drupal/scheduler",
-            "version": "1.4.0",
+            "version": "2.0.0-rc2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/scheduler.git",
-                "reference": "8.x-1.4"
+                "reference": "2.0.0-rc2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/scheduler-8.x-1.4.zip",
-                "reference": "8.x-1.4",
-                "shasum": "5b2203e4688e5d3ac67d0780605809c92c6ece70"
+                "url": "https://ftp.drupal.org/files/projects/scheduler-2.0.0-rc2.zip",
+                "reference": "2.0.0-rc2",
+                "shasum": "9848a19d74a601530af6d4357794a9be7db4803f"
             },
             "require": {
                 "drupal/core": "^8 || ^9"
             },
             "require-dev": {
-                "drupal/devel_generate": "^2.0 || 4.x-dev",
+                "drupal/commerce": "^2.0",
+                "drupal/devel_generate": "^4.0",
                 "drupal/rules": "^3",
                 "drush/drush": "^9.0 || ^10"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.4",
-                    "datestamp": "1637145565",
+                    "version": "2.0.0-rc2",
+                    "datestamp": "1645716839",
                     "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
+                        "status": "not-covered",
+                        "message": "RC releases are not covered by Drupal security advisories."
                     }
                 },
                 "drush": {
@@ -12553,7 +12554,7 @@
             "extra": {
                 "drupal": {
                     "version": "6.0.4",
-                    "datestamp": "1624461046",
+                    "datestamp": "1629907247",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -18221,6 +18222,7 @@
         "drupal/paypal_subscriptions": 20,
         "drupal/perimeter": 5,
         "drupal/react_comments": 10,
+        "drupal/scheduler": 5,
         "drupal/search_api_spellcheck": 10,
         "drupal/sendgrid_api": 15,
         "drupal/session_limit": 10,
