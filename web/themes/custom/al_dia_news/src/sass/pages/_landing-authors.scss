@@ -1,5 +1,8 @@
 .path-authors{
     .block-views-blocklanding-authors-block-1{
+        border-bottom: solid #EE2211;
+        margin-bottom: 50px;
+
         .views-field-nothing {
             h1 {
 
@@ -46,5 +49,23 @@
                 }
             }
         }
-    }       
+    }
+    
+    .block-system-main-block{
+        .view-content{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+
+            .views-row{
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                align-items: center;
+                border: solid;
+            }
+        }
+    }
 }
