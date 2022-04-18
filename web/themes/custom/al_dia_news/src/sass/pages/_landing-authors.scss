@@ -2,6 +2,14 @@
     .block-views-blocklanding-authors-block-1{
         .views-field-nothing {
             h1 {
+
+                font-family: 'ModernoFB';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 42px;
+                line-height: 50px;
+                
+                color: #EE2211;
             .aldia-logo-in-text {
                 top: -1px;
                 max-width: 116px;
@@ -21,21 +29,21 @@
                 max-width: 106px;
                 margin-right: 5px;
         
-                @media screen and (max-width: $tablet) {
-                    height: 22px;
-                }
+                    @media screen and (max-width: $tablet) {
+                        height: 22px;
+                    }
                 }
         
             }
         
-            span {
-                max-height: 33px;
-                line-height: 1;
-        
-                @media screen and (max-width: $tablet) {
-                max-height: 16px;
+                span {
+                    max-height: 33px;
+                    line-height: 1;
+            
+                    @media screen and (max-width: $tablet) {
+                    max-height: 16px;
+                    }
                 }
-            }
             }
         }
     }       
