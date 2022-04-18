@@ -54,7 +54,7 @@
         grid-auto-rows: auto;
         grid-template-areas:
             "area-1 area-2"
-            "area-1 area-2";
+            "area-3 area-3";
         overflow: hidden;
         margin-bottom: 90px;
 
@@ -278,6 +278,10 @@
                 line-height: 12px;
                 }
             }
+        }
+
+        .content-news-authors{
+            grid-area: area-3;
         }
         
     }
