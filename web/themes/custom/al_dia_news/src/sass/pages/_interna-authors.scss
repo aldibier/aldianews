@@ -126,6 +126,19 @@
             
     .related_authors {
         grid-area: area-2;
+
+        .view-header{
+            h2{
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: calc(0% - 35px);
+                    height: 1px;
+                    width: 100%;
+                    background-color: #333333;
+                    }
+            }
+        }
         .card-more-authors {
             display: flex;
     
