@@ -48,7 +48,7 @@
     }
 
     .content-page-node {
-        max-height: initial !important;
+        max-height: initial;
         display: grid;
         grid-template-columns: 1fr auto;
         grid-auto-rows: auto;
@@ -318,13 +318,14 @@
     
                     margin: 20px auto;
                     &::after {
-                        content: '';
+                        content: "";
                         position: absolute;
-                        height: 2px;
+                        height: 3px;
                         width: 100%;
-                        background-color: #333333;
+                        background-color: #333;
                         margin-left: 10px;
-                        top: 13px;
+                        top: 63%;
+                        max-width: 810px;
                         }
                 }
             }
