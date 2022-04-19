@@ -78,6 +78,7 @@
                         width: 120px;
                         height: 142px;
                         border-radius: 50%;
+                        box-shadow: 3px 16px 15px -15px;
                     }
 
                     a {
@@ -135,6 +136,22 @@
                             color: $cgrey6;
                         }
                     }
+                }
+            }
+
+            .pager{
+                .pager__item{
+                    font-family: 'Proxima Nova Condensed';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 30px;
+                    line-height: 37px;
+                    color: #777777;
+                    margin-bottom: 70px;
+                }
+                .pager__item--first,
+                .pager__item--last{
+                    display: none;
                 }
             }
         }
