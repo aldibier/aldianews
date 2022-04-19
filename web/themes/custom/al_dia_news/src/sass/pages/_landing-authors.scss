@@ -139,22 +139,24 @@
                 }
             }
 
-            .pager__items{
-                a {
-                    font-family: 'Proxima Nova Condensed';
-                    font-style: normal;
-                    font-weight: 700;
-                    font-size: 30px;
-                    line-height: 37px;
-                    color: #777777;
-                    margin-bottom: 70px;
-                }
-                .pager__item--first,
-                .pager__item--last{
-                    a{
-                        display: none !important;
-                    }
-                }
+            
+        }
+    }
+
+    .pager__items{
+        a {
+            font-family: 'Proxima Nova Condensed';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 30px;
+            line-height: 37px;
+            color: #777777;
+            margin-bottom: 70px;
+        }
+        .pager__item--first,
+        .pager__item--last{
+            a{
+                display: none !important;
             }
         }
     }
