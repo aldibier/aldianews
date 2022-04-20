@@ -114,7 +114,8 @@
             grid-template-columns: 1fr;
             grid-template-areas:
             "area-1"
-            "area-2";
+            "area-2"
+            "area-3";
             grid-gap: 0;
             overflow: initial;
         }
@@ -396,7 +397,11 @@
                         margin-left: 10px;
                         top: 75%;
                         max-width: 810px;
+
+                        @media (max-width: $broken) {
+                            top: 80%;
                         }
+                    }
                 }
             }
         }
