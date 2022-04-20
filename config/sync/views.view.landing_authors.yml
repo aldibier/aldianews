@@ -12,6 +12,7 @@ dependencies:
     - node
     - svg_image
     - user
+    - views_block_area
 id: landing_authors
 label: 'Landing authors'
 module: views
@@ -1379,6 +1380,28 @@ display:
           plugin_id: custom
       defaults:
         fields: false
+        footer: false
+      footer:
+        views_block_area:
+          id: views_block_area
+          table: views
+          field: views_block_area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          block_id: 'block_group:fixed_blocks_adversiting'
+          plugin_id: views_block_area
+        views_block_area_1:
+          id: views_block_area_1
+          table: views
+          field: views_block_area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          block_id: 'block_group:gamw_fixed_skyscraper_adversiting'
+          plugin_id: views_block_area
     cache_metadata:
       max-age: -1
       contexts:
