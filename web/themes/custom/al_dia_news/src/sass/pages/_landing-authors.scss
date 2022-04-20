@@ -83,6 +83,15 @@
                     background: $cgrey4;
                     right: calc(0% - 25px );
                 }
+
+                .views-row::after {
+                    content: "";
+                    height: 1px;
+                    width: 100%;
+                    position: absolute;
+                    background: green;
+                    right: calc(0% - 25px );
+                }
             }
         }
 
