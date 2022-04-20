@@ -1,5 +1,30 @@
 .path-authors{
 
+    .view-display-id-page_1{
+        display: grid;
+        width: 100%;
+        height: auto;
+        grid-template-areas:
+            "head foot"
+            "pager pager";
+
+        .view-content{
+            grid-area: head;
+        }
+
+        .pager{
+            grid-area: pager;
+        }
+
+        .view-footer{
+            grid-area: foot;
+
+            .block{
+                margin: 50px auto;
+            }
+        }
+    }
+
     .views-field-field-lead{
         .field-content{
             a{
