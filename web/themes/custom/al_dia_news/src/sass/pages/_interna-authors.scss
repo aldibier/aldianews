@@ -5,7 +5,11 @@
         
         grid-area: area-1;
 
-        position: relative;
+        @media screen and(max-width:$broken) {
+            position: relative;
+            max-width: 100%;
+            margin-right: 0;
+            margin-bottom: 65px;
 
             &::after {
             content: '';
@@ -16,7 +20,7 @@
             background-color: #b1b1b1;
             }
 
-        
+        }
 
         @media screen and(max-width:$tablet) {
             margin-bottom: 20px;
@@ -105,7 +109,7 @@
                 margin-bottom: 40px;
             }
 
-        @media screen and(max-width:$mobile-mid) {
+        @media screen and(max-width:$broken) {
             max-height: initial;
             grid-template-columns: 1fr;
             grid-template-areas:
@@ -152,7 +156,7 @@
             min-height: 520px;
             max-height: 520px;
 
-            @media screen and(max-width:$mobile-mid) {
+            @media screen and(max-width:$broken) {
                 height: auto;
                 min-height: 245px;
             }
