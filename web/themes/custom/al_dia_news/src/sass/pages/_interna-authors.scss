@@ -125,22 +125,18 @@
             
             grid-area: area-1;
 
-            @media screen and(max-width:$broken) {
-            position: relative;
-            max-width: 100%;
-            margin-right: 0;
-            margin-bottom: 65px;
+            
 
-                &::after {
-                    content: '';
-                    position: absolute;
-                    bottom: calc(0% - 35px);
-                    height: 1px;
-                    width: 100%;
-                    background-color: #b1b1b1;
-                }
-
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: calc(0% - 35px);
+                height: 1px;
+                width: 100%;
+                background-color: #b1b1b1;
             }
+
+            
 
             @media screen and(max-width:$tablet) {
             margin-bottom: 20px;
