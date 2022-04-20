@@ -52,6 +52,40 @@
     }
     
     .block-system-main-block{
+
+        .view-id-landing_authors{
+            .view-content{
+                display: grid;
+                grid-template-columns: repeat(3,180px);
+                grid-gap: 20px 50px;
+                width: max-content;
+                overflow: hidden;
+
+                .views-row {
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: nowrap;
+                    align-items: center;
+                    max-width: 280px;
+                    width: 100%;
+                    max-height: 455px;
+                    height: 420px;
+                    margin: 20px auto;
+                    justify-content: center;
+                    position: relative;
+                }
+
+                .views-row:before {
+                    content: "";
+                    width: 1px;
+                    height: 100%;
+                    position: absolute;
+                    background: black;
+                    right: calc(0% - 25px );
+                }
+            }
+        }
+
         .view-content{
             display: flex;
             flex-direction: row;
