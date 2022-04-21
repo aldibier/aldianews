@@ -71,6 +71,7 @@ body[class*="path-authors"]{
     }
 
     .author-lead-intern{
+        margin-right: 20px;
         p{
             font-family: 'Century Old Style Std';
             font-style: normal;
@@ -83,6 +84,7 @@ body[class*="path-authors"]{
     }
 
     .author-biography-intern{
+        margin-right: 20px;
         p{
             font-family: 'Proxima Nova Condensed';
             font-style: normal;
@@ -166,6 +168,7 @@ body[class*="path-authors"]{
         }
 
         .author-social-media-intern{
+            margin-bottom: 25px;
             ul{
 
                 display: flex;
@@ -176,7 +179,10 @@ body[class*="path-authors"]{
 
                         padding: 4px;
                         border-radius: 100%;
-                        background: #939598;
+                        background: $cgrey;
+                        width: 40px;
+                        height: 40px;
+
                         a{
                             font-size: 0px;
                             position: absolute;
@@ -189,7 +195,7 @@ body[class*="path-authors"]{
                             margin: 5px;
 
                             .fa-envelope:before {
-                               
+                                padding: 5px 5px;
                                 font-size: 22px;
                             }
                         }
@@ -208,14 +214,24 @@ body[class*="path-authors"]{
                 h2{
 
                     margin: 20px auto;
+                    font-family: 'ModernoFB';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 28px;
+                    line-height: 34px;
+                    display: flex;
+                    align-items: center;
+                    color: #333333;
+                    position: relative;
+
                     &::after {
-                        content: '';
+                        content: "";
                         position: absolute;
-                        height: 2px;
+                        height: 3px;
                         width: 100%;
-                        background-color: #333333;
-                        margin-left: 10px;
-                        top: 13px;
+                        background-color: #333;
+                        margin-left: 375px;
+                        top: 50%;
                         }
                 }
             }
@@ -392,17 +408,23 @@ body[class*="path-authors"]{
             grid-area: area-3;
             .view-header{
                 h2{
-    
-                    margin: 20px auto;
+                    font-family: 'ModernoFB';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 28px;
+                    line-height: 34px;
+                    display: flex;
+                    align-items: center;
+                    color: #333333;
+                    position: relative;
                     &::after {
                         content: "";
                         position: absolute;
                         height: 3px;
                         width: 100%;
                         background-color: #333;
-                        margin-left: 10px;
-                        top: 75%;
-                        max-width: 810px;
+                        margin-left: 375px;
+                        top: 50%;
 
                         @media (max-width: $broken) {
                             top: 80%;
