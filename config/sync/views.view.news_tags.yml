@@ -67,9 +67,9 @@ display:
           label: TAGS
           exclude: false
           alter:
-            alter_text: true
+            alter_text: false
             text: '{{ field_tags }}'
-            make_link: true
+            make_link: false
             path: '/taxonomy/term/{{ field_tags__target_id }}?node={{ nid }}'
             absolute: false
             external: false
