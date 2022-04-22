@@ -127,93 +127,29 @@
     
     .block-system-main-block{
 
-        .view-id-landing_authors{
-            .view-content{
-                display: grid;
-                grid-template-columns: repeat(3,230px);
-                grid-gap: 20px 50px;
-                width: max-content;
-                overflow: hidden;
-
-                .views-row {
-                    display: flex;
-                    flex-direction: column;
-                    flex-wrap: nowrap;
-                    align-items: center;
-                    max-width: 280px;
-                    width: 100%;
-                    max-height: 465px;
-                    height: 465px;
-                    margin: 20px auto;
-                    justify-content: center;
-                    position: relative;
-                }
-
-                .views-row:before {
-                    content: "";
-                    width: 1px;
-                    height: 100%;
-                    position: absolute;
-                    background: $cgrey4;
-                    right: calc(0% - 25px );
-                }
-
-                .views-row::after {
-                    content: "";
-                    height: 1px;
-                    width: 130%;
-                    position: absolute;
-                    background: $cgrey4;
-                    top: calc(0% - 25px );
-                }
-            }
-        }
-
         .view-content{
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            align-items: center;
+            display: grid;
+            grid-template-columns: repeat(3,300px);
+            grid-gap: 20px 50px;
+            width: max-content;
+            overflow: hidden;
 
-            .views-row{
+            .views-row {
                 display: flex;
                 flex-direction: column;
                 flex-wrap: nowrap;
                 align-items: center;
                 max-width: 280px;
                 width: 100%;
-                max-height: 455px;
-                height: 420px;
+                max-height: 465px;
+                height: 465px;
                 margin: 20px auto;
                 justify-content: center;
+                position: relative;
 
-                .views-field{
-                    margin: 15px auto;
-
-                    .views-field-field-lead{
-                        .field-content{
-                            a{
-                                font-family: 'Nimrod';
-                                font-style: normal;
-                                font-weight: 400;
-                                font-size: 16px !important;
-                                line-height: 122%;
-                                text-align: center;
-                                color: $cgrey6;
-                            }
-                        }
-                    }
-
-                    img{
-                        width: 120px;
-                        height: 130px;
-                        border-radius: 50%;
-                        box-shadow: 3px 16px 15px -15px;
-                    }
-
-                    a {
-                        font-family: $PrNovacond-reg;
+                .views-field-name{
+                    a{
+                        font-family: 'Proxima Nova Condensed';
                         font-style: normal;
                         font-weight: 700;
                         font-size: 22px;
@@ -223,46 +159,72 @@
                         text-align: center;
                         letter-spacing: 0.07em;
                         text-transform: uppercase;
-                        color: $cgrey6;
+                        color: #333333;
                     }
-                    
+                }
 
-                    .views-field-nid{
-                        span {
-                            font-family: $PrNovacond-reg;
-                            font-style: normal;
-                            font-weight: 400;
-                            font-size: 16px;
-                            line-height: 26px;
-                            display: flex;
-                            align-items: center;
-                            text-align: center;
-                            letter-spacing: 0.01em;
-                            text-transform: uppercase;
-                            color: $cgrey6;
-                        }
+                .views-field-nid{
+                    span{
+                        font-family: 'Proxima Nova Condensed';
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 16px;
+                        line-height: 26px;
+                        display: flex;
+                        align-items: center;
+                        text-align: center;
+                        letter-spacing: 0.01em;
+                        text-transform: uppercase;
+                        color: #333333;
                     }
+                }
 
-                    
+                .views-field-field-lead{
+                    a{
+                        font-family: 'Nimrod';
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 16px;
+                        line-height: 122%;
+                        text-align: center;
+                        color: #333333;
+                        text-transform: initial;
+                    }
+                }
 
-                    .views-field-nothing{
-                        a {
-                            font-family: $PrNovacond-reg;
-                            font-style: normal;
-                            font-weight: 800;
-                            font-size: 18px !important;
-                            line-height: 22px;
-                            display: flex; 
-                            align-items: center;
-                            text-align: center;
-                            letter-spacing: 0.025em;
-                            color: $cgrey6;
-                        }
+                .views-field-nothing{
+                    a{
+                        font-family: 'Proxima Nova Condensed';
+                        font-style: normal;
+                        font-weight: 800;
+                        font-size: 20px;
+                        line-height: 24px;
+                        display: flex;
+                        align-items: center;
+                        text-align: center;
+                        letter-spacing: 0.025em;
+                        color: #333333;
                     }
                 }
             }
 
-            
+            .views-row:before {
+                content: "";
+                width: 1px;
+                height: 100%;
+                position: absolute;
+                background: $cgrey4;
+                right: calc(0% - 25px );
+            }
+
+            .views-row::after {
+                content: "";
+                height: 1px;
+                width: 130%;
+                position: absolute;
+                background: $cgrey4;
+                top: calc(0% - 25px );
+            }
         }
     }
 
