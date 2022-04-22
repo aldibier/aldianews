@@ -147,15 +147,15 @@
                 margin: 20px auto;
                 justify-content: center;
                 position: relative;
-
-                img{
-                    width: 120px;
-                    height: 120px;
-                    border-radius: 50%;
-                    box-shadow: 3px 16px 15px -15px;
-                    margin-bottom: 5px;
+                .views-field-field-authors-photo{
+                    img{
+                        width: 120px;
+                        height: 120px;
+                        border-radius: 50%;
+                        box-shadow: 3px 16px 15px -15px;
+                        margin-bottom: 5px;
+                    }
                 }
-
                 .views-field-name{
                     margin: 15px auto;
                     a{
@@ -220,6 +220,18 @@
                     }
                 }
 
+            }
+
+            .views-row:hover {
+                background: black;
+
+                a{
+                    color: $cwhite;
+                }
+
+                span{
+                    color: $cwhite;
+                }
             }
 
             .views-row:before {
