@@ -131,7 +131,7 @@
         .view-content{
             display: grid;
             grid-template-columns: repeat(3,300px);
-            grid-gap: 20px 50px;
+            grid-gap: 15px 0px;
             width: max-content;
             overflow: hidden;
             margin-right: 30px;
@@ -141,7 +141,7 @@
                 flex-direction: column;
                 flex-wrap: nowrap;
                 align-items: center;
-                max-width: 280px;
+                max-width:300px;
                 width: 100%;
                 max-height: 465px;
                 height: 465px;
@@ -241,7 +241,7 @@
                 height: 100%;
                 position: absolute;
                 background: $cgrey4;
-                right: calc(0% - 25px );
+                right: calc(0% - 0px );
             }
 
             .views-row::after {
