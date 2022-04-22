@@ -127,6 +127,7 @@
     
     .block-system-main-block{
 
+        
         .view-content{
             display: grid;
             grid-template-columns: repeat(3,300px);
@@ -147,7 +148,16 @@
                 justify-content: center;
                 position: relative;
 
+                img{
+                    width: 120px;
+                    height: 120px;
+                    border-radius: 50%;
+                    box-shadow: 3px 16px 15px -15px;
+                    margin-bottom: 5px;
+                }
+
                 .views-field-name{
+                    margin: 15px auto;
                     a{
                         font-family: 'Proxima Nova Condensed';
                         font-style: normal;
@@ -164,6 +174,7 @@
                 }
 
                 .views-field-nid{
+                    margin-bottom: 15px;
                     span{
                         font-family: 'Proxima Nova Condensed';
                         font-style: normal;
@@ -180,6 +191,8 @@
                 }
 
                 .views-field-field-lead{
+                    margin-bottom: 20px;
+                    text-align: center;
                     a{
                         font-family: 'Nimrod';
                         font-style: normal;
@@ -206,6 +219,7 @@
                         color: #333333;
                     }
                 }
+
             }
 
             .views-row:before {
