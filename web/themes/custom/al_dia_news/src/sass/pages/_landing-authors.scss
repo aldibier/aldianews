@@ -6,7 +6,11 @@
         height: auto;
         grid-template-areas:
             "head foot"
-            "pager pa";
+            "pager .";
+        grid-template-columns: minmax(400px,840px) 400px;
+        grid-gap: 0px 40px;
+
+        
 
         .view-content{
             grid-area: head;
@@ -132,9 +136,10 @@
         
         .view-content{
             display: grid;
-            grid-template-columns: repeat(3,300px);
+            grid-template-columns: 270px 300px 270px;
             grid-gap: 15px 0px;
             overflow: hidden;
+            max-width: 840px;
             
             
 
@@ -250,6 +255,10 @@
                 position: absolute;
                 background: $cgrey4;
                 right: calc(0% - 0px );
+            }
+
+            .views-row:nth-child(3n+3):before{
+                content: none;
             }
 
             .views-row::after {
