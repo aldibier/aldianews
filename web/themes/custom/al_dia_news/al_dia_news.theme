@@ -41,7 +41,7 @@ function al_dia_news_preprocess_views_view_unformatted(&$vars) {
   $display = $view->getDisplay();
 
   /* if($id === 'categories_sons'){
-   
+
     static $control;
 
     if(empty($control)) $control = [];
@@ -166,7 +166,7 @@ function al_dia_news_preprocess_views_view_unformatted(&$vars) {
       }
     }
   }
-	
+
   if (is_mobile()) {
     $vars['device'] = 'mobile';
   } else {
@@ -238,7 +238,7 @@ function al_dia_news_suggestions_block_alter(array &$suggestions, array $vars) {
 }
 
 function al_dia_news_theme_suggestions_alter(array &$suggestions, array $vars, $hook) {
-  if($vars['elements']['#plugin_id'] == 'gamw'){
+  if(isset($vars['elements']['#plugin_id']) &&  $vars['elements']['#plugin_id'] == 'gamw' ){
     if($vars['elements']['#configuration']['ad_unit'] == 'internal-news-thought-banner-last-block-top-mobile'){
       $suggestions[] = 'block__gamw_last_top_mobile';
     }
