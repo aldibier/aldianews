@@ -160,7 +160,15 @@ class RelatedContentFieldFormatter extends FormatterBase {
     return $newContent;
 
   }
+  public function getInnerHtml( $node ) {
+    $innerHTML= '';
+    $children = $node->childNodes;
+    foreach ($children as $child) {
+      $innerHTML .= $child->ownerDocument->saveXML( $child );
+    }
 
+    return $innerHTML;
+  }
   /**
    * Get and count paragraphs in field and insert related content HTML
    *
@@ -175,9 +183,7 @@ class RelatedContentFieldFormatter extends FormatterBase {
     //$a = $dom->getElementsByTagName('blockquote');
     $blockquote = [];
     foreach ($dom->getElementsByTagName('blockquote') as $key => $value) {
-      // ksm($value->nodeValue, PHP_EOL);
-      // ksm($key);
-      $blockquote[] = $value->nodeValue;
+      $blockquote[] = $this->getInnerHtml($value);
       $value->nodeValue = '[bq_' . $key . ']';
     }
     $count_p = count($dom->getElementsByTagName('p'));
