@@ -168,10 +168,18 @@ class RelatedContentFieldFormatter extends FormatterBase {
    * @param $view string
    */
   public function newHtml($html_body, $related_content){
-
+    //$new_html = $this->strip_tags_content($html_body, '<blockquote>', TRUE);
     $dom= Html::load($html_body);
 
     // get count paragraphs
+    //$a = $dom->getElementsByTagName('blockquote');
+    $blockquote = [];
+    foreach ($dom->getElementsByTagName('blockquote') as $key => $value) {
+      // ksm($value->nodeValue, PHP_EOL);
+      // ksm($key);
+      $blockquote[] = $value->nodeValue;
+      $value->nodeValue = '[bq_' . $key . ']';
+    }
     $count_p = count($dom->getElementsByTagName('p'));
 
     // get paragraph position, divided by 3
@@ -220,6 +228,9 @@ class RelatedContentFieldFormatter extends FormatterBase {
     $content = "</p><div data-embed-button='related_content'>". $related_content ."</div>";
 
     // HTML to return
+    foreach ($blockquote as $key => $value) {
+      $html = str_replace('[bq_' . $key . ']', $value, $html);
+    }
     $html = str_replace("[ad]</p>", $ad, $html);
     $html = str_replace("[related-content]</p>", $content, $html);
 
