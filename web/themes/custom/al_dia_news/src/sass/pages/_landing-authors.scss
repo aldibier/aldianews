@@ -20,6 +20,9 @@
             grid-template-areas:
             "head" 
             "pager" "foot";
+            grid-template-columns: initial;
+            grid-gap: 0 0;
+            justify-items: center;
             
         }
 
@@ -141,6 +144,10 @@
             
             @media screen and (max-width: $broken7) {
                 grid-template-columns: 230px 240px 230px;
+                }
+
+            @media screen and (max-width: $broken) {
+                grid-template-columns: 300px 300px;
                 }
 
             .views-row {
