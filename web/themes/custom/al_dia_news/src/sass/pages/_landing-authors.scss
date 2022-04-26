@@ -13,6 +13,14 @@
         @media screen and (max-width: $broken7) {
             grid-template-columns: minmax(400px,840px) 280px;
             grid-gap: 0 0px;
+            
+        }
+
+        @media screen and (max-width: $broken) {
+            grid-template-areas:
+            "head" "foot"
+            "pager";
+            
         }
 
         .view-content{
