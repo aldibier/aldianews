@@ -9,8 +9,11 @@
             "pager .";
         grid-template-columns: minmax(400px,840px) 400px;
         grid-gap: 0px 40px;
-
         
+        @media screen and (max-width: $tablet) {
+            grid-template-columns: minmax(400px,840px) 280px;
+            grid-gap: 0 0px;
+        }
 
         .view-content{
             grid-area: head;
