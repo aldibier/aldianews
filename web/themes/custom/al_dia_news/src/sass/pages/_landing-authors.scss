@@ -147,7 +147,7 @@
                 }
 
             @media screen and (max-width: $broken) {
-                grid-template-columns: 300px 300px;
+                grid-template-columns: 230px 230px;
                 }
 
             .views-row {
@@ -200,7 +200,9 @@
 
                         @media screen and (max-width: $broken7) {
                             font-size: 16px;
+                            line-height: 19px;
                             }
+                        
                     }
                 }
 
@@ -228,6 +230,9 @@
                     @media screen and (max-width: $broken7) {
                         margin: 3px 55px;
                         }
+                    @media screen and (max-width: $broken) {
+                        margin: 5px 30px;
+                        }
                     a{
                         font-family: 'Nimrod';
                         font-style: normal;
@@ -237,6 +242,10 @@
                         text-align: center;
                         color: $cgrey6;
                         text-transform: initial;
+
+                        @media screen and (max-width: $broken) {
+                            font-size: 14px;
+                            }
                     }
                 }
 
@@ -263,6 +272,11 @@
                         @media screen and (max-width: $broken7) {
                             font-size: 18px;
                             padding: 5px 60px;
+                            }
+
+                        @media screen and (max-width: $broken) {
+                            font-size: 14px;
+                            padding: 20px 60px;
                             }
                     }
                 }
