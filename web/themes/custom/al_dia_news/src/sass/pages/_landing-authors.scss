@@ -9,8 +9,22 @@
             "pager .";
         grid-template-columns: minmax(400px,840px) 400px;
         grid-gap: 0px 40px;
-
         
+        @media screen and (max-width: $broken7) {
+            grid-template-columns: minmax(400px,840px) 280px;
+            grid-gap: 0 0px;
+            
+        }
+
+        @media screen and (max-width: $broken) {
+            grid-template-areas:
+            "head" 
+            "pager" "foot";
+            grid-template-columns: initial;
+            grid-gap: 0 0;
+            justify-items: center;
+            
+        }
 
         .view-content{
             grid-area: head;
@@ -128,7 +142,13 @@
             overflow: hidden;
             max-width: 840px;
             
-            
+            @media screen and (max-width: $broken7) {
+                grid-template-columns: 230px 240px 230px;
+                }
+
+            @media screen and (max-width: $broken) {
+                grid-template-columns: 230px 230px;
+                }
 
             .views-row {
                 display: flex;
@@ -142,6 +162,10 @@
                 margin: 20px auto;
                 justify-content: center;
                 position: relative;
+
+                @media screen and (max-width: $broken7) {
+                    
+                    }
                 .views-field-field-authors-photo{
                     img{
                         width: 120px;
@@ -149,10 +173,18 @@
                         border-radius: 50%;
                         box-shadow: 3px 16px 15px -15px $cblack2;
                         margin-bottom: 5px;
+                        @media screen and (max-width: $broken7) {
+                            width: 90px;
+                            height: 90px;
+                            }
                     }
                 }
                 .views-field-name{
                     margin: 15px 10px;
+                    @media screen and (max-width: $broken7) {
+                        margin: 0px 10px;
+                        }
+                    
                     a{
                         font-family: $PrNovacond-Sbold;
                         font-style: normal;
@@ -165,6 +197,12 @@
                         letter-spacing: 0.07em;
                         text-transform: uppercase;
                         color: $cgrey6;
+
+                        @media screen and (max-width: $broken7) {
+                            font-size: 16px;
+                            line-height: 19px;
+                            }
+                        
                     }
                 }
 
@@ -188,6 +226,13 @@
                 .views-field-field-lead{
                     margin: 15px 55px;
                     text-align: center;
+
+                    @media screen and (max-width: $broken7) {
+                        margin: 3px 55px;
+                        }
+                    @media screen and (max-width: $broken) {
+                        margin: 5px 30px;
+                        }
                     a{
                         font-family: 'Nimrod';
                         font-style: normal;
@@ -197,6 +242,10 @@
                         text-align: center;
                         color: $cgrey6;
                         text-transform: initial;
+
+                        @media screen and (max-width: $broken) {
+                            font-size: 14px;
+                            }
                     }
                 }
 
@@ -218,6 +267,17 @@
                         width: 100%;
                         height: 100%;
                         justify-content: center;
+                        text-align: center;
+
+                        @media screen and (max-width: $broken7) {
+                            font-size: 18px;
+                            padding: 5px 60px;
+                            }
+
+                        @media screen and (max-width: $broken) {
+                            font-size: 14px;
+                            padding: 20px 60px;
+                            }
                     }
                 }
 
@@ -246,6 +306,12 @@
 
             .views-row:nth-child(3n+3):before{
                 content: none;
+            }
+
+            @media screen and(max-width:$broken) {
+                .views-row:nth-child(2n+2):before{
+                    content: none;
+                }
             }
 
             .views-row::after {

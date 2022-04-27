@@ -56,6 +56,10 @@ body[class*="path-authors"]{
         line-height: 110%;
         color: #000000;
         margin: 30px auto 10px;
+
+        @media screen and(max-width:$broken) {
+            font-size: 28px;
+        }
     }
 
     .author-job-intern{
@@ -68,6 +72,10 @@ body[class*="path-authors"]{
         align-items: center;
         color: #000000;
         margin-bottom: 10px;
+
+        @media screen and(max-width:$broken) {
+            font-size: 18px;
+        }
     }
 
     .author-lead-intern{
@@ -80,6 +88,11 @@ body[class*="path-authors"]{
             line-height: 140%;
             color: #333333;
             margin: 10px auto;
+
+            @media screen and(max-width:$broken) {
+                font-size: 18px;
+                }
+            
         }
     }
 
@@ -93,6 +106,10 @@ body[class*="path-authors"]{
             line-height: 140%;
             color: #000000;
             margin: 30px auto 1px;
+
+            @media screen and(max-width:$broken) {
+                font-size: 18px;
+                }
         }
     }
 
@@ -175,6 +192,10 @@ body[class*="path-authors"]{
                 li{
                     padding: 0 15px 0 0;
                     position: relative;
+
+                    @media screen and(max-width:$broken) {
+                        padding: 0 9px 0 0;
+                    }
                     .paragraph--type--social-media{
 
                         padding: 4px;
@@ -182,6 +203,12 @@ body[class*="path-authors"]{
                         background: $cgrey;
                         width: 45px;
                         height: 45px;
+
+                        @media screen and(max-width:$broken) {
+                            padding: 0px;
+                            width: 35px;
+                            height: 35px;
+                        }
 
                         a{
                             font-size: 0px;
@@ -415,6 +442,10 @@ body[class*="path-authors"]{
                     color: #333333;
                     position: relative;
                     margin-bottom: 30px;
+
+                    @media screen and(max-width:$broken) {
+                        font-size: 20px;
+                    }
 
                     &::after {
                         content: "";
