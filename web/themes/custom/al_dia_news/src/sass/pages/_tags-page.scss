@@ -82,6 +82,16 @@
         
         grid-area: area-2;
         max-width: 420px;
+
+        .block-views-blocklast-news-category-sons-block-2::before{
+            content: "";
+            width: 3px;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #b1b1b1;
+        }
         .view-content {
           display: flex;
           flex-direction: column;
