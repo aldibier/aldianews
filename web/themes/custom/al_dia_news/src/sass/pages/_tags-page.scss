@@ -83,11 +83,7 @@
         grid-area: area-2;
         max-width: 420px;
         .view-content {
-          display: grid;
-          grid-template-columns: minmax(200px, 400px) minmax(200px, 400px);
-          gap: 0px 40px;
-          position: relative;
-          overflow: hidden;
+          display: flex;
         }
   
         @media screen and (max-width: $broken) {
