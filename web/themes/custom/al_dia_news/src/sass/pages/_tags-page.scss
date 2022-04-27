@@ -1,103 +1,38 @@
 .container-content {
+  
     >.first-block-tags-taxonomy {
-      .group-title-link {
-              max-height: 45px;
-              line-height: 1;
-              
-        h2 {
-          display: block;
-          margin: 0;
-  
-          a {
-            @include title-section-line($px38, $ModernoFB-Regular, $corange2);
-            display: flex;
-            align-items: center;
-          }
-  
-          @media (max-width: $tablet) {
-            max-height: 37px;
-            padding-bottom: 10px;
-            border-bottom: 1.5px solid $corange2;
-  
-            a {
-              font-size: 20px;
-              line-height: 24px;
-  
-              &::after {
-                display: none;
-              }
-            }
-          }
-        }
-      }
-  
-      .group-title-link.sub-category-link {
-  
-        h2 {
-          border-bottom: 0;
-        }
-  
-        a {
-          display: block;
-          background-color: $cwhite;
-  
-          @media (max-width: $tablet) {
-            position: relative;
-            display: flex;
-            min-height: 15px;
-            font-size: szrem(15);
-            line-height: 1;
-            background-color: transparent;
-  
-            &::after {
-              content: "";
-              position: relative;
-              right: 0;
-              display: block !important;
-              flex: 1;
-              width: 100%;
-              background: $corange2;
-              height: 0.1mm;
-              top: -3px;
-              z-index: 0;
-            }
-          }
-        }
-      }
-  
-      >.first-block-tags-taxonomy {
-        max-height: 520px;
-        display: grid;
-        grid-template-columns: 1fr auto;
-        grid-auto-rows: auto;
-        grid-template-areas:
-            "area-1 area-2"
-            "area-1 area-2";
-        overflow: hidden;
-        margin-bottom: 90px;
-  
+    max-height: 520px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-auto-rows: auto;
+    grid-template-areas:
+        "area-1 area-2"
+        "area-1 area-2";
+    overflow: hidden;
+    margin-bottom: 90px;
+
+    .banner-scroll {
+        grid-column: span 2;
+        margin-top: 80px;
+    }
+
+    @media (max-width: $desktop) {
+        margin-bottom: 40px;
+    }
+
+    @media (max-width: $broken) {
+        display: flex;
+        flex-direction: column;
+
         .banner-scroll {
-          grid-column: span 2;
-          margin-top: 80px;
+        margin-top: 30px;
         }
-  
-        @media (max-width: $desktop) {
-          margin-bottom: 40px;
-        }
-  
-        @media (max-width: $broken) {
-          display: flex;
-          flex-direction: column;
-  
-          .banner-scroll {
-            margin-top: 30px;
-          }
-        }
-  
-        @media (max-width: $tablet) {
-          margin-bottom: 35px;
-        }
-      }
+    }
+
+    @media (max-width: $tablet) {
+        margin-bottom: 35px;
+    }
+    }
   
           >.views-row  >.views-field-fieldset {
         grid-area: head;
@@ -181,63 +116,7 @@
         }
       }
   
-      .views-field-view-2 {
-        grid-area: area-3;
-  
-        .view-content {
-          @media screen and (max-width: $broken) {
-            .last-content-category-childs {
-              margin-bottom: 20px;
-            }
-          }
-  
-          @media screen and (max-width: $tablet) {
-            .views-row {
-              width: 100%;
-              max-width: 100%;
-              margin-top: 0;
-            }
-  
-            .container-content {
-              flex-direction: row;
-              align-items: center;
-            }
-  
-            .last-content-category-childs {
-              flex: 1 1 140px;
-              margin-bottom: 0;
-            }
-  
-            .two-content-child {
-              flex: 1 0 140px;
-              margin-left: 10px;
-            }
-  
-            .slick-slide {
-              >div {
-                .views-row {
-                  padding-top: 10px;
-                  padding-bottom: 10px;
-                  border-bottom: 1px solid $cgrey4;
-                }
-  
-                &:first-child {
-                  .views-row {
-                    padding-top: 0;
-                  }
-                }
-  
-                &:last-child {
-                  .views-row {
-                    padding-bottom: 0;
-                    border-bottom: none;
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
+      
   
       .views-field-view-3 {
         grid-area: head;
@@ -251,7 +130,7 @@
       .views-field-view-4 {
         grid-column: 2 span;
       }
-    }
+    
   
   
     //next two
