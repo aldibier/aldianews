@@ -1,6 +1,4 @@
-.container-content {
-  
-    >.first-block-tags-taxonomy {
+.first-block-tags-taxonomy{
     max-height: 520px;
     display: grid;
     grid-template-columns: 1fr auto;
@@ -11,78 +9,18 @@
     overflow: hidden;
     margin-bottom: 90px;
 
-    .banner-scroll {
-        grid-column: span 2;
-        margin-top: 80px;
-    }
+    .block-last-node-tag{
 
-    @media (max-width: $desktop) {
-        margin-bottom: 40px;
-    }
-
-    @media (max-width: $broken) {
-        display: flex;
-        flex-direction: column;
-
-        .banner-scroll {
-        margin-top: 30px;
-        }
-    }
-
-    @media (max-width: $tablet) {
-        margin-bottom: 35px;
-    }
-    }
-  
-          >.views-row  >.views-field-fieldset {
-        grid-area: head;
-              margin-bottom: 62px;
-  
-              @media (max-width: $tablet) {
-          margin-bottom: 45px;
-        }
-  
-      }
-  
-      .block-last-node-tag {
-        max-width: 840px;
-        max-height: 512px;
+        max-width: 880px;
+        max-height: 540px;
         margin-right: 19px;
-        padding-bottom: 35px;
-        border-bottom: 1px solid $cgrey4;
         grid-area: area-1;
-  
-        .main-news-image {
-          max-height: 480px;
-        }
-  
-        @media screen and(max-width:$broken) {
-          max-width: 100%;
-          margin-bottom: 35px;
-          margin-right: 0;
-          overflow: hidden;
-  
-          img {
-            height: auto;
-          }
-        }
-  
-        @media screen and(max-width:$tablet) {
-          padding-bottom: 0;
-          margin-bottom: 20px;
-          border-bottom: none;
-  
-          img {
-            min-height: 245px;
-          }
-        }
-      }
-  
-      .block-views-blocklanding-tags-block-1 {
-        
-        grid-area: area-2;
-        max-width: 420px;
 
+    }
+
+    .block-views-blocklanding-tags-block-1{
+
+        grid-area: area-2;
         &::before{
             content: "";
             width: 3px;
@@ -92,98 +30,5 @@
             left: 0;
             background-color: #b1b1b1;
         }
-        .view-content {
-          display: flex;
-          flex-direction: column;
-
-          .views-row{
-              .container-content{
-                display: flex;
-                flex-direction: row;
-
-                .one-content-subcategory-four{
-                    margin-right: 15px;
-
-                    .block-field-blocknodenewsfield-type-of-content{
-                        font-size: 0px;
-                    }
-
-                }
-
-                .two-content-category-four{
-                    .block-field-blocknodenewsfield-category{
-                        div{
-                            margin: 0 0 10px;
-                            line-height: 0;
-                            a{
-                                font-family: $ModernoFB-Regular;
-                                font-style: normal;
-                                font-weight: 600;
-                                font-size: 12px;
-                                line-height: 14px;
-                                letter-spacing: 0.08em;
-                                color: $corange;
-                            }
-                        }                        
-                    }
-
-                    .block-field-blocknodenewsfield-new-short-title{
-
-                    }
-
-                    .block-field-blocknodenewscreated{
-                        span{
-                            font-family: $PrNovacond-reg;
-                            font-style: normal;
-                            font-weight: 400;
-                            font-size: 12px;
-                            line-height: 15px;
-                            color: $cgrey3;
-                        }
-                    }
-                }
-              }
-          }
-        }
-  
-        @media screen and (max-width: $broken) {
-          margin: 0;
-          position: relative;
-  
-          /* &:after {
-            width: 100%;
-            content: '';
-            height: 1px;
-            display: block;
-            position: absolute;
-            bottom: 15px;
-            left: 0;
-            background: #B1B1B1;
-          } */
-  
-          .view-content {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-gap: 0 10px;
-            overflow: hidden;
-            grid-auto-flow: dense;
-            width: 100%;
-          }
-        }
-      }
-  
-      
-  
-      .views-field-view-3 {
-        grid-area: head;
-              margin-bottom: 40px;
-  
-        @media screen and (max-width: $broken) {
-          margin-bottom: 20px;
-        }
-      }
-  
-      .views-field-view-4 {
-        grid-column: 2 span;
-      }
+    }
 }
