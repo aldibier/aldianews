@@ -84,6 +84,56 @@
         max-width: 420px;
         .view-content {
           display: flex;
+          flex-direction: column;
+
+          .views-row{
+              .container-content{
+                display: flex;
+                flex-direction: row;
+
+                .one-content-subcategory-four{
+                    margin-right: 15px;
+
+                    .block-field-blocknodenewsfield-type-of-content{
+                        font-size: 0px;
+                    }
+
+                }
+
+                .two-content-category-four{
+                    .block-field-blocknodenewsfield-category{
+                        div{
+                            margin: 0 0 10px;
+                            line-height: 0;
+                            a{
+                                font-family: $ModernoFB-Regular;
+                                font-style: normal;
+                                font-weight: 600;
+                                font-size: 12px;
+                                line-height: 14px;
+                                letter-spacing: 0.08em;
+                                color: $corange;
+                            }
+                        }                        
+                    }
+
+                    .block-field-blocknodenewsfield-new-short-title{
+
+                    }
+
+                    .block-field-blocknodenewscreated{
+                        span{
+                            font-family: $PrNovacond-reg;
+                            font-style: normal;
+                            font-weight: 400;
+                            font-size: 12px;
+                            line-height: 15px;
+                            color: $cgrey3;
+                        }
+                    }
+                }
+              }
+          }
         }
   
         @media screen and (max-width: $broken) {
@@ -126,28 +176,4 @@
       .views-field-view-4 {
         grid-column: 2 span;
       }
-    
-  
-  
-    //next two
-    .card-one-column {
-      @media screen and (max-width: $broken) {
-        width: 100%;
-        max-width: 100%;
-        margin: 20px 0 0 0;
-        position: initial;
-        border: none;
-        //border-bottom: 1px solid $cgrey4;
-  
-        &:nth-child(1) {
-          border-right: none;
-        }
-      }
-    }
-  
-    .view-display-id-block_5 .category-view-more a {
-      @media (max-width: $tablet) {
-        margin: -3px 0px -7px;
-      }
-    }
-  }
+}
