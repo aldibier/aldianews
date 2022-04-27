@@ -81,30 +81,20 @@
       .block-views-blocklanding-tags-block-1 {
         
         grid-area: area-2;
-        .view-landing-tags{
-            max-width: 420px;
-            .view-content {
-                display: grid;
-                grid-template-columns: minmax(200px, 400px) minmax(200px, 400px);
-                gap: 0px 40px;
-                position: relative;
-                overflow: hidden;
-
-                @media screen and (max-width: $broken) {
-                    display: grid;
-                    grid-template-columns: repeat(2, 1fr);
-                    grid-gap: 0 10px;
-                    overflow: hidden;
-                    grid-auto-flow: dense;
-                    width: 100%;
-                }
+        max-width: 420px;
+        .view-content {
+          display: grid;
+          grid-template-columns: minmax(200px, 400px) minmax(200px, 400px);
+          gap: 0px 40px;
+          position: relative;
+          overflow: hidden;
         }
-
+  
         @media screen and (max-width: $broken) {
-            margin: 0;
-            position: relative;
-
-            /* &:after {
+          margin: 0;
+          position: relative;
+  
+          /* &:after {
             width: 100%;
             content: '';
             height: 1px;
@@ -113,11 +103,20 @@
             bottom: 15px;
             left: 0;
             background: #B1B1B1;
-            } */
+          } */
+  
+          .view-content {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 0 10px;
+            overflow: hidden;
+            grid-auto-flow: dense;
+            width: 100%;
+          }
         }
       }
   
-    } 
+      
   
       .views-field-view-3 {
         grid-area: head;
