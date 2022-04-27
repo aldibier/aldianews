@@ -65,15 +65,16 @@
         }
       }
   
-      >.block-last-node-tag {
-        margin-bottom: 90px;
+      >.first-block-tags-taxonomy {
+        max-height: 520px;
         display: grid;
-        grid-template-columns: minmax(auto, 860px) minmax(420px, 1fr);
-        grid-template-rows: repeat(2, auto) 1fr;
+        grid-template-columns: 1fr auto;
+        grid-auto-rows: auto;
         grid-template-areas:
-          "head head"
-          "area-1 area-3"
-          "area-2 area-3";
+            "area-1 area-2"
+            "area-1 area-2";
+        overflow: hidden;
+        margin-bottom: 90px;
   
         .banner-scroll {
           grid-column: span 2;
@@ -108,7 +109,7 @@
   
       }
   
-      .views-field-view {
+      .block-last-node-tag {
         max-width: 840px;
         max-height: 512px;
         margin-right: 19px;
@@ -142,7 +143,7 @@
         }
       }
   
-      .views-field-view-1 {
+      .block-views-blocklanding-tags-block-1 {
         margin: 35px 20px 0 0;
         grid-area: area-2;
   
