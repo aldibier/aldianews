@@ -1,0 +1,277 @@
+.container-content {
+    >.first-block-tags-taxonomy {
+      .group-title-link {
+              max-height: 45px;
+              line-height: 1;
+              
+        h2 {
+          display: block;
+          margin: 0;
+  
+          a {
+            @include title-section-line($px38, $ModernoFB-Regular, $corange2);
+            display: flex;
+            align-items: center;
+          }
+  
+          @media (max-width: $tablet) {
+            max-height: 37px;
+            padding-bottom: 10px;
+            border-bottom: 1.5px solid $corange2;
+  
+            a {
+              font-size: 20px;
+              line-height: 24px;
+  
+              &::after {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+  
+      .group-title-link.sub-category-link {
+  
+        h2 {
+          border-bottom: 0;
+        }
+  
+        a {
+          display: block;
+          background-color: $cwhite;
+  
+          @media (max-width: $tablet) {
+            position: relative;
+            display: flex;
+            min-height: 15px;
+            font-size: szrem(15);
+            line-height: 1;
+            background-color: transparent;
+  
+            &::after {
+              content: "";
+              position: relative;
+              right: 0;
+              display: block !important;
+              flex: 1;
+              width: 100%;
+              background: $corange2;
+              height: 0.1mm;
+              top: -3px;
+              z-index: 0;
+            }
+          }
+        }
+      }
+  
+      >.block-last-node-tag {
+        margin-bottom: 90px;
+        display: grid;
+        grid-template-columns: minmax(auto, 860px) minmax(420px, 1fr);
+        grid-template-rows: repeat(2, auto) 1fr;
+        grid-template-areas:
+          "head head"
+          "area-1 area-3"
+          "area-2 area-3";
+  
+        .banner-scroll {
+          grid-column: span 2;
+          margin-top: 80px;
+        }
+  
+        @media (max-width: $desktop) {
+          margin-bottom: 40px;
+        }
+  
+        @media (max-width: $broken) {
+          display: flex;
+          flex-direction: column;
+  
+          .banner-scroll {
+            margin-top: 30px;
+          }
+        }
+  
+        @media (max-width: $tablet) {
+          margin-bottom: 35px;
+        }
+      }
+  
+          >.views-row  >.views-field-fieldset {
+        grid-area: head;
+              margin-bottom: 62px;
+  
+              @media (max-width: $tablet) {
+          margin-bottom: 45px;
+        }
+  
+      }
+  
+      .views-field-view {
+        max-width: 840px;
+        max-height: 512px;
+        margin-right: 19px;
+        padding-bottom: 35px;
+        border-bottom: 1px solid $cgrey4;
+        grid-area: area-1;
+  
+        .main-news-image {
+          max-height: 480px;
+        }
+  
+        @media screen and(max-width:$broken) {
+          max-width: 100%;
+          margin-bottom: 35px;
+          margin-right: 0;
+          overflow: hidden;
+  
+          img {
+            height: auto;
+          }
+        }
+  
+        @media screen and(max-width:$tablet) {
+          padding-bottom: 0;
+          margin-bottom: 20px;
+          border-bottom: none;
+  
+          img {
+            min-height: 245px;
+          }
+        }
+      }
+  
+      .views-field-view-1 {
+        margin: 35px 20px 0 0;
+        grid-area: area-2;
+  
+        .view-content {
+          display: grid;
+          grid-template-columns: minmax(200px, 400px) minmax(200px, 400px);
+          gap: 0px 40px;
+          position: relative;
+          overflow: hidden;
+        }
+  
+        @media screen and (max-width: $broken) {
+          margin: 0;
+          position: relative;
+  
+          /* &:after {
+            width: 100%;
+            content: '';
+            height: 1px;
+            display: block;
+            position: absolute;
+            bottom: 15px;
+            left: 0;
+            background: #B1B1B1;
+          } */
+  
+          .view-content {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 0 10px;
+            overflow: hidden;
+            grid-auto-flow: dense;
+            width: 100%;
+          }
+        }
+      }
+  
+      .views-field-view-2 {
+        grid-area: area-3;
+  
+        .view-content {
+          @media screen and (max-width: $broken) {
+            .last-content-category-childs {
+              margin-bottom: 20px;
+            }
+          }
+  
+          @media screen and (max-width: $tablet) {
+            .views-row {
+              width: 100%;
+              max-width: 100%;
+              margin-top: 0;
+            }
+  
+            .container-content {
+              flex-direction: row;
+              align-items: center;
+            }
+  
+            .last-content-category-childs {
+              flex: 1 1 140px;
+              margin-bottom: 0;
+            }
+  
+            .two-content-child {
+              flex: 1 0 140px;
+              margin-left: 10px;
+            }
+  
+            .slick-slide {
+              >div {
+                .views-row {
+                  padding-top: 10px;
+                  padding-bottom: 10px;
+                  border-bottom: 1px solid $cgrey4;
+                }
+  
+                &:first-child {
+                  .views-row {
+                    padding-top: 0;
+                  }
+                }
+  
+                &:last-child {
+                  .views-row {
+                    padding-bottom: 0;
+                    border-bottom: none;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+  
+      .views-field-view-3 {
+        grid-area: head;
+              margin-bottom: 40px;
+  
+        @media screen and (max-width: $broken) {
+          margin-bottom: 20px;
+        }
+      }
+  
+      .views-field-view-4 {
+        grid-column: 2 span;
+      }
+    }
+  
+  
+    //next two
+    .card-one-column {
+      @media screen and (max-width: $broken) {
+        width: 100%;
+        max-width: 100%;
+        margin: 20px 0 0 0;
+        position: initial;
+        border: none;
+        //border-bottom: 1px solid $cgrey4;
+  
+        &:nth-child(1) {
+          border-right: none;
+        }
+      }
+    }
+  
+    .view-display-id-block_5 .category-view-more a {
+      @media (max-width: $tablet) {
+        margin: -3px 0px -7px;
+      }
+    }
+  }
