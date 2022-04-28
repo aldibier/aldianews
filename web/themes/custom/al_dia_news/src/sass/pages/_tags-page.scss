@@ -16,19 +16,21 @@
         margin-right: 19px;
         grid-area: area-1;
 
+        .node__content{
+            max-width: 840px;
+
+            &::after {
+                display: table;
+                clear: both;
+                content: "";
+            }
+        }
+
     }
 
     .block-views-blocklanding-tags-block-1{
 
         grid-area: area-2;
-        &::before{
-            content: "";
-            width: 3px;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            background-color: #b1b1b1;
-        }
+        
     }
 }
