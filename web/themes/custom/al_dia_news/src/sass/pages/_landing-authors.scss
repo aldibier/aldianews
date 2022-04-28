@@ -92,8 +92,10 @@
                 font-weight: 400;
                 font-size: 42px;
                 line-height: 50px;
-                
                 color: $corange;
+                @media screen and (max-width: $broken) {
+                    font-size: 27px;
+                }
             .aldia-logo-in-text {
                 top: -1px;
                 max-width: 105px;
@@ -150,6 +152,11 @@
                 grid-template-columns: 230px 230px;
                 }
 
+            @media screen and (max-width: $mobile-mid) {
+                grid-template-columns: 160px 160px;
+                max-width: 300px;
+            }
+
             .views-row {
                 display: flex;
                 flex-direction: column;
@@ -163,10 +170,10 @@
                 justify-content: center;
                 position: relative;
 
-                @media screen and (max-width: $broken7) {
-                    
-                    }
-                .views-field-field-authors-photo{
+                @media screen and (max-width: $mobile-mid) {
+                    max-height: 400px;
+                }
+                .views-field-field-authors-photo{ 
                     img{
                         width: 120px;
                         height: 120px;
@@ -274,9 +281,9 @@
                             padding: 5px 60px;
                             }
 
-                        @media screen and (max-width: $broken) {
+                        @media screen and (max-width: $mobile-mid) {
                             font-size: 14px;
-                            padding: 20px 60px;
+                            padding: 0px 10px;
                             }
                     }
                 }
