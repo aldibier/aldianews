@@ -28,7 +28,9 @@
     }
 
     @media screen and(max-width:$broken) {
-        grid-template-columns: 620px auto;
+        grid-template-areas:
+        "area-1"
+        "area-2";
 
     }
 
