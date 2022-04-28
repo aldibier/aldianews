@@ -1,3 +1,16 @@
+.header-tags{
+    border-bottom: solid $corange;
+    margin-bottom: 50px;
+
+    h1{
+        font-family: $ModernoFB-Regular;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 42px;
+        line-height: 50px;
+        color: $corange;
+    }
+}
 .first-block-tags-taxonomy{
     max-height: 520px;
     display: grid;
@@ -31,16 +44,6 @@
     .block-views-blocklanding-tags-block-1{
 
         grid-area: area-2;
-
-        &:before {
-            content: "";
-            width: 1px;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            background-color: #b1b1b1;
-        }
 
         .views-row{
             margin-bottom: 19.5px;
