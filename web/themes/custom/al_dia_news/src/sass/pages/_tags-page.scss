@@ -32,6 +32,16 @@
 
         grid-area: area-2;
 
+        &::before {
+            content: "";
+            width: 1px;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #b1b1b1;
+        }
+
         .container-content{
             display: flex;
 
