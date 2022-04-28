@@ -343,7 +343,43 @@ body[class*="path-authors"]{
                 }
             }
         
-            //
+            .field--name-field-category {
+                h2 {
+                margin: 0 0 10px;
+                line-height: 0;
+        
+                @media screen and(max-width:$tablet) {
+                    margin: 0 0 5px;
+                }
+                }
+        
+                a {
+                border: none;
+                font-size: szrem(12);
+                font-family: $Mod-Sbold;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 14px;
+                letter-spacing: 0.08em;
+                color: $corange;
+        
+        
+                @media screen and(max-width:$broken) {
+                    font-size: szrem(16);
+                    line-height: 19px;
+                }
+        
+                // @media screen and(max-width:$broken) {
+                //   font-size: szrem(18);
+                //   line-height: 22px;
+                // }
+        
+                @media screen and(max-width:$tablet) {
+                    font-size: 10px;
+                    line-height: 12px;
+                }
+                }
+            }
         
             .views-field-name {
                 span {
