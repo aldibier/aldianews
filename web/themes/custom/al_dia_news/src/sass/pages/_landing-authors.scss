@@ -313,14 +313,15 @@
 
             .views-row:nth-child(3n+3):before{
                 content: none;
-            }
 
-            @media screen and(max-width:$broken) {
-                .views-row:nth-child(2n+2):before{
+                @media screen and(max-width:$broken) {
+                    
                     content: "";
+                    
                 }
             }
 
+            
             .views-row::after {
                 content: "";
                 height: 1px;
