@@ -3,11 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.subcategory_more
-    - core.entity_view_mode.node.subcategory_next_4
+    - core.entity_view_mode.node.landing_tags
     - field.storage.node.field_category
     - field.storage.node.field_image
     - field.storage.node.field_short_title
+    - field.storage.node.field_type_of_content
     - node.type.news
     - responsive_image.styles.next_two_image_responsive
     - taxonomy.vocabulary.tags
@@ -17,6 +17,7 @@ dependencies:
     - taxonomy
     - user
     - views_block_area
+    - views_fieldsets
     - views_infinite_scroll
 id: landing_tags
 label: 'Landing tags'
@@ -879,7 +880,7 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          view_mode: subcategory_next_4
+          view_mode: landing_tags
           entity_type: node
           plugin_id: rendered_entity
       defaults:
@@ -1122,6 +1123,7 @@ display:
         - 'config:core.entity_view_display.node.news.default'
         - 'config:core.entity_view_display.node.news.first_category_home'
         - 'config:core.entity_view_display.node.news.full'
+        - 'config:core.entity_view_display.node.news.landing_tags'
         - 'config:core.entity_view_display.node.news.news'
         - 'config:core.entity_view_display.node.news.premium'
         - 'config:core.entity_view_display.node.news.subcategory_first_'
@@ -1390,6 +1392,126 @@ display:
         groups:
           1: AND
       fields:
+        fieldset:
+          id: fieldset
+          table: views
+          field: fieldset
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          fields:
+            - field_type_of_content
+            - field_image
+          wrapper: div
+          legend: ''
+          classes: container-wrapper
+          collapsible: 1
+          collapsed: 0
+          plugin_id: fieldset
+        field_type_of_content:
+          id: field_type_of_content
+          table: node__field_type_of_content
+          field: field_type_of_content
+          relationship: reverse__node__field_tags
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
         field_image:
           id: field_image
           table: node__field_image
@@ -1398,7 +1520,7 @@ display:
           group_type: group
           admin_label: ''
           label: ''
-          exclude: true
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -1647,18 +1769,18 @@ display:
           entity_type: node
           entity_field: created
           plugin_id: field
-        rendered_entity:
-          id: rendered_entity
-          table: node
-          field: rendered_entity
-          relationship: reverse__node__field_tags
+        nothing:
+          id: nothing
+          table: views
+          field: nothing
+          relationship: none
           group_type: group
           admin_label: ''
           label: ''
           exclude: false
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: "<div class=\"card-content\">\r\n   <div class=\"card-name-category\">{{ field_category }}</div>\r\n   <div class=\"card-title\">{{ field_new_short_title }}</div>\r\n   <div class=\"card-date\">{{ created }}</div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -1694,10 +1816,8 @@ display:
           empty: ''
           hide_empty: false
           empty_zero: false
-          hide_alter_empty: true
-          view_mode: subcategory_more
-          entity_type: node
-          plugin_id: rendered_entity
+          hide_alter_empty: false
+          plugin_id: custom
       style:
         type: default
         options:
@@ -1728,54 +1848,10 @@ display:
         - url.query_args
         - user.permissions
       tags:
-        - 'config:core.entity_view_display.node.al_dia_vacancy.default'
-        - 'config:core.entity_view_display.node.al_dia_vacancy.teaser'
-        - 'config:core.entity_view_display.node.article.default'
-        - 'config:core.entity_view_display.node.article.rss'
-        - 'config:core.entity_view_display.node.article.search_index'
-        - 'config:core.entity_view_display.node.article.search_result'
-        - 'config:core.entity_view_display.node.article.teaser'
-        - 'config:core.entity_view_display.node.event.default'
-        - 'config:core.entity_view_display.node.event.teaser'
-        - 'config:core.entity_view_display.node.event.work_whit_al_dia'
-        - 'config:core.entity_view_display.node.feature_employer.default'
-        - 'config:core.entity_view_display.node.feature_employer.teaser'
-        - 'config:core.entity_view_display.node.job.default'
-        - 'config:core.entity_view_display.node.job.teaser'
-        - 'config:core.entity_view_display.node.job.token'
-        - 'config:core.entity_view_display.node.more_covers.default'
-        - 'config:core.entity_view_display.node.more_covers.teaser'
-        - 'config:core.entity_view_display.node.news.categories_home'
-        - 'config:core.entity_view_display.node.news.category_childs'
-        - 'config:core.entity_view_display.node.news.category_first'
-        - 'config:core.entity_view_display.node.news.category_next_4'
-        - 'config:core.entity_view_display.node.news.default'
-        - 'config:core.entity_view_display.node.news.first_category_home'
-        - 'config:core.entity_view_display.node.news.full'
-        - 'config:core.entity_view_display.node.news.news'
-        - 'config:core.entity_view_display.node.news.premium'
-        - 'config:core.entity_view_display.node.news.subcategory_first_'
-        - 'config:core.entity_view_display.node.news.subcategory_more'
-        - 'config:core.entity_view_display.node.news.subcategory_next_4'
-        - 'config:core.entity_view_display.node.news.teaser'
-        - 'config:core.entity_view_display.node.page.basic_page_about_us'
-        - 'config:core.entity_view_display.node.page.contact_us'
-        - 'config:core.entity_view_display.node.page.default'
-        - 'config:core.entity_view_display.node.page.general_errors'
-        - 'config:core.entity_view_display.node.page.search_index'
-        - 'config:core.entity_view_display.node.page.search_result'
-        - 'config:core.entity_view_display.node.page.share_a_news_tip'
-        - 'config:core.entity_view_display.node.page.teaser'
-        - 'config:core.entity_view_display.node.page.title_in_h2'
-        - 'config:core.entity_view_display.node.page.work_whit_al_dia'
-        - 'config:core.entity_view_display.node.thought_leaders.default'
-        - 'config:core.entity_view_display.node.thought_leaders.premium'
-        - 'config:core.entity_view_display.node.thought_leaders.teaser'
-        - 'config:core.entity_view_display.node.webform.default'
-        - 'config:core.entity_view_display.node.webform.teaser'
         - 'config:field.storage.node.field_category'
         - 'config:field.storage.node.field_image'
         - 'config:field.storage.node.field_short_title'
+        - 'config:field.storage.node.field_type_of_content'
   block_3:
     display_plugin: block
     id: block_3
