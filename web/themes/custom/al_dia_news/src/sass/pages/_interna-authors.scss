@@ -256,6 +256,13 @@ body[class*="path-authors"]{
                         background-color: #333;
                         margin-left: 230px;
                         top: 50%;
+
+                        @media screen and(max-width:$broken) {
+                    
+                            width: 100%;
+                            max-width: max-content;
+                            
+                        }
                         }
                 }
             }
