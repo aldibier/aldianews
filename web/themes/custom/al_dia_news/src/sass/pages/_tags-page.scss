@@ -14,13 +14,18 @@
 .first-block-tags-taxonomy{
     max-height: 520px;
     display: grid;
-    grid-template-columns: 880px 420;
+    grid-template-columns: 880px auto;
     grid-auto-rows: auto;
     grid-template-areas:
         "area-1 area-2"
         "area-1 area-2";
     overflow: hidden;
     margin-bottom: 90px;
+
+    @media screen and(max-width:$tablet-max) {
+        grid-template-columns: 620px auto;
+
+    }
 
     .block-last-node-tag{
 
