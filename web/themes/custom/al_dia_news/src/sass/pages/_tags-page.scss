@@ -1,7 +1,7 @@
 .first-block-tags-taxonomy{
     max-height: 520px;
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 880px 420;
     grid-auto-rows: auto;
     grid-template-areas:
         "area-1 area-2"
@@ -32,7 +32,7 @@
 
         grid-area: area-2;
 
-        &::before {
+        &:before {
             content: "";
             width: 1px;
             height: 100%;
@@ -42,40 +42,47 @@
             background-color: #b1b1b1;
         }
 
-        .container-content{
-            display: flex;
+        .views-row{
+            margin-bottom: 19.5px;
+            padding-bottom: 19.5px;
+            border-bottom: 1px solid #b1b1b1;
+            .container-content{
+                display: flex;
 
-            .one-content-subcategory-four{
-                margin-right: 15px;
-                .block-field-blocknodenewsfield-type-of-content{
-                    font-size: 0;
-                }
-            }
-
-            .short-title-date{
-                .block-field-blocknodenewsfield-category{
-
-                }
-
-                .block-field-blocknodenewsfield-new-short-title{
-
+                .one-content-subcategory-four{
+                    margin-right: 15px;
+                    
+                    .block-field-blocknodenewsfield-type-of-content{
+                        font-size: 0;
+                    }
                 }
 
-                .block-field-blocknodenewscreated{
-                    .field--name-field-new-short-title{
-                        margin: 0 0 10px;
-                        a{
-                            font-family: 'ModernoFB';
-                            font-style: normal;
-                            font-weight: 600;
-                            font-size: 12px;
-                            line-height: 14px;
-                            letter-spacing: 0.08em;
-                            color: #EE2211;
+                .short-title-date{
+                    .block-field-blocknodenewsfield-category{
+
+                    }
+
+                    .block-field-blocknodenewsfield-new-short-title{
+
+                    }
+
+                    .block-field-blocknodenewscreated{
+                        .field--name-field-new-short-title{
+                            margin: 0 0 10px;
+                            a{
+                                font-family: 'ModernoFB';
+                                font-style: normal;
+                                font-weight: 600;
+                                font-size: 12px;
+                                line-height: 14px;
+                                letter-spacing: 0.08em;
+                                color: #EE2211;
+                            }
                         }
                     }
                 }
             }
+
         }
         
     }
