@@ -817,6 +817,14 @@ function al_dia_news_general_views_query_alter(ViewExecutable $view, QueryPlugin
         }
       }
     break;
+    case "landing_authors":
+    $is_mobile = is_mobile();
+
+        if($is_mobile){
+          $view->setOffset(0);
+          $view->getPager()->setItemsPerPage(8);
+        }
+    break;
   }
 }
 
