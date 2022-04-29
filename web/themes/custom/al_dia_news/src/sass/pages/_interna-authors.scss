@@ -245,19 +245,28 @@ body[class*="path-authors"]{
             .view-header{
                 h2{
 
-                    margin: -17px 0 0 0;
-                    width: max-content;
-                    padding: 0 15px 0 0;
-                    background: #fff;
+                    font-family: 'ModernoFB';
                     font-style: normal;
                     font-weight: 400;
-                    font-size: 28px;
-                    line-height: 34px;
-                    font-family: $ModernoFB-RegularItalic;
-                    color: #000;
+                    font-size: 34px;
+                    line-height: 41px;
+                    display: flex;
+                    align-items: center;
+                    color: #333333;
+                    position: relative;
+                    margin: 30px;
 
                     @media screen and(max-width:$broken) {
-                        margin-right: 30px;
+                        margin: -17px 0 0 0;
+                        width: max-content;
+                        padding: 0 15px 0 0;
+                        background: #fff;
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 30px;
+                        line-height: 34px;
+                        font-family: $ModernoFB-RegularItalic;
+                        color: #000;
                     }
 
                     &::after {
@@ -466,24 +475,33 @@ body[class*="path-authors"]{
             }
             .view-header{
                 h2{
-                    margin: -17px 0 0 0;
-                    width: max-content;
-                    padding: 0 15px 0 0;
-                    background: #fff;
+                    font-family: 'ModernoFB';
                     font-style: normal;
                     font-weight: 400;
-                    font-size: 28px;
-                    line-height: 34px;
-                    font-family: $ModernoFB-RegularItalic;
-                    color: #000;
+                    font-size: 34px;
+                    line-height: 41px;
+                    display: flex;
+                    align-items: center;
+                    color: #333333;
+                    position: relative;
+                    margin: 30px;
 
                     @media screen and(max-width:$broken) {
-                        font-size: 20px;
+                        margin: -17px 0 0 0;
+                        width: max-content;
+                        padding: 0 15px 0 0;
+                        background: #fff;
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 28px;
+                        line-height: 34px;
+                        font-family: $ModernoFB-RegularItalic;
+                        color: #000;
                     }
-                    
+
                     &::after{
                         @media screen and(max-width:$broken) {
-                            display: none;
+                            display: none;                            
                         }
                     }
                 }
