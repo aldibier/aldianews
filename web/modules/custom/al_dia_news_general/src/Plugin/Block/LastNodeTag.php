@@ -73,8 +73,14 @@ class LastNodeTag extends BlockBase implements ContainerFactoryPluginInterface {
       $node = $this->entityTypeManager->getStorage('node')->load($id_node);
       if ($node) {
         $render_controller = $this->entityTypeManager->getViewBuilder($node->getEntityTypeId());
+        $return["main"] = [
+          "#type" => "container",
+          '#attributes' => [
+            'class' => 'main-news',
+          ],
+        ];
         $mode = $render_controller->view($node, 'category_first'); //selecciono el modo de visualización en news, first_category_home
-        $return["main"] = $mode;
+        $return["main"]["main"] = $mode;
       }
     }
     else {
@@ -95,8 +101,14 @@ class LastNodeTag extends BlockBase implements ContainerFactoryPluginInterface {
       $node = $this->entityTypeManager->getStorage('node')->load($results->nid);
       if ($node) {
         $render_controller = $this->entityTypeManager->getViewBuilder($node->getEntityTypeId());
+        $return["main"] = [
+          "#type" => "container",
+          '#attributes' => [
+            'class' => 'main-news',
+          ],
+        ];
         $mode = $render_controller->view($node, 'category_first'); //selecciono el modo de visualización en news, first_category_home
-        $return["main"] = $mode;
+        $return["main"]["main"] = $mode;
       }
     }
 
