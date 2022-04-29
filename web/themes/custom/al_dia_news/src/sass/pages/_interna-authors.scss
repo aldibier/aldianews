@@ -109,6 +109,8 @@ body[class*="path-authors"]{
 
             @media screen and(max-width:$broken) {
                 font-size: 18px;
+                padding-bottom: 30px;
+                border-bottom: 1px solid #B1B1B1;
                 }
         }
     }
@@ -284,9 +286,21 @@ body[class*="path-authors"]{
             }
             .card-more-authors {
                 display: flex;
+                position: relative;
         
                 @media (max-width: $broken) {
                 flex-direction: column;
+                }
+
+                @media (max-width: 769px) {
+                    &::before{
+                        content: "";
+                        position: absolute;
+                        top: calc(0% - 35px);
+                        width: 100vw;
+                        height: 1px;
+                        background-color: #b1b1b1;
+                    }
                 }
             }
         
