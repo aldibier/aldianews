@@ -236,19 +236,25 @@ body[class*="path-authors"]{
         .related_authors {
             grid-area: area-2;
 
+            .view-more-authors{
+                @media screen and(max-width:$broken) {
+                    border-top: solid 1px #333333;
+                }
+            }
+
             .view-header{
                 h2{
 
-                    margin: 20px auto;
-                    font-family: 'ModernoFB';
+                    margin: -17px 0 0 0;
+                    width: max-content;
+                    padding: 0 15px 0 0;
+                    background: #fff;
                     font-style: normal;
                     font-weight: 400;
                     font-size: 28px;
                     line-height: 34px;
-                    display: flex;
-                    align-items: center;
-                    color: #333333;
-                    position: relative;
+                    font-family: $ModernoFB-RegularItalic;
+                    color: #000;
 
                     @media screen and(max-width:$broken) {
                         margin-right: 30px;
@@ -264,7 +270,7 @@ body[class*="path-authors"]{
                         top: 50%;
 
                         @media screen and(max-width:$broken) {
-                            max-width: 71%;
+                            display: none;
                         }
                     }
                 } 
@@ -452,34 +458,32 @@ body[class*="path-authors"]{
 
         .content-news-authors{
             grid-area: area-3;
+
+            .view-internal-author-information-{
+                @media screen and(max-width:$broken) {
+                    border-top: solid 1px #333333;                    
+                }
+            }
             .view-header{
                 h2{
-                    font-family: 'ModernoFB';
+                    margin: -17px 0 0 0;
+                    width: max-content;
+                    padding: 0 15px 0 0;
+                    background: #fff;
                     font-style: normal;
                     font-weight: 400;
-                    font-size: 34px;
-                    line-height: 41px;
-                    display: flex;
-                    align-items: center;
-                    color: #333333;
-                    position: relative;
-                    margin-bottom: 30px;
+                    font-size: 28px;
+                    line-height: 34px;
+                    font-family: $ModernoFB-RegularItalic;
+                    color: #000;
 
                     @media screen and(max-width:$broken) {
                         font-size: 20px;
                     }
-
-                    &::after {
-                        content: "";
-                        position: absolute;
-                        height: 3px;
-                        width: 100%;
-                        background-color: #333;
-                        margin-left: 450px;
-                        top: 50%;
-
-                        @media (max-width: $broken) {
-                            top: 80%;
+                    
+                    &::after{
+                        @media screen and(max-width:$broken) {
+                            display: none;
                         }
                     }
                 }
