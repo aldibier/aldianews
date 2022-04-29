@@ -8,7 +8,7 @@ function videoSDK() {
     "#ads-progress-container"
   );
 
-  if (!!drupalSettings.vast) {
+  if (!!drupalSettings.vast && !!videoContainer) {
     const vastTags = Object.values(drupalSettings.vast);
     const mapPositions = vastTags.map(function (tag) {
       return tag["pos"];
