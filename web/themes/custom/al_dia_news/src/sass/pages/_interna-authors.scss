@@ -248,6 +248,10 @@ body[class*="path-authors"]{
                     color: #333333;
                     position: relative;
 
+                    @media screen and(max-width:$broken) {
+                        margin-right: 30px;
+                    }
+
                     &::after {
                         content: "";
                         position: absolute;
