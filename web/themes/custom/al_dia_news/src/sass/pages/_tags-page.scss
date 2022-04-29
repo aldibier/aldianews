@@ -47,6 +47,10 @@
         .node__content{
             max-width: 840px;
 
+            img{
+                max-height: 555px;
+            }
+
             &::after {
                 display: table;
                 clear: both;
@@ -59,6 +63,7 @@
     .block-views-blocklanding-tags-block-1{
 
         grid-area: area-2;
+        position: relative;
 
         &::before {
             content: "";
