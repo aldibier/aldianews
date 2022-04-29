@@ -60,6 +60,16 @@
 
         grid-area: area-2;
 
+        :before {
+            content: "";
+            width: 1px;
+            height: 100%;
+            background: #B1B1B1;
+            position: absolute;
+            top: 0;
+            left: calc(0% - 20px);
+        }
+
         .view-content{
             @media screen and(max-width:$broken) {
                 display: grid;

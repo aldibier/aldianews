@@ -899,6 +899,10 @@ function al_dia_news_general_preprocess_node(&$vars) {
 		$field_type = $fields['field_type_of_content'];
 		$field_type_entity = $field_type->entity;
 
+     if(str_contains($vars['url'],'taxonomy/term')){
+      $vars['attributes']['class'][] = 'mains-news';
+      }
+
 		if($field_type_entity->getName() !== null ){
 			if(strtolower($field_type_entity->getName()) == 'video'){
 				$vars['attributes']['class'][] = 'node_has_video';
