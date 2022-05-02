@@ -28,7 +28,7 @@ function is_mobile() {
   $device_param = \Drupal::request()->query->get('device');
 
   if($device_param == 'mobile'){
-    return TRUE;
+    return 'mobile';
   }else {
     return $detect->isMobile();
   }
@@ -817,8 +817,8 @@ function al_dia_news_general_views_query_alter(ViewExecutable $view, QueryPlugin
         }
       }
     break;
-    case "views-row":
-    $is_mobile = is_mobile();
+    case "":
+    $is_mobile = is_mobile(landing_authors);
 
         if($is_mobile){
           $view->setOffset(0);
