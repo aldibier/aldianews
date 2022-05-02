@@ -241,6 +241,10 @@ body[class*="path-authors"]{
                     border-top: solid 1px #333333;
                     margin-right: 30px;
                 }
+                @media screen and(max-width:$mobile-med) {
+                    max-width: 370px;
+                    min-width: 300px;
+                }
             }
 
             .view-header{
@@ -468,11 +472,20 @@ body[class*="path-authors"]{
 
         .content-news-authors{
             grid-area: area-3;
+            @media screen and(max-width:$mobile-med) {
+                margin-top: 20px;
+            }
 
             .view-internal-author-information-{
                 @media screen and(max-width:$broken) {
                     border-top: solid 1px #333333; 
-                    margin-right: 30px;                   
+                    margin-right: 30px;  
+                    margin-bottom: 20px;                 
+                }
+                @media screen and(max-width:$mobile-med) {
+                    max-width: 370px;
+                    min-width: 300px;
+                    margin-right: 0px;
                 }
             }
             .view-header{
@@ -500,6 +513,10 @@ body[class*="path-authors"]{
                         line-height: 34px;
                         font-family: $ModernoFB-RegularItalic;
                         color: #000;
+                    }
+
+                    @media screen and(max-width:$mobile-med) {
+                        font-size: 20px;
                     }
 
                     &::after {
