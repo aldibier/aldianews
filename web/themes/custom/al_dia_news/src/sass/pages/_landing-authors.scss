@@ -173,6 +173,13 @@
                 @media screen and (max-width: $mobile-mid) {
                     max-height: 400px;
                 }
+
+                
+                @media screen and (max-width: $mobile-max) {
+                    &:nth-child(9){
+                        display: none;
+                    }
+                }
                 .views-field-field-authors-photo{ 
                     img{
                         width: 120px;
