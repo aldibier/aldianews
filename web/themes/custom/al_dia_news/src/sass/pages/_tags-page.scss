@@ -186,6 +186,9 @@
                                 font-size: 18px;
                                 line-height: 22px;
                                 color: $cblack;
+                                @media screen and(max-width:$broken10) {
+                                    font-size: 30px;               
+                                }
                             }
                         }
                         
@@ -231,7 +234,7 @@
                     font-family: $PrNovacond-reg;
                     font-style: normal;
                     font-weight: 400;
-                    font-size: 12px;
+                    font-size: 16px;
                     line-height: 15px;
                     color: $cgrey3;
 
@@ -252,7 +255,7 @@
                         font-family: $ModernoFB-Regular;
                         font-style: normal;
                         font-weight: 600;
-                        font-size: 12px;
+                        font-size: 18px;
                         line-height: 14px;
                         letter-spacing: 0.08em;
                         color: $corange;
@@ -271,9 +274,12 @@
                         font-family: $PrNovacond-bold;
                         font-style: normal;
                         font-weight: 800;
-                        font-size: 18px;
+                        font-size: 30px;
                         line-height: 22px;
                         color: $cblack;
+                        @media screen and(max-width:$broken) {
+                            font-size: 18px;               
+                        }
                     }
                 }
                 
