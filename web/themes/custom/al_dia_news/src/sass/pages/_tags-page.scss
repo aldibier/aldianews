@@ -10,6 +10,11 @@
         line-height: 50px;
         color: $corange;
         text-transform: uppercase; 
+
+        @media screen and(max-width:$broken) {
+            font-size: 20px;
+        }
+
     }
 }
 .first-block-tags-taxonomy{
@@ -22,7 +27,7 @@
         "area-1 area-2";
     
     margin-bottom: 90px;
-    @media screen and(max-width:1181px) {
+    @media screen and(max-width:$broken10) {
         grid-template-columns: 700px auto;
         max-height: 480px;
     }
@@ -91,7 +96,10 @@
                 grid-gap: 0 10px;
                 overflow: hidden;
                 margin: 20px auto;
-        
+                
+                @media screen and(max-width:$broken) {
+                    grid-gap: 0 0px;
+                }        
             }
             .views-row{
                 margin-bottom: 15px;
@@ -148,6 +156,10 @@
                         
                         .block-field-blocknodenewsfield-category{
                             margin: 0 0 10px;
+
+                            @media screen and(max-width:$broken) {
+                                margin: 0 0 -15px;
+                            }
                             a{
                                 font-family: $ModernoFB-Regular;
                                 font-style: normal;
