@@ -25,7 +25,7 @@
 
     @media screen and(max-width:$tablet-max) {
         grid-template-columns: 620px auto;
-
+        max-height: 480px;
     }
 
     @media screen and(max-width:$broken) {
@@ -34,7 +34,7 @@
         "area-2";
         margin-bottom: 30px;
         display: table-row;
-        max-height: 480px;
+        
     }
 
     .block-last-node-tag{
@@ -89,7 +89,7 @@
                 margin-bottom: 15px;
                 padding-bottom: 20px;
                 border-bottom: 1px solid #b1b1b1;
-                @media screen and(max-width:$broken) {
+                @media screen and(max-width:$tablet-max) {
                     margin-bottom: 0px;
                 }
                 .container-content{
