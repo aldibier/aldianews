@@ -17,8 +17,7 @@
 
     }
 }
-.first-block-tags-taxonomy,
-.one-content-taxonomy-tags{
+.first-block-tags-taxonomy{
     max-height: 520px;
     display: grid;
     grid-template-columns: 880px auto;
@@ -203,4 +202,87 @@
     .views-field-field-type-of-content{
         display: none;
     }
+
+    .views-infinite-scroll-content-wrapper{
+        .card-one-column{
+            
+            @media screen and(max-width:$broken10) {
+                margin-bottom: 12px;
+                padding-bottom: 9px;
+            }
+
+            .views-field-fieldset{
+                margin-right: 15px;
+
+                img{
+                    @media screen and(max-width:$broken) {
+                        width: 100%;
+                        max-width: 100%;
+                        height: auto;
+                        max-height: 265px;
+                
+                    }
+                }
+            }
+
+            .views-field-nothing{
+                .card-date{
+                    
+                    font-family: $PrNovacond-reg;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 12px;
+                    line-height: 15px;
+                    color: $cgrey3;
+
+                    @media screen and(max-width:$broken) {
+                        font-size: 10px;
+                        line-height: 12px;
+                
+                    }
+                    
+                }
+
+                
+                .card-name-category{
+                    margin: 0 0 10px;
+
+                    @media screen and(max-width:$broken) {
+                        margin: 0 0 -15px;
+                    }
+                    a{
+                        font-family: $ModernoFB-Regular;
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 12px;
+                        line-height: 14px;
+                        letter-spacing: 0.08em;
+                        color: $corange;
+                        text-transform: uppercase;
+
+                        @media screen and(max-width:$broken) {
+                            font-size: 10px;
+                            line-height: 12px;
+                    
+                        }
+                    }
+                }
+
+                .card-title{
+                    a{
+                        font-family: $PrNovacond-bold;
+                        font-style: normal;
+                        font-weight: 800;
+                        font-size: 18px;
+                        line-height: 22px;
+                        color: $cblack;
+                    }
+                }
+                
+            }
+    
+
+        }
+    }
+    
 }
