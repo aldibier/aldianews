@@ -37,7 +37,7 @@
         max-height: 480px;
     }
 
-    @media screen and(max-width:$broken3) {
+    @media screen and(max-width:$broken) {
         grid-template-areas:
         "area-1"
         "area-2";
@@ -50,10 +50,11 @@
 
         max-width: 880px;
         max-height: 540px;
+        margin-right: 19px;
         grid-area: area-1;
-        margin-right: 35px;
+
         @media screen and(max-width:$broken) {
-            margin-right: 0px;
+            margin-right: 35px;
         }
 
         .node__content{
@@ -88,7 +89,7 @@
         }
 
         .view-content{
-            @media screen and(max-width:$broken3) {
+            @media screen and(max-width:$broken) {
                 display: grid;
                 grid-template-columns: repeat(2,1fr);
                 grid-auto-flow: dense; 
@@ -111,19 +112,19 @@
                 }
                 .container-content{
                     display: flex;
-                    @media screen and(max-width:$broken3) {
+                    @media screen and(max-width:$broken) {
                         flex-direction: column;
                     }
 
                     .one-content-subcategory-four{
                         margin-right: 15px;
-
+                        
                         .block-field-blocknodenewsfield-type-of-content{
                             font-size: 0;
                         }
 
                         img{
-                            @media screen and(max-width:$broken3) {
+                            @media screen and(max-width:$broken) {
                                 width: 100%;
                                 max-width: 100%;
                                 height: auto;
@@ -134,9 +135,6 @@
                     }
 
                     .short-title-date{
-                        @media screen and(max-width:$broken) {
-                            width: 100%;                  
-                        }
                         .block-field-blocknodenewscreated{
                             
                             span{
@@ -185,13 +183,10 @@
                                 font-family: $PrNovacond-bold;
                                 font-style: normal;
                                 font-weight: 800;
-                                font-size: 18px;
+                                font-size: 30px;
                                 line-height: 22px;
                                 color: $cblack;
                                 @media screen and(max-width:$broken) {
-                                    font-size: 30px;               
-                                }
-                                @media screen and(max-width:$broken3) {
                                     font-size: 18px;               
                                 }
                             }
@@ -260,7 +255,7 @@
                         font-family: $ModernoFB-Regular;
                         font-style: normal;
                         font-weight: 600;
-                        font-size: 18px;
+                        font-size: 12px;
                         line-height: 14px;
                         letter-spacing: 0.08em;
                         color: $corange;
@@ -282,7 +277,7 @@
                         font-size: 30px;
                         line-height: 22px;
                         color: $cblack;
-                        @media screen and(max-width:$broken3) {
+                        @media screen and(max-width:$broken) {
                             font-size: 18px;               
                         }
                     }
