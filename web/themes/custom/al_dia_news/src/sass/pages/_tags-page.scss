@@ -53,7 +53,9 @@
         margin-right: 19px;
         grid-area: area-1;
         margin-right: 35px;
-        
+        @media screen and(max-width:$broken) {
+            margin-right: 0px;
+        }
 
         .node__content{
             max-width: 840px;
