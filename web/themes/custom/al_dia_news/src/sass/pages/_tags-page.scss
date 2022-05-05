@@ -184,10 +184,13 @@
                                 font-family: $PrNovacond-bold;
                                 font-style: normal;
                                 font-weight: 800;
-                                font-size: 30px;
+                                font-size: 18px;
                                 line-height: 22px;
                                 color: $cblack;
                                 @media screen and(max-width:$broken) {
+                                    font-size: 30px;               
+                                }
+                                @media screen and(max-width:$broken3) {
                                     font-size: 18px;               
                                 }
                             }
@@ -278,7 +281,7 @@
                         font-size: 30px;
                         line-height: 22px;
                         color: $cblack;
-                        @media screen and(max-width:$broken) {
+                        @media screen and(max-width:$broken3) {
                             font-size: 18px;               
                         }
                     }
