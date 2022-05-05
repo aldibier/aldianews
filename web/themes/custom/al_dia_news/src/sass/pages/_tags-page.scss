@@ -37,7 +37,7 @@
         max-height: 480px;
     }
 
-    @media screen and(max-width:$broken3) {
+    @media screen and(max-width:$broken) {
         grid-template-areas:
         "area-1"
         "area-2";
@@ -54,7 +54,7 @@
         grid-area: area-1;
 
         @media screen and(max-width:$broken) {
-            
+            margin-right: 35px;
         }
 
         .node__content{
@@ -89,15 +89,17 @@
         }
 
         .view-content{
-            @media screen and(max-width:$broken3) {
+            @media screen and(max-width:$broken) {
                 display: grid;
                 grid-template-columns: repeat(2,1fr);
                 grid-auto-flow: dense; 
                 grid-gap: 0 10px;
                 overflow: hidden;
                 margin: 20px auto;
-                grid-gap: 0 0px;
-                     
+                
+                @media screen and(max-width:$broken) {
+                    grid-gap: 0 0px;
+                }        
             }
             .views-row{
                 margin-bottom: 15px;
@@ -110,7 +112,7 @@
                 }
                 .container-content{
                     display: flex;
-                    @media screen and(max-width:$broken3) {
+                    @media screen and(max-width:$broken) {
                         flex-direction: column;
                     }
 
@@ -184,7 +186,7 @@
                                 font-size: 18px;
                                 line-height: 22px;
                                 color: $cblack;
-                                @media screen and(max-width:$broken3) {
+                                @media screen and(max-width:$desktop) {
                                     font-size: 30px;               
                                 }
                             }
