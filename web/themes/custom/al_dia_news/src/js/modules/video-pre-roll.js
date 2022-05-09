@@ -207,7 +207,13 @@ function videoSDK() {
         console.log("onAdLoaded");
         adsObj.ad = adEvent.getAd();
         adsObj.duration = adsObj.ad.getDuration();
-        adsObj.linkDestiny = adsObj.ad.h.clickThroughUrl;
+        adsObj.linkDestiny = '';
+
+        if(typeof adsObj.ad == 'object'){
+          adsObj.data = adsObj.ad[Object.keys(adsObj.ad)[0]];
+          adsObj.linkDestiny = adsObj.data.clickThroughUrl;
+        }
+
         adsObj.progress = 0;
 
         if (adsObj.linkDestiny) {
