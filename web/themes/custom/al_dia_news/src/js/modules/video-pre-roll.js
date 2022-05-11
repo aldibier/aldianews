@@ -254,7 +254,9 @@ function videoSDK() {
         // Maneja el registro de errores.
         console.log('onAdError');
         let error = adErrorEvent.getError();
-        managmentErrors(error);
+        let code = error.getErrorCode();
+
+        managmentErrors(error,code);
 
         if (adsManager) {
           adsManager.destroy();
@@ -296,12 +298,11 @@ function videoSDK() {
     function getTagByPosition(arr, pos) {
       let tag = arr.filter((element) => {
         if (element["pos"] == pos) {
-          return element["tag"];
+          return element["tag"] ?? '';
         }
       });
 
-      if (!!tag) return tag[0].tag;
-
+      if (!!tag && tag.length > 0) return tag[0].tag;
       return null;
     }
 
@@ -406,10 +407,9 @@ function videoSDK() {
       return Math.floor(Math.random() * (9999999 - 1 + 1)).toString();
     }
 
-    function managmentErrors(error){
-      let errorCode  = error.h.errorCode;
-
-      switch(errorCode) {
+    function managmentErrors(error,code){
+      console.error('Vast code error : ' + code);
+      switch(code) {
         case 1005 :
           videoContainer.remove();
           console.error('The vast url has an incorrect format.');
@@ -434,6 +434,7 @@ function videoSDK() {
           videoContainer.remove();
           console.error('VAST redirection timeout has been reached.');
         default:
+          videoContainer.remove();
           console.log(error);
       }
 
