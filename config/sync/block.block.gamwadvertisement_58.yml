@@ -1,0 +1,28 @@
+uuid: f510c8a7-5bd4-481e-9e83-c74e29aa87a6
+langcode: en
+status: true
+dependencies:
+  module:
+    - gamw
+    - mobile_detect
+  theme:
+    - al_dia_news
+id: gamwadvertisement_58
+theme: al_dia_news
+region: group_career_news_jobs
+weight: 0
+provider: null
+plugin: gamw
+settings:
+  id: gamw
+  label: 'GAMW Jobs landing - Side Carrer news block 2'
+  provider: gamw
+  label_display: '0'
+  ad_unit: jobs-landing-side-carrer-news-block-2
+  attributes_wrapper:
+    - ''
+visibility:
+  mobile_detect_device_type:
+    id: mobile_detect_device_type
+    devices: {  }
+    negate: null

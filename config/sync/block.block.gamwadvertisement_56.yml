@@ -1,0 +1,28 @@
+uuid: cf53c20b-eda5-48dd-9dde-2746a09d2040
+langcode: en
+status: true
+dependencies:
+  module:
+    - gamw
+    - mobile_detect
+  theme:
+    - al_dia_news
+id: gamwadvertisement_56
+theme: al_dia_news
+region: gamw_home_side_category_leadership_top
+weight: 0
+provider: null
+plugin: gamw
+settings:
+  id: gamw
+  label: 'GAMW Category - Block Side Middle 2'
+  provider: gamw
+  label_display: '0'
+  ad_unit: category-block-side-middle-2
+  attributes_wrapper:
+    - ''
+visibility:
+  mobile_detect_device_type:
+    id: mobile_detect_device_type
+    devices: {  }
+    negate: null
