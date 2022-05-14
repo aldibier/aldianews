@@ -1,0 +1,28 @@
+uuid: 009fa9f0-29dc-49fa-bce4-b18800ee35b3
+langcode: en
+status: true
+dependencies:
+  module:
+    - gamw
+    - mobile_detect
+  theme:
+    - al_dia_news
+id: gamwadvertisement_61
+theme: al_dia_news
+region: gamw_infinite_scroll_banner_
+weight: 0
+provider: null
+plugin: gamw
+settings:
+  id: gamw
+  label: 'GAMW Infinite scroll - Block Last 2'
+  provider: gamw
+  label_display: visible
+  ad_unit: infinite-scroll-block-last-2
+  attributes_wrapper:
+    - ''
+visibility:
+  mobile_detect_device_type:
+    id: mobile_detect_device_type
+    devices: {  }
+    negate: null

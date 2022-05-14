@@ -17,10 +17,11 @@
  * @ingroup themeable
  */
 #}
+
+
 {% if title %}
 	<h3>{{ title }}</h3>
 {% endif %}
-{% if device  == 'desktop' %}
 
 	{% set index_hide_lines = [4,5,8,9,12,13,14] %}
 
@@ -42,9 +43,12 @@
 
 		{## skyscraper ##}
 		{% if loop.index  == 8 %}
-			<span class="skys-scroll ads">{{ drupal_entity('block', 'gamwadvertisement_17') }}</span>
+			<span class="wrapper">
+				<span class="ads">{{ drupal_entity('block', 'gamwadvertisement_10') }}</span>
+				<span class="ads">{{ drupal_entity('block', 'gamwadvertisement_59') }}</span>
+			</span>
 		{% endif %}
-
+		
 		{% if loop.index in index_hide_lines %}
 			<div class="views-row not-show-line">
 				{{- row.content -}}

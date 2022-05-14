@@ -24,7 +24,7 @@
 {% endif %}
 
 {% if device == 'desktop' %}
-	
+
 	{# {% set index_hide_lines = [7,8,9,15,16,17,23,24,29,30,31] %} #}
 	{% set index_hide_lines = [1,2,3,10,11,12,18,19,20,25,26] %}
 
@@ -43,10 +43,16 @@
 
 		{## skyscraper ##}
 		{% if loop.index  == 22 %}
-			<span class="skys-scroll ads">{{ drupal_entity('block', 'gamwadvertisement_17') }}</span>
+			<span class="wrapper">
+				<span class="ads">{{ drupal_entity('block', 'gamwadvertisement_10') }}</span>
+				<span class="ads">{{ drupal_entity('block', 'gamwadvertisement_59') }}</span>
+			</span>
 		{% endif %}
 		{% if loop.index  == 24 %}
-			<span class="skys-scroll skys2 ads">{{ drupal_entity('block', 'gamwadvertisement_20') }}</span>
+			<span class="wrapper two">
+				<span class="ads">{{ drupal_entity('block', 'gamwadvertisement_60') }}</span>
+				<span class="ads">{{ drupal_entity('block', 'gamwadvertisement_61') }}</span>
+			</span>
 		{% endif %}
 
 		{% if loop.index in index_hide_lines %}
@@ -76,7 +82,7 @@
 {% endif %}
 
 {% if device == 'mobile' %}
-	
+
 	{# {% set index_hide_lines = [5,6,13,14] %} #}
 	{% set index_hide_lines = [7,8,11,12,15,16,19,21,22] %}
 	{% set index_show_lines = [18,20] %}
@@ -96,10 +102,16 @@
 
 		{## skyscraper ##}
 		{% if loop.index  == 17 %}
-			<span class="skys-scroll ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_17') }}</span>
+			<span class="wrapper">
+				<span class="ads">{{ drupal_entity('block', 'gamwadvertisement_10') }}</span>
+				<span class="ads">{{ drupal_entity('block', 'gamwadvertisement_59') }}</span>
+			</span>
 		{% endif %}
 		{% if loop.index  == 19 %}
-			<span class="skys-scroll skys2 ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_20') }}</span>
+			<span class="wrapper two">
+				<span class="ads">{{ drupal_entity('block', 'gamwadvertisement_60') }}</span>
+				<span class="ads">{{ drupal_entity('block', 'gamwadvertisement_61') }}</span>
+			</span>
 		{% endif %}
 
 		{% if loop.index in index_hide_lines %}
