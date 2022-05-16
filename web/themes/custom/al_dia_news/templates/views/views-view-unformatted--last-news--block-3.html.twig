@@ -38,8 +38,10 @@
 {% endfor %}
 
 {% if (rows.block_type[0] == 'advertising_complete') and (device  == 'desktop') %}
-	<div class="block-advertising-complete ads">{{ drupal_entity('block', 'gamwadvertisement_55') }}</div>
-	<div class="block-advertising-complete ads">{{ drupal_entity('block', 'gamwadvertisement_56') }}</div>
+	<div class="block-advertising-complete ads">
+		{{ drupal_entity('block', 'gamwadvertisement_55') }}
+		{{ drupal_entity('block', 'gamwadvertisement_56') }}
+	</div>
 {% endif %}
 {% if (rows.block_type[0] == 'block_bottom') and (device  == 'desktop') %}
 	<div class="block-advertising-bottom ads">{{ drupal_entity('block', 'gamwadvertisement_28') }}</div>
