@@ -22,7 +22,7 @@
 {% if title %}
 	<h3>{{ title }}</h3>
 {% endif %}
-
+{% if device == 'desktop' %}
 	{% set index_hide_lines = [4,5,8,9,12,13,14] %}
 
 	{% for row in rows %}

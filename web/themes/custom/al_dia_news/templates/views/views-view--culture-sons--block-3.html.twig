@@ -68,7 +68,10 @@
     <div class="view-content">
       {{ rows }}
     </div>
-    <div class="block-fixed-block-contentsquare-advertising-mobile margin-top ads">{{ drupal_entity('block', 'gamwadvertisement_30') }}</div>
+    {% if device == 'desktop' %}
+      <div class="margin-top ads">{{ drupal_entity('block', 'gamwadvertisement_30') }}</div>
+    {% endif %}
+    <div class="block-fixed-block-contentsquare-advertising-mobile margin-top ads">{{ drupal_entity('block', 'gamwadvertisement_20') }}</div>
   {% elseif empty %}
     <div class="view-empty">
       {{ empty }}
