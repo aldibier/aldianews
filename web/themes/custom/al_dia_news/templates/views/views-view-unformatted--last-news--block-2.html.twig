@@ -25,21 +25,22 @@
     set row_classes = [
       default_row_class ? 'views-row',
     ]
-  %}
-	
+	%}
+
+	{% if (loop.index == 1) and (device == 'mobile') %}
+		{% if rows.index_pos[0] == 1  %}
+			<span class="block-mobile ads">{{ drupal_entity('block', 'gamwadvertisement_29') }}</span>
+		{% endif %}
+		{% if rows.index_pos[0] == 2 %}
+			<span class="block-mobile ads">{{ drupal_entity('block', 'gamwadvertisement_55') }}</span>
+		{% endif %}
+		{% if rows.index_pos[0] == 3  %}
+			<span class="block-mobile ads">{{ drupal_entity('block', 'gamwadvertisement_11') }}</span>
+		{% endif %}
+	{% endif %}
+
 	<div{{row.attributes.addClass(row_classes)}}>
 		{{- row.content -}}
 	</div>
 
-	{% if (loop.index == 1) and (device == 'mobile') %}
-		{% if rows.index_pos[0] == 1  %}
-			<span class="skyscraper-mobile ads">{{ drupal_entity('block', 'gamwadvertisement_29') }}</span>
-		{% endif %}
-		{% if rows.index_pos[0] == 2 %}
-			<span class="skyscraper-mobile ads">{{ drupal_entity('block', 'gamwadvertisement_35') }}</span>
-		{% endif %}
-		{% if rows.index_pos[0] == 3  %}
-			<span class="skyscraper-mobile ads">{{ drupal_entity('block', 'gamwadvertisement_11') }}</span>
-		{% endif %}
-	{% endif %}
 {% endfor %}

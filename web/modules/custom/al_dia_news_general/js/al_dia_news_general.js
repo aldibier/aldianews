@@ -216,7 +216,7 @@
                 if (
                   $(viewContent)
                   .find(
-                    ".block-advertising-complete .block-fixed-block-contentbig-vertical-advertising .content > div > div"
+                    ".block-advertising-complete .block-gamw .content > div > div"
                   )
                   .children().length > 0
                 ) {

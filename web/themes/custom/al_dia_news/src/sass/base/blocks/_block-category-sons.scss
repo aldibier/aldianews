@@ -213,7 +213,7 @@
           display: grid;
           grid-template-columns: repeat(2, 1fr);
           grid-gap: 0 10px;
-          overflow: hidden;
+          overflow: visible;
           grid-auto-flow: dense;
           width: 100%;
         }
@@ -319,11 +319,6 @@
 .path-taxonomy .views-field-view-1 {
   .card-one-column {
     position: relative;
-
-    &:nth-child(1),
-    &:nth-child(2) {
-      margin-top: 0;
-    }
 
     &:nth-child(2n + 1) {
       &::after {

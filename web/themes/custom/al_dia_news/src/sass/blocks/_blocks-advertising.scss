@@ -1,6 +1,11 @@
 .close-gamw {
   display: none !important;
 }
+
+[id*="block-gamwadvertisement"]{
+  text-align: center;
+}
+
 div[data-ad-unit="home-banner-prefooter"] {
   text-align: center;
 }
@@ -151,6 +156,20 @@ div[data-ad-unit="jobs-landing-side-carrer-news-block-1"] {
       }
     }
   }
+
+  .block-mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: span 2;
+    margin: 0 -15px;
+    position: relative;
+    background-color: $cwhite;
+    text-align: center;
+    z-index: 1;
+    overflow: initial;
+  }
+  
 }
 
 @media (max-width: $tablet) {
@@ -203,10 +222,9 @@ div[data-ad-unit="jobs-landing-side-carrer-news-block-1"] {
   }
 
   .skyscraper-mobile {
-    grid-row: span 2;
-    margin: 0px 0px 0px 19px;
+    grid-column: span 2;
+    margin: 0 0 35px 0;
     margin-left: 0;
-    padding-left: 10px;
     position: relative;
     background-color: $cwhite;
     text-align: center;
@@ -543,11 +561,9 @@ div[data-ad-unit="jobs-landing-side-carrer-news-block-1"] {
 .banner-horizontal {
   margin: 0 auto 90px;
   max-width: 1280px;
-  max-height: 149px;
   overflow: hidden;
 
   @media (max-width: $tablet) {
-    max-height: 230px;
     margin: 0 -15px 30px;
     display: flex;
     justify-content: center;
@@ -1104,13 +1120,13 @@ div[data-ad-unit*="Home-post-main-headline"] {
 
 //Landing categories
 .path-taxonomy .block-advertising-top {
-  padding-bottom: 50px;
+  padding-bottom: 25px;
   margin-bottom: 25px;
   border-bottom: 1px solid $cgrey4;
 }
 
 .path-taxonomy .block-advertising-bottom {
-  margin-top: 54px;
+  margin-top: 25px;
 }
 
 .hidden-per-advertising {
@@ -1270,4 +1286,13 @@ div[data-ad-unit*="Home-post-main-headline"] {
 			}
     }
   }
+}
+
+.block-advertising-complete {
+  >div:first-child {
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    /* border-bottom: 1px solid #ccc; */
+  }
+
 }
