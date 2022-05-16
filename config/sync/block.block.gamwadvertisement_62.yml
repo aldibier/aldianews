@@ -1,0 +1,28 @@
+uuid: 3e3fb365-0f22-4952-ba21-c2fb5ac65cae
+langcode: en
+status: true
+dependencies:
+  module:
+    - gamw
+    - mobile_detect
+  theme:
+    - al_dia_news
+id: gamwadvertisement_62
+theme: al_dia_news
+region: gamw_home_side_category_leadership_top
+weight: 0
+provider: null
+plugin: gamw
+settings:
+  id: gamw
+  label: 'GAMW Home - Side category politics bottom 2'
+  provider: gamw
+  label_display: '0'
+  ad_unit: Home-Side-category-politics-bottom-2
+  attributes_wrapper:
+    - ''
+visibility:
+  mobile_detect_device_type:
+    id: mobile_detect_device_type
+    devices: {  }
+    negate: null
