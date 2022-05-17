@@ -847,6 +847,9 @@ div[data-ad-unit="jobs-landing-side-carrer-news-block-1"] {
 }
 
 .block-scroll {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   max-width: 400px;
   max-height: 375px;
   margin: 35px auto;
@@ -876,6 +879,38 @@ div[data-ad-unit="jobs-landing-side-carrer-news-block-1"] {
     grid-row: span 2;
     //margin: 0px 0 0 19px;
   }
+}
+
+.wrapper-ads {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 35px auto;
+  grid-column: 3;
+  grid-row: span 2;
+  z-index: 2;
+  width: 100%;
+  background-color: $cwhite;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: calc(0% - 20px);
+    width: 20px;
+    height: 100%;
+    background-color: $cwhite;
+  }
+
+  >span:first-child {
+    margin-bottom: 70px;
+  }
+
+  @media screen and(max-width:$broken) {
+    grid-column: 1/-1;
+    grid-row: initial;
+  }
+
 }
 
 .path-videos .news-gallery .view-content>div:not(.no-result-search) {
