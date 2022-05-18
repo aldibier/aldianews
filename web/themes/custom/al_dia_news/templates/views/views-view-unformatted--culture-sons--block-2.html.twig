@@ -29,9 +29,7 @@
     ]
 %}
 	{% if device  == 'mobile' %}
-		{% if loop.index == 2 %}
-			<div class="skyscraper-mobile ads">{{ drupal_entity('block', 'gamwadvertisement_31') }}</div>
-		{% endif %}
+		<div class="block-mobile ads">{{ drupal_entity('block', 'gamwadvertisement_31') }}</div>
 	{% endif %}
 	<div{{row.attributes.addClass(row_classes)}}>
 		{{- row.content -}}
