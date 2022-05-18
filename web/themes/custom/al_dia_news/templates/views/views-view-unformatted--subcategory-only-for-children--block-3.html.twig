@@ -43,16 +43,10 @@
 
 		{## skyscraper ##}
 		{% if loop.index  == 22 %}
-			<span class="wrapper-ads">
-				<span class="ads">{{ drupal_entity('block', 'gamwadvertisement_10') }}</span>
-				<span class="ads">{{ drupal_entity('block', 'gamwadvertisement_59') }}</span>
-			</span>
+			<span class="skys-scroll ads">{{ drupal_entity('block', 'gamwadvertisement_10') }}</span>
 		{% endif %}
 		{% if loop.index  == 24 %}
-			<span class="wrapper-ads two">
-				<span class="ads">{{ drupal_entity('block', 'gamwadvertisement_60') }}</span>
-				<span class="ads">{{ drupal_entity('block', 'gamwadvertisement_61') }}</span>
-			</span>
+			<span class="skys-scroll skys2 ads">{{ drupal_entity('block', 'gamwadvertisement_59') }}</span>
 		{% endif %}
 
 		{% if loop.index in index_hide_lines %}
@@ -102,16 +96,10 @@
 
 		{## skyscraper ##}
 		{% if loop.index  == 17 %}
-			<span class="wrapper-ads">
-				<span class="ads">{{ drupal_entity('block', 'gamwadvertisement_10') }}</span>
-				<span class="ads">{{ drupal_entity('block', 'gamwadvertisement_59') }}</span>
-			</span>
+			<span class="skys-scroll ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_17') }}</span>
 		{% endif %}
 		{% if loop.index  == 19 %}
-			<span class="wrapper-ads two">
-				<span class="ads">{{ drupal_entity('block', 'gamwadvertisement_60') }}</span>
-				<span class="ads">{{ drupal_entity('block', 'gamwadvertisement_61') }}</span>
-			</span>
+			<span class="skys-scroll skys2 ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_20') }}</span>
 		{% endif %}
 
 		{% if loop.index in index_hide_lines %}
