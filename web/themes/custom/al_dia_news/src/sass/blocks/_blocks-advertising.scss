@@ -874,12 +874,15 @@ div[data-ad-unit="internal-side-section-top-block"] {
 }
 
 .skys-scroll {
-  max-width: 400px;
+  width: 100%;
+  max-width: 100%;
   max-height: 790px;
   margin: 35px auto;
   grid-column: 3;
   grid-row: span 2;
+  align-self: center;
   z-index: 2;
+  background-color: $cwhite;
 
   @media (max-width: $broken) {
     max-width: 120px;
