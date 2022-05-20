@@ -1345,7 +1345,12 @@ div[data-ad-unit*="Home-post-main-headline"] {
 }
 
 .block-advertising-complete {
-  >div:first-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  >div:first-child {
     margin-bottom: 25px;
     padding-bottom: 25px;
     /* border-bottom: 1px solid #ccc; */
