@@ -63,13 +63,13 @@
 
   {% if rows %}
     {% if device  == 'desktop' %}
-	    <div class="margin-bottom ads">{{ drupal_entity('block', 'gamwadvertisement_33') }}</div>
+	    <div class="ads">{{ drupal_entity('block', 'gamwadvertisement_33') }}</div>
     {% endif %}
     <div class="view-content">
       {{ rows }}
     </div>
     {% if device == 'desktop' %}
-      <div class="margin-top ads">{{ drupal_entity('block', 'gamwadvertisement_32') }}</div>
+      <span class="skyscraper-home-category ads">{{ drupal_entity('block', 'gamwadvertisement_32') }}</span>
     {% endif %}
     <div class="block-fixed-block-contentsquare-advertising-mobile margin-top ads">{{ drupal_entity('block', 'gamwadvertisement_17') }}</div>
   {% elseif empty %}

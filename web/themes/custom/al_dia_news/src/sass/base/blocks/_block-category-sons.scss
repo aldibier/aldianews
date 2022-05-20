@@ -234,10 +234,6 @@
       }
 
       .view-content {
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-
         @media screen and (max-width: $broken) {
           .last-content-category-childs {
             margin-bottom: 20px;
@@ -326,6 +322,16 @@
   .view-display-id-block_5 .category-view-more a {
     @media (max-width: $tablet) {
       margin: -3px 0px -7px;
+    }
+  }
+}
+
+.path-taxonomy .view-categories-sons {
+  .views-field-view-2 {
+    .view-content {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
     }
   }
 }
