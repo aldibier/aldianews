@@ -18,10 +18,6 @@ div[data-ad-unit="jobs-landing-side-carrer-news-block-1"] {
   margin: auto 30px;
 }
 
-div[data-ad-unit="Home-side-category-culture-top"] {
-  margin-bottom: 30px;
-}
-
 div[data-ad-unit="internal-side-section-top-block"] {
   margin: 30px auto;
 }
@@ -226,9 +222,10 @@ div[data-ad-unit="internal-side-section-top-block"] {
 
   .block-fixed-block-contentsquare-advertising-mobile,
   .block-fixed-block-content-small-vertical-advertising {
+    display: flex;
+    justify-content: center;
     max-width: 300px;
     max-height: 250px;
-    overflow: hidden;
     margin: 30px auto;
     grid-column: span 2;
 
@@ -319,6 +316,16 @@ div[data-ad-unit="internal-side-section-top-block"] {
   }
 }
 
+.path-frontpage .skyscraper-home-category {
+  display: block;
+  margin-bottom: 65px;
+
+  @media (max-width: $tablet) {
+    margin: 30px auto;
+  }
+
+}
+
 .path-frontpage .view-categories-sons .views-field-view-1 {
   @media (max-width: $broken) {
     .block-fixed-block-content-small-vertical-advertising {
@@ -332,6 +339,14 @@ div[data-ad-unit="internal-side-section-top-block"] {
         width: 100%;
         height: auto;
       }
+    }
+  }
+}
+
+.path-frontpage .view-categories-sons > .view-content .views-field-view-1 .view-content {
+  @media (max-width: $broken) {
+    .block-mobile {
+      margin-bottom: 20px;
     }
   }
 }
