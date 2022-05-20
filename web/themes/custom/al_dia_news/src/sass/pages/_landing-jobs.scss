@@ -888,6 +888,11 @@ $brokenPixelUp: $broken2+1;
     display: flex;
     justify-content: space-between;
 
+    @media (max-width: $tablet) {
+      flex-direction: column;
+      justify-content: initial;
+    }
+
     .content {
       margin: 0px;
     }
@@ -900,6 +905,7 @@ $brokenPixelUp: $broken2+1;
     padding-left: 20px;
     max-width: 420px;
     margin-left: 20px;
+    text-align: center;
 
     @media (min-width: 769px) and (max-width: $broken2) {
       display: none;
@@ -1299,23 +1305,6 @@ $brokenPixelUp: $broken2+1;
 
   .block-block-groupgroup-career-news-jobs {
     padding: 0 15px;
-
-    .block-fixed-block-contentbig-vertical-advertising {
-      position: absolute;
-      border-left: 0px;
-      width: 100%;
-      max-width: 50%;
-      //max-width: 140px;
-      padding-left: 20px;
-      margin-left: 0px;
-      margin-bottom: 0px;
-      max-height: none;
-      max-height: 320px;
-      overflow: hidden;
-      right: calc(0% + 15px);
-      background-color: $cwhite;
-      text-align: center;
-    }
   }
 
   //View general
@@ -1598,32 +1587,38 @@ $brokenPixelUp: $broken2+1;
 
       .views-row:nth-child(1),
       .views-row:nth-child(2) {
-        flex-direction: column;
-        padding-right: 140px !important;
+        // flex-direction: column;
+        // padding-right: 140px !important;
       }
 
       .views-row:nth-child(2) {
-        margin-top: 30px !important;
-        padding-top: 30px !important;
+        // margin-top: 30px !important;
+        // padding-top: 30px !important;
       }
 
       .views-row:nth-child(3) {
-        margin-top: 30px !important;
-        padding-top: 20px !important;
+        // margin-top: 30px !important;
+        // padding-top: 20px !important;
       }
 
       .views-row:nth-child(1) .views-field-field-image,
       .views-row:nth-child(2) .views-field-field-image {
-        flex: 0 0 auto;
-        max-width: 140px;
-        margin-right: 0 !important;
-        margin-bottom: 10px !important;
+        // flex: 0 0 auto;
+        // max-width: 140px;
+        // margin-right: 0 !important;
+        // margin-bottom: 10px !important;
       }
     }
   }
 
   .block-views-blockcareer-news-block-1:not(.view-complete)+.block-fixed-block-contentbig-vertical-advertising {
-    flex: 1;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin: 0 0 30px 0;
+    flex: 1 1 100%;
+    border: none;
+    order: -1;
   }
 
   .block-block-groupgroup-career-news-jobs+.block-fixed-block-contenthorizontal-advertising {

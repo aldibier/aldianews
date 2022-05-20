@@ -224,7 +224,20 @@
     .views-field-view-2 {
       grid-area: area-3;
 
+      >.field-content {
+        display: block;
+        height: 100%;
+      }
+
+      .view-more {
+        height: 100%;
+      }
+
       .view-content {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+
         @media screen and (max-width: $broken) {
           .last-content-category-childs {
             margin-bottom: 20px;
