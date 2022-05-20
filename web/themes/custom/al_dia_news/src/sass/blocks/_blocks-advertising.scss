@@ -433,16 +433,16 @@ div[data-ad-unit="internal-side-section-top-block"] {
 
     .skys-scroll.skys2 {
       &::before {
-        content: "";
-        width: calc(100vw - 30px);
-        height: 0;
-        margin: -35px auto;
-        padding: 0.1mm;
-        display: block;
-        position: absolute;
-        right: 0;
-        bottom: 0px;
-        background: $cgrey4;
+        content: none;
+        // width: calc(100vw - 30px);
+        // height: 0;
+        // margin: -35px auto;
+        // padding: 0.1mm;
+        // display: block;
+        // position: absolute;
+        // right: 0;
+        // bottom: 0px;
+        // background: $cgrey4;
       }
     }
   }
@@ -458,25 +458,20 @@ div[data-ad-unit="internal-side-section-top-block"] {
 
     .skys-scroll {
       position: relative;
-      grid-row: span 1;
+      display: flex;
+      justify-content: center;
+      grid-column: span 2;
     }
 
     .skys-scroll.ads.ads-mobile {
       &::after {
-        content: "";
-        width: 35px;
-        height: 100%;
-        position: absolute;
-        left: calc(0% - 30px);
-        top: 0;
-        background: $cwhite;
+        content: none;
       }
     }
 
     .skys-scroll:not(.skys2).ads-mobile {
-      &::before {
-        display: none;
-      }
+      padding-top: 20px;
+      margin-top: 20px;
     }
 
     .skys-scroll.skys2.ads-mobile {
@@ -496,6 +491,8 @@ div[data-ad-unit="internal-side-section-top-block"] {
     }
 
     .block-scroll.ads-mobile {
+      display: flex;
+      justify-content: center;
       width: 100%;
       max-width: 100%;
       max-height: initial;
@@ -503,13 +500,14 @@ div[data-ad-unit="internal-side-section-top-block"] {
       padding: 20px 0;
       border-top: 1px solid $cgrey4;
       border-bottom: 1px solid $cgrey4;
-      display: block;
       position: relative;
       text-align: center;
     }
 
     .block-scroll.block2.ads-mobile {
+      margin-top: 20px;
       margin-bottom: 20px;
+      border-top: 1px solid $cgrey4;
     }
 
     .banner-scroll.last-banner {
