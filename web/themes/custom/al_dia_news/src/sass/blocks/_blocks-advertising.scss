@@ -1185,6 +1185,11 @@ div[data-ad-unit*="Home-post-main-headline"] {
     @media (max-width: $broken) {
       text-align: center;
     }
+    @media (max-width: $tablet) {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+    }
   }
 }
 
@@ -1386,4 +1391,16 @@ div[data-ad-unit*="Home-post-main-headline"] {
     /* border-bottom: 1px solid #ccc; */
   }
 
+}
+
+.one-vertical-advertising.content-right-pages {
+  @media screen and (max-width: $tablet) {
+    display: flex;
+    justify-content: center;
+
+    >.block-gamw {
+      margin: 0 -15px;
+    }
+
+  }
 }
