@@ -135,11 +135,9 @@ class RelatedContentFieldFormatter extends FormatterBase {
       // Render.
       $render = $view->render();
       // get count results
-      $q = $view->query->query()->countQuery()->execute()->fetchAssoc();
-      $count = reset($q);
 
       // If this content doesn't have related content, return original content
-      if($count == 0){
+      if(count($view->result) == 0){
         return $value;
       }
 
