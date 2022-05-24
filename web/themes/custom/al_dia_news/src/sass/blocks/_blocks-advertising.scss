@@ -511,6 +511,15 @@ div[data-ad-unit="internal-side-section-top-block"] {
       border-top: 1px solid $cgrey4;
     }
 
+    .block-mobile.block-first.ads-mobile {
+      margin-top: 35px;
+      margin-bottom: 0;
+    }
+
+    .block-mobile.block-last.ads-mobile {
+      margin-bottom: 35px;
+    }
+
     .banner-scroll.last-banner {
       margin: 30px auto 25px;
 
@@ -763,6 +772,16 @@ div[data-ad-unit="internal-side-section-top-block"] {
       margin: 0 auto;
     }
   }
+}
+
+.views-infinite-scroll-content-wrapper:not(.non-adversiting) {
+
+  @media screen and (max-width: $tablet) {
+    .block-mobile {
+      margin-bottom: 35px;
+    }
+  }
+
 }
 
 //----------------- landing categories ----------------------------------//
