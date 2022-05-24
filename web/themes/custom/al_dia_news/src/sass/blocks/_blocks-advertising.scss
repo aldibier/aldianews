@@ -433,16 +433,16 @@ div[data-ad-unit="internal-side-section-top-block"] {
 
     .skys-scroll.skys2 {
       &::before {
-        content: "";
-        width: calc(100vw - 30px);
-        height: 0;
-        margin: -35px auto;
-        padding: 0.1mm;
-        display: block;
-        position: absolute;
-        right: 0;
-        bottom: 0px;
-        background: $cgrey4;
+        content: none;
+        // width: calc(100vw - 30px);
+        // height: 0;
+        // margin: -35px auto;
+        // padding: 0.1mm;
+        // display: block;
+        // position: absolute;
+        // right: 0;
+        // bottom: 0px;
+        // background: $cgrey4;
       }
     }
   }
@@ -458,25 +458,21 @@ div[data-ad-unit="internal-side-section-top-block"] {
 
     .skys-scroll {
       position: relative;
-      grid-row: span 1;
+      display: flex;
+      justify-content: center;
+      grid-column: span 2;
     }
 
     .skys-scroll.ads.ads-mobile {
       &::after {
-        content: "";
-        width: 35px;
-        height: 100%;
-        position: absolute;
-        left: calc(0% - 30px);
-        top: 0;
-        background: $cwhite;
+        content: none;
       }
     }
 
     .skys-scroll:not(.skys2).ads-mobile {
-      &::before {
-        display: none;
-      }
+      padding-top: 20px;
+      margin-top: 20px;
+      border-top: 1px solid $cgrey4;
     }
 
     .skys-scroll.skys2.ads-mobile {
@@ -496,6 +492,8 @@ div[data-ad-unit="internal-side-section-top-block"] {
     }
 
     .block-scroll.ads-mobile {
+      display: flex;
+      justify-content: center;
       width: 100%;
       max-width: 100%;
       max-height: initial;
@@ -503,13 +501,23 @@ div[data-ad-unit="internal-side-section-top-block"] {
       padding: 20px 0;
       border-top: 1px solid $cgrey4;
       border-bottom: 1px solid $cgrey4;
-      display: block;
       position: relative;
       text-align: center;
     }
 
     .block-scroll.block2.ads-mobile {
+      margin-top: 20px;
       margin-bottom: 20px;
+      border-top: 1px solid $cgrey4;
+    }
+
+    .block-mobile.block-first.ads-mobile {
+      margin-top: 35px;
+      margin-bottom: 0;
+    }
+
+    .block-mobile.block-last.ads-mobile {
+      margin-bottom: 35px;
     }
 
     .banner-scroll.last-banner {
@@ -713,7 +721,7 @@ div[data-ad-unit="internal-side-section-top-block"] {
     }
 
     .banner-horizontal {
-      margin: 90px 0;
+      margin-bottom: 80px;
     }
   }
 
@@ -764,6 +772,16 @@ div[data-ad-unit="internal-side-section-top-block"] {
       margin: 0 auto;
     }
   }
+}
+
+.views-infinite-scroll-content-wrapper:not(.non-adversiting) {
+
+  @media screen and (max-width: $tablet) {
+    .block-mobile {
+      margin-bottom: 35px;
+    }
+  }
+
 }
 
 //----------------- landing categories ----------------------------------//
@@ -1186,6 +1204,11 @@ div[data-ad-unit*="Home-post-main-headline"] {
     @media (max-width: $broken) {
       text-align: center;
     }
+    @media (max-width: $tablet) {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+    }
   }
 }
 
@@ -1248,20 +1271,36 @@ div[data-ad-unit*="Home-post-main-headline"] {
       }
 
       .card-more:nth-of-type(2)::before {
-        top: calc(0% - 30px);
-        bottom: 0;
-        margin-bottom: 60px;
+        display: none !important;
       }
     }
   }
 }
 
+// .card-more.card-more-news.card-more-category.views-row:nth-of-type(2n + 1)::before {
+//   content: '';
+//   width: calc(100vw - 30px);
+//   left: 0;
+//   right: 0;
+// }
+
 .page-node-type-news {
   @media (max-width: $tablet) {
     .view-more-in-this-section-news .view-content:not(.non-adversiting) {
       .card-more:nth-of-type(2)::before {
-        top: calc(0% - 30px);
+        display: none !important;
       }
+    }
+  }
+}
+
+.block-views-blockmore-in-this-section-news-block-1 .view-content {
+  @media (max-width: $tablet) {
+    .banner-mobile {
+      display: flex;
+      justify-content: center;
+      grid-column: span 2;
+      margin-bottom: 45px;
     }
   }
 }
@@ -1371,4 +1410,16 @@ div[data-ad-unit*="Home-post-main-headline"] {
     /* border-bottom: 1px solid #ccc; */
   }
 
+}
+
+.one-vertical-advertising.content-right-pages {
+  @media screen and (max-width: $tablet) {
+    display: flex;
+    justify-content: center;
+
+    >.block-gamw {
+      margin: 0 -15px;
+    }
+
+  }
 }
