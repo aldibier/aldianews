@@ -42,13 +42,16 @@
   }
 }
 
+.node--type-thought-leaders .block-field-blocknodenewsbody p:not(.caption,.question),
+.node--type-thought-leaders .block-field-blocknodenewsbody li,
+.node--type-thought-leaders .block-field-blocknodenewsbody blockquote,
 .node--type-news .block-field-blocknodenewsbody p:not(.caption,.question),
 .node--type-news .block-field-blocknodenewsbody li,
 .node--type-news .block-field-blocknodenewsbody blockquote {
   font-family: $CenturyOld-Regular !important;
 }
 
-.node--type-news .block-field-blocknodenewsbody strong {
+.node--type-news .block-field-blocknodenewsbody strong {
   font-family: $CenturyOld-Bold !important;
   font-size: szrem(19);
   font-weight: bold;
