@@ -28,10 +28,9 @@
     default_row_class ? 'card-one-column views-row',
     ]
 %}
-	{% if device == 'mobile' %}
-		<span class="block-mobile ads">{{ drupal_entity('block', 'gamwadvertisement_33') }}</span>
+	{% if device == 'mobile' and loop.index == 2 %}
+		<span class="skyscraper-mobile ads">{{ drupal_entity('block', 'gamwadvertisement_33') }}</span>
 	{% endif %}
-
 	<div{{row.attributes.addClass(row_classes)}}>
 		{{- row.content -}}
 	</div>

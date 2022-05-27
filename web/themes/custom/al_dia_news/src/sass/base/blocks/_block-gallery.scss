@@ -144,7 +144,7 @@
       @media screen and (max-width: $broken) {
         margin-bottom: 40px;
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2,minmax(140px,1fr));
         grid-gap: 0 10px;
         grid-auto-flow: dense;
       }

@@ -36,6 +36,10 @@
 
 	<div{{row.attributes.addClass(row_classes)}}>
 		{{- row.content -}}
-		<div class="banner-horizontal ads">{{block_gamw}}</div>
+		{% if device == 'desktop' %}
+			<div class="banner-horizontal ads">{{block_gamw}}</div>
+		{% else %}
+			<div class="block-mobile ads">{{block_gamw}}</div>
+		{% endif %}
 	</div>
 {% endfor %}

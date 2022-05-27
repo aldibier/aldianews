@@ -219,6 +219,12 @@
           width: 100%;
         }
       }
+
+      @media screen and (max-width: $tablet) {
+        .view-content {
+          grid-gap: 0 5px;
+        }
+      }
     }
 
     .views-field-view-2 {
@@ -360,7 +366,13 @@
     @media screen and (max-width: $broken) {
       margin: 35px 0px;
       padding: 0px;
-
     }
+
+    @media screen and (max-width: $tablet) {
+      min-width: 140px;
+      margin: 20px 0px;
+    }
+  
   }
+
 }

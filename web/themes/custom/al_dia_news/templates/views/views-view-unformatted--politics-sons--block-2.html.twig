@@ -28,8 +28,8 @@
     default_row_class ? 'views-row',
     ]
 %}
-	{% if device == 'mobile' %}
-		<span class="block-mobile ads">{{ drupal_entity('block', 'gamwadvertisement_34') }}</span>
+	{% if device == 'mobile' and loop.index == 2 %}
+		<span class="skyscraper-mobile ads">{{ drupal_entity('block', 'gamwadvertisement_34') }}</span>
 	{% endif %}
 	<div{{row.attributes.addClass(row_classes)}}>
 		{{- row.content -}}

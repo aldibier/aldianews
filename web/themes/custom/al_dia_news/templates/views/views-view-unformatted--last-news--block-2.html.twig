@@ -29,18 +29,21 @@
 
 	{% if (loop.index == 1) and (device == 'mobile') %}
 		{% if rows.index_pos[0] == 1  %}
-			<span class="block-mobile ads">{{ drupal_entity('block', 'gamwadvertisement_29') }}</span>
+			<span class="skyscraper-mobile ads">{{ drupal_entity('block', 'gamwadvertisement_29') }}</span>
 		{% endif %}
 		{% if rows.index_pos[0] == 2 %}
-			<span class="block-mobile ads">{{ drupal_entity('block', 'gamwadvertisement_55') }}</span>
+			<span class="skyscraper-mobile ads">{{ drupal_entity('block', 'gamwadvertisement_55') }}</span>
 		{% endif %}
 		{% if rows.index_pos[0] == 3  %}
-			<span class="block-mobile ads">{{ drupal_entity('block', 'gamwadvertisement_11') }}</span>
+			<span class="skyscraper-mobile ads">{{ drupal_entity('block', 'gamwadvertisement_11') }}</span>
 		{% endif %}
 	{% endif %}
 
-	<div{{row.attributes.addClass(row_classes)}}>
-		{{- row.content -}}
-	</div>
+	{% if row.content|length > 0 %}
+		<div{{row.attributes.addClass(row_classes)}}>
+			{{- row.content -}}
+		</div>
+	{% endif %}
+
 
 {% endfor %}

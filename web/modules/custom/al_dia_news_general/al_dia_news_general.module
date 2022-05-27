@@ -398,7 +398,7 @@ function al_dia_news_general_views_pre_view(ViewExecutable $view, $display_id, a
  * @param query consulta sql de la vista
  */
 function al_dia_news_general_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
-  /* ksm($view->id()); */
+  /* var_dump($view->id()); */
   switch ($view->id()) {
     case 'landing_tags':
       if ($view->getDisplay()->display['id'] == 'block_1') {
@@ -491,6 +491,14 @@ function al_dia_news_general_views_query_alter(ViewExecutable $view, QueryPlugin
             }
           }
         }
+
+        $is_mobile = is_mobile();
+
+        if($is_mobile){
+          $view->setOffset(1);
+          $view->getPager()->setItemsPerPage(4);
+        }
+
       }
       if ($view->getDisplay()->display['id'] == 'block_3') {
         $current_path = \Drupal::service('path.current')->getPath();
@@ -582,7 +590,7 @@ function al_dia_news_general_views_query_alter(ViewExecutable $view, QueryPlugin
 
         if($is_mobile){
           $view->setOffset(0);
-          $view->getPager()->setItemsPerPage(22);
+          $view->getPager()->setItemsPerPage(24);
         }
       }
     break;
@@ -592,7 +600,7 @@ function al_dia_news_general_views_query_alter(ViewExecutable $view, QueryPlugin
 
         if($is_mobile){
           $view->setOffset(0);
-          $view->getPager()->setItemsPerPage(22);
+          $view->getPager()->setItemsPerPage(24);
         }
 			}
 		break;
@@ -803,7 +811,7 @@ function al_dia_news_general_views_query_alter(ViewExecutable $view, QueryPlugin
 
         if($is_mobile){
           $view->setOffset(0);
-          $view->getPager()->setItemsPerPage(22);
+          $view->getPager()->setItemsPerPage(24);
         }
       }
     break;
@@ -813,7 +821,7 @@ function al_dia_news_general_views_query_alter(ViewExecutable $view, QueryPlugin
 
         if($is_mobile){
           $view->setOffset(0);
-          $view->getPager()->setItemsPerPage(22);
+          $view->getPager()->setItemsPerPage(24);
         }
       }
     break;
