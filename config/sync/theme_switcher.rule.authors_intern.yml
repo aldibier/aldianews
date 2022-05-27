@@ -1,0 +1,30 @@
+uuid: d9b2021c-53d7-47b7-ba26-cafb11f66dd1
+langcode: en
+status: true
+dependencies:
+  module:
+    - mobile_detect
+    - system
+    - user
+id: authors_intern
+label: 'Authors intern'
+weight: 0
+theme: al_dia_news
+admin_theme: al_dia_news
+visibility:
+  mobile_detect_device_type:
+    id: mobile_detect_device_type
+    devices: {  }
+    negate: null
+  user_role:
+    id: user_role
+    roles:
+      anonymous: anonymous
+      authenticated: authenticated
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+  request_path:
+    id: request_path
+    pages: '/authors/*'
+    negate: false
