@@ -908,12 +908,12 @@ div[data-ad-unit="internal-side-section-top-block"] {
 
     .skyscraper-mobile::before {
       content: "";
-      width: 30px;
+      width: 10px;
       height: 100%;
       display: block;
       position: absolute;
       background: $cwhite;
-      left: calc(0% - 30px);
+      left: calc(0% - 5px);
     }
   }
 }
@@ -1332,6 +1332,16 @@ div[data-ad-unit*="Home-post-main-headline"] {
       justify-content: center;
       grid-column: span 2;
       margin-bottom: 45px;
+    }
+  }
+}
+
+.block-views-blockmore-in-this-section-news-block-1 .view-content {
+  @media (max-width: $tablet) {
+    span.skyscraper-mobile {
+      grid-column: 2;
+      grid-row: span 4;
+      margin: 0 0 20px 0 !important;
     }
   }
 }
