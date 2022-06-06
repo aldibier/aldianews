@@ -11,8 +11,8 @@ dependencies:
     - field.storage.node.field_short_title
     - node.type.news
   module:
-    - image
     - node
+    - svg_image
     - taxonomy
     - text
     - user
@@ -760,6 +760,7 @@ display:
         - 'config:core.entity_view_display.node.feature_employer.teaser'
         - 'config:core.entity_view_display.node.job.default'
         - 'config:core.entity_view_display.node.job.teaser'
+        - 'config:core.entity_view_display.node.job.token'
         - 'config:core.entity_view_display.node.more_covers.default'
         - 'config:core.entity_view_display.node.more_covers.teaser'
         - 'config:core.entity_view_display.node.news.categories_home'
@@ -769,6 +770,7 @@ display:
         - 'config:core.entity_view_display.node.news.default'
         - 'config:core.entity_view_display.node.news.first_category_home'
         - 'config:core.entity_view_display.node.news.full'
+        - 'config:core.entity_view_display.node.news.landing_tags'
         - 'config:core.entity_view_display.node.news.news'
         - 'config:core.entity_view_display.node.news.premium'
         - 'config:core.entity_view_display.node.news.subcategory_first_'
@@ -781,6 +783,7 @@ display:
         - 'config:core.entity_view_display.node.page.general_errors'
         - 'config:core.entity_view_display.node.page.search_index'
         - 'config:core.entity_view_display.node.page.search_result'
+        - 'config:core.entity_view_display.node.page.share_a_news_tip'
         - 'config:core.entity_view_display.node.page.teaser'
         - 'config:core.entity_view_display.node.page.title_in_h2'
         - 'config:core.entity_view_display.node.page.work_whit_al_dia'
@@ -1116,6 +1119,7 @@ display:
         - 'config:core.entity_view_display.node.feature_employer.teaser'
         - 'config:core.entity_view_display.node.job.default'
         - 'config:core.entity_view_display.node.job.teaser'
+        - 'config:core.entity_view_display.node.job.token'
         - 'config:core.entity_view_display.node.more_covers.default'
         - 'config:core.entity_view_display.node.more_covers.teaser'
         - 'config:core.entity_view_display.node.news.categories_home'
@@ -1125,6 +1129,7 @@ display:
         - 'config:core.entity_view_display.node.news.default'
         - 'config:core.entity_view_display.node.news.first_category_home'
         - 'config:core.entity_view_display.node.news.full'
+        - 'config:core.entity_view_display.node.news.landing_tags'
         - 'config:core.entity_view_display.node.news.news'
         - 'config:core.entity_view_display.node.news.premium'
         - 'config:core.entity_view_display.node.news.subcategory_first_'
@@ -1137,6 +1142,7 @@ display:
         - 'config:core.entity_view_display.node.page.general_errors'
         - 'config:core.entity_view_display.node.page.search_index'
         - 'config:core.entity_view_display.node.page.search_result'
+        - 'config:core.entity_view_display.node.page.share_a_news_tip'
         - 'config:core.entity_view_display.node.page.teaser'
         - 'config:core.entity_view_display.node.page.title_in_h2'
         - 'config:core.entity_view_display.node.page.work_whit_al_dia'
@@ -1215,7 +1221,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"category-title\">\r\n    <h1>AL DÍA <span>{{ parent_target_id }}</span></h1>\r\n</div>"
+            text: "<div class=\"category-title\">\r\n    <h1><span class=\"aldia-logo-before\">AL DÍA</span> <span>{{ parent_target_id }}</span></h1>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
