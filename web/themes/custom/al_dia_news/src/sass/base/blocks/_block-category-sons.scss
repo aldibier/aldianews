@@ -199,27 +199,20 @@
         margin: 0;
         position: relative;
 
-        /* &:after {
-          width: 100%;
-          content: '';
-          height: 1px;
-          display: block;
-          position: absolute;
-          bottom: 15px;
-          left: 0;
-          background: #B1B1B1;
-        } */
-
         .view-content {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
           grid-gap: 0 10px;
-          overflow: visible;
           grid-auto-flow: dense;
           width: 100%;
         }
       }
 
+      @media screen and (max-width: $tablet) {
+        .view-content {
+          overflow: visible;
+        }
+      }
     }
 
     .views-field-view-2 {

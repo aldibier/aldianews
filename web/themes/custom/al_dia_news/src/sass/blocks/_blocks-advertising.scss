@@ -162,12 +162,18 @@ div[data-ad-unit="internal-side-section-top-block"] {
       .view-content {
 
         .skyscraper-mobile+.card-one-column {
-          margin-top: 35px;
+          margin-top: 0;
         }
 
         .skyscraper-mobile::before {
           display: none;
         }
+
+        .card-one-column:nth-of-type(3),
+        .card-one-column:nth-of-type(4) {
+          display: none;
+        }
+
       }
     }
   }

@@ -149,6 +149,7 @@
     }
 
     @media (max-width: $broken) {
+      display: grid !important;
       grid-template-columns: repeat(2,minmax(140px,1fr));
       grid-gap: 0 5px;
     }
