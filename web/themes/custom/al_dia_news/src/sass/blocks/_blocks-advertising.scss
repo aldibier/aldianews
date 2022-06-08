@@ -267,6 +267,10 @@ div[data-ad-unit="internal-side-section-top-block"] {
       }
     }
 
+    .block-mobile {
+      margin: 25px -15px;
+    }
+
     .views-row.not-apply-ads {
       .views-field-view-1 {
         .card-one-column::after {
@@ -328,7 +332,7 @@ div[data-ad-unit="internal-side-section-top-block"] {
       height: auto;
     }
   }
-
+  
   .skyscraper-mobile {
     grid-column: span 2;
     margin: 0 0 35px 0;
@@ -348,6 +352,15 @@ div[data-ad-unit="internal-side-section-top-block"] {
       background: $cwhite;
     }
   }
+
+  .path-frontpage .skyscraper-mobile {
+    &::before {
+      content: "";
+      width: 5px;
+      left: calc(0% - 5px);
+    }
+  }
+
 }
 
 @media (max-width: 400px) {
