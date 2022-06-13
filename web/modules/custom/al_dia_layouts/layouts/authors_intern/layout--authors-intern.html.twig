@@ -20,19 +20,21 @@
           </div>
       {% endif %}
        <div class="content-page-node">
-        <div class="author-information">
-          {% if content.author_information %}
-              <div {{ region_attributes.two_content.addClass('author-information-general') }}>
-                {{ content.author_information }}
-              </div>
-          {% endif %}
-        </div>
-        <div class="related_authors">
-          {% if content.related_authors %}
-              <div {{ region_attributes.two_vertical_advertising.addClass('related-authors-intern') }}>
-                {{ content.related_authors }}
-              </div>
-          {% endif %}
+        <div class="author-wrapper">
+          <div class="author-information">
+            {% if content.author_information %}
+                <div {{ region_attributes.two_content.addClass('author-information-general') }}>
+                  {{ content.author_information }}
+                </div>
+            {% endif %}
+          </div>
+          <div class="related_authors">
+            {% if content.related_authors %}
+                <div {{ region_attributes.two_vertical_advertising.addClass('related-authors-intern') }}>
+                  {{ content.related_authors }}
+                </div>
+            {% endif %}
+          </div>
         </div>
         <div class="content-news-authors">
             {% if content.authors_news %}
