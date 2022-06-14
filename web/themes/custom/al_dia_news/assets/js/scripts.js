@@ -1959,6 +1959,20 @@ var initMain = function initMain($, Drupal) {
       }
     });
   }
+
+  var arrimages = document.querySelectorAll(".cke-ig img");
+
+  if (arrimages.length != 0) {
+    arrclone = Array.from(arr).map(function (item) {
+      return item.cloneNode(true);
+    });
+    var popupgalery = document.createElement("div");
+    popupgalery.classList.add("popupgalerycontainer");
+    arrclone.forEach(function (element) {
+      popupgalery.appendChild(element);
+    });
+    document.body.appendChild(arrclone);
+  }
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (initMain);
@@ -3358,7 +3372,7 @@ var initSlick = function initSlick($, Drupal) {
       autoplay: true,
       autoplaySpeed: 3000,
       infinite: true,
-      slidesToShow: 2,
+      slidesToShow: 3,
       slidesToScroll: 1,
       centerPadding: "60px",
       centerMode: true,
