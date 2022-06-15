@@ -28,7 +28,7 @@ function is_mobile() {
   $device_param = \Drupal::request()->query->get('device');
 
   if($device_param == 'mobile'){
-    return true;
+    return 'mobile';
   }else {
     return $detect->isMobile();
   }
@@ -70,7 +70,6 @@ function al_dia_news_general_customize_address($element, $form_state) {
  * Implements hook_form_alter()
  */
 function al_dia_news_general_form_alter(&$form, $form_state, $form_id) {
-  // ksm($form_id);
   // //Saber el path
   // $current_path = \Drupal::service('path.current')->getPath();
   // $url_object = \Drupal::service('path.validator')->getUrlIfValid($current_path);
@@ -138,7 +137,7 @@ function al_dia_news_general_form_alter(&$form, $form_state, $form_id) {
     break;
     case "comment_comments_content_delete_form":
       $form['#title'] = t("DELETE COMMENT");
-      $form['description']['#markup'] = t('<div>Any replies to this comment will be lost. This action cannot be undone.</div> <div class="text-comment">Are you sure you want to delete this comment?</div>');
+      $form['description']['#markup'] = '<div>Any replies to this comment will be lost. This action cannot be undone.</div> <div class="text-comment">Are you sure you want to delete this comment?</div>';
     break;
     case "user_register_form":
       $form['#title'] = t("REGISTER");
@@ -399,7 +398,7 @@ function al_dia_news_general_views_pre_view(ViewExecutable $view, $display_id, a
  * @param query consulta sql de la vista
  */
 function al_dia_news_general_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
-  /* var_dump($view->id()); */
+  /* ksm($view->id()); */
   switch ($view->id()) {
     case 'landing_tags':
       if ($view->getDisplay()->display['id'] == 'block_1') {
@@ -492,14 +491,6 @@ function al_dia_news_general_views_query_alter(ViewExecutable $view, QueryPlugin
             }
           }
         }
-
-        $is_mobile = is_mobile();
-
-        if($is_mobile){
-          $view->setOffset(1);
-          $view->getPager()->setItemsPerPage(4);
-        }
-
       }
       if ($view->getDisplay()->display['id'] == 'block_3') {
         $current_path = \Drupal::service('path.current')->getPath();
@@ -591,7 +582,7 @@ function al_dia_news_general_views_query_alter(ViewExecutable $view, QueryPlugin
 
         if($is_mobile){
           $view->setOffset(0);
-          $view->getPager()->setItemsPerPage(24);
+          $view->getPager()->setItemsPerPage(22);
         }
       }
     break;
@@ -601,7 +592,7 @@ function al_dia_news_general_views_query_alter(ViewExecutable $view, QueryPlugin
 
         if($is_mobile){
           $view->setOffset(0);
-          $view->getPager()->setItemsPerPage(24);
+          $view->getPager()->setItemsPerPage(22);
         }
 			}
 		break;
@@ -812,7 +803,7 @@ function al_dia_news_general_views_query_alter(ViewExecutable $view, QueryPlugin
 
         if($is_mobile){
           $view->setOffset(0);
-          $view->getPager()->setItemsPerPage(24);
+          $view->getPager()->setItemsPerPage(22);
         }
       }
     break;
@@ -822,7 +813,7 @@ function al_dia_news_general_views_query_alter(ViewExecutable $view, QueryPlugin
 
         if($is_mobile){
           $view->setOffset(0);
-          $view->getPager()->setItemsPerPage(24);
+          $view->getPager()->setItemsPerPage(22);
         }
       }
     break;
@@ -833,7 +824,7 @@ function al_dia_news_general_views_query_alter(ViewExecutable $view, QueryPlugin
           $view->setOffset(0);
           $view->getPager()->setItemsPerPage(8);
       }
-
+    
     }
     break;
   }
@@ -918,7 +909,7 @@ function al_dia_news_general_preprocess_node(&$vars) {
 		$field_type = $fields['field_type_of_content'];
 		$field_type_entity = $field_type->entity;
 
-
+     
 		if($field_type_entity->getName() !== null ){
 			if(strtolower($field_type_entity->getName()) == 'video'){
 				$vars['attributes']['class'][] = 'node_has_video';

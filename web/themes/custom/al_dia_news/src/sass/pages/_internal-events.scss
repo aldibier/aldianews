@@ -470,7 +470,6 @@
 
   .mode-two {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
 
     .subtitle-events {
@@ -531,7 +530,7 @@
 
       @media (max-width:$tablet) {
         .block-gamw {
-          margin-bottom: 0px;
+          margin-bottom: 50px;
         }
       }
     }
@@ -1299,10 +1298,10 @@
       display: none;
     }
 
-     .body-lateral-section-advertising:not(.non-adversiting) {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 40px !important;
+     .body-lateral-section-advertising {
+      display: block;
+      max-width: 200px;
+      margin: 20px 30px 40px;
     }
 
     .block-extra-field-blocknodenewsaddtoany h2 {

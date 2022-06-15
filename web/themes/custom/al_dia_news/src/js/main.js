@@ -833,6 +833,24 @@ const initMain = ($, Drupal) => {
 			}
 		})
 	}
+
+	let arrimages = document.querySelectorAll(".cke-ig img")
+	if (arrimages.length !=0){
+		arrclone = Array.from(arr).map(item => {
+			return item.cloneNode(true); 
+		})
+		let popupgalery = document.createElement("div")
+		popupgalery.classList.add("popupgalerycontainer")
+
+		arrclone.forEach(element => {
+			popupgalery.appendChild(element)
+		
+		})
+
+		document.body.appendChild(arrclone)
+	}
 };
 
 export default initMain;
+
+

@@ -17,6 +17,8 @@
  * @ingroup themeable
  */
 #}
+
+
 {% if title %}
 	<h3>{{ title }}</h3>
 {% endif %}
@@ -40,10 +42,16 @@
 
 		{## skyscraper ##}
 		{% if loop.index  == 22 %}
-			<span class="skys-scroll ads">{{ drupal_entity('block', 'gamwadvertisement_10') }}</span>
+			<span class="wrapper-ads">
+				<span class="ads">{{ drupal_entity('block', 'gamwadvertisement_10') }}</span>
+				<span class="ads">{{ drupal_entity('block', 'gamwadvertisement_59') }}</span>
+			</span>
 		{% endif %}
 		{% if loop.index  == 24 %}
-			<span class="skys-scroll skys2 ads">{{ drupal_entity('block', 'gamwadvertisement_59') }}</span>
+			<span class="wrapper-ads two">
+				<span class="ads">{{ drupal_entity('block', 'gamwadvertisement_60') }}</span>
+				<span class="ads">{{ drupal_entity('block', 'gamwadvertisement_61') }}</span>
+			</span>
 		{% endif %}
 
 		{% if loop.index in index_hide_lines %}
@@ -69,7 +77,6 @@
 		{% if loop.index == 31 %}
 			<span class="banner-scroll last-banner ads">{{ drupal_entity('block', 'gamwadvertisement_36') }}</span>
 		{% endif %}
-
 	{% endfor %}
 {% endif %}
 
@@ -89,7 +96,21 @@
 		{% if loop.index  == 7 %}
 			<span class="block-scroll ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_16') }}</span>
 		{% endif %}
-	
+
+		{## skyscraper ##}
+		{% if loop.index  == 17 %}
+			<span class="wrapper-ads">
+				<span class="ads">{{ drupal_entity('block', 'gamwadvertisement_10') }}</span>
+				<span class="ads">{{ drupal_entity('block', 'gamwadvertisement_59') }}</span>
+			</span>
+		{% endif %}
+		{% if loop.index  == 19 %}
+			<span class="wrapper-ads two">
+				<span class="ads">{{ drupal_entity('block', 'gamwadvertisement_60') }}</span>
+				<span class="ads">{{ drupal_entity('block', 'gamwadvertisement_61') }}</span>
+			</span>
+		{% endif %}
+
 		{% if loop.index in index_hide_lines %}
 			<div class="views-row not-show-line-mobile">
 				{{- row.content -}}
@@ -102,7 +123,7 @@
 
 		{## skyscraper ##}
 		{% if loop.index  == 11 %}
-			<span class="block-mobile block-first ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_10') }}</span>
+			<span class="skys-scroll ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_17') }}</span>
 		{% endif %}
 
 		{## block ##}
@@ -112,13 +133,12 @@
 
 		{## skyscraper ##}
 		{% if loop.index  == 12 %}
-			<span class="block-mobile block-last ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_59') }}</span>
+			<span class="skys-scroll skys2 ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_20') }}</span>
 		{% endif %}
 
 		{## banner ##}
 		{% if loop.index == 16 %}
 			<span class="banner-scroll last-banner ads ads-mobile">{{ drupal_entity('block', 'gamwadvertisement_36') }}</span>
 		{% endif %}
-
 	{% endfor %}
 {% endif %}

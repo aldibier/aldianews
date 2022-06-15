@@ -31,16 +31,11 @@
 	{%
     set row_classes = [
     	default_row_class ? 'views-row',
-		(index >= 3) ? 'not-apply-ads' : '' 
     ]
   %}
 
 	<div{{row.attributes.addClass(row_classes)}}>
 		{{- row.content -}}
-		{% if device == 'desktop' %}
-			<div class="banner-horizontal ads">{{block_gamw}}</div>
-		{% else %}
-			<div class="block-mobile ads">{{block_gamw}}</div>
-		{% endif %}
+		<div class="banner-horizontal ads">{{block_gamw}}</div>
 	</div>
 {% endfor %}

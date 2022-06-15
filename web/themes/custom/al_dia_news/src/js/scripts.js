@@ -102,7 +102,7 @@ import { formApplyModified } from './modules/fixedCloseWebforms';
 			} else {
 				$(containerVideo).height("auto");
 				$(videoThoughtLeaders).removeClass("stuck");
-			}
+			} 
 			$(
 				'.block-field-blocknodethought-leadersfield-video .stuck button[name="close"]'
 			).click(function () {

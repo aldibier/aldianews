@@ -63,18 +63,15 @@
 
   {% if rows %}
     {% if device == 'desktop' %}
-	    <div class="ads">{{ drupal_entity('block', 'gamwadvertisement_31') }}</div>
+	    <div class="margin-bottom ads">{{ drupal_entity('block', 'gamwadvertisement_31') }}</div>
     {% endif %}
     <div class="view-content">
       {{ rows }}
     </div>
     {% if device == 'desktop' %}
-      <span class="skyscraper-home-category ads">{{ drupal_entity('block', 'gamwadvertisement_30') }}</span>
-      <div class="block-fixed-block-contentsquare-advertising-mobile ads">{{ drupal_entity('block', 'gamwadvertisement_20') }}</div>
+      <div class="margin-top ads">{{ drupal_entity('block', 'gamwadvertisement_30') }}</div>
     {% endif %}
-    {% if device == 'mobile' %}
-      <div class="block-fixed-block-contentsquare-advertising-mobile ads">{{ drupal_entity('block', 'gamwadvertisement_20') }}</div>
-    {% endif %}
+    <div class="block-fixed-block-contentsquare-advertising-mobile margin-top ads">{{ drupal_entity('block', 'gamwadvertisement_20') }}</div>
   {% elseif empty %}
     <div class="view-empty">
       {{ empty }}

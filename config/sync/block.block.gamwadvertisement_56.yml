@@ -1,29 +1,26 @@
-uuid: 9b5d5cec-3bf2-4d43-a74b-343a71e4feb4
+uuid: cf53c20b-eda5-48dd-9dde-2746a09d2040
 langcode: en
 status: true
 dependencies:
   module:
-    - block_class
     - gamw
     - mobile_detect
   theme:
     - al_dia_news
-third_party_settings:
-  block_class:
-    classes: 'block-fixed-block-contentbig-vertical-advertising ads'
 id: gamwadvertisement_56
 theme: al_dia_news
-region: group_career_news_jobs
+region: gamw_home_side_category_leadership_top
 weight: 0
 provider: null
 plugin: gamw
 settings:
   id: gamw
-  label: 'GAMW Jobs landing - Side Carrer news skyscraper'
+  label: 'GAMW Category - Block Side Middle 2'
   provider: gamw
   label_display: '0'
-  ad_unit: jobs-landing-skyscraper-side-carrer-news
-  attributes_wrapper: null
+  ad_unit: category-block-side-middle-2
+  attributes_wrapper:
+    - ''
 visibility:
   mobile_detect_device_type:
     id: mobile_detect_device_type

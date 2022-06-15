@@ -29,8 +29,9 @@
     ]
 %}
 	{% if device == 'mobile' and loop.index == 2 %}
-		<span class="skyscraper-mobile ads">{{ drupal_entity('block', 'gamwadvertisement_33') }}</span>
+		<div class="skyscraper-mobile ads">{{ drupal_entity('block', 'gamwadvertisement_33') }}</div>
 	{% endif %}
+
 	<div{{row.attributes.addClass(row_classes)}}>
 		{{- row.content -}}
 	</div>
