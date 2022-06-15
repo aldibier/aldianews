@@ -55,35 +55,32 @@ const initSlick = ($, Drupal) => {
 	})
 
 	/// Slider para interna de noticias
-
-	if ($(".cke-ig").length) {
-		$(".cke-ig").slick({
-			autoplay: true,
-			autoplaySpeed: 3000,
-			infinite: true,
-			slidesToShow: 2,
-			slidesToScroll: 1,
-			centerPadding: "60px",
-			centerMode: true,
-			variableWidth: true,
-			dots: true,
-			mobileFirst: true,
-			responsive: [
-				{
-					breakpoint: 1300,
-					settings: "reInit"
-				},
-				{
-					breakpoint: 992,
-					settings: "reInit"
-				},
-				{
-					breakpoint: 768,
-					settings: "reInit"
-				}
-			]
-		});
-	}
+	$('.cke-ig').slick({
+		autoplay: true,
+		autoplaySpeed: 3000,
+		infinite: true,
+		slidesToShow: 2,
+		slidesToScroll: 1,
+		centerPadding: "60px",
+		centerMode: true,
+		variableWidth: true,
+		dots: true,
+		mobileFirst: true,
+		responsive: [
+			{
+				breakpoint: 1300,
+				settings: "reInit"
+			},
+			{
+				breakpoint: 992,
+				settings: "reInit"
+			},
+			{
+				breakpoint: 768,
+				settings: "reInit"
+			}
+		]
+	})
 
 	// slide landing jobs
 	$(
