@@ -1964,7 +1964,7 @@ var initMain = function initMain($, Drupal) {
   var arrimages = document.querySelectorAll(".cke-ig img");
 
   if (arrimages.length != 0) {
-    arrclone = Array.from(arrimages).map(function (item) {
+    var arrclone = Array.from(arrimages).map(function (item) {
       return item.cloneNode(true);
     });
     var popupgalery = document.createElement("div");

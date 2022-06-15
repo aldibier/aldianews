@@ -837,7 +837,7 @@ const initMain = ($, Drupal) => {
 	//js para galeria en interna de noticias
 	let arrimages = document.querySelectorAll(".cke-ig img")
 	if (arrimages.length !=0){
-		arrclone = Array.from(arrimages).map(item => {
+		let arrclone = Array.from(arrimages).map(item => {
 			return item.cloneNode(true); 
 		})
 		let popupgalery = document.createElement("div")
