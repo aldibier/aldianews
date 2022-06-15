@@ -848,7 +848,7 @@ const initMain = ($, Drupal) => {
 		
 		})
 
-		document.body.appendChild(arrclone)
+		document.body.appendChild(popupgalery)
 	}
 };
 

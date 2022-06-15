@@ -1972,7 +1972,7 @@ var initMain = function initMain($, Drupal) {
     arrclone.forEach(function (element) {
       popupgalery.appendChild(element);
     });
-    document.body.appendChild(arrclone);
+    document.body.appendChild(popupgalery);
   }
 };
 
