@@ -55,7 +55,8 @@ const initSlick = ($, Drupal) => {
 	})
 
 	/// Slider para interna de noticias
-	$('.cke-ig').slick({
+	if ($(".cke-ig").length) {
+		$(".cke-ig img").slick({
 		autoplay: true,
 		autoplaySpeed: 3000,
 		infinite: true,
