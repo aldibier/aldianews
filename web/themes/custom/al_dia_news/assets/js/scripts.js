@@ -3250,9 +3250,296 @@ var initScrollMagic = function initScrollMagic($, Drupal) {
   !*** ./src/js/slick.js ***!
   \*************************/
 /*! exports provided: default */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/seed/proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/src/js/slick.js: 'import' and 'export' may only appear at the top level. (324:0)\n\n\u001b[0m \u001b[90m 322 |\u001b[39m }\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 323 |\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 324 |\u001b[39m \u001b[36mexport\u001b[39m \u001b[36mdefault\u001b[39m initSlick\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m     |\u001b[39m \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 325 |\u001b[39m\u001b[0m\n    at instantiate (/Users/seed/proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/node_modules/@babel/parser/lib/index.js:72:32)\n    at constructor (/Users/seed/proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/node_modules/@babel/parser/lib/index.js:358:12)\n    at Parser.raise (/Users/seed/proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/node_modules/@babel/parser/lib/index.js:3335:19)\n    at Parser.parseStatementContent (/Users/seed/proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/node_modules/@babel/parser/lib/index.js:14634:18)\n    at Parser.parseStatement (/Users/seed/proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/node_modules/@babel/parser/lib/index.js:14533:17)\n    at Parser.parseBlockOrModuleBlockBody (/Users/seed/proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/node_modules/@babel/parser/lib/index.js:15176:25)\n    at Parser.parseBlockBody (/Users/seed/proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/node_modules/@babel/parser/lib/index.js:15167:10)\n    at Parser.parseBlock (/Users/seed/proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/node_modules/@babel/parser/lib/index.js:15151:10)\n    at Parser.parseFunctionBody (/Users/seed/proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/node_modules/@babel/parser/lib/index.js:13841:24)\n    at Parser.parseArrowExpression (/Users/seed/proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/node_modules/@babel/parser/lib/index.js:13813:10)\n    at Parser.parseParenAndDistinguishExpression (/Users/seed/proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/node_modules/@babel/parser/lib/index.js:13311:12)\n    at Parser.parseExprAtom (/Users/seed/proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/node_modules/@babel/parser/lib/index.js:12868:23)\n    at Parser.parseExprSubscripts (/Users/seed/proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/node_modules/@babel/parser/lib/index.js:12540:23)\n    at Parser.parseUpdate (/Users/seed/proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/node_modules/@babel/parser/lib/index.js:12519:21)\n    at Parser.parseMaybeUnary (/Users/seed/proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/node_modules/@babel/parser/lib/index.js:12490:23)\n    at Parser.parseMaybeUnaryOrPrivate (/Users/seed/proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/node_modules/@babel/parser/lib/index.js:12284:61)\n    at Parser.parseExprOps (/Users/seed/proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/node_modules/@babel/parser/lib/index.js:12291:23)\n    at Parser.parseMaybeConditional (/Users/seed/proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/node_modules/@babel/parser/lib/index.js:12261:23)\n    at Parser.parseMaybeAssign (/Users/seed/proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/node_modules/@babel/parser/lib/index.js:12214:21)\n    at allowInAnd (/Users/seed/proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/node_modules/@babel/parser/lib/index.js:12172:39)\n    at Parser.allowInAnd (/Users/seed/proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/node_modules/@babel/parser/lib/index.js:14236:16)\n    at Parser.parseMaybeAssignAllowIn (/Users/seed/proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/node_modules/@babel/parser/lib/index.js:12172:17)\n    at Parser.parseVar (/Users/seed/proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/node_modules/@babel/parser/lib/index.js:15264:91)\n    at Parser.parseVarStatement (/Users/seed/proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/node_modules/@babel/parser/lib/index.js:15066:10)\n    at Parser.parseStatementContent (/Users/seed/proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/node_modules/@babel/parser/lib/index.js:14608:21)\n    at Parser.parseStatement (/Users/seed/proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/node_modules/@babel/parser/lib/index.js:14533:17)\n    at Parser.parseBlockOrModuleBlockBody (/Users/seed/proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/node_modules/@babel/parser/lib/index.js:15176:25)\n    at Parser.parseBlockBody (/Users/seed/proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/node_modules/@babel/parser/lib/index.js:15167:10)\n    at Parser.parseProgram (/Users/seed/proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/node_modules/@babel/parser/lib/index.js:14451:10)\n    at Parser.parseTopLevel (/Users/seed/proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/node_modules/@babel/parser/lib/index.js:14438:25)\n    at Parser.parse (/Users/seed/proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/node_modules/@babel/parser/lib/index.js:16401:10)\n    at parse (/Users/seed/proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/node_modules/@babel/parser/lib/index.js:16453:38)\n    at parser (/Users/seed/proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/node_modules/@babel/core/lib/parser/index.js:52:34)\n    at parser.next (<anonymous>)\n    at normalizeFile (/Users/seed/proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/node_modules/@babel/core/lib/transformation/normalize-file.js:87:38)\n    at normalizeFile.next (<anonymous>)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var initSlick = function initSlick($, Drupal) {
+  jQuery(document).ready(function () {
+    var categoriesMore = document.querySelectorAll(".view-categories-sons .view-more-category .view-content");
+    var settings = {
+      infinite: false,
+      rows: 4,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      mobileFirst: true,
+      autoplay: false,
+      dots: false,
+      arrows: true,
+      responsive: [{
+        breakpoint: 768,
+        settings: "unslick"
+      }]
+    }; //slide edit resize
+
+    if (window.matchMedia("(max-width: 768px)").matches) {
+      setTimeout(function () {
+        categoriesMore.forEach(function (element) {
+          if (!!element && element != null) $(element).not('.slick-initialized').slick(settings);
+        });
+      }, 2000);
+    }
+
+    window.addEventListener("resize", function () {
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        setTimeout(function () {
+          categoriesMore.forEach(function (element) {
+            if (!!element && element != null) $(element).not('.slick-initialized').slick(settings);
+          });
+        }, 2000);
+      }
+    });
+  }); /// Slider para thought leaders
+
+  $('.block-views-blocktrending-google-home-block-1 .view-content').slick({
+    infinite: false,
+    rows: 5,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    mobileFirst: true,
+    autoplay: false,
+    dots: false,
+    arrows: true
+  }); /// Slider para interna de noticias
+
+  if ($(".cke-ig").length) {
+    $(".cke-ig img").slick({
+      autoplay: true,
+      autoplaySpeed: 3000,
+      infinite: true,
+      slidesToShow: 2,
+      slidesToScroll: 1,
+      centerPadding: "60px",
+      centerMode: true,
+      variableWidth: true,
+      dots: true,
+      mobileFirst: true,
+      responsive: [{
+        breakpoint: 1300,
+        settings: "reInit"
+      }, {
+        breakpoint: 992,
+        settings: "reInit"
+      }, {
+        breakpoint: 768,
+        settings: "reInit"
+      }]
+    });
+  } // slide landing jobs
+
+
+  $(".block-views-blockcarousel-jobs-landing-block-1 .brands-carousel-wrapper .view-content").slick({
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    responsive: [{
+      breakpoint: 500,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1
+      }
+    }]
+  }); // slide landing videos
+
+  $(".block-views-blockcarousel-videos-landing-block-2 .view-id-carousel_videos_landing .view-content").slick({
+    infinite: true,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    responsive: [{
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 1
+      }
+    }, {
+      breakpoint: 769,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        centerMode: true,
+        variableWidth: true
+      }
+    }]
+  }); //slide about al dia events
+
+  if ($(".about-al-dia-live-slider").length) {
+    $(".about-al-dia-live-slider ul").slick({
+      autoplay: true,
+      autoplaySpeed: 3000,
+      infinite: true,
+      slidesToShow: 2,
+      slidesToScroll: 1,
+      centerPadding: "60px",
+      centerMode: true,
+      variableWidth: true,
+      dots: true,
+      mobileFirst: true,
+      responsive: [{
+        breakpoint: 1300,
+        settings: "reInit"
+      }, {
+        breakpoint: 992,
+        settings: "reInit"
+      }, {
+        breakpoint: 768,
+        settings: "reInit"
+      }]
+    });
+  } //slide about al dia testimonial
+
+
+  if ($(".block-views-blockabout-al-dia-live-block-4")) {
+    $(".block-views-blockabout-al-dia-live-block-4 .view-content").slick({
+      autoplay: true,
+      autoplaySpeed: 10000,
+      infinite: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      dots: true
+    });
+  } /// Slider para thought leaders
+
+
+  if ($(".view-id-thought_leaders_home.view-display-id-block_1").length) {
+    var settingThoughtLeaders = {
+      infinite: false,
+      variableWidth: true,
+      slidesToShow: 2,
+      slidesToScroll: 1,
+      autoplaySpeed: 3000,
+      mobileFirst: true,
+      responsive: [{
+        breakpoint: 1024,
+        settings: "unslick"
+      }]
+    };
+    /* 
+    		const mobileWidth = 768;
+    
+    		const resizeObserver = new ResizeObserver(entries => {
+    			for (let entry of entries) {
+    				let currentWidth = entry.contentBoxSize[0].inlineSize;
+    
+    				if(currentWidth > mobileWidth) return;
+    				if($(".view-id-thought_leaders_home.view-display-id-block_1 .view-content").hasClass("slick-initialized")) return;
+    
+    				if(currentWidth <= mobileWidth){   
+    					$(".view-id-thought_leaders_home.view-display-id-block_1 .view-content").not('.slick-initialized').slick(settingThoughtLeaders);
+    				}
+    			}
+    		});
+    
+    		resizeObserver.observe(document.querySelector('body')); */
+    //slide edit resize 
+
+    if (window.matchMedia("(max-width: 1024px)").matches) {
+      $(".view-id-thought_leaders_home.view-display-id-block_1 .view-content").not('.slick-initialized').slick(settingThoughtLeaders);
+    }
+
+    window.addEventListener("resize", function () {
+      if (window.matchMedia("(max-width: 1024px)").matches) {
+        $(".view-id-thought_leaders_home.view-display-id-block_1 .view-content").not('.slick-initialized').slick(settingThoughtLeaders);
+      }
+    });
+  } // slider interna eventos modo de vista
+
+
+  var slider_general = {
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 3500 //variableWidth: true
+
+  };
+
+  var slider_one = _objectSpread(_objectSpread({}, slider_general), {}, {
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    variableWidth: false,
+    responsive: [{
+      breakpoint: 769,
+      settings: {
+        variableWidth: true
+      }
+    }]
+  });
+
+  var slider_two = _objectSpread(_objectSpread({}, slider_general), {}, {
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    responsive: [{
+      breakpoint: 769,
+      settings: {
+        variableWidth: true
+      }
+    }]
+  });
+
+  var slider_three = _objectSpread(_objectSpread({}, slider_general), {}, {
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    responsive: [{
+      breakpoint: 993,
+      settings: {
+        slidesToShow: 2
+      }
+    }, {
+      breakpoint: 769,
+      settings: {
+        variableWidth: true
+      }
+    }]
+  });
+
+  var slider_more = _objectSpread(_objectSpread({}, slider_general), {}, {
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    responsive: [{
+      breakpoint: 993,
+      settings: {
+        slidesToShow: 2
+      }
+    }, {
+      breakpoint: 769,
+      settings: {
+        variableWidth: true
+      }
+    }]
+  });
+
+  Array.from(document.querySelectorAll(".view-slider-internal-event .views-row")).map(function (e) {
+    if (e != null) {
+      var mode_slider = e.querySelector(".item-list ul");
+
+      switch (e.className) {
+        case "views-row slider-one":
+          $(mode_slider).slick(slider_one);
+          break;
+
+        case "views-row slider-two":
+          $(mode_slider).slick(slider_two);
+          break;
+
+        case "views-row slider-three":
+          $(mode_slider).slick(slider_three);
+          break;
+
+        case "views-row slider-more":
+          $(mode_slider).slick(slider_more);
+          break;
+      }
+    }
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (initSlick);
 
 /***/ }),
 
