@@ -1958,12 +1958,13 @@ var initMain = function initMain($, Drupal) {
         link.href = "".concat(href + param);
       }
     });
-  }
+  } //js para galeria en interna de noticias
+
 
   var arrimages = document.querySelectorAll(".cke-ig img");
 
   if (arrimages.length != 0) {
-    arrclone = Array.from(arr).map(function (item) {
+    arrclone = Array.from(arrimages).map(function (item) {
       return item.cloneNode(true);
     });
     var popupgalery = document.createElement("div");
