@@ -15,8 +15,20 @@
         overflow: hidden;
 
   li {
-    min-width: 290px;
-    height: 165px;
+    min-width: auto;
+    height: auto;
+    
+    button{
+        width: 0;
+        height: 0;
+        margin-right: 10px;
+        padding: 5px;
+        border: none;
+        font-size: 0;
+        background-color: #c4c4c4;
+        border-radius: 50%;
+        cursor: pointer;
+    }
   }
 
   @media screen and (max-width: $tablet) {
