@@ -83,7 +83,15 @@ const initSlick = ($, Drupal) => {
 	// 	]
 	// })
 
-	$('.cke-ig').slick();
+	$('.cke-ig').slick({
+		slidesToShow: 3,
+		slidesToScroll: 1,
+		centerPadding: "60px",
+		centerMode: true,
+		variableWidth: true,
+		dots: true,
+		mobileFirst: true,
+	});
 
 	// slide landing jobs
 	$(

@@ -3336,7 +3336,15 @@ var initSlick = function initSlick($, Drupal) {
   // 	]
   // })
 
-  $('.cke-ig').slick(); // slide landing jobs
+  $('.cke-ig').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    centerPadding: "60px",
+    centerMode: true,
+    variableWidth: true,
+    dots: true,
+    mobileFirst: true
+  }); // slide landing jobs
 
   $(".block-views-blockcarousel-jobs-landing-block-1 .brands-carousel-wrapper .view-content").slick({
     infinite: true,
