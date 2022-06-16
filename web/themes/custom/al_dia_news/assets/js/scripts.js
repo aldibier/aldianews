@@ -3342,8 +3342,7 @@ var initSlick = function initSlick($, Drupal) {
     centerPadding: "60px",
     centerMode: true,
     variableWidth: true,
-    dots: true,
-    mobileFirst: true
+    dots: true
   }); // slide landing jobs
 
   $(".block-views-blockcarousel-jobs-landing-block-1 .brands-carousel-wrapper .view-content").slick({

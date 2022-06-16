@@ -90,7 +90,6 @@ const initSlick = ($, Drupal) => {
 		centerMode: true,
 		variableWidth: true,
 		dots: true,
-		mobileFirst: true,
 	});
 
 	// slide landing jobs
