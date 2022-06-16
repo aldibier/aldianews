@@ -1,0 +1,92 @@
+.cke-ig {
+
+    ul:not(.slick-slider,.slick-dots) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+        padding-bottom: 50px;
+        margin-bottom: 60px;
+  overflow: hidden;
+
+  li {
+    min-width: 290px;
+    height: 165px;
+  }
+
+  @media screen and (max-width: $tablet) {
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+            
+    li {
+      min-width: 120px;
+      height: 65px;
+    }
+  }
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.slick-slider {
+  margin-bottom: 60px;
+  padding-bottom: 50px;
+  position: relative;
+
+  @media screen and (max-width: $tablet) {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+.slick-list {
+  height: 335px;
+  margin-bottom: 40px;
+
+  @media screen and (max-width: $tablet) {
+    max-width: 500px;
+    margin: 0 auto;
+    height: 105px;
+    margin-bottom: 15px;
+  }
+}
+
+.slick-track {
+  height: inherit;
+  display: flex;
+  align-items: center;
+}
+
+.slick-slide {
+  width: 290px;
+  height: 165px;
+  margin: 0 100px;
+  padding: 0;
+  transition: margin 1s ease-in-out;
+
+  @media screen and (max-width: $large-min) {
+    margin: 0 50px;
+  }
+
+  @media screen and (max-width: $tablet) {
+    width: 120px;
+    height: 65px;
+    margin: 0 22px;
+  }
+}
+
+.slick-center {
+  will-change: transform;
+  transform: scaleX(2.139) scaley(2.031);
+  transition: all 500ms ease;
+
+  @media screen and (max-width: $large-min) {
+    transform: scaleX(1.4) scaley(1.4);
+  }
+
+  @media screen and (max-width: $tablet) {
+    transform: scaleX(1.63) scaleY(1.63);
+  }
+}
+}

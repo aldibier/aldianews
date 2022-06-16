@@ -92,12 +92,20 @@ const initSlick = ($, Drupal) => {
 	});
 
 	$('.popupgalerycontainer').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: false,
+		fade: true,
+		asNavFor: '.slider-nav'
+	});
+
+	$('.popupgalerycontainer').slick({
 		slidesToShow: 3,
 		slidesToScroll: 1,
-		centerPadding: "60px",
-		centerMode: true,
-		variableWidth: true,
+		asNavFor: '.slider-for',
 		dots: true,
+		centerMode: true,
+		focusOnSelect: true
 	});
 
 	// slide landing jobs
