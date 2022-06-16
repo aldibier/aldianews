@@ -3341,7 +3341,6 @@ var initSlick = function initSlick($, Drupal) {
     slidesToScroll: 1,
     centerPadding: "60px",
     centerMode: true,
-    variableWidth: true,
     dots: true
   });
   $('.popupgalerycontainer').slick({
