@@ -1964,13 +1964,21 @@ var initMain = function initMain($, Drupal) {
   var arrimages = document.querySelectorAll(".cke-ig img");
 
   if (arrimages.length != 0) {
-    var arrclone = Array.from(arrimages).map(function (item) {
+    var arrcloneNav = Array.from(arrimages).map(function (item) {
       return item.cloneNode(true);
     });
-    var popupgalery = document.createElement("div");
-    popupgalery.classList.add("popupgalerycontainer");
-    arrclone.forEach(function (element) {
-      popupgalery.appendChild(element);
+    var arrcloneFor = Array.from(arrimages).map(function (item) {
+      return item.cloneNode(true);
+    });
+    var popupgaleryNav = document.createElement("div");
+    popupgalery.classList.add("popupgalerycontainer-nav");
+    var popupgaleryFor = document.createElement("div");
+    popupgalery.classList.add("popupgalerycontainer-for");
+    arrcloneNav.forEach(function (element) {
+      popupgaleryNav.appendChild(element);
+    });
+    arrcloneFor.forEach(function (element) {
+      popupgaleryFor.appendChild(element);
     });
     document.body.appendChild(popupgalery);
   }

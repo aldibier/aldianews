@@ -837,19 +837,31 @@ const initMain = ($, Drupal) => {
 	//js para galeria en interna de noticias
 	let arrimages = document.querySelectorAll(".cke-ig img")
 	if (arrimages.length !=0){
-		let arrclone = Array.from(arrimages).map(item => {
+		let arrcloneNav = Array.from(arrimages).map(item => {
 			return item.cloneNode(true); 
 		})
-		let popupgalery = document.createElement("div")
-		popupgalery.classList.add("popupgalerycontainer")
+		let arrcloneFor = Array.from(arrimages).map(item => {
+			return item.cloneNode(true); 
+		})
+		let popupgaleryNav = document.createElement("div")
+		popupgalery.classList.add("popupgalerycontainer-nav")
+		
+		let popupgaleryFor = document.createElement("div")
+		popupgalery.classList.add("popupgalerycontainer-for")
 
-		arrclone.forEach(element => {
-			popupgalery.appendChild(element)
+		arrcloneNav.forEach(element => {
+			popupgaleryNav.appendChild(element)
+		
+		})
+
+		arrcloneFor.forEach(element => {
+			popupgaleryFor.appendChild(element)
 		
 		})
 
 		document.body.appendChild(popupgalery)
-	}
+	}	
+	
 };
 
 export default initMain;
