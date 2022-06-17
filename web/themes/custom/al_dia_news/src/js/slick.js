@@ -57,7 +57,8 @@ const initSlick = ($, Drupal) => {
 	/// Slider para interna de noticias
 	console.log("hola");
 	$('.cke-ig').slick({
-		
+		//autoplay: true,
+		//autoplaySpeed: 3000,
 		infinite: true,
 		slidesToShow: 2,
 		slidesToScroll: 1,
@@ -151,8 +152,8 @@ const initSlick = ($, Drupal) => {
 	//slide about al dia events
 	if ($(".about-al-dia-live-slider").length) {
 		$(".about-al-dia-live-slider ul").slick({
-			autoplay: true,
-			autoplaySpeed: 3000,
+			//autoplay: true,
+			//autoplaySpeed: 3000,
 			infinite: true,
 			slidesToShow: 2,
 			slidesToScroll: 1,
