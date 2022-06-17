@@ -15,8 +15,7 @@
         overflow: hidden;
 
   li {
-    min-width: auto;
-    height: auto;
+    list-style: none;
     
     &::marker{
         display: none;
@@ -98,17 +97,48 @@ img {
   }
 }
 
-.slick-center {
-  will-change: transform;
-  transform: scaleX(2.139) scaley(2.031);
-  transition: all 500ms ease;
+    .slick-center {
+    will-change: transform;
+    transform: scaleX(2.139) scaley(2.031);
+    transition: all 500ms ease;
 
-  @media screen and (max-width: $large-min) {
-    transform: scaleX(1.4) scaley(1.4);
-  }
+        @media screen and (max-width: $large-min) {
+            transform: scaleX(1.4) scaley(1.4);
+        }
 
-  @media screen and (max-width: $tablet) {
-    transform: scaleX(1.63) scaleY(1.63);
-  }
-}
+        @media screen and (max-width: $tablet) {
+            transform: scaleX(1.63) scaleY(1.63);
+        }
+    }
+
+    .slick-arrow {
+        width: 15px;
+        height: 15px;
+        border: none;
+        position: absolute;
+        bottom: calc(0% - 21px);
+        background-color: transparent;
+        background-size: contain;
+        background-repeat: no-repeat;
+        font-size: 0;
+        transform: translateY(100%);
+      }
+    
+      .slick-prev {
+        left: calc(50% - 25px);
+        background-image: url("../../assets/img/arrow-left.svg");
+    
+        &.slick-disabled {
+          opacity: 0.3;
+        }
+      }
+    
+      .slick-next {
+        left: calc(50% + 25px);
+        background-image: url("../../assets/img/arrow-right.svg");
+    
+        &.slick-disabled {
+          opacity: 0.3;
+        }
+      }
 }
