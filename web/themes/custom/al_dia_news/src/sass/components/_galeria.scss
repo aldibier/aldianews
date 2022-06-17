@@ -1,8 +1,8 @@
 .cke-ig {
 
     img{
-        width: 100% !important;
-        height: 75% !important;
+        width: 220px !important;
+        height: 150px !important;
         margin: 0px 40px;
     }
 
@@ -17,6 +17,10 @@
   li {
     min-width: auto;
     height: auto;
+    
+    &::marker{
+        display: none;
+    }
     
     button{
         width: 0;
