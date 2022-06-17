@@ -3309,39 +3309,28 @@ var initSlick = function initSlick($, Drupal) {
     arrows: true
   }); /// Slider para interna de noticias
 
-  console.log("hola"); // $('.cke-ig').slick({
-  // 	autoplay: true,
-  // 	autoplaySpeed: 3000,
-  // 	infinite: true,
-  // 	slidesToShow: 2,
-  // 	slidesToScroll: 1,
-  // 	centerPadding: "60px",
-  // 	centerMode: true,
-  // 	variableWidth: true,
-  // 	dots: true,
-  // 	mobileFirst: true,
-  // 	responsive: [
-  // 		{
-  // 			breakpoint: 1300,
-  // 			settings: "reInit"
-  // 		},
-  // 		{
-  // 			breakpoint: 992,
-  // 			settings: "reInit"
-  // 		},
-  // 		{
-  // 			breakpoint: 768,
-  // 			settings: "reInit"
-  // 		}
-  // 	]
-  // })
-
+  console.log("hola");
   $('.cke-ig').slick({
-    slidesToShow: 3,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    infinite: true,
+    slidesToShow: 2,
     slidesToScroll: 1,
     centerPadding: "60px",
     centerMode: true,
-    dots: true
+    variableWidth: true,
+    dots: true,
+    mobileFirst: true,
+    responsive: [{
+      breakpoint: 1300,
+      settings: "reInit"
+    }, {
+      breakpoint: 992,
+      settings: "reInit"
+    }, {
+      breakpoint: 768,
+      settings: "reInit"
+    }]
   });
   $('.popupgalerycontainer').slick({
     slidesToShow: 1,
