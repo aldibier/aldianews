@@ -1,8 +1,8 @@
 .cke-ig {
 
     img{
-        width: 220px !important;
-        height: 150px !important;
+        width: 210px !important;
+        height: 125px !important;
         margin: 0px 40px;
     }
 
@@ -63,7 +63,7 @@ img {
 
 .slick-list {
   height: 335px;
-  margin-bottom: 40px;
+  margin-bottom: -30px;
 
   @media screen and (max-width: $tablet) {
     max-width: 500px;
@@ -74,6 +74,7 @@ img {
 
   .slick-cloned{
     margin: 0px 50px;
+    opacity: 0.6;
   }
 }
 
@@ -81,11 +82,15 @@ img {
   height: inherit;
   display: flex;
   align-items: center;
-  margin: 0px 5px;
+  margin: 0px;
 
   img{
-    margin: 0px 5px;
+    margin: 0px 50px;
   }
+}
+
+.slick-current{
+    z-index: 1;
 }
 
 .slick-slide {
@@ -134,7 +139,7 @@ img {
       }
     
       .slick-prev {
-        left: calc(50% - 25px);
+        top: calc(50% - 70px);
         background-image: url("../../assets/img/arrow-left.svg");
     
         &.slick-disabled {
@@ -143,7 +148,8 @@ img {
       }
     
       .slick-next {
-        left: calc(50% + 25px);
+        top: calc(50% - 70px);
+        right: 0px;
         background-image: url("../../assets/img/arrow-right.svg");
     
         &.slick-disabled {
