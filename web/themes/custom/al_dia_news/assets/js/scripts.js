@@ -1980,7 +1980,7 @@ var initMain = function initMain($, Drupal) {
     arrcloneFor.forEach(function (element) {
       popupgaleryFor.appendChild(element);
     });
-    document.body.appendChild(popupgalery);
+    document.body.append(popupgaleryNav, popupgaleryFor);
   }
 };
 

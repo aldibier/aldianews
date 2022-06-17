@@ -859,7 +859,7 @@ const initMain = ($, Drupal) => {
 		
 		})
 
-		document.body.appendChild(popupgalery)
+		document.body.append(popupgaleryNav, popupgaleryFor)
 	}	
 	
 };
