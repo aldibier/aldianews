@@ -844,10 +844,10 @@ const initMain = ($, Drupal) => {
 			return item.cloneNode(true); 
 		})
 		let popupgaleryNav = document.createElement("div")
-		popupgalery.classList.add("popupgalerycontainer-nav")
+		popupgaleryNav.classList.add("popupgalerycontainer-nav")
 		
 		let popupgaleryFor = document.createElement("div")
-		popupgalery.classList.add("popupgalerycontainer-for")
+		popupgaleryFor.classList.add("popupgalerycontainer-for")
 
 		arrcloneNav.forEach(element => {
 			popupgaleryNav.appendChild(element)

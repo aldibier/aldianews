@@ -1971,9 +1971,9 @@ var initMain = function initMain($, Drupal) {
       return item.cloneNode(true);
     });
     var popupgaleryNav = document.createElement("div");
-    popupgalery.classList.add("popupgalerycontainer-nav");
+    popupgaleryNav.classList.add("popupgalerycontainer-nav");
     var popupgaleryFor = document.createElement("div");
-    popupgalery.classList.add("popupgalerycontainer-for");
+    popupgaleryFor.classList.add("popupgalerycontainer-for");
     arrcloneNav.forEach(function (element) {
       popupgaleryNav.appendChild(element);
     });
