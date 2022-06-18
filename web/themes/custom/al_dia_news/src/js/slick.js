@@ -97,7 +97,6 @@ const initSlick = ($, Drupal) => {
 		slidesToShow: 3,
 		slidesToScroll: 1,
 		asNavFor: '.popupgalerycontainer-nav',
-		dots: true,
 		centerMode: true,
 		focusOnSelect: true
 	});
