@@ -3340,17 +3340,17 @@ var initSlick = function initSlick($, Drupal) {
       settings: "reInit"
     }]
   });
-  $('.popupgalerycontainer').slick({
+  $('.popupgalerycontainer-nav').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
     fade: true,
-    asNavFor: '.slider-nav'
+    asNavFor: '.popupgalerycontainer-for'
   });
-  $('.popupgalerycontainer').slick({
+  $('.popupgalerycontainer-for').slick({
     slidesToShow: 3,
     slidesToScroll: 1,
-    asNavFor: '.slider-for',
+    asNavFor: '.popupgalerycontainer-nav',
     dots: true,
     centerMode: true,
     focusOnSelect: true
