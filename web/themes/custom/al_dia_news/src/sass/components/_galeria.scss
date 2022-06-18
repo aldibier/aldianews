@@ -157,3 +157,38 @@ img {
         }
       }
 }
+
+.popupgalerycontainer-nav{
+    width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+    
+    .slick-slide{
+            height: 40vh;
+          background-color: #fff;
+          text-align: center;
+          line-height: 40vh;
+          font-size: 40px;
+          font-weight: bold;
+          border: 1px solid #000;
+          margin-bottom: 20px;
+          box-sizing: border-box;
+         
+    }
+}
+
+.popupgalerycontainer-for{
+  .slick-cloned{
+      text-align: center;
+      box-sizing: border-box;
+      padding: 20px;
+      background-color: yellow;
+      border: 1px solid #000;
+      cursor: pointer;
+  }
+  
+  .slick-cloned:hover {
+        background-color: rgb(255, 179, 0);
+    }
+}
