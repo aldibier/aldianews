@@ -206,4 +206,37 @@ img {
   .slick-cloned:hover {
         background-color: #000000 ;
     }
+
+    .slick-next{
+        width: 28px;
+        height: 70px;
+        border: none;
+        position: absolute;
+        bottom: calc(0% - 21px);
+        background-color: transparent;
+        background-size: contain;
+        background-repeat: no-repeat;
+        font-size: 0;
+        top: calc(50% - 0px);
+        right: 0;
+        background-image: url(/themes/custom/al_dia_news/assets/css/../../assets/img/der.png);
+        filter: invert(100%);
+    }
+
+    .slick-prev{
+        width: 28px;
+        height: 70px;
+        border: none;
+        position: absolute;
+        bottom: calc(0% - 21px);
+        background-color: transparent;
+        background-size: contain;
+        background-repeat: no-repeat;
+        font-size: 0;
+        top: calc(50% - 0px);
+        left: 0;
+        background-image: url(/themes/custom/al_dia_news/assets/css/../../assets/img/izq.png);
+        filter: invert(100%);
+        z-index: 999;
+    }
 }

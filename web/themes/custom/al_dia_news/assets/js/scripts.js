@@ -3349,7 +3349,7 @@ var initSlick = function initSlick($, Drupal) {
     asNavFor: '.popupgalerycontainer-for'
   });
   $('.popupgalerycontainer-for').slick({
-    slidesToShow: 3,
+    slidesToShow: 2,
     slidesToScroll: 1,
     asNavFor: '.popupgalerycontainer-nav',
     centerMode: true,
