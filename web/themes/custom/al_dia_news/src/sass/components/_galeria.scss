@@ -159,13 +159,20 @@ img {
 }
 
 .popupgalerycontainer-nav{
-    width: 85%;
+    width: 100%;
     margin: 0 auto;
     position: relative;
     z-index: 10;
     background: #000000e3;
-    height: 760px;
     top: 0;
+
+    .slick-list{
+        max-width: 1330px;
+        width: 100%;
+        max-height: 760px;
+        height: auto;
+        overflow: hidden;
+    }
       
     .slick-active{
         
@@ -222,7 +229,7 @@ img {
 }
 
 .popupgalerycontainer-for{
-    width: 85%;
+    width: 100%;
     margin: 0 auto;
     z-index: 10;
     background: #000000e3;
