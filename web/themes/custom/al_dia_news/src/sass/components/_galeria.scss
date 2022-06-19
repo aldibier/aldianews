@@ -165,6 +165,7 @@ img {
     z-index: 10;
     background: #000000e3;
     top: 0;
+    display: none;
 
     .slick-list{
         max-width: 1330px;
@@ -172,6 +173,28 @@ img {
         max-height: 760px;
         height: auto;
         overflow: hidden;
+
+        &::before{
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 200px;
+            height: 100%;
+            background: linear-gradient(90deg, #333333 0%, rgba(217, 217, 217, 0) 100%);
+        }
+
+        &::after{
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 200px;
+            height: 100%;
+            background: linear-gradient(270deg, #333333 0%, rgba(217, 217, 217, 0) 100%);
+        }
     }
       
     .slick-active{
@@ -228,6 +251,9 @@ img {
     }
 }
 
+.popupgalerycontainer-nav.active{
+    display: block;
+}
 .popupgalerycontainer-for{
     width: 100%;
     margin: 0 auto;
@@ -235,6 +261,7 @@ img {
     background: #000000e3;
     bottom: 0;
     padding: 0px 160px;
+    display: none;
     
   img{
       text-align: center;
@@ -263,7 +290,7 @@ img {
         background-repeat: no-repeat;
         font-size: 0;
         top: calc(50% - 0px);
-        right: 110px;
+        right: 8%;
         background-image: url(/themes/custom/al_dia_news/assets/css/../../assets/img/der.png);
         filter: invert(100%);
     }
@@ -279,9 +306,12 @@ img {
         background-repeat: no-repeat;
         font-size: 0;
         top: calc(50% - 0px);
-        left: 110px;
+        left: 8%;
         background-image: url(/themes/custom/al_dia_news/assets/css/../../assets/img/izq.png);
         filter: invert(100%);
         z-index: 999;
     }
+}
+.popupgalerycontainer-for.active{
+    display: block;
 }

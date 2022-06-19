@@ -125,6 +125,41 @@ import { formApplyModified } from './modules/fixedCloseWebforms';
 	});
 
 	$(window).on("load", function () {
+
+		let slider1 = document.querySelector(".popupgalerycontainer-nav ");
+		let slider2 = document.querySelector(".popupgalerycontainer-for ");
+		let currentDiv = document.querySelector(".site-footer");
+
+		if ( !!slider1 && !!slider2 && !!currentDiv ) {
+			let newDiv = document.createElement("div");
+			newDiv.classList.add('slider-black-aldia');
+			
+			let newDivX = document.createElement("div");
+			newDivX.classList.add('slider-black-x');
+			let newContent = document.createTextNode("X");
+
+			newDivX.appendChild(newContent);
+			newDiv.appendChild(newDivX); 
+			currentDiv.appendChild(newDiv);
+			newDiv.appendChild(slider1);
+			newDiv.appendChild(slider2);
+			showSlider();
+		}
+
+		function showSlider() {
+			let slider1mini = document.querySelector(".cke-ig .slick-slide");
+			let slider2show = document.querySelector(".slider-black-aldia");
+			let slider2close = document.querySelector(".slider-black-x");
+
+			if ( !!slider1mini && !!slider2show && !!slider2close ) {
+				slider1mini.addEventListener("click", () => {
+					slider2show.classList.add('active');
+				});
+				slider2close.addEventListener("click", () => {
+					slider2show.classList.remove('active');
+				});
+			}
+		}
 		videoSDK();
 
 		const headingTags = document.querySelectorAll("h1, h2, h3");
