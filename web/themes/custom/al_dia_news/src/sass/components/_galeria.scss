@@ -171,15 +171,16 @@ img {
     margin: 0 auto;
     position: relative;
     z-index: 10;
-    background: #000000e3;
+    background: rgb(0 0 0 / 90%);
     top: 0;
 
     .slick-list{
         max-width: 1330px;
         width: 100%;
-        max-height: 760px;
+        max-height: 560px;
         height: auto;
         overflow: hidden;
+        margin: 0px 70px;
 
         &::before{
             content: '';
