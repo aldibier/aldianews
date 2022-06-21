@@ -1958,29 +1958,6 @@ var initMain = function initMain($, Drupal) {
         link.href = "".concat(href + param);
       }
     });
-  } //js para galeria en interna de noticias
-
-
-  var arrimages = document.querySelectorAll(".cke-ig img");
-
-  if (arrimages.length != 0) {
-    var arrcloneNav = Array.from(arrimages).map(function (item) {
-      return item.cloneNode(true);
-    });
-    var arrcloneFor = Array.from(arrimages).map(function (item) {
-      return item.cloneNode(true);
-    });
-    var popupgaleryNav = document.createElement("div");
-    popupgaleryNav.classList.add("popupgalerycontainer-nav");
-    var popupgaleryFor = document.createElement("div");
-    popupgaleryFor.classList.add("popupgalerycontainer-for");
-    arrcloneNav.forEach(function (element) {
-      popupgaleryNav.appendChild(element);
-    });
-    arrcloneFor.forEach(function (element) {
-      popupgaleryFor.appendChild(element);
-    });
-    document.body.append(popupgaleryNav, popupgaleryFor);
   }
 };
 
@@ -2932,7 +2909,30 @@ __webpack_require__.r(__webpack_exports__);
           Object(_modules_fixedCloseWebforms__WEBPACK_IMPORTED_MODULE_8__["formApplyModified"])(formRegisterEvent, '.close-modal');
         }, 0);
       }
-    });
+    }); //js para galeria en interna de noticias
+
+    var arrimages = document.querySelectorAll(".cke-ig img");
+
+    if (arrimages.length != 0) {
+      var arrcloneNav = Array.from(arrimages).map(function (item) {
+        return item.cloneNode(true);
+      });
+      var arrcloneFor = Array.from(arrimages).map(function (item) {
+        return item.cloneNode(true);
+      });
+      var popupgaleryNav = document.createElement("div");
+      popupgaleryNav.classList.add("popupgalerycontainer-nav");
+      var popupgaleryFor = document.createElement("div");
+      popupgaleryFor.classList.add("popupgalerycontainer-for");
+      arrcloneNav.forEach(function (element) {
+        popupgaleryNav.appendChild(element);
+      });
+      arrcloneFor.forEach(function (element) {
+        popupgaleryFor.appendChild(element);
+      });
+      document.body.append(popupgaleryNav, popupgaleryFor);
+    }
+
     var slider1 = document.querySelector(".popupgalerycontainer-nav ");
     var slider2 = document.querySelector(".popupgalerycontainer-for ");
     var currentDiv = document.querySelector(".site-footer");

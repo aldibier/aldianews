@@ -489,6 +489,33 @@ import { formApplyModified } from './modules/fixedCloseWebforms';
 			}
 	
 		})
+		//js para galeria en interna de noticias
+		let arrimages = document.querySelectorAll(".cke-ig img")
+		if (arrimages.length !=0){
+		let arrcloneNav = Array.from(arrimages).map(item => {
+			return item.cloneNode(true); 
+		})
+		let arrcloneFor = Array.from(arrimages).map(item => {
+			return item.cloneNode(true); 
+		})
+		let popupgaleryNav = document.createElement("div")
+		popupgaleryNav.classList.add("popupgalerycontainer-nav")
+		
+		let popupgaleryFor = document.createElement("div")
+		popupgaleryFor.classList.add("popupgalerycontainer-for")
+
+		arrcloneNav.forEach(element => {
+			popupgaleryNav.appendChild(element)
+		
+		})
+
+		arrcloneFor.forEach(element => {
+			popupgaleryFor.appendChild(element)
+		
+		})
+
+		document.body.append(popupgaleryNav, popupgaleryFor)
+	}
 
 		let slider1 = document.querySelector(".popupgalerycontainer-nav ");
 		let slider2 = document.querySelector(".popupgalerycontainer-for ");
