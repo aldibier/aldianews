@@ -542,6 +542,7 @@ import { formApplyModified } from './modules/fixedCloseWebforms';
 
 		function showSlider() {
 			let slider2show = document.querySelector(".slider-black-aldia");
+			let slider2active = document.querySelector(".slider-black-aldia .popupgalerycontainer-nav .slick-next");
 			let slider2close = document.querySelector(".slider-black-x");
 
 
@@ -551,6 +552,9 @@ import { formApplyModified } from './modules/fixedCloseWebforms';
 				if ( !!e && !!slider2show && !!slider2close ) {
 				e.addEventListener("click", () => {
 					slider2show.classList.add('active');
+					if (!!slider2active){
+						slider2active.click();
+					}
 				});
 				slider2close.addEventListener("click", () => {
 					slider2show.classList.remove('active');

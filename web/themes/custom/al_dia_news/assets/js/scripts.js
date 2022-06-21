@@ -2953,11 +2953,16 @@ __webpack_require__.r(__webpack_exports__);
 
     function showSlider() {
       var slider2show = document.querySelector(".slider-black-aldia");
+      var slider2active = document.querySelector(".slider-black-aldia .popupgalerycontainer-nav .slick-next");
       var slider2close = document.querySelector(".slider-black-x");
       Array.from(document.querySelectorAll(".cke-ig .slick-slide")).map(function (e) {
         if (!!e && !!slider2show && !!slider2close) {
           e.addEventListener("click", function () {
             slider2show.classList.add('active');
+
+            if (!!slider2active) {
+              slider2active.click();
+            }
           });
           slider2close.addEventListener("click", function () {
             slider2show.classList.remove('active');
