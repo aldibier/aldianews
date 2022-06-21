@@ -34,6 +34,12 @@
     }
   }
 
+  li .slick-active{
+    button{
+        background-color: #ED1C24;
+    }
+  }
+
   @media screen and (max-width: $tablet) {
             padding-bottom: 30px;
             margin-bottom: 30px;
@@ -127,8 +133,8 @@ img {
     }
 
     .slick-arrow {
-        width: 15px;
-        height: 15px;
+        width: 35px;
+        height: 20px;
         border: none;
         position: absolute;
         bottom: calc(0% - 21px);
@@ -140,7 +146,7 @@ img {
       }
     
       .slick-prev {
-        top: calc(50% - 45px);
+        top: calc(50% - 60px);
         background-image: url("../../assets/img/izq.png");
     
         &.slick-disabled {
@@ -149,8 +155,8 @@ img {
       }
     
       .slick-next {
-        top: calc(50% - 45px);
-        right: 0px;
+        top: calc(50% - 60px);
+        right: -20px;
         background-image: url("../../assets/img/der.png");
     
         &.slick-disabled {
