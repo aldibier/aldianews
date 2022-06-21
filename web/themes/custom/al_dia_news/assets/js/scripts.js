@@ -2702,39 +2702,6 @@ __webpack_require__.r(__webpack_exports__);
     }
   });
   $(window).on("load", function () {
-    var slider1 = document.querySelector(".popupgalerycontainer-nav ");
-    var slider2 = document.querySelector(".popupgalerycontainer-for ");
-    var currentDiv = document.querySelector(".site-footer");
-
-    if (!!slider1 && !!slider2 && !!currentDiv) {
-      var newDiv = document.createElement("div");
-      newDiv.classList.add('slider-black-aldia');
-      var newDivX = document.createElement("div");
-      newDivX.classList.add('slider-black-x');
-      var newContent = document.createTextNode("X");
-      newDivX.appendChild(newContent);
-      newDiv.appendChild(newDivX);
-      currentDiv.appendChild(newDiv);
-      newDiv.appendChild(slider1);
-      newDiv.appendChild(slider2);
-      showSlider();
-    }
-
-    function showSlider() {
-      var slider1mini = document.querySelector(".cke-ig .slick-slide");
-      var slider2show = document.querySelector(".slider-black-aldia");
-      var slider2close = document.querySelector(".slider-black-x");
-
-      if (!!slider1mini && !!slider2show && !!slider2close) {
-        slider1mini.addEventListener("click", function () {
-          slider2show.classList.add('active');
-        });
-        slider2close.addEventListener("click", function () {
-          slider2show.classList.remove('active');
-        });
-      }
-    }
-
     Object(_modules_video_pre_roll__WEBPACK_IMPORTED_MODULE_6__["videoSDK"])();
     var headingTags = document.querySelectorAll("h1, h2, h3");
     var paragraphTags = document.querySelectorAll("p");
@@ -2966,6 +2933,38 @@ __webpack_require__.r(__webpack_exports__);
         }, 0);
       }
     });
+    var slider1 = document.querySelector(".popupgalerycontainer-nav ");
+    var slider2 = document.querySelector(".popupgalerycontainer-for ");
+    var currentDiv = document.querySelector(".site-footer");
+
+    if (!!slider1 && !!slider2 && !!currentDiv) {
+      var newDiv = document.createElement("div");
+      newDiv.classList.add('slider-black-aldia');
+      var newDivX = document.createElement("div");
+      newDivX.classList.add('slider-black-x');
+      var newContent = document.createTextNode("X");
+      newDivX.appendChild(newContent);
+      newDiv.appendChild(newDivX);
+      currentDiv.appendChild(newDiv);
+      newDiv.appendChild(slider1);
+      newDiv.appendChild(slider2);
+      showSlider();
+    }
+
+    function showSlider() {
+      var slider2show = document.querySelector(".slider-black-aldia");
+      var slider2close = document.querySelector(".slider-black-x");
+      Array.from(document.querySelectorAll(".cke-ig .slick-slide")).map(function (e) {
+        if (!!e && !!slider2show && !!slider2close) {
+          e.addEventListener("click", function () {
+            slider2show.classList.add('active');
+          });
+          slider2close.addEventListener("click", function () {
+            slider2show.classList.remove('active');
+          });
+        }
+      });
+    }
   });
   Drupal.behaviors.aldia_news_sumoselect = {
     attach: function attach(context, settings) {

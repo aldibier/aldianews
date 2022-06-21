@@ -165,7 +165,6 @@ img {
     z-index: 10;
     background: #000000e3;
     top: 0;
-    display: none;
 
     .slick-list{
         max-width: 1330px;
@@ -251,9 +250,7 @@ img {
     }
 }
 
-.popupgalerycontainer-nav.active{
-    display: block;
-}
+
 .popupgalerycontainer-for{
     width: 100%;
     margin: 0 auto;
@@ -261,7 +258,6 @@ img {
     background: #000000e3;
     bottom: 0;
     padding: 0px 160px;
-    display: none;
     
   img{
       text-align: center;
@@ -312,6 +308,11 @@ img {
         z-index: 999;
     }
 }
-.popupgalerycontainer-for.active{
+
+.slider-black-aldia{
+    display: none;
+}
+
+.slider-black-aldia.active{
     display: block;
 }
