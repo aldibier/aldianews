@@ -5,6 +5,14 @@
         max-width: 210px !important;
         height: 125px !important;
         margin: 0px 40px;
+
+        @media screen and (max-width: $tablet) {
+            width: 100% !important;
+            max-width: 100px !important;
+            height: auto!important;
+            max-height: 70px !important;
+            margin: 0px 0px !important;            
+        }
     }
 
     .slick-slider, .slick-dots {
