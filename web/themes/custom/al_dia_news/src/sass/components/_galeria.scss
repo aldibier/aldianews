@@ -97,8 +97,12 @@ img {
   margin: 0px;
 
   img{
-    margin: 0px 15px;
+    margin: 0px 50px;
     opacity: 0.6;
+
+    @media screen and (max-width: $tablet) {
+        margin: 0px 20px;
+      }
   }
 
   .slick-current.slick-active{
