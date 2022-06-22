@@ -52,12 +52,13 @@
   @media screen and (max-width: $tablet) {
             padding-bottom: 30px;
             margin-bottom: 30px;
+  }
             
     li {
       
       
     }
-  }
+  
 }
 
 img {
@@ -300,6 +301,9 @@ img {
     background: #000000e3;
     bottom: 0;
     padding: 0px 160px;
+    @media screen and (max-width: $tablet) {
+        padding:0px 0px;
+    }
     
   img{
       text-align: center;
