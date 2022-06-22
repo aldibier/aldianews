@@ -251,6 +251,10 @@ img {
         max-width: 1330px !important;
         left: -1444px;
         position: relative;
+
+        @media screen and (max-width: $tablet) {
+            left: -345px;
+        }
     }
 
     .slick-next{
