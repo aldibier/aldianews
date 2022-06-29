@@ -1,5 +1,5 @@
 const initSlick = ($, Drupal) => {
-	jQuery(document).ready(function () {
+    jQuery(document).ready(function () {
 		let categoriesMore = document.querySelectorAll(
 			".view-categories-sons .view-more-category .view-content"
 		);
@@ -53,6 +53,80 @@ const initSlick = ($, Drupal) => {
 		dots: false,
 		arrows: true,
 	})
+
+	/// Slider para interna de noticias
+	
+	$('.cke-ig').slick({
+		// autoplay: true,
+		// autoplaySpeed: 3000,
+		infinite: true,
+		slidesToShow: 2,
+		slidesToScroll: 1,
+		centerPadding: "60px",
+		centerMode: true,
+		variableWidth: true,
+		dots: true,
+		asNavFor: '.popupgalerycontainer-nav',
+		mobileFirst: true,
+		responsive: [
+			{
+				breakpoint: 1300,
+				settings: "reInit"
+			},
+			{
+				breakpoint: 992,
+				settings: "reInit"
+			},
+			{
+				breakpoint: 768,
+				settings: "reInit"
+			}
+		]
+	})
+
+
+	$('.popupgalerycontainer-nav').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: true,
+		fade: true,
+		infinite: true,
+		asNavFor: '.popupgalerycontainer-for',
+		focusOnSelect: true,
+	});
+
+	$('.popupgalerycontainer-for').slick({
+		slidesToShow: 5,
+		infinite: true,
+		arrows: true,
+		slidesToScroll: 1,
+		asNavFor: '.popupgalerycontainer-nav',
+		centerMode: false,
+		focusOnSelect: true,
+		responsive: [
+			{
+			  breakpoint: 767,
+			  settings: {
+				slidesToShow: 5,
+				slidesToScroll: 1
+			  }
+			},
+			{
+			  breakpoint: 600,
+			  settings: {
+				slidesToShow: 2,
+				slidesToScroll: 1
+			  }
+			},
+			{
+			  breakpoint: 480,
+			  settings: {
+				slidesToShow: 2,
+				slidesToScroll: 1
+			  }
+			}
+		]
+	});
 
 	// slide landing jobs
 	$(
