@@ -91,7 +91,7 @@ const initSlick = ($, Drupal) => {
 		arrows: true,
 		fade: true,
 		infinite: true,
-		asNavFor: '.popupgalerycontainer-for',
+		//asNavFor: '.popupgalerycontainer-for',
 		focusOnSelect: true,
 	});
 
