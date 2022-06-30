@@ -128,6 +128,7 @@ const initSlick = ($, Drupal) => {
 		]
 	});
 
+
 	// slide landing jobs
 	$(
 		".block-views-blockcarousel-jobs-landing-block-1 .brands-carousel-wrapper .view-content"
