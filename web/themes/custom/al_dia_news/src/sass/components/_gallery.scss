@@ -10,7 +10,7 @@
 			max-width: 100px !important;
 			height: auto !important;
 			max-height: 70px !important;
-			margin: 0px 0px !important;
+			//margin: 0px 0px !important;
 		}
 	}
 
@@ -128,7 +128,7 @@
 		transition: margin 1s ease-in-out;
 
 		@media screen and (max-width: $large-min) {
-			margin: 0 50px;
+			//margin: 0 50px;
 		}
 
 		@media screen and (max-width: $tablet) {
@@ -144,7 +144,8 @@
 		transition: all 500ms ease;
 
 		@media screen and (max-width: $large-min) {
-			transform: scaleX(1.4) scaley(1.4);
+			//transform: scaleX(1.4) scaley(1.4);
+			transform: scaleX(1.5) scaley(1.5);
 		}
 
 		@media screen and (max-width: $tablet) {
@@ -206,6 +207,9 @@
 	.slick-track {
 		display: flex !important;
 		min-height: 760px;
+		@media screen and (max-width: $tablet-max) {
+			min-height: 560px;
+		}
 		@media screen and (max-width: $tablet) {
 			min-height: 160px;
 		}
@@ -217,6 +221,9 @@
 		min-height: 760px;
 		//height: 100%;
 		//overflow-y: visible;
+		@media screen and (max-width: $tablet-max) {
+			min-height: 560px;
+		}
 		@media screen and (max-width: $tablet) {
 			min-height: 191px;
 		}
@@ -262,6 +269,7 @@
 		cursor: pointer;
 		@media screen and (max-width: $tablet )  {
 			width: 20px;
+			top: 80px;
 		}
 	}
 
@@ -284,6 +292,7 @@
 		cursor: pointer;
 		@media screen and (max-width: $tablet )  {
 			width: 20px;
+			top: 80px;
 		}
 	}
 	img{
@@ -291,8 +300,13 @@
 		width: 100% !important;
 		max-height: 760px;
 		filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.25));
+		@media(max-width: $tablet-max){
+			max-height: 560px;
+		}
 		@media(max-width: 768px){
 			max-width: 280px !important;
+			height: 160px;
+			object-fit: cover;
 		}
 	}
 	.slick-list.draggable{
@@ -302,7 +316,7 @@
 		&::before , &::after {
 			content: "''";
 			max-width: 100%;
-			max-height: 767px;
+			max-height: 760px;
 			position: absolute;
 			width: 200px;
 			height: 100%;
@@ -311,6 +325,10 @@
 			color: transparent;
 			right: 0;
 			background: linear-gradient(270deg, #333333 0%, rgba(217, 217, 217, 0) 100%);
+			@media screen and(max-width: $tablet-max) {
+				width: 60px;
+				max-height: 560px;
+			}
 			@media screen and(max-width: $tablet) {
 				width: 60px;
 				max-height: 160px;
@@ -334,10 +352,19 @@
 	z-index: 10;
 	bottom: 0;
 	margin-top: 15px;
-	@media screen and (max-width: $tablet) {
-		width: 60%;
+
+	@media screen and (max-width: 1100px) {
+		max-width: 865px;
+	}
+	@media screen and (max-width: 990px) {
+		max-width: 80%;
 		margin-top: 0;
 	}
+
+	// @media screen and (max-width: $tablet) {
+	// 	width: 80%;
+	// 	margin-top: 0;
+	// }
 	
 	.slick-list {
 		overflow: hidden;
@@ -348,12 +375,14 @@
 		text-align: center;
 		box-sizing: border-box;
 		padding: 3px;
-	
 		opacity: 0.8;
 		cursor: pointer;
 		//   margin: 15px 10px;
+		@media screen and (max-width: 1100px) {
+			padding: 1px ;
+		}
 		@media screen and (max-width: $tablet) {
-			padding: 10px !important;
+			padding: 10px ;
 		}
 	}
 
@@ -386,9 +415,13 @@
 		background-image: url(/themes/custom/al_dia_news/assets/css/../../assets/img/der.png);
 		filter: invert(100%);
 		cursor: pointer;
+		@media screen and (max-width: 990px) {
+			top: 20px;
+		}
 		@media screen and (max-width: $tablet) {
 			width: 20px;
 			right: -22px;
+			top: 60px;
 		}
 	}
 
@@ -408,9 +441,13 @@
 		filter: invert(100%);
 		z-index: 999;
 		cursor: pointer;
+		@media screen and (max-width: 990px) {
+			top: 20px;
+		}
 		@media screen and (max-width: $tablet) {
 			width: 20px;
 			left: -20px;
+			top: 60px;
 		}
 	}
 }
@@ -438,7 +475,7 @@
 	height: 100%;
 	overflow-y: visible;
 	@media screen and (max-width: $tablet) {
-		height: 450px;
+		height: 350px;
 		top: 20%;
 	}
 }

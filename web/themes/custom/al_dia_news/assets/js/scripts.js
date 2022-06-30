@@ -3375,13 +3375,13 @@ var initSlick = function initSlick($, Drupal) {
     mobileFirst: true,
     responsive: [{
       breakpoint: 1300,
-      settings: "reInit"
+      centerPadding: "60px"
     }, {
       breakpoint: 992,
-      settings: "reInit"
+      centerPadding: "60px"
     }, {
       breakpoint: 768,
-      settings: "reInit"
+      centerPadding: "60px"
     }]
   });
   $('.popupgalerycontainer-nav').slick({
