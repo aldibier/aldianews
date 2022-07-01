@@ -441,8 +441,12 @@ import { formApplyModified } from './modules/fixedCloseWebforms';
 						//obtengo el value del atributo title de la imagen para mostrarlo en un p
 						let titleImage = document.createElement('p');
 						titleImage.textContent = item.getAttribute('title');
+						//creo un nuevo contenedor para poner solo la imagen
+						let containerImage = document.createElement('div');
+						containerImage.classList.add('container-image'); 
+						containerImage.append(item.cloneNode(true));
 						//agrego imagen y title en el div creado:
-						containerImageTitle.append(item.cloneNode(true), titleImage ); 
+						containerImageTitle.append(containerImage, titleImage ); 
 						//retorno  el div con title e imagen :
 						return containerImageTitle;
 					});
@@ -479,6 +483,9 @@ import { formApplyModified } from './modules/fixedCloseWebforms';
 
 		initSlick($, Drupal);
 
+		var viewportHeight = window.innerHeight;
+		var calcHeight = ((viewportHeight * 60.62) / 100).toFixed(2); 
+
 		let allSlider = document.querySelectorAll('.cke-ig img');
 		allSlider.forEach((slide) => {
 			slide.addEventListener('click', (e) => {
@@ -487,6 +494,10 @@ import { formApplyModified } from './modules/fixedCloseWebforms';
 				$('#header').addClass('hide');
 				$('.popupgalerycontainer-nav').slick('refresh');
 				$('.popupgalerycontainer-for').slick("refresh");
+				$('.popupgalerycontainer-nav img' ).css('height' , calcHeight  ); 
+				$('.popupgalerycontainer-nav .slick-list.draggable::after' ).css('height' , calcHeight  );
+				$('.popupgalerycontainer-nav .slick-list.draggable::before' ).css('height' , calcHeight  );
+					
 			});
 		})
 		//cerrar modal slider

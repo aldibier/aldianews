@@ -235,27 +235,27 @@
 
 	.slick-track {
 		display: flex !important;
-		min-height: 760px;
-		@media screen and (max-width: $tablet-max) {
-			min-height: 560px;
-		}
-		@media screen and (max-width: $tablet) {
-			min-height: 160px;
-		}
+		//min-height: 760px;
+		// @media screen and (max-width: $tablet-max) {
+		// 	min-height: 560px;
+		// }
+		// @media screen and (max-width: $tablet) {
+		// 	min-height: 160px;
+		// }
 	}
 
 	.slick-list {
 		overflow: hidden;
 		margin: 0px auto;
-		min-height: 760px;
+		//min-height: 760px;
 		//height: 100%;
 		//overflow-y: visible;
-		@media screen and (max-width: $tablet-max) {
-			min-height: 560px;
-		}
-		@media screen and (max-width: $tablet) {
-			min-height: 191px;
-		}
+		// @media screen and (max-width: $tablet-max) {
+		// 	min-height: 560px;
+		// }
+		// @media screen and (max-width: $tablet) {
+		// 	min-height: 191px;
+		// }
 	}
 
 	.slick-active {
@@ -342,34 +342,38 @@
 		@media screen and(max-width: $tablet) {
 			max-width: 280px;
 		}
-		&::before , &::after {
-			content: "''";
-			max-width: 100%;
-			max-height: 760px;
-			position: absolute;
-			width: 200px;
-			height: 100%;
-			display: block;
-			z-index: 1;
-			color: transparent;
-			right: 0;
-			background: linear-gradient(270deg, #333333 0%, rgba(217, 217, 217, 0) 100%);
-			@media screen and(max-width: $tablet-max) {
-				width: 60px;
-				max-height: 560px;
+		.container-image{
+			position: relative;
+			&::before , &::after {
+				content: "''";
+				max-width: 100%;
+				max-height: 760px;
+				position: absolute;
+				width: 200px;
+				height: 100%;
+				display: block;
+				z-index: 1;
+				color: transparent;
+				right: 0;
+				background: linear-gradient(270deg, #333333 0%, rgba(217, 217, 217, 0) 100%);
+				@media screen and(max-width: $tablet-max) {
+					width: 60px;
+					max-height: 560px;
+				}
+				@media screen and(max-width: $tablet) {
+					width: 60px;
+					max-height: 160px;
+				}
 			}
-			@media screen and(max-width: $tablet) {
-				width: 60px;
-				max-height: 160px;
+			&::after{
+				left: 0;
+				top: 0;
+				right: inherit;
+				background: linear-gradient(270deg, #333333 0%, rgba(217, 217, 217, 0) 100%);
+				transform: matrix(-1, 0, 0, 1, 0, 0);
 			}
 		}
-		&::after{
-			left: 0;
-			top: 0;
-			right: inherit;
-			background: linear-gradient(270deg, #333333 0%, rgba(217, 217, 217, 0) 100%);
-			transform: matrix(-1, 0, 0, 1, 0, 0);
-		}
+
 	}
 }
 
