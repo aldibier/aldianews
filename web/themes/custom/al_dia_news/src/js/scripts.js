@@ -484,7 +484,7 @@ import { formApplyModified } from './modules/fixedCloseWebforms';
 		initSlick($, Drupal);
 
 		var viewportHeight = window.innerHeight;
-		var calcHeight = ((viewportHeight * 60.62) / 100).toFixed(2); 
+		var calcHeight = ((viewportHeight * 75.62) / 100).toFixed(2); 
 
 		let allSlider = document.querySelectorAll('.cke-ig img');
 		allSlider.forEach((slide) => {

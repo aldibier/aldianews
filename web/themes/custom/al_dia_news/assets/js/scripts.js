@@ -2908,7 +2908,7 @@ __webpack_require__.r(__webpack_exports__);
 
     Object(_slick_js__WEBPACK_IMPORTED_MODULE_4__["default"])($, Drupal);
     var viewportHeight = window.innerHeight;
-    var calcHeight = (viewportHeight * 60.62 / 100).toFixed(2);
+    var calcHeight = (viewportHeight * 75.62 / 100).toFixed(2);
     var allSlider = document.querySelectorAll('.cke-ig img');
     allSlider.forEach(function (slide) {
       slide.addEventListener('click', function (e) {
