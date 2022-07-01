@@ -577,6 +577,9 @@
 	letter-spacing: 2px !important;
 	display: flex;
 	align-items: center;
+	@media(max-width: $tablet){
+		justify-content: space-between;
+	}
 	&::after{
 		content: "";
 		display: inline-block;
