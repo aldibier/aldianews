@@ -239,9 +239,9 @@
 		// @media screen and (max-width: $tablet-max) {
 		// 	min-height: 560px;
 		// }
-		// @media screen and (max-width: $tablet) {
-		// 	min-height: 160px;
-		// }
+		@media screen and (max-width: $tablet) {
+			min-height: 160px;
+		}
 	}
 
 	.slick-list {
@@ -371,6 +371,10 @@
 				right: inherit;
 				background: linear-gradient(270deg, #333333 0%, rgba(217, 217, 217, 0) 100%);
 				transform: matrix(-1, 0, 0, 1, 0, 0);
+			}
+
+			@media(max-width: 1440px){
+				width: 98%;
 			}
 		}
 
@@ -508,7 +512,7 @@
 	height: 100%;
 	overflow-y: visible;
 	@media screen and (max-width: $tablet) {
-		height: 350px;
+		height: 450px;
 		top: 20%;
 	}
 }

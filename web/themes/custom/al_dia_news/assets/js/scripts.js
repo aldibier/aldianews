@@ -2908,7 +2908,12 @@ __webpack_require__.r(__webpack_exports__);
 
     Object(_slick_js__WEBPACK_IMPORTED_MODULE_4__["default"])($, Drupal);
     var viewportHeight = window.innerHeight;
-    var calcHeight = (viewportHeight * 75.62 / 100).toFixed(2);
+    var calcHeight = (viewportHeight * 60.62 / 100).toFixed(2);
+
+    if (window.matchMedia("(min-width: 1440px)").matches) {
+      calcHeight = (viewportHeight * 74.6 / 100).toFixed(2);
+    }
+
     var allSlider = document.querySelectorAll('.cke-ig img');
     allSlider.forEach(function (slide) {
       slide.addEventListener('click', function (e) {
@@ -2917,9 +2922,11 @@ __webpack_require__.r(__webpack_exports__);
         $('#header').addClass('hide');
         $('.popupgalerycontainer-nav').slick('refresh');
         $('.popupgalerycontainer-for').slick("refresh");
-        $('.popupgalerycontainer-nav img').css('height', calcHeight);
-        $('.popupgalerycontainer-nav .slick-list.draggable::after').css('height', calcHeight);
-        $('.popupgalerycontainer-nav .slick-list.draggable::before').css('height', calcHeight);
+
+        if (window.matchMedia("(min-width: 767px)").matches) {
+          $('.popupgalerycontainer-nav img').css('height', calcHeight);
+          console.log('asfsaddsfsasdsd');
+        }
       });
     }); //cerrar modal slider
 
