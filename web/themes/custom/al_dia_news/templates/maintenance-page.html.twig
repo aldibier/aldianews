@@ -1,0 +1,51 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a single Drupal page while offline.
+ *
+ * All available variables are mirrored in page.html.twig.
+ * Some may be blank but they are provided for consistency.
+ *
+ * @see template_preprocess_maintenance_page()
+ *
+ * @ingroup themeable
+ */
+#}
+<header role="banner">
+  {% if logo %}
+    <img src="{{ logo }}" alt="{{ 'Home'|t }}"/>
+  {% endif %}
+
+  <p>THE BEST OF THE AMERICAN <b>LATINO</b> EXPERIENCE</p>
+  
+</header>
+
+<main role="main">
+  <div class="content">
+    {% if title %}
+     <h1>{{ title }}</h1>
+    {% endif %}
+
+    {# {{ page.highlighted }} #}
+    <p>{{ page.content }}</p>
+
+  </div>
+</main>
+
+{% if page.sidebar_first %}
+  <aside role="complementary">
+    {{ page.sidebar_first }}
+  </aside>
+{% endif %}
+
+{% if page.sidebar_second %}
+  <aside role="complementary">
+    {{ page.sidebar_second }}
+  </aside>
+{% endif %}
+
+{% if page.footer %}
+  <footer role="contentinfo">
+    {{ page.footer }}
+  </footer>
+{% endif %}
