@@ -441,8 +441,12 @@ import { formApplyModified } from './modules/fixedCloseWebforms';
 						//obtengo el value del atributo title de la imagen para mostrarlo en un p
 						let titleImage = document.createElement('p');
 						titleImage.textContent = item.getAttribute('title');
+						//creo un nuevo contenedor para poner solo la imagen
+						let containerImage = document.createElement('div');
+						containerImage.classList.add('container-image'); 
+						containerImage.append(item.cloneNode(true));
 						//agrego imagen y title en el div creado:
-						containerImageTitle.append(item.cloneNode(true), titleImage ); 
+						containerImageTitle.append(containerImage, titleImage ); 
 						//retorno  el div con title e imagen :
 						return containerImageTitle;
 					});
@@ -479,6 +483,13 @@ import { formApplyModified } from './modules/fixedCloseWebforms';
 
 		initSlick($, Drupal);
 
+		var viewportHeight = window.innerHeight;
+		var calcHeight = ((viewportHeight * 60.62) / 100).toFixed(2); 
+
+		if (window.matchMedia("(min-width: 1440px)").matches) {
+			calcHeight = ((viewportHeight * 74.6) / 100).toFixed(2);
+		}
+
 		let allSlider = document.querySelectorAll('.cke-ig img');
 		allSlider.forEach((slide) => {
 			slide.addEventListener('click', (e) => {
@@ -487,6 +498,11 @@ import { formApplyModified } from './modules/fixedCloseWebforms';
 				$('#header').addClass('hide');
 				$('.popupgalerycontainer-nav').slick('refresh');
 				$('.popupgalerycontainer-for').slick("refresh");
+				 
+				if (window.matchMedia("(min-width: 767px)").matches) {
+					$('.popupgalerycontainer-nav img' ).css('height' , calcHeight  );
+					console.log('asfsaddsfsasdsd');
+				}	
 			});
 		})
 		//cerrar modal slider
