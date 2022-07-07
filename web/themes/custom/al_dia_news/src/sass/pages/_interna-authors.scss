@@ -472,7 +472,7 @@ body[class*="path-authors"] {
       }
       .view-header {
         h2 {
-          font-family: "ModernoFB";
+          font-family: $ModernoFB-Regular;
           font-style: normal;
           font-weight: 400;
           font-size: 34px;
@@ -482,6 +482,7 @@ body[class*="path-authors"] {
           color: #333333;
           position: relative;
           margin-bottom: 30px;
+          overflow: hidden;
 
           @media screen and(max-width:$broken) {
             margin: -17px 0 0 0;
