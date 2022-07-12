@@ -1,158 +1,226 @@
 <?php
 /**
  * @file
- * Contains Drupal\al_dia_preroll\Form\Preroll. 
+ * Contains Drupal\al_dia_preroll\Form\Preroll.
  */
 
 namespace Drupal\al_dia_preroll\Form;
-use Drupal\Core\Form\ConfigFormBase; 
-use Drupal\Core\Form\FormStateInterface;  
+
+use Drupal\Core\Form\ConfigFormBase;
+use Drupal\Core\Form\FormStateInterface;
 
 class PrerollForm extends ConfigFormBase {
 
-    /**  
-     * {@inheritdoc}  
-     */ 
-    protected function getEditableConfigNames()
-    {
-        return [
-            'al_dia_preroll.adminsettings',
-        ];
+  /**
+   * @return string[]
+   */
+  protected function getEditableConfigNames() {
+    return ['al_dia_preroll.adminsettings'];
+  }
+
+  /**
+   * @return string
+   */
+  public function getFormId() {
+    return 'al_dia_preroll_form';
+  }
+
+  /**
+   * @param array $form
+   * @param FormStateInterface $form_state
+   * @return array
+   */
+  public function buildForm(array $form, FormStateInterface $form_state) {
+    $config = $this->config('al_dia_preroll.adminsettings');
+    $vasts = $config->get('vast');
+    $form['#attached']['library'][] = 'core/drupal.ajax';
+    $form['#tree'] = TRUE;
+
+    $form['tags'] = [
+      '#type' => 'fieldset',
+      '#prefix' => '<div id="fieldset-wrapper">',
+      '#suffix' => '</div>',
+    ];
+
+    if (empty($vasts)) {
+      $form['tags']['initial_message'] = array(
+        '#type' => 'markup',
+        '#markup' => '<p>No tag has been added</p>',
+      );
     }
 
-    /**  
-     * {@inheritdoc}  
-     */
-    public function getFormId()
-    {
-        return 'al_dia_preroll_form';
+    if (count($vasts) > 0) {
+      $form['tags']['random_order'] = [
+        '#type' => 'checkbox',
+        '#title' => $this->t('Random order'),
+        '#default_value' => $config->get('random_order') ?? FALSE
+      ];
     }
 
-    /**  
-     * {@inheritdoc}  
-     */
-    public function buildForm(array $form, FormStateInterface $form_state){
-        $config = $this->config('al_dia_preroll.adminsettings');
-        $form['#attached']['library'][] = 'core/drupal.ajax';
-        $form['#tree'] = TRUE;
+    $i = 0;
+    foreach ($vasts as $vast) {
+      ++$i;
+      $form['tags']['vast_' . $i] = [
+        '#type' => 'details',
+        '#title' => $this->t("Vast " . $i)
+      ];
 
-        $form['tags'] = [
-            '#type' => 'fieldset',
-            '#prefix' => '<div id="fieldset-wrapper">',
-            '#suffix' => '</div>',
-        ];
+      $form['tags']['vast_' . $i]['path_vast_' . $i] = [
+        '#type' => 'textarea',
+        '#rows' => 2,
+        '#title' => $this->t('Generated vast tag'),
+        '#default_value' => $vast['path_vast_' . $i]
+      ];
 
-        $number_of_tags = $config->get('number_of_tags');
-   
-        if (empty($number_of_tags)) {
-            $form['tags']['initial_message'] = array(
-                '#type' => 'markup',
-                '#markup' => '<p>No tag has been added</p>',
-            );
+      $form['tags']['vast_' . $i]['pos_vast_' . $i] = [
+        '#type' => 'number',
+        '#title' => $this->t('Position vast tag should be played back'),
+        '#default_value' => $vast['pos_vast_' . $i]
+      ];
+
+      if (!isset($vast['sub_vast_' . $i]) || count($vast['sub_vast_' . $i]) <= 0) {
+        $form['tags']['vast_' . $i]['initial_message'] = array(
+          '#type' => 'markup',
+          '#markup' => '<p>No sub tags has been added</p>',
+        );
+      }
+
+      $j = 0;
+      if (isset($vast['sub_vast_' . $i])) {
+        foreach ($vast['sub_vast_' . $i] as $subVast) {
+          ++$j;
+          $form['tags']['vast_' . $i]['sub_vast_' . $j] = [
+            '#type' => 'details',
+            '#title' => $this->t("Sub vast " . $j)
+          ];
+
+          $form['tags']['vast_' . $i]['sub_vast_' . $j]['path_sub_vast_' . $j] = [
+            '#type' => 'textarea',
+            '#rows' => 2,
+            '#title' => $this->t('Generated vast tag'),
+            '#default_value' => $subVast['path_sub_vast_' . $j]
+          ];
+
+          $form['tags']['vast_' . $i]['sub_vast_' . $j]['pos_sub_vast_' . $j] = [
+            '#type' => 'number',
+            '#title' => $this->t('Position vast tag should be played back'),
+            '#default_value' => $subVast['pos_sub_vast_' . $j]
+          ];
         }
-
-        for($i = 1;$i <= $number_of_tags;$i++){
-
-            $form['tags']['label_'.$i] = [
-                '#type' => 'html_tag',
-                '#tag' => 'h2',
-                '#value' => $this
-                    ->t('Vast '.$i),
-            ];
-          
-            $form['tags']['path_vast_'.$i] = [
-                '#type' => 'textarea',
-                '#title' => $this->t('Generated vast tag'),
-                '#default_value' => $config->get("path_vast_$i")
-            ];
-
-            $form['tags']['pos_vast_'.$i] = [
-                '#type' => 'number',
-                '#title' => $this->t('Position vast tag should be played back'),
-                '#default_value' => $config->get("pos_vast_$i")
-            ];
-
-        }   
-
-        $form['tags']['addtag'] = [
-            '#type' => 'submit',
-            '#value' => $this->t('Add one more'),
-            '#submit' => ['::addOneTag'],
-            '#ajax' => [
-                'callback' => '::updateTagCallback',
-			    'wrapper' => 'fieldset-wrapper',
-			    'method' => 'replace',
-                'speed' => 10000
-            ],
-        ];
-        
-        $form['tags']['remtag'] = [
-            '#type' => 'submit',
-            '#value' => $this->t('Remove the last'),
-            '#submit' => ['::remOneTag'],
-            '#weight' => 100,
-            '#ajax' => [
-              'callback' => '::updateTagCallback',
-              'wrapper' => 'fieldset-wrapper',
-              'method' => 'replace',
-            ],
-        ];
-
-        return parent::buildForm($form,$form_state);
-
+      }
+      $this->buildButtonsAddAndRem($form['tags']['vast_' . $i], 'sub_vast__' . $i . '__' . $j, 'sub vast');
     }
 
-    /**  
-     * {@inheritdoc}  
-     */
-    public function addOneTag(array &$form, FormStateInterface $form_state) {
-       $config = $this->config('al_dia_preroll.adminsettings');
-       $number_of_tags = $config->get('number_of_tags');
+    $this->buildButtonsAddAndRem($form['tags'], 'vast', 'vast');
 
-       $config->set('number_of_tags',$number_of_tags + 1)->save();
-       $form_state->setRebuild(TRUE);
+    return parent::buildForm($form, $form_state);
+  }
+
+  /**
+   * @param array $form
+   * @param FormStateInterface $form_state
+   */
+  public function addOneTag(array &$form, FormStateInterface $form_state) {
+    $element = explode('__', $form_state->getTriggeringElement()['#name']);
+    $config = $this->config('al_dia_preroll.adminsettings');
+    $vast = $config->get('vast');
+    if ($element[0] == 'add_vast') {
+      $count = count($vast);
+      $vast['vast_' . ($count + 1)] = [
+        'path_vast_' . ($count + 1) => "",
+        'pos_vast_' . ($count + 1) => ""
+      ];
+      array_push($vast);
+    }
+    else {
+      $vast["vast_$element[1]"]["sub_vast_$element[1]"][] = [
+        "path_sub_vast_" . ($element[2] + 1) => "",
+        "pos_sub_vast_" . ($element[2] + 1) => ""
+      ];
+      array_push($vast);
     }
 
-    /**  
-     * {@inheritdoc}  
-     */
-    public function remOneTag(array &$form, FormStateInterface $form_state) {
-        $config = $this->config('al_dia_preroll.adminsettings');
-        $number_of_tags = $config->get('number_of_tags');
+    $config->set('vast', $vast)->save();
+    $form_state->setRebuild(TRUE);
+  }
 
-        $config->clear("path_vast_$number_of_tags")->save();
-        $config->clear("pos_vast_$number_of_tags")->save();
-        $config->set('number_of_tags', $number_of_tags - 1)->save();
-
-        $form_state->setRebuild(TRUE);
+  /**
+   * @param array $form
+   * @param FormStateInterface $form_state
+   */
+  public function remOneTag(array &$form, FormStateInterface $form_state) {
+    $element = explode('__', $form_state->getTriggeringElement()['#name']);
+    $config = $this->config('al_dia_preroll.adminsettings');
+    $vast = $config->get('vast');
+    if ($element[0] == 'rem_vast') {
+      unset($vast['vast_' . (count($vast))]);
+    }
+    else {
+      unset($vast["vast_$element[1]"]["sub_vast_$element[1]"][$element[2] - 1]);
     }
 
-    /**  
-     * {@inheritdoc}  
-     */
-    public function updateTagCallback(array &$form, FormStateInterface $form_state) {
-        return $form['tags'];
+    $config->set('vast', $vast)->save();
+    $form_state->setRebuild(TRUE);
+  }
+
+  /**
+   * @param array $form
+   * @param FormStateInterface $form_state
+   * @return mixed
+   */
+  public function updateTagCallback(array &$form, FormStateInterface $form_state) {
+    return $form['tags'];
+  }
+
+  /**
+   * @param $form_container
+   * @param $name
+   * @param $valueButton
+   */
+  public function buildButtonsAddAndRem(&$form_container, $name, $valueButton) {
+    $form_container['addtag'] = [
+      '#type' => 'submit',
+      '#value' => $this->t("Add $valueButton"),
+      '#submit' => ['::addOneTag'],
+      '#name' => "add_{$name}",
+      '#button_type' => 'primary',
+      '#ajax' => [
+        'callback' => '::updateTagCallback',
+        'wrapper' => 'fieldset-wrapper',
+        'speed' => 10000
+      ],
+    ];
+
+    $form_container['remtag'] = [
+      '#type' => 'submit',
+      '#value' => $this->t("Remove the last $valueButton"),
+      '#submit' => ['::remOneTag'],
+      '#name' => "rem_{$name}",
+      '#weight' => 100,
+      '#ajax' => [
+        'callback' => '::updateTagCallback',
+        'wrapper' => 'fieldset-wrapper',
+      ],
+    ];
+  }
+
+  /**
+   * @param array $form
+   * @param FormStateInterface $form_state
+   */
+  public function submitForm(array &$form, FormStateInterface $form_state) {
+    $config = $this->config('al_dia_preroll.adminsettings');
+    $vast = [];
+    foreach ($form_state->getValue('tags') as $key => $tag) {
+      if (strpos($key, 'vast_') !== FALSE) {
+        $vast[$key] = $tag;
+      }
     }
+    $config->set('vast', $vast)
+      ->set('random_order', $form_state->getValue('tags')['random_order'])
+      ->save();
 
-    /**  
-     * {@inheritdoc}  
-     */
-    public function submitForm(array &$form, FormStateInterface $form_state)
-    {
-        parent::submitForm($form,$form_state);
-
-        $config = $this->config('al_dia_preroll.adminsettings');
-        $tags = $config->get('number_of_tags');
-
-        for($i = 1;$i <= $tags;$i++ ){
-
-            $config->set("path_vast_$i",$form_state->getValue('tags')["path_vast_$i"])->save();
-            $config->set("pos_vast_$i",$form_state->getValue('tags')["pos_vast_$i"])->save();
-
-        }
-
-        $config->set('number_of_tags_save',$tags)->save();
-        
-    }
+    parent::submitForm($form, $form_state);
+  }
 
 }
