@@ -244,7 +244,7 @@ function videoSDK() {
           managementPosition("initial");
 
           adsManager.destroy();
-          actionRequest();         
+          actionRequest();
         } else {
           nextAction.click();
         }
@@ -428,7 +428,7 @@ function videoSDK() {
         break;
         case 303 :
           videoContainer.remove();
-          console.error('Empty VAST response returned.');  
+          console.error('Empty VAST response returned.');
         break;
         case 301 :
           videoContainer.remove();
@@ -443,7 +443,7 @@ function videoSDK() {
     managementPosition("initial");
     initializeIMA();
     actionRequest();
-    
+
   } else {
 
     if(videoContainer) videoContainer.remove();

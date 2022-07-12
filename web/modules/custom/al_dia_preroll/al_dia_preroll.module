@@ -1,4 +1,5 @@
 <?php
+
 use Drupal\Core\Messenger\MessengerInterface;
 
 /**
@@ -6,23 +7,26 @@ use Drupal\Core\Messenger\MessengerInterface;
  * Contains al_dia_preroll.module.
  */
 
-function al_dia_preroll_preprocess_node(&$vars){
-    $config = \Drupal::config('al_dia_preroll.adminsettings');
-    $number_of_tags = $config->get('number_of_tags');
-    $randomOrder = $config->get('random_order');
+function al_dia_preroll_preprocess_node(&$vars) {
+  $config = \Drupal::config('al_dia_preroll.adminsettings');
+  $campaigns = $config->get('campaigns');
+  $randomOrder = $config->get('random_order');
 
-    if($number_of_tags > 0){
-        $arr = [];
-        $arr['randomOrder'] = $randomOrder;
-        for($i = 1;$i <= $number_of_tags;$i++){
-            $arr[$i]['tag'] =  $config->get("path_vast_$i");
-            $arr[$i]['pos'] =   $config->get("pos_vast_$i");
-        }
-
-        $vars['#attached']['drupalSettings']['vast'] = $arr;
-
+  if (count($campaigns) > 0) {
+    $arr = [];
+    $i = 0;
+    foreach ($campaigns as $campaign) {
+      $arr[$i]['tag'] = $campaign["path_vast"];
+      $arr[$i]['pos'] = $campaign["pos_vast"];
+      if (isset($campaign['sub_vast']) && count($campaign['sub_vast']) > 0) {
+        $arr[$i]['sub_vast'] = $campaign["sub_vast"];
+      }
+      $i++;
     }
+    $arr[]['randomOrder'] = (bool)$randomOrder;
 
+    $vars['#attached']['drupalSettings']['vast'] = $arr;
+  }
 }
 
 

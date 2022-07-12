@@ -32,7 +32,8 @@ class PrerollForm extends ConfigFormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     $config = $this->config('al_dia_preroll.adminsettings');
-    $vasts = $config->get('vast');
+    //$config->set('campaigns', [])->save();
+    $campaigns = $config->get('campaigns');
     $form['#attached']['library'][] = 'core/drupal.ajax';
     $form['#tree'] = TRUE;
 
@@ -42,76 +43,76 @@ class PrerollForm extends ConfigFormBase {
       '#suffix' => '</div>',
     ];
 
-    if (empty($vasts)) {
+    if (empty($campaigns)) {
       $form['tags']['initial_message'] = array(
         '#type' => 'markup',
-        '#markup' => '<p>No tag has been added</p>',
+        '#markup' => '<p>No campaign has been added</p>',
       );
     }
 
-    if (count($vasts) > 0) {
+    if (count($campaigns) > 0) {
       $form['tags']['random_order'] = [
         '#type' => 'checkbox',
-        '#title' => $this->t('Random order'),
+        '#title' => $this->t('Campaign random order'),
         '#default_value' => $config->get('random_order') ?? FALSE
       ];
     }
 
     $i = 0;
-    foreach ($vasts as $vast) {
-      ++$i;
-      $form['tags']['vast_' . $i] = [
+    foreach ($campaigns as $campaign) {
+      $form['tags']['campaign_' . $i] = [
         '#type' => 'details',
-        '#title' => $this->t("Vast " . $i)
+        '#title' => $this->t("Campaign " . ($i + 1))
       ];
 
-      $form['tags']['vast_' . $i]['path_vast_' . $i] = [
-        '#type' => 'textarea',
-        '#rows' => 2,
-        '#title' => $this->t('Generated vast tag'),
-        '#default_value' => $vast['path_vast_' . $i]
-      ];
-
-      $form['tags']['vast_' . $i]['pos_vast_' . $i] = [
-        '#type' => 'number',
-        '#title' => $this->t('Position vast tag should be played back'),
-        '#default_value' => $vast['pos_vast_' . $i]
-      ];
-
-      if (!isset($vast['sub_vast_' . $i]) || count($vast['sub_vast_' . $i]) <= 0) {
-        $form['tags']['vast_' . $i]['initial_message'] = array(
+      if (!isset($campaign['vast']) || count($campaign['vast']) <= 0) {
+        $form['tags']['campaign_' . $i]['initial_message'] = array(
           '#type' => 'markup',
-          '#markup' => '<p>No sub tags has been added</p>',
+          '#markup' => '<p>No vast has been added</p>',
         );
+      }
+      else {
+        $form['tags']['campaign_' . $i]['random_order'] = [
+          '#type' => 'checkbox',
+          '#title' => $this->t('Vast random order'),
+          '#default_value' => $campaign['random_order'] ?? FALSE
+        ];
+
+        $form['tags']['campaign_' . $i]['pos_campaign'] = [
+          '#type' => 'number',
+          '#title' => $this->t('Order play back of campaign'),
+          '#default_value' => $campaign['pos_campaign'] ?? ''
+        ];
       }
 
       $j = 0;
-      if (isset($vast['sub_vast_' . $i])) {
-        foreach ($vast['sub_vast_' . $i] as $subVast) {
-          ++$j;
-          $form['tags']['vast_' . $i]['sub_vast_' . $j] = [
+      if (isset($campaign['vast'])) {
+        foreach ($campaign['vast'] as $vast) {
+          $form['tags']['campaign_' . $i]['vast'][$j] = [
             '#type' => 'details',
-            '#title' => $this->t("Sub vast " . $j)
+            '#title' => $this->t("Vast " . ($j + 1))
           ];
 
-          $form['tags']['vast_' . $i]['sub_vast_' . $j]['path_sub_vast_' . $j] = [
+          $form['tags']['campaign_' . $i]['vast'][$j]['path_vast'] = [
             '#type' => 'textarea',
             '#rows' => 2,
             '#title' => $this->t('Generated vast tag'),
-            '#default_value' => $subVast['path_sub_vast_' . $j]
+            '#default_value' => $vast['path_vast'] ?? ''
           ];
 
-          $form['tags']['vast_' . $i]['sub_vast_' . $j]['pos_sub_vast_' . $j] = [
+          $form['tags']['campaign_' . $i]['vast'][$j]['pos_vast'] = [
             '#type' => 'number',
             '#title' => $this->t('Position vast tag should be played back'),
-            '#default_value' => $subVast['pos_sub_vast_' . $j]
+            '#default_value' => $vast['pos_sub_vast'] ?? ''
           ];
+          $j++;
         }
       }
-      $this->buildButtonsAddAndRem($form['tags']['vast_' . $i], 'sub_vast__' . $i . '__' . $j, 'sub vast');
+      $this->buildButtonsAddAndRem($form['tags']['campaign_' . $i], 'vast__' . $i . '__' . ($j - 1), 'vast');
+      $i++;
     }
 
-    $this->buildButtonsAddAndRem($form['tags'], 'vast', 'vast');
+    $this->buildButtonsAddAndRem($form['tags'], 'campaign', 'campaign');
 
     return parent::buildForm($form, $form_state);
   }
@@ -123,24 +124,24 @@ class PrerollForm extends ConfigFormBase {
   public function addOneTag(array &$form, FormStateInterface $form_state) {
     $element = explode('__', $form_state->getTriggeringElement()['#name']);
     $config = $this->config('al_dia_preroll.adminsettings');
-    $vast = $config->get('vast');
-    if ($element[0] == 'add_vast') {
-      $count = count($vast);
-      $vast['vast_' . ($count + 1)] = [
-        'path_vast_' . ($count + 1) => "",
-        'pos_vast_' . ($count + 1) => ""
+    $campaigns = $config->get('campaigns');
+    if ($element[0] == 'add_campaign') {
+      $count = count($campaigns);
+      $campaigns['campaign_' . $count] = [
+        'random_order' . $count => FALSE,
+        'pos_campaign' . $count => ""
       ];
-      array_push($vast);
+      array_push($campaigns);
     }
     else {
-      $vast["vast_$element[1]"]["sub_vast_$element[1]"][] = [
-        "path_sub_vast_" . ($element[2] + 1) => "",
-        "pos_sub_vast_" . ($element[2] + 1) => ""
+      $campaigns["campaign_$element[1]"]["vast"][] = [
+        "path_vast" => "",
+        "pos_vast" => ""
       ];
-      array_push($vast);
+      array_push($campaigns);
     }
 
-    $config->set('vast', $vast)->save();
+    $config->set('campaigns', $campaigns)->save();
     $form_state->setRebuild(TRUE);
   }
 
@@ -151,15 +152,15 @@ class PrerollForm extends ConfigFormBase {
   public function remOneTag(array &$form, FormStateInterface $form_state) {
     $element = explode('__', $form_state->getTriggeringElement()['#name']);
     $config = $this->config('al_dia_preroll.adminsettings');
-    $vast = $config->get('vast');
-    if ($element[0] == 'rem_vast') {
-      unset($vast['vast_' . (count($vast))]);
+    $campaigns = $config->get('campaigns');
+    if ($element[0] == 'rem_campaign') {
+      unset($campaigns['campaign_' . (count($campaigns) - 1)]);
     }
     else {
-      unset($vast["vast_$element[1]"]["sub_vast_$element[1]"][$element[2] - 1]);
+      unset($campaigns["campaign_$element[1]"]["vast"][$element[2]]);
     }
 
-    $config->set('vast', $vast)->save();
+    $config->set('campaigns', $campaigns)->save();
     $form_state->setRebuild(TRUE);
   }
 
@@ -210,14 +211,15 @@ class PrerollForm extends ConfigFormBase {
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $config = $this->config('al_dia_preroll.adminsettings');
+    $tags = $form_state->getValue('tags');
     $vast = [];
-    foreach ($form_state->getValue('tags') as $key => $tag) {
-      if (strpos($key, 'vast_') !== FALSE) {
+    foreach ($tags as $key => $tag) {
+      if (strpos($key, 'campaign_') !== FALSE) {
         $vast[$key] = $tag;
       }
     }
-    $config->set('vast', $vast)
-      ->set('random_order', $form_state->getValue('tags')['random_order'])
+    $config->set('campaigns', $vast)
+      ->set('random_order', $form_state->getValue('tags')['random_order'] ?? FALSE)
       ->save();
 
     parent::submitForm($form, $form_state);
