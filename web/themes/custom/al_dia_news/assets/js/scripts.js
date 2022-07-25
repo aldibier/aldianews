@@ -2165,6 +2165,18 @@ var unitedStateFirst = function unitedStateFirst(form) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "videoSDK", function() { return videoSDK; });
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 
 function videoSDK() {
@@ -2174,7 +2186,7 @@ function videoSDK() {
   var adContainer = document.querySelector("#ad-container");
   var adsProgressContainer = document.querySelector("#ads-progress-container");
 
-  if (!!drupalSettings.vast && !!videoContainer) {
+  if (!!drupalSettings.campaigns && !!videoContainer) {
     var initializeIMA = function initializeIMA() {
       adDisplayContainer = new google.ima.AdDisplayContainer(adContainer, videoElement);
       adsLoader = new google.ima.AdsLoader(adDisplayContainer);
@@ -2241,7 +2253,17 @@ function videoSDK() {
         console.log('onAdComplete');
 
         if (lastAdComplete) {
-          urlTag = getTagByPosition(vastTags, mapPositions[0]);
+          lastAdComplete = false;
+          var posCampaign = localStorage.posCampaign;
+          localStorage.posVast = 0;
+          localStorage.posCampaign++;
+
+          if (parseInt(posCampaign) + 1 > campaigns.length - 1) {
+            localStorage.posCampaign = 0;
+          }
+
+          setCampaignInStorage(localStorage.posCampaign);
+          urlTag = getTagByPosition(localStorage.posVast);
           managementPosition("initial");
           adsManager.destroy();
           actionRequest();
@@ -2291,16 +2313,9 @@ function videoSDK() {
       }
     };
 
-    var getTagByPosition = function getTagByPosition(arr, pos) {
-      var tag = arr.filter(function (element) {
-        if (element["pos"] == pos) {
-          var _element$tag;
-
-          return (_element$tag = element["tag"]) !== null && _element$tag !== void 0 ? _element$tag : '';
-        }
-      });
-      if (!!tag && tag.length > 0) return tag[0].tag;
-      return null;
+    var getTagByPosition = function getTagByPosition() {
+      var pos = localStorage.posVast;
+      return mapCampaigns[pos];
     };
 
     var managementPosition = function managementPosition(option) {
@@ -2436,17 +2451,53 @@ function videoSDK() {
       }
     };
 
-    var vastTags = Object.values(drupalSettings.vast);
-    var mapPositions = vastTags.map(function (tag) {
-      return tag["pos"];
-    });
-    mapPositions.sort(function (a, b) {
-      return a - b;
-    });
+    var setCampaignInStorage = function setCampaignInStorage(pos) {
+      var playbacks = 0;
+      campaigns[pos].vast.forEach(function (element) {
+        playbacks += parseInt(element.pos_vast);
+      });
+      var vastPriority = sortVastPriority(playbacks, campaigns[pos].vast);
+      localStorage.campaign = JSON.stringify(vastPriority);
+      mapCampaigns = JSON.parse(localStorage.campaign);
+      lastVast = mapCampaigns.length - 1;
+    };
+
+    var sortVastPriority = function sortVastPriority(playbacks, vast) {
+      var copyVast = JSON.parse(JSON.stringify(vast));
+      var sortVast = [];
+      var j = 0;
+
+      for (var i = 0; i < playbacks; ++i) {
+        Object.entries(copyVast).forEach(function (_ref) {
+          var _ref2 = _slicedToArray(_ref, 2),
+              key = _ref2[0],
+              value = _ref2[1];
+
+          var pos = parseInt(value.pos_vast);
+
+          if (pos > 0) {
+            value.pos_vast--;
+            sortVast[j++] = value.path_vast;
+          }
+        });
+      }
+
+      return sortVast;
+    };
+
+    var campaigns = Object.values(drupalSettings.campaigns);
+
+    if (localStorage.campaign == null) {
+      localStorage.posCampaign = 0;
+      localStorage.posVast = 0;
+      setCampaignInStorage(localStorage.posCampaign);
+    }
+
+    var mapCampaigns = JSON.parse(localStorage.campaign);
     var vastPrev;
     var vastCurrent;
     var vastNext;
-    var lastVast = vastTags.length - 1;
+    var lastVast = mapCampaigns.length - (1 + parseInt(localStorage.posVast));
     var initialVast = true; // Elements ads
 
     var adDisplayContainer;
@@ -2465,7 +2516,7 @@ function videoSDK() {
     var adsTimeLeft = document.querySelector(".ads-time-left");
     var adsTimeTotal = document.querySelector(".ads-time-total");
     var adsLinkDestiny = document.querySelector(".ads-destiny-link");
-    var urlTag = getTagByPosition(vastTags, mapPositions[0]);
+    var urlTag = getTagByPosition(localStorage.posVast);
     var adsMuted = true;
     var lastAdComplete = false;
     playAction.addEventListener("click", function () {
@@ -2485,15 +2536,15 @@ function videoSDK() {
       }
     });
     previousAction.addEventListener("click", function () {
-      var pos = this.dataset.position;
-      urlTag = getTagByPosition(vastTags, mapPositions[pos]);
+      localStorage.posVast = this.dataset.position;
+      urlTag = getTagByPosition(localStorage.posVast);
       adsManager.destroy();
       actionRequest();
       managementPosition("previous");
     });
     nextAction.addEventListener("click", function () {
-      var pos = this.dataset.position;
-      urlTag = getTagByPosition(vastTags, mapPositions[pos]);
+      localStorage.posVast = this.dataset.position;
+      urlTag = getTagByPosition(localStorage.posVast);
       adsManager.destroy();
       actionRequest();
       managementPosition("next");

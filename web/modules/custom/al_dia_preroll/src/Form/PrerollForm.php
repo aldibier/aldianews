@@ -32,7 +32,6 @@ class PrerollForm extends ConfigFormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     $config = $this->config('al_dia_preroll.adminsettings');
-    //$config->set('campaigns', [])->save();
     $campaigns = $config->get('campaigns');
     $form['#attached']['library'][] = 'core/drupal.ajax';
     $form['#tree'] = TRUE;
@@ -72,16 +71,23 @@ class PrerollForm extends ConfigFormBase {
         );
       }
       else {
-        $form['tags']['campaign_' . $i]['random_order'] = [
+
+        $form['tags']['campaign_' . $i]['turn_off_campaign'] = [
           '#type' => 'checkbox',
-          '#title' => $this->t('Vast random order'),
-          '#default_value' => $campaign['random_order'] ?? FALSE
+          '#title' => $this->t('Turn off campaign'),
+          '#default_value' => $campaign['turn_off_campaign'] ?? FALSE
         ];
 
         $form['tags']['campaign_' . $i]['pos_campaign'] = [
           '#type' => 'number',
           '#title' => $this->t('Order play back of campaign'),
           '#default_value' => $campaign['pos_campaign'] ?? ''
+        ];
+
+        $form['tags']['campaign_' . $i]['random_order'] = [
+          '#type' => 'checkbox',
+          '#title' => $this->t('Vast random order'),
+          '#default_value' => $campaign['random_order'] ?? FALSE
         ];
       }
 
@@ -102,8 +108,8 @@ class PrerollForm extends ConfigFormBase {
 
           $form['tags']['campaign_' . $i]['vast'][$j]['pos_vast'] = [
             '#type' => 'number',
-            '#title' => $this->t('Position vast tag should be played back'),
-            '#default_value' => $vast['pos_sub_vast'] ?? ''
+            '#title' => $this->t('Order play back of vast'),
+            '#default_value' => $vast['pos_vast'] ?? ''
           ];
           $j++;
         }
@@ -128,8 +134,9 @@ class PrerollForm extends ConfigFormBase {
     if ($element[0] == 'add_campaign') {
       $count = count($campaigns);
       $campaigns['campaign_' . $count] = [
-        'random_order' . $count => FALSE,
-        'pos_campaign' . $count => ""
+        'turn_off_campaign' => FALSE,
+        'random_order' => FALSE,
+        'pos_campaign' => ""
       ];
       array_push($campaigns);
     }
@@ -212,6 +219,7 @@ class PrerollForm extends ConfigFormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $config = $this->config('al_dia_preroll.adminsettings');
     $tags = $form_state->getValue('tags');
+
     $vast = [];
     foreach ($tags as $key => $tag) {
       if (strpos($key, 'campaign_') !== FALSE) {
