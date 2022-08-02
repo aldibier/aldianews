@@ -19,6 +19,7 @@ function al_dia_preroll_preprocess_node(&$vars) {
       if (!$campaign['turn_off_campaign']) {
         $arr[$i]['randomOrder'] = $campaign["random_order"];
         $arr[$i]['posCampaign'] = $campaign["pos_campaign"];
+        $arr[$i]['middleVideo'] = $campaign["middle_video"];
         if (isset($campaign['vast']) && count($campaign['vast']) > 0) {
           $arr[$i]['vast'] = $campaign["vast"];
         }

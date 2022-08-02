@@ -89,6 +89,13 @@ class PrerollForm extends ConfigFormBase {
           '#title' => $this->t('Vast random order'),
           '#default_value' => $campaign['random_order'] ?? FALSE
         ];
+
+        $form['tags']['campaign_' . $i]['middle_video'] = [
+          '#type' => 'textarea',
+          '#rows' => 2,
+          '#title' => $this->t('Middle video'),
+          '#default_value' => $campaign['middle_video'] ?? ''
+        ];
       }
 
       $j = 0;
@@ -108,7 +115,7 @@ class PrerollForm extends ConfigFormBase {
 
           $form['tags']['campaign_' . $i]['vast'][$j]['pos_vast'] = [
             '#type' => 'number',
-            '#title' => $this->t('Order play back of vast'),
+            '#title' => $this->t('Priority play back of vast'),
             '#default_value' => $vast['pos_vast'] ?? ''
           ];
           $j++;
@@ -136,7 +143,8 @@ class PrerollForm extends ConfigFormBase {
       $campaigns['campaign_' . $count] = [
         'turn_off_campaign' => FALSE,
         'random_order' => FALSE,
-        'pos_campaign' => ""
+        'pos_campaign' => "",
+        'middle_video' => ""
       ];
       array_push($campaigns);
     }

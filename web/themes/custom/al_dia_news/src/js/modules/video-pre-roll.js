@@ -446,6 +446,7 @@ function videoSDK() {
         playbacks += parseInt(element.pos_vast);
       });
       let vastPriority = sortVastPriority(playbacks, campaigns[pos].vast);
+      addMiddleVideoInVasts(vastPriority, campaigns[pos])
       localStorage.campaign = JSON.stringify(vastPriority);
       mapCampaigns = JSON.parse(localStorage.campaign);
       lastVast = mapCampaigns.length - 1;
@@ -467,6 +468,16 @@ function videoSDK() {
       }
 
       return sortVast;
+    }
+
+    function addMiddleVideoInVasts(vastPriority, campaigns) {
+      const middleVideo = campaigns['middleVideo'];
+      const length = vastPriority.length;
+      for (let i = 0; i < length; i++) {
+        if (i % 2 === 0) {
+          vastPriority.splice(i + 1, 0, middleVideo);
+        }
+      }
     }
 
     managementPosition("initial");

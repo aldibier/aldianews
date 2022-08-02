@@ -2457,6 +2457,7 @@ function videoSDK() {
         playbacks += parseInt(element.pos_vast);
       });
       var vastPriority = sortVastPriority(playbacks, campaigns[pos].vast);
+      addMiddleVideoInVasts(vastPriority, campaigns[pos]);
       localStorage.campaign = JSON.stringify(vastPriority);
       mapCampaigns = JSON.parse(localStorage.campaign);
       lastVast = mapCampaigns.length - 1;
@@ -2483,6 +2484,17 @@ function videoSDK() {
       }
 
       return sortVast;
+    };
+
+    var addMiddleVideoInVasts = function addMiddleVideoInVasts(vastPriority, campaigns) {
+      var middleVideo = campaigns['middleVideo'];
+      var length = vastPriority.length;
+
+      for (var i = 0; i < length; i++) {
+        if (i % 2 === 0) {
+          vastPriority.splice(i + 1, 0, middleVideo);
+        }
+      }
     };
 
     var campaigns = Object.values(drupalSettings.campaigns);
