@@ -471,17 +471,19 @@ function videoSDK() {
     }
 
     function addMiddleVideoInVasts(vastPriority, campaigns) {
-      const middleVideo = campaigns['middleVideo'];
-      const length = vastPriority.length;
-      for (let i = 0; i <= length; i++) {
-        if (i % 2 === 0) {
-          vastPriority.splice(i + 1, 0, middleVideo);
+      if (campaigns['middleVideo'] !== undefined) {
+        const middleVideo = campaigns['middleVideo'];
+        const length = vastPriority.length;
+        for (let i = 0; i <= length; i++) {
+          if (i % 2 === 0) {
+            vastPriority.splice(i + 1, 0, middleVideo);
+          }
         }
-      }
 
-      const lastLength = vastPriority.length;
-      if (vastPriority[lastLength - 1] !== middleVideo) {
-        vastPriority.splice(lastLength, 0, middleVideo);
+        const lastLength = vastPriority.length;
+        if (vastPriority[lastLength - 1] !== middleVideo) {
+          vastPriority.splice(lastLength, 0, middleVideo);
+        }
       }
     }
 
