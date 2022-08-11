@@ -1245,7 +1245,7 @@ var initMain = function initMain($, Drupal) {
   var container = document.querySelector('body');
   var elemento = document.getElementById('block-webform-2'); /// js newsletter
 
-  var newsletter = document.querySelector('.newsletter'); /// close 
+  var newsletter = document.querySelector('.newsletter'); /// close
 
   if (!!document.querySelector('.newsletter .close-modal')) {
     var closeNewsletter = document.querySelector('.newsletter .close-modal');
@@ -1743,7 +1743,7 @@ var initMain = function initMain($, Drupal) {
     if (!!e && !!father_li) {
       father_li.appendChild(e);
     }
-  }); /////// js para añadir la cantidad de comentarios de respuesta 
+  }); /////// js para añadir la cantidad de comentarios de respuesta
 
   Array.from(document.querySelectorAll("section .comment")).map(function (e) {
     if (!e.nextElementSibling) return;
@@ -1824,7 +1824,7 @@ var initMain = function initMain($, Drupal) {
 
   if (!!budget && !!container_country) {
     container_country.appendChild(budget);
-  } //// js fondo modal 
+  } //// js fondo modal
 
 
   var modal_welcome = document.querySelector(".pop-up-wellcome-aldia");
@@ -2801,7 +2801,7 @@ __webpack_require__.r(__webpack_exports__);
     if (!!containermenu && !!menu) {
       var controller2 = new ScrollMagic.Controller({
         globalSceneOptions: {
-          triggerHook: 0.14 // duration: time.offsetHeight 
+          triggerHook: 0.14 // duration: time.offsetHeight
 
         }
       });
