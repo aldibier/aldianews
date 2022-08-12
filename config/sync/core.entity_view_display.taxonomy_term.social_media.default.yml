@@ -1,0 +1,37 @@
+uuid: fabf15d4-f13b-4a16-be29-516a08f2f436
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.social_media.field_icon_code
+    - taxonomy.vocabulary.social_media
+  module:
+    - al_dia_news_general
+    - ds
+    - field_formatter_class
+id: taxonomy_term.social_media.default
+targetEntityType: taxonomy_term
+bundle: social_media
+mode: default
+content:
+  field_icon_code:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: icon_field_formatter
+    region: content
+hidden:
+  description: true
+  langcode: true
+  search_api_excerpt: true

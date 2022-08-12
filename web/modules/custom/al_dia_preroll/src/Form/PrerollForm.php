@@ -1,158 +1,244 @@
 <?php
 /**
  * @file
- * Contains Drupal\al_dia_preroll\Form\Preroll. 
+ * Contains Drupal\al_dia_preroll\Form\Preroll.
  */
 
 namespace Drupal\al_dia_preroll\Form;
-use Drupal\Core\Form\ConfigFormBase; 
-use Drupal\Core\Form\FormStateInterface;  
+
+use Drupal\Core\Form\ConfigFormBase;
+use Drupal\Core\Form\FormStateInterface;
 
 class PrerollForm extends ConfigFormBase {
 
-    /**  
-     * {@inheritdoc}  
-     */ 
-    protected function getEditableConfigNames()
-    {
-        return [
-            'al_dia_preroll.adminsettings',
-        ];
+  /**
+   * @return string[]
+   */
+  protected function getEditableConfigNames() {
+    return ['al_dia_preroll.adminsettings'];
+  }
+
+  /**
+   * @return string
+   */
+  public function getFormId() {
+    return 'al_dia_preroll_form';
+  }
+
+  /**
+   * @param array $form
+   * @param FormStateInterface $form_state
+   * @return array
+   */
+  public function buildForm(array $form, FormStateInterface $form_state) {
+    $config = $this->config('al_dia_preroll.adminsettings');
+    $campaigns = $config->get('campaigns');
+    $form['#attached']['library'][] = 'core/drupal.ajax';
+    $form['#tree'] = TRUE;
+
+    $form['tags'] = [
+      '#type' => 'fieldset',
+      '#prefix' => '<div id="fieldset-wrapper">',
+      '#suffix' => '</div>',
+    ];
+
+    if (empty($campaigns)) {
+      $form['tags']['initial_message'] = array(
+        '#type' => 'markup',
+        '#markup' => '<p>No campaign has been added</p>',
+      );
     }
 
-    /**  
-     * {@inheritdoc}  
-     */
-    public function getFormId()
-    {
-        return 'al_dia_preroll_form';
+    if (count($campaigns) > 0) {
+      $form['tags']['random_order'] = [
+        '#type' => 'checkbox',
+        '#title' => $this->t('Campaign random order'),
+        '#default_value' => $config->get('random_order') ?? FALSE
+      ];
     }
 
-    /**  
-     * {@inheritdoc}  
-     */
-    public function buildForm(array $form, FormStateInterface $form_state){
-        $config = $this->config('al_dia_preroll.adminsettings');
-        $form['#attached']['library'][] = 'core/drupal.ajax';
-        $form['#tree'] = TRUE;
+    $i = 0;
+    foreach ($campaigns as $campaign) {
+      $form['tags']['campaign_' . $i] = [
+        '#type' => 'details',
+        '#title' => $this->t("Campaign " . ($i + 1))
+      ];
 
-        $form['tags'] = [
-            '#type' => 'fieldset',
-            '#prefix' => '<div id="fieldset-wrapper">',
-            '#suffix' => '</div>',
+      if (!isset($campaign['vast']) || count($campaign['vast']) <= 0) {
+        $form['tags']['campaign_' . $i]['initial_message'] = array(
+          '#type' => 'markup',
+          '#markup' => '<p>No vast has been added</p>',
+        );
+      }
+      else {
+
+        $form['tags']['campaign_' . $i]['turn_off_campaign'] = [
+          '#type' => 'checkbox',
+          '#title' => $this->t('Turn off campaign'),
+          '#default_value' => $campaign['turn_off_campaign'] ?? FALSE
         ];
 
-        $number_of_tags = $config->get('number_of_tags');
-   
-        if (empty($number_of_tags)) {
-            $form['tags']['initial_message'] = array(
-                '#type' => 'markup',
-                '#markup' => '<p>No tag has been added</p>',
-            );
+        $form['tags']['campaign_' . $i]['pos_campaign'] = [
+          '#type' => 'number',
+          '#title' => $this->t('Order play back of campaign'),
+          '#default_value' => $campaign['pos_campaign'] ?? ''
+        ];
+
+        $form['tags']['campaign_' . $i]['random_order'] = [
+          '#type' => 'checkbox',
+          '#title' => $this->t('Vast random order'),
+          '#default_value' => $campaign['random_order'] ?? FALSE
+        ];
+
+        $form['tags']['campaign_' . $i]['middle_video'] = [
+          '#type' => 'textarea',
+          '#rows' => 2,
+          '#title' => $this->t('Middle video'),
+          '#default_value' => $campaign['middle_video'] ?? ''
+        ];
+      }
+
+      $j = 0;
+      if (isset($campaign['vast'])) {
+        foreach ($campaign['vast'] as $vast) {
+          $form['tags']['campaign_' . $i]['vast'][$j] = [
+            '#type' => 'details',
+            '#title' => $this->t("Vast " . ($j + 1))
+          ];
+
+          $form['tags']['campaign_' . $i]['vast'][$j]['path_vast'] = [
+            '#type' => 'textarea',
+            '#rows' => 2,
+            '#title' => $this->t('Generated vast tag'),
+            '#default_value' => $vast['path_vast'] ?? ''
+          ];
+
+          $form['tags']['campaign_' . $i]['vast'][$j]['pos_vast'] = [
+            '#type' => 'number',
+            '#title' => $this->t('Priority play back of vast'),
+            '#default_value' => $vast['pos_vast'] ?? ''
+          ];
+          $j++;
         }
-
-        for($i = 1;$i <= $number_of_tags;$i++){
-
-            $form['tags']['label_'.$i] = [
-                '#type' => 'html_tag',
-                '#tag' => 'h2',
-                '#value' => $this
-                    ->t('Vast '.$i),
-            ];
-          
-            $form['tags']['path_vast_'.$i] = [
-                '#type' => 'textarea',
-                '#title' => $this->t('Generated vast tag'),
-                '#default_value' => $config->get("path_vast_$i")
-            ];
-
-            $form['tags']['pos_vast_'.$i] = [
-                '#type' => 'number',
-                '#title' => $this->t('Position vast tag should be played back'),
-                '#default_value' => $config->get("pos_vast_$i")
-            ];
-
-        }   
-
-        $form['tags']['addtag'] = [
-            '#type' => 'submit',
-            '#value' => $this->t('Add one more'),
-            '#submit' => ['::addOneTag'],
-            '#ajax' => [
-                'callback' => '::updateTagCallback',
-			    'wrapper' => 'fieldset-wrapper',
-			    'method' => 'replace',
-                'speed' => 10000
-            ],
-        ];
-        
-        $form['tags']['remtag'] = [
-            '#type' => 'submit',
-            '#value' => $this->t('Remove the last'),
-            '#submit' => ['::remOneTag'],
-            '#weight' => 100,
-            '#ajax' => [
-              'callback' => '::updateTagCallback',
-              'wrapper' => 'fieldset-wrapper',
-              'method' => 'replace',
-            ],
-        ];
-
-        return parent::buildForm($form,$form_state);
-
+      }
+      $this->buildButtonsAddAndRem($form['tags']['campaign_' . $i], 'vast__' . $i . '__' . ($j - 1), 'vast');
+      $i++;
     }
 
-    /**  
-     * {@inheritdoc}  
-     */
-    public function addOneTag(array &$form, FormStateInterface $form_state) {
-       $config = $this->config('al_dia_preroll.adminsettings');
-       $number_of_tags = $config->get('number_of_tags');
+    $this->buildButtonsAddAndRem($form['tags'], 'campaign', 'campaign');
 
-       $config->set('number_of_tags',$number_of_tags + 1)->save();
-       $form_state->setRebuild(TRUE);
+    return parent::buildForm($form, $form_state);
+  }
+
+  /**
+   * @param array $form
+   * @param FormStateInterface $form_state
+   */
+  public function addOneTag(array &$form, FormStateInterface $form_state) {
+    $element = explode('__', $form_state->getTriggeringElement()['#name']);
+    $config = $this->config('al_dia_preroll.adminsettings');
+    $campaigns = $config->get('campaigns');
+    if ($element[0] == 'add_campaign') {
+      $count = count($campaigns);
+      $campaigns['campaign_' . $count] = [
+        'turn_off_campaign' => FALSE,
+        'random_order' => FALSE,
+        'pos_campaign' => "",
+        'middle_video' => ""
+      ];
+      array_push($campaigns);
+    }
+    else {
+      $campaigns["campaign_$element[1]"]["vast"][] = [
+        "path_vast" => "",
+        "pos_vast" => ""
+      ];
+      array_push($campaigns);
     }
 
-    /**  
-     * {@inheritdoc}  
-     */
-    public function remOneTag(array &$form, FormStateInterface $form_state) {
-        $config = $this->config('al_dia_preroll.adminsettings');
-        $number_of_tags = $config->get('number_of_tags');
+    $config->set('campaigns', $campaigns)->save();
+    $form_state->setRebuild(TRUE);
+  }
 
-        $config->clear("path_vast_$number_of_tags")->save();
-        $config->clear("pos_vast_$number_of_tags")->save();
-        $config->set('number_of_tags', $number_of_tags - 1)->save();
-
-        $form_state->setRebuild(TRUE);
+  /**
+   * @param array $form
+   * @param FormStateInterface $form_state
+   */
+  public function remOneTag(array &$form, FormStateInterface $form_state) {
+    $element = explode('__', $form_state->getTriggeringElement()['#name']);
+    $config = $this->config('al_dia_preroll.adminsettings');
+    $campaigns = $config->get('campaigns');
+    if ($element[0] == 'rem_campaign') {
+      unset($campaigns['campaign_' . (count($campaigns) - 1)]);
+    }
+    else {
+      unset($campaigns["campaign_$element[1]"]["vast"][$element[2]]);
     }
 
-    /**  
-     * {@inheritdoc}  
-     */
-    public function updateTagCallback(array &$form, FormStateInterface $form_state) {
-        return $form['tags'];
+    $config->set('campaigns', $campaigns)->save();
+    $form_state->setRebuild(TRUE);
+  }
+
+  /**
+   * @param array $form
+   * @param FormStateInterface $form_state
+   * @return mixed
+   */
+  public function updateTagCallback(array &$form, FormStateInterface $form_state) {
+    return $form['tags'];
+  }
+
+  /**
+   * @param $form_container
+   * @param $name
+   * @param $valueButton
+   */
+  public function buildButtonsAddAndRem(&$form_container, $name, $valueButton) {
+    $form_container['addtag'] = [
+      '#type' => 'submit',
+      '#value' => $this->t("Add $valueButton"),
+      '#submit' => ['::addOneTag'],
+      '#name' => "add_{$name}",
+      '#button_type' => 'primary',
+      '#ajax' => [
+        'callback' => '::updateTagCallback',
+        'wrapper' => 'fieldset-wrapper',
+        'speed' => 10000
+      ],
+    ];
+
+    $form_container['remtag'] = [
+      '#type' => 'submit',
+      '#value' => $this->t("Remove the last $valueButton"),
+      '#submit' => ['::remOneTag'],
+      '#name' => "rem_{$name}",
+      '#weight' => 100,
+      '#ajax' => [
+        'callback' => '::updateTagCallback',
+        'wrapper' => 'fieldset-wrapper',
+      ],
+    ];
+  }
+
+  /**
+   * @param array $form
+   * @param FormStateInterface $form_state
+   */
+  public function submitForm(array &$form, FormStateInterface $form_state) {
+    $config = $this->config('al_dia_preroll.adminsettings');
+    $tags = $form_state->getValue('tags');
+
+    $vast = [];
+    foreach ($tags as $key => $tag) {
+      if (strpos($key, 'campaign_') !== FALSE) {
+        $vast[$key] = $tag;
+      }
     }
+    $config->set('campaigns', $vast)
+      ->set('random_order', $form_state->getValue('tags')['random_order'] ?? FALSE)
+      ->save();
 
-    /**  
-     * {@inheritdoc}  
-     */
-    public function submitForm(array &$form, FormStateInterface $form_state)
-    {
-        parent::submitForm($form,$form_state);
-
-        $config = $this->config('al_dia_preroll.adminsettings');
-        $tags = $config->get('number_of_tags');
-
-        for($i = 1;$i <= $tags;$i++ ){
-
-            $config->set("path_vast_$i",$form_state->getValue('tags')["path_vast_$i"])->save();
-            $config->set("pos_vast_$i",$form_state->getValue('tags')["pos_vast_$i"])->save();
-
-        }
-
-        $config->set('number_of_tags_save',$tags)->save();
-        
-    }
+    parent::submitForm($form, $form_state);
+  }
 
 }

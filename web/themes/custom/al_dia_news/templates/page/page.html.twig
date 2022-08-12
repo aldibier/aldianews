@@ -64,12 +64,12 @@
         window.googletag = window.googletag || {cmd: []};
         googletag.cmd.push(function() {
           var mapping = googletag.sizeMapping()
-                  .addSize([1024,0], [[840, 240]])
-                  .addSize([769,0], [[750, 200]])
-                  .addSize([0,0], [[320,140]])
+                  .addSize([1024,0], [[728, 90]])
+                  .addSize([769,0], [[300, 250]])
+                  .addSize([0,0], [[300,250]])
                   .build();
 
-          googletag.defineSlot('/309686595/internal-section-body', [[840, 240], [320, 140], [750, 200]], 'div-gpt-ad-1644009767547-0')
+          googletag.defineSlot('/309686595/internal-section-body', [[728, 90], [300, 250]], 'div-gpt-ad-1644009767547-0')
           .defineSizeMapping(mapping)
           .addService(googletag.pubads());
           googletag.pubads().enableSingleRequest();

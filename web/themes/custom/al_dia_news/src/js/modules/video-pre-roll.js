@@ -8,20 +8,18 @@ function videoSDK() {
     "#ads-progress-container"
   );
 
-  if (!!drupalSettings.vast && !!videoContainer) {
-    const vastTags = Object.values(drupalSettings.vast);
-    const mapPositions = vastTags.map(function (tag) {
-      return tag["pos"];
-    });
-
-    mapPositions.sort(function (a, b) {
-      return a - b;
-    });
-
+  if (!!drupalSettings.campaigns && !!videoContainer) {
+    const campaigns = Object.values(drupalSettings.campaigns);
+    if (localStorage.campaign == null) {
+      localStorage.posCampaign = 0;
+      localStorage.posVast = 0;
+      setCampaignInStorage(localStorage.posCampaign)
+    }
+    let mapCampaigns = JSON.parse(localStorage.campaign);
     let vastPrev;
     let vastCurrent;
     let vastNext;
-    let lastVast = vastTags.length - 1;
+    let lastVast = mapCampaigns.length - (1 + parseInt(localStorage.posVast));
     let initialVast = true;
 
     // Elements ads
@@ -45,7 +43,7 @@ function videoSDK() {
     const adsTimeTotal = document.querySelector(".ads-time-total");
     const adsLinkDestiny = document.querySelector(".ads-destiny-link");
 
-    let urlTag = getTagByPosition(vastTags, mapPositions[0]);
+    let urlTag = getTagByPosition(localStorage.posVast);
     let adsMuted = true;
     let lastAdComplete = false;
 
@@ -70,8 +68,8 @@ function videoSDK() {
     });
 
     previousAction.addEventListener("click", function () {
-      let pos = this.dataset.position;
-      urlTag = getTagByPosition(vastTags, mapPositions[pos]);
+      localStorage.posVast = this.dataset.position;
+      urlTag = getTagByPosition(localStorage.posVast);
 
       adsManager.destroy();
       actionRequest();
@@ -79,8 +77,8 @@ function videoSDK() {
     });
 
     nextAction.addEventListener("click", function () {
-      let pos = this.dataset.position;
-      urlTag = getTagByPosition(vastTags, mapPositions[pos]);
+      localStorage.posVast = this.dataset.position;
+      urlTag = getTagByPosition(localStorage.posVast);
 
       adsManager.destroy();
       actionRequest();
@@ -123,12 +121,12 @@ function videoSDK() {
       }
 
       //Support safari fullscreen
-      if(!document.body.classList.contains('safari')) return;
+      if (!document.body.classList.contains('safari')) return;
 
-      if (!videoContainer.classList.contains('fullscreen')){
+      if (!videoContainer.classList.contains('fullscreen')) {
         videoContainer.classList.add('fullscreen');
         document.body.classList.add('fullscreen-active');
-      }else {
+      } else {
         videoContainer.classList.remove('fullscreen');
         document.body.classList.remove('fullscreen-active');
       }
@@ -175,18 +173,18 @@ function videoSDK() {
         // Instanciar el AdsManager desde la respuesta de adsLoader y pasarle el elemento vídeo
         adsManager = adsManagerLoadedEvent.getAdsManager(videoElement);
 
-        if(initialVast == false){
+        if (initialVast == false) {
           playAction.click();
         }
 
-        if(initialVast){
+        if (initialVast) {
           playAction.click();
           initialVast = false;
         }
 
         if (adsMuted) {
           adsManager.setVolume(0);
-        }else {
+        } else {
           adsManager.setVolume(1);
         }
 
@@ -209,7 +207,7 @@ function videoSDK() {
         adsObj.duration = adsObj.ad.getDuration();
         adsObj.linkDestiny = '';
 
-        if(typeof adsObj.ad == 'object'){
+        if (typeof adsObj.ad == 'object') {
           adsObj.data = adsObj.ad[Object.keys(adsObj.ad)[0]];
           adsObj.linkDestiny = adsObj.data.clickThroughUrl;
         }
@@ -240,11 +238,19 @@ function videoSDK() {
       function onAdComplete() {
         console.log('onAdComplete');
         if (lastAdComplete) {
-          urlTag = getTagByPosition(vastTags, mapPositions[0]);
+          lastAdComplete = false;
+          let posCampaign = localStorage.posCampaign;
+          localStorage.posVast = 0;
+          localStorage.posCampaign++;
+          if (parseInt(posCampaign) + 1 > campaigns.length - 1) {
+            localStorage.posCampaign = 0;
+          }
+          setCampaignInStorage(localStorage.posCampaign)
+          urlTag = getTagByPosition(localStorage.posVast);
           managementPosition("initial");
 
           adsManager.destroy();
-          actionRequest();         
+          actionRequest();
         } else {
           nextAction.click();
         }
@@ -256,7 +262,7 @@ function videoSDK() {
         let error = adErrorEvent.getError();
         let code = error.getErrorCode();
 
-        managmentErrors(error,code);
+        managmentErrors(error, code);
 
         if (adsManager) {
           adsManager.destroy();
@@ -295,15 +301,9 @@ function videoSDK() {
       }
     }
 
-    function getTagByPosition(arr, pos) {
-      let tag = arr.filter((element) => {
-        if (element["pos"] == pos) {
-          return element["tag"] ?? '';
-        }
-      });
-
-      if (!!tag && tag.length > 0) return tag[0].tag;
-      return null;
+    function getTagByPosition() {
+      let pos = localStorage.posVast;
+      return mapCampaigns[pos];
     }
 
     function managementPosition(option) {
@@ -392,7 +392,7 @@ function videoSDK() {
 
       if (adsMuted) {
         videoContainer.classList.add("muted");
-      }else {
+      } else {
         videoContainer.classList.remove("muted");
       }
 
@@ -403,33 +403,33 @@ function videoSDK() {
       clearInterval(adsObj.interval);
     }
 
-    function randomCorrelatorNumber(){
+    function randomCorrelatorNumber() {
       return Math.floor(Math.random() * (9999999 - 1 + 1)).toString();
     }
 
-    function managmentErrors(error,code){
+    function managmentErrors(error, code) {
       console.error('Vast code error : ' + code);
-      switch(code) {
+      switch (code) {
         case 1005 :
           videoContainer.remove();
           console.error('The vast url has an incorrect format.');
-        break;
+          break;
         case 1009 :
           videoContainer.remove();
           console.error('The VAST response document is empty.');
-        break;
+          break;
         case 402 :
           videoContainer.remove();
           console.error('VAST media file loading reached a timeout of 8 seconds.');
-        break;
+          break;
         case 400 :
           videoContainer.remove();
           console.error('There was an error playing the video ad.');
-        break;
+          break;
         case 303 :
           videoContainer.remove();
-          console.error('Empty VAST response returned.');  
-        break;
+          console.error('Empty VAST response returned.');
+          break;
         case 301 :
           videoContainer.remove();
           console.error('VAST redirection timeout has been reached.');
@@ -440,16 +440,63 @@ function videoSDK() {
 
     }
 
+    function setCampaignInStorage(pos) {
+      let playbacks = 0;
+      campaigns[pos].vast.forEach((element) => {
+        playbacks += parseInt(element.pos_vast);
+      });
+      let vastPriority = sortVastPriority(playbacks, campaigns[pos].vast);
+      addMiddleVideoInVasts(vastPriority, campaigns[pos])
+      localStorage.campaign = JSON.stringify(vastPriority);
+      mapCampaigns = JSON.parse(localStorage.campaign);
+      lastVast = mapCampaigns.length - 1;
+    }
+
+    function sortVastPriority(playbacks, vast) {
+      let copyVast = JSON.parse(JSON.stringify(vast));
+      let sortVast = [];
+      let j = 0;
+
+      for (let i = 0; i < playbacks; ++i) {
+        Object.entries(copyVast).forEach(([key, value]) => {
+          let pos = parseInt(value.pos_vast);
+          if (pos > 0) {
+            value.pos_vast--;
+            sortVast[j++] = value.path_vast;
+          }
+        });
+      }
+
+      return sortVast;
+    }
+
+    function addMiddleVideoInVasts(vastPriority, campaigns) {
+      if (campaigns['middleVideo'] !== undefined) {
+        const middleVideo = campaigns['middleVideo'];
+        const length = vastPriority.length;
+        for (let i = 0; i <= length; i++) {
+          if (i % 2 === 0) {
+            vastPriority.splice(i + 1, 0, middleVideo);
+          }
+        }
+
+        const lastLength = vastPriority.length;
+        if (vastPriority[lastLength - 1] !== middleVideo) {
+          vastPriority.splice(lastLength, 0, middleVideo);
+        }
+      }
+    }
+
     managementPosition("initial");
     initializeIMA();
     actionRequest();
-    
+
   } else {
 
-    if(videoContainer) videoContainer.remove();
+    if (videoContainer) videoContainer.remove();
 
   }
 
 }
 
-export { videoSDK };
+export {videoSDK};

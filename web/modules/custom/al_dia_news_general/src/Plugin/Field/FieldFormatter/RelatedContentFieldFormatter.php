@@ -210,14 +210,16 @@ class RelatedContentFieldFormatter extends FormatterBase {
 
     // insert a token into html to be replaced
     $count = 1;
+    $adElement = $dom->createElement('p', '[ad]');
+    $contentElement = $dom->createElement('p', '[related-content]');
     foreach ($dom->getElementsByTagName('p') as $paragraph) {
 
       if ($position_ad == $count){
-        $paragraph->nodeValue = $paragraph->nodeValue."[ad]";
+        $paragraph->appendChild($adElement);
       }
 
       if ($position_related == $count){
-        $paragraph->nodeValue = $paragraph->nodeValue."[related-content]";
+        $paragraph->appendChild($contentElement);
       }
 
       $count++;
@@ -231,7 +233,7 @@ class RelatedContentFieldFormatter extends FormatterBase {
       </script>
     </div>";
 
-    $content = "</p><div data-embed-button='related_content'>". $related_content ."</div>";
+    $content = "<div data-embed-button='related_content'>". $related_content ."</div>";
 
     // HTML to return
     foreach ($blockquote as $key => $value) {

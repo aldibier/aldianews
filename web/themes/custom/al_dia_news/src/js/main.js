@@ -20,7 +20,7 @@ const initMain = ($, Drupal) => {
 	/// js newsletter
 	const newsletter = document.querySelector('.newsletter');
 
-	/// close 
+	/// close
 	if (!!document.querySelector('.newsletter .close-modal')) {
 		const closeNewsletter = document.querySelector('.newsletter .close-modal');
 		closeNewsletter.addEventListener('click', () => {
@@ -29,7 +29,7 @@ const initMain = ($, Drupal) => {
 			if(!!document.querySelector('#video-container')){
 				document.querySelector('#video-container').classList.add('not-newsletter');
 			}
-			
+
 		}, {
 			once: true
 		})
@@ -83,7 +83,7 @@ const initMain = ($, Drupal) => {
 		if(!!summary){
 			containerSummary.insertAdjacentElement("beforebegin", summary);
 		}
-		
+
 	}
 
 	// js video en interna
@@ -612,7 +612,7 @@ const initMain = ($, Drupal) => {
 	});
 
 
-	/////// js para añadir la cantidad de comentarios de respuesta 
+	/////// js para añadir la cantidad de comentarios de respuesta
 	Array.from(document.querySelectorAll("section .comment")).map(function (e) {
 		if (!e.nextElementSibling) return;
 		if (!!e.nextElementSibling.classList.contains("indented")) {
@@ -697,7 +697,7 @@ const initMain = ($, Drupal) => {
 		container_country.appendChild(budget);
 	}
 
-	//// js fondo modal 
+	//// js fondo modal
 	var modal_welcome = document.querySelector(".pop-up-wellcome-aldia");
 	var background_body = document.querySelector("body");
 

@@ -3,25 +3,49 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.social_media.field_icon_name
+    - field.field.paragraph.social_media.field_icon
     - field.field.paragraph.social_media.field_link
     - paragraphs.paragraphs_type.social_media
   module:
-    - al_dia_news_general
+    - ds
     - link
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class:
+            paragraph--type--social-media: paragraph--type--social-media
+          ds_content: {  }
+    regions:
+      ds_content:
+        - field_link
+        - field_icon
 id: paragraph.social_media.default
 targetEntityType: paragraph
 bundle: social_media
 mode: default
 content:
-  field_icon_name:
+  field_icon:
+    type: entity_reference_entity_view
     weight: 1
+    region: ds_content
     label: hidden
     settings:
-      link_to_entity: false
+      link: true
+      view_mode: default
     third_party_settings: {  }
-    type: icon_field_formatter
-    region: content
   field_link:
     weight: 0
     label: hidden
@@ -33,6 +57,6 @@ content:
       target: ''
     third_party_settings: {  }
     type: link
-    region: content
+    region: ds_content
 hidden:
   search_api_excerpt: true

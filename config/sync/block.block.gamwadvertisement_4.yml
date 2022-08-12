@@ -26,14 +26,6 @@ settings:
   ad_unit: internal-news-thought-banner-prefooter
   attributes_wrapper: null
 visibility:
-  request_path_exclusion:
-    id: request_path_exclusion
-    pages: ''
-    negate: true
-  view_inclusion:
-    id: view_inclusion
-    negate: false
-    view_inclusion: {  }
   node_type:
     id: node_type
     bundles:
@@ -42,3 +34,11 @@ visibility:
     negate: false
     context_mapping:
       node: '@node.node_route_context:node'
+  request_path_exclusion:
+    id: request_path_exclusion
+    pages: ''
+    negate: true
+  view_inclusion:
+    id: view_inclusion
+    negate: false
+    view_inclusion: {  }
