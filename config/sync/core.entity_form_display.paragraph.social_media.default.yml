@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.social_media.field_icon_name
+    - field.field.paragraph.social_media.field_icon
     - field.field.paragraph.social_media.field_link
     - paragraphs.paragraphs_type.social_media
   module:
@@ -13,13 +13,15 @@ targetEntityType: paragraph
 bundle: social_media
 mode: default
 content:
-  field_icon_name:
-    weight: 11
+  field_icon:
+    weight: 12
     settings:
+      match_operator: CONTAINS
+      match_limit: 10
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
+    type: entity_reference_autocomplete
     region: content
   field_link:
     weight: 0
