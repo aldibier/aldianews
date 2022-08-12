@@ -1,5 +1,5 @@
 const initSlick = ($, Drupal) => {
-	jQuery(document).ready(function () {
+    jQuery(document).ready(function () {
 		let categoriesMore = document.querySelectorAll(
 			".view-categories-sons .view-more-category .view-content"
 		);
@@ -55,7 +55,7 @@ const initSlick = ($, Drupal) => {
 	})
 
 	/// Slider para interna de noticias
-	console.log("hola");
+
 	$('.cke-ig').slick({
 		// autoplay: true,
 		// autoplaySpeed: 3000,
@@ -66,6 +66,7 @@ const initSlick = ($, Drupal) => {
 		centerMode: true,
 		variableWidth: true,
 		dots: true,
+		asNavFor: '.popupgalerycontainer-nav',
 		mobileFirst: true,
 		responsive: [
 			{
@@ -83,23 +84,48 @@ const initSlick = ($, Drupal) => {
 		]
 	})
 
-	
 
 	$('.popupgalerycontainer-nav').slick({
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		arrows: true,
 		fade: true,
-		centerMode: true,
-		asNavFor: '.popupgalerycontainer-for'
+		infinite: true,
+		asNavFor: '.popupgalerycontainer-for',
+		focusOnSelect: true,
 	});
 
 	$('.popupgalerycontainer-for').slick({
-		slidesToShow: 2,
+		slidesToShow: 5,
+		infinite: true,
+		arrows: true,
 		slidesToScroll: 1,
 		asNavFor: '.popupgalerycontainer-nav',
-		centerMode: true,
-		focusOnSelect: true
+		centerMode: false,
+		focusOnSelect: true,
+		responsive: [
+			{
+			  breakpoint: 767,
+			  settings: {
+				slidesToShow: 5,
+				slidesToScroll: 1
+			  }
+			},
+			{
+			  breakpoint: 600,
+			  settings: {
+				slidesToShow: 2,
+				slidesToScroll: 1
+			  }
+			},
+			{
+			  breakpoint: 480,
+			  settings: {
+				slidesToShow: 2,
+				slidesToScroll: 1
+			  }
+			}
+		]
 	});
 
 	// slide landing jobs
@@ -208,26 +234,26 @@ const initSlick = ($, Drupal) => {
 				},
 			]
 		}
-		/* 
+		/*
 				const mobileWidth = 768;
-		
+
 				const resizeObserver = new ResizeObserver(entries => {
 					for (let entry of entries) {
 						let currentWidth = entry.contentBoxSize[0].inlineSize;
-		
+
 						if(currentWidth > mobileWidth) return;
 						if($(".view-id-thought_leaders_home.view-display-id-block_1 .view-content").hasClass("slick-initialized")) return;
-		
-						if(currentWidth <= mobileWidth){   
+
+						if(currentWidth <= mobileWidth){
 							$(".view-id-thought_leaders_home.view-display-id-block_1 .view-content").not('.slick-initialized').slick(settingThoughtLeaders);
 						}
 					}
 				});
-		
+
 				resizeObserver.observe(document.querySelector('body')); */
 
 
-		//slide edit resize 
+		//slide edit resize
 		if (window.matchMedia("(max-width: 1024px)").matches) {
 			$(".view-id-thought_leaders_home.view-display-id-block_1 .view-content").not('.slick-initialized').slick(settingThoughtLeaders);
 		}

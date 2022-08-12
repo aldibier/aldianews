@@ -959,7 +959,7 @@ function addStyle (obj, options) {
 	// If a transform function was defined, run it on the css
 	if (options.transform && obj.css) {
 	    result = typeof options.transform === 'function'
-		 ? options.transform(obj.css) 
+		 ? options.transform(obj.css)
 		 : options.transform.default(obj.css);
 
 	    if (result) {
@@ -1245,7 +1245,7 @@ var initMain = function initMain($, Drupal) {
   var container = document.querySelector('body');
   var elemento = document.getElementById('block-webform-2'); /// js newsletter
 
-  var newsletter = document.querySelector('.newsletter'); /// close 
+  var newsletter = document.querySelector('.newsletter'); /// close
 
   if (!!document.querySelector('.newsletter .close-modal')) {
     var closeNewsletter = document.querySelector('.newsletter .close-modal');
@@ -1743,7 +1743,7 @@ var initMain = function initMain($, Drupal) {
     if (!!e && !!father_li) {
       father_li.appendChild(e);
     }
-  }); /////// js para añadir la cantidad de comentarios de respuesta 
+  }); /////// js para añadir la cantidad de comentarios de respuesta
 
   Array.from(document.querySelectorAll("section .comment")).map(function (e) {
     if (!e.nextElementSibling) return;
@@ -1824,7 +1824,7 @@ var initMain = function initMain($, Drupal) {
 
   if (!!budget && !!container_country) {
     container_country.appendChild(budget);
-  } //// js fondo modal 
+  } //// js fondo modal
 
 
   var modal_welcome = document.querySelector(".pop-up-wellcome-aldia");
@@ -2094,7 +2094,7 @@ var validateFormSponsorship = function validateFormSponsorship(form) {
   var countriesItems = selectParent.querySelectorAll('.opt');
   var contrySelected = selectCountry.value; //disabled at startup
 
-  if (contrySelected.toLocaleLowerCase() != "united states" || contrySelected.toLocaleLowerCase() != "estados unidos") removeStateAndCity(fieldState, fieldCity); //reorder fields 
+  if (contrySelected.toLocaleLowerCase() != "united states" || contrySelected.toLocaleLowerCase() != "estados unidos") removeStateAndCity(fieldState, fieldCity); //reorder fields
 
   filedCountry.insertAdjacentElement('afterend', fieldState);
   fieldState.insertAdjacentElement('afterend', fieldCity);
@@ -2730,7 +2730,7 @@ __webpack_require__.r(__webpack_exports__);
     if (!!containermenu && !!menu) {
       var controller2 = new ScrollMagic.Controller({
         globalSceneOptions: {
-          triggerHook: 0.14 // duration: time.offsetHeight 
+          triggerHook: 0.14 // duration: time.offsetHeight
 
         }
       });
@@ -2858,29 +2858,73 @@ __webpack_require__.r(__webpack_exports__);
     });
     Object(_main_js__WEBPACK_IMPORTED_MODULE_3__["default"])(); //js para galeria en interna de noticias
 
-    var arrimages = document.querySelectorAll(".cke-ig img");
+    var allSlidersCKEIG = document.querySelectorAll('.cke-ig');
 
-    if (arrimages.length != 0) {
-      var arrcloneNav = Array.from(arrimages).map(function (item) {
-        return item.cloneNode(true);
+    if (allSlidersCKEIG) {
+      allSlidersCKEIG.forEach(function (slider) {
+        var arrImage = slider.querySelectorAll('img');
+
+        if (arrImage.length != 0) {
+          var arrcloneNav = Array.from(arrImage).map(function (item) {
+            //creo contenedor adicional para retornar imagen y texto en  un solo div:
+            var containerImageTitle = document.createElement('div');
+            containerImageTitle.classList.add('container-item-galery'); //obtengo el value del atributo title de la imagen para mostrarlo en un p
+
+            var titleImage = document.createElement('p');
+            titleImage.textContent = item.getAttribute('title'); //agrego imagen y title en el div creado:
+
+            containerImageTitle.append(item.cloneNode(true), titleImage); //retorno  el div con title e imagen :
+
+            return containerImageTitle;
+          });
+          var arrcloneFor = Array.from(arrImage).map(function (item) {
+            return item.cloneNode(true);
+          });
+          var popupgaleryNav = document.createElement("div");
+          popupgaleryNav.classList.add("popupgalerycontainer-nav");
+          var popupgaleryFor = document.createElement("div");
+          popupgaleryFor.classList.add("popupgalerycontainer-for");
+          arrcloneNav.forEach(function (element) {
+            popupgaleryNav.appendChild(element);
+          });
+          arrcloneFor.forEach(function (element) {
+            popupgaleryFor.appendChild(element);
+          });
+          var containerPopupSlider = document.createElement("div");
+          containerPopupSlider.classList.add('slider-black-aldia');
+          var closeDivX = document.createElement("div");
+          closeDivX.classList.add('slider-black-x');
+          var newContent = document.createTextNode("X");
+          closeDivX.append(newContent);
+          containerPopupSlider.append(closeDivX, popupgaleryNav, popupgaleryFor);
+          slider.insertAdjacentElement('afterend', containerPopupSlider);
+        }
       });
-      var arrcloneFor = Array.from(arrimages).map(function (item) {
-        return item.cloneNode(true);
-      });
-      var popupgaleryNav = document.createElement("div");
-      popupgaleryNav.classList.add("popupgalerycontainer-nav");
-      var popupgaleryFor = document.createElement("div");
-      popupgaleryFor.classList.add("popupgalerycontainer-for");
-      arrcloneNav.forEach(function (element) {
-        popupgaleryNav.appendChild(element);
-      });
-      arrcloneFor.forEach(function (element) {
-        popupgaleryFor.appendChild(element);
-      });
-      document.body.append(popupgaleryNav, popupgaleryFor);
     }
 
-    Object(_slick_js__WEBPACK_IMPORTED_MODULE_4__["default"])($, Drupal); //// sumo select
+    Object(_slick_js__WEBPACK_IMPORTED_MODULE_4__["default"])($, Drupal);
+    var allSlider = document.querySelectorAll('.cke-ig img');
+    allSlider.forEach(function (slide) {
+      slide.addEventListener('click', function (e) {
+        var popupSlider = e.target.closest('.cke-ig').nextElementSibling;
+        popupSlider.classList.add('active');
+        $('#header').addClass('hide');
+        $('.popupgalerycontainer-nav').slick('refresh');
+        $('.popupgalerycontainer-for').slick("refresh");
+      });
+    }); //cerrar modal slider
+
+    var sliderBlackClose = document.querySelectorAll('.slider-black-x');
+
+    if (sliderBlackClose) {
+      sliderBlackClose.forEach(function (close) {
+        close.addEventListener('click', function (e) {
+          e.target.parentElement.classList.remove('active');
+          $('#header').removeClass('hide');
+        });
+      });
+    } //// sumo select
+
 
     Array.from(document.querySelectorAll(".region-content select:not(.SumoSelect select")).map(function (element) {
       if (element != null) {
@@ -2933,43 +2977,6 @@ __webpack_require__.r(__webpack_exports__);
         }, 0);
       }
     });
-    var slider1 = document.querySelector(".popupgalerycontainer-nav ");
-    var slider2 = document.querySelector(".popupgalerycontainer-for ");
-    var currentDiv = document.querySelector(".site-footer");
-
-    if (!!slider1 && !!slider2 && !!currentDiv) {
-      var newDiv = document.createElement("div");
-      newDiv.classList.add('slider-black-aldia');
-      var newDivX = document.createElement("div");
-      newDivX.classList.add('slider-black-x');
-      var newContent = document.createTextNode("X");
-      newDivX.appendChild(newContent);
-      newDiv.appendChild(newDivX);
-      currentDiv.appendChild(newDiv);
-      newDiv.appendChild(slider1);
-      newDiv.appendChild(slider2);
-      showSlider();
-    }
-
-    function showSlider() {
-      var slider2show = document.querySelector(".slider-black-aldia");
-      var slider2active = document.querySelector(".slider-black-aldia .popupgalerycontainer-nav .slick-next");
-      var slider2close = document.querySelector(".slider-black-x");
-      Array.from(document.querySelectorAll(".cke-ig .slick-slide")).map(function (e) {
-        if (!!e && !!slider2show && !!slider2close) {
-          e.addEventListener("click", function () {
-            slider2show.classList.add('active');
-
-            if (!!slider2active) {
-              slider2active.click();
-            }
-          });
-          slider2close.addEventListener("click", function () {
-            slider2show.classList.remove('active');
-          });
-        }
-      });
-    }
   });
   Drupal.behaviors.aldia_news_sumoselect = {
     attach: function attach(context, settings) {
@@ -3257,7 +3264,7 @@ var initScrollMagic = function initScrollMagic($, Drupal) {
         const scene2 = new ScrollMagic.Scene({ triggerElement: containerRigth, duration: getDurationScene2 })
         .addTo(controller)
         .offset(noticias.offsetHeight + 20)
-        .setPin(noticias, { pushFollowers: false })    
+        .setPin(noticias, { pushFollowers: false })
     },6000); */
     var getDurationScene2 = function getDurationScene2() {
       return containerRigth.offsetHeight - noticias.offsetHeight;
@@ -3354,7 +3361,6 @@ var initSlick = function initSlick($, Drupal) {
     arrows: true
   }); /// Slider para interna de noticias
 
-  console.log("hola");
   $('.cke-ig').slick({
     // autoplay: true,
     // autoplaySpeed: 3000,
@@ -3365,6 +3371,7 @@ var initSlick = function initSlick($, Drupal) {
     centerMode: true,
     variableWidth: true,
     dots: true,
+    asNavFor: '.popupgalerycontainer-nav',
     mobileFirst: true,
     responsive: [{
       breakpoint: 1300,
@@ -3382,15 +3389,37 @@ var initSlick = function initSlick($, Drupal) {
     slidesToScroll: 1,
     arrows: true,
     fade: true,
-    centerMode: true,
-    asNavFor: '.popupgalerycontainer-for'
+    infinite: true,
+    asNavFor: '.popupgalerycontainer-for',
+    focusOnSelect: true
   });
   $('.popupgalerycontainer-for').slick({
-    slidesToShow: 2,
+    slidesToShow: 5,
+    infinite: true,
+    arrows: true,
     slidesToScroll: 1,
     asNavFor: '.popupgalerycontainer-nav',
-    centerMode: true,
-    focusOnSelect: true
+    centerMode: false,
+    focusOnSelect: true,
+    responsive: [{
+      breakpoint: 767,
+      settings: {
+        slidesToShow: 5,
+        slidesToScroll: 1
+      }
+    }, {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1
+      }
+    }, {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1
+      }
+    }]
   }); // slide landing jobs
 
   $(".block-views-blockcarousel-jobs-landing-block-1 .brands-carousel-wrapper .view-content").slick({
@@ -3480,24 +3509,24 @@ var initSlick = function initSlick($, Drupal) {
         settings: "unslick"
       }]
     };
-    /* 
+    /*
     		const mobileWidth = 768;
-    
+
     		const resizeObserver = new ResizeObserver(entries => {
     			for (let entry of entries) {
     				let currentWidth = entry.contentBoxSize[0].inlineSize;
-    
+
     				if(currentWidth > mobileWidth) return;
     				if($(".view-id-thought_leaders_home.view-display-id-block_1 .view-content").hasClass("slick-initialized")) return;
-    
-    				if(currentWidth <= mobileWidth){   
+
+    				if(currentWidth <= mobileWidth){
     					$(".view-id-thought_leaders_home.view-display-id-block_1 .view-content").not('.slick-initialized').slick(settingThoughtLeaders);
     				}
     			}
     		});
-    
+
     		resizeObserver.observe(document.querySelector('body')); */
-    //slide edit resize 
+    //slide edit resize
 
     if (window.matchMedia("(max-width: 1024px)").matches) {
       $(".view-id-thought_leaders_home.view-display-id-block_1 .view-content").not('.slick-initialized').slick(settingThoughtLeaders);
@@ -3620,8 +3649,8 @@ var initSlick = function initSlick($, Drupal) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/seed/proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
-module.exports = __webpack_require__(/*! /Users/seed/proyectos/4ld14-n3ws/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
+__webpack_require__(/*! /Users/david/sites/4ld14-n3ws/web/themes/custom/al_dia_news/src/js/scripts.js */"./src/js/scripts.js");
+module.exports = __webpack_require__(/*! /Users/david/sites/4ld14-n3ws/web/themes/custom/al_dia_news/src/sass/styles.scss */"./src/sass/styles.scss");
 
 
 /***/ })

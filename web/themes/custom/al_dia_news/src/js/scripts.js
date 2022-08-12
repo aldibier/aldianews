@@ -9,7 +9,7 @@ import { validateFormSponsorship, unitedStateFirst } from './modules/state_and_c
 import { formApplyModified } from './modules/fixedCloseWebforms';
 
 (function ($, Drupal) {
-	// Selection share
+    // Selection share
 	const sharer = new SelectionSharer();
 	sharer.setElements(
 		"p,h1,h2,h3,blockquote,em,strong,a:not(.selectionSharer a)"
@@ -102,7 +102,7 @@ import { formApplyModified } from './modules/fixedCloseWebforms';
 			} else {
 				$(containerVideo).height("auto");
 				$(videoThoughtLeaders).removeClass("stuck");
-			} 
+			}
 			$(
 				'.block-field-blocknodethought-leadersfield-video .stuck button[name="close"]'
 			).click(function () {
@@ -126,7 +126,7 @@ import { formApplyModified } from './modules/fixedCloseWebforms';
 
 	$(window).on("load", function () {
 
-		
+
 		videoSDK();
 
 		const headingTags = document.querySelectorAll("h1, h2, h3");
@@ -202,7 +202,7 @@ import { formApplyModified } from './modules/fixedCloseWebforms';
 			var controller2 = new ScrollMagic.Controller({
 				globalSceneOptions: {
 					triggerHook: 0.14,
-					// duration: time.offsetHeight 
+					// duration: time.offsetHeight
 				}
 			});
 
@@ -314,8 +314,8 @@ import { formApplyModified } from './modules/fixedCloseWebforms';
 			$(".form-nominee-events")
 				.parents(".modal-apply-webform")
 				.addClass("open");
-				const form = document.querySelector('.webform-submission-nominate-form');
-				formApplyModified(form,'.close-modal');
+			const form = document.querySelector('.webform-submission-nominate-form');
+			formApplyModified(form, '.close-modal');
 		});
 
 		$(".banner-events a#register-here").click(function () {
@@ -328,8 +328,8 @@ import { formApplyModified } from './modules/fixedCloseWebforms';
 			$(".form-sponsorship-events")
 				.parents(".modal-apply-webform")
 				.addClass("open");
-				const formSponsorshipEvent = document.querySelector('.webform-submission-sponsorship-upcoming-event-form');
-				formApplyModified(formSponsorshipEvent,'.close-modal');
+			const formSponsorshipEvent = document.querySelector('.webform-submission-sponsorship-upcoming-event-form');
+			formApplyModified(formSponsorshipEvent, '.close-modal');
 		});
 
 		$('.modal-apply-webform  button[name="close"]').click(function () {
@@ -429,33 +429,76 @@ import { formApplyModified } from './modules/fixedCloseWebforms';
 		initMain();
 
 		//js para galeria en interna de noticias
-		let arrimages = document.querySelectorAll(".cke-ig img")
-		if (arrimages.length !=0){
-		let arrcloneNav = Array.from(arrimages).map(item => {
-			return item.cloneNode(true); 
-		})
-		let arrcloneFor = Array.from(arrimages).map(item => {
-			return item.cloneNode(true); 
-		})
-		let popupgaleryNav = document.createElement("div")
-		popupgaleryNav.classList.add("popupgalerycontainer-nav")
-		
-		let popupgaleryFor = document.createElement("div")
-		popupgaleryFor.classList.add("popupgalerycontainer-for")
+		let allSlidersCKEIG = document.querySelectorAll('.cke-ig');
+		if (allSlidersCKEIG) {
+			allSlidersCKEIG.forEach((slider) => {
+				let arrImage = slider.querySelectorAll('img');
+				if (arrImage.length != 0) {
+					let arrcloneNav = Array.from(arrImage).map(item => {
+						//creo contenedor adicional para retornar imagen y texto en  un solo div:
+						let containerImageTitle = document.createElement('div');
+						containerImageTitle.classList.add('container-item-galery');
+						//obtengo el value del atributo title de la imagen para mostrarlo en un p
+						let titleImage = document.createElement('p');
+						titleImage.textContent = item.getAttribute('title');
+						//agrego imagen y title en el div creado:
+						containerImageTitle.append(item.cloneNode(true), titleImage );
+						//retorno  el div con title e imagen :
+						return containerImageTitle;
+					});
 
-		arrcloneNav.forEach(element => {
-			popupgaleryNav.appendChild(element)
-		
-		})
+					let arrcloneFor = Array.from(arrImage).map(item => {
+						return item.cloneNode(true);
+					});
+					let popupgaleryNav = document.createElement("div")
+					popupgaleryNav.classList.add("popupgalerycontainer-nav")
 
-		arrcloneFor.forEach(element => {
-			popupgaleryFor.appendChild(element)
-		
-		})
+					let popupgaleryFor = document.createElement("div")
+					popupgaleryFor.classList.add("popupgalerycontainer-for")
 
-		document.body.append(popupgaleryNav, popupgaleryFor)
-	}
+					arrcloneNav.forEach(element => {
+						popupgaleryNav.appendChild(element)
+					})
+
+					arrcloneFor.forEach(element => {
+						popupgaleryFor.appendChild(element)
+
+					});
+					let containerPopupSlider = document.createElement("div");
+					containerPopupSlider.classList.add('slider-black-aldia');
+
+					let closeDivX = document.createElement("div");
+					closeDivX.classList.add('slider-black-x');
+					let newContent = document.createTextNode("X");
+					closeDivX.append(newContent);
+					containerPopupSlider.append(closeDivX, popupgaleryNav, popupgaleryFor);
+					slider.insertAdjacentElement('afterend', containerPopupSlider);
+				}
+			})
+		}
+
 		initSlick($, Drupal);
+
+		let allSlider = document.querySelectorAll('.cke-ig img');
+		allSlider.forEach((slide) => {
+			slide.addEventListener('click', (e) => {
+				let popupSlider = e.target.closest('.cke-ig').nextElementSibling;
+				popupSlider.classList.add('active');
+				$('#header').addClass('hide');
+				$('.popupgalerycontainer-nav').slick('refresh');
+				$('.popupgalerycontainer-for').slick("refresh");
+			});
+		})
+		//cerrar modal slider
+		let sliderBlackClose = document.querySelectorAll('.slider-black-x');
+		if (sliderBlackClose) {
+			sliderBlackClose.forEach( close => {
+				close.addEventListener('click' , (e) => {
+					e.target.parentElement.classList.remove('active');
+					$('#header').removeClass('hide');
+				} )
+			} )
+		}
 
 		//// sumo select
 
@@ -494,30 +537,30 @@ import { formApplyModified } from './modules/fixedCloseWebforms';
 		}
 
 		const formSponsorshipEvent = document.querySelector('.webform-submission-sponsorship-upcoming-event-form');
-		formApplyModified(formSponsorshipEvent,'.close-modal');
-		
+		formApplyModified(formSponsorshipEvent, '.close-modal');
+
 		$(window).on('resize', function () {
 			const formNominate = document.querySelector('.webform-submission-nominate-form');
 			const formSponsorshipEvent = document.querySelector('.webform-submission-sponsorship-upcoming-event-form');
 			const formRegisterEvent = document.querySelector('.registerhere-popup-event-landing .webform-submission-register-form');
 
-			if(!!formNominate){
-				formApplyModified(formNominate,'.close-modal');
+			if (!!formNominate) {
+				formApplyModified(formNominate, '.close-modal');
 			}
 
-			if(!!formSponsorshipEvent){
-				formApplyModified(formSponsorshipEvent,'.close-modal');
+			if (!!formSponsorshipEvent) {
+				formApplyModified(formSponsorshipEvent, '.close-modal');
 			}
 
 
-			if(!!formRegisterEvent){
-				setTimeout(()=>{
-					formApplyModified(formRegisterEvent,'.close-modal');
-				},0)
+			if (!!formRegisterEvent) {
+				setTimeout(() => {
+					formApplyModified(formRegisterEvent, '.close-modal');
+				}, 0)
 			}
-	
+
 		})
-		
+
 
 		let slider1 = document.querySelector(".popupgalerycontainer-nav ");
 		let slider2 = document.querySelector(".popupgalerycontainer-for ");
@@ -526,13 +569,13 @@ import { formApplyModified } from './modules/fixedCloseWebforms';
 		if ( !!slider1 && !!slider2 && !!currentDiv ) {
 			let newDiv = document.createElement("div");
 			newDiv.classList.add('slider-black-aldia');
-			
+
 			let newDivX = document.createElement("div");
 			newDivX.classList.add('slider-black-x');
 			let newContent = document.createTextNode("X");
 
 			newDivX.appendChild(newContent);
-			newDiv.appendChild(newDivX); 
+			newDiv.appendChild(newDivX);
 			currentDiv.appendChild(newDiv);
 			newDiv.appendChild(slider1);
 			newDiv.appendChild(slider2);
@@ -561,8 +604,8 @@ import { formApplyModified } from './modules/fixedCloseWebforms';
 				});
 			}
 			});
-			
-			
+
+
 		}
 	});
 
@@ -841,24 +884,24 @@ import { formApplyModified } from './modules/fixedCloseWebforms';
 	Drupal.behaviors.titleFixed = {
 		attach: function (context, settings) {
 
-			setTimeout(()=>{
+			setTimeout(() => {
 				const formLogin = document.querySelector('.account-modal--login');
 				const formSponsorshipEvent = context.querySelector('.webform-submission-sponsorship-upcoming-event-form');
 				const formRegisterEvent = document.querySelector('.registerhere-popup-event-landing .webform-submission-register-form');
 
-				if(!!formLogin){
-					formApplyModified(formLogin,'.ui-dialog-titlebar-close');
+				if (!!formLogin) {
+					formApplyModified(formLogin, '.ui-dialog-titlebar-close');
 				}
 
-				if(!!formSponsorshipEvent){
-					formApplyModified(formSponsorshipEvent,'.close-modal');
+				if (!!formSponsorshipEvent) {
+					formApplyModified(formSponsorshipEvent, '.close-modal');
 				}
 
-				if(!!formRegisterEvent ){
-					formApplyModified(formRegisterEvent ,'.close-modal');
+				if (!!formRegisterEvent) {
+					formApplyModified(formRegisterEvent, '.close-modal');
 				}
 
-			},100)
+			}, 100)
 		}
 	}
 
