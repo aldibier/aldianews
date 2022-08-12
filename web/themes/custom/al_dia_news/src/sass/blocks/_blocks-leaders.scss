@@ -61,27 +61,28 @@
         }
 
         .by-author-information {
-            top: 3px;
-            left: 0;
+            display: inline-block;
+            width: auto;
+            height: auto;
+            padding: 0;
+            margin: 0 10px 0 0;
             font-style: normal;
             font-weight: 600;
             font-size: $px24;
             line-height: 29px;
             font-family: $ModernoFB-Regular;
-            position: absolute;
-            margin: 0;
-            width: 40px;
             color: $cgrey3;
         }
 
         .author-name {
+            display: inline-block;
             font-style: normal;
             font-weight: 600;
             font-size: $px24;
             line-height: 29px;
             font-family: $ModernoFB-Regular;
             margin: 5px 0 0 0;
-            padding: 0 0 0 35px;
+            padding: 0;
             color: $corange;
 
             a{
@@ -112,9 +113,9 @@
         @media (max-width:$tablet){
 
             .by-author-information {
+                margin: 0 5px 0 0;
                 font-size: 14px;
                 line-height: 17px;
-                top: 4;
             }
 
             img {
@@ -150,7 +151,6 @@
             .author-name {
                 font-size: 14px;
                 line-height: 17px;
-                padding: 0 0 0 21px;
             }
 
             .date-authored-on {
