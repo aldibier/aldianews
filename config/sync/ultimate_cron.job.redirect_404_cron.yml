@@ -1,14 +1,14 @@
-uuid: c182e2ed-2f26-40f3-a888-ce5e8b9d2422
+uuid: 89a22613-b5ac-48e8-934e-157b45e983e0
 langcode: en
 status: true
 dependencies:
   module:
-    - spambot
+    - redirect_404
 title: 'Default cron handler'
-id: spambot_cron
+id: redirect_404_cron
 weight: 0
-module: spambot
-callback: spambot_cron
+module: redirect_404
+callback: redirect_404_cron
 scheduler:
   id: simple
 launcher:

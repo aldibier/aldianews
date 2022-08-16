@@ -20,7 +20,7 @@
 .first-block-tags-taxonomy{
     max-height: 520px;
     display: grid;
-    grid-template-columns: 880px auto;
+    grid-template-columns: 1fr auto;
     grid-auto-rows: auto;
     grid-template-areas:
         "area-1 area-2"
@@ -52,7 +52,7 @@
         max-height: 540px;
         margin-right: 19px;
         grid-area: area-1;
-        margin-right: 35px;
+
         @media screen and(max-width:$broken) {
             margin-right: 15px;
             margin-bottom: 15px;
@@ -83,10 +83,26 @@
             content: "";
             width: 1px;
             height: 100%;
-            background: #B1B1B1;
             position: absolute;
             top: 0;
-            left: calc(0% - 20px);
+            left: 0;
+            background-color: #b1b1b1;
+
+            @media screen and(max-width:$broken) {
+                content: none
+            }
+
+        }
+
+        .view-more-tags {
+            max-width: 420px;
+            padding: 0 0 0 20px;
+
+            @media screen and(max-width:$broken) {
+                max-width: 100%;
+                padding: 0;
+            }
+
         }
 
         .view-content{
@@ -111,6 +127,19 @@
                     margin-bottom: 12px;
                     padding-bottom: 9px;
                 }
+
+                .block-layout-builder {
+                    line-height: 1;
+                }
+
+                .field--name-field-type-of-content{
+                    display: none;
+                }
+
+                .field--type-entity-reference {
+                    margin: 0;
+                }
+
                 .container-content{
                     display: flex;
                     @media screen and(max-width:$broken) {
@@ -118,7 +147,10 @@
                     }
 
                     .one-content-subcategory-four{
-                        margin-right: 15px;
+           
+                        @media screen and(max-width:$broken) {
+                            margin-right: 15px;
+                        }
                         
                         .block-field-blocknodenewsfield-type-of-content{
                             font-size: 0;
@@ -181,12 +213,15 @@
 
                         .block-field-blocknodenewsfield-new-short-title{
                             a{
-                                font-family: $PrNovacond-bold;
+
                                 font-style: normal;
                                 font-weight: 800;
                                 font-size: 18px;
                                 line-height: 22px;
-                                color: $cblack;
+                                color: #000;
+                                text-transform: uppercase;
+                                font-family: $PrNovacond-Xbold;
+
                                 @media screen and(max-width:$broken) {
                                     font-size: 30px;               
                                 }
@@ -196,6 +231,37 @@
                             }
                         }
                         
+                    }
+                }
+
+                .field--name-field-image {
+                    width: 175px;
+                    height: 100px;
+                    max-width: 175px;
+                    min-height: 100px;
+                    margin-right: 15px;
+                    border: none;
+              
+                    @media (max-width: $broken) {
+                        margin-right: 0;
+                        width: 100%;
+                        height: auto;
+                        max-width: 100%;
+                    }
+              
+                    img {
+                      width: 100%;
+                      height: 100%;
+                      max-width: 100%;
+                      margin: 0;
+                      object-fit: contain;
+              
+                      $screen-query: 993px;
+              
+                      @media (min-width: $screen-query) {
+                        height: 100px;
+                      }
+    
                     }
                 }
 

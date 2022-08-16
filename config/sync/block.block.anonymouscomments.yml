@@ -29,13 +29,6 @@ visibility:
     id: view_inclusion
     negate: null
     view_inclusion: {  }
-  user_role:
-    id: user_role
-    roles:
-      anonymous: anonymous
-    negate: false
-    context_mapping:
-      user: '@user.current_user_context:current_user'
   node_type:
     id: node_type
     bundles:
@@ -44,3 +37,10 @@ visibility:
     negate: false
     context_mapping:
       node: '@node.node_route_context:node'
+  user_role:
+    id: user_role
+    roles:
+      anonymous: anonymous
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
