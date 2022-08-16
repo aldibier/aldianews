@@ -1086,7 +1086,7 @@ display:
           settings:
             responsive_image_style: more_content_responsive
             image_link: content
-          group_column: ''
+          group_column: target_id
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -1227,6 +1227,7 @@ display:
         sorts: false
         filters: false
         filter_groups: false
+        group_by: false
       arguments: {  }
       pager:
         type: some
@@ -1424,6 +1425,7 @@ display:
         operator: AND
         groups:
           1: AND
+      group_by: true
     cache_metadata:
       max-age: -1
       contexts:
