@@ -24,6 +24,14 @@ settings:
   primary: true
   secondary: true
 visibility:
+  request_path_exclusion:
+    id: request_path_exclusion
+    pages: ''
+    negate: true
+  view_inclusion:
+    id: view_inclusion
+    negate: false
+    view_inclusion: {  }
   request_path:
     id: request_path
     pages: "/about-al-dia-live/al-dia-live/past-events\r\n/about-al-dia-live/al-dia-live\r\n"
@@ -36,11 +44,3 @@ visibility:
     negate: false
     context_mapping:
       user: '@user.current_user_context:current_user'
-  request_path_exclusion:
-    id: request_path_exclusion
-    pages: ''
-    negate: true
-  view_inclusion:
-    id: view_inclusion
-    negate: false
-    view_inclusion: {  }
