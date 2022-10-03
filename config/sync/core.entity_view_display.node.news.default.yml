@@ -19,6 +19,7 @@ dependencies:
     - field.field.node.news.field_postcast_categories
     - field.field.node.news.field_short_description
     - field.field.node.news.field_short_title
+    - field.field.node.news.field_show_in_video_landing_page
     - field.field.node.news.field_tags
     - field.field.node.news.field_test
     - field.field.node.news.field_type_of_content
@@ -515,6 +516,24 @@ third_party_settings:
                 type: string
             additional: {  }
             weight: 13
+          fc67c0ce-febc-43c6-b245-52de1aa2dbef:
+            uuid: fc67c0ce-febc-43c6-b245-52de1aa2dbef
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:news:field_show_in_video_landing_page'
+              formatter:
+                label: above
+                settings:
+                  format: default
+                  format_custom_false: ''
+                  format_custom_true: ''
+                third_party_settings: {  }
+                type: boolean
+            additional: {  }
+            weight: 14
         third_party_settings: {  }
 id: node.news.default
 targetEntityType: node
@@ -649,6 +668,16 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_show_in_video_landing_page:
+    weight: 20
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
     region: content
   field_tags:
     weight: 7

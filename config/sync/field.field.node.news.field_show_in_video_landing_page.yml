@@ -1,0 +1,23 @@
+uuid: 85bce664-e0fa-480e-a71e-71a5af7b298b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_show_in_video_landing_page
+    - node.type.news
+id: node.news.field_show_in_video_landing_page
+field_name: field_show_in_video_landing_page
+entity_type: node
+bundle: news
+label: 'Show in video landing page'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
