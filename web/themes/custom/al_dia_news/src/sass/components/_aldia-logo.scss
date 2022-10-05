@@ -642,6 +642,29 @@ span.aldia-logo-before {
   }
 }
 
+.path-node {
+  .field--name-body  h1 .aldia-logo-in-text {
+    max-width: 50px;
+    max-height: 40px;
+
+    img {
+      height: 15px;
+      width: 100%;
+    }
+  }
+
+  @media (max-width: $tablet) {
+    .field--name-body  h1 .aldia-logo-in-text {
+      max-width: 45px;
+
+      img {
+        height: 14px;
+        width: 100%;
+      }
+    }
+  }
+}
+
 //** Old style **//
 
 // .view-last-news-category-sons {
