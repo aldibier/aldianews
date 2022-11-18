@@ -126,8 +126,9 @@ import { formApplyModified } from './modules/fixedCloseWebforms';
 
 	$(window).on("load", function () {
 
-
-		videoSDK();
+		if (localStorage.campaign !=null) {
+			videoSDK();
+		}
 
 		const headingTags = document.querySelectorAll("h1, h2, h3");
 		const paragraphTags = document.querySelectorAll("p");
