@@ -442,9 +442,13 @@ function videoSDK() {
 
     function setCampaignInStorage(pos) {
       let playbacks = 0;
-      campaigns[pos].vast.forEach((element) => {
-        playbacks += parseInt(element.pos_vast);
-      });
+      
+      if(campaigns[pos].vast.length){
+        campaigns[pos].vast.forEach((element) => {
+          playbacks += parseInt(element.pos_vast);
+        });
+      }
+      
       let vastPriority = sortVastPriority(playbacks, campaigns[pos].vast);
       addMiddleVideoInVasts(vastPriority, campaigns[pos])
       localStorage.campaign = JSON.stringify(vastPriority);
