@@ -22,23 +22,27 @@ const initSlick = ($, Drupal) => {
 		};
 
 		//slide edit resize
-		if (window.matchMedia("(max-width: 768px)").matches) {
-			setTimeout(function () {
-				categoriesMore.forEach(element => {
-					if (!!element && element != null) $(element).not('.slick-initialized').slick(settings);
-				});
-			}, 2000);
-		}
-
-		window.addEventListener("resize", () => {
+		if(!!categoriesMore){
+			
 			if (window.matchMedia("(max-width: 768px)").matches) {
 				setTimeout(function () {
 					categoriesMore.forEach(element => {
-						if (!!element && element != null) $(element).not('.slick-initialized').slick(settings)
+						if (!!element && element != null) $(element).not('.slick-initialized').slick(settings);
 					});
 				}, 2000);
 			}
-		});
+
+			window.addEventListener("resize", () => {
+				if (window.matchMedia("(max-width: 768px)").matches) {
+					setTimeout(function () {
+						categoriesMore.forEach(element => {
+							if (!!element && element != null) $(element).not('.slick-initialized').slick(settings)
+						});
+					}, 2000);
+				}
+			});
+
+		}
 	});
 
 
