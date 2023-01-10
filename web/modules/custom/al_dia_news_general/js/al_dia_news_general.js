@@ -25,7 +25,7 @@
                 // doing async stuff
                 if (
                   $(
-                    ".view-id-leadership_sons.view-display-id-block_3 .block-fixed-block-content-small-vertical-advertising"
+                    ".view-id-leadership_sons.view-display-id-block_3 .block-fixed-block-contentsquare-advertising-mobile"
                   )
                   .find(".content > div > div")
                   .children().length > 0
@@ -74,7 +74,7 @@
                 // doing async stuff
                 if (
                   $(
-                    ".view-id-politics_sons.view-display-id-block_3 .block-fixed-block-content-small-vertical-advertising"
+                    ".view-id-politics_sons.view-display-id-block_3 .block-fixed-block-contentsquare-advertising-mobile"
                   )
                   .find(".content > div > div")
                   .children().length > 0
@@ -122,7 +122,7 @@
                 // doing async stuff
                 if (
                   $(
-                    ".view-id-culture_sons.view-display-id-block_3 .block-fixed-block-content-small-vertical-advertising"
+                    ".view-id-culture_sons.view-display-id-block_3 .block-fixed-block-contentsquare-advertising-mobile"
                   )
                   .find(".content > div > div")
                   .children().length > 0
