@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.news.field_caption
     - field.field.node.news.field_category
     - field.field.node.news.field_comments
+    - field.field.node.news.field_company
     - field.field.node.news.field_high_impact_news
     - field.field.node.news.field_image
     - field.field.node.news.field_internal_image
@@ -21,6 +22,8 @@ dependencies:
     - field.field.node.news.field_short_description
     - field.field.node.news.field_short_title
     - field.field.node.news.field_show_in_video_landing_page
+    - field.field.node.news.field_sponsor_accompanying_text
+    - field.field.node.news.field_sponsor_image
     - field.field.node.news.field_tags
     - field.field.node.news.field_test
     - field.field.node.news.field_type_of_content
@@ -209,6 +212,7 @@ content:
     type: entity_reference_label
     region: content
 hidden:
+  field_company: true
   field_high_impact_news: true
   field_internal_image: true
   field_my_content_has_a_main_vide: true
@@ -218,6 +222,8 @@ hidden:
   field_postcast_categories: true
   field_short_description: true
   field_show_in_video_landing_page: true
+  field_sponsor_accompanying_text: true
+  field_sponsor_image: true
   field_test: true
   field_type_of_content: true
   field_video: true

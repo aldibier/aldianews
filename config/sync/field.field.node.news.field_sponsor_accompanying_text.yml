@@ -1,0 +1,19 @@
+uuid: f819c0ba-db6f-4179-9670-83545939b952
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sponsor_accompanying_text
+    - node.type.news
+id: node.news.field_sponsor_accompanying_text
+field_name: field_sponsor_accompanying_text
+entity_type: node
+bundle: news
+label: 'Sponsor accompanying text'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

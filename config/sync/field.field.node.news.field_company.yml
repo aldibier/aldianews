@@ -1,0 +1,29 @@
+uuid: 81b41b90-2f5c-465f-a4df-dc1b9d845b11
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_company
+    - node.type.feature_employer
+    - node.type.news
+id: node.news.field_company
+field_name: field_company
+entity_type: node
+bundle: news
+label: Company
+description: 'If the category of this news is Sponsored Content, then select the sponsoring company from the list below'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      feature_employer: feature_employer
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
