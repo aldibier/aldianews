@@ -9,7 +9,6 @@ dependencies:
     - field.field.node.news.field_caption
     - field.field.node.news.field_category
     - field.field.node.news.field_comments
-    - field.field.node.news.field_company
     - field.field.node.news.field_high_impact_news
     - field.field.node.news.field_image
     - field.field.node.news.field_internal_image
@@ -21,15 +20,12 @@ dependencies:
     - field.field.node.news.field_short_description
     - field.field.node.news.field_short_title
     - field.field.node.news.field_show_in_video_landing_page
-    - field.field.node.news.field_sponsor_accompanying_text
-    - field.field.node.news.field_sponsor_image
     - field.field.node.news.field_tags
     - field.field.node.news.field_test
     - field.field.node.news.field_type_of_content
     - field.field.node.news.field_video
     - node.type.news
     - views.view._summary_news_intern
-    - views.view.company_in_news
     - views.view.content_authors
     - views.view.more_in_this_section_news
     - views.view.news_tags
@@ -128,7 +124,7 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: -6
+            weight: -7
           85b577c8-0624-449c-a353-da8bfe8a1721:
             uuid: 85b577c8-0624-449c-a353-da8bfe8a1721
             region: two_content
@@ -150,7 +146,7 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: -4
+            weight: -5
           cfe2d810-0491-4dd0-8618-f5832b9cd269:
             uuid: cfe2d810-0491-4dd0-8618-f5832b9cd269
             region: content
@@ -179,7 +175,7 @@ third_party_settings:
               items_per_page: none
               context_mapping: {  }
             additional: {  }
-            weight: -9
+            weight: -10
           d7c86c43-0433-4918-8c9e-59120ede1108:
             uuid: d7c86c43-0433-4918-8c9e-59120ede1108
             region: two_content
@@ -194,7 +190,7 @@ third_party_settings:
               context_mapping:
                 entity: layout_builder.entity
             additional: {  }
-            weight: -8
+            weight: -9
           be603c0d-56da-46ef-8a58-c966b26d748b:
             uuid: be603c0d-56da-46ef-8a58-c966b26d748b
             region: one_more
@@ -236,7 +232,7 @@ third_party_settings:
               items_per_page: none
               context_mapping: {  }
             additional: {  }
-            weight: -5
+            weight: -6
           2401a43d-8335-4c06-acfd-a3cf3ce9025d:
             uuid: 2401a43d-8335-4c06-acfd-a3cf3ce9025d
             region: content
@@ -442,7 +438,7 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: -7
+            weight: -8
           aac17531-72e1-4d80-919e-3679424293cc:
             uuid: aac17531-72e1-4d80-919e-3679424293cc
             region: content
@@ -488,7 +484,7 @@ third_party_settings:
               attributes_wrapper: null
               context_mapping: {  }
             additional: {  }
-            weight: -3
+            weight: -4
           e5298e8e-2b46-48e1-a7f7-31bee856f4ac:
             uuid: e5298e8e-2b46-48e1-a7f7-31bee856f4ac
             region: content
@@ -520,8 +516,8 @@ third_party_settings:
                 type: string
             additional: {  }
             weight: 13
-          203e706d-c41f-47fb-a6c6-822e5f4c877a:
-            uuid: 203e706d-c41f-47fb-a6c6-822e5f4c877a
+          fc67c0ce-febc-43c6-b245-52de1aa2dbef:
+            uuid: fc67c0ce-febc-43c6-b245-52de1aa2dbef
             region: content
             configuration:
               label_display: '0'
@@ -538,65 +534,6 @@ third_party_settings:
                 type: boolean
             additional: {  }
             weight: 14
-              id: 'field_block:node:news:field_company'
-              formatter:
-                label: above
-                settings:
-                  link: true
-                third_party_settings: {  }
-                type: entity_reference_label
-            additional: {  }
-            weight: 14
-          9eabbd56-f545-4e87-b1bc-fce4f16e44d1:
-            uuid: 9eabbd56-f545-4e87-b1bc-fce4f16e44d1
-            region: content
-            configuration:
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              id: 'field_block:node:news:field_sponsor_image'
-              formatter:
-                label: above
-                settings:
-                  svg_attributes:
-                    width: null
-                    height: null
-                  svg_render_as_image: true
-                  image_style: ''
-                  image_link: ''
-                third_party_settings: {  }
-                type: image
-            additional: {  }
-            weight: 15
-          85c41b54-9cbb-41f9-8124-71a5b5acaf10:
-            uuid: 85c41b54-9cbb-41f9-8124-71a5b5acaf10
-            region: content
-            configuration:
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              id: 'field_block:node:news:field_sponsor_accompanying_text'
-              formatter:
-                label: above
-                settings:
-                  link_to_entity: false
-                third_party_settings: {  }
-                type: string
-            additional: {  }
-            weight: 16
-          2a7a1eb9-e824-4fc8-b4c4-1d9e71db7dbd:
-            uuid: 2a7a1eb9-e824-4fc8-b4c4-1d9e71db7dbd
-            region: two_content
-            configuration:
-              id: 'views_block:company_in_news-block_1'
-              label: ''
-              provider: views
-              label_display: '0'
-              views_label: ''
-              items_per_page: none
-              context_mapping: {  }
-            additional: {  }
-            weight: -10
         third_party_settings: {  }
 id: node.news.default
 targetEntityType: node
@@ -647,14 +584,6 @@ content:
       pager_id: 0
     third_party_settings: {  }
     type: comment_default
-    region: content
-  field_company:
-    weight: 20
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
     region: content
   field_high_impact_news:
     weight: 11
@@ -749,26 +678,6 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     type: boolean
-  field_sponsor_accompanying_text:
-    weight: 22
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  field_sponsor_image:
-    weight: 21
-    label: above
-    settings:
-      svg_attributes:
-        width: null
-        height: null
-      svg_render_as_image: true
-      image_style: ''
-      image_link: ''
-    third_party_settings: {  }
-    type: image
     region: content
   field_tags:
     weight: 7
