@@ -6,7 +6,6 @@ dependencies:
     - field.storage.node.field_image
     - field.storage.node.field_sponsor_accompanying_text
     - field.storage.node.field_sponsor_image
-    - image.style.crop_podcast_130_x_130
     - node.type.news
   module:
     - node
@@ -296,7 +295,7 @@ display:
           click_sort_column: target_id
           type: image
           settings:
-            image_style: crop_podcast_130_x_130
+            image_style: ''
             image_link: ''
             svg_render_as_image: true
             svg_attributes:
