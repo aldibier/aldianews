@@ -1,7 +1,5 @@
 function videoSDK() {
 
-  console.log('videoSDK');
-
   // Elements container
   const videoContainer = document.querySelector("#video-container");
   const videoElement = document.querySelector("#video-element");
@@ -225,7 +223,6 @@ function videoSDK() {
 
         adsObj.interval = setInterval(function () {
           progressAds(adsObj.progress++, adsObj.duration, adsProgressContainer);
-          console.log('interval!');
         }, 1000);
 
         let minutes = Math.floor(adsObj.duration / 60);
@@ -280,7 +277,6 @@ function videoSDK() {
       adsRequest.adTagUrl = `${urlTag}${correlatorNumber}`;
 
       // Pasar la petición al adsLoader para solicitar anuncios
-      console.log('adTagUrl',adsRequest.adTagUrl);
       adsLoader.requestAds(adsRequest);
       adsLoader.contentComplete();
     }
