@@ -126,8 +126,12 @@ import { formApplyModified } from './modules/fixedCloseWebforms';
 
 	$(window).on("load", function () {
 
-		if (localStorage.campaign !=null) {
-			videoSDK();
+		console.log(localStorage.campaign);
+		
+		videoSDK();
+
+		if (localStorage.campaign !=null) { 
+			//do stuff
 		}
 
 		const headingTags = document.querySelectorAll("h1, h2, h3");
