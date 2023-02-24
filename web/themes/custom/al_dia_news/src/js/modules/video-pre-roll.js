@@ -1,4 +1,9 @@
+import { dateToTimestamp,getHoursBetweenDates} from './dateManagment';
+
 function videoSDK() {
+
+  // Fecha actual
+  const currentDate = new Date();
 
   // Elements container
   const videoContainer = document.querySelector("#video-container");
@@ -10,11 +15,38 @@ function videoSDK() {
 
   if (!!drupalSettings.campaigns && !!videoContainer) {
     const campaigns = Object.values(drupalSettings.campaigns);
+    const browserStorage = drupalSettings.campaigns.browser_storage;
+
     if (localStorage.campaign == null) {
       localStorage.posCampaign = 0;
       localStorage.posVast = 0;
+      localStorage.lastViewed = dateToTimestamp(currentDate);
       setCampaignInStorage(localStorage.posCampaign)
     }
+
+    if(localStorage.campaign != null){
+
+      if(localStorage.lastViewed != null){
+
+        const date1 = dateToTimestamp(currentDate);
+        const date2 = localStorage.lastViewed;
+        const hoursDiff = getHoursBetweenDates(date1,date2,true);
+
+        if(hoursDiff > browserStorage){
+          localStorage.posCampaign = 0;
+          localStorage.posVast = 0;
+          localStorage.lastViewed = dateToTimestamp(currentDate);
+          setCampaignInStorage(localStorage.posCampaign)
+        }
+
+      }
+
+      if(localStorage.lastViewed == null){
+        localStorage.lastViewed = dateToTimestamp(currentDate);
+      }
+   
+    }
+
     let mapCampaigns = JSON.parse(localStorage.campaign);
     let vastPrev;
     let vastCurrent;
