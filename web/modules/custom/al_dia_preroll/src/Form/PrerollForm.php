@@ -127,6 +127,14 @@ class PrerollForm extends ConfigFormBase {
 
     $this->buildButtonsAddAndRem($form['tags'], 'campaign', 'campaign');
 
+    $form['browser_storage'] = [
+      '#type' => 'number',
+      '#title' => $this->t('Reset browser storage (in hours)'),
+      '#min' => 0,
+      '#step' => 1,
+      '#default_value' => $config->get('browser_storage') ?? FALSE
+    ];
+
     return parent::buildForm($form, $form_state);
   }
 
@@ -236,6 +244,7 @@ class PrerollForm extends ConfigFormBase {
     }
     $config->set('campaigns', $vast)
       ->set('random_order', $form_state->getValue('tags')['random_order'] ?? FALSE)
+      ->set('browser_storage',$form_state->getValue('browser_storage')?? 0)
       ->save();
 
     parent::submitForm($form, $form_state);

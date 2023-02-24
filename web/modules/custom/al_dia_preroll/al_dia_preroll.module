@@ -11,6 +11,7 @@ function al_dia_preroll_preprocess_node(&$vars) {
   $config = \Drupal::config('al_dia_preroll.adminsettings');
   $campaigns = $config->get('campaigns');
   $randomOrder = $config->get('random_order');
+  $browserStorage = $config->get('browser_storage');
 
   if (count($campaigns) > 0) {
     $arr = [];
@@ -38,6 +39,7 @@ function al_dia_preroll_preprocess_node(&$vars) {
       });
     }
     $arr = sortCampaignsAndVasts($arr);
+    $arr['browser_storage'] = $browserStorage;
     $vars['#attached']['drupalSettings']['campaigns'] = $arr;
   }
 }
