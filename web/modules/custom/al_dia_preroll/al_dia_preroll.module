@@ -1,11 +1,28 @@
 <?php
 
-use Drupal\Core\Messenger\MessengerInterface;
-
 /**
  * @file
  * Contains al_dia_preroll.module.
  */
+/**
+ * Implements hook_theme().
+ */
+function al_dia_preroll_theme() {
+
+  return [
+    'preroll_block' => [
+      'variables' => [
+        'params' => [],
+      ],
+      
+    ],
+  ];
+
+}
+
+function al_dia_preroll_page_attachments(array &$attachments) {
+  $attachments['#attached']['library'][] = 'al_dia_preroll/preroll_files';
+}
 
 function al_dia_preroll_preprocess_node(&$vars) {
   $config = \Drupal::config('al_dia_preroll.adminsettings');
