@@ -108,11 +108,11 @@ function videoSDK() {
       });
       
       // Support for safari initialization 
-/*       if(document.body.classList.contains('iphone')){
+      if(document.body.classList.contains('iphone')){
         document.addEventListener("touchstart", function(event) {
           loadAds();
         }, { once: true });
-      } */
+      }
   
       playSwitch.addEventListener("click", function (e) {
         if (!videoContainer.classList.contains("paused")) {
@@ -241,7 +241,11 @@ function videoSDK() {
           }
   
           if (initialVast) {
-            playAction.dispatchEvent(new Event("click"));
+
+            if(!document.body.classList.contains('iphone')){
+              playAction.dispatchEvent(new Event("click"));
+            }
+          
             initialVast = false;
           }
   
