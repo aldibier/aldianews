@@ -21,8 +21,6 @@ function getHoursBetweenDates(date1, date2, useTimestamps = false) {
 
 function videoSDK() {
 
-  console.log('videoSDK');
-
     // Fecha actual
     const currentDate = new Date();
   
@@ -108,6 +106,13 @@ function videoSDK() {
       playAction.addEventListener("click", function () {
         loadAds();
       });
+      
+      // Support for safari initialization 
+/*       if(document.body.classList.contains('iphone')){
+        document.addEventListener("touchstart", function(event) {
+          loadAds();
+        }, { once: true });
+      } */
   
       playSwitch.addEventListener("click", function (e) {
         if (!videoContainer.classList.contains("paused")) {
@@ -232,17 +237,11 @@ function videoSDK() {
           adsManager = adsManagerLoadedEvent.getAdsManager(videoElement);
   
           if (initialVast == false) {
-            playAction.click();
+            playAction.dispatchEvent(new Event("click"));
           }
   
           if (initialVast) {
-            
-            if(document.body.classList.contains('chrome','safari')){
-              playAction.dispatchEvent(new Event("click"));
-            }else {
-              playAction.click();
-            }
-          
+            playAction.dispatchEvent(new Event("click"));
             initialVast = false;
           }
   
@@ -472,6 +471,7 @@ function videoSDK() {
   
       function managmentErrors(error, code) {
         console.error('Vast code error : ' + code);
+        console.error('Vast code message : ' + error) ;
         switch (code) {
           case 1005 :
             videoContainer.remove();
