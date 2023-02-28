@@ -39,7 +39,9 @@ function videoSDK() {
 
       let campaigns = Object.values(drupalSettings.campaigns);
       // Validates if the campaigns are objects
-      campaigns = campaigns.filter(element => typeof element === 'object' );
+      campaigns = campaigns.filter(element => {
+        if(element !== null) return typeof element === 'object';
+      } );
 
       if (localStorage.campaign == null) {
         localStorage.posCampaign = 0;
