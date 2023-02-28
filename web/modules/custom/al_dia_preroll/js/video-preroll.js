@@ -236,7 +236,13 @@ function videoSDK() {
           }
   
           if (initialVast) {
-            playAction.click();
+            
+            if(document.body.classList.contains('chrome','safari')){
+              playAction.dispatchEvent(new Event("click"));
+            }else {
+              playAction.click();
+            }
+          
             initialVast = false;
           }
   
