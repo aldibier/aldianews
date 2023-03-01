@@ -129,7 +129,7 @@ class PrerollForm extends ConfigFormBase {
 
     $form['browser_storage'] = [
       '#type' => 'number',
-      '#title' => $this->t('Reset browser storage (in hours)'),
+      '#title' => $this->t('Reset browser storage (in seconds)'),
       '#min' => 0,
       '#step' => 1,
       '#default_value' => $config->get('browser_storage') ?? FALSE
