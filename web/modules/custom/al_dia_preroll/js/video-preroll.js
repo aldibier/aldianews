@@ -2,23 +2,25 @@
 
   const MILLISECONDS_PER_SECOND = 1000;
   const SECONDS_PER_MINUTE = 60;
-  const MINUTES_PER_HOUR = 60;
 
   function dateToTimestamp(date) {
     return date.getTime();
   }
 
-  function getHoursBetweenDates(date1, date2, useTimestamps = false) {
+  function getSecondsBetweenDates(date1, date2, useTimestamps = false) {
+    const MILLISECONDS_PER_SECOND = 1000;
+    const SECONDS_PER_MINUTE = 60;
     let timeDiffInMs;
+  
     if (useTimestamps) {
       timeDiffInMs = Math.abs(date1 - date2);
     } else {
       timeDiffInMs = Math.abs(date1.getTime() - date2.getTime());
     }
-
-    const hoursDiff = Math.floor(timeDiffInMs / (MILLISECONDS_PER_SECOND * SECONDS_PER_MINUTE * MINUTES_PER_HOUR));
-
-    return hoursDiff;
+  
+    const secondsDiff = Math.floor(timeDiffInMs / MILLISECONDS_PER_SECOND);
+  
+    return secondsDiff;
   }
 
   function is_ios() {
@@ -71,12 +73,12 @@
     
             const date1 = dateToTimestamp(currentDate);
             const date2 = localStorage.lastViewed;
-            const hoursDiff = getHoursBetweenDates(date1,date2,true);
+            const secondsDiff = getSecondsBetweenDates(date1,date2,true);
     
-            console.log('hoursDiff',hoursDiff);
+            console.log('secondsDiff',secondsDiff);
             console.log('browserStorage',browserStorage);
 
-            if(hoursDiff > browserStorage){
+            if(secondsDiff > parseInt(browserStorage)){
               localStorage.posCampaign = 0;
               localStorage.posVast = 0;
               localStorage.lastViewed = dateToTimestamp(currentDate);
@@ -125,9 +127,11 @@
         
         // Support for safari initialization 
         if(!!ios){
-          document.addEventListener('touchend', () => {
+          document.addEventListener('touchstart', (event) => {
+            event.preventDefault();
             loadAds();
-          },{ once: true });
+            console.log('touchstart');
+          },{ once: true,passive:false });
         }
     
         playSwitch.addEventListener("click", function (e) {
