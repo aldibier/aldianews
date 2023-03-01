@@ -490,37 +490,11 @@
         }
     
         function managmentErrors(error, code) {
+          const urlTag = getTagByPosition(localStorage.posVast);
+          videoContainer.remove();
           console.error('Vast code error : ' + code);
           console.error('Vast code message : ' + error) ;
-          switch (code) {
-            case 1005 :
-              videoContainer.remove();
-              console.error('The vast url has an incorrect format.');
-              break;
-            case 1009 :
-              videoContainer.remove();
-              console.error('The VAST response document is empty.');
-              break;
-            case 402 :
-              videoContainer.remove();
-              console.error('VAST media file loading reached a timeout of 8 seconds.');
-              break;
-            case 400 :
-              videoContainer.remove();
-              console.error('There was an error playing the video ad.');
-              break;
-            case 303 :
-              videoContainer.remove();
-              console.error('Empty VAST response returned.');
-              break;
-            case 301 :
-              videoContainer.remove();
-              console.error('VAST redirection timeout has been reached.');
-            default:
-              videoContainer.remove();
-              console.log(error);
-          }
-    
+          console.error('Vast tag : ' + urlTag);
         }
     
         function setCampaignInStorage(pos) {
