@@ -135,7 +135,10 @@ class PrerollForm extends ConfigFormBase {
       '#default_value' => $config->get('browser_storage') ?? FALSE
     ];
 
+    $form['#cache']['max-age'] = 0;
+
     return parent::buildForm($form, $form_state);
+    
   }
 
   /**
