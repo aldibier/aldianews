@@ -19,6 +19,10 @@ function getHoursBetweenDates(date1, date2, useTimestamps = false) {
   return hoursDiff;
 }
 
+function is_ios () {
+  return navigator.userAgent && navigator.userAgent.match(/iPhone|iPad|iPod/);
+}
+
 function videoSDK() {
 
     // Fecha actual
@@ -109,9 +113,9 @@ function videoSDK() {
       
       // Support for safari initialization 
       if(document.body.classList.contains('iphone')){
-        document.addEventListener("touchstart", function(event) {
+        document.addEventListener('touchmove', () => {
           loadAds();
-        }, { once: true });
+        });
       }
   
       playSwitch.addEventListener("click", function (e) {
