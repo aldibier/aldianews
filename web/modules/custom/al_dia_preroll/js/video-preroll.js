@@ -1,15 +1,12 @@
 (function ($, Drupal) {
 
   const MILLISECONDS_PER_SECOND = 1000;
-  const SECONDS_PER_MINUTE = 60;
 
   function dateToTimestamp(date) {
     return date.getTime();
   }
 
   function getSecondsBetweenDates(date1, date2, useTimestamps = false) {
-    const MILLISECONDS_PER_SECOND = 1000;
-    const SECONDS_PER_MINUTE = 60;
     let timeDiffInMs;
   
     if (useTimestamps) {
@@ -124,15 +121,6 @@
         playAction.addEventListener("click", function () {
           loadAds();
         });
-        
-        // Support for safari initialization 
-        if(!!ios){
-          document.addEventListener('touchstart', (event) => {
-            event.preventDefault();
-            loadAds();
-            console.log('touchstart');
-          },{ once: true,passive:false });
-        }
     
         playSwitch.addEventListener("click", function (e) {
           if (!videoContainer.classList.contains("paused")) {
@@ -261,11 +249,7 @@
             }
     
             if (initialVast) {
-
-              if(!ios){
-                playAction.dispatchEvent(new Event("click"));
-              }
-            
+              playAction.dispatchEvent(new Event("click"));
               initialVast = false;
             }
     
