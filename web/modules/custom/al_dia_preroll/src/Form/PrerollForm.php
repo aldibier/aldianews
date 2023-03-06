@@ -251,6 +251,20 @@ class PrerollForm extends ConfigFormBase {
       ->save();
 
     parent::submitForm($form, $form_state);
+
+    clear_page_cache();
+
   }
 
+}
+
+/**
+ * Clears the page cache.
+ */
+function clear_page_cache() {
+  // Get the page cache service object.
+  $cache_page = \Drupal::cache('page');
+
+  // Invalidate the entire page cache.
+  $cache_page->invalidateAll();
 }

@@ -24,7 +24,7 @@ function al_dia_preroll_page_attachments(array &$attachments) {
   $attachments['#attached']['library'][] = 'al_dia_preroll/preroll_files';
 }
 
-function al_dia_preroll_preprocess_block__preroll_block(&$vars) {
+function al_dia_preroll_preprocess_block__preroll_block(&$vars) { 
   $config = \Drupal::config('al_dia_preroll.adminsettings');
   $campaigns = $config->get('campaigns');
   $randomOrder = $config->get('random_order');
@@ -59,9 +59,6 @@ function al_dia_preroll_preprocess_block__preroll_block(&$vars) {
     $arr['browser_storage'] = $browserStorage;
     $vars['#attached']['drupalSettings']['campaigns'] = $arr;
   }
-
-  $vars['#cache']['tags'] = $config->getCacheTags();
-
 }
 
 function sortCampaignsAndVasts($array): array {
@@ -85,5 +82,3 @@ function customShuffle($a): array {
   }
   return $a;
 }
-
-
