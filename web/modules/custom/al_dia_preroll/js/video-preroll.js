@@ -218,6 +218,7 @@
           adsManager.destroy();
           adsLoader.destroy();
           videoContainer.remove();
+          $(document).off("visibilitychange", handleVisibilityChange);
         });
     
         function initializeIMA() {
@@ -535,11 +536,33 @@
             }
           }
         }
+
+        function handleVisibilityChange() {
+          console.log('handleVisibilityChange');
+          const isPaused = videoContainer.classList.contains("paused");
+          const initialPlayerState = isPaused ? "paused" : "playing";
+          const visibilityState = document.visibilityState;
+        
+          if (visibilityState === "hidden") {
+            if (initialPlayerState === "playing") {
+              adsManager.pause();
+            }
+          }
+        
+          if (visibilityState === "visible") {
+            if (initialPlayerState === "playing") {
+              adsManager.resume();
+            }
+          }
+
+        }
     
         managementPosition("initial");
         initializeIMA();
         actionRequest();
     
+        $(document).on("visibilitychange",handleVisibilityChange)
+
       } else {
     
         if (videoContainer) videoContainer.remove();
