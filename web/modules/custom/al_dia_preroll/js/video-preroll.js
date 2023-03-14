@@ -557,12 +557,16 @@
         
           if (visibilityState === "hidden") {
             if (initialPlayerState === "playing") {
+              clearInterval(adsObj.interval);
               adsManager.pause();
             }
           }
         
           if (visibilityState === "visible") {
             if (initialPlayerState === "playing") {
+              adsObj.interval = setInterval(function () {
+                progressAds(adsObj.progress++, adsObj.duration, adsProgressContainer);
+              }, 1000);
               adsManager.resume();
             }
           }
