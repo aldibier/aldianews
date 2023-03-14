@@ -222,6 +222,7 @@
         });
     
         function initializeIMA() {
+          console.log('initializeIMA');
           adDisplayContainer = new google.ima.AdDisplayContainer(
             adContainer,
             videoElement
@@ -333,15 +334,20 @@
             let error = adErrorEvent.getError();
             let code = error.getErrorCode();
     
+            if (adsManager) {
+              //adsManager.destroy();
+            }
+
             managmentErrors(error, code);
     
-            if (adsManager) {
-              adsManager.destroy();
-            }
           }
+
+          adsObj.onAdComplete = onAdComplete;
+
         }
     
         function actionRequest() {
+          console.log('actionRequest');
           let adsRequest = new google.ima.AdsRequest();
           let correlatorNumber = randomCorrelatorNumber();
           adsRequest.setAdWillAutoPlay(true);
@@ -354,6 +360,7 @@
         }
     
         function loadAds() {
+          console.log('loadAds');
           // Inicializar el contenedor. Debe hacerse mediante una acción del usuario en los dispositivos móviles.
           adDisplayContainer.initialize();
     
@@ -480,15 +487,20 @@
     
         function managmentErrors(error, code) {
           const urlTag = getTagByPosition(localStorage.posVast);
-          videoContainer.remove();
+          //videoContainer.remove();
+
           console.error('Vast code error : ' + code);
           console.error('Vast code message : ' + error) ;
           console.error('Vast tag : ' + urlTag);
+
+          // Funcion para omitir etiquetas con error 
+          adsObj.onAdComplete();
+
         }
     
         function setCampaignInStorage(pos) {
           let playbacks = 0;
-          
+
           if(campaigns[pos].vast.length){
             campaigns[pos].vast.forEach((element) => {
               playbacks += parseInt(element.pos_vast);
