@@ -320,8 +320,11 @@
               setCampaignInStorage(localStorage.posCampaign)
               urlTag = getTagByPosition(localStorage.posVast);
               managementPosition("initial");
+
+              if(!!adsManager){
+                adsManager.destroy();
+              }
     
-              adsManager.destroy();
               actionRequest();
             } else {
               nextAction.click();
@@ -554,6 +557,8 @@
           const isPaused = videoContainer.classList.contains("paused");
           const initialPlayerState = isPaused ? "paused" : "playing";
           const visibilityState = document.visibilityState;
+
+          if(!adsManager) return;
         
           if (visibilityState === "hidden") {
             if (initialPlayerState === "playing") {
