@@ -150,6 +150,7 @@ class RelatedContentFieldFormatter extends FormatterBase {
 
       // the view is inserted in content
       $newContent = $this->newHtml($value, $rendered);
+      
     }
 
 
@@ -235,8 +236,8 @@ class RelatedContentFieldFormatter extends FormatterBase {
     foreach ($blockquote as $key => $value) {
       $html = str_replace('[bq_' . $key . ']', $value, $html);
     }
-    $html = str_replace("[ad]</p>", $ad, $html);
-    $html = str_replace("[related-content]</p>", $content, $html);
+    $html = str_replace("[ad]", $ad, $html);
+    $html = str_replace("[related-content]", $content, $html);
 
     return $html;
 
