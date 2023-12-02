@@ -1,9 +1,7 @@
 uuid: e3d093e1-4319-420f-bef3-6f61aa2da661
 langcode: en
 status: open
-dependencies:
-  module:
-    - al_dia_news_general
+dependencies: {  }
 open: null
 close: null
 weight: 0
@@ -248,35 +246,35 @@ access:
     users: {  }
     permissions: {  }
 handlers:
-  event_contact:
-    id: event_contact
-    label: 'Event Contact'
+  nomination:
+    id: email
+    label: Nomination
     notes: ''
-    handler_id: event_contact
+    handler_id: nomination
     status: true
     conditions: {  }
     weight: 0
     settings:
       states:
         - completed
-      to_mail: _default
+      to_mail: events@aldianews.com
       to_options: {  }
       cc_mail: ''
       cc_options: {  }
-      bcc_mail: ''
+      bcc_mail: amorales@seedem.co
       bcc_options: {  }
-      from_mail: no-reply@aldianews.com
+      from_mail: _default
       from_options: {  }
       from_name: _default
-      subject: _default
-      body: "**Important: Please do not reply to the e-mail mjbuitrago@seedem.co, reply to the e-mail registered in the body of the message.\r\n\r\n<p>Posted on: {{ webform_token('[webform_submission:created]', webform_submission, [], options) }}</p>\r\n<p>Sending by: {{ \r\nwebform_token('[webform_submission:user]', webform_submission, [], options) }}</p>\r\n<p>Contenido:</p>\r\n{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}\r\n"
+      subject: 'Al Dia // New Nomination'
+      body: "<p>A new nomination has been posted on: {{ webform_token('[webform_submission:created]', webform_submission, [], options) }}</p>\r\n\r\n<p>Content:</p>\r\n{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}"
       excluded_elements: {  }
-      ignore_access: 0
+      ignore_access: false
       exclude_empty: true
-      exclude_empty_checkbox: 0
-      exclude_attachments: 0
+      exclude_empty_checkbox: false
+      exclude_attachments: false
       html: true
-      attachments: 0
+      attachments: false
       twig: true
       debug: false
       reply_to: ''

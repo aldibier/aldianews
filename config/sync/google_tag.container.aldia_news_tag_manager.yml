@@ -40,40 +40,6 @@ status_list: |-
   403
   404
 conditions:
-  'entity_bundle:commerce_product':
-    id: 'entity_bundle:commerce_product'
-    bundles: {  }
-    negate: false
-    context_mapping:
-      commerce_product: '@commerce_product.product_route_context:commerce_product'
-  'entity_bundle:commerce_product_variation':
-    id: 'entity_bundle:commerce_product_variation'
-    bundles: {  }
-    negate: false
-    context_mapping:
-      commerce_product_variation: '@commerce_product.product_variation_route_context:commerce_product_variation'
-  'entity_bundle:node':
-    id: 'entity_bundle:node'
-    bundles: {  }
-    negate: false
-    context_mapping:
-      node: '@node.node_route_context:node'
-  'entity_bundle:taxonomy_term':
-    id: 'entity_bundle:taxonomy_term'
-    bundles: {  }
-    negate: false
-    context_mapping:
-      taxonomy_term: '@taxonomy_term.taxonomy_term_route_context:taxonomy_term'
-  'entity_bundle:webform_submission':
-    id: 'entity_bundle:webform_submission'
-    bundles: {  }
-    negate: false
-    context_mapping:
-      webform_submission: '@webform.webform_submission_route_context:webform_submission'
-  http_status_code:
-    id: http_status_code
-    status_codes: {  }
-    negate: false
   mobile_detect_device_type:
     id: mobile_detect_device_type
     devices: {  }
@@ -82,8 +48,3 @@ conditions:
     id: mobile_detect_platform
     platform: {  }
     negate: 0
-  webform:
-    id: webform
-    webforms: {  }
-    negate: false
-    context_mapping: {  }
