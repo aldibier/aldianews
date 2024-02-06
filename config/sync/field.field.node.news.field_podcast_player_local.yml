@@ -1,0 +1,29 @@
+uuid: 3e9937f8-77db-4db5-8d90-88a2e266d97f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_podcast_player_local
+    - media.type.audio
+    - node.type.news
+id: node.news.field_podcast_player_local
+field_name: field_podcast_player_local
+entity_type: node
+bundle: news
+label: 'Podcast player (local)'
+description: 'Upload an MP3 file to be played by the user'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      audio: audio
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
