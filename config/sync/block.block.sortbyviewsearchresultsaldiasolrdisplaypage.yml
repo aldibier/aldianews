@@ -3,7 +3,6 @@ langcode: en
 status: false
 dependencies:
   module:
-    - context
     - search_api_sorts
     - system
   theme:
@@ -17,18 +16,10 @@ plugin: 'search_api_sorts_block:views_page:search_results_al_dia_solr__page_1'
 settings:
   id: 'search_api_sorts_block:views_page:search_results_al_dia_solr__page_1'
   label: 'SORT BY: '
-  provider: search_api_sorts
   label_display: visible
+  provider: search_api_sorts
 visibility:
-  request_path_exclusion:
-    id: request_path_exclusion
-    pages: ''
-    negate: null
-  view_inclusion:
-    id: view_inclusion
-    negate: null
-    view_inclusion: {  }
   request_path:
     id: request_path
-    pages: /search-results
     negate: false
+    pages: /search-results

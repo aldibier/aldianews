@@ -2,11 +2,11 @@ uuid: e5c06fbe-98a7-4ae3-a15d-75d511204e6a
 langcode: en
 status: true
 dependencies:
+  module:
+    - commerce_order
   enforced:
     module:
       - commerce_cart
-  module:
-    - commerce_order
 _core:
   default_config_hash: BeqBf6Mm59Nebv4SsV0yvK5EspkCegPqvwnqwEBvEp0
 id: commerce_order_item.add_to_cart

@@ -4,8 +4,8 @@ status: true
 dependencies:
   module:
     - system
-name: i_am_an_employer_landing
 label: 'I am an Employer Landing'
+name: i_am_an_employer_landing
 group: 'General pages'
 description: 'I am an Employer Landing'
 requireAllConditions: false
@@ -13,61 +13,61 @@ disabled: false
 conditions:
   request_path:
     id: request_path
-    pages: /jobs/employer
     negate: false
     uuid: 190d0698-32f8-418a-b8af-2bbb60aea6f0
     context_mapping: {  }
+    pages: /jobs/employer
 reactions:
   blocks:
+    id: blocks
+    uuid: add8fcd8-5caa-4afe-ab73-fd7c6c58e165
     blocks:
       d78d1a58-33d9-42d4-9527-cfc66a6c7df5:
+        uuid: d78d1a58-33d9-42d4-9527-cfc66a6c7df5
         id: 'fixed_block_content:header_i_am_an_employer'
         label: 'Header I am an employer'
         provider: fixed_block_content
         label_display: '0'
         region: content
         weight: '-1'
-        view_mode: ''
-        context_mapping: {  }
         custom_id: fixed_block_content_header_i_am_an_employer
         theme: al_dia_news
         css_class: block-banner-page
         unique: 0
         context_id: i_am_an_employer_landing
-        uuid: d78d1a58-33d9-42d4-9527-cfc66a6c7df5
+        context_mapping: {  }
+        view_mode: ''
       a48ac423-c727-4e83-821e-87de70c21af3:
+        uuid: a48ac423-c727-4e83-821e-87de70c21af3
         id: system_main_block
         label: 'Main page content'
         provider: system
         label_display: '0'
         region: content
         weight: '1'
-        context_mapping: {  }
         custom_id: system_main_block
         theme: al_dia_news
         css_class: ''
         unique: 1
         context_id: i_am_an_employer_landing
-        uuid: a48ac423-c727-4e83-821e-87de70c21af3
+        context_mapping: {  }
       6f273460-3c0f-4a5d-8b86-bdb9289000ed:
+        uuid: 6f273460-3c0f-4a5d-8b86-bdb9289000ed
         id: 'system_menu_block:i-am-an-employer-menu'
         label: 'I am an Employer menu'
         provider: system
         label_display: '0'
-        level: '1'
-        depth: '0'
-        expand_all_items: 0
         region: content
         weight: '0'
-        context_mapping: {  }
         custom_id: system_menu_block_i_am_an_employer_menu
         theme: al_dia_news
         css_class: block-menu-float
         unique: 0
         context_id: i_am_an_employer_landing
-        uuid: 6f273460-3c0f-4a5d-8b86-bdb9289000ed
-    id: blocks
-    saved: false
-    uuid: add8fcd8-5caa-4afe-ab73-fd7c6c58e165
+        context_mapping: {  }
+        level: '1'
+        depth: '0'
+        expand_all_items: 0
     include_default_blocks: 1
+    saved: false
 weight: 0

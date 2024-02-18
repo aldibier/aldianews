@@ -18,12 +18,12 @@ plugin: system_breadcrumb_block
 settings:
   id: system_breadcrumb_block
   label: Breadcrumbs
-  provider: system
   label_display: '0'
+  provider: system
 visibility:
   http_status_code:
     id: http_status_code
+    negate: true
     status_codes:
       403: 403
       404: 404
-    negate: true

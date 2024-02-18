@@ -4,7 +4,6 @@ status: true
 dependencies:
   module:
     - commerce_checkout
-    - context
   theme:
     - al_dia_news
 id: checkoutprogress
@@ -16,14 +15,6 @@ plugin: commerce_checkout_progress
 settings:
   id: commerce_checkout_progress
   label: 'Checkout progress'
-  provider: commerce_checkout
   label_display: '0'
-visibility:
-  request_path_exclusion:
-    id: request_path_exclusion
-    pages: ''
-    negate: null
-  view_inclusion:
-    id: view_inclusion
-    negate: null
-    view_inclusion: {  }
+  provider: commerce_checkout
+visibility: {  }

@@ -16,7 +16,7 @@ index 78295e2..5880e69 100644
      ],
      'search_api_spellcheck_suggestions' => [
 diff --git a/src/Plugin/views/area/DidYouMeanSpellCheck.php b/src/Plugin/views/area/DidYouMeanSpellCheck.php
-index 42ef994..dcd4168 100644
+index e3b5698..c978ae2 100644
 --- a/src/Plugin/views/area/DidYouMeanSpellCheck.php
 +++ b/src/Plugin/views/area/DidYouMeanSpellCheck.php
 @@ -9,6 +9,7 @@ use Drupal\search_api\Plugin\views\filter\SearchApiFulltext;
@@ -65,23 +65,27 @@ index 42ef994..dcd4168 100644
    }
  
    /**
-@@ -165,9 +185,9 @@ class DidYouMeanSpellCheck extends AreaPluginBase {
-    * @return \Drupal\Core\StringTranslation\TranslatableMarkup
-    *   The suggestion label translated.
-    */
+@@ -159,16 +179,6 @@ class DidYouMeanSpellCheck extends AreaPluginBase {
+     return $field_key;
+   }
+ 
+-  /**
+-   * Gets the suggestion label.
+-   *
+-   * @return \Drupal\Core\StringTranslation\TranslatableMarkup
+-   *   The suggestion label translated.
+-   */
 -  protected function getSuggestionLabel() {
 -    return $this->t('Did you mean:');
 -  }
-+//  protected function getSuggestionLabel() {
-+//    return $this->t('Did you mean:');
-+//  }
- 
+-
    /**
     * Gets the suggestion link.
-@@ -188,4 +208,54 @@ class DidYouMeanSpellCheck extends AreaPluginBase {
- 
+    *
+@@ -199,4 +209,52 @@ class DidYouMeanSpellCheck extends AreaPluginBase {
      return Link::fromTextAndUrl($new_keys, $url);
    }
+ 
 +
 +
 +  /**
@@ -130,24 +134,22 @@ index 42ef994..dcd4168 100644
 +
 +      return $url->toString();
 +  }
-+
  }
-+	
 diff --git a/templates/search-api-spellcheck-did-you-mean.html.twig b/templates/search-api-spellcheck-did-you-mean.html.twig
-index 42b474e..3d8c317 100644
+index 42b474e..5848709 100644
 --- a/templates/search-api-spellcheck-did-you-mean.html.twig
 +++ b/templates/search-api-spellcheck-did-you-mean.html.twig
-@@ -12,9 +12,26 @@
+@@ -11,10 +11,30 @@
+  * @ingroup themeable
   */
  #}
- 
 +<script type="text/javascript">
 +  var elem = document.getElementById("dym-wrapper");
 + if(!!elem){
 +  elem.remove();
 + }
 +</script>
-+
+ 
 +{% if url_redirect %}
 +
 +<script type="text/javascript">
@@ -158,10 +160,11 @@ index 42b474e..3d8c317 100644
 +
 +<div id="dym-wrapper">
 +
++ 
  <div class="sapi-did-you-mean">
--  <span class="did-you-mean-prefix">{{ label }} </span>
--  {{ link }}
--  <span class="did-you-mean-suffix">?</span>
+   <span class="did-you-mean-prefix">{{ label }} </span>
+   {{ link }}
+   <span class="did-you-mean-suffix">?</span>
 +  <div class="did-you-mean-prefix">{{ 'We’re sorry. We could not find results for '|t }}<span class="original-token-i">"{{ original_token }}"</span></div>
 +  <div class="showing-token">{{ 'Showing results for '|t }}<span class="token-it">"{{ token }}"</span></div>
  </div>

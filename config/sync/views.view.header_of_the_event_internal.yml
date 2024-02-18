@@ -28,45 +28,12 @@ base_table: node_field_data
 base_field: nid
 display:
   default:
-    display_plugin: default
     id: default
     display_title: Master
+    display_plugin: default
     position: 0
     display_options:
-      access:
-        type: perm
-        options:
-          perm: 'access content'
-      cache:
-        type: tag
-        options: {  }
-      query:
-        type: views_query
-        options:
-          disable_sql_rewrite: false
-          distinct: false
-          replica: false
-          query_comment: ''
-          query_tags: {  }
-      exposed_form:
-        type: basic
-        options:
-          submit_button: Apply
-          reset_button: false
-          reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
-          expose_sort_order: true
-          sort_asc_label: Asc
-          sort_desc_label: Desc
-      pager:
-        type: none
-        options:
-          items_per_page: null
-          offset: 0
-      style:
-        type: default
-      row:
-        type: fields
+      title: 'Header of the event internal'
       fields:
         field_logo:
           id: field_logo
@@ -75,6 +42,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: field
           label: ''
           exclude: false
           alter:
@@ -119,8 +87,10 @@ display:
           click_sort_column: target_id
           type: image
           settings:
-            image_style: ''
             image_link: ''
+            image_style: ''
+            image_loading:
+              attribute: lazy
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -131,7 +101,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
         title:
           id: title
           table: node_field_data
@@ -139,6 +108,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: node
+          entity_field: title
+          plugin_id: field
           label: ''
           exclude: false
           alter:
@@ -194,9 +166,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: node
-          entity_field: title
-          plugin_id: field
         field_image:
           id: field_image
           table: node__field_image
@@ -204,6 +173,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: field
           label: ''
           exclude: false
           alter:
@@ -248,8 +218,10 @@ display:
           click_sort_column: target_id
           type: image
           settings:
-            image_style: ''
             image_link: ''
+            image_style: ''
+            image_loading:
+              attribute: lazy
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -260,7 +232,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
         field_nomination_status:
           id: field_nomination_status
           table: node__field_nomination_status
@@ -268,6 +239,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: field
           label: ''
           exclude: false
           alter:
@@ -323,7 +295,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
         fieldset:
           id: fieldset
           table: views
@@ -331,6 +302,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: fieldset
           label: ''
           exclude: false
           alter:
@@ -380,7 +352,6 @@ display:
           classes: header-content-date-place
           collapsible: 1
           collapsed: 0
-          plugin_id: fieldset
         field_date_of_event:
           id: field_date_of_event
           table: node__field_date_of_event
@@ -388,6 +359,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: field
           label: ''
           exclude: false
           alter:
@@ -444,7 +416,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
         field_venue_of_the_event:
           id: field_venue_of_the_event
           table: node__field_venue_of_the_event
@@ -452,6 +423,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: field
           label: ''
           exclude: false
           alter:
@@ -507,39 +479,30 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
-      filters:
-        status:
-          value: '1'
-          table: node_field_data
-          field: status
-          plugin_id: boolean
-          entity_type: node
-          entity_field: status
-          id: status
-          expose:
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-          group: 1
-        type:
-          id: type
-          table: node_field_data
-          field: type
-          value:
-            event: event
-          entity_type: node
-          entity_field: type
-          plugin_id: bundle
-          expose:
-            operator_limit_selection: false
-            operator_list: {  }
-      sorts: {  }
-      title: 'Header of the event internal'
-      header: {  }
-      footer: {  }
+      pager:
+        type: none
+        options:
+          offset: 0
+          items_per_page: null
+      exposed_form:
+        type: basic
+        options:
+          submit_button: Apply
+          reset_button: false
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      access:
+        type: perm
+        options:
+          perm: 'access content'
+      cache:
+        type: tag
+        options: {  }
       empty: {  }
-      relationships: {  }
+      sorts: {  }
       arguments:
         nid:
           id: nid
@@ -548,6 +511,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: node
+          entity_field: nid
+          plugin_id: node_nid
           default_action: default
           exception:
             value: all
@@ -561,8 +527,8 @@ display:
           summary_options:
             base_path: ''
             count: true
-            items_per_page: 25
             override: false
+            items_per_page: 25
           summary:
             sort_order: asc
             number_of_records: 0
@@ -574,9 +540,47 @@ display:
           validate_options: {  }
           break_phrase: false
           not: false
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
           entity_type: node
-          entity_field: nid
-          plugin_id: node_nid
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          value:
+            event: event
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+      style:
+        type: default
+      row:
+        type: fields
+      query:
+        type: views_query
+        options:
+          query_comment: ''
+          disable_sql_rewrite: false
+          distinct: false
+          replica: false
+          query_tags: {  }
+      relationships: {  }
+      header: {  }
+      footer: {  }
       display_extenders: {  }
     cache_metadata:
       max-age: -1
@@ -593,35 +597,11 @@ display:
         - 'config:field.storage.node.field_nomination_status'
         - 'config:field.storage.node.field_venue_of_the_event'
   block_1:
-    display_plugin: block
     id: block_1
     display_title: 'UPCOMING EVENTS'
+    display_plugin: block
     position: 1
     display_options:
-      display_extenders:
-        ajax_history: {  }
-      display_description: ''
-      footer:
-        area:
-          id: area
-          table: views
-          field: area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: false
-          tokenize: true
-          content:
-            value: "<div class=\"text-and-buttons-event section-flex\">\r\n            <span>Click here to register, to nominate, or to sponsor</span>\r\n             {{ view }} \r\n             {{ field_ticketlap_link }}\r\n             <a class=\"buttton-link\" id=\"sponsorship\" href=\"#\" role=\"button\">SPONSORSHIP</a>\r\n</div>"
-            format: full_html
-          plugin_id: text
-      defaults:
-        footer: false
-        header: false
-        fields: false
-        filters: false
-        filter_groups: false
-      header: {  }
       fields:
         field_logo:
           id: field_logo
@@ -630,6 +610,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: field
           label: ''
           exclude: false
           alter:
@@ -674,8 +655,10 @@ display:
           click_sort_column: target_id
           type: image
           settings:
-            image_style: ''
             image_link: ''
+            image_style: ''
+            image_loading:
+              attribute: lazy
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -686,7 +669,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
         title:
           id: title
           table: node_field_data
@@ -694,6 +676,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: node
+          entity_field: title
+          plugin_id: field
           label: ''
           exclude: false
           alter:
@@ -749,9 +734,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: node
-          entity_field: title
-          plugin_id: field
         field_image:
           id: field_image
           table: node__field_image
@@ -759,6 +741,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: field
           label: ''
           exclude: true
           alter:
@@ -803,12 +786,14 @@ display:
           click_sort_column: target_id
           type: image
           settings:
-            image_style: ''
             image_link: ''
-            svg_render_as_image: true
+            image_style: ''
             svg_attributes:
               width: null
               height: null
+            svg_render_as_image: true
+            image_loading:
+              attribute: lazy
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -819,7 +804,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
         field_landing_image:
           id: field_landing_image
           table: node__field_landing_image
@@ -827,6 +811,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: field
           label: ''
           exclude: false
           alter:
@@ -871,12 +856,14 @@ display:
           click_sort_column: target_id
           type: image
           settings:
-            image_style: ''
             image_link: ''
-            svg_render_as_image: true
+            image_style: ''
             svg_attributes:
               width: null
               height: null
+            svg_render_as_image: true
+            image_loading:
+              attribute: lazy
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -887,7 +874,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
         field_nomination_status:
           id: field_nomination_status
           table: node__field_nomination_status
@@ -895,6 +881,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: field
           label: ''
           exclude: false
           alter:
@@ -950,7 +937,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
         fieldset:
           id: fieldset
           table: views
@@ -958,6 +944,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: fieldset
           label: ''
           exclude: false
           alter:
@@ -1007,7 +994,6 @@ display:
           classes: header-content-date-place
           collapsible: 1
           collapsed: 0
-          plugin_id: fieldset
         field_date_of_event:
           id: field_date_of_event
           table: node__field_date_of_event
@@ -1015,6 +1001,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: field
           label: ''
           exclude: false
           alter:
@@ -1071,7 +1058,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
         field_venue_of_the_event:
           id: field_venue_of_the_event
           table: node__field_venue_of_the_event
@@ -1079,6 +1065,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: field
           label: ''
           exclude: false
           alter:
@@ -1134,7 +1121,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
         field_ticketlap_link:
           id: field_ticketlap_link
           table: node__field_ticketlap_link
@@ -1142,6 +1128,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: field
           label: ''
           exclude: true
           alter:
@@ -1201,7 +1188,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
         nid:
           id: nid
           table: node_field_data
@@ -1209,6 +1195,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: node
+          entity_field: nid
+          plugin_id: field
           label: ''
           exclude: true
           alter:
@@ -1265,9 +1254,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: node
-          entity_field: nid
-          plugin_id: field
         view:
           id: view
           table: views
@@ -1275,6 +1261,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: view
           label: ''
           exclude: true
           alter:
@@ -1319,30 +1306,29 @@ display:
           view: header_of_the_event_internal
           display: block_4
           arguments: '{{ fields.nid }}'
-          plugin_id: view
       filters:
         status:
-          value: '1'
+          id: status
           table: node_field_data
           field: status
-          plugin_id: boolean
           entity_type: node
           entity_field: status
-          id: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
           expose:
             operator: ''
             operator_limit_selection: false
             operator_list: {  }
-          group: 1
         type:
           id: type
           table: node_field_data
           field: type
-          value:
-            event: event
           entity_type: node
           entity_field: type
           plugin_id: bundle
+          value:
+            event: event
           expose:
             operator_limit_selection: false
             operator_list: {  }
@@ -1353,6 +1339,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: datetime
           operator: '>='
           value:
             min: ''
@@ -1375,9 +1362,9 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-            placeholder: ''
             min_placeholder: ''
             max_placeholder: ''
+            placeholder: ''
           is_grouped: false
           group_info:
             label: ''
@@ -1390,7 +1377,6 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          plugin_id: datetime
         langcode:
           id: langcode
           table: node_field_data
@@ -1398,6 +1384,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: node
+          entity_field: langcode
+          plugin_id: language
           operator: in
           value:
             '***LANGUAGE_language_interface***': '***LANGUAGE_language_interface***'
@@ -1430,13 +1419,34 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          entity_type: node
-          entity_field: langcode
-          plugin_id: language
       filter_groups:
         operator: AND
         groups:
           1: AND
+      defaults:
+        fields: false
+        filters: false
+        filter_groups: false
+        header: false
+        footer: false
+      display_description: ''
+      header: {  }
+      footer:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: false
+          content:
+            value: "<div class=\"text-and-buttons-event section-flex\">\r\n            <span>Click here to register, to nominate, or to sponsor</span>\r\n             {{ view }} \r\n             {{ field_ticketlap_link }}\r\n             <a class=\"buttton-link\" id=\"sponsorship\" href=\"#\" role=\"button\">SPONSORSHIP</a>\r\n</div>"
+            format: full_html
+          tokenize: true
+      display_extenders:
+        ajax_history: {  }
     cache_metadata:
       max-age: -1
       contexts:
@@ -1454,14 +1464,11 @@ display:
         - 'config:field.storage.node.field_ticketlap_link'
         - 'config:field.storage.node.field_venue_of_the_event'
   block_2:
-    display_plugin: block
     id: block_2
     display_title: 'PAST EVENTS'
+    display_plugin: block
     position: 1
     display_options:
-      display_extenders:
-        ajax_history: {  }
-      display_description: ''
       fields:
         field_logo:
           id: field_logo
@@ -1470,6 +1477,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: field
           label: ''
           exclude: false
           alter:
@@ -1514,8 +1522,10 @@ display:
           click_sort_column: target_id
           type: image
           settings:
-            image_style: ''
             image_link: ''
+            image_style: ''
+            image_loading:
+              attribute: lazy
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -1526,7 +1536,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
         title:
           id: title
           table: node_field_data
@@ -1534,6 +1543,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: node
+          entity_field: title
+          plugin_id: field
           label: ''
           exclude: false
           alter:
@@ -1589,9 +1601,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: node
-          entity_field: title
-          plugin_id: field
         field_image:
           id: field_image
           table: node__field_image
@@ -1599,6 +1608,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: field
           label: ''
           exclude: false
           alter:
@@ -1643,8 +1653,10 @@ display:
           click_sort_column: target_id
           type: image
           settings:
-            image_style: ''
             image_link: ''
+            image_style: ''
+            image_loading:
+              attribute: lazy
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -1655,7 +1667,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
         fieldset:
           id: fieldset
           table: views
@@ -1663,6 +1674,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: fieldset
           label: ''
           exclude: false
           alter:
@@ -1712,7 +1724,6 @@ display:
           classes: header-content-date-place
           collapsible: 1
           collapsed: 0
-          plugin_id: fieldset
         field_date_of_event:
           id: field_date_of_event
           table: node__field_date_of_event
@@ -1720,6 +1731,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: field
           label: ''
           exclude: false
           alter:
@@ -1776,7 +1788,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
         field_venue_of_the_event:
           id: field_venue_of_the_event
           table: node__field_venue_of_the_event
@@ -1784,6 +1795,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: field
           label: ''
           exclude: false
           alter:
@@ -1838,34 +1850,29 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
-      defaults:
-        fields: false
-        filters: false
-        filter_groups: false
       filters:
         status:
-          value: '1'
+          id: status
           table: node_field_data
           field: status
-          plugin_id: boolean
           entity_type: node
           entity_field: status
-          id: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
           expose:
             operator: ''
             operator_limit_selection: false
             operator_list: {  }
-          group: 1
         type:
           id: type
           table: node_field_data
           field: type
-          value:
-            event: event
           entity_type: node
           entity_field: type
           plugin_id: bundle
+          value:
+            event: event
           expose:
             operator_limit_selection: false
             operator_list: {  }
@@ -1876,6 +1883,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: datetime
           operator: '<'
           value:
             min: ''
@@ -1898,9 +1906,9 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-            placeholder: ''
             min_placeholder: ''
             max_placeholder: ''
+            placeholder: ''
           is_grouped: false
           group_info:
             label: ''
@@ -1913,7 +1921,6 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          plugin_id: datetime
         langcode:
           id: langcode
           table: node_field_data
@@ -1921,6 +1928,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: node
+          entity_field: langcode
+          plugin_id: language
           operator: in
           value:
             '***LANGUAGE_language_interface***': '***LANGUAGE_language_interface***'
@@ -1953,13 +1963,17 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          entity_type: node
-          entity_field: langcode
-          plugin_id: language
       filter_groups:
         operator: AND
         groups:
           1: AND
+      defaults:
+        fields: false
+        filters: false
+        filter_groups: false
+      display_description: ''
+      display_extenders:
+        ajax_history: {  }
     cache_metadata:
       max-age: -1
       contexts:
@@ -1974,14 +1988,11 @@ display:
         - 'config:field.storage.node.field_logo'
         - 'config:field.storage.node.field_venue_of_the_event'
   block_3:
-    display_plugin: block
     id: block_3
     display_title: Presentación
+    display_plugin: block
     position: 3
     display_options:
-      display_extenders:
-        ajax_history: {  }
-      display_description: ''
       fields:
         field_date_of_event:
           id: field_date_of_event
@@ -1990,6 +2001,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: field
           label: ''
           exclude: true
           alter:
@@ -2046,7 +2058,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
         view:
           id: view
           table: views
@@ -2054,6 +2065,7 @@ display:
           relationship: none
           group_type: group
           admin_label: 'UPCOMING EVENTS'
+          plugin_id: view
           label: ''
           exclude: true
           alter:
@@ -2098,7 +2110,6 @@ display:
           view: header_of_the_event_internal
           display: block_1
           arguments: '{{ raw_arguments.nid }}'
-          plugin_id: view
         view_1:
           id: view_1
           table: views
@@ -2106,6 +2117,7 @@ display:
           relationship: none
           group_type: group
           admin_label: 'PAST EVENTS'
+          plugin_id: view
           label: ''
           exclude: true
           alter:
@@ -2150,7 +2162,6 @@ display:
           view: header_of_the_event_internal
           display: block_2
           arguments: '{{ raw_arguments.nid }}'
-          plugin_id: view
         nid:
           id: nid
           table: node_field_data
@@ -2158,6 +2169,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: node
+          entity_field: nid
+          plugin_id: field
           label: ''
           exclude: true
           alter:
@@ -2214,9 +2228,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: node
-          entity_field: nid
-          plugin_id: field
         nothing:
           id: nothing
           table: views
@@ -2224,6 +2235,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: custom
           label: ''
           exclude: false
           alter:
@@ -2265,10 +2277,6 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: false
-          plugin_id: custom
-      defaults:
-        fields: false
-        arguments: false
       arguments:
         nid:
           id: nid
@@ -2277,6 +2285,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: node
+          entity_field: nid
+          plugin_id: node_nid
           default_action: default
           exception:
             value: all
@@ -2290,8 +2301,8 @@ display:
           summary_options:
             base_path: ''
             count: true
-            items_per_page: 25
             override: false
+            items_per_page: 25
           summary:
             sort_order: asc
             number_of_records: 0
@@ -2303,9 +2314,12 @@ display:
           validate_options: {  }
           break_phrase: false
           not: false
-          entity_type: node
-          entity_field: nid
-          plugin_id: node_nid
+      defaults:
+        fields: false
+        arguments: false
+      display_description: ''
+      display_extenders:
+        ajax_history: {  }
     cache_metadata:
       max-age: -1
       contexts:
@@ -2317,14 +2331,11 @@ display:
       tags:
         - 'config:field.storage.node.field_date_of_event'
   block_4:
-    display_plugin: block
     id: block_4
     display_title: Botones
+    display_plugin: block
     position: 4
     display_options:
-      display_extenders:
-        ajax_history: {  }
-      display_description: ''
       fields:
         nothing:
           id: nothing
@@ -2333,6 +2344,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: custom
           label: ''
           exclude: false
           alter:
@@ -2374,39 +2386,35 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: false
-          plugin_id: custom
-      defaults:
-        fields: false
-        sorts: false
-        filters: false
-        filter_groups: false
-        pager: false
-        style: false
-        row: false
+      pager:
+        type: some
+        options:
+          offset: 0
+          items_per_page: 1
       sorts: {  }
       filters:
         status:
-          value: '1'
+          id: status
           table: node_field_data
           field: status
-          plugin_id: boolean
           entity_type: node
           entity_field: status
-          id: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
           expose:
             operator: ''
             operator_limit_selection: false
             operator_list: {  }
-          group: 1
         type:
           id: type
           table: node_field_data
           field: type
-          value:
-            event: event
           entity_type: node
           entity_field: type
           plugin_id: bundle
+          value:
+            event: event
           expose:
             operator_limit_selection: false
             operator_list: {  }
@@ -2417,6 +2425,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: boolean
           operator: '='
           value: '1'
           group: 1
@@ -2447,16 +2456,10 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          plugin_id: boolean
       filter_groups:
         operator: AND
         groups:
           1: AND
-      pager:
-        type: some
-        options:
-          items_per_page: 1
-          offset: 0
       style:
         type: default
         options:
@@ -2470,6 +2473,17 @@ display:
           inline: {  }
           separator: ''
           hide_empty: false
+      defaults:
+        pager: false
+        style: false
+        row: false
+        fields: false
+        sorts: false
+        filters: false
+        filter_groups: false
+      display_description: ''
+      display_extenders:
+        ajax_history: {  }
       block_hide_empty: true
     cache_metadata:
       max-age: -1

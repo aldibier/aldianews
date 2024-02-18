@@ -4,7 +4,6 @@ status: true
 dependencies:
   module:
     - al_dia_news_general
-    - context
   theme:
     - al_dia_news
 id: latestcategories
@@ -16,14 +15,6 @@ plugin: latest_categories
 settings:
   id: latest_categories
   label: LatestCategories
-  provider: al_dia_news_general
   label_display: '0'
-visibility:
-  request_path_exclusion:
-    id: request_path_exclusion
-    pages: ''
-    negate: null
-  view_inclusion:
-    id: view_inclusion
-    negate: null
-    view_inclusion: {  }
+  provider: al_dia_news_general
+visibility: {  }

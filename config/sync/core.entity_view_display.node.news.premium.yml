@@ -41,8 +41,8 @@ dependencies:
     - video_embed_field
 third_party_settings:
   layout_builder:
-    allow_custom: false
     enabled: false
+    allow_custom: false
   ds:
     layout:
       id: ds_1col
@@ -50,15 +50,15 @@ third_party_settings:
       disable_css: false
       entity_classes: all_classes
       settings:
-        label: ''
+        classes:
+          layout_class: {  }
         wrappers:
           ds_content: div
         outer_wrapper: div
         attributes: ''
         link_attribute: ''
         link_custom: ''
-        classes:
-          layout_class: {  }
+        label: ''
     regions:
       ds_content:
         - group_node_content
@@ -101,9 +101,9 @@ third_party_settings:
         label: hidden
         formatter: default
         settings:
+          link: false
           wrapper: h1
           class: main-title
-          link: false
   field_group:
     group_one_content:
       children:
@@ -111,13 +111,14 @@ third_party_settings:
         - field_image
         - field_caption
         - node_title
+      label: 'One Content'
       parent_name: group_container_content
+      region: ds_content
       weight: 1
       format_type: html_element
-      region: ds_content
       format_settings:
-        id: ''
         classes: content-news-internal-first
+        id: ''
         element: div
         show_label: false
         label_element: h3
@@ -125,7 +126,6 @@ third_party_settings:
         attributes: ''
         effect: none
         speed: fast
-      label: 'One Content'
     group_two_content:
       children:
         - 'dynamic_block_field:node-author_view'
@@ -134,13 +134,14 @@ third_party_settings:
         - body
         - premium_message
         - premium_content_display_custom
+      label: 'Two Content'
       parent_name: group_container_content
+      region: ds_content
       weight: 3
       format_type: html_element
-      region: ds_content
       format_settings:
-        id: ''
         classes: content-news-internal-left
+        id: ''
         element: div
         show_label: false
         label_element: h3
@@ -148,17 +149,17 @@ third_party_settings:
         attributes: ''
         effect: none
         speed: fast
-      label: 'Two Content'
     group_container_right:
       children:
         - 'dynamic_block_field:node-more_in_this_section'
+      label: 'Container right'
       parent_name: group_container_content
+      region: ds_content
       weight: 2
       format_type: html_element
-      region: ds_content
       format_settings:
-        id: ''
         classes: container-right
+        id: ''
         element: div
         show_label: false
         label_element: h3
@@ -166,17 +167,17 @@ third_party_settings:
         attributes: ''
         effect: none
         speed: fast
-      label: 'Container right'
     group_share_this_content:
       children:
         - addtoany
+      label: 'Share this content'
       parent_name: group_two_content
+      region: ds_content
       weight: 18
       format_type: html_element
-      region: ds_content
       format_settings:
-        id: ''
         classes: 'block block-extra-field-blocknodenewsaddtoany block-layout-builder'
+        id: ''
         element: div
         show_label: false
         label_element: h3
@@ -184,19 +185,19 @@ third_party_settings:
         attributes: ''
         effect: none
         speed: fast
-      label: 'Share this content'
     group_container_content:
       children:
         - group_one_content
         - group_container_right
         - group_two_content
+      label: 'Container content'
       parent_name: group_node_content
+      region: ds_content
       weight: 1
       format_type: html_element
-      region: ds_content
       format_settings:
-        id: ''
         classes: container-content
+        id: ''
         element: div
         show_label: false
         label_element: h3
@@ -204,17 +205,17 @@ third_party_settings:
         attributes: ''
         effect: none
         speed: fast
-      label: 'Container content'
     group_node_content:
       children:
         - group_container_content
+      label: 'Node content'
       parent_name: ''
+      region: ds_content
       weight: 0
       format_type: html_element
-      region: ds_content
       format_settings:
-        id: ''
         classes: node__content
+        id: ''
         element: div
         show_label: false
         label_element: h3
@@ -222,15 +223,17 @@ third_party_settings:
         attributes: ''
         effect: none
         speed: fast
-      label: 'Node content'
     group_video:
       children:
         - field_video
+      label: Video
       parent_name: group_one_content
+      region: ds_content
       weight: 0
       format_type: html_element
-      region: ds_content
       format_settings:
+        classes: 'block block-layout-builder block-field-blocknodenewsfield-video premium'
+        id: ''
         element: div
         show_label: false
         label_element: h3
@@ -238,65 +241,66 @@ third_party_settings:
         attributes: ''
         effect: none
         speed: fast
-        id: ''
-        classes: 'block block-layout-builder block-field-blocknodenewsfield-video premium'
-      label: Video
 id: node.news.premium
 targetEntityType: node
 bundle: news
 mode: premium
 content:
   addtoany:
-    weight: 2
-    region: ds_content
     settings: {  }
     third_party_settings: {  }
+    weight: 2
+    region: ds_content
   body:
-    label: hidden
     type: text_trimmed
-    weight: 20
+    label: hidden
     settings:
       trim_length: 600
     third_party_settings:
       field_formatter_class:
         class: 'block block-layout-builder block-field-blocknodenewsbody'
+    weight: 20
     region: ds_content
   field_caption:
-    weight: 2
+    type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings:
       field_formatter_class:
         class: 'block block-layout-builder block-field-blocknodenewsfield-caption'
-    type: string
+    weight: 2
     region: ds_content
   field_image:
-    weight: 1
+    type: image
     label: hidden
     settings:
-      image_style: ''
       image_link: ''
+      image_style: ''
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_loading:
+        attribute: lazy
     third_party_settings:
       field_formatter_class:
         class: 'block block-layout-builder block-field-blocknodenewsfield-image'
       lazy:
-        placeholder_style: ''
         lazy_image: '0'
+        placeholder_style: ''
         data_uri: false
-    type: image
+    weight: 1
     region: ds_content
   field_podcast_player:
     type: text_default
-    weight: 19
-    region: ds_content
     label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 19
+    region: ds_content
   field_video:
     type: video_embed_field_video
-    weight: 26
-    region: ds_content
     label: hidden
     settings:
       autoplay: true
@@ -306,11 +310,13 @@ content:
     third_party_settings:
       field_formatter_class:
         class: content
-  premium_message:
-    weight: 21
+    weight: 26
     region: ds_content
+  premium_message:
     settings: {  }
     third_party_settings: {  }
+    weight: 21
+    region: ds_content
 hidden:
   field_author: true
   field_category: true

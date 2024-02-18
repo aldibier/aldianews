@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   module:
-    - context
     - login_popup
   theme:
     - al_dia_news
@@ -16,14 +15,7 @@ plugin: login_form_popup
 settings:
   id: login_form_popup
   label: 'Login Form Popup'
-  provider: login_popup
   label_display: '0'
-visibility:
-  request_path_exclusion:
-    id: request_path_exclusion
-    pages: ''
-    negate: null
-  view_inclusion:
-    id: view_inclusion
-    negate: null
-    view_inclusion: {  }
+  provider: login_popup
+  show_logout_link: false
+visibility: {  }

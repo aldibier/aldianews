@@ -25,8 +25,8 @@ dependencies:
     - views
 third_party_settings:
   layout_builder:
-    allow_custom: false
     enabled: true
+    allow_custom: false
     sections:
       -
         layout_id: job_posting_intern
@@ -39,66 +39,67 @@ third_party_settings:
             configuration:
               id: 'field_block:node:job:title'
               label: Title
-              provider: layout_builder
               label_display: '0'
-              formatter:
-                label: hidden
-                type: string
-                settings:
-                  link_to_entity: false
-                third_party_settings: {  }
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
                 view_mode: view_mode
-            additional: {  }
+              formatter:
+                type: string
+                label: hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
             weight: 0
+            additional: {  }
           9024d3ba-76a6-49f0-a05c-88f23c684478:
             uuid: 9024d3ba-76a6-49f0-a05c-88f23c684478
             region: one_content_information
             configuration:
               id: 'field_block:node:job:field_company_name'
               label: 'Company name'
-              provider: layout_builder
               label_display: '0'
-              formatter:
-                label: hidden
-                type: entity_reference_label
-                settings:
-                  link: false
-                third_party_settings: {  }
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
                 view_mode: view_mode
-            additional: {  }
+              formatter:
+                type: entity_reference_label
+                label: hidden
+                settings:
+                  link: false
+                third_party_settings: {  }
             weight: 0
+            additional: {  }
           81396a2f-017a-47a5-a03f-4e1cdc7e7436:
             uuid: 81396a2f-017a-47a5-a03f-4e1cdc7e7436
             region: one_content_information
             configuration:
               id: 'field_block:node:job:field_place'
               label: Place
-              provider: layout_builder
               label_display: '0'
-              formatter:
-                label: hidden
-                type: string
-                settings:
-                  link_to_entity: false
-                third_party_settings: {  }
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
                 view_mode: view_mode
-            additional: {  }
+              formatter:
+                type: string
+                label: hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
             weight: 1
+            additional: {  }
           9755fae9-7f86-4e54-9d8c-93a0f1a01c7e:
             uuid: 9755fae9-7f86-4e54-9d8c-93a0f1a01c7e
             region: content
             configuration:
+              id: 'field_block:node:job:field_link_to_apply_for_the_job'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-              id: 'field_block:node:job:field_link_to_apply_for_the_job'
               formatter:
+                type: link
                 label: above
                 settings:
                   trim_length: 80
@@ -107,118 +108,117 @@ third_party_settings:
                   rel: ''
                   target: ''
                 third_party_settings: {  }
-                type: link
-            additional: {  }
             weight: 0
+            additional: {  }
           4e0b76c1-77be-45f0-819b-d2d9498e961e:
             uuid: 4e0b76c1-77be-45f0-819b-d2d9498e961e
             region: three_content_buttons
             configuration:
               id: 'views_block:internal_links_to_job_postings-block_1'
               label: ''
-              provider: views
               label_display: '0'
+              provider: views
+              context_mapping: {  }
               views_label: ''
               items_per_page: none
-              context_mapping: {  }
-            additional: {  }
             weight: 4
+            additional: {  }
           9b0203ad-364b-4b18-806e-76cf136ae930:
             uuid: 9b0203ad-364b-4b18-806e-76cf136ae930
             region: two_content_body
             configuration:
               id: 'field_block:node:job:body'
               label: Description
-              provider: layout_builder
               label_display: '0'
-              formatter:
-                label: hidden
-                type: text_default
-                settings: {  }
-                third_party_settings: {  }
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
                 view_mode: view_mode
-            additional: {  }
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
             weight: -9
+            additional: {  }
           12bf7836-f873-4255-aea9-025fc945a18a:
             uuid: 12bf7836-f873-4255-aea9-025fc945a18a
             region: two_content_body
             configuration:
               id: 'field_block:node:job:field_requirements'
               label: Requirements
-              provider: layout_builder
               label_display: '0'
-              formatter:
-                label: hidden
-                type: text_default
-                settings: {  }
-                third_party_settings: {  }
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
                 view_mode: view_mode
-            additional: {  }
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
             weight: -8
+            additional: {  }
           af784945-b669-4ce0-834d-aeac27546966:
             uuid: af784945-b669-4ce0-834d-aeac27546966
             region: two_content_body
             configuration:
               id: 'extra_field_block:node:job:addtoany'
               label: 'SHARE THIS CONTENT:'
-              provider: layout_builder
               label_display: visible
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
               formatter:
                 settings: {  }
                 third_party_settings: {  }
-              context_mapping:
-                entity: layout_builder.entity
-            additional: {  }
             weight: -10
+            additional: {  }
           25402d1b-772e-414e-8590-10778f9e41e4:
             uuid: 25402d1b-772e-414e-8590-10778f9e41e4
             region: horizontal_advertising
             configuration:
               id: gamw
               label: 'Header - top - banner (Internal jobs)'
-              provider: gamw
               label_display: '0'
+              provider: gamw
+              context_mapping: {  }
               ad_unit: header-top-banner
               attributes_wrapper: null
-              context_mapping: {  }
-            additional: {  }
             weight: 1
+            additional: {  }
           361a0c86-22e3-4df4-91ca-4af628ed716e:
             uuid: 361a0c86-22e3-4df4-91ca-4af628ed716e
             region: one_vertical_advertising
             configuration:
               id: gamw
               label: 'Fixed Internal - Side Section top block'
-              provider: gamw
               label_display: '0'
+              provider: gamw
+              context_mapping: {  }
               ad_unit: fixed-internal-side-section-top-block
               attributes_wrapper:
                 0: ''
                 add: 'Add another targeting attribute'
                 remove: 'Remove last targeting attribute'
-              context_mapping: {  }
-            additional: {  }
             weight: 1
+            additional: {  }
           06c729d0-effd-4a85-923f-46a01551a4a1:
             uuid: 06c729d0-effd-4a85-923f-46a01551a4a1
             region: two_vertical_advertising
             configuration:
               id: gamw
               label: 'Fixed Internal - Side Section bottom skyscraper'
-              provider: gamw
               label_display: '0'
+              provider: gamw
+              context_mapping: {  }
               ad_unit: fixed-internal-side-section-bottom-skyscraper
               attributes_wrapper:
                 0: ''
                 add: 'Add another targeting attribute'
                 remove: 'Remove last targeting attribute'
-              context_mapping: {  }
-            additional: {  }
             weight: 1
+            additional: {  }
         third_party_settings: {  }
 id: node.job.default
 targetEntityType: node
@@ -226,31 +226,31 @@ bundle: job
 mode: default
 content:
   body:
-    label: hidden
     type: text_default
-    weight: 101
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 101
     region: content
   field_company_name:
-    weight: 105
+    type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 105
     region: content
   field_expiration_date:
-    weight: 104
+    type: datetime_default
     label: above
     settings:
-      format_type: medium
       timezone_override: ''
+      format_type: medium
     third_party_settings: {  }
-    type: datetime_default
+    weight: 104
     region: content
   field_link_to_apply_for_the_job:
-    weight: 109
+    type: link
     label: above
     settings:
       trim_length: 80
@@ -259,51 +259,51 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    type: link
+    weight: 109
     region: content
   field_place:
-    weight: 103
+    type: string
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 103
     region: content
   field_requirements:
-    weight: 102
+    type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: text_default
+    weight: 102
     region: content
   field_sector:
-    weight: 106
+    type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 106
     region: content
   field_sponsored_profile:
-    weight: 107
+    type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 107
     region: content
   field_type_of_working_day:
-    weight: 108
+    type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 108
     region: content
   links:
-    weight: 100
     settings: {  }
     third_party_settings: {  }
+    weight: 100
     region: content
 hidden:
   addtoany: true

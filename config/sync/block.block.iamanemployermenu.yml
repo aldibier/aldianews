@@ -5,7 +5,6 @@ dependencies:
   config:
     - system.menu.i-am-an-employer-menu
   module:
-    - context
     - system
   theme:
     - al_dia_news
@@ -18,17 +17,9 @@ plugin: 'system_menu_block:i-am-an-employer-menu'
 settings:
   id: 'system_menu_block:i-am-an-employer-menu'
   label: 'I am an Employer menu'
-  provider: system
   label_display: '0'
+  provider: system
   level: 1
   depth: 0
   expand_all_items: false
-visibility:
-  request_path_exclusion:
-    id: request_path_exclusion
-    pages: ''
-    negate: null
-  view_inclusion:
-    id: view_inclusion
-    negate: null
-    view_inclusion: {  }
+visibility: {  }

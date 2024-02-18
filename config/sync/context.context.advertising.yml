@@ -4,8 +4,8 @@ status: true
 dependencies:
   module:
     - system
-name: advertising
 label: Advertising
+name: advertising
 group: 'General pages'
 description: 'This is the context of the blocks of the landing page advertising'
 requireAllConditions: false
@@ -13,91 +13,91 @@ disabled: false
 conditions:
   request_path:
     id: request_path
-    pages: /advertising
     negate: false
     uuid: 9bbbb3cb-3a6f-47c8-b89a-99e9bd9be771
     context_mapping: {  }
+    pages: /advertising
 reactions:
   blocks:
+    id: blocks
+    uuid: cd435262-caab-47c7-9c29-b6aa3d857682
     blocks:
       a8c3193b-f1e0-4f68-a24a-cf5d645b8178:
+        uuid: a8c3193b-f1e0-4f68-a24a-cf5d645b8178
         id: system_main_block
         label: 'Main page content'
         provider: system
         label_display: '0'
         region: content
         weight: '-2'
-        context_mapping: {  }
         custom_id: system_main_block
         theme: al_dia_news
         css_class: ''
         unique: 0
         context_id: advertising
-        uuid: a8c3193b-f1e0-4f68-a24a-cf5d645b8178
+        context_mapping: {  }
       e59c9311-b172-46e3-9d52-ba7afbc8dc8a:
+        uuid: e59c9311-b172-46e3-9d52-ba7afbc8dc8a
         id: 'views_block:header_advertising_landing-block_1'
         label: ''
         provider: views
         label_display: '0'
-        views_label: ''
-        items_per_page: none
         region: content
         weight: '-1'
-        context_mapping: {  }
         custom_id: views_block_header_advertising_landing_block_1
         theme: al_dia_news
         css_class: ''
         unique: 1
         context_id: advertising
-        uuid: e59c9311-b172-46e3-9d52-ba7afbc8dc8a
+        context_mapping: {  }
+        views_label: ''
+        items_per_page: none
       fda9aaee-d23a-435e-ad14-97cad694a0d2:
+        uuid: fda9aaee-d23a-435e-ad14-97cad694a0d2
         id: 'fixed_block_content:information_footer_advertising'
         label: 'Information footer Advertising'
         provider: fixed_block_content
         label_display: '0'
         region: advertising_webform
         weight: '-7'
-        view_mode: ''
-        context_mapping: {  }
         custom_id: fixed_block_content_information_footer_advertising
         theme: al_dia_news
         css_class: ''
         unique: 0
         context_id: advertising
-        uuid: fda9aaee-d23a-435e-ad14-97cad694a0d2
+        context_mapping: {  }
+        view_mode: ''
       50a28dd4-a057-41c6-a9f2-da7fcb9bea2e:
+        uuid: 50a28dd4-a057-41c6-a9f2-da7fcb9bea2e
         id: webform_block
         label: 'CONTACT US'
         provider: webform
         label_display: '0'
-        webform_id: contact_us_advertising_landing
-        default_data: ''
-        redirect: 0
         region: advertising_webform
         weight: '-2'
-        context_mapping: {  }
         custom_id: webform_block
         theme: al_dia_news
         css_class: ''
         unique: 0
         context_id: advertising
-        uuid: 50a28dd4-a057-41c6-a9f2-da7fcb9bea2e
+        context_mapping: {  }
+        webform_id: contact_us_advertising_landing
+        default_data: ''
+        redirect: 0
       dd03b2b2-9c41-4388-9b3d-9159408aae19:
+        uuid: dd03b2b2-9c41-4388-9b3d-9159408aae19
         id: 'block_group:advertising_webform'
         label: 'Advertising webform'
         provider: blockgroup
         label_display: '0'
         region: content
         weight: '0'
-        context_mapping: {  }
         custom_id: block_group_advertising_webform
         theme: al_dia_news
         css_class: advertising-card
         unique: 0
         context_id: advertising
-        uuid: dd03b2b2-9c41-4388-9b3d-9159408aae19
-    id: blocks
-    saved: false
-    uuid: cd435262-caab-47c7-9c29-b6aa3d857682
+        context_mapping: {  }
     include_default_blocks: 1
+    saved: false
 weight: 0

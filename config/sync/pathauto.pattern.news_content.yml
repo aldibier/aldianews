@@ -10,13 +10,13 @@ type: 'canonical_entities:node'
 pattern: '[node:field_category:entity:parent]/[node:field_category]/[node:field_new_short_title]'
 selection_criteria:
   c50e821b-27e7-4cbf-9f86-9d495250d3a5:
-    id: node_type
-    bundles:
-      news: news
+    id: 'entity_bundle:node'
     negate: false
+    uuid: c50e821b-27e7-4cbf-9f86-9d495250d3a5
     context_mapping:
       node: node
-    uuid: c50e821b-27e7-4cbf-9f86-9d495250d3a5
+    bundles:
+      news: news
 selection_logic: and
 weight: -5
 relationships: {  }

@@ -15,21 +15,21 @@ bundle: title_and_body_block
 mode: default
 content:
   body:
-    label: hidden
     type: text_default
-    weight: 1
+    label: hidden
     settings: {  }
     third_party_settings:
       field_formatter_class:
         class: body-block-title-body
+    weight: 1
     region: content
   field_section_title:
-    weight: 0
+    type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 0
     region: content
 hidden:
   langcode: true

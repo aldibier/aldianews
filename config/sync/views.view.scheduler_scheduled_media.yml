@@ -4,12 +4,12 @@ status: true
 dependencies:
   config:
     - system.menu.admin
-  enforced:
-    module:
-      - scheduler
   module:
     - media
     - user
+  enforced:
+    module:
+      - scheduler
 _core:
   default_config_hash: DlyNLtcxCE_NYlHEz0bKJ0br1iHdrNY8_wA85aHsy9g
 id: scheduler_scheduled_media
@@ -21,133 +21,12 @@ base_table: media_field_revision
 base_field: vid
 display:
   default:
-    display_plugin: default
     id: default
     display_title: Master
+    display_plugin: default
     position: 0
     display_options:
-      access:
-        type: perm
-        options:
-          perm: 'view scheduled media'
-      cache:
-        type: tag
-        options: {  }
-      query:
-        type: views_query
-        options:
-          disable_sql_rewrite: false
-          distinct: false
-          replica: false
-          query_comment: ''
-          query_tags: {  }
-      exposed_form:
-        type: basic
-        options:
-          submit_button: Filter
-          reset_button: true
-          reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
-          expose_sort_order: true
-          sort_asc_label: Asc
-          sort_desc_label: Desc
-      pager:
-        type: full
-        options:
-          items_per_page: 50
-          offset: 0
-          id: 0
-          total_pages: null
-          expose:
-            items_per_page: false
-            items_per_page_label: 'Items per page'
-            items_per_page_options: '5, 10, 25, 50'
-            items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
-            offset: false
-            offset_label: Offset
-          tags:
-            previous: '‹ previous'
-            next: 'next ›'
-            first: '« first'
-            last: 'last »'
-      style:
-        type: table
-        options:
-          grouping: {  }
-          row_class: ''
-          default_row_class: true
-          override: true
-          sticky: true
-          caption: ''
-          summary: ''
-          description: ''
-          columns:
-            media_bulk_form: media_bulk_form
-            name: name
-            bundle: bundle
-            uid: uid
-            status: status
-            publish_on: publish_on
-            unpublish_on: unpublish_on
-            operations: operations
-          info:
-            media_bulk_form:
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            name:
-              sortable: true
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            bundle:
-              sortable: true
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            uid:
-              sortable: true
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            status:
-              sortable: true
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            publish_on:
-              sortable: true
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            unpublish_on:
-              sortable: true
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            operations:
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-          default: publish_on
-          empty_table: true
-      row:
-        type: fields
+      title: 'Scheduled Media'
       fields:
         media_bulk_form:
           id: media_bulk_form
@@ -156,6 +35,8 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: media
+          plugin_id: bulk_form
           label: 'Bulk update'
           exclude: false
           alter:
@@ -200,8 +81,6 @@ display:
           action_title: Action
           include_exclude: exclude
           selected_actions: {  }
-          entity_type: media
-          plugin_id: bulk_form
         name:
           id: name
           table: media_field_revision
@@ -209,6 +88,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: media
+          entity_field: name
+          plugin_id: field
           label: 'Media Name'
           exclude: false
           alter:
@@ -264,9 +146,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: media
-          entity_field: name
-          plugin_id: field
         bundle:
           id: bundle
           table: media_field_data
@@ -274,6 +153,9 @@ display:
           relationship: mid
           group_type: group
           admin_label: ''
+          entity_type: media
+          entity_field: bundle
+          plugin_id: field
           label: 'Media type'
           exclude: false
           alter:
@@ -329,9 +211,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: media
-          entity_field: bundle
-          plugin_id: field
         uid:
           id: uid
           table: media_field_revision
@@ -339,6 +218,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: media
+          entity_field: uid
+          plugin_id: field
           label: Author
           exclude: false
           alter:
@@ -394,9 +276,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: media
-          entity_field: uid
-          plugin_id: field
         status:
           id: status
           table: media_field_revision
@@ -404,6 +283,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: media
+          entity_field: status
+          plugin_id: field
           label: Status
           exclude: false
           alter:
@@ -449,8 +331,8 @@ display:
           type: boolean
           settings:
             format: custom
-            format_custom_true: Published
             format_custom_false: Unpublished
+            format_custom_true: Published
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -461,9 +343,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: media
-          entity_field: status
-          plugin_id: field
         publish_on:
           id: publish_on
           table: media_field_revision
@@ -471,6 +350,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: media
+          entity_field: publish_on
+          plugin_id: field
           label: 'Publish on'
           exclude: false
           alter:
@@ -528,9 +410,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: media
-          entity_field: publish_on
-          plugin_id: field
         unpublish_on:
           id: unpublish_on
           table: media_field_revision
@@ -538,6 +417,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: media
+          entity_field: unpublish_on
+          plugin_id: field
           label: 'Unpublish on'
           exclude: false
           alter:
@@ -595,9 +477,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: media
-          entity_field: unpublish_on
-          plugin_id: field
         operations:
           id: operations
           table: media_revision
@@ -605,6 +484,8 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: media
+          plugin_id: entity_operations
           label: Operations
           exclude: false
           alter:
@@ -647,8 +528,57 @@ display:
           empty_zero: false
           hide_alter_empty: true
           destination: false
-          entity_type: media
-          plugin_id: entity_operations
+      pager:
+        type: full
+        options:
+          offset: 0
+          items_per_page: 50
+          total_pages: null
+          id: 0
+          tags:
+            next: 'next ›'
+            previous: '‹ previous'
+            first: '« first'
+            last: 'last »'
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+      exposed_form:
+        type: basic
+        options:
+          submit_button: Filter
+          reset_button: true
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      access:
+        type: perm
+        options:
+          perm: 'view scheduled media'
+      cache:
+        type: tag
+        options: {  }
+      empty:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text_custom
+          empty: true
+          content: 'No scheduled media.'
+          tokenize: false
+      sorts: {  }
+      arguments: {  }
       filters:
         latest_revision:
           id: latest_revision
@@ -657,6 +587,8 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: media
+          plugin_id: latest_revision
           operator: '='
           value: ''
           group: 1
@@ -687,8 +619,6 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          entity_type: media
-          plugin_id: latest_revision
         name:
           id: name
           table: media_field_revision
@@ -696,6 +626,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: media
+          entity_field: name
+          plugin_id: string
           operator: contains
           value: ''
           group: 1
@@ -729,9 +662,6 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          entity_type: media
-          entity_field: name
-          plugin_id: string
         bundle:
           id: bundle
           table: media_field_data
@@ -739,6 +669,9 @@ display:
           relationship: mid
           group_type: group
           admin_label: ''
+          entity_type: media
+          entity_field: bundle
+          plugin_id: bundle
           operator: in
           value: {  }
           group: 1
@@ -772,9 +705,6 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          entity_type: media
-          entity_field: bundle
-          plugin_id: bundle
         status:
           id: status
           table: media_field_revision
@@ -782,6 +712,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: media
+          entity_field: status
+          plugin_id: boolean
           operator: '='
           value: ''
           group: 1
@@ -822,9 +755,6 @@ display:
                 title: Unpublished
                 operator: '='
                 value: '0'
-          entity_type: media
-          entity_field: status
-          plugin_id: boolean
         langcode:
           id: langcode
           table: media_field_revision
@@ -832,6 +762,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: media
+          entity_field: langcode
+          plugin_id: language
           operator: in
           value: {  }
           group: 1
@@ -865,9 +798,6 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          entity_type: media
-          entity_field: langcode
-          plugin_id: language
         publish_on:
           id: publish_on
           table: media_field_revision
@@ -875,6 +805,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: media
+          entity_field: publish_on
+          plugin_id: date
           operator: 'not empty'
           value:
             min: ''
@@ -897,9 +830,9 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-            placeholder: ''
             min_placeholder: ''
             max_placeholder: ''
+            placeholder: ''
           is_grouped: false
           group_info:
             label: ''
@@ -912,9 +845,6 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          entity_type: media
-          entity_field: publish_on
-          plugin_id: date
         unpublish_on:
           id: unpublish_on
           table: media_field_revision
@@ -922,6 +852,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: media
+          entity_field: unpublish_on
+          plugin_id: date
           operator: 'not empty'
           value:
             min: ''
@@ -944,9 +877,9 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-            placeholder: null
             min_placeholder: null
             max_placeholder: null
+            placeholder: null
           is_grouped: false
           group_info:
             label: ''
@@ -959,26 +892,96 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          entity_type: media
-          entity_field: unpublish_on
-          plugin_id: date
-      sorts: {  }
-      title: 'Scheduled Media'
-      header: {  }
-      footer: {  }
-      empty:
-        area_text_custom:
-          id: area_text_custom
-          table: views
-          field: area_text_custom
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: true
-          tokenize: false
-          content: 'No scheduled media.'
-          plugin_id: text_custom
-      arguments: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+          2: OR
+      style:
+        type: table
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          columns:
+            media_bulk_form: media_bulk_form
+            name: name
+            bundle: bundle
+            uid: uid
+            status: status
+            publish_on: publish_on
+            unpublish_on: unpublish_on
+            operations: operations
+          default: publish_on
+          info:
+            media_bulk_form:
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            name:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            bundle:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            uid:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            status:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            publish_on:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            unpublish_on:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            operations:
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+          override: true
+          sticky: true
+          summary: ''
+          empty_table: true
+          caption: ''
+          description: ''
+      row:
+        type: fields
+      query:
+        type: views_query
+        options:
+          query_comment: ''
+          disable_sql_rewrite: false
+          distinct: false
+          replica: false
+          query_tags: {  }
       relationships:
         mid:
           id: mid
@@ -987,16 +990,13 @@ display:
           relationship: none
           group_type: group
           admin_label: 'Media Field'
-          required: false
           entity_type: media
           entity_field: mid
           plugin_id: standard
+          required: false
+      header: {  }
+      footer: {  }
       display_extenders: {  }
-      filter_groups:
-        operator: AND
-        groups:
-          1: AND
-          2: OR
     cache_metadata:
       max-age: 0
       contexts:
@@ -1007,23 +1007,23 @@ display:
         - user.permissions
       tags: {  }
   overview:
-    display_plugin: page
     id: overview
     display_title: 'Media Overview'
+    display_plugin: page
     position: 1
     display_options:
+      display_description: 'Overview of all scheduled media, via main admin content page'
       display_extenders: {  }
       path: admin/content/media/scheduled
-      display_description: 'Overview of all scheduled media, via main admin content page'
       menu:
         type: normal
         title: 'Scheduled Media'
         description: 'Media items that are scheduled for publishing or unpublishing'
-        expanded: false
-        parent: system.admin_content
         weight: 0
-        context: '0'
+        expanded: false
         menu_name: admin
+        parent: system.admin_content
+        context: '0'
     cache_metadata:
       max-age: 0
       contexts:
@@ -1034,23 +1034,14 @@ display:
         - user.permissions
       tags: {  }
   user_page:
-    display_plugin: page
     id: user_page
     display_title: User
+    display_plugin: page
     position: 2
     display_options:
-      display_extenders: {  }
-      display_description: 'Scheduled media on user profile, showing just that user''s scheduled media'
-      path: user/%user/scheduled_media
-      menu:
-        type: tab
-        title: 'Scheduled Media'
-        description: 'Scheduled Media by this user'
-        expanded: false
-        parent: user.page
-        weight: -1
-        context: '0'
-        menu_name: account
+      access:
+        type: none
+        options: {  }
       empty:
         area_text_custom:
           id: area_text_custom
@@ -1059,14 +1050,10 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          empty: true
-          tokenize: true
-          content: 'No scheduled media for user {{ arguments.uid }}'
           plugin_id: text_custom
-      defaults:
-        empty: false
-        arguments: false
-        access: false
+          empty: true
+          content: 'No scheduled media for user {{ arguments.uid }}'
+          tokenize: true
       arguments:
         uid:
           id: uid
@@ -1075,10 +1062,23 @@ display:
           entity_type: media
           entity_field: uid
           plugin_id: numeric
-      access:
-        type: none
-        options: {  }
+      defaults:
+        empty: false
+        access: false
+        arguments: false
+      display_description: 'Scheduled media on user profile, showing just that user''s scheduled media'
       display_comment: 'Access to the user view is controllled via a custom RouteSubscriber'
+      display_extenders: {  }
+      path: user/%user/scheduled_media
+      menu:
+        type: tab
+        title: 'Scheduled Media'
+        description: 'Scheduled Media by this user'
+        weight: -1
+        expanded: false
+        menu_name: account
+        parent: user.page
+        context: '0'
     cache_metadata:
       max-age: 0
       contexts:

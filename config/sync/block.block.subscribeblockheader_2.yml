@@ -6,7 +6,6 @@ dependencies:
     - 'block_content:block_for_image_and_link:0ae47bf7-7bf7-43a0-959d-d1e01a49406f'
   module:
     - block_content
-    - context
   theme:
     - al_dia_news
 id: subscribeblockheader_2
@@ -18,17 +17,9 @@ plugin: 'block_content:0ae47bf7-7bf7-43a0-959d-d1e01a49406f'
 settings:
   id: 'block_content:0ae47bf7-7bf7-43a0-959d-d1e01a49406f'
   label: 'Subscribe block header'
-  provider: block_content
   label_display: '0'
+  provider: block_content
   status: true
   info: ''
   view_mode: full
-visibility:
-  request_path_exclusion:
-    id: request_path_exclusion
-    pages: ''
-    negate: null
-  view_inclusion:
-    id: view_inclusion
-    negate: null
-    view_inclusion: {  }
+visibility: {  }

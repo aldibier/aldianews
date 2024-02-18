@@ -11,45 +11,51 @@ dependencies:
   module:
     - ds
     - field_formatter_class
-    - image
     - lazy
     - options
+    - svg_image
 id: paragraph.sliders_in_internal_events.default
 targetEntityType: paragraph
 bundle: sliders_in_internal_events
 mode: default
 content:
   field_image_slider:
-    weight: 2
+    type: image
     label: above
     settings:
-      image_style: crop_slider_570_x_300
       image_link: ''
+      image_style: crop_slider_570_x_300
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_loading:
+        attribute: lazy
     third_party_settings:
       field_formatter_class:
         class: item
       lazy:
-        placeholder_style: ''
         lazy_image: '0'
+        placeholder_style: ''
         data_uri: false
       ds:
         ds_limit: ''
-    type: image
+    weight: 2
     region: content
   field_slider_styl:
-    weight: 3
+    type: list_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: list_default
+    weight: 3
     region: content
   field_title:
-    weight: 0
+    type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 0
     region: content
 hidden:
   search_api_excerpt: true

@@ -27,75 +27,34 @@ base_table: node_field_data
 base_field: nid
 display:
   default:
-    display_plugin: default
     id: default
     display_title: Master
+    display_plugin: default
     position: 0
     display_options:
-      access:
-        type: perm
-        options:
-          perm: 'access content'
-      cache:
-        type: tag
-        options: {  }
-      query:
-        type: views_query
-        options:
-          disable_sql_rewrite: false
-          distinct: false
-          replica: false
-          query_comment: ''
-          query_tags: {  }
-      exposed_form:
-        type: basic
-        options:
-          submit_button: Apply
-          reset_button: false
-          reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
-          expose_sort_order: true
-          sort_asc_label: Asc
-          sort_desc_label: Desc
-      pager:
-        type: none
-        options:
-          items_per_page: null
-          offset: 0
-      style:
-        type: default
-        options:
-          grouping: {  }
-          row_class: card-event
-          default_row_class: true
-      row:
-        type: fields
+      title: 'Events in Al Día Live'
       fields:
         title:
           id: title
           table: node_field_data
           field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
           entity_type: node
           entity_field: title
+          plugin_id: field
           label: ''
+          exclude: false
           alter:
             alter_text: false
             make_link: false
             absolute: false
-            trim: false
             word_boundary: false
             ellipsis: false
             strip_tags: false
+            trim: false
             html: false
-          hide_empty: false
-          empty_zero: false
-          settings:
-            link_to_entity: true
-          plugin_id: field
-          relationship: none
-          group_type: group
-          admin_label: ''
-          exclude: false
           element_type: ''
           element_class: ''
           element_label_type: ''
@@ -105,9 +64,13 @@ display:
           element_wrapper_class: ''
           element_default_classes: true
           empty: ''
+          hide_empty: false
+          empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
           type: string
+          settings:
+            link_to_entity: true
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -118,32 +81,29 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-      filters:
-        status:
-          value: '1'
-          table: node_field_data
-          field: status
-          plugin_id: boolean
-          entity_type: node
-          entity_field: status
-          id: status
-          expose:
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-          group: 1
-        type:
-          id: type
-          table: node_field_data
-          field: type
-          value:
-            event: event
-          entity_type: node
-          entity_field: type
-          plugin_id: bundle
-          expose:
-            operator_limit_selection: false
-            operator_list: {  }
+      pager:
+        type: none
+        options:
+          offset: 0
+          items_per_page: null
+      exposed_form:
+        type: basic
+        options:
+          submit_button: Apply
+          reset_button: false
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      access:
+        type: perm
+        options:
+          perm: 'access content'
+      cache:
+        type: tag
+        options: {  }
+      empty: {  }
       sorts:
         field_date_of_event_value:
           id: field_date_of_event_value
@@ -152,13 +112,58 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: datetime
           order: DESC
-          exposed: false
           expose:
             label: ''
+            field_identifier: field_date_of_event_value
+          exposed: false
           granularity: second
-          plugin_id: datetime
-      title: 'Events in Al Día Live'
+      arguments: {  }
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          value:
+            event: event
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: card-event
+          default_row_class: true
+      row:
+        type: fields
+      query:
+        type: views_query
+        options:
+          query_comment: ''
+          disable_sql_rewrite: false
+          distinct: false
+          replica: false
+          query_tags: {  }
+      relationships: {  }
+      css_class: events-gallery
       header: {  }
       footer:
         views_block_area:
@@ -168,14 +173,10 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: views_block_area
           empty: false
           block_id: 'block_group:al_dia_live_banner_last_block_top'
-          plugin_id: views_block_area
-      empty: {  }
-      relationships: {  }
-      arguments: {  }
       display_extenders: {  }
-      css_class: events-gallery
     cache_metadata:
       max-age: -1
       contexts:
@@ -185,194 +186,11 @@ display:
         - user.permissions
       tags: {  }
   page_1:
-    display_plugin: page
     id: page_1
     display_title: 'UPCOMING EVENTS'
+    display_plugin: page
     position: 1
     display_options:
-      display_extenders:
-        ajax_history: {  }
-      path: about-al-dia-live/al-dia-live
-      menu:
-        type: 'default tab'
-        title: 'UPCOMING EVENTS'
-        description: ''
-        expanded: false
-        parent: ''
-        weight: 0
-        context: '0'
-        menu_name: main
-      tab_options:
-        type: none
-        title: ''
-        description: ''
-        weight: 0
-      display_description: ''
-      filters:
-        status:
-          value: '1'
-          table: node_field_data
-          field: status
-          plugin_id: boolean
-          entity_type: node
-          entity_field: status
-          id: status
-          expose:
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-          group: 1
-        type:
-          id: type
-          table: node_field_data
-          field: type
-          value:
-            event: event
-          entity_type: node
-          entity_field: type
-          plugin_id: bundle
-          expose:
-            operator_limit_selection: false
-            operator_list: {  }
-        field_date_of_event_value:
-          id: field_date_of_event_value
-          table: node__field_date_of_event
-          field: field_date_of_event_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: '>='
-          value:
-            min: ''
-            max: ''
-            value: now
-            type: offset
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            placeholder: ''
-            min_placeholder: ''
-            max_placeholder: ''
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          plugin_id: datetime
-        other_view_filter:
-          id: other_view_filter
-          table: node_field_data
-          field: other_view_filter
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: 'not in'
-          value:
-            'al_dia_live:block_3': 'al_dia_live:block_3'
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          inherit_contextual_filters: 0
-          entity_type: node
-          plugin_id: other_views_filter
-        langcode:
-          id: langcode
-          table: node_field_data
-          field: langcode
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: in
-          value:
-            '***LANGUAGE_language_interface***': '***LANGUAGE_language_interface***'
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          entity_type: node
-          entity_field: langcode
-          plugin_id: language
-      defaults:
-        filters: false
-        filter_groups: false
-        fields: false
-        pager: false
-        sorts: false
-      filter_groups:
-        operator: AND
-        groups:
-          1: AND
       fields:
         field_image:
           id: field_image
@@ -381,6 +199,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: field
           label: ''
           exclude: false
           alter:
@@ -437,7 +256,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
         title:
           id: title
           table: node_field_data
@@ -445,6 +263,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: node
+          entity_field: title
+          plugin_id: field
           label: ''
           exclude: false
           alter:
@@ -500,9 +321,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: node
-          entity_field: title
-          plugin_id: field
         fieldset:
           id: fieldset
           table: views
@@ -510,6 +328,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: fieldset
           label: ''
           exclude: false
           alter:
@@ -559,7 +378,6 @@ display:
           classes: date-time-vanue-event
           collapsible: 1
           collapsed: 0
-          plugin_id: fieldset
         fieldset_1:
           id: fieldset_1
           table: views
@@ -567,6 +385,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: fieldset
           label: ''
           exclude: false
           alter:
@@ -616,7 +435,6 @@ display:
           classes: card-event-date-container
           collapsible: 1
           collapsed: 0
-          plugin_id: fieldset
         field_date_of_event:
           id: field_date_of_event
           table: node__field_date_of_event
@@ -624,6 +442,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: field
           label: ''
           exclude: false
           alter:
@@ -680,7 +499,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
         field_date_of_event_1:
           id: field_date_of_event_1
           table: node__field_date_of_event
@@ -688,6 +506,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: field
           label: ''
           exclude: false
           alter:
@@ -744,7 +563,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
         field_venue_of_the_event:
           id: field_venue_of_the_event
           table: node__field_venue_of_the_event
@@ -752,6 +570,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: field
           label: ''
           exclude: false
           alter:
@@ -806,17 +625,16 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
       pager:
         type: full
         options:
-          items_per_page: 9
           offset: null
-          id: 0
+          items_per_page: 9
           total_pages: null
+          id: 0
           tags:
-            previous: '‹ '
             next: '...  ›'
+            previous: '‹ '
             first: '« First'
             last: 'Last »'
           expose:
@@ -836,71 +654,36 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: datetime
           order: ASC
-          exposed: false
           expose:
             label: ''
+            field_identifier: field_date_of_event_value
+          exposed: false
           granularity: second
-          plugin_id: datetime
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - url.query_args
-        - 'user.node_grants:view'
-        - user.permissions
-      tags:
-        - 'config:field.storage.node.field_date_of_event'
-        - 'config:field.storage.node.field_image'
-        - 'config:field.storage.node.field_venue_of_the_event'
-  page_2:
-    display_plugin: page
-    id: page_2
-    display_title: 'PAST EVENTS'
-    position: 1
-    display_options:
-      display_extenders:
-        ajax_history: {  }
-      path: about-al-dia-live/al-dia-live/past-events
-      menu:
-        type: tab
-        title: 'PAST EVENTS'
-        description: ''
-        expanded: false
-        parent: ''
-        weight: 0
-        context: '0'
-        menu_name: main
-      tab_options:
-        type: none
-        title: ''
-        description: ''
-        weight: 0
-      display_description: ''
       filters:
         status:
-          value: '1'
+          id: status
           table: node_field_data
           field: status
-          plugin_id: boolean
           entity_type: node
           entity_field: status
-          id: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
           expose:
             operator: ''
             operator_limit_selection: false
             operator_list: {  }
-          group: 1
         type:
           id: type
           table: node_field_data
           field: type
-          value:
-            event: event
           entity_type: node
           entity_field: type
           plugin_id: bundle
+          value:
+            event: event
           expose:
             operator_limit_selection: false
             operator_list: {  }
@@ -911,7 +694,8 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          operator: '<'
+          plugin_id: datetime
+          operator: '>='
           value:
             min: ''
             max: ''
@@ -933,9 +717,9 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-            placeholder: ''
             min_placeholder: ''
             max_placeholder: ''
+            placeholder: ''
           is_grouped: false
           group_info:
             label: ''
@@ -948,7 +732,6 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          plugin_id: datetime
         other_view_filter:
           id: other_view_filter
           table: node_field_data
@@ -956,6 +739,8 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: node
+          plugin_id: other_views_filter
           operator: 'not in'
           value:
             'al_dia_live:block_3': 'al_dia_live:block_3'
@@ -989,8 +774,6 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           inherit_contextual_filters: 0
-          entity_type: node
-          plugin_id: other_views_filter
         langcode:
           id: langcode
           table: node_field_data
@@ -998,6 +781,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: node
+          entity_field: langcode
+          plugin_id: language
           operator: in
           value:
             '***LANGUAGE_language_interface***': '***LANGUAGE_language_interface***'
@@ -1030,19 +816,52 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          entity_type: node
-          entity_field: langcode
-          plugin_id: language
-      defaults:
-        filters: false
-        filter_groups: false
-        fields: false
-        pager: false
-        footer: true
       filter_groups:
         operator: AND
         groups:
           1: AND
+      defaults:
+        pager: false
+        fields: false
+        sorts: false
+        filters: false
+        filter_groups: false
+      display_description: ''
+      display_extenders:
+        ajax_history: {  }
+      path: about-al-dia-live/al-dia-live
+      menu:
+        type: 'default tab'
+        title: 'UPCOMING EVENTS'
+        description: ''
+        weight: 0
+        expanded: false
+        menu_name: main
+        parent: ''
+        context: '0'
+      tab_options:
+        type: none
+        title: ''
+        description: ''
+        weight: 0
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.field_date_of_event'
+        - 'config:field.storage.node.field_image'
+        - 'config:field.storage.node.field_venue_of_the_event'
+  page_2:
+    id: page_2
+    display_title: 'PAST EVENTS'
+    display_plugin: page
+    position: 1
+    display_options:
       fields:
         field_image:
           id: field_image
@@ -1051,6 +870,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: field
           label: ''
           exclude: false
           alter:
@@ -1107,7 +927,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
         title:
           id: title
           table: node_field_data
@@ -1115,6 +934,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: node
+          entity_field: title
+          plugin_id: field
           label: ''
           exclude: false
           alter:
@@ -1170,9 +992,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: node
-          entity_field: title
-          plugin_id: field
         fieldset:
           id: fieldset
           table: views
@@ -1180,6 +999,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: fieldset
           label: ''
           exclude: false
           alter:
@@ -1229,7 +1049,6 @@ display:
           classes: date-time-vanue-event
           collapsible: 1
           collapsed: 0
-          plugin_id: fieldset
         fieldset_1:
           id: fieldset_1
           table: views
@@ -1237,6 +1056,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: fieldset
           label: ''
           exclude: false
           alter:
@@ -1285,7 +1105,6 @@ display:
           classes: card-event-date-container
           collapsible: 1
           collapsed: 0
-          plugin_id: fieldset
         field_date_of_event:
           id: field_date_of_event
           table: node__field_date_of_event
@@ -1293,6 +1112,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: field
           label: ''
           exclude: false
           alter:
@@ -1349,7 +1169,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
         field_venue_of_the_event:
           id: field_venue_of_the_event
           table: node__field_venue_of_the_event
@@ -1357,6 +1176,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: field
           label: ''
           exclude: false
           alter:
@@ -1411,17 +1231,16 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
       pager:
         type: full
         options:
-          items_per_page: 9
           offset: 0
-          id: 0
+          items_per_page: 9
           total_pages: null
+          id: 0
           tags:
-            previous: ‹
             next: '... ›'
+            previous: ‹
             first: '« First'
             last: 'Last »'
           expose:
@@ -1433,6 +1252,189 @@ display:
             offset: false
             offset_label: Offset
           quantity: 3
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          value:
+            event: event
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+        field_date_of_event_value:
+          id: field_date_of_event_value
+          table: node__field_date_of_event
+          field: field_date_of_event_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: datetime
+          operator: '<'
+          value:
+            min: ''
+            max: ''
+            value: now
+            type: offset
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        other_view_filter:
+          id: other_view_filter
+          table: node_field_data
+          field: other_view_filter
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          plugin_id: other_views_filter
+          operator: 'not in'
+          value:
+            'al_dia_live:block_3': 'al_dia_live:block_3'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          inherit_contextual_filters: 0
+        langcode:
+          id: langcode
+          table: node_field_data
+          field: langcode
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: langcode
+          plugin_id: language
+          operator: in
+          value:
+            '***LANGUAGE_language_interface***': '***LANGUAGE_language_interface***'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      defaults:
+        pager: false
+        fields: false
+        filters: false
+        filter_groups: false
+        footer: true
+      display_description: ''
+      display_extenders:
+        ajax_history: {  }
+      path: about-al-dia-live/al-dia-live/past-events
+      menu:
+        type: tab
+        title: 'PAST EVENTS'
+        description: ''
+        weight: 0
+        expanded: false
+        menu_name: main
+        parent: ''
+        context: '0'
+      tab_options:
+        type: none
+        title: ''
+        description: ''
+        weight: 0
     cache_metadata:
       max-age: -1
       contexts:

@@ -10,13 +10,13 @@ type: 'canonical_entities:node'
 pattern: 'work-with-al-dia/[node:title]'
 selection_criteria:
   e8f7e4f6-98ba-4bb9-91d9-1bbfefbb43fa:
-    id: node_type
-    bundles:
-      al_dia_vacancy: al_dia_vacancy
+    id: 'entity_bundle:node'
     negate: false
+    uuid: e8f7e4f6-98ba-4bb9-91d9-1bbfefbb43fa
     context_mapping:
       node: node
-    uuid: e8f7e4f6-98ba-4bb9-91d9-1bbfefbb43fa
+    bundles:
+      al_dia_vacancy: al_dia_vacancy
 selection_logic: and
 weight: -5
 relationships: {  }

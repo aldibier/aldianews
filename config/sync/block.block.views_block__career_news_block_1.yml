@@ -5,7 +5,6 @@ dependencies:
   config:
     - views.view.career_news
   module:
-    - context
     - views
   theme:
     - al_dia_news
@@ -18,16 +17,8 @@ plugin: 'views_block:career_news-block_1'
 settings:
   id: 'views_block:career_news-block_1'
   label: ''
-  provider: views
   label_display: '0'
+  provider: views
   views_label: ''
   items_per_page: none
-visibility:
-  request_path_exclusion:
-    id: request_path_exclusion
-    pages: ''
-    negate: null
-  view_inclusion:
-    id: view_inclusion
-    negate: null
-    view_inclusion: {  }
+visibility: {  }

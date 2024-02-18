@@ -4,8 +4,8 @@ status: true
 dependencies:
   module:
     - user
-name: admin
 label: admin
+name: admin
 group: null
 description: ''
 requireAllConditions: true
@@ -13,13 +13,13 @@ disabled: false
 conditions:
   user_role:
     id: user_role
-    roles:
-      administrator: administrator
-      editor: editor
     negate: false
     uuid: 6cebbfc7-27fa-40b4-a76c-845cfb18e623
     context_mapping:
       user: '@user.current_user_context:current_user'
+    roles:
+      administrator: administrator
+      editor: editor
 reactions:
   body_class:
     id: body_class

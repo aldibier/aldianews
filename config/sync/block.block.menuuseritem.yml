@@ -4,7 +4,6 @@ status: true
 dependencies:
   module:
     - al_dia_news_general
-    - context
   theme:
     - al_dia_news
 id: menuuseritem
@@ -16,14 +15,6 @@ plugin: menu_user_item
 settings:
   id: menu_user_item
   label: 'Menu User Item'
-  provider: al_dia_news_general
   label_display: visible
-visibility:
-  request_path_exclusion:
-    id: request_path_exclusion
-    pages: ''
-    negate: null
-  view_inclusion:
-    id: view_inclusion
-    negate: null
-    view_inclusion: {  }
+  provider: al_dia_news_general
+visibility: {  }

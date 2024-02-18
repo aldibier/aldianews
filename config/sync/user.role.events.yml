@@ -1,7 +1,20 @@
 uuid: 9798039d-4614-4467-ade7-4d04ae2a2b96
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - filter.format.full_html
+    - filter.format.podcast
+    - node.type.event
+    - node.type.news
+    - node.type.webform
+  module:
+    - commerce_payment
+    - filter
+    - node
+    - system
+    - toolbar
+    - webform
 id: events
 label: Events
 weight: 9

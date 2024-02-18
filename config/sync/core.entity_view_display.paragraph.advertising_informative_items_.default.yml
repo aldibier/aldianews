@@ -15,28 +15,28 @@ bundle: advertising_informative_items_
 mode: default
 content:
   field_description:
-    weight: 2
+    type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 2
     region: content
   field_icon_name:
-    weight: 0
+    type: icon_field_formatter
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: icon_field_formatter
+    weight: 0
     region: content
   field_text:
-    weight: 1
+    type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 1
     region: content
 hidden:
   search_api_excerpt: true

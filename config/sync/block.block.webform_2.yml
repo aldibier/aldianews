@@ -5,9 +5,8 @@ dependencies:
   config:
     - webform.webform.newsletters
   module:
-    - context
-    - ctools
     - language
+    - node
     - webform
   theme:
     - al_dia_news
@@ -20,32 +19,25 @@ plugin: webform_block
 settings:
   id: webform_block
   label: Webform
-  provider: webform
   label_display: '0'
+  provider: webform
   webform_id: newsletters
   default_data: ''
   redirect: false
+  lazy: false
 visibility:
-  request_path_exclusion:
-    id: request_path_exclusion
-    pages: ''
-    negate: null
-  view_inclusion:
-    id: view_inclusion
-    negate: null
-    view_inclusion: {  }
   'entity_bundle:node':
     id: 'entity_bundle:node'
-    bundles:
-      news: news
-      thought_leaders: thought_leaders
     negate: false
     context_mapping:
       node: '@node.node_route_context:node'
+    bundles:
+      news: news
+      thought_leaders: thought_leaders
   language:
     id: language
-    langcodes:
-      en: en
     negate: false
     context_mapping:
       language: '@language.current_language_context:language_interface'
+    langcodes:
+      en: en

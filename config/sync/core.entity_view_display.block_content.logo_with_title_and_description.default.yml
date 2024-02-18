@@ -13,13 +13,13 @@ bundle: logo_with_title_and_description
 mode: default
 content:
   field_information_with_icons:
-    weight: 1
+    type: entity_reference_revisions_entity_view
     label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    type: entity_reference_revisions_entity_view
+    weight: 1
     region: content
 hidden:
   langcode: true

@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   module:
-    - context
     - login_popup
     - system
     - user
@@ -18,25 +17,18 @@ plugin: login_register_form_popup
 settings:
   id: login_register_form_popup
   label: 'Login and Registration Form Popup'
-  provider: login_popup
   label_display: '0'
+  provider: login_popup
+  show_logout_link: false
 visibility:
-  request_path_exclusion:
-    id: request_path_exclusion
-    pages: ''
-    negate: null
-  view_inclusion:
-    id: view_inclusion
-    negate: null
-    view_inclusion: {  }
   request_path:
     id: request_path
-    pages: '/node/*'
     negate: false
+    pages: '/node/*'
   user_role:
     id: user_role
-    roles:
-      anonymous: anonymous
     negate: false
     context_mapping:
       user: '@user.current_user_context:current_user'
+    roles:
+      anonymous: anonymous

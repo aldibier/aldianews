@@ -14,8 +14,8 @@ dependencies:
     - user
 third_party_settings:
   layout_builder:
-    allow_custom: false
     enabled: true
+    allow_custom: false
     sections:
       -
         layout_id: basic_page_general_contact_us
@@ -28,66 +28,66 @@ third_party_settings:
             configuration:
               id: 'field_block:node:page:title'
               label: Title
-              provider: layout_builder
               label_display: '0'
-              formatter:
-                label: hidden
-                type: string
-                settings:
-                  link_to_entity: false
-                third_party_settings: {  }
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
                 view_mode: view_mode
-            additional: {  }
+              formatter:
+                type: string
+                label: hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
             weight: 0
+            additional: {  }
           dead23c2-e091-4696-865e-fd098f47ba87:
             uuid: dead23c2-e091-4696-865e-fd098f47ba87
             region: two_content
             configuration:
               id: 'field_block:node:page:body'
               label: Body
-              provider: layout_builder
               label_display: '0'
-              formatter:
-                label: hidden
-                type: text_default
-                settings: {  }
-                third_party_settings: {  }
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
                 view_mode: view_mode
-            additional: {  }
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
             weight: 0
+            additional: {  }
           c89f7f06-6fad-408a-ac2e-43f5eba81376:
             uuid: c89f7f06-6fad-408a-ac2e-43f5eba81376
             region: horizontal_advertising
             configuration:
               id: gamw
               label: 'Pre footer -  Bottom banner '
-              provider: gamw
               label_display: '0'
+              provider: gamw
+              context_mapping: {  }
               ad_unit: pre-footer-bottom-banner
               attributes_wrapper: null
-              context_mapping: {  }
-            additional: {  }
             weight: 1
+            additional: {  }
           e7a755d5-d0e8-4aec-9d04-ea4fa9374635:
             uuid: e7a755d5-d0e8-4aec-9d04-ea4fa9374635
             region: one_vertical_advertising
             configuration:
               id: gamw
               label: 'Fixed Internal - Side Section top block'
-              provider: gamw
               label_display: '0'
+              provider: gamw
+              context_mapping: {  }
               ad_unit: fixed-internal-side-section-top-block
               attributes_wrapper:
                 0: ''
                 add: 'Add another targeting attribute'
                 remove: 'Remove last targeting attribute'
-              context_mapping: {  }
-            additional: {  }
             weight: 1
+            additional: {  }
         third_party_settings: {  }
 _core:
   default_config_hash: g1S3_GLaxq4l3I9RIca5Mlz02MxI2KmOquZpHw59akM
@@ -97,22 +97,22 @@ bundle: page
 mode: contact_us
 content:
   addtoany:
-    weight: 101
-    region: content
     settings: {  }
     third_party_settings: {  }
+    weight: 101
+    region: content
   body:
-    label: hidden
     type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
     weight: 100
     region: content
+  links:
     settings: {  }
     third_party_settings: {  }
-  links:
     weight: 101
     region: content
-    settings: {  }
-    third_party_settings: {  }
 hidden:
   langcode: true
   premium_message: true

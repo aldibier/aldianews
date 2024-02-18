@@ -45,8 +45,8 @@ dependencies:
     - webform
 third_party_settings:
   layout_builder:
-    allow_custom: false
     enabled: true
+    allow_custom: false
     sections:
       -
         layout_id: events
@@ -59,86 +59,86 @@ third_party_settings:
             configuration:
               id: addtoany_block
               label: 'AddToAny buttons'
-              provider: addtoany
               label_display: '0'
+              provider: addtoany
               context_mapping: {  }
-            additional: {  }
             weight: 0
+            additional: {  }
           01eac25f-602a-4890-bbec-fbbb6ac04dd6:
             uuid: 01eac25f-602a-4890-bbec-fbbb6ac04dd6
             region: one_content
             configuration:
               id: 'field_block:node:event:body'
               label: Body
-              provider: layout_builder
               label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
               formatter:
-                label: hidden
                 type: text_default
+                label: hidden
                 settings: {  }
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-            additional: {  }
             weight: 1
+            additional: {  }
           9a9a24b7-0b44-4354-8ab6-882fdd26d4ab:
             uuid: 9a9a24b7-0b44-4354-8ab6-882fdd26d4ab
             region: one_advertising
             configuration:
               id: 'fixed_block_content:_small_vertical_advertising'
               label: ' Small vertical advertising'
-              provider: fixed_block_content
               label_display: '0'
+              provider: fixed_block_content
               view_mode: ''
               context_mapping: {  }
-            additional: {  }
             weight: 0
+            additional: {  }
           830d5c54-ccfc-457f-aa97-0139b1cb963c:
             uuid: 830d5c54-ccfc-457f-aa97-0139b1cb963c
             region: one_first
             configuration:
               id: 'field_block:node:event:body'
               label: Body
-              provider: layout_builder
               label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
               formatter:
-                label: hidden
                 type: text_default
+                label: hidden
                 settings: {  }
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-            additional: {  }
             weight: -7
+            additional: {  }
           58c7b2bf-9921-4e54-8fd4-aa58c2838b4d:
             uuid: 58c7b2bf-9921-4e54-8fd4-aa58c2838b4d
             region: one_first
             configuration:
               id: 'extra_field_block:node:event:addtoany'
               label: 'SHARE THIS CONTENT:'
-              provider: layout_builder
               label_display: visible
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
               formatter:
                 settings: {  }
                 third_party_settings: {  }
-              context_mapping:
-                entity: layout_builder.entity
-            additional: {  }
             weight: -8
+            additional: {  }
           6d6b1f99-48da-40f7-8984-4239b08a8204:
             uuid: 6d6b1f99-48da-40f7-8984-4239b08a8204
             region: content
             configuration:
+              id: 'field_block:node:event:field_guest_block'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-              id: 'field_block:node:event:field_guest_block'
               formatter:
                 type: entity_reference_revisions_entity_view
                 label: above
@@ -146,39 +146,42 @@ third_party_settings:
                   view_mode: default
                   link: ''
                 third_party_settings: {  }
-            additional: {  }
             weight: 0
+            additional: {  }
           7ee1dfbd-5c6b-4bd0-affd-c2ece9cf1a64:
             uuid: 7ee1dfbd-5c6b-4bd0-affd-c2ece9cf1a64
             region: content
             configuration:
+              id: 'field_block:node:event:field_present_by'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-              id: 'field_block:node:event:field_present_by'
               formatter:
+                type: image
                 label: above
                 settings:
-                  image_style: ''
                   image_link: ''
+                  image_style: ''
                 third_party_settings: {  }
-                type: image
-            additional: {  }
             weight: 1
+            additional: {  }
           bc302704-d950-46f7-8994-0a0443a549d3:
             uuid: bc302704-d950-46f7-8994-0a0443a549d3
             region: three_content
             configuration:
               id: 'field_block:node:event:field_present_by'
               label: 'PRESENTED BY'
-              provider: layout_builder
               label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
               formatter:
-                label: above
                 type: image
+                label: above
                 settings:
-                  image_style: ''
                   image_link: ''
+                  image_style: ''
                 third_party_settings:
                   field_formatter_class:
                     class: ''
@@ -186,19 +189,16 @@ third_party_settings:
                     lazy_image: '0'
                     placeholder_style: ''
                     data_uri: false
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-            additional: {  }
             weight: -9
+            additional: {  }
           ada1435c-e844-4f7f-900f-e61c2afe5de5:
             uuid: ada1435c-e844-4f7f-900f-e61c2afe5de5
             region: content
             configuration:
+              id: 'field_block:node:event:field_slider_block'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-              id: 'field_block:node:event:field_slider_block'
               formatter:
                 type: entity_reference_revisions_entity_view
                 label: above
@@ -206,54 +206,54 @@ third_party_settings:
                   view_mode: default
                   link: ''
                 third_party_settings: {  }
-            additional: {  }
             weight: 2
+            additional: {  }
           992f1545-8891-4121-bd3e-9cf33d0abcee:
             uuid: 992f1545-8891-4121-bd3e-9cf33d0abcee
             region: four_content
             configuration:
               id: 'views_block:block_guest-block_1'
               label: ''
-              provider: views
               label_display: '0'
+              provider: views
+              context_mapping: {  }
               views_label: ''
               items_per_page: none
-              context_mapping: {  }
-            additional: {  }
             weight: 0
+            additional: {  }
           927b7376-2637-4000-93cc-a8881d3ca0da:
             uuid: 927b7376-2637-4000-93cc-a8881d3ca0da
             region: four_content_second
             configuration:
               id: 'fixed_block_content:_small_vertical_advertising'
               label: ' Small vertical advertising'
-              provider: fixed_block_content
               label_display: '0'
+              provider: fixed_block_content
               view_mode: ''
               context_mapping: {  }
-            additional: {  }
             weight: 0
+            additional: {  }
           f9d15303-538e-4993-8b55-de9ba603163f:
             uuid: f9d15303-538e-4993-8b55-de9ba603163f
             region: five_content
             configuration:
               id: 'views_block:slider_internal_event-block_1'
               label: ''
-              provider: views
               label_display: '0'
+              provider: views
+              context_mapping: {  }
               views_label: ''
               items_per_page: none
-              context_mapping: {  }
-            additional: {  }
             weight: 0
+            additional: {  }
           3cf06b27-29eb-4f7b-b81e-a044c993d527:
             uuid: 3cf06b27-29eb-4f7b-b81e-a044c993d527
             region: content
             configuration:
+              id: 'field_block:node:event:field_contact_block'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-              id: 'field_block:node:event:field_contact_block'
               formatter:
                 type: entity_reference_revisions_entity_view
                 label: above
@@ -261,235 +261,236 @@ third_party_settings:
                   view_mode: default
                   link: ''
                 third_party_settings: {  }
-            additional: {  }
             weight: 3
+            additional: {  }
           2f57b093-e53b-416b-b528-fd1146e639d9:
             uuid: 2f57b093-e53b-416b-b528-fd1146e639d9
             region: six_content
             configuration:
               id: 'views_block:contact_event-block_1'
               label: ''
-              provider: views
               label_display: '0'
+              provider: views
+              context_mapping: {  }
               views_label: ''
               items_per_page: none
-              context_mapping: {  }
-            additional: {  }
             weight: 0
+            additional: {  }
           a0f690c3-4eb5-494d-a5cc-aa2435716ef0:
             uuid: a0f690c3-4eb5-494d-a5cc-aa2435716ef0
             region: content
             configuration:
+              id: 'field_block:node:event:field_email'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-              id: 'field_block:node:event:field_email'
               formatter:
+                type: basic_string
                 label: above
                 settings: {  }
                 third_party_settings: {  }
-                type: basic_string
-            additional: {  }
             weight: 4
+            additional: {  }
           e5c6ad6a-9b12-4248-966a-f26849e2571f:
             uuid: e5c6ad6a-9b12-4248-966a-f26849e2571f
             region: advertising_content
             configuration:
               id: webform_block
               label: Webform
-              provider: webform
               label_display: '0'
+              provider: webform
+              context_mapping: {  }
               webform_id: nominate
               default_data: ''
               redirect: false
-              context_mapping: {  }
-            additional: {  }
             weight: -10
+            additional: {  }
           15c5ab79-f144-41f6-bdfb-9706abeb56ea:
             uuid: 15c5ab79-f144-41f6-bdfb-9706abeb56ea
             region: content
             configuration:
+              id: 'field_block:node:event:field_venue_of_the_event'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-              id: 'field_block:node:event:field_venue_of_the_event'
               formatter:
+                type: basic_string
                 label: above
                 settings: {  }
                 third_party_settings: {  }
-                type: basic_string
-            additional: {  }
             weight: 5
+            additional: {  }
           0788a671-20c2-435e-bc2c-6836ba11c212:
             uuid: 0788a671-20c2-435e-bc2c-6836ba11c212
             region: content
             configuration:
+              id: 'field_block:node:event:field_images_of_the_event'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-              id: 'field_block:node:event:field_images_of_the_event'
               formatter:
+                type: image
                 label: above
                 settings:
-                  image_style: ''
                   image_link: ''
+                  image_style: ''
                 third_party_settings: {  }
-                type: image
-            additional: {  }
             weight: 6
+            additional: {  }
           8fc4e819-1630-43c6-9e98-faac81dd7095:
             uuid: 8fc4e819-1630-43c6-9e98-faac81dd7095
             region: slider_past_event
             configuration:
               id: 'views_block:slider_internal_event-block_2'
               label: ''
-              provider: views
               label_display: '0'
+              provider: views
+              context_mapping: {  }
               views_label: ''
               items_per_page: none
-              context_mapping: {  }
-            additional: {  }
             weight: 0
+            additional: {  }
           6950acd7-b4e6-43ea-8c08-dd77ce7dbfa2:
             uuid: 6950acd7-b4e6-43ea-8c08-dd77ce7dbfa2
             region: header_content
             configuration:
               id: 'views_block:header_of_the_event_internal-block_1'
               label: ''
-              provider: views
               label_display: '0'
+              provider: views
+              context_mapping: {  }
               views_label: ''
               items_per_page: none
-              context_mapping: {  }
-            additional: {  }
             weight: -8
+            additional: {  }
           5e4e85b6-9485-40df-9426-2a0b678f21d8:
             uuid: 5e4e85b6-9485-40df-9426-2a0b678f21d8
             region: header_content
             configuration:
               id: 'views_block:header_of_the_event_internal-block_2'
               label: ''
-              provider: views
               label_display: '0'
+              provider: views
+              context_mapping: {  }
               views_label: ''
               items_per_page: none
-              context_mapping: {  }
-            additional: {  }
             weight: -7
+            additional: {  }
           3656e728-bd30-4007-a809-4d8181d705b6:
             uuid: 3656e728-bd30-4007-a809-4d8181d705b6
             region: advertising_content
             configuration:
               id: webform_block
               label: Webform
-              provider: webform
               label_display: '0'
+              provider: webform
+              context_mapping: {  }
               webform_id: register
               default_data: ''
               redirect: false
-              context_mapping: {  }
-            additional: {  }
             weight: -8
+            additional: {  }
           a3846f41-6669-4470-9195-fadff7011b18:
             uuid: a3846f41-6669-4470-9195-fadff7011b18
             region: advertising_content
             configuration:
               id: webform_block
               label: Webform
-              provider: webform
               label_display: '0'
+              provider: webform
+              context_mapping: {  }
               webform_id: sponsorship_upcoming_event
               default_data: ''
               redirect: false
-              context_mapping: {  }
-            additional: {  }
             weight: -7
+            additional: {  }
           5e5c6d7f-cf59-4be2-8bdc-47e7296fe11f:
             uuid: 5e5c6d7f-cf59-4be2-8bdc-47e7296fe11f
             region: six_content
             configuration:
               id: gamw
               label: 'Pre footer -  Bottom banner event'
-              provider: gamw
               label_display: '0'
+              provider: gamw
+              context_mapping: {  }
               ad_unit: pre-footer-bottom-banner
               attributes_wrapper:
                 0: ''
                 add: 'Add another targeting attribute'
                 remove: 'Remove last targeting attribute'
-              context_mapping: {  }
-            additional: {  }
             weight: 1
+            additional: {  }
           f8f23b61-8beb-4be3-a67e-fd70884305fd:
             uuid: f8f23b61-8beb-4be3-a67e-fd70884305fd
             region: advertising_content
             configuration:
               id: gamw
               label: 'first block bottom banner'
-              provider: gamw
               label_display: '0'
+              provider: gamw
+              context_mapping: {  }
               ad_unit: first-block-bottom-banner
               attributes_wrapper: null
-              context_mapping: {  }
-            additional: {  }
             weight: -6
+            additional: {  }
           8549f987-6392-4a9a-8b04-60f042a00c06:
             uuid: 8549f987-6392-4a9a-8b04-60f042a00c06
             region: one_second
             configuration:
               id: 'block_group:fixed_blocks_adversiting'
               label: 'GAMW - fixed block adversiting'
-              provider: blockgroup
               label_display: '0'
+              provider: blockgroup
               context_mapping: {  }
-            additional: {  }
             weight: 1
+            additional: {  }
           fc196575-32d8-4668-9b5a-842acaf6a64a:
             uuid: fc196575-32d8-4668-9b5a-842acaf6a64a
             region: three_content_second
             configuration:
               id: gamw
               label: 'Internal events - side section - view mode'
-              provider: gamw
               label_display: '0'
+              provider: gamw
+              context_mapping: {  }
               ad_unit: internal-event-skyscraper-side-section-view-mode
               attributes_wrapper:
                 0: ''
                 add: 'Add another targeting attribute'
                 remove: 'Remove last targeting attribute'
-              context_mapping: {  }
-            additional: {  }
             weight: -6
+            additional: {  }
           22beaae2-cca6-4c0a-ab4e-931030d83fd2:
             uuid: 22beaae2-cca6-4c0a-ab4e-931030d83fd2
             region: content
             configuration:
+              id: 'field_block:node:event:field_landing_image'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-              id: 'field_block:node:event:field_landing_image'
               formatter:
+                type: image
                 label: above
                 settings:
+                  image_link: ''
+                  image_style: ''
                   svg_attributes:
                     width: null
                     height: null
                   svg_render_as_image: true
-                  image_style: ''
-                  image_link: ''
                 third_party_settings: {  }
-                type: image
-            additional: {  }
             weight: 7
+            additional: {  }
           3a989b74-6b19-4ad8-a2f2-d9374cf7bc8a:
             uuid: 3a989b74-6b19-4ad8-a2f2-d9374cf7bc8a
             region: content
             configuration:
+              id: 'field_block:node:event:field_ticketlap_link'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-              id: 'field_block:node:event:field_ticketlap_link'
               formatter:
+                type: link
                 label: above
                 settings:
                   trim_length: 80
@@ -498,27 +499,141 @@ third_party_settings:
                   rel: ''
                   target: ''
                 third_party_settings: {  }
-                type: link
-            additional: {  }
             weight: 8
+            additional: {  }
           dd0f73da-435d-445c-8604-f940dcf37388:
             uuid: dd0f73da-435d-445c-8604-f940dcf37388
             region: content
             configuration:
+              id: 'field_block:node:event:field_enable_nominate_button'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-              id: 'field_block:node:event:field_enable_nominate_button'
               formatter:
+                type: boolean
                 label: above
                 settings:
                   format: default
                   format_custom_false: ''
                   format_custom_true: ''
                 third_party_settings: {  }
-                type: boolean
-            additional: {  }
             weight: 9
+            additional: {  }
+          15a558e1-1e8b-4c12-9e10-9a7a3d59e822:
+            uuid: 15a558e1-1e8b-4c12-9e10-9a7a3d59e822
+            region: content
+            configuration:
+              id: 'field_block:node:event:field_image'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: above
+                settings:
+                  image_link: ''
+                  image_style: ''
+                  svg_attributes:
+                    width: null
+                    height: null
+                  svg_render_as_image: true
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 10
+            additional: {  }
+          328b1d97-c634-4e7d-aafa-0af01e57da49:
+            uuid: 328b1d97-c634-4e7d-aafa-0af01e57da49
+            region: content
+            configuration:
+              id: 'field_block:node:event:field_images_of_the_event'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: above
+                settings:
+                  image_link: ''
+                  image_style: ''
+                  svg_attributes:
+                    width: null
+                    height: null
+                  svg_render_as_image: true
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 11
+            additional: {  }
+          0f499e68-df1d-42fb-9d06-bee57d21d89a:
+            uuid: 0f499e68-df1d-42fb-9d06-bee57d21d89a
+            region: content
+            configuration:
+              id: 'field_block:node:event:field_landing_image'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: above
+                settings:
+                  image_link: ''
+                  image_style: ''
+                  svg_attributes:
+                    width: null
+                    height: null
+                  svg_render_as_image: true
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 12
+            additional: {  }
+          ecf49265-ea12-469f-a4ad-04bf49e5da5f:
+            uuid: ecf49265-ea12-469f-a4ad-04bf49e5da5f
+            region: content
+            configuration:
+              id: 'field_block:node:event:field_logo'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: above
+                settings:
+                  image_link: ''
+                  image_style: ''
+                  svg_attributes:
+                    width: null
+                    height: null
+                  svg_render_as_image: true
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 13
+            additional: {  }
+          e9e83898-2fe8-4814-95a9-ca8d802aa3b1:
+            uuid: e9e83898-2fe8-4814-95a9-ca8d802aa3b1
+            region: content
+            configuration:
+              id: 'field_block:node:event:field_present_by'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: above
+                settings:
+                  image_link: ''
+                  image_style: ''
+                  svg_attributes:
+                    width: null
+                    height: null
+                  svg_render_as_image: true
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 14
+            additional: {  }
         third_party_settings: {  }
 id: node.event.default
 targetEntityType: node
@@ -526,124 +641,150 @@ bundle: event
 mode: default
 content:
   body:
-    label: hidden
     type: text_default
-    weight: 101
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 101
     region: content
   field_contact_block:
     type: entity_reference_revisions_entity_view
-    weight: 111
     label: above
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    weight: 111
     region: content
   field_date_of_event:
-    weight: 106
+    type: datetime_default
     label: above
     settings:
-      format_type: medium
       timezone_override: ''
+      format_type: medium
     third_party_settings: {  }
-    type: datetime_default
+    weight: 106
     region: content
   field_email:
-    weight: 112
+    type: basic_string
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: basic_string
+    weight: 112
     region: content
   field_enable_nominate_button:
-    weight: 117
+    type: boolean
     label: above
     settings:
       format: default
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    type: boolean
+    weight: 117
     region: content
   field_guest_block:
     type: entity_reference_revisions_entity_view
-    weight: 108
     label: above
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    weight: 108
     region: content
   field_image:
-    weight: 103
-    label: above
-    settings:
-      image_style: ''
-      image_link: ''
-    third_party_settings: {  }
     type: image
-    region: content
-  field_images_of_the_event:
-    weight: 114
     label: above
     settings:
-      image_style: ''
       image_link: ''
-    third_party_settings: {  }
-    type: image
-    region: content
-  field_landing_image:
-    weight: 115
-    label: above
-    settings:
+      image_style: ''
       svg_attributes:
         width: null
         height: null
       svg_render_as_image: true
-      image_style: ''
-      image_link: ''
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
-    type: image
+    weight: 103
     region: content
-  field_logo:
-    weight: 104
+  field_images_of_the_event:
+    type: image
     label: above
     settings:
-      image_style: ''
       image_link: ''
+      image_style: ''
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
+    weight: 114
+    region: content
+  field_landing_image:
     type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 115
+    region: content
+  field_logo:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 104
     region: content
   field_nomination_status:
-    weight: 105
+    type: string
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 105
     region: content
   field_present_by:
-    weight: 109
+    type: image
     label: above
     settings:
-      image_style: ''
       image_link: ''
+      image_style: ''
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
-    type: image
+    weight: 109
     region: content
   field_slider_block:
     type: entity_reference_revisions_entity_view
-    weight: 110
     label: above
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    weight: 110
     region: content
   field_ticketlap_link:
-    weight: 116
+    type: link
     label: above
     settings:
       trim_length: 80
@@ -652,19 +793,19 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    type: link
+    weight: 116
     region: content
   field_venue_of_the_event:
-    weight: 113
+    type: basic_string
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: basic_string
+    weight: 113
     region: content
   links:
-    weight: 100
     settings: {  }
     third_party_settings: {  }
+    weight: 100
     region: content
 hidden:
   addtoany: true

@@ -4,8 +4,8 @@ status: true
 dependencies:
   module:
     - system
-name: about_al_dia_live
 label: 'About Al Día Live'
+name: about_al_dia_live
 group: 'General pages'
 description: 'About Al Día Live landing'
 requireAllConditions: false
@@ -13,125 +13,136 @@ disabled: false
 conditions:
   request_path:
     id: request_path
-    pages: /about-al-dia-live
     negate: false
     uuid: 78b7afeb-ce3d-4a84-ac4b-d7b69a51ba38
     context_mapping: {  }
+    pages: /about-al-dia-live
 reactions:
   blocks:
+    id: blocks
+    uuid: e8523adf-eacb-45ff-bd80-ac4e8c76b9db
     blocks:
       126535ed-53b6-4e23-b01b-ac1cb16cd26d:
+        uuid: 126535ed-53b6-4e23-b01b-ac1cb16cd26d
         id: system_main_block
         label: 'Main page content'
         provider: system
         label_display: '0'
         region: content
         weight: '-4'
-        context_mapping: {  }
         custom_id: system_main_block
         theme: al_dia_news
         css_class: ''
         unique: 0
         context_id: about_al_dia_live
-        uuid: 126535ed-53b6-4e23-b01b-ac1cb16cd26d
+        context_mapping: {  }
       003b3d29-e812-44ad-aaa8-51db5992a5c2:
+        uuid: 003b3d29-e812-44ad-aaa8-51db5992a5c2
         id: 'block_group:advertising_body_in_about_al_dia_live'
         label: 'Advertising body in About Al Día Live'
         provider: blockgroup
         label_display: '0'
         region: content
         weight: '-1'
-        context_mapping: {  }
         custom_id: block_group_advertising_body_in_about_al_dia_live
         theme: al_dia_news
         css_class: ''
         unique: 0
         context_id: about_al_dia_live
-        uuid: 003b3d29-e812-44ad-aaa8-51db5992a5c2
+        context_mapping: {  }
       0347d10c-53d3-48da-b004-3d87655372d1:
+        uuid: 0347d10c-53d3-48da-b004-3d87655372d1
         id: 'views_block:about_al_dia_live-block_1'
         label: ''
         provider: views
         label_display: '0'
-        views_label: ''
-        items_per_page: none
         region: content
         weight: '1'
-        context_mapping: {  }
         custom_id: views_block_about_al_dia_live_block_1
         theme: al_dia_news
         css_class: ''
         unique: 0
         context_id: about_al_dia_live
-        uuid: 0347d10c-53d3-48da-b004-3d87655372d1
+        context_mapping: {  }
+        views_label: ''
+        items_per_page: none
       5fcfa6ec-226b-44e2-80ef-965f8a6cd09f:
+        uuid: 5fcfa6ec-226b-44e2-80ef-965f8a6cd09f
         id: 'views_block:about_al_dia_live-block_2'
         label: ''
         provider: views
         label_display: '0'
-        views_label: ''
-        items_per_page: none
         region: content
         weight: '2'
-        context_mapping: {  }
         custom_id: views_block_about_al_dia_live_block_2
         theme: al_dia_news
         css_class: ''
         unique: 0
         context_id: about_al_dia_live
-        uuid: 5fcfa6ec-226b-44e2-80ef-965f8a6cd09f
+        context_mapping: {  }
+        views_label: ''
+        items_per_page: none
       a12bd9a1-547b-4c3b-a65f-ff475abd1a17:
+        uuid: a12bd9a1-547b-4c3b-a65f-ff475abd1a17
         id: 'views_block:about_al_dia_live-block_3'
         label: ''
         provider: views
         label_display: '0'
-        views_label: ''
-        items_per_page: none
         region: content
         weight: '3'
-        context_mapping: {  }
         custom_id: views_block_about_al_dia_live_block_3
         theme: al_dia_news
         css_class: ''
         unique: 0
         context_id: about_al_dia_live
-        uuid: a12bd9a1-547b-4c3b-a65f-ff475abd1a17
+        context_mapping: {  }
+        views_label: ''
+        items_per_page: none
       7612dc51-baf2-4b9e-b2ad-0e5f38a9674c:
+        uuid: 7612dc51-baf2-4b9e-b2ad-0e5f38a9674c
         id: 'block_group:testimonial_and_advertising_vertical'
         label: 'Testimonial and advertising vertical'
         provider: blockgroup
         label_display: '0'
         region: content
         weight: '4'
-        context_mapping: {  }
         custom_id: block_group_testimonial_and_advertising_vertical
         theme: al_dia_news
         css_class: testimonial-wrapper
         unique: 0
         context_id: about_al_dia_live
-        uuid: 7612dc51-baf2-4b9e-b2ad-0e5f38a9674c
+        context_mapping: {  }
       334663ca-bcc3-4ba0-b076-4882289ca36b:
+        uuid: 334663ca-bcc3-4ba0-b076-4882289ca36b
         id: webform_block
         label: Webform
         provider: webform
         label_display: '0'
-        webform_id: sponsorship
-        default_data: ''
-        redirect: 0
         region: content
         weight: '0'
-        context_mapping: {  }
         custom_id: webform_block
         theme: al_dia_news
         css_class: ''
         unique: 0
         context_id: about_al_dia_live
-        uuid: 334663ca-bcc3-4ba0-b076-4882289ca36b
+        context_mapping: {  }
+        webform_id: sponsorship
+        default_data: ''
+        redirect: 0
       06dd3f14-5da4-45dd-8d5a-35c379564603:
+        uuid: 06dd3f14-5da4-45dd-8d5a-35c379564603
         id: gamw
         label: 'Pre footer -  Bottom banner al dia live'
         provider: gamw
         label_display: '0'
+        region: content
+        weight: '5'
+        custom_id: gamw
+        theme: al_dia_news
+        css_class: 'banner-horizontal ads'
+        unique: 1
+        context_id: about_al_dia_live
+        context_mapping: {  }
         ad_unit: pre-footer-bottom-banner
         attributes_wrapper:
           0: ''
@@ -143,36 +154,25 @@ reactions:
           6: ''
           add: 'Add another targeting attribute'
           remove: 'Remove last targeting attribute'
-        region: content
-        weight: '5'
-        context_mapping: {  }
-        custom_id: gamw
-        theme: al_dia_news
-        css_class: 'banner-horizontal ads'
-        unique: 1
-        context_id: about_al_dia_live
-        uuid: 06dd3f14-5da4-45dd-8d5a-35c379564603
       cdc3b66e-6ea3-4845-8903-e847f400ef41:
+        uuid: cdc3b66e-6ea3-4845-8903-e847f400ef41
         id: gamw
         label: 'first block bottom banner'
         provider: gamw
         label_display: '0'
-        ad_unit: first-block-bottom-banner
-        attributes_wrapper:
-          0: ''
-          add: 'Add another targeting attribute'
-          remove: 'Remove last targeting attribute'
         region: content
         weight: '-3'
-        context_mapping: {  }
         custom_id: gamw
         theme: al_dia_news
         css_class: 'banner-horizontal  first-block-bottom-banner ads'
         unique: 1
         context_id: about_al_dia_live
-        uuid: cdc3b66e-6ea3-4845-8903-e847f400ef41
-    id: blocks
-    saved: false
-    uuid: e8523adf-eacb-45ff-bd80-ac4e8c76b9db
+        context_mapping: {  }
+        ad_unit: first-block-bottom-banner
+        attributes_wrapper:
+          0: ''
+          add: 'Add another targeting attribute'
+          remove: 'Remove last targeting attribute'
     include_default_blocks: 1
+    saved: false
 weight: 0

@@ -12,12 +12,12 @@ pattern: 'podcast/[term:name]'
 selection_criteria:
   92d89a06-b0eb-458a-bc40-ebb10eca7586:
     id: 'entity_bundle:taxonomy_term'
-    bundles:
-      podcast_category: podcast_category
     negate: false
+    uuid: 92d89a06-b0eb-458a-bc40-ebb10eca7586
     context_mapping:
       taxonomy_term: taxonomy_term
-    uuid: 92d89a06-b0eb-458a-bc40-ebb10eca7586
+    bundles:
+      podcast_category: podcast_category
 selection_logic: and
 weight: -5
 relationships: {  }

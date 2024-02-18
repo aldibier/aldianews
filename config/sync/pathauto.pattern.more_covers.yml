@@ -10,13 +10,13 @@ type: 'canonical_entities:node'
 pattern: '/more-covers/[node:title]'
 selection_criteria:
   76f488b1-2df5-4f79-8e78-fb74c20d4846:
-    id: node_type
-    bundles:
-      more_covers: more_covers
+    id: 'entity_bundle:node'
     negate: false
+    uuid: 76f488b1-2df5-4f79-8e78-fb74c20d4846
     context_mapping:
       node: node
-    uuid: 76f488b1-2df5-4f79-8e78-fb74c20d4846
+    bundles:
+      more_covers: more_covers
 selection_logic: and
 weight: -5
 relationships: {  }

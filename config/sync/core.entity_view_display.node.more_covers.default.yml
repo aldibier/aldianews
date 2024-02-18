@@ -19,8 +19,8 @@ dependencies:
     - datetime
     - entity_reference_revisions
     - field_group
-    - image
     - layout_builder
+    - svg_image
     - user
     - views
 third_party_settings:
@@ -29,13 +29,14 @@ third_party_settings:
       children:
         - field_start_date
         - field_end_date
+      label: dates
       parent_name: ''
+      region: content
       weight: 2
       format_type: html_element
-      region: content
       format_settings:
-        id: ''
         classes: dates-group
+        id: ''
         element: div
         show_label: false
         label_element: h3
@@ -43,10 +44,9 @@ third_party_settings:
         attributes: ''
         effect: none
         speed: fast
-      label: dates
   layout_builder:
-    allow_custom: false
     enabled: true
+    allow_custom: false
     sections:
       -
         layout_id: more_covers
@@ -59,14 +59,17 @@ third_party_settings:
             configuration:
               id: 'field_block:node:more_covers:field_cover_page'
               label: 'cover page'
-              provider: layout_builder
               label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
               formatter:
-                label: hidden
                 type: image
+                label: hidden
                 settings:
-                  image_style: ''
                   image_link: ''
+                  image_style: ''
                 third_party_settings:
                   field_formatter_class:
                     class: ''
@@ -74,63 +77,60 @@ third_party_settings:
                     lazy_image: '0'
                     placeholder_style: ''
                     data_uri: false
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-            additional: {  }
             weight: -10
+            additional: {  }
           3591c5f2-40db-4f8c-b3cf-448e6e15b013:
             uuid: 3591c5f2-40db-4f8c-b3cf-448e6e15b013
             region: one_content
             configuration:
               id: 'field_block:node:more_covers:field_start_date'
               label: 'start date'
-              provider: layout_builder
               label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
               formatter:
-                label: hidden
                 type: datetime_custom
+                label: hidden
                 settings:
                   timezone_override: ''
                   date_format: 'F jS'
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-            additional: {  }
             weight: -8
+            additional: {  }
           66df1d46-065f-4c3d-be3d-31e0b199243d:
             uuid: 66df1d46-065f-4c3d-be3d-31e0b199243d
             region: one_content
             configuration:
               id: 'field_block:node:more_covers:field_end_date'
               label: 'end date'
-              provider: layout_builder
               label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
               formatter:
-                label: hidden
                 type: datetime_custom
+                label: hidden
                 settings:
                   timezone_override: ''
                   date_format: 'F jS, Y'
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-            additional: {  }
             weight: -7
+            additional: {  }
           d1bbdd52-7ed2-474a-8748-8b3d1b4e842a:
             uuid: d1bbdd52-7ed2-474a-8748-8b3d1b4e842a
             region: content
             configuration:
+              id: 'field_block:node:more_covers:field_related_more_covers'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-              id: 'field_block:node:more_covers:field_related_more_covers'
               formatter:
                 type: entity_reference_revisions_entity_view
                 label: above
@@ -138,80 +138,103 @@ third_party_settings:
                   view_mode: default
                   link: ''
                 third_party_settings: {  }
-            additional: {  }
             weight: 0
+            additional: {  }
           c6ea9853-8d1a-424e-9a00-81d076acf09e:
             uuid: c6ea9853-8d1a-424e-9a00-81d076acf09e
             region: one_content
             configuration:
               id: 'field_block:node:more_covers:title'
               label: Title
-              provider: layout_builder
               label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
               formatter:
-                label: hidden
                 type: string
+                label: hidden
                 settings:
                   link_to_entity: false
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-            additional: {  }
             weight: -9
+            additional: {  }
           14c675bf-efdb-4d4a-83b7-d395dd23e61c:
             uuid: 14c675bf-efdb-4d4a-83b7-d395dd23e61c
             region: content
             configuration:
+              id: 'field_block:node:more_covers:field_year_covers'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-              id: 'field_block:node:more_covers:field_year_covers'
               formatter:
+                type: entity_reference_label
                 label: above
                 settings:
                   link: true
                 third_party_settings: {  }
-                type: entity_reference_label
-            additional: {  }
             weight: 1
+            additional: {  }
           b40cd345-cf4f-49ee-9ebb-fe8570f5e318:
             uuid: b40cd345-cf4f-49ee-9ebb-fe8570f5e318
             region: two_content
             configuration:
               id: 'block_group:fixed_blocks_adversiting'
               label: 'GAMW - fixed block adversiting'
-              provider: blockgroup
               label_display: '0'
+              provider: blockgroup
               context_mapping: {  }
-            additional: {  }
             weight: 0
+            additional: {  }
           936c45cd-e194-4757-99ab-9089031c5683:
             uuid: 936c45cd-e194-4757-99ab-9089031c5683
             region: two_content
             configuration:
               id: 'block_group:gamw_fixed_skyscraper_adversiting'
               label: 'GAMW - fixed skyscraper adversiting'
-              provider: blockgroup
               label_display: '0'
+              provider: blockgroup
               context_mapping: {  }
-            additional: {  }
             weight: 1
+            additional: {  }
           5287dcad-8296-4d79-8b19-fc8e1fb02c18:
             uuid: 5287dcad-8296-4d79-8b19-fc8e1fb02c18
             region: three_content
             configuration:
               id: 'views_block:related_news_in_more_covers_-block_1'
               label: ''
-              provider: views
               label_display: '0'
+              provider: views
+              context_mapping: {  }
               views_label: ''
               items_per_page: none
-              context_mapping: {  }
-            additional: {  }
             weight: 1
+            additional: {  }
+          ebd5686f-be03-45a5-86de-526d350be9ae:
+            uuid: ebd5686f-be03-45a5-86de-526d350be9ae
+            region: content
+            configuration:
+              id: 'field_block:node:more_covers:field_cover_page'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: ''
+                  svg_attributes:
+                    width: null
+                    height: null
+                  svg_render_as_image: true
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
         third_party_settings: {  }
 id: node.more_covers.default
 targetEntityType: node
@@ -219,54 +242,60 @@ bundle: more_covers
 mode: default
 content:
   field_cover_page:
-    weight: 1
+    type: image
     label: hidden
     settings:
-      image_style: ''
       image_link: ''
+      image_style: ''
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
-    type: image
+    weight: 1
     region: content
   field_end_date:
-    weight: 3
+    type: datetime_custom
     label: hidden
     settings:
       timezone_override: ''
       date_format: ' F jS / Y'
     third_party_settings: {  }
-    type: datetime_custom
+    weight: 3
     region: content
   field_related_more_covers:
     type: entity_reference_revisions_entity_view
-    weight: 4
     label: above
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    weight: 4
     region: content
   field_start_date:
-    weight: 2
+    type: datetime_custom
     label: hidden
     settings:
       timezone_override: ''
       date_format: ' F jS'
     third_party_settings: {  }
-    type: datetime_custom
+    weight: 2
     region: content
   field_year_covers:
-    weight: 5
+    type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 5
     region: content
   links:
-    weight: 0
-    region: content
     settings: {  }
     third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   addtoany: true
   body: true

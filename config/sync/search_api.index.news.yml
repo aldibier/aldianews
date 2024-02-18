@@ -2,11 +2,6 @@ uuid: 37920c67-6c26-405f-8199-c9040dc8c695
 langcode: en
 status: true
 dependencies:
-  module:
-    - search_api_solr
-    - node
-    - content_authors
-    - search_api
   config:
     - field.storage.node.field_author
     - field.storage.node.body
@@ -18,24 +13,26 @@ dependencies:
     - field.storage.node.field_short_title
     - field.storage.node.field_type_of_content
     - search_api.server.al_dia_news_solr
+  module:
+    - search_api_solr
+    - node
+    - content_authors
+    - search_api
 third_party_settings:
   search_api_solr:
     finalize: false
     commit_before_finalize: false
     commit_after_finalize: false
-    multilingual:
-      limit_to_content_language: false
-      include_language_independent: true
     highlighter:
       maxAnalyzedChars: 51200
       fragmenter: gap
+      usePhraseHighlighter: true
+      highlightMultiTerm: true
+      preserveMulti: false
       regex:
         slop: 0.5
         pattern: blank
         maxAnalyzedChars: 10000
-      usePhraseHighlighter: true
-      highlightMultiTerm: true
-      preserveMulti: false
       highlight:
         mergeContiguous: false
         requireFieldMatch: false
@@ -59,6 +56,12 @@ third_party_settings:
       index_prefix: ''
       collection: ''
       timezone: ''
+    multilingual:
+      limit_to_content_language: false
+      include_language_independent: true
+      specific_languages: {  }
+      use_language_undefined_as_fallback_language: false
+      use_universal_collation: false
 id: news
 name: News
 description: ''
@@ -201,15 +204,15 @@ processor_settings:
   add_url: {  }
   aggregated_field: {  }
   highlight:
-    highlight: always
-    highlight_partial: false
+    weights:
+      postprocess_query: 0
+    prefix: '<strong>'
+    suffix: '</strong>'
     excerpt: true
     excerpt_length: 256
     exclude_fields: {  }
-    prefix: '<strong>'
-    suffix: '</strong>'
-    weights:
-      postprocess_query: 0
+    highlight: always
+    highlight_partial: false
   language_with_fallback: {  }
   rendered_item: {  }
   solr_date_range:
@@ -219,6 +222,7 @@ tracker_settings:
   default:
     indexing_order: fifo
 options:
-  index_directly: true
   cron_limit: 50
+  index_directly: true
+  track_changes_in_references: true
 server: al_dia_news_solr

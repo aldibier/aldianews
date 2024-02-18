@@ -10,13 +10,13 @@ type: 'canonical_entities:node'
 pattern: 'about-al-dia-live/al-dia-live/[node:title]'
 selection_criteria:
   b3f97c53-c67f-4716-b233-a5b82d0ee5b2:
-    id: node_type
-    bundles:
-      event: event
+    id: 'entity_bundle:node'
     negate: false
+    uuid: b3f97c53-c67f-4716-b233-a5b82d0ee5b2
     context_mapping:
       node: node
-    uuid: b3f97c53-c67f-4716-b233-a5b82d0ee5b2
+    bundles:
+      event: event
 selection_logic: and
 weight: -5
 relationships: {  }

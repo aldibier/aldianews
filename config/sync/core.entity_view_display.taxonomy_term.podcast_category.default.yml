@@ -15,8 +15,8 @@ dependencies:
     - views
 third_party_settings:
   layout_builder:
-    allow_custom: false
     enabled: true
+    allow_custom: false
     sections:
       -
         layout_id: podcast_category
@@ -29,60 +29,106 @@ third_party_settings:
             configuration:
               id: 'views_block:podcast_category_internals-block_4'
               label: ''
-              provider: views
               label_display: '0'
+              provider: views
+              context_mapping: {  }
               views_label: ''
               items_per_page: none
-              context_mapping: {  }
-            additional: {  }
             weight: -8
+            additional: {  }
           4fc433af-bf99-4644-888a-b7711dbcbe8f:
             uuid: 4fc433af-bf99-4644-888a-b7711dbcbe8f
             region: one_content
             configuration:
               id: 'views_block:podcast_category_internals-block_2'
               label: ''
-              provider: views
               label_display: '0'
+              provider: views
+              context_mapping: {  }
               views_label: ''
               items_per_page: none
-              context_mapping: {  }
-            additional: {  }
             weight: -10
+            additional: {  }
           efcaa5b2-d296-4dad-a0cd-e49f4fc85980:
             uuid: efcaa5b2-d296-4dad-a0cd-e49f4fc85980
             region: content
             configuration:
+              id: 'field_block:taxonomy_term:podcast_category:field_field_category_image_thumb'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-              id: 'field_block:taxonomy_term:podcast_category:field_field_category_image_thumb'
               formatter:
+                type: image
                 label: above
                 settings:
+                  image_link: ''
+                  image_style: ''
                   svg_attributes:
                     width: null
                     height: null
                   svg_render_as_image: true
-                  image_style: ''
-                  image_link: ''
                 third_party_settings: {  }
-                type: image
-            additional: {  }
             weight: 0
+            additional: {  }
           a881a7ee-f872-4a54-bb75-14041afa8cec:
             uuid: a881a7ee-f872-4a54-bb75-14041afa8cec
             region: one_content
             configuration:
               id: 'views_block:podcast_category_internals-block_3'
               label: ''
-              provider: views
               label_display: '0'
+              provider: views
+              context_mapping: {  }
               views_label: ''
               items_per_page: none
-              context_mapping: {  }
-            additional: {  }
             weight: -7
+            additional: {  }
+          f1e2c839-74c4-432c-b165-c730445f376e:
+            uuid: f1e2c839-74c4-432c-b165-c730445f376e
+            region: content
+            configuration:
+              id: 'field_block:taxonomy_term:podcast_category:field_category_image'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: above
+                settings:
+                  image_link: ''
+                  image_style: ''
+                  svg_attributes:
+                    width: null
+                    height: null
+                  svg_render_as_image: true
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          830bbd45-eb22-43dc-b15c-9fb4ba2993ea:
+            uuid: 830bbd45-eb22-43dc-b15c-9fb4ba2993ea
+            region: content
+            configuration:
+              id: 'field_block:taxonomy_term:podcast_category:field_field_category_image_thumb'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: above
+                settings:
+                  image_link: ''
+                  image_style: ''
+                  svg_attributes:
+                    width: null
+                    height: null
+                  svg_render_as_image: true
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
         third_party_settings: {  }
 id: taxonomy_term.podcast_category.default
 targetEntityType: taxonomy_term
@@ -90,33 +136,41 @@ bundle: podcast_category
 mode: default
 content:
   description:
-    label: hidden
     type: text_default
-    weight: 0
-    region: content
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-  field_category_image:
-    weight: 1
-    label: above
-    settings:
-      image_style: ''
-      image_link: ''
-    third_party_settings: {  }
-    type: image
+    weight: 0
     region: content
-  field_field_category_image_thumb:
-    weight: 2
+  field_category_image:
+    type: image
     label: above
     settings:
+      image_link: ''
+      image_style: ''
       svg_attributes:
         width: null
         height: null
       svg_render_as_image: true
-      image_style: ''
-      image_link: ''
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
+    weight: 1
+    region: content
+  field_field_category_image_thumb:
     type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 2
     region: content
 hidden:
   langcode: true

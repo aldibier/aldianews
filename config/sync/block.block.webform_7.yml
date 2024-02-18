@@ -5,7 +5,6 @@ dependencies:
   config:
     - webform.webform.receive_updates_for_al_dia_live
   module:
-    - context
     - system
     - webform
   theme:
@@ -19,21 +18,14 @@ plugin: webform_block
 settings:
   id: webform_block
   label: Webform
-  provider: webform
   label_display: '0'
+  provider: webform
   webform_id: receive_updates_for_al_dia_live
   default_data: ''
   redirect: false
+  lazy: false
 visibility:
-  request_path_exclusion:
-    id: request_path_exclusion
-    pages: ''
-    negate: null
-  view_inclusion:
-    id: view_inclusion
-    negate: null
-    view_inclusion: {  }
   request_path:
     id: request_path
-    pages: "/about-al-dia-live/al-dia-live/past-events\r\n/about-al-dia-live/al-dia-live"
     negate: false
+    pages: "/about-al-dia-live/al-dia-live/past-events\r\n/about-al-dia-live/al-dia-live"

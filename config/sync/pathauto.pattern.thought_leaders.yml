@@ -10,13 +10,13 @@ type: 'canonical_entities:node'
 pattern: '/thought-leaders/[node:title]'
 selection_criteria:
   1aefaffd-f4de-4255-8125-a875e16ecbbf:
-    id: node_type
-    bundles:
-      thought_leaders: thought_leaders
+    id: 'entity_bundle:node'
     negate: false
+    uuid: 1aefaffd-f4de-4255-8125-a875e16ecbbf
     context_mapping:
       node: node
-    uuid: 1aefaffd-f4de-4255-8125-a875e16ecbbf
+    bundles:
+      thought_leaders: thought_leaders
 selection_logic: and
 weight: -5
 relationships: {  }

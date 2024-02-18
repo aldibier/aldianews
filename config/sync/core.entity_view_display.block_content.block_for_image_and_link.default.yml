@@ -7,24 +7,30 @@ dependencies:
     - field.field.block_content.block_for_image_and_link.field_image
     - field.field.block_content.block_for_image_and_link.field_link
   module:
-    - image
     - link
+    - svg_image
 id: block_content.block_for_image_and_link.default
 targetEntityType: block_content
 bundle: block_for_image_and_link
 mode: default
 content:
   field_image:
-    weight: 1
+    type: image
     label: hidden
     settings:
-      image_style: ''
       image_link: ''
+      image_style: ''
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
-    type: image
+    weight: 1
     region: content
   field_link:
-    weight: 2
+    type: link
     label: hidden
     settings:
       trim_length: 80
@@ -33,7 +39,7 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    type: link
+    weight: 2
     region: content
 hidden:
   langcode: true

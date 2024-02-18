@@ -13,11 +13,11 @@ bundle: only_video
 mode: default
 content:
   field_url_video:
+    type: video_embed_field_textfield
     weight: 27
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: video_embed_field_textfield
-    region: content
   info:
     type: string_textfield
     weight: -5
@@ -35,7 +35,7 @@ content:
     third_party_settings: {  }
   translation:
     weight: 10
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden: {  }

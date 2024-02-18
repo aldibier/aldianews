@@ -8,24 +8,30 @@ dependencies:
     - field.field.paragraph.platforms.field_platform_name
     - paragraphs.paragraphs_type.platforms
   module:
-    - image
     - link
+    - svg_image
 id: paragraph.platforms.default
 targetEntityType: paragraph
 bundle: platforms
 mode: default
 content:
   field_icon_platform:
-    weight: 0
+    type: image
     label: hidden
     settings:
-      image_style: ''
       image_link: ''
+      image_style: ''
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
-    type: image
+    weight: 0
     region: content
   field_link_platform:
-    weight: 1
+    type: link
     label: hidden
     settings:
       trim_length: 80
@@ -34,15 +40,15 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    type: link
+    weight: 1
     region: content
   field_platform_name:
-    weight: 2
+    type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 2
     region: content
 hidden:
   search_api_excerpt: true

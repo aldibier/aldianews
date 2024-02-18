@@ -1,7 +1,19 @@
 uuid: 5921e19c-6dc4-49bc-a7bf-59f64e197461
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - filter.format.restricted_html
+  module:
+    - comment
+    - commerce_checkout
+    - commerce_product
+    - contact
+    - content_authors
+    - filter
+    - media
+    - search
+    - system
 id: anonymous
 label: 'Anonymous user'
 weight: 0
@@ -10,16 +22,8 @@ permissions:
   - 'access checkout'
   - 'access comments'
   - 'access content'
-  - 'access devel information'
   - 'access site-wide contact form'
-  - 'administer devel_generate'
-  - 'execute php code'
-  - 'generate spam master'
-  - 'restful get comments'
-  - 'restful get me'
-  - 'restful post comments'
   - 'search content'
-  - 'switch users'
   - 'use text format restricted_html'
   - 'view commerce_product'
   - 'view media'

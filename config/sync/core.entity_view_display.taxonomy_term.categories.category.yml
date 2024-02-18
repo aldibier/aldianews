@@ -13,8 +13,8 @@ dependencies:
     - views
 third_party_settings:
   layout_builder:
-    allow_custom: false
     enabled: true
+    allow_custom: false
     sections:
       -
         layout_id: taxonomy_category
@@ -27,26 +27,26 @@ third_party_settings:
             configuration:
               id: 'views_block:last_news-block_1'
               label: ''
-              provider: views
               label_display: visible
+              provider: views
+              context_mapping: {  }
               views_label: ''
               items_per_page: none
-              context_mapping: {  }
-            additional: {  }
             weight: 0
+            additional: {  }
           73848a35-a336-436b-87b2-28ca24ab80e1:
             uuid: 73848a35-a336-436b-87b2-28ca24ab80e1
             region: one_content
             configuration:
               id: 'views_block:last_news-block_2'
               label: ''
-              provider: views
               label_display: visible
+              provider: views
+              context_mapping: {  }
               views_label: ''
               items_per_page: none
-              context_mapping: {  }
-            additional: {  }
             weight: 1
+            additional: {  }
         third_party_settings: {  }
 id: taxonomy_term.categories.category
 targetEntityType: taxonomy_term
@@ -54,12 +54,12 @@ bundle: categories
 mode: category
 content:
   description:
-    label: hidden
     type: text_default
-    weight: 0
-    region: content
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   langcode: true
   search_api_excerpt: true

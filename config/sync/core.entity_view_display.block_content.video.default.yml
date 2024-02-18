@@ -9,7 +9,7 @@ dependencies:
     - field.field.block_content.video.field_video_thumbnail
     - field.field.block_content.video.field_video_title
   module:
-    - image
+    - svg_image
     - text
     - video_embed_field
 id: block_content.video.default
@@ -18,39 +18,45 @@ bundle: video
 mode: default
 content:
   body:
-    label: hidden
     type: text_default
-    weight: 0
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 0
     region: content
   field_url_video:
-    weight: 2
+    type: video_embed_field_video
     label: above
     settings:
+      autoplay: true
       responsive: true
       width: 854
       height: 480
-      autoplay: true
     third_party_settings: {  }
-    type: video_embed_field_video
+    weight: 2
     region: content
   field_video_thumbnail:
-    weight: 1
+    type: image
     label: above
     settings:
-      image_style: ''
       image_link: ''
+      image_style: ''
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
-    type: image
+    weight: 1
     region: content
   field_video_title:
-    weight: 3
+    type: string
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 3
     region: content
 hidden:
   langcode: true

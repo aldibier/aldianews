@@ -22,7 +22,7 @@ field_type:
           class: solr.MappingCharFilterFactory
           mapping: accents_es.txt
       tokenizer:
-        class: solr.WhitespaceTokenizerFactory
+        class: solr.StandardTokenizerFactory
       filters:
         -
           class: solr.WordDelimiterGraphFilterFactory
@@ -35,6 +35,8 @@ field_type:
           catenateAll: 0
           catenateWords: 1
         -
+          class: solr.FlattenGraphFilterFactory
+        -
           class: solr.LowerCaseFilterFactory
         -
           class: solr.StopFilterFactory
@@ -42,8 +44,8 @@ field_type:
           words: stopwords_es.txt
         -
           class: solr.SnowballPorterFilterFactory
-          language: Spanish
           protected: protwords_es.txt
+          language: Spanish
         -
           class: solr.RemoveDuplicatesTokenFilterFactory
     -
@@ -53,7 +55,7 @@ field_type:
           class: solr.MappingCharFilterFactory
           mapping: accents_es.txt
       tokenizer:
-        class: solr.WhitespaceTokenizerFactory
+        class: solr.StandardTokenizerFactory
       filters:
         -
           class: solr.WordDelimiterGraphFilterFactory
@@ -69,19 +71,20 @@ field_type:
           class: solr.LowerCaseFilterFactory
         -
           class: solr.SynonymGraphFilterFactory
+          ignoreCase: true
           synonyms: synonyms_es.txt
           expand: true
-          ignoreCase: true
         -
           class: solr.StopFilterFactory
           ignoreCase: true
           words: stopwords_es.txt
         -
           class: solr.SnowballPorterFilterFactory
-          language: Spanish
           protected: protwords_es.txt
+          language: Spanish
         -
           class: solr.RemoveDuplicatesTokenFilterFactory
+  storeOffsetsWithPositions: true
 unstemmed_field_type:
   name: text_unstemmed_es
   class: solr.TextField
@@ -94,7 +97,7 @@ unstemmed_field_type:
           class: solr.MappingCharFilterFactory
           mapping: accents_es.txt
       tokenizer:
-        class: solr.WhitespaceTokenizerFactory
+        class: solr.StandardTokenizerFactory
       filters:
         -
           class: solr.WordDelimiterGraphFilterFactory
@@ -106,6 +109,8 @@ unstemmed_field_type:
           preserveOriginal: 1
           catenateAll: 0
           catenateWords: 1
+        -
+          class: solr.FlattenGraphFilterFactory
         -
           class: solr.LowerCaseFilterFactory
         -
@@ -121,7 +126,7 @@ unstemmed_field_type:
           class: solr.MappingCharFilterFactory
           mapping: accents_es.txt
       tokenizer:
-        class: solr.WhitespaceTokenizerFactory
+        class: solr.StandardTokenizerFactory
       filters:
         -
           class: solr.WordDelimiterGraphFilterFactory
@@ -137,15 +142,16 @@ unstemmed_field_type:
           class: solr.LowerCaseFilterFactory
         -
           class: solr.SynonymGraphFilterFactory
+          ignoreCase: true
           synonyms: synonyms_es.txt
           expand: true
-          ignoreCase: true
         -
           class: solr.StopFilterFactory
           ignoreCase: true
           words: stopwords_es.txt
         -
           class: solr.RemoveDuplicatesTokenFilterFactory
+  storeOffsetsWithPositions: true
 spellcheck_field_type: null
 collated_field_type:
   name: collated_es
@@ -225,7 +231,7 @@ solr_configs:
               VALUE: sm_context_tags
             -
               name: buildOnCommit
-              VALUE: 'true'
+              VALUE: 'false'
             -
               name: buildOnStartup
               VALUE: 'false'
@@ -539,9 +545,6 @@ text_files:
     tenidos
     tenidas
     tened
-  synonyms: |
-    drupal, durpal
-  nouns: ''
   protwords: ''
   accents: |
     # À => A
@@ -708,3 +711,6 @@ text_files:
     "\uFB05" => "st"
     # ﬆ => st
     "\uFB06" => "st"
+  synonyms: |
+    drupal, durpal
+  nouns: ''

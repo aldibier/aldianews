@@ -24,8 +24,8 @@ dependencies:
     - views
 third_party_settings:
   layout_builder:
-    allow_custom: false
     enabled: true
+    allow_custom: false
     sections:
       -
         layout_id: authors_intern
@@ -39,52 +39,81 @@ third_party_settings:
             configuration:
               id: gamw
               label: 'GAMW Advertisement'
-              provider: gamw
               label_display: '0'
+              provider: gamw
+              context_mapping: {  }
               ad_unit: header-top-banner
               attributes_wrapper: null
-              context_mapping: {  }
-            additional: {  }
             weight: 0
+            additional: {  }
           037e0f84-7142-4342-9958-88b1e1cda9a7:
             uuid: 037e0f84-7142-4342-9958-88b1e1cda9a7
             region: author_information
             configuration:
               id: 'views_block:internal_author_information_-block_1'
               label: ''
-              provider: views
               label_display: '0'
+              provider: views
+              context_mapping: {  }
               views_label: ''
               items_per_page: none
-              context_mapping: {  }
-            additional: {  }
             weight: 0
+            additional: {  }
           4025a730-96ea-4962-b861-45914ec54451:
             uuid: 4025a730-96ea-4962-b861-45914ec54451
             region: related_authors
             configuration:
               id: 'views_block:internal_author_information_-block_2'
               label: ''
-              provider: views
               label_display: '0'
+              provider: views
+              context_mapping: {  }
               views_label: ''
               items_per_page: none
-              context_mapping: {  }
-            additional: {  }
             weight: 0
+            additional: {  }
           d1efc698-b766-40fa-b6a5-2ede62b3ebb8:
             uuid: d1efc698-b766-40fa-b6a5-2ede62b3ebb8
             region: authors_news
             configuration:
               id: 'views_block:internal_author_information_-block_3'
               label: ''
-              provider: views
               label_display: '0'
+              provider: views
+              context_mapping: {  }
               views_label: ''
               items_per_page: none
-              context_mapping: {  }
-            additional: {  }
             weight: 0
+            additional: {  }
+          ada71385-64f2-4e7c-b4c8-7e4aedc9458e:
+            uuid: ada71385-64f2-4e7c-b4c8-7e4aedc9458e
+            region: content
+            configuration:
+              id: 'field_block:authors:news_authors:field_authors_photo'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: above
+                settings:
+                  image_link: ''
+                  image_style: photo_autor
+                  svg_attributes:
+                    width: null
+                    height: null
+                  svg_render_as_image: true
+                  image_loading:
+                    attribute: lazy
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+                  lazy:
+                    lazy_image: '0'
+                    placeholder_style: ''
+                    data_uri: false
+            weight: 0
+            additional: {  }
         third_party_settings: {  }
 id: authors.news_authors.default
 targetEntityType: authors
@@ -92,81 +121,83 @@ bundle: news_authors
 mode: default
 content:
   field_authors_photo:
-    weight: 1
+    type: image
     label: above
     settings:
-      image_style: photo_autor
       image_link: ''
+      image_style: photo_autor
       svg_attributes:
         width: null
         height: null
       svg_render_as_image: true
+      image_loading:
+        attribute: lazy
     third_party_settings:
       field_formatter_class:
         class: ''
       lazy:
-        placeholder_style: ''
         lazy_image: '0'
+        placeholder_style: ''
         data_uri: false
-    type: image
+    weight: 1
     region: content
   field_biography:
-    weight: 4
+    type: basic_string
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: basic_string
+    weight: 4
     region: content
   field_display_in_the_authors_lan:
-    weight: 5
+    type: boolean
     label: above
     settings:
       format: default
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    type: boolean
+    weight: 5
     region: content
   field_job_title_or_prof_all_news:
-    weight: 2
+    type: string
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 2
     region: content
   field_lead:
-    weight: 3
+    type: string
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 3
     region: content
   field_social_media:
     type: entity_reference_revisions_entity_view
-    weight: 6
     label: above
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    weight: 6
     region: content
   name:
-    label: above
     type: string
-    weight: -4
-    region: content
+    label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-  user_id:
-    label: hidden
-    type: author
-    weight: 0
+    weight: -4
     region: content
+  user_id:
+    type: author
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   langcode: true
   search_api_excerpt: true

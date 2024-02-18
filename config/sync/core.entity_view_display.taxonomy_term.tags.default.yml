@@ -13,8 +13,8 @@ dependencies:
     - views
 third_party_settings:
   layout_builder:
-    allow_custom: false
     enabled: true
+    allow_custom: false
     sections:
       -
         layout_id: taxonomy_tags
@@ -28,50 +28,50 @@ third_party_settings:
             configuration:
               id: last_node_tag
               label: LastNodeTag
-              provider: al_dia_news_general
               label_display: '0'
+              provider: al_dia_news_general
               context_mapping: {  }
-            additional: {  }
             weight: -8
+            additional: {  }
           6e78d8f1-0b4f-4196-9164-05c347ae3536:
             uuid: 6e78d8f1-0b4f-4196-9164-05c347ae3536
             region: first_block_tags
             configuration:
               id: 'views_block:landing_tags-block_1'
               label: ''
-              provider: views
               label_display: '0'
+              provider: views
+              context_mapping: {  }
               views_label: ''
               items_per_page: none
-              context_mapping: {  }
-            additional: {  }
             weight: -7
+            additional: {  }
           3b706750-d023-407c-b935-8083bd8ce201:
             uuid: 3b706750-d023-407c-b935-8083bd8ce201
             region: other_news_tags
             configuration:
               id: 'views_block:landing_tags-block_2'
               label: ''
-              provider: views
               label_display: '0'
+              provider: views
+              context_mapping: {  }
               views_label: ''
               items_per_page: none
-              context_mapping: {  }
-            additional: {  }
             weight: 0
+            additional: {  }
           1fa3fafa-9418-4a13-9929-d77d15525a41:
             uuid: 1fa3fafa-9418-4a13-9929-d77d15525a41
             region: header_tags
             configuration:
               id: 'views_block:landing_tags-block_3'
               label: ''
-              provider: views
               label_display: '0'
+              provider: views
+              context_mapping: {  }
               views_label: ''
               items_per_page: none
-              context_mapping: {  }
-            additional: {  }
             weight: -10
+            additional: {  }
         third_party_settings: {  }
 id: taxonomy_term.tags.default
 targetEntityType: taxonomy_term
@@ -79,12 +79,12 @@ bundle: tags
 mode: default
 content:
   description:
-    label: hidden
     type: text_default
-    weight: 0
-    region: content
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   langcode: true
   search_api_excerpt: true

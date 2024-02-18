@@ -10,13 +10,13 @@ type: 'canonical_entities:node'
 pattern: 'jobs/[node:title]'
 selection_criteria:
   b4a170dd-2718-4c1e-82b1-318982e6b62f:
-    id: node_type
-    bundles:
-      feature_employer: feature_employer
+    id: 'entity_bundle:node'
     negate: false
+    uuid: b4a170dd-2718-4c1e-82b1-318982e6b62f
     context_mapping:
       node: node
-    uuid: b4a170dd-2718-4c1e-82b1-318982e6b62f
+    bundles:
+      feature_employer: feature_employer
 selection_logic: and
 weight: -5
 relationships: {  }

@@ -11,18 +11,18 @@ dependencies:
     - email_registration
 _core:
   default_config_hash: 5BYvSDemm8xYwB9rMGFuEuGK6FxVheqtXEUxnpKO2N4
-id: default
 label: Default
+id: default
 plugin: multistep_default
 configuration:
   display_checkout_progress: true
   display_checkout_progress_breadcrumb_links: false
   panes:
     'order_fields:checkout':
-      wrapper_element: container
-      display_label: 'Order fields'
       step: order_information
       weight: 0
+      wrapper_element: container
+      display_label: 'Order fields'
     payment_information:
       step: order_information
       weight: 1
@@ -33,51 +33,51 @@ configuration:
       step: review
       weight: 3
     order_summary:
-      view: checkout_order_summary_subscription
       step: review
       weight: 4
+      view: checkout_order_summary_subscription
     review:
       step: review
       weight: 5
     payment_process:
-      capture: true
       step: payment
       weight: 6
+      capture: true
     completion_message:
+      step: complete
+      weight: 7
       message:
         value: "Your order number is [commerce_order:order_number].\r\nYou can view your order on your account page when logged in."
         format: plain_text
-      step: complete
-      weight: 7
       capture: true
     paypal_checkout_payment_process:
-      capture: true
       step: complete
       weight: 8
+      capture: true
     completion_register:
       step: complete
       weight: 9
     contact_information:
-      double_entry: false
       step: _disabled
       weight: 10
+      double_entry: false
     rechpack_order_review_your_order:
       step: _disabled
       weight: 11
     coupon_redemption:
-      allow_multiple: false
       step: _disabled
       weight: 12
+      allow_multiple: false
     login:
-      allow_guest_checkout: true
-      allow_registration: false
       step: _disabled
       weight: 13
-    email_registration_login:
       allow_guest_checkout: true
       allow_registration: false
+    email_registration_login:
       step: _disabled
       weight: 14
+      allow_guest_checkout: true
+      allow_registration: false
     email_registration_completion_registration:
       step: _disabled
       weight: 15

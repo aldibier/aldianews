@@ -15,15 +15,15 @@ dependencies:
     - al_dia_layouts
     - entity_reference_revisions
     - gamw
-    - image
     - layout_builder
+    - svg_image
     - text
     - user
     - views
 third_party_settings:
   layout_builder:
-    allow_custom: false
     enabled: true
+    allow_custom: false
     sections:
       -
         layout_id: feature_employer_intern
@@ -36,175 +36,198 @@ third_party_settings:
             configuration:
               id: 'field_block:node:feature_employer:title'
               label: Title
-              provider: layout_builder
               label_display: '0'
-              formatter:
-                label: hidden
-                type: string
-                settings:
-                  link_to_entity: false
-                third_party_settings: {  }
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
                 view_mode: view_mode
-            additional: {  }
+              formatter:
+                type: string
+                label: hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
             weight: 0
+            additional: {  }
           80b36a8b-fee4-4eed-8660-1c7d55a5e60a:
             uuid: 80b36a8b-fee4-4eed-8660-1c7d55a5e60a
             region: employer_information_image
             configuration:
               id: 'field_block:node:feature_employer:field_image'
               label: Image
-              provider: layout_builder
               label_display: '0'
-              formatter:
-                label: hidden
-                type: image
-                settings:
-                  image_style: image_style_crop_290_260
-                  image_link: ''
-                third_party_settings: {  }
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
                 view_mode: view_mode
-            additional: {  }
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: image_style_crop_290_260
+                third_party_settings: {  }
             weight: 0
+            additional: {  }
           ca5e08f0-0e35-4471-9ec9-cec072309758:
             uuid: ca5e08f0-0e35-4471-9ec9-cec072309758
             region: two_content_body
             configuration:
               id: 'extra_field_block:node:feature_employer:addtoany'
               label: 'SHARE THIS CONTENT:'
-              provider: layout_builder
               label_display: visible
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
               formatter:
                 settings: {  }
                 third_party_settings: {  }
-              context_mapping:
-                entity: layout_builder.entity
-            additional: {  }
             weight: 0
+            additional: {  }
           ed120830-ae77-4eab-91f0-2fdb938dd9b9:
             uuid: ed120830-ae77-4eab-91f0-2fdb938dd9b9
             region: two_content_body
             configuration:
               id: 'field_block:node:feature_employer:body'
               label: Body
-              provider: layout_builder
               label_display: '0'
-              formatter:
-                label: hidden
-                type: text_default
-                settings: {  }
-                third_party_settings: {  }
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
                 view_mode: view_mode
-            additional: {  }
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
             weight: 1
+            additional: {  }
           8f5778a5-9ea6-43c7-bec4-68800cb9abee:
             uuid: 8f5778a5-9ea6-43c7-bec4-68800cb9abee
             region: employer_information_information
             configuration:
               id: 'views_block:feature_employed_information-block_1'
               label: ''
-              provider: views
               label_display: '0'
+              provider: views
+              context_mapping: {  }
               views_label: ''
               items_per_page: none
-              context_mapping: {  }
-            additional: {  }
             weight: 0
+            additional: {  }
           f718bbdd-3d96-4d0d-a483-6851ab9f9a0c:
             uuid: f718bbdd-3d96-4d0d-a483-6851ab9f9a0c
             region: employer_information_information
             configuration:
               id: 'views_block:feature_employed_information-block_2'
               label: ''
-              provider: views
               label_display: '0'
+              provider: views
+              context_mapping: {  }
               views_label: ''
               items_per_page: none
-              context_mapping: {  }
-            additional: {  }
             weight: 1
+            additional: {  }
           4941604a-3ae2-4f05-981e-f5b7ce9c5e8b:
             uuid: 4941604a-3ae2-4f05-981e-f5b7ce9c5e8b
             region: content
             configuration:
+              id: 'field_block:node:feature_employer:field_company_name'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-              id: 'field_block:node:feature_employer:field_company_name'
               formatter:
+                type: entity_reference_label
                 label: above
                 settings:
                   link: true
                 third_party_settings: {  }
-                type: entity_reference_label
-            additional: {  }
             weight: 0
+            additional: {  }
           44910c59-8055-4124-b8c7-29eec9f7d95d:
             uuid: 44910c59-8055-4124-b8c7-29eec9f7d95d
             region: three_content_jobs
             configuration:
               id: 'views_block:jobs_in_this_company-block_1'
               label: ''
-              provider: views
               label_display: visible
+              provider: views
+              context_mapping: {  }
               views_label: ''
               items_per_page: none
-              context_mapping: {  }
-            additional: {  }
             weight: 0
+            additional: {  }
           8a6f2ab5-12ec-4148-9c4f-1d7c74f5948a:
             uuid: 8a6f2ab5-12ec-4148-9c4f-1d7c74f5948a
             region: horizontal_advertising
             configuration:
               id: gamw
               label: 'Header - Top banner (Feature employer)'
-              provider: gamw
               label_display: '0'
+              provider: gamw
+              context_mapping: {  }
               ad_unit: header-top-banner
               attributes_wrapper:
                 0: ''
                 add: 'Add another targeting attribute'
                 remove: 'Remove last targeting attribute'
-              context_mapping: {  }
-            additional: {  }
             weight: 1
+            additional: {  }
           6790d5f9-3635-45f6-80a8-1d1e0d791e16:
             uuid: 6790d5f9-3635-45f6-80a8-1d1e0d791e16
             region: one_vertical_advertising
             configuration:
               id: gamw
               label: 'Fixed Internal - Side Section top block'
-              provider: gamw
               label_display: '0'
+              provider: gamw
+              context_mapping: {  }
               ad_unit: fixed-internal-side-section-top-block
               attributes_wrapper:
                 0: ''
                 add: 'Add another targeting attribute'
                 remove: 'Remove last targeting attribute'
-              context_mapping: {  }
-            additional: {  }
             weight: 1
+            additional: {  }
           076e66cb-d6f6-416d-a8aa-04b9d44a577c:
             uuid: 076e66cb-d6f6-416d-a8aa-04b9d44a577c
             region: two_vertical_advertising
             configuration:
               id: gamw
               label: 'Fixed Internal - Side Section bottom skyscraper'
-              provider: gamw
               label_display: '0'
+              provider: gamw
+              context_mapping: {  }
               ad_unit: fixed-internal-side-section-bottom-skyscraper
               attributes_wrapper:
                 0: ''
                 add: 'Add another targeting attribute'
                 remove: 'Remove last targeting attribute'
-              context_mapping: {  }
-            additional: {  }
             weight: 1
+            additional: {  }
+          ac9c3e8d-6b6a-4456-9129-9c594187d5ec:
+            uuid: ac9c3e8d-6b6a-4456-9129-9c594187d5ec
+            region: content
+            configuration:
+              id: 'field_block:node:feature_employer:field_image'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: above
+                settings:
+                  image_link: ''
+                  image_style: ''
+                  svg_attributes:
+                    width: null
+                    height: null
+                  svg_render_as_image: true
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
         third_party_settings: {  }
 id: node.feature_employer.default
 targetEntityType: node
@@ -212,51 +235,57 @@ bundle: feature_employer
 mode: default
 content:
   body:
-    label: hidden
     type: text_default
-    weight: 101
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 101
     region: content
   field_company_name:
-    weight: 105
+    type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 105
     region: content
   field_image:
-    weight: 102
+    type: image
     label: above
     settings:
-      image_style: ''
       image_link: ''
+      image_style: ''
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
-    type: image
+    weight: 102
     region: content
   field_main_features:
     type: entity_reference_revisions_entity_view
-    weight: 103
     label: above
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    weight: 103
     region: content
   field_social_media:
     type: entity_reference_revisions_entity_view
-    weight: 104
     label: above
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    weight: 104
     region: content
   links:
-    weight: 100
     settings: {  }
     third_party_settings: {  }
+    weight: 100
     region: content
 hidden:
   addtoany: true

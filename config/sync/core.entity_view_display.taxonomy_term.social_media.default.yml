@@ -15,7 +15,7 @@ bundle: social_media
 mode: default
 content:
   field_icon_code:
-    weight: 0
+    type: icon_field_formatter
     label: hidden
     settings:
       link_to_entity: false
@@ -29,7 +29,7 @@ content:
             lb: ''
             lb-col: false
             classes: {  }
-    type: icon_field_formatter
+    weight: 0
     region: content
 hidden:
   description: true

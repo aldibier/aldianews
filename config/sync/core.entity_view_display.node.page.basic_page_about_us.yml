@@ -16,8 +16,8 @@ dependencies:
     - user
 third_party_settings:
   layout_builder:
-    allow_custom: false
     enabled: true
+    allow_custom: false
     sections:
       -
         layout_id: basic_page_with_block_image
@@ -30,75 +30,75 @@ third_party_settings:
             configuration:
               id: 'field_block:node:page:body'
               label: Body
-              provider: layout_builder
               label_display: '0'
-              formatter:
-                label: hidden
-                type: text_default
-                settings: {  }
-                third_party_settings: {  }
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
                 view_mode: view_mode
-            additional: {  }
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
             weight: 0
+            additional: {  }
           2b66b274-fda1-45f3-a60b-c0fab914cb4c:
             uuid: 2b66b274-fda1-45f3-a60b-c0fab914cb4c
             region: block_image
             configuration:
               id: 'fixed_block_content:header_page_about_us'
               label: 'Header page about us'
-              provider: fixed_block_content
               label_display: '0'
+              provider: fixed_block_content
               view_mode: ''
               context_mapping: {  }
-            additional: {  }
             weight: 1
+            additional: {  }
           7966874a-823a-4211-95e2-3b5092d77035:
             uuid: 7966874a-823a-4211-95e2-3b5092d77035
             region: horizontal_advertising
             configuration:
               id: gamw
               label: 'first block bottom banner'
-              provider: gamw
               label_display: '0'
+              provider: gamw
+              context_mapping: {  }
               ad_unit: first-block-bottom-banner
               attributes_wrapper: null
-              context_mapping: {  }
-            additional: {  }
             weight: 1
+            additional: {  }
           46624775-cd3c-4796-aec5-ce80c8018551:
             uuid: 46624775-cd3c-4796-aec5-ce80c8018551
             region: one_vertical_advertising
             configuration:
               id: gamw
               label: 'Fixed Internal - Side Section top block'
-              provider: gamw
               label_display: '0'
+              provider: gamw
+              context_mapping: {  }
               ad_unit: fixed-internal-side-section-top-block
               attributes_wrapper:
                 0: ''
                 add: 'Add another targeting attribute'
                 remove: 'Remove last targeting attribute'
-              context_mapping: {  }
-            additional: {  }
             weight: 2
+            additional: {  }
           551ad8c7-623a-4533-a935-2ce111fcefc3:
             uuid: 551ad8c7-623a-4533-a935-2ce111fcefc3
             region: two_vertical_advertising
             configuration:
               id: gamw
               label: 'Fixed Internal - Side Section bottom skyscraper'
-              provider: gamw
               label_display: '0'
+              provider: gamw
+              context_mapping: {  }
               ad_unit: fixed-internal-side-section-bottom-skyscraper
               attributes_wrapper:
                 0: ''
                 add: 'Add another targeting attribute'
                 remove: 'Remove last targeting attribute'
-              context_mapping: {  }
-            additional: {  }
             weight: 1
+            additional: {  }
         third_party_settings: {  }
 _core:
   default_config_hash: g1S3_GLaxq4l3I9RIca5Mlz02MxI2KmOquZpHw59akM
@@ -108,22 +108,22 @@ bundle: page
 mode: basic_page_about_us
 content:
   addtoany:
-    weight: 101
-    region: content
     settings: {  }
     third_party_settings: {  }
+    weight: 101
+    region: content
   body:
-    label: hidden
     type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
     weight: 100
     region: content
+  links:
     settings: {  }
     third_party_settings: {  }
-  links:
     weight: 101
     region: content
-    settings: {  }
-    third_party_settings: {  }
 hidden:
   langcode: true
   premium_message: true

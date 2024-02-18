@@ -12,12 +12,12 @@ pattern: '/authors/[authors:name]'
 selection_criteria:
   00aef05a-1d29-44ac-b137-22a96b0d0c99:
     id: 'entity_bundle:authors'
-    bundles:
-      news_authors: news_authors
     negate: false
+    uuid: 00aef05a-1d29-44ac-b137-22a96b0d0c99
     context_mapping:
       authors: authors
-    uuid: 00aef05a-1d29-44ac-b137-22a96b0d0c99
+    bundles:
+      news_authors: news_authors
 selection_logic: and
 weight: -5
 relationships: {  }

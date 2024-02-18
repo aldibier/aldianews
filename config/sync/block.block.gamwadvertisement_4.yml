@@ -4,7 +4,6 @@ status: true
 dependencies:
   module:
     - block_class
-    - context
     - gamw
     - node
   theme:
@@ -21,24 +20,16 @@ plugin: gamw
 settings:
   id: gamw
   label: 'Internal news / thought - banner - prefooter'
-  provider: gamw
   label_display: '0'
+  provider: gamw
   ad_unit: internal-news-thought-banner-prefooter
   attributes_wrapper: null
 visibility:
-  request_path_exclusion:
-    id: request_path_exclusion
-    pages: ''
-    negate: true
-  view_inclusion:
-    id: view_inclusion
-    negate: false
-    view_inclusion: {  }
-  node_type:
-    id: node_type
-    bundles:
-      news: news
-      thought_leaders: thought_leaders
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
     negate: false
     context_mapping:
       node: '@node.node_route_context:node'
+    bundles:
+      news: news
+      thought_leaders: thought_leaders

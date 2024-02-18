@@ -1,7 +1,17 @@
 uuid: d15d4870-40af-42ec-9e23-a8198529894e
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - filter.format.full_html
+    - filter.format.podcast
+    - node.type.news
+  module:
+    - commerce_payment
+    - filter
+    - node
+    - system
+    - toolbar
 id: publisher
 label: Publisher
 weight: 8

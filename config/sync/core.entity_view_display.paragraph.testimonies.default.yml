@@ -9,43 +9,49 @@ dependencies:
     - field.field.paragraph.testimonies.field_testimonial
     - paragraphs.paragraphs_type.testimonies
   module:
-    - image
+    - svg_image
 id: paragraph.testimonies.default
 targetEntityType: paragraph
 bundle: testimonies
 mode: default
 content:
   field_name:
-    weight: 1
+    type: string
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 1
     region: content
   field_photo:
-    weight: 2
+    type: image
     label: above
     settings:
-      image_style: ''
       image_link: ''
+      image_style: ''
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
-    type: image
+    weight: 2
     region: content
   field_position:
-    weight: 3
+    type: string
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 3
     region: content
   field_testimonial:
-    weight: 0
+    type: basic_string
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: basic_string
+    weight: 0
     region: content
 hidden:
   search_api_excerpt: true

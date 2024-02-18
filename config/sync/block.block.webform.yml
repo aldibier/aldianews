@@ -5,7 +5,6 @@ dependencies:
   config:
     - webform.webform.contact_us_advertising_landing
   module:
-    - context
     - webform
   theme:
     - al_dia_news
@@ -18,17 +17,10 @@ plugin: webform_block
 settings:
   id: webform_block
   label: Webform
-  provider: webform
   label_display: '0'
+  provider: webform
   webform_id: contact_us_advertising_landing
   default_data: ''
   redirect: false
-visibility:
-  request_path_exclusion:
-    id: request_path_exclusion
-    pages: ''
-    negate: null
-  view_inclusion:
-    id: view_inclusion
-    negate: null
-    view_inclusion: {  }
+  lazy: false
+visibility: {  }

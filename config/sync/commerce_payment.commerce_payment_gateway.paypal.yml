@@ -9,6 +9,11 @@ label: PayPal
 weight: null
 plugin: paypal_checkout
 configuration:
+  display_label: PayPal
+  mode: test
+  payment_method_types:
+    - paypal_checkout
+  collect_billing_information: false
   payment_solution: smart_payment_buttons
   client_id: AekR7JMyyq5TsAJDOd-3SnEqeJ12wLP14D83abakJoWd505bYUfgAQdpqCLS7XI8iZB9PuBMyrihyh86
   secret: EK1m0ZdQEkzUQRLR_IwcndVCLVMY93X4zSRCgimCkWbfj8oejsjMAszj281AyOh6c4tvYPCTN76oB3G0
@@ -20,10 +25,7 @@ configuration:
   update_shipping_profile: true
   style: {  }
   enable_on_cart: true
-  collect_billing_information: false
-  display_label: PayPal
-  mode: test
-  payment_method_types:
-    - paypal_checkout
+  webhook_id: ''
+  enable_credit_card_icons: false
 conditions: {  }
 conditionOperator: AND

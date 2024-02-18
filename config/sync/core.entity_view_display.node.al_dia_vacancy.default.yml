@@ -11,15 +11,15 @@ dependencies:
   module:
     - al_dia_layouts
     - gamw
-    - image
     - layout_builder
+    - svg_image
     - text
     - user
     - webform
 third_party_settings:
   layout_builder:
-    allow_custom: false
     enabled: true
+    allow_custom: false
     sections:
       -
         layout_id: al_dia_vacancy_default
@@ -32,11 +32,14 @@ third_party_settings:
             configuration:
               id: 'field_block:node:al_dia_vacancy:field_picture'
               label: Picture
-              provider: layout_builder
               label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
               formatter:
-                label: hidden
                 type: responsive_image
+                label: hidden
                 settings:
                   responsive_image_style: image_style_crop_page_headers_responsive
                   image_link: ''
@@ -47,107 +50,127 @@ third_party_settings:
                     lazy_image: '0'
                     placeholder_style: ''
                     data_uri: false
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-            additional: {  }
             weight: 0
+            additional: {  }
           623d18b1-5938-437e-8bc2-18b723636f92:
             uuid: 623d18b1-5938-437e-8bc2-18b723636f92
             region: one_content_title
             configuration:
               id: 'field_block:node:al_dia_vacancy:title'
               label: Title
-              provider: layout_builder
               label_display: '0'
-              formatter:
-                label: hidden
-                type: string
-                settings:
-                  link_to_entity: false
-                third_party_settings: {  }
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
                 view_mode: view_mode
-            additional: {  }
+              formatter:
+                type: string
+                label: hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
             weight: 0
+            additional: {  }
           34767187-59ea-455c-a3bc-7cd40200c818:
             uuid: 34767187-59ea-455c-a3bc-7cd40200c818
             region: two_content
             configuration:
               id: 'field_block:node:al_dia_vacancy:body'
               label: Body
-              provider: layout_builder
               label_display: '0'
-              formatter:
-                label: hidden
-                type: text_default
-                settings: {  }
-                third_party_settings: {  }
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
                 view_mode: view_mode
-            additional: {  }
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
             weight: 0
+            additional: {  }
           26c4e740-008b-4435-8fba-22111231b418:
             uuid: 26c4e740-008b-4435-8fba-22111231b418
             region: two_content
             configuration:
               id: webform_block
               label: 'Apply to this Job'
-              provider: webform
               label_display: visible
+              provider: webform
+              context_mapping: {  }
               webform_id: apply_to_this_job
               default_data: ''
               redirect: false
-              context_mapping: {  }
-            additional: {  }
             weight: 1
+            additional: {  }
           f63bd07e-8c24-4081-b0cb-8673ad0b2873:
             uuid: f63bd07e-8c24-4081-b0cb-8673ad0b2873
             region: horizontal_advertising
             configuration:
               id: gamw
               label: 'first block bottom banner work with al dia interna'
-              provider: gamw
               label_display: '0'
+              provider: gamw
+              context_mapping: {  }
               ad_unit: first-block-bottom-banner
               attributes_wrapper: null
-              context_mapping: {  }
-            additional: {  }
             weight: 1
+            additional: {  }
           908f7c57-cc4b-478a-90a3-c6e0d46278a6:
             uuid: 908f7c57-cc4b-478a-90a3-c6e0d46278a6
             region: one_vertical_advertising
             configuration:
               id: gamw
               label: 'GAMW Advertisement'
-              provider: gamw
               label_display: visible
+              provider: gamw
+              context_mapping: {  }
               ad_unit: fixed-internal-side-section-top-block
               attributes_wrapper:
                 0: ''
                 add: 'Add another targeting attribute'
                 remove: 'Remove last targeting attribute'
-              context_mapping: {  }
-            additional: {  }
             weight: 0
+            additional: {  }
           2307fa5d-5d74-4a76-a5a7-5a265c187d00:
             uuid: 2307fa5d-5d74-4a76-a5a7-5a265c187d00
             region: two_vertical_advertising
             configuration:
               id: gamw
               label: 'GAMW Advertisement'
-              provider: gamw
               label_display: visible
+              provider: gamw
+              context_mapping: {  }
               ad_unit: fixed-internal-side-section-bottom-skyscraper
               attributes_wrapper:
                 0: ''
                 add: 'Add another targeting attribute'
                 remove: 'Remove last targeting attribute'
-              context_mapping: {  }
-            additional: {  }
             weight: 0
+            additional: {  }
+          d45e311c-0c31-4b16-a057-0be74ad54442:
+            uuid: d45e311c-0c31-4b16-a057-0be74ad54442
+            region: content
+            configuration:
+              id: 'field_block:node:al_dia_vacancy:field_picture'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: above
+                settings:
+                  image_link: ''
+                  image_style: ''
+                  svg_attributes:
+                    width: null
+                    height: null
+                  svg_render_as_image: true
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
         third_party_settings: {  }
 id: node.al_dia_vacancy.default
 targetEntityType: node
@@ -155,32 +178,38 @@ bundle: al_dia_vacancy
 mode: default
 content:
   body:
-    label: hidden
     type: text_default
-    weight: 101
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 101
     region: content
   field_email:
-    weight: 103
+    type: basic_string
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: basic_string
+    weight: 103
     region: content
   field_picture:
-    weight: 102
+    type: image
     label: above
     settings:
-      image_style: ''
       image_link: ''
+      image_style: ''
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
-    type: image
+    weight: 102
     region: content
   links:
-    weight: 100
     settings: {  }
     third_party_settings: {  }
+    weight: 100
     region: content
 hidden:
   addtoany: true

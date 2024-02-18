@@ -10,13 +10,13 @@ type: 'canonical_entities:node'
 pattern: '/jobs/job-seeker/[node:title]'
 selection_criteria:
   21e441ef-8ecf-433d-bf0e-e878347c4772:
-    id: node_type
-    bundles:
-      job: job
+    id: 'entity_bundle:node'
     negate: false
+    uuid: 21e441ef-8ecf-433d-bf0e-e878347c4772
     context_mapping:
       node: node
-    uuid: 21e441ef-8ecf-433d-bf0e-e878347c4772
+    bundles:
+      job: job
 selection_logic: and
 weight: -5
 relationships: {  }

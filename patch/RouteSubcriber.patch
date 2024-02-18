@@ -1,16 +1,14 @@
 diff --git a/src/Routing/RouteSubscriber.php b/src/Routing/RouteSubscriber.php
---- RouteSubscriber.php	2021-06-23 18:48:28.000000000 -0500
-+++ RouteSubscriber1.php	2021-06-23 17:14:16.000000000 -0500
-@@ -17,9 +17,9 @@
+index a7791c3..fca153f 100644
+--- a/src/Routing/RouteSubscriber.php
++++ b/src/Routing/RouteSubscriber.php
+@@ -17,9 +17,6 @@ class RouteSubscriber extends RouteSubscriberBase {
      // As Change Password page is separate form now so in order to do that,
      // override user.reset route with change_pwd_page.reset route to show the
      // Change Password form instead of default.
 -    if ($route = $collection->get('user.reset')) {
--      $route->setPath('/user/reset/{uid}/{timestamp}/{hash}/new/login');
+-      $route->setPath('/user/reset/{uid}/{timestamp}/{hash}/new');
 -    }
-+    // if ($route = $collection->get('user.reset')) {
-+    //   $route->setPath('/user/reset/{uid}/{timestamp}/{hash}/new/login');
-+    // }
    }
  
  }

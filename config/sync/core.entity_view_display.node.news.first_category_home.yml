@@ -41,8 +41,8 @@ dependencies:
     - user
 third_party_settings:
   layout_builder:
-    allow_custom: false
     enabled: false
+    allow_custom: false
   ds:
     layout:
       id: ds_1col
@@ -50,15 +50,15 @@ third_party_settings:
       disable_css: false
       entity_classes: all_classes
       settings:
-        label: ''
+        classes:
+          layout_class: {  }
         wrappers:
           ds_content: div
         outer_wrapper: div
         attributes: ''
         link_attribute: ''
         link_custom: ''
-        classes:
-          layout_class: {  }
+        label: ''
     regions:
       ds_content:
         - group_container
@@ -73,11 +73,14 @@ third_party_settings:
       children:
         - field_new_short_title
         - field_short_description
+      label: 'Last News Home Wrapper'
       parent_name: ''
+      region: ds_content
       weight: 1
       format_type: html_element
-      region: ds_content
       format_settings:
+        classes: last-news-home-wrapper
+        id: ''
         element: div
         show_label: false
         label_element: h3
@@ -85,17 +88,17 @@ third_party_settings:
         attributes: ''
         effect: none
         speed: fast
-        id: ''
-        classes: last-news-home-wrapper
-      label: 'Last News Home Wrapper'
     group_container_icon:
       children:
         - field_type_of_content
+      label: 'Container icon'
       parent_name: group_container
+      region: ds_content
       weight: 2
       format_type: html_element
-      region: ds_content
       format_settings:
+        classes: block-field-blocknodenewsfield-type-of-content
+        id: ''
         element: div
         show_label: false
         label_element: h3
@@ -103,18 +106,18 @@ third_party_settings:
         attributes: ''
         effect: none
         speed: fast
-        id: ''
-        classes: block-field-blocknodenewsfield-type-of-content
-      label: 'Container icon'
     group_container:
       children:
         - group_container_icon
         - field_image
+      label: Container
       parent_name: ''
+      region: ds_content
       weight: 0
       format_type: html_element
-      region: ds_content
       format_settings:
+        classes: main-news
+        id: ''
         element: div
         show_label: false
         label_element: h3
@@ -122,16 +125,13 @@ third_party_settings:
         attributes: ''
         effect: none
         speed: fast
-        id: ''
-        classes: main-news
-      label: Container
 id: node.news.first_category_home
 targetEntityType: node
 bundle: news
 mode: first_category_home
 content:
   field_image:
-    weight: 3
+    type: lazy_responsive_image
     label: hidden
     settings:
       responsive_image_style: last_news_first_block
@@ -140,40 +140,40 @@ content:
       field_formatter_class:
         class: last-news-home-image
       lazy:
-        placeholder_style: ''
         lazy_image: '1'
+        placeholder_style: ''
         data_uri: false
-    type: lazy_responsive_image
+    weight: 3
     region: ds_content
   field_new_short_title:
     type: string
-    weight: 5
-    region: ds_content
     label: hidden
     settings:
       link_to_entity: true
     third_party_settings:
       field_formatter_class:
         class: last-news-home-title
+    weight: 5
+    region: ds_content
   field_short_description:
     type: basic_string
-    weight: 6
-    region: ds_content
     label: hidden
     settings: {  }
     third_party_settings:
       field_formatter_class:
         class: last-news-home-body
+    weight: 6
+    region: ds_content
   field_type_of_content:
     type: entity_reference_label
-    weight: 0
-    region: ds_content
     label: hidden
     settings:
       link: false
     third_party_settings:
       field_formatter_class:
         class: ''
+    weight: 0
+    region: ds_content
 hidden:
   addtoany: true
   body: true

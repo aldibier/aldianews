@@ -8,7 +8,7 @@ dependencies:
     - field.field.block_content.basic_block_with_image_and_custo.field_description
     - field.field.block_content.basic_block_with_image_and_custo.field_image_block
   module:
-    - image
+    - svg_image
     - text
 id: block_content.basic_block_with_image_and_custo.default
 targetEntityType: block_content
@@ -16,28 +16,34 @@ bundle: basic_block_with_image_and_custo
 mode: default
 content:
   field_custom_title:
-    weight: 0
+    type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: text_default
+    weight: 0
     region: content
   field_description:
-    weight: 3
+    type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 3
     region: content
   field_image_block:
-    weight: 2
+    type: image
     label: hidden
     settings:
-      image_style: ''
       image_link: ''
+      image_style: ''
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
-    type: image
+    weight: 2
     region: content
 hidden:
   langcode: true

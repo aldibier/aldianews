@@ -5,7 +5,6 @@ dependencies:
   config:
     - simple_block.simple_block.auto_renewal_terms_orders_simple_block
   module:
-    - context
     - simple_block
     - system
   theme:
@@ -19,18 +18,10 @@ plugin: 'simple_block:auto_renewal_terms_orders_simple_block'
 settings:
   id: 'simple_block:auto_renewal_terms_orders_simple_block'
   label: 'Auto-Renewal terms Orders Simple Block'
-  provider: simple_block
   label_display: '0'
+  provider: simple_block
 visibility:
-  request_path_exclusion:
-    id: request_path_exclusion
-    pages: ''
-    negate: null
-  view_inclusion:
-    id: view_inclusion
-    negate: null
-    view_inclusion: {  }
   request_path:
     id: request_path
-    pages: '/checkout/*/order_information'
     negate: false
+    pages: '/checkout/*/order_information'

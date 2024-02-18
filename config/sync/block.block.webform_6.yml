@@ -18,13 +18,14 @@ plugin: webform_block
 settings:
   id: webform_block
   label: Webform
-  provider: webform
   label_display: '0'
+  provider: webform
   webform_id: request_a_call_back
   default_data: ''
   redirect: false
+  lazy: false
 visibility:
   request_path:
     id: request_path
-    pages: /request-a-call-back
     negate: false
+    pages: /request-a-call-back

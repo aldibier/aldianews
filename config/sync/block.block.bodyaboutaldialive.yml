@@ -5,7 +5,6 @@ dependencies:
   config:
     - fixed_block_content.fixed_block_content.body_about_al_dia_live
   module:
-    - context
     - fixed_block_content
   theme:
     - al_dia_news
@@ -18,15 +17,7 @@ plugin: 'fixed_block_content:body_about_al_dia_live'
 settings:
   id: 'fixed_block_content:body_about_al_dia_live'
   label: 'Body About Al Día Live'
-  provider: fixed_block_content
   label_display: '0'
+  provider: fixed_block_content
   view_mode: ''
-visibility:
-  request_path_exclusion:
-    id: request_path_exclusion
-    pages: ''
-    negate: null
-  view_inclusion:
-    id: view_inclusion
-    negate: null
-    view_inclusion: {  }
+visibility: {  }

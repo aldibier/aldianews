@@ -39,8 +39,8 @@ dependencies:
     - user
 third_party_settings:
   layout_builder:
-    allow_custom: false
     enabled: true
+    allow_custom: false
     sections:
       -
         layout_id: subcategory_more
@@ -53,32 +53,35 @@ third_party_settings:
             configuration:
               id: 'field_block:node:news:created'
               label: 'Authored on'
-              provider: layout_builder
               label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
               formatter:
-                label: hidden
                 type: timestamp
+                label: hidden
                 settings:
                   date_format: related_news
                   custom_date_format: ''
                   timezone: ''
                 third_party_settings: {  }
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-            additional: {  }
             weight: -8
+            additional: {  }
           9da796c5-8659-44b1-9b47-0cd5e23bf23d:
             uuid: 9da796c5-8659-44b1-9b47-0cd5e23bf23d
             region: one_content_image
             configuration:
               id: 'field_block:node:news:field_image'
               label: Image
-              provider: layout_builder
               label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
               formatter:
-                label: hidden
                 type: responsive_image
+                label: hidden
                 settings:
                   responsive_image_style: next_two_image_responsive
                   image_link: content
@@ -89,53 +92,73 @@ third_party_settings:
                     lazy_image: '0'
                     placeholder_style: ''
                     data_uri: false
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-            additional: {  }
             weight: -10
+            additional: {  }
           88887429-b452-4ac3-8330-bc1f42ca8460:
             uuid: 88887429-b452-4ac3-8330-bc1f42ca8460
             region: one_content
             configuration:
               id: 'field_block:node:news:field_type_of_content'
               label: 'Type of content'
-              provider: layout_builder
               label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
               formatter:
-                label: hidden
                 type: entity_reference_label
+                label: hidden
                 settings:
                   link: false
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-            additional: {  }
             weight: -10
+            additional: {  }
           dba80f04-3083-4e44-bce8-23b0566fc606:
             uuid: dba80f04-3083-4e44-bce8-23b0566fc606
             region: two_content
             configuration:
               id: 'field_block:node:news:field_new_short_title'
               label: 'Short title'
-              provider: layout_builder
               label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
               formatter:
-                label: hidden
                 type: string
+                label: hidden
                 settings:
                   link_to_entity: true
                 third_party_settings:
                   field_formatter_class:
                     class: ''
+            weight: -9
+            additional: {  }
+          419e1cb5-2aca-429b-8448-b1d6c060f8f5:
+            uuid: 419e1cb5-2aca-429b-8448-b1d6c060f8f5
+            region: content
+            configuration:
+              id: 'field_block:node:news:field_image'
+              label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-                view_mode: view_mode
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: ''
+                  svg_attributes:
+                    width: null
+                    height: null
+                  svg_render_as_image: true
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 0
             additional: {  }
-            weight: -9
         third_party_settings: {  }
 id: node.news.subcategory_more
 targetEntityType: node
@@ -143,74 +166,80 @@ bundle: news
 mode: subcategory_more
 content:
   addtoany:
+    settings: {  }
+    third_party_settings: {  }
     weight: 4
     region: content
-    settings: {  }
-    third_party_settings: {  }
   body:
-    label: hidden
     type: text_default
-    weight: 3
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 3
     region: content
   field_author:
-    weight: 6
+    type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 6
     region: content
   field_caption:
-    weight: 2
+    type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 2
     region: content
   field_category:
-    weight: 8
+    type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 8
     region: content
   field_comments:
-    weight: 5
+    type: comment_default
     label: above
     settings:
       view_mode: default
       pager_id: 0
     third_party_settings: {  }
-    type: comment_default
+    weight: 5
     region: content
   field_image:
-    weight: 1
+    type: image
     label: hidden
     settings:
-      image_style: ''
       image_link: ''
+      image_style: ''
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
-    type: image
+    weight: 1
     region: content
   field_short_title:
-    weight: 0
+    type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 0
     region: content
   field_tags:
-    weight: 7
+    type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 7
     region: content
 hidden:
   field_company: true

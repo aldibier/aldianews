@@ -17,8 +17,8 @@ dependencies:
     - image.style.suscribe_image
   module:
     - field_formatter_class
-    - image
     - lazy
+    - svg_image
     - text
 _core:
   default_config_hash: 10qgl6V_HwkrJufzsNCV75OpqOeMzzKDJb3BhaogmzQ
@@ -29,103 +29,109 @@ mode: default
 content:
   body:
     type: text_default
-    weight: 3
     label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 3
     region: content
   field_highlighted:
-    weight: 9
+    type: boolean
     label: inline
     settings:
       format: default
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    type: boolean
+    weight: 9
     region: content
   field_image:
-    weight: 1
+    type: image
     label: hidden
     settings:
-      image_style: suscribe_image
       image_link: ''
+      image_style: suscribe_image
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_loading:
+        attribute: lazy
     third_party_settings:
       field_formatter_class:
         class: ''
       lazy:
-        placeholder_style: ''
         lazy_image: '0'
+        placeholder_style: ''
         data_uri: false
-    type: image
+    weight: 1
     region: content
   field_intro:
-    weight: 2
+    type: string
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 2
     region: content
   field_new_payment_button:
     type: text_default
-    weight: 8
-    region: content
     label: above
     settings: {  }
     third_party_settings:
       field_formatter_class:
         class: new-payment-button
+    weight: 8
+    region: content
   field_price_companion:
-    weight: 7
+    type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 7
     region: content
   field_symbol:
-    weight: 4
+    type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 4
     region: content
   field_text:
-    weight: 6
+    type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 6
     region: content
   field_weekly_value:
-    weight: 5
+    type: number_integer
     label: hidden
     settings:
       thousand_separator: ''
       prefix_suffix: true
     third_party_settings: {  }
-    type: number_integer
+    weight: 5
     region: content
   langcode:
     type: language
-    weight: 8
-    region: content
     label: above
     settings:
       link_to_entity: false
       native_language: false
     third_party_settings: {  }
+    weight: 8
+    region: content
   title:
     type: string
-    weight: 0
-    region: content
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   created: true
   field_weight: true

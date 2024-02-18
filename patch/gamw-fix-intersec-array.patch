@@ -1,0 +1,31 @@
+diff --git a/src/Plugin/Block/Gamw.php b/src/Plugin/Block/Gamw.php
+index da30c9c..6bdc4f2 100644
+--- a/src/Plugin/Block/Gamw.php
++++ b/src/Plugin/Block/Gamw.php
+@@ -55,15 +55,18 @@ class Gamw extends BlockBase implements ContainerFactoryPluginInterface {
+     $ad_sizes = [];
+     $ad_sizes_split = [];
+     $integer_dimensions = [];
+-    foreach ($ad_unit_sizes_per_breakpoint['creative_sizes'] as $breakpoint => $sizes) {
+-      $ad_sizes[$breakpoint] = array_intersect($sizes, $ad_unit_information[$this->configuration['ad_unit']]);
+-      foreach ($ad_sizes as $key => $value) {
+-        foreach ($value as $key2 => $value2) {
+-          $dimension_split = explode('x', $value2);
+-          for ($i = 0; $i < count($dimension_split); $i++) {
+-            $integer_dimensions[$i] = (int) $dimension_split[$i];
++
++    if(!empty($ad_unit_information[$this->configuration['ad_unit']])){
++      foreach ($ad_unit_sizes_per_breakpoint['creative_sizes'] as $breakpoint => $sizes) {
++        $ad_sizes[$breakpoint] = array_intersect($sizes, $ad_unit_information[$this->configuration['ad_unit']]);
++        foreach ($ad_sizes as $key => $value) {
++          foreach ($value as $key2 => $value2) {
++            $dimension_split = explode('x', $value2);
++            for ($i = 0; $i < count($dimension_split); $i++) {
++              $integer_dimensions[$i] = (int) $dimension_split[$i];
++            }
++            $ad_sizes_split[$key][$key2] = $integer_dimensions;
+           }
+-          $ad_sizes_split[$key][$key2] = $integer_dimensions;
+         }
+       }
+     }

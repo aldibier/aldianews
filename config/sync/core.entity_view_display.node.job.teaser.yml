@@ -28,15 +28,15 @@ third_party_settings:
       disable_css: false
       entity_classes: all_classes
       settings:
-        label: ''
+        classes:
+          layout_class: {  }
         wrappers:
           ds_content: div
         outer_wrapper: div
         attributes: ''
         link_attribute: ''
         link_custom: ''
-        classes:
-          layout_class: {  }
+        label: ''
     regions:
       ds_content:
         - group_container
@@ -78,13 +78,14 @@ third_party_settings:
       children:
         - trim_title
         - field_company_name
+      label: 'Job and company'
       parent_name: group_container
+      region: ds_content
       weight: 1
       format_type: html_element
-      region: ds_content
       format_settings:
-        id: ''
         classes: job-and-company
+        id: ''
         element: div
         show_label: false
         label_element: h3
@@ -92,17 +93,17 @@ third_party_settings:
         attributes: ''
         effect: none
         speed: fast
-      label: 'Job and company'
     group_job_categories:
       children:
         - group_ul
+      label: 'Job categories'
       parent_name: group_container
+      region: ds_content
       weight: 2
       format_type: html_element
-      region: ds_content
       format_settings:
-        id: ''
         classes: job-categories
+        id: ''
         element: div
         show_label: false
         label_element: h3
@@ -110,18 +111,18 @@ third_party_settings:
         attributes: ''
         effect: none
         speed: fast
-      label: 'Job categories'
     group_ul:
       children:
         - field_sector
         - field_type_of_working_day
+      label: UL
       parent_name: group_job_categories
+      region: ds_content
       weight: 2
       format_type: html_element
-      region: ds_content
       format_settings:
-        id: ''
         classes: ''
+        id: ''
         element: ul
         show_label: false
         label_element: h3
@@ -129,17 +130,17 @@ third_party_settings:
         attributes: ''
         effect: none
         speed: fast
-      label: UL
     group_date_exp:
       children:
         - field_expiration_date
+      label: 'Date exp'
       parent_name: group_container
+      region: ds_content
       weight: 4
       format_type: html_element
-      region: ds_content
       format_settings:
-        id: ''
         classes: date-expiration-job
+        id: ''
         element: div
         show_label: false
         label_element: h3
@@ -147,20 +148,20 @@ third_party_settings:
         attributes: ''
         effect: none
         speed: fast
-      label: 'Date exp'
     group_container:
       children:
         - group_job_and_company
         - group_job_categories
         - field_place
         - group_date_exp
+      label: Container
       parent_name: ''
+      region: ds_content
       weight: 0
       format_type: html_element
-      region: ds_content
       format_settings:
-        id: ''
         classes: job-container
+        id: ''
         element: div
         show_label: false
         label_element: h3
@@ -168,7 +169,6 @@ third_party_settings:
         attributes: ''
         effect: none
         speed: fast
-      label: Container
 id: node.job.teaser
 targetEntityType: node
 bundle: job
@@ -176,8 +176,6 @@ mode: teaser
 content:
   field_company_name:
     type: entity_reference_label
-    weight: 2
-    region: ds_content
     label: hidden
     settings:
       link: false
@@ -189,33 +187,33 @@ content:
           id: expert
           settings:
             lb: ''
-            prefix: ''
+            lbw: false
             lbw-el: ''
             lbw-cl: ''
             lbw-at: ''
+            lb-col: false
+            ow: false
             ow-el: ''
             ow-cl: ''
             ow-at: ''
+            ow-def-at: false
+            ow-def-cl: false
+            fis: false
             fis-el: ''
             fis-cl: ''
             fis-at: ''
+            fis-def-at: false
             fi: true
             fi-el: span
             fi-cl: ''
             fi-at: ''
-            suffix: ''
-            lbw: false
-            lb-col: false
-            ow: false
-            ow-def-at: false
-            ow-def-cl: false
-            fis: false
-            fis-def-at: false
             fi-def-at: false
+            prefix: ''
+            suffix: ''
+    weight: 2
+    region: ds_content
   field_expiration_date:
     type: datetime_time_ago_custom
-    weight: 4
-    region: ds_content
     label: hidden
     settings:
       future_format: '@interval hence'
@@ -231,10 +229,10 @@ content:
             lb: ''
             lb-col: false
             classes: {  }
+    weight: 4
+    region: ds_content
   field_place:
     type: string
-    weight: 3
-    region: ds_content
     label: hidden
     settings:
       link_to_entity: false
@@ -246,33 +244,33 @@ content:
           id: expert
           settings:
             lb: ''
-            prefix: ''
+            lbw: false
             lbw-el: ''
             lbw-cl: ''
             lbw-at: ''
+            lb-col: false
+            ow: false
             ow-el: ''
             ow-cl: ''
             ow-at: ''
+            ow-def-at: false
+            ow-def-cl: false
+            fis: false
             fis-el: ''
             fis-cl: ''
             fis-at: ''
+            fis-def-at: false
             fi: true
             fi-el: div
             fi-cl: place-employer
             fi-at: ''
-            suffix: ''
-            lbw: false
-            lb-col: false
-            ow: false
-            ow-def-at: false
-            ow-def-cl: false
-            fis: false
-            fis-def-at: false
             fi-def-at: false
-  field_sector:
-    type: entity_reference_label
+            prefix: ''
+            suffix: ''
     weight: 3
     region: ds_content
+  field_sector:
+    type: entity_reference_label
     label: hidden
     settings:
       link: false
@@ -284,33 +282,33 @@ content:
           id: expert
           settings:
             lb: ''
-            prefix: ''
+            lbw: false
             lbw-el: ''
             lbw-cl: ''
             lbw-at: ''
+            lb-col: false
+            ow: false
             ow-el: ''
             ow-cl: ''
             ow-at: ''
+            ow-def-at: false
+            ow-def-cl: false
+            fis: false
             fis-el: ''
             fis-cl: ''
             fis-at: ''
+            fis-def-at: false
             fi: true
             fi-el: li
             fi-cl: ''
             fi-at: ''
-            suffix: ''
-            lbw: false
-            lb-col: false
-            ow: false
-            ow-def-at: false
-            ow-def-cl: false
-            fis: false
-            fis-def-at: false
             fi-def-at: false
+            prefix: ''
+            suffix: ''
+    weight: 3
+    region: ds_content
   field_type_of_working_day:
     type: entity_reference_label
-    weight: 4
-    region: ds_content
     label: hidden
     settings:
       link: false
@@ -322,29 +320,31 @@ content:
           id: expert
           settings:
             lb: ''
-            prefix: ''
+            lbw: false
             lbw-el: ''
             lbw-cl: ''
             lbw-at: ''
+            lb-col: false
+            ow: false
             ow-el: ''
             ow-cl: ''
             ow-at: ''
+            ow-def-at: false
+            ow-def-cl: false
+            fis: false
             fis-el: ''
             fis-cl: ''
             fis-at: ''
+            fis-def-at: false
             fi: true
             fi-el: li
             fi-cl: ''
             fi-at: ''
-            suffix: ''
-            lbw: false
-            lb-col: false
-            ow: false
-            ow-def-at: false
-            ow-def-cl: false
-            fis: false
-            fis-def-at: false
             fi-def-at: false
+            prefix: ''
+            suffix: ''
+    weight: 4
+    region: ds_content
 hidden:
   addtoany: true
   body: true

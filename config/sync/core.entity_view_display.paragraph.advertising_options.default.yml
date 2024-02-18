@@ -11,8 +11,8 @@ dependencies:
     - field.field.paragraph.advertising_options.field_webform
     - paragraphs.paragraphs_type.advertising_options
   module:
-    - image
     - lazy
+    - svg_image
     - webform
 id: paragraph.advertising_options.default
 targetEntityType: paragraph
@@ -20,63 +20,87 @@ bundle: advertising_options
 mode: default
 content:
   field_block_description:
-    weight: 3
+    type: basic_string
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: basic_string
+    weight: 3
     region: content
   field_image_block:
-    weight: 2
+    type: image
     label: hidden
     settings:
-      image_style: ''
       image_link: ''
+      image_style: ''
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
-    type: image
+    weight: 2
     region: content
   field_image_for_title:
-    weight: 0
+    type: image
     label: hidden
     settings:
-      image_style: ''
       image_link: ''
+      image_style: ''
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
-    type: image
+    weight: 0
     region: content
   field_mobile_image_block:
-    weight: 6
+    type: image
     label: above
     settings:
-      image_style: ''
       image_link: ''
+      image_style: ''
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_loading:
+        attribute: lazy
     third_party_settings:
       lazy:
         lazy_image: '1'
         placeholder_style: ''
         data_uri: true
-    type: image
+    weight: 6
     region: content
   field_mobile_image_for_title:
-    weight: 5
+    type: image
     label: above
     settings:
-      image_style: ''
       image_link: ''
+      image_style: ''
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_loading:
+        attribute: lazy
     third_party_settings:
       lazy:
         lazy_image: '1'
         placeholder_style: ''
         data_uri: true
-    type: image
+    weight: 5
     region: content
   field_webform:
-    weight: 4
+    type: webform_entity_reference_entity_view
     label: above
     settings:
       source_entity: true
     third_party_settings: {  }
-    type: webform_entity_reference_entity_view
+    weight: 4
     region: content
 hidden:
   search_api_excerpt: true

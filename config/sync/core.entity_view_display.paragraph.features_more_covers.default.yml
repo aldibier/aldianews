@@ -10,8 +10,8 @@ dependencies:
     - paragraphs.paragraphs_type.features_more_covers
   module:
     - field_formatter_class
-    - image
     - lazy
+    - svg_image
     - text
 id: paragraph.features_more_covers.default
 targetEntityType: paragraph
@@ -19,38 +19,44 @@ bundle: features_more_covers
 mode: default
 content:
   field_card_title_related_covers:
-    weight: 2
+    type: text_default
     label: hidden
     settings: {  }
     third_party_settings:
       field_formatter_class:
         class: card-title
-    type: text_default
+    weight: 2
     region: content
   field_image_related_covers:
-    weight: 0
+    type: image
     label: hidden
     settings:
-      image_style: card_one_column_desktop
       image_link: ''
+      image_style: card_one_column_desktop
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_loading:
+        attribute: lazy
     third_party_settings:
       field_formatter_class:
         class: ''
       lazy:
-        placeholder_style: ''
         lazy_image: '0'
+        placeholder_style: ''
         data_uri: false
-    type: image
+    weight: 0
     region: content
   field_taxonomy_term_related_cove:
-    weight: 1
+    type: entity_reference_label
     label: hidden
     settings:
       link: false
     third_party_settings:
       field_formatter_class:
         class: ''
-    type: entity_reference_label
+    weight: 1
     region: content
 hidden:
   search_api_excerpt: true

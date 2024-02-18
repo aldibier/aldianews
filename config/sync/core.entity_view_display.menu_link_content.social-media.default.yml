@@ -13,17 +13,17 @@ bundle: social-media
 mode: default
 content:
   children:
-    weight: 0
-    region: content
     settings: {  }
     third_party_settings: {  }
+    weight: 0
+    region: content
   field_icon_name:
-    weight: 1
+    type: icon_field_formatter
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: icon_field_formatter
+    weight: 1
     region: content
 hidden:
   langcode: true

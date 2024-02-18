@@ -1,16 +1,6 @@
-image_fields:
-  block_content--header_advertising--field_image--default: '1'
-  block_content--header_advertising--field_mobile_image--default: '1'
-  paragraph--advertising_options--field_mobile_image_for_title--default: '1'
-  paragraph--advertising_options--field_mobile_image_block--default: '1'
-alter_tag:
-  img: img
-  iframe: '0'
-formatters:
-  lazy_image: lazy_image
-  lazy_responsive_image: lazy_responsive_image
+_core:
+  default_config_hash: y7LBTPYVTcA6s3XuXz3mXS0he0kmx7NQWmTz2fDSI-s
 skipClass: no-lazy
-disabled_paths: /rss.xml
 placeholderSrc: /themes/custom/al_dia_news/assets/img/svg/placeholder-image.svg
 preferNative: false
 cssEffect: false
@@ -34,5 +24,4 @@ lazysizes:
   ricTimeout: 0
   throttleDelay: 125
   plugins: {  }
-_core:
-  default_config_hash: y7LBTPYVTcA6s3XuXz3mXS0he0kmx7NQWmTz2fDSI-s
+disabled_paths: /rss.xml

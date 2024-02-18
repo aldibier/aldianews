@@ -20,13 +20,13 @@ plugin: gamw
 settings:
   id: gamw
   label: 'Internal category podcast - banner - prefooter'
-  provider: gamw
   label_display: visible
+  provider: gamw
   ad_unit: pre-footer-bottom-banner
   attributes_wrapper:
     - ''
 visibility:
   request_path:
     id: request_path
-    pages: '/podcast/*'
     negate: false
+    pages: '/podcast/*'

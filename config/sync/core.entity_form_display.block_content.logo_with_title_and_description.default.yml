@@ -13,7 +13,9 @@ bundle: logo_with_title_and_description
 mode: default
 content:
   field_information_with_icons:
+    type: paragraphs
     weight: 27
+    region: content
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -28,8 +30,6 @@ content:
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
     third_party_settings: {  }
-    type: paragraphs
-    region: content
   info:
     type: string_textfield
     weight: -5
