@@ -368,6 +368,8 @@ display:
           settings:
             responsive_image_style: podcast_category_responsive
             image_link: content
+            image_loading:
+              attribute: eager
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -432,6 +434,8 @@ display:
           settings:
             responsive_image_style: podcast_category_responsive
             image_link: ''
+            image_loading:
+              attribute: eager
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -946,6 +950,15 @@ display:
             date_format: related_news
             custom_date_format: ''
             timezone: ''
+            tooltip:
+              date_format: ''
+              custom_date_format: ''
+            time_diff:
+              enabled: false
+              future_format: '@interval hence'
+              past_format: '@interval ago'
+              granularity: 2
+              refresh: 60
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -1151,7 +1164,6 @@ display:
             limit: false
             vids: {  }
             anyall: ','
-          default_argument_skip_url: false
           summary_options:
             base_path: ''
             count: true
@@ -1385,7 +1397,6 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
-        - user
       tags:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_category'
@@ -2964,6 +2975,15 @@ display:
             date_format: related_news
             custom_date_format: ''
             timezone: ''
+            tooltip:
+              date_format: ''
+              custom_date_format: ''
+            time_diff:
+              enabled: false
+              future_format: '@interval hence'
+              past_format: '@interval ago'
+              granularity: 2
+              refresh: 60
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -3437,7 +3457,6 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url.query_args
-        - user
         - user.permissions
       tags:
         - 'config:field.storage.node.body'

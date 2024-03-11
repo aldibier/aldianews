@@ -14,7 +14,9 @@ dependencies:
   module:
     - commerce_payment
     - content_translation
+    - file
     - filter
+    - help
     - node
     - system
     - taxonomy
@@ -26,6 +28,7 @@ is_admin: null
 permissions:
   - 'access administration pages'
   - 'access content overview'
+  - 'access help pages'
   - 'access toolbar'
   - 'administer nodes'
   - 'create feature_employer content'
@@ -33,6 +36,7 @@ permissions:
   - 'create more_covers content'
   - 'create news content'
   - 'create terms in job_posting_company_name'
+  - 'delete own files'
   - 'edit any feature_employer content'
   - 'edit any job content'
   - 'edit any more_covers content'

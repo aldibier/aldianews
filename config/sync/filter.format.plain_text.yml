@@ -1,33 +1,22 @@
 uuid: f70266a9-2804-41ea-877f-a4ea4f43bb04
 langcode: en
 status: true
-dependencies:
-  module:
-    - media
+dependencies: {  }
 _core:
   default_config_hash: NIKBt6kw_uPhNI0qtR2DnRf7mSOgAQdx7Q94SKMjXbQ
 name: 'Plain text'
 format: plain_text
 weight: -7
 filters:
-  filter_html_escape:
-    id: filter_html_escape
-    provider: filter
-    status: true
-    weight: -10
-    settings: {  }
   filter_autop:
     id: filter_autop
     provider: filter
     status: true
     weight: 0
     settings: {  }
-  media_embed:
-    id: media_embed
-    provider: media
-    status: false
-    weight: 100
-    settings:
-      default_view_mode: default
-      allowed_view_modes: {  }
-      allowed_media_types: {  }
+  filter_html_escape:
+    id: filter_html_escape
+    provider: filter
+    status: true
+    weight: -10
+    settings: {  }
