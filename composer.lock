@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fd295b5b807e25f77e54f4bc42e3ec75",
+    "content-hash": "3ea6e2ebe9c588cf6c03bb18193326a3",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5789,6 +5789,55 @@
             }
         },
         {
+            "name": "drupal/howlerjs",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/howlerjs.git",
+                "reference": "1.0.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/howlerjs-1.0.1.zip",
+                "reference": "1.0.1",
+                "shasum": "e2316b25be5989b868c4be29f7c015843b8be1fe"
+            },
+            "require": {
+                "drupal/core": "^8.8 || ^9 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.1",
+                    "datestamp": "1668446915",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "facine",
+                    "homepage": "https://www.drupal.org/user/1169056"
+                },
+                {
+                    "name": "pcambra",
+                    "homepage": "https://www.drupal.org/user/122101"
+                }
+            ],
+            "description": "howler.js is an audio library for the modern web.",
+            "homepage": "https://www.drupal.org/project/howlerjs",
+            "support": {
+                "source": "https://drupal.org/project/howlerjs",
+                "issues": "https://drupal.org/project/issues/howlerjs"
+            }
+        },
+        {
             "name": "drupal/image_widget_crop",
             "version": "2.4.0",
             "source": {
@@ -9533,6 +9582,61 @@
             "homepage": "https://www.drupal.org/project/theme_switcher",
             "support": {
                 "source": "https://git.drupalcode.org/project/theme_switcher"
+            }
+        },
+        {
+            "name": "drupal/tiny_html_audio_player",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/tiny_html_audio_player.git",
+                "reference": "1.0.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/tiny_html_audio_player-1.0.3.zip",
+                "reference": "1.0.3",
+                "shasum": "3c751d0027e1fc74d998dea6d5babca05588ef0c"
+            },
+            "require": {
+                "drupal/core": "^9.3 || ^10",
+                "drupal/howlerjs": "^1"
+            },
+            "suggest": {
+                "drupal/fontawesome": "^2"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.3",
+                    "datestamp": "1675268126",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Pedro Cambra",
+                    "homepage": "https://drupal.org/u/pcambra",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Manuel Egío",
+                    "homepage": "https://www.drupal.org/u/facine",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "A tiny and clean audio player for the web.",
+            "homepage": "https://drupal.org/project/tiny_html_audio_player",
+            "support": {
+                "source": "https://drupal.org/project/tiny_html_audio_player",
+                "issues": "https://drupal.org/project/issues/tiny_html_audio_player"
             }
         },
         {

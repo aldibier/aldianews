@@ -462,3 +462,9 @@ table tr {
   font-size: szrem(16) !important;
   font-weight: bold !important;
 } 
+// Fix Style Tiny Player https://www.drupal.org/project/tiny_html_audio_player/issues/3373803
+.iru-tiny-player .icon::before{
+  font-family: "Font Awesome 5 Free" !important;
+  font-weight: 900 !important;
+}
+
