@@ -53,29 +53,6 @@ third_party_settings:
               attributes_wrapper: null
             weight: 0
             additional: {  }
-          1a092e59-c976-45cd-b93e-f9f53cce6476:
-            uuid: 1a092e59-c976-45cd-b93e-f9f53cce6476
-            region: content
-            configuration:
-              id: 'field_block:node:thought_leaders:field_image'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: image
-                label: above
-                settings:
-                  image_link: ''
-                  image_style: ''
-                  svg_attributes:
-                    width: null
-                    height: null
-                  svg_render_as_image: true
-                  image_loading:
-                    attribute: lazy
-                third_party_settings: {  }
-            weight: 1
-            additional: {  }
         third_party_settings: {  }
       -
         layout_id: thought_leaders
@@ -392,12 +369,12 @@ content:
     settings:
       image_link: ''
       image_style: ''
+      image_loading:
+        attribute: lazy
       svg_attributes:
         width: null
         height: null
       svg_render_as_image: true
-      image_loading:
-        attribute: lazy
     third_party_settings: {  }
     weight: 102
     region: content

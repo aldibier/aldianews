@@ -82,12 +82,12 @@ display:
           settings:
             image_link: ''
             image_style: photo_autor
+            image_loading:
+              attribute: lazy
             svg_attributes:
               width: null
               height: null
             svg_render_as_image: true
-            image_loading:
-              attribute: lazy
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -553,8 +553,8 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: views_block_area
-          empty: false
           block_id: 'block_group:gamw_block_side_section_top_views'
+          empty: false
       footer:
         views_block_area:
           id: views_block_area
@@ -564,8 +564,8 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: views_block_area
-          empty: false
           block_id: 'block_group:gamw_skyscraper_side_section_top_views'
+          empty: false
       display_extenders: {  }
     cache_metadata:
       max-age: -1

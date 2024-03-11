@@ -26,12 +26,12 @@ content:
   coupons:
     type: entity_reference_autocomplete
     weight: 5
+    region: content
     settings:
       match_operator: CONTAINS
-      placeholder: ''
       match_limit: 10
       size: 60
-    region: content
+      placeholder: ''
     third_party_settings: {  }
   field_address:
     type: address_default

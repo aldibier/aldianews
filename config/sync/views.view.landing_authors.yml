@@ -83,12 +83,12 @@ display:
           settings:
             image_link: ''
             image_style: ''
+            image_loading:
+              attribute: lazy
             svg_attributes:
               width: null
               height: null
             svg_render_as_image: true
-            image_loading:
-              attribute: lazy
           group_column: entity_id
           group_columns: {  }
           group_rows: true
@@ -920,12 +920,12 @@ display:
           settings:
             image_link: content
             image_style: ''
+            image_loading:
+              attribute: lazy
             svg_attributes:
               width: null
               height: null
             svg_render_as_image: true
-            image_loading:
-              attribute: lazy
           group_column: entity_id
           group_columns: {  }
           group_rows: true
@@ -1577,8 +1577,8 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: views_block_area
-          empty: false
           block_id: 'block_group:fixed_blocks_adversiting'
+          empty: false
         views_block_area_1:
           id: views_block_area_1
           table: views
@@ -1587,8 +1587,8 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: views_block_area
-          empty: false
           block_id: 'block_group:gamw_fixed_skyscraper_adversiting'
+          empty: false
       display_extenders:
         ajax_history: {  }
       path: authors
