@@ -1,0 +1,52 @@
+uuid: 1ca7ffac-ce29-44d8-a717-d5cf88b89293
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.tiny_player
+    - field.field.media.audio.field_media_audio_file
+    - media.type.audio
+  module:
+    - ds
+    - field_formatter_class
+    - layout_builder
+    - tiny_html_audio_player
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+_core:
+  default_config_hash: SWf3MLdbEKvlx4Vs6iPwDHu5pr1aKT0SJmgp8no73-k
+id: media.audio.tiny_player
+targetEntityType: media
+bundle: audio
+mode: tiny_player
+content:
+  field_media_audio_file:
+    type: tiny_html_audio_player
+    label: hidden
+    settings:
+      controls: true
+      autoplay: false
+      loop: false
+      multiple_file_display_type: tags
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    weight: 0
+    region: content
+hidden:
+  addtoany: true
+  created: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

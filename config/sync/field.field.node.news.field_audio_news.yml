@@ -1,0 +1,29 @@
+uuid: 4c578af8-2a7d-47eb-97a3-eb592bf27971
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_audio_news
+    - media.type.audio
+    - node.type.news
+id: node.news.field_audio_news
+field_name: field_audio_news
+entity_type: node
+bundle: news
+label: 'Audio News'
+description: "<p>Upload an MP3 Audio of this news, <b>be sure the audio contains the same content and the file name is the same title in the content</b> because that title is visible in Audio Player.</p>\r\n<p>You can use a free service to convert text to audio and download MP3. Suggestion: <a href=\"https://ttsmaker.com\" target=\"_blank\">https://ttsmaker.com</a></p>"
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      audio: audio
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

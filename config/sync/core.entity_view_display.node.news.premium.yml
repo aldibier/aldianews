@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.premium
     - field.field.node.news.body
+    - field.field.node.news.field_audio_news
     - field.field.node.news.field_author
     - field.field.node.news.field_caption
     - field.field.node.news.field_category
@@ -46,9 +47,6 @@ third_party_settings:
   ds:
     layout:
       id: ds_1col
-      library: null
-      disable_css: false
-      entity_classes: all_classes
       settings:
         classes:
           layout_class: {  }
@@ -59,6 +57,9 @@ third_party_settings:
         link_attribute: ''
         link_custom: ''
         label: ''
+      library: null
+      disable_css: false
+      entity_classes: all_classes
     regions:
       ds_content:
         - group_node_content
@@ -318,6 +319,7 @@ content:
     weight: 21
     region: ds_content
 hidden:
+  field_audio_news: true
   field_author: true
   field_category: true
   field_comments: true

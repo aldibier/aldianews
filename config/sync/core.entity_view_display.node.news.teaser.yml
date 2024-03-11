@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.news.body
+    - field.field.node.news.field_audio_news
     - field.field.node.news.field_author
     - field.field.node.news.field_caption
     - field.field.node.news.field_category
@@ -93,6 +94,7 @@ content:
     region: content
 hidden:
   addtoany: true
+  field_audio_news: true
   field_author: true
   field_caption: true
   field_category: true

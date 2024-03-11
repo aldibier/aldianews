@@ -33,6 +33,7 @@
     "require": {
         "composer/installers": "^1.9",
         "cweagans/composer-patches": "^1.7",
+        "drupal/account_modal": "^1.0@RC",
         "drupal/address": "^2.0",
         "drupal/addtoany": "^2.0",
         "drupal/admin_toolbar": "^3.4",
@@ -256,6 +257,9 @@
             "drupal/ckeditor_oembed": {
                 "D10": "https://www.drupal.org/files/issues/2023-12-09/ckeditor_oembed.8.x-1.3.rector.patch"
             },
+            "drupal/account_modal": {
+                "D10": "https://www.drupal.org/files/issues/2023-12-09/account_modal.8.x-1.0-beta3.rector_0.patch"
+            },
             "drupal/ckeditor_images_gallery": {
                 "Automated Drupal 10 compatibility fixes": "https://www.drupal.org/files/issues/2023-12-09/ckeditor_images_gallery.8.x-1.6.rector.patch"
             }
@@ -282,7 +286,7 @@
             ]
         },
         "drupal-lenient": {
-            "allowed-list": ["drupal/gamw","drupal/ckeditor_oembed","drupal/ckeditor_images_gallery"]
+            "allowed-list": ["drupal/gamw","drupal/ckeditor_oembed","drupal/ckeditor_images_gallery", "drupal/account_modal"]
         }
     },
     "require-dev": {

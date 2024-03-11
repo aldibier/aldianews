@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_display.comment.comments_content.default
     - core.entity_view_mode.node.subcategory_next_4
     - field.field.node.news.body
+    - field.field.node.news.field_audio_news
     - field.field.node.news.field_author
     - field.field.node.news.field_caption
     - field.field.node.news.field_category
@@ -245,6 +246,7 @@ content:
     weight: 7
     region: content
 hidden:
+  field_audio_news: true
   field_company: true
   field_high_impact_news: true
   field_internal_image: true
