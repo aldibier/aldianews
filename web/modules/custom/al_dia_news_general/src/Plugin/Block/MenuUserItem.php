@@ -2,6 +2,7 @@
 
 namespace Drupal\al_dia_news_general\Plugin\Block;
 
+use Drupal\user\Entity\User;
 use Drupal\Core\Url;
 use Drupal\node\Entity\Node;
 use Drupal\Component\Serialization\Json;
@@ -58,7 +59,7 @@ class MenuUserItem extends  BlockBase implements ContainerFactoryPluginInterface
     $items = [];
     if ($this->currentUser->isAuthenticated()) {
       //$user_name = $this->currentUser->getAccountName();
-      $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
+      $user = User::load(\Drupal::currentUser()->id());
       $r_period = $user->field_first_name->value;
       //ksm($r_period);
 

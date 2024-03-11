@@ -2,6 +2,7 @@
 
 namespace Drupal\al_dia_news_general\Plugin\Field\FieldFormatter;
 
+use Drupal\views\Views;
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Field\FieldItemInterface;
 use Drupal\Core\Field\FieldItemListInterface;
@@ -126,7 +127,7 @@ class RelatedContentFieldFormatter extends FormatterBase {
       }
 
       // get view
-      $view = \Drupal\views\Views::getView($view_id);
+      $view = Views::getView($view_id);
       $view->setDisplay($view_display);
       $view->setArguments([$nodeId, $tags_list]);
       //dsm($tags_list);

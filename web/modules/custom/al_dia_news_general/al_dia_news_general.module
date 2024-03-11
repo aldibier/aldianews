@@ -896,7 +896,7 @@ function al_dia_news_general_editor_js_settings_alter(array &$settings) {
  * Implements hook_ckeditor_css_alter().
  */
 function al_dia_news_general_ckeditor_css_alter(array &$css, Editor $editor) {
-  $css[] = drupal_get_path('module', 'al_dia_news_general') . '/src/css/custom.css';
+  $css[] = \Drupal::service('extension.list.module')->getPath('al_dia_news_general') . '/src/css/custom.css';
 }
 
 function al_dia_news_general_preprocess_block(&$vars) {

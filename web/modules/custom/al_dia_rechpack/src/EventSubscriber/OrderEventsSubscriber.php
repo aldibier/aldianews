@@ -309,7 +309,7 @@ class OrderEventsSubscriber implements EventSubscriberInterface {
                 '#url' => $url,
               ];
               $theme_message = $this->renderer->renderPlain($theme);
-              $stylesheet = file_get_contents(drupal_get_path('module', 'al_dia_rechpack') . '/dist/css/email.css');
+              $stylesheet = file_get_contents(\Drupal::service('extension.list.module')->getPath('al_dia_rechpack') . '/dist/css/email.css');
               $params['message'] = $theme_message;
               $params['title'] = 'Active your Subscription at Al Día News';
               $params['css'] = $stylesheet;
@@ -334,7 +334,7 @@ class OrderEventsSubscriber implements EventSubscriberInterface {
       '#url' => 'test',
     ];
     $theme_message = $this->renderer->renderPlain($theme);
-    $stylesheet = file_get_contents(drupal_get_path('module', 'al_dia_rechpack') . '/dist/css/email.css');
+    $stylesheet = file_get_contents(\Drupal::service('extension.list.module')->getPath('al_dia_rechpack') . '/dist/css/email.css');
     $params['message'] = $theme_message;
     $params['title'] = 'Al Día News - Confirmation email for your Subscription';
     $params['css'] = $stylesheet;

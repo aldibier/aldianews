@@ -4,7 +4,7 @@
  * @file
  * Install, update and uninstall functions for the autogestion_me_pockets module.
  */
-
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\Core\Database\Database;
 use Drupal\Core\Entity\ContentEntityType;
 
@@ -13,7 +13,7 @@ function autogestion_me_pockets_update_8001() {
     // Basically the entity plugin definition for the custom entity, converted to an associative array. 
     $entity_definition = new ContentEntityType([            
         'id' => "authors",
-        'label' => new \Drupal\Core\StringTranslation\TranslatableMarkup("Authors"),
+        'label' => new TranslatableMarkup("Authors"),
         'bundle_label' => @Translation("Authors type"),
         'handlers' => [
             "storage" => "Drupal\content_authors\AuthorsStorage",

@@ -2,6 +2,7 @@
 
 namespace Drupal\al_dia_migration\Plugin\migrate\process;
 
+use Drupal\file\Entity\File;
 use Drupal\migrate\MigrateSkipRowException;
 use Drupal\migrate\MigrateExecutableInterface;
 use Drupal\migrate\ProcessPluginBase;
@@ -64,7 +65,7 @@ class FixMediaTags extends ProcessPluginBase {
       }
 
       // Load the file.
-      $file = \Drupal\file\Entity\File::load($this->FidDrupal9($tag_info['fid']));
+      $file = File::load($this->FidDrupal9($tag_info['fid']));
       
       if (!$file) {
         $file = 0;

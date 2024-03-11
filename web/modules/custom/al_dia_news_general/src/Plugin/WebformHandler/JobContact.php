@@ -1,6 +1,7 @@
 <?php
 namespace Drupal\al_dia_news_general\Plugin\WebformHandler;
 
+use Drupal\node\NodeInterface;
 use Drupal\webform\Plugin\WebformHandler\EmailWebformHandler;
 use Drupal\webform\WebformSubmissionInterface;
 
@@ -24,7 +25,7 @@ class JobContact extends EmailWebformHandler
         $data = $webform_submission->getData();
 
         $node = \Drupal::routeMatch()->getParameter('node');
-        if ($node instanceof \Drupal\node\NodeInterface) {
+        if ($node instanceof NodeInterface) {
             // You can get nid and anything else you need from the node object.
             $nid = $node->id();
 
