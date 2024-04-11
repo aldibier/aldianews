@@ -1,0 +1,29 @@
+uuid: b9f6dd13-7ef5-43aa-9057-5def0134d098
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_audio_news
+    - media.type.audio
+    - node.type.thought_leaders
+id: node.thought_leaders.field_audio_news
+field_name: field_audio_news
+entity_type: node
+bundle: thought_leaders
+label: 'Audio News'
+description: "<p>Upload an MP3 Audio of this news, <b>be sure the audio contains the same content and the file name is the same title in the content</b> because that title is visible in Audio Player.</p>\r\n<p>You can use a free service to convert text to audio and download MP3. Suggestion: <a href=\"https://text-to-speech.online\" target=\"_blank\">https://text-to-speech.online</a></p>"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      audio: audio
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

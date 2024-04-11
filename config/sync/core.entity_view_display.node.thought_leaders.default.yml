@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_display.comment.comments_content.default
     - field.field.node.thought_leaders.body
+    - field.field.node.thought_leaders.field_audio_news
     - field.field.node.thought_leaders.field_author
     - field.field.node.thought_leaders.field_author_thought_leaders
     - field.field.node.thought_leaders.field_caption
@@ -147,7 +148,7 @@ third_party_settings:
               context_mapping: {  }
               views_label: ''
               items_per_page: none
-            weight: -10
+            weight: -3
             additional: {  }
           bb7be5b1-ef27-405e-ba32-22d377634654:
             uuid: bb7be5b1-ef27-405e-ba32-22d377634654
@@ -162,7 +163,7 @@ third_party_settings:
               formatter:
                 settings: {  }
                 third_party_settings: {  }
-            weight: -9
+            weight: -2
             additional: {  }
           52698ec9-a25a-45b0-bf34-394a00a53af1:
             uuid: 52698ec9-a25a-45b0-bf34-394a00a53af1
@@ -180,7 +181,7 @@ third_party_settings:
                 label: hidden
                 settings: {  }
                 third_party_settings: {  }
-            weight: -8
+            weight: -1
             additional: {  }
           1355dea0-ce3a-4753-bcf0-1300d24f09a9:
             uuid: 1355dea0-ce3a-4753-bcf0-1300d24f09a9
@@ -217,7 +218,7 @@ third_party_settings:
                   view_mode: default
                   pager_id: 0
                 third_party_settings: {  }
-            weight: -6
+            weight: 1
             additional: {  }
           f59e9c96-b29e-43dd-956c-70ecf67e3965:
             uuid: f59e9c96-b29e-43dd-956c-70ecf67e3965
@@ -243,7 +244,7 @@ third_party_settings:
               context_mapping: {  }
               views_label: ''
               items_per_page: none
-            weight: -7
+            weight: 0
             additional: {  }
           f82c07a4-0172-4762-8b0c-3076503813f1:
             uuid: f82c07a4-0172-4762-8b0c-3076503813f1
@@ -315,7 +316,28 @@ third_party_settings:
               context_mapping: {  }
               ad_unit: internal-news-thought-banner-last-block-top-mobile
               attributes_wrapper: null
-            weight: -5
+            weight: 2
+            additional: {  }
+          8654eff1-08d4-4acd-8222-ac920ea235e6:
+            uuid: 8654eff1-08d4-4acd-8222-ac920ea235e6
+            region: two_content
+            configuration:
+              id: 'field_block:node:thought_leaders:field_audio_news'
+              label: 'Listen this article'
+              label_display: visible
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_entity_view
+                label: hidden
+                settings:
+                  view_mode: tiny_player
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: -4
             additional: {  }
         third_party_settings: {  }
 id: node.thought_leaders.default
@@ -329,6 +351,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 101
+    region: content
+  field_audio_news:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 111
     region: content
   field_author:
     type: entity_reference_label

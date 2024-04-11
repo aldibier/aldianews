@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.thought_leaders.body
+    - field.field.node.thought_leaders.field_audio_news
     - field.field.node.thought_leaders.field_author
     - field.field.node.thought_leaders.field_author_thought_leaders
     - field.field.node.thought_leaders.field_caption
@@ -38,6 +39,7 @@ content:
     region: content
 hidden:
   addtoany: true
+  field_audio_news: true
   field_author: true
   field_author_thought_leaders: true
   field_caption: true

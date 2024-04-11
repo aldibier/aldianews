@@ -1,0 +1,17 @@
+uuid: 43cb23b8-ee3c-4e49-a4cc-fdbbc89224c3
+langcode: en
+status: true
+dependencies:
+  module:
+    - statistics
+title: 'Reset counts and clean up'
+id: statistics_cron
+weight: 0
+module: statistics
+callback: statistics_cron
+scheduler:
+  id: simple
+launcher:
+  id: serial
+logger:
+  id: database
