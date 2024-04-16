@@ -1,10 +1,9 @@
 uuid: 5b5c45b3-a649-4236-bd1e-44a9aba25b8c
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - gamw
-    - mobile_detect
   theme:
     - al_dia_news
 id: gamwadvertisement_20
@@ -21,8 +20,4 @@ settings:
   ad_unit: Home-side-category-Culture-bottom-2
   attributes_wrapper:
     - ''
-visibility:
-  mobile_detect_device_type:
-    id: mobile_detect_device_type
-    negate: null
-    devices: {  }
+visibility: {  }

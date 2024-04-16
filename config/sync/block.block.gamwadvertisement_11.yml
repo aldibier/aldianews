@@ -1,9 +1,8 @@
 uuid: a36d3730-6660-4406-9c58-9643ca2081b8
 langcode: en
-status: true
+status: false
 dependencies:
   module:
-    - context
     - gamw
   theme:
     - al_dia_news
@@ -21,12 +20,4 @@ settings:
   ad_unit: category-block-side-section-bottom
   attributes_wrapper:
     - ''
-visibility:
-  request_path_exclusion:
-    id: request_path_exclusion
-    negate: true
-    pages: ''
-  view_inclusion:
-    id: view_inclusion
-    negate: false
-    view_inclusion: {  }
+visibility: {  }

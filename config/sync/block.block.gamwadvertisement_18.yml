@@ -1,10 +1,9 @@
 uuid: 47622024-c78d-459d-aea4-2780ff01c82b
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - block_class
-    - context
     - gamw
   theme:
     - al_dia_news
@@ -25,12 +24,4 @@ settings:
   ad_unit: infinite-scroll-second-banner
   attributes_wrapper:
     - ''
-visibility:
-  request_path_exclusion:
-    id: request_path_exclusion
-    negate: true
-    pages: ''
-  view_inclusion:
-    id: view_inclusion
-    negate: false
-    view_inclusion: {  }
+visibility: {  }

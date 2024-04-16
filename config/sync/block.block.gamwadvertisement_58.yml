@@ -1,10 +1,9 @@
 uuid: f510c8a7-5bd4-481e-9e83-c74e29aa87a6
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - gamw
-    - mobile_detect
   theme:
     - al_dia_news
 id: gamwadvertisement_58
@@ -21,8 +20,4 @@ settings:
   ad_unit: jobs-landing-side-carrer-news-block-2
   attributes_wrapper:
     - ''
-visibility:
-  mobile_detect_device_type:
-    id: mobile_detect_device_type
-    negate: null
-    devices: {  }
+visibility: {  }

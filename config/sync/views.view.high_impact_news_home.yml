@@ -540,8 +540,8 @@ display:
           wrapper: div
           legend: ''
           classes: featured-news
-          collapsible: 1
-          collapsed: 0
+          collapsible: true
+          collapsed: false
         fieldset_2:
           id: fieldset_2
           table: views
@@ -597,8 +597,8 @@ display:
           wrapper: div
           legend: ''
           classes: main-news
-          collapsible: 1
-          collapsed: 0
+          collapsible: true
+          collapsed: false
         field_type_of_content:
           id: field_type_of_content
           table: node__field_type_of_content
@@ -783,8 +783,8 @@ display:
           wrapper: div
           legend: ''
           classes: featured-news-wrapper
-          collapsible: 1
-          collapsed: 0
+          collapsible: true
+          collapsed: false
         field_short_title:
           id: field_short_title
           table: node__field_short_title
@@ -1341,7 +1341,7 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: text
-          empty: false
+          empty: true
           content:
             value: '<h2 class="breaking_news">BREAKING NEWS</h2>'
             format: full_html
@@ -1426,8 +1426,8 @@ display:
           wrapper: fieldset
           legend: ''
           classes: container-wrapper
-          collapsible: 1
-          collapsed: 0
+          collapsible: true
+          collapsed: false
         field_type_of_content:
           id: field_type_of_content
           table: node__field_type_of_content

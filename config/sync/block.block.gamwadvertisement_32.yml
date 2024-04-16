@@ -1,10 +1,9 @@
 uuid: 019b62a4-b8e5-43c7-9c26-5d5976556f4b
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - block_class
-    - context
     - gamw
   theme:
     - al_dia_news
@@ -25,12 +24,4 @@ settings:
   ad_unit: home-side-category-leadership-bottom_
   attributes_wrapper:
     - ''
-visibility:
-  request_path_exclusion:
-    id: request_path_exclusion
-    negate: true
-    pages: ''
-  view_inclusion:
-    id: view_inclusion
-    negate: false
-    view_inclusion: {  }
+visibility: {  }

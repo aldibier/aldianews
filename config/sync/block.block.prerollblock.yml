@@ -1,10 +1,9 @@
 uuid: 49e88063-1140-49ac-b7b8-811540a72b4a
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - al_dia_preroll
-    - mobile_detect
   theme:
     - al_dia_news
 id: prerollblock
@@ -18,8 +17,4 @@ settings:
   label: 'Preroll Block'
   label_display: '0'
   provider: al_dia_preroll
-visibility:
-  mobile_detect_device_type:
-    id: mobile_detect_device_type
-    negate: null
-    devices: {  }
+visibility: {  }

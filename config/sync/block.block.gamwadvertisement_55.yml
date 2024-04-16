@@ -1,10 +1,9 @@
 uuid: f69889c1-65bf-46d3-a68e-a9149a668641
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - gamw
-    - mobile_detect
   theme:
     - al_dia_news
 id: gamwadvertisement_55
@@ -21,8 +20,4 @@ settings:
   ad_unit: category-skyscraper-side-section-top
   attributes_wrapper:
     - ''
-visibility:
-  mobile_detect_device_type:
-    id: mobile_detect_device_type
-    negate: null
-    devices: {  }
+visibility: {  }

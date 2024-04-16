@@ -33,12 +33,14 @@ dependencies:
     - node.type.news
     - responsive_image.styles.last_news_first_block
   module:
+    - al_dia_news_general
     - ds
     - field_formatter_class
     - field_group
     - layout_builder
     - lazy
     - responsive_image
+    - shs
     - user
 third_party_settings:
   layout_builder:
@@ -48,27 +50,27 @@ third_party_settings:
     layout:
       id: ds_1col
       settings:
+        disable_css: false
+        entity_classes: all_classes
         classes:
           layout_class: {  }
+          content: {  }
         wrappers:
-          ds_content: div
+          content: div
         outer_wrapper: div
         attributes: ''
         link_attribute: ''
         link_custom: ''
         label: ''
-      library: null
-      disable_css: false
-      entity_classes: all_classes
     regions:
-      ds_content:
+      content:
         - group_container
         - field_type_of_content
+        - field_new_short_title
         - group_featured_news_wrapper
+        - field_short_description
         - group_container_icon
         - field_image
-        - field_new_short_title
-        - field_short_description
   field_group:
     group_featured_news_wrapper:
       children:
@@ -76,7 +78,7 @@ third_party_settings:
         - field_short_description
       label: 'Last News Home Wrapper'
       parent_name: ''
-      region: ds_content
+      region: content
       weight: 1
       format_type: html_element
       format_settings:
@@ -94,7 +96,7 @@ third_party_settings:
         - field_type_of_content
       label: 'Container icon'
       parent_name: group_container
-      region: ds_content
+      region: content
       weight: 2
       format_type: html_element
       format_settings:
@@ -113,7 +115,7 @@ third_party_settings:
         - field_image
       label: Container
       parent_name: ''
-      region: ds_content
+      region: content
       weight: 0
       format_type: html_element
       format_settings:
@@ -137,6 +139,8 @@ content:
     settings:
       responsive_image_style: last_news_first_block
       image_link: content
+      image_loading:
+        attribute: lazy
     third_party_settings:
       field_formatter_class:
         class: last-news-home-image
@@ -144,37 +148,47 @@ content:
         lazy_image: '1'
         placeholder_style: ''
         data_uri: false
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
     weight: 3
-    region: ds_content
+    region: content
   field_new_short_title:
-    type: string
-    label: hidden
+    type: icon_field_formatter
+    label: above
     settings:
-      link_to_entity: true
-    third_party_settings:
-      field_formatter_class:
-        class: last-news-home-title
-    weight: 5
-    region: ds_content
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
   field_short_description:
     type: basic_string
-    label: hidden
+    label: above
     settings: {  }
-    third_party_settings:
-      field_formatter_class:
-        class: last-news-home-body
-    weight: 6
-    region: ds_content
+    third_party_settings: {  }
+    weight: 1
+    region: content
   field_type_of_content:
-    type: entity_reference_label
-    label: hidden
+    type: entity_reference_shs
+    label: above
     settings:
-      link: false
+      link: 0
     third_party_settings:
       field_formatter_class:
         class: ''
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
     weight: 0
-    region: ds_content
+    region: content
 hidden:
   addtoany: true
   body: true

@@ -39,6 +39,7 @@ dependencies:
     - layout_builder
     - lazy
     - responsive_image
+    - shs
     - user
 third_party_settings:
   layout_builder:
@@ -48,38 +49,38 @@ third_party_settings:
     layout:
       id: ds_1col
       settings:
+        disable_css: false
+        entity_classes: all_classes
         classes:
           layout_class: {  }
+          content: {  }
         wrappers:
-          ds_content: div
+          content: div
         outer_wrapper: div
         attributes: ''
         link_attribute: ''
         link_custom: ''
         label: ''
-      library: null
-      disable_css: false
-      entity_classes: all_classes
     regions:
-      ds_content:
+      content:
         - group_container_news
-        - group_container_icon
-        - field_type_of_content
-        - group_container_news_wrapper
-        - field_image
-        - group_container_news_info
         - category_home
         - field_new_short_title
+        - group_container_icon
+        - group_container_news_wrapper
+        - field_type_of_content
+        - field_image
         - 'dynamic_token_field:node-authored_on'
+        - group_container_news_info
     fields:
       category_home:
         plugin_id: category_home
-        weight: 11
+        weight: 0
         label: hidden
         formatter: default
       'dynamic_token_field:node-authored_on':
         plugin_id: 'dynamic_token_field:node-authored_on'
-        weight: 14
+        weight: 3
         label: hidden
         formatter: default
   field_group:
@@ -89,7 +90,7 @@ third_party_settings:
         - group_container_news_info
       label: 'Container news'
       parent_name: ''
-      region: ds_content
+      region: content
       weight: 0
       format_type: html_element
       format_settings:
@@ -108,7 +109,7 @@ third_party_settings:
         - field_image
       label: 'Container news wrapper'
       parent_name: group_container_news
-      region: ds_content
+      region: content
       weight: 3
       format_type: html_element
       format_settings:
@@ -128,7 +129,7 @@ third_party_settings:
         - 'dynamic_token_field:node-authored_on'
       label: 'Container news info'
       parent_name: group_container_news
-      region: ds_content
+      region: content
       weight: 4
       format_type: html_element
       format_settings:
@@ -146,7 +147,7 @@ third_party_settings:
         - field_type_of_content
       label: 'Container icon'
       parent_name: group_container_news_wrapper
-      region: ds_content
+      region: content
       weight: 2
       format_type: html_element
       format_settings:
@@ -169,16 +170,25 @@ content:
     label: hidden
     settings:
       responsive_image_style: next_two_image_responsive
-      image_link: content
+      image_link: ''
+      image_loading:
+        attribute: lazy
     third_party_settings:
       field_formatter_class:
         class: card-image
       lazy:
-        lazy_image: '0'
+        lazy_image: '1'
         placeholder_style: ''
         data_uri: false
-    weight: 4
-    region: ds_content
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    weight: 3
+    region: content
   field_new_short_title:
     type: string
     label: hidden
@@ -187,10 +197,17 @@ content:
     third_party_settings:
       field_formatter_class:
         class: card-title
-    weight: 13
-    region: ds_content
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    weight: 1
+    region: content
   field_type_of_content:
-    type: entity_reference_label
+    type: entity_reference_shs
     label: hidden
     settings:
       link: false
@@ -198,7 +215,7 @@ content:
       field_formatter_class:
         class: ''
     weight: 3
-    region: ds_content
+    region: content
 hidden:
   addtoany: true
   body: true

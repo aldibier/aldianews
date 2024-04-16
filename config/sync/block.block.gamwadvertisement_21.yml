@@ -1,9 +1,8 @@
 uuid: 55103957-6882-4cea-bd43-24998fe0c14e
 langcode: en
-status: true
+status: false
 dependencies:
   module:
-    - context
     - gamw
   theme:
     - al_dia_news
@@ -21,12 +20,4 @@ settings:
   ad_unit: infinite-scroll-second-block
   attributes_wrapper:
     - ''
-visibility:
-  request_path_exclusion:
-    id: request_path_exclusion
-    negate: true
-    pages: ''
-  view_inclusion:
-    id: view_inclusion
-    negate: false
-    view_inclusion: {  }
+visibility: {  }

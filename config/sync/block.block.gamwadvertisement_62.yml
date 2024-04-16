@@ -1,10 +1,9 @@
 uuid: 3e3fb365-0f22-4952-ba21-c2fb5ac65cae
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - gamw
-    - mobile_detect
   theme:
     - al_dia_news
 id: gamwadvertisement_62
@@ -21,8 +20,4 @@ settings:
   ad_unit: Home-Side-category-politics-bottom-2
   attributes_wrapper:
     - ''
-visibility:
-  mobile_detect_device_type:
-    id: mobile_detect_device_type
-    negate: null
-    devices: {  }
+visibility: {  }
