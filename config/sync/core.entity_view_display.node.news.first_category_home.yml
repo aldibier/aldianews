@@ -33,7 +33,6 @@ dependencies:
     - node.type.news
     - responsive_image.styles.last_news_first_block
   module:
-    - al_dia_news_general
     - ds
     - field_formatter_class
     - field_group
@@ -158,23 +157,41 @@ content:
     weight: 3
     region: content
   field_new_short_title:
-    type: icon_field_formatter
-    label: above
+    type: string
+    label: hidden
     settings:
-      link_to_entity: false
-    third_party_settings: {  }
+      link_to_entity: true
+    third_party_settings:
+      field_formatter_class:
+        class: last-news-home-title
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
     weight: 0
     region: content
   field_short_description:
     type: basic_string
-    label: above
+    label: hidden
     settings: {  }
-    third_party_settings: {  }
+    third_party_settings:
+      field_formatter_class:
+        class: last-news-home-body
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
     weight: 1
     region: content
   field_type_of_content:
     type: entity_reference_shs
-    label: above
+    label: hidden
     settings:
       link: 0
     third_party_settings:
