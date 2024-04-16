@@ -8,6 +8,7 @@ dependencies:
     - paragraphs.paragraphs_type.social_media
   module:
     - ds
+    - link
 third_party_settings:
   ds:
     layout:
@@ -26,13 +27,35 @@ third_party_settings:
         link_attribute: ''
         link_custom: ''
         label: ''
-    regions: {  }
+    regions:
+      content:
+        - field_link
+        - field_icon
 id: paragraph.social_media.default
 targetEntityType: paragraph
 bundle: social_media
 mode: default
-content: {  }
+content:
+  field_icon:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
-  field_icon: true
-  field_link: true
   search_api_excerpt: true
