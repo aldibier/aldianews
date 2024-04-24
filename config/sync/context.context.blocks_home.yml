@@ -2,8 +2,20 @@ uuid: 04031411-3032-4d38-a525-9509369317ec
 langcode: en
 status: true
 dependencies:
+  config:
+    - blockgroup.block_group_content.current_edition_advertising_home
+    - blockgroup.block_group_content.high_impact_and_most_visited_news_home
+    - blockgroup.block_group_content.latest_categories_tending_block
+    - views.view.culture_mix
+    - views.view.leadership_mix
+    - views.view.politics_mix
+    - views.view.sports_mix
+    - views.view.thought_leaders_home
   module:
+    - blockgroup
+    - gamw
     - system
+    - views
 label: Home
 name: blocks_home
 group: Home
@@ -201,6 +213,23 @@ reactions:
         context_mapping: {  }
         views_label: ''
         items_per_page: none
+      38a5e893-f0a4-4d2e-abda-d094ceb2b34d:
+        uuid: 38a5e893-f0a4-4d2e-abda-d094ceb2b34d
+        id: 'views_block:sports_mix-block_1'
+        label: ''
+        provider: views
+        label_display: '0'
+        region: content
+        weight: '0'
+        custom_id: views_block_sports_mix_block_1
+        theme: al_dia_news
+        css_class: ''
+        unique: 0
+        context_id: blocks_home
+        context_mapping: {  }
+        views_label: ''
+        items_per_page: none
+        third_party_settings: {  }
     include_default_blocks: 1
     saved: false
 weight: 0

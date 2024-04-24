@@ -1,13 +1,11 @@
-uuid: 58c110e5-fa20-49b7-af14-06159be2734b
+uuid: 87012107-9baf-48e9-b22d-4610438ab76d
 langcode: en
 status: true
 dependencies:
   config:
     - taxonomy.vocabulary.categories
   content:
-    - 'taxonomy_term:categories:14619ab3-adee-497b-9f77-1bf445337eb1'
-    - 'taxonomy_term:categories:49a8a0eb-c50c-4500-9077-8226a3833e5b'
-    - 'taxonomy_term:categories:cf1eec84-47c1-4745-b3fe-62d661529eaf'
+    - 'taxonomy_term:categories:14cfd131-3e69-4346-b359-6ed50458761f'
   module:
     - better_exposed_filters
     - node
@@ -29,18 +27,17 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'POLITICS MIX'
+      title: 'CULTURE MIX'
       fields:
-        parent_target_id_1:
-          id: parent_target_id_1
-          table: taxonomy_term__parent
-          field: parent_target_id
+        view_taxonomy_term:
+          id: view_taxonomy_term
+          table: taxonomy_term_data
+          field: view_taxonomy_term
           relationship: parent_target_id
           group_type: group
           admin_label: ''
           entity_type: taxonomy_term
-          entity_field: parent
-          plugin_id: field
+          plugin_id: entity_link
           label: ''
           exclude: true
           alter:
@@ -82,22 +79,11 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: false
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        parent_target_id_2:
-          id: parent_target_id_2
+          text: view
+          output_url_as_text: true
+          absolute: true
+        parent_target_id_1:
+          id: parent_target_id_1
           table: taxonomy_term__parent
           field: parent_target_id
           relationship: none
@@ -216,7 +202,7 @@ display:
           wrapper: div
           legend: ''
           classes: group-title-link
-          collapsible: true
+          collapsible: false
           collapsed: false
         nothing:
           id: nothing
@@ -230,7 +216,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<h2 class="category-title"> <a href="/politics"><span class="aldia-logo-before">AL DÍA</span><span class="text">POLITICS</span></a></h2>'
+            text: '<h2 class="category-title"> <a href="/sports"><span class="aldia-logo-before">AL DÍA</span><span class="text">{{ parent_target_id_1 }}</span></a></h2>'
             make_link: false
             path: ''
             absolute: false
@@ -316,7 +302,7 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          view: politics_sons
+          view: sports_sons
           display: block_4
           arguments: ''
         view_1:
@@ -368,7 +354,7 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          view: politics_sons
+          view: sports_sons
           display: block_1
           arguments: ''
         view_2:
@@ -420,7 +406,7 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          view: politics_sons
+          view: sports_sons
           display: block_2
           arguments: ''
         view_3:
@@ -472,7 +458,7 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          view: politics_sons
+          view: sports_sons
           display: block_3
           arguments: ''
       pager:
@@ -509,8 +495,12 @@ display:
         options:
           perm: 'access content'
       cache:
-        type: tag
-        options: {  }
+        type: time
+        options:
+          results_lifespan: 0
+          results_lifespan_custom: 0
+          output_lifespan: 0
+          output_lifespan_custom: 0
       empty: {  }
       sorts:
         weight:
@@ -637,9 +627,7 @@ display:
           plugin_id: taxonomy_index_tid
           operator: or
           value:
-            5: 5
-            6: 6
-            7: 7
+            23266: 23266
           group: 1
           exposed: false
           expose:

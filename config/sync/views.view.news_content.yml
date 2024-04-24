@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.field_author
     - field.storage.node.field_type_of_content
     - node.type.news
+    - taxonomy.vocabulary.categories
     - taxonomy.vocabulary.type_of_content
   module:
     - node
@@ -766,6 +767,62 @@ display:
             group_items: {  }
           reduce_duplicates: false
           vid: type_of_content
+          type: select
+          hierarchy: true
+          limit: true
+          error_message: true
+        field_category_target_id:
+          id: field_category_target_id
+          table: node__field_category
+          field: field_category_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_category_target_id_op
+            label: Category
+            description: ''
+            use_operator: false
+            operator: field_category_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_category_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              editor: '0'
+              site_administrator: '0'
+              writer: '0'
+              sales: '0'
+              contributor: '0'
+              publisher: '0'
+              events: '0'
+              columnist: '0'
+              freelancer: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: categories
           type: select
           hierarchy: true
           limit: true

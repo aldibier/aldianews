@@ -25,6 +25,7 @@ dependencies:
     - 'taxonomy_term:categories:4f42d147-084b-4591-9dac-456e7e3704b3'
     - 'taxonomy_term:categories:5c694ec9-71d1-4ee6-ab3c-56d20a158a71'
     - 'taxonomy_term:categories:aec049fa-a86a-42fb-8dc9-173f58881fde'
+    - 'taxonomy_term:categories:bde9bbd1-fd88-4d34-b520-6bb6ca2cbdeb'
   module:
     - lazy
     - node
@@ -168,8 +169,8 @@ display:
           wrapper: div
           legend: ''
           classes: one-content-category
-          collapsible: 1
-          collapsed: 0
+          collapsible: true
+          collapsed: false
         field_image:
           id: field_image
           table: node__field_image
@@ -619,8 +620,8 @@ display:
           wrapper: div
           legend: ''
           classes: two-content-category
-          collapsible: 1
-          collapsed: 0
+          collapsible: true
+          collapsed: false
         nothing:
           id: nothing
           table: views
@@ -1048,8 +1049,8 @@ display:
           wrapper: div
           legend: ''
           classes: one-content-category
-          collapsible: 1
-          collapsed: 0
+          collapsible: true
+          collapsed: false
         field_type_of_content:
           id: field_type_of_content
           table: node__field_type_of_content
@@ -1620,8 +1621,8 @@ display:
           wrapper: div
           legend: ''
           classes: two-content-category
-          collapsible: 1
-          collapsed: 0
+          collapsible: true
+          collapsed: false
         nothing:
           id: nothing
           table: views
@@ -1707,10 +1708,11 @@ display:
           plugin_id: taxonomy_index_tid
           operator: or
           value:
-            131: 131
-            132: 132
             133: 133
+            132: 132
+            131: 131
             134: 134
+            223: 223
           group: 1
           exposed: false
           expose:
@@ -2039,8 +2041,8 @@ display:
           wrapper: div
           legend: ''
           classes: container-wrapper
-          collapsible: 1
-          collapsed: 0
+          collapsible: true
+          collapsed: false
         field_type_of_content:
           id: field_type_of_content
           table: node__field_type_of_content
@@ -2523,10 +2525,11 @@ display:
           plugin_id: taxonomy_index_tid
           operator: or
           value:
-            131: 131
-            132: 132
             133: 133
+            132: 132
+            131: 131
             134: 134
+            223: 223
           group: 1
           exposed: false
           expose:
@@ -3038,10 +3041,11 @@ display:
           plugin_id: taxonomy_index_tid
           operator: or
           value:
-            131: 131
-            132: 132
             133: 133
+            132: 132
+            131: 131
             134: 134
+            223: 223
           group: 1
           exposed: false
           expose:
@@ -3259,6 +3263,7 @@ display:
         - 'config:core.entity_view_display.node.feature_employer.teaser'
         - 'config:core.entity_view_display.node.job.default'
         - 'config:core.entity_view_display.node.job.teaser'
+        - 'config:core.entity_view_display.node.job.token'
         - 'config:core.entity_view_display.node.more_covers.default'
         - 'config:core.entity_view_display.node.more_covers.teaser'
         - 'config:core.entity_view_display.node.news.categories_home'
@@ -3268,6 +3273,7 @@ display:
         - 'config:core.entity_view_display.node.news.default'
         - 'config:core.entity_view_display.node.news.first_category_home'
         - 'config:core.entity_view_display.node.news.full'
+        - 'config:core.entity_view_display.node.news.landing_tags'
         - 'config:core.entity_view_display.node.news.news'
         - 'config:core.entity_view_display.node.news.premium'
         - 'config:core.entity_view_display.node.news.subcategory_first_'
@@ -3714,10 +3720,11 @@ display:
           plugin_id: taxonomy_index_tid
           operator: or
           value:
-            131: 131
-            132: 132
             133: 133
+            132: 132
+            131: 131
             134: 134
+            223: 223
           group: 1
           exposed: false
           expose:
