@@ -98,8 +98,9 @@ class LastNodeTag extends BlockBase implements ContainerFactoryPluginInterface {
       $query1->orderBy("n.created", "DESC");
       $results = $query1->execute()->fetchObject();
 
-      $node = $this->entityTypeManager->getStorage('node')->load($results->nid);
-      if ($node) {
+      
+      if ($results) {
+        $node = $this->entityTypeManager->getStorage('node')->load($results->nid);
         $render_controller = $this->entityTypeManager->getViewBuilder($node->getEntityTypeId());
         $return["main"] = [
           "#type" => "container",

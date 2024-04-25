@@ -307,7 +307,7 @@ display:
       pager:
         type: some
         options:
-          offset: null
+          offset: 0
           items_per_page: 4
       exposed_form:
         type: basic
@@ -1233,8 +1233,8 @@ display:
           wrapper: div
           legend: ''
           classes: container-wrapper
-          collapsible: 1
-          collapsed: 0
+          collapsible: true
+          collapsed: false
         field_type_of_content:
           id: field_type_of_content
           table: node__field_type_of_content
@@ -2026,7 +2026,7 @@ display:
       pager:
         type: some
         options:
-          offset: null
+          offset: 0
           items_per_page: 1
       defaults:
         pager: false
