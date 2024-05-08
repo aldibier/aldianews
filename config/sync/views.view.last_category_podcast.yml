@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.body
     - field.storage.node.field_category
     - field.storage.node.field_podcast_player
+    - field.storage.node.field_podcast_player_local
     - field.storage.taxonomy_term.field_category_image
     - field.storage.taxonomy_term.field_field_category_image_thumb
     - responsive_image.styles.podcast_category_responsive
@@ -23,7 +24,6 @@ dependencies:
     - user
     - views_block_area
     - views_field_view
-    - views_infinite_scroll
 id: last_category_podcast
 label: 'Last category PODCAST'
 module: views
@@ -1041,7 +1041,7 @@ display:
           admin_label: ''
           plugin_id: field
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -1094,11 +1094,74 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        field_podcast_player_local:
+          id: field_podcast_player_local
+          table: node__field_podcast_player_local
+          field: field_podcast_player_local
+          relationship: reverse__node__field_postcast_categories
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_entity_view
+          settings:
+            view_mode: tiny_player
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
       pager:
-        type: infinite_scroll
+        type: mini
         options:
           offset: null
-          items_per_page: 5
+          items_per_page: 10
           total_pages: null
           id: 0
           tags:
@@ -1112,10 +1175,6 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
-          views_infinite_scroll:
-            button_text: 'Load More'
-            automatically_load_content: true
-            initially_load_all_pages: false
       access:
         type: none
         options: {  }
@@ -1401,6 +1460,7 @@ display:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_category'
         - 'config:field.storage.node.field_podcast_player'
+        - 'config:field.storage.node.field_podcast_player_local'
   block_4:
     id: block_4
     display_title: 'Bloque inicial nuevo Podcast'
@@ -3066,7 +3126,7 @@ display:
           admin_label: ''
           plugin_id: field
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -3119,11 +3179,74 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        field_podcast_player_local:
+          id: field_podcast_player_local
+          table: node__field_podcast_player_local
+          field: field_podcast_player_local
+          relationship: reverse__node__field_postcast_categories
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_entity_view
+          settings:
+            view_mode: tiny_player
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
       pager:
-        type: infinite_scroll
+        type: mini
         options:
           offset: null
-          items_per_page: 5
+          items_per_page: 10
           total_pages: null
           id: 0
           tags:
@@ -3137,10 +3260,6 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
-          views_infinite_scroll:
-            button_text: 'Load More'
-            automatically_load_content: true
-            initially_load_all_pages: false
       sorts:
         created:
           id: created
@@ -3396,7 +3515,7 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          inherit_contextual_filters: 0
+          inherit_contextual_filters: false
       filter_groups:
         operator: AND
         groups:
@@ -3462,3 +3581,4 @@ display:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_category'
         - 'config:field.storage.node.field_podcast_player'
+        - 'config:field.storage.node.field_podcast_player_local'
