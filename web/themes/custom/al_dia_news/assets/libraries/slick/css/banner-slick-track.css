@@ -17,11 +17,26 @@
 }
 
 .slick-arrow::before {
-    color: #ed1c25;
+    color: rgb(238, 34, 17);
 }
 
 .view-home-last-news-slider .slick__arrow {
     width: 98%;
     margin: 0 auto;
     right: 0;
+}
+
+.slide__link a {
+    color: rgb(238, 34, 17);;
+}
+
+@media (max-width: 680px) {
+    .slick__arrow {
+        top: 24%;
+    }
+
+    .slick--skin--classic .slide__caption {
+        min-height: 228px;
+        margin-bottom: 8px;
+    }
 }
