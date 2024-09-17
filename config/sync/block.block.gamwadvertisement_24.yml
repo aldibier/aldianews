@@ -4,6 +4,7 @@ status: false
 dependencies:
   module:
     - block_class
+    - context
     - gamw
   theme:
     - al_dia_news
@@ -24,4 +25,12 @@ settings:
   ad_unit: category-banner-top-one
   attributes_wrapper:
     - ''
-visibility: {  }
+visibility:
+  request_path_exclusion:
+    id: request_path_exclusion
+    negate: true
+    pages: ''
+  view_inclusion:
+    id: view_inclusion
+    negate: false
+    view_inclusion: {  }

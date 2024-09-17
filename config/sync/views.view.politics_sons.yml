@@ -22,8 +22,12 @@ dependencies:
     - 'taxonomy_term:categories:14619ab3-adee-497b-9f77-1bf445337eb1'
     - 'taxonomy_term:categories:35e711a0-e9d4-45fe-8147-997d1394844b'
     - 'taxonomy_term:categories:49a8a0eb-c50c-4500-9077-8226a3833e5b'
+    - 'taxonomy_term:categories:6f3813ea-3b3d-4a71-a283-6213bc175c6b'
+    - 'taxonomy_term:categories:7adc4115-5aef-4003-82e8-8a7454de7f66'
     - 'taxonomy_term:categories:aec049fa-a86a-42fb-8dc9-173f58881fde'
+    - 'taxonomy_term:categories:bd3e0f3d-1624-4c46-bb0a-633272c79376'
     - 'taxonomy_term:categories:cf1eec84-47c1-4745-b3fe-62d661529eaf'
+    - 'taxonomy_term:categories:d9ec7188-14ad-41c6-9757-1a7510f36405'
   module:
     - lazy
     - node
@@ -167,8 +171,8 @@ display:
           wrapper: div
           legend: ''
           classes: one-content-category
-          collapsible: 1
-          collapsed: 0
+          collapsible: true
+          collapsed: false
         field_image:
           id: field_image
           table: node__field_image
@@ -618,8 +622,8 @@ display:
           wrapper: div
           legend: ''
           classes: two-content-category
-          collapsible: 1
-          collapsed: 0
+          collapsible: true
+          collapsed: false
         nothing:
           id: nothing
           table: views
@@ -1047,8 +1051,8 @@ display:
           wrapper: div
           legend: ''
           classes: one-content-category
-          collapsible: 1
-          collapsed: 0
+          collapsible: true
+          collapsed: false
         field_type_of_content:
           id: field_type_of_content
           table: node__field_type_of_content
@@ -1619,8 +1623,8 @@ display:
           wrapper: div
           legend: ''
           classes: two-content-category
-          collapsible: 1
-          collapsed: 0
+          collapsible: true
+          collapsed: false
         nothing:
           id: nothing
           table: views
@@ -1706,18 +1710,9 @@ display:
           plugin_id: taxonomy_index_tid
           operator: or
           value:
-            159: 159
-            160: 160
             5: 5
             6: 6
             7: 7
-            149: 149
-            150: 150
-            151: 151
-            152: 152
-            153: 153
-            154: 154
-            155: 155
           group: 1
           exposed: false
           expose:
@@ -1825,52 +1820,6 @@ display:
             remember_roles:
               authenticated: authenticated
             reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-        nid:
-          id: nid
-          table: node_field_data
-          field: nid
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: node
-          entity_field: nid
-          plugin_id: numeric
-          operator: '='
-          value:
-            min: ''
-            max: ''
-            value: '1'
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            min_placeholder: ''
-            max_placeholder: ''
-            placeholder: ''
           is_grouped: false
           group_info:
             label: ''
@@ -2048,8 +1997,8 @@ display:
           wrapper: div
           legend: ''
           classes: container-wrapper
-          collapsible: 1
-          collapsed: 0
+          collapsible: true
+          collapsed: false
         field_type_of_content:
           id: field_type_of_content
           table: node__field_type_of_content
@@ -2535,18 +2484,9 @@ display:
           plugin_id: taxonomy_index_tid
           operator: or
           value:
-            159: 159
-            160: 160
             5: 5
             6: 6
             7: 7
-            149: 149
-            150: 150
-            151: 151
-            152: 152
-            153: 153
-            154: 154
-            155: 155
           group: 1
           exposed: false
           expose:
@@ -2654,52 +2594,6 @@ display:
             remember_roles:
               authenticated: authenticated
             reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-        nid:
-          id: nid
-          table: node_field_data
-          field: nid
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: node
-          entity_field: nid
-          plugin_id: numeric
-          operator: '='
-          value:
-            min: ''
-            max: ''
-            value: '1'
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            min_placeholder: ''
-            max_placeholder: ''
-            placeholder: ''
           is_grouped: false
           group_info:
             label: ''
@@ -3059,18 +2953,13 @@ display:
           plugin_id: taxonomy_index_tid
           operator: or
           value:
-            159: 159
-            160: 160
+            23302: 23302
+            23304: 23304
+            23305: 23305
+            23303: 23303
             5: 5
             6: 6
             7: 7
-            149: 149
-            150: 150
-            151: 151
-            152: 152
-            153: 153
-            154: 154
-            155: 155
           group: 1
           exposed: false
           expose:
@@ -3190,52 +3079,6 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-        nid:
-          id: nid
-          table: node_field_data
-          field: nid
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: node
-          entity_field: nid
-          plugin_id: numeric
-          operator: '='
-          value:
-            min: ''
-            max: ''
-            value: '1'
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            min_placeholder: ''
-            max_placeholder: ''
-            placeholder: ''
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
       filter_groups:
         operator: AND
         groups:
@@ -3288,6 +3131,7 @@ display:
         - 'config:core.entity_view_display.node.feature_employer.teaser'
         - 'config:core.entity_view_display.node.job.default'
         - 'config:core.entity_view_display.node.job.teaser'
+        - 'config:core.entity_view_display.node.job.token'
         - 'config:core.entity_view_display.node.more_covers.default'
         - 'config:core.entity_view_display.node.more_covers.teaser'
         - 'config:core.entity_view_display.node.news.categories_home'
@@ -3297,6 +3141,7 @@ display:
         - 'config:core.entity_view_display.node.news.default'
         - 'config:core.entity_view_display.node.news.first_category_home'
         - 'config:core.entity_view_display.node.news.full'
+        - 'config:core.entity_view_display.node.news.landing_tags'
         - 'config:core.entity_view_display.node.news.news'
         - 'config:core.entity_view_display.node.news.premium'
         - 'config:core.entity_view_display.node.news.subcategory_first_'
@@ -3743,9 +3588,10 @@ display:
           plugin_id: taxonomy_index_tid
           operator: or
           value:
-            5: 5
-            6: 6
-            7: 7
+            23302: 23302
+            23304: 23304
+            23305: 23305
+            23303: 23303
           group: 1
           exposed: false
           expose:

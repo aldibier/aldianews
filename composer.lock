@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c4dd403fab5f76b7169d56fa36df3e2c",
+    "content-hash": "65fd8758a986b528c6a565152f618f27",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2846,26 +2846,29 @@
         },
         {
             "name": "drupal/ckeditor_media_embed",
-            "version": "dev-2.x",
+            "version": "2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/ckeditor_media_embed.git",
-                "reference": "92a7bfa899c3395b9b739b28910aa49051cf5dfb"
+                "reference": "2.0.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/ckeditor_media_embed-2.0.2.zip",
+                "reference": "2.0.2",
+                "shasum": "7c95e0bebb5d45d940c97255dbf0d3998143943f"
             },
             "require": {
                 "drupal/core": "^9 || ^10"
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-2.x": "2.x-dev"
-                },
                 "drupal": {
-                    "version": "2.0.0-alpha5+3-dev",
-                    "datestamp": "1700988974",
+                    "version": "2.0.2",
+                    "datestamp": "1713998002",
                     "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Dev releases are not covered by Drupal security advisories."
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
                     }
                 },
                 "drush": {
@@ -18107,7 +18110,6 @@
         "drupal/account_modal": 5,
         "drupal/advagg": 15,
         "drupal/advancedqueue": 5,
-        "drupal/ckeditor_media_embed": 20,
         "drupal/context": 5,
         "drupal/ds": 15,
         "drupal/facets": 10,

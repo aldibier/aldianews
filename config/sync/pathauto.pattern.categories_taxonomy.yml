@@ -3,17 +3,16 @@ langcode: en
 status: true
 dependencies:
   module:
-    - ctools
     - taxonomy
 id: categories_taxonomy
 label: 'Categories Taxonomy'
 type: 'canonical_entities:taxonomy_term'
 pattern: '[term:parent:name]/[term:name]'
 selection_criteria:
-  7836661e-4450-4aa0-b95c-60348129bbe3:
+  28bfb41d-2e0d-4288-ab94-c61f8ac626e2:
     id: 'entity_bundle:taxonomy_term'
     negate: false
-    uuid: 7836661e-4450-4aa0-b95c-60348129bbe3
+    uuid: 28bfb41d-2e0d-4288-ab94-c61f8ac626e2
     context_mapping:
       taxonomy_term: taxonomy_term
     bundles:

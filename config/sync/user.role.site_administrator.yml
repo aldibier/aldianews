@@ -10,7 +10,6 @@ dependencies:
     - node.type.news
     - node.type.page
     - node.type.webform
-    - taxonomy.vocabulary.categories
     - taxonomy.vocabulary.feature_employer
     - taxonomy.vocabulary.job_categories
     - taxonomy.vocabulary.job_posting_company_name
@@ -43,10 +42,10 @@ permissions:
   - 'create more_covers content'
   - 'create news content'
   - 'create page content'
-  - 'create terms in categories'
   - 'create terms in feature_employer'
   - 'create terms in job_categories'
   - 'create terms in job_posting_company_name'
+  - 'create terms in tags'
   - 'create webform content'
   - 'delete all revisions'
   - 'delete any event content'
@@ -59,7 +58,6 @@ permissions:
   - 'delete own news content'
   - 'delete own page content'
   - 'delete own webform content'
-  - 'delete terms in categories'
   - 'delete terms in tags'
   - 'edit any event content'
   - 'edit any more_covers content'
@@ -70,7 +68,6 @@ permissions:
   - 'edit own news content'
   - 'edit own page content'
   - 'edit own webform content'
-  - 'edit terms in categories'
   - 'edit terms in tags'
   - 'manage own commerce_payment_method'
   - 'opt-in or out of google analytics tracking'

@@ -6,6 +6,11 @@ dependencies:
     - content_authors.authors_type.news_authors
     - filter.format.full_html
     - filter.format.podcast
+    - media.type.audio
+    - media.type.document
+    - media.type.image
+    - media.type.remote_video
+    - media.type.video
     - node.type.al_dia_vacancy
     - node.type.article
     - node.type.feature_employer
@@ -29,6 +34,7 @@ dependencies:
     - ds_switch_view_mode
     - file
     - filter
+    - media
     - menu_link_content
     - node
     - nopremium
@@ -41,21 +47,36 @@ label: Editor
 weight: 3
 is_admin: null
 permissions:
+  - 'access administration pages'
   - 'access content overview'
   - 'access taxonomy overview'
   - 'access toolbar'
   - 'add authors entities'
+  - 'administer authors entities'
   - 'administer nodes'
+  - 'create audio media'
   - 'create content translations'
+  - 'create document media'
+  - 'create image media'
+  - 'create media'
   - 'create more_covers content'
   - 'create news content'
+  - 'create remote_video media'
+  - 'create terms in tags'
   - 'create terms in type_of_working_day'
   - 'create thought_leaders content'
+  - 'create video media'
   - 'delete authors entities'
   - 'delete content translations'
+  - 'delete own audio media'
+  - 'delete own document media'
   - 'delete own files'
+  - 'delete own image media'
+  - 'delete own remote_video media'
   - 'delete own thought_leaders content'
+  - 'delete own video media'
   - 'delete terms in feature_employer'
+  - 'delete terms in tags'
   - 'delete terms in type_of_working_day'
   - 'ds switch al_dia_vacancy'
   - 'ds switch article'
@@ -66,17 +87,42 @@ permissions:
   - 'ds switch thought_leaders'
   - 'ds switch view mode'
   - 'ds switch webform'
+  - 'edit any audio media'
+  - 'edit any document media'
+  - 'edit any image media'
   - 'edit any more_covers content'
   - 'edit any news content'
+  - 'edit any remote_video media'
   - 'edit any thought_leaders content'
+  - 'edit any video media'
   - 'edit authors entities'
+  - 'edit own audio media'
+  - 'edit own document media'
+  - 'edit own image media'
   - 'edit own more_covers content'
   - 'edit own news content'
+  - 'edit own remote_video media'
   - 'edit own thought_leaders content'
+  - 'edit own video media'
   - 'edit terms in feature_employer'
+  - 'edit terms in tags'
   - 'edit terms in type_of_working_day'
   - 'manage own commerce_payment_method'
+  - 'news_authors create entities'
+  - 'news_authors delete any entities'
+  - 'news_authors delete own entities'
+  - 'news_authors delete revisions'
+  - 'news_authors edit any entities'
+  - 'news_authors edit own entities'
+  - 'news_authors revert revisions'
+  - 'news_authors view revisions'
+  - 'revert all authors revisions'
   - 'revert all revisions'
+  - 'revert any audio media revisions'
+  - 'revert any document media revisions'
+  - 'revert any image media revisions'
+  - 'revert any remote_video media revisions'
+  - 'revert any video media revisions'
   - 'translate al_dia_vacancy node'
   - 'translate article node'
   - 'translate block_content'
@@ -95,14 +141,21 @@ permissions:
   - 'translate tags taxonomy_term'
   - 'translate thought_leaders node'
   - 'update content translations'
+  - 'update media'
   - 'use text format full_html'
   - 'use text format podcast'
   - 'view all authors revisions'
   - 'view all revisions'
+  - 'view any audio media revisions'
+  - 'view any document media revisions'
+  - 'view any image media revisions'
+  - 'view any remote_video media revisions'
+  - 'view any video media revisions'
   - 'view any webform submission'
   - 'view full news premium content'
   - 'view full thought_leaders premium content'
   - 'view own unpublished content'
+  - 'view own unpublished media'
   - 'view published authors entities'
   - 'view the administration theme'
   - 'view unpublished authors entities'

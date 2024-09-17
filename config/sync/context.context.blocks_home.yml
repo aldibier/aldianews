@@ -11,6 +11,7 @@ dependencies:
     - views.view.politics_mix
     - views.view.sports_mix
     - views.view.thought_leaders_home
+    - views.view.wellness_mix
   module:
     - blockgroup
     - gamw
@@ -41,7 +42,7 @@ reactions:
         provider: views
         label_display: '0'
         region: content
-        weight: '0'
+        weight: '-1'
         custom_id: views_block_leadership_mix_block_1
         theme: al_dia_news
         css_class: ''
@@ -57,7 +58,7 @@ reactions:
         provider: views
         label_display: '0'
         region: content
-        weight: '2'
+        weight: '3'
         custom_id: views_block_culture_mix_block_1
         theme: al_dia_news
         css_class: ''
@@ -73,7 +74,7 @@ reactions:
         provider: views
         label_display: '0'
         region: content
-        weight: '3'
+        weight: '4'
         custom_id: views_block_politics_mix_block_1
         theme: al_dia_news
         css_class: ''
@@ -89,7 +90,7 @@ reactions:
         provider: blockgroup
         label_display: '0'
         region: content
-        weight: '-3'
+        weight: '-4'
         custom_id: block_group_high_impact_and_most_visited_news_home
         theme: al_dia_news
         css_class: ''
@@ -103,7 +104,7 @@ reactions:
         provider: blockgroup
         label_display: '0'
         region: content
-        weight: '4'
+        weight: '5'
         custom_id: block_group_current_edition_advertising_home
         theme: al_dia_news
         css_class: ''
@@ -117,7 +118,7 @@ reactions:
         provider: blockgroup
         label_display: '0'
         region: content
-        weight: '-2'
+        weight: '-3'
         custom_id: block_group_latest_categories_tending_block
         theme: al_dia_news
         css_class: wrapper-news-trending
@@ -131,7 +132,7 @@ reactions:
         provider: gamw
         label_display: '0'
         region: content
-        weight: '5'
+        weight: '6'
         custom_id: gamw
         theme: al_dia_news
         css_class: 'banner-horizontal ads'
@@ -156,7 +157,7 @@ reactions:
         provider: gamw
         label_display: '0'
         region: content
-        weight: '-4'
+        weight: '-5'
         custom_id: gamw
         theme: al_dia_news
         css_class: 'ads section1310 block-fixed-block-content-horizontal-advertising-close'
@@ -179,7 +180,7 @@ reactions:
         provider: gamw
         label_display: '0'
         region: content
-        weight: '-1'
+        weight: '-2'
         custom_id: gamw
         theme: al_dia_news
         css_class: 'banner-horizontal ads'
@@ -204,7 +205,7 @@ reactions:
         provider: views
         label_display: '0'
         region: content
-        weight: '0'
+        weight: '2'
         custom_id: views_block_thought_leaders_home_block_4
         theme: al_dia_news
         css_class: ''
@@ -222,6 +223,23 @@ reactions:
         region: content
         weight: '0'
         custom_id: views_block_sports_mix_block_1
+        theme: al_dia_news
+        css_class: ''
+        unique: 0
+        context_id: blocks_home
+        context_mapping: {  }
+        views_label: ''
+        items_per_page: none
+        third_party_settings: {  }
+      c6064f28-8edc-4d75-bfc7-1d993dd19b76:
+        uuid: c6064f28-8edc-4d75-bfc7-1d993dd19b76
+        id: 'views_block:wellness_mix-block_1'
+        label: ''
+        provider: views
+        label_display: '0'
+        region: content
+        weight: '1'
+        custom_id: views_block_wellness_mix_block_1
         theme: al_dia_news
         css_class: ''
         unique: 0

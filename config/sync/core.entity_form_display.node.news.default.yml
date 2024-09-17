@@ -62,7 +62,6 @@ third_party_settings:
     group_only_for_podcast:
       children:
         - field_postcast_categories
-        - field_podcast_player
         - field_podcast_player_local
       label: 'Only for Podcast'
       region: content
@@ -226,14 +225,6 @@ content:
       match_operator: CONTAINS
       match_limit: 10
       size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_podcast_player:
-    type: text_textarea
-    weight: 5
-    region: content
-    settings:
-      rows: 5
       placeholder: ''
     third_party_settings: {  }
   field_podcast_player_local:
@@ -403,5 +394,6 @@ content:
     third_party_settings: {  }
 hidden:
   field_internal_image: true
+  field_podcast_player: true
   field_short_title: true
   unpublish_on: true

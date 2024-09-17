@@ -164,8 +164,8 @@ display:
           wrapper: div
           legend: ''
           classes: one-content-category
-          collapsible: 1
-          collapsed: 0
+          collapsible: true
+          collapsed: false
         field_image:
           id: field_image
           table: node__field_image
@@ -615,8 +615,8 @@ display:
           wrapper: div
           legend: ''
           classes: two-content-category
-          collapsible: 1
-          collapsed: 0
+          collapsible: true
+          collapsed: false
         nothing:
           id: nothing
           table: views
@@ -1044,8 +1044,8 @@ display:
           wrapper: div
           legend: ''
           classes: one-content-category
-          collapsible: 1
-          collapsed: 0
+          collapsible: true
+          collapsed: false
         field_type_of_content:
           id: field_type_of_content
           table: node__field_type_of_content
@@ -1616,8 +1616,8 @@ display:
           wrapper: div
           legend: ''
           classes: two-content-category
-          collapsible: 1
-          collapsed: 0
+          collapsible: true
+          collapsed: false
         nothing:
           id: nothing
           table: views
@@ -1825,52 +1825,6 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-        nid:
-          id: nid
-          table: node_field_data
-          field: nid
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: node
-          entity_field: nid
-          plugin_id: numeric
-          operator: '='
-          value:
-            min: ''
-            max: ''
-            value: '1'
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            min_placeholder: ''
-            max_placeholder: ''
-            placeholder: ''
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
       filter_groups:
         operator: AND
         groups:
@@ -2035,8 +1989,8 @@ display:
           wrapper: div
           legend: ''
           classes: container-wrapper
-          collapsible: 1
-          collapsed: 0
+          collapsible: true
+          collapsed: false
         field_type_of_content:
           id: field_type_of_content
           table: node__field_type_of_content
@@ -2641,52 +2595,6 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-        nid:
-          id: nid
-          table: node_field_data
-          field: nid
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: node
-          entity_field: nid
-          plugin_id: numeric
-          operator: '='
-          value:
-            min: ''
-            max: ''
-            value: '1'
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            min_placeholder: ''
-            max_placeholder: ''
-            placeholder: ''
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
       filter_groups:
         operator: AND
         groups:
@@ -3218,52 +3126,6 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-        nid:
-          id: nid
-          table: node_field_data
-          field: nid
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: node
-          entity_field: nid
-          plugin_id: numeric
-          operator: '='
-          value:
-            min: ''
-            max: ''
-            value: '1'
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            min_placeholder: ''
-            max_placeholder: ''
-            placeholder: ''
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
       filter_groups:
         operator: AND
         groups:
@@ -3316,6 +3178,7 @@ display:
         - 'config:core.entity_view_display.node.feature_employer.teaser'
         - 'config:core.entity_view_display.node.job.default'
         - 'config:core.entity_view_display.node.job.teaser'
+        - 'config:core.entity_view_display.node.job.token'
         - 'config:core.entity_view_display.node.more_covers.default'
         - 'config:core.entity_view_display.node.more_covers.teaser'
         - 'config:core.entity_view_display.node.news.categories_home'
@@ -3325,6 +3188,7 @@ display:
         - 'config:core.entity_view_display.node.news.default'
         - 'config:core.entity_view_display.node.news.first_category_home'
         - 'config:core.entity_view_display.node.news.full'
+        - 'config:core.entity_view_display.node.news.landing_tags'
         - 'config:core.entity_view_display.node.news.news'
         - 'config:core.entity_view_display.node.news.premium'
         - 'config:core.entity_view_display.node.news.subcategory_first_'
