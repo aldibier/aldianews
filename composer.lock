@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "65fd8758a986b528c6a565152f618f27",
+    "content-hash": "8f0eebc9072458fad5e5974934713747",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3011,6 +3011,75 @@
             "homepage": "http://drupal.org/project/ckeditor_paste_filter",
             "support": {
                 "source": "https://git.drupalcode.org/project/ckeditor_paste_filter"
+            }
+        },
+        {
+            "name": "drupal/cloudflare_stream",
+            "version": "2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/cloudflare_stream.git",
+                "reference": "8.x-2.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/cloudflare_stream-8.x-2.1.zip",
+                "reference": "8.x-2.1",
+                "shasum": "59c4fdff48e8de1343fe301564e10f55861c7fbe"
+            },
+            "require": {
+                "drupal/core": "^9.3 || ^10"
+            },
+            "require-dev": {
+                "drupal/cloudflare_stream_hosted_video": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-2.1",
+                    "datestamp": "1693826164",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Contributors",
+                    "homepage": "https://www.drupal.org/node/3046840/committers",
+                    "role": "Contributor"
+                },
+                {
+                    "name": "pjbaert",
+                    "homepage": "https://www.drupal.org/user/2869357"
+                },
+                {
+                    "name": "tamerzg",
+                    "homepage": "https://www.drupal.org/user/464564"
+                },
+                {
+                    "name": "tim-diels",
+                    "homepage": "https://www.drupal.org/user/2915097"
+                },
+                {
+                    "name": "ws.agency",
+                    "homepage": "https://www.drupal.org/user/2851415"
+                },
+                {
+                    "name": "xSDx",
+                    "homepage": "https://www.drupal.org/user/3273632"
+                }
+            ],
+            "description": "This module integrates the Cloudflare Stream video streaming platform. This way you can spend less time managing video delivery and more time building and promoting your product.",
+            "homepage": "https://www.drupal.org/project/cloudflare_stream",
+            "support": {
+                "source": "https://git.drupalcode.org/project/cloudflare_stream/",
+                "issues": "https://www.drupal.org/project/issues/cloudflare_stream?version=8.x"
             }
         },
         {
