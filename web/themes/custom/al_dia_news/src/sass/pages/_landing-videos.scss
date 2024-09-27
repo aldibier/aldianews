@@ -49,7 +49,7 @@
       margin: 90px 0 0;
       @include title-section-line($px34, $ModernoFB-Regular, $cwhite);
 
-      @media screen and(max-width:$tablet) {
+      @media screen and (max-width:$tablet) {
         padding-bottom: 5px;
         border-bottom: 2px solid $cwhite;
         font-size: szrem(20);
@@ -66,11 +66,11 @@
   .view-filters {
     margin-bottom: 20px;
 
-    @media screen and(max-width:$tablet) {
+    @media screen and (max-width:$tablet) {
       margin-bottom: 25px;
     }
 
-    @media screen and(min-width:$desktop) {
+    @media screen and (min-width:$desktop) {
       position: relative;
       bottom: 7px;
     }
@@ -96,7 +96,7 @@
       letter-spacing: 0.025em;
       color: $cwhite;
 
-      @media screen and(max-width:767px) {
+      @media screen and (max-width:767px) {
         margin-right: 5px;
         font-size: szrem(14);
         // line-height: 16px;
@@ -134,7 +134,7 @@
         text-transform: uppercase;
         color: $cwhite;
 
-        @media screen and(max-width:767px) {
+        @media screen and (max-width:767px) {
           font-size: szrem(14);
           line-height: 16px;
         }
@@ -145,7 +145,7 @@
       display: none;
     }
 
-    @media screen and(max-width:767px) {
+    @media screen and (max-width:767px) {
       margin-top: 20px;
     }
   }

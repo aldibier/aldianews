@@ -64,7 +64,7 @@
   }
 
   .slick-list {
-    @media screen and(min-width:$broken) {
+    @media screen and (min-width:$broken) {
       height: 485px;
       transition: all 0.5s linear;
 
@@ -125,12 +125,12 @@
     transition: height 0.6s linear,background-color 0.6s linear;
 		will-change: height, background-color;
 
-    @media screen and(max-width:$tablet) {
+    @media screen and (max-width:$tablet) {
       height: 45px;
       padding: 5px 20px;
     }
 
-    @media screen and(min-width:$broken) {
+    @media screen and (min-width:$broken) {
       &:hover,
       &:focus-within {
         height: 140px;
@@ -156,7 +156,7 @@
     line-height: 53px;
     color: $corange;
 
-    @media screen and(max-width:$tablet) {
+    @media screen and (max-width:$tablet) {
       min-width: 25px;
       margin-right: 30px;
       font-size: szrem(30);
@@ -179,7 +179,7 @@
       transition: color 0.3s;
 			will-change: color;
 
-      @media screen and(max-width:$tablet) {
+      @media screen and (max-width:$tablet) {
         font-size: szrem(15);
         line-height: 18px;
       }

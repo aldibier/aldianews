@@ -11,7 +11,7 @@
         color: $corange;
         text-transform: uppercase; 
 
-        @media screen and(max-width:$broken) {
+        @media screen and (max-width:$broken) {
             font-size: 20px;
         }
 
@@ -27,17 +27,17 @@
         "area-1 area-2";
     
     margin-bottom: 90px;
-    @media screen and(max-width:$broken10) {
+    @media screen and (max-width:$broken10) {
         grid-template-columns: 700px auto;
         max-height: 480px;
     }
 
-    @media screen and(max-width:$tablet-max) {
+    @media screen and (max-width:$tablet-max) {
         grid-template-columns: 620px auto;
         max-height: 480px;
     }
 
-    @media screen and(max-width:$broken) {
+    @media screen and (max-width:$broken) {
         grid-template-areas:
         "area-1"
         "area-2";
@@ -53,7 +53,7 @@
         margin-right: 19px;
         grid-area: area-1;
 
-        @media screen and(max-width:$broken) {
+        @media screen and (max-width:$broken) {
             margin-right: 15px;
             margin-bottom: 15px;
         }
@@ -88,7 +88,7 @@
             left: 0;
             background-color: #b1b1b1;
 
-            @media screen and(max-width:$broken) {
+            @media screen and (max-width:$broken) {
                 content: none
             }
 
@@ -98,7 +98,7 @@
             max-width: 420px;
             padding: 0 0 0 20px;
 
-            @media screen and(max-width:$broken) {
+            @media screen and (max-width:$broken) {
                 max-width: 100%;
                 padding: 0;
             }
@@ -106,7 +106,7 @@
         }
 
         .view-content{
-            @media screen and(max-width:$broken) {
+            @media screen and (max-width:$broken) {
                 display: grid;
                 grid-template-columns: repeat(2,1fr);
                 grid-auto-flow: dense; 
@@ -114,7 +114,7 @@
                 overflow: hidden;
                 margin: 20px auto;
                 
-                @media screen and(max-width:$broken) {
+                @media screen and (max-width:$broken) {
                     grid-gap: 0 0px;
                 }        
             }
@@ -123,7 +123,7 @@
                 padding-bottom: 20px;
                 border-bottom: 1px solid #b1b1b1;
 
-                @media screen and(max-width:$broken10) {
+                @media screen and (max-width:$broken10) {
                     margin-bottom: 12px;
                     padding-bottom: 9px;
                 }
@@ -142,13 +142,13 @@
 
                 .container-content{
                     display: flex;
-                    @media screen and(max-width:$broken) {
+                    @media screen and (max-width:$broken) {
                         flex-direction: column;
                     }
 
                     .one-content-subcategory-four{
            
-                        @media screen and(max-width:$broken) {
+                        @media screen and (max-width:$broken) {
                             margin-right: 15px;
                         }
                         
@@ -157,7 +157,7 @@
                         }
 
                         img{
-                            @media screen and(max-width:$broken) {
+                            @media screen and (max-width:$broken) {
                                 width: 100%;
                                 max-width: 100%;
                                 height: auto;
@@ -178,7 +178,7 @@
                                 line-height: 15px;
                                 color: $cgrey3;
 
-                                @media screen and(max-width:$broken) {
+                                @media screen and (max-width:$broken) {
                                     font-size: 10px;
                                     line-height: 12px;
                             
@@ -190,7 +190,7 @@
                         .block-field-blocknodenewsfield-category{
                             margin: 0 0 10px;
 
-                            @media screen and(max-width:$broken) {
+                            @media screen and (max-width:$broken) {
                                 margin: 0 0 -15px;
                             }
                             a{
@@ -203,7 +203,7 @@
                                 color: $corange;
                                 text-transform: uppercase;
 
-                                @media screen and(max-width:$broken) {
+                                @media screen and (max-width:$broken) {
                                     font-size: 10px;
                                     line-height: 12px;
                             
@@ -222,10 +222,10 @@
                                 text-transform: uppercase;
                                 font-family: $PrNovacond-Xbold;
 
-                                @media screen and(max-width:$broken) {
+                                @media screen and (max-width:$broken) {
                                     font-size: 30px;               
                                 }
-                                @media screen and(max-width:$broken3) {
+                                @media screen and (max-width:$broken3) {
                                     font-size: 18px;               
                                 }
                             }
@@ -279,7 +279,7 @@
     .views-infinite-scroll-content-wrapper{
         .card-one-column{
             
-            @media screen and(max-width:$broken10) {
+            @media screen and (max-width:$broken10) {
                 margin-bottom: 12px;
                 padding-bottom: 9px;
             }
@@ -288,7 +288,7 @@
                 margin-right: 15px;
 
                 img{
-                    @media screen and(max-width:$broken) {
+                    @media screen and (max-width:$broken) {
                         width: 100%;
                         max-width: 100%;
                         height: auto;
@@ -308,7 +308,7 @@
                     line-height: 15px;
                     color: $cgrey3;
 
-                    @media screen and(max-width:$broken) {
+                    @media screen and (max-width:$broken) {
                         font-size: 10px;
                         line-height: 12px;
                 
@@ -331,7 +331,7 @@
                         color: $corange;
                         text-transform: uppercase;
 
-                        @media screen and(max-width:$broken) {
+                        @media screen and (max-width:$broken) {
                             font-size: 10px;
                             line-height: 12px;
                     
@@ -347,7 +347,7 @@
                         font-size: 30px;
                         line-height: 22px;
                         color: $cblack;
-                        @media screen and(max-width:$broken3) {
+                        @media screen and (max-width:$broken3) {
                             font-size: 18px;               
                         }
                     }

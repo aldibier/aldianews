@@ -245,7 +245,7 @@
       display: none;
     }
 
-    @media screen and(max-width: $tablet) {
+    @media screen and (max-width: $tablet) {
       width: 100%;
       margin-bottom: 0;
       padding: 30px 18px 10px;
@@ -266,7 +266,7 @@
 
     .webform-submission-newsletters-form {
 
-      @media screen and(max-width:$broken) {
+      @media screen and (max-width:$broken) {
         .webform-confirmation__back {
           a {
             font-size: 12px;
@@ -277,7 +277,7 @@
         }
       }
 
-      @media screen and(max-width:$tablet) {
+      @media screen and (max-width:$tablet) {
         display: flex;
         padding: 20px 10px;
 
@@ -296,7 +296,7 @@
     }
 
     .webform-submission-boletines-form {
-      @media screen and(min-width:$broken) {
+      @media screen and (min-width:$broken) {
         .webform-confirmation__message:lang(es) {
           margin-bottom: 10px;
         }
@@ -308,7 +308,7 @@
         }
       }
 
-      @media screen and(max-width:$tablet) {
+      @media screen and (max-width:$tablet) {
         display: flex;
         padding: 20px 10px;
 
@@ -335,7 +335,7 @@
 
   .wrapper-news-trending {
     .webform-submission-newsletters-form {
-      @media screen and(min-width:$broken) {
+      @media screen and (min-width:$broken) {
         .form-item-email {
           input:lang(en) {
             &::placeholder {
@@ -347,7 +347,7 @@
     }
 
     .webform-submission-boletines-form {
-      @media screen and(min-width:$broken) {
+      @media screen and (min-width:$broken) {
         .webform-confirmation__message:lang(es) {
           margin-bottom: 10px;
         }
@@ -359,7 +359,7 @@
         }
       }
 
-      @media screen and(max-width:$tablet) {
+      @media screen and (max-width:$tablet) {
         display: flex;
         padding: 20px 10px;
 
@@ -414,13 +414,13 @@
       letter-spacing: 0.741176px;
       color: $cgrey5;
 
-      @media screen and(min-width: $broken) {
+      @media screen and (min-width: $broken) {
         &:lang(es) {
           margin: 0 auto 10px;
         }
       }
 
-      @media screen and(max-width: $tablet) {
+      @media screen and (max-width: $tablet) {
         margin: 0px auto 10px;
         flex: 1 1 100%;
         font-size: 14px;
@@ -455,7 +455,7 @@
           opacity: 0.4;
         }
 
-        @media screen and(max-width: $tablet) {
+        @media screen and (max-width: $tablet) {
           min-height: 40px;
           max-height: 40px;
           padding: 0;
@@ -466,7 +466,7 @@
         }
       }
 
-      @media screen and(max-width: $broken) {
+      @media screen and (max-width: $broken) {
         width: 100%;
         max-width: 90%;
 
@@ -482,7 +482,7 @@
       flex: 1 1 auto;
       display: inline-block;
 
-			@media screen and(max-width: $broken) {
+			@media screen and (max-width: $broken) {
 				flex: 0 1 auto;
 			}
 
@@ -492,7 +492,7 @@
         font-size: szrem(14);
         background-color: $cgrey3;
 
-        @media screen and(max-width: $tablet) {
+        @media screen and (max-width: $tablet) {
           min-width: initial;
           max-height: 40px;
           min-height: 40px;
@@ -500,7 +500,7 @@
         }
       }
 
-      @media screen and(max-width: $broken) {
+      @media screen and (max-width: $broken) {
         // width: 10%;
 
         // &:lang(es) {
@@ -548,7 +548,7 @@
     .newsletter {
       padding: 9px;
 
-      @media screen and(min-width: $broken) {
+      @media screen and (min-width: $broken) {
         min-height: 140px;
       }
     }
@@ -556,7 +556,7 @@
     .webform-submission-newsletters-form {
       padding: 20px 25px 19px 25px;
 
-      @media screen and(max-width: $tablet) {
+      @media screen and (max-width: $tablet) {
         padding: 10px;
         display: flex;
       }
@@ -565,12 +565,12 @@
     .form-item-email {
       max-width: 155px;
 
-      @media screen and(max-width: $broken) {
+      @media screen and (max-width: $broken) {
         width: 100%;
         max-width: 90%;
       }
 
-      @media screen and(max-width: $tablet) {
+      @media screen and (max-width: $tablet) {
         width: initial;
         max-width: none;
         flex: 1 1 180px;
@@ -578,11 +578,11 @@
     }
 
     #edit-actions {
-      @media screen and(max-width: $broken) {
+      @media screen and (max-width: $broken) {
         //width: 10%;
       }
 
-      @media screen and(max-width: $tablet) {
+      @media screen and (max-width: $tablet) {
         width: initial;
         max-width: none;
         flex: 0 1 70px;

@@ -307,7 +307,7 @@ section .indented {
 
     .field--name-comment-display-custom:not(.anonymus.field--name-comment-display-custom)
       .item-list {
-      @media screen and(max-width:$tablet) {
+      @media screen and (max-width:$tablet) {
         ul {
           justify-content: flex-end;
         }
@@ -340,7 +340,7 @@ section .indented:not(.indented > .indented) {
     .field--name-field-comment-body {
       padding-left: $space-level;
     }
-    @media screen and(max-width:$tablet) {
+    @media screen and (max-width:$tablet) {
       $space-level: 30px;
       padding-left: $space-level;
     }
@@ -353,7 +353,7 @@ section .indented:not(.idented) > .indented {
     .field--name-field-comment-body {
       padding-left: $space-level + 100px;
     }
-    @media screen and(max-width:$tablet) {
+    @media screen and (max-width:$tablet) {
       $space-level: 30px;
       padding-left: $space-level + $space-level;
     }
@@ -590,7 +590,7 @@ html[lang="es"] section > .comment:nth-of-type(1) {
     color: $corange;
   }
 
-  @media screen and(max-width: $tablet) {
+  @media screen and (max-width: $tablet) {
     font-size: szrem(17);
     line-height: 19px;
     text-align: center;
@@ -623,7 +623,7 @@ html[lang="es"] section > .comment:nth-of-type(1) {
   letter-spacing: 0.2px;
   color: $cgrey6;
 
-  @media screen and(max-width: $tablet) {
+  @media screen and (max-width: $tablet) {
     font-size: szrem(16);
     line-height: 19px;
     text-align: center;
@@ -643,12 +643,12 @@ html[lang="es"] section > .comment:nth-of-type(1) {
     flex-direction: column;
     cursor: pointer;
 
-    @media screen and(max-width: $broken) {
+    @media screen and (max-width: $broken) {
       max-width: 100%;
       margin-right: 0;
     }
 
-    @media screen and(max-width: $tablet) {
+    @media screen and (max-width: $tablet) {
       margin-bottom: 40px;
     }
 
@@ -705,7 +705,7 @@ html[lang="es"] section > .comment:nth-of-type(1) {
       letter-spacing: 0.2px;
       color: $cblack;
 
-      @media screen and(max-width: $tablet) {
+      @media screen and (max-width: $tablet) {
         margin: 0 0 10px;
         font-size: szrem(14);
       }
@@ -721,7 +721,7 @@ html[lang="es"] section > .comment:nth-of-type(1) {
         padding: 0;
         resize: none;
 
-        @media screen and(max-width: $tablet) {
+        @media screen and (max-width: $tablet) {
           height: 125px;
           min-height: 125px;
         }
@@ -740,7 +740,7 @@ html[lang="es"] section > .comment:nth-of-type(1) {
         display: block;
         font-size: szrem(18);
 
-        @media screen and(max-width: $tablet) {
+        @media screen and (max-width: $tablet) {
           width: 110px;
           height: 30px;
           font-size: szrem(12);
@@ -767,7 +767,7 @@ html[lang="es"] section > .comment:nth-of-type(1) {
     visibility: hidden;
     pointer-events: none;
 
-    @media screen and(max-width: $tablet) {
+    @media screen and (max-width: $tablet) {
       height: 125px;
       padding: 0 20px;
       top: calc(0% + 28px);
@@ -777,7 +777,7 @@ html[lang="es"] section > .comment:nth-of-type(1) {
       &.text-anonymous-comment {
         margin-bottom: 10px;
 
-        @media screen and(max-width: $tablet) {
+        @media screen and (max-width: $tablet) {
           margin-bottom: 15px;
         }
       }

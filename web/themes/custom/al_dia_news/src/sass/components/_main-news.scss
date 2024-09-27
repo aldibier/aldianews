@@ -51,14 +51,14 @@
     .main-news-body {
       display: block;
 
-      @media screen and(max-width:$broken) {
+      @media screen and (max-width:$broken) {
         font-size: 0.9rem;
         line-height: 1.2rem;
         margin: -5px 0 6px;
       }
     }
 
-    @media screen and(max-width:$broken) {
+    @media screen and (max-width:$broken) {
       height: 80%;
       padding: 0 20px 14px;
       display: flex;
@@ -116,7 +116,7 @@
 
 
 
-    @media screen and(min-width:$broken) {
+    @media screen and (min-width:$broken) {
       max-height: 520px;
     }
 
@@ -139,7 +139,7 @@
       max-width: 840px;
       object-fit: cover;
 
-      @media screen and(max-width:$broken) {
+      @media screen and (max-width:$broken) {
         max-width: initial;
         height: auto;
         min-height: initial;
@@ -153,11 +153,11 @@
     margin: 0 auto;
     padding: 0 10px;
 
-		@media screen and(max-width:$broken) {
+		@media screen and (max-width:$broken) {
 			margin: 0;
     }
 
-    @media screen and(max-width:$tablet) {
+    @media screen and (max-width:$tablet) {
       padding: 0;
     }
   }
@@ -174,7 +174,7 @@
       text-transform: uppercase;
       color: $cwhite;
 
-      @media screen and(max-width:$tablet) {
+      @media screen and (max-width:$tablet) {
         margin-bottom: 5px;
         font-size: 12px;
         line-height: 14px;
@@ -198,11 +198,11 @@
       color: $cwhite;
     }
  
-    @media screen and(max-width:$broken) {
+    @media screen and (max-width:$broken) {
       line-height: 0;
     }
 
-    @media screen and(max-width:$tablet) {
+    @media screen and (max-width:$tablet) {
       a {
         font-size: 18px;
         line-height: 22px;
@@ -220,7 +220,7 @@
     color: $cwhite;
     display: none;
 
-    @media screen and(max-width:$tablet) {
+    @media screen and (max-width:$tablet) {
       display: none;
     }
   }

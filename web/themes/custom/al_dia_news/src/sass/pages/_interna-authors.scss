@@ -11,14 +11,14 @@ body[class*="path-authors"] {
       width: 100%;
     }
 
-    @media screen and(max-width:$broken) {
+    @media screen and (max-width:$broken) {
       position: relative;
       max-width: 100%;
       margin-right: 0;
       margin-bottom: 30px;
     }
 
-    @media screen and(max-width:$tablet) {
+    @media screen and (max-width:$tablet) {
       margin: 20px;
 
       &::after {
@@ -35,7 +35,7 @@ body[class*="path-authors"] {
       min-height: 520px;
       max-height: 520px;
 
-      @media screen and(max-width:$broken) {
+      @media screen and (max-width:$broken) {
         height: auto;
         min-height: 245px;
       }
@@ -51,7 +51,7 @@ body[class*="path-authors"] {
     color: #000000;
     margin-bottom: 10px;
 
-    @media screen and(max-width:$broken) {
+    @media screen and (max-width:$broken) {
       margin-bottom: 0;
       font-size: 28px;
     }
@@ -68,7 +68,7 @@ body[class*="path-authors"] {
     color: #000000;
     margin-bottom: 10px;
 
-    @media screen and(max-width:$broken) {
+    @media screen and (max-width:$broken) {
       font-size: 18px;
     }
   }
@@ -84,7 +84,7 @@ body[class*="path-authors"] {
       color: #333333;
       margin: 10px auto;
 
-      @media screen and(max-width:$broken) {
+      @media screen and (max-width:$broken) {
         font-size: 18px;
       }
     }
@@ -101,7 +101,7 @@ body[class*="path-authors"] {
       color: #000000;
       margin: 30px auto 1px;
 
-      @media screen and(max-width:$broken) {
+      @media screen and (max-width:$broken) {
         font-size: 18px;
         padding-bottom: 30px;
         border-bottom: 1px solid #b1b1b1;
@@ -119,11 +119,11 @@ body[class*="path-authors"] {
       overflow: hidden;
       margin-bottom: 70px;
 
-      @media screen and(max-width:$desktop) {
+      @media screen and (max-width:$desktop) {
         margin-bottom: 40px;
       }
 
-      @media screen and(max-width:$broken) {
+      @media screen and (max-width:$broken) {
         display: block;
         max-height: initial;
         grid-template-columns: 1fr;
@@ -136,12 +136,12 @@ body[class*="path-authors"] {
       .author-information {
         padding-right: 20px;
 
-        @media screen and(max-width:$broken) {
+        @media screen and (max-width:$broken) {
           padding-right: 0;
           margin-bottom: 60px;
         }
 
-        @media screen and(max-width:$broken) {
+        @media screen and (max-width:$broken) {
           position: relative;
 
           &::after {
@@ -159,7 +159,7 @@ body[class*="path-authors"] {
       .author-image-intern {
         max-height: 540px;
 
-        @media screen and(max-width:$tablet) {
+        @media screen and (max-width:$tablet) {
           margin: 0 0 20px 0;
 
           &::after {
@@ -176,7 +176,7 @@ body[class*="path-authors"] {
           min-height: 520px;
           max-height: 520px;
 
-          @media screen and(max-width:$broken) {
+          @media screen and (max-width:$broken) {
             height: auto;
             min-height: 245px;
           }
@@ -195,7 +195,7 @@ body[class*="path-authors"] {
             padding: 0 15px 0 0;
             position: relative;
 
-            @media screen and(max-width:$broken) {
+            @media screen and (max-width:$broken) {
               padding: 0 9px 0 0;
             }
             .paragraph--type--social-media {
@@ -205,7 +205,7 @@ body[class*="path-authors"] {
               width: 45px;
               height: 45px;
 
-              @media screen and(max-width:$broken) {
+              @media screen and (max-width:$broken) {
                 padding: 0px;
                 width: 35px;
                 height: 35px;
@@ -235,10 +235,10 @@ body[class*="path-authors"] {
 
       .related_authors {
         .view-more-authors {
-          @media screen and(max-width:$broken) {
+          @media screen and (max-width:$broken) {
             border-top: solid 1px #333333;
           }
-          @media screen and(max-width:$mobile-med) {
+          @media screen and (max-width:$mobile-med) {
             max-width: 370px;
             min-width: 300px;
           }
@@ -259,7 +259,7 @@ body[class*="path-authors"] {
             position: relative;
             margin-bottom: 25px;
 
-            @media screen and(max-width:$broken) {
+            @media screen and (max-width:$broken) {
               margin: -17px 0 0 0;
               width: max-content;
               padding: 0 15px 0 0;
@@ -271,7 +271,7 @@ body[class*="path-authors"] {
               color: #000;
             }
 
-            @media screen and(max-width:$tablet-min) {
+            @media screen and (max-width:$tablet-min) {
               margin-bottom: 25px;
               font-size: 20px;
             }
@@ -285,7 +285,7 @@ body[class*="path-authors"] {
               margin-left: 240px;
               top: 15px;
 
-              @media screen and(max-width:$broken) {
+              @media screen and (max-width:$broken) {
                 display: none;
               }
             }
@@ -410,7 +410,7 @@ body[class*="path-authors"] {
             margin: 0 0 10px;
             line-height: 0;
 
-            @media screen and(max-width:$tablet) {
+            @media screen and (max-width:$tablet) {
               margin: 0 0 5px;
             }
           }
@@ -425,17 +425,17 @@ body[class*="path-authors"] {
             letter-spacing: 0.08em;
             color: $corange;
 
-            @media screen and(max-width:$broken) {
+            @media screen and (max-width:$broken) {
               font-size: szrem(16);
               line-height: 19px;
             }
 
-            // @media screen and(max-width:$broken) {
+            // @media screen and (max-width:$broken) {
             //   font-size: szrem(18);
             //   line-height: 22px;
             // }
 
-            @media screen and(max-width:$tablet) {
+            @media screen and (max-width:$tablet) {
               font-size: 10px;
               line-height: 12px;
             }
@@ -459,7 +459,7 @@ body[class*="path-authors"] {
             color: $cblack;
             word-break: break-word;
 
-            @media screen and(max-width:$broken) {
+            @media screen and (max-width:$broken) {
               font-size: szrem(30);
               line-height: 35px;
             }
@@ -496,17 +496,17 @@ body[class*="path-authors"] {
 
     .content-news-authors {
       grid-area: area-3;
-      @media screen and(max-width:$mobile-med) {
+      @media screen and (max-width:$mobile-med) {
         margin-top: 20px;
       }
 
       .view-internal-author-information- {
-        @media screen and(max-width:$broken) {
+        @media screen and (max-width:$broken) {
           border-top: solid 1px #333333;
           margin-right: 30px;
           margin-bottom: 20px;
         }
-        @media screen and(max-width:$mobile-med) {
+        @media screen and (max-width:$mobile-med) {
           max-width: 370px;
           min-width: 300px;
           margin-right: 0px;
@@ -526,7 +526,7 @@ body[class*="path-authors"] {
           margin-bottom: 60px;
           overflow: hidden;
 
-          @media screen and(max-width:$broken) {
+          @media screen and (max-width:$broken) {
             margin: -17px 0 40px 0;
             width: max-content;
             padding: 0 15px 0 0;
@@ -538,7 +538,7 @@ body[class*="path-authors"] {
             color: #000;
           }
 
-          @media screen and(max-width:$tablet-min) {
+          @media screen and (max-width:$tablet-min) {
             margin-bottom: 25px;
             font-size: 20px;
           }
@@ -552,7 +552,7 @@ body[class*="path-authors"] {
             margin-left: 445px;
             top: 50%;
 
-            @media screen and(max-width:$broken) {
+            @media screen and (max-width:$broken) {
               display: none;
             }
           }

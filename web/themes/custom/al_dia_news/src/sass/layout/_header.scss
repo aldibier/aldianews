@@ -240,9 +240,7 @@ body.open-menu {
 
 //------------------menu secondary----------//
 .region-secondary-menu.open-menu {
-  height: auto;
-  min-height: 120px;
-  transition: all 1s cubic-bezier(0.55, 0, 0.1, 1);
+  display: block;
 
   >* {
     transition: all 1s cubic-bezier(0.55, 0, 0.1, 1);
@@ -251,6 +249,9 @@ body.open-menu {
   }
 
   @media (max-width: $tablet) {
+    height: auto;
+    min-height: 120px;
+    transition: all 1s cubic-bezier(0.55, 0, 0.1, 1);
     flex-wrap: wrap;
     margin: 0 auto 7px;
     padding: 70px 0 0px;
@@ -278,15 +279,43 @@ body.open-menu {
   margin: 0 auto;
   position: relative;
   background: $cwhite;
-  height: 0;
+  height: auto;
+  min-height: 120px;
   transition: all 1s cubic-bezier(0.55, 0, 0.1, 1);
 
-  >* {
+  /* >* {
     //transition: all 1s cubic-bezier(0.55, 0, 0.1, 1);
     opacity: 0;
     height: 0;
     overflow: hidden;
     transition: none;
+  } */
+
+  >* {
+    transition: all 1s cubic-bezier(0.55, 0, 0.1, 1);
+    opacity: 1;
+    height: initial;
+  }
+
+  @media (max-width: $tablet) {
+    display: none;
+    flex-wrap: wrap;
+    margin: 0 auto 7px;
+    padding: 70px 0 0px;
+
+    &:after {
+      position: absolute;
+      top: 62px;
+      width: calc(100vw - 70px);
+      max-width: 100%;
+      min-width: 250px;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      height: 1px;
+      content: "";
+      background: $cgrey4;
+    }
   }
 
   &:before {
@@ -328,9 +357,9 @@ body.open-menu {
   #block-al-dia-news-main-menu {
     display: flex;
     align-items: center;
+    justify-content: center;
     width: 100%;
     z-index: 2;
-    max-width: 1030px;
 
     @media (max-width: $tablet) {
       justify-content: center;
@@ -592,7 +621,7 @@ body.open-menu {
 #block-blockpreheader {
   min-width: 20px;
   min-height: 20px;
-  display: block;
+  display: none;
   height: 20px;
   margin: auto 10px auto 13px;
   position: relative;
@@ -801,6 +830,7 @@ body.open-menu {
     //margin: 20px 35px 7px 0;
     margin: auto 35px auto 0;
     cursor: pointer;
+    display: none;
 
     &:before,
     &:after {
@@ -857,6 +887,10 @@ body.open-menu {
       &:lang(es)::after {
         content: "Menú";
       }
+    }
+
+    @media (max-width: $tablet) {
+      display: block;
     }
   }
 
