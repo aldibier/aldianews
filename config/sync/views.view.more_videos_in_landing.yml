@@ -165,8 +165,8 @@ display:
           wrapper: div
           legend: ''
           classes: container-wrapper
-          collapsible: 1
-          collapsed: 0
+          collapsible: true
+          collapsed: false
         field_image:
           id: field_image
           table: node__field_image
@@ -889,7 +889,7 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          inherit_contextual_filters: 0
+          inherit_contextual_filters: false
       filter_groups:
         operator: AND
         groups:
@@ -1067,8 +1067,8 @@ display:
           wrapper: div
           legend: ''
           classes: container-wrapper
-          collapsible: 1
-          collapsed: 0
+          collapsible: true
+          collapsed: false
         field_image:
           id: field_image
           table: node__field_image
@@ -1565,8 +1565,8 @@ display:
           wrapper: div
           legend: ''
           classes: 'modal-video  modal-video-landing'
-          collapsible: 1
-          collapsed: 0
+          collapsible: true
+          collapsed: false
         nothing_1:
           id: nothing_1
           table: views
@@ -1902,7 +1902,7 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          inherit_contextual_filters: 0
+          inherit_contextual_filters: false
         field_type_of_content_target_id:
           id: field_type_of_content_target_id
           table: node__field_type_of_content
