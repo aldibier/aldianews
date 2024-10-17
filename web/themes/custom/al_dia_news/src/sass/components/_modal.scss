@@ -41,7 +41,7 @@
   max-width: none !important;
 }
 
-.ui-widget.ui-corner-all:not(button) {
+.ui-widget.account-modal:not(button) {
   width: 100% !important;
   border: none;
   overflow: auto;
@@ -296,10 +296,10 @@
 }
 
 //------ specific styles ------//
-.ui-widget.account-modal--login.ui-corner-all:not(button),
-.ui-widget.account-modal--password.ui-corner-all:not(button),
-.ui-widget.account-modal--register.ui-corner-all:not(button),
-.ui-widget.edit-info-user.ui-corner-all:not(button),
+.ui-widget.account-modal--login.account-modal:not(button),
+.ui-widget.account-modal--password.account-modal:not(button),
+.ui-widget.account-modal--register.account-modal:not(button),
+.ui-widget.edit-info-user.account-modal:not(button),
 .popup-class-user-information.ui-widget.ui-corner-all:not(button),
 .popup-cancel-account.ui-widget.ui-corner-all:not(button),
 div.popup-login.ui-widget.ui-corner-all:not(button) {
@@ -318,7 +318,7 @@ div.popup-login.ui-widget.ui-corner-all:not(button) {
 }
 
 //------ modal login ------//
-.ui-widget.account-modal--login.ui-corner-all:not(button) {
+.ui-widget.account-modal--login.account-modal:not(button) {
   padding-bottom: 65px;
 
   @media screen and (max-width: $tablet) {
@@ -364,7 +364,7 @@ div.popup-login.ui-widget.ui-corner-all:not(button) {
 }
 
 //------ modal register ------//
-.ui-widget.account-modal--register.ui-corner-all:not(button) {
+.ui-widget.account-modal--register.account-modal:not(button) {
   padding-bottom: 49px;
 
   @media screen and (max-width: $tablet) {
