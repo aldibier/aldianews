@@ -205,8 +205,12 @@ content:
     weight: 4
     region: content
     settings:
-      media_types: {  }
-    third_party_settings: {  }
+      media_types:
+        - hosted_video
+        - remote_video
+    third_party_settings:
+      field_formatter_class:
+        class: ''
   field_my_content_has_a_main_vide:
     type: boolean_checkbox
     weight: 30

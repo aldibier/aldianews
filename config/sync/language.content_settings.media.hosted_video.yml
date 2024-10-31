@@ -4,8 +4,13 @@ status: true
 dependencies:
   config:
     - media.type.hosted_video
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
 id: media.hosted_video
 target_entity_type_id: media
 target_bundle: hosted_video
 default_langcode: site_default
-language_alterable: false
+language_alterable: true
