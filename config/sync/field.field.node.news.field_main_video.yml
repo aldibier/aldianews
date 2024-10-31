@@ -1,0 +1,31 @@
+uuid: 5bb6a8b8-e9c9-4821-abc3-8e3a4045978c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_main_video
+    - media.type.hosted_video
+    - media.type.remote_video
+    - node.type.news
+id: node.news.field_main_video
+field_name: field_main_video
+entity_type: node
+bundle: news
+label: 'Main Video'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      hosted_video: hosted_video
+      remote_video: remote_video
+    sort:
+      field: publish_on
+      direction: DESC
+    auto_create: true
+    auto_create_bundle: hosted_video
+field_type: entity_reference

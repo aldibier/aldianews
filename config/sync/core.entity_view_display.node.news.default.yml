@@ -14,6 +14,7 @@ dependencies:
     - field.field.node.news.field_high_impact_news
     - field.field.node.news.field_image
     - field.field.node.news.field_internal_image
+    - field.field.node.news.field_main_video
     - field.field.node.news.field_my_content_has_a_main_vide
     - field.field.node.news.field_new_short_title
     - field.field.node.news.field_news
@@ -675,6 +676,23 @@ third_party_settings:
               items_per_page: none
             weight: 2
             additional: {  }
+          f4f0a292-54c6-4a50-9ade-9652bc81c8ac:
+            uuid: f4f0a292-54c6-4a50-9ade-9652bc81c8ac
+            region: content
+            configuration:
+              id: 'field_block:node:news:field_main_video'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_entity_view
+                label: above
+                settings:
+                  view_mode: default
+                  link: false
+                third_party_settings: {  }
+            weight: 19
+            additional: {  }
         third_party_settings: {  }
 id: node.news.default
 targetEntityType: node
@@ -774,6 +792,15 @@ content:
       svg_render_as_image: true
     third_party_settings: {  }
     weight: 17
+    region: content
+  field_main_video:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 23
     region: content
   field_my_content_has_a_main_vide:
     type: boolean
