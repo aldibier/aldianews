@@ -7,6 +7,7 @@ dependencies:
     - media.type.hosted_video
   module:
     - cloudflare_stream
+    - field_formatter_class
     - path
 _core:
   default_config_hash: hBA4ID42wX8OjJ2acil9Xr8L8lOrM5bL_u1PdjmMiPU
@@ -26,8 +27,10 @@ content:
     weight: 1
     region: content
     settings:
-      progress_indicator: throbber
-    third_party_settings: {  }
+      progress_indicator: bar
+    third_party_settings:
+      field_formatter_class:
+        class: ''
   langcode:
     type: language_select
     weight: 2

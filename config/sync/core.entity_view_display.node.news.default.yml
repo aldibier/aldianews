@@ -280,28 +280,6 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 4
             additional: {  }
-          311709d2-2980-4173-9300-0751f6fac023:
-            uuid: 311709d2-2980-4173-9300-0751f6fac023
-            region: one_content
-            configuration:
-              id: 'field_block:node:news:field_video'
-              label: Video
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: video_embed_field_video
-                label: hidden
-                settings:
-                  autoplay: true
-                  responsive: true
-                  width: 854
-                  height: 480
-                third_party_settings: {  }
-            weight: -10
-            additional: {  }
           37a47b7f-6652-4258-9056-e0fb1a467e2d:
             uuid: 37a47b7f-6652-4258-9056-e0fb1a467e2d
             region: content
@@ -692,6 +670,27 @@ third_party_settings:
                   link: false
                 third_party_settings: {  }
             weight: 19
+            additional: {  }
+          62ee800c-dfc7-48c0-bcdf-b0089c0da8a9:
+            uuid: 62ee800c-dfc7-48c0-bcdf-b0089c0da8a9
+            region: one_content
+            configuration:
+              id: 'field_block:node:news:field_main_video'
+              label: 'Main Video'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_entity_view
+                label: hidden
+                settings:
+                  view_mode: default
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: -4
             additional: {  }
         third_party_settings: {  }
 id: node.news.default
