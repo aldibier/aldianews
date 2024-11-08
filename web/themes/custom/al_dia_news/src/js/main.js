@@ -249,7 +249,7 @@ const initMain = ($, Drupal) => {
 	const itemsNews = document.querySelectorAll('.view-id-carousel_videos_landing.view-display-id-page_1 .views-row');
 	const allIframes = document.querySelectorAll(".view-id-carousel_videos_landing.view-display-id-page_1  iframe");
 
-	const resetAlliframes = (iframes) => {
+	/* const resetAlliframes = (iframes) => {
 		iframes.forEach(iframe => {
 			iframe.classList.add("change-src");
 
@@ -263,7 +263,7 @@ const initMain = ($, Drupal) => {
 			iframe.src = iframe.src;
 			setTimeout(() => iframe.classList.remove("change-src"), 800);
 		});
-	};
+	}; */
 
 	const removeActiveElements = () => {
 		const list = document.querySelectorAll('.block-views-blockcarousel-videos-landing-block-2 .views-row');
@@ -291,7 +291,7 @@ const initMain = ($, Drupal) => {
 
 				if (nid === activeNid) return;
 
-				resetAlliframes(allIframes);
+				/* resetAlliframes(allIframes); */
 				removeActiveElements();
 
 				target.classList.add('active');

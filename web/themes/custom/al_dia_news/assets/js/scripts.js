@@ -1357,21 +1357,21 @@ var initMain = function initMain($, Drupal) {
   var itemsCarousel = document.querySelectorAll('.block-views-blockcarousel-videos-landing-block-2 .views-row');
   var itemsNews = document.querySelectorAll('.view-id-carousel_videos_landing.view-display-id-page_1 .views-row');
   var allIframes = document.querySelectorAll(".view-id-carousel_videos_landing.view-display-id-page_1  iframe");
-  var resetAlliframes = function resetAlliframes(iframes) {
-    iframes.forEach(function (iframe) {
-      iframe.classList.add("change-src");
-      if (iframe.src.indexOf('?') > 0) {
-        var srcEdit = iframe.src.split('?');
-        iframe.src = "".concat(srcEdit[0], "?start=0&rel=0");
-      } else {
-        iframe.src = iframe.src;
-      }
-      iframe.src = iframe.src;
-      setTimeout(function () {
-        return iframe.classList.remove("change-src");
-      }, 800);
-    });
-  };
+
+  /* const resetAlliframes = (iframes) => {
+  	iframes.forEach(iframe => {
+  		iframe.classList.add("change-src");
+  			if (iframe.src.indexOf('?') > 0) {
+  			const srcEdit = iframe.src.split('?');
+  			iframe.src = `${srcEdit[0]}?start=0&rel=0`;
+  		} else {
+  			iframe.src = iframe.src;
+  		}
+  			iframe.src = iframe.src;
+  		setTimeout(() => iframe.classList.remove("change-src"), 800);
+  	});
+  }; */
+
   var removeActiveElements = function removeActiveElements() {
     var list = document.querySelectorAll('.block-views-blockcarousel-videos-landing-block-2 .views-row');
     list.forEach(function (item) {
@@ -1393,7 +1393,8 @@ var initMain = function initMain($, Drupal) {
         var hasActive = target.parentElement.querySelector('.active');
         var activeNid = !!hasActive ? hasActive.dataset.nid : false;
         if (nid === activeNid) return;
-        resetAlliframes(allIframes);
+
+        /* resetAlliframes(allIframes); */
         removeActiveElements();
         target.classList.add('active');
         toggleVideo(nid, itemsNews);
@@ -2038,7 +2039,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-(function ($, Drupal) {
+(function ($, Drupal, once) {
   // Selection share
   var sharer = new _assets_libraries_selection_sharer_selection_sharer_js__WEBPACK_IMPORTED_MODULE_1___default.a();
   sharer.setElements("p,h1,h2,h3,blockquote,em,strong,a:not(.selectionSharer a)");
@@ -2492,7 +2493,7 @@ __webpack_require__.r(__webpack_exports__);
     }
   };
   Drupal.behaviors.form_checkbox = {
-    attach: function attach(context, settings) {
+    attach: function attach(context, settings, once) {
       $(function () {
         //js para recargar
         Array.from(document.querySelectorAll(".button-preload")).map(function (e) {
@@ -2533,9 +2534,8 @@ __webpack_require__.r(__webpack_exports__);
         }
 
         // Pone clase activa cuando el radio está seleccionado
-        $("." + currentClass, context).once("js-form-fake-checkbox").click(function () {
-          var context = $(this);
-          context.toggleClass("active-check");
+        $("." + currentClass).off("click").on("click", function () {
+          $(this).toggleClass("active-check");
         });
 
         /// js para esrilos de boton de eliminar archivo
@@ -2673,7 +2673,7 @@ __webpack_require__.r(__webpack_exports__);
       }, 100);
     }
   };
-})(jQuery, Drupal);
+})(jQuery, Drupal, once);
 
 /***/ }),
 
@@ -2903,6 +2903,7 @@ var initSlick = function initSlick($, Drupal) {
     infinite: true,
     slidesToShow: 5,
     slidesToScroll: 1,
+    autoplay: false,
     responsive: [{
       breakpoint: 1024,
       settings: {

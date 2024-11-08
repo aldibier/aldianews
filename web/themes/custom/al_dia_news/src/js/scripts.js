@@ -7,7 +7,7 @@ import replaceToken from "./modules/replaceToken";
 import { validateFormSponsorship, unitedStateFirst } from './modules/state_and_city';
 import { formApplyModified } from './modules/fixedCloseWebforms';
 
-(function ($, Drupal) {
+(function ($, Drupal, once) {
     // Selection share
 	const sharer = new SelectionSharer();
 	sharer.setElements(
@@ -665,7 +665,7 @@ import { formApplyModified } from './modules/fixedCloseWebforms';
 	}
 
 	Drupal.behaviors.form_checkbox = {
-		attach: function (context, settings) {
+		attach: function (context, settings, once) {
 			$(function () {
 				//js para recargar
 				Array.from(document.querySelectorAll(".button-preload")).map(function (
@@ -714,12 +714,9 @@ import { formApplyModified } from './modules/fixedCloseWebforms';
 				}
 
 				// Pone clase activa cuando el radio está seleccionado
-				$("." + currentClass, context)
-					.once("js-form-fake-checkbox")
-					.click(function () {
-						var context = $(this);
-						context.toggleClass("active-check");
-					});
+				$("." + currentClass).off("click").on("click", function () {
+					$(this).toggleClass("active-check");
+				  });
 
 				/// js para esrilos de boton de eliminar archivo
 				var check_number = document.querySelectorAll(
@@ -921,4 +918,4 @@ import { formApplyModified } from './modules/fixedCloseWebforms';
 		}
 	}
 
-})(jQuery, Drupal);
+})(jQuery, Drupal, once);

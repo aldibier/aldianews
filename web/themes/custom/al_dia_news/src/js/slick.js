@@ -160,6 +160,7 @@ const initSlick = ($, Drupal) => {
 		infinite: true,
 		slidesToShow: 5,
 		slidesToScroll: 1,
+		autoplay: false,
 		responsive: [
 			{
 				breakpoint: 1024,
