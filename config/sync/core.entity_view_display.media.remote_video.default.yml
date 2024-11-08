@@ -6,6 +6,8 @@ dependencies:
     - field.field.media.remote_video.field_media_oembed_video
     - media.type.remote_video
   module:
+    - ds
+    - field_formatter_class
     - media
 _core:
   default_config_hash: gUaDZKMQD3lmLKWPn727X3JHVdKJ525g4EJCCcDVAqk
@@ -21,8 +23,17 @@ content:
       max_width: 0
       max_height: 0
       loading:
-        attribute: eager
-    third_party_settings: {  }
+        attribute: lazy
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
     weight: 0
     region: content
 hidden:

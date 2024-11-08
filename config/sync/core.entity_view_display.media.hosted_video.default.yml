@@ -7,6 +7,8 @@ dependencies:
     - media.type.hosted_video
   module:
     - cloudflare_stream
+    - ds
+    - field_formatter_class
 _core:
   default_config_hash: tcumsSN5ajRaZ6X4oB3-tmuyApPVmyzB06R8gB80gec
 id: media.hosted_video.default
@@ -16,17 +18,27 @@ mode: default
 content:
   field_media_hosted_video:
     type: cloudflarevideo_default
-    weight: 0
-    region: content
     label: hidden
     settings:
       controls: true
-      autoplay: true
-      loop: false
       muted: false
-      width: '854'
-      height: '480'
-    third_party_settings: {  }
+      autoplay: false
+      loop: false
+      dimensions:
+        width: ''
+        height: ''
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    weight: 0
+    region: content
 hidden:
   addtoany: true
   created: true

@@ -1123,7 +1123,9 @@ display:
           type: lazy_responsive_image
           settings:
             responsive_image_style: next_two_image_responsive
-            image_link: ''
+            image_loading:
+              attribute: lazy
+            image_link: content
           group_column: ''
           group_columns: {  }
           group_rows: true
