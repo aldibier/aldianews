@@ -326,7 +326,7 @@
   }
 
   .field--name-field-media-oembed-video {
-    min-height: 500px;
+    min-height: 386px;
     position: relative;
     
     iframe {
@@ -637,6 +637,15 @@
       margin-right: 0px;
       margin-bottom: 25px;
       width: 100%;
+    }
+
+    .views-field-field-main-video {
+      margin-right: 0;
+      width: 100%;
+
+      stream {
+        width: unset !important;
+      }
     }
 
     .views-field-nothing {

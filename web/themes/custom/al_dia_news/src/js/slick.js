@@ -181,6 +181,26 @@ const initSlick = ($, Drupal) => {
 		]
 	});
 
+	/* // Función para detener todos los videos
+	function stopAllVideos() {
+			document.querySelectorAll('.block-views-blockcarousel-videos-landing-block-2 .view-id-carousel_videos_landing .view-content iframe').forEach(function(iframe) {
+			const src = iframe.src;
+			iframe.src = '';   // Elimina el src para detener el video
+			iframe.src = src;  // Restaura el src para permitir la reproducción nuevamente
+		});
+	}
+
+	// Agrega evento de clic en cada elemento del slider
+	$('.block-views-blockcarousel-videos-landing-block-2 .view-id-carousel_videos_landing .view-content').on('click', '.slick-slide', function(event) {
+		stopAllVideos(); // Detiene los videos antes de que se reproduzca uno nuevo
+	
+		// Activa el video en el slide actual (si es necesario)
+		const clickedIframe = $(this).find('iframe')[0];
+		if (clickedIframe) {
+			clickedIframe.src += ""; // Opcionalmente, puedes dejar el src igual para que esté listo para reproducir
+		}
+	}); */
+
 	//slide about al dia events
 	if ($(".about-al-dia-live-slider").length) {
 		$(".about-al-dia-live-slider ul").slick({
