@@ -2,8 +2,13 @@ uuid: cef95039-a739-4bdb-b0b7-02962f65ac69
 langcode: en
 status: true
 dependencies:
+  config:
+    - views.view.carousel_videos_landing
+    - views.view.more_videos_in_landing
   module:
+    - gamw
     - system
+    - views
 label: 'Videos landing'
 name: videos_landing
 group: 'General pages'
@@ -16,7 +21,7 @@ conditions:
     negate: false
     uuid: 2012412a-fd7d-474b-93b7-bcd8d3d351be
     context_mapping: {  }
-    pages: /videos
+    pages: "/videos\r\n/videos/*"
 reactions:
   blocks:
     id: blocks

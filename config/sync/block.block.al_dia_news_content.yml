@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   module:
+    - block_class
     - system
   theme:
     - al_dia_news
@@ -23,4 +24,4 @@ visibility:
   request_path:
     id: request_path
     negate: true
-    pages: "/jobs/employer\r\n/about-al-dia-live\r\n/about-al-dia-live/al-dia-live\r\n/about-al-dia-live/al-dia-live/past-events\r\n/advertising\r\n/jobs/job-seeker\r\n/jobs\r\n/more-covers\r\n/podcast\r\n/videos\r\n/authors"
+    pages: "/jobs/employer\r\n/about-al-dia-live\r\n/about-al-dia-live/al-dia-live\r\n/about-al-dia-live/al-dia-live/past-events\r\n/advertising\r\n/jobs/job-seeker\r\n/jobs\r\n/more-covers\r\n/podcast\r\n/videos\r\n/videos/*\r\n/authors"
