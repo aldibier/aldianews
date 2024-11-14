@@ -1354,82 +1354,58 @@ var initMain = function initMain($, Drupal) {
   }
 
   //// js para slider de video en landing de video
-  var itemsCarousel = document.querySelectorAll('.block-views-blockcarousel-videos-landing-block-2 .views-row');
-  var itemsNews = document.querySelectorAll('.view-id-carousel_videos_landing.view-display-id-page_1 .views-row');
-  var allIframes = document.querySelectorAll(".view-id-carousel_videos_landing.view-display-id-page_1 .views-row");
-  var resetAlliframes = function resetAlliframes(iframes, nid) {
-    console.log(iframes);
-    iframes.forEach(function (iframe) {
-      var srcIframe = iframe.querySelector('iframe');
-      if (nid != iframe.dataset.nid) {
-        var src = srcIframe.src;
-        console.log("src", src);
-        console.log("nid", iframe.dataset.nid);
-        console.log("iframe", srcIframe);
-        console.log("no iguales");
-        srcIframe.setAttribute('src', '');
-        srcIframe.setAttribute('src', src);
-        /* srcIframe += ""; */
-        /* srcIframe.src = '';   // Elimina el src para detener el video
-        srcIframe.src = src; */
-      }
-      /* const src = iframe.src;
-      console.log("1", src) */
-      /* if (iframe.src.indexOf('?') > 0) {
-      	const srcEdit = iframe.src.split('?');
-      	iframe.src = `${srcEdit[0]}?start=0&rel=0`;
-      } else {
-      	iframe.src = iframe.src;
-      } */
+  /* const itemsCarousel = document.querySelectorAll('.block-views-blockcarousel-videos-landing-block-2 .views-row');
+  const itemsNews = document.querySelectorAll('.view-id-carousel_videos_landing.view-display-id-page_1 .views-row');
+  const allIframes = document.querySelectorAll(".view-id-carousel_videos_landing.view-display-id-page_1 .views-row"); */
 
-      /* iframe.src = '';   // Elimina el src para detener el video
-      console.log("2", iframe.src)
-      /* iframe.src = src;  // Restaura el src para permitir la reproducción nuevamente */
-      /* console.log("3", iframe.src) */
-      /* setTimeout(() => iframe.classList.remove("change-src"), 800); */
-    });
-  };
-  var removeActiveElements = function removeActiveElements() {
-    var list = document.querySelectorAll('.block-views-blockcarousel-videos-landing-block-2 .views-row');
-    list.forEach(function (item) {
-      if (item.classList.contains('active')) item.classList.remove('active');
-    });
-  };
-  var toggleVideo = function toggleVideo(nid, list) {
-    list.forEach(function (item) {
-      var videoNid = item.dataset.nid;
-      if (nid != videoNid) item.classList.remove('active');
-      if (nid == videoNid) item.classList.add('active');
-    });
-  };
+  /* const resetAlliframes = (iframes, nid) => {
+  	console.log(iframes)
+  	iframes.forEach(iframe => {
+  		const srcIframe = iframe.querySelector('iframe');
+  		
+  			if (nid != iframe.dataset.nid) {
+  			const src = srcIframe.src;
+  			srcIframe.setAttribute('src', '');
+  			srcIframe.setAttribute('src', src);
+  		}
+  		
+  	});
+  }; */
+
+  /* const removeActiveElements = () => {
+  	const list = document.querySelectorAll('.block-views-blockcarousel-videos-landing-block-2 .views-row');
+  		list.forEach(item => {
+  		if (item.classList.contains('active')) item.classList.remove('active');
+  	})
+  	}
+  	const toggleVideo = (nid, list) => {
+  	list.forEach(item => {
+  		let videoNid = item.dataset.nid;
+  		if (nid != videoNid) item.classList.remove('active');
+  		if (nid == videoNid) item.classList.add('active');
+  	})
+  } */
 
   // Agrega evento de clic en cada elemento del slider
 
   if (document.body.classList.contains('path-videos')) {
     document.body.addEventListener('click', function (event) {
       var target = event.target.closest('.slick-slide');
+      /*  */
       if (target) {
-        console.log("target:", target);
-        var nid = target.dataset.nid;
-        console.log("nid", nid);
-        var hasActive = target.parentElement.querySelector('.active');
-        var activeNid = hasActive ? hasActive.dataset.nid : null;
+        var href = target.querySelector('a');
+        if (href) window.location.href = href + "#block-views-block-carousel-videos-landing-block-1";
+
+        /* const nid = target.dataset.nid;
+        const hasActive = target.parentElement.querySelector('.active');
+        const activeNid = hasActive ? hasActive.dataset.nid : null; */
+
+        /* 
         if (nid === activeNid) return; // Evita la acción si ya está activo
-
-        removeActiveElements(); // Remueve las clases activas
-
-        target.classList.add('active'); // Agrega la clase activa al nuevo slide
+        				removeActiveElements(); // Remueve las clases activas
+        				target.classList.add('active'); // Agrega la clase activa al nuevo slide
         toggleVideo(nid, itemsNews); // Cambia al video correspondiente
-
-        var clickedIframe = document.querySelector("iframe");
-        resetAlliframes(allIframes, nid); // Detiene los videos antes de reproducir uno nuevo
-
-        // Activa el video en el slide actual (si existe un iframe)
-
-        console.log("clickedIframe", clickedIframe);
-        if (clickedIframe) {
-          clickedIframe.src += ""; // Opcionalmente, mantiene el src para estar listo para reproducir
-        }
+        */
       }
     });
   }
@@ -2952,25 +2928,6 @@ var initSlick = function initSlick($, Drupal) {
       }
     }]
   });
-
-  /* // Función para detener todos los videos
-  function stopAllVideos() {
-  		document.querySelectorAll('.block-views-blockcarousel-videos-landing-block-2 .view-id-carousel_videos_landing .view-content iframe').forEach(function(iframe) {
-  		const src = iframe.src;
-  		iframe.src = '';   // Elimina el src para detener el video
-  		iframe.src = src;  // Restaura el src para permitir la reproducción nuevamente
-  	});
-  }
-  	// Agrega evento de clic en cada elemento del slider
-  $('.block-views-blockcarousel-videos-landing-block-2 .view-id-carousel_videos_landing .view-content').on('click', '.slick-slide', function(event) {
-  	stopAllVideos(); // Detiene los videos antes de que se reproduzca uno nuevo
-  
-  	// Activa el video en el slide actual (si es necesario)
-  	const clickedIframe = $(this).find('iframe')[0];
-  	if (clickedIframe) {
-  		clickedIframe.src += ""; // Opcionalmente, puedes dejar el src igual para que esté listo para reproducir
-  	}
-  }); */
 
   //slide about al dia events
   if ($(".about-al-dia-live-slider").length) {
