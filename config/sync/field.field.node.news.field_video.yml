@@ -11,8 +11,8 @@ id: node.news.field_video
 field_name: field_video
 entity_type: node
 bundle: news
-label: Video
-description: 'Paste a Video URL from Youtube'
+label: 'Video (Deprecated)'
+description: "Please DON'T use this video field, instead use Main Video Field, this field will be removed soon."
 required: false
 translatable: false
 default_value: {  }
@@ -20,6 +20,6 @@ default_value_callback: ''
 settings:
   allowed_providers:
     youtube: youtube
-    vimeo: '0'
     youtube_playlist: '0'
+    vimeo: '0'
 field_type: video_embed_field

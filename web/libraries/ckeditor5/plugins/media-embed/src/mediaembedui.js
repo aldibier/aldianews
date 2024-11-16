@@ -1,14 +1,14 @@
 /**
- * @license Copyright (c) 2003-2023, CKSource Holding sp. z o.o. All rights reserved.
+ * @license Copyright (c) 2003-2024, CKSource Holding sp. z o.o. All rights reserved.
  * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
  */
 /**
  * @module media-embed/mediaembedui
  */
-import { Plugin } from 'ckeditor5/src/core';
-import { createDropdown, CssTransitionDisablerMixin } from 'ckeditor5/src/ui';
-import MediaFormView from './ui/mediaformview';
-import MediaEmbedEditing from './mediaembedediting';
+import { Plugin } from 'ckeditor5/src/core.js';
+import { createDropdown, CssTransitionDisablerMixin } from 'ckeditor5/src/ui.js';
+import MediaFormView from './ui/mediaformview.js';
+import MediaEmbedEditing from './mediaembedediting.js';
 import mediaIcon from '../theme/icons/media.svg';
 /**
  * The media embed UI plugin.
