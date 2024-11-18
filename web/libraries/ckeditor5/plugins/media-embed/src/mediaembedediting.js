@@ -1,16 +1,16 @@
 /**
- * @license Copyright (c) 2003-2023, CKSource Holding sp. z o.o. All rights reserved.
+ * @license Copyright (c) 2003-2024, CKSource Holding sp. z o.o. All rights reserved.
  * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
  */
 /**
  * @module media-embed/mediaembedediting
  */
-import { Plugin } from 'ckeditor5/src/core';
-import { first } from 'ckeditor5/src/utils';
-import { modelToViewUrlAttributeConverter } from './converters';
-import MediaEmbedCommand from './mediaembedcommand';
-import MediaRegistry from './mediaregistry';
-import { toMediaWidget, createMediaFigureElement } from './utils';
+import { Plugin } from 'ckeditor5/src/core.js';
+import { first } from 'ckeditor5/src/utils.js';
+import { modelToViewUrlAttributeConverter } from './converters.js';
+import MediaEmbedCommand from './mediaembedcommand.js';
+import MediaRegistry from './mediaregistry.js';
+import { toMediaWidget, createMediaFigureElement } from './utils.js';
 import '../theme/mediaembedediting.css';
 /**
  * The media embed editing feature.
