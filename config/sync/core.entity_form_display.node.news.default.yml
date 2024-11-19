@@ -52,14 +52,16 @@ third_party_settings:
         - field_main_video
         - field_show_in_video_landing_page
         - field_my_content_has_a_main_vide
-      label: 'Image or video'
+      label: Multimedia
       region: content
       parent_name: ''
       weight: 8
       format_type: fieldset
       format_settings:
         classes: ''
+        show_empty_fields: false
         id: ''
+        label_as_html: false
         description: ''
         required_fields: true
     group_only_for_podcast:
