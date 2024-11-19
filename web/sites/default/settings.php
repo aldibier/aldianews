@@ -817,6 +817,10 @@ if (getenv('LANDO') === 'ON') {
 
 $settings['config_sync_directory'] = '../config/sync/';
 
+$databases['default']['default'] ['init_commands'] = array(
+  'sql_mode' => "SET sql_mode = ''",
+  );  
+
 if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
   include $app_root . '/' . $site_path . '/settings.local.php';
 }
@@ -825,3 +829,4 @@ $ddev_settings = dirname(__FILE__) . '/settings.ddev.php';
 if (getenv('IS_DDEV_PROJECT') == 'true' && is_readable($ddev_settings)) {
   require $ddev_settings;
 }
+
