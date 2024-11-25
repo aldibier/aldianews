@@ -2,8 +2,12 @@ uuid: 374e205c-07aa-4bfb-b67c-c474dc7523d3
 langcode: en
 status: true
 dependencies:
+  config:
+    - views.view.last_category_podcast
   module:
+    - gamw
     - system
+    - views
 label: 'Podcast landing'
 name: podcast_landing
 group: 'General pages'
@@ -36,22 +40,6 @@ reactions:
         unique: 0
         context_id: podcast_landing
         context_mapping: {  }
-      1381eeb2-fc14-4787-a37d-76e4a53a3291:
-        uuid: 1381eeb2-fc14-4787-a37d-76e4a53a3291
-        id: 'views_block:last_category_podcast-block_2'
-        label: ''
-        provider: views
-        label_display: '0'
-        region: content
-        weight: '-1'
-        custom_id: views_block_last_category_podcast_block_2
-        theme: al_dia_news
-        css_class: ''
-        unique: 0
-        context_id: podcast_landing
-        context_mapping: {  }
-        views_label: ''
-        items_per_page: none
       ef29cf1c-cfba-4585-bc8a-536c62521466:
         uuid: ef29cf1c-cfba-4585-bc8a-536c62521466
         id: gamw

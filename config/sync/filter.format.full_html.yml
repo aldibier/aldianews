@@ -3,17 +3,32 @@ langcode: en
 status: true
 dependencies:
   module:
+    - blazy
     - ckeditor_media_embed
     - editor
     - entity_embed
     - media
-    - video_embed_wysiwyg
 _core:
   default_config_hash: WNeK5FbcY8pXgEpbD_KgRzlF1-5PL3BJXwqaBctPTqw
 name: 'Full HTML'
 format: full_html
 weight: -10
 filters:
+  blazy_filter:
+    id: blazy_filter
+    provider: blazy
+    status: false
+    weight: 3
+    settings:
+      media_switch: ''
+      hybrid_style: ''
+      box_style: ''
+      box_media_style: ''
+      box_caption: ''
+      filter_tags:
+        img: img
+        iframe: iframe
+      use_data_uri: '0'
   editor_file_reference:
     id: editor_file_reference
     provider: editor
@@ -50,7 +65,7 @@ filters:
     status: false
     weight: -10
     settings:
-      allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <s> <sup> <sub> <img src alt data-entity-type data-entity-uuid data-align data-caption> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <hr> <h1> <pre> <u> <drupal-media data-entity-type data-entity-uuid data-view-mode data-align data-caption alt title> <p class="caption editor-notes question"> <drupal-entity data-entity-type data-entity-uuid data-entity-embed-display data-entity-embed-display-settings data-align data-caption data-embed-button data-langcode alt title>'
+      allowed_html: '<p class="caption editor-notes question">'
       filter_html_help: true
       filter_html_nofollow: false
   filter_htmlcorrector:
@@ -78,9 +93,3 @@ filters:
         hosted_video: hosted_video
         image: image
         remote_video: remote_video
-  video_embed_wysiwyg:
-    id: video_embed_wysiwyg
-    provider: video_embed_wysiwyg
-    status: true
-    weight: 0
-    settings: {  }

@@ -2028,7 +2028,20 @@ display:
         footer: false
       use_ajax: false
       display_description: ''
-      header: {  }
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: false
+          content:
+            value: '<h1>PODCASTS</h1>'
+            format: full_html
+          tokenize: false
       footer: {  }
       display_extenders:
         ajax_history: {  }
@@ -3396,7 +3409,7 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          inherit_contextual_filters: 0
+          inherit_contextual_filters: false
       filter_groups:
         operator: AND
         groups:
