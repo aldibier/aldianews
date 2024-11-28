@@ -1,21 +1,19 @@
-uuid: 188a2dec-31b0-4b99-bc5e-a8121ef6da11
+uuid: 735569c8-1daa-4b51-a1d7-e0612e707877
 langcode: en
 status: true
 dependencies:
   config:
     - filter.format.podcast
   module:
-    - ckeditor
+    - ckeditor5
 format: podcast
-editor: ckeditor
+editor: ckeditor5
 settings:
   toolbar:
-    rows:
-      -
-        -
-          name: Tools
-          items:
-            - Source
-  plugins: {  }
+    items:
+      - sourceEditing
+  plugins:
+    ckeditor5_sourceEditing:
+      allowed_tags: {  }
 image_upload:
   status: false
