@@ -1,30 +1,221 @@
-.view-podcast-category-internals,
-.view-last-category-podcast {
-  h1 {
-    max-height: 58px;
-    margin: 0 0 45px;
-    padding-bottom: 10px;
-    border-bottom: 3px solid $corange;
-    font-size: szrem(42);
-    font-family: $Mod-light;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 50px;
-    color: $corange;
+.path-node:not(.page-premium) #main-wrapper #main .content-page-node {
+  display: unset;
+  margin: 0;
+  padding: 0;
 
-    @media screen and (max-width: $tablet) {
-      max-height: 30px;
-      margin: 0 0 20px;
-      padding-bottom: 8px;
-      border-width: 1px;
-      font-size: szrem(20);
-      font-family: $Mod-bold;
-      line-height: 24px;
+  .content-left-pages {
+    margin-bottom: 40px;
+    width: 100%;
+    max-width: unset;
+    padding: 0;
+  }
+
+  .content-right-pages {
+    display: none;
+  }
+ 
+  h1 {
+    @include title-section-line($px38, $ModernoFB-Regular, $corange2);
+    display: flex;
+    align-items: center;
+    z-index: 1;
+    background-color: $cwhite;
+    line-height: 1;
+    margin-bottom: 2em;
+    font-size: 1.675rem;
+
+    &::after {
+      position: unset;
+    }
+
+    .aldia-logo-in-text {
+      z-index: 1;
+      max-width: 155px;
+      margin: 0;
+      text-align: center;
+
+      @media (max-width: $tablet) {
+        top: -1px;
+        max-width: 75px;
+        max-height: 25px;
+      }
+  
+      img {
+        min-width: 145px;
+        max-width: 145px;
+        max-height: 45px;
+  
+        @media (max-width: $tablet) {
+          max-width: 70px;
+          min-width: 70px;
+          min-height: 26px;
+        }
+      }
     }
   }
 }
 
-.path-podcast {
+.view-last-category-podcast {
+  .view-content {
+    .item-podcast {
+      display: flex;
+      justify-content: space-between;
+      column-gap: 64px;
+      margin-bottom: 40px;
+
+      .podcast-category-image img {
+        max-height: 480px;
+        max-width: 640px;
+        width: auto;
+      }
+
+      h4 {
+        a {
+          font-family: $PrNovacond-bold;
+          font-style: normal;
+          font-weight: 800;
+          font-size: 30px;
+          line-height: 22px;
+          color: $cblack;
+          @media screen and (max-width:$broken3) {
+              font-size: 18px;               
+          }
+        }
+      }
+
+      @media (max-width: $tablet) {
+        flex-wrap: wrap;
+      }
+      
+    }
+
+    .item-list {
+      ul li {
+        max-width: 640px;
+        width: 100%;
+      }
+    }
+
+    .view-podcast-episodes {
+      .field-content {
+        font-size: szrem(30);
+        font-family: $PrNovacond-Sbold;
+        font-style: normal;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-decoration: none;
+        line-height: 35px;
+        letter-spacing: 0.741176px;
+        color: $cgrey6;
+
+        @media screen and (max-width: $tablet) {
+          font-size: szrem(18);
+        }
+      }
+    }
+  }
+}
+
+.block-views-blockpodcast-episodes-block-1, .block-views-blockpodcast-category-internals-block-1 {
+  margin-bottom: 2em;
+
+  .view-content {
+    display: flex;
+    column-gap: 30px;
+    flex-wrap: wrap;
+
+    .podcast-category {
+      max-width: 180px;
+    }
+  }
+
+  .views-field-field-new-short-title {
+    font-size: szrem(30);
+    font-family: $PrNovacond-Sbold;
+    font-style: normal;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    line-height: 35px;
+    letter-spacing: 0.741176px;
+    color: $cgrey6;
+  }
+
+  .views-field-name {
+    border: none;
+    font-size: szrem(18);
+    font-family: $PrNovacond-Xbold;
+    font-style: normal;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    line-height: 21px;
+    color: $cblack;
+    word-break: break-word;
+
+    @media screen and (max-width:$broken) {
+      font-size: szrem(30);
+      line-height: 35px;
+    }
+
+    @media (max-width: $tablet) {
+      font-size: 14px;
+      line-height: 17px;
+    }
+  }
+  
+  h2 {
+    @include title-section-line($px38, $ModernoFB-Regular, $corange2);
+    display: flex;
+    align-items: center;
+    z-index: 1;
+    background-color: $cwhite;
+    line-height: 1;
+    margin-bottom: 2em;
+    font-size: 1.675rem;
+
+    &::after {
+      position: unset;
+    }
+
+    .aldia-logo-in-text {
+      z-index: 1;
+      max-width: 155px;
+      margin: 0;
+      text-align: center;
+
+      @media (max-width: $tablet) {
+        top: -1px;
+        max-width: 75px;
+        max-height: 25px;
+      }
+  
+      img {
+        min-width: 145px;
+        max-width: 145px;
+        max-height: 45px;
+  
+        @media (max-width: $tablet) {
+          max-width: 70px;
+          min-width: 70px;
+          min-height: 26px;
+        }
+      }
+    }
+  }
+}
+
+.block-views-blockpodcast-episodes-block-1 {
+  .view-content {
+    flex-wrap: nowrap;
+
+    @media (max-width: $tablet) {
+      flex-wrap: wrap;
+    }
+  }
+}
+
+/* .path-podcast {
   @media screen and (max-width: $broken) {
     .region-content>#block-gamw {
       margin: 0 -15px 30px;
@@ -179,73 +370,10 @@
       //image-rendering: -webkit-optimize-contrast;
     }
   }
-}
+} */
 
-.al-dia-podcast-social-media {
-  padding-top: 45px;
-  border-top: 2px solid $cgrey4;
-  grid-area: social-media;
 
-  @media screen and (max-width: $broken) {
-    padding-top: 30px;
-  }
-
-  @media screen and (max-width: $tablet) {
-    padding-top: 25px;
-    border-width: 1px;
-  }
-
-  ul {
-    display: flex;
-    justify-content: space-evenly;
-    text-align: center;
-
-    li {
-      margin: 0;
-      padding: 0;
-      position: relative;
-    }
-  }
-
-  .views-field-field-icon-platform {
-    margin-bottom: 15px;
-
-    @media screen and (max-width: $tablet) {
-      margin-bottom: 10px;
-    }
-
-    a {
-      display: block;
-      line-height: 0;
-
-      &::after {
-        content: attr(title);
-        display: block;
-        font-size: 0;
-      }
-    }
-
-    img {
-      @media screen and (max-width: $tablet) {
-        width: 30px;
-        height: auto;
-        image-rendering: -webkit-optimize-contrast;
-      }
-    }
-  }
-
-  .views-field-field-platform-name {
-    font-size: szrem(14);
-    font-family: $PrNovacond-reg;
-    font-style: normal;
-    //font-weight: 600;
-    line-height: 25px;
-    letter-spacing: 0.741176px;
-    color: $cgrey3;
-  }
-}
-
-.category-text-mobile {
+/* .category-text-mobile {
   margin-bottom: 5px;
   display: none;
   font-size: szrem(18);
@@ -505,9 +633,9 @@
       line-height: 19px;
     }
   }
-}
+} */
 
-.podcast-item-title {
+/* .podcast-item-title {
   margin-bottom: 10px;
   display: block;
 
@@ -563,8 +691,8 @@
     line-height: 17px;
   }
 }
-
-.podcast-item-podcast-player {
+ */
+/* .podcast-item-podcast-player {
   max-width: 470px;
   max-height: 90px;
 
@@ -580,4 +708,4 @@
     min-width: 290px;
     max-height: 55x;
   }
-}
+} */

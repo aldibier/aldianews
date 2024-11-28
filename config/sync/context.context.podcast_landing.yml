@@ -2,8 +2,14 @@ uuid: 374e205c-07aa-4bfb-b67c-c474dc7523d3
 langcode: en
 status: true
 dependencies:
+  config:
+    - views.view.last_category_podcast
+    - views.view.podcast_category_internals
+    - views.view.podcast_episodes
   module:
+    - gamw
     - system
+    - views
 label: 'Podcast landing'
 name: podcast_landing
 group: 'General pages'
@@ -29,29 +35,13 @@ reactions:
         provider: system
         label_display: '0'
         region: content
-        weight: '0'
+        weight: '-2'
         custom_id: system_main_block
         theme: al_dia_news
         css_class: ''
         unique: 0
         context_id: podcast_landing
         context_mapping: {  }
-      1381eeb2-fc14-4787-a37d-76e4a53a3291:
-        uuid: 1381eeb2-fc14-4787-a37d-76e4a53a3291
-        id: 'views_block:last_category_podcast-block_2'
-        label: ''
-        provider: views
-        label_display: '0'
-        region: content
-        weight: '-1'
-        custom_id: views_block_last_category_podcast_block_2
-        theme: al_dia_news
-        css_class: ''
-        unique: 0
-        context_id: podcast_landing
-        context_mapping: {  }
-        views_label: ''
-        items_per_page: none
       ef29cf1c-cfba-4585-bc8a-536c62521466:
         uuid: ef29cf1c-cfba-4585-bc8a-536c62521466
         id: gamw
@@ -59,7 +49,7 @@ reactions:
         provider: gamw
         label_display: '0'
         region: content
-        weight: '0'
+        weight: '2'
         custom_id: gamw
         theme: al_dia_news
         css_class: 'banner-horizontal ads'
@@ -84,7 +74,7 @@ reactions:
         provider: views
         label_display: '0'
         region: content
-        weight: '0'
+        weight: '-1'
         custom_id: views_block_last_category_podcast_block_4
         theme: al_dia_news
         css_class: ''
@@ -93,6 +83,40 @@ reactions:
         context_mapping: {  }
         views_label: ''
         items_per_page: none
+      9298f31c-8d50-440f-840a-f179be74cd69:
+        uuid: 9298f31c-8d50-440f-840a-f179be74cd69
+        id: 'views_block:podcast_episodes-block_1'
+        label: ''
+        provider: views
+        label_display: visible
+        region: content
+        weight: '0'
+        custom_id: views_block_podcast_episodes_block_1
+        theme: al_dia_news
+        css_class: ''
+        unique: 0
+        context_id: podcast_landing
+        context_mapping: {  }
+        views_label: ''
+        items_per_page: none
+        third_party_settings: {  }
+      450a4216-0514-400f-b722-7071a84ee48c:
+        uuid: 450a4216-0514-400f-b722-7071a84ee48c
+        id: 'views_block:podcast_category_internals-block_1'
+        label: ''
+        provider: views
+        label_display: visible
+        region: content
+        weight: '1'
+        custom_id: views_block_podcast_category_internals_block_1
+        theme: al_dia_news
+        css_class: ''
+        unique: 0
+        context_id: podcast_landing
+        context_mapping: {  }
+        views_label: ''
+        items_per_page: none
+        third_party_settings: {  }
     include_default_blocks: 1
     saved: false
 weight: 0
