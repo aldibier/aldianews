@@ -11,12 +11,16 @@ global:
     assets/libraries/browserclass.js: {}
   dependencies:
     - core/jquery
+    - core/drupal
     - core/drupalSettings
-    - core/once
-    - al_dia_news/slick
-    - al_dia_news/sumoselect
-    - al_dia_news/scrollmagic
 
+video-library:
+  js:
+    assets/js/video.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+        
 scrollmagic:
   version: 2.0.7
   js:

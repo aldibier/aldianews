@@ -3,29 +3,20 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.body
-    - field.storage.node.field_category
-    - field.storage.node.field_podcast_player
     - field.storage.node.field_short_description
     - field.storage.taxonomy_term.field_category_image
     - field.storage.taxonomy_term.field_field_category_image_thumb
     - responsive_image.styles.podcast_category_responsive
-    - taxonomy.vocabulary.categories
     - taxonomy.vocabulary.podcast_category
-  content:
-    - 'taxonomy_term:categories:4443e551-d2a6-4a99-afd7-651218d34a48'
   module:
     - media
     - node
-    - other_view_filter
     - responsive_image
     - svg_image
     - taxonomy
     - text
     - user
     - views_block_area
-    - views_field_view
-    - views_infinite_scroll
 id: last_category_podcast
 label: 'Second category PODCAST'
 module: views
@@ -1130,20 +1121,7 @@ display:
         footer: false
       use_ajax: false
       display_description: ''
-      header:
-        area:
-          id: area
-          table: views
-          field: area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: text
-          empty: false
-          content:
-            value: '<h1>PODCASTS</h1>'
-            format: full_html
-          tokenize: false
+      header: {  }
       footer: {  }
       display_extenders:
         ajax_history: {  }

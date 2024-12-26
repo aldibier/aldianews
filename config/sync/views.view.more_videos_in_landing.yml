@@ -920,7 +920,7 @@ display:
           plugin_id: standard
           required: true
       css_class: news-gallery
-      use_ajax: true
+      use_ajax: false
       header: {  }
       footer: {  }
       display_extenders: {  }
@@ -1755,12 +1755,15 @@ display:
         groups:
           1: AND
       defaults:
+        use_ajax: false
         pager: false
         fields: false
         filters: false
         filter_groups: false
+      use_ajax: true
       display_extenders:
-        ajax_history: {  }
+        ajax_history:
+          enable_history: false
     cache_metadata:
       max-age: -1
       contexts:

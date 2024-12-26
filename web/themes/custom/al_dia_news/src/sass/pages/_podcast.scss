@@ -1,17 +1,16 @@
-.path-node:not(.page-premium) #main-wrapper #main .content-page-node {
+.path-node:is(.path-podcast) #main-wrapper #main .content-page-node {
   display: unset;
   margin: 0;
   padding: 0;
+  max-width: unset;
+  padding: 0;
+  margin: 0;
 
   .content-left-pages {
     margin-bottom: 40px;
     width: 100%;
     max-width: unset;
     padding: 0;
-  }
-
-  .content-right-pages {
-    display: none;
   }
  
   h1 {
