@@ -814,7 +814,7 @@ if (getenv('LANDO') === 'ON') {
   $settings['cache']['bins']['page'] = 'cache.backend.null';
 
 }
-
+$config['system.logging']['error_level'] = 'verbose';
 $settings['config_sync_directory'] = '../config/sync/';
 
 $databases['default']['default'] ['init_commands'] = array(

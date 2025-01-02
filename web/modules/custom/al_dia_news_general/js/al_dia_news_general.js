@@ -4,7 +4,7 @@
 
 
 
-(function (Drupal) {
+(function (Drupal, $) {
 
 
   Drupal.behaviors.aldia_news_advertising = {
@@ -292,4 +292,4 @@
       }
     }
   };
-})(Drupal);
+})(Drupal, jQuery);

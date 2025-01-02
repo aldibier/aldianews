@@ -244,3 +244,10 @@ function al_dia_news_theme_suggestions_alter(array &$suggestions, array $vars, $
     }
   }
 }
+
+function al_dia_news_page_attachments_alter(&$page){
+  $path = $current_path = \Drupal::service('path.current')->getPath();
+  if($path == '/videos') {
+    $page['#attached']['library'][] = 'my-theme/video-library';
+  }
+}

@@ -153,34 +153,6 @@ const initSlick = ($, Drupal) => {
 		]
 	});
 
-	// slide landing videos
-	$(
-		".block-views-blockcarousel-videos-landing-block-2 .view-id-carousel_videos_landing .view-content"
-	).slick({
-		infinite: true,
-		slidesToShow: 5,
-		slidesToScroll: 1,
-		autoplay: false,
-		responsive: [
-			{
-				breakpoint: 1024,
-				settings: {
-					slidesToShow: 4,
-					slidesToScroll: 1
-				}
-			},
-			{
-				breakpoint: 769,
-				settings: {
-					slidesToShow: 1,
-					slidesToScroll: 1,
-					centerMode: true,
-					variableWidth: true
-				}
-			},
-		]
-	});
-
 	//slide about al dia events
 	if ($(".about-al-dia-live-slider").length) {
 		$(".about-al-dia-live-slider ul").slick({

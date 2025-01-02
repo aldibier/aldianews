@@ -1388,28 +1388,6 @@ var initMain = function initMain($, Drupal) {
 
   // Agrega evento de clic en cada elemento del slider
 
-  if (document.body.classList.contains('path-videos')) {
-    document.body.addEventListener('click', function (event) {
-      var target = event.target.closest('.slick-slide');
-      /*  */
-      if (target) {
-        var href = target.querySelector('a');
-        if (href) window.location.href = href + "#block-views-block-carousel-videos-landing-block-1";
-
-        /* const nid = target.dataset.nid;
-        const hasActive = target.parentElement.querySelector('.active');
-        const activeNid = hasActive ? hasActive.dataset.nid : null; */
-
-        /* 
-        if (nid === activeNid) return; // Evita la acción si ya está activo
-        				removeActiveElements(); // Remueve las clases activas
-        				target.classList.add('active'); // Agrega la clase activa al nuevo slide
-        toggleVideo(nid, itemsNews); // Cambia al video correspondiente
-        */
-      }
-    });
-  }
-
   // itemsCarousel.forEach(item => {
   //   item.addEventListener('click', () => {
   //     let nid = item.dataset.nid;
@@ -2902,29 +2880,6 @@ var initSlick = function initSlick($, Drupal) {
       settings: {
         slidesToShow: 2,
         slidesToScroll: 1
-      }
-    }]
-  });
-
-  // slide landing videos
-  $(".block-views-blockcarousel-videos-landing-block-2 .view-id-carousel_videos_landing .view-content").slick({
-    infinite: true,
-    slidesToShow: 5,
-    slidesToScroll: 1,
-    autoplay: false,
-    responsive: [{
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 4,
-        slidesToScroll: 1
-      }
-    }, {
-      breakpoint: 769,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        centerMode: true,
-        variableWidth: true
       }
     }]
   });

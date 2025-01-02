@@ -281,31 +281,6 @@ const initMain = ($, Drupal) => {
 	} */
 
 	// Agrega evento de clic en cada elemento del slider
-
-	if (document.body.classList.contains('path-videos')) {
-		document.body.addEventListener('click', (event) => {
-			const target = event.target.closest('.slick-slide');
-			/*  */
-			if (target) {
-
-				const href = target.querySelector('a')
-				if (href) window.location.href = href+"#block-views-block-carousel-videos-landing-block-1";
-
-				/* const nid = target.dataset.nid;
-				const hasActive = target.parentElement.querySelector('.active');
-				const activeNid = hasActive ? hasActive.dataset.nid : null; */
-
-				/* 
-				if (nid === activeNid) return; // Evita la acción si ya está activo
-			
-				removeActiveElements(); // Remueve las clases activas
-			
-				target.classList.add('active'); // Agrega la clase activa al nuevo slide
-				toggleVideo(nid, itemsNews); // Cambia al video correspondiente
-			 */
-			}
-		}); 
-	}
 	
 	// itemsCarousel.forEach(item => {
 	//   item.addEventListener('click', () => {
