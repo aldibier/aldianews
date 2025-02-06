@@ -1332,20 +1332,7 @@ display:
         filter_groups: false
         header: false
       display_description: ''
-      header:
-        area:
-          id: area
-          table: views
-          field: area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: text
-          empty: true
-          content:
-            value: '<h2 class="breaking_news">BREAKING NEWS</h2>'
-            format: full_html
-          tokenize: false
+      header: {  }
       display_extenders:
         ajax_history: {  }
       block_hide_empty: true
