@@ -19,6 +19,7 @@ dependencies:
     - views.view.more_in_this_section_thought_leaders
     - views.view.thought_leaders_content_authors
     - views.view.thought_leaders_tags
+    - webform.webform.boletines
   module:
     - al_dia_layouts
     - comment
@@ -30,6 +31,7 @@ dependencies:
     - user
     - video_embed_field
     - views
+    - webform
 third_party_settings:
   layout_builder:
     enabled: true
@@ -220,19 +222,6 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 1
             additional: {  }
-          f59e9c96-b29e-43dd-956c-70ecf67e3965:
-            uuid: f59e9c96-b29e-43dd-956c-70ecf67e3965
-            region: one_more
-            configuration:
-              id: 'views_block:more_in_this_section_thought_leaders-block_1'
-              label: ''
-              label_display: visible
-              provider: views
-              context_mapping: {  }
-              views_label: ''
-              items_per_page: none
-            weight: 0
-            additional: {  }
           ee4777e9-5cde-40fe-9d59-6e655aa670dc:
             uuid: ee4777e9-5cde-40fe-9d59-6e655aa670dc
             region: two_content
@@ -338,6 +327,34 @@ third_party_settings:
                   field_formatter_class:
                     class: ''
             weight: -4
+            additional: {  }
+          fb77833d-6704-4946-9261-c4aecac09f68:
+            uuid: fb77833d-6704-4946-9261-c4aecac09f68
+            region: one_more
+            configuration:
+              id: webform_block
+              label: Webform
+              label_display: '0'
+              provider: webform
+              context_mapping: {  }
+              webform_id: boletines
+              default_data: ''
+              redirect: false
+              lazy: false
+            weight: 2
+            additional: {  }
+          072f85e4-b7a5-4dc3-8b72-4854edeeb11d:
+            uuid: 072f85e4-b7a5-4dc3-8b72-4854edeeb11d
+            region: one_more
+            configuration:
+              id: 'views_block:more_in_this_section_thought_leaders-block_1'
+              label: ''
+              label_display: visible
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+            weight: 3
             additional: {  }
         third_party_settings: {  }
 id: node.thought_leaders.default
