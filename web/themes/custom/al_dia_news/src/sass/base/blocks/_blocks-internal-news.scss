@@ -64,11 +64,18 @@
   font-weight: bold;
 
   @media screen and (max-width: $tablet) {
-    font-size: szrem(15);
+    font-size: szrem(18);
     line-height: 140%;
   }
 
 }
+
+.node--type-news .block-field-blocknodenewsbody p {
+  @media screen and (max-width: $tablet) {
+    font-size: szrem(18);
+  }
+}
+
 
 .node--type-news,
 .node--type-thought-leaders {
