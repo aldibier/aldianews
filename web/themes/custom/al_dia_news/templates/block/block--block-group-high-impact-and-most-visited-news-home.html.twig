@@ -41,7 +41,6 @@
 {% set view = drupal_view_result('high_impact_news_home', 'block_1')|length %}
 
 {% if view > 0 %}
-	<button class="watch-live-button watch-live-mobile" name="watch-live" type="button">WATCH LIVE</button>
 	<div{{attributes.addClass(classes)}}>
 		{{ title_prefix }}
 		{% if label %}
