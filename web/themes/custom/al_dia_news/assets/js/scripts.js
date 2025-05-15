@@ -2110,10 +2110,12 @@ __webpack_require__.r(__webpack_exports__);
 
     //--------- menu--------------------//
     $(".region-header #block-blockheader").click(function () {
-      if ($(".region-secondary-menu").hasClass("open-menu")) {
+      if ($(".region-secondary-menu #block-al-dia-news-main-menu").hasClass("open-menu")) {
+        $(".region-secondary-menu #block-al-dia-news-main-menu").removeClass("open-menu");
         $(".region-secondary-menu").removeClass("open-menu");
         $("body").removeClass("open-menu");
       } else {
+        $(".region-secondary-menu #block-al-dia-news-main-menu").addClass("open-menu");
         $(".region-secondary-menu").addClass("open-menu");
         $("body").addClass("open-menu");
       }
