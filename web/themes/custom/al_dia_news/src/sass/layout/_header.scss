@@ -283,8 +283,8 @@ body .region-secondary-menu div#block-menuuseritem {
   position: relative;
   background: $cwhite;
   max-height: 80px;
-  transition: all 1s cubic-bezier(0.55, 0, 0.1, 1);
  */
+ transition: all 1s cubic-bezier(0.55, 0, 0.1, 1);
 
   /* >* {
     //transition: all 1s cubic-bezier(0.55, 0, 0.1, 1);
@@ -300,29 +300,17 @@ body .region-secondary-menu div#block-menuuseritem {
     height: initial;
   }
 
+
   &.open-menu {
     position: relative;
     height: 380px;
     background: $cwhite;
+    height: 94vh;
+    overflow: scroll;
   }
 
   @media (max-width: $tablet) {
     flex-wrap: wrap;
-    
-    
-    &:after {
-      position: absolute;
-      top: 62px;
-      width: calc(100vw - 70px);
-      max-width: 100%;
-      min-width: 250px;
-      left: 0;
-      right: 0;
-      margin: 0 auto;
-      height: 1px;
-      content: "";
-      background: $cgrey4;
-    }
   }
   
 
@@ -369,7 +357,7 @@ body .region-secondary-menu div#block-menuuseritem {
     width: 100%;
     z-index: 2;
     padding: 0 15px;
-    margin: 0 auto;
+    margin: 0 auto 0;
     background: $cwhite;
     transition: all 1s cubic-bezier(0.55, 0, 0.1, 1);
 
@@ -379,14 +367,13 @@ body .region-secondary-menu div#block-menuuseritem {
     height: inherit;
 
     @media (max-width: $tablet) {
-      padding-top: 85px;
+      padding-top: 162px;
     }
 
     .menu {
       display: flex;
       align-items: flex-start;
       flex-wrap: wrap;
-      margin: 35px 0;
       flex-direction: column;
       width: auto;
 
@@ -397,10 +384,10 @@ body .region-secondary-menu div#block-menuuseritem {
 
     a {
       font-style: normal;
-      font-family: $PrNova-light;
+      font-family: $PrNovacond-bold;
       font-weight: normal;
-      font-size: 16px;
-      line-height: 19px;
+      font-size: szrem(28);
+      line-height: 16px;
       text-align: center;
       letter-spacing: 0.025em;
       padding: 0;
@@ -419,7 +406,7 @@ body .region-secondary-menu div#block-menuuseritem {
     .menu-item {
       flex: 2 1 150px;
       align-self: stretch;
-      margin: 0;
+      margin: 0 0 2rem;
       display: flex;
       align-items: center;
       flex-wrap: wrap;
@@ -852,6 +839,7 @@ body .region-secondary-menu div#block-menuuseritem {
     //margin: 20px 35px 7px 0;
     margin: auto 35px auto 0;
     cursor: pointer;
+    transition: all 0.3s ease;
 
     &:before,
     &:after {
@@ -864,6 +852,7 @@ body .region-secondary-menu div#block-menuuseritem {
       background: $cwhite;
       right: 0;
       margin: 0 auto;
+      transition: all 0.3s ease;
     }
 
     &:after {
@@ -886,6 +875,7 @@ body .region-secondary-menu div#block-menuuseritem {
         right: 0;
         margin: 0 auto;
         top: 16px;
+        transition: all 0.3s ease;
       }
 
       &:after {
@@ -903,6 +893,7 @@ body .region-secondary-menu div#block-menuuseritem {
         font-family: $PrNovacond-reg;
         text-align: center;
         bottom: 4px;
+        transition: all 0.3s ease;
       }
 
       &:lang(es)::after {
@@ -913,7 +904,40 @@ body .region-secondary-menu div#block-menuuseritem {
     /* @media (max-width: $tablet) {
       display: block;
     } */
+
+    // Transformación a X cuando el menú está abierto
+    &.open-menu {
+      &:before {
+        transform: rotate(45deg);
+        top: 8px; // Centrar para formar la X
+      }
+      
+      &:after {
+        transform: rotate(-45deg);
+        top: 8px; // Centrar para formar la X
+      }
+      
+      .content {
+        &:before {
+          opacity: 0; // Ocultar la línea del medio
+        }
+        
+        /* &:after {
+          content: "Cerrar";
+          
+          &:lang(es) {
+            content: "Cerrar";
+          }
+
+          &:lang(en) {
+            content: "Close";
+          }
+        } */
+      }
+    }
   }
+
+
 
   #block-al-dia-news-branding {
     position: relative;
