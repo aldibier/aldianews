@@ -418,6 +418,16 @@ body .region-secondary-menu div#block-menuuseritem {
 
       a {
         color: $cblack0;
+
+        &:hover {
+          color: #e21;
+          text-decoration: none;
+          transition: all 0.3s ease;
+        }
+
+        &:focus {
+          color: #e21;
+        }
       }
 
       &:nth-child(8) {
