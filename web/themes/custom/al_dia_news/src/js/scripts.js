@@ -388,6 +388,10 @@ import { formApplyModified } from './modules/fixedCloseWebforms';
 			$("#block-exposedformsearch-results-al-dia-solrpage-1-2").addClass(
 				"open"
 			);
+			$(".region-header #block-blockheader").removeClass("open-menu");
+			$(".region-secondary-menu #block-al-dia-news-main-menu").removeClass("open-menu");
+			$(".region-secondary-menu").removeClass("open-menu");
+			$("body").removeClass("open-menu");
 			$("#block-exposedformsearch-results-al-dia-solrpage-1-2 .form-item-token input").focus();
 			$(".layout-main-wrapper.layout-container").addClass("color-mod");
 		});

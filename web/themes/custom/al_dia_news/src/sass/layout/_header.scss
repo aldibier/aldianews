@@ -41,15 +41,13 @@
 
 body.open-menu {
   .region-header {
-    padding-top: 0;
-    max-height: 75px;
 
     &:after {
       display: none;
     }
 
     #block-al-dia-news-branding h1 {
-      margin-bottom: 3px;
+      margin-bottom: 4px;
     }
 
     #block-loginformpopup {
@@ -284,7 +282,8 @@ body .region-secondary-menu div#block-menuuseritem {
   background: $cwhite;
   max-height: 80px;
  */
- transition: all 1s cubic-bezier(0.55, 0, 0.1, 1);
+ transition: height 0.5s ease-in-out;
+ height: 0;
 
   /* >* {
     //transition: all 1s cubic-bezier(0.55, 0, 0.1, 1);
@@ -306,7 +305,8 @@ body .region-secondary-menu div#block-menuuseritem {
     height: 380px;
     background: $cwhite;
     height: 94vh;
-    overflow: scroll;
+    overflow: auto;
+    transition: height 0.5s ease-in-out;
   }
 
   @media (max-width: $tablet) {
@@ -355,19 +355,18 @@ body .region-secondary-menu div#block-menuuseritem {
     align-items: center;
     justify-content: left;
     width: 100%;
+    max-width: 1310px;
     z-index: 2;
     padding: 0 15px;
-    margin: 0 auto 0;
+    margin: 3em auto;
     background: $cwhite;
     transition: all 1s cubic-bezier(0.55, 0, 0.1, 1);
-
     position: absolute;
     left: 0;
     right: 0;
-    height: inherit;
 
-    @media (max-width: $tablet) {
-      padding-top: 162px;
+    @media (max-width: $desktop) {
+      padding-top: 2em;
     }
 
     .menu {
@@ -396,6 +395,11 @@ body .region-secondary-menu div#block-menuuseritem {
       @media (max-width: $desktop) {
         padding: 0;
         margin: 0;
+        font-size: szrem(28);
+      }
+
+      @media (max-width: $tablet) {
+        font-size: szrem(22);
       }
     }
   }
@@ -986,7 +990,7 @@ body .region-secondary-menu div#block-menuuseritem {
     }
 
     h1 {
-      margin-bottom: 5px;
+      margin-bottom: 4px;
     }
 
     .site-branding__logo {
