@@ -7,6 +7,10 @@
   top: 0;
   z-index: 101;
 
+  .section {
+    position: unset;
+  }
+
   @media (max-width: $tablet) {
     min-height: 80px;
     //border-bottom: 2px solid $corange;
@@ -301,8 +305,9 @@ body .region-secondary-menu div#block-menuuseritem {
 
 
   &.open-menu {
-    position: relative;
-    height: 380px;
+    position: absolute;
+    left: 0;
+    right: 0;
     background: $cwhite;
     height: 94vh;
     overflow: auto;
