@@ -6,12 +6,20 @@ dependencies:
     - core.entity_view_mode.node.contact_us
     - field.field.node.page.body
     - node.type.page
+    - simple_block.simple_block.departments
+    - simple_block.simple_block.visit_us
+    - webform.webform.contact
+  content:
+    - 'block_content:advertise_cta:b42f1088-73ae-4489-91c1-4bd3a03750e1'
   module:
     - al_dia_layouts
+    - block_content
     - gamw
     - layout_builder
+    - simple_block
     - text
     - user
+    - webform
 third_party_settings:
   layout_builder:
     enabled: true
@@ -88,6 +96,81 @@ third_party_settings:
                 remove: 'Remove last targeting attribute'
             weight: 1
             additional: {  }
+          2b14322d-4107-476d-8003-3ab1b3551b2e:
+            uuid: 2b14322d-4107-476d-8003-3ab1b3551b2e
+            region: one_vertical_advertising
+            configuration:
+              id: webform_block
+              label: 'Send Us a Message'
+              label_display: visible
+              provider: webform
+              context_mapping: {  }
+              webform_id: contact
+              default_data: ''
+              redirect: false
+              lazy: false
+            weight: 2
+            additional: {  }
+          e8833191-1a26-42d0-84dd-60d7e5fc6e4d:
+            uuid: e8833191-1a26-42d0-84dd-60d7e5fc6e4d
+            region: two_content
+            configuration:
+              id: 'simple_block:departments'
+              label: Departments
+              label_display: visible
+              provider: simple_block
+              context_mapping: {  }
+            weight: 1
+            additional: {  }
+          e98e4db0-aab8-480d-8b6d-61626b620106:
+            uuid: e98e4db0-aab8-480d-8b6d-61626b620106
+            region: two_content
+            configuration:
+              id: 'simple_block:visit_us'
+              label: 'Visit Us'
+              label_display: visible
+              provider: simple_block
+              context_mapping: {  }
+            weight: 2
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+          column_widths: 67-33
+        components:
+          832746e3-3e37-4d58-8476-ffbb5081ecd0:
+            uuid: 832746e3-3e37-4d58-8476-ffbb5081ecd0
+            region: first
+            configuration:
+              id: 'block_content:b42f1088-73ae-4489-91c1-4bd3a03750e1'
+              label: 'Content for Advertise With Us Block'
+              label_display: '0'
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 3
+            additional:
+              component_attributes:
+                block_attributes:
+                  id: ''
+                  class: block-advertise-us
+                  style: ''
+                  data: ''
+                block_title_attributes:
+                  id: ''
+                  class: ''
+                  style: ''
+                  data: ''
+                block_content_attributes:
+                  id: ''
+                  class: ''
+                  style: ''
+                  data: ''
         third_party_settings: {  }
 _core:
   default_config_hash: g1S3_GLaxq4l3I9RIca5Mlz02MxI2KmOquZpHw59akM

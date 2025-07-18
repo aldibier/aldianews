@@ -28,6 +28,16 @@ elements: |-
     '#type': email
     '#required': true
     '#default_value': '[current-user:mail]'
+  department:
+    '#type': select
+    '#title': Department
+    '#title_display': before
+    '#options':
+      Editorial: Editorial
+      Advertising: Advertising
+      Events: Events
+      Subscription: Subscription
+    '#required': true
   subject:
     '#title': Subject
     '#type': textfield
