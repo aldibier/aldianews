@@ -407,6 +407,34 @@ body .region-secondary-menu div#block-menuuseritem {
         font-size: szrem(22);
       }
     }
+
+    //------------- submenu
+    .menu-item--expanded {
+      max-height: none;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .menu .menu {
+      margin: 1rem 0 0 1.25rem;
+
+      .menu-item {
+        margin: 0 0 0.9rem;
+        min-height: 0;
+      }
+
+      a {
+        font-size: szrem(20);
+
+        @media (max-width: $desktop) {
+          font-size: szrem(20);
+        }
+
+        @media (max-width: $tablet) {
+          font-size: szrem(18);
+        }
+      }
+    }
   }
 
   .menu {
