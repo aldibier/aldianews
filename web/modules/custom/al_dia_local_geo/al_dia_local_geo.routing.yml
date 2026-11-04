@@ -1,0 +1,8 @@
+al_dia_local_geo.near_me:
+  path: '/local/near-me'
+  defaults:
+    _controller: '\Drupal\al_dia_local_geo\Controller\LocalGeoController::redirectToArea'
+  requirements:
+    _access: 'TRUE'
+  options:
+    no_cache: TRUE
