@@ -35,7 +35,12 @@ class LocalGeoController extends ControllerBase {
    */
   public function redirectToArea(Request $request) {
     $config = $this->config('al_dia_local_geo.settings');
-    $tid = $this->matchZone($request, $config->get('zones') ?? []) ?? $config->get('default_tid');
+    $country = (string) $request->headers->get('CF-IPCountry');
+    // CF-Postal-Code comes from the "Add visitor location headers" managed
+    // transform; US values can be ZIP+4.
+    $postal_code = substr(trim((string) $request->headers->get('CF-Postal-Code')), 0, 5);
+    $zone = $this->matchZone($country, $postal_code, $config->get('zones') ?? []);
+    $tid = $zone['tid'] ?? $config->get('default_tid');
 
     $url = Url::fromRoute('entity.taxonomy_term.canonical', ['taxonomy_term' => $tid])
       ->toString(TRUE)
@@ -43,25 +48,22 @@ class LocalGeoController extends ControllerBase {
 
     $response = new RedirectResponse($url, 302);
     $response->headers->set('Cache-Control', 'private, no-store');
+    // Lets testers see what was detected; it only echoes the requester's own
+    // location.
+    $response->headers->set('X-Local-Geo', sprintf('country=%s; zip=%s; zone=%s', $country ?: '-', $postal_code ?: '-', $zone['label'] ?? 'default'));
     return $response;
   }
 
   /**
-   * Returns the term ID of the enabled zone that holds the reader ZIP code.
+   * Returns the enabled zone that holds the reader ZIP code, if any.
    */
-  protected function matchZone(Request $request, array $zones) {
-    if ($request->headers->get('CF-IPCountry') !== 'US') {
-      return NULL;
-    }
-    // CF-Postal-Code comes from the "Add visitor location headers" managed
-    // transform; US values can be ZIP+4.
-    $postal_code = substr(trim((string) $request->headers->get('CF-Postal-Code')), 0, 5);
-    if (!preg_match('/^\d{5}$/', $postal_code)) {
+  protected function matchZone(string $country, string $postal_code, array $zones) {
+    if ($country !== 'US' || !preg_match('/^\d{5}$/', $postal_code)) {
       return NULL;
     }
     foreach ($zones as $zone) {
       if (!empty($zone['enabled']) && in_array($postal_code, $zone['postal_codes'] ?? [], TRUE)) {
-        return $zone['tid'];
+        return $zone;
       }
     }
     return NULL;
